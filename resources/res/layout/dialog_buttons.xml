@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="@dimen/_19sdp">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/button1" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="#fff600" app:corners="@dimen/_6sdp">
+        <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/black" android:layout_gravity="center" android:id="@+id/tv_accept" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/button2" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="@dimen/_8sdp" app:backgroundMainColor="#33ffffff" app:borderMainColor="#1affffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_6sdp">
+        <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/tv_cancel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</LinearLayout>

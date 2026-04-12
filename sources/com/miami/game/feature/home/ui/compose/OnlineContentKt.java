@@ -131,9 +131,9 @@ public final class OnlineContentKt {
                 ComposerKt.sourceInformation(startRestartGroup, "73@3251L10,74@3308L13,70@3119L224,77@3395L36,76@3364L181,84@3720L10,85@3777L13,81@3566L246");
                 float f = 11;
                 i3 = 0;
-                TextKt.m2712TextNvy7gAk("Очередь", null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, 390, 0, 131050);
+                TextKt.m2712TextNvy7gAk("Очередь", null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, 390, 0, 131050);
                 ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.queue_ic, startRestartGroup, 0), (String) null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(13)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
-                TextKt.m2712TextNvy7gAk(String.valueOf(uiState.getQueue()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
+                TextKt.m2712TextNvy7gAk(String.valueOf(uiState.getQueue()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
                 startRestartGroup = startRestartGroup;
                 startRestartGroup.endReplaceGroup();
             } else {
@@ -143,9 +143,9 @@ public final class OnlineContentKt {
             }
             float f2 = 11;
             composer2 = startRestartGroup;
-            TextKt.m2712TextNvy7gAk("Онлайн", null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, 390, 0, 131050);
+            TextKt.m2712TextNvy7gAk("Онлайн", null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, 390, 0, 131050);
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.online_ic, composer2, i3), (String) null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(13)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer2, Painter.$stable | 432, 120);
-            TextKt.m2712TextNvy7gAk(String.valueOf(uiState.getOnline()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f2), composer2, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
+            TextKt.m2712TextNvy7gAk(String.valueOf(uiState.getOnline()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f2), composer2, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();

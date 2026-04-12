@@ -183,7 +183,7 @@ public final class MaterialCalendarGridView extends GridView {
     @Override // android.widget.GridView, android.widget.AbsListView, android.view.View
     public void onMeasure(int i, int i2) {
         if (this.nestedScrollable) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(ViewCompat.MEASURED_SIZE_MASK, Integer.MIN_VALUE));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(16777215, Integer.MIN_VALUE));
             getLayoutParams().height = getMeasuredHeight();
             return;
         }

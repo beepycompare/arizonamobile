@@ -2,7 +2,6 @@ package ru.mrlargha.feature.mobile.presentation.page.rent;
 
 import android.widget.TextView;
 import androidx.media3.extractor.ts.PsExtractor;
-import androidx.media3.extractor.ts.TsExtractor;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -21,7 +20,7 @@ import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentCreat
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArizonaRentAddPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$4$1$1", f = "ArizonaRentAddPage.kt", i = {}, l = {187, DownloaderService.STATUS_PAUSED_BY_APP}, m = "invokeSuspend", n = {}, nl = {191, DownloaderService.STATUS_QUEUED_FOR_WIFI}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$4$1$1", f = "ArizonaRentAddPage.kt", i = {}, l = {PsExtractor.PRIVATE_STREAM_1, DownloaderService.STATUS_WAITING_FOR_NETWORK}, m = "invokeSuspend", n = {}, nl = {DownloaderService.STATUS_PAUSED_BY_APP, 199}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class ArizonaRentAddPage$setupListeners$1$4$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ EditTextCheckResult $result;
@@ -96,7 +95,7 @@ public final class ArizonaRentAddPage$setupListeners$1$4$1$1 extends SuspendLamb
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ArizonaRentAddPage.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$4$1$1$1", f = "ArizonaRentAddPage.kt", i = {}, l = {TsExtractor.TS_PACKET_SIZE}, m = "invokeSuspend", n = {}, nl = {PsExtractor.PRIVATE_STREAM_1}, s = {}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$4$1$1$1", f = "ArizonaRentAddPage.kt", i = {}, l = {DownloaderService.STATUS_PENDING}, m = "invokeSuspend", n = {}, nl = {191}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$4$1$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -145,7 +144,7 @@ public final class ArizonaRentAddPage$setupListeners$1$4$1$1 extends SuspendLamb
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ArizonaRentAddPage.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$4$1$1$2", f = "ArizonaRentAddPage.kt", i = {}, l = {DownloaderService.STATUS_WAITING_TO_RETRY}, m = "invokeSuspend", n = {}, nl = {DownloaderService.STATUS_WAITING_FOR_NETWORK}, s = {}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$4$1$1$2", f = "ArizonaRentAddPage.kt", i = {}, l = {DownloaderService.STATUS_QUEUED_FOR_WIFI_OR_CELLULAR_PERMISSION}, m = "invokeSuspend", n = {}, nl = {DownloaderService.STATUS_QUEUED_FOR_WIFI}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$4$1$1$2  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

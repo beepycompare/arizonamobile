@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:gravity="center_horizontal" android:orientation="vertical" android:id="@+id/root" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/topRow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_2sdp">
+        <Space android:layout_width="@dimen/_3sdp" android:layout_height="1dp"/>
+        <ImageView android:id="@+id/tvPrefix" android:layout_width="@dimen/_16sdp" android:layout_height="@dimen/_7sdp" android:layout_marginTop="@dimen/_1sdp" android:layout_marginBottom="1px" android:src="@drawable/new_money_kk" android:scaleType="fitCenter"/>
+        <TextView android:textSize="@dimen/_9sdp" android:textColor="@color/white" android:id="@+id/tvValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="999" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/deltaRow" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <Space android:layout_width="@dimen/_3sdp" android:layout_height="1dp"/>
+        <ImageView android:id="@+id/tvPrefixDelta" android:layout_width="@dimen/_13sdp" android:layout_height="@dimen/_6sdp" android:layout_marginTop="@dimen/_1sdp" android:src="@drawable/new_money_kk" android:scaleType="fitCenter"/>
+        <TextView android:textSize="@dimen/_8sdp" android:textColor="#7dff43" android:layout_gravity="right" android:id="@+id/tvDelta" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+99" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+    </LinearLayout>
+</LinearLayout>

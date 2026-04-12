@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.core.content.ContextCompat;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestBuilder;
+import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
@@ -340,7 +342,13 @@ public final class DonateUtilsKt {
 
     public static final void setGifSdn(ImageView imageView, int i) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
-        Glide.with(imageView.getContext()).asGif().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate_shop/" + i + ".gif").error(defaultImageInt).into(imageView);
+        String str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate_shop/" + i + ".gif";
+        String str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/items/" + i + ".gif";
+        RequestBuilder<GifDrawable> asGif = Glide.with(imageView.getContext()).asGif();
+        if (!UtilsKt.isArizonaType()) {
+            str = str2;
+        }
+        asGif.load(str).error(defaultImageInt).into(imageView);
     }
 
     public static final void setImageItemBgSdn(ImageView imageView, int i) {

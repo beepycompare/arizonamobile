@@ -57,7 +57,7 @@ public interface ViewSizeResolver<T extends View> extends SizeResolver {
                     if (!this.isResumed) {
                         this.isResumed = true;
                         Result.Companion companion = Result.Companion;
-                        cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(size2));
+                        cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(size2));
                     }
                 }
                 return true;

@@ -119,10 +119,10 @@ public final class NumberSpanParserOperation<Output> implements ParserOperation<
 
     @Override // kotlinx.datetime.internal.format.parser.ParserOperation
     /* renamed from: consume-FANa98k  reason: not valid java name */
-    public Object mo10796consumeFANa98k(Output output, CharSequence input, int i) {
+    public Object mo10797consumeFANa98k(Output output, CharSequence input, int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         if (this.minLength + i > input.length()) {
-            return ParseResult.Companion.m10806ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda0
+            return ParseResult.Companion.m10807ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     return NumberSpanParserOperation.consume_FANa98k$lambda$8(NumberSpanParserOperation.this);
@@ -135,7 +135,7 @@ public final class NumberSpanParserOperation<Output> implements ParserOperation<
             int i2 = intRef.element;
         }
         if (intRef.element < this.minLength) {
-            return ParseResult.Companion.m10806ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda1
+            return ParseResult.Companion.m10807ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     return NumberSpanParserOperation.consume_FANa98k$lambda$9(Ref.IntRef.this, this);
@@ -150,7 +150,7 @@ public final class NumberSpanParserOperation<Output> implements ParserOperation<
             final NumberConsumptionError consume = this.consumers.get(i3).consume(output, input, i, intValue);
             if (consume != null) {
                 final String obj = input.subSequence(i, intValue).toString();
-                return ParseResult.Companion.m10806ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda2
+                return ParseResult.Companion.m10807ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         return NumberSpanParserOperation.consume_FANa98k$lambda$10(obj, this, i3, consume);
@@ -160,7 +160,7 @@ public final class NumberSpanParserOperation<Output> implements ParserOperation<
             i3++;
             i = intValue;
         }
-        return ParseResult.Companion.m10807OkQi1bsqg(i);
+        return ParseResult.Companion.m10808OkQi1bsqg(i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

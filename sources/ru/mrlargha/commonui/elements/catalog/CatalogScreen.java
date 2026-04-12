@@ -1,17 +1,25 @@
 package ru.mrlargha.commonui.elements.catalog;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 import kotlin.Metadata;
 import kotlin.Unit;
+import kotlin.collections.CollectionsKt;
 import kotlin.collections.SetsKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.SAMPUIElement;
@@ -21,36 +29,38 @@ import ru.mrlargha.commonui.databinding.CatalogLayoutBinding;
 import ru.mrlargha.commonui.elements.catalog.models.CatalogInfoModel;
 import ru.mrlargha.commonui.elements.catalog.models.CatalogItemModel;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: CatalogScreen.kt */
-@Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001\u001eB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J\u0018\u0010\u0014\u001a\u00020\u00112\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0005H\u0016J\u0010\u0010\u0018\u001a\u00020\u00112\u0006\u0010\u0019\u001a\u00020\u0005H\u0002J\b\u0010\u001a\u001a\u00020\u0011H\u0002J\u0010\u0010\u001b\u001a\u00020\u00112\u0006\u0010\u001c\u001a\u00020\u001dH\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lru/mrlargha/commonui/elements/catalog/CatalogScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "catalogScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/CatalogLayoutBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "catalogAdapter", "Lru/mrlargha/commonui/elements/catalog/CatalogAdapter;", "setupTitleData", "", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/catalog/models/CatalogInfoModel;", "onBackendMessage", "data", "", "subId", "removeCatalogItemById", "id", "closeScreen", "setVisibility", "visible", "", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0001#B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0002J\u0018\u0010\u0018\u001a\u00020\u00152\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u0005H\u0016J\u0010\u0010\u001c\u001a\u00020\u00152\u0006\u0010\u001d\u001a\u00020\u0005H\u0002J\b\u0010\u001e\u001a\u00020\u0015H\u0002J\u0010\u0010\u001f\u001a\u00020\u00152\u0006\u0010 \u001a\u00020!H\u0016J\b\u0010\"\u001a\u00020\u0015H\u0002R\u0016\u0010\b\u001a\n \n*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lru/mrlargha/commonui/elements/catalog/CatalogScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "catalogScreen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/CatalogLayoutBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "catalogAdapter", "Lru/mrlargha/commonui/elements/catalog/CatalogAdapter;", "catalogItemList", "", "Lru/mrlargha/commonui/elements/catalog/models/CatalogItemModel;", "setupTitleData", "", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/catalog/models/CatalogInfoModel;", "onBackendMessage", "data", "", "subId", "removeCatalogItemById", "id", "closeScreen", "setVisibility", "visible", "", "setupListeners", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CatalogScreen extends SAMPUIElement {
     private final CatalogLayoutBinding binding;
     private final CatalogAdapter catalogAdapter;
-    private final ConstraintLayout catalogScreen;
+    private List<CatalogItemModel> catalogItemList;
+    private final View catalogScreen;
     private final IBackendNotifier frontendNotifier;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CatalogScreen(Activity targetActivity, int i) {
         super(targetActivity, i);
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
-        View inflate = targetActivity.getLayoutInflater().inflate(R.layout.catalog_layout, (ViewGroup) null);
-        Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout");
-        ConstraintLayout constraintLayout = (ConstraintLayout) inflate;
-        this.catalogScreen = constraintLayout;
-        CatalogLayoutBinding bind = CatalogLayoutBinding.bind(constraintLayout);
+        View catalogScreen = targetActivity.getLayoutInflater().inflate(R.layout.catalog_layout, (ViewGroup) null);
+        this.catalogScreen = catalogScreen;
+        CatalogLayoutBinding bind = CatalogLayoutBinding.bind(catalogScreen);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
         this.frontendNotifier = (IBackendNotifier) targetActivity;
-        CatalogAdapter catalogAdapter = new CatalogAdapter(targetActivity.getSharedPreferences("flavorType", 0).getBoolean("isArizonaType", false), new Function2() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogScreen$$ExternalSyntheticLambda0
+        CatalogAdapter catalogAdapter = new CatalogAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 return CatalogScreen.catalogAdapter$lambda$0(CatalogScreen.this, (CatalogItemModel) obj, ((Integer) obj2).intValue());
             }
         });
         this.catalogAdapter = catalogAdapter;
-        constraintLayout.setClickable(true);
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        this.catalogItemList = CollectionsKt.emptyList();
+        catalogScreen.setClickable(true);
+        Intrinsics.checkNotNullExpressionValue(catalogScreen, "catalogScreen");
+        addViewToConstraintLayout(catalogScreen, -1, -1);
         bind.catalogBtnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -58,6 +68,7 @@ public final class CatalogScreen extends SAMPUIElement {
             }
         });
         bind.catalogListRv.setAdapter(catalogAdapter);
+        setupListeners();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -70,7 +81,10 @@ public final class CatalogScreen extends SAMPUIElement {
     private final void setupTitleData(CatalogInfoModel catalogInfoModel) {
         CatalogLayoutBinding catalogLayoutBinding = this.binding;
         catalogLayoutBinding.catalogTitleText.setText(catalogInfoModel.getTitle());
-        catalogLayoutBinding.catalogDescText.setText(catalogInfoModel.getDesc());
+        catalogLayoutBinding.catalogDescText.setText(StringsKt.replace$default(catalogInfoModel.getDesc(), "</br>", "\n", false, 4, (Object) null));
+        CustomCardView searchContainer = catalogLayoutBinding.searchContainer;
+        Intrinsics.checkNotNullExpressionValue(searchContainer, "searchContainer");
+        searchContainer.setVisibility(catalogInfoModel.getSearch() ? 0 : 8);
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
@@ -79,6 +93,7 @@ public final class CatalogScreen extends SAMPUIElement {
         if (i == 0) {
             setupTitleData((CatalogInfoModel) MapperKt.toModel(data, CatalogInfoModel.class));
         } else if (i == 1) {
+            this.catalogItemList = CollectionsKt.plus((Collection) this.catalogItemList, (Iterable) MapperKt.toListModel(data, CatalogItemModel.class));
             this.catalogAdapter.addCatalogItems(MapperKt.toListModel(data, CatalogItemModel.class));
         } else if (i != 2) {
         } else {
@@ -108,6 +123,73 @@ public final class CatalogScreen extends SAMPUIElement {
             return;
         }
         this.catalogAdapter.clearCatalogItems();
+    }
+
+    private final void setupListeners() {
+        final CatalogLayoutBinding catalogLayoutBinding = this.binding;
+        catalogLayoutBinding.etSearch.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogScreen$setupListeners$1$1
+            @Override // android.text.TextWatcher
+            public void afterTextChanged(Editable editable) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+                List list;
+                ArrayList arrayList;
+                CatalogAdapter catalogAdapter;
+                String obj;
+                String obj2 = (charSequence == null || (obj = charSequence.toString()) == null) ? null : StringsKt.trim((CharSequence) obj).toString();
+                if (obj2 == null) {
+                    obj2 = "";
+                }
+                String str = obj2;
+                int length = str.length();
+                CatalogScreen catalogScreen = CatalogScreen.this;
+                if (length == 0) {
+                    arrayList = catalogScreen.catalogItemList;
+                } else {
+                    list = catalogScreen.catalogItemList;
+                    ArrayList arrayList2 = new ArrayList();
+                    for (Object obj3 : list) {
+                        if (StringsKt.contains((CharSequence) ((CatalogItemModel) obj3).getTitle(), (CharSequence) str, true)) {
+                            arrayList2.add(obj3);
+                        }
+                    }
+                    arrayList = arrayList2;
+                }
+                catalogAdapter = CatalogScreen.this.catalogAdapter;
+                catalogAdapter.setSearchItems(arrayList);
+            }
+        });
+        catalogLayoutBinding.etSearch.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogScreen$$ExternalSyntheticLambda2
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view, MotionEvent motionEvent) {
+                boolean z;
+                z = CatalogScreen.setupListeners$lambda$0$0(CatalogLayoutBinding.this, this, view, motionEvent);
+                return z;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean setupListeners$lambda$0$0(CatalogLayoutBinding catalogLayoutBinding, CatalogScreen catalogScreen, View view, MotionEvent motionEvent) {
+        Drawable drawable;
+        if (motionEvent.getAction() != 1 || (drawable = catalogLayoutBinding.etSearch.getCompoundDrawables()[2]) == null) {
+            return false;
+        }
+        if (motionEvent.getX() >= (catalogLayoutBinding.etSearch.getWidth() - catalogLayoutBinding.etSearch.getPaddingEnd()) - drawable.getBounds().width()) {
+            Editable text = catalogLayoutBinding.etSearch.getText();
+            if (text != null) {
+                text.clear();
+            }
+            catalogScreen.catalogAdapter.addCatalogItems(catalogScreen.catalogItemList);
+            return true;
+        }
+        return false;
     }
 
     /* compiled from: CatalogScreen.kt */

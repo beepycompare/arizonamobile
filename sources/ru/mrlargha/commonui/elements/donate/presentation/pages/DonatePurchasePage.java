@@ -89,7 +89,7 @@ public final class DonatePurchasePage extends DonatePage {
         DonateItemModelUi donateItemModelUi = this.canPressItem;
         if (donateItemModelUi != null) {
             if (donateItemModelUi.getId() == i) {
-                this.openDialog.invoke(new DonateBoostModelUi(new DonateRateModel(1, donateItemModelUi.getTotalEarnings() < 1 ? 1 : donateItemModelUi.getTotalEarnings()), donateItemModelUi.getUnixTime(), CollectionsKt.emptyList(), false, 0, 0, DonateItemType.RATE));
+                this.openDialog.invoke(new DonateBoostModelUi(new DonateRateModel(1, donateItemModelUi.getTotalEarnings() >= 1 ? donateItemModelUi.getTotalEarnings() : 1L), donateItemModelUi.getUnixTime(), CollectionsKt.emptyList(), false, 0L, 0L, DonateItemType.RATE));
             } else {
                 getNotifier().clickedWrapper(getBackendId(), i, 3);
             }

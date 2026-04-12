@@ -1,11 +1,7 @@
 package ru.mrlargha.commonui.elements.hints;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -20,18 +16,15 @@ import kotlin.collections.SetsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.ranges.IntRange;
-import kotlin.text.MatchResult;
-import kotlin.text.Regex;
-import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.HintsScreenBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: HintsScreen.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 \u00162\u00020\u0001:\u0002\u0016\u0017B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0002J\u0018\u0010\u0010\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0005H\u0016J\f\u0010\u0014\u001a\u00020\u0015*\u00020\u0012H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/commonui/elements/hints/HintsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/HintsScreenBinding;", "setHintInfo", "", "info", "Lru/mrlargha/commonui/elements/hints/HintsScreen$Companion$HintInfo;", "onBackendMessage", "data", "", "subId", "toSpannable", "Landroid/text/SpannableString;", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u0000 \u00142\u00020\u0001:\u0002\u0014\u0015B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0002J\u0018\u0010\u0010\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lru/mrlargha/commonui/elements/hints/HintsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/HintsScreenBinding;", "setHintInfo", "", "info", "Lru/mrlargha/commonui/elements/hints/HintsScreen$Companion$HintInfo;", "onBackendMessage", "data", "", "subId", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class HintsScreen extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
@@ -84,12 +77,12 @@ public final class HintsScreen extends SAMPUIElement {
 
     private final void setHintInfo(Companion.HintInfo hintInfo) {
         HintsScreenBinding hintsScreenBinding = this.binding;
-        SpannableString spannable = toSpannable(hintInfo.getHint());
+        SpannableString spannable$default = ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, hintInfo.getHint(), 0.0f, 1, null);
         int position = hintInfo.getPosition();
         if (position == 0) {
             hintsScreenBinding.rightHint.setVisibility(8);
             hintsScreenBinding.leftHint.setVisibility(0);
-            hintsScreenBinding.leftHintContainerText.setText(spannable);
+            hintsScreenBinding.leftHintContainerText.setText(spannable$default);
             Picasso picasso = Picasso.get();
             String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             picasso.load(resourceUrl$default + "projects/arizona-rp/systems/quest_notify/" + hintInfo.getBackgroundImage()).into(hintsScreenBinding.leftHintPerson);
@@ -97,7 +90,7 @@ public final class HintsScreen extends SAMPUIElement {
         } else {
             hintsScreenBinding.leftHint.setVisibility(8);
             hintsScreenBinding.rightHint.setVisibility(0);
-            hintsScreenBinding.rightHintContainerText.setText(spannable);
+            hintsScreenBinding.rightHintContainerText.setText(spannable$default);
             Picasso picasso2 = Picasso.get();
             String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             picasso2.load(resourceUrl$default2 + "projects/arizona-rp/systems/quest_notify/" + hintInfo.getBackgroundImage()).into(hintsScreenBinding.rightHintPerson);
@@ -110,53 +103,6 @@ public final class HintsScreen extends SAMPUIElement {
         if (i == 0) {
             setHintInfo((Companion.HintInfo) MapperKt.toModel(data, Companion.HintInfo.class));
         }
-    }
-
-    private final SpannableString toSpannable(String str) {
-        int i;
-        int i2;
-        int i3;
-        int i4;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        try {
-            Regex regex = new Regex("\\|[0-9A-z]*\\|");
-            MatchResult find = regex.find(str, 0);
-            i = 0;
-            i2 = -1;
-            i3 = -1;
-            while (find != null) {
-                try {
-                    i4 = Color.parseColor('#' + StringsKt.substring(find.getValue(), new IntRange(1, 6)));
-                } catch (NumberFormatException unused) {
-                    i4 = -1;
-                }
-                if (i2 != -1) {
-                    int i5 = i2 + 1;
-                    spannableStringBuilder.append(str.subSequence(i5, find.getRange().getFirst()));
-                    spannableStringBuilder.setSpan(new ForegroundColorSpan(i3), i5 - i, find.getRange().getFirst() - i, 34);
-                } else {
-                    String substring = str.substring(0, find.getRange().getFirst());
-                    Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
-                    spannableStringBuilder.append((CharSequence) substring);
-                }
-                i += 8;
-                i2 = find.getRange().getLast();
-                find = regex.find(str, find.getRange().getLast());
-                i3 = i4;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.d("HintsScreen", "last index error");
-        }
-        if (i2 != -1) {
-            int i6 = i2 + 1;
-            spannableStringBuilder.append(str.subSequence(i6, StringsKt.getLastIndex(str) + 1));
-            spannableStringBuilder.setSpan(new ForegroundColorSpan(i3), i6 - i, (StringsKt.getLastIndex(str) + 1) - i, 34);
-            SpannableString valueOf = SpannableString.valueOf(spannableStringBuilder);
-            Intrinsics.checkNotNullExpressionValue(valueOf, "valueOf(...)");
-            return valueOf;
-        }
-        return new SpannableString(str);
     }
 
     /* compiled from: HintsScreen.kt */

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/promo" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@+id/main" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/_16sdp">
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/_28sdp" android:textColor="@android:color/white" android:id="@+id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PAYDAY" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            <LinearLayout android:gravity="center" android:layout_gravity="bottom|right" android:orientation="horizontal" android:id="@+id/layoutTopBadges" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_2sdp">
+                <include android:id="@+id/badgePaydayMultiplier" android:visibility="visible" layout="@layout/hud_element_payday_badge"/>
+                <include android:id="@+id/badgeHouseMultiplier" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_2sdp" layout="@layout/hud_element_payday_badge"/>
+            </LinearLayout>
+        </FrameLayout>
+        <include android:id="@+id/warningCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_2sdp" android:layout_marginRight="@dimen/_2sdp" android:layout_marginHorizontal="@dimen/_2sdp" layout="@layout/hud_element_payday_warning"/>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/incomeCard" android:layout_width="match_parent" android:layout_height="@dimen/_14sdp" android:layout_marginLeft="@dimen/_2sdp" android:layout_marginRight="@dimen/_2sdp" android:layout_marginHorizontal="@dimen/_2sdp" app:backgroundMainColor="#6693ff35" app:borderMainColor="#4d93ff35" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_4sdp">
+            <TextView android:textSize="@dimen/_10sdp" android:textColor="#93ff35" android:gravity="center" android:id="@+id/tvMainIncome" android:layout_width="match_parent" android:layout_height="match_parent" android:text="+1 ЖБ 133 ₽" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="match_parent" android:layout_height="@dimen/_14sdp" android:layout_marginLeft="@dimen/_2sdp" android:layout_marginTop="@dimen/_1sdp" android:layout_marginRight="@dimen/_2sdp" android:layout_marginBottom="@dimen/_4sdp" android:layout_marginHorizontal="@dimen/_2sdp" app:backgroundMainColor="#b37d7d7d" app:borderMainColor="#32ffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_4sdp">
+            <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="horizontal" android:id="@+id/layoutOnlineInfo" android:layout_width="match_parent" android:layout_height="@dimen/_12sdp">
+                <Space android:layout_width="0dp" android:layout_height="@dimen/_3sdp" android:layout_weight="1"/>
+                <TextView android:textSize="@dimen/_4sdp" android:textColor="@android:color/white" android:id="@+id/tvOnlineLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ВАШ ОНЛАЙН" android:includeFontPadding="false" android:fontFamily="@font/heading_now_65"/>
+                <TextView android:textSize="@dimen/_5sdp" android:textColor="#acffffff" android:id="@+id/tvTodayLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Сегодня" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular" android:layout_marginStart="@dimen/_2sdp"/>
+                <TextView android:textSize="@dimen/_5sdp" android:textColor="@android:color/white" android:id="@+id/tvTodayTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="03:59" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_2sdp" android:fontFeatureSettings="tnum"/>
+                <Space android:layout_width="0dp" android:layout_height="@dimen/_3sdp" android:layout_weight="1"/>
+                <TextView android:textSize="@dimen/_5sdp" android:textColor="@android:color/white" android:id="@+id/tvHourLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="За час" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
+                <TextView android:textSize="@dimen/_5sdp" android:textColor="@android:color/white" android:id="@+id/tvHourTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:59" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_2sdp" android:fontFeatureSettings="tnum"/>
+                <Space android:layout_width="0dp" android:layout_height="@dimen/_3sdp" android:layout_weight="1"/>
+            </LinearLayout>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/layoutCardsRow1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_2sdp" android:layout_marginRight="@dimen/_2sdp" android:layout_marginHorizontal="@dimen/_2sdp">
+            <include android:id="@+id/cardLevel" android:layout_width="0dp" android:layout_height="@dimen/_24sdp" android:layout_weight="1" layout="@layout/hud_element_payday_item"/>
+            <Space android:layout_width="@dimen/_2sdp" android:layout_height="0dp"/>
+            <include android:id="@+id/cardDeposit" android:layout_width="0dp" android:layout_height="@dimen/_24sdp" android:layout_weight="1" layout="@layout/hud_element_payday_item"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/layoutCardsRow2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_2sdp" android:layout_marginRight="@dimen/_2sdp" android:layout_marginHorizontal="@dimen/_2sdp">
+            <include android:id="@+id/cardFraction" android:layout_width="0dp" android:layout_height="@dimen/_24sdp" android:layout_weight="1" layout="@layout/hud_element_payday_item"/>
+            <Space android:layout_width="@dimen/_2sdp" android:layout_height="0dp"/>
+            <include android:id="@+id/cardAz" android:layout_width="0dp" android:layout_height="@dimen/_24sdp" android:layout_weight="1" layout="@layout/hud_element_payday_item"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/layoutCardsRow3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_2sdp" android:layout_marginRight="@dimen/_2sdp" android:layout_marginHorizontal="@dimen/_2sdp">
+            <include android:id="@+id/cardLaws" android:layout_width="0dp" android:layout_height="@dimen/_24sdp" android:layout_weight="1" layout="@layout/hud_element_payday_item"/>
+            <include android:id="@+id/cardAdditional" android:visibility="visible" android:layout_width="0dp" android:layout_height="@dimen/_24sdp" android:layout_marginLeft="@dimen/_2sdp" android:layout_weight="1" layout="@layout/hud_element_payday_item"/>
+        </LinearLayout>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/close" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_2sdp" android:layout_marginTop="@dimen/_4sdp" android:layout_marginRight="@dimen/_2sdp" android:layout_marginHorizontal="@dimen/_2sdp" app:backgroundMainColor="@color/white" app:corners="@dimen/_4sdp">
+            <TextView android:textSize="@dimen/_7sdp" android:textColor="@android:color/black" android:gravity="center" android:id="@+id/btnClose" android:layout_width="match_parent" android:layout_height="@dimen/_16sdp" android:text="ЗАКРЫТЬ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_65"/>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    </LinearLayout>
+</FrameLayout>

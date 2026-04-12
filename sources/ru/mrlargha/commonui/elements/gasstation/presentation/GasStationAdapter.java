@@ -17,6 +17,7 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.elements.gasstation.domain.GasStationShop;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: GasStationAdapter.kt */
 @Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0000\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0018\u0010\u0010\u001a\u00020\u00022\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014H\u0016J\u0018\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00022\u0006\u0010\u0018\u001a\u00020\u0014H\u0016J\b\u0010\u0019\u001a\u00020\u0014H\u0016J\u0014\u0010\u001a\u001a\u00020\u00162\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\u001bR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u0007\u001a\u0012\u0012\u0004\u0012\u00020\t0\bj\b\u0012\u0004\u0012\u00020\t`\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \r*\u0004\u0018\u00010\f0\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/elements/gasstation/presentation/GasStationAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/gasstation/presentation/GasStationViewHolder;", "targetActivity", "Landroid/app/Activity;", "<init>", "(Landroid/app/Activity;)V", "shopList", "Ljava/util/ArrayList;", "Lru/mrlargha/commonui/elements/gasstation/domain/GasStationShop;", "Lkotlin/collections/ArrayList;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "", "holder", "position", "getItemCount", "addShopItem", "", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -47,6 +48,7 @@ public final class GasStationAdapter extends RecyclerView.Adapter<GasStationView
     public void onBindViewHolder(GasStationViewHolder holder, final int i) {
         String str;
         String str2;
+        String str3;
         Intrinsics.checkNotNullParameter(holder, "holder");
         if (this.isArizonaType) {
             str = "$";
@@ -54,15 +56,21 @@ public final class GasStationAdapter extends RecyclerView.Adapter<GasStationView
             str = "₽";
         }
         String title = this.shopList.get(i).getTitle();
-        String str3 = this.shopList.get(i).getPrice() + str;
-        if (this.isArizonaType) {
-            str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate/";
+        boolean z = this.isArizonaType;
+        ArrayList<GasStationShop> arrayList = this.shopList;
+        if (z) {
+            str2 = MoneyElementKt.toMoneyFormattedSpannable$default(arrayList.get(i).getPrice(), false, null, null, 7, null);
         } else {
-            str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/items/";
+            str2 = arrayList.get(i).getPrice() + str;
         }
-        Picasso.get().load(str2 + this.shopList.get(i).getImage() + ".webp").into(holder.getGasStationItem().gsShopItemImg);
+        if (this.isArizonaType) {
+            str3 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate/";
+        } else {
+            str3 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/items/";
+        }
+        Picasso.get().load(str3 + this.shopList.get(i).getImage() + ".webp").into(holder.getGasStationItem().gsShopItemImg);
         holder.getGasStationItem().gsShopItemTitle.setText(title);
-        holder.getGasStationItem().gsShopItemPrice.setText(str3);
+        holder.getGasStationItem().gsShopItemPrice.setText(str2);
         holder.getGasStationItem().gsShopItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.gasstation.presentation.GasStationAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

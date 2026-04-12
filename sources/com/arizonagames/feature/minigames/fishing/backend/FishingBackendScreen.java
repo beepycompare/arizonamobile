@@ -10,7 +10,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.arizona.common.utils.EasyAnimation;
 import com.arizona.common.utils.GridItemDecoration;
 import com.arizonagames.feature.minigames.fishing.backend.databinding.BackendGameLayoutBinding;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import java.util.ArrayList;
 import java.util.Set;
@@ -112,7 +111,7 @@ public final class FishingBackendScreen extends SAMPUIElement {
         if (i == 0) {
             try {
                 if (MapperKt.isJsonValid(data)) {
-                    setItems((GameData) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) GameData.class));
+                    setItems((GameData) MapperKt.getGson().fromJson(data, (Class<Object>) GameData.class));
                     return;
                 }
                 throw new JsonParseException("Json is not valid");

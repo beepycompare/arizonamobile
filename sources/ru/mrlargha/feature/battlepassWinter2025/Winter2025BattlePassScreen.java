@@ -19,7 +19,6 @@ import com.adjust.sdk.Constants;
 import com.arizona.game.BuildConfig;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
@@ -512,7 +511,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
                         root.setVisibility(8);
                         return;
                     } else if (MapperKt.isJsonValid(data)) {
-                        openModalWindow((BpModalWindowModel) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) BpModalWindowModel.class));
+                        openModalWindow((BpModalWindowModel) MapperKt.getGson().fromJson(data, (Class<Object>) BpModalWindowModel.class));
                         return;
                     } else {
                         throw new JsonParseException("Json is not valid");

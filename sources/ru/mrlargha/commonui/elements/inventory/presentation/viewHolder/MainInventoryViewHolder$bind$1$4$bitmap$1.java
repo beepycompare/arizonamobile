@@ -1,6 +1,7 @@
 package ru.mrlargha.commonui.elements.inventory.presentation.viewHolder;
 
 import android.graphics.Bitmap;
+import android.util.Log;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -18,6 +19,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 /* loaded from: classes6.dex */
 final class MainInventoryViewHolder$bind$1$4$bitmap$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Bitmap>, Object> {
     final /* synthetic */ InventoryItem $itemVal;
+    private /* synthetic */ Object L$0;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -29,7 +31,9 @@ final class MainInventoryViewHolder$bind$1$4$bitmap$1 extends SuspendLambda impl
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new MainInventoryViewHolder$bind$1$4$bitmap$1(this.$itemVal, continuation);
+        MainInventoryViewHolder$bind$1$4$bitmap$1 mainInventoryViewHolder$bind$1$4$bitmap$1 = new MainInventoryViewHolder$bind$1$4$bitmap$1(this.$itemVal, continuation);
+        mainInventoryViewHolder$bind$1$4$bitmap$1.L$0 = obj;
+        return mainInventoryViewHolder$bind$1$4$bitmap$1;
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -39,11 +43,20 @@ final class MainInventoryViewHolder$bind$1$4$bitmap$1 extends SuspendLambda impl
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        Bitmap iconFromArchiveWithFormat;
+        CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label != 0) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        return UtilsKt.getIconFromArchive$default("items", this.$itemVal.getItem().intValue(), (String) null, 4, (Object) null);
+        boolean isArizonaType = UtilsKt.isArizonaType();
+        InventoryItem inventoryItem = this.$itemVal;
+        if (isArizonaType) {
+            return UtilsKt.getIconFromArchive$default("items", inventoryItem.getItem().intValue(), (String) null, 4, (Object) null);
+        }
+        Log.d("TAG", "bind: " + inventoryItem.getCustomIcon());
+        String customIcon = this.$itemVal.getCustomIcon();
+        return (customIcon == null || (iconFromArchiveWithFormat = UtilsKt.getIconFromArchiveWithFormat("custom_icon", customIcon)) == null) ? UtilsKt.getIconFromArchive$default("items", this.$itemVal.getItem().intValue(), (String) null, 4, (Object) null) : iconFromArchiveWithFormat;
     }
 }

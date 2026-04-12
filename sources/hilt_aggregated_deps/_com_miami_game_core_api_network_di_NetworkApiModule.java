@@ -1,4 +1,4 @@
 package hilt_aggregated_deps;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class _com_miami_game_core_api_network_di_NetworkApiModule {
 }

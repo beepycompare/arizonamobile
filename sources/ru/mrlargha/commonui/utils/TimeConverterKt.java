@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlinx.datetime.internal.DateCalculationsKt;
 /* compiled from: TimeConverter.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\u001a\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003\u001a\u000e\u0010\u0004\u001a\u00020\u00012\u0006\u0010\u0005\u001a\u00020\u0003\u001a\u000e\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003\u001a\u000e\u0010\u0007\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003\u001a\n\u0010\b\u001a\u00020\u0001*\u00020\t¨\u0006\n"}, d2 = {"mainPageTimeConvert", "", "time", "", "taskPageTimeConvert", "unixTime", "oldPriseTimeConvert", "welcomeTimeConvert", "toTimeString", "", "CommonUI"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\u001a\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003\u001a\u000e\u0010\u0004\u001a\u00020\u00012\u0006\u0010\u0005\u001a\u00020\u0003\u001a\u000e\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003\u001a\u000e\u0010\u0007\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003\u001a\n\u0010\b\u001a\u00020\u0001*\u00020\t\u001a\n\u0010\n\u001a\u00020\u000b*\u00020\u0003\u001a\u000e\u0010\f\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u0003¨\u0006\u000e"}, d2 = {"mainPageTimeConvert", "", "time", "", "taskPageTimeConvert", "unixTime", "oldPriseTimeConvert", "welcomeTimeConvert", "toTimeString", "", "toDataString", "", "formatMillisToTime", "millis", "CommonUI"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class TimeConverterKt {
     public static final String mainPageTimeConvert(long j) {
@@ -76,5 +76,27 @@ public final class TimeConverterKt {
             Intrinsics.checkNotNullExpressionValue(format3, "format(...)");
             return format3;
         }
+    }
+
+    public static final void toDataString(long j) {
+        long abs = Math.abs((j * 1000) - System.currentTimeMillis());
+        TimeUnit.MILLISECONDS.toDays(abs);
+        long hours = TimeUnit.MILLISECONDS.toHours(abs) % 24;
+        long j2 = 60;
+        long minutes = TimeUnit.MILLISECONDS.toMinutes(abs) % j2;
+        long seconds = TimeUnit.MILLISECONDS.toSeconds(abs) % j2;
+    }
+
+    public static final String formatMillisToTime(long j) {
+        long j2 = j / 1000;
+        long j3 = (long) DateCalculationsKt.SECONDS_PER_HOUR;
+        long j4 = j2 / j3;
+        long j5 = 60;
+        long j6 = (j2 % j3) / j5;
+        long j7 = j2 % j5;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
+        String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(j4), Long.valueOf(j6), Long.valueOf(j7)}, 3));
+        Intrinsics.checkNotNullExpressionValue(format, "format(...)");
+        return format;
     }
 }

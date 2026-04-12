@@ -1,6 +1,4 @@
 package androidx.constraintlayout.core.motion;
-
-import androidx.core.view.ViewCompat;
 /* loaded from: classes2.dex */
 public class CustomAttribute {
     private static final String TAG = "TransitionLayout";
@@ -154,7 +152,7 @@ public class CustomAttribute {
             case 3:
                 int hsvToRgb = hsvToRgb(fArr[0], fArr[1], fArr[2]);
                 this.mColorValue = hsvToRgb;
-                this.mColorValue = (clamp((int) (fArr[3] * 255.0f)) << 24) | (hsvToRgb & ViewCompat.MEASURED_SIZE_MASK);
+                this.mColorValue = (clamp((int) (fArr[3] * 255.0f)) << 24) | (hsvToRgb & 16777215);
                 return;
             case 4:
                 throw new RuntimeException("Color does not have a single color to interpolate");

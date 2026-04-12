@@ -1,6 +1,5 @@
 package androidx.media3.extractor.ts;
 
-import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.media3.common.ParserException;
 import androidx.media3.common.util.ParsableBitArray;
@@ -56,7 +55,7 @@ final class MpeghUtil {
     }
 
     public static boolean isSyncWord(int i) {
-        return (i & ViewCompat.MEASURED_SIZE_MASK) == MHAS_SYNC_WORD;
+        return (i & 16777215) == MHAS_SYNC_WORD;
     }
 
     public static boolean parseMhasPacketHeader(ParsableBitArray parsableBitArray, MhasPacketHeader mhasPacketHeader) throws ParserException {

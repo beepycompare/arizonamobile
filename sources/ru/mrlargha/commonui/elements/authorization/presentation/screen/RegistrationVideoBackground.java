@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.net.Uri;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +25,7 @@ import java.util.Set;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.SetsKt;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.R;
@@ -36,9 +39,12 @@ import ru.mrlargha.commonui.elements.authorization.domain.controller.Registratio
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceManager;
 /* compiled from: RegistrationVideoBackground.kt */
-@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0016\u0018\u00002\u00020\u00012\u00020\u0002:\u00012B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0013H\u0016J\u000e\u0010\u0019\u001a\u00020\u00172\u0006\u0010\u001a\u001a\u00020\u000eJ\u0018\u0010\u001b\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u0006H\u0016J\u0010\u0010\u001f\u001a\u00020\u00172\u0006\u0010 \u001a\u00020\u001dH\u0002J\u0010\u0010!\u001a\u00020\u00172\u0006\u0010\"\u001a\u00020\u001dH\u0002J\u0010\u0010#\u001a\u00020\u00172\u0006\u0010$\u001a\u00020\u001dH\u0002J\u0010\u0010%\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\b\u0010&\u001a\u00020\u0017H\u0002J\u0010\u0010'\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0018\u0010(\u001a\u00020\u00172\u0006\u0010)\u001a\u00020\u00062\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0010\u0010*\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0010\u0010+\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\n\u0010,\u001a\u0004\u0018\u00010\u001dH\u0002J\u0006\u0010-\u001a\u00020\fJ\b\u0010.\u001a\u00020\u0017H\u0002J\u0010\u0010/\u001a\u00020\u00172\u0006\u00100\u001a\u00020\u001dH\u0002J\u0010\u00101\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0013H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00063"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationVideoBackground;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "videoBackground", "Landroidx/constraintlayout/widget/ConstraintLayout;", "videoBackgroundBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "lastChoseVideo", "Lru/mrlargha/commonui/elements/authorization/domain/controller/RegistrationVideoModeType;", "sharedPref", "Landroid/content/SharedPreferences;", "sharedPreferencesUI", "isVisible", "", "player", "Landroidx/media3/exoplayer/ExoPlayer;", "setVisibility", "", "visible", "selectVideoMode", "videoMode", "onBackendMessage", "data", "", "subId", "preload", "flavorType", "gameFlavorType", "type", "setAwaitText", "text", "pushSelectSpawnData", "showAuthInterface", "pushRecoveryResponse", "pushAuthServerInfo", "actionId", "pushRegistrationAccountResponse", "pushPedSettingsResponse", "getSAMPPath", "getMainBinding", "stopVideo", "setVideo", BreakpointSQLiteKey.FILENAME, "setVisible", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u001d\u0018\u0000 92\u00020\u00012\u00020\u0002:\u000289B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0013H\u0016J\u000e\u0010\u0019\u001a\u00020\u00172\u0006\u0010\u001a\u001a\u00020\u000eJ\u0018\u0010\u001b\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u0006H\u0016J\u0010\u0010\u001f\u001a\u00020\u00172\u0006\u0010 \u001a\u00020\u001dH\u0002J\u0010\u0010!\u001a\u00020\u00172\u0006\u0010\"\u001a\u00020\u001dH\u0002J\u0010\u0010#\u001a\u00020\u00172\u0006\u0010$\u001a\u00020\u001dH\u0002J\u0010\u0010%\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\b\u0010&\u001a\u00020\u0017H\u0002J\u0010\u0010'\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0018\u0010(\u001a\u00020\u00172\u0006\u0010)\u001a\u00020\u00062\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0010\u0010*\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0010\u0010+\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\n\u0010,\u001a\u0004\u0018\u00010\u001dH\u0002J\u0006\u0010-\u001a\u00020\fJ\b\u0010.\u001a\u00020\u0017H\u0002J\u0010\u0010/\u001a\u00020\u00172\u0006\u00100\u001a\u00020\u001dH\u0002J\b\u00101\u001a\u00020\u0017H\u0002J\b\u00102\u001a\u00020\u0017H\u0002J\u0006\u00103\u001a\u00020\u0017J\b\u00104\u001a\u00020\u0017H\u0002J\u0006\u00105\u001a\u00020\u0017J\b\u00106\u001a\u00020\u0017H\u0002J\u0010\u00107\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0013H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006:"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationVideoBackground;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "videoBackground", "Landroidx/constraintlayout/widget/ConstraintLayout;", "videoBackgroundBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "lastChoseVideo", "Lru/mrlargha/commonui/elements/authorization/domain/controller/RegistrationVideoModeType;", "sharedPref", "Landroid/content/SharedPreferences;", "sharedPreferencesUI", "isVisible", "", "player", "Landroidx/media3/exoplayer/ExoPlayer;", "setVisibility", "", "visible", "selectVideoMode", "videoMode", "onBackendMessage", "data", "", "subId", "preload", "flavorType", "gameFlavorType", "type", "setAwaitText", "text", "pushSelectSpawnData", "showAuthInterface", "pushRecoveryResponse", "pushAuthServerInfo", "actionId", "pushRegistrationAccountResponse", "pushPedSettingsResponse", "getSAMPPath", "getMainBinding", "stopVideo", "setVideo", BreakpointSQLiteKey.FILENAME, "initialize", "setListeners", "turnVideoPlay", "checkVideoPlayStatus", "turnSound", "checkSoundStatus", "setVisible", "Spawner", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class RegistrationVideoBackground extends SAMPUIElement implements InterfaceController {
+    public static final Companion Companion = new Companion(null);
+    public static final String SP_HAS_SOUND = "sp_has_sound";
+    public static final String SP_IS_VIDEO_PLAY = "sp_is_video_play";
     private boolean isVisible;
     private RegistrationVideoModeType lastChoseVideo;
     private ExoPlayer player;
@@ -108,6 +114,7 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
                 SAMPUIElement.notifyClick$default(RegistrationVideoBackground.this, -1, -1, null, 4, null);
             }
         });
+        setListeners();
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
@@ -157,12 +164,7 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
             this.videoBackgroundBinding.video.setVisibility(0);
             this.videoBackgroundBinding.playerView.setVisibility(0);
             setVideo("/SAMP/registration_video.webm");
-        } else if (i != 3) {
-            if (i != 4) {
-                throw new NoWhenBranchMatchedException();
-            }
-            stopVideo();
-        } else {
+        } else if (i == 3) {
             stopVideo();
             if (this.videoBackground.getVisibility() != 8) {
                 this.videoBackground.setVisibility(8);
@@ -170,7 +172,12 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
             if (this.videoBackgroundBinding.video.getVisibility() != 8) {
                 this.videoBackgroundBinding.video.setVisibility(8);
             }
+        } else if (i != 4) {
+            throw new NoWhenBranchMatchedException();
+        } else {
+            stopVideo();
         }
+        initialize();
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
@@ -324,6 +331,68 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
         }
     }
 
+    private final void initialize() {
+        checkVideoPlayStatus();
+        checkSoundStatus();
+    }
+
+    private final void setListeners() {
+        BackgroundVideoBinding backgroundVideoBinding = this.videoBackgroundBinding;
+        backgroundVideoBinding.btnPlay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationVideoBackground$$ExternalSyntheticLambda1
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                RegistrationVideoBackground.this.turnVideoPlay();
+            }
+        });
+        backgroundVideoBinding.btnSound.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationVideoBackground$$ExternalSyntheticLambda2
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                RegistrationVideoBackground.this.turnSound();
+            }
+        });
+    }
+
+    public final void turnVideoPlay() {
+        getSharedPreferences().edit().putBoolean(SP_IS_VIDEO_PLAY, !getSharedPreferences().getBoolean(SP_IS_VIDEO_PLAY, true)).apply();
+        checkVideoPlayStatus();
+    }
+
+    private final void checkVideoPlayStatus() {
+        BackgroundVideoBinding backgroundVideoBinding = this.videoBackgroundBinding;
+        if (!getSharedPreferences().getBoolean(SP_IS_VIDEO_PLAY, true)) {
+            this.player.pause();
+            backgroundVideoBinding.btnPlay.setBackground(Color.parseColor("#33FFFFFF"));
+            backgroundVideoBinding.ivPlay.setImageResource(R.drawable.background_video_ic_play);
+            return;
+        }
+        backgroundVideoBinding.btnPlay.setBackground(0);
+        backgroundVideoBinding.ivPlay.setImageResource(R.drawable.background_video_ic_stop);
+        this.player.play();
+    }
+
+    public final void turnSound() {
+        getSharedPreferences().edit().putBoolean(SP_HAS_SOUND, !getSharedPreferences().getBoolean(SP_HAS_SOUND, true)).apply();
+        checkSoundStatus();
+    }
+
+    private final void checkSoundStatus() {
+        BackgroundVideoBinding backgroundVideoBinding = this.videoBackgroundBinding;
+        boolean z = getSharedPreferences().getBoolean(SP_HAS_SOUND, true);
+        Log.i(getCLASS_TAG(), "turnSound: " + z);
+        ExoPlayer exoPlayer = this.player;
+        if (!z) {
+            exoPlayer.setVolume(0.0f);
+            backgroundVideoBinding.btnSound.setBackground(Color.parseColor("#33FFFFFF"));
+            backgroundVideoBinding.btnSound.setBorder(Color.parseColor("#FF4E4E"));
+            backgroundVideoBinding.ivSound.setImageTintList(ColorStateList.valueOf(Color.parseColor("#FF4E4E")));
+            return;
+        }
+        exoPlayer.setVolume(1.0f);
+        backgroundVideoBinding.btnSound.setBackground(0);
+        backgroundVideoBinding.btnSound.setBorder(-1);
+        backgroundVideoBinding.ivSound.setImageTintList(null);
+    }
+
     /* compiled from: RegistrationVideoBackground.kt */
     @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationVideoBackground$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
@@ -339,6 +408,18 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
         @Override // ru.mrlargha.commonui.core.UIElementAbstractSpawner
         public Set<UIElementID> getCorrectIds() {
             return this.correctIds;
+        }
+    }
+
+    /* compiled from: RegistrationVideoBackground.kt */
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationVideoBackground$Companion;", "", "<init>", "()V", "SP_IS_VIDEO_PLAY", "", "SP_HAS_SOUND", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    /* loaded from: classes6.dex */
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
         }
     }
 }

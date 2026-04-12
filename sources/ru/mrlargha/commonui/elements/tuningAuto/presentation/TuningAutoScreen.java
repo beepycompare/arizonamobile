@@ -58,6 +58,8 @@ import ru.mrlargha.commonui.utils.ConstantsKt;
 import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: TuningAutoScreen.kt */
 @Metadata(d1 = {"\u0000¢\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u000e\n\u0002\b\u000b\u0018\u00002\u00020\u00012\u00020\u0002:\u0001NB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0016J\b\u00108\u001a\u00020\u0010H\u0002J\u0010\u00109\u001a\u00020\u00102\u0006\u0010:\u001a\u00020\u001bH\u0002J\u0016\u0010;\u001a\u00020\u00102\f\u0010<\u001a\b\u0012\u0004\u0012\u0002020)H\u0002J\u0016\u0010=\u001a\u00020\u00102\f\u0010<\u001a\b\u0012\u0004\u0012\u0002020)H\u0002J\u0010\u0010>\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0010\u0010?\u001a\u00020\u00102\u0006\u0010:\u001a\u000202H\u0002J\u0016\u0010@\u001a\u00020\u00102\f\u0010<\u001a\b\u0012\u0004\u0012\u00020\u001b0)H\u0002J\b\u0010A\u001a\u00020\u0010H\u0002J\u0018\u0010B\u001a\u00020\u00102\u0006\u0010C\u001a\u00020D2\u0006\u0010E\u001a\u00020\u0006H\u0016J\b\u0010F\u001a\u00020\u0010H\u0002J\u0010\u0010G\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\b\u0010H\u001a\u00020\u0010H\u0002J\u0016\u0010I\u001a\u00020\u00102\f\u0010<\u001a\b\u0012\u0004\u0012\u00020*0)H\u0002J\u0016\u0010J\u001a\b\u0012\u0004\u0012\u00020,0)2\u0006\u0010K\u001a\u00020\u0006H\u0002J\u0018\u0010L\u001a\u00020\u00102\u0006\u0010C\u001a\u00020D2\u0006\u0010E\u001a\u00020\u0006H\u0002J\b\u0010M\u001a\u00020\u0010H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020!X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020*0)X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020,0\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010.\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\b\u0012\u0004\u0012\u0002000\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00101\u001a\b\u0012\u0004\u0012\u0002020)X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u000205X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00106\u001a\u0004\u0018\u000102X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00107\u001a\b\u0012\u0004\u0012\u00020,0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006O"}, d2 = {"Lru/mrlargha/commonui/elements/tuningAuto/presentation/TuningAutoScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/TuningAutoScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "setVisible", "", "visible", "", "categoriesMenuAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/CategoriesMenuAdapter;", "subCategoriesMenuAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/SubCategoriesMenuAdapter;", "itemComponentsAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/CategoryComponentsAdapter;", "categoryComponentsList", "", "Lru/mrlargha/commonui/elements/tuningAuto/domain/CategoryComponents;", "autoCharsAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/AutoCharsAdapter;", "tintSelectColorAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/TintedColorAdapter;", "selectFirstColorAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/TuningSelectColorAdapter;", "selectSecondColorAdapter", "userCartAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/UserCartAdapter;", "currentPageId", "firstSelectedColorIndex", "secondSelectedColorIndex", "wheelSettings", "", "Lru/mrlargha/commonui/elements/tuningAuto/domain/WheelSettings;", "listAllColors", "Lru/mrlargha/commonui/elements/tuningAuto/domain/SelectedColors;", "cartItems", "selectedCategoryComponent", "listTintedWindows", "Lru/mrlargha/commonui/elements/tuningAuto/domain/TintedWindows;", "categoriesList", "Lru/mrlargha/commonui/elements/tuningAuto/domain/CategoryInfo;", "selectedTintColor", "handler", "Landroid/os/Handler;", "selectedSubCategory", "unselectTintColorList", "initAdapters", "setTintedWindowInfo", "item", "initMenuCategories", "list", "initSubMenuCategories", "additionalInfoUiVisibility", "showProperUi", "refreshComponentsList", "initAutoColorAdapter", "onBackendMessage", "data", "", "subId", "resetAllValues", "cartUiVisibility", "showCartListUi", "updateWheelSettings", "updateSelectColorIndex", "itemIndex", "sendData", "closeScreen", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -302,7 +304,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
     public static final void _init_$lambda$8(TuningAutoScreen tuningAutoScreen, View view) {
         tuningAutoScreen.sendData(StringKt.toStringJson(""), 12);
         tuningAutoScreen.cartUiVisibility(false);
-        tuningAutoScreen.binding.tvCartTotal.setText("0");
+        tuningAutoScreen.binding.tvCartTotal.setText(MoneyElementKt.toMoneyFormattedSpannable$default(0L, false, null, null, 7, null));
         tuningAutoScreen.binding.tvCartCount.setText("0");
     }
 
@@ -970,21 +972,36 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:120:0x0080 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x016b A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x014a A[SYNTHETIC] */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0080 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x016b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x014a A[SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r0v15 */
+    /* JADX WARN: Type inference failed for: r0v16 */
+    /* JADX WARN: Type inference failed for: r0v29 */
+    /* JADX WARN: Type inference failed for: r12v67 */
+    /* JADX WARN: Type inference failed for: r12v68 */
+    /* JADX WARN: Type inference failed for: r12v69 */
+    /* JADX WARN: Type inference failed for: r6v10 */
+    /* JADX WARN: Type inference failed for: r6v11 */
+    /* JADX WARN: Type inference failed for: r6v9 */
+    /* JADX WARN: Type inference failed for: r7v7 */
+    /* JADX WARN: Type inference failed for: r7v8 */
+    /* JADX WARN: Type inference failed for: r7v9 */
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void onBackendMessage(String data, int i) {
-        boolean z;
+        ?? r7;
         Integer id;
         Object obj;
-        boolean z2;
+        ?? r6;
         Intrinsics.checkNotNullParameter(data, "data");
         Log.d("TAG_TUNING", "onBACKEND subID: " + i + " === data: " + data);
+        TuningSelectColorAdapter tuningSelectColorAdapter = null;
         CategoryComponentsAdapter categoryComponentsAdapter = null;
+        TintedColorAdapter tintedColorAdapter = null;
         try {
             switch (i) {
                 case 1:
@@ -1007,18 +1024,18 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
                     this.secondSelectedColorIndex = ((Number) list.get(1)).intValue();
                     Button btnSecondColor = this.binding.selectColorLayout.btnSecondColor;
                     Intrinsics.checkNotNullExpressionValue(btnSecondColor, "btnSecondColor");
-                    btnSecondColor.setVisibility(((Number) list.get(2)).intValue() != 1 ? 0 : 8);
+                    btnSecondColor.setVisibility((((Number) list.get(2)).intValue() != 1) != false ? 0 : 8);
                     for (Number number : ConstantsKt.getTuningColorsList()) {
                         this.listAllColors.add(new SelectedColors(number.intValue(), false));
                     }
                     List<SelectedColors> updateSelectColorIndex = updateSelectColorIndex(this.firstSelectedColorIndex);
-                    TuningSelectColorAdapter tuningSelectColorAdapter = this.selectFirstColorAdapter;
-                    if (tuningSelectColorAdapter == null) {
+                    TuningSelectColorAdapter tuningSelectColorAdapter2 = this.selectFirstColorAdapter;
+                    if (tuningSelectColorAdapter2 == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("selectFirstColorAdapter");
                     } else {
-                        categoryComponentsAdapter = tuningSelectColorAdapter;
+                        tuningSelectColorAdapter = tuningSelectColorAdapter2;
                     }
-                    categoryComponentsAdapter.submitList(updateSelectColorIndex);
+                    tuningSelectColorAdapter.submitList(updateSelectColorIndex);
                     sendData(StringKt.toStringJson(new UpdateColor(((Number) list.get(0)).intValue(), ((Number) list.get(1)).intValue())), 5);
                     return;
                 case 3:
@@ -1029,13 +1046,13 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
                         arrayList.add(new SelectedColors(number2.intValue(), false));
                     }
                     this.unselectTintColorList = arrayList;
-                    TintedColorAdapter tintedColorAdapter = this.tintSelectColorAdapter;
-                    if (tintedColorAdapter == null) {
+                    TintedColorAdapter tintedColorAdapter2 = this.tintSelectColorAdapter;
+                    if (tintedColorAdapter2 == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("tintSelectColorAdapter");
                     } else {
-                        categoryComponentsAdapter = tintedColorAdapter;
+                        tintedColorAdapter = tintedColorAdapter2;
                     }
-                    categoryComponentsAdapter.submitList(arrayList);
+                    tintedColorAdapter.submitList(arrayList);
                     return;
                 case 4:
                     List<WheelSettings> listModel2 = MapperKt.toListModel(data, WheelSettings.class);
@@ -1056,9 +1073,16 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
                     Intrinsics.checkNotNullExpressionValue(fromJson3, "fromJson(...)");
                     ClientData clientData = (ClientData) fromJson3;
                     this.binding.tvTitle.setText(clientData.getCarName());
-                    this.binding.tvUserMoney.setText(String.valueOf(clientData.getPlayerMoney()));
-                    this.binding.tvCartTotal.setText(String.valueOf(clientData.getCartCount()));
-                    this.binding.userCartLayout.tvTotalPrice.setText(String.valueOf(clientData.getCartCount()));
+                    this.binding.tvUserMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(clientData.getPlayerMoney(), false, null, null, 7, null));
+                    if (UtilsKt.isArizonaType()) {
+                        this.binding.tvUserMoney.setCompoundDrawablesRelative(null, null, null, null);
+                    }
+                    TextView textView = this.binding.tvCartTotal;
+                    Long cartCount = clientData.getCartCount();
+                    textView.setText(cartCount != null ? MoneyElementKt.toMoneyFormattedSpannable$default(cartCount.longValue(), false, null, null, 7, null) : null);
+                    TextView textView2 = this.binding.userCartLayout.tvTotalPrice;
+                    Long cartCount2 = clientData.getCartCount();
+                    textView2.setText(cartCount2 != null ? MoneyElementKt.toMoneyFormattedSpannable$default(cartCount2.longValue(), false, null, null, 7, null) : null);
                     return;
                 case 8:
                     this.autoCharsAdapter.submitList(MapperKt.toListModel(data, DashboardProperties.class));
@@ -1087,13 +1111,13 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
                         Integer categoryId = ((CategoryComponents) obj2).getCategoryId();
                         int i3 = this.currentPageId;
                         if (categoryId != null && categoryId.intValue() == i3) {
-                            z = true;
-                            if (!z) {
+                            r7 = true;
+                            if (r7 == false) {
                                 arrayList2.add(obj2);
                             }
                         }
-                        z = false;
-                        if (!z) {
+                        r7 = false;
+                        if (r7 == false) {
                         }
                     }
                     categoryComponentsAdapter2.submitList(arrayList2);
@@ -1113,7 +1137,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
                             resetAllValues();
                             ConstraintLayout parentLayout = this.binding.userCartLayout.parentLayout;
                             Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
-                            if (parentLayout.getVisibility() == 0) {
+                            if ((parentLayout.getVisibility() == 0) != false) {
                                 cartUiVisibility(false);
                             }
                         }
@@ -1127,19 +1151,19 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
                     this.cartItems.clear();
                     for (Number number3 : list2) {
                         int intValue = number3.intValue();
-                        Iterator<T> it2 = this.categoryComponentsList.iterator();
+                        Iterator it2 = this.categoryComponentsList.iterator();
                         while (true) {
                             if (it2.hasNext()) {
                                 obj = it2.next();
                                 Integer id2 = ((CategoryComponents) obj).getId();
                                 if (id2 != null && id2.intValue() == intValue) {
-                                    z2 = true;
+                                    r6 = true;
                                     continue;
-                                    if (z2) {
+                                    if (r6 != false) {
                                     }
                                 }
-                                z2 = false;
-                                if (z2) {
+                                r6 = false;
+                                if (r6 != false) {
                                 }
                             } else {
                                 obj = null;

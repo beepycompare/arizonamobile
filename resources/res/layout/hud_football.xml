@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="@dimen/_160sdp" android:layout_height="wrap_content">
+    <ImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/hud_football_bg" android:adjustViewBounds="true"/>
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_4sdp">
+        <TextView android:textSize="@dimen/_12sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_2sdp" android:text="СЧЕТ" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_commands" android:layout_width="match_parent" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    </LinearLayout>
+</FrameLayout>

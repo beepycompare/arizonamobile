@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:padding="@dimen/_2sdp" android:layout_width="wrap_content" android:layout_height="wrap_content">
     <androidx.cardview.widget.CardView android:layout_width="@dimen/_270sdp" android:layout_height="@dimen/_130sdp" app:cardCornerRadius="@dimen/_9sdp">
-        <ImageView android:id="@+id/bg_img" android:layout_width="match_parent" android:layout_height="match_parent" android:foreground="@drawable/event_task_item_bg" android:src="@drawable/event_task_item_bg_test" android:scaleType="centerCrop" android:adjustViewBounds="true"/>
+        <ImageView android:id="@+id/bg_img" android:layout_width="match_parent" android:layout_height="match_parent" android:foreground="@drawable/event_task_item_bg" android:scaleType="centerCrop" android:adjustViewBounds="true"/>
         <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/_12sdp" android:paddingTop="@dimen/_8sdp" android:paddingRight="@dimen/_12sdp" android:paddingBottom="@dimen/_8sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="@dimen/_12sdp" android:paddingVertical="@dimen/_8sdp">
             <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <TextView android:textSize="@dimen/_11sdp" android:textColor="@color/white" android:id="@+id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="НАЗВАНИЕ ЗАДАНИЯ" android:layout_weight="1" android:fontFamily="@font/heading_now_66_bold"/>

@@ -17,23 +17,21 @@ public final class EventTopbarBinding implements ViewBinding {
     private final LinearLayout rootView;
     public final TextView tabEvent;
     public final TextView tabMain;
-    public final TextView tabShip;
     public final TextView tabShop;
     public final TextView tabTask;
     public final LinearLayout tabVideoBack;
     public final LinearLayout tabsContainer;
     public final LinearLayout videoTabsContainer;
 
-    private EventTopbarBinding(LinearLayout linearLayout, ImageView imageView, LinearLayout linearLayout2, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5) {
+    private EventTopbarBinding(LinearLayout linearLayout, ImageView imageView, LinearLayout linearLayout2, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5) {
         this.rootView = linearLayout;
         this.backButton = imageView;
         this.moneyContainer = linearLayout2;
         this.moneyText = textView;
         this.tabEvent = textView2;
         this.tabMain = textView3;
-        this.tabShip = textView4;
-        this.tabShop = textView5;
-        this.tabTask = textView6;
+        this.tabShop = textView4;
+        this.tabTask = textView5;
         this.tabVideoBack = linearLayout3;
         this.tabsContainer = linearLayout4;
         this.videoTabsContainer = linearLayout5;
@@ -72,26 +70,22 @@ public final class EventTopbarBinding implements ViewBinding {
                         i = R.id.tab_main;
                         TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                         if (textView3 != null) {
-                            i = R.id.tab_ship;
+                            i = R.id.tab_shop;
                             TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
                             if (textView4 != null) {
-                                i = R.id.tab_shop;
+                                i = R.id.tab_task;
                                 TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
                                 if (textView5 != null) {
-                                    i = R.id.tab_task;
-                                    TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
-                                    if (textView6 != null) {
-                                        i = R.id.tab_video_back;
-                                        LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
-                                        if (linearLayout2 != null) {
-                                            i = R.id.tabs_container;
-                                            LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(view, i);
-                                            if (linearLayout3 != null) {
-                                                i = R.id.video_tabs_container;
-                                                LinearLayout linearLayout4 = (LinearLayout) ViewBindings.findChildViewById(view, i);
-                                                if (linearLayout4 != null) {
-                                                    return new EventTopbarBinding((LinearLayout) view, imageView, linearLayout, textView, textView2, textView3, textView4, textView5, textView6, linearLayout2, linearLayout3, linearLayout4);
-                                                }
+                                    i = R.id.tab_video_back;
+                                    LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                    if (linearLayout2 != null) {
+                                        i = R.id.tabs_container;
+                                        LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                        if (linearLayout3 != null) {
+                                            i = R.id.video_tabs_container;
+                                            LinearLayout linearLayout4 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                            if (linearLayout4 != null) {
+                                                return new EventTopbarBinding((LinearLayout) view, imageView, linearLayout, textView, textView2, textView3, textView4, textView5, linearLayout2, linearLayout3, linearLayout4);
                                             }
                                         }
                                     }

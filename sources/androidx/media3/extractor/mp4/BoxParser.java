@@ -2,7 +2,6 @@ package androidx.media3.extractor.mp4;
 
 import android.util.Pair;
 import androidx.collection.SieveCacheKt;
-import androidx.core.view.ViewCompat;
 import androidx.media3.common.C;
 import androidx.media3.common.ColorInfo;
 import androidx.media3.common.DrmInitData;
@@ -90,7 +89,7 @@ public final class BoxParser {
     }
 
     public static int parseFullBoxFlags(int i) {
-        return i & ViewCompat.MEASURED_SIZE_MASK;
+        return i & 16777215;
     }
 
     public static int parseFullBoxVersion(int i) {

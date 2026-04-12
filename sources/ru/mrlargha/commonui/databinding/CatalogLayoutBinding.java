@@ -3,36 +3,39 @@ package ru.mrlargha.commonui.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* loaded from: classes3.dex */
 public final class CatalogLayoutBinding implements ViewBinding {
     public final AppCompatImageButton catalogBtnClose;
     public final TextView catalogDescText;
     public final RecyclerView catalogListRv;
-    public final ConstraintLayout catalogScreenRootCl;
     public final LinearLayout catalogScreenRootLl;
     public final TextView catalogTitleText;
-    private final ConstraintLayout rootView;
+    public final EditText etSearch;
+    private final LinearLayout rootView;
+    public final CustomCardView searchContainer;
 
-    private CatalogLayoutBinding(ConstraintLayout rootView, AppCompatImageButton catalogBtnClose, TextView catalogDescText, RecyclerView catalogListRv, ConstraintLayout catalogScreenRootCl, LinearLayout catalogScreenRootLl, TextView catalogTitleText) {
+    private CatalogLayoutBinding(LinearLayout rootView, AppCompatImageButton catalogBtnClose, TextView catalogDescText, RecyclerView catalogListRv, LinearLayout catalogScreenRootLl, TextView catalogTitleText, EditText etSearch, CustomCardView searchContainer) {
         this.rootView = rootView;
         this.catalogBtnClose = catalogBtnClose;
         this.catalogDescText = catalogDescText;
         this.catalogListRv = catalogListRv;
-        this.catalogScreenRootCl = catalogScreenRootCl;
         this.catalogScreenRootLl = catalogScreenRootLl;
         this.catalogTitleText = catalogTitleText;
+        this.etSearch = etSearch;
+        this.searchContainer = searchContainer;
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public ConstraintLayout getRoot() {
+    public LinearLayout getRoot() {
         return this.rootView;
     }
 
@@ -58,14 +61,18 @@ public final class CatalogLayoutBinding implements ViewBinding {
                 i = R.id.catalog_list_rv;
                 RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
                 if (recyclerView != null) {
-                    ConstraintLayout constraintLayout = (ConstraintLayout) rootView;
-                    i = R.id.catalog_screen_root_ll;
-                    LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                    if (linearLayout != null) {
-                        i = R.id.catalog_title_text;
-                        TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                        if (textView2 != null) {
-                            return new CatalogLayoutBinding(constraintLayout, appCompatImageButton, textView, recyclerView, constraintLayout, linearLayout, textView2);
+                    LinearLayout linearLayout = (LinearLayout) rootView;
+                    i = R.id.catalog_title_text;
+                    TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                    if (textView2 != null) {
+                        i = R.id.et_search;
+                        EditText editText = (EditText) ViewBindings.findChildViewById(rootView, i);
+                        if (editText != null) {
+                            i = R.id.search_container;
+                            CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                            if (customCardView != null) {
+                                return new CatalogLayoutBinding(linearLayout, appCompatImageButton, textView, recyclerView, linearLayout, textView2, editText, customCardView);
+                            }
                         }
                     }
                 }

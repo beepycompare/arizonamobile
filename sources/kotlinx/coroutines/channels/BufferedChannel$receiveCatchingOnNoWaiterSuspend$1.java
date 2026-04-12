@@ -29,10 +29,10 @@ public final class BufferedChannel$receiveCatchingOnNoWaiterSuspend$1 extends Co
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m10700receiveCatchingOnNoWaiterSuspendGKJJFZk;
+        Object m10701receiveCatchingOnNoWaiterSuspendGKJJFZk;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        m10700receiveCatchingOnNoWaiterSuspendGKJJFZk = this.this$0.m10700receiveCatchingOnNoWaiterSuspendGKJJFZk(null, 0, 0L, this);
-        return m10700receiveCatchingOnNoWaiterSuspendGKJJFZk == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? m10700receiveCatchingOnNoWaiterSuspendGKJJFZk : ChannelResult.m10709boximpl(m10700receiveCatchingOnNoWaiterSuspendGKJJFZk);
+        m10701receiveCatchingOnNoWaiterSuspendGKJJFZk = this.this$0.m10701receiveCatchingOnNoWaiterSuspendGKJJFZk(null, 0, 0L, this);
+        return m10701receiveCatchingOnNoWaiterSuspendGKJJFZk == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? m10701receiveCatchingOnNoWaiterSuspendGKJJFZk : ChannelResult.m10710boximpl(m10701receiveCatchingOnNoWaiterSuspendGKJJFZk);
     }
 }

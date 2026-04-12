@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="167dp" android:width="352dp" android:viewportWidth="352" android:viewportHeight="167">
+    <path android:fillColor="@drawable/res_0x7f0802e6_user_battlepass_topbar_bg__0" android:pathData="M0,24C0,10.75 10.75,0 24,0H328C341.26,0 352,10.75 352,24V167H0V24Z"/>
+    <group>
+        <clip-path android:pathData="M0,24C0,10.75 10.75,0 24,0H328C341.26,0 352,10.75 352,24V167H0V24Z"/>
+        <path android:fillColor="#ffffff" android:pathData="M41.96,175L-47,7.11L-44.15,1.97L73.9,92.77L56.22,-20.87L71.05,-11.16L148.6,69.36L287.75,-28.87L320.82,-42L267.22,69.36L371.01,54.51L375,69.36L304.86,175H41.96Z" android:fillAlpha="0.3"/>
+    </group>
+</vector>

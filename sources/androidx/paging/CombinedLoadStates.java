@@ -17,7 +17,7 @@ public final class CombinedLoadStates {
     private final LoadState refresh;
     private final LoadStates source;
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0040  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0041  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

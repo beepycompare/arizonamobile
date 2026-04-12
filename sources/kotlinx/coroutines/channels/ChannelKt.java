@@ -11,12 +11,12 @@ import kotlinx.coroutines.channels.ChannelResult;
 public final class ChannelKt {
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: getOrElse-WpGqRn0 */
-    public static final <T> T m10705getOrElseWpGqRn0(Object obj, Function1<? super Throwable, ? extends T> function1) {
-        return obj instanceof ChannelResult.Failed ? function1.invoke(ChannelResult.m10713exceptionOrNullimpl(obj)) : obj;
+    public static final <T> T m10706getOrElseWpGqRn0(Object obj, Function1<? super Throwable, ? extends T> function1) {
+        return obj instanceof ChannelResult.Failed ? function1.invoke(ChannelResult.m10714exceptionOrNullimpl(obj)) : obj;
     }
 
     /* renamed from: onSuccess-WpGqRn0 */
-    public static final <T> Object m10708onSuccessWpGqRn0(Object obj, Function1<? super T, Unit> function1) {
+    public static final <T> Object m10709onSuccessWpGqRn0(Object obj, Function1<? super T, Unit> function1) {
         if (!(obj instanceof ChannelResult.Failed)) {
             function1.invoke(obj);
         }
@@ -24,17 +24,17 @@ public final class ChannelKt {
     }
 
     /* renamed from: onFailure-WpGqRn0 */
-    public static final <T> Object m10707onFailureWpGqRn0(Object obj, Function1<? super Throwable, Unit> function1) {
+    public static final <T> Object m10708onFailureWpGqRn0(Object obj, Function1<? super Throwable, Unit> function1) {
         if (obj instanceof ChannelResult.Failed) {
-            function1.invoke(ChannelResult.m10713exceptionOrNullimpl(obj));
+            function1.invoke(ChannelResult.m10714exceptionOrNullimpl(obj));
         }
         return obj;
     }
 
     /* renamed from: onClosed-WpGqRn0 */
-    public static final <T> Object m10706onClosedWpGqRn0(Object obj, Function1<? super Throwable, Unit> function1) {
+    public static final <T> Object m10707onClosedWpGqRn0(Object obj, Function1<? super Throwable, Unit> function1) {
         if (obj instanceof ChannelResult.Closed) {
-            function1.invoke(ChannelResult.m10713exceptionOrNullimpl(obj));
+            function1.invoke(ChannelResult.m10714exceptionOrNullimpl(obj));
         }
         return obj;
     }

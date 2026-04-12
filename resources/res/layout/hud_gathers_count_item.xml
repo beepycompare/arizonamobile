@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="@dimen/_16sdp" android:layout_marginEnd="@dimen/_minus3sdp">
+    <ImageView android:id="@+id/iv_bg" android:layout_width="wrap_content" android:layout_height="match_parent" android:src="@drawable/hud_gathers_count_inactive_item_bg" android:adjustViewBounds="true"/>
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@+id/active_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="match_parent">
+        <ImageView android:id="@+id/iv_active_ic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_1sdp" android:layout_marginBottom="@dimen/_1sdp" android:src="@drawable/hud_gathers_count_ic_run" android:adjustViewBounds="true" android:layout_weight="1" android:layout_marginStart="@dimen/_4sdp" android:layout_marginEnd="@dimen/_3sdp" android:layout_marginVertical="@dimen/_1sdp"/>
+        <TextView android:textSize="@dimen/_4sdp" android:textColor="@color/white" android:id="@+id/tv_timer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00" android:fontFamily="@font/heading_now_65_medium" android:layout_marginEnd="@dimen/_1sdp"/>
+    </LinearLayout>
+    <ImageView android:id="@+id/iv_inactive_ic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/_4sdp" android:src="@drawable/hud_gathers_count_ic_present" android:adjustViewBounds="true" android:layout_weight="1" android:alpha="0.6" android:paddingStart="@dimen/_1sdp"/>
+</FrameLayout>

@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.ProductsListElementBinding;
 import ru.mrlargha.commonui.elements.products.ProductsScreen;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: ProductsAdapter.kt */
 @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\b\u0005\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002\u0018\u0019B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u000e\u0010\n\u001a\u00020\u000b2\u0006\u0010\b\u001a\u00020\tJ\u0018\u0010\f\u001a\u00020\u00022\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016J\u0018\u0010\u0011\u001a\u00020\u000b2\u0006\u0010\u0012\u001a\u00020\u00022\u0006\u0010\u0013\u001a\u00020\u0010H\u0016J\u0014\u0010\u0014\u001a\u00020\u000b2\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0015J\u0006\u0010\u0016\u001a\u00020\u000bJ\b\u0010\u0017\u001a\u00020\u0010H\u0016R\u0014\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082.¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Lru/mrlargha/commonui/elements/products/ProductsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/products/ProductsAdapter$ProductsViewHolder;", "<init>", "()V", "products", "", "Lru/mrlargha/commonui/elements/products/ProductsScreen$Companion$ItemsList;", "productSelectedClickListener", "Lru/mrlargha/commonui/elements/products/ProductsAdapter$OnProductSelectedClickListener;", "setOnProductSelectedClickListener", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "addProducts", "", "clearProducts", "getItemCount", "OnProductSelectedClickListener", "ProductsViewHolder", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -60,7 +62,9 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
             ProductsScreen.Companion.Item item = (ProductsScreen.Companion.Item) obj;
             if (i2 == 0) {
                 binding.title1.setText(item.getTitle());
-                binding.value1.setText(item.getValue());
+                TextView textView = binding.value1;
+                String value = item.getValue();
+                textView.setText(value != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value, 0.0f, 1, null) : null);
                 binding.value1.setTextColor(-1);
                 String color = item.getColor();
                 if (color != null) {
@@ -68,7 +72,9 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
                 }
             } else if (i2 == 1) {
                 binding.title2.setText(item.getTitle());
-                binding.value2.setText(item.getValue());
+                TextView textView2 = binding.value2;
+                String value2 = item.getValue();
+                textView2.setText(value2 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value2, 0.0f, 1, null) : null);
                 binding.value2.setTextColor(-1);
                 String color2 = item.getColor();
                 if (color2 != null) {
@@ -76,7 +82,9 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
                 }
             } else if (i2 == 2) {
                 binding.title3.setText(item.getTitle());
-                binding.value3.setText(item.getValue());
+                TextView textView3 = binding.value3;
+                String value3 = item.getValue();
+                textView3.setText(value3 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value3, 0.0f, 1, null) : null);
                 binding.value3.setTextColor(-1);
                 String color3 = item.getColor();
                 if (color3 != null) {
@@ -84,7 +92,9 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
                 }
             } else if (i2 == 3) {
                 binding.title4.setText(item.getTitle());
-                binding.value4.setText(item.getValue());
+                TextView textView4 = binding.value4;
+                String value4 = item.getValue();
+                textView4.setText(value4 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value4, 0.0f, 1, null) : null);
                 binding.value4.setTextColor(-1);
                 String color4 = item.getColor();
                 if (color4 != null) {
@@ -92,22 +102,26 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
                 }
             } else if (i2 == 4) {
                 binding.title5.setText(item.getTitle());
-                binding.value5.setText(item.getValue());
+                TextView textView5 = binding.value5;
+                String value5 = item.getValue();
+                textView5.setText(value5 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value5, 0.0f, 1, null) : null);
                 binding.value5.setTextColor(-1);
                 String color5 = item.getColor();
                 if (color5 != null) {
                     binding.value5.setTextColor(Color.parseColor(color5));
                 }
             } else if (i2 == 5) {
-                String value = item.getValue();
-                if (value == null || value.length() == 0) {
+                String value6 = item.getValue();
+                if (value6 == null || value6.length() == 0) {
                     binding.title6.setVisibility(8);
                     binding.value6.setVisibility(8);
                 } else {
                     binding.title6.setVisibility(0);
                     binding.value6.setVisibility(0);
                     binding.title6.setText(item.getTitle());
-                    binding.value6.setText(item.getValue());
+                    TextView textView6 = binding.value6;
+                    String value7 = item.getValue();
+                    textView6.setText(value7 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value7, 0.0f, 1, null) : null);
                     binding.value6.setTextColor(-1);
                     String color6 = item.getColor();
                     if (color6 != null) {

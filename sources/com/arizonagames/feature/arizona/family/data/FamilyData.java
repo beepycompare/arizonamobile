@@ -6,13 +6,13 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FamilyData.kt */
-@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0019\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\bB\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001Bï\u0001\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\u0006\u0010\b\u001a\u00020\u0006\u0012\u0006\u0010\t\u001a\u00020\u0006\u0012\u0006\u0010\n\u001a\u00020\u0003\u0012\u0006\u0010\u000b\u001a\u00020\u0003\u0012\u0006\u0010\f\u001a\u00020\u0003\u0012\u0006\u0010\r\u001a\u00020\u0003\u0012\u0006\u0010\u000e\u001a\u00020\u0003\u0012\u0006\u0010\u000f\u001a\u00020\u0003\u0012\u0006\u0010\u0010\u001a\u00020\u0003\u0012\u0006\u0010\u0011\u001a\u00020\u0003\u0012\u0006\u0010\u0012\u001a\u00020\u0006\u0012\u0006\u0010\u0013\u001a\u00020\u0006\u0012\u0006\u0010\u0014\u001a\u00020\u0006\u0012\u0006\u0010\u0015\u001a\u00020\u0006\u0012\u0006\u0010\u0016\u001a\u00020\u0003\u0012\u0006\u0010\u0017\u001a\u00020\u0003\u0012\u0006\u0010\u0018\u001a\u00020\u0006\u0012\u0006\u0010\u0019\u001a\u00020\u0003\u0012\u0006\u0010\u001a\u001a\u00020\u0003\u0012\u0006\u0010\u001b\u001a\u00020\u0003\u0012\u0006\u0010\u001c\u001a\u00020\u0003\u0012\u0006\u0010\u001d\u001a\u00020\u0003\u0012\b\u0010\u001e\u001a\u0004\u0018\u00010\u0003\u0012\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 ¢\u0006\u0004\b\"\u0010#J\t\u0010E\u001a\u00020\u0003HÆ\u0003J\t\u0010F\u001a\u00020\u0003HÆ\u0003J\t\u0010G\u001a\u00020\u0006HÆ\u0003J\t\u0010H\u001a\u00020\u0006HÆ\u0003J\t\u0010I\u001a\u00020\u0006HÆ\u0003J\t\u0010J\u001a\u00020\u0006HÆ\u0003J\t\u0010K\u001a\u00020\u0003HÆ\u0003J\t\u0010L\u001a\u00020\u0003HÆ\u0003J\t\u0010M\u001a\u00020\u0003HÆ\u0003J\t\u0010N\u001a\u00020\u0003HÆ\u0003J\t\u0010O\u001a\u00020\u0003HÆ\u0003J\t\u0010P\u001a\u00020\u0003HÆ\u0003J\t\u0010Q\u001a\u00020\u0003HÆ\u0003J\t\u0010R\u001a\u00020\u0003HÆ\u0003J\t\u0010S\u001a\u00020\u0006HÆ\u0003J\t\u0010T\u001a\u00020\u0006HÆ\u0003J\t\u0010U\u001a\u00020\u0006HÆ\u0003J\t\u0010V\u001a\u00020\u0006HÆ\u0003J\t\u0010W\u001a\u00020\u0003HÆ\u0003J\t\u0010X\u001a\u00020\u0003HÆ\u0003J\t\u0010Y\u001a\u00020\u0006HÆ\u0003J\t\u0010Z\u001a\u00020\u0003HÆ\u0003J\t\u0010[\u001a\u00020\u0003HÆ\u0003J\t\u0010\\\u001a\u00020\u0003HÆ\u0003J\t\u0010]\u001a\u00020\u0003HÆ\u0003J\t\u0010^\u001a\u00020\u0003HÆ\u0003J\u0010\u0010_\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010AJ\u000f\u0010`\u001a\b\u0012\u0004\u0012\u00020!0 HÆ\u0003J®\u0002\u0010a\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\u00062\b\b\u0002\u0010\b\u001a\u00020\u00062\b\b\u0002\u0010\t\u001a\u00020\u00062\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00032\b\b\u0002\u0010\u000e\u001a\u00020\u00032\b\b\u0002\u0010\u000f\u001a\u00020\u00032\b\b\u0002\u0010\u0010\u001a\u00020\u00032\b\b\u0002\u0010\u0011\u001a\u00020\u00032\b\b\u0002\u0010\u0012\u001a\u00020\u00062\b\b\u0002\u0010\u0013\u001a\u00020\u00062\b\b\u0002\u0010\u0014\u001a\u00020\u00062\b\b\u0002\u0010\u0015\u001a\u00020\u00062\b\b\u0002\u0010\u0016\u001a\u00020\u00032\b\b\u0002\u0010\u0017\u001a\u00020\u00032\b\b\u0002\u0010\u0018\u001a\u00020\u00062\b\b\u0002\u0010\u0019\u001a\u00020\u00032\b\b\u0002\u0010\u001a\u001a\u00020\u00032\b\b\u0002\u0010\u001b\u001a\u00020\u00032\b\b\u0002\u0010\u001c\u001a\u00020\u00032\b\b\u0002\u0010\u001d\u001a\u00020\u00032\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u00032\u000e\b\u0002\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 HÆ\u0001¢\u0006\u0002\u0010bJ\u0014\u0010c\u001a\u00020d2\b\u0010e\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010f\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010g\u001a\u00020\u0006HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%R\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b&\u0010%R\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b'\u0010(R\u0011\u0010\u0007\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b)\u0010(R\u0011\u0010\b\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b*\u0010(R\u0011\u0010\t\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b+\u0010(R\u0011\u0010\n\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b,\u0010%R\u0011\u0010\u000b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b-\u0010%R\u0011\u0010\f\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b.\u0010%R\u0011\u0010\r\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b/\u0010%R\u0011\u0010\u000e\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b0\u0010%R\u0011\u0010\u000f\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b1\u0010%R\u0011\u0010\u0010\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b2\u0010%R\u0011\u0010\u0011\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b3\u0010%R\u0011\u0010\u0012\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b4\u0010(R\u0011\u0010\u0013\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b5\u0010(R\u0011\u0010\u0014\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b6\u0010(R\u0011\u0010\u0015\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b7\u0010(R\u0011\u0010\u0016\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b8\u0010%R\u0011\u0010\u0017\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b9\u0010%R\u0011\u0010\u0018\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b:\u0010(R\u0011\u0010\u0019\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b;\u0010%R\u0011\u0010\u001a\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b<\u0010%R\u0011\u0010\u001b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b=\u0010%R\u0011\u0010\u001c\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b>\u0010%R\u0011\u0010\u001d\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b?\u0010%R\u0015\u0010\u001e\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010B\u001a\u0004\b@\u0010AR\u0017\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 ¢\u0006\b\n\u0000\u001a\u0004\bC\u0010D¨\u0006h"}, d2 = {"Lcom/arizonagames/feature/arizona/family/data/FamilyData;", "", "id", "", "management", "title", "", "type", "desc", "message", "bg", "icon", "reputation", "evil", "money", "coins", "deposit", "payDay", "flag", "fraction", "aliance", "apart", "verification", "brand", "discord", FirebaseAnalytics.Param.LEVEL, "currentExp", "totalExp", "hasEstate", "online", "members", "leaders", "", "Lcom/arizonagames/feature/arizona/family/data/Leader;", "<init>", "(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIIIIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;IIIIILjava/lang/Integer;Ljava/util/List;)V", "getId", "()I", "getManagement", "getTitle", "()Ljava/lang/String;", "getType", "getDesc", "getMessage", "getBg", "getIcon", "getReputation", "getEvil", "getMoney", "getCoins", "getDeposit", "getPayDay", "getFlag", "getFraction", "getAliance", "getApart", "getVerification", "getBrand", "getDiscord", "getLevel", "getCurrentExp", "getTotalExp", "getHasEstate", "getOnline", "getMembers", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getLeaders", "()Ljava/util/List;", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "component17", "component18", "component19", "component20", "component21", "component22", "component23", "component24", "component25", "component26", "component27", "component28", "copy", "(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIIIIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;IIIIILjava/lang/Integer;Ljava/util/List;)Lcom/arizonagames/feature/arizona/family/data/FamilyData;", "equals", "", "other", "hashCode", "toString", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\t\n\u0002\b\u0011\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\bC\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001Bï\u0001\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\u0006\u0010\b\u001a\u00020\u0006\u0012\u0006\u0010\t\u001a\u00020\u0006\u0012\u0006\u0010\n\u001a\u00020\u0003\u0012\u0006\u0010\u000b\u001a\u00020\u0003\u0012\u0006\u0010\f\u001a\u00020\u0003\u0012\u0006\u0010\r\u001a\u00020\u0003\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0003\u0012\u0006\u0010\u0011\u001a\u00020\u0003\u0012\u0006\u0010\u0012\u001a\u00020\u0003\u0012\u0006\u0010\u0013\u001a\u00020\u0006\u0012\u0006\u0010\u0014\u001a\u00020\u0006\u0012\u0006\u0010\u0015\u001a\u00020\u0006\u0012\u0006\u0010\u0016\u001a\u00020\u0006\u0012\u0006\u0010\u0017\u001a\u00020\u000f\u0012\u0006\u0010\u0018\u001a\u00020\u000f\u0012\u0006\u0010\u0019\u001a\u00020\u0006\u0012\u0006\u0010\u001a\u001a\u00020\u0003\u0012\u0006\u0010\u001b\u001a\u00020\u0003\u0012\u0006\u0010\u001c\u001a\u00020\u0003\u0012\u0006\u0010\u001d\u001a\u00020\u0003\u0012\u0006\u0010\u001e\u001a\u00020\u0003\u0012\b\u0010\u001f\u001a\u0004\u0018\u00010\u0003\u0012\f\u0010 \u001a\b\u0012\u0004\u0012\u00020\"0!¢\u0006\u0004\b#\u0010$J\t\u0010G\u001a\u00020\u0003HÆ\u0003J\t\u0010H\u001a\u00020\u0003HÆ\u0003J\t\u0010I\u001a\u00020\u0006HÆ\u0003J\t\u0010J\u001a\u00020\u0006HÆ\u0003J\t\u0010K\u001a\u00020\u0006HÆ\u0003J\t\u0010L\u001a\u00020\u0006HÆ\u0003J\t\u0010M\u001a\u00020\u0003HÆ\u0003J\t\u0010N\u001a\u00020\u0003HÆ\u0003J\t\u0010O\u001a\u00020\u0003HÆ\u0003J\t\u0010P\u001a\u00020\u0003HÆ\u0003J\t\u0010Q\u001a\u00020\u000fHÆ\u0003J\t\u0010R\u001a\u00020\u0003HÆ\u0003J\t\u0010S\u001a\u00020\u0003HÆ\u0003J\t\u0010T\u001a\u00020\u0003HÆ\u0003J\t\u0010U\u001a\u00020\u0006HÆ\u0003J\t\u0010V\u001a\u00020\u0006HÆ\u0003J\t\u0010W\u001a\u00020\u0006HÆ\u0003J\t\u0010X\u001a\u00020\u0006HÆ\u0003J\t\u0010Y\u001a\u00020\u000fHÆ\u0003J\t\u0010Z\u001a\u00020\u000fHÆ\u0003J\t\u0010[\u001a\u00020\u0006HÆ\u0003J\t\u0010\\\u001a\u00020\u0003HÆ\u0003J\t\u0010]\u001a\u00020\u0003HÆ\u0003J\t\u0010^\u001a\u00020\u0003HÆ\u0003J\t\u0010_\u001a\u00020\u0003HÆ\u0003J\t\u0010`\u001a\u00020\u0003HÆ\u0003J\u0010\u0010a\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010CJ\u000f\u0010b\u001a\b\u0012\u0004\u0012\u00020\"0!HÆ\u0003J®\u0002\u0010c\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\u00062\b\b\u0002\u0010\b\u001a\u00020\u00062\b\b\u0002\u0010\t\u001a\u00020\u00062\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00032\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00032\b\b\u0002\u0010\u0011\u001a\u00020\u00032\b\b\u0002\u0010\u0012\u001a\u00020\u00032\b\b\u0002\u0010\u0013\u001a\u00020\u00062\b\b\u0002\u0010\u0014\u001a\u00020\u00062\b\b\u0002\u0010\u0015\u001a\u00020\u00062\b\b\u0002\u0010\u0016\u001a\u00020\u00062\b\b\u0002\u0010\u0017\u001a\u00020\u000f2\b\b\u0002\u0010\u0018\u001a\u00020\u000f2\b\b\u0002\u0010\u0019\u001a\u00020\u00062\b\b\u0002\u0010\u001a\u001a\u00020\u00032\b\b\u0002\u0010\u001b\u001a\u00020\u00032\b\b\u0002\u0010\u001c\u001a\u00020\u00032\b\b\u0002\u0010\u001d\u001a\u00020\u00032\b\b\u0002\u0010\u001e\u001a\u00020\u00032\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010\u00032\u000e\b\u0002\u0010 \u001a\b\u0012\u0004\u0012\u00020\"0!HÆ\u0001¢\u0006\u0002\u0010dJ\u0014\u0010e\u001a\u00020f2\b\u0010g\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010h\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010i\u001a\u00020\u0006HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&R\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b'\u0010&R\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b(\u0010)R\u0011\u0010\u0007\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b*\u0010)R\u0011\u0010\b\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b+\u0010)R\u0011\u0010\t\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b,\u0010)R\u0011\u0010\n\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b-\u0010&R\u0011\u0010\u000b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b.\u0010&R\u0011\u0010\f\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b/\u0010&R\u0011\u0010\r\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b0\u0010&R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b1\u00102R\u0011\u0010\u0010\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b3\u0010&R\u0011\u0010\u0011\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b4\u0010&R\u0011\u0010\u0012\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b5\u0010&R\u0011\u0010\u0013\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b6\u0010)R\u0011\u0010\u0014\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b7\u0010)R\u0011\u0010\u0015\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b8\u0010)R\u0011\u0010\u0016\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b9\u0010)R\u0011\u0010\u0017\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b:\u00102R\u0011\u0010\u0018\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b;\u00102R\u0011\u0010\u0019\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b<\u0010)R\u0011\u0010\u001a\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b=\u0010&R\u0011\u0010\u001b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b>\u0010&R\u0011\u0010\u001c\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b?\u0010&R\u0011\u0010\u001d\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b@\u0010&R\u0011\u0010\u001e\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\bA\u0010&R\u0015\u0010\u001f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010D\u001a\u0004\bB\u0010CR\u0017\u0010 \u001a\b\u0012\u0004\u0012\u00020\"0!¢\u0006\b\n\u0000\u001a\u0004\bE\u0010F¨\u0006j"}, d2 = {"Lcom/arizonagames/feature/arizona/family/data/FamilyData;", "", "id", "", "management", "title", "", "type", "desc", "message", "bg", "icon", "reputation", "evil", "money", "", "coins", "deposit", "payDay", "flag", "fraction", "aliance", "apart", "verification", "brand", "discord", FirebaseAnalytics.Param.LEVEL, "currentExp", "totalExp", "hasEstate", "online", "members", "leaders", "", "Lcom/arizonagames/feature/arizona/family/data/Leader;", "<init>", "(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIIJIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLjava/lang/String;IIIIILjava/lang/Integer;Ljava/util/List;)V", "getId", "()I", "getManagement", "getTitle", "()Ljava/lang/String;", "getType", "getDesc", "getMessage", "getBg", "getIcon", "getReputation", "getEvil", "getMoney", "()J", "getCoins", "getDeposit", "getPayDay", "getFlag", "getFraction", "getAliance", "getApart", "getVerification", "getBrand", "getDiscord", "getLevel", "getCurrentExp", "getTotalExp", "getHasEstate", "getOnline", "getMembers", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getLeaders", "()Ljava/util/List;", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "component17", "component18", "component19", "component20", "component21", "component22", "component23", "component24", "component25", "component26", "component27", "component28", "copy", "(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIIJIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLjava/lang/String;IIIIILjava/lang/Integer;Ljava/util/List;)Lcom/arizonagames/feature/arizona/family/data/FamilyData;", "equals", "", "other", "hashCode", "toString", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class FamilyData {
     private final String aliance;
     private final String apart;
     private final int bg;
-    private final int brand;
+    private final long brand;
     private final int coins;
     private final int currentExp;
     private final int deposit;
@@ -29,54 +29,131 @@ public final class FamilyData {
     private final int management;
     private final Integer members;
     private final String message;
-    private final int money;
+    private final long money;
     private final int online;
     private final int payDay;
     private final int reputation;
     private final String title;
     private final int totalExp;
     private final String type;
-    private final int verification;
+    private final long verification;
 
-    public static /* synthetic */ FamilyData copy$default(FamilyData familyData, int i, int i2, String str, String str2, String str3, String str4, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, String str5, String str6, String str7, String str8, int i11, int i12, String str9, int i13, int i14, int i15, int i16, int i17, Integer num, List list, int i18, Object obj) {
+    public static /* synthetic */ FamilyData copy$default(FamilyData familyData, int i, int i2, String str, String str2, String str3, String str4, int i3, int i4, int i5, int i6, long j, int i7, int i8, int i9, String str5, String str6, String str7, String str8, long j2, long j3, String str9, int i10, int i11, int i12, int i13, int i14, Integer num, List list, int i15, Object obj) {
         List<Leader> list2;
         Integer num2;
-        int i19 = (i18 & 1) != 0 ? familyData.id : i;
-        int i20 = (i18 & 2) != 0 ? familyData.management : i2;
-        String str10 = (i18 & 4) != 0 ? familyData.title : str;
-        String str11 = (i18 & 8) != 0 ? familyData.type : str2;
-        String str12 = (i18 & 16) != 0 ? familyData.desc : str3;
-        String str13 = (i18 & 32) != 0 ? familyData.message : str4;
-        int i21 = (i18 & 64) != 0 ? familyData.bg : i3;
-        int i22 = (i18 & 128) != 0 ? familyData.icon : i4;
-        int i23 = (i18 & 256) != 0 ? familyData.reputation : i5;
-        int i24 = (i18 & 512) != 0 ? familyData.evil : i6;
-        int i25 = (i18 & 1024) != 0 ? familyData.money : i7;
-        int i26 = (i18 & 2048) != 0 ? familyData.coins : i8;
-        int i27 = (i18 & 4096) != 0 ? familyData.deposit : i9;
-        int i28 = (i18 & 8192) != 0 ? familyData.payDay : i10;
-        int i29 = i19;
-        String str14 = (i18 & 16384) != 0 ? familyData.flag : str5;
-        String str15 = (i18 & 32768) != 0 ? familyData.fraction : str6;
-        String str16 = (i18 & 65536) != 0 ? familyData.aliance : str7;
-        String str17 = (i18 & 131072) != 0 ? familyData.apart : str8;
-        int i30 = (i18 & 262144) != 0 ? familyData.verification : i11;
-        int i31 = (i18 & 524288) != 0 ? familyData.brand : i12;
-        String str18 = (i18 & 1048576) != 0 ? familyData.discord : str9;
-        int i32 = (i18 & 2097152) != 0 ? familyData.level : i13;
-        int i33 = (i18 & 4194304) != 0 ? familyData.currentExp : i14;
-        int i34 = (i18 & 8388608) != 0 ? familyData.totalExp : i15;
-        int i35 = (i18 & 16777216) != 0 ? familyData.hasEstate : i16;
-        int i36 = (i18 & 33554432) != 0 ? familyData.online : i17;
-        Integer num3 = (i18 & 67108864) != 0 ? familyData.members : num;
-        if ((i18 & C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+        int i16;
+        String str10;
+        String str11;
+        String str12;
+        String str13;
+        long j4;
+        long j5;
+        String str14;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        int i22;
+        String str15;
+        String str16;
+        String str17;
+        String str18;
+        int i23;
+        int i24;
+        int i25;
+        int i26;
+        long j6;
+        int i27;
+        int i28;
+        int i29 = (i15 & 1) != 0 ? familyData.id : i;
+        int i30 = (i15 & 2) != 0 ? familyData.management : i2;
+        String str19 = (i15 & 4) != 0 ? familyData.title : str;
+        String str20 = (i15 & 8) != 0 ? familyData.type : str2;
+        String str21 = (i15 & 16) != 0 ? familyData.desc : str3;
+        String str22 = (i15 & 32) != 0 ? familyData.message : str4;
+        int i31 = (i15 & 64) != 0 ? familyData.bg : i3;
+        int i32 = (i15 & 128) != 0 ? familyData.icon : i4;
+        int i33 = (i15 & 256) != 0 ? familyData.reputation : i5;
+        int i34 = (i15 & 512) != 0 ? familyData.evil : i6;
+        long j7 = (i15 & 1024) != 0 ? familyData.money : j;
+        int i35 = (i15 & 2048) != 0 ? familyData.coins : i7;
+        int i36 = (i15 & 4096) != 0 ? familyData.deposit : i8;
+        int i37 = i29;
+        int i38 = (i15 & 8192) != 0 ? familyData.payDay : i9;
+        String str23 = (i15 & 16384) != 0 ? familyData.flag : str5;
+        String str24 = (i15 & 32768) != 0 ? familyData.fraction : str6;
+        String str25 = (i15 & 65536) != 0 ? familyData.aliance : str7;
+        String str26 = (i15 & 131072) != 0 ? familyData.apart : str8;
+        String str27 = str23;
+        long j8 = (i15 & 262144) != 0 ? familyData.verification : j2;
+        long j9 = (i15 & 524288) != 0 ? familyData.brand : j3;
+        String str28 = (i15 & 1048576) != 0 ? familyData.discord : str9;
+        int i39 = (i15 & 2097152) != 0 ? familyData.level : i10;
+        String str29 = str28;
+        int i40 = (i15 & 4194304) != 0 ? familyData.currentExp : i11;
+        int i41 = (i15 & 8388608) != 0 ? familyData.totalExp : i12;
+        int i42 = (i15 & 16777216) != 0 ? familyData.hasEstate : i13;
+        int i43 = (i15 & 33554432) != 0 ? familyData.online : i14;
+        Integer num3 = (i15 & 67108864) != 0 ? familyData.members : num;
+        if ((i15 & C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
             num2 = num3;
             list2 = familyData.leaders;
+            str10 = str24;
+            str11 = str25;
+            str12 = str27;
+            str13 = str26;
+            j4 = j8;
+            j5 = j9;
+            str14 = str29;
+            i17 = i40;
+            i18 = i41;
+            i19 = i42;
+            i20 = i43;
+            i21 = i39;
+            i22 = i30;
+            str15 = str19;
+            str16 = str20;
+            str17 = str21;
+            str18 = str22;
+            i23 = i31;
+            i24 = i32;
+            i25 = i33;
+            i26 = i34;
+            j6 = j7;
+            i27 = i35;
+            i28 = i36;
+            i16 = i38;
         } else {
             list2 = list;
             num2 = num3;
+            i16 = i38;
+            str10 = str24;
+            str11 = str25;
+            str12 = str27;
+            str13 = str26;
+            j4 = j8;
+            j5 = j9;
+            str14 = str29;
+            i17 = i40;
+            i18 = i41;
+            i19 = i42;
+            i20 = i43;
+            i21 = i39;
+            i22 = i30;
+            str15 = str19;
+            str16 = str20;
+            str17 = str21;
+            str18 = str22;
+            i23 = i31;
+            i24 = i32;
+            i25 = i33;
+            i26 = i34;
+            j6 = j7;
+            i27 = i35;
+            i28 = i36;
         }
-        return familyData.copy(i29, i20, str10, str11, str12, str13, i21, i22, i23, i24, i25, i26, i27, i28, str14, str15, str16, str17, i30, i31, str18, i32, i33, i34, i35, i36, num2, list2);
+        return familyData.copy(i37, i22, str15, str16, str17, str18, i23, i24, i25, i26, j6, i27, i28, i16, str12, str10, str11, str13, j4, j5, str14, i21, i17, i18, i19, i20, num2, list2);
     }
 
     public final int component1() {
@@ -87,7 +164,7 @@ public final class FamilyData {
         return this.evil;
     }
 
-    public final int component11() {
+    public final long component11() {
         return this.money;
     }
 
@@ -119,7 +196,7 @@ public final class FamilyData {
         return this.apart;
     }
 
-    public final int component19() {
+    public final long component19() {
         return this.verification;
     }
 
@@ -127,7 +204,7 @@ public final class FamilyData {
         return this.management;
     }
 
-    public final int component20() {
+    public final long component20() {
         return this.brand;
     }
 
@@ -191,7 +268,7 @@ public final class FamilyData {
         return this.reputation;
     }
 
-    public final FamilyData copy(int i, int i2, String title, String type, String desc, String message, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, String flag, String fraction, String aliance, String apart, int i11, int i12, String discord, int i13, int i14, int i15, int i16, int i17, Integer num, List<Leader> leaders) {
+    public final FamilyData copy(int i, int i2, String title, String type, String desc, String message, int i3, int i4, int i5, int i6, long j, int i7, int i8, int i9, String flag, String fraction, String aliance, String apart, long j2, long j3, String discord, int i10, int i11, int i12, int i13, int i14, Integer num, List<Leader> leaders) {
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(type, "type");
         Intrinsics.checkNotNullParameter(desc, "desc");
@@ -202,7 +279,7 @@ public final class FamilyData {
         Intrinsics.checkNotNullParameter(apart, "apart");
         Intrinsics.checkNotNullParameter(discord, "discord");
         Intrinsics.checkNotNullParameter(leaders, "leaders");
-        return new FamilyData(i, i2, title, type, desc, message, i3, i4, i5, i6, i7, i8, i9, i10, flag, fraction, aliance, apart, i11, i12, discord, i13, i14, i15, i16, i17, num, leaders);
+        return new FamilyData(i, i2, title, type, desc, message, i3, i4, i5, i6, j, i7, i8, i9, flag, fraction, aliance, apart, j2, j3, discord, i10, i11, i12, i13, i14, num, leaders);
     }
 
     public boolean equals(Object obj) {
@@ -217,7 +294,7 @@ public final class FamilyData {
     }
 
     public int hashCode() {
-        int hashCode = ((((((((((((((((((((((((((((((((((((((((((((((((((Integer.hashCode(this.id) * 31) + Integer.hashCode(this.management)) * 31) + this.title.hashCode()) * 31) + this.type.hashCode()) * 31) + this.desc.hashCode()) * 31) + this.message.hashCode()) * 31) + Integer.hashCode(this.bg)) * 31) + Integer.hashCode(this.icon)) * 31) + Integer.hashCode(this.reputation)) * 31) + Integer.hashCode(this.evil)) * 31) + Integer.hashCode(this.money)) * 31) + Integer.hashCode(this.coins)) * 31) + Integer.hashCode(this.deposit)) * 31) + Integer.hashCode(this.payDay)) * 31) + this.flag.hashCode()) * 31) + this.fraction.hashCode()) * 31) + this.aliance.hashCode()) * 31) + this.apart.hashCode()) * 31) + Integer.hashCode(this.verification)) * 31) + Integer.hashCode(this.brand)) * 31) + this.discord.hashCode()) * 31) + Integer.hashCode(this.level)) * 31) + Integer.hashCode(this.currentExp)) * 31) + Integer.hashCode(this.totalExp)) * 31) + Integer.hashCode(this.hasEstate)) * 31) + Integer.hashCode(this.online)) * 31;
+        int hashCode = ((((((((((((((((((((((((((((((((((((((((((((((((((Integer.hashCode(this.id) * 31) + Integer.hashCode(this.management)) * 31) + this.title.hashCode()) * 31) + this.type.hashCode()) * 31) + this.desc.hashCode()) * 31) + this.message.hashCode()) * 31) + Integer.hashCode(this.bg)) * 31) + Integer.hashCode(this.icon)) * 31) + Integer.hashCode(this.reputation)) * 31) + Integer.hashCode(this.evil)) * 31) + Long.hashCode(this.money)) * 31) + Integer.hashCode(this.coins)) * 31) + Integer.hashCode(this.deposit)) * 31) + Integer.hashCode(this.payDay)) * 31) + this.flag.hashCode()) * 31) + this.fraction.hashCode()) * 31) + this.aliance.hashCode()) * 31) + this.apart.hashCode()) * 31) + Long.hashCode(this.verification)) * 31) + Long.hashCode(this.brand)) * 31) + this.discord.hashCode()) * 31) + Integer.hashCode(this.level)) * 31) + Integer.hashCode(this.currentExp)) * 31) + Integer.hashCode(this.totalExp)) * 31) + Integer.hashCode(this.hasEstate)) * 31) + Integer.hashCode(this.online)) * 31;
         Integer num = this.members;
         return ((hashCode + (num == null ? 0 : num.hashCode())) * 31) + this.leaders.hashCode();
     }
@@ -233,27 +310,27 @@ public final class FamilyData {
         int i4 = this.icon;
         int i5 = this.reputation;
         int i6 = this.evil;
-        int i7 = this.money;
-        int i8 = this.coins;
-        int i9 = this.deposit;
-        int i10 = this.payDay;
+        long j = this.money;
+        int i7 = this.coins;
+        int i8 = this.deposit;
+        int i9 = this.payDay;
         String str5 = this.flag;
         String str6 = this.fraction;
         String str7 = this.aliance;
         String str8 = this.apart;
-        int i11 = this.verification;
-        int i12 = this.brand;
+        long j2 = this.verification;
+        long j3 = this.brand;
         String str9 = this.discord;
-        int i13 = this.level;
-        int i14 = this.currentExp;
-        int i15 = this.totalExp;
-        int i16 = this.hasEstate;
-        int i17 = this.online;
+        int i10 = this.level;
+        int i11 = this.currentExp;
+        int i12 = this.totalExp;
+        int i13 = this.hasEstate;
+        int i14 = this.online;
         Integer num = this.members;
-        return "FamilyData(id=" + i + ", management=" + i2 + ", title=" + str + ", type=" + str2 + ", desc=" + str3 + ", message=" + str4 + ", bg=" + i3 + ", icon=" + i4 + ", reputation=" + i5 + ", evil=" + i6 + ", money=" + i7 + ", coins=" + i8 + ", deposit=" + i9 + ", payDay=" + i10 + ", flag=" + str5 + ", fraction=" + str6 + ", aliance=" + str7 + ", apart=" + str8 + ", verification=" + i11 + ", brand=" + i12 + ", discord=" + str9 + ", level=" + i13 + ", currentExp=" + i14 + ", totalExp=" + i15 + ", hasEstate=" + i16 + ", online=" + i17 + ", members=" + num + ", leaders=" + this.leaders + ")";
+        return "FamilyData(id=" + i + ", management=" + i2 + ", title=" + str + ", type=" + str2 + ", desc=" + str3 + ", message=" + str4 + ", bg=" + i3 + ", icon=" + i4 + ", reputation=" + i5 + ", evil=" + i6 + ", money=" + j + ", coins=" + i7 + ", deposit=" + i8 + ", payDay=" + i9 + ", flag=" + str5 + ", fraction=" + str6 + ", aliance=" + str7 + ", apart=" + str8 + ", verification=" + j2 + ", brand=" + j3 + ", discord=" + str9 + ", level=" + i10 + ", currentExp=" + i11 + ", totalExp=" + i12 + ", hasEstate=" + i13 + ", online=" + i14 + ", members=" + num + ", leaders=" + this.leaders + ")";
     }
 
-    public FamilyData(int i, int i2, String title, String type, String desc, String message, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, String flag, String fraction, String aliance, String apart, int i11, int i12, String discord, int i13, int i14, int i15, int i16, int i17, Integer num, List<Leader> leaders) {
+    public FamilyData(int i, int i2, String title, String type, String desc, String message, int i3, int i4, int i5, int i6, long j, int i7, int i8, int i9, String flag, String fraction, String aliance, String apart, long j2, long j3, String discord, int i10, int i11, int i12, int i13, int i14, Integer num, List<Leader> leaders) {
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(type, "type");
         Intrinsics.checkNotNullParameter(desc, "desc");
@@ -274,22 +351,22 @@ public final class FamilyData {
         this.icon = i4;
         this.reputation = i5;
         this.evil = i6;
-        this.money = i7;
-        this.coins = i8;
-        this.deposit = i9;
-        this.payDay = i10;
+        this.money = j;
+        this.coins = i7;
+        this.deposit = i8;
+        this.payDay = i9;
         this.flag = flag;
         this.fraction = fraction;
         this.aliance = aliance;
         this.apart = apart;
-        this.verification = i11;
-        this.brand = i12;
+        this.verification = j2;
+        this.brand = j3;
         this.discord = discord;
-        this.level = i13;
-        this.currentExp = i14;
-        this.totalExp = i15;
-        this.hasEstate = i16;
-        this.online = i17;
+        this.level = i10;
+        this.currentExp = i11;
+        this.totalExp = i12;
+        this.hasEstate = i13;
+        this.online = i14;
         this.members = num;
         this.leaders = leaders;
     }
@@ -334,7 +411,7 @@ public final class FamilyData {
         return this.evil;
     }
 
-    public final int getMoney() {
+    public final long getMoney() {
         return this.money;
     }
 
@@ -366,11 +443,11 @@ public final class FamilyData {
         return this.apart;
     }
 
-    public final int getVerification() {
+    public final long getVerification() {
         return this.verification;
     }
 
-    public final int getBrand() {
+    public final long getBrand() {
         return this.brand;
     }
 

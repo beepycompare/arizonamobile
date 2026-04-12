@@ -10,6 +10,7 @@ import com.arizonagames.feature.arizona.cars.databinding.CarsFirstScreenCarParam
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: CarInfoMainPageListAdapter.kt */
 @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\u0018\u0000 \u000f2\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0002\u000f\u0010B\u0007¢\u0006\u0004\b\u0004\u0010\u0005J\u0018\u0010\u0006\u001a\u00020\u00032\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\nH\u0016J\u0018\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u00032\u0006\u0010\u000e\u001a\u00020\nH\u0016¨\u0006\u0011"}, d2 = {"Lcom/arizonagames/feature/arizona/cars/CarInfoMainPageListAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lcom/arizonagames/feature/arizona/cars/LabelInfo;", "Lcom/arizonagames/feature/arizona/cars/CarInfoMainPageListAdapter$ViewHolder;", "<init>", "()V", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "", "holder", "position", "Companion", "ViewHolder", "cars"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
@@ -48,7 +49,7 @@ public final class CarInfoMainPageListAdapter extends ListAdapter<LabelInfo, Vie
         Intrinsics.checkNotNullParameter(holder, "holder");
         CarsFirstScreenCarParamItemBinding binding = holder.getBinding();
         LabelInfo item = getItem(i);
-        binding.itemValue.setText(item.getTitle());
+        binding.itemValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getTitle(), 0.0f, 1, null));
         String icon = item.getIcon();
         int hashCode = icon.hashCode();
         if (hashCode == -1437013366) {

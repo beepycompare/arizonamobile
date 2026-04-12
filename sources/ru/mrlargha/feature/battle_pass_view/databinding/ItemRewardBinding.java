@@ -4,9 +4,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.battle_pass_view.R;
@@ -14,20 +14,22 @@ import ru.mrlargha.feature.battle_pass_view.R;
 public final class ItemRewardBinding implements ViewBinding {
     public final CardView cvReward;
     public final ImageView ivReward;
-    public final ConstraintLayout parentLayout;
-    private final ConstraintLayout rootView;
+    public final LinearLayout parentLayout;
+    private final LinearLayout rootView;
+    public final TextView tvDopInfo;
     public final TextView tvRewardDesc;
 
-    private ItemRewardBinding(ConstraintLayout constraintLayout, CardView cardView, ImageView imageView, ConstraintLayout constraintLayout2, TextView textView) {
-        this.rootView = constraintLayout;
+    private ItemRewardBinding(LinearLayout linearLayout, CardView cardView, ImageView imageView, LinearLayout linearLayout2, TextView textView, TextView textView2) {
+        this.rootView = linearLayout;
         this.cvReward = cardView;
         this.ivReward = imageView;
-        this.parentLayout = constraintLayout2;
-        this.tvRewardDesc = textView;
+        this.parentLayout = linearLayout2;
+        this.tvDopInfo = textView;
+        this.tvRewardDesc = textView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public ConstraintLayout getRoot() {
+    public LinearLayout getRoot() {
         return this.rootView;
     }
 
@@ -50,11 +52,15 @@ public final class ItemRewardBinding implements ViewBinding {
             i = R.id.ivReward;
             ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
             if (imageView != null) {
-                ConstraintLayout constraintLayout = (ConstraintLayout) view;
-                i = R.id.tvRewardDesc;
+                LinearLayout linearLayout = (LinearLayout) view;
+                i = R.id.tv_dop_info;
                 TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                 if (textView != null) {
-                    return new ItemRewardBinding(constraintLayout, cardView, imageView, constraintLayout, textView);
+                    i = R.id.tvRewardDesc;
+                    TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
+                    if (textView2 != null) {
+                        return new ItemRewardBinding(linearLayout, cardView, imageView, linearLayout, textView, textView2);
+                    }
                 }
             }
         }

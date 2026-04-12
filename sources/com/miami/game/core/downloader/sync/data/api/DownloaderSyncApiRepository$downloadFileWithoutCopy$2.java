@@ -13,6 +13,7 @@ import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DownloaderSyncApiRepository.kt */
@@ -57,7 +58,9 @@ public final class DownloaderSyncApiRepository$downloadFileWithoutCopy$2 extends
             files2 = this.this$0.files;
             files2.safeDelete(safeGetFileByUri);
             downloader = this.this$0.downloader;
-            return Boxing.boxLong(downloader.downloadFile(Uri.parse(this.$url), this.$destinationUri));
+            Uri parse = Uri.parse(this.$url);
+            Intrinsics.checkExpressionValueIsNotNull(parse, "Uri.parse(this)");
+            return Boxing.boxLong(downloader.downloadFile(parse, this.$destinationUri));
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }

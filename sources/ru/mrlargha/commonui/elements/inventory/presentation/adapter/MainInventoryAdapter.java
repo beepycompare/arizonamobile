@@ -1,13 +1,17 @@
 package ru.mrlargha.commonui.elements.inventory.presentation.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
+import java.util.Collection;
+import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
+import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -16,11 +20,14 @@ import ru.mrlargha.commonui.databinding.ItemInventoryBinding;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.elements.inventory.presentation.adapter.MainInventoryAdapter;
 import ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInventoryViewHolder;
+import ru.mrlargha.commonui.utils.ConstantsKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: MainInventoryAdapter.kt */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\u0018\u0000 \u00162\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0002\u0016\u0017B\u000f\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\r\u001a\u00020\u00032\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00032\u0006\u0010\u0015\u001a\u00020\u0011H\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u00020\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\n\"\u0004\b\u000b\u0010\f¨\u0006\u0018"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder;", "params", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;", "<init>", "(Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;)V", "isWalletVisible", "", "()Z", "setWalletVisible", "(Z)V", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "", "holder", "position", "Companion", "Params", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 \u001e2\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0002\u001e\u001fB\u000f\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0014\u0010\u0013\u001a\u00020\u00142\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00020\u0016J\u0018\u0010\u0017\u001a\u00020\u00032\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u000eH\u0016J\u0018\u0010\u001b\u001a\u00020\u00142\u0006\u0010\u001c\u001a\u00020\u00032\u0006\u0010\u001d\u001a\u00020\u000eH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u00020\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\n\"\u0004\b\u000b\u0010\fR\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012¨\u0006 "}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder;", "params", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;", "<init>", "(Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;)V", "isWalletVisible", "", "()Z", "setWalletVisible", "(Z)V", "maxItems", "", "getMaxItems", "()I", "setMaxItems", "(I)V", "submit", "", "list", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "Companion", "Params", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainInventoryViewHolder> {
     private boolean isWalletVisible;
+    private int maxItems;
     private final Params params;
     public static final Companion Companion = new Companion(null);
     private static final MainInventoryAdapter$Companion$COMPARATOR$1 COMPARATOR = new DiffUtil.ItemCallback<InventoryItem>() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.adapter.MainInventoryAdapter$Companion$COMPARATOR$1
@@ -44,6 +51,7 @@ public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainI
         super(COMPARATOR);
         Intrinsics.checkNotNullParameter(params, "params");
         this.params = params;
+        this.maxItems = -1;
     }
 
     public final boolean isWalletVisible() {
@@ -52,6 +60,35 @@ public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainI
 
     public final void setWalletVisible(boolean z) {
         this.isWalletVisible = z;
+    }
+
+    public final int getMaxItems() {
+        return this.maxItems;
+    }
+
+    public final void setMaxItems(int i) {
+        this.maxItems = i;
+    }
+
+    public final void submit(List<InventoryItem> list) {
+        Intrinsics.checkNotNullParameter(list, "list");
+        int size = list.size();
+        int i = this.maxItems;
+        if (size < i) {
+            List mutableList = CollectionsKt.toMutableList((Collection) list);
+            int size2 = this.maxItems - list.size();
+            for (int i2 = 0; i2 < size2; i2++) {
+                mutableList.add(ConstantsKt.getEmptyInventoryItem());
+            }
+            submitList(mutableList);
+            int i3 = this.maxItems;
+            Log.d("TAG", "no submit: max: " + i3 + " listSize:" + mutableList.size());
+            return;
+        }
+        if (i > 0 && !UtilsKt.isArizonaType()) {
+            list = CollectionsKt.take(list, this.maxItems);
+        }
+        submitList(list);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

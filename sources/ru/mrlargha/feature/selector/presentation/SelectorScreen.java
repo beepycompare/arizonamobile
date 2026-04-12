@@ -8,7 +8,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SimpleItemAnimator;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.ArrayList;
@@ -26,9 +25,9 @@ import kotlinx.coroutines.Job;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
-import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.feature.selector.R;
 import ru.mrlargha.feature.selector.databinding.SelectorScreenBinding;
 import ru.mrlargha.feature.selector.presentation.adapters.SelectorIndicatorAdapter;
@@ -193,7 +192,7 @@ public final class SelectorScreen extends SAMPUIElement {
         TextView tvTitle = selectorScreenBinding.tvTitle;
         Intrinsics.checkNotNullExpressionValue(tvTitle, "tvTitle");
         tvTitle.setVisibility(selectorModel.getTitle().length() > 0 ? 0 : 8);
-        selectorScreenBinding.tvMoney.setText(DonateUtilsKt.formatWithSpaces(selectorModel.getPrice()));
+        selectorScreenBinding.tvMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(selectorModel.getPrice(), false, null, null, 7, null));
         LinearLayout moneyContainer = selectorScreenBinding.moneyContainer;
         Intrinsics.checkNotNullExpressionValue(moneyContainer, "moneyContainer");
         moneyContainer.setVisibility(selectorModel.getPrice() <= 0 ? 4 : 0);
@@ -258,7 +257,7 @@ public final class SelectorScreen extends SAMPUIElement {
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == 0) {
             if (MapperKt.isJsonValid(data)) {
-                setData((SelectorModel) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) SelectorModel.class));
+                setData((SelectorModel) MapperKt.getGson().fromJson(data, (Class<Object>) SelectorModel.class));
                 return;
             }
             throw new JsonParseException("Json is not valid");

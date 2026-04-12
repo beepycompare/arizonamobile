@@ -20,6 +20,7 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.gradientBg.RadialBottomCenterCircleDrawable;
 import ru.mrlargha.feature.arizona.promo.R;
 import ru.mrlargha.feature.arizona.promo.databinding.ProgressItemBinding;
@@ -61,7 +62,7 @@ public final class ProgressItemsAdapter extends RecyclerView.Adapter<ProgressIte
             promoReward = (PromoReward) CollectionsKt.first((List<? extends Object>) this.itemsList);
         }
         ProgressItemBinding binding = holder.getBinding();
-        binding.text.setText(promoReward.getTitle());
+        binding.text.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, promoReward.getTitle(), 0.0f, 1, null));
         binding.text2.setText(promoReward.getRequirement());
         binding.colorBottom.setBackgroundColor(Color.parseColor(promoReward.getColor()));
         if (promoReward.getAvailable() == 1 || promoReward.getReceived() == 1) {

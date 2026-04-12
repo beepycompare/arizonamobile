@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class string {
-        public static int fcm_fallback_notification_channel_label = 0x7f1200d0;
+        public static int fcm_fallback_notification_channel_label = 0x7f1200d5;
 
         private string() {
         }

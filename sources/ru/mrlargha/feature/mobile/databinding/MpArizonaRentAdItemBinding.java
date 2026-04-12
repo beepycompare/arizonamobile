@@ -17,9 +17,9 @@ public final class MpArizonaRentAdItemBinding implements ViewBinding {
     public final CustomCardView btnRaiseList;
     public final CustomCardView btnRent;
     public final CustomCardView garageContainer;
-    public final ImageView ivDollar;
     public final ImageView ivHome;
     public final CustomCardView myAdContainer;
+    public final CustomCardView online;
     public final LinearLayout raiseListContainer;
     private final CustomCardView rootView;
     public final TextView tvAdNumber;
@@ -32,16 +32,16 @@ public final class MpArizonaRentAdItemBinding implements ViewBinding {
     public final TextView tvX;
     public final CustomCardView xContainer;
 
-    private MpArizonaRentAdItemBinding(CustomCardView customCardView, CustomCardView customCardView2, CustomCardView customCardView3, CustomCardView customCardView4, CustomCardView customCardView5, CustomCardView customCardView6, ImageView imageView, ImageView imageView2, CustomCardView customCardView7, LinearLayout linearLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, CustomCardView customCardView8) {
+    private MpArizonaRentAdItemBinding(CustomCardView customCardView, CustomCardView customCardView2, CustomCardView customCardView3, CustomCardView customCardView4, CustomCardView customCardView5, CustomCardView customCardView6, ImageView imageView, CustomCardView customCardView7, CustomCardView customCardView8, LinearLayout linearLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, CustomCardView customCardView9) {
         this.rootView = customCardView;
         this.basementContainer = customCardView2;
         this.btnDeleteAd = customCardView3;
         this.btnRaiseList = customCardView4;
         this.btnRent = customCardView5;
         this.garageContainer = customCardView6;
-        this.ivDollar = imageView;
-        this.ivHome = imageView2;
+        this.ivHome = imageView;
         this.myAdContainer = customCardView7;
+        this.online = customCardView8;
         this.raiseListContainer = linearLayout;
         this.tvAdNumber = textView;
         this.tvDesc = textView2;
@@ -51,7 +51,7 @@ public final class MpArizonaRentAdItemBinding implements ViewBinding {
         this.tvTime = textView6;
         this.tvUserName = textView7;
         this.tvX = textView8;
-        this.xContainer = customCardView8;
+        this.xContainer = customCardView9;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -87,15 +87,15 @@ public final class MpArizonaRentAdItemBinding implements ViewBinding {
                         i = R.id.garage_container;
                         CustomCardView customCardView5 = (CustomCardView) ViewBindings.findChildViewById(view, i);
                         if (customCardView5 != null) {
-                            i = R.id.iv_dollar;
+                            i = R.id.iv_home;
                             ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
                             if (imageView != null) {
-                                i = R.id.iv_home;
-                                ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                if (imageView2 != null) {
-                                    i = R.id.my_ad_container;
-                                    CustomCardView customCardView6 = (CustomCardView) ViewBindings.findChildViewById(view, i);
-                                    if (customCardView6 != null) {
+                                i = R.id.my_ad_container;
+                                CustomCardView customCardView6 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                if (customCardView6 != null) {
+                                    i = R.id.online;
+                                    CustomCardView customCardView7 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                    if (customCardView7 != null) {
                                         i = R.id.raise_list_container;
                                         LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                         if (linearLayout != null) {
@@ -124,9 +124,9 @@ public final class MpArizonaRentAdItemBinding implements ViewBinding {
                                                                         TextView textView8 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                         if (textView8 != null) {
                                                                             i = R.id.x_container;
-                                                                            CustomCardView customCardView7 = (CustomCardView) ViewBindings.findChildViewById(view, i);
-                                                                            if (customCardView7 != null) {
-                                                                                return new MpArizonaRentAdItemBinding((CustomCardView) view, customCardView, customCardView2, customCardView3, customCardView4, customCardView5, imageView, imageView2, customCardView6, linearLayout, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, customCardView7);
+                                                                            CustomCardView customCardView8 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                                                            if (customCardView8 != null) {
+                                                                                return new MpArizonaRentAdItemBinding((CustomCardView) view, customCardView, customCardView2, customCardView3, customCardView4, customCardView5, imageView, customCardView6, customCardView7, linearLayout, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, customCardView8);
                                                                             }
                                                                         }
                                                                     }

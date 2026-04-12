@@ -21,7 +21,6 @@ import androidx.compose.ui.text.style.TextGeometricTransform;
 import androidx.compose.ui.text.style.TextIndent;
 import androidx.compose.ui.text.style.TextMotion;
 import androidx.compose.ui.unit.TextUnit;
-import androidx.core.view.ViewCompat;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import io.appmetrica.analytics.impl.C0739z2;
 import kotlin.Deprecated;
@@ -35,7 +34,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class TextStyle {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final TextStyle Default = new TextStyle(0, 0, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, (int) ViewCompat.MEASURED_SIZE_MASK, (DefaultConstructorMarker) null);
+    private static final TextStyle Default = new TextStyle(0, 0, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777215, (DefaultConstructorMarker) null);
     private final ParagraphStyle paragraphStyle;
     private final PlatformTextStyle platformStyle;
     private final SpanStyle spanStyle;

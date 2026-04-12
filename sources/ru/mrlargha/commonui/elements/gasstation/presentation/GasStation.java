@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SeekBar;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -22,7 +23,6 @@ import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
-import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.SAMPUIElement;
@@ -33,8 +33,9 @@ import ru.mrlargha.commonui.elements.gasstation.domain.GasStationFuel;
 import ru.mrlargha.commonui.elements.gasstation.domain.GasStationShop;
 import ru.mrlargha.commonui.utils.ConverterKt;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: GasStation.kt */
-@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 .2\u00020\u0001:\u0003./0B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001c\u001a\u00020\u001bH\u0002J\b\u0010\u001d\u001a\u00020\u001bH\u0002J\b\u0010\u001e\u001a\u00020\u001bH\u0002J\b\u0010\u001f\u001a\u00020\u001bH\u0002J\b\u0010 \u001a\u00020\u001bH\u0002J\b\u0010!\u001a\u00020\u001bH\u0002J\b\u0010\"\u001a\u00020\u001bH\u0002J\u0010\u0010#\u001a\u00020\u001b2\u0006\u0010$\u001a\u00020%H\u0002J\u0010\u0010&\u001a\u00020\u001b2\u0006\u0010$\u001a\u00020%H\u0002J\u0010\u0010'\u001a\u00020\u001b2\u0006\u0010\u0015\u001a\u00020(H\u0002J\u0018\u0010)\u001a\u00020\u001b2\u0006\u0010$\u001a\u00020%2\u0006\u0010*\u001a\u00020\u0005H\u0016J\u0010\u0010+\u001a\u00020\u00122\u0006\u0010,\u001a\u00020\u0005H\u0002J\b\u0010-\u001a\u00020\u001bH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0015\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0016R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0019\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0016¨\u00061"}, d2 = {"Lru/mrlargha/commonui/elements/gasstation/presentation/GasStation;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "gasStation", "Landroidx/constraintlayout/widget/ConstraintLayout;", "gasStationBinding", "Lru/mrlargha/commonui/databinding/GasStationBinding;", "gasStationAdapter", "Lru/mrlargha/commonui/elements/gasstation/presentation/GasStationAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "commonBorderSize", "gasNow", "fuelType", "Ljava/lang/Integer;", "fuelAmount", FirebaseAnalytics.Param.PRICE, "choseFuelCount", "yellowActive", "", "yellowDisable", "greenActive", "greenDisable", "blueActive", "blueDisable", "redActive", "redDisable", "addShopItem", "data", "", "addFuelType", "mapFuelType", "Lru/mrlargha/commonui/elements/gasstation/domain/GasStationFuel;", "onBackendMessage", "subId", "intToBoolean", "int", "resetSettings", "Companion", "Spawner", "FuelType", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 /2\u00020\u0001:\u0003/01B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u001b\u001a\u00020\u001cH\u0002J\b\u0010\u001d\u001a\u00020\u001cH\u0002J\b\u0010\u001e\u001a\u00020\u001cH\u0002J\b\u0010\u001f\u001a\u00020\u001cH\u0002J\b\u0010 \u001a\u00020\u001cH\u0002J\b\u0010!\u001a\u00020\u001cH\u0002J\b\u0010\"\u001a\u00020\u001cH\u0002J\b\u0010#\u001a\u00020\u001cH\u0002J\u0010\u0010$\u001a\u00020\u001c2\u0006\u0010%\u001a\u00020&H\u0002J\u0010\u0010'\u001a\u00020\u001c2\u0006\u0010%\u001a\u00020&H\u0002J\u0010\u0010(\u001a\u00020\u001c2\u0006\u0010\u0015\u001a\u00020)H\u0002J\u0018\u0010*\u001a\u00020\u001c2\u0006\u0010%\u001a\u00020&2\u0006\u0010+\u001a\u00020\u0005H\u0016J\u0010\u0010,\u001a\u00020\u00122\u0006\u0010-\u001a\u00020\u0005H\u0002J\b\u0010.\u001a\u00020\u001cH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0015\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0016R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u001a\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0016¨\u00062"}, d2 = {"Lru/mrlargha/commonui/elements/gasstation/presentation/GasStation;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "gasStation", "Landroidx/constraintlayout/widget/ConstraintLayout;", "gasStationBinding", "Lru/mrlargha/commonui/databinding/GasStationBinding;", "gasStationAdapter", "Lru/mrlargha/commonui/elements/gasstation/presentation/GasStationAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "commonBorderSize", "gasNow", "fuelType", "Ljava/lang/Integer;", "fuelAmount", FirebaseAnalytics.Param.PRICE, "", "choseFuelCount", "yellowActive", "", "yellowDisable", "greenActive", "greenDisable", "blueActive", "blueDisable", "redActive", "redDisable", "addShopItem", "data", "", "addFuelType", "mapFuelType", "Lru/mrlargha/commonui/elements/gasstation/domain/GasStationFuel;", "onBackendMessage", "subId", "intToBoolean", "int", "resetSettings", "Companion", "Spawner", "FuelType", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class GasStation extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
@@ -48,7 +49,7 @@ public final class GasStation extends SAMPUIElement {
     private final GasStationAdapter gasStationAdapter;
     private final GasStationBinding gasStationBinding;
     private final boolean isArizonaType;
-    private int price;
+    private long price;
     private final SharedPreferences sharedPref;
 
     private final boolean intToBoolean(int i) {
@@ -111,7 +112,10 @@ public final class GasStation extends SAMPUIElement {
                 Intrinsics.checkNotNullParameter(seekBar, "seekBar");
                 GasStation.this.gasStationBinding.gsFuelCounter.setText("+" + i2 + "l.");
                 GasStation.this.gasStationBinding.gsFuelNowCount.setText((GasStation.this.gasNow + i2) + "l.");
-                GasStation.this.gasStationBinding.gsFuelTotalPrice.setText(String.valueOf(GasStation.this.price * i2));
+                GasStation.this.gasStationBinding.gsFuelTotalPrice.setText(MoneyElementKt.toMoneyFormattedSpannable$default(i2 * GasStation.this.price, false, null, null, 7, null));
+                AppCompatImageView gsFuelCountCurrencyIc = GasStation.this.gasStationBinding.gsFuelCountCurrencyIc;
+                Intrinsics.checkNotNullExpressionValue(gsFuelCountCurrencyIc, "gsFuelCountCurrencyIc");
+                gsFuelCountCurrencyIc.setVisibility(GasStation.this.isArizonaType ? 8 : 0);
                 GasStation.this.choseFuelCount = Integer.valueOf(i2);
             }
         });
@@ -155,7 +159,6 @@ public final class GasStation extends SAMPUIElement {
     }
 
     private final void yellowActive() {
-        int parseInt;
         Drawable mutate = this.gasStationBinding.gsFuelTypeContainer92.getBackground().mutate();
         Intrinsics.checkNotNull(mutate, "null cannot be cast to non-null type android.graphics.drawable.GradientDrawable");
         GradientDrawable gradientDrawable = (GradientDrawable) mutate;
@@ -167,14 +170,6 @@ public final class GasStation extends SAMPUIElement {
         greenDisable();
         blueDisable();
         redDisable();
-        boolean z = this.isArizonaType;
-        GasStationBinding gasStationBinding = this.gasStationBinding;
-        if (z) {
-            parseInt = Integer.parseInt(StringsKt.substringBefore$default(gasStationBinding.gsFuelTypePrice92.getText().toString(), "$", (String) null, 2, (Object) null));
-        } else {
-            parseInt = Integer.parseInt(StringsKt.substringBefore$default(gasStationBinding.gsFuelTypePrice92.getText().toString(), "₽", (String) null, 2, (Object) null));
-        }
-        this.price = parseInt;
         this.fuelType = Integer.valueOf(FuelType.FUEL_92.getId());
     }
 
@@ -190,7 +185,6 @@ public final class GasStation extends SAMPUIElement {
     }
 
     private final void greenActive() {
-        int parseInt;
         Drawable mutate = this.gasStationBinding.gsFuelTypeContainer95.getBackground().mutate();
         Intrinsics.checkNotNull(mutate, "null cannot be cast to non-null type android.graphics.drawable.GradientDrawable");
         GradientDrawable gradientDrawable = (GradientDrawable) mutate;
@@ -202,14 +196,6 @@ public final class GasStation extends SAMPUIElement {
         yellowDisable();
         blueDisable();
         redDisable();
-        boolean z = this.isArizonaType;
-        GasStationBinding gasStationBinding = this.gasStationBinding;
-        if (z) {
-            parseInt = Integer.parseInt(StringsKt.substringBefore$default(gasStationBinding.gsFuelTypePrice95.getText().toString(), "$", (String) null, 2, (Object) null));
-        } else {
-            parseInt = Integer.parseInt(StringsKt.substringBefore$default(gasStationBinding.gsFuelTypePrice95.getText().toString(), "₽", (String) null, 2, (Object) null));
-        }
-        this.price = parseInt;
         this.fuelType = Integer.valueOf(FuelType.FUEL_95.getId());
     }
 
@@ -225,7 +211,6 @@ public final class GasStation extends SAMPUIElement {
     }
 
     private final void blueActive() {
-        int parseInt;
         Drawable mutate = this.gasStationBinding.gsFuelTypeContainer100.getBackground().mutate();
         Intrinsics.checkNotNull(mutate, "null cannot be cast to non-null type android.graphics.drawable.GradientDrawable");
         GradientDrawable gradientDrawable = (GradientDrawable) mutate;
@@ -237,14 +222,6 @@ public final class GasStation extends SAMPUIElement {
         greenDisable();
         yellowDisable();
         redDisable();
-        boolean z = this.isArizonaType;
-        GasStationBinding gasStationBinding = this.gasStationBinding;
-        if (z) {
-            parseInt = Integer.parseInt(StringsKt.substringBefore$default(gasStationBinding.gsFuelTypePrice100.getText().toString(), "$", (String) null, 2, (Object) null));
-        } else {
-            parseInt = Integer.parseInt(StringsKt.substringBefore$default(gasStationBinding.gsFuelTypePrice100.getText().toString(), "₽", (String) null, 2, (Object) null));
-        }
-        this.price = parseInt;
         this.fuelType = Integer.valueOf(FuelType.FUEL_98.getId());
     }
 
@@ -260,7 +237,6 @@ public final class GasStation extends SAMPUIElement {
     }
 
     private final void redActive() {
-        int parseInt;
         Drawable mutate = this.gasStationBinding.gsFuelTypeContainerDiesel.getBackground().mutate();
         Intrinsics.checkNotNull(mutate, "null cannot be cast to non-null type android.graphics.drawable.GradientDrawable");
         GradientDrawable gradientDrawable = (GradientDrawable) mutate;
@@ -272,14 +248,6 @@ public final class GasStation extends SAMPUIElement {
         greenDisable();
         blueDisable();
         yellowDisable();
-        boolean z = this.isArizonaType;
-        GasStationBinding gasStationBinding = this.gasStationBinding;
-        if (z) {
-            parseInt = Integer.parseInt(StringsKt.substringBefore$default(gasStationBinding.gsFuelTypePriceDiesel.getText().toString(), "$", (String) null, 2, (Object) null));
-        } else {
-            parseInt = Integer.parseInt(StringsKt.substringBefore$default(gasStationBinding.gsFuelTypePriceDiesel.getText().toString(), "₽", (String) null, 2, (Object) null));
-        }
-        this.price = parseInt;
         this.fuelType = Integer.valueOf(FuelType.FUEL_DIESEL.getId());
     }
 
@@ -323,10 +291,11 @@ public final class GasStation extends SAMPUIElement {
             GasStationBinding gasStationBinding = this.gasStationBinding;
             if (intToBoolean(gasStationFuel.getAvailable())) {
                 if (this.isArizonaType) {
-                    gasStationBinding.gsFuelTypePrice92.setText(gasStationFuel.getPrice() + "$ /1l.");
+                    gasStationBinding.gsFuelTypePrice92.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", 3, null));
                 } else {
                     gasStationBinding.gsFuelTypePrice92.setText(gasStationFuel.getPrice() + "₽ /1l.");
                 }
+                this.price = gasStationFuel.getPrice();
                 yellowActive();
                 return;
             }
@@ -340,10 +309,11 @@ public final class GasStation extends SAMPUIElement {
             GasStationBinding gasStationBinding2 = this.gasStationBinding;
             if (intToBoolean(gasStationFuel.getAvailable())) {
                 if (this.isArizonaType) {
-                    gasStationBinding2.gsFuelTypePrice95.setText(gasStationFuel.getPrice() + "$ /1l.");
+                    gasStationBinding2.gsFuelTypePrice95.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", 3, null));
                 } else {
                     gasStationBinding2.gsFuelTypePrice95.setText(gasStationFuel.getPrice() + "₽ /1l.");
                 }
+                this.price = gasStationFuel.getPrice();
                 greenActive();
                 return;
             }
@@ -357,10 +327,11 @@ public final class GasStation extends SAMPUIElement {
             GasStationBinding gasStationBinding3 = this.gasStationBinding;
             if (intToBoolean(gasStationFuel.getAvailable())) {
                 if (this.isArizonaType) {
-                    gasStationBinding3.gsFuelTypePrice100.setText(gasStationFuel.getPrice() + "$ /1l.");
+                    gasStationBinding3.gsFuelTypePrice100.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", 3, null));
                 } else {
                     gasStationBinding3.gsFuelTypePrice100.setText(gasStationFuel.getPrice() + "₽ /1l.");
                 }
+                this.price = gasStationFuel.getPrice();
                 blueActive();
                 return;
             }
@@ -374,10 +345,11 @@ public final class GasStation extends SAMPUIElement {
             GasStationBinding gasStationBinding4 = this.gasStationBinding;
             if (intToBoolean(gasStationFuel.getAvailable())) {
                 if (this.isArizonaType) {
-                    gasStationBinding4.gsFuelTypePriceDiesel.setText(gasStationFuel.getPrice() + "$ /1l.");
+                    gasStationBinding4.gsFuelTypePriceDiesel.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", 3, null));
                 } else {
                     gasStationBinding4.gsFuelTypePriceDiesel.setText(gasStationFuel.getPrice() + "₽ /1l.");
                 }
+                this.price = gasStationFuel.getPrice();
                 redActive();
             }
         }

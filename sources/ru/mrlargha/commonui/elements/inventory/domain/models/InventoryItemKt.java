@@ -9,7 +9,7 @@ import ru.mrlargha.commonui.domain.db.inventory.InventoryItemEntity;
 public final class InventoryItemKt {
     public static final InventoryItemEntity toEntity(InventoryItem inventoryItem) {
         Intrinsics.checkNotNullParameter(inventoryItem, "<this>");
-        return new InventoryItemEntity(inventoryItem.getSlot(), inventoryItem.getItem(), inventoryItem.getId(), inventoryItem.getText(), inventoryItem.getItem_type(), inventoryItem.getAmount(), inventoryItem.getBackground(), inventoryItem.getColor(), inventoryItem.getBits(), inventoryItem.getAvailable(), inventoryItem.getEnchant(), inventoryItem.getBreaks(), inventoryItem.isActive(), inventoryItem.getItemStrength(), inventoryItem.getBlackout(), inventoryItem.getTime(), inventoryItem.getAcsSlot(), inventoryItem.getInventoryType(), inventoryItem.isColored(), inventoryItem.isLocked(), inventoryItem.getEffect(), inventoryItem.getEffectType(), inventoryItem.getQuality());
+        return new InventoryItemEntity(inventoryItem.getSlot(), inventoryItem.getItem(), inventoryItem.getId(), inventoryItem.getText(), inventoryItem.getItem_type(), inventoryItem.getAmount(), inventoryItem.getBackground(), inventoryItem.getColor(), inventoryItem.getBits(), inventoryItem.getAvailable(), inventoryItem.getEnchant(), inventoryItem.getBreaks(), inventoryItem.isActive(), inventoryItem.getItemStrength(), inventoryItem.getBlackout(), inventoryItem.getTime(), inventoryItem.getAcsSlot(), inventoryItem.getInventoryType(), inventoryItem.isColored(), inventoryItem.isLocked(), inventoryItem.getEffect(), inventoryItem.getEffectType(), inventoryItem.getQuality(), inventoryItem.getCustomIcon());
     }
 
     public static final InventoryItem toUi(InventoryItemEntity inventoryItemEntity) {
@@ -19,7 +19,7 @@ public final class InventoryItemKt {
         int id = inventoryItemEntity.getId();
         String text = inventoryItemEntity.getText();
         Integer item_type = inventoryItemEntity.getItem_type();
-        Integer amount = inventoryItemEntity.getAmount();
+        Long amount = inventoryItemEntity.getAmount();
         Integer background = inventoryItemEntity.getBackground();
         Integer color = inventoryItemEntity.getColor();
         Integer bits = inventoryItemEntity.getBits();
@@ -31,6 +31,6 @@ public final class InventoryItemKt {
         Integer enchant = inventoryItemEntity.getEnchant();
         Integer breaks = inventoryItemEntity.getBreaks();
         Integer isActive = inventoryItemEntity.isActive();
-        return new InventoryItem(slot, item, id, text, item_type, amount, background, color, bits, available, enchant, inventoryItemEntity.getBlackout(), inventoryItemEntity.getTime(), inventoryItemEntity.getItemStrength(), isActive, breaks, inventoryType, acsSlot, null, isColored, isLocked, inventoryItemEntity.getEffect(), inventoryItemEntity.getEffectType(), inventoryItemEntity.getQuality());
+        return new InventoryItem(slot, item, id, text, item_type, amount, background, color, bits, available, enchant, inventoryItemEntity.getBlackout(), inventoryItemEntity.getTime(), inventoryItemEntity.getItemStrength(), isActive, breaks, inventoryType, acsSlot, null, isColored, isLocked, inventoryItemEntity.getEffect(), inventoryItemEntity.getEffectType(), inventoryItemEntity.getQuality(), inventoryItemEntity.getCustom_icon());
     }
 }

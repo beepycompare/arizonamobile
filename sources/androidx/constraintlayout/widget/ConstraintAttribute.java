@@ -9,7 +9,6 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.util.Xml;
 import android.view.View;
-import androidx.core.view.ViewCompat;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -165,7 +164,7 @@ public class ConstraintAttribute {
             case 3:
                 int HSVToColor = Color.HSVToColor(fArr);
                 this.mColorValue = HSVToColor;
-                this.mColorValue = (clamp((int) (fArr[3] * 255.0f)) << 24) | (HSVToColor & ViewCompat.MEASURED_SIZE_MASK);
+                this.mColorValue = (clamp((int) (fArr[3] * 255.0f)) << 24) | (HSVToColor & 16777215);
                 return;
             case 4:
                 throw new RuntimeException("Color does not have a single color to interpolate");

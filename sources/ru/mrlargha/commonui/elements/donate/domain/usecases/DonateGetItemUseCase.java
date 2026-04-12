@@ -235,7 +235,7 @@ public final class DonateGetItemUseCase {
                         textGradientColor = donateItemModel2.getTextGradientColor();
                     }
                     List<String> list4 = textGradientColor;
-                    int totalEarnings = donateItemModel.getTotalEarnings() > -1 ? donateItemModel.getTotalEarnings() : donateItemModel2.getTotalEarnings();
+                    long totalEarnings = donateItemModel.getTotalEarnings() > -1 ? donateItemModel.getTotalEarnings() : donateItemModel2.getTotalEarnings();
                     int gifId = donateItemModel.getGifId() > -1 ? donateItemModel.getGifId() : donateItemModel2.getGifId();
                     int blockedType = donateItemModel.getBlockedType() > -1 ? donateItemModel.getBlockedType() : donateItemModel2.getBlockedType();
                     String blockedReason = donateItemModel.getBlockedReason();

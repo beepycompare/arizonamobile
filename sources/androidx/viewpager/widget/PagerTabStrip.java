@@ -10,7 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import androidx.core.content.ContextCompat;
-import androidx.core.view.ViewCompat;
 /* loaded from: classes3.dex */
 public class PagerTabStrip extends PagerTitleStrip {
     private static final int FULL_UNDERLINE_HEIGHT = 1;
@@ -188,11 +187,11 @@ public class PagerTabStrip extends PagerTitleStrip {
         int height = getHeight();
         int left = this.mCurrText.getLeft() - this.mTabPadding;
         int right = this.mCurrText.getRight() + this.mTabPadding;
-        this.mTabPaint.setColor((this.mTabAlpha << 24) | (this.mIndicatorColor & ViewCompat.MEASURED_SIZE_MASK));
+        this.mTabPaint.setColor((this.mTabAlpha << 24) | (this.mIndicatorColor & 16777215));
         float f = height;
         canvas.drawRect(left, height - this.mIndicatorHeight, right, f, this.mTabPaint);
         if (this.mDrawFullUnderline) {
-            this.mTabPaint.setColor((this.mIndicatorColor & ViewCompat.MEASURED_SIZE_MASK) | (-16777216));
+            this.mTabPaint.setColor((this.mIndicatorColor & 16777215) | (-16777216));
             canvas.drawRect(getPaddingLeft(), height - this.mFullUnderlineHeight, getWidth() - getPaddingRight(), f, this.mTabPaint);
         }
     }

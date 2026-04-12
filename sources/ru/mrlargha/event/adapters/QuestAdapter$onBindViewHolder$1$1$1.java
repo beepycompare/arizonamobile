@@ -15,11 +15,10 @@ import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 import ru.mrlargha.commonui.utils.UtilsKt;
-import ru.mrlargha.feature.event.R;
 import ru.mrlargha.feature.event.databinding.EventTaskItemBinding;
 /* compiled from: QuestAdapter.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.event.adapters.QuestAdapter$onBindViewHolder$1$1$1", f = "QuestAdapter.kt", i = {}, l = {43}, m = "invokeSuspend", n = {}, nl = {46}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.event.adapters.QuestAdapter$onBindViewHolder$1$1$1", f = "QuestAdapter.kt", i = {}, l = {42}, m = "invokeSuspend", n = {}, nl = {45}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 final class QuestAdapter$onBindViewHolder$1$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ String $it;
@@ -28,15 +27,15 @@ final class QuestAdapter$onBindViewHolder$1$1$1 extends SuspendLambda implements
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public QuestAdapter$onBindViewHolder$1$1$1(EventTaskItemBinding eventTaskItemBinding, String str, Continuation<? super QuestAdapter$onBindViewHolder$1$1$1> continuation) {
+    public QuestAdapter$onBindViewHolder$1$1$1(String str, EventTaskItemBinding eventTaskItemBinding, Continuation<? super QuestAdapter$onBindViewHolder$1$1$1> continuation) {
         super(2, continuation);
-        this.$this_apply = eventTaskItemBinding;
         this.$it = str;
+        this.$this_apply = eventTaskItemBinding;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new QuestAdapter$onBindViewHolder$1$1$1(this.$this_apply, this.$it, continuation);
+        return new QuestAdapter$onBindViewHolder$1$1$1(this.$it, this.$this_apply, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -65,9 +64,6 @@ final class QuestAdapter$onBindViewHolder$1$1$1 extends SuspendLambda implements
             ImageView bgImg = this.$this_apply.bgImg;
             Intrinsics.checkNotNullExpressionValue(bgImg, "bgImg");
             UtilsKt.setImage(bgImg, bitmap);
-        }
-        if (bitmap == null) {
-            this.$this_apply.bgImg.setImageResource(R.drawable.event_event_item_bg_test);
         }
         return Unit.INSTANCE;
     }

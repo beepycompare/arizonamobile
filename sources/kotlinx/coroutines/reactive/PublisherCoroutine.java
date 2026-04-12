@@ -54,7 +54,7 @@ public final class PublisherCoroutine<T> extends AbstractCoroutine<Unit> impleme
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: invokeOnClose  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ void mo10770invokeOnClose(Function1 function1) {
+    public /* bridge */ /* synthetic */ void mo10771invokeOnClose(Function1 function1) {
         invokeOnClose((Function1<? super Throwable, Unit>) function1);
     }
 
@@ -123,13 +123,13 @@ public final class PublisherCoroutine<T> extends AbstractCoroutine<Unit> impleme
     /* renamed from: trySend-JP2dKIU */
     public Object mo8396trySendJP2dKIU(T t) {
         if (!Mutex.DefaultImpls.tryLock$default(this.mutex, null, 1, null)) {
-            return ChannelResult.Companion.m10723failurePtdJZtk();
+            return ChannelResult.Companion.m10724failurePtdJZtk();
         }
         Throwable doLockedNext = doLockedNext(t);
         if (doLockedNext == null) {
-            return ChannelResult.Companion.m10724successJP2dKIU(Unit.INSTANCE);
+            return ChannelResult.Companion.m10725successJP2dKIU(Unit.INSTANCE);
         }
-        return ChannelResult.Companion.m10722closedJP2dKIU(doLockedNext);
+        return ChannelResult.Companion.m10723closedJP2dKIU(doLockedNext);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */

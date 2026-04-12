@@ -3364,6 +3364,16 @@
     <style name="CardView.Light" parent="@style/CardView">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
     </style>
+    <style name="DialogSmallContainer" parent="">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">@dimen/_260sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="backgroundMainColor">#e6091422</item>
+        <item name="backgroundSecondColor">#e6399393</item>
+        <item name="borderMainColor">#1affffff</item>
+        <item name="borderWidth">@dimen/_1sdp</item>
+        <item name="corners">@dimen/_6sdp</item>
+    </style>
     <style name="DialogWindowTheme" parent="">
         <item name="android:windowClipToOutline">false</item>
     </style>

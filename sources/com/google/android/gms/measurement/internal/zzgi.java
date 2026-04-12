@@ -46,20 +46,20 @@ public final class zzgi extends zzg {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(15:1|(1:3)(6:58|59|(1:61)(2:76|(1:78))|62|63|(16:65|(1:67)(1:74)|68|69|5|(2:7|(2:9|(2:11|(2:13|(2:15|(2:17|(1:19)(1:51))(1:52))(1:53))(1:54))(1:55))(1:56))(1:57)|20|21|22|(1:24)(1:48)|25|(1:27)|29|(3:31|(1:33)(3:40|(3:43|(1:45)|41)|46)|(2:35|36)(2:38|39))|47|(0)(0)))|4|5|(0)(0)|20|21|22|(0)(0)|25|(0)|29|(0)|47|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x019a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x0199, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x019b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x019a, code lost:
         r11.zzu.zzaV().zzb().zzc("Fetching Google App Id failed with exception. appId", com.google.android.gms.measurement.internal.zzgu.zzl(r1), r0);
      */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0158  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0182  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0183  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0188 A[Catch: IllegalStateException -> 0x019a, TRY_LEAVE, TryCatch #2 {IllegalStateException -> 0x019a, blocks: (B:49:0x016e, B:53:0x0184, B:55:0x0188), top: B:81:0x016e }] */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x01c3  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x01f8  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0203  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0157  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0181  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0182  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0187 A[Catch: IllegalStateException -> 0x0199, TRY_LEAVE, TryCatch #2 {IllegalStateException -> 0x0199, blocks: (B:49:0x016d, B:53:0x0183, B:55:0x0187), top: B:81:0x016d }] */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x01c2  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x01f7  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0202  */
     @Override // com.google.android.gms.measurement.internal.zzg
     @EnsuresNonNull({RemoteConfigConstants.RequestFieldKey.APP_ID, "appStore", "appName", "gmpAppId", "gaAppId"})
     /*

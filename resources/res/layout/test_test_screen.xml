@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/baseTest" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:padding="12dp" android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:textColor="@color/black" android:id="@+id/etValue1123213e" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1" android:hint="Value 1" android:inputType="number"/>
+        <TextView android:textColor="@color/black" android:id="@+id/etValue2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1" android:hint="Value 2" android:inputType="number"/>
+        <TextView android:textColor="@color/black" android:id="@+id/etValue3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1" android:hint="Value 3" android:inputType="number"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp">
+            <TextView android:textSize="@dimen/_50sdp" android:textColor="@color/black" android:id="@+id/btnMinus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-"/>
+            <TextView android:textSize="@dimen/_50sdp" android:textColor="@color/black" android:id="@+id/btnPlusqqqqq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+" android:layout_marginStart="8dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

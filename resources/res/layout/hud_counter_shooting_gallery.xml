@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_38sdp" android:src="@drawable/hud_counter_shooting_gallery_bg" android:adjustViewBounds="true"/>
+    <TextView android:textSize="@dimen/_5sdp" android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/tv_logo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Поражено\10мишеней" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" android:layout_marginEnd="@dimen/_5sdp" android:lineHeight="@dimen/_6sdp"/>
+    <TextView android:textSize="@dimen/_9sdp" android:textColor="@color/white" android:layout_gravity="end|center_vertical" android:id="@+id/tv_second" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_3sdp" android:text="10/20" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" android:layout_marginEnd="@dimen/_5sdp" android:lineHeight="@dimen/_6sdp"/>
+    <LinearLayout android:gravity="center" android:layout_gravity="end|bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_7sdp" android:layout_marginEnd="@dimen/_3sdp">
+        <ImageView android:layout_width="@dimen/_6sdp" android:layout_height="@dimen/_6sdp" android:src="@drawable/hud_capt_time_ic"/>
+        <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/tv_first" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10:00" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_2sdp" android:layout_marginEnd="@dimen/_5sdp" android:lineHeight="@dimen/_6sdp"/>
+    </LinearLayout>
+</FrameLayout>

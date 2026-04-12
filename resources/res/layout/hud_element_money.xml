@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/root" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/main" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <include android:id="@+id/blockM" layout="@layout/hud_element_money_item"/>
+        <include android:id="@+id/blockKK" layout="@layout/hud_element_money_item"/>
+        <include android:id="@+id/blockK" layout="@layout/hud_element_money_item"/>
+    </LinearLayout>
+</FrameLayout>

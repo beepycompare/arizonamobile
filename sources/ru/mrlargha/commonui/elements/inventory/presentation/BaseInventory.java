@@ -154,18 +154,19 @@ public abstract class BaseInventory extends SAMPUIElement {
     }
 
     public void sendData(InventoryItem fromItem, InventoryItem toItem) {
-        int i;
+        long j;
         int slot;
         int slot2;
         int page;
         Intrinsics.checkNotNullParameter(fromItem, "fromItem");
         Intrinsics.checkNotNullParameter(toItem, "toItem");
         if (fromItem.getAmount() != null) {
-            Integer amount = fromItem.getAmount();
-            i = amount != null ? amount.intValue() : 0;
+            Long amount = fromItem.getAmount();
+            j = amount != null ? amount.longValue() : 0L;
         } else {
-            i = 1;
+            j = 1;
         }
+        long j2 = j;
         if (fromItem.getSlot() == toItem.getSlot() && fromItem.getInventoryType() == toItem.getInventoryType()) {
             Log.d("TAG_SEND", "EQUAL ITEMS");
             return;
@@ -195,17 +196,17 @@ public abstract class BaseInventory extends SAMPUIElement {
         } else {
             slot = toItem.getSlot();
             IBackendNotifier notifier = getNotifier();
-            int i2 = currentBackendId;
-            byte[] bytes = StringKt.toStringJson(new InventorySendRequest(new ChangeFromSlot(fromItem.getSlot(), fromItem.getInventoryType(), i, fromItem.getId()), new ChangeToSlot(slot, toItem.getInventoryType()))).getBytes(Charsets.UTF_8);
+            int i = currentBackendId;
+            byte[] bytes = StringKt.toStringJson(new InventorySendRequest(new ChangeFromSlot(fromItem.getSlot(), fromItem.getInventoryType(), j2, fromItem.getId()), new ChangeToSlot(slot, toItem.getInventoryType()))).getBytes(Charsets.UTF_8);
             Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
-            notifier.clickedWrapper(i2, -1, 1, bytes);
+            notifier.clickedWrapper(i, -1, 1, bytes);
         }
         slot = slot2 + page;
         IBackendNotifier notifier2 = getNotifier();
-        int i22 = currentBackendId;
-        byte[] bytes2 = StringKt.toStringJson(new InventorySendRequest(new ChangeFromSlot(fromItem.getSlot(), fromItem.getInventoryType(), i, fromItem.getId()), new ChangeToSlot(slot, toItem.getInventoryType()))).getBytes(Charsets.UTF_8);
+        int i2 = currentBackendId;
+        byte[] bytes2 = StringKt.toStringJson(new InventorySendRequest(new ChangeFromSlot(fromItem.getSlot(), fromItem.getInventoryType(), j2, fromItem.getId()), new ChangeToSlot(slot, toItem.getInventoryType()))).getBytes(Charsets.UTF_8);
         Intrinsics.checkNotNullExpressionValue(bytes2, "getBytes(...)");
-        notifier2.clickedWrapper(i22, -1, 1, bytes2);
+        notifier2.clickedWrapper(i2, -1, 1, bytes2);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

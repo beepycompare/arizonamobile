@@ -58,7 +58,7 @@ final class DistinctUntilChangeByObserver<T> implements ObservableObserver<T>, D
     /* JADX WARN: Multi-variable type inference failed */
     @Override // ru.rustore.sdk.reactive.observable.ObservableObserver
     public void onNext(T t) {
-        Object m9182constructorimpl;
+        Object m9183constructorimpl;
         boolean z;
         try {
             Result.Companion companion = Result.Companion;
@@ -74,23 +74,23 @@ final class DistinctUntilChangeByObserver<T> implements ObservableObserver<T>, D
                     this.oldProceedValue = t;
                 }
             }
-            m9182constructorimpl = Result.m9182constructorimpl(Boolean.valueOf(z));
+            m9183constructorimpl = Result.m9183constructorimpl(Boolean.valueOf(z));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
+            m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9189isSuccessimpl(m9182constructorimpl) && ((Boolean) m9182constructorimpl).booleanValue() && !isDisposed()) {
+        if (Result.m9190isSuccessimpl(m9183constructorimpl) && ((Boolean) m9183constructorimpl).booleanValue() && !isDisposed()) {
             this.downstream.onNext(t);
         }
-        Throwable m9185exceptionOrNullimpl = Result.m9185exceptionOrNullimpl(m9182constructorimpl);
-        if (m9185exceptionOrNullimpl == null || !this.disposed.compareAndSet(false, true)) {
+        Throwable m9186exceptionOrNullimpl = Result.m9186exceptionOrNullimpl(m9183constructorimpl);
+        if (m9186exceptionOrNullimpl == null || !this.disposed.compareAndSet(false, true)) {
             return;
         }
         Disposable andSet = this.upstreamDisposable.getAndSet(null);
         if (andSet != null) {
             andSet.dispose();
         }
-        this.downstream.onError(m9185exceptionOrNullimpl);
+        this.downstream.onError(m9186exceptionOrNullimpl);
     }
 
     @Override // ru.rustore.sdk.reactive.observable.ObservableObserver

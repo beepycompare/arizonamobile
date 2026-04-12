@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/rent_accessory" android:layout_width="160dp" android:layout_height="300dp">
+    <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/_8sdp" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:gravity="center" android:paddingLeft="@dimen/_10sdp" android:paddingRight="@dimen/_10sdp" android:layout_width="match_parent" android:layout_height="@dimen/_12sdp" android:layout_marginTop="@dimen/_6sdp" android:paddingHorizontal="@dimen/_10sdp">
+            <ImageView android:id="@+id/btn_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_left_arrow_phone" android:adjustViewBounds="true"/>
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/mobile_rent_accessory_title" android:adjustViewBounds="true" android:layout_weight="1"/>
+            <ImageView android:id="@+id/btn_add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/mobile_rent_accessory_ic_add" android:adjustViewBounds="true"/>
+        </LinearLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            <include android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/mobile_rent_accessory_main"/>
+            <androidx.recyclerview.widget.RecyclerView android:scrollbarStyle="outsideInset" android:id="@+id/rv_categories" android:visibility="gone" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="@dimen/_10sdp" android:layout_marginTop="@dimen/_8sdp" android:layout_marginRight="@dimen/_10sdp" android:paddingEnd="@dimen/_6sdp" android:layout_marginHorizontal="@dimen/_10sdp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            <include android:id="@+id/create_add" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/mobile_rent_accessory_add"/>
+            <include android:id="@+id/not_data" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/mobile_rent_accessory_nothing_found"/>
+        </FrameLayout>
+    </LinearLayout>
+    <include android:id="@+id/filter" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/mobile_rent_accessory_filter"/>
+</FrameLayout>

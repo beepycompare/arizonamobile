@@ -15,7 +15,6 @@ import com.arizona.game.BuildConfig;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
 import io.appmetrica.analytics.AppMetrica;
-import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import io.appmetrica.analytics.ecommerce.ECommerceAmount;
 import io.appmetrica.analytics.ecommerce.ECommerceCartItem;
 import io.appmetrica.analytics.ecommerce.ECommerceEvent;
@@ -240,15 +239,9 @@ public final class MetricsFunsKt {
             return;
         }
         ArrayList arrayList = new ArrayList();
-        Iterator it = StringsKt.split$default((CharSequence) str, new String[]{"&"}, false, 0, 6, (Object) null).iterator();
-        while (true) {
-            packageInfo = null;
-            if (!it.hasNext()) {
-                break;
-            }
-            Object next = it.next();
-            if (StringsKt.contains$default((CharSequence) ((String) next), (CharSequence) "=", false, 2, (Object) null)) {
-                arrayList.add(next);
+        for (Object obj : StringsKt.split$default((CharSequence) str, new String[]{"&"}, false, 0, 6, (Object) null)) {
+            if (StringsKt.contains$default((CharSequence) ((String) obj), (CharSequence) "=", false, 2, (Object) null)) {
+                arrayList.add(obj);
             }
         }
         ArrayList<String> arrayList2 = arrayList;
@@ -261,6 +254,7 @@ public final class MetricsFunsKt {
         try {
             packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
         } catch (PackageManager.NameNotFoundException unused) {
+            packageInfo = null;
         }
         long j = packageInfo != null ? packageInfo.firstInstallTime : 0L;
         String str3 = (String) linkedHashMap.get("utm_source");
@@ -279,65 +273,22 @@ public final class MetricsFunsKt {
         if (str6 == null) {
             str6 = "unknown_content";
         }
-        String str7 = (String) linkedHashMap.get("utm_campaign");
-        if (str7 == null) {
-            str7 = "unknown_campaign";
+        String str7 = str6;
+        String str8 = (String) linkedHashMap.get("utm_campaign");
+        if (str8 == null) {
+            str8 = "unknown_campaign";
         }
-        Map mapOf = MapsKt.mapOf(TuplesKt.to("utm_source", str3), TuplesKt.to("utm_medium", str4), TuplesKt.to("utm_term", str5), TuplesKt.to("utm_content", str6), TuplesKt.to("utm_campaign", str7), TuplesKt.to("first_install_time", Long.valueOf(j)));
-        AppMetrica.reportEvent(action, mapOf);
+        Map mapOf = MapsKt.mapOf(TuplesKt.to("utm_source", str3), TuplesKt.to("utm_medium", str4), TuplesKt.to("utm_term", str5), TuplesKt.to("utm_content", str7), TuplesKt.to("utm_campaign", str8), TuplesKt.to("first_install_time", Long.valueOf(j)));
+        AppMetrica.reportEvent(StringsKt.substringBefore$default(action, "&", (String) null, 2, (Object) null), mapOf);
         Log.e("appMetrica", "url is " + mapOf);
     }
 
     public static final void sendAdmitadAnalytics(Context context, String action) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(action, "action");
-        String str = UtilsKt.isArizonaType() ? "70CBB4fc01F466d0FCacdFcDEf8B8158" : "8E2e5c2c32A1BcCF695582A73c8a1f44";
-        ArrayList arrayList = new ArrayList();
-        Iterator it = StringsKt.split$default((CharSequence) action, new String[]{"&"}, false, 0, 6, (Object) null).iterator();
-        while (true) {
-            Pair pair = null;
-            if (!it.hasNext()) {
-                break;
-            }
-            String str2 = (String) it.next();
-            int indexOf$default = StringsKt.indexOf$default((CharSequence) str2, "=", 0, false, 6, (Object) null);
-            if (indexOf$default != -1) {
-                String substring = str2.substring(0, indexOf$default);
-                Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
-                String substring2 = str2.substring(indexOf$default + 1);
-                Intrinsics.checkNotNullExpressionValue(substring2, "substring(...)");
-                pair = TuplesKt.to(substring, substring2);
-            }
-            if (pair != null) {
-                arrayList.add(pair);
-            }
-        }
-        Map map = MapsKt.toMap(arrayList);
-        String str3 = (String) map.get("ac");
-        String str4 = (String) map.get("oid");
-        String str5 = (String) map.get("uid");
-        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
-        String str6 = string != null ? string : "";
-        ArrayList arrayList2 = new ArrayList();
-        for (Object obj : StringsKt.split$default((CharSequence) str6, new String[]{"&"}, false, 0, 6, (Object) null)) {
-            if (StringsKt.contains$default((CharSequence) ((String) obj), (CharSequence) "=", false, 2, (Object) null)) {
-                arrayList2.add(obj);
-            }
-        }
-        ArrayList<String> arrayList3 = arrayList2;
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(arrayList3, 10)), 16));
-        for (String str7 : arrayList3) {
-            List split$default = StringsKt.split$default((CharSequence) str7, new String[]{"="}, false, 0, 6, (Object) null);
-            Pair pair2 = TuplesKt.to((String) split$default.get(0), (String) split$default.get(1));
-            linkedHashMap.put(pair2.getFirst(), pair2.getSecond());
-        }
-        String str8 = (String) linkedHashMap.get("utm_campaign");
-        if (str8 == null) {
-            str8 = "cbb5e52c77";
-        }
-        HttpUrl build = new HttpUrl.Builder().scheme(Constants.SCHEME).host("ad.admitad.com").addPathSegment("r").addQueryParameter("campaign_code", str8).addQueryParameter("pb", "1").addQueryParameter("pk", str).addQueryParameter("ac", str3).addQueryParameter("uid", str5).addQueryParameter("oid", str4).addQueryParameter("tc", "1").addQueryParameter("adm_device", "mobile").addQueryParameter("adm_ostype", ConstantDeviceInfo.APP_PLATFORM).addQueryParameter("adm_method", "adv").build();
-        Log.d("admitad", "url: " + build);
-        client.newCall(new Request.Builder().url(build).get().build()).enqueue(new okhttp3.Callback() { // from class: ru.mrlargha.commonui.utils.metrics.MetricsFunsKt$sendAdmitadAnalytics$1
+        HttpUrl httpUrl = HttpUrl.Companion.get("https://ad.admitad.com/r?" + action);
+        Log.d("admitad", "url: " + httpUrl);
+        client.newCall(new Request.Builder().url(httpUrl).get().build()).enqueue(new okhttp3.Callback() { // from class: ru.mrlargha.commonui.utils.metrics.MetricsFunsKt$sendAdmitadAnalytics$1
             @Override // okhttp3.Callback
             public void onFailure(okhttp3.Call call, IOException e) {
                 Intrinsics.checkNotNullParameter(call, "call");

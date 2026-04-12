@@ -3,7 +3,7 @@ package dagger.internal;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class LazyClassKeyMap<V> implements Map<Class<?>, V> {
     private final Map<String, V> delegate;
 
@@ -87,7 +87,7 @@ public final class LazyClassKeyMap<V> implements Map<Class<?>, V> {
         throw new UnsupportedOperationException("Dagger map bindings are immutable");
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class MapFactory<V> implements Factory<Map<Class<?>, V>> {
         Factory<Map<String, V>> delegate;
 
@@ -105,7 +105,7 @@ public final class LazyClassKeyMap<V> implements Map<Class<?>, V> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class MapProviderFactory<V> implements Factory<Map<Class<?>, Provider<V>>> {
         Factory<Map<String, Provider<V>>> delegate;
 

@@ -22,6 +22,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.feature.mobile.R;
 import ru.mrlargha.feature.mobile.databinding.MpArizonaRentAdItemBinding;
 import ru.mrlargha.feature.mobile.presentation.page.rent.adapters.ArizonaRentAdAdapter;
@@ -104,12 +105,24 @@ public final class ArizonaRentAdAdapter extends ListAdapter<ArizonaRentAdModel, 
             TextView tvX = mpArizonaRentAdItemBinding.tvX;
             Intrinsics.checkNotNullExpressionValue(tvX, "tvX");
             tvX.setVisibility(arizonaRentAdModel.getXPayDay() > 1 ? 0 : 8);
-            mpArizonaRentAdItemBinding.tvMoney.setText(UtilsKt.formatNumberWithSpaces(arizonaRentAdModel.getCost()));
+            mpArizonaRentAdItemBinding.tvMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(arizonaRentAdModel.getCost(), false, null, null, 7, null));
             mpArizonaRentAdItemBinding.tvUserName.setText(context.getString(R.string.name_square_brackets, arizonaRentAdModel.getOwnerName(), String.valueOf(arizonaRentAdModel.getHouseOwnerId())));
             mpArizonaRentAdItemBinding.tvTime.setText(context.getString(arizonaRentAdModel.isFully() ? R.string.per_day : R.string.per_hour));
             TextView tvDesc = mpArizonaRentAdItemBinding.tvDesc;
             Intrinsics.checkNotNullExpressionValue(tvDesc, "tvDesc");
             UtilsKt.setColoredTextBeforeDot(tvDesc, context.getString(arizonaRentAdModel.isFully() ? R.string.from_i_to_i_days : R.string.from_i_to_i_hours, Integer.valueOf(arizonaRentAdModel.getStartRent()), Integer.valueOf(arizonaRentAdModel.getEndRent())) + " " + arizonaRentAdModel.getDesc(), Color.parseColor("#FFBF00"));
+            Boolean online = arizonaRentAdModel.getOnline();
+            if (online != null) {
+                boolean booleanValue = online.booleanValue();
+                CustomCardView online2 = mpArizonaRentAdItemBinding.online;
+                Intrinsics.checkNotNullExpressionValue(online2, "online");
+                online2.setVisibility(0);
+                mpArizonaRentAdItemBinding.online.setBackground(Color.parseColor(booleanValue ? "#8BE475" : "#FF162D"));
+            } else {
+                CustomCardView online3 = mpArizonaRentAdItemBinding.online;
+                Intrinsics.checkNotNullExpressionValue(online3, "online");
+                online3.setVisibility(8);
+            }
             Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/house_int/" + arizonaRentAdModel.getImage() + ".webp").into(mpArizonaRentAdItemBinding.ivHome);
             Intrinsics.checkNotNull(context);
             checkIsMyAd(arizonaRentAdModel.getIsMy(context));

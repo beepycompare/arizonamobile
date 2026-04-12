@@ -21,9 +21,11 @@ import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.commonui.utils.ui.CustomEditText;
 import ru.mrlargha.commonui.utils.ui.EditeTextValidationErrorType;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyParts;
 import ru.mrlargha.feature.mobile.R;
 /* compiled from: ArizonaRentResponse.kt */
-@Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u001aT\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\n\b\u0002\u0010\u0003\u001a\u0004\u0018\u00010\u00042\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00042\b\b\u0002\u0010\u0006\u001a\u00020\u00072!\u0010\b\u001a\u001d\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\t¢\u0006\u0002\u0010\u000e\u001a]\u0010\u000f\u001a\u00020\u0001*\u00020\u00102\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u0011\u001a\u00020\u00042\b\b\u0002\u0010\u0012\u001a\u00020\u00042\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162#\u0010\u0017\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u00010\t\u001a0\u0010\u001a\u001a\u00020\u0001*\u00020\u00102\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0014\u0010\u0017\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0018\u0012\u0004\u0012\u00020\u00010\t\u001a\u0018\u0010\u001b\u001a\u00020\u00012\u0006\u0010\u001c\u001a\u00020\u00072\u0006\u0010\u001d\u001a\u00020\u0014H\u0002¨\u0006\u001e"}, d2 = {"checkAvailableData", "", "Landroid/widget/EditText;", "maxInputInt", "", "minInputInt", "checkEmptyValue", "", "result", "Lkotlin/Function1;", "Lru/mrlargha/feature/mobile/presentation/page/rent/EditTextCheckResult;", "Lkotlin/ParameterName;", "name", "checkResult", "(Landroid/widget/EditText;Ljava/lang/Integer;Ljava/lang/Integer;ZLkotlin/jvm/functions/Function1;)V", "onChangeListeners", "Lru/mrlargha/commonui/utils/ui/CustomEditText;", "minValue", "maxValue", "etContainer", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "tvError", "Landroid/widget/TextView;", "afterTextChanged", "Landroid/text/Editable;", CmcdData.STREAMING_FORMAT_SS, "checkValidate", "isError", "showError", "customCardView", "mobile"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\u001aT\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\n\b\u0002\u0010\u0003\u001a\u0004\u0018\u00010\u00042\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00042\b\b\u0002\u0010\u0006\u001a\u00020\u00072!\u0010\b\u001a\u001d\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\t¢\u0006\u0002\u0010\u000e\u001a]\u0010\u000f\u001a\u00020\u0001*\u00020\u00102\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u0011\u001a\u00020\u00042\b\b\u0002\u0010\u0012\u001a\u00020\u00042\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162#\u0010\u0017\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u00010\t\u001a0\u0010\u001a\u001a\u00020\u0001*\u00020\u00102\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0014\u0010\u0017\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0018\u0012\u0004\u0012\u00020\u00010\t\u001a@\u0010\u001b\u001a\u00020\u0001*\u00020\u00102\u0006\u0010\u001c\u001a\u00020\u00072\u0006\u0010\u001d\u001a\u00020\u00102\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0014\u0010\u0017\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0018\u0012\u0004\u0012\u00020\u00010\t\u001a\u0018\u0010\u001e\u001a\u00020\u00012\u0006\u0010\u001f\u001a\u00020\u00072\u0006\u0010 \u001a\u00020\u0014H\u0002¨\u0006!"}, d2 = {"checkAvailableData", "", "Landroid/widget/EditText;", "maxInputInt", "", "minInputInt", "checkEmptyValue", "", "result", "Lkotlin/Function1;", "Lru/mrlargha/feature/mobile/presentation/page/rent/EditTextCheckResult;", "Lkotlin/ParameterName;", "name", "checkResult", "(Landroid/widget/EditText;Ljava/lang/Integer;Ljava/lang/Integer;ZLkotlin/jvm/functions/Function1;)V", "onChangeListeners", "Lru/mrlargha/commonui/utils/ui/CustomEditText;", "minValue", "maxValue", "etContainer", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "tvError", "Landroid/widget/TextView;", "afterTextChanged", "Landroid/text/Editable;", CmcdData.STREAMING_FORMAT_SS, "checkValidate", "checkValidateForCost", "isK", "secondValue", "isError", "showError", "customCardView", "mobile"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class ArizonaRentResponseKt {
 
@@ -188,6 +190,51 @@ public final class ArizonaRentResponseKt {
         Intrinsics.checkNotNullParameter(etContainer, "etContainer");
         Intrinsics.checkNotNullParameter(tvError, "tvError");
         Intrinsics.checkNotNullParameter(afterTextChanged, "afterTextChanged");
+        int i = WhenMappings.$EnumSwitchMapping$0[customEditText.getEditTextValidationBuilder().checkValidationField().ordinal()];
+        if (i == 1) {
+            isError(false, etContainer);
+            tvError.setVisibility(8);
+            afterTextChanged.invoke(customEditText.getEditableText());
+        } else if (i == 2) {
+            isError(true, etContainer);
+            tvError.setVisibility(0);
+            tvError.setText(etContainer.getContext().getString(R.string.error_input_form));
+            afterTextChanged.invoke(null);
+        } else if (i == 3) {
+            customEditText.setText(String.valueOf(customEditText.getEditTextValidationBuilder().getMinInputCount()));
+            Editable text = customEditText.getText();
+            customEditText.setSelection(text != null ? text.length() : 0);
+            isError(false, etContainer);
+            Toast.makeText(customEditText.getContext(), "Значение должно быть не менее " + customEditText.getEditTextValidationBuilder().getMinInputCount(), 0).show();
+            tvError.setVisibility(8);
+            afterTextChanged.invoke(customEditText.getEditableText());
+        } else if (i != 4) {
+            throw new NoWhenBranchMatchedException();
+        } else {
+            customEditText.setText(String.valueOf(customEditText.getEditTextValidationBuilder().getMaxInputCount()));
+            Editable text2 = customEditText.getText();
+            customEditText.setSelection(text2 != null ? text2.length() : 0);
+            Toast.makeText(customEditText.getContext(), "Значение должно быть не более " + customEditText.getEditTextValidationBuilder().getMaxInputCount(), 0).show();
+            isError(false, etContainer);
+            tvError.setVisibility(8);
+            afterTextChanged.invoke(customEditText.getEditableText());
+        }
+    }
+
+    public static final void checkValidateForCost(CustomEditText customEditText, boolean z, CustomEditText secondValue, CustomCardView etContainer, TextView tvError, Function1<? super Editable, Unit> afterTextChanged) {
+        Intrinsics.checkNotNullParameter(customEditText, "<this>");
+        Intrinsics.checkNotNullParameter(secondValue, "secondValue");
+        Intrinsics.checkNotNullParameter(etContainer, "etContainer");
+        Intrinsics.checkNotNullParameter(tvError, "tvError");
+        Intrinsics.checkNotNullParameter(afterTextChanged, "afterTextChanged");
+        String customEditText2 = secondValue.toString();
+        Intrinsics.checkNotNullExpressionValue(customEditText2, "toString(...)");
+        Integer intOrNull = StringsKt.toIntOrNull(customEditText2);
+        int intValue = intOrNull != null ? intOrNull.intValue() : 0;
+        Integer intOrNull2 = StringsKt.toIntOrNull(String.valueOf(customEditText.getText()));
+        long j = MoneyElementKt.toLong(new MoneyParts(0, intValue, intOrNull2 != null ? intOrNull2.intValue() : 0));
+        Integer intOrNull3 = StringsKt.toIntOrNull(String.valueOf(customEditText.getText()));
+        customEditText.getEditTextValidationBuilder().setUpdateValue(z ? Long.valueOf(j) : Long.valueOf(MoneyElementKt.toLong(new MoneyParts(0, intOrNull3 != null ? intOrNull3.intValue() : 0, intValue))));
         int i = WhenMappings.$EnumSwitchMapping$0[customEditText.getEditTextValidationBuilder().checkValidationField().ordinal()];
         if (i == 1) {
             isError(false, etContainer);

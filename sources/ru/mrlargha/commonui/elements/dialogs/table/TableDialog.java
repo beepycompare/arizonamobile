@@ -5,11 +5,7 @@ import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,22 +16,20 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
+import ru.mrlargha.commonui.databinding.TableDialogBinding;
 import ru.mrlargha.commonui.elements.dialogs.AbstractDialog;
 import ru.mrlargha.commonui.elements.dialogs.IAutocompleteStateProvider;
 import ru.mrlargha.commonui.utils.ConverterKt;
 /* compiled from: TableDialog.kt */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 \u001e2\u00020\u0001:\u0001\u001eBS\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0012\u0010\b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0\t0\t\u0012\u0006\u0010\u000b\u001a\u00020\u0007\u0012\u0006\u0010\f\u001a\u00020\u0007\u0012\u0006\u0010\r\u001a\u00020\u000e\u0012\u0006\u0010\u000f\u001a\u00020\u0005¢\u0006\u0004\b\u0010\u0010\u0011R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/table/TableDialog;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "Landroid/text/SpannableString;", "tableData", "", "Lru/mrlargha/commonui/elements/dialogs/table/TableCell;", "leftButtonText", "rightButtonText", "useFirstRowAsHeader", "", "sampDialogId", "<init>", "(Landroid/app/Activity;ILandroid/text/SpannableString;Ljava/util/List;Landroid/text/SpannableString;Landroid/text/SpannableString;ZI)V", "dialogLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "captionTextView", "Landroid/widget/TextView;", "button1", "Landroid/widget/Button;", "button2", "recyclerView", "Landroidx/recyclerview/widget/RecyclerView;", "maxLengthInRow", "adapter", "Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 \u001a2\u00020\u0001:\u0001\u001aBS\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0012\u0010\b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0\t0\t\u0012\u0006\u0010\u000b\u001a\u00020\u0007\u0012\u0006\u0010\f\u001a\u00020\u0007\u0012\u0006\u0010\r\u001a\u00020\u000e\u0012\u0006\u0010\u000f\u001a\u00020\u0005¢\u0006\u0004\b\u0010\u0010\u0011R\u0016\u0010\u0012\u001a\n \u0014*\u0004\u0018\u00010\u00130\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/table/TableDialog;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "Landroid/text/SpannableString;", "tableData", "", "Lru/mrlargha/commonui/elements/dialogs/table/TableCell;", "leftButtonText", "rightButtonText", "useFirstRowAsHeader", "", "sampDialogId", "<init>", "(Landroid/app/Activity;ILandroid/text/SpannableString;Ljava/util/List;Landroid/text/SpannableString;Landroid/text/SpannableString;ZI)V", "dialogLayout", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/TableDialogBinding;", "maxLengthInRow", "adapter", "Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class TableDialog extends AbstractDialog {
     public static final Companion Companion = new Companion(null);
     private static final Map<Integer, Integer> savedRows = new LinkedHashMap();
     private final DialogTableAdapter adapter;
-    private final Button button1;
-    private final Button button2;
-    private final TextView captionTextView;
-    private final ConstraintLayout dialogLayout;
+    private final TableDialogBinding binding;
+    private final View dialogLayout;
     private int maxLengthInRow;
-    private final RecyclerView recyclerView;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public TableDialog(final Activity targetActivity, int i, SpannableString caption, List<? extends List<TableCell>> tableData, SpannableString leftButtonText, SpannableString rightButtonText, final boolean z, final int i2) {
@@ -48,27 +42,16 @@ public final class TableDialog extends AbstractDialog {
         Intrinsics.checkNotNullParameter(leftButtonText, "leftButtonText");
         Intrinsics.checkNotNullParameter(rightButtonText, "rightButtonText");
         Activity activity = targetActivity;
-        View inflate = LayoutInflater.from(activity).inflate(R.layout.table_dialog, (ViewGroup) null, false);
-        Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout");
-        ConstraintLayout constraintLayout = (ConstraintLayout) inflate;
-        this.dialogLayout = constraintLayout;
-        View findViewById = constraintLayout.findViewById(R.id.caption);
-        Intrinsics.checkNotNullExpressionValue(findViewById, "findViewById(...)");
-        this.captionTextView = (TextView) findViewById;
-        View findViewById2 = constraintLayout.findViewById(R.id.button1);
-        Intrinsics.checkNotNullExpressionValue(findViewById2, "findViewById(...)");
-        this.button1 = (Button) findViewById2;
-        View findViewById3 = constraintLayout.findViewById(R.id.button2);
-        Intrinsics.checkNotNullExpressionValue(findViewById3, "findViewById(...)");
-        this.button2 = (Button) findViewById3;
-        View findViewById4 = constraintLayout.findViewById(R.id.recyclerView);
-        Intrinsics.checkNotNullExpressionValue(findViewById4, "findViewById(...)");
-        RecyclerView recyclerView = (RecyclerView) findViewById4;
-        this.recyclerView = recyclerView;
+        View dialogLayout = LayoutInflater.from(activity).inflate(R.layout.table_dialog, (ViewGroup) null, false);
+        this.dialogLayout = dialogLayout;
+        TableDialogBinding bind = TableDialogBinding.bind(dialogLayout);
+        Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
+        this.binding = bind;
         this.adapter = new DialogTableAdapter(tableData, z, targetActivity, null, null, null, 56, null);
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        Intrinsics.checkNotNullExpressionValue(dialogLayout, "dialogLayout");
+        addViewToConstraintLayout(dialogLayout, -1, -1);
         if (tableData.size() > 7) {
-            recyclerView.getLayoutParams().height = ConverterKt.dpToPx(250, targetActivity);
+            bind.recyclerView.getLayoutParams().height = ConverterKt.dpToPx(250, targetActivity);
         }
         if (!tableData.isEmpty() && ((List) CollectionsKt.first((List<? extends Object>) tableData)).size() == 1) {
             for (List<TableCell> list : tableData) {
@@ -78,55 +61,59 @@ public final class TableDialog extends AbstractDialog {
                     }
                 }
             }
+            int dimension = (int) this.binding.getRoot().getContext().getResources().getDimension(R.dimen._290sdp);
             int i3 = this.maxLengthInRow;
-            RecyclerView recyclerView2 = this.recyclerView;
             if (i3 <= 37) {
-                recyclerView2.getLayoutParams().width = ConverterKt.dpToPx(200, targetActivity);
+                int dpToPx = ConverterKt.dpToPx(200, targetActivity);
+                bind.recyclerView.getLayoutParams().width = dimension <= dpToPx ? dpToPx : dimension;
             } else {
-                recyclerView2.getLayoutParams().width = ConverterKt.dpToPx(this.maxLengthInRow * 6, targetActivity);
+                int dpToPx2 = ConverterKt.dpToPx(i3 * 6, targetActivity);
+                bind.recyclerView.getLayoutParams().width = dimension <= dpToPx2 ? dpToPx2 : dimension;
             }
         }
-        this.recyclerView.setLayoutManager(new LinearLayoutManager(activity));
-        this.captionTextView.setText(caption);
-        this.recyclerView.setAdapter(this.adapter);
+        bind.recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+        bind.caption.setText(caption);
+        bind.recyclerView.setAdapter(this.adapter);
         if (((IAutocompleteStateProvider) targetActivity).getAutocompleteState() && (num = savedRows.get(Integer.valueOf(i2))) != null && (intValue = num.intValue()) < this.adapter.getItemCount()) {
             this.adapter.setSelectedItemId(intValue);
             this.adapter.notifyItemChanged(intValue);
-            this.recyclerView.scrollToPosition(intValue);
+            bind.recyclerView.scrollToPosition(intValue);
         }
         setVisibility(true);
         SpannableString spannableString = leftButtonText;
-        int length = spannableString.length();
-        Button button = this.button1;
-        if (length == 0) {
-            button.setVisibility(8);
+        if (spannableString.length() == 0) {
+            bind.buttons.button1.setVisibility(8);
         } else {
-            button.setText(spannableString);
-            this.button1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.table.TableDialog$$ExternalSyntheticLambda0
+            bind.buttons.tvAccept.setText(spannableString);
+            bind.buttons.button1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.table.TableDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TableDialog._init_$lambda$1(targetActivity, i2, this, z, view);
+                    TableDialog.lambda$0$1(targetActivity, i2, this, z, view);
                 }
             });
         }
         SpannableString spannableString2 = rightButtonText;
-        int length2 = spannableString2.length();
-        Button button2 = this.button2;
-        if (length2 == 0) {
-            button2.setVisibility(8);
-            return;
+        if (spannableString2.length() == 0) {
+            bind.buttons.button2.setVisibility(8);
+        } else {
+            bind.buttons.tvCancel.setText(spannableString2);
+            bind.buttons.button2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.table.TableDialog$$ExternalSyntheticLambda1
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    TableDialog.lambda$0$2(TableDialog.this, i2, z, view);
+                }
+            });
         }
-        button2.setText(spannableString2);
-        this.button2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.table.TableDialog$$ExternalSyntheticLambda1
+        bind.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.table.TableDialog$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TableDialog._init_$lambda$2(TableDialog.this, i2, z, view);
+                TableDialog.lambda$0$3(TableDialog.this, i2, z, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void _init_$lambda$1(Activity activity, int i, TableDialog tableDialog, boolean z, View view) {
+    public static final void lambda$0$1(Activity activity, int i, TableDialog tableDialog, boolean z, View view) {
         int selectedItemId;
         Intrinsics.checkNotNull(activity, "null cannot be cast to non-null type ru.mrlargha.commonui.elements.dialogs.IAutocompleteStateProvider");
         if (((IAutocompleteStateProvider) activity).getAutocompleteState()) {
@@ -145,7 +132,22 @@ public final class TableDialog extends AbstractDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void _init_$lambda$2(TableDialog tableDialog, int i, boolean z, View view) {
+    public static final void lambda$0$2(TableDialog tableDialog, int i, boolean z, View view) {
+        int selectedItemId;
+        IBackendNotifier notifier = tableDialog.getNotifier();
+        if (tableDialog.adapter.getSelectedItemId() > -1 && z) {
+            selectedItemId = tableDialog.adapter.getSelectedItemId() - 1;
+        } else {
+            selectedItemId = tableDialog.adapter.getSelectedItemId();
+        }
+        byte[] bytes = tableDialog.adapter.getSelectedRowText().getBytes(Charsets.UTF_8);
+        Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
+        notifier.onDialogResponseWrapper(i, 0, selectedItemId, bytes);
+        tableDialog.getNotifier().destroyDialog();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void lambda$0$3(TableDialog tableDialog, int i, boolean z, View view) {
         int selectedItemId;
         IBackendNotifier notifier = tableDialog.getNotifier();
         if (tableDialog.adapter.getSelectedItemId() > -1 && z) {

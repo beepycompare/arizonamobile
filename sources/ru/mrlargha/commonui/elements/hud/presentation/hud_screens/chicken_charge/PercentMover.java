@@ -43,7 +43,7 @@ public final class PercentMover {
 
     public static /* synthetic */ void start$default(PercentMover percentMover, int i, long j, int i2, Object obj) {
         if ((i2 & 2) != 0) {
-            j = 75;
+            j = 15;
         }
         percentMover.start(i, j);
     }
@@ -66,7 +66,7 @@ public final class PercentMover {
             return;
         }
         percentMover.running = true;
-        final float f = i;
+        final float f = i / 5.0f;
         percentMover.handler.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_charge.PercentMover$start$1$r$1
             @Override // java.lang.Runnable
             public void run() {

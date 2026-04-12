@@ -923,7 +923,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
         canvas.restoreToCount(save);
         float f = this.mScrimOpacity;
         if (f > 0.0f && isContentView) {
-            this.mScrimPaint.setColor((this.mScrimColor & ViewCompat.MEASURED_SIZE_MASK) | (((int) ((((-16777216) & i) >>> 24) * f)) << 24));
+            this.mScrimPaint.setColor((this.mScrimColor & 16777215) | (((int) ((((-16777216) & i) >>> 24) * f)) << 24));
             canvas.drawRect(i2, 0.0f, width, getHeight(), this.mScrimPaint);
             return drawChild;
         } else if (this.mShadowLeftResolved != null && checkDrawerViewAbsoluteGravity(view, 3)) {

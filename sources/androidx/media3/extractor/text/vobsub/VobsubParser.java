@@ -2,7 +2,6 @@ package androidx.media3.extractor.text.vobsub;
 
 import android.graphics.Bitmap;
 import android.graphics.Rect;
-import androidx.core.view.ViewCompat;
 import androidx.media3.common.C;
 import androidx.media3.common.text.Cue;
 import androidx.media3.common.util.Consumer;
@@ -86,7 +85,7 @@ public final class VobsubParser implements SubtitleParser {
         private int planeWidth;
 
         private static int setAlpha(int i, int i2) {
-            return (i & ViewCompat.MEASURED_SIZE_MASK) | ((i2 * 17) << 24);
+            return (i & 16777215) | ((i2 * 17) << 24);
         }
 
         public void parseIdx(String str) {

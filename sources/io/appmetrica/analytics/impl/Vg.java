@@ -21,8 +21,8 @@ public final class Vg extends Rg {
         this(x4, new SafePackageManager());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x004d A[Catch: all -> 0x00d0, TryCatch #0 {all -> 0x00d0, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0094, B:25:0x0098), top: B:28:0x0043 }] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x005d A[Catch: all -> 0x00d0, TryCatch #0 {all -> 0x00d0, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0094, B:25:0x0098), top: B:28:0x0043 }] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x004d A[Catch: all -> 0x00d1, TryCatch #0 {all -> 0x00d1, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0095, B:25:0x0099), top: B:28:0x0043 }] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x005d A[Catch: all -> 0x00d1, TryCatch #0 {all -> 0x00d1, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0095, B:25:0x0099), top: B:28:0x0043 }] */
     @Override // io.appmetrica.analytics.impl.Rg
     /*
         Code decompiled incorrectly, please refer to instructions dump.

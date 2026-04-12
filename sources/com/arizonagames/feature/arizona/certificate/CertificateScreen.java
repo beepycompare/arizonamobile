@@ -12,8 +12,6 @@ import androidx.media3.common.C;
 import com.arizonagames.feature.arizona.certificate.databinding.CertificateInfoItemBinding;
 import com.arizonagames.feature.arizona.certificate.databinding.CertificateInfoItemLeftBinding;
 import com.arizonagames.feature.arizona.certificate.databinding.CertificateScreenBinding;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
@@ -35,13 +33,13 @@ import ru.mrlargha.certificate.ImagesKt;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
-import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 import ru.mrlargha.commonui.elements.items3d.ItemScene;
 import ru.mrlargha.commonui.elements.items3d.ModelRotationTouchListener;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
-import ru.mrlargha.commonui.utils.ui.UtilsKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.ui.kit.ParseColoredTextKt;
 /* compiled from: CertificateScreen.kt */
 @Metadata(d1 = {"\u0000|\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\r\u0018\u00002\u00020\u0001:\u00018B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020\"H\u0016J\u0018\u0010*\u001a\u00020(2\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u0005H\u0016J\u0010\u0010.\u001a\u00020(2\u0006\u0010/\u001a\u00020\u0018H\u0002J\b\u00100\u001a\u00020(H\u0002J\u0010\u00101\u001a\u00020(2\u0006\u0010/\u001a\u00020\u0018H\u0002J\u0016\u00102\u001a\u00020(2\f\u0010#\u001a\b\u0012\u0004\u0012\u00020$0\u001aH\u0002J\u0016\u00103\u001a\u00020(2\f\u0010#\u001a\b\u0012\u0004\u0012\u00020$0\u001aH\u0002J\b\u00104\u001a\u00020(H\u0002J\b\u00105\u001a\u00020(H\u0002J\b\u00106\u001a\u00020(H\u0002J\b\u00107\u001a\u00020(H\u0002R\u0016\u0010\b\u001a\n \n*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\r\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0011\u001a\u00020\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\b\u0012\u0004\u0012\u00020$0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010%\u001a\u0004\u0018\u00010&X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00069"}, d2 = {"Lcom/arizonagames/feature/arizona/certificate/CertificateScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lcom/arizonagames/feature/arizona/certificate/databinding/CertificateScreenBinding;", "scene", "Lru/mrlargha/commonui/elements/items3d/ItemScene;", "getScene", "()Lru/mrlargha/commonui/elements/items3d/ItemScene;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/arizona/rating/CertificateApi;", "mainInfo", "Lcom/arizonagames/feature/arizona/certificate/MainInfo;", "qualityTypeList", "", "Lcom/arizonagames/feature/arizona/certificate/QualityType;", "bonusType", "Lcom/arizonagames/feature/arizona/certificate/BonusType;", "zoomMultipler", "", "qualityType", "isCars", "", "bonuses", "Lcom/arizonagames/feature/arizona/certificate/ItemBonus;", "blockTimerJob", "Lkotlinx/coroutines/Job;", "setVisibility", "", "visible", "onBackendMessage", "data", "", "subId", "saveMainInfo", "item", "startAnimatedScreen", "setMainInfo", "saveBonuses", "setBonuses", "loadCars", "loadCarsBonus", "loadAccs", "loadAccsBonus", "Spawner", "certificate"}, k = 1, mv = {2, 3, 0}, xi = 48)
@@ -210,8 +208,10 @@ public final class CertificateScreen extends SAMPUIElement {
         certificateScreenBinding.title.setText(mainInfo.getTitle());
         mainInfo.getPrice();
         if (mainInfo.getPrice() > 0) {
-            certificateScreenBinding.sellText.setText(DonateUtilsKt.formatWithSpaces(mainInfo.getPrice()));
-            certificateScreenBinding.sellIc.setVisibility(0);
+            certificateScreenBinding.sellText.setText(MoneyElementKt.toMoneyFormattedSpannable$default(mainInfo.getPrice(), false, null, null, 7, null));
+            if (!UtilsKt.isArizonaType()) {
+                certificateScreenBinding.sellIc.setVisibility(0);
+            }
         } else {
             certificateScreenBinding.sellText.setText("Перейти в рейтинг");
             certificateScreenBinding.sellIc.setVisibility(8);
@@ -370,7 +370,7 @@ public final class CertificateScreen extends SAMPUIElement {
             }
         }
         QualityType qualityType = (QualityType) obj;
-        this.binding.textBonus.setText(UtilsKt.buildSpannableList(CollectionsKt.toList(arrayList), -16777216, true, Integer.valueOf(Color.parseColor((qualityType == null || (colors = qualityType.getColors()) == null || (r8 = (String) CollectionsKt.getOrNull(colors, 0)) == null) ? "#9A9A9A" : "#9A9A9A")), true));
+        this.binding.textBonus.setText(ru.mrlargha.commonui.utils.ui.UtilsKt.buildSpannableList(CollectionsKt.toList(arrayList), -16777216, true, Integer.valueOf(Color.parseColor((qualityType == null || (colors = qualityType.getColors()) == null || (r8 = (String) CollectionsKt.getOrNull(colors, 0)) == null) ? "#9A9A9A" : "#9A9A9A")), true));
     }
 
     private final void loadCars() {
@@ -419,19 +419,18 @@ public final class CertificateScreen extends SAMPUIElement {
         try {
             if (i == 0) {
                 if (MapperKt.isJsonValid(data)) {
-                    saveMainInfo((MainInfo) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) MainInfo.class));
+                    saveMainInfo((MainInfo) MapperKt.getGson().fromJson(data, (Class<Object>) MainInfo.class));
                     return;
                 }
                 throw new JsonParseException("Json is not valid");
             } else if (i == 1) {
                 if (MapperKt.isJsonValid(data)) {
-                    Gson create = new GsonBuilder().setLenient().create();
-                    JsonArray asJsonArray = ((JsonElement) create.fromJson(data, (Class<Object>) JsonElement.class)).getAsJsonArray();
+                    JsonArray asJsonArray = ((JsonElement) MapperKt.getGson().fromJson(data, (Class<Object>) JsonElement.class)).getAsJsonArray();
                     Intrinsics.checkNotNull(asJsonArray);
                     JsonArray<JsonElement> jsonArray = asJsonArray;
                     ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(jsonArray, 10));
                     for (JsonElement jsonElement : jsonArray) {
-                        arrayList2.add(create.fromJson(jsonElement, (Class<Object>) ItemBonus.class));
+                        arrayList2.add(MapperKt.getGson().fromJson(jsonElement, (Class<Object>) ItemBonus.class));
                     }
                     arrayList = arrayList2;
                 } else {

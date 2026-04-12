@@ -17,6 +17,7 @@ import com.miami.game.core.build.config.BuildConfigRepository;
 import com.miami.game.core.decompose.utils.CoroutineFeature;
 import com.miami.game.core.decompose.utils.CoroutineFeatureImpl;
 import com.miami.game.core.decompose.utils.SharedEventFlow;
+import com.miami.game.core.design.system.component.background.LauncherBackgroundWriter;
 import com.miami.game.core.external.navigation.model.ExternalNavigationAction;
 import com.miami.game.core.news.domain.NewsInteractor;
 import com.miami.game.core.privacy.privacyInteractor;

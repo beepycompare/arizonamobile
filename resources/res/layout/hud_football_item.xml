@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:paddingLeft="@dimen/_4sdp" android:paddingRight="@dimen/_4sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_2sdp" android:paddingHorizontal="@dimen/_4sdp">
+    <ImageView android:id="@+id/iv_bg" android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/hud_football_item_bg" android:adjustViewBounds="true" android:tint="#75ae44" android:tintMode="multiply"/>
+    <FrameLayout android:layout_gravity="center" android:paddingLeft="@dimen/_6sdp" android:paddingRight="@dimen/_6sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/_6sdp">
+        <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:layout_gravity="start|center_vertical" android:id="@+id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="название команды 2" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+        <LinearLayout android:gravity="center" android:layout_gravity="end" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/_9sdp" android:textColor="@color/white" android:id="@+id/tv_score" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" android:layout_marginEnd="@dimen/_2sdp"/>
+            <ImageView android:layout_width="@dimen/_12sdp" android:layout_height="wrap_content" android:src="@drawable/hud_footlball_ic_ball" android:adjustViewBounds="true"/>
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

@@ -90,13 +90,13 @@ public final class LocalManifestStore {
                         String readText = FilesKt.readText(this.manifestFile, Charsets.UTF_8);
                         Json json = this.json;
                         json.getSerializersModule();
-                        Object m9182constructorimpl = Result.m9182constructorimpl((LocalManifest) json.decodeFromString(LocalManifest.Companion.serializer(), readText));
-                        Throwable m9185exceptionOrNullimpl = Result.m9185exceptionOrNullimpl(m9182constructorimpl);
-                        if (m9185exceptionOrNullimpl != null) {
-                            resetManifestFile(m9185exceptionOrNullimpl);
-                            m9182constructorimpl = new LocalManifest((Map) null, 1, (DefaultConstructorMarker) null);
+                        Object m9183constructorimpl = Result.m9183constructorimpl((LocalManifest) json.decodeFromString(LocalManifest.Companion.serializer(), readText));
+                        Throwable m9186exceptionOrNullimpl = Result.m9186exceptionOrNullimpl(m9183constructorimpl);
+                        if (m9186exceptionOrNullimpl != null) {
+                            resetManifestFile(m9186exceptionOrNullimpl);
+                            m9183constructorimpl = new LocalManifest((Map) null, 1, (DefaultConstructorMarker) null);
                         }
-                        localManifest = (LocalManifest) m9182constructorimpl;
+                        localManifest = (LocalManifest) m9183constructorimpl;
                     } else {
                         localManifest = new LocalManifest((Map) null, 1, (DefaultConstructorMarker) null);
                     }
@@ -372,11 +372,11 @@ public final class LocalManifestStore {
                 File file = new File(this.manifestFile.getParentFile(), "local_manifest.bak_" + System.currentTimeMillis() + ".json");
                 Result.Companion companion = Result.Companion;
                 LocalManifestStore localManifestStore = this;
-                Result.m9182constructorimpl(FilesKt.copyTo$default(this.manifestFile, file, true, 0, 4, null));
+                Result.m9183constructorimpl(FilesKt.copyTo$default(this.manifestFile, file, true, 0, 4, null));
             }
             Result.Companion companion2 = Result.Companion;
             LocalManifestStore localManifestStore2 = this;
-            Result.m9182constructorimpl(Boolean.valueOf(this.manifestFile.delete()));
+            Result.m9183constructorimpl(Boolean.valueOf(this.manifestFile.delete()));
             Result.Companion companion3 = Result.Companion;
             LocalManifestStore localManifestStore3 = this;
             this.manifestFile.createNewFile();
@@ -385,7 +385,7 @@ public final class LocalManifestStore {
             LocalManifest localManifest = new LocalManifest((Map) null, 1, (DefaultConstructorMarker) null);
             json.getSerializersModule();
             FilesKt.writeText(file2, json.encodeToString(LocalManifest.Companion.serializer(), localManifest), Charsets.UTF_8);
-            Result.m9181boximpl(Result.m9182constructorimpl(Unit.INSTANCE));
+            Result.m9182boximpl(Result.m9183constructorimpl(Unit.INSTANCE));
         } catch (Throwable th2) {
             Integer.valueOf(Log.e("LocalManifestStore", "resetManifestFile failed: " + this.manifestFile.getAbsolutePath(), th2));
         }

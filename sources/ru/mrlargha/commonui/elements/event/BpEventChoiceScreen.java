@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
@@ -41,7 +40,7 @@ public final class BpEventChoiceScreen extends SAMPUIElement implements Interfac
         addViewToConstraintLayout(screen, -1, -1);
         setupNavigation();
         Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/battlepass/selector/event.webp").into(bind.item1);
-        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/battlepass/selector/main_disabled.webp").into(bind.item2);
+        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/battlepass/selector/main.webp").into(bind.item2);
     }
 
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
@@ -60,7 +59,7 @@ public final class BpEventChoiceScreen extends SAMPUIElement implements Interfac
                 }
                 isBpAvailable(data);
             } else if (MapperKt.isJsonValid(data)) {
-                setImages((ChoiceData) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) ChoiceData.class));
+                setImages((ChoiceData) MapperKt.getGson().fromJson(data, (Class<Object>) ChoiceData.class));
             } else {
                 throw new JsonParseException("Json is not valid");
             }
@@ -74,9 +73,7 @@ public final class BpEventChoiceScreen extends SAMPUIElement implements Interfac
 
     public final void isBpAvailable(String data) {
         Intrinsics.checkNotNullParameter(data, "data");
-        if (StringsKt.contains$default((CharSequence) data, (CharSequence) "1", false, 2, (Object) null)) {
-            this.binding.item2.setImageResource(R.drawable.bp_event_choice_item2);
-        }
+        StringsKt.contains$default((CharSequence) data, (CharSequence) "1", false, 2, (Object) null);
     }
 
     public final void setImages(ChoiceData data) {

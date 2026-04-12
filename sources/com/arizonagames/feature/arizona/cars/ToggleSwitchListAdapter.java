@@ -12,6 +12,7 @@ import com.arizonagames.feature.arizona.cars.databinding.CarsSwitchableItemBindi
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: ToggleSwitchListAdapter.kt */
 @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\u0018\u0000 \u00162\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0003\u0015\u0016\u0017B\u000f\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\tJ\u0018\u0010\r\u001a\u00020\u00032\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\u000b2\u0006\u0010\u0013\u001a\u00020\u00032\u0006\u0010\u0014\u001a\u00020\u0011H\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082.¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/arizonagames/feature/arizona/cars/ToggleSwitchListAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lcom/arizonagames/feature/arizona/cars/ToggleSwitchInfo;", "Lcom/arizonagames/feature/arizona/cars/ToggleSwitchListAdapter$ViewHolder;", "activity", "Landroid/app/Activity;", "<init>", "(Landroid/app/Activity;)V", "switchClickListener", "Lcom/arizonagames/feature/arizona/cars/ToggleSwitchListAdapter$OnSwitchClickListener;", "setOnSwitchClickListener", "", "onSwitchClickListener", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "OnSwitchClickListener", "Companion", "ViewHolder", "cars"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
@@ -74,7 +75,7 @@ public final class ToggleSwitchListAdapter extends ListAdapter<ToggleSwitchInfo,
         binding.carsSwitchableItem.getLayoutParams().width = (int) ((i2 * 11.97d) / d);
         binding.carsSwitchableItem.getLayoutParams().height = (int) ((i3 * 6.94d) / d);
         final ToggleSwitchInfo item = getItem(i);
-        binding.itemName.setText(item.getTitle());
+        binding.itemName.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getTitle(), 0.0f, 1, null));
         binding.carSwitch.setChecked(item.getValue() == 1);
         binding.carSwitch.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.cars.ToggleSwitchListAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener

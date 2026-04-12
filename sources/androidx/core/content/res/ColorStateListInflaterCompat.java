@@ -12,7 +12,6 @@ import android.util.TypedValue;
 import android.util.Xml;
 import androidx.core.R;
 import androidx.core.math.MathUtils;
-import androidx.core.view.ViewCompat;
 import java.io.IOException;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -155,7 +154,7 @@ public final class ColorStateListInflaterCompat {
                 CamColor fromColor = CamColor.fromColor(i);
                 i = CamColor.toColor(fromColor.getHue(), fromColor.getChroma(), f2);
             }
-            return (i & ViewCompat.MEASURED_SIZE_MASK) | (clamp << 24);
+            return (i & 16777215) | (clamp << 24);
         }
         return i;
     }

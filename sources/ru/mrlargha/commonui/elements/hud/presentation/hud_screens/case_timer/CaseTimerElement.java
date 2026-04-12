@@ -3,7 +3,6 @@ package ru.mrlargha.commonui.elements.hud.presentation.hud_screens.case_timer;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
@@ -54,7 +53,7 @@ public final class CaseTimerElement {
         try {
             setVisible();
             if (MapperKt.isJsonValid(data)) {
-                setData((CaseTimerInfo) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) CaseTimerInfo.class));
+                setData((CaseTimerInfo) MapperKt.getGson().fromJson(data, (Class<Object>) CaseTimerInfo.class));
                 return;
             }
             throw new JsonParseException("Json is not valid");

@@ -18,7 +18,7 @@ import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentCreat
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArizonaRentAddPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$7$1", f = "ArizonaRentAddPage.kt", i = {}, l = {235}, m = "invokeSuspend", n = {}, nl = {238}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$7$1", f = "ArizonaRentAddPage.kt", i = {}, l = {241}, m = "invokeSuspend", n = {}, nl = {244}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class ArizonaRentAddPage$setupListeners$1$7$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Editable $it;
@@ -46,7 +46,7 @@ public final class ArizonaRentAddPage$setupListeners$1$7$1 extends SuspendLambda
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ArizonaRentAddPage.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$7$1$1", f = "ArizonaRentAddPage.kt", i = {}, l = {236}, m = "invokeSuspend", n = {}, nl = {237}, s = {}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$7$1$1", f = "ArizonaRentAddPage.kt", i = {}, l = {242}, m = "invokeSuspend", n = {}, nl = {243}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$7$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -82,7 +82,7 @@ public final class ArizonaRentAddPage$setupListeners$1$7$1 extends SuspendLambda
                 mutableStateFlow = this.this$0.adState;
                 mutableStateFlow2 = this.this$0.adState;
                 this.label = 1;
-                if (mutableStateFlow.emit(ArizonaRentCreateAdModel.copy$default((ArizonaRentCreateAdModel) mutableStateFlow2.getValue(), null, null, null, null, StringsKt.toIntOrNull(String.valueOf(this.$it)), null, 47, null), this) == coroutine_suspended) {
+                if (mutableStateFlow.emit(ArizonaRentCreateAdModel.copy$default((ArizonaRentCreateAdModel) mutableStateFlow2.getValue(), null, null, null, StringsKt.toIntOrNull(String.valueOf(this.$it)), null, null, 55, null), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {

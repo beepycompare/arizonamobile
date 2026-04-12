@@ -66,7 +66,7 @@ public final class SettingsInteractor$saveSettings$1 extends SuspendLambda imple
         localRepository2 = this.this$0.localRepository;
         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(localRepository2.getContext());
         Intrinsics.checkNotNullExpressionValue(defaultSharedPreferences, "getDefaultSharedPreferences(...)");
-        defaultSharedPreferences.edit().putBoolean(SettingsConstants.SHOW_FPS, this.$settings.getShowFps()).putBoolean(SettingsConstants.USE_FULLSCREEN, this.$settings.getFullScreen()).putBoolean(SettingsConstants.STREAMER_MODE, this.$settings.getStreamerMode()).putBoolean(SettingsConstants.AMBIENT_SOUNDS, this.$settings.getAmbientSounds()).apply();
+        defaultSharedPreferences.edit().putBoolean(SettingsConstants.SHOW_FPS, this.$settings.getShowFps()).putBoolean(SettingsConstants.UPDATED_GRAPHICS, this.$settings.getUpdatedGraphics()).putBoolean(SettingsConstants.USE_FULLSCREEN, this.$settings.getFullScreen()).putBoolean(SettingsConstants.STREAMER_MODE, this.$settings.getStreamerMode()).putBoolean(SettingsConstants.AMBIENT_SOUNDS, this.$settings.getAmbientSounds()).apply();
         mutableStateFlow = this.this$0.stateStore;
         SettingState settingState = this.$settings;
         do {

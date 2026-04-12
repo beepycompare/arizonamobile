@@ -9,14 +9,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.math.MathKt;
 import ru.mrlargha.commonui.R;
@@ -25,13 +24,25 @@ import ru.mrlargha.commonui.databinding.HudElementChickenChargeBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: ChickenCharge.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012J\u000e\u0010\u0013\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012J\u0016\u0010\u0014\u001a\u00020\u00102\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016H\u0002J\b\u0010\u0018\u001a\u00020\u0010H\u0002J\u0014\u0010\u0019\u001a\u00020\u00102\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "animator1", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/PercentMover;", "animator2", "setVisibility", "", "data", "", "setInfo", "setData", "info", "", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/StageState;", "firstOpen", "setResult", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/HudChickenChargeResult;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 '2\u00020\u0001:\u0001'B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u0018J\u000e\u0010\u001d\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u0018J\u0016\u0010\u001e\u001a\u00020\u001b2\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 H\u0002J\b\u0010\"\u001a\u00020\u001bH\u0002J\u0014\u0010#\u001a\u00020\u001b2\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020$0 J\u000e\u0010%\u001a\u00020\u001b2\u0006\u0010&\u001a\u00020\u0010R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006("}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "animator1", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/PercentMover;", "animator2", "mainBg", "", "finalBg", "playerGif", "opponentGif", "leftImg", "Landroid/widget/ImageView;", "rightImg", "successText", "", "failText", "setVisibility", "", "data", "setInfo", "setData", "info", "", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/StageState;", "firstOpen", "setResult", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/HudChickenChargeResult;", "setType", "type", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class ChickenChargeElement {
+    public static final int CHICKEN = 0;
+    public static final Companion Companion = new Companion(null);
+    public static final int HAY = 2;
+    public static final int SAWMILL = 1;
     private final PercentMover animator1;
     private final PercentMover animator2;
     private final HudElementChickenChargeBinding binding;
+    private String failText;
+    private int finalBg;
+    private ImageView leftImg;
+    private int mainBg;
     private final SAMPUIElement notifier;
+    private int opponentGif;
+    private int playerGif;
+    private ImageView rightImg;
+    private String successText;
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setData$lambda$0$2(View view) {
@@ -52,6 +63,14 @@ public final class ChickenChargeElement {
         FrameLayout player2target = binding.player2target;
         Intrinsics.checkNotNullExpressionValue(player2target, "player2target");
         this.animator2 = new PercentMover(player2progressbar, player2target);
+        ImageView ivBgLeftChiken = binding.ivBgLeftChiken;
+        Intrinsics.checkNotNullExpressionValue(ivBgLeftChiken, "ivBgLeftChiken");
+        this.leftImg = ivBgLeftChiken;
+        ImageView ivBgRightChiken = binding.ivBgRightChiken;
+        Intrinsics.checkNotNullExpressionValue(ivBgRightChiken, "ivBgRightChiken");
+        this.rightImg = ivBgRightChiken;
+        this.successText = "УСПЕХ";
+        this.failText = "ПРОВАЛ";
     }
 
     public final HudElementChickenChargeBinding getBinding() {
@@ -126,8 +145,8 @@ public final class ChickenChargeElement {
             });
         }
         hudElementChickenChargeBinding.stage.setText("Этап " + stageState.getStage() + "/" + stageState.getStageTotal());
-        Glide.with(hudElementChickenChargeBinding.chickenGif.getContext()).load(Integer.valueOf(R.drawable.hud_chicken_charge)).into(hudElementChickenChargeBinding.chickenGif);
-        Glide.with(hudElementChickenChargeBinding.chickenGif.getContext()).load(Integer.valueOf(R.drawable.hud_chicken_charge_game_target2_ic)).into(hudElementChickenChargeBinding.chickenGif2);
+        Glide.with(hudElementChickenChargeBinding.chickenGif.getContext()).load(Integer.valueOf(this.playerGif)).into(hudElementChickenChargeBinding.chickenGif);
+        Glide.with(hudElementChickenChargeBinding.chickenGif.getContext()).load(Integer.valueOf(this.opponentGif)).into(hudElementChickenChargeBinding.chickenGif2);
         StageUserInfo stageUserInfo3 = (StageUserInfo) CollectionsKt.getOrNull(stageState.getInfoUser(), 0);
         if (stageUserInfo3 != null) {
             this.animator1.setCurrentPercent(stageUserInfo3.getCurrentPosition());
@@ -248,18 +267,23 @@ public final class ChickenChargeElement {
 
     private final void firstOpen() {
         HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
-        ImageView ivBg = hudElementChickenChargeBinding.ivBg;
-        Intrinsics.checkNotNullExpressionValue(ivBg, "ivBg");
-        ivBg.setVisibility(0);
-        ImageView ivBgFinal = hudElementChickenChargeBinding.ivBgFinal;
-        Intrinsics.checkNotNullExpressionValue(ivBgFinal, "ivBgFinal");
-        ivBgFinal.setVisibility(8);
+        hudElementChickenChargeBinding.ivBgMain.setImageResource(this.mainBg);
         LinearLayout main = hudElementChickenChargeBinding.main;
         Intrinsics.checkNotNullExpressionValue(main, "main");
         main.setVisibility(0);
+        LinearLayout main2 = hudElementChickenChargeBinding.main2;
+        Intrinsics.checkNotNullExpressionValue(main2, "main2");
+        main2.setVisibility(0);
+        FrameLayout hided = hudElementChickenChargeBinding.hided;
+        Intrinsics.checkNotNullExpressionValue(hided, "hided");
+        hided.setVisibility(0);
+        hudElementChickenChargeBinding.hided.setAlpha(1.0f);
         LinearLayout finalContainer = hudElementChickenChargeBinding.finalContainer;
         Intrinsics.checkNotNullExpressionValue(finalContainer, "finalContainer");
         finalContainer.setVisibility(8);
+        this.rightImg.setVisibility(8);
+        this.leftImg.setVisibility(0);
+        hudElementChickenChargeBinding.ivBgMain.setImageTintList(null);
     }
 
     public final void setResult(List<HudChickenChargeResult> data) {
@@ -269,15 +293,12 @@ public final class ChickenChargeElement {
         if (hudChickenChargeResult == null) {
             return;
         }
-        ImageView ivBg = hudElementChickenChargeBinding.ivBg;
-        Intrinsics.checkNotNullExpressionValue(ivBg, "ivBg");
-        ivBg.setVisibility(8);
-        ImageView ivBgFinal = hudElementChickenChargeBinding.ivBgFinal;
-        Intrinsics.checkNotNullExpressionValue(ivBgFinal, "ivBgFinal");
-        ivBgFinal.setVisibility(0);
+        hudElementChickenChargeBinding.ivBgMain.setImageResource(this.finalBg);
+        this.rightImg.setVisibility(0);
         LinearLayout main = hudElementChickenChargeBinding.main;
         Intrinsics.checkNotNullExpressionValue(main, "main");
         main.setVisibility(8);
+        hudElementChickenChargeBinding.hided.setAlpha(0.2f);
         LinearLayout finalContainer = hudElementChickenChargeBinding.finalContainer;
         Intrinsics.checkNotNullExpressionValue(finalContainer, "finalContainer");
         finalContainer.setVisibility(0);
@@ -288,13 +309,94 @@ public final class ChickenChargeElement {
         Intrinsics.checkNotNullExpressionValue(tvYouWaiting, "tvYouWaiting");
         tvYouWaiting.setVisibility(8);
         hudElementChickenChargeBinding.tvPercentSuccess.setText("Общий шанс успеха - " + hudChickenChargeResult.getChance() + "%");
-        if (hudChickenChargeResult.isSuccessful()) {
-            hudElementChickenChargeBinding.tvResult.setText("УСПЕХ");
+        if (hudChickenChargeResult.getSuccess() == 1) {
+            hudElementChickenChargeBinding.tvResult.setText(this.successText);
             hudElementChickenChargeBinding.tvResult.setTextColor(Color.parseColor("#BFFF64"));
             return;
         }
-        hudElementChickenChargeBinding.tvResult.setText("ПРОВАЛ");
+        hudElementChickenChargeBinding.tvResult.setText(this.failText);
         hudElementChickenChargeBinding.tvResult.setTextColor(Color.parseColor("#E83C3C"));
+    }
+
+    public final void setType(int i) {
+        this.binding.ivBgLeftChiken.setVisibility(8);
+        this.binding.ivBgRightChiken.setVisibility(8);
+        HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
+        hudElementChickenChargeBinding.player2target.setVisibility(0);
+        hudElementChickenChargeBinding.chance2.setVisibility(0);
+        hudElementChickenChargeBinding.player2Info.setVisibility(0);
+        hudElementChickenChargeBinding.ivBgMain2.setVisibility(8);
+        hudElementChickenChargeBinding.ivBgMain.setVisibility(0);
+        if (i == 0) {
+            HudElementChickenChargeBinding hudElementChickenChargeBinding2 = this.binding;
+            hudElementChickenChargeBinding2.ivBgText.setImageResource(R.drawable.hud_element_chicken_charging_bg_text);
+            this.mainBg = R.drawable.hud_element_chicken_charging_bg_main;
+            this.finalBg = R.drawable.hud_element_chicken_charge_final_bg;
+            this.playerGif = R.drawable.hud_chicken_charge;
+            this.opponentGif = R.drawable.hud_chicken_charge_game_target2_ic;
+            ImageView ivBgLeftChiken = this.binding.ivBgLeftChiken;
+            Intrinsics.checkNotNullExpressionValue(ivBgLeftChiken, "ivBgLeftChiken");
+            this.leftImg = ivBgLeftChiken;
+            ImageView ivBgRightChiken = this.binding.ivBgRightChiken;
+            Intrinsics.checkNotNullExpressionValue(ivBgRightChiken, "ivBgRightChiken");
+            this.rightImg = ivBgRightChiken;
+            hudElementChickenChargeBinding2.tvWaitingYou.setText("ОЖИДАЕТ ВАШЕГО ХОДА");
+            hudElementChickenChargeBinding2.player1progressbar.setBackground(Color.parseColor("#AA5A34B1"));
+            hudElementChickenChargeBinding2.player2progressbar.setBackground(Color.parseColor("#AA5A34B1"));
+            this.successText = "УСПЕХ";
+            this.failText = "ПРОВАЛ";
+        } else if (i == 1) {
+            HudElementChickenChargeBinding hudElementChickenChargeBinding3 = this.binding;
+            hudElementChickenChargeBinding3.ivBgText.setImageResource(R.drawable.hud_element_chicken_charging_bg_text_sawmill);
+            this.mainBg = R.drawable.hud_element_chicken_charging_bg_main_sawmill;
+            this.finalBg = R.drawable.hud_element_chicken_charge_final_bg_sawmill;
+            this.playerGif = R.drawable.hud_chicken_charge_saw;
+            this.opponentGif = R.drawable.hud_chicken_charge_saw;
+            ImageView ivBgLeftSawmill = this.binding.ivBgLeftSawmill;
+            Intrinsics.checkNotNullExpressionValue(ivBgLeftSawmill, "ivBgLeftSawmill");
+            this.leftImg = ivBgLeftSawmill;
+            ImageView ivBgRightSawmill = this.binding.ivBgRightSawmill;
+            Intrinsics.checkNotNullExpressionValue(ivBgRightSawmill, "ivBgRightSawmill");
+            this.rightImg = ivBgRightSawmill;
+            hudElementChickenChargeBinding3.tvWaitingYou.setText("ВАША ОЧЕРЕДЬ РЕЗАТЬ");
+            hudElementChickenChargeBinding3.player1progressbar.setBackground(Color.parseColor("#AAA97950"));
+            hudElementChickenChargeBinding3.player2progressbar.setBackground(Color.parseColor("#AAA97950"));
+            this.successText = "УСПЕШНЫЙ НАДРЕЗ";
+            this.failText = "БЕНЗОПИЛА ЗАГЛОХЛА";
+        } else if (i == 2) {
+            HudElementChickenChargeBinding hudElementChickenChargeBinding4 = this.binding;
+            hudElementChickenChargeBinding4.ivBgMain.setVisibility(8);
+            hudElementChickenChargeBinding4.ivBgMain2.setVisibility(0);
+            hudElementChickenChargeBinding4.player2target.setVisibility(8);
+            hudElementChickenChargeBinding4.chance2.setVisibility(8);
+            hudElementChickenChargeBinding4.player2Info.setVisibility(8);
+            hudElementChickenChargeBinding4.ivBgText.setImageResource(R.drawable.hud_element_chicken_charging_bg_text_hay);
+            this.playerGif = R.drawable.hud_chicken_charge_hay;
+            this.opponentGif = R.drawable.hud_chicken_charge_hay;
+            ImageView ivBgLeftHay = this.binding.ivBgLeftHay;
+            Intrinsics.checkNotNullExpressionValue(ivBgLeftHay, "ivBgLeftHay");
+            this.leftImg = ivBgLeftHay;
+            ImageView ivBgRightHay = this.binding.ivBgRightHay;
+            Intrinsics.checkNotNullExpressionValue(ivBgRightHay, "ivBgRightHay");
+            this.rightImg = ivBgRightHay;
+            hudElementChickenChargeBinding4.tvWaitingYou.setText("");
+            hudElementChickenChargeBinding4.player1progressbar.setBackground(Color.parseColor("#B17634"));
+            this.successText = "Успешное измельчение";
+            this.failText = "Измельчитель заглох";
+        }
+        setVisibility("1");
+    }
+
+    /* compiled from: ChickenCharge.kt */
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement$Companion;", "", "<init>", "()V", "CHICKEN", "", "SAWMILL", "HAY", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    /* loaded from: classes6.dex */
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
     }
 
     public final void setInfo(String data) {
@@ -302,13 +404,12 @@ public final class ChickenChargeElement {
         Intrinsics.checkNotNullParameter(data, "data");
         try {
             if (MapperKt.isJsonValid(data)) {
-                Gson create = new GsonBuilder().setLenient().create();
-                JsonArray asJsonArray = ((JsonElement) create.fromJson(data, (Class<Object>) JsonElement.class)).getAsJsonArray();
+                JsonArray asJsonArray = ((JsonElement) MapperKt.getGson().fromJson(data, (Class<Object>) JsonElement.class)).getAsJsonArray();
                 Intrinsics.checkNotNull(asJsonArray);
                 JsonArray<JsonElement> jsonArray = asJsonArray;
                 ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(jsonArray, 10));
                 for (JsonElement jsonElement : jsonArray) {
-                    arrayList2.add(create.fromJson(jsonElement, (Class<Object>) StageState.class));
+                    arrayList2.add(MapperKt.getGson().fromJson(jsonElement, (Class<Object>) StageState.class));
                 }
                 arrayList = arrayList2;
             } else {

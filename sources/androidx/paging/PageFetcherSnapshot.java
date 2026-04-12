@@ -594,7 +594,7 @@ public final class PageFetcherSnapshot<Key, Value> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:181:0x05c5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:181:0x05c6, code lost:
         if (r2.lock(null, r3) != r4) goto L13;
      */
     /* JADX WARN: Code restructure failed: missing block: B:40:0x01f0, code lost:
@@ -602,20 +602,20 @@ public final class PageFetcherSnapshot<Key, Value> {
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x002d  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x042f  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0443  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x0430  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0444  */
     /* JADX WARN: Removed duplicated region for block: B:12:0x0035  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x04cb A[Catch: all -> 0x05f8, TRY_LEAVE, TryCatch #6 {all -> 0x05f8, blocks: (B:142:0x04bd, B:144:0x04cb), top: B:253:0x04bd }] */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x0503  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x051f A[Catch: all -> 0x00b4, TryCatch #4 {all -> 0x00b4, blocks: (B:148:0x04fa, B:150:0x0506, B:152:0x051f, B:154:0x052b, B:156:0x0533, B:158:0x0540, B:157:0x053a, B:159:0x0545, B:163:0x0575, B:14:0x0081, B:17:0x00af), top: B:249:0x002a }] */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0533 A[Catch: all -> 0x00b4, TryCatch #4 {all -> 0x00b4, blocks: (B:148:0x04fa, B:150:0x0506, B:152:0x051f, B:154:0x052b, B:156:0x0533, B:158:0x0540, B:157:0x053a, B:159:0x0545, B:163:0x0575, B:14:0x0081, B:17:0x00af), top: B:249:0x002a }] */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x053a A[Catch: all -> 0x00b4, TryCatch #4 {all -> 0x00b4, blocks: (B:148:0x04fa, B:150:0x0506, B:152:0x051f, B:154:0x052b, B:156:0x0533, B:158:0x0540, B:157:0x053a, B:159:0x0545, B:163:0x0575, B:14:0x0081, B:17:0x00af), top: B:249:0x002a }] */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x056d  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x056f  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x04cc A[Catch: all -> 0x05f9, TRY_LEAVE, TryCatch #6 {all -> 0x05f9, blocks: (B:142:0x04be, B:144:0x04cc), top: B:253:0x04be }] */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x0504  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0520 A[Catch: all -> 0x00b4, TryCatch #3 {all -> 0x00b4, blocks: (B:148:0x04fb, B:150:0x0507, B:152:0x0520, B:154:0x052c, B:156:0x0534, B:158:0x0541, B:157:0x053b, B:159:0x0546, B:163:0x0576, B:14:0x0081, B:17:0x00af), top: B:247:0x002a }] */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0534 A[Catch: all -> 0x00b4, TryCatch #3 {all -> 0x00b4, blocks: (B:148:0x04fb, B:150:0x0507, B:152:0x0520, B:154:0x052c, B:156:0x0534, B:158:0x0541, B:157:0x053b, B:159:0x0546, B:163:0x0576, B:14:0x0081, B:17:0x00af), top: B:247:0x002a }] */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x053b A[Catch: all -> 0x00b4, TryCatch #3 {all -> 0x00b4, blocks: (B:148:0x04fb, B:150:0x0507, B:152:0x0520, B:154:0x052c, B:156:0x0534, B:158:0x0541, B:157:0x053b, B:159:0x0546, B:163:0x0576, B:14:0x0081, B:17:0x00af), top: B:247:0x002a }] */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x056e  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x0570  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x0606  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x0660  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x0607  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x0661  */
     /* JADX WARN: Removed duplicated region for block: B:21:0x00b8  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x00ea  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0103  */
@@ -625,7 +625,7 @@ public final class PageFetcherSnapshot<Key, Value> {
     /* JADX WARN: Removed duplicated region for block: B:35:0x0190  */
     /* JADX WARN: Removed duplicated region for block: B:36:0x01b1  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x01cb  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x02ee A[Catch: all -> 0x06a4, TRY_LEAVE, TryCatch #3 {all -> 0x06a4, blocks: (B:71:0x02d5, B:73:0x02ee), top: B:247:0x02d5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x02ee A[Catch: all -> 0x06a5, TRY_LEAVE, TryCatch #4 {all -> 0x06a5, blocks: (B:71:0x02d5, B:73:0x02ee), top: B:249:0x02d5 }] */
     /* JADX WARN: Removed duplicated region for block: B:79:0x0310  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x0320  */
     /* JADX WARN: Removed duplicated region for block: B:93:0x0388  */
@@ -640,9 +640,9 @@ public final class PageFetcherSnapshot<Key, Value> {
     /* JADX WARN: Type inference failed for: r5v47 */
     /* JADX WARN: Type inference failed for: r5v75 */
     /* JADX WARN: Type inference failed for: r9v44, types: [T, java.lang.Object] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:177:0x059c -> B:189:0x05ed). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:179:0x05a0 -> B:189:0x05ed). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:181:0x05c5 -> B:245:0x05c9). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:177:0x059d -> B:189:0x05ee). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:179:0x05a1 -> B:189:0x05ee). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:181:0x05c6 -> B:245:0x05ca). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

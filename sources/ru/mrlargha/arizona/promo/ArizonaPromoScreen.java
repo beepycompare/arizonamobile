@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 import androidx.core.app.NotificationCompat;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import java.util.Iterator;
 import java.util.List;
@@ -32,6 +31,7 @@ import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.feature.arizona.promo.R;
 import ru.mrlargha.feature.arizona.promo.databinding.ActivationPageBinding;
 import ru.mrlargha.feature.arizona.promo.databinding.LevelLockerBinding;
@@ -177,7 +177,7 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
                     return;
                 case 4:
                     if (MapperKt.isJsonValid(data)) {
-                        setLevelLocker((PromoLevelLocker) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) PromoLevelLocker.class));
+                        setLevelLocker((PromoLevelLocker) MapperKt.getGson().fromJson(data, (Class<Object>) PromoLevelLocker.class));
                         return;
                     }
                     throw new JsonParseException("Json is not valid");
@@ -488,7 +488,7 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
     private final void setRefPage(ReferralResponse referralResponse) {
         ReferalsBinding referalsBinding = this.binding.referals;
         referalsBinding.title.setText(referralResponse.getName());
-        referalsBinding.header.cash.setText(String.valueOf(referralResponse.getCashBack()));
+        referalsBinding.header.cash.setText(MoneyElementKt.toMoneyFormattedSpannable$default(referralResponse.getCashBack(), false, null, null, 7, null));
         referalsBinding.header.count.setText(String.valueOf(referralResponse.getReferralsValue()));
         this.refProgressAdapter.addAllItems(referralResponse.getReferralsRewards());
         PromoReward promoReward = (PromoReward) CollectionsKt.firstOrNull((List<? extends Object>) referralResponse.getReferralsRewards());

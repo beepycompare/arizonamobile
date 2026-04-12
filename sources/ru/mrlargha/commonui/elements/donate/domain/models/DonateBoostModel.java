@@ -5,7 +5,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DonateBoostModel.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u00002\u00020\u0001B-\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\b¢\u0006\u0004\b\n\u0010\u000bJ\t\u0010\u0013\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0014\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0015\u001a\u00020\u0006HÆ\u0003J\u000f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\t0\bHÆ\u0003J7\u0010\u0017\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\u000e\b\u0002\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\bHÆ\u0001J\u0014\u0010\u0018\u001a\u00020\u00192\b\u0010\u001a\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u001b\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010\u001c\u001a\u00020\u001dHÖ\u0081\u0004R\u0016\u0010\u0002\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0016\u0010\u0004\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\rR\u0016\u0010\u0005\u001a\u00020\u00068\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001c\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\b8\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012¨\u0006\u001e"}, d2 = {"Lru/mrlargha/commonui/elements/donate/domain/models/DonateBoostModel;", "", "totalEarnings", "", "mainBoostPayment", "boostEndTime", "", "bonusList", "", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateBonusModel;", "<init>", "(IIJLjava/util/List;)V", "getTotalEarnings", "()I", "getMainBoostPayment", "getBoostEndTime", "()J", "getBonusList", "()Ljava/util/List;", "component1", "component2", "component3", "component4", "copy", "equals", "", "other", "hashCode", "toString", "", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u00002\u00020\u0001B-\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007¢\u0006\u0004\b\t\u0010\nJ\t\u0010\u0011\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0012\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0013\u001a\u00020\u0003HÆ\u0003J\u000f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\b0\u0007HÆ\u0003J7\u0010\u0015\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007HÆ\u0001J\u0014\u0010\u0016\u001a\u00020\u00172\b\u0010\u0018\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0019\u001a\u00020\u001aHÖ\u0081\u0004J\n\u0010\u001b\u001a\u00020\u001cHÖ\u0081\u0004R\u0016\u0010\u0002\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0016\u0010\u0004\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\fR\u0016\u0010\u0005\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\fR\u001c\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u00078\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u001d"}, d2 = {"Lru/mrlargha/commonui/elements/donate/domain/models/DonateBoostModel;", "", "totalEarnings", "", "mainBoostPayment", "boostEndTime", "bonusList", "", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateBonusModel;", "<init>", "(JJJLjava/util/List;)V", "getTotalEarnings", "()J", "getMainBoostPayment", "getBoostEndTime", "getBonusList", "()Ljava/util/List;", "component1", "component2", "component3", "component4", "copy", "equals", "", "other", "hashCode", "", "toString", "", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DonateBoostModel {
     @SerializedName("bonusPayments")
@@ -13,33 +13,35 @@ public final class DonateBoostModel {
     @SerializedName("boostEndTime")
     private final long boostEndTime;
     @SerializedName("mainBoostPayment")
-    private final int mainBoostPayment;
+    private final long mainBoostPayment;
     @SerializedName("totalEarnings")
-    private final int totalEarnings;
+    private final long totalEarnings;
 
-    public static /* synthetic */ DonateBoostModel copy$default(DonateBoostModel donateBoostModel, int i, int i2, long j, List list, int i3, Object obj) {
-        if ((i3 & 1) != 0) {
-            i = donateBoostModel.totalEarnings;
+    public static /* synthetic */ DonateBoostModel copy$default(DonateBoostModel donateBoostModel, long j, long j2, long j3, List list, int i, Object obj) {
+        if ((i & 1) != 0) {
+            j = donateBoostModel.totalEarnings;
         }
-        if ((i3 & 2) != 0) {
-            i2 = donateBoostModel.mainBoostPayment;
+        long j4 = j;
+        if ((i & 2) != 0) {
+            j2 = donateBoostModel.mainBoostPayment;
         }
-        if ((i3 & 4) != 0) {
-            j = donateBoostModel.boostEndTime;
+        long j5 = j2;
+        if ((i & 4) != 0) {
+            j3 = donateBoostModel.boostEndTime;
         }
+        long j6 = j3;
         List<DonateBonusModel> list2 = list;
-        if ((i3 & 8) != 0) {
+        if ((i & 8) != 0) {
             list2 = donateBoostModel.bonusList;
         }
-        List list3 = list2;
-        return donateBoostModel.copy(i, i2, j, list3);
+        return donateBoostModel.copy(j4, j5, j6, list2);
     }
 
-    public final int component1() {
+    public final long component1() {
         return this.totalEarnings;
     }
 
-    public final int component2() {
+    public final long component2() {
         return this.mainBoostPayment;
     }
 
@@ -51,9 +53,9 @@ public final class DonateBoostModel {
         return this.bonusList;
     }
 
-    public final DonateBoostModel copy(int i, int i2, long j, List<DonateBonusModel> bonusList) {
+    public final DonateBoostModel copy(long j, long j2, long j3, List<DonateBonusModel> bonusList) {
         Intrinsics.checkNotNullParameter(bonusList, "bonusList");
-        return new DonateBoostModel(i, i2, j, bonusList);
+        return new DonateBoostModel(j, j2, j3, bonusList);
     }
 
     public boolean equals(Object obj) {
@@ -68,29 +70,29 @@ public final class DonateBoostModel {
     }
 
     public int hashCode() {
-        return (((((Integer.hashCode(this.totalEarnings) * 31) + Integer.hashCode(this.mainBoostPayment)) * 31) + Long.hashCode(this.boostEndTime)) * 31) + this.bonusList.hashCode();
+        return (((((Long.hashCode(this.totalEarnings) * 31) + Long.hashCode(this.mainBoostPayment)) * 31) + Long.hashCode(this.boostEndTime)) * 31) + this.bonusList.hashCode();
     }
 
     public String toString() {
-        int i = this.totalEarnings;
-        int i2 = this.mainBoostPayment;
-        long j = this.boostEndTime;
-        return "DonateBoostModel(totalEarnings=" + i + ", mainBoostPayment=" + i2 + ", boostEndTime=" + j + ", bonusList=" + this.bonusList + ")";
+        long j = this.totalEarnings;
+        long j2 = this.mainBoostPayment;
+        long j3 = this.boostEndTime;
+        return "DonateBoostModel(totalEarnings=" + j + ", mainBoostPayment=" + j2 + ", boostEndTime=" + j3 + ", bonusList=" + this.bonusList + ")";
     }
 
-    public DonateBoostModel(int i, int i2, long j, List<DonateBonusModel> bonusList) {
+    public DonateBoostModel(long j, long j2, long j3, List<DonateBonusModel> bonusList) {
         Intrinsics.checkNotNullParameter(bonusList, "bonusList");
-        this.totalEarnings = i;
-        this.mainBoostPayment = i2;
-        this.boostEndTime = j;
+        this.totalEarnings = j;
+        this.mainBoostPayment = j2;
+        this.boostEndTime = j3;
         this.bonusList = bonusList;
     }
 
-    public final int getTotalEarnings() {
+    public final long getTotalEarnings() {
         return this.totalEarnings;
     }
 
-    public final int getMainBoostPayment() {
+    public final long getMainBoostPayment() {
         return this.mainBoostPayment;
     }
 

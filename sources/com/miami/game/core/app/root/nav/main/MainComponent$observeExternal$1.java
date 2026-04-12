@@ -16,7 +16,6 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
-import timber.log.Timber;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MainComponent.kt */
 @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/miami/game/core/app/root/nav/main/MainState;"}, k = 3, mv = {2, 3, 0}, xi = 48)
@@ -56,7 +55,6 @@ public final class MainComponent$observeExternal$1 extends SuspendLambda impleme
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        Timber.Forest.d("mainStateStore " + mainState, new Object[0]);
         if (mainState.getDialog() instanceof DialogMainState.Empty) {
             stackNavigation2 = this.this$0.navDialog;
             final MainComponent.DialogConfig[] dialogConfigArr = {MainComponent.DialogConfig.EMPTY.INSTANCE};

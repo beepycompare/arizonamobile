@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +16,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.feature.arizona.cases.CasesGuaranteedPrizeModel;
 import ru.mrlargha.feature.arizona.cases.CasesResponseKt;
 import ru.mrlargha.feature.arizona.cases.databinding.ArizonaCasesCanWinItemBinding;
@@ -80,9 +80,7 @@ public final class CasesCanWinAdapter extends ListAdapter<CasesGuaranteedPrizeMo
             }
             ItemsInfo itemsInfo = (ItemsInfo) obj;
             if (itemsInfo != null) {
-                TextView textView = arizonaCasesCanWinItemBinding.tvPrizeName;
-                String name = itemsInfo.getName();
-                textView.setText(name + "\n" + casesGuaranteedPrizeModel.m11152getCount());
+                arizonaCasesCanWinItemBinding.tvPrizeName.setText(itemsInfo.getName() + "\n" + casesGuaranteedPrizeModel.m11154getCount());
                 if (casesGuaranteedPrizeModel.getCustom_image() != null) {
                     ImageView ivPrize = arizonaCasesCanWinItemBinding.ivPrize;
                     Intrinsics.checkNotNullExpressionValue(ivPrize, "ivPrize");
@@ -111,6 +109,9 @@ public final class CasesCanWinAdapter extends ListAdapter<CasesGuaranteedPrizeMo
                     CasesCanWinAdapter.CanWinViewHolder.initialize$lambda$0$3(CasesCanWinAdapter.this, casesGuaranteedPrizeModel, view);
                 }
             });
+            if (casesGuaranteedPrizeModel.getCustom_name() != null) {
+                arizonaCasesCanWinItemBinding.tvPrizeName.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, casesGuaranteedPrizeModel.getCustom_name(), 0.0f, 1, null));
+            }
         }
 
         /* JADX INFO: Access modifiers changed from: private */

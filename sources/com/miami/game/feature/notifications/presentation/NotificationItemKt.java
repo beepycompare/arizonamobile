@@ -244,9 +244,9 @@ public final class NotificationItemKt {
             SpacerKt.Spacer(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(2)), startRestartGroup, 6);
             float f4 = 24;
             composer2 = startRestartGroup;
-            TextKt.m2712TextNvy7gAk(notificationModel.getTitle(), null, ColorKt.Color(4294046193L), null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f4), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f4), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
+            TextKt.m2712TextNvy7gAk(notificationModel.getTitle(), null, ColorKt.Color(4294046193L), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f4), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f4), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
             float f5 = 11;
-            TextKt.m2712TextNvy7gAk(notificationModel.getText(), null, ColorKt.Color(4291150552L), null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f5), composer2, 6), null, null, null, 0L, null, null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f5), composer2, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
+            TextKt.m2712TextNvy7gAk(notificationModel.getText(), null, ColorKt.Color(4291150552L), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f5), composer2, 6), null, null, null, 0L, null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f5), composer2, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();

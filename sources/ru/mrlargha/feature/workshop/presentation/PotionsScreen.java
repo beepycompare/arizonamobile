@@ -54,6 +54,7 @@ import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.feature.workshop.R;
 import ru.mrlargha.feature.workshop.databinding.PotionsScreenBinding;
 import ru.mrlargha.feature.workshop.domain.FixingRequest;
@@ -610,7 +611,6 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
     }
 
     private final void updateMainField(InventoryItem inventoryItem) {
-        Integer item;
         Ref.IntRef intRef = new Ref.IntRef();
         Integer enchant = inventoryItem.getEnchant();
         intRef.element = enchant != null ? enchant.intValue() : 1;
@@ -637,7 +637,9 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         }
         TextView textView = this.binding.tvMainItemDescription;
         List<ItemsInfo> itemsName = UtilsKt.getItemsName();
-        textView.setText(itemsName.get(inventoryItem.getItem() != null ? item.intValue() : 0).getName() + " ");
+        Integer item = inventoryItem.getItem();
+        ItemsInfo itemsInfo = (ItemsInfo) CollectionsKt.getOrNull(itemsName, item != null ? item.intValue() : 0);
+        textView.setText(((itemsInfo == null || (r5 = itemsInfo.getName()) == null) ? "" : "") + " ");
         int i2 = this.currentScreenType;
         PotionsScreenBinding potionsScreenBinding = this.binding;
         if (i2 == 0) {
@@ -670,8 +672,8 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
             TextView textView = this.binding.tvRightItemDescription;
             List<ItemsInfo> itemsName = UtilsKt.getItemsName();
             Integer item2 = inventoryItem.getItem();
-            Intrinsics.checkNotNull(item2);
-            textView.setText(itemsName.get(item2.intValue()).getName() + " ");
+            ItemsInfo itemsInfo = (ItemsInfo) CollectionsKt.getOrNull(itemsName, item2 != null ? item2.intValue() : 0);
+            textView.setText(((itemsInfo == null || (r1 = itemsInfo.getName()) == null) ? "" : "") + " ");
             btnSharpenEnableStatus(true);
             this.binding.rightItemField.tvTitleText.setText(inventoryItem.getText());
             return;
@@ -701,10 +703,10 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
             TextView textView = this.binding.tvLeftItemDescription;
             List<ItemsInfo> itemsName = UtilsKt.getItemsName();
             Integer item2 = inventoryItem.getItem();
-            Intrinsics.checkNotNull(item2);
-            textView.setText(itemsName.get(item2.intValue()).getName() + " ");
+            ItemsInfo itemsInfo = (ItemsInfo) CollectionsKt.getOrNull(itemsName, item2 != null ? item2.intValue() : 0);
+            textView.setText(((itemsInfo == null || (r1 = itemsInfo.getName()) == null) ? "" : "") + " ");
             btnSharpenEnableStatus(true);
-            Integer amount = inventoryItem.getAmount();
+            Long amount = inventoryItem.getAmount();
             PotionsScreenBinding potionsScreenBinding = this.binding;
             if (amount == null) {
                 potionsScreenBinding.leftItemField.tvTitleText.setText("1");
@@ -746,7 +748,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
             }
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
             for (InventoryItem inventoryItem2 : list2) {
-                arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, Integer.valueOf(!CollectionsKt.contains(this.availableList, inventoryItem2.getItem()) ? 1 : 0), null, null, null, null, 0, null, null, false, false, null, null, null, 16775167, null));
+                arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, Integer.valueOf(!CollectionsKt.contains(this.availableList, inventoryItem2.getItem()) ? 1 : 0), null, null, null, null, 0, null, null, false, false, null, null, null, null, 33552383, null));
             }
             this.inventoryItemList = CollectionsKt.toMutableList((Collection) arrayList);
         }
@@ -760,7 +762,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         Integer itemStrength;
         Object obj2;
         Object obj3;
-        Integer amount;
+        Long amount;
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == 0) {
             Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) CraftStart.class);
@@ -846,12 +848,12 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                 btnSharpenEnableStatus(false);
             }
             this.binding.successChanceField.valueTextView.setText(craftItemInfo.getChance() + " ");
-            this.binding.costField.valueTextView.setText(craftItemInfo.getCost() + " ");
-            this.binding.costFieldPainting.valueTextView.setText(craftItemInfo.getCost() + " ");
+            this.binding.costField.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", 3, null));
+            this.binding.costFieldPainting.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", 3, null));
             InventoryItem inventoryItem = this.currentPaintItem;
-            int intValue = (inventoryItem == null || (amount = inventoryItem.getAmount()) == null) ? 0 : amount.intValue();
+            long longValue = (inventoryItem == null || (amount = inventoryItem.getAmount()) == null) ? 0L : amount.longValue();
             Integer amount2 = craftItemInfo.getAmount();
-            int intValue2 = amount2 != null ? amount2.intValue() : 0;
+            int intValue = amount2 != null ? amount2.intValue() : 0;
             if (this.isArizonaType && this.currentScreenType == 1 && this.currentPaintItem != null) {
                 TextView tvTitleText = this.binding.leftItemField.tvTitleText;
                 Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
@@ -863,8 +865,9 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                 InventoryItem inventoryItem2 = this.currentPaintItem;
                 textView.setText(String.valueOf(inventoryItem2 != null ? inventoryItem2.getText() : null));
                 this.binding.leftItemField.tvNeedRes.setText("/" + craftItemInfo.getAmount());
+                int i3 = (intValue > longValue ? 1 : (intValue == longValue ? 0 : -1));
                 PotionsScreenBinding potionsScreenBinding = this.binding;
-                if (intValue2 > intValue) {
+                if (i3 > 0) {
                     potionsScreenBinding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.red));
                 } else {
                     potionsScreenBinding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.white));
@@ -909,21 +912,21 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                         }
                     }
                     ItemsInfo itemsInfo2 = (ItemsInfo) obj3;
-                    arrayList.add(InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type2, itemsInfo2 != null ? Integer.valueOf(itemsInfo2.getAcs_slot()) : null, null, false, false, null, null, null, 16580591, null));
+                    arrayList.add(InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type2, itemsInfo2 != null ? Integer.valueOf(itemsInfo2.getAcs_slot()) : null, null, false, false, null, null, null, null, 33357807, null));
                 }
-                InventoryResponse inventoryResponse2 = new InventoryResponse(type, arrayList);
+                InventoryResponse inventoryResponse2 = new InventoryResponse(type, arrayList, 0, 4, null);
                 if (inventoryResponse2.getType() == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
                     for (InventoryItem inventoryItem4 : inventoryResponse2.getItems()) {
                         Iterator<InventoryItem> it3 = this.inventoryItemList.iterator();
-                        int i3 = 0;
+                        int i4 = 0;
                         while (true) {
                             if (!it3.hasNext()) {
-                                i3 = -1;
+                                i4 = -1;
                                 break;
                             } else if (it3.next().getSlot() == inventoryItem4.getSlot()) {
                                 break;
                             } else {
-                                i3++;
+                                i4++;
                             }
                         }
                         Iterator<T> it4 = this.inventoryItemList.iterator();
@@ -938,16 +941,16 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                             }
                         }
                         InventoryItem updateInventoryItem = UtilsKt.updateInventoryItem((InventoryItem) obj, inventoryItem4);
-                        if (i3 >= 0) {
+                        if (i4 >= 0) {
                             Integer item3 = inventoryItem4.getItem();
                             List<InventoryItem> list = this.inventoryItemList;
                             if (item3 != null) {
                                 if (updateInventoryItem == null) {
                                     updateInventoryItem = ConstantsKt.getEmptyInventoryItem();
                                 }
-                                list.set(i3, updateInventoryItem);
+                                list.set(i4, updateInventoryItem);
                             } else {
-                                list.set(i3, inventoryItem4);
+                                list.set(i4, inventoryItem4);
                             }
                         }
                         if (this.isArizonaType && this.currentScreenType == 2 && (itemStrength = inventoryItem4.getItemStrength()) != null && itemStrength.intValue() == 100) {

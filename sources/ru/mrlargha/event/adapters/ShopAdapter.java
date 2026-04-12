@@ -22,23 +22,17 @@ import ru.mrlargha.event.data.ShopItem;
 import ru.mrlargha.feature.event.R;
 import ru.mrlargha.feature.event.databinding.EventShopItemBinding;
 /* compiled from: ShopAdapter.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010!\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B#\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0012\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006¢\u0006\u0004\b\t\u0010\nJ\u0018\u0010\u000e\u001a\u00020\u00022\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0016J\u0018\u0010\u0013\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\u00022\u0006\u0010\u0015\u001a\u00020\u0012H\u0016J\b\u0010\u0016\u001a\u00020\u0012H\u0016J\u0014\u0010\u0017\u001a\u00020\b2\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00070\u0019J\u0006\u0010\u001a\u001a\u00020\bR\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0003\u0010\u000bR\u001a\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00070\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lru/mrlargha/event/adapters/ShopAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/event/adapters/EasterShopViewHolder;", "isArizona", "", "onClick", "Lkotlin/Function1;", "Lru/mrlargha/event/data/ShopItem;", "", "<init>", "(ZLkotlin/jvm/functions/Function1;)V", "()Z", "itemsList", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "addAllItems", "items", "", "clearList", NotificationCompat.CATEGORY_EVENT}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001b\u0012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\u000b\u001a\u00020\u00022\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016J\u0018\u0010\u0010\u001a\u00020\u00062\u0006\u0010\u0011\u001a\u00020\u00022\u0006\u0010\u0012\u001a\u00020\u000fH\u0016J\b\u0010\u0013\u001a\u00020\u000fH\u0016J\u0014\u0010\u0014\u001a\u00020\u00062\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00050\u0016J\u0006\u0010\u0017\u001a\u00020\u0006R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00050\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/event/adapters/ShopAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/event/adapters/EasterShopViewHolder;", "onClick", "Lkotlin/Function1;", "Lru/mrlargha/event/data/ShopItem;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "itemsList", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "addAllItems", "items", "", "clearList", NotificationCompat.CATEGORY_EVENT}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class ShopAdapter extends RecyclerView.Adapter<EasterShopViewHolder> {
-    private final boolean isArizona;
     private final List<ShopItem> itemsList;
     private final Function1<ShopItem, Unit> onClick;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public ShopAdapter(boolean z, Function1<? super ShopItem, Unit> onClick) {
+    public ShopAdapter(Function1<? super ShopItem, Unit> onClick) {
         Intrinsics.checkNotNullParameter(onClick, "onClick");
-        this.isArizona = z;
         this.onClick = onClick;
         this.itemsList = new ArrayList();
-    }
-
-    public final boolean isArizona() {
-        return this.isArizona;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -59,8 +53,8 @@ public final class ShopAdapter extends RecyclerView.Adapter<EasterShopViewHolder
         EventShopItemBinding binding = holder.getBinding();
         binding.tvTitle.setText(shopItem.getName());
         binding.price.setText(String.valueOf(shopItem.getPrice()));
-        if (this.isArizona) {
-            Picasso.get().load((UtilsKt.isDebug() ? "https://staging-cdn.azresources.cloud/" : FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null)) + "/projects/arizona-rp/systems/event_battlepass/rewards/" + shopItem.getImage() + ".webp").into(binding.ivName);
+        if (UtilsKt.isArizonaType()) {
+            Picasso.get().load((UtilsKt.isDebug() ? "https://staging-cdn.azresources.cloud/" : FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null)) + "/projects/arizona-rp/systems/battlepass/easter-2026/" + shopItem.getImage() + ".webp").into(binding.ivName);
         } else {
             Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "/projects/rodina-rp/systems/battlepass/items/" + shopItem.getImage() + ".webp").into(binding.ivName);
         }

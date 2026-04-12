@@ -282,7 +282,7 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
         List<InventoryItem> items = inventoryResponse.getItems();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(items, 10));
         for (InventoryItem inventoryItem : items) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, null, null, 16711679, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, null, null, null, 33488895, null));
         }
         return arrayList;
     }

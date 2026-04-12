@@ -446,8 +446,8 @@ public final class zzav extends zzos {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00da  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00e1  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -465,49 +465,49 @@ public final class zzav extends zzos {
             cursor2 = null;
             try {
                 cursor3 = zze().query("upload_queue", new String[]{"rowId", "app_id", "measurement_batch", "upload_uri", "upload_headers", "upload_type", "retry_count", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "associated_row_id", "last_upload_timestamp"}, "rowId=?", new String[]{String.valueOf(j)}, null, null, null, "1");
+            } catch (SQLiteException e) {
+                e = e;
+                cursor3 = cursor2;
                 try {
-                } catch (SQLiteException e) {
-                    e = e;
-                    try {
-                        this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. rowId", Long.valueOf(j), e);
-                        zzpjVar = cursor2;
-                        if (cursor3 != null) {
-                        }
-                        return zzpjVar;
-                    } catch (Throwable th) {
-                        th = th;
-                        if (cursor3 != null) {
-                            cursor3.close();
-                        }
-                        throw th;
-                    }
-                } catch (Throwable th2) {
-                    th = th2;
+                    this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. rowId", Long.valueOf(j), e);
+                    zzpjVar = cursor2;
                     if (cursor3 != null) {
+                    }
+                    return zzpjVar;
+                } catch (Throwable th) {
+                    th = th;
+                    if (cursor3 != null) {
+                        cursor3.close();
                     }
                     throw th;
                 }
-            } catch (SQLiteException e2) {
-                e = e2;
-                cursor3 = cursor2;
-                this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. rowId", Long.valueOf(j), e);
-                zzpjVar = cursor2;
-                if (cursor3 != null) {
-                }
-                return zzpjVar;
-            } catch (Throwable th3) {
-                th = th3;
+            } catch (Throwable th2) {
+                th = th2;
                 cursor3 = cursor;
                 if (cursor3 != null) {
                 }
                 throw th;
             }
+        } catch (SQLiteException e2) {
+            e = e2;
+            cursor2 = null;
+        } catch (Throwable th3) {
+            th = th3;
+            cursor = null;
+        }
+        try {
         } catch (SQLiteException e3) {
             e = e3;
-            cursor2 = null;
+            this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. rowId", Long.valueOf(j), e);
+            zzpjVar = cursor2;
+            if (cursor3 != null) {
+            }
+            return zzpjVar;
         } catch (Throwable th4) {
             th = th4;
-            cursor = null;
+            if (cursor3 != null) {
+            }
+            throw th;
         }
         if (!cursor3.moveToFirst()) {
             if (cursor3 != null) {
@@ -522,8 +522,8 @@ public final class zzav extends zzos {
         return zzaF;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0154  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0147  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0150  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1057,7 +1057,7 @@ public final class zzav extends zzos {
     /* JADX WARN: Removed duplicated region for block: B:80:0x01d6  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x01f7  */
     /* JADX WARN: Removed duplicated region for block: B:85:0x01fd  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x02bc A[Catch: SQLiteException -> 0x02d2, TRY_LEAVE, TryCatch #4 {SQLiteException -> 0x02d2, blocks: (B:93:0x02a0, B:95:0x02bc), top: B:108:0x02a0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x02bb A[Catch: SQLiteException -> 0x02d1, TRY_LEAVE, TryCatch #4 {SQLiteException -> 0x02d1, blocks: (B:93:0x029f, B:95:0x02bb), top: B:108:0x029f }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1790,65 +1790,65 @@ public final class zzav extends zzos {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(16:1|2|3|4|5|(6:7|(1:9)(1:113)|(1:11)|12|13|(2:15|(2:17|18)(1:20))(3:21|22|23))(6:114|(1:116)(1:125)|(1:118)|119|120|(2:122|(0)(0))(2:123|124))|25|26|27|28|29|31|32|(1:34)(15:35|36|37|38|(1:40)|41|42|(10:44|(2:46|(1:48)(1:80))(1:83)|49|(1:(1:79))(1:53)|54|55|56|57|(2:59|(8:60|61|62|63|64|(2:72|73)|66|(2:69|70)(1:68)))(1:77)|71)(2:84|(7:86|82|55|56|57|(0)(0)|71)(1:87))|81|82|55|56|57|(0)(0)|71)|(0)(0)|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x0266, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x0265, code lost:
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:102:0x0267, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x0266, code lost:
         r23 = r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x0269, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x0268, code lost:
         r6 = r23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:104:0x026c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:104:0x026b, code lost:
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:105:0x026d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x026c, code lost:
         r23 = r3;
         r22 = r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:106:0x0271, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x0270, code lost:
         r4 = r22;
         r6 = r23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:108:0x0277, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x0276, code lost:
         r6 = r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:110:0x027a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:110:0x0279, code lost:
         r4 = r22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:119:0x029b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:119:0x029a, code lost:
         if (r6 != null) goto L101;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:120:0x029d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:120:0x029c, code lost:
         r6.close();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:121:0x02a0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:121:0x029f, code lost:
         throw r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x025c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x025b, code lost:
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:94:0x025d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x025c, code lost:
         r3 = r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x025f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x025e, code lost:
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:96:0x0260, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x025f, code lost:
         r3 = r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x0262, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x0261, code lost:
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x0264, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x0263, code lost:
         r0 = e;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x0297  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x029d  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0296  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x029c  */
     /* JADX WARN: Removed duplicated region for block: B:137:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x01df  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0232 A[Catch: all -> 0x0244, SQLiteException -> 0x027e, TRY_LEAVE, TryCatch #2 {all -> 0x0244, blocks: (B:3:0x0016, B:8:0x002b, B:12:0x0046, B:70:0x01d9, B:73:0x01e1, B:74:0x01e9, B:76:0x01f5, B:81:0x0227, B:80:0x0212, B:85:0x0232, B:114:0x0281, B:9:0x003a, B:23:0x007d, B:27:0x0090, B:24:0x0088), top: B:123:0x0016 }] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01de  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0231 A[Catch: all -> 0x0243, SQLiteException -> 0x027d, TRY_LEAVE, TryCatch #2 {all -> 0x0243, blocks: (B:3:0x0016, B:8:0x002b, B:12:0x0046, B:70:0x01d8, B:73:0x01e0, B:74:0x01e8, B:76:0x01f4, B:81:0x0226, B:80:0x0211, B:85:0x0231, B:114:0x0280, B:9:0x003a, B:23:0x007d, B:27:0x0090, B:24:0x0088), top: B:123:0x0016 }] */
     /* JADX WARN: Type inference failed for: r3v0, types: [java.lang.String] */
     /* JADX WARN: Type inference failed for: r3v10 */
     /* JADX WARN: Type inference failed for: r3v11 */
@@ -2269,8 +2269,9 @@ public final class zzav extends zzos {
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00a9  */
+    /* JADX WARN: Not initialized variable reg: 2, insn: 0x00a3: MOVE  (r1 I:??[OBJECT, ARRAY]) = (r2 I:??[OBJECT, ARRAY]), block:B:32:0x00a2 */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00a6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2280,14 +2281,15 @@ public final class zzav extends zzos {
         String str4;
         SQLiteException sQLiteException;
         Cursor cursor;
+        Cursor cursor2;
         Preconditions.checkNotEmpty(str);
         Preconditions.checkNotEmpty(str2);
         zzg();
         zzaw();
-        Cursor cursor2 = null;
+        Cursor cursor3 = null;
         try {
-            cursor = zze().query("user_attributes", new String[]{"set_timestamp", "value", "origin"}, "app_id=? and name=?", new String[]{str, str2}, null, null, null);
             try {
+                cursor = zze().query("user_attributes", new String[]{"set_timestamp", "value", "origin"}, "app_id=? and name=?", new String[]{str, str2}, null, null, null);
                 try {
                     if (cursor.moveToFirst()) {
                         long j = cursor.getLong(0);
@@ -2315,18 +2317,18 @@ public final class zzav extends zzos {
                             }
                         }
                     }
-                } catch (Throwable th2) {
-                    th = th2;
-                    cursor2 = cursor;
-                    if (cursor2 != null) {
-                        cursor2.close();
-                    }
-                    throw th;
+                } catch (SQLiteException e2) {
+                    e = e2;
+                    str3 = str;
+                    str4 = str2;
                 }
-            } catch (SQLiteException e2) {
-                e = e2;
-                str3 = str;
-                str4 = str2;
+            } catch (Throwable th2) {
+                th = th2;
+                cursor3 = cursor2;
+                if (cursor3 != null) {
+                    cursor3.close();
+                }
+                throw th;
             }
         } catch (SQLiteException e3) {
             str3 = str;
@@ -2335,7 +2337,7 @@ public final class zzav extends zzos {
             cursor = null;
         } catch (Throwable th3) {
             th = th3;
-            if (cursor2 != null) {
+            if (cursor3 != null) {
             }
             throw th;
         }
@@ -2385,19 +2387,19 @@ public final class zzav extends zzos {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x00bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x00b9, code lost:
         r0 = r13.zzaV().zzb();
         r13.zzc();
         r0.zzb("Read more than the max allowed user properties, ignoring excess", 1000);
      */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0143  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0147  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final List zzo(String str, String str2, String str3) {
-        String str4;
         Cursor cursor;
+        String str4;
         Cursor cursor2;
         String str5;
         Preconditions.checkNotEmpty(str);
@@ -2500,29 +2502,29 @@ public final class zzav extends zzos {
                                 str4 = str5;
                             }
                         }
-                    } catch (Throwable th2) {
-                        th = th2;
+                    } catch (SQLiteException e4) {
+                        e = e4;
                         cursor = cursor2;
-                        if (cursor != null) {
-                        }
-                        throw th;
                     }
-                } catch (SQLiteException e4) {
-                    e = e4;
+                } catch (Throwable th2) {
+                    th = th2;
                     cursor = cursor2;
+                    if (cursor != null) {
+                    }
+                    throw th;
                 }
-            } catch (Throwable th3) {
-                th = th3;
-                cursor = null;
+            } catch (SQLiteException e5) {
+                e = e5;
+                str4 = str2;
             }
-        } catch (SQLiteException e5) {
-            e = e5;
-            str4 = str2;
+            if (cursor2 != null) {
+                cursor2.close();
+            }
+            return arrayList;
+        } catch (Throwable th3) {
+            th = th3;
+            cursor = null;
         }
-        if (cursor2 != null) {
-            cursor2.close();
-        }
-        return arrayList;
     }
 
     public final boolean zzp(zzah zzahVar) {
@@ -2564,8 +2566,9 @@ public final class zzav extends zzos {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0159  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0161  */
+    /* JADX WARN: Not initialized variable reg: 9, insn: 0x0157: MOVE  (r8 I:??[OBJECT, ARRAY]) = (r9 I:??[OBJECT, ARRAY]), block:B:43:0x0157 */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0152  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x015a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2575,6 +2578,7 @@ public final class zzav extends zzos {
         Cursor cursor2;
         Cursor cursor3;
         Cursor cursor4;
+        Cursor cursor5;
         zzah zzahVar;
         SQLiteDatabase zze2;
         String[] strArr;
@@ -2583,90 +2587,90 @@ public final class zzav extends zzos {
         zzg();
         zzaw();
         try {
-            zze2 = zze();
-            strArr = new String[11];
-            strArr[0] = "origin";
-            strArr[1] = "value";
-            strArr[2] = AppMeasurementSdk.ConditionalUserProperty.ACTIVE;
-            strArr[3] = AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME;
-            strArr[4] = AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT;
-            strArr[5] = "timed_out_event";
-            strArr[6] = AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP;
-            strArr[7] = "triggered_event";
-            strArr[8] = AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP;
-            strArr[9] = AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE;
-            cursor = null;
-            zzahVar = 0;
-            cursor2 = null;
-            cursor2 = null;
-            cursor2 = null;
-        } catch (SQLiteException e) {
-            e = e;
-            str3 = str2;
-            cursor2 = null;
-        } catch (Throwable th) {
-            th = th;
-            cursor = null;
-        }
-        try {
-            strArr[10] = "expired_event";
-            cursor4 = zze2.query("conditional_properties", strArr, "app_id=? and name=?", new String[]{str, str2}, null, null, null);
             try {
+                zze2 = zze();
+                strArr = new String[11];
+                strArr[0] = "origin";
+                strArr[1] = "value";
+                strArr[2] = AppMeasurementSdk.ConditionalUserProperty.ACTIVE;
+                strArr[3] = AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME;
+                strArr[4] = AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT;
+                strArr[5] = "timed_out_event";
+                strArr[6] = AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP;
+                strArr[7] = "triggered_event";
+                strArr[8] = AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP;
+                strArr[9] = AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE;
+                cursor = null;
+                zzahVar = 0;
+                cursor2 = null;
+                cursor2 = null;
+                cursor2 = null;
+            } catch (Throwable th) {
+                th = th;
+                cursor4 = cursor3;
+                if (cursor4 != null) {
+                    cursor4.close();
+                }
+                throw th;
+            }
+            try {
+                strArr[10] = "expired_event";
+                cursor5 = zze2.query("conditional_properties", strArr, "app_id=? and name=?", new String[]{str, str2}, null, null, null);
                 try {
-                } catch (SQLiteException e2) {
-                    e = e2;
+                } catch (SQLiteException e) {
+                    e = e;
                     str3 = str2;
                 }
+            } catch (SQLiteException e2) {
+                e = e2;
+                str3 = str2;
+                cursor5 = cursor2;
+                zzic zzicVar = this.zzu;
+                zzicVar.zzaV().zzb().zzd("Error querying conditional property", zzgu.zzl(str), zzicVar.zzl().zzc(str3), e);
+                zzahVar = cursor2;
+                if (cursor5 != null) {
+                }
+                return zzahVar;
             } catch (Throwable th2) {
                 th = th2;
-                cursor3 = cursor4;
-                if (cursor3 != null) {
-                    cursor3.close();
+                cursor4 = cursor;
+                if (cursor4 != null) {
                 }
                 throw th;
             }
         } catch (SQLiteException e3) {
             e = e3;
             str3 = str2;
-            cursor4 = cursor2;
-            zzic zzicVar = this.zzu;
-            zzicVar.zzaV().zzb().zzd("Error querying conditional property", zzgu.zzl(str), zzicVar.zzl().zzc(str3), e);
-            zzahVar = cursor2;
-            if (cursor4 != null) {
-            }
-            return zzahVar;
+            cursor2 = null;
         } catch (Throwable th3) {
             th = th3;
-            cursor3 = cursor;
-            if (cursor3 != null) {
-            }
-            throw th;
+            cursor = null;
         }
-        if (!cursor4.moveToFirst()) {
-            if (cursor4 != null) {
-                cursor4.close();
+        if (!cursor5.moveToFirst()) {
+            if (cursor5 != null) {
+                cursor5.close();
             }
             return zzahVar;
         }
-        String string = cursor4.getString(0);
+        String string = cursor5.getString(0);
         if (string == null) {
             string = "";
         }
-        Object zzL = zzL(cursor4, 1);
-        boolean z = cursor4.getInt(2) != 0;
-        String string2 = cursor4.getString(3);
-        long j = cursor4.getLong(4);
+        Object zzL = zzL(cursor5, 1);
+        boolean z = cursor5.getInt(2) != 0;
+        String string2 = cursor5.getString(3);
+        long j = cursor5.getLong(4);
         zzpg zzpgVar = this.zzg;
         str3 = str2;
         String str4 = string;
         try {
-            zzah zzahVar2 = new zzah(str, str4, new zzpl(str3, cursor4.getLong(8), zzL, str4), cursor4.getLong(6), z, string2, (zzbg) zzpgVar.zzp().zzl(cursor4.getBlob(5), zzbg.CREATOR), j, (zzbg) zzpgVar.zzp().zzl(cursor4.getBlob(7), zzbg.CREATOR), cursor4.getLong(9), (zzbg) zzpgVar.zzp().zzl(cursor4.getBlob(10), zzbg.CREATOR));
-            if (cursor4.moveToNext()) {
+            zzah zzahVar2 = new zzah(str, str4, new zzpl(str3, cursor5.getLong(8), zzL, str4), cursor5.getLong(6), z, string2, (zzbg) zzpgVar.zzp().zzl(cursor5.getBlob(5), zzbg.CREATOR), j, (zzbg) zzpgVar.zzp().zzl(cursor5.getBlob(7), zzbg.CREATOR), cursor5.getLong(9), (zzbg) zzpgVar.zzp().zzl(cursor5.getBlob(10), zzbg.CREATOR));
+            if (cursor5.moveToNext()) {
                 zzic zzicVar2 = this.zzu;
                 zzicVar2.zzaV().zzb().zzc("Got multiple records for conditional property, expected one", zzgu.zzl(str), zzicVar2.zzl().zzc(str3));
             }
-            if (cursor4 != null) {
-                cursor4.close();
+            if (cursor5 != null) {
+                cursor5.close();
             }
             return zzahVar2;
         } catch (SQLiteException e4) {
@@ -2674,7 +2678,7 @@ public final class zzav extends zzos {
             zzic zzicVar3 = this.zzu;
             zzicVar3.zzaV().zzb().zzd("Error querying conditional property", zzgu.zzl(str), zzicVar3.zzl().zzc(str3), e);
             zzahVar = cursor2;
-            if (cursor4 != null) {
+            if (cursor5 != null) {
             }
             return zzahVar;
         }
@@ -2713,14 +2717,14 @@ public final class zzav extends zzos {
         return zzt(sb.toString(), (String[]) arrayList.toArray(new String[arrayList.size()]));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x008d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0086, code lost:
         r3 = r11.zzaV().zzb();
         r11.zzc();
         r3.zzb("Read more than the max allowed conditional properties, ignoring extra", 1000);
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x016a  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0171  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0163  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x016a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2800,27 +2804,26 @@ public final class zzav extends zzos {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Not initialized variable reg: 4, insn: 0x03c6: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY]), block:B:101:0x03c6 */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x03c9  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0207  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x020b A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0254  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0257 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0266 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0282 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0293 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x02d4 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x02ee A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0302  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0305 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x032d  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0330 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0345 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0358 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0374 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0384 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TRY_LEAVE, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0397  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x03c1  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x03c3  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0201  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0205 A[Catch: SQLiteException -> 0x0395, all -> 0x03bf, TryCatch #1 {SQLiteException -> 0x0395, blocks: (B:6:0x0137, B:9:0x013f, B:11:0x0156, B:12:0x015d, B:14:0x0170, B:15:0x0177, B:17:0x01b6, B:22:0x01c0, B:26:0x020a, B:28:0x0239, B:33:0x0243, B:37:0x0255, B:39:0x0260, B:40:0x0272, B:42:0x027c, B:43:0x0285, B:45:0x028d, B:49:0x0296, B:51:0x02ce, B:52:0x02e0, B:54:0x02e8, B:58:0x02f1, B:65:0x030a, B:69:0x0334, B:71:0x033f, B:72:0x034a, B:74:0x0352, B:75:0x035d, B:77:0x036e, B:78:0x0375, B:80:0x037e, B:68:0x032a, B:61:0x02ff, B:64:0x0306, B:36:0x0251, B:25:0x0205), top: B:105:0x0137 }] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x024e  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0251 A[Catch: SQLiteException -> 0x0395, all -> 0x03bf, TryCatch #1 {SQLiteException -> 0x0395, blocks: (B:6:0x0137, B:9:0x013f, B:11:0x0156, B:12:0x015d, B:14:0x0170, B:15:0x0177, B:17:0x01b6, B:22:0x01c0, B:26:0x020a, B:28:0x0239, B:33:0x0243, B:37:0x0255, B:39:0x0260, B:40:0x0272, B:42:0x027c, B:43:0x0285, B:45:0x028d, B:49:0x0296, B:51:0x02ce, B:52:0x02e0, B:54:0x02e8, B:58:0x02f1, B:65:0x030a, B:69:0x0334, B:71:0x033f, B:72:0x034a, B:74:0x0352, B:75:0x035d, B:77:0x036e, B:78:0x0375, B:80:0x037e, B:68:0x032a, B:61:0x02ff, B:64:0x0306, B:36:0x0251, B:25:0x0205), top: B:105:0x0137 }] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0260 A[Catch: SQLiteException -> 0x0395, all -> 0x03bf, TryCatch #1 {SQLiteException -> 0x0395, blocks: (B:6:0x0137, B:9:0x013f, B:11:0x0156, B:12:0x015d, B:14:0x0170, B:15:0x0177, B:17:0x01b6, B:22:0x01c0, B:26:0x020a, B:28:0x0239, B:33:0x0243, B:37:0x0255, B:39:0x0260, B:40:0x0272, B:42:0x027c, B:43:0x0285, B:45:0x028d, B:49:0x0296, B:51:0x02ce, B:52:0x02e0, B:54:0x02e8, B:58:0x02f1, B:65:0x030a, B:69:0x0334, B:71:0x033f, B:72:0x034a, B:74:0x0352, B:75:0x035d, B:77:0x036e, B:78:0x0375, B:80:0x037e, B:68:0x032a, B:61:0x02ff, B:64:0x0306, B:36:0x0251, B:25:0x0205), top: B:105:0x0137 }] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x027c A[Catch: SQLiteException -> 0x0395, all -> 0x03bf, TryCatch #1 {SQLiteException -> 0x0395, blocks: (B:6:0x0137, B:9:0x013f, B:11:0x0156, B:12:0x015d, B:14:0x0170, B:15:0x0177, B:17:0x01b6, B:22:0x01c0, B:26:0x020a, B:28:0x0239, B:33:0x0243, B:37:0x0255, B:39:0x0260, B:40:0x0272, B:42:0x027c, B:43:0x0285, B:45:0x028d, B:49:0x0296, B:51:0x02ce, B:52:0x02e0, B:54:0x02e8, B:58:0x02f1, B:65:0x030a, B:69:0x0334, B:71:0x033f, B:72:0x034a, B:74:0x0352, B:75:0x035d, B:77:0x036e, B:78:0x0375, B:80:0x037e, B:68:0x032a, B:61:0x02ff, B:64:0x0306, B:36:0x0251, B:25:0x0205), top: B:105:0x0137 }] */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x028d A[Catch: SQLiteException -> 0x0395, all -> 0x03bf, TryCatch #1 {SQLiteException -> 0x0395, blocks: (B:6:0x0137, B:9:0x013f, B:11:0x0156, B:12:0x015d, B:14:0x0170, B:15:0x0177, B:17:0x01b6, B:22:0x01c0, B:26:0x020a, B:28:0x0239, B:33:0x0243, B:37:0x0255, B:39:0x0260, B:40:0x0272, B:42:0x027c, B:43:0x0285, B:45:0x028d, B:49:0x0296, B:51:0x02ce, B:52:0x02e0, B:54:0x02e8, B:58:0x02f1, B:65:0x030a, B:69:0x0334, B:71:0x033f, B:72:0x034a, B:74:0x0352, B:75:0x035d, B:77:0x036e, B:78:0x0375, B:80:0x037e, B:68:0x032a, B:61:0x02ff, B:64:0x0306, B:36:0x0251, B:25:0x0205), top: B:105:0x0137 }] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x02ce A[Catch: SQLiteException -> 0x0395, all -> 0x03bf, TryCatch #1 {SQLiteException -> 0x0395, blocks: (B:6:0x0137, B:9:0x013f, B:11:0x0156, B:12:0x015d, B:14:0x0170, B:15:0x0177, B:17:0x01b6, B:22:0x01c0, B:26:0x020a, B:28:0x0239, B:33:0x0243, B:37:0x0255, B:39:0x0260, B:40:0x0272, B:42:0x027c, B:43:0x0285, B:45:0x028d, B:49:0x0296, B:51:0x02ce, B:52:0x02e0, B:54:0x02e8, B:58:0x02f1, B:65:0x030a, B:69:0x0334, B:71:0x033f, B:72:0x034a, B:74:0x0352, B:75:0x035d, B:77:0x036e, B:78:0x0375, B:80:0x037e, B:68:0x032a, B:61:0x02ff, B:64:0x0306, B:36:0x0251, B:25:0x0205), top: B:105:0x0137 }] */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x02e8 A[Catch: SQLiteException -> 0x0395, all -> 0x03bf, TryCatch #1 {SQLiteException -> 0x0395, blocks: (B:6:0x0137, B:9:0x013f, B:11:0x0156, B:12:0x015d, B:14:0x0170, B:15:0x0177, B:17:0x01b6, B:22:0x01c0, B:26:0x020a, B:28:0x0239, B:33:0x0243, B:37:0x0255, B:39:0x0260, B:40:0x0272, B:42:0x027c, B:43:0x0285, B:45:0x028d, B:49:0x0296, B:51:0x02ce, B:52:0x02e0, B:54:0x02e8, B:58:0x02f1, B:65:0x030a, B:69:0x0334, B:71:0x033f, B:72:0x034a, B:74:0x0352, B:75:0x035d, B:77:0x036e, B:78:0x0375, B:80:0x037e, B:68:0x032a, B:61:0x02ff, B:64:0x0306, B:36:0x0251, B:25:0x0205), top: B:105:0x0137 }] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x02fc  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x02ff A[Catch: SQLiteException -> 0x0395, all -> 0x03bf, TryCatch #1 {SQLiteException -> 0x0395, blocks: (B:6:0x0137, B:9:0x013f, B:11:0x0156, B:12:0x015d, B:14:0x0170, B:15:0x0177, B:17:0x01b6, B:22:0x01c0, B:26:0x020a, B:28:0x0239, B:33:0x0243, B:37:0x0255, B:39:0x0260, B:40:0x0272, B:42:0x027c, B:43:0x0285, B:45:0x028d, B:49:0x0296, B:51:0x02ce, B:52:0x02e0, B:54:0x02e8, B:58:0x02f1, B:65:0x030a, B:69:0x0334, B:71:0x033f, B:72:0x034a, B:74:0x0352, B:75:0x035d, B:77:0x036e, B:78:0x0375, B:80:0x037e, B:68:0x032a, B:61:0x02ff, B:64:0x0306, B:36:0x0251, B:25:0x0205), top: B:105:0x0137 }] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0327  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x032a A[Catch: SQLiteException -> 0x0395, all -> 0x03bf, TryCatch #1 {SQLiteException -> 0x0395, blocks: (B:6:0x0137, B:9:0x013f, B:11:0x0156, B:12:0x015d, B:14:0x0170, B:15:0x0177, B:17:0x01b6, B:22:0x01c0, B:26:0x020a, B:28:0x0239, B:33:0x0243, B:37:0x0255, B:39:0x0260, B:40:0x0272, B:42:0x027c, B:43:0x0285, B:45:0x028d, B:49:0x0296, B:51:0x02ce, B:52:0x02e0, B:54:0x02e8, B:58:0x02f1, B:65:0x030a, B:69:0x0334, B:71:0x033f, B:72:0x034a, B:74:0x0352, B:75:0x035d, B:77:0x036e, B:78:0x0375, B:80:0x037e, B:68:0x032a, B:61:0x02ff, B:64:0x0306, B:36:0x0251, B:25:0x0205), top: B:105:0x0137 }] */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x033f A[Catch: SQLiteException -> 0x0395, all -> 0x03bf, TryCatch #1 {SQLiteException -> 0x0395, blocks: (B:6:0x0137, B:9:0x013f, B:11:0x0156, B:12:0x015d, B:14:0x0170, B:15:0x0177, B:17:0x01b6, B:22:0x01c0, B:26:0x020a, B:28:0x0239, B:33:0x0243, B:37:0x0255, B:39:0x0260, B:40:0x0272, B:42:0x027c, B:43:0x0285, B:45:0x028d, B:49:0x0296, B:51:0x02ce, B:52:0x02e0, B:54:0x02e8, B:58:0x02f1, B:65:0x030a, B:69:0x0334, B:71:0x033f, B:72:0x034a, B:74:0x0352, B:75:0x035d, B:77:0x036e, B:78:0x0375, B:80:0x037e, B:68:0x032a, B:61:0x02ff, B:64:0x0306, B:36:0x0251, B:25:0x0205), top: B:105:0x0137 }] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0352 A[Catch: SQLiteException -> 0x0395, all -> 0x03bf, TryCatch #1 {SQLiteException -> 0x0395, blocks: (B:6:0x0137, B:9:0x013f, B:11:0x0156, B:12:0x015d, B:14:0x0170, B:15:0x0177, B:17:0x01b6, B:22:0x01c0, B:26:0x020a, B:28:0x0239, B:33:0x0243, B:37:0x0255, B:39:0x0260, B:40:0x0272, B:42:0x027c, B:43:0x0285, B:45:0x028d, B:49:0x0296, B:51:0x02ce, B:52:0x02e0, B:54:0x02e8, B:58:0x02f1, B:65:0x030a, B:69:0x0334, B:71:0x033f, B:72:0x034a, B:74:0x0352, B:75:0x035d, B:77:0x036e, B:78:0x0375, B:80:0x037e, B:68:0x032a, B:61:0x02ff, B:64:0x0306, B:36:0x0251, B:25:0x0205), top: B:105:0x0137 }] */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x036e A[Catch: SQLiteException -> 0x0395, all -> 0x03bf, TryCatch #1 {SQLiteException -> 0x0395, blocks: (B:6:0x0137, B:9:0x013f, B:11:0x0156, B:12:0x015d, B:14:0x0170, B:15:0x0177, B:17:0x01b6, B:22:0x01c0, B:26:0x020a, B:28:0x0239, B:33:0x0243, B:37:0x0255, B:39:0x0260, B:40:0x0272, B:42:0x027c, B:43:0x0285, B:45:0x028d, B:49:0x0296, B:51:0x02ce, B:52:0x02e0, B:54:0x02e8, B:58:0x02f1, B:65:0x030a, B:69:0x0334, B:71:0x033f, B:72:0x034a, B:74:0x0352, B:75:0x035d, B:77:0x036e, B:78:0x0375, B:80:0x037e, B:68:0x032a, B:61:0x02ff, B:64:0x0306, B:36:0x0251, B:25:0x0205), top: B:105:0x0137 }] */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x037e A[Catch: SQLiteException -> 0x0395, all -> 0x03bf, TRY_LEAVE, TryCatch #1 {SQLiteException -> 0x0395, blocks: (B:6:0x0137, B:9:0x013f, B:11:0x0156, B:12:0x015d, B:14:0x0170, B:15:0x0177, B:17:0x01b6, B:22:0x01c0, B:26:0x020a, B:28:0x0239, B:33:0x0243, B:37:0x0255, B:39:0x0260, B:40:0x0272, B:42:0x027c, B:43:0x0285, B:45:0x028d, B:49:0x0296, B:51:0x02ce, B:52:0x02e0, B:54:0x02e8, B:58:0x02f1, B:65:0x030a, B:69:0x0334, B:71:0x033f, B:72:0x034a, B:74:0x0352, B:75:0x035d, B:77:0x036e, B:78:0x0375, B:80:0x037e, B:68:0x032a, B:61:0x02ff, B:64:0x0306, B:36:0x0251, B:25:0x0205), top: B:105:0x0137 }] */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0391  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x03bb  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2829,10 +2832,7 @@ public final class zzav extends zzos {
         Cursor cursor2;
         Cursor cursor3;
         Cursor cursor4;
-        Cursor cursor5;
         zzh zzhVar;
-        SQLiteDatabase zze2;
-        String[] strArr;
         boolean z;
         boolean z2;
         zzic zzicVar;
@@ -2841,102 +2841,102 @@ public final class zzav extends zzos {
         zzg();
         zzaw();
         try {
+            SQLiteDatabase zze2 = zze();
+            String[] strArr = new String[45];
+            strArr[0] = "app_instance_id";
+            strArr[1] = "gmp_app_id";
+            strArr[2] = "resettable_device_id_hash";
+            strArr[3] = "last_bundle_index";
+            strArr[4] = "last_bundle_start_timestamp";
+            strArr[5] = "last_bundle_end_timestamp";
+            strArr[6] = "app_version";
+            strArr[7] = "app_store";
+            strArr[8] = "gmp_version";
+            strArr[9] = "dev_cert_hash";
+            cursor = null;
+            zzhVar = 0;
+            cursor2 = null;
+            cursor2 = null;
             try {
-                zze2 = zze();
-                strArr = new String[45];
-                strArr[0] = "app_instance_id";
-                strArr[1] = "gmp_app_id";
-                strArr[2] = "resettable_device_id_hash";
-                strArr[3] = "last_bundle_index";
-                strArr[4] = "last_bundle_start_timestamp";
-                strArr[5] = "last_bundle_end_timestamp";
-                strArr[6] = "app_version";
-                strArr[7] = "app_store";
-                strArr[8] = "gmp_version";
-                strArr[9] = "dev_cert_hash";
-                cursor = null;
-                zzhVar = 0;
-                cursor2 = null;
-                cursor2 = null;
-            } catch (Throwable th) {
-                th = th;
-                cursor4 = cursor3;
+                strArr[10] = "measurement_enabled";
+                strArr[11] = "day";
+                strArr[12] = "daily_public_events_count";
+                strArr[13] = "daily_events_count";
+                strArr[14] = "daily_conversions_count";
+                strArr[15] = "config_fetched_time";
+                strArr[16] = "failed_config_fetch_time";
+                strArr[17] = "app_version_int";
+                strArr[18] = "firebase_instance_id";
+                strArr[19] = "daily_error_events_count";
+                strArr[20] = "daily_realtime_events_count";
+                strArr[21] = "health_monitor_sample";
+                strArr[22] = "android_id";
+                strArr[23] = "adid_reporting_enabled";
+                strArr[24] = "admob_app_id";
+                strArr[25] = "dynamite_version";
+                strArr[26] = "safelisted_events";
+                strArr[27] = "ga_app_id";
+                strArr[28] = "session_stitching_token";
+                strArr[29] = "sgtm_upload_enabled";
+                strArr[30] = "target_os_version";
+                strArr[31] = "session_stitching_token_hash";
+                strArr[32] = "ad_services_version";
+                strArr[33] = "unmatched_first_open_without_ad_id";
+                strArr[34] = "npa_metadata_value";
+                strArr[35] = "attribution_eligibility_status";
+                strArr[36] = "sgtm_preview_key";
+                strArr[37] = "dma_consent_state";
+                strArr[38] = "daily_realtime_dcu_count";
+                strArr[39] = "bundle_delivery_index";
+                strArr[40] = "serialized_npa_metadata";
+                strArr[41] = "unmatched_pfo";
+                strArr[42] = "unmatched_uwa";
+                strArr[43] = "ad_campaign_info";
+                strArr[44] = "client_upload_eligibility";
+                cursor4 = zze2.query("apps", strArr, "app_id=?", new String[]{str}, null, null, null);
+                try {
+                    try {
+                    } catch (SQLiteException e) {
+                        e = e;
+                        this.zzu.zzaV().zzb().zzc("Error querying app. appId", zzgu.zzl(str), e);
+                        zzhVar = cursor2;
+                        if (cursor4 != null) {
+                        }
+                        return zzhVar;
+                    }
+                } catch (Throwable th) {
+                    th = th;
+                    cursor3 = cursor4;
+                    if (cursor3 != null) {
+                        cursor3.close();
+                    }
+                    throw th;
+                }
+            } catch (SQLiteException e2) {
+                e = e2;
+                cursor4 = cursor2;
+                this.zzu.zzaV().zzb().zzc("Error querying app. appId", zzgu.zzl(str), e);
+                zzhVar = cursor2;
                 if (cursor4 != null) {
-                    cursor4.close();
+                }
+                return zzhVar;
+            } catch (Throwable th2) {
+                th = th2;
+                cursor3 = cursor;
+                if (cursor3 != null) {
                 }
                 throw th;
             }
-        } catch (SQLiteException e) {
-            e = e;
-            cursor2 = null;
-        } catch (Throwable th2) {
-            th = th2;
-            cursor = null;
-        }
-        try {
-            strArr[10] = "measurement_enabled";
-            strArr[11] = "day";
-            strArr[12] = "daily_public_events_count";
-            strArr[13] = "daily_events_count";
-            strArr[14] = "daily_conversions_count";
-            strArr[15] = "config_fetched_time";
-            strArr[16] = "failed_config_fetch_time";
-            strArr[17] = "app_version_int";
-            strArr[18] = "firebase_instance_id";
-            strArr[19] = "daily_error_events_count";
-            strArr[20] = "daily_realtime_events_count";
-            strArr[21] = "health_monitor_sample";
-            strArr[22] = "android_id";
-            strArr[23] = "adid_reporting_enabled";
-            strArr[24] = "admob_app_id";
-            strArr[25] = "dynamite_version";
-            strArr[26] = "safelisted_events";
-            strArr[27] = "ga_app_id";
-            strArr[28] = "session_stitching_token";
-            strArr[29] = "sgtm_upload_enabled";
-            strArr[30] = "target_os_version";
-            strArr[31] = "session_stitching_token_hash";
-            strArr[32] = "ad_services_version";
-            strArr[33] = "unmatched_first_open_without_ad_id";
-            strArr[34] = "npa_metadata_value";
-            strArr[35] = "attribution_eligibility_status";
-            strArr[36] = "sgtm_preview_key";
-            strArr[37] = "dma_consent_state";
-            strArr[38] = "daily_realtime_dcu_count";
-            strArr[39] = "bundle_delivery_index";
-            strArr[40] = "serialized_npa_metadata";
-            strArr[41] = "unmatched_pfo";
-            strArr[42] = "unmatched_uwa";
-            strArr[43] = "ad_campaign_info";
-            strArr[44] = "client_upload_eligibility";
-            cursor5 = zze2.query("apps", strArr, "app_id=?", new String[]{str}, null, null, null);
-            try {
-            } catch (SQLiteException e2) {
-                e = e2;
-                this.zzu.zzaV().zzb().zzc("Error querying app. appId", zzgu.zzl(str), e);
-                zzhVar = cursor2;
-                if (cursor5 != null) {
-                }
-                return zzhVar;
-            }
         } catch (SQLiteException e3) {
             e = e3;
-            cursor5 = cursor2;
-            this.zzu.zzaV().zzb().zzc("Error querying app. appId", zzgu.zzl(str), e);
-            zzhVar = cursor2;
-            if (cursor5 != null) {
-            }
-            return zzhVar;
+            cursor2 = null;
         } catch (Throwable th3) {
             th = th3;
-            cursor4 = cursor;
-            if (cursor4 != null) {
-            }
-            throw th;
+            cursor = null;
         }
-        if (!cursor5.moveToFirst()) {
-            if (cursor5 != null) {
-                cursor5.close();
+        if (!cursor4.moveToFirst()) {
+            if (cursor4 != null) {
+                cursor4.close();
             }
             return zzhVar;
         }
@@ -2945,205 +2945,205 @@ public final class zzav extends zzos {
         zzjl zzB = zzpgVar.zzB(str);
         zzjk zzjkVar = zzjk.ANALYTICS_STORAGE;
         if (zzB.zzo(zzjkVar)) {
-            zzhVar2.zze(cursor5.getString(0));
+            zzhVar2.zze(cursor4.getString(0));
         }
-        zzhVar2.zzg(cursor5.getString(1));
+        zzhVar2.zzg(cursor4.getString(1));
         if (zzpgVar.zzB(str).zzo(zzjk.AD_STORAGE)) {
-            zzhVar2.zzk(cursor5.getString(2));
+            zzhVar2.zzk(cursor4.getString(2));
         }
-        zzhVar2.zzF(cursor5.getLong(3));
-        zzhVar2.zzo(cursor5.getLong(4));
-        zzhVar2.zzq(cursor5.getLong(5));
-        zzhVar2.zzs(cursor5.getString(6));
-        zzhVar2.zzw(cursor5.getString(7));
-        zzhVar2.zzy(cursor5.getLong(8));
-        zzhVar2.zzA(cursor5.getLong(9));
-        if (!cursor5.isNull(10) && cursor5.getInt(10) == 0) {
+        zzhVar2.zzF(cursor4.getLong(3));
+        zzhVar2.zzo(cursor4.getLong(4));
+        zzhVar2.zzq(cursor4.getLong(5));
+        zzhVar2.zzs(cursor4.getString(6));
+        zzhVar2.zzw(cursor4.getString(7));
+        zzhVar2.zzy(cursor4.getLong(8));
+        zzhVar2.zzA(cursor4.getLong(9));
+        if (!cursor4.isNull(10) && cursor4.getInt(10) == 0) {
             z = false;
             zzhVar2.zzE(z);
-            zzhVar2.zzO(cursor5.getLong(11));
-            zzhVar2.zzQ(cursor5.getLong(12));
-            zzhVar2.zzS(cursor5.getLong(13));
-            zzhVar2.zzU(cursor5.getLong(14));
-            zzhVar2.zzI(cursor5.getLong(15));
-            zzhVar2.zzK(cursor5.getLong(16));
-            zzhVar2.zzu(!cursor5.isNull(17) ? SieveCacheKt.NodeMetaAndPreviousMask : cursor5.getInt(17));
-            zzhVar2.zzm(cursor5.getString(18));
-            zzhVar2.zzY(cursor5.getLong(19));
-            zzhVar2.zzW(cursor5.getLong(20));
-            zzhVar2.zzab(cursor5.getString(21));
-            if (!cursor5.isNull(23) && cursor5.getInt(23) == 0) {
+            zzhVar2.zzO(cursor4.getLong(11));
+            zzhVar2.zzQ(cursor4.getLong(12));
+            zzhVar2.zzS(cursor4.getLong(13));
+            zzhVar2.zzU(cursor4.getLong(14));
+            zzhVar2.zzI(cursor4.getLong(15));
+            zzhVar2.zzK(cursor4.getLong(16));
+            zzhVar2.zzu(!cursor4.isNull(17) ? SieveCacheKt.NodeMetaAndPreviousMask : cursor4.getInt(17));
+            zzhVar2.zzm(cursor4.getString(18));
+            zzhVar2.zzY(cursor4.getLong(19));
+            zzhVar2.zzW(cursor4.getLong(20));
+            zzhVar2.zzab(cursor4.getString(21));
+            if (!cursor4.isNull(23) && cursor4.getInt(23) == 0) {
                 z2 = false;
                 zzhVar2.zzad(z2);
-                zzhVar2.zzC(!cursor5.isNull(25) ? 0L : cursor5.getLong(25));
-                if (!cursor5.isNull(26)) {
-                    zzhVar2.zzah(Arrays.asList(cursor5.getString(26).split(StringUtils.COMMA, -1)));
+                zzhVar2.zzC(!cursor4.isNull(25) ? 0L : cursor4.getLong(25));
+                if (!cursor4.isNull(26)) {
+                    zzhVar2.zzah(Arrays.asList(cursor4.getString(26).split(StringUtils.COMMA, -1)));
                 }
                 if (zzpgVar.zzB(str).zzo(zzjkVar)) {
-                    zzhVar2.zzi(cursor5.getString(28));
+                    zzhVar2.zzi(cursor4.getString(28));
                 }
-                zzhVar2.zzaj(cursor5.isNull(29) && cursor5.getInt(29) != 0);
-                zzhVar2.zzaE(cursor5.getLong(39));
-                zzhVar2.zzaz(cursor5.getString(36));
-                zzhVar2.zzal(cursor5.getLong(30));
-                zzhVar2.zzan(cursor5.getLong(31));
+                zzhVar2.zzaj(cursor4.isNull(29) && cursor4.getInt(29) != 0);
+                zzhVar2.zzaE(cursor4.getLong(39));
+                zzhVar2.zzaz(cursor4.getString(36));
+                zzhVar2.zzal(cursor4.getLong(30));
+                zzhVar2.zzan(cursor4.getLong(31));
                 zzqp.zza();
                 zzicVar = this.zzu;
                 if (zzicVar.zzc().zzp(str, zzfy.zzaP)) {
-                    zzhVar2.zzap(cursor5.getInt(32));
-                    zzhVar2.zzax(cursor5.getLong(35));
+                    zzhVar2.zzap(cursor4.getInt(32));
+                    zzhVar2.zzax(cursor4.getLong(35));
                 }
-                zzhVar2.zzar(cursor5.isNull(33) && cursor5.getInt(33) != 0);
-                if (cursor5.isNull(34)) {
-                    valueOf = Boolean.valueOf(cursor5.getInt(34) != 0);
+                zzhVar2.zzar(cursor4.isNull(33) && cursor4.getInt(33) != 0);
+                if (cursor4.isNull(34)) {
+                    valueOf = Boolean.valueOf(cursor4.getInt(34) != 0);
                 } else {
                     valueOf = null;
                 }
                 zzhVar2.zzaf(valueOf);
-                zzhVar2.zzaB(cursor5.getInt(37));
-                zzhVar2.zzaD(cursor5.getInt(38));
-                zzhVar2.zzaG(!cursor5.isNull(40) ? "" : (String) Preconditions.checkNotNull(cursor5.getString(40)));
-                if (!cursor5.isNull(41)) {
-                    zzhVar2.zzat(Long.valueOf(cursor5.getLong(41)));
+                zzhVar2.zzaB(cursor4.getInt(37));
+                zzhVar2.zzaD(cursor4.getInt(38));
+                zzhVar2.zzaG(!cursor4.isNull(40) ? "" : (String) Preconditions.checkNotNull(cursor4.getString(40)));
+                if (!cursor4.isNull(41)) {
+                    zzhVar2.zzat(Long.valueOf(cursor4.getLong(41)));
                 }
-                if (!cursor5.isNull(42)) {
-                    zzhVar2.zzav(Long.valueOf(cursor5.getLong(42)));
+                if (!cursor4.isNull(42)) {
+                    zzhVar2.zzav(Long.valueOf(cursor4.getLong(42)));
                 }
-                zzhVar2.zzaI(cursor5.getBlob(43));
-                if (!cursor5.isNull(44)) {
-                    zzhVar2.zzaK(cursor5.getInt(44));
+                zzhVar2.zzaI(cursor4.getBlob(43));
+                if (!cursor4.isNull(44)) {
+                    zzhVar2.zzaK(cursor4.getInt(44));
                 }
                 zzhVar2.zzb();
-                if (cursor5.moveToNext()) {
+                if (cursor4.moveToNext()) {
                     zzicVar.zzaV().zzb().zzb("Got multiple records for app, expected one. appId", zzgu.zzl(str));
                 }
-                if (cursor5 != null) {
-                    cursor5.close();
+                if (cursor4 != null) {
+                    cursor4.close();
                 }
                 return zzhVar2;
             }
             z2 = true;
             zzhVar2.zzad(z2);
-            zzhVar2.zzC(!cursor5.isNull(25) ? 0L : cursor5.getLong(25));
-            if (!cursor5.isNull(26)) {
+            zzhVar2.zzC(!cursor4.isNull(25) ? 0L : cursor4.getLong(25));
+            if (!cursor4.isNull(26)) {
             }
             if (zzpgVar.zzB(str).zzo(zzjkVar)) {
             }
-            zzhVar2.zzaj(cursor5.isNull(29) && cursor5.getInt(29) != 0);
-            zzhVar2.zzaE(cursor5.getLong(39));
-            zzhVar2.zzaz(cursor5.getString(36));
-            zzhVar2.zzal(cursor5.getLong(30));
-            zzhVar2.zzan(cursor5.getLong(31));
+            zzhVar2.zzaj(cursor4.isNull(29) && cursor4.getInt(29) != 0);
+            zzhVar2.zzaE(cursor4.getLong(39));
+            zzhVar2.zzaz(cursor4.getString(36));
+            zzhVar2.zzal(cursor4.getLong(30));
+            zzhVar2.zzan(cursor4.getLong(31));
             zzqp.zza();
             zzicVar = this.zzu;
             if (zzicVar.zzc().zzp(str, zzfy.zzaP)) {
             }
-            zzhVar2.zzar(cursor5.isNull(33) && cursor5.getInt(33) != 0);
-            if (cursor5.isNull(34)) {
+            zzhVar2.zzar(cursor4.isNull(33) && cursor4.getInt(33) != 0);
+            if (cursor4.isNull(34)) {
             }
             zzhVar2.zzaf(valueOf);
-            zzhVar2.zzaB(cursor5.getInt(37));
-            zzhVar2.zzaD(cursor5.getInt(38));
-            zzhVar2.zzaG(!cursor5.isNull(40) ? "" : (String) Preconditions.checkNotNull(cursor5.getString(40)));
-            if (!cursor5.isNull(41)) {
+            zzhVar2.zzaB(cursor4.getInt(37));
+            zzhVar2.zzaD(cursor4.getInt(38));
+            zzhVar2.zzaG(!cursor4.isNull(40) ? "" : (String) Preconditions.checkNotNull(cursor4.getString(40)));
+            if (!cursor4.isNull(41)) {
             }
-            if (!cursor5.isNull(42)) {
+            if (!cursor4.isNull(42)) {
             }
-            zzhVar2.zzaI(cursor5.getBlob(43));
-            if (!cursor5.isNull(44)) {
+            zzhVar2.zzaI(cursor4.getBlob(43));
+            if (!cursor4.isNull(44)) {
             }
             zzhVar2.zzb();
-            if (cursor5.moveToNext()) {
+            if (cursor4.moveToNext()) {
             }
-            if (cursor5 != null) {
+            if (cursor4 != null) {
             }
             return zzhVar2;
         }
         z = true;
         zzhVar2.zzE(z);
-        zzhVar2.zzO(cursor5.getLong(11));
-        zzhVar2.zzQ(cursor5.getLong(12));
-        zzhVar2.zzS(cursor5.getLong(13));
-        zzhVar2.zzU(cursor5.getLong(14));
-        zzhVar2.zzI(cursor5.getLong(15));
-        zzhVar2.zzK(cursor5.getLong(16));
-        zzhVar2.zzu(!cursor5.isNull(17) ? SieveCacheKt.NodeMetaAndPreviousMask : cursor5.getInt(17));
-        zzhVar2.zzm(cursor5.getString(18));
-        zzhVar2.zzY(cursor5.getLong(19));
-        zzhVar2.zzW(cursor5.getLong(20));
-        zzhVar2.zzab(cursor5.getString(21));
-        if (!cursor5.isNull(23)) {
+        zzhVar2.zzO(cursor4.getLong(11));
+        zzhVar2.zzQ(cursor4.getLong(12));
+        zzhVar2.zzS(cursor4.getLong(13));
+        zzhVar2.zzU(cursor4.getLong(14));
+        zzhVar2.zzI(cursor4.getLong(15));
+        zzhVar2.zzK(cursor4.getLong(16));
+        zzhVar2.zzu(!cursor4.isNull(17) ? SieveCacheKt.NodeMetaAndPreviousMask : cursor4.getInt(17));
+        zzhVar2.zzm(cursor4.getString(18));
+        zzhVar2.zzY(cursor4.getLong(19));
+        zzhVar2.zzW(cursor4.getLong(20));
+        zzhVar2.zzab(cursor4.getString(21));
+        if (!cursor4.isNull(23)) {
             z2 = false;
             zzhVar2.zzad(z2);
-            zzhVar2.zzC(!cursor5.isNull(25) ? 0L : cursor5.getLong(25));
-            if (!cursor5.isNull(26)) {
+            zzhVar2.zzC(!cursor4.isNull(25) ? 0L : cursor4.getLong(25));
+            if (!cursor4.isNull(26)) {
             }
             if (zzpgVar.zzB(str).zzo(zzjkVar)) {
             }
-            zzhVar2.zzaj(cursor5.isNull(29) && cursor5.getInt(29) != 0);
-            zzhVar2.zzaE(cursor5.getLong(39));
-            zzhVar2.zzaz(cursor5.getString(36));
-            zzhVar2.zzal(cursor5.getLong(30));
-            zzhVar2.zzan(cursor5.getLong(31));
+            zzhVar2.zzaj(cursor4.isNull(29) && cursor4.getInt(29) != 0);
+            zzhVar2.zzaE(cursor4.getLong(39));
+            zzhVar2.zzaz(cursor4.getString(36));
+            zzhVar2.zzal(cursor4.getLong(30));
+            zzhVar2.zzan(cursor4.getLong(31));
             zzqp.zza();
             zzicVar = this.zzu;
             if (zzicVar.zzc().zzp(str, zzfy.zzaP)) {
             }
-            zzhVar2.zzar(cursor5.isNull(33) && cursor5.getInt(33) != 0);
-            if (cursor5.isNull(34)) {
+            zzhVar2.zzar(cursor4.isNull(33) && cursor4.getInt(33) != 0);
+            if (cursor4.isNull(34)) {
             }
             zzhVar2.zzaf(valueOf);
-            zzhVar2.zzaB(cursor5.getInt(37));
-            zzhVar2.zzaD(cursor5.getInt(38));
-            zzhVar2.zzaG(!cursor5.isNull(40) ? "" : (String) Preconditions.checkNotNull(cursor5.getString(40)));
-            if (!cursor5.isNull(41)) {
+            zzhVar2.zzaB(cursor4.getInt(37));
+            zzhVar2.zzaD(cursor4.getInt(38));
+            zzhVar2.zzaG(!cursor4.isNull(40) ? "" : (String) Preconditions.checkNotNull(cursor4.getString(40)));
+            if (!cursor4.isNull(41)) {
             }
-            if (!cursor5.isNull(42)) {
+            if (!cursor4.isNull(42)) {
             }
-            zzhVar2.zzaI(cursor5.getBlob(43));
-            if (!cursor5.isNull(44)) {
+            zzhVar2.zzaI(cursor4.getBlob(43));
+            if (!cursor4.isNull(44)) {
             }
             zzhVar2.zzb();
-            if (cursor5.moveToNext()) {
+            if (cursor4.moveToNext()) {
             }
-            if (cursor5 != null) {
+            if (cursor4 != null) {
             }
             return zzhVar2;
         }
         z2 = true;
         zzhVar2.zzad(z2);
-        zzhVar2.zzC(!cursor5.isNull(25) ? 0L : cursor5.getLong(25));
-        if (!cursor5.isNull(26)) {
+        zzhVar2.zzC(!cursor4.isNull(25) ? 0L : cursor4.getLong(25));
+        if (!cursor4.isNull(26)) {
         }
         if (zzpgVar.zzB(str).zzo(zzjkVar)) {
         }
-        zzhVar2.zzaj(cursor5.isNull(29) && cursor5.getInt(29) != 0);
-        zzhVar2.zzaE(cursor5.getLong(39));
-        zzhVar2.zzaz(cursor5.getString(36));
-        zzhVar2.zzal(cursor5.getLong(30));
-        zzhVar2.zzan(cursor5.getLong(31));
+        zzhVar2.zzaj(cursor4.isNull(29) && cursor4.getInt(29) != 0);
+        zzhVar2.zzaE(cursor4.getLong(39));
+        zzhVar2.zzaz(cursor4.getString(36));
+        zzhVar2.zzal(cursor4.getLong(30));
+        zzhVar2.zzan(cursor4.getLong(31));
         zzqp.zza();
         zzicVar = this.zzu;
         if (zzicVar.zzc().zzp(str, zzfy.zzaP)) {
         }
-        zzhVar2.zzar(cursor5.isNull(33) && cursor5.getInt(33) != 0);
-        if (cursor5.isNull(34)) {
+        zzhVar2.zzar(cursor4.isNull(33) && cursor4.getInt(33) != 0);
+        if (cursor4.isNull(34)) {
         }
         zzhVar2.zzaf(valueOf);
-        zzhVar2.zzaB(cursor5.getInt(37));
-        zzhVar2.zzaD(cursor5.getInt(38));
-        zzhVar2.zzaG(!cursor5.isNull(40) ? "" : (String) Preconditions.checkNotNull(cursor5.getString(40)));
-        if (!cursor5.isNull(41)) {
+        zzhVar2.zzaB(cursor4.getInt(37));
+        zzhVar2.zzaD(cursor4.getInt(38));
+        zzhVar2.zzaG(!cursor4.isNull(40) ? "" : (String) Preconditions.checkNotNull(cursor4.getString(40)));
+        if (!cursor4.isNull(41)) {
         }
-        if (!cursor5.isNull(42)) {
+        if (!cursor4.isNull(42)) {
         }
-        zzhVar2.zzaI(cursor5.getBlob(43));
-        if (!cursor5.isNull(44)) {
+        zzhVar2.zzaI(cursor4.getBlob(43));
+        if (!cursor4.isNull(44)) {
         }
         zzhVar2.zzb();
-        if (cursor5.moveToNext()) {
+        if (cursor4.moveToNext()) {
         }
-        if (cursor5 != null) {
+        if (cursor4 != null) {
         }
         return zzhVar2;
     }

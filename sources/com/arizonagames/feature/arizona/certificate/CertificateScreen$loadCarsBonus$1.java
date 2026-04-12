@@ -15,7 +15,7 @@ import ru.mrlargha.arizona.rating.CertificateApi;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CertificateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.arizonagames.feature.arizona.certificate.CertificateScreen$loadCarsBonus$1", f = "CertificateScreen.kt", i = {}, l = {314, 315}, m = "invokeSuspend", n = {}, nl = {315, TypedValues.AttributesType.TYPE_PIVOT_TARGET}, s = {}, v = 2)
+@DebugMetadata(c = "com.arizonagames.feature.arizona.certificate.CertificateScreen$loadCarsBonus$1", f = "CertificateScreen.kt", i = {}, l = {TypedValues.AttributesType.TYPE_PATH_ROTATE, TypedValues.AttributesType.TYPE_EASING}, m = "invokeSuspend", n = {}, nl = {TypedValues.AttributesType.TYPE_EASING, 320}, s = {}, v = 2)
 /* loaded from: classes3.dex */
 public final class CertificateScreen$loadCarsBonus$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;

@@ -225,13 +225,13 @@ public final class RxAwaitKt {
             @Override // io.reactivex.CompletableObserver, io.reactivex.MaybeObserver
             public void onComplete() {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(Unit.INSTANCE));
+                cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(Unit.INSTANCE));
             }
 
             @Override // io.reactivex.CompletableObserver
             public void onError(Throwable th) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(ResultKt.createFailure(th)));
             }
         });
         Object result = cancellableContinuationImpl.getResult();
@@ -254,19 +254,19 @@ public final class RxAwaitKt {
             @Override // io.reactivex.MaybeObserver
             public void onComplete() {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(null));
+                cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(null));
             }
 
             @Override // io.reactivex.MaybeObserver
             public void onSuccess(T t) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(t));
+                cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(t));
             }
 
             @Override // io.reactivex.MaybeObserver
             public void onError(Throwable th) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(ResultKt.createFailure(th)));
             }
         }));
         Object result = cancellableContinuationImpl.getResult();
@@ -289,13 +289,13 @@ public final class RxAwaitKt {
             @Override // io.reactivex.SingleObserver
             public void onSuccess(T t) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(t));
+                cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(t));
             }
 
             @Override // io.reactivex.SingleObserver
             public void onError(Throwable th) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(ResultKt.createFailure(th)));
             }
         }));
         Object result = cancellableContinuationImpl.getResult();
@@ -370,7 +370,7 @@ public final class RxAwaitKt {
                     }
                     this.seenValue = true;
                     Result.Companion companion = Result.Companion;
-                    cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(t2));
+                    cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(t2));
                     Disposable disposable2 = this.subscription;
                     if (disposable2 == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("subscription");
@@ -384,7 +384,7 @@ public final class RxAwaitKt {
                     if (mode == Mode.SINGLE && this.seenValue) {
                         if (cancellableContinuationImpl2.isActive()) {
                             Result.Companion companion2 = Result.Companion;
-                            cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(ResultKt.createFailure(new IllegalArgumentException("More than one onNext value for " + mode))));
+                            cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(ResultKt.createFailure(new IllegalArgumentException("More than one onNext value for " + mode))));
                         }
                         Disposable disposable3 = this.subscription;
                         if (disposable3 == null) {
@@ -405,7 +405,7 @@ public final class RxAwaitKt {
                 if (this.seenValue) {
                     if (cancellableContinuationImpl2.isActive()) {
                         Result.Companion companion = Result.Companion;
-                        cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(this.value));
+                        cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(this.value));
                         return;
                     }
                     return;
@@ -415,17 +415,17 @@ public final class RxAwaitKt {
                 CancellableContinuation<T> cancellableContinuation = cancellableContinuationImpl2;
                 if (mode2 == mode3) {
                     Result.Companion companion2 = Result.Companion;
-                    cancellableContinuation.resumeWith(Result.m9182constructorimpl(t));
+                    cancellableContinuation.resumeWith(Result.m9183constructorimpl(t));
                 } else if (cancellableContinuation.isActive()) {
                     Result.Companion companion3 = Result.Companion;
-                    cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(ResultKt.createFailure(new NoSuchElementException("No value received via onNext for " + mode))));
+                    cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(ResultKt.createFailure(new NoSuchElementException("No value received via onNext for " + mode))));
                 }
             }
 
             @Override // io.reactivex.Observer
             public void onError(Throwable th) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(ResultKt.createFailure(th)));
             }
         }));
         Object result = cancellableContinuationImpl.getResult();

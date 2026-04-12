@@ -15,7 +15,6 @@ import androidx.compose.runtime.ComposerImplKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.internal.view.SupportMenu;
 import com.arizona.common.utils.EasyAnimation;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Collection;
@@ -132,7 +131,7 @@ public final class ArizonaRentAddPage extends MobilePage {
         } else if (i != 2) {
         } else {
             if (MapperKt.isJsonValid(data)) {
-                setLimits((ArizonaRentLimitModel) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) ArizonaRentLimitModel.class));
+                setLimits((ArizonaRentLimitModel) MapperKt.getGson().fromJson(data, (Class<Object>) ArizonaRentLimitModel.class));
                 return;
             }
             throw new JsonParseException("Json is not valid");
@@ -143,8 +142,8 @@ public final class ArizonaRentAddPage extends MobilePage {
         MAX_CHAR_COUNT = arizonaRentLimitModel.getDescMax();
         DATA_INPUT_LIMIT_FULLY = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.getFullValueMin()), Integer.valueOf(arizonaRentLimitModel.getFullValueMax()));
         DATA_INPUT_LIMIT_ROOM = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.getRoomValueMin()), Integer.valueOf(arizonaRentLimitModel.getRoomValueMax()));
-        DATA_INPUT_LIMIT_COST_FULLY = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.m11218getFullostMin()), Integer.valueOf(arizonaRentLimitModel.getFullCostMax()));
-        DATA_INPUT_LIMIT_COST_ROOM = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.m11219getRoomostMin()), Integer.valueOf(arizonaRentLimitModel.getRoomCostMax()));
+        DATA_INPUT_LIMIT_COST_FULLY = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.m11220getFullostMin()), Integer.valueOf(arizonaRentLimitModel.getFullCostMax()));
+        DATA_INPUT_LIMIT_COST_ROOM = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.m11221getRoomostMin()), Integer.valueOf(arizonaRentLimitModel.getRoomCostMax()));
     }
 
     private final void setAvailableRealEstateList(List<ArizonaRentRealEstateModel> list) {
@@ -194,10 +193,11 @@ public final class ArizonaRentAddPage extends MobilePage {
         mpArizonaRentAddPageBinding.etDesc.setText((CharSequence) null);
         mpArizonaRentAddPageBinding.etFrom.setText((CharSequence) null);
         mpArizonaRentAddPageBinding.etTo.setText((CharSequence) null);
-        mpArizonaRentAddPageBinding.etCost.setText((CharSequence) null);
+        mpArizonaRentAddPageBinding.etCostK.setText((CharSequence) null);
+        mpArizonaRentAddPageBinding.etCostKk.setText((CharSequence) null);
         mpArizonaRentAddPageBinding.tvDesc.setText((CharSequence) null);
         checkSelectedRealEstate();
-        for (CustomCardView customCardView : CollectionsKt.listOf((Object[]) new CustomCardView[]{mpArizonaRentAddPageBinding.descContainer, mpArizonaRentAddPageBinding.toContainer, mpArizonaRentAddPageBinding.fromContainer, mpArizonaRentAddPageBinding.costContainer})) {
+        for (CustomCardView customCardView : CollectionsKt.listOf((Object[]) new CustomCardView[]{mpArizonaRentAddPageBinding.descContainer, mpArizonaRentAddPageBinding.toContainer, mpArizonaRentAddPageBinding.fromContainer, mpArizonaRentAddPageBinding.costContainerKk, mpArizonaRentAddPageBinding.costContainerK})) {
             Intrinsics.checkNotNull(customCardView);
             isError(false, customCardView);
         }
@@ -212,7 +212,7 @@ public final class ArizonaRentAddPage extends MobilePage {
         EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
         ImageView btnBack = mpArizonaRentAddPageBinding.topBar.btnBack;
         Intrinsics.checkNotNullExpressionValue(btnBack, "btnBack");
-        EasyAnimation.animateClick$default(easyAnimation, btnBack, 0L, null, new Function0() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda3
+        EasyAnimation.animateClick$default(easyAnimation, btnBack, 0L, null, new Function0() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit unit;
@@ -220,13 +220,13 @@ public final class ArizonaRentAddPage extends MobilePage {
                 return unit;
             }
         }, 3, null);
-        mpArizonaRentAddPageBinding.btnFully.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda4
+        mpArizonaRentAddPageBinding.btnFully.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ArizonaRentAddPage.setupListeners$lambda$0$1(ArizonaRentAddPage.this, view);
             }
         });
-        mpArizonaRentAddPageBinding.btnRoom.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda5
+        mpArizonaRentAddPageBinding.btnRoom.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ArizonaRentAddPage.setupListeners$lambda$0$2(ArizonaRentAddPage.this, view);
@@ -238,7 +238,7 @@ public final class ArizonaRentAddPage extends MobilePage {
         Intrinsics.checkNotNullExpressionValue(descContainer, "descContainer");
         TextView tvDescError = mpArizonaRentAddPageBinding.tvDescError;
         Intrinsics.checkNotNullExpressionValue(tvDescError, "tvDescError");
-        ArizonaRentResponseKt.onChangeListeners$default(etDesc, false, 0, 0, descContainer, tvDescError, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda6
+        ArizonaRentResponseKt.onChangeListeners$default(etDesc, false, 0, 0, descContainer, tvDescError, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit unit;
@@ -246,47 +246,47 @@ public final class ArizonaRentAddPage extends MobilePage {
                 return unit;
             }
         }, 7, null);
-        CustomEditText etCost = mpArizonaRentAddPageBinding.etCost;
-        Intrinsics.checkNotNullExpressionValue(etCost, "etCost");
+        CustomEditText etCostK = mpArizonaRentAddPageBinding.etCostK;
+        Intrinsics.checkNotNullExpressionValue(etCostK, "etCostK");
         int intValue = this.inputFormatCost.getSecond().intValue();
         int intValue2 = this.inputFormatCost.getFirst().intValue();
-        CustomCardView costContainer = mpArizonaRentAddPageBinding.costContainer;
-        Intrinsics.checkNotNullExpressionValue(costContainer, "costContainer");
+        CustomCardView costContainerK = mpArizonaRentAddPageBinding.costContainerK;
+        Intrinsics.checkNotNullExpressionValue(costContainerK, "costContainerK");
         TextView tvCostError = mpArizonaRentAddPageBinding.tvCostError;
         Intrinsics.checkNotNullExpressionValue(tvCostError, "tvCostError");
-        ArizonaRentResponseKt.onChangeListeners$default(etCost, false, intValue2, intValue, costContainer, tvCostError, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda7
+        ArizonaRentResponseKt.onChangeListeners$default(etCostK, false, intValue2, intValue, costContainerK, tvCostError, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit unit;
-                unit = ArizonaRentAddPage.setupListeners$lambda$0$4(ArizonaRentAddPage.this, (Editable) obj);
+                unit = ArizonaRentAddPage.setupListeners$lambda$0$4(ArizonaRentAddPage.this, mpArizonaRentAddPageBinding, (Editable) obj);
+                return unit;
+            }
+        }, 1, null);
+        CustomEditText etCostKk = mpArizonaRentAddPageBinding.etCostKk;
+        Intrinsics.checkNotNullExpressionValue(etCostKk, "etCostKk");
+        int intValue3 = this.inputFormatCost.getSecond().intValue();
+        int intValue4 = this.inputFormatCost.getFirst().intValue();
+        CustomCardView costContainerKk = mpArizonaRentAddPageBinding.costContainerKk;
+        Intrinsics.checkNotNullExpressionValue(costContainerKk, "costContainerKk");
+        TextView tvCostError2 = mpArizonaRentAddPageBinding.tvCostError;
+        Intrinsics.checkNotNullExpressionValue(tvCostError2, "tvCostError");
+        ArizonaRentResponseKt.onChangeListeners$default(etCostKk, false, intValue4, intValue3, costContainerKk, tvCostError2, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda10
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit unit;
+                unit = ArizonaRentAddPage.setupListeners$lambda$0$5(ArizonaRentAddPage.this, mpArizonaRentAddPageBinding, (Editable) obj);
                 return unit;
             }
         }, 1, null);
         CustomEditText etFrom = mpArizonaRentAddPageBinding.etFrom;
         Intrinsics.checkNotNullExpressionValue(etFrom, "etFrom");
-        int intValue3 = this.inputFormat.getSecond().intValue();
-        int intValue4 = this.inputFormat.getFirst().intValue();
+        int intValue5 = this.inputFormat.getSecond().intValue();
+        int intValue6 = this.inputFormat.getFirst().intValue();
         CustomCardView fromContainer = mpArizonaRentAddPageBinding.fromContainer;
         Intrinsics.checkNotNullExpressionValue(fromContainer, "fromContainer");
         TextView tvDataError = mpArizonaRentAddPageBinding.tvDataError;
         Intrinsics.checkNotNullExpressionValue(tvDataError, "tvDataError");
-        ArizonaRentResponseKt.onChangeListeners$default(etFrom, false, intValue4, intValue3, fromContainer, tvDataError, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda8
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit unit;
-                unit = ArizonaRentAddPage.setupListeners$lambda$0$5(ArizonaRentAddPage.this, (Editable) obj);
-                return unit;
-            }
-        }, 1, null);
-        CustomEditText etTo = mpArizonaRentAddPageBinding.etTo;
-        Intrinsics.checkNotNullExpressionValue(etTo, "etTo");
-        int intValue5 = this.inputFormat.getSecond().intValue();
-        int intValue6 = this.inputFormat.getFirst().intValue();
-        CustomCardView toContainer = mpArizonaRentAddPageBinding.toContainer;
-        Intrinsics.checkNotNullExpressionValue(toContainer, "toContainer");
-        TextView tvDataError2 = mpArizonaRentAddPageBinding.tvDataError;
-        Intrinsics.checkNotNullExpressionValue(tvDataError2, "tvDataError");
-        ArizonaRentResponseKt.onChangeListeners$default(etTo, false, intValue6, intValue5, toContainer, tvDataError2, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda9
+        ArizonaRentResponseKt.onChangeListeners$default(etFrom, false, intValue6, intValue5, fromContainer, tvDataError, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit unit;
@@ -294,7 +294,23 @@ public final class ArizonaRentAddPage extends MobilePage {
                 return unit;
             }
         }, 1, null);
-        mpArizonaRentAddPageBinding.spinnerRealEstate.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$8
+        CustomEditText etTo = mpArizonaRentAddPageBinding.etTo;
+        Intrinsics.checkNotNullExpressionValue(etTo, "etTo");
+        int intValue7 = this.inputFormat.getSecond().intValue();
+        int intValue8 = this.inputFormat.getFirst().intValue();
+        CustomCardView toContainer = mpArizonaRentAddPageBinding.toContainer;
+        Intrinsics.checkNotNullExpressionValue(toContainer, "toContainer");
+        TextView tvDataError2 = mpArizonaRentAddPageBinding.tvDataError;
+        Intrinsics.checkNotNullExpressionValue(tvDataError2, "tvDataError");
+        ArizonaRentResponseKt.onChangeListeners$default(etTo, false, intValue8, intValue7, toContainer, tvDataError2, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda12
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit unit;
+                unit = ArizonaRentAddPage.setupListeners$lambda$0$7(ArizonaRentAddPage.this, (Editable) obj);
+                return unit;
+            }
+        }, 1, null);
+        mpArizonaRentAddPageBinding.spinnerRealEstate.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$9
             @Override // android.widget.AdapterView.OnItemSelectedListener
             public void onNothingSelected(AdapterView<?> parent) {
                 Intrinsics.checkNotNullParameter(parent, "parent");
@@ -305,13 +321,13 @@ public final class ArizonaRentAddPage extends MobilePage {
                 CoroutineScope coroutineScope;
                 Intrinsics.checkNotNullParameter(parent, "parent");
                 coroutineScope = ArizonaRentAddPage.this.scope;
-                BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new ArizonaRentAddPage$setupListeners$1$8$onItemSelected$1(mpArizonaRentAddPageBinding, ArizonaRentAddPage.this, null), 3, null);
+                BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new ArizonaRentAddPage$setupListeners$1$9$onItemSelected$1(mpArizonaRentAddPageBinding, ArizonaRentAddPage.this, null), 3, null);
             }
         });
-        mpArizonaRentAddPageBinding.btnCreateAd.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda10
+        mpArizonaRentAddPageBinding.btnCreateAd.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ArizonaRentAddPage.setupListeners$lambda$0$7(ArizonaRentAddPage.this, view);
+                ArizonaRentAddPage.setupListeners$lambda$0$8(ArizonaRentAddPage.this, view);
             }
         });
     }
@@ -375,15 +391,14 @@ public final class ArizonaRentAddPage extends MobilePage {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit setupListeners$lambda$0$4(ArizonaRentAddPage arizonaRentAddPage, Editable editable) {
-        BuildersKt__Builders_commonKt.launch$default(arizonaRentAddPage.scope, null, null, new ArizonaRentAddPage$setupListeners$1$5$1(arizonaRentAddPage, editable, null), 3, null);
+    public static final Unit setupListeners$lambda$0$4(ArizonaRentAddPage arizonaRentAddPage, MpArizonaRentAddPageBinding mpArizonaRentAddPageBinding, Editable editable) {
+        BuildersKt__Builders_commonKt.launch$default(arizonaRentAddPage.scope, null, null, new ArizonaRentAddPage$setupListeners$1$5$1(mpArizonaRentAddPageBinding, editable, arizonaRentAddPage, null), 3, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit setupListeners$lambda$0$5(ArizonaRentAddPage arizonaRentAddPage, Editable editable) {
-        BuildersKt__Builders_commonKt.launch$default(arizonaRentAddPage.scope, null, null, new ArizonaRentAddPage$setupListeners$1$6$1(arizonaRentAddPage, editable, null), 3, null);
-        arizonaRentAddPage.checkToFrom();
+    public static final Unit setupListeners$lambda$0$5(ArizonaRentAddPage arizonaRentAddPage, MpArizonaRentAddPageBinding mpArizonaRentAddPageBinding, Editable editable) {
+        BuildersKt__Builders_commonKt.launch$default(arizonaRentAddPage.scope, null, null, new ArizonaRentAddPage$setupListeners$1$6$1(mpArizonaRentAddPageBinding, editable, arizonaRentAddPage, null), 3, null);
         return Unit.INSTANCE;
     }
 
@@ -395,7 +410,14 @@ public final class ArizonaRentAddPage extends MobilePage {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$0$7(ArizonaRentAddPage arizonaRentAddPage, View view) {
+    public static final Unit setupListeners$lambda$0$7(ArizonaRentAddPage arizonaRentAddPage, Editable editable) {
+        BuildersKt__Builders_commonKt.launch$default(arizonaRentAddPage.scope, null, null, new ArizonaRentAddPage$setupListeners$1$8$1(arizonaRentAddPage, editable, null), 3, null);
+        arizonaRentAddPage.checkToFrom();
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupListeners$lambda$0$8(ArizonaRentAddPage arizonaRentAddPage, View view) {
         MobilePage.sendFrontendMessage$default(arizonaRentAddPage, MobilePHoneSendSubIds.RENT_ADD_AD.getSubIds(), 0, StringKt.toStringJson(arizonaRentAddPage.adState.getValue()), 2, null);
     }
 
@@ -462,7 +484,6 @@ public final class ArizonaRentAddPage extends MobilePage {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void isError(boolean z, CustomCardView customCardView) {
-        Log.d("arizona_rent", "isError: " + z + " " + customCardView);
         if (z) {
             customCardView.setBorder(SupportMenu.CATEGORY_MASK);
         } else {
@@ -492,7 +513,8 @@ public final class ArizonaRentAddPage extends MobilePage {
     public final EditTextValidationBuilder updateLimitData() {
         MpArizonaRentAddPageBinding mpArizonaRentAddPageBinding = this.binding;
         Log.d("arizona_rent", "updateLimitData: " + this.inputFormat);
-        mpArizonaRentAddPageBinding.etCost.getEditTextValidationBuilder().setMaxInputCount(this.inputFormatCost.getSecond().intValue()).setMinInputCount(this.inputFormatCost.getFirst().intValue());
+        mpArizonaRentAddPageBinding.etCostKk.getEditTextValidationBuilder().setMaxInputCount(this.inputFormatCost.getSecond().intValue()).setMinInputCount(this.inputFormatCost.getFirst().intValue());
+        mpArizonaRentAddPageBinding.etCostK.getEditTextValidationBuilder().setMaxInputCount(this.inputFormatCost.getSecond().intValue()).setMinInputCount(this.inputFormatCost.getFirst().intValue());
         mpArizonaRentAddPageBinding.etTo.getEditTextValidationBuilder().setMaxInputCount(this.inputFormat.getSecond().intValue()).setMinInputCount(this.inputFormat.getFirst().intValue());
         return mpArizonaRentAddPageBinding.etFrom.getEditTextValidationBuilder().setMaxInputCount(this.inputFormat.getSecond().intValue()).setMinInputCount(this.inputFormat.getFirst().intValue());
     }
@@ -500,18 +522,36 @@ public final class ArizonaRentAddPage extends MobilePage {
     /* JADX INFO: Access modifiers changed from: private */
     public final void checkEditTexts() {
         MpArizonaRentAddPageBinding mpArizonaRentAddPageBinding = this.binding;
-        CustomEditText etCost = mpArizonaRentAddPageBinding.etCost;
-        Intrinsics.checkNotNullExpressionValue(etCost, "etCost");
-        CustomCardView costContainer = mpArizonaRentAddPageBinding.costContainer;
-        Intrinsics.checkNotNullExpressionValue(costContainer, "costContainer");
-        TextView tvCost = mpArizonaRentAddPageBinding.tvCost;
-        Intrinsics.checkNotNullExpressionValue(tvCost, "tvCost");
-        ArizonaRentResponseKt.checkValidate(etCost, costContainer, tvCost, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda11
+        CustomEditText etCostK = mpArizonaRentAddPageBinding.etCostK;
+        Intrinsics.checkNotNullExpressionValue(etCostK, "etCostK");
+        CustomEditText etCostKk = mpArizonaRentAddPageBinding.etCostKk;
+        Intrinsics.checkNotNullExpressionValue(etCostKk, "etCostKk");
+        CustomCardView costContainerK = mpArizonaRentAddPageBinding.costContainerK;
+        Intrinsics.checkNotNullExpressionValue(costContainerK, "costContainerK");
+        TextView tvCostError = mpArizonaRentAddPageBinding.tvCostError;
+        Intrinsics.checkNotNullExpressionValue(tvCostError, "tvCostError");
+        ArizonaRentResponseKt.checkValidateForCost(etCostK, true, etCostKk, costContainerK, tvCostError, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit checkEditTexts$lambda$0$0;
                 checkEditTexts$lambda$0$0 = ArizonaRentAddPage.checkEditTexts$lambda$0$0((Editable) obj);
                 return checkEditTexts$lambda$0$0;
+            }
+        });
+        CustomEditText etCostKk2 = mpArizonaRentAddPageBinding.etCostKk;
+        Intrinsics.checkNotNullExpressionValue(etCostKk2, "etCostKk");
+        CustomEditText etCostK2 = mpArizonaRentAddPageBinding.etCostK;
+        Intrinsics.checkNotNullExpressionValue(etCostK2, "etCostK");
+        CustomCardView costContainerKk = mpArizonaRentAddPageBinding.costContainerKk;
+        Intrinsics.checkNotNullExpressionValue(costContainerKk, "costContainerKk");
+        TextView tvCostError2 = mpArizonaRentAddPageBinding.tvCostError;
+        Intrinsics.checkNotNullExpressionValue(tvCostError2, "tvCostError");
+        ArizonaRentResponseKt.checkValidateForCost(etCostKk2, false, etCostK2, costContainerKk, tvCostError2, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda2
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit checkEditTexts$lambda$0$1;
+                checkEditTexts$lambda$0$1 = ArizonaRentAddPage.checkEditTexts$lambda$0$1((Editable) obj);
+                return checkEditTexts$lambda$0$1;
             }
         });
         CustomEditText etTo = mpArizonaRentAddPageBinding.etTo;
@@ -520,12 +560,12 @@ public final class ArizonaRentAddPage extends MobilePage {
         Intrinsics.checkNotNullExpressionValue(toContainer, "toContainer");
         TextView tvDataError = mpArizonaRentAddPageBinding.tvDataError;
         Intrinsics.checkNotNullExpressionValue(tvDataError, "tvDataError");
-        ArizonaRentResponseKt.checkValidate(etTo, toContainer, tvDataError, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda1
+        ArizonaRentResponseKt.checkValidate(etTo, toContainer, tvDataError, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit checkEditTexts$lambda$0$1;
-                checkEditTexts$lambda$0$1 = ArizonaRentAddPage.checkEditTexts$lambda$0$1((Editable) obj);
-                return checkEditTexts$lambda$0$1;
+                Unit checkEditTexts$lambda$0$2;
+                checkEditTexts$lambda$0$2 = ArizonaRentAddPage.checkEditTexts$lambda$0$2((Editable) obj);
+                return checkEditTexts$lambda$0$2;
             }
         });
         CustomEditText etFrom = mpArizonaRentAddPageBinding.etFrom;
@@ -534,12 +574,12 @@ public final class ArizonaRentAddPage extends MobilePage {
         Intrinsics.checkNotNullExpressionValue(fromContainer, "fromContainer");
         TextView tvDataError2 = mpArizonaRentAddPageBinding.tvDataError;
         Intrinsics.checkNotNullExpressionValue(tvDataError2, "tvDataError");
-        ArizonaRentResponseKt.checkValidate(etFrom, fromContainer, tvDataError2, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda2
+        ArizonaRentResponseKt.checkValidate(etFrom, fromContainer, tvDataError2, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit checkEditTexts$lambda$0$2;
-                checkEditTexts$lambda$0$2 = ArizonaRentAddPage.checkEditTexts$lambda$0$2((Editable) obj);
-                return checkEditTexts$lambda$0$2;
+                Unit checkEditTexts$lambda$0$3;
+                checkEditTexts$lambda$0$3 = ArizonaRentAddPage.checkEditTexts$lambda$0$3((Editable) obj);
+                return checkEditTexts$lambda$0$3;
             }
         });
     }
@@ -556,6 +596,11 @@ public final class ArizonaRentAddPage extends MobilePage {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit checkEditTexts$lambda$0$2(Editable editable) {
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit checkEditTexts$lambda$0$3(Editable editable) {
         return Unit.INSTANCE;
     }
 

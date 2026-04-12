@@ -17,6 +17,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.arizonaui.biz.MyBusinessScreen;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.feature.business.R;
 import ru.mrlargha.feature.business.databinding.MyBusinessItemBinding;
 /* compiled from: MyBusinessListAdapter.kt */
@@ -90,14 +91,14 @@ public final class MyBusinessListAdapter extends RecyclerView.Adapter<BusinessVi
             }
             MyBusinessScreen.Companion.BusinessItemStatInfo businessItemStatInfo = (MyBusinessScreen.Companion.BusinessItemStatInfo) obj;
             if (i2 == 0) {
-                binding.firstValue.setText(businessItemStatInfo.getValue());
-                binding.firstTitle.setText(businessItemStatInfo.getTitle());
+                binding.firstValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getValue(), 0.0f, 1, null));
+                binding.firstTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getTitle(), 0.0f, 1, null));
             } else if (i2 == 1) {
-                binding.secondValue.setText(businessItemStatInfo.getValue());
-                binding.secondTitle.setText(businessItemStatInfo.getTitle());
+                binding.secondValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getValue(), 0.0f, 1, null));
+                binding.secondTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getTitle(), 0.0f, 1, null));
             } else if (i2 == 2) {
-                binding.thirdValue.setText(businessItemStatInfo.getValue());
-                binding.thirdTitle.setText(businessItemStatInfo.getTitle());
+                binding.thirdValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getValue(), 0.0f, 1, null));
+                binding.thirdTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getTitle(), 0.0f, 1, null));
             }
             i2 = i3;
         }

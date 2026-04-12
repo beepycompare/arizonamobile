@@ -27,6 +27,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.feature.business.R;
 import ru.mrlargha.feature.business.databinding.MyBizScreenBinding;
 /* compiled from: MyBusinessScreen.kt */
@@ -192,7 +193,7 @@ public final class MyBusinessScreen extends SAMPUIElement {
         this.currentBizId = mainBusinessInfo.getId();
         myBizScreenBinding.mainPage.setVisibility(8);
         myBizScreenBinding.infoPage.setVisibility(0);
-        myBizScreenBinding.balance.setText(String.valueOf(mainBusinessInfo.getBalance()));
+        myBizScreenBinding.balance.setText(MoneyElementKt.toMoneyFormattedSpannable$default(mainBusinessInfo.getBalance(), false, null, null, 7, null));
         myBizScreenBinding.bizName.setText(mainBusinessInfo.getTitle());
         myBizScreenBinding.bizId.setText(String.valueOf(mainBusinessInfo.getId()));
         String currency = mainBusinessInfo.getCurrency();
@@ -715,10 +716,10 @@ public final class MyBusinessScreen extends SAMPUIElement {
         }
 
         /* compiled from: MyBusinessScreen.kt */
-        @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0016\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001BG\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\u0006\u0010\u0007\u001a\u00020\u0003\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n\u0012\b\u0010\f\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\r\u0010\u000eJ\t\u0010\u0019\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001a\u001a\u00020\u0005HÆ\u0003J\t\u0010\u001b\u001a\u00020\u0005HÆ\u0003J\t\u0010\u001c\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001d\u001a\u00020\u0003HÆ\u0003J\u000f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u000b0\nHÆ\u0003J\u000b\u0010\u001f\u001a\u0004\u0018\u00010\u0005HÆ\u0003JW\u0010 \u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00052\b\b\u0002\u0010\u0007\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\u00032\u000e\b\u0002\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\u0005HÆ\u0001J\u0014\u0010!\u001a\u00020\"2\b\u0010#\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010$\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010%\u001a\u00020\u0005HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\u0006\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0012R\u0011\u0010\u0007\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0010R\u0011\u0010\b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0013\u0010\f\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0012¨\u0006&"}, d2 = {"Lru/mrlargha/arizonaui/biz/MyBusinessScreen$Companion$MainBusinessInfo;", "", "id", "", "type", "", "title", "balance", "opened", "stats", "", "Lru/mrlargha/arizonaui/biz/MyBusinessScreen$Companion$MainBusinessInfoStat;", FirebaseAnalytics.Param.CURRENCY, "<init>", "(ILjava/lang/String;Ljava/lang/String;IILjava/util/List;Ljava/lang/String;)V", "getId", "()I", "getType", "()Ljava/lang/String;", "getTitle", "getBalance", "getOpened", "getStats", "()Ljava/util/List;", "getCurrency", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "copy", "equals", "", "other", "hashCode", "toString", "business"}, k = 1, mv = {2, 3, 0}, xi = 48)
+        @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0017\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001BG\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\u0003\u0012\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b\u0012\b\u0010\r\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u000e\u0010\u000fJ\t\u0010\u001b\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001c\u001a\u00020\u0005HÆ\u0003J\t\u0010\u001d\u001a\u00020\u0005HÆ\u0003J\t\u0010\u001e\u001a\u00020\bHÆ\u0003J\t\u0010\u001f\u001a\u00020\u0003HÆ\u0003J\u000f\u0010 \u001a\b\u0012\u0004\u0012\u00020\f0\u000bHÆ\u0003J\u000b\u0010!\u001a\u0004\u0018\u00010\u0005HÆ\u0003JW\u0010\"\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00052\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\u00032\u000e\b\u0002\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b2\n\b\u0002\u0010\r\u001a\u0004\u0018\u00010\u0005HÆ\u0001J\u0014\u0010#\u001a\u00020$2\b\u0010%\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010&\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010'\u001a\u00020\u0005HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0011\u0010\u0006\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0013R\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0011\u0010\t\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0011R\u0017\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u0013\u0010\r\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0013¨\u0006("}, d2 = {"Lru/mrlargha/arizonaui/biz/MyBusinessScreen$Companion$MainBusinessInfo;", "", "id", "", "type", "", "title", "balance", "", "opened", "stats", "", "Lru/mrlargha/arizonaui/biz/MyBusinessScreen$Companion$MainBusinessInfoStat;", FirebaseAnalytics.Param.CURRENCY, "<init>", "(ILjava/lang/String;Ljava/lang/String;JILjava/util/List;Ljava/lang/String;)V", "getId", "()I", "getType", "()Ljava/lang/String;", "getTitle", "getBalance", "()J", "getOpened", "getStats", "()Ljava/util/List;", "getCurrency", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "copy", "equals", "", "other", "hashCode", "toString", "business"}, k = 1, mv = {2, 3, 0}, xi = 48)
         /* loaded from: classes5.dex */
         public static final class MainBusinessInfo {
-            private final int balance;
+            private final long balance;
             private final String currency;
             private final int id;
             private final int opened;
@@ -726,34 +727,34 @@ public final class MyBusinessScreen extends SAMPUIElement {
             private final String title;
             private final String type;
 
-            public static /* synthetic */ MainBusinessInfo copy$default(MainBusinessInfo mainBusinessInfo, int i, String str, String str2, int i2, int i3, List list, String str3, int i4, Object obj) {
-                if ((i4 & 1) != 0) {
+            public static /* synthetic */ MainBusinessInfo copy$default(MainBusinessInfo mainBusinessInfo, int i, String str, String str2, long j, int i2, List list, String str3, int i3, Object obj) {
+                if ((i3 & 1) != 0) {
                     i = mainBusinessInfo.id;
                 }
-                if ((i4 & 2) != 0) {
+                if ((i3 & 2) != 0) {
                     str = mainBusinessInfo.type;
                 }
-                if ((i4 & 4) != 0) {
+                if ((i3 & 4) != 0) {
                     str2 = mainBusinessInfo.title;
                 }
-                if ((i4 & 8) != 0) {
-                    i2 = mainBusinessInfo.balance;
+                if ((i3 & 8) != 0) {
+                    j = mainBusinessInfo.balance;
                 }
-                if ((i4 & 16) != 0) {
-                    i3 = mainBusinessInfo.opened;
+                if ((i3 & 16) != 0) {
+                    i2 = mainBusinessInfo.opened;
                 }
                 List<MainBusinessInfoStat> list2 = list;
-                if ((i4 & 32) != 0) {
+                if ((i3 & 32) != 0) {
                     list2 = mainBusinessInfo.stats;
                 }
-                if ((i4 & 64) != 0) {
+                if ((i3 & 64) != 0) {
                     str3 = mainBusinessInfo.currency;
                 }
-                List list3 = list2;
                 String str4 = str3;
-                int i5 = i3;
+                int i4 = i2;
+                long j2 = j;
                 String str5 = str2;
-                return mainBusinessInfo.copy(i, str, str5, i2, i5, list3, str4);
+                return mainBusinessInfo.copy(i, str, str5, j2, i4, list2, str4);
             }
 
             public final int component1() {
@@ -768,7 +769,7 @@ public final class MyBusinessScreen extends SAMPUIElement {
                 return this.title;
             }
 
-            public final int component4() {
+            public final long component4() {
                 return this.balance;
             }
 
@@ -784,11 +785,11 @@ public final class MyBusinessScreen extends SAMPUIElement {
                 return this.currency;
             }
 
-            public final MainBusinessInfo copy(int i, String type, String title, int i2, int i3, List<MainBusinessInfoStat> stats, String str) {
+            public final MainBusinessInfo copy(int i, String type, String title, long j, int i2, List<MainBusinessInfoStat> stats, String str) {
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(title, "title");
                 Intrinsics.checkNotNullParameter(stats, "stats");
-                return new MainBusinessInfo(i, type, title, i2, i3, stats, str);
+                return new MainBusinessInfo(i, type, title, j, i2, stats, str);
             }
 
             public boolean equals(Object obj) {
@@ -803,7 +804,7 @@ public final class MyBusinessScreen extends SAMPUIElement {
             }
 
             public int hashCode() {
-                int hashCode = ((((((((((Integer.hashCode(this.id) * 31) + this.type.hashCode()) * 31) + this.title.hashCode()) * 31) + Integer.hashCode(this.balance)) * 31) + Integer.hashCode(this.opened)) * 31) + this.stats.hashCode()) * 31;
+                int hashCode = ((((((((((Integer.hashCode(this.id) * 31) + this.type.hashCode()) * 31) + this.title.hashCode()) * 31) + Long.hashCode(this.balance)) * 31) + Integer.hashCode(this.opened)) * 31) + this.stats.hashCode()) * 31;
                 String str = this.currency;
                 return hashCode + (str == null ? 0 : str.hashCode());
             }
@@ -812,21 +813,21 @@ public final class MyBusinessScreen extends SAMPUIElement {
                 int i = this.id;
                 String str = this.type;
                 String str2 = this.title;
-                int i2 = this.balance;
-                int i3 = this.opened;
+                long j = this.balance;
+                int i2 = this.opened;
                 List<MainBusinessInfoStat> list = this.stats;
-                return "MainBusinessInfo(id=" + i + ", type=" + str + ", title=" + str2 + ", balance=" + i2 + ", opened=" + i3 + ", stats=" + list + ", currency=" + this.currency + ")";
+                return "MainBusinessInfo(id=" + i + ", type=" + str + ", title=" + str2 + ", balance=" + j + ", opened=" + i2 + ", stats=" + list + ", currency=" + this.currency + ")";
             }
 
-            public MainBusinessInfo(int i, String type, String title, int i2, int i3, List<MainBusinessInfoStat> stats, String str) {
+            public MainBusinessInfo(int i, String type, String title, long j, int i2, List<MainBusinessInfoStat> stats, String str) {
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(title, "title");
                 Intrinsics.checkNotNullParameter(stats, "stats");
                 this.id = i;
                 this.type = type;
                 this.title = title;
-                this.balance = i2;
-                this.opened = i3;
+                this.balance = j;
+                this.opened = i2;
                 this.stats = stats;
                 this.currency = str;
             }
@@ -843,7 +844,7 @@ public final class MyBusinessScreen extends SAMPUIElement {
                 return this.title;
             }
 
-            public final int getBalance() {
+            public final long getBalance() {
                 return this.balance;
             }
 

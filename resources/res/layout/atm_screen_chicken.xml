@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/root" android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:id="@+id/backgroundImage" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/atm_bg_chicken" android:scaleType="centerCrop"/>
+    <ImageView android:id="@+id/bgResult" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop"/>
+    <ImageView android:layout_gravity="top|center_horizontal" android:id="@+id/atmImage" android:layout_width="match_parent" android:layout_height="@dimen/_220sdp" android:adjustViewBounds="true"/>
+    <LinearLayout android:orientation="vertical" android:id="@+id/contentContainer" android:paddingTop="@dimen/_14sdp" android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="@dimen/_14sdp" android:paddingEnd="@dimen/_14sdp">
+        <LinearLayout android:gravity="top" android:orientation="horizontal" android:id="@+id/topRow" android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <LinearLayout android:orientation="vertical" android:id="@+id/leftPanel" android:layout_width="@dimen/_158sdp" android:layout_height="wrap_content">
+                <ru.mrlargha.commonui.utils.ui.StrokeTextView android:textSize="@dimen/_18sdp" android:textColor="#ffe58e" android:id="@+id/titleText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Кормление" android:lineSpacingExtra="@dimen/_1sdp" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                <ru.mrlargha.commonui.utils.ui.StrokeTextView android:textSize="@dimen/_18sdp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="курочек" android:lineSpacingExtra="@dimen/_1sdp" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/infoCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_10sdp" app:backgroundMainColor="#66000000" app:backgroundSecondColor="#40000000" app:borderMainColor="#33ffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_6sdp">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/_10sdp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <ImageView android:id="@+id/infoIcon" android:layout_width="@dimen/_18sdp" android:layout_height="@dimen/_18sdp" android:src="@drawable/atm_info_ic" android:tint="#ffe58e"/>
+                        <TextView android:textSize="@dimen/_7sdp" android:textColor="#ffffff" android:id="@+id/infoText" android:layout_width="0dp" android:layout_height="wrap_content" android:text="Чтобы накормить всех куриц, вам необходимо перенести семечки в соответствии с размером курицы" android:layout_weight="1" android:layout_marginStart="@dimen/_8sdp"/>
+                    </LinearLayout>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </LinearLayout>
+            <LinearLayout android:gravity="end" android:orientation="vertical" android:id="@+id/rightPanel" android:layout_width="@dimen/_126sdp" android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="top|center_horizontal" android:layout_gravity="top|center_horizontal" android:orientation="vertical" android:id="@+id/centerPanel" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1">
+        <LinearLayout android:gravity="top|center_horizontal" android:orientation="horizontal" android:id="@+id/slotsRow" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <FrameLayout android:id="@+id/slot1Container" android:layout_width="@dimen/_120sdp" android:layout_height="@dimen/_168sdp">
+                <include layout="@layout/item_atm_slot_chicken"/>
+            </FrameLayout>
+            <FrameLayout android:id="@+id/slot10Container" android:layout_width="@dimen/_100sdp" android:layout_height="@dimen/_156sdp">
+                <include layout="@layout/item_atm_slot_chicken"/>
+            </FrameLayout>
+            <FrameLayout android:id="@+id/slot50Container" android:layout_width="@dimen/_80sdp" android:layout_height="@dimen/_144sdp">
+                <include layout="@layout/item_atm_slot_chicken"/>
+            </FrameLayout>
+            <FrameLayout android:id="@+id/slot100Container" android:layout_width="@dimen/_60sdp" android:layout_height="@dimen/_134sdp">
+                <include layout="@layout/item_atm_slot_chicken"/>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:id="@+id/statusPanel" android:layout_width="@dimen/_230sdp" android:layout_height="@dimen/_52sdp">
+        <TextView android:textSize="@dimen/_16sdp" android:textStyle="bold" android:textColor="#a8ff57" android:layout_gravity="center" android:id="@+id/statusText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:textAllCaps="true"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    <View android:layout_gravity="right" android:id="@+id/close" android:background="@drawable/btn_close" android:layout_width="@dimen/_24sdp" android:layout_height="@dimen/_24sdp" android:layout_margin="@dimen/_16sdp"/>
+    <FrameLayout android:gravity="center_vertical" android:layout_gravity="right" android:orientation="horizontal" android:id="@+id/progressBlock" android:layout_width="@dimen/_140sdp" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_2sdp" android:layout_marginRight="@dimen/_40sdp">
+        <ImageView android:id="@+id/progressIcon" android:layout_width="@dimen/_60sdp" android:layout_height="@dimen/_60sdp" android:src="@drawable/atm_ic_money_pack_chicken"/>
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="@dimen/_90sdp" android:layout_height="wrap_content" android:layout_marginStart="@dimen/_6sdp">
+            <ru.mrlargha.commonui.utils.ui.StrokeTextView android:textSize="@dimen/_7sdp" android:textColor="#ffffff" android:id="@+id/progressTitleText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="РАСПРЕДЕЛЕНО\10семечек" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            <ru.mrlargha.commonui.utils.ui.StrokeTextView android:textSize="@dimen/_18sdp" android:textColor="#ffe58e" android:id="@+id/progressText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0/25" android:fontFamily="@font/heading_now_66_bold"/>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="bottom|center_horizontal" android:id="@+id/bottomArea" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="bottom|center_horizontal" android:id="@+id/bagImage" android:layout_width="wrap_content" android:layout_height="@dimen/_155sdp" android:src="@drawable/atm_bag_chicken" android:adjustViewBounds="true"/>
+        <View android:layout_gravity="bottom|center_horizontal" android:id="@+id/bagTouchArea" android:background="@android:color/transparent" android:layout_width="@dimen/_140sdp" android:layout_height="@dimen/_90sdp"/>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/dragLayer" android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent"/>
+</FrameLayout>

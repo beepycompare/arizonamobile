@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center" android:paddingTop="@dimen/_40sdp" android:paddingBottom="@dimen/_20sdp" android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center" android:paddingTop="@dimen/_40sdp" android:layout_width="match_parent" android:layout_height="match_parent">
     <View android:layout_width="1dp" android:layout_height="1dp" android:layout_weight="1"/>
-    <LinearLayout android:orientation="vertical" android:visibility="gone" android:layout_width="@dimen/_180sdp" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:paddingBottom="@dimen/_20sdp" android:visibility="gone" android:layout_width="@dimen/_180sdp" android:layout_height="match_parent">
         <FrameLayout android:id="@+id/item_top1" android:background="@drawable/event_shop_first_place_bg" android:padding="@dimen/_10sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_10sdp" android:layout_marginBottom="@dimen/_10sdp" android:layout_weight="1" android:layout_marginVertical="@dimen/_10sdp">
             <ImageView android:layout_width="@dimen/_40sdp" android:layout_height="wrap_content" android:src="@drawable/event_first_place_icon" android:adjustViewBounds="true"/>
             <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">

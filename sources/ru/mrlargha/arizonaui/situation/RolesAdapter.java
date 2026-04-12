@@ -17,6 +17,7 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.arizonaui.R;
 import ru.mrlargha.arizonaui.databinding.SituationItemBinding;
 import ru.mrlargha.arizonaui.situation.SituationScreen;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: RolesAdapter.kt */
 @Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\u0003\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002\u001b\u001cB\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u000e\u0010\r\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\nJ\u0018\u0010\u000f\u001a\u00020\u00022\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0016J\u0018\u0010\u0014\u001a\u00020\u000e2\u0006\u0010\u0015\u001a\u00020\u00022\u0006\u0010\u0016\u001a\u00020\u0013H\u0016J\b\u0010\u0017\u001a\u00020\u0013H\u0016J\u0014\u0010\u0018\u001a\u00020\u000e2\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00070\u001aR\u001e\u0010\u0005\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0006j\b\u0012\u0004\u0012\u00020\u0007`\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082.¢\u0006\u0002\n\u0000¨\u0006\u001d"}, d2 = {"Lru/mrlargha/arizonaui/situation/RolesAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/arizonaui/situation/RolesAdapter$RoleViewHolder;", "<init>", "()V", "roles", "Ljava/util/ArrayList;", "Lru/mrlargha/arizonaui/situation/SituationScreen$Companion$RoleInfo;", "Lkotlin/collections/ArrayList;", "onRoleClickListener", "Lru/mrlargha/arizonaui/situation/RolesAdapter$OnRoleClickListener;", "context", "Landroid/content/Context;", "setOnRoleClickListener", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "addRoles", "roleList", "", "OnRoleClickListener", "RoleViewHolder", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
@@ -64,7 +65,7 @@ public final class RolesAdapter extends RecyclerView.Adapter<RoleViewHolder> {
         } else {
             binding.freeSlotsTitle.setText("Свободные слоты: " + roleInfo2.getSlots() + " / ∞");
         }
-        binding.fullInfo.setText(roleInfo2.getDescription());
+        binding.fullInfo.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, roleInfo2.getDescription(), 0.0f, 1, null));
         if (roleInfo2.isPressed()) {
             ConstraintLayout mainInfoContainer = binding.mainInfoContainer;
             Intrinsics.checkNotNullExpressionValue(mainInfoContainer, "mainInfoContainer");

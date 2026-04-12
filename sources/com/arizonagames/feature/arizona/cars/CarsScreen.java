@@ -14,7 +14,6 @@ import com.arizonagames.feature.arizona.cars.ActionsListAdapter;
 import com.arizonagames.feature.arizona.cars.CarInfoListAdapter;
 import com.arizonagames.feature.arizona.cars.ToggleSwitchListAdapter;
 import com.arizonagames.feature.arizona.cars.databinding.CarsLayoutBinding;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -292,19 +291,19 @@ public final class CarsScreen extends SAMPUIElement {
                     return;
                 case 10:
                     if (MapperKt.isJsonValid(data)) {
-                        setCarRarity((CarsRarity) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) CarsRarity.class));
+                        setCarRarity((CarsRarity) MapperKt.getGson().fromJson(data, (Class<Object>) CarsRarity.class));
                         return;
                     }
                     throw new JsonParseException("Json is not valid");
                 case 11:
                     if (MapperKt.isJsonValid(data)) {
-                        setCarInfoArizona((VehicleItem) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) VehicleItem.class));
+                        setCarInfoArizona((VehicleItem) MapperKt.getGson().fromJson(data, (Class<Object>) VehicleItem.class));
                         return;
                     }
                     throw new JsonParseException("Json is not valid");
                 case 12:
                     if (MapperKt.isJsonValid(data)) {
-                        updateFavorites((Favorite) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) Favorite.class));
+                        updateFavorites((Favorite) MapperKt.getGson().fromJson(data, (Class<Object>) Favorite.class));
                         return;
                     }
                     throw new JsonParseException("Json is not valid");

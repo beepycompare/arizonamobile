@@ -129,7 +129,7 @@ public final class SwitchMapObserver<T, R> implements ObservableObserver<T>, Dis
         }
 
         public final void subscribe(T t) {
-            Object m9182constructorimpl;
+            Object m9183constructorimpl;
             if (isDisposed()) {
                 return;
             }
@@ -137,14 +137,14 @@ public final class SwitchMapObserver<T, R> implements ObservableObserver<T>, Dis
             try {
                 Result.Companion companion = Result.Companion;
                 SubstreamSubscriber substreamSubscriber = this;
-                m9182constructorimpl = Result.m9182constructorimpl((Observable) ((SwitchMapObserver) switchMapObserver).mapper.invoke(t));
+                m9183constructorimpl = Result.m9183constructorimpl((Observable) ((SwitchMapObserver) switchMapObserver).mapper.invoke(t));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
+                m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
             }
             final SwitchMapObserver<T, R> switchMapObserver2 = SwitchMapObserver.this;
-            if (Result.m9189isSuccessimpl(m9182constructorimpl)) {
-                attachSubstream(ObservableSubscribeKt.subscribe((Observable) m9182constructorimpl, new Function1<Throwable, Unit>(this) { // from class: ru.rustore.sdk.reactive.observable.SwitchMapObserver$SubstreamSubscriber$subscribe$2$subDisposable$1
+            if (Result.m9190isSuccessimpl(m9183constructorimpl)) {
+                attachSubstream(ObservableSubscribeKt.subscribe((Observable) m9183constructorimpl, new Function1<Throwable, Unit>(this) { // from class: ru.rustore.sdk.reactive.observable.SwitchMapObserver$SubstreamSubscriber$subscribe$2$subDisposable$1
                     final /* synthetic */ SwitchMapObserver<T, R>.SubstreamSubscriber this$0;
 
                     /* JADX INFO: Access modifiers changed from: package-private */
@@ -217,9 +217,9 @@ public final class SwitchMapObserver<T, R> implements ObservableObserver<T>, Dis
                     }
                 }));
             }
-            Throwable m9185exceptionOrNullimpl = Result.m9185exceptionOrNullimpl(m9182constructorimpl);
-            if (m9185exceptionOrNullimpl != null) {
-                sendError(m9185exceptionOrNullimpl);
+            Throwable m9186exceptionOrNullimpl = Result.m9186exceptionOrNullimpl(m9183constructorimpl);
+            if (m9186exceptionOrNullimpl != null) {
+                sendError(m9186exceptionOrNullimpl);
             }
         }
 

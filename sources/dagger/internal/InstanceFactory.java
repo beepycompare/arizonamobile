@@ -1,7 +1,7 @@
 package dagger.internal;
 
 import dagger.Lazy;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class InstanceFactory<T> implements Factory<T>, Lazy<T> {
     private static final InstanceFactory<Object> NULL_INSTANCE_FACTORY = new InstanceFactory<>(null);
     private final T instance;

@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.content.res.ResourcesCompat;
-import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewGroupKt;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
@@ -239,7 +238,7 @@ public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowView
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(0, -2, weightsFormula.get(i2 % weightsFormula.size()).floatValue());
                 Intrinsics.checkNotNull(this.adapter.maxLengthInRow.get(Integer.valueOf(i2)));
                 layoutParams.width = ConverterKt.dpToPx(((Number) obj).intValue() * 5.7f, this.adapter.targetActivity);
-                layoutParams.gravity = GravityCompat.START;
+                layoutParams.gravity = 17;
                 if (i2 == 0) {
                     layoutParams.setMarginStart(0);
                 } else {

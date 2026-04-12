@@ -1,23 +1,24 @@
 package ru.mrlargha.commonui.elements.trade.presentation;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Group;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.gson.JsonParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
+import kotlin.collections.MapsKt;
 import kotlin.collections.SetsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
@@ -30,6 +31,7 @@ import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.TradeScreenBinding;
+import ru.mrlargha.commonui.databinding.ViewUniversalMoneyInputBinding;
 import ru.mrlargha.commonui.domain.db.AppDatabase;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.elements.inventory.domain.ChangeFromSlot;
@@ -37,7 +39,6 @@ import ru.mrlargha.commonui.elements.inventory.domain.ChangeToSlot;
 import ru.mrlargha.commonui.elements.inventory.domain.InventoryResponse;
 import ru.mrlargha.commonui.elements.inventory.domain.InventorySendRequest;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
-import ru.mrlargha.commonui.elements.inventory.presentation.ShowDialogInfo;
 import ru.mrlargha.commonui.elements.inventory.presentation.adapter.DraggedItem;
 import ru.mrlargha.commonui.elements.inventory.presentation.dialog.SelectorDialog;
 import ru.mrlargha.commonui.elements.trade.domain.TradeInfo;
@@ -49,26 +50,28 @@ import ru.mrlargha.commonui.elements.trade.presentation.adapter.TradeInventoryAd
 import ru.mrlargha.commonui.utils.ArizonaBlockType;
 import ru.mrlargha.commonui.utils.ConstantsKt;
 import ru.mrlargha.commonui.utils.GsonStore;
+import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.RodinaBlockType;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
-import ru.mrlargha.commonui.utils.ui.CustomCardView;
+import ru.mrlargha.commonui.utils.ui.textWithIcons.IconAndSize;
+import ru.mrlargha.commonui.utils.ui.textWithIcons.TextWithIconsKt;
 /* compiled from: TradeScreen.kt */
-@Metadata(d1 = {"\u0000\u0084\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u00012\u00020\u0002:\u0001BB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020\u001cH\u0016J\b\u0010(\u001a\u00020&H\u0002J\b\u0010)\u001a\u00020&H\u0002J\b\u0010*\u001a\u00020&H\u0002J\u0018\u0010+\u001a\u00020&2\u0006\u0010,\u001a\u00020\u00062\u0006\u0010-\u001a\u00020\u0006H\u0002J\u0018\u0010.\u001a\u00020&2\u0006\u0010/\u001a\u0002002\u0006\u00101\u001a\u00020\u0006H\u0016J\u0018\u00102\u001a\u00020&2\u0006\u00103\u001a\u00020\u00162\u0006\u00104\u001a\u00020\u0016H\u0002J\u0010\u00105\u001a\u00020&2\u0006\u00106\u001a\u000207H\u0002J\u0018\u00108\u001a\u00020&2\u0006\u00109\u001a\u00020\u00062\u0006\u0010:\u001a\u00020;H\u0002J\u0010\u0010<\u001a\u00020&2\u0006\u0010=\u001a\u00020>H\u0002J\u0018\u0010?\u001a\u00020&2\u0006\u00101\u001a\u00020\u00062\u0006\u0010/\u001a\u000200H\u0002J\b\u0010@\u001a\u00020&H\u0002J\b\u0010A\u001a\u00020&H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u00158BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0018R\u0014\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001f\u001a\n !*\u0004\u0018\u00010 0 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006C"}, d2 = {"Lru/mrlargha/commonui/elements/trade/presentation/TradeScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "tradeScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/TradeScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "tradeInventoryAdapter", "Lru/mrlargha/commonui/elements/trade/presentation/adapter/TradeInventoryAdapter;", "sendItemsAdapter", "Lru/mrlargha/commonui/elements/trade/presentation/adapter/SendItemsAdapter;", "getItemsAdapter", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "getInventoryList", "()Ljava/util/List;", "sendItemsList", "getItemsList", "isConfirmedClicked", "", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "inventoryItemList", "selectedInventoryItem", "setVisible", "", "visible", "defaultScreenState", "initAdapters", "initObservers", "createEmptyLists", "trade", "forTrade", "onBackendMessage", "data", "", "subId", "sendDataFromDrop", "curItem", "toItem", "editValueCostUi", "response", "Lru/mrlargha/commonui/elements/trade/domain/TradeValueResponse;", "selectDrawableType", "type", "view", "Landroid/widget/EditText;", "editUi", "tradeResp", "Lru/mrlargha/commonui/elements/trade/domain/TradeResponse;", "sendData", "addLockedItems", "closeScreen", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\r\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u0002@AB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u001fH\u0016J\u0010\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020\u0006H\u0002J\b\u0010*\u001a\u00020%H\u0002J\b\u0010+\u001a\u00020%H\u0002J\b\u0010,\u001a\u00020%H\u0002J\u0018\u0010-\u001a\u00020%2\u0006\u0010.\u001a\u00020\u00062\u0006\u0010/\u001a\u00020\u0006H\u0002J\u0018\u00100\u001a\u00020%2\u0006\u00101\u001a\u0002022\u0006\u00103\u001a\u00020\u0006H\u0016J\u0018\u00104\u001a\u00020%2\u0006\u00105\u001a\u00020\u00192\u0006\u00106\u001a\u00020\u0019H\u0002J\u0010\u00107\u001a\u00020%2\u0006\u00108\u001a\u000209H\u0002J\u0010\u0010:\u001a\u00020%2\u0006\u0010;\u001a\u00020<H\u0002J\u0018\u0010=\u001a\u00020%2\u0006\u00103\u001a\u00020\u00062\u0006\u00101\u001a\u000202H\u0002J\b\u0010>\u001a\u00020%H\u0002J\b\u0010?\u001a\u00020%H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00190\u00188BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010#\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006B"}, d2 = {"Lru/mrlargha/commonui/elements/trade/presentation/TradeScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "tradeScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/TradeScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "topMoneyController", "Lru/mrlargha/commonui/elements/trade/presentation/TradeEditText;", "bottomMoneyController", "tradeInventoryAdapter", "Lru/mrlargha/commonui/elements/trade/presentation/adapter/TradeInventoryAdapter;", "sendItemsAdapter", "Lru/mrlargha/commonui/elements/trade/presentation/adapter/SendItemsAdapter;", "getItemsAdapter", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "getInventoryList", "()Ljava/util/List;", "sendItemsList", "getItemsList", "isConfirmedClicked", "", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryItemList", "selectedInventoryItem", "setVisible", "", "visible", "setButtonText", "", "type", "defaultScreenState", "initAdapters", "initObservers", "createEmptyLists", "trade", "forTrade", "onBackendMessage", "data", "", "subId", "sendDataFromDrop", "curItem", "toItem", "editValueCostUi", "response", "Lru/mrlargha/commonui/elements/trade/domain/TradeValueResponse;", "editUi", "tradeResp", "Lru/mrlargha/commonui/elements/trade/domain/TradeResponse;", "sendData", "addLockedItems", "closeScreen", "Spawner", "ShowDialogInfo", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class TradeScreen extends SAMPUIElement implements InterfaceController {
     private final TradeScreenBinding binding;
+    private final TradeEditText bottomMoneyController;
     private final AppDatabase db;
     private final IBackendNotifier frontendNotifier;
     private final SendItemsAdapter getItemsAdapter;
     private List<InventoryItem> getItemsList;
     private List<InventoryItem> inventoryItemList;
-    private final boolean isArizonaType;
     private boolean isConfirmedClicked;
     private InventoryItem selectedInventoryItem;
     private final SendItemsAdapter sendItemsAdapter;
     private List<InventoryItem> sendItemsList;
-    private final SharedPreferences sharedPref;
+    private final TradeEditText topMoneyController;
     private final TradeInventoryAdapter tradeInventoryAdapter;
     private final ConstraintLayout tradeScreen;
 
@@ -84,6 +87,14 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
         this.frontendNotifier = (IBackendNotifier) targetActivity;
+        ViewUniversalMoneyInputBinding etSendItems = bind.etSendItems;
+        Intrinsics.checkNotNullExpressionValue(etSendItems, "etSendItems");
+        TradeEditText tradeEditText = new TradeEditText(etSendItems);
+        this.topMoneyController = tradeEditText;
+        ViewUniversalMoneyInputBinding etReceiveItems = bind.etReceiveItems;
+        Intrinsics.checkNotNullExpressionValue(etReceiveItems, "etReceiveItems");
+        TradeEditText tradeEditText2 = new TradeEditText(etReceiveItems);
+        this.bottomMoneyController = tradeEditText2;
         RecyclerView rvInventory = bind.rvInventory;
         Intrinsics.checkNotNullExpressionValue(rvInventory, "rvInventory");
         Activity activity = targetActivity;
@@ -92,7 +103,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             public final Object invoke(Object obj) {
                 return TradeScreen.tradeInventoryAdapter$lambda$0(TradeScreen.this, (DraggedItem) obj);
             }
-        }, rvInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda5
+        }, rvInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return TradeScreen.tradeInventoryAdapter$lambda$1(TradeScreen.this, (InventoryItem) obj);
@@ -100,12 +111,12 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         });
         RecyclerView rvSendItems = bind.rvSendItems;
         Intrinsics.checkNotNullExpressionValue(rvSendItems, "rvSendItems");
-        this.sendItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda6
+        this.sendItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda16
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return TradeScreen.sendItemsAdapter$lambda$0(TradeScreen.this, (DraggedItem) obj);
             }
-        }, rvSendItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda7
+        }, rvSendItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return TradeScreen.sendItemsAdapter$lambda$1(TradeScreen.this, (InventoryItem) obj);
@@ -113,12 +124,12 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         });
         RecyclerView rvReceiveItems = bind.rvReceiveItems;
         Intrinsics.checkNotNullExpressionValue(rvReceiveItems, "rvReceiveItems");
-        this.getItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda8
+        this.getItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return TradeScreen.getItemsAdapter$lambda$0((DraggedItem) obj);
             }
-        }, rvReceiveItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda9
+        }, rvReceiveItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return TradeScreen.getItemsAdapter$lambda$1(TradeScreen.this, (InventoryItem) obj);
@@ -127,79 +138,90 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         this.sendItemsList = new ArrayList();
         this.getItemsList = new ArrayList();
         this.db = AppDatabase.Companion.invoke(activity);
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
-        this.sharedPref = sharedPreferences;
-        boolean z = sharedPreferences.getBoolean("isArizonaType", false);
-        this.isArizonaType = z;
         this.inventoryItemList = new ArrayList();
         constraintLayout.setClickable(true);
         addViewToConstraintLayout(constraintLayout, -1, -1);
-        UtilsKt.checkItemsName(activity, z);
+        UtilsKt.checkItemsName(activity, UtilsKt.isArizonaType());
         initAdapters();
-        bind.btnAccept.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda10
+        bind.btnAccept.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TradeScreen._init_$lambda$0(TradeScreen.this, view);
             }
         });
-        bind.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda11
+        bind.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TradeScreen.this.closeScreen();
             }
         });
-        bind.etSendItems.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda1
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                TradeScreen.this.sendData(4, StringKt.toStringJson(0));
-            }
-        });
-        bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda2
+        bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TradeScreen.this.closeScreen();
             }
         });
-        if (z) {
-            EditText etSendItems = bind.etSendItems;
-            Intrinsics.checkNotNullExpressionValue(etSendItems, "etSendItems");
-            UtilsKt.setDrawableEnd(etSendItems, R.drawable.ic_dollar, targetActivity);
-            EditText etReceiveItems = bind.etReceiveItems;
-            Intrinsics.checkNotNullExpressionValue(etReceiveItems, "etReceiveItems");
-            UtilsKt.setDrawableEnd(etReceiveItems, R.drawable.ic_dollar, targetActivity);
-            CustomCardView btnSendItem = bind.btnSendItem;
-            Intrinsics.checkNotNullExpressionValue(btnSendItem, "btnSendItem");
-            btnSendItem.setVisibility(0);
-            CustomCardView btnReceiveItem = bind.btnReceiveItem;
-            Intrinsics.checkNotNullExpressionValue(btnReceiveItem, "btnReceiveItem");
-            btnReceiveItem.setVisibility(0);
+        if (UtilsKt.isArizonaType()) {
+            tradeEditText2.setEnabled(false);
+            tradeEditText.setType(0);
+            tradeEditText2.setType(0);
+            bind.btnSendItemText.setText(TextWithIconsKt.toTextWithIcons("$ Деньги <ic>1<ic>", activity, new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp)));
+            bind.btnReceiveItemText.setText(TextWithIconsKt.toTextWithIcons("Валюты", activity, new IconAndSize[0]));
+            bind.btnSendItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda7
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    TradeScreen.this.binding.currencyChoice.setVisibility(0);
+                }
+            });
+            bind.currencyChoice.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda8
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    TradeScreen.this.binding.currencyChoice.setVisibility(8);
+                }
+            });
+            bind.buttonCurrency1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda9
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    TradeScreen._init_$lambda$5(TradeScreen.this, view);
+                }
+            });
+            bind.buttonCurrency2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda10
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    TradeScreen._init_$lambda$6(TradeScreen.this, view);
+                }
+            });
+            bind.buttonCurrency3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda11
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    TradeScreen._init_$lambda$7(TradeScreen.this, view);
+                }
+            });
+            bind.buttonCurrency4.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda12
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    TradeScreen._init_$lambda$8(TradeScreen.this, view);
+                }
+            });
         } else {
-            EditText etSendItems2 = bind.etSendItems;
-            Intrinsics.checkNotNullExpressionValue(etSendItems2, "etSendItems");
-            UtilsKt.setDrawableEnd(etSendItems2, R.drawable.ic_rubble, targetActivity);
-            EditText etReceiveItems2 = bind.etReceiveItems;
-            Intrinsics.checkNotNullExpressionValue(etReceiveItems2, "etReceiveItems");
-            UtilsKt.setDrawableEnd(etReceiveItems2, R.drawable.ic_rubble, targetActivity);
-            CustomCardView btnSendItem2 = bind.btnSendItem;
-            Intrinsics.checkNotNullExpressionValue(btnSendItem2, "btnSendItem");
-            btnSendItem2.setVisibility(0);
-            CustomCardView btnReceiveItem2 = bind.btnReceiveItem;
-            Intrinsics.checkNotNullExpressionValue(btnReceiveItem2, "btnReceiveItem");
-            btnReceiveItem2.setVisibility(0);
+            tradeEditText.setType(10);
+            tradeEditText2.setType(10);
+            bind.btnSendItem.setVisibility(8);
+            bind.btnReceiveItem.setVisibility(8);
         }
-        bind.btnSendItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda3
+        bind.btnArizonaReceiveItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 SAMPUIElement.notifyClick$default(TradeScreen.this, 0, 9, null, 4, null);
             }
         });
-        bind.btnReceiveItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda4
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                SAMPUIElement.notifyClick$default(TradeScreen.this, 1, 9, null, 4, null);
+        initObservers();
+        tradeEditText.setOnValueChanged(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda14
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                return TradeScreen._init_$lambda$10(TradeScreen.this, (Long) obj);
             }
         });
-        initObservers();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -258,7 +280,17 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
 
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
     public void setVisible(boolean z) {
-        this.binding.parentLayout.setVisibility(z ? 0 : 8);
+        int i;
+        ConstraintLayout constraintLayout = this.binding.parentLayout;
+        if (z) {
+            i = 0;
+            sendData(4, StringKt.toStringJson(0));
+        } else {
+            i = 8;
+        }
+        constraintLayout.setVisibility(i);
+        this.topMoneyController.setValidation(true);
+        this.topMoneyController.setEnabled(true);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -269,6 +301,63 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         byte[] bytes = StringKt.toStringJson("0").getBytes(Charsets.UTF_8);
         Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
         iBackendNotifier.clickedWrapper(id, -1, 3, bytes);
+        tradeScreen.topMoneyController.setEnabled(false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$5(TradeScreen tradeScreen, View view) {
+        tradeScreen.binding.currencyChoice.setVisibility(8);
+        tradeScreen.topMoneyController.setType(0);
+        tradeScreen.binding.btnSendItemText.setText(tradeScreen.setButtonText(0));
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$6(TradeScreen tradeScreen, View view) {
+        tradeScreen.binding.currencyChoice.setVisibility(8);
+        tradeScreen.topMoneyController.setType(2);
+        tradeScreen.binding.btnSendItemText.setText(tradeScreen.setButtonText(2));
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$7(TradeScreen tradeScreen, View view) {
+        tradeScreen.binding.currencyChoice.setVisibility(8);
+        tradeScreen.topMoneyController.setType(3);
+        tradeScreen.binding.btnSendItemText.setText(tradeScreen.setButtonText(3));
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$8(TradeScreen tradeScreen, View view) {
+        tradeScreen.binding.currencyChoice.setVisibility(8);
+        tradeScreen.topMoneyController.setType(1);
+        tradeScreen.binding.btnSendItemText.setText(tradeScreen.setButtonText(1));
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit _init_$lambda$10(TradeScreen tradeScreen, Long l) {
+        Long value = tradeScreen.topMoneyController.getValue();
+        if (value == null) {
+            tradeScreen.topMoneyController.setValidation(false);
+            return Unit.INSTANCE;
+        }
+        tradeScreen.topMoneyController.setValidation(true);
+        tradeScreen.notifyClick(10, 10, "{\"type\":" + tradeScreen.topMoneyController.getEditTextType() + ",\"money\":\"" + value + "\"}");
+        return Unit.INSTANCE;
+    }
+
+    private final CharSequence setButtonText(int i) {
+        if (i != 0) {
+            if (i != 1) {
+                if (i != 2) {
+                    if (i == 3) {
+                        return TextWithIconsKt.toTextWithIcons("<ic>2<ic> Acs <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.trade_asc_ic, R.dimen._8sdp, R.dimen._8sdp));
+                    }
+                    return "";
+                }
+                return TextWithIconsKt.toTextWithIcons("<ic>2<ic> Bitcoin <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.trade_bitcoin_ic, R.dimen._8sdp, R.dimen._8sdp));
+            }
+            return TextWithIconsKt.toTextWithIcons("<ic>2<ic> Euro <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.trade_euro_ic, R.dimen._8sdp, R.dimen._8sdp));
+        }
+        return TextWithIconsKt.toTextWithIcons("$ Деньги <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp));
     }
 
     private final void defaultScreenState() {
@@ -285,8 +374,9 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         ivSendStatus.setVisibility(8);
         this.binding.btnAccept.setBackgroundResource(R.drawable.bttn_ready_trade);
         initObservers();
-        editValueCostUi(new TradeValueResponse(new ValueStatus(0, 0), new ValueStatus(0, 0)));
+        editValueCostUi(new TradeValueResponse(new ValueStatus(0L, 0), new ValueStatus(0L, 0)));
         this.isConfirmedClicked = false;
+        this.topMoneyController.setEnabled(true);
     }
 
     private final void initAdapters() {
@@ -296,9 +386,9 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
     }
 
     private final void initObservers() {
-        boolean z = this.isArizonaType;
+        boolean isArizonaType = UtilsKt.isArizonaType();
         SendItemsAdapter sendItemsAdapter = this.sendItemsAdapter;
-        if (z) {
+        if (isArizonaType) {
             sendItemsAdapter.setDragDropEnabled(true);
             this.getItemsAdapter.setDragDropEnabled(false);
             createEmptyLists(ArizonaBlockType.BLOCK_TYPE_TRADE.getId(), ArizonaBlockType.BLOCK_TYPE_FOR_TRADE.getId());
@@ -316,33 +406,42 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
 
     private final void createEmptyLists(int i, int i2) {
         for (int i3 = 0; i3 < 10; i3++) {
-            this.sendItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i3, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i, null, null, false, false, null, null, null, 16711678, null));
+            this.sendItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i3, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i, null, null, false, false, null, null, null, null, 33488894, null));
         }
         for (int i4 = 0; i4 < 10; i4++) {
-            this.getItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i4, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i2, null, null, false, false, null, null, null, 16711678, null));
+            this.getItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i4, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i2, null, null, false, false, null, null, null, null, 33488894, null));
         }
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void onBackendMessage(String data, int i) {
-        Object fromJson;
         Intrinsics.checkNotNullParameter(data, "data");
         Log.d("TAG_TRADE", "data: " + data + " ======= subID: " + i);
         if (i == 0) {
-            Intrinsics.checkNotNullExpressionValue(GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) TradeInfo.class), "fromJson(...)");
-            this.binding.tvTitle.setText("Обмен с игроком  " + ((TradeInfo) fromJson).getName());
-            defaultScreenState();
+            if (MapperKt.isJsonValid(data)) {
+                TradeInfo tradeInfo = (TradeInfo) MapperKt.getGson().fromJson(data, (Class<Object>) TradeInfo.class);
+                this.binding.tvTitle.setText("Обмен с игроком  " + tradeInfo.getName());
+                TradeEditText tradeEditText = this.topMoneyController;
+                Map<String, List<Long>> limits = tradeInfo.getLimits();
+                if (limits == null) {
+                    limits = MapsKt.emptyMap();
+                }
+                tradeEditText.setLimits(limits);
+                defaultScreenState();
+                return;
+            }
+            throw new JsonParseException("Json is not valid");
         } else if (i == 2) {
-            Object fromJson2 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
-            Intrinsics.checkNotNullExpressionValue(fromJson2, "fromJson(...)");
-            InventoryResponse inventoryResponse = (InventoryResponse) fromJson2;
+            Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
+            Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
+            InventoryResponse inventoryResponse = (InventoryResponse) fromJson;
             int type = inventoryResponse.getType();
             List<InventoryItem> items = inventoryResponse.getItems();
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(items, 10));
             for (InventoryItem inventoryItem : items) {
-                arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, null, null, 16711679, null));
+                arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, null, null, null, 33488895, null));
             }
-            InventoryResponse inventoryResponse2 = new InventoryResponse(type, arrayList);
+            InventoryResponse inventoryResponse2 = new InventoryResponse(type, arrayList, 0, 4, null);
             int type2 = inventoryResponse2.getType();
             if (type2 != RodinaBlockType.BLOCK_TYPE_TRADE.getId() && type2 != ArizonaBlockType.BLOCK_TYPE_TRADE.getId()) {
                 if (type2 == RodinaBlockType.BLOCK_TYPE_FOR_TRADE.getId() || type2 == ArizonaBlockType.BLOCK_TYPE_FOR_TRADE.getId()) {
@@ -389,45 +488,53 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             this.sendItemsAdapter.submitList(this.sendItemsList);
             this.sendItemsAdapter.notifyDataSetChanged();
         } else if (i == 3) {
-            Object fromJson3 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) ShowDialogInfo.class);
-            Intrinsics.checkNotNullExpressionValue(fromJson3, "fromJson(...)");
-            ShowDialogInfo showDialogInfo = (ShowDialogInfo) fromJson3;
-            InventoryItem inventoryItem4 = this.selectedInventoryItem;
-            if (inventoryItem4 != null) {
-                new SelectorDialog(getTargetActivity(), 52, InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, 16776959, null), 0);
+            if (MapperKt.isJsonValid(data)) {
+                ShowDialogInfo showDialogInfo = (ShowDialogInfo) MapperKt.getGson().fromJson(data, (Class<Object>) ShowDialogInfo.class);
+                InventoryItem inventoryItem4 = this.selectedInventoryItem;
+                if (inventoryItem4 != null) {
+                    new SelectorDialog(getTargetActivity(), 52, InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, 33554175, null), 0);
+                    return;
+                }
+                return;
             }
+            throw new JsonParseException("Json is not valid");
         } else if (i == 4) {
             if (StringsKt.contains$default((CharSequence) data, (CharSequence) "\"self\"", false, 2, (Object) null)) {
-                Object fromJson4 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) TradeResponse.class);
-                Intrinsics.checkNotNullExpressionValue(fromJson4, "fromJson(...)");
-                editUi((TradeResponse) fromJson4);
+                if (MapperKt.isJsonValid(data)) {
+                    editUi((TradeResponse) MapperKt.getGson().fromJson(data, (Class<Object>) TradeResponse.class));
+                    return;
+                }
+                throw new JsonParseException("Json is not valid");
             }
         } else if (i != 6) {
             if (i == UIElementID.INVENTORY.getId()) {
-                Object fromJson5 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
-                Intrinsics.checkNotNullExpressionValue(fromJson5, "fromJson(...)");
-                InventoryResponse inventoryResponse3 = (InventoryResponse) fromJson5;
-                if (inventoryResponse3.getType() == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
-                    for (InventoryItem inventoryItem5 : inventoryResponse3.getItems()) {
-                        List<InventoryItem> list = this.inventoryItemList;
-                        ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
-                        for (InventoryItem inventoryItem6 : list) {
-                            if (inventoryItem6.getSlot() == inventoryItem5.getSlot()) {
-                                inventoryItem6 = InventoryItem.copy$default(inventoryItem6, 0, null, 0, null, null, null, null, null, null, inventoryItem5.getAvailable(), null, null, null, null, null, null, 0, null, null, false, false, null, null, null, 16776703, null);
+                if (MapperKt.isJsonValid(data)) {
+                    InventoryResponse inventoryResponse3 = (InventoryResponse) MapperKt.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
+                    if (inventoryResponse3.getType() == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
+                        for (InventoryItem inventoryItem5 : inventoryResponse3.getItems()) {
+                            List<InventoryItem> list = this.inventoryItemList;
+                            ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
+                            for (InventoryItem inventoryItem6 : list) {
+                                if (inventoryItem6.getSlot() == inventoryItem5.getSlot()) {
+                                    inventoryItem6 = InventoryItem.copy$default(inventoryItem6, 0, null, 0, null, null, null, null, null, null, inventoryItem5.getAvailable(), null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, 33553919, null);
+                                }
+                                arrayList2.add(inventoryItem6);
                             }
-                            arrayList2.add(inventoryItem6);
+                            List<InventoryItem> mutableList = CollectionsKt.toMutableList((Collection) arrayList2);
+                            this.inventoryItemList = mutableList;
+                            this.tradeInventoryAdapter.submitList(mutableList);
+                            this.tradeInventoryAdapter.notifyItemChanged(inventoryItem5.getSlot());
                         }
-                        List<InventoryItem> mutableList = CollectionsKt.toMutableList((Collection) arrayList2);
-                        this.inventoryItemList = mutableList;
-                        this.tradeInventoryAdapter.submitList(mutableList);
-                        this.tradeInventoryAdapter.notifyItemChanged(inventoryItem5.getSlot());
+                        return;
                     }
+                    return;
                 }
+                throw new JsonParseException("Json is not valid");
             }
+        } else if (MapperKt.isJsonValid(data)) {
+            editValueCostUi((TradeValueResponse) MapperKt.getGson().fromJson(data, (Class<Object>) TradeValueResponse.class));
         } else {
-            Object fromJson6 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) TradeValueResponse.class);
-            Intrinsics.checkNotNullExpressionValue(fromJson6, "fromJson(...)");
-            editValueCostUi((TradeValueResponse) fromJson6);
+            throw new JsonParseException("Json is not valid");
         }
     }
 
@@ -438,39 +545,18 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         }
         int slot = inventoryItem.getSlot();
         int inventoryType = inventoryItem.getInventoryType();
-        Integer amount = inventoryItem.getAmount();
-        int intValue = amount != null ? amount.intValue() : 1;
+        Long amount = inventoryItem.getAmount();
+        long longValue = amount != null ? amount.longValue() : 1L;
         Integer item = inventoryItem.getItem();
-        sendData(1, StringKt.toStringJson(new InventorySendRequest(new ChangeFromSlot(slot, inventoryType, intValue, item != null ? item.intValue() : -1), new ChangeToSlot(inventoryItem2.getSlot(), inventoryItem2.getInventoryType()))));
+        sendData(1, StringKt.toStringJson(new InventorySendRequest(new ChangeFromSlot(slot, inventoryType, longValue, item != null ? item.intValue() : -1), new ChangeToSlot(inventoryItem2.getSlot(), inventoryItem2.getInventoryType()))));
     }
 
     private final void editValueCostUi(TradeValueResponse tradeValueResponse) {
-        this.binding.etSendItems.setText(String.valueOf(tradeValueResponse.getSelf().getValue()));
-        int type = tradeValueResponse.getSelf().getType();
-        EditText etSendItems = this.binding.etSendItems;
-        Intrinsics.checkNotNullExpressionValue(etSendItems, "etSendItems");
-        selectDrawableType(type, etSendItems);
-        this.binding.etReceiveItems.setText(String.valueOf(tradeValueResponse.getTarget().getValue()));
-        int type2 = tradeValueResponse.getTarget().getType();
-        EditText etReceiveItems = this.binding.etReceiveItems;
-        Intrinsics.checkNotNullExpressionValue(etReceiveItems, "etReceiveItems");
-        selectDrawableType(type2, etReceiveItems);
-    }
-
-    private final void selectDrawableType(int i, EditText editText) {
-        if (i == 0) {
-            if (this.isArizonaType) {
-                UtilsKt.setDrawableEnd(editText, R.drawable.ic_dollar, getTargetActivity());
-            } else {
-                UtilsKt.setDrawableEnd(editText, R.drawable.ic_rubble, getTargetActivity());
-            }
-        } else if (i == 1) {
-            UtilsKt.setDrawableEnd(editText, R.drawable.ic_euro, getTargetActivity());
-        } else if (i == 2) {
-            UtilsKt.setDrawableEnd(editText, R.drawable.ic_bitcoin, getTargetActivity());
-        } else if (i != 3) {
-        } else {
-            UtilsKt.setDrawableEnd(editText, R.drawable.ic_az_coin, getTargetActivity());
+        this.topMoneyController.setValue(tradeValueResponse.getSelf().getValue());
+        this.bottomMoneyController.setValue(tradeValueResponse.getTarget().getValue());
+        this.binding.btnReceiveItemText.setText(setButtonText(tradeValueResponse.getTarget().getType()));
+        if (UtilsKt.isArizonaType()) {
+            this.bottomMoneyController.setType(tradeValueResponse.getTarget().getType());
         }
     }
 
@@ -490,10 +576,11 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             Intrinsics.checkNotNullExpressionValue(groupProgressBar, "groupProgressBar");
             groupProgressBar.setVisibility(0);
         }
+        this.topMoneyController.setEnabled(tradeResponse.getSelf().getConfirm() == 0);
+        this.binding.btnSendItem.setEnabled(tradeResponse.getSelf().getConfirm() == 0);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void sendData(int i, String str) {
+    private final void sendData(int i, String str) {
         Log.d("TAG_SEND", "sendITEM: " + str + " === subID: " + i);
         IBackendNotifier iBackendNotifier = this.frontendNotifier;
         int id = UIElementID.TRADE.getId();
@@ -509,7 +596,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             int i = 1;
             while (true) {
                 InventoryItem inventoryItem = (InventoryItem) CollectionsKt.lastOrNull((List<? extends Object>) getInventoryList());
-                this.inventoryItemList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), inventoryItem != null ? inventoryItem.getSlot() + 1 : 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, 15728638, null));
+                this.inventoryItemList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), inventoryItem != null ? inventoryItem.getSlot() + 1 : 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, null, 32505854, null));
                 if (i == nextMultipleOfFive) {
                     break;
                 }
@@ -519,7 +606,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         List<InventoryItem> list = this.inventoryItemList;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem2 : list) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, 16774655, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, 33551871, null));
         }
         List<InventoryItem> mutableList = CollectionsKt.toMutableList((Collection) arrayList);
         this.inventoryItemList = mutableList;
@@ -548,6 +635,83 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         @Override // ru.mrlargha.commonui.core.UIElementAbstractSpawner
         public Set<UIElementID> getCorrectIds() {
             return this.correctIds;
+        }
+    }
+
+    /* compiled from: TradeScreen.kt */
+    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003¢\u0006\u0004\b\u0006\u0010\u0007J\t\u0010\f\u001a\u00020\u0003HÆ\u0003J\t\u0010\r\u001a\u00020\u0003HÆ\u0003J\t\u0010\u000e\u001a\u00020\u0003HÆ\u0003J'\u0010\u000f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u0003HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010\u0014\u001a\u00020\u0015HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\tR\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\t¨\u0006\u0016"}, d2 = {"Lru/mrlargha/commonui/elements/trade/presentation/TradeScreen$ShowDialogInfo;", "", "type", "", "slot", "bits", "<init>", "(III)V", "getType", "()I", "getSlot", "getBits", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "toString", "", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    /* loaded from: classes6.dex */
+    public static final class ShowDialogInfo {
+        private final int bits;
+        private final int slot;
+        private final int type;
+
+        public static /* synthetic */ ShowDialogInfo copy$default(ShowDialogInfo showDialogInfo, int i, int i2, int i3, int i4, Object obj) {
+            if ((i4 & 1) != 0) {
+                i = showDialogInfo.type;
+            }
+            if ((i4 & 2) != 0) {
+                i2 = showDialogInfo.slot;
+            }
+            if ((i4 & 4) != 0) {
+                i3 = showDialogInfo.bits;
+            }
+            return showDialogInfo.copy(i, i2, i3);
+        }
+
+        public final int component1() {
+            return this.type;
+        }
+
+        public final int component2() {
+            return this.slot;
+        }
+
+        public final int component3() {
+            return this.bits;
+        }
+
+        public final ShowDialogInfo copy(int i, int i2, int i3) {
+            return new ShowDialogInfo(i, i2, i3);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof ShowDialogInfo) {
+                ShowDialogInfo showDialogInfo = (ShowDialogInfo) obj;
+                return this.type == showDialogInfo.type && this.slot == showDialogInfo.slot && this.bits == showDialogInfo.bits;
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return (((Integer.hashCode(this.type) * 31) + Integer.hashCode(this.slot)) * 31) + Integer.hashCode(this.bits);
+        }
+
+        public String toString() {
+            int i = this.type;
+            int i2 = this.slot;
+            return "ShowDialogInfo(type=" + i + ", slot=" + i2 + ", bits=" + this.bits + ")";
+        }
+
+        public ShowDialogInfo(int i, int i2, int i3) {
+            this.type = i;
+            this.slot = i2;
+            this.bits = i3;
+        }
+
+        public final int getType() {
+            return this.type;
+        }
+
+        public final int getSlot() {
+            return this.slot;
+        }
+
+        public final int getBits() {
+            return this.bits;
         }
     }
 }

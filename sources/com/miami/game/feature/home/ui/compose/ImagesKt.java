@@ -117,7 +117,7 @@ public final class ImagesKt {
         final ImageBitmap imageBitmap2;
         Intrinsics.checkNotNullParameter(imageBitmap, "imageBitmap");
         Composer startRestartGroup = composer.startRestartGroup(-1222174292);
-        ComposerKt.sourceInformation(startRestartGroup, "C(BackgroundImage)N(imageBitmap)34@1346L162:Images.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(BackgroundImage)N(imageBitmap)26@992L162:Images.kt#dswm0d");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(imageBitmap) ? 4 : 2) | i;
         } else {
@@ -128,7 +128,7 @@ public final class ImagesKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1222174292, i2, -1, "com.miami.game.feature.home.ui.compose.BackgroundImage (Images.kt:33)");
+                ComposerKt.traceEventStart(-1222174292, i2, -1, "com.miami.game.feature.home.ui.compose.BackgroundImage (Images.kt:25)");
             }
             imageBitmap2 = imageBitmap;
             ImageKt.m321Image5hnEew(imageBitmap2, null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, ContentScale.Companion.getCrop(), 0.0f, null, 0, startRestartGroup, (i2 & 14) | 25008, 232);
@@ -149,12 +149,12 @@ public final class ImagesKt {
 
     public static final void SettingsImage(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(-385149265);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SettingsImage)47@1638L104,44@1559L267:Images.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SettingsImage)39@1284L104,36@1205L267:Images.kt#dswm0d");
         if (!startRestartGroup.shouldExecute(i != 0, i & 1)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-385149265, i, -1, "com.miami.game.feature.home.ui.compose.SettingsImage (Images.kt:43)");
+                ComposerKt.traceEventStart(-385149265, i, -1, "com.miami.game.feature.home.ui.compose.SettingsImage (Images.kt:35)");
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.ic_setting, startRestartGroup, 0), (String) null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(24)), (Alignment) null, ContentScale.Companion.getCrop(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
@@ -175,7 +175,7 @@ public final class ImagesKt {
     public static final void PlayImage(final boolean z, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(-1050683340);
-        ComposerKt.sourceInformation(startRestartGroup, "C(PlayImage)N(isCheckingFiles)57@1897L427:Images.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(PlayImage)N(isCheckingFiles)49@1543L427:Images.kt#dswm0d");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(z) ? 4 : 2) | i;
         } else {
@@ -185,7 +185,7 @@ public final class ImagesKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1050683340, i2, -1, "com.miami.game.feature.home.ui.compose.PlayImage (Images.kt:56)");
+                ComposerKt.traceEventStart(-1050683340, i2, -1, "com.miami.game.feature.home.ui.compose.PlayImage (Images.kt:48)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
@@ -212,7 +212,7 @@ public final class ImagesKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -598791714, "C63@2213L55,60@2111L207:Images.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -598791714, "C55@1859L55,52@1757L207:Images.kt#dswm0d");
             ImageKt.Image(PainterResources_androidKt.painterResource(z ? R.drawable.ic_play_home_screen_inactive : R.drawable.ic_play_home_screen, startRestartGroup, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(72)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -237,12 +237,12 @@ public final class ImagesKt {
 
     public static final void UpdateImage(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(-1202479543);
-        ComposerKt.sourceInformation(startRestartGroup, "C(UpdateImage)73@2373L253:Images.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(UpdateImage)65@2019L253:Images.kt#dswm0d");
         if (!startRestartGroup.shouldExecute(i != 0, i & 1)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1202479543, i, -1, "com.miami.game.feature.home.ui.compose.UpdateImage (Images.kt:72)");
+                ComposerKt.traceEventStart(-1202479543, i, -1, "com.miami.game.feature.home.ui.compose.UpdateImage (Images.kt:64)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
@@ -269,7 +269,7 @@ public final class ImagesKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -179924533, "C77@2489L81,74@2387L233:Images.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -179924533, "C69@2135L81,66@2033L233:Images.kt#dswm0d");
             ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.feature.home.R.drawable.update_home_screen, startRestartGroup, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(72)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -294,12 +294,12 @@ public final class ImagesKt {
 
     public static final void SetupImage(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(-371068495);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SetupImage)87@2674L285:Images.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SetupImage)79@2320L285:Images.kt#dswm0d");
         if (!startRestartGroup.shouldExecute(i != 0, i & 1)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-371068495, i, -1, "com.miami.game.feature.home.ui.compose.SetupImage (Images.kt:86)");
+                ComposerKt.traceEventStart(-371068495, i, -1, "com.miami.game.feature.home.ui.compose.SetupImage (Images.kt:78)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
@@ -326,7 +326,7 @@ public final class ImagesKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1934356849, "C91@2790L113,88@2688L265:Images.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1934356849, "C83@2436L113,80@2334L265:Images.kt#dswm0d");
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.setup_image, startRestartGroup, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(72)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -351,12 +351,12 @@ public final class ImagesKt {
 
     public static final void ForumImage(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(-1452948083);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ForumImage)104@3097L64,101@3007L244:Images.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(ForumImage)96@2743L64,93@2653L244:Images.kt#dswm0d");
         if (!startRestartGroup.shouldExecute(i != 0, i & 1)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1452948083, i, -1, "com.miami.game.feature.home.ui.compose.ForumImage (Images.kt:100)");
+                ComposerKt.traceEventStart(-1452948083, i, -1, "com.miami.game.feature.home.ui.compose.ForumImage (Images.kt:92)");
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.feature.home.R.drawable.btn_forum, startRestartGroup, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(54)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
@@ -378,7 +378,7 @@ public final class ImagesKt {
         int i2;
         Intrinsics.checkNotNullParameter(notificationState, "notificationState");
         Composer startRestartGroup = composer.startRestartGroup(772996739);
-        ComposerKt.sourceInformation(startRestartGroup, "C(NotificationsImage)N(notificationState)114@3337L1298:Images.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(NotificationsImage)N(notificationState)106@2983L1298:Images.kt#dswm0d");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(notificationState) ? 4 : 2) | i;
         } else {
@@ -388,7 +388,7 @@ public final class ImagesKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(772996739, i2, -1, "com.miami.game.feature.home.ui.compose.NotificationsImage (Images.kt:113)");
+                ComposerKt.traceEventStart(772996739, i2, -1, "com.miami.game.feature.home.ui.compose.NotificationsImage (Images.kt:105)");
             }
             float f = 10;
             Modifier m778offsetVpY3zN4$default = OffsetKt.m778offsetVpY3zN4$default(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(44)), Dp.m7555constructorimpl(-Dp.m7555constructorimpl(f)), 0.0f, 2, null);
@@ -418,11 +418,11 @@ public final class ImagesKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 80033659, "C121@3579L79,118@3477L283:Images.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 80033659, "C113@3225L79,110@3123L283:Images.kt#dswm0d");
             ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.feature.home.R.drawable.btn_notification, startRestartGroup, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(32)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             if (notificationState.getValue().intValue() > 0) {
                 startRestartGroup.startReplaceGroup(80346944);
-                ComposerKt.sourceInformation(startRestartGroup, "129@3817L801");
+                ComposerKt.sourceInformation(startRestartGroup, "121@3463L801");
                 float f2 = 12;
                 Modifier m777offsetVpY3zN4 = OffsetKt.m777offsetVpY3zN4(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(14)), Dp.m7555constructorimpl(f2), Dp.m7555constructorimpl(-Dp.m7555constructorimpl(f2)));
                 Alignment center2 = Alignment.Companion.getCenter();
@@ -451,9 +451,9 @@ public final class ImagesKt {
                 Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1132758621, "C136@4075L101,135@4038L264,145@4486L13,146@4532L13,142@4319L285:Images.kt#dswm0d");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1132758621, "C128@3721L101,127@3684L264,137@4132L13,138@4178L13,134@3965L285:Images.kt#dswm0d");
                 ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.feature.home.R.drawable.btn_notification_count, startRestartGroup, 0), (String) null, (Modifier) null, (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 24624, 108);
-                TextKt.m2712TextNvy7gAk(String.valueOf(notificationState.getValue().intValue()), Modifier.Companion, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, null, null, startRestartGroup, 432, 0, 260072);
+                TextKt.m2712TextNvy7gAk(String.valueOf(notificationState.getValue().intValue()), Modifier.Companion, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, null, null, startRestartGroup, 432, 0, 260072);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -489,12 +489,12 @@ public final class ImagesKt {
 
     public static final void AccountImage(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(307092609);
-        ComposerKt.sourceInformation(startRestartGroup, "C(AccountImage)161@4776L66,158@4686L246:Images.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(AccountImage)153@4422L66,150@4332L246:Images.kt#dswm0d");
         if (!startRestartGroup.shouldExecute(i != 0, i & 1)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(307092609, i, -1, "com.miami.game.feature.home.ui.compose.AccountImage (Images.kt:157)");
+                ComposerKt.traceEventStart(307092609, i, -1, "com.miami.game.feature.home.ui.compose.AccountImage (Images.kt:149)");
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.feature.home.R.drawable.btn_account, startRestartGroup, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(54)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
@@ -515,7 +515,7 @@ public final class ImagesKt {
     public static final void ShopImage(final int i, final boolean z, Composer composer, final int i2) {
         int i3;
         Composer startRestartGroup = composer.startRestartGroup(601068787);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ShopImage)N(xdonate,isArizona)171@5011L1248:Images.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(ShopImage)N(xdonate,isArizona)163@4657L1248:Images.kt#dswm0d");
         if ((i2 & 6) == 0) {
             i3 = i2 | (startRestartGroup.changed(i) ? 4 : 2);
         } else {
@@ -528,7 +528,7 @@ public final class ImagesKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(601068787, i3, -1, "com.miami.game.feature.home.ui.compose.ShopImage (Images.kt:170)");
+                ComposerKt.traceEventStart(601068787, i3, -1, "com.miami.game.feature.home.ui.compose.ShopImage (Images.kt:162)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
@@ -555,11 +555,11 @@ public final class ImagesKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -541691606, "C175@5118L113,172@5025L256:Images.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -541691606, "C167@4764L113,164@4671L256:Images.kt#dswm0d");
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.ic_btn_shop, startRestartGroup, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(72)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
             if ((i > 2 && !z) || (i > 3 && z)) {
                 startRestartGroup.startReplaceGroup(-541378321);
-                ComposerKt.sourceInformation(startRestartGroup, "181@5365L878");
+                ComposerKt.sourceInformation(startRestartGroup, "173@5011L878");
                 float f = 6;
                 Modifier align = boxScopeInstance.align(OffsetKt.m777offsetVpY3zN4(Modifier.Companion, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(f)), Dp.m7555constructorimpl(-Dp.m7555constructorimpl(f))), Alignment.Companion.getTopEnd());
                 Alignment center = Alignment.Companion.getCenter();
@@ -588,10 +588,10 @@ public final class ImagesKt {
                 Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -493011394, "C187@5649L100,184@5532L283,195@5995L13,196@6041L13,199@6189L10,192@5832L397:Images.kt#dswm0d");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -493011394, "C179@5295L100,176@5178L283,187@5641L13,188@5687L13,191@5835L10,184@5478L397:Images.kt#dswm0d");
                 ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.feature.home.R.drawable.shop_notificaiotns_bg, startRestartGroup, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(20)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
                 float f2 = 12;
-                TextKt.m2712TextNvy7gAk("АКЦИЯ Х" + i + " ДОНАТ", Modifier.Companion, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6), null, FontWeight.Companion.getW900(), null, 0L, null, null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getLabelMedium(), startRestartGroup, 1573296, 0, 128936);
+                TextKt.m2712TextNvy7gAk("АКЦИЯ Х" + i + " ДОНАТ", Modifier.Companion, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6), null, FontWeight.Companion.getW900(), null, 0L, null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getLabelMedium(), startRestartGroup, 1573296, 0, 128936);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -627,12 +627,12 @@ public final class ImagesKt {
 
     public static final void DiscordImage(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(1376889058);
-        ComposerKt.sourceInformation(startRestartGroup, "C(DiscordImage)211@6399L66,208@6309L246:Images.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(DiscordImage)203@6045L66,200@5955L246:Images.kt#dswm0d");
         if (!startRestartGroup.shouldExecute(i != 0, i & 1)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1376889058, i, -1, "com.miami.game.feature.home.ui.compose.DiscordImage (Images.kt:207)");
+                ComposerKt.traceEventStart(1376889058, i, -1, "com.miami.game.feature.home.ui.compose.DiscordImage (Images.kt:199)");
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.feature.home.R.drawable.btn_discord, startRestartGroup, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(54)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
@@ -652,12 +652,12 @@ public final class ImagesKt {
 
     public static final void TelegramImage(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(-1835780975);
-        ComposerKt.sourceInformation(startRestartGroup, "C(TelegramImage)224@6696L67,221@6606L247:Images.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(TelegramImage)216@6342L67,213@6252L247:Images.kt#dswm0d");
         if (!startRestartGroup.shouldExecute(i != 0, i & 1)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1835780975, i, -1, "com.miami.game.feature.home.ui.compose.TelegramImage (Images.kt:220)");
+                ComposerKt.traceEventStart(-1835780975, i, -1, "com.miami.game.feature.home.ui.compose.TelegramImage (Images.kt:212)");
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.feature.home.R.drawable.btn_telegram, startRestartGroup, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(54)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
@@ -677,12 +677,12 @@ public final class ImagesKt {
 
     public static final void VkImage(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(1909789917);
-        ComposerKt.sourceInformation(startRestartGroup, "C(VkImage)237@6988L61,234@6898L241:Images.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(VkImage)229@6634L61,226@6544L241:Images.kt#dswm0d");
         if (!startRestartGroup.shouldExecute(i != 0, i & 1)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1909789917, i, -1, "com.miami.game.feature.home.ui.compose.VkImage (Images.kt:233)");
+                ComposerKt.traceEventStart(1909789917, i, -1, "com.miami.game.feature.home.ui.compose.VkImage (Images.kt:225)");
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.feature.home.R.drawable.btn_vk, startRestartGroup, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(54)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {

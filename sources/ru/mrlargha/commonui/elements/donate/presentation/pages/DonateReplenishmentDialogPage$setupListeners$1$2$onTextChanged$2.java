@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateRateType;
 /* compiled from: DonateReplenishmentDialogPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupListeners$1$2$onTextChanged$2", f = "DonateReplenishmentDialogPage.kt", i = {2}, l = {94, 96, 99}, m = "invokeSuspend", n = {"bonus"}, nl = {96, 99, 101}, s = {"I$0"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupListeners$1$2$onTextChanged$2", f = "DonateReplenishmentDialogPage.kt", i = {2}, l = {95, 97, 100}, m = "invokeSuspend", n = {"bonus"}, nl = {97, 100, 102}, s = {"I$0"}, v = 2)
 /* loaded from: classes6.dex */
 final class DonateReplenishmentDialogPage$setupListeners$1$2$onTextChanged$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ long $number;

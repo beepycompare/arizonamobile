@@ -157,7 +157,7 @@ final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implem
                             }
                             if (event == Lifecycle.Event.ON_DESTROY) {
                                 Result.Companion companion = Result.Companion;
-                                cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(Unit.INSTANCE));
+                                cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(Unit.INSTANCE));
                             }
                         }
 

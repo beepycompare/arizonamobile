@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="@dimen/_500sdp" style="@style/DialogSmallContainer">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center" android:id="@+id/caption_container" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">
+                <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_14sdp" android:src="@drawable/dialog_ic_caption"/>
+                <TextView android:textSize="@dimen/_12sdp" android:textColor="@color/white" android:id="@+id/caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_2sdp"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent" android:layout_height="@dimen/_140sdp" android:layout_marginTop="@dimen/_6sdp" android:layout_marginBottom="@dimen/_6sdp" android:layout_marginVertical="@dimen/_6sdp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            <include android:id="@+id/buttons" layout="@layout/dialog_buttons"/>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

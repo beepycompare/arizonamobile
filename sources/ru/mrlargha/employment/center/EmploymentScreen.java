@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 import androidx.exifinterface.media.ExifInterface;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
@@ -32,11 +31,12 @@ import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
-import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.TimeConverterKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.employment.center.data.AdditionalInfo;
 import ru.mrlargha.employment.center.data.BonusItem;
 import ru.mrlargha.employment.center.data.EmploymentData;
@@ -46,7 +46,6 @@ import ru.mrlargha.feature.employment.center.R;
 import ru.mrlargha.feature.employment.center.databinding.EmploymentCenterMainBinding;
 import ru.mrlargha.feature.employment.center.databinding.EmploymentCenterSalaryTableBinding;
 import ru.mrlargha.feature.employment.center.databinding.EmploymentCenterScreenBinding;
-import ru.mrlargha.ui.kit.ParseColoredTextKt;
 /* compiled from: EmploymentScreen.kt */
 @Metadata(d1 = {"\u0000\u008e\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0003:;<B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\"H\u0016J\u0018\u0010#\u001a\u00020 2\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u0006H\u0016J\u0010\u0010'\u001a\u00020 2\u0006\u0010(\u001a\u00020)H\u0002J\b\u0010*\u001a\u00020 H\u0002J\u0010\u0010+\u001a\u00020 2\u0006\u0010$\u001a\u00020\u0018H\u0002J\u0010\u0010,\u001a\u00020 2\u0006\u0010-\u001a\u00020.H\u0002J\u0010\u0010/\u001a\u00020 2\u0006\u0010(\u001a\u000200H\u0002J\u0010\u00101\u001a\u00020 2\u0006\u00102\u001a\u00020\u0016H\u0002J\b\u00103\u001a\u00020 H\u0002J\b\u00104\u001a\u00020 H\u0002J\u0010\u00105\u001a\u00020 2\u0006\u00106\u001a\u00020\u0006H\u0002J\u0010\u00107\u001a\u00020 2\u0006\u00108\u001a\u000209H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006="}, d2 = {"Lru/mrlargha/employment/center/EmploymentScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/employment/center/databinding/EmploymentCenterScreenBinding;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/employment/center/EmploymentApi;", "apiData", "", "Lru/mrlargha/employment/center/Job;", "mainData", "Lru/mrlargha/employment/center/data/EmploymentData;", "jobsAdapter", "Lru/mrlargha/employment/center/JobsAdapter;", "bonusesAdapter", "Lru/mrlargha/employment/center/BonusesAdapter;", "textBonusAdapter", "Lru/mrlargha/employment/center/TextBonusAdapter;", "setVisible", "", "visible", "", "onBackendMessage", "data", "", "subId", "selectJob", "item", "Lru/mrlargha/employment/center/data/SelectJob;", "getApiData", "setMainInfo", "setServerInfo", "info", "Lru/mrlargha/employment/center/data/JobInfo;", "onClickBonus", "Lru/mrlargha/employment/center/data/BonusItem;", "onSelectJob", "job", "setupAdapters", "setupNavigation", "clickJobsButton", "id", "navigateTo", "nav", "Lru/mrlargha/employment/center/EmploymentScreen$Navigation;", "EasterBites", "Navigation", "Spawner", "employment-center"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -143,20 +142,20 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         try {
             if (i == 0) {
                 if (MapperKt.isJsonValid(data)) {
-                    setMainInfo((EmploymentData) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) EmploymentData.class));
+                    setMainInfo((EmploymentData) MapperKt.getGson().fromJson(data, (Class<Object>) EmploymentData.class));
                     return;
                 }
                 throw new JsonParseException("Json is not valid");
             } else if (i == 1) {
                 if (MapperKt.isJsonValid(data)) {
-                    setServerInfo((JobInfo) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) JobInfo.class));
+                    setServerInfo((JobInfo) MapperKt.getGson().fromJson(data, (Class<Object>) JobInfo.class));
                     return;
                 }
                 throw new JsonParseException("Json is not valid");
             } else if (i != 2) {
             } else {
                 if (MapperKt.isJsonValid(data)) {
-                    selectJob((SelectJob) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) SelectJob.class));
+                    selectJob((SelectJob) MapperKt.getGson().fromJson(data, (Class<Object>) SelectJob.class));
                     return;
                 }
                 throw new JsonParseException("Json is not valid");
@@ -368,13 +367,15 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         }
         this.textBonusAdapter.addAllItems(jobInfo.getAdditionalInfo());
         EmploymentCenterSalaryTableBinding employmentCenterSalaryTableBinding = this.binding.salaryTable;
-        employmentCenterSalaryTableBinding.money.setText(DonateUtilsKt.formatWithSpaces(jobInfo.getHourSalary()));
+        employmentCenterSalaryTableBinding.money.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary(), false, null, null, 7, null));
         for (AdditionalInfo additionalInfo : jobInfo.getAdditionalInfo()) {
             i2 += additionalInfo.getValue();
         }
         employmentCenterSalaryTableBinding.totalBonus.setText("+" + i2 + "%");
-        employmentCenterSalaryTableBinding.total.setText(DonateUtilsKt.formatWithSpaces(jobInfo.getHourSalary() + ((jobInfo.getHourSalary() * i2) / 100)));
-        employmentCenterMainBinding.salary.setText(DonateUtilsKt.formatWithSpaces(jobInfo.getHourSalary() + ((i2 * jobInfo.getHourSalary()) / 100)));
+        long j = i2;
+        long j2 = 100;
+        employmentCenterSalaryTableBinding.total.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary() + ((jobInfo.getHourSalary() * j) / j2), false, null, null, 7, null));
+        employmentCenterMainBinding.salary.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary() + ((j * jobInfo.getHourSalary()) / j2), false, null, null, 7, null));
         employmentCenterMainBinding.buttonInfo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.employment.center.EmploymentScreen$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -429,8 +430,8 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         } else {
             employmentCenterMainBinding.label.setVisibility(8);
         }
-        employmentCenterMainBinding.salary.setText(DonateUtilsKt.formatWithSpaces(job.getAvgHourSalary()));
-        this.binding.textTable.text.setText(ParseColoredTextKt.toColoredText(job.getDescriptionMobile(), Color.parseColor("#80FFFFFF")));
+        employmentCenterMainBinding.salary.setText(MoneyElementKt.toMoneyFormattedSpannable$default(job.getAvgHourSalary(), false, null, null, 7, null));
+        this.binding.textTable.text.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, job.getDescriptionMobile(), 0.0f, 1, null));
         this.binding.textTable.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.employment.center.EmploymentScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

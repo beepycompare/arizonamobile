@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/container" android:layout_width="@dimen/_34sdp" android:layout_height="@dimen/_34sdp" app:backgroundMainColor="#33ffffff" app:backgroundSecondColor="#0dffffff" app:borderMainColor="#0dffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_6sdp" app:gradientAngle="45">
+        <ImageView android:id="@+id/iv_effect_background" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/_1sdp" android:scaleType="fitEnd"/>
+        <ImageView android:id="@+id/iv_effect_background_top" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/_1sdp" android:scaleType="fitEnd"/>
+        <ImageView android:id="@+id/iv_item" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop"/>
+        <ImageView android:layout_gravity="center" android:id="@+id/iv_icon" android:layout_width="@dimen/_7sdp" android:layout_height="wrap_content" android:src="@drawable/mobile_ic_cross" android:adjustViewBounds="true"/>
+        <TextView android:textSize="@dimen/_4sdp" android:textColor="@color/white" android:layout_gravity="end|bottom" android:id="@+id/tv_count" android:padding="@dimen/_3sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+2" android:fontFamily="@font/heading_now_66_bold"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    <ImageView android:id="@+id/iv_effect_foreground" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/_1sdp"/>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end" android:id="@+id/btn_delete" android:padding="@dimen/_1sdp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" app:backgroundMainColor="@color/red" app:corners="@dimen/_10sdp">
+        <ImageView android:layout_width="@dimen/_6sdp" android:layout_height="wrap_content" android:src="@drawable/cross" android:adjustViewBounds="true"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

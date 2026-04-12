@@ -27,7 +27,6 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.core.content.res.TypedArrayUtils;
 import androidx.core.graphics.PathParser;
 import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.core.view.ViewCompat;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.IOException;
 import java.util.ArrayDeque;
@@ -421,7 +420,7 @@ public class VectorDrawableCompat extends VectorDrawableCommon {
     }
 
     static int applyAlpha(int i, float f) {
-        return (i & ViewCompat.MEASURED_SIZE_MASK) | (((int) (Color.alpha(i) * f)) << 24);
+        return (i & 16777215) | (((int) (Color.alpha(i) * f)) << 24);
     }
 
     @Override // android.graphics.drawable.Drawable

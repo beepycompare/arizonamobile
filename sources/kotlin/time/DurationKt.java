@@ -129,13 +129,13 @@ public final class DurationKt {
     }
 
     /* renamed from: times-mvk6XK0 */
-    private static final long m10640timesmvk6XK0(int i, long j) {
-        return Duration.m10569timesUwyO8pc(j, i);
+    private static final long m10641timesmvk6XK0(int i, long j) {
+        return Duration.m10570timesUwyO8pc(j, i);
     }
 
     /* renamed from: times-kIfJnKk */
-    private static final long m10639timeskIfJnKk(double d, long j) {
-        return Duration.m10568timesUwyO8pc(j, d);
+    private static final long m10640timeskIfJnKk(double d, long j) {
+        return Duration.m10569timesUwyO8pc(j, d);
     }
 
     public static /* synthetic */ long parseDuration$default(String str, boolean z, boolean z2, int i, Object obj) {
@@ -153,7 +153,7 @@ public final class DurationKt {
             if (z2) {
                 throw new IllegalArgumentException("The string is empty");
             }
-            return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+            return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
         }
         char charAt = str.charAt(0);
         if (charAt != '+') {
@@ -168,7 +168,7 @@ public final class DurationKt {
             if (z2) {
                 throw new IllegalArgumentException("No components");
             }
-            return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+            return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
         }
         if (str.charAt(i2) == 'P') {
             parseDefaultStringFormat = parseIsoStringFormat(str, i2 + 1, z2);
@@ -176,13 +176,13 @@ public final class DurationKt {
             if (z2) {
                 throw new IllegalArgumentException("");
             }
-            return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+            return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
         } else if (StringsKt.regionMatches(str, i2, INFINITY_STRING, 0, Math.max(str.length() - i2, 8), true)) {
-            parseDefaultStringFormat = Duration.Companion.m10630getINFINITEUwyO8pc();
+            parseDefaultStringFormat = Duration.Companion.m10631getINFINITEUwyO8pc();
         } else {
             parseDefaultStringFormat = parseDefaultStringFormat(str, i2, z3, z2);
         }
-        return (i == 0 || Duration.m10543equalsimpl0(parseDefaultStringFormat, Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib())) ? parseDefaultStringFormat : Duration.m10582unaryMinusUwyO8pc(parseDefaultStringFormat);
+        return (i == 0 || Duration.m10544equalsimpl0(parseDefaultStringFormat, Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib())) ? parseDefaultStringFormat : Duration.m10583unaryMinusUwyO8pc(parseDefaultStringFormat);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:348:0x01c6, code lost:
@@ -232,7 +232,7 @@ public final class DurationKt {
             if (z) {
                 throw new IllegalArgumentException("");
             }
-            return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+            return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
         }
         DurationUnit durationUnit = null;
         long j2 = 0;
@@ -245,7 +245,7 @@ public final class DurationKt {
                     if (z) {
                         throw new IllegalArgumentException(str3);
                     }
-                    return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                    return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
                 }
                 z2 = true;
             } else {
@@ -360,7 +360,7 @@ public final class DurationKt {
                                         if (z) {
                                             throw new IllegalArgumentException(str2);
                                         }
-                                        return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                                        return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
                                     }
                                     isoDurationUnitByShortNameOrNull = isoDurationUnitByShortNameOrNull(str, i4);
                                     if (isoDurationUnitByShortNameOrNull != null) {
@@ -368,33 +368,33 @@ public final class DurationKt {
                                         if (z) {
                                             throw new IllegalArgumentException(str5);
                                         }
-                                        return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                                        return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
                                     } else if (durationUnit != null && durationUnit.compareTo(isoDurationUnitByShortNameOrNull) <= 0) {
                                         if (z) {
                                             throw new IllegalArgumentException("Unexpected order of duration components");
                                         }
-                                        return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                                        return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
                                     } else {
                                         if (isoDurationUnitByShortNameOrNull == DurationUnit.DAYS) {
                                             if (z2) {
                                                 if (z) {
                                                     throw new IllegalArgumentException(str2);
                                                 }
-                                                return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                                                return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
                                             }
                                             j2 = i3 * DurationUnitKt.convertDurationUnitToMilliseconds(j4, isoDurationUnitByShortNameOrNull);
                                         } else if (!z2) {
                                             if (z) {
                                                 throw new IllegalArgumentException(str2);
                                             }
-                                            return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                                            return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
                                         } else {
                                             long addMillisWithoutOverflow = addMillisWithoutOverflow(j2, i3 * DurationUnitKt.convertDurationUnitToMilliseconds(j4, isoDurationUnitByShortNameOrNull));
                                             if (addMillisWithoutOverflow == Duration.INVALID_RAW_VALUE) {
                                                 if (z) {
                                                     throw new IllegalArgumentException(str2);
                                                 }
-                                                return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                                                return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
                                             }
                                             j2 = addMillisWithoutOverflow;
                                         }
@@ -405,7 +405,7 @@ public final class DurationKt {
                                 }
                             }
                             if (z) {
-                                return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                                return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
                             }
                             throw new IllegalArgumentException(str42);
                         }
@@ -424,7 +424,7 @@ public final class DurationKt {
                         if (z) {
                             throw new IllegalArgumentException(str2);
                         }
-                        return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                        return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
                     }
                 }
                 i2 = i6;
@@ -445,7 +445,7 @@ public final class DurationKt {
                 }
             }
         }
-        return Duration.m10567plusLRDsOJo(toDuration(j2, DurationUnit.MILLISECONDS), toDuration(j3, DurationUnit.NANOSECONDS));
+        return Duration.m10568plusLRDsOJo(toDuration(j2, DurationUnit.MILLISECONDS), toDuration(j3, DurationUnit.NANOSECONDS));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:255:0x00d0, code lost:
@@ -467,7 +467,7 @@ public final class DurationKt {
         if (r28 != false) goto L65;
      */
     /* JADX WARN: Code restructure failed: missing block: B:262:0x00e7, code lost:
-        return kotlin.time.Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+        return kotlin.time.Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
      */
     /* JADX WARN: Code restructure failed: missing block: B:264:0x00ed, code lost:
         throw new java.lang.IllegalArgumentException("");
@@ -504,7 +504,7 @@ public final class DurationKt {
                 if (z2) {
                     throw new IllegalArgumentException("No components");
                 }
-                return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
             }
             z3 = true;
         } else {
@@ -555,7 +555,7 @@ public final class DurationKt {
                 if (z2) {
                     throw new IllegalArgumentException("");
                 }
-                return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
             }
             boolean z8 = str.charAt(i5) == '.';
             if (z8) {
@@ -609,7 +609,7 @@ public final class DurationKt {
                 if (z2) {
                     throw new IllegalArgumentException("");
                 }
-                return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
             }
             z5 = z8;
             i3 = -1;
@@ -620,12 +620,12 @@ public final class DurationKt {
                 if (z2) {
                     throw new IllegalArgumentException(str2);
                 }
-                return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
             } else if (durationUnit != null && durationUnit.compareTo(defaultDurationUnitByShortNameOrNull) <= 0) {
                 if (z2) {
                     throw new IllegalArgumentException("Unexpected order of duration components");
                 }
-                return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
             } else {
                 int i16 = WhenMappings.$EnumSwitchMapping$0[defaultDurationUnitByShortNameOrNull.ordinal()];
                 if (i16 == 1) {
@@ -653,7 +653,7 @@ public final class DurationKt {
                     if (z2) {
                         throw new IllegalArgumentException("Fractional component must be last");
                     }
-                    return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+                    return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
                 } else {
                     if (defaultDurationUnitByShortNameOrNull.compareTo(DurationUnit.MINUTES) >= 0 && shortNameLength - i3 > 15) {
                         fractionDigitsToNanos = parseFractionFallback(str, i3, shortNameLength - getShortNameLength(defaultDurationUnitByShortNameOrNull), defaultDurationUnitByShortNameOrNull);
@@ -668,7 +668,7 @@ public final class DurationKt {
                 }
             }
         }
-        return Duration.m10567plusLRDsOJo(toDuration(j3, DurationUnit.MILLISECONDS), toDuration(j4, DurationUnit.NANOSECONDS));
+        return Duration.m10568plusLRDsOJo(toDuration(j3, DurationUnit.MILLISECONDS), toDuration(j4, DurationUnit.NANOSECONDS));
     }
 
     public static final long addMillisWithoutOverflow(long j, long j2) {
@@ -693,19 +693,19 @@ public final class DurationKt {
         if (z) {
             throw new IllegalArgumentException(str);
         }
-        return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+        return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
     }
 
     private static final long handleError(boolean z, String str) {
         if (z) {
             throw new IllegalArgumentException(str);
         }
-        return Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib();
+        return Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib();
     }
 
     /* renamed from: onInvalid-ge6A_vg */
-    private static final Duration m10638onInvalidge6A_vg(long j, Function0<Duration> function0) {
-        return Duration.m10543equalsimpl0(j, Duration.Companion.m10631getINVALIDUwyO8pc$kotlin_stdlib()) ? function0.invoke() : Duration.m10536boximpl(j);
+    private static final Duration m10639onInvalidge6A_vg(long j, Function0<Duration> function0) {
+        return Duration.m10544equalsimpl0(j, Duration.Companion.m10632getINVALIDUwyO8pc$kotlin_stdlib()) ? function0.invoke() : Duration.m10537boximpl(j);
     }
 
     private static final DurationUnit defaultDurationUnitByShortNameOrNull(String str, int i) {
@@ -796,15 +796,15 @@ public final class DurationKt {
     }
 
     public static final long durationOfNanos(long j) {
-        return Duration.Companion.m10629fromRawValueUwyO8pc$kotlin_stdlib(j << 1);
+        return Duration.Companion.m10630fromRawValueUwyO8pc$kotlin_stdlib(j << 1);
     }
 
     public static final long durationOfMillis(long j) {
-        return Duration.Companion.m10629fromRawValueUwyO8pc$kotlin_stdlib((j << 1) + 1);
+        return Duration.Companion.m10630fromRawValueUwyO8pc$kotlin_stdlib((j << 1) + 1);
     }
 
     public static final long durationOf(long j, int i) {
-        return Duration.Companion.m10629fromRawValueUwyO8pc$kotlin_stdlib((j << 1) + i);
+        return Duration.Companion.m10630fromRawValueUwyO8pc$kotlin_stdlib((j << 1) + i);
     }
 
     public static final long durationOfNanosNormalized(long j) {

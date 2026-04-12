@@ -570,14 +570,14 @@ public final class ArizonaRentPage extends MobilePage {
                     data = CollectionsKt.sortedWith(data, new Comparator() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage$setFilterData$$inlined$sortedBy$1
                         @Override // java.util.Comparator
                         public final int compare(T t, T t2) {
-                            return ComparisonsKt.compareValues(Integer.valueOf(((ArizonaRentAdModel) t).getCost()), Integer.valueOf(((ArizonaRentAdModel) t2).getCost()));
+                            return ComparisonsKt.compareValues(Long.valueOf(((ArizonaRentAdModel) t).getCost()), Long.valueOf(((ArizonaRentAdModel) t2).getCost()));
                         }
                     });
                 } else {
                     data = CollectionsKt.sortedWith(data, new Comparator() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage$setFilterData$$inlined$sortedByDescending$1
                         @Override // java.util.Comparator
                         public final int compare(T t, T t2) {
-                            return ComparisonsKt.compareValues(Integer.valueOf(((ArizonaRentAdModel) t2).getCost()), Integer.valueOf(((ArizonaRentAdModel) t).getCost()));
+                            return ComparisonsKt.compareValues(Long.valueOf(((ArizonaRentAdModel) t2).getCost()), Long.valueOf(((ArizonaRentAdModel) t).getCost()));
                         }
                     });
                 }

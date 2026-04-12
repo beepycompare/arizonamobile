@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="18dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="18">
+    <path android:fillColor="@drawable/res_0x7f080265_mobile_ic_k_coin__0" android:pathData="M11.057,17.095H6.204V0.616H11.057V6.729H12.141L14.262,0.616H19.477L16.046,8.545V8.656L19.928,17.095H14.691L12.141,10.583H11.057V17.095Z"/>
+    <path android:fillColor="@drawable/res_0x7f080266_mobile_ic_k_coin__1" android:pathData="M1.254,4.79H23.199V6.636H1.254V4.79Z"/>
+    <path android:fillColor="@drawable/res_0x7f080267_mobile_ic_k_coin__2" android:pathData="M1.254,10.942H23.199V12.788H1.254V10.942Z"/>
+    <path android:fillColor="@drawable/res_0x7f080268_mobile_ic_k_coin__3" android:pathData="M9.803,16.478H4.95V0H9.803V6.113H10.887L13.008,0H18.223L14.792,7.929V8.04L18.674,16.478H13.437L10.887,9.967H9.803V16.478Z"/>
+    <path android:fillColor="@drawable/res_0x7f080269_mobile_ic_k_coin__4" android:pathData="M0,4.174H21.945V6.019H0V4.174Z"/>
+    <path android:fillColor="@drawable/res_0x7f08026a_mobile_ic_k_coin__5" android:pathData="M0,10.326H21.945V12.172H0V10.326Z"/>
+</vector>

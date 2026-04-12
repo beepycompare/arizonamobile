@@ -75,14 +75,17 @@
     <string name="choose_color">выберите цвет</string>
     <string name="choose_format">Выберите формат</string>
     <string name="choose_real_estate">Выберите недвижимось</string>
+    <string name="chose_item">Выберите предмет</string>
+    <string name="chose_items">Выберите предметы</string>
+    <string name="chose_type">Выберите тип</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
     <string name="client_check">ПОЧИНИТЬ</string>
     <string name="close">Закрыть</string>
     <string name="close_drawer">Close navigation menu</string>
     <string name="close_sheet">Close sheet</string>
     <string name="close_txt">Закрыто</string>
-    <string name="res_0x7f120051_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
-    <string name="res_0x7f120052_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"e40c2521640e07e6a60024d21955cf1ef432f300\"\n}\n</string>
+    <string name="res_0x7f120054_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
+    <string name="res_0x7f120055_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"9bc1d4840a16942646e9ffcab40152ac1a4c4251\"\n}\n</string>
     <string name="common_google_play_services_enable_button">Enable</string>
     <string name="common_google_play_services_enable_text">%1$s won\'t work unless you enable Google Play services.</string>
     <string name="common_google_play_services_enable_title">Enable Google Play services</string>
@@ -109,6 +112,7 @@
     <string name="corrupted_files_found">Удалены временные и поврежденные файлы</string>
     <string name="cost">стоимость</string>
     <string name="cost_days">Стоимость в сутки</string>
+    <string name="cost_for_hour">Стоимость в час</string>
     <string name="cost_hours">Стоимость за час</string>
     <string name="create_ad">Создать объявление</string>
     <string name="currency_not_found">Currency not found</string>
@@ -129,6 +133,7 @@
     <string name="default_update_percent">30%</string>
     <string name="default_user_name">Maks_Mironow (999)</string>
     <string name="default_web_client_id">551532909837-v18n6loavv3j8lm9f93unfn6li0vrabg.apps.googleusercontent.com</string>
+    <string name="delivered">доставлено</string>
     <string name="desc">Описание</string>
     <string name="description">Играйте в любимые проекты в любой точке мира на своём мобильном устройстве</string>
     <string name="dest_title">destination title</string>
@@ -237,6 +242,8 @@
     <string name="history">История</string>
     <string name="home">дом</string>
     <string name="how_hear">Откуда узнали о проекте?</string>
+    <string name="i_km">%1$s %2$s km</string>
+    <string name="i_level">%1$d уровень</string>
     <string name="i_number_i">%2$s #%1$d</string>
     <string name="i_percent">%1$s%%</string>
     <string name="i_times">%1$d раз</string>
@@ -274,6 +281,8 @@
     <string name="left">Левый</string>
     <string name="left_time">Left ~</string>
     <string name="left_time_default">2 min.</string>
+    <string name="legend_i">легендарное (%1$d)</string>
+    <string name="limited">LIMITED</string>
     <string name="loading">Загрузка...</string>
     <string name="m3_exceed_max_badge_text_suffix">%1$s%2$s</string>
     <string name="m3_loading_indicator_content_description">Loading</string>
@@ -496,6 +505,8 @@
     <string name="open_website">Перейти на сайт</string>
     <string name="organization">Организация</string>
     <string name="out_of">%1$d/%2$d</string>
+    <string name="out_of_brackets">(%1$d/%2$d)</string>
+    <string name="out_of_k">%1$d/%2$dk</string>
     <string name="painting">покраска</string>
     <string name="pass">Пропустить</string>
     <string name="password">Пароль</string>
@@ -510,6 +521,7 @@
     <string name="per_hour">за час</string>
     <string name="permissions_not_granted">Для использования микрофона, Вам необходимо предоставить все разрешения.\nВы сможете сделать это позже в игре</string>
     <string name="phoenix">Phoenix</string>
+    <string name="plus_i">+%1$d</string>
     <string name="plus_percent">+%1$d%%</string>
     <string name="preference_copied">\"%1$s\" copied to clipboard.</string>
     <string name="prepare_data">Prepare data</string>
@@ -517,12 +529,14 @@
     <string name="project_id">arizona-21</string>
     <string name="public_ad">Публикация объявления</string>
     <string name="public_debug">public_debug</string>
+    <string name="publish_add">Публикация объявления</string>
     <string name="published">(опубликовано)</string>
     <string name="purchase_title">Покупка AZ-коинов</string>
     <string name="radar_info">Частота моргания индикатора обозначает близость к пришельцу</string>
     <string name="raise_list">поднять в списке</string>
     <string name="range_end">Range end</string>
     <string name="range_start">Range start</string>
+    <string name="rare_i">редкое (%1$d)</string>
     <string name="rating_bp">Рейтинг BP</string>
     <string name="rcon_password">RCON Password</string>
     <string name="recording">Запись \nсигнала</string>
@@ -565,6 +579,7 @@
     <string name="server_list">Список серверов</string>
     <string name="server_password">Server Password</string>
     <string name="server_unreachable">Сервер недоступен</string>
+    <string name="set">сет</string>
     <string name="set_i">СЕТ №%1$d</string>
     <string name="settings">Настройки</string>
     <string name="sharpening">заточка</string>
@@ -589,6 +604,7 @@
     <string name="success_chance">шанс успеха</string>
     <string name="sum">Сумма</string>
     <string name="summary_collapsed_preference_list">%1$s, %2$s</string>
+    <string name="supply">поставка</string>
     <string name="switch_role">Switch</string>
     <string name="tab">Tab</string>
     <string name="task_for_upgrade">Задания для повышения на ранг</string>
@@ -608,6 +624,7 @@
     <string name="top_up">Пополнить</string>
     <string name="trade_request">Ожидание подтверждения обмена</string>
     <string name="trade_shop">Торговая лавка</string>
+    <string name="trash_i">хлам (%1$d)</string>
     <string name="txt_number">№</string>
     <string name="unavailable">недоступно</string>
     <string name="unknown">Неизвестно</string>
@@ -633,6 +650,7 @@
     <string name="v7_preference_on">ON</string>
     <string name="vkontakte">Вконтакте</string>
     <string name="waiting">Waiting</string>
+    <string name="warehouse">Склад</string>
     <string name="warehouse_bank_vault">банковское хранилище</string>
     <string name="warehouse_barn">амбар</string>
     <string name="warehouse_camper_cupboard">шкаф кемпера</string>

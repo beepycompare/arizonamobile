@@ -103,6 +103,21 @@
     </attr>
     <attr name="alertDialogTheme" format="reference">
     </attr>
+    <attr name="alignContent">
+        <enum name="flex_start" value="0" />
+        <enum name="flex_end" value="1" />
+        <enum name="center" value="2" />
+        <enum name="space_between" value="3" />
+        <enum name="space_around" value="4" />
+        <enum name="stretch" value="5" />
+    </attr>
+    <attr name="alignItems">
+        <enum name="flex_start" value="0" />
+        <enum name="flex_end" value="1" />
+        <enum name="center" value="2" />
+        <enum name="baseline" value="3" />
+        <enum name="stretch" value="4" />
+    </attr>
     <attr name="allowDividerAbove" format="boolean">
     </attr>
     <attr name="allowDividerAfterLastItem" format="boolean">
@@ -1017,6 +1032,8 @@
     </attr>
     <attr name="customBoolean" format="boolean">
     </attr>
+    <attr name="customCardViewHeigh" format="dimension">
+    </attr>
     <attr name="customColorDrawableValue" format="color">
     </attr>
     <attr name="customColorValue" format="color">
@@ -1107,6 +1124,12 @@
     <attr name="divider" format="reference">
     </attr>
     <attr name="dividerColor" format="reference|color">
+    </attr>
+    <attr name="dividerDrawable" format="reference">
+    </attr>
+    <attr name="dividerDrawableHorizontal" format="reference">
+    </attr>
+    <attr name="dividerDrawableVertical" format="reference">
     </attr>
     <attr name="dividerHorizontal" format="reference">
     </attr>
@@ -1391,9 +1414,15 @@
     </attr>
     <attr name="errorShown" format="boolean">
     </attr>
+    <attr name="errorText" format="string">
+    </attr>
     <attr name="errorTextAppearance" format="reference">
     </attr>
     <attr name="errorTextColor" format="color">
+    </attr>
+    <attr name="errorTextMarginTop" format="dimension">
+    </attr>
+    <attr name="errorTextSize" format="dimension">
     </attr>
     <attr name="exitAnim" format="reference">
     </attr>
@@ -1536,6 +1565,17 @@
         <enum name="adjacent" value="2" />
     </attr>
     <attr name="firstBaselineToTopHeight" format="dimension">
+    </attr>
+    <attr name="flexDirection">
+        <enum name="row" value="0" />
+        <enum name="row_reverse" value="1" />
+        <enum name="column" value="2" />
+        <enum name="column_reverse" value="3" />
+    </attr>
+    <attr name="flexWrap">
+        <enum name="nowrap" value="0" />
+        <enum name="wrap" value="1" />
+        <enum name="wrap_reverse" value="2" />
     </attr>
     <attr name="floatingActionButtonLargePrimaryStyle" format="reference">
     </attr>
@@ -2065,6 +2105,14 @@
     </attr>
     <attr name="itemVerticalPadding" format="dimension">
     </attr>
+    <attr name="justifyContent">
+        <enum name="flex_start" value="0" />
+        <enum name="flex_end" value="1" />
+        <enum name="center" value="2" />
+        <enum name="space_between" value="3" />
+        <enum name="space_around" value="4" />
+        <enum name="space_evenly" value="5" />
+    </attr>
     <attr name="keep_content_on_player_reset" format="boolean">
     </attr>
     <attr name="key" format="string">
@@ -2119,6 +2167,14 @@
         <enum name="callMeasure" value="2" />
     </attr>
     <attr name="layoutManager" format="string">
+    </attr>
+    <attr name="layout_alignSelf">
+        <enum name="auto" value="-1" />
+        <enum name="flex_start" value="0" />
+        <enum name="flex_end" value="1" />
+        <enum name="center" value="2" />
+        <enum name="baseline" value="3" />
+        <enum name="stretch" value="4" />
     </attr>
     <attr name="layout_anchor" format="reference">
     </attr>
@@ -2292,6 +2348,12 @@
     </attr>
     <attr name="layout_editor_absoluteY" format="dimension">
     </attr>
+    <attr name="layout_flexBasisPercent" format="fraction">
+    </attr>
+    <attr name="layout_flexGrow" format="float">
+    </attr>
+    <attr name="layout_flexShrink" format="float">
+    </attr>
     <attr name="layout_goneMarginBaseline" format="dimension">
     </attr>
     <attr name="layout_goneMarginBottom" format="dimension">
@@ -2319,6 +2381,14 @@
     </attr>
     <attr name="layout_marginBaseline" format="dimension">
     </attr>
+    <attr name="layout_maxHeight" format="dimension">
+    </attr>
+    <attr name="layout_maxWidth" format="dimension">
+    </attr>
+    <attr name="layout_minHeight" format="dimension">
+    </attr>
+    <attr name="layout_minWidth" format="dimension">
+    </attr>
     <attr name="layout_optimizationLevel">
         <flag name="none" value="0" />
         <flag name="legacy" value="0" />
@@ -2335,6 +2405,8 @@
         <flag name="dependency_ordering" value="512" />
         <flag name="grouping" value="1024" />
     </attr>
+    <attr name="layout_order" format="integer">
+    </attr>
     <attr name="layout_scrollEffect">
         <enum name="none" value="0" />
         <enum name="compress" value="1" />
@@ -2349,6 +2421,8 @@
         <flag name="snapMargins" value="0x20" />
     </attr>
     <attr name="layout_scrollInterpolator" format="reference">
+    </attr>
+    <attr name="layout_wrapBefore" format="boolean">
     </attr>
     <attr name="layout_wrapBehaviorInParent">
         <enum name="included" value="0" />
@@ -2751,6 +2825,8 @@
     <attr name="maxHeight" format="dimension">
     </attr>
     <attr name="maxImageSize" format="dimension">
+    </attr>
+    <attr name="maxLine" format="integer">
     </attr>
     <attr name="maxLines" format="integer">
     </attr>
@@ -3468,6 +3544,24 @@
         <flag name="collapseActionView" value="8" />
     </attr>
     <attr name="showDelay" format="integer">
+    </attr>
+    <attr name="showDivider">
+        <flag name="none" value="0" />
+        <flag name="beginning" value="1" />
+        <flag name="middle" value="2" />
+        <flag name="end" value="4" />
+    </attr>
+    <attr name="showDividerHorizontal">
+        <flag name="none" value="0" />
+        <flag name="beginning" value="1" />
+        <flag name="middle" value="2" />
+        <flag name="end" value="4" />
+    </attr>
+    <attr name="showDividerVertical">
+        <flag name="none" value="0" />
+        <flag name="beginning" value="1" />
+        <flag name="middle" value="2" />
+        <flag name="end" value="4" />
     </attr>
     <attr name="showDividers">
         <flag name="none" value="0" />

@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ServersInteractor.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor", f = "ServersInteractor.kt", i = {}, l = {103}, m = "checkFavorite", n = {}, nl = {104}, s = {}, v = 2)
+@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor", f = "ServersInteractor.kt", i = {}, l = {104}, m = "checkFavorite", n = {}, nl = {105}, s = {}, v = 2)
 /* loaded from: classes4.dex */
 public final class ServersInteractor$checkFavorite$1 extends ContinuationImpl {
     int label;

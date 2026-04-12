@@ -57,15 +57,15 @@ public final class AppDatabase_Impl extends AppDatabase {
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                super(9, "0a0fc920d52231bb54461669c571a75a", "5547ec6d0cb7cb0378d84e195718eb51");
+                super(10, "0fe28d94ab7189c477cb213aee264f0e", "9c21dc286825aaa44d594f4e51ee0d88");
             }
 
             @Override // androidx.room.RoomOpenDelegate
             public void createAllTables(SQLiteConnection connection) {
                 Intrinsics.checkNotNullParameter(connection, "connection");
-                SQLite.execSQL(connection, "CREATE TABLE IF NOT EXISTS `InventoryItemEntity` (`slot` INTEGER NOT NULL, `item` INTEGER, `id` INTEGER NOT NULL, `text` TEXT, `item_type` INTEGER, `amount` INTEGER, `background` INTEGER, `color` INTEGER, `bits` INTEGER, `available` INTEGER, `enchant` INTEGER, `breaks` INTEGER, `isActive` INTEGER, `itemStrength` INTEGER, `blackout` INTEGER, `time` INTEGER, `acsSlot` INTEGER, `inventoryType` INTEGER NOT NULL, `isColored` INTEGER NOT NULL, `isLocked` INTEGER NOT NULL, `effect` TEXT, `effectType` INTEGER, `quality` INTEGER, PRIMARY KEY(`slot`))");
+                SQLite.execSQL(connection, "CREATE TABLE IF NOT EXISTS `InventoryItemEntity` (`slot` INTEGER NOT NULL, `item` INTEGER, `id` INTEGER NOT NULL, `text` TEXT, `item_type` INTEGER, `amount` INTEGER, `background` INTEGER, `color` INTEGER, `bits` INTEGER, `available` INTEGER, `enchant` INTEGER, `breaks` INTEGER, `isActive` INTEGER, `itemStrength` INTEGER, `blackout` INTEGER, `time` INTEGER, `acsSlot` INTEGER, `inventoryType` INTEGER NOT NULL, `isColored` INTEGER NOT NULL, `isLocked` INTEGER NOT NULL, `effect` TEXT, `effectType` INTEGER, `quality` INTEGER, `custom_icon` TEXT, PRIMARY KEY(`slot`))");
                 SQLite.execSQL(connection, RoomMasterTable.CREATE_QUERY);
-                SQLite.execSQL(connection, "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0a0fc920d52231bb54461669c571a75a')");
+                SQLite.execSQL(connection, "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0fe28d94ab7189c477cb213aee264f0e')");
             }
 
             @Override // androidx.room.RoomOpenDelegate
@@ -113,6 +113,7 @@ public final class AppDatabase_Impl extends AppDatabase {
                 linkedHashMap.put("effect", new TableInfo.Column("effect", "TEXT", false, 0, null, 1));
                 linkedHashMap.put("effectType", new TableInfo.Column("effectType", "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("quality", new TableInfo.Column("quality", "INTEGER", false, 0, null, 1));
+                linkedHashMap.put("custom_icon", new TableInfo.Column("custom_icon", "TEXT", false, 0, null, 1));
                 TableInfo tableInfo = new TableInfo("InventoryItemEntity", linkedHashMap, new LinkedHashSet(), new LinkedHashSet());
                 TableInfo read = TableInfo.Companion.read(connection, "InventoryItemEntity");
                 if (!tableInfo.equals(read)) {

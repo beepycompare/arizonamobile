@@ -36,13 +36,13 @@
         <LinearLayout android:orientation="vertical" android:padding="@dimen/_4sdp" android:layout_width="match_parent" android:layout_height="wrap_content">
             <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
                 <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:id="@+id/tv_money" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/default_number" android:fontFamily="@font/heading_now_66_bold"/>
-                <ImageView android:id="@+id/iv_dollar" android:layout_width="@dimen/_9sdp" android:layout_height="@dimen/_9sdp" android:src="@drawable/ic_dollar" android:tint="#95ff00" android:layout_marginStart="@dimen/_2sdp"/>
                 <TextView android:textSize="@dimen/_6sdp" android:textColor="#6bffffff" android:id="@+id/tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/per_day" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_2sdp"/>
             </LinearLayout>
             <TextView android:textSize="@dimen/_4sdp" android:textColor="#b2ffffff" android:id="@+id/tv_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_2sdp" android:text="@string/from_i_to_i_days" android:fontFamily="@font/heading_now_65_medium"/>
             <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_4sdp">
                 <ImageView android:layout_width="@dimen/_6sdp" android:layout_height="@dimen/_6sdp" android:src="@drawable/mp_people_ic"/>
                 <TextView android:textSize="@dimen/_5sdp" android:textColor="#80ffffff" android:id="@+id/tv_user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/default_user_name" android:fontFamily="@font/heading_now_64_regular" android:layout_marginStart="@dimen/_3sdp"/>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/online" android:layout_width="@dimen/_6sdp" android:layout_height="@dimen/_6sdp" android:layout_marginStart="@dimen/_2sdp" app:backgroundMainColor="#8be475" app:corners="@dimen/_10sdp"/>
             </LinearLayout>
             <FrameLayout android:layout_width="match_parent" android:layout_height="@dimen/_20sdp" android:layout_marginTop="@dimen/_4sdp" android:layout_marginBottom="@dimen/_2sdp">
                 <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/btn_rent" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="#2857f4" app:backgroundSecondColor="#6cd0fa" app:corners="@dimen/_4sdp" app:gradientAngle="30">

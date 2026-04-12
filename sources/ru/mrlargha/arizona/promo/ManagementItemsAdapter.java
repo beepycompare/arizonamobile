@@ -18,6 +18,7 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.gradientBg.RadialBottomCenterCircleDrawable;
 import ru.mrlargha.feature.arizona.promo.R;
 import ru.mrlargha.feature.arizona.promo.databinding.ManagementItemBinding;
@@ -43,7 +44,7 @@ public final class ManagementItemsAdapter extends RecyclerView.Adapter<Managemen
             promoReward = (PromoReward) CollectionsKt.first((List<? extends Object>) this.itemsList);
         }
         ManagementItemBinding binding = holder.getBinding();
-        binding.text.setText(promoReward.getTitle());
+        binding.text.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, promoReward.getTitle(), 0.0f, 1, null));
         binding.colorBottom.setBackgroundColor(Color.parseColor(promoReward.getColor()));
         if (!UtilsKt.isArizonaType()) {
             BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new ManagementItemsAdapter$onBindViewHolder$1$1(promoReward, binding, null), 3, null);

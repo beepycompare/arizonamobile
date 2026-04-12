@@ -22,13 +22,13 @@ public final class UShortArrayBuilder extends PrimitiveArrayBuilder<UShortArray>
     private UShortArrayBuilder(short[] bufferWithData) {
         Intrinsics.checkNotNullParameter(bufferWithData, "bufferWithData");
         this.buffer = bufferWithData;
-        this.position = UShortArray.m9527getSizeimpl(bufferWithData);
+        this.position = UShortArray.m9528getSizeimpl(bufferWithData);
         ensureCapacity$kotlinx_serialization_core(10);
     }
 
     @Override // kotlinx.serialization.internal.PrimitiveArrayBuilder
     public /* bridge */ /* synthetic */ UShortArray build$kotlinx_serialization_core() {
-        return UShortArray.m9519boximpl(m10871buildamswpOA$kotlinx_serialization_core());
+        return UShortArray.m9520boximpl(m10872buildamswpOA$kotlinx_serialization_core());
     }
 
     @Override // kotlinx.serialization.internal.PrimitiveArrayBuilder
@@ -38,27 +38,27 @@ public final class UShortArrayBuilder extends PrimitiveArrayBuilder<UShortArray>
 
     @Override // kotlinx.serialization.internal.PrimitiveArrayBuilder
     public void ensureCapacity$kotlinx_serialization_core(int i) {
-        if (UShortArray.m9527getSizeimpl(this.buffer) < i) {
+        if (UShortArray.m9528getSizeimpl(this.buffer) < i) {
             short[] sArr = this.buffer;
-            short[] copyOf = Arrays.copyOf(sArr, RangesKt.coerceAtLeast(i, UShortArray.m9527getSizeimpl(sArr) * 2));
+            short[] copyOf = Arrays.copyOf(sArr, RangesKt.coerceAtLeast(i, UShortArray.m9528getSizeimpl(sArr) * 2));
             Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-            this.buffer = UShortArray.m9521constructorimpl(copyOf);
+            this.buffer = UShortArray.m9522constructorimpl(copyOf);
         }
     }
 
     /* renamed from: append-xj2QHRw$kotlinx_serialization_core  reason: not valid java name */
-    public final void m10870appendxj2QHRw$kotlinx_serialization_core(short s) {
+    public final void m10871appendxj2QHRw$kotlinx_serialization_core(short s) {
         PrimitiveArrayBuilder.ensureCapacity$kotlinx_serialization_core$default(this, 0, 1, null);
         short[] sArr = this.buffer;
         int position$kotlinx_serialization_core = getPosition$kotlinx_serialization_core();
         this.position = position$kotlinx_serialization_core + 1;
-        UShortArray.m9531set01HTLdE(sArr, position$kotlinx_serialization_core, s);
+        UShortArray.m9532set01HTLdE(sArr, position$kotlinx_serialization_core, s);
     }
 
     /* renamed from: build-amswpOA$kotlinx_serialization_core  reason: not valid java name */
-    public short[] m10871buildamswpOA$kotlinx_serialization_core() {
+    public short[] m10872buildamswpOA$kotlinx_serialization_core() {
         short[] copyOf = Arrays.copyOf(this.buffer, getPosition$kotlinx_serialization_core());
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return UShortArray.m9521constructorimpl(copyOf);
+        return UShortArray.m9522constructorimpl(copyOf);
     }
 }

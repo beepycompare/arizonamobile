@@ -51,7 +51,7 @@ public abstract class OnBackPressedCallback {
         Iterator<AutoCloseable> it = this.closeables.iterator();
         Intrinsics.checkNotNullExpressionValue(it, "iterator(...)");
         while (it.hasNext()) {
-            UByte$$ExternalSyntheticBackport0.m9255m((Object) it.next());
+            UByte$$ExternalSyntheticBackport0.m9256m((Object) it.next());
         }
         this.closeables.clear();
         for (OnBackPressedEventHandler onBackPressedEventHandler : this.eventHandlers) {

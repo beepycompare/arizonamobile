@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.FrameMetricsAggregator;
 import com.arizona.common.utils.EasyAnimation;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -427,7 +426,7 @@ public final class CarsScreen extends SAMPUIElement {
                     return;
                 case 10:
                     if (MapperKt.isJsonValid(data)) {
-                        setCarRarity((CarsRarity) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) CarsRarity.class));
+                        setCarRarity((CarsRarity) MapperKt.getGson().fromJson(data, (Class<Object>) CarsRarity.class));
                         return;
                     }
                     throw new JsonParseException("Json is not valid");

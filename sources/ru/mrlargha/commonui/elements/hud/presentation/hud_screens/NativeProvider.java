@@ -16,7 +16,7 @@ public final class NativeProvider {
     public final void setNativeHudTimer2(NativeHudTimer nativeHudTimer) {
         int i;
         if (nativeHudTimer == null) {
-            this.hudListener.hudSetTimer(0);
+            this.hudListener.hudSetTimer2(0, 0, 0);
             return;
         }
         String icon = nativeHudTimer.getIcon();
@@ -24,109 +24,109 @@ public final class NativeProvider {
             case -1062813327:
                 if (icon.equals("muscle")) {
                     i = 1;
-                    this.hudListener.hudSetTimer2(nativeHudTimer.getSeconds(), nativeHudTimer.getMaxTime(), i);
+                    this.hudListener.hudSetTimer2(nativeHudTimer.getCurrentTime(), nativeHudTimer.getMaxTime(), i);
                     return;
                 }
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
             case -903340183:
                 if (icon.equals("shield")) {
                     i = 9;
-                    this.hudListener.hudSetTimer2(nativeHudTimer.getSeconds(), nativeHudTimer.getMaxTime(), i);
+                    this.hudListener.hudSetTimer2(nativeHudTimer.getCurrentTime(), nativeHudTimer.getMaxTime(), i);
                     return;
                 }
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
             case 97038:
                 if (icon.equals("axe")) {
                     i = 8;
-                    this.hudListener.hudSetTimer2(nativeHudTimer.getSeconds(), nativeHudTimer.getMaxTime(), i);
+                    this.hudListener.hudSetTimer2(nativeHudTimer.getCurrentTime(), nativeHudTimer.getMaxTime(), i);
                     return;
                 }
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
             case 97920:
                 if (icon.equals("bus")) {
                     i = 7;
-                    this.hudListener.hudSetTimer2(nativeHudTimer.getSeconds(), nativeHudTimer.getMaxTime(), i);
+                    this.hudListener.hudSetTimer2(nativeHudTimer.getCurrentTime(), nativeHudTimer.getMaxTime(), i);
                     return;
                 }
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
             case 3143256:
                 if (icon.equals("fish")) {
                     i = 13;
-                    this.hudListener.hudSetTimer2(nativeHudTimer.getSeconds(), nativeHudTimer.getMaxTime(), i);
+                    this.hudListener.hudSetTimer2(nativeHudTimer.getCurrentTime(), nativeHudTimer.getMaxTime(), i);
                     return;
                 }
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
             case 3452170:
                 if (icon.equals("pubg")) {
                     i = 3;
-                    this.hudListener.hudSetTimer2(nativeHudTimer.getSeconds(), nativeHudTimer.getMaxTime(), i);
+                    this.hudListener.hudSetTimer2(nativeHudTimer.getCurrentTime(), nativeHudTimer.getMaxTime(), i);
                     return;
                 }
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
             case 92975308:
                 if (icon.equals("anvil")) {
                     i = 2;
-                    this.hudListener.hudSetTimer2(nativeHudTimer.getSeconds(), nativeHudTimer.getMaxTime(), i);
+                    this.hudListener.hudSetTimer2(nativeHudTimer.getCurrentTime(), nativeHudTimer.getMaxTime(), i);
                     return;
                 }
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
             case 104079552:
                 if (icon.equals("money")) {
                     i = 6;
-                    this.hudListener.hudSetTimer2(nativeHudTimer.getSeconds(), nativeHudTimer.getMaxTime(), i);
+                    this.hudListener.hudSetTimer2(nativeHudTimer.getCurrentTime(), nativeHudTimer.getMaxTime(), i);
                     return;
                 }
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
             case 106680966:
                 if (icon.equals("pixel")) {
                     i = 10;
-                    this.hudListener.hudSetTimer2(nativeHudTimer.getSeconds(), nativeHudTimer.getMaxTime(), i);
+                    this.hudListener.hudSetTimer2(nativeHudTimer.getCurrentTime(), nativeHudTimer.getMaxTime(), i);
                     return;
                 }
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
             case 109556488:
                 if (icon.equals("smile")) {
                     i = 4;
-                    this.hudListener.hudSetTimer2(nativeHudTimer.getSeconds(), nativeHudTimer.getMaxTime(), i);
+                    this.hudListener.hudSetTimer2(nativeHudTimer.getCurrentTime(), nativeHudTimer.getMaxTime(), i);
                     return;
                 }
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
             case 110640223:
                 if (icon.equals("truck")) {
                     i = 5;
-                    this.hudListener.hudSetTimer2(nativeHudTimer.getSeconds(), nativeHudTimer.getMaxTime(), i);
+                    this.hudListener.hudSetTimer2(nativeHudTimer.getCurrentTime(), nativeHudTimer.getMaxTime(), i);
                     return;
                 }
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
             case 274187994:
                 if (icon.equals("road-repair")) {
                     i = 12;
-                    this.hudListener.hudSetTimer2(nativeHudTimer.getSeconds(), nativeHudTimer.getMaxTime(), i);
+                    this.hudListener.hudSetTimer2(nativeHudTimer.getCurrentTime(), nativeHudTimer.getMaxTime(), i);
                     return;
                 }
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
             case 1550584101:
                 if (icon.equals("deliver")) {
                     i = 11;
-                    this.hudListener.hudSetTimer2(nativeHudTimer.getSeconds(), nativeHudTimer.getMaxTime(), i);
+                    this.hudListener.hudSetTimer2(nativeHudTimer.getCurrentTime(), nativeHudTimer.getMaxTime(), i);
                     return;
                 }
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
             default:
-                this.hudListener.hudSetTimer(0);
+                this.hudListener.hudSetTimer2(0, 0, 0);
                 return;
         }
     }

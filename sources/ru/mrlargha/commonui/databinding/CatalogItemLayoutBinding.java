@@ -4,22 +4,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* loaded from: classes3.dex */
 public final class CatalogItemLayoutBinding implements ViewBinding {
+    public final View brightness;
     public final ImageView catalogImage;
     public final TextView catalogItemPriceText;
     public final TextView catalogNameText;
     public final ProgressBar catalogProgressBar;
-    private final LinearLayout rootView;
+    private final CustomCardView rootView;
 
-    private CatalogItemLayoutBinding(LinearLayout rootView, ImageView catalogImage, TextView catalogItemPriceText, TextView catalogNameText, ProgressBar catalogProgressBar) {
+    private CatalogItemLayoutBinding(CustomCardView rootView, View brightness, ImageView catalogImage, TextView catalogItemPriceText, TextView catalogNameText, ProgressBar catalogProgressBar) {
         this.rootView = rootView;
+        this.brightness = brightness;
         this.catalogImage = catalogImage;
         this.catalogItemPriceText = catalogItemPriceText;
         this.catalogNameText = catalogNameText;
@@ -27,7 +29,7 @@ public final class CatalogItemLayoutBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
+    public CustomCardView getRoot() {
         return this.rootView;
     }
 
@@ -44,19 +46,23 @@ public final class CatalogItemLayoutBinding implements ViewBinding {
     }
 
     public static CatalogItemLayoutBinding bind(View rootView) {
-        int i = R.id.catalog_image;
-        ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
-        if (imageView != null) {
-            i = R.id.catalog_item_price_text;
-            TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-            if (textView != null) {
-                i = R.id.catalog_name_text;
-                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                if (textView2 != null) {
-                    i = R.id.catalog_progress_bar;
-                    ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(rootView, i);
-                    if (progressBar != null) {
-                        return new CatalogItemLayoutBinding((LinearLayout) rootView, imageView, textView, textView2, progressBar);
+        int i = R.id.brightness;
+        View findChildViewById = ViewBindings.findChildViewById(rootView, i);
+        if (findChildViewById != null) {
+            i = R.id.catalog_image;
+            ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
+            if (imageView != null) {
+                i = R.id.catalog_item_price_text;
+                TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+                if (textView != null) {
+                    i = R.id.catalog_name_text;
+                    TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                    if (textView2 != null) {
+                        i = R.id.catalog_progress_bar;
+                        ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(rootView, i);
+                        if (progressBar != null) {
+                            return new CatalogItemLayoutBinding((CustomCardView) rootView, findChildViewById, imageView, textView, textView2, progressBar);
+                        }
                     }
                 }
             }

@@ -1,6 +1,10 @@
 package com.miami.game.feature.home.ui.compose;
 
 import android.content.Context;
+import androidx.compose.animation.core.AnimateAsStateKt;
+import androidx.compose.animation.core.AnimationSpecKt;
+import androidx.compose.animation.core.EasingKt;
+import androidx.compose.foundation.ImageKt;
 import androidx.compose.foundation.layout.Arrangement;
 import androidx.compose.foundation.layout.BoxKt;
 import androidx.compose.foundation.layout.BoxScopeInstance;
@@ -21,9 +25,15 @@ import androidx.compose.runtime.livedata.LiveDataAdapterKt;
 import androidx.compose.ui.Alignment;
 import androidx.compose.ui.ComposedModifierKt;
 import androidx.compose.ui.Modifier;
+import androidx.compose.ui.graphics.ColorFilter;
+import androidx.compose.ui.graphics.GraphicsLayerModifierKt;
+import androidx.compose.ui.graphics.GraphicsLayerScope;
+import androidx.compose.ui.graphics.painter.Painter;
+import androidx.compose.ui.layout.ContentScale;
 import androidx.compose.ui.layout.MeasurePolicy;
 import androidx.compose.ui.node.ComposeUiNode;
 import androidx.compose.ui.platform.AndroidCompositionLocals_androidKt;
+import androidx.compose.ui.res.PainterResources_androidKt;
 import androidx.compose.ui.unit.Dp;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
@@ -31,6 +41,7 @@ import androidx.lifecycle.compose.FlowExtKt;
 import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
+import com.google.firebase.messaging.ServiceStarter;
 import com.miami.game.core.decompose.utils.SharedEventFlow;
 import com.miami.game.core.design.system.component.background.Main_backgroundKt;
 import com.miami.game.core.external.navigation.ui.ObserveExternalNavigationActionsKt;
@@ -49,7 +60,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KFunction;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: HomeScreen.kt */
-@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\b\u0010\u001a\u008f\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0012\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\t2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u001e\u0010\f\u001a\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u0005\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\r2\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u000f\u001aÉ\u0001\u0010\u0010\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00122\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u00142\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0012\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\t2\u0012\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\t2\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010 \u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010!\u001aÉ\u0001\u0010\"\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00122\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u00142\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0012\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\t2\u0012\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\t2\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010 \u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010!\u001a\r\u0010#\u001a\u00020\u0001H\u0003¢\u0006\u0002\u0010$¨\u0006%²\u0006\n\u0010\u0011\u001a\u00020\u0012X\u008a\u0084\u0002"}, d2 = {"HomeRoute", "", "component", "Lcom/miami/game/feature/home/ui/HomeComponent;", "navigateToSettings", "Lkotlin/Function0;", "navigateToSelectServers", "navigateTooRepairGameSuccess", "navigateToDownloadDialog", "Lkotlin/Function1;", "", "navigateToDownloadScreen", "navigateToErrorDialog", "Lkotlin/Function2;", "navigateToNotification", "(Lcom/miami/game/feature/home/ui/HomeComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "HomeScreen", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "notificationState", "Landroidx/compose/runtime/State;", "", "onClickGame", "onClickServer", "onClickShop", "onClickNews", "onClickSocial", "onClickAccount", "onClickForum", "onClickSettings", "onClickSetup", "onClickNotifications", "onLongClickGame", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Landroidx/compose/runtime/State;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V", "HomeContent", "NewsItemUiPreview", "(Landroidx/compose/runtime/Composer;I)V", "home"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\b\u0011\n\u0002\u0010\u0007\u001a\u008f\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0012\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\t2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u001e\u0010\f\u001a\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u0005\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\r2\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u000f\u001aÉ\u0001\u0010\u0010\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00122\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u00142\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0012\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\t2\u0012\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\t2\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010 \u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010!\u001aÉ\u0001\u0010\"\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00122\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u00142\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0012\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\t2\u0012\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\t2\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010 \u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010!\u001a\r\u0010#\u001a\u00020\u0001H\u0003¢\u0006\u0002\u0010$¨\u0006%²\u0006\n\u0010\u0011\u001a\u00020\u0012X\u008a\u0084\u0002²\u0006\n\u0010&\u001a\u00020'X\u008a\u0084\u0002"}, d2 = {"HomeRoute", "", "component", "Lcom/miami/game/feature/home/ui/HomeComponent;", "navigateToSettings", "Lkotlin/Function0;", "navigateToSelectServers", "navigateTooRepairGameSuccess", "navigateToDownloadDialog", "Lkotlin/Function1;", "", "navigateToDownloadScreen", "navigateToErrorDialog", "Lkotlin/Function2;", "navigateToNotification", "(Lcom/miami/game/feature/home/ui/HomeComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "HomeScreen", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "notificationState", "Landroidx/compose/runtime/State;", "", "onClickGame", "onClickServer", "onClickShop", "onClickNews", "onClickSocial", "onClickAccount", "onClickForum", "onClickSettings", "onClickSetup", "onClickNotifications", "onLongClickGame", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Landroidx/compose/runtime/State;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V", "HomeContent", "NewsItemUiPreview", "(Landroidx/compose/runtime/Composer;I)V", "home", "alpha", ""}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class HomeScreenKt {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -183,7 +194,7 @@ public final class HomeScreenKt {
             boolean changedInstance3 = composer2.changedInstance(homeComponent) | composer2.changedInstance(context);
             Object rememberedValue4 = composer2.rememberedValue();
             if (changedInstance3 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                rememberedValue4 = new Function0() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda1
+                rememberedValue4 = new Function0() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         Unit HomeRoute$lambda$4$0;
@@ -273,7 +284,7 @@ public final class HomeScreenKt {
         }
         ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda2
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     return HomeScreenKt.HomeRoute$lambda$13(HomeComponent.this, navigateToSettings, navigateToSelectServers, navigateTooRepairGameSuccess, navigateToDownloadDialog, navigateToDownloadScreen, navigateToErrorDialog, navigateToNotification, i, (Composer) obj, ((Integer) obj2).intValue());
@@ -291,7 +302,6 @@ public final class HomeScreenKt {
     public static final void HomeScreen(final HomeUiState uiState, final State<Integer> notificationState, final Function0<Unit> onClickGame, final Function0<Unit> onClickServer, final Function0<Unit> onClickShop, final Function1<? super String, Unit> onClickNews, final Function1<? super String, Unit> onClickSocial, final Function0<Unit> onClickAccount, final Function0<Unit> onClickForum, final Function0<Unit> onClickSettings, final Function0<Unit> onClickSetup, final Function0<Unit> onClickNotifications, final Function0<Unit> onLongClickGame, Composer composer, final int i, final int i2) {
         int i3;
         int i4;
-        int i5;
         Composer composer2;
         Intrinsics.checkNotNullParameter(uiState, "uiState");
         Intrinsics.checkNotNullParameter(notificationState, "notificationState");
@@ -307,9 +317,9 @@ public final class HomeScreenKt {
         Intrinsics.checkNotNullParameter(onClickNotifications, "onClickNotifications");
         Intrinsics.checkNotNullParameter(onLongClickGame, "onLongClickGame");
         Composer startRestartGroup = composer.startRestartGroup(392307616);
-        ComposerKt.sourceInformation(startRestartGroup, "C(HomeScreen)N(uiState,notificationState,onClickGame,onClickServer,onClickShop,onClickNews,onClickSocial,onClickAccount,onClickForum,onClickSettings,onClickSetup,onClickNotifications,onLongClickGame)109@4642L2207:HomeScreen.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(HomeScreen)N(uiState,notificationState,onClickGame,onClickServer,onClickShop,onClickNews,onClickSocial,onClickAccount,onClickForum,onClickSettings,onClickSetup,onClickNotifications,onLongClickGame)109@4642L2203:HomeScreen.kt#dswm0d");
         if ((i & 6) == 0) {
-            i3 = (startRestartGroup.changed(uiState) ? 4 : 2) | i;
+            i3 = i | (startRestartGroup.changed(uiState) ? 4 : 2);
         } else {
             i3 = i;
         }
@@ -340,6 +350,7 @@ public final class HomeScreenKt {
         if ((805306368 & i) == 0) {
             i3 |= startRestartGroup.changedInstance(onClickSettings) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
         }
+        int i5 = i3;
         if ((i2 & 6) == 0) {
             i4 = i2 | (startRestartGroup.changedInstance(onClickSetup) ? 4 : 2);
         } else {
@@ -348,18 +359,16 @@ public final class HomeScreenKt {
         if ((i2 & 48) == 0) {
             i4 |= startRestartGroup.changedInstance(onClickNotifications) ? 32 : 16;
         }
-        int i6 = i4;
         if ((i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-            i5 = i6 | (startRestartGroup.changedInstance(onLongClickGame) ? 256 : 128);
-        } else {
-            i5 = i6;
+            i4 |= startRestartGroup.changedInstance(onLongClickGame) ? 256 : 128;
         }
-        if (!startRestartGroup.shouldExecute(((i3 & 306783379) == 306783378 && (i5 & 147) == 146) ? false : true, i3 & 1)) {
+        int i6 = i4;
+        if (!startRestartGroup.shouldExecute(((i5 & 306783379) == 306783378 && (i6 & 147) == 146) ? false : true, i5 & 1)) {
             composer2 = startRestartGroup;
             composer2.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(392307616, i3, i5, "com.miami.game.feature.home.ui.compose.HomeScreen (HomeScreen.kt:108)");
+                ComposerKt.traceEventStart(392307616, i5, i6, "com.miami.game.feature.home.ui.compose.HomeScreen (HomeScreen.kt:108)");
             }
             Modifier fillMaxSize$default = SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
@@ -387,10 +396,28 @@ public final class HomeScreenKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1468741406, "C135@5468L166,143@5644L584:HomeScreen.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1468741282, "C135@5468L166,143@5644L584,158@6250L265,169@6625L22,170@6671L72,166@6524L315:HomeScreen.kt#dswm0d");
+            Main_backgroundKt.BackgroundImage(uiState.getBackGroundId(), false, uiState.getImageBitmap(), uiState.getFile(), uiState.getVersion(), startRestartGroup, 48);
+            HomeContent(uiState, notificationState, onClickGame, onClickServer, onClickShop, onClickNews, onClickSocial, onClickAccount, onClickForum, onClickSettings, onClickSetup, onClickNotifications, onLongClickGame, startRestartGroup, 2147483646 & i5, i6 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED);
+            final State<Float> animateFloatAsState = AnimateAsStateKt.animateFloatAsState(uiState.getImageBitmap() == null ? 1.0f : 0.0f, AnimationSpecKt.tween$default(ServiceStarter.ERROR_UNKNOWN, 0, EasingKt.getFastOutSlowInEasing(), 2, null), 0.0f, "bg_alpha", null, startRestartGroup, 3072, 20);
+            Modifier fillMaxSize$default2 = SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2030795556, "CC(remember):HomeScreen.kt#9igjgp");
+            boolean changed = startRestartGroup.changed(animateFloatAsState);
+            Object rememberedValue = startRestartGroup.rememberedValue();
+            if (changed || rememberedValue == Composer.Companion.getEmpty()) {
+                rememberedValue = new Function1() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda0
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj) {
+                        Unit HomeScreen$lambda$0$1$0;
+                        HomeScreen$lambda$0$1$0 = HomeScreenKt.HomeScreen$lambda$0$1$0(State.this, (GraphicsLayerScope) obj);
+                        return HomeScreen$lambda$0$1$0;
+                    }
+                };
+                startRestartGroup.updateRememberedValue(rememberedValue);
+            }
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             composer2 = startRestartGroup;
-            Main_backgroundKt.BackgroundImage(uiState.getBackGroundId(), false, uiState.getImageBitmap(), uiState.getFile(), uiState.getVersion(), composer2, 48);
-            HomeContent(uiState, notificationState, onClickGame, onClickServer, onClickShop, onClickNews, onClickSocial, onClickAccount, onClickForum, onClickSettings, onClickSetup, onClickNotifications, onLongClickGame, composer2, 2147483646 & i3, i5 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED);
+            ImageKt.Image(PainterResources_androidKt.painterResource(uiState.getBackGroundId(), startRestartGroup, 0), (String) null, GraphicsLayerModifierKt.graphicsLayer(fillMaxSize$default2, (Function1) rememberedValue), (Alignment) null, ContentScale.Companion.getCrop(), 0.0f, (ColorFilter) null, composer2, Painter.$stable | 24624, 104);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();
@@ -403,13 +430,20 @@ public final class HomeScreenKt {
         }
         ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda0
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     return HomeScreenKt.HomeScreen$lambda$1(HomeUiState.this, notificationState, onClickGame, onClickServer, onClickShop, onClickNews, onClickSocial, onClickAccount, onClickForum, onClickSettings, onClickSetup, onClickNotifications, onLongClickGame, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit HomeScreen$lambda$0$1$0(State state, GraphicsLayerScope graphicsLayer) {
+        Intrinsics.checkNotNullParameter(graphicsLayer, "$this$graphicsLayer");
+        graphicsLayer.setAlpha(HomeScreen$lambda$0$0(state));
+        return Unit.INSTANCE;
     }
 
     public static final void HomeContent(final HomeUiState uiState, final State<Integer> notificationState, final Function0<Unit> onClickGame, final Function0<Unit> onClickServer, final Function0<Unit> onClickShop, final Function1<? super String, Unit> onClickNews, final Function1<? super String, Unit> onClickSocial, final Function0<Unit> onClickAccount, final Function0<Unit> onClickForum, final Function0<Unit> onClickSettings, final Function0<Unit> onClickSetup, final Function0<Unit> onClickNotifications, final Function0<Unit> onLongClickGame, Composer composer, final int i, final int i2) {
@@ -431,7 +465,7 @@ public final class HomeScreenKt {
         Intrinsics.checkNotNullParameter(onClickNotifications, "onClickNotifications");
         Intrinsics.checkNotNullParameter(onLongClickGame, "onLongClickGame");
         Composer startRestartGroup = composer.startRestartGroup(258468589);
-        ComposerKt.sourceInformation(startRestartGroup, "C(HomeContent)N(uiState,notificationState,onClickGame,onClickServer,onClickShop,onClickNews,onClickSocial,onClickAccount,onClickForum,onClickSettings,onClickSetup,onClickNotifications,onLongClickGame)196@7375L1307:HomeScreen.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(HomeContent)N(uiState,notificationState,onClickGame,onClickServer,onClickShop,onClickNews,onClickSocial,onClickAccount,onClickForum,onClickSettings,onClickSetup,onClickNotifications,onLongClickGame)196@7371L1307:HomeScreen.kt#dswm0d");
         if ((i & 6) == 0) {
             i3 = (startRestartGroup.changed(uiState) ? 4 : 2) | i;
         } else {
@@ -510,7 +544,7 @@ public final class HomeScreenKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -637544234, "C201@7486L523,216@8018L382,227@8410L266:HomeScreen.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -637544234, "C201@7482L523,216@8014L382,227@8406L266:HomeScreen.kt#dswm0d");
             Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(PaddingKt.m822paddingqDBjuR0$default(boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getCenterStart()), Dp.m7555constructorimpl(32), 0.0f, 0.0f, Dp.m7555constructorimpl(16), 6, null), 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), Alignment.Companion.getStart(), startRestartGroup, 6);
@@ -537,7 +571,7 @@ public final class HomeScreenKt {
             Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1749381735, "C206@7700L110,210@7823L104,214@7940L59:HomeScreen.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1749381735, "C206@7696L110,210@7819L104,214@7936L59:HomeScreen.kt#dswm0d");
             int i9 = i7 & 14;
             int i10 = i7 >> 15;
             SocialContentKt.SocialContent(uiState, onClickSocial, startRestartGroup, (i10 & 112) | i9);
@@ -575,7 +609,7 @@ public final class HomeScreenKt {
             Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1659112318, "C217@8070L320:HomeScreen.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1659112318, "C217@8066L320:HomeScreen.kt#dswm0d");
             MenuContentKt.MenuContent(uiState, notificationState, onClickAccount, onClickForum, onClickSettings, onClickNotifications, startRestartGroup, (i7 & WebSocketProtocol.PAYLOAD_SHORT) | (i10 & 896) | (i10 & 7168) | (57344 & i10) | ((i8 << 12) & 458752));
             composer2 = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -610,7 +644,7 @@ public final class HomeScreenKt {
             Updater.m4049setimpl(m4041constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer2, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer2, 863299728, "C228@8465L201:HomeScreen.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(composer2, 863299728, "C228@8461L201:HomeScreen.kt#dswm0d");
             int i11 = i7 >> 3;
             PlayContentKt.PlayContent(uiState, onClickGame, onClickServer, onLongClickGame, composer2, (i11 & 896) | i9 | (i11 & 112) | ((i8 << 3) & 7168));
             ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -631,7 +665,7 @@ public final class HomeScreenKt {
         }
         ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda4
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     return HomeScreenKt.HomeContent$lambda$1(HomeUiState.this, notificationState, onClickGame, onClickServer, onClickShop, onClickNews, onClickSocial, onClickAccount, onClickForum, onClickSettings, onClickSetup, onClickNotifications, onLongClickGame, i, i2, (Composer) obj, ((Integer) obj2).intValue());
@@ -642,7 +676,7 @@ public final class HomeScreenKt {
 
     private static final void NewsItemUiPreview(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(1764360146);
-        ComposerKt.sourceInformation(startRestartGroup, "C(NewsItemUiPreview)244@8837L464:HomeScreen.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(NewsItemUiPreview)244@8833L464:HomeScreen.kt#dswm0d");
         if (!startRestartGroup.shouldExecute(i != 0, i & 1)) {
             startRestartGroup.skipToGroupEnd();
         } else {
@@ -656,7 +690,7 @@ public final class HomeScreenKt {
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda3
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     return HomeScreenKt.NewsItemUiPreview$lambda$0(i, (Composer) obj, ((Integer) obj2).intValue());
@@ -668,5 +702,9 @@ public final class HomeScreenKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final HomeUiState HomeRoute$lambda$0(State<HomeUiState> state) {
         return state.getValue();
+    }
+
+    private static final float HomeScreen$lambda$0$0(State<Float> state) {
+        return state.getValue().floatValue();
     }
 }

@@ -9,6 +9,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.arizonaui.biz.MyBusinessScreen;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.feature.business.R;
 import ru.mrlargha.feature.business.databinding.MyBusinessChildStatItemBinding;
 /* compiled from: MyBusinessChildStatAdapter.kt */
@@ -32,8 +33,8 @@ public final class MyBusinessChildStatAdapter extends RecyclerView.Adapter<Busin
         Intrinsics.checkNotNullExpressionValue(businessDetailInfoItem, "get(...)");
         MyBusinessScreen.Companion.BusinessDetailInfoItem businessDetailInfoItem2 = businessDetailInfoItem;
         MyBusinessChildStatItemBinding binding = holder.getBinding();
-        binding.title.setText(businessDetailInfoItem2.getTitle());
-        binding.value.setText(businessDetailInfoItem2.getValue());
+        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessDetailInfoItem2.getTitle(), 0.0f, 1, null));
+        binding.value.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessDetailInfoItem2.getValue(), 0.0f, 1, null));
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

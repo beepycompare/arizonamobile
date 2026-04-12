@@ -24,7 +24,7 @@ import ru.mrlargha.commonui.elements.hud.presentation.api.obj.Query;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Hud.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.Hud$installHud$1", f = "Hud.kt", i = {4, 4}, l = {299, 300, 301, 302, 308}, m = "invokeSuspend", n = {"resp", SearchIntents.EXTRA_QUERY}, nl = {300, 301, 302, 303, 320}, s = {"L$0", "L$1"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.Hud$installHud$1", f = "Hud.kt", i = {4, 4}, l = {332, 333, 334, 335, 341}, m = "invokeSuspend", n = {"resp", SearchIntents.EXTRA_QUERY}, nl = {333, 334, 335, 336, 353}, s = {"L$0", "L$1"}, v = 2)
 /* loaded from: classes6.dex */
 public final class Hud$installHud$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $serverId;

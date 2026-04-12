@@ -308,7 +308,7 @@ public final class DonateBottomItemAdapter extends ListAdapter<DonateItemModelUi
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonateDefaultItemBinding donateDefaultItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11103getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11105getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donateDefaultItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");

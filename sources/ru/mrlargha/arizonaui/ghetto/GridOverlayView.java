@@ -349,7 +349,7 @@ public final class GridOverlayView extends View {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r9v1 */
-    /* JADX WARN: Type inference failed for: r9v4, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r9v5, types: [java.lang.Object] */
     private final void calculateCells() {
         Object obj;
         T t;
@@ -386,7 +386,7 @@ public final class GridOverlayView extends View {
             objectRef.element = t;
             if (uniqData != null) {
                 MapData mapData = (MapData) objectRef.element;
-                objectRef.element = mapData != null ? MapData.copy$default(mapData, 0, 0, 0, 0, true, Integer.valueOf(uniqData.getBalance()), Integer.valueOf(uniqData.getUkrop()), null, null, 399, null) : 0;
+                objectRef.element = mapData != null ? MapData.copy$default(mapData, 0, 0, 0L, 0, true, Long.valueOf(uniqData.getBalance()), Integer.valueOf(uniqData.getUkrop()), null, null, 399, null) : 0;
             }
             arrayList2.add((MapData) objectRef.element);
         }

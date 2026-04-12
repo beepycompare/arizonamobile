@@ -5,7 +5,7 @@ import dagger.internal.AbstractMapFactory;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class MapProviderFactory<K, V> extends AbstractMapFactory<K, V, Provider<V>> implements Lazy<Map<K, Provider<V>>> {
     public static <K, V> Builder<K, V> builder(int size) {
         return new Builder<>(size);
@@ -20,7 +20,7 @@ public final class MapProviderFactory<K, V> extends AbstractMapFactory<K, V, Pro
         return contributingMap();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder<K, V> extends AbstractMapFactory.Builder<K, V, Provider<V>> {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // dagger.internal.AbstractMapFactory.Builder

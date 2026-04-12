@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="24dp" android:width="35dp" android:viewportWidth="35" android:viewportHeight="24">
+    <group>
+        <clip-path android:pathData="M0,0h34.8v23.2h-34.8z"/>
+        <path android:fillColor="@drawable/res_0x7f08026b_mobile_ic_kk_coin__0" android:pathData="M9.582,20.147H4.856V3.668H9.582V9.781H10.637L12.703,3.668H17.78L14.439,11.597V11.708L18.219,20.147H13.12L10.637,13.635H9.582V20.147Z"/>
+        <path android:fillColor="@drawable/res_0x7f08026c_mobile_ic_kk_coin__1" android:pathData="M24.198,20.147H19.473V3.668H24.198V9.781H25.253L27.319,3.668H32.396L29.055,11.597V11.708L32.836,20.147H27.737L25.253,13.635H24.198V20.147Z"/>
+        <path android:fillColor="@drawable/res_0x7f08026d_mobile_ic_kk_coin__2" android:pathData="M1.222,9.072H34.8V10.918H1.222V9.072Z"/>
+        <path android:fillColor="@drawable/res_0x7f08026e_mobile_ic_kk_coin__3" android:pathData="M1.222,13.379H34.8V15.225H1.222V13.379Z"/>
+        <path android:fillColor="@drawable/res_0x7f08026f_mobile_ic_kk_coin__4" android:pathData="M8.36,19.532H3.635V3.053H8.36V9.166H9.415L11.481,3.053H16.558L13.217,10.982V11.093L16.997,19.532H11.898L9.415,13.02H8.36V19.532Z"/>
+        <path android:fillColor="@drawable/res_0x7f080270_mobile_ic_kk_coin__5" android:pathData="M22.976,19.532H18.251V3.053H22.976V9.166H24.031L26.097,3.053H31.174L27.834,10.982V11.093L31.614,19.532H26.515L24.031,13.02H22.976V19.532Z"/>
+        <path android:fillColor="@drawable/res_0x7f080271_mobile_ic_kk_coin__6" android:pathData="M0,8.457H33.578V10.303H0V8.457Z"/>
+        <path android:fillColor="@drawable/res_0x7f080272_mobile_ic_kk_coin__7" android:pathData="M0,12.764H33.578V14.61H0V12.764Z"/>
+    </group>
+</vector>

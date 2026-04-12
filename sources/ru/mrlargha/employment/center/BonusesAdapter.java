@@ -24,6 +24,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.employment.center.data.BonusItem;
 import ru.mrlargha.feature.employment.center.R;
@@ -121,9 +122,10 @@ public final class BonusesAdapter extends RecyclerView.Adapter<EmploymentBonusVi
             load3.into(picassoTarget3);
         }
         binding.text.setText(bonusItem.getName());
+        binding.label1.getRoot().setVisibility(0);
         String valueString = bonusItem.getValueString();
         if (valueString != null && valueString.length() != 0) {
-            binding.label1.text.setText(bonusItem.getValueString());
+            binding.label1.text.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, bonusItem.getValueString(), 0.0f, 1, null));
         } else if (bonusItem.getValue() <= 0) {
             binding.label1.getRoot().setVisibility(8);
         } else if (bonusItem.getValueMax() > bonusItem.getValue()) {

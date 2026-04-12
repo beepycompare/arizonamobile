@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/root" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="horizontal" android:id="@+id/layoutMoney" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+        <include android:id="@+id/blockM" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" layout="@layout/view_money_part_input"/>
+        <include android:id="@+id/blockKK" android:layout_width="0dp" android:layout_height="match_parent" android:layout_marginLeft="@dimen/_4sdp" android:layout_marginRight="@dimen/_4sdp" android:layout_weight="1" android:layout_marginHorizontal="@dimen/_4sdp" layout="@layout/view_money_part_input"/>
+        <include android:id="@+id/blockK" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" layout="@layout/view_money_part_input"/>
+    </LinearLayout>
+    <include android:id="@+id/etSingle" android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/view_money_part_input"/>
+</FrameLayout>

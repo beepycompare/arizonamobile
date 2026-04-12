@@ -1,5 +1,6 @@
 package com.miami.game.core.design.system.component.background;
 
+import android.content.Context;
 import androidx.compose.foundation.ImageKt;
 import androidx.compose.foundation.layout.SizeKt;
 import androidx.compose.runtime.Composer;
@@ -12,8 +13,15 @@ import androidx.compose.ui.graphics.ColorFilter;
 import androidx.compose.ui.graphics.ImageBitmap;
 import androidx.compose.ui.graphics.painter.Painter;
 import androidx.compose.ui.layout.ContentScale;
+import androidx.compose.ui.platform.AndroidCompositionLocals_androidKt;
 import androidx.compose.ui.res.PainterResources_androidKt;
+import androidx.media3.exoplayer.RendererCapabilities;
+import coil3.compose.SingletonAsyncImageKt;
+import coil3.request.ImageRequest;
+import coil3.request.ImageRequestsKt;
+import coil3.transform.Transformation;
 import com.facebook.internal.NativeProtocol;
+import com.miami.game.core.design.system.component.coil.blur.CoilBlurTransformation;
 import java.io.File;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -30,20 +38,62 @@ public final class Main_backgroundKt {
 
     public static final void BackgroundImage(final int i, final boolean z, final ImageBitmap imageBitmap, final File file, final int i2, Composer composer, final int i3) {
         int i4;
+        int i5;
+        int i6;
         Composer startRestartGroup = composer.startRestartGroup(1841108206);
         ComposerKt.sourceInformation(startRestartGroup, "C(BackgroundImage)N(default,isBlur,imageBitmap,file,version)23@906L29,19@761L182:main_background.kt#nlkwnv");
         if ((i3 & 6) == 0) {
-            i4 = i3 | (startRestartGroup.changed(i) ? 4 : 2);
+            i4 = (startRestartGroup.changed(i) ? 4 : 2) | i3;
         } else {
             i4 = i3;
         }
-        if (!startRestartGroup.shouldExecute((i4 & 3) != 2, i4 & 1)) {
+        if ((i3 & 48) == 0) {
+            i4 |= startRestartGroup.changed(z) ? 32 : 16;
+        }
+        if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            i4 |= startRestartGroup.changedInstance(imageBitmap) ? 256 : 128;
+        }
+        if ((i3 & 3072) == 0) {
+            i4 |= startRestartGroup.changedInstance(file) ? 2048 : 1024;
+        }
+        if ((i3 & 24576) == 0) {
+            i4 |= startRestartGroup.changed(i2) ? 16384 : 8192;
+        }
+        if (!startRestartGroup.shouldExecute((i4 & 9363) != 9362, i4 & 1)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1841108206, i4, -1, "com.miami.game.core.design.system.component.background.BackgroundImage (main_background.kt:17)");
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(i, startRestartGroup, i4 & 14), (String) null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getCrop(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
+            if (imageBitmap != null) {
+                startRestartGroup.startReplaceGroup(1722531998);
+                ComposerKt.sourceInformation(startRestartGroup, "27@983L182");
+                i5 = 0;
+                i6 = 1;
+                ImageKt.m321Image5hnEew(imageBitmap, null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, ContentScale.Companion.getCrop(), 0.0f, null, 0, startRestartGroup, ((i4 >> 6) & 14) | 25008, 232);
+                startRestartGroup.endReplaceGroup();
+            } else {
+                i5 = 0;
+                i6 = 1;
+                startRestartGroup.startReplaceGroup(1722712852);
+                startRestartGroup.endReplaceGroup();
+            }
+            if (z && file != null) {
+                startRestartGroup.startReplaceGroup(1722759662);
+                ComposerKt.sourceInformation(startRestartGroup, "36@1280L7,35@1214L438");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ImageRequest.Builder diskCacheKey = new ImageRequest.Builder((Context) consume).data(file).memoryCacheKey("launcher_bg_" + i2).diskCacheKey("launcher_bg_" + i2);
+                Transformation[] transformationArr = new Transformation[i6];
+                transformationArr[i5] = new CoilBlurTransformation(i5, i5, 3, null);
+                SingletonAsyncImageKt.m8558AsyncImage10Xjiaw(ImageRequestsKt.transformations(diskCacheKey, transformationArr).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, i6, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
+                startRestartGroup.endReplaceGroup();
+            } else {
+                startRestartGroup.startReplaceGroup(1723195956);
+                startRestartGroup.endReplaceGroup();
+            }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

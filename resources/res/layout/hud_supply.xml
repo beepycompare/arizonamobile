@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <ImageView android:layout_width="@dimen/_100sdp" android:layout_height="@dimen/_60sdp" android:src="@drawable/hud_supply_bg" android:scaleType="fitXY"/>
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_14sdp" android:layout_marginRight="@dimen/_14sdp" android:layout_marginHorizontal="@dimen/_14sdp">
+        <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/supply" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+        <TextView android:textSize="@dimen/_5sdp" android:textColor="#66fff2f2" android:id="@+id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_1sdp" android:text="@string/title" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium"/>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:paddingLeft="@dimen/_3sdp" android:paddingTop="@dimen/_1sdp" android:paddingRight="@dimen/_3sdp" android:paddingBottom="@dimen/_1sdp" android:layout_width="@dimen/_72sdp" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/_3sdp" android:paddingVertical="@dimen/_1sdp" app:backgroundMainColor="#66000000" app:corners="@dimen/_2sdp">
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/_5sdp" android:textColor="#4dddd3c0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/delivered" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium"/>
+                <TextView android:textSize="@dimen/_8sdp" android:textColor="#cc998f68" android:id="@+id/tv_out_of" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_minus3sdp" android:text="@string/out_of_k" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            </LinearLayout>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    </LinearLayout>
+</FrameLayout>

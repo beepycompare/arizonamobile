@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="11dp" android:width="14dp" android:viewportWidth="14" android:viewportHeight="11">
+    <path android:fillColor="@drawable/res_0x7f0801b6_ic_k_cost__0" android:pathData="M6.673,10.316H3.744V0.372H6.673V4.061H7.326L8.607,0.372H11.753L9.683,5.157V5.224L12.026,10.316H8.866L7.326,6.386H6.673V10.316Z"/>
+    <path android:fillColor="@drawable/res_0x7f0801b7_ic_k_cost__1" android:pathData="M0.757,2.891H14V4.004H0.757V2.891Z"/>
+    <path android:fillColor="@drawable/res_0x7f0801b8_ic_k_cost__2" android:pathData="M0.757,6.603H14V7.717H0.757V6.603Z"/>
+    <path android:fillColor="@drawable/res_0x7f0801b9_ic_k_cost__3" android:pathData="M5.916,9.944H2.987V0H5.916V3.689H6.57L7.85,0H10.997L8.926,4.785V4.852L11.269,9.944H8.109L6.57,6.014H5.916V9.944Z"/>
+    <path android:fillColor="@drawable/res_0x7f0801ba_ic_k_cost__4" android:pathData="M0,2.519H13.243V3.632H0V2.519Z"/>
+    <path android:fillColor="@drawable/res_0x7f0801bb_ic_k_cost__5" android:pathData="M0,6.231H13.243V7.345H0V6.231Z"/>
+</vector>

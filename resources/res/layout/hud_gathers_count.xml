@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:visibility="gone" android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <FrameLayout android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_8sdp">
+        <ImageView android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="@dimen/_30sdp" android:src="@drawable/hud_gathers_count_bg" android:adjustViewBounds="true"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_40sdp" android:layout_marginBottom="@dimen/_4sdp" android:src="@drawable/hud_gathers_count_easter" android:adjustViewBounds="true" android:layout_marginStart="@dimen/_2sdp"/>
+        <LinearLayout android:layout_gravity="center" android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_7sdp">
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/_minus3sdp">
+                <ImageView android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="@dimen/_16sdp" android:src="@drawable/hud_gathers_count_time_bg" android:adjustViewBounds="true"/>
+                <TextView android:textSize="@dimen/_11sdp" android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/tv_timer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="01:35" android:fontFamily="@font/heading_now_65_medium"/>
+            </FrameLayout>
+            <androidx.recyclerview.widget.RecyclerView android:orientation="horizontal" android:id="@+id/rv_bonus" android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="end|bottom" android:id="@+id/debuff_container" android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/_3sdp">
+        <ImageView android:id="@+id/iv_debuff_bg" android:layout_width="wrap_content" android:layout_height="@dimen/_12sdp" android:src="@drawable/hud_gathers_count_blinding_item_bg" android:adjustViewBounds="true"/>
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@+id/iv_debuff_ic" android:layout_width="wrap_content" android:layout_height="@dimen/_6sdp" android:src="@drawable/hud_gathers_count_ic_blindness" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_2sdp"/>
+            <TextView android:textSize="@dimen/_4sdp" android:textColor="@color/white" android:id="@+id/tv_debuff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="птичья слепота" android:alpha="0.7" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium" android:layout_marginEnd="@dimen/_2sdp"/>
+            <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:id="@+id/tv_debuff_timer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium"/>
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

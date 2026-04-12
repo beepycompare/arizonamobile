@@ -48,16 +48,15 @@ public final class DownloadScreenComponent$observeExternal$1 extends SuspendLamb
         Object value;
         DownloadExternalUiState downloadExternalUiState = (DownloadExternalUiState) this.L$0;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        if (this.label != 0) {
-            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        if (this.label == 0) {
+            ResultKt.throwOnFailure(obj);
+            mutableStateFlow = this.this$0.stateStore;
+            do {
+                value = mutableStateFlow.getValue();
+                Timber.Forest.d(downloadExternalUiState.toString(), new Object[0]);
+            } while (!mutableStateFlow.compareAndSet(value, DownloadScreenUiState.copy$default((DownloadScreenUiState) value, downloadExternalUiState.getTextDownload(), downloadExternalUiState.getTimeRemainingString(), downloadExternalUiState.getDownloadingStringState(), false, false, downloadExternalUiState.getPercentageProgress(), null, false, downloadExternalUiState.isDialogVisible(), downloadExternalUiState.isLauncherUpdate(), 0, 1240, null)));
+            return Unit.INSTANCE;
         }
-        ResultKt.throwOnFailure(obj);
-        Timber.Forest.d("mainStateStore " + downloadExternalUiState, new Object[0]);
-        mutableStateFlow = this.this$0.stateStore;
-        do {
-            value = mutableStateFlow.getValue();
-            Timber.Forest.d(downloadExternalUiState.toString(), new Object[0]);
-        } while (!mutableStateFlow.compareAndSet(value, DownloadScreenUiState.copy$default((DownloadScreenUiState) value, downloadExternalUiState.getTextDownload(), downloadExternalUiState.getTimeRemainingString(), downloadExternalUiState.getDownloadingStringState(), false, false, downloadExternalUiState.getPercentageProgress(), null, false, downloadExternalUiState.isDialogVisible(), downloadExternalUiState.isLauncherUpdate(), 0, 1240, null)));
-        return Unit.INSTANCE;
+        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }
 }

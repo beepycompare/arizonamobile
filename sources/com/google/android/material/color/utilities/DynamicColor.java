@@ -1,6 +1,5 @@
 package com.google.android.material.color.utilities;
 
-import androidx.core.view.ViewCompat;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -82,7 +81,7 @@ public final class DynamicColor {
         if (function == null) {
             return i;
         }
-        return (MathUtils.clampInt(0, 255, (int) Math.round(function.apply(dynamicScheme).doubleValue() * 255.0d)) << 24) | (i & ViewCompat.MEASURED_SIZE_MASK);
+        return (MathUtils.clampInt(0, 255, (int) Math.round(function.apply(dynamicScheme).doubleValue() * 255.0d)) << 24) | (i & 16777215);
     }
 
     public Hct getHct(DynamicScheme dynamicScheme) {

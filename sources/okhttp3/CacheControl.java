@@ -110,61 +110,61 @@ public final class CacheControl {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "noCache", imports = {}))
     /* renamed from: -deprecated_noCache  reason: not valid java name */
-    public final boolean m10901deprecated_noCache() {
+    public final boolean m10902deprecated_noCache() {
         return this.noCache;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "noStore", imports = {}))
     /* renamed from: -deprecated_noStore  reason: not valid java name */
-    public final boolean m10902deprecated_noStore() {
+    public final boolean m10903deprecated_noStore() {
         return this.noStore;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "maxAgeSeconds", imports = {}))
     /* renamed from: -deprecated_maxAgeSeconds  reason: not valid java name */
-    public final int m10897deprecated_maxAgeSeconds() {
+    public final int m10898deprecated_maxAgeSeconds() {
         return this.maxAgeSeconds;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "sMaxAgeSeconds", imports = {}))
     /* renamed from: -deprecated_sMaxAgeSeconds  reason: not valid java name */
-    public final int m10905deprecated_sMaxAgeSeconds() {
+    public final int m10906deprecated_sMaxAgeSeconds() {
         return this.sMaxAgeSeconds;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "mustRevalidate", imports = {}))
     /* renamed from: -deprecated_mustRevalidate  reason: not valid java name */
-    public final boolean m10900deprecated_mustRevalidate() {
+    public final boolean m10901deprecated_mustRevalidate() {
         return this.mustRevalidate;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "maxStaleSeconds", imports = {}))
     /* renamed from: -deprecated_maxStaleSeconds  reason: not valid java name */
-    public final int m10898deprecated_maxStaleSeconds() {
+    public final int m10899deprecated_maxStaleSeconds() {
         return this.maxStaleSeconds;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "minFreshSeconds", imports = {}))
     /* renamed from: -deprecated_minFreshSeconds  reason: not valid java name */
-    public final int m10899deprecated_minFreshSeconds() {
+    public final int m10900deprecated_minFreshSeconds() {
         return this.minFreshSeconds;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "onlyIfCached", imports = {}))
     /* renamed from: -deprecated_onlyIfCached  reason: not valid java name */
-    public final boolean m10904deprecated_onlyIfCached() {
+    public final boolean m10905deprecated_onlyIfCached() {
         return this.onlyIfCached;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "noTransform", imports = {}))
     /* renamed from: -deprecated_noTransform  reason: not valid java name */
-    public final boolean m10903deprecated_noTransform() {
+    public final boolean m10904deprecated_noTransform() {
         return this.noTransform;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "immutable", imports = {}))
     /* renamed from: -deprecated_immutable  reason: not valid java name */
-    public final boolean m10896deprecated_immutable() {
+    public final boolean m10897deprecated_immutable() {
         return this.immutable;
     }
 
@@ -270,32 +270,32 @@ public final class CacheControl {
         }
 
         /* renamed from: maxAge-LRDsOJo  reason: not valid java name */
-        public final Builder m10906maxAgeLRDsOJo(long j) {
-            long m10552getInWholeSecondsimpl = Duration.m10552getInWholeSecondsimpl(j);
-            if (m10552getInWholeSecondsimpl < 0) {
-                throw new IllegalArgumentException(("maxAge < 0: " + m10552getInWholeSecondsimpl).toString());
+        public final Builder m10907maxAgeLRDsOJo(long j) {
+            long m10553getInWholeSecondsimpl = Duration.m10553getInWholeSecondsimpl(j);
+            if (m10553getInWholeSecondsimpl < 0) {
+                throw new IllegalArgumentException(("maxAge < 0: " + m10553getInWholeSecondsimpl).toString());
             }
-            this.maxAgeSeconds = _CacheControlCommonKt.commonClampToInt(m10552getInWholeSecondsimpl);
+            this.maxAgeSeconds = _CacheControlCommonKt.commonClampToInt(m10553getInWholeSecondsimpl);
             return this;
         }
 
         /* renamed from: maxStale-LRDsOJo  reason: not valid java name */
-        public final Builder m10907maxStaleLRDsOJo(long j) {
-            long m10552getInWholeSecondsimpl = Duration.m10552getInWholeSecondsimpl(j);
-            if (m10552getInWholeSecondsimpl < 0) {
-                throw new IllegalArgumentException(("maxStale < 0: " + m10552getInWholeSecondsimpl).toString());
+        public final Builder m10908maxStaleLRDsOJo(long j) {
+            long m10553getInWholeSecondsimpl = Duration.m10553getInWholeSecondsimpl(j);
+            if (m10553getInWholeSecondsimpl < 0) {
+                throw new IllegalArgumentException(("maxStale < 0: " + m10553getInWholeSecondsimpl).toString());
             }
-            this.maxStaleSeconds = _CacheControlCommonKt.commonClampToInt(m10552getInWholeSecondsimpl);
+            this.maxStaleSeconds = _CacheControlCommonKt.commonClampToInt(m10553getInWholeSecondsimpl);
             return this;
         }
 
         /* renamed from: minFresh-LRDsOJo  reason: not valid java name */
-        public final Builder m10908minFreshLRDsOJo(long j) {
-            long m10552getInWholeSecondsimpl = Duration.m10552getInWholeSecondsimpl(j);
-            if (m10552getInWholeSecondsimpl < 0) {
-                throw new IllegalArgumentException(("minFresh < 0: " + m10552getInWholeSecondsimpl).toString());
+        public final Builder m10909minFreshLRDsOJo(long j) {
+            long m10553getInWholeSecondsimpl = Duration.m10553getInWholeSecondsimpl(j);
+            if (m10553getInWholeSecondsimpl < 0) {
+                throw new IllegalArgumentException(("minFresh < 0: " + m10553getInWholeSecondsimpl).toString());
             }
-            this.minFreshSeconds = _CacheControlCommonKt.commonClampToInt(m10552getInWholeSecondsimpl);
+            this.minFreshSeconds = _CacheControlCommonKt.commonClampToInt(m10553getInWholeSecondsimpl);
             return this;
         }
 

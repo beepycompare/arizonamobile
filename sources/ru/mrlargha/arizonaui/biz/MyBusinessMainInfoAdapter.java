@@ -9,6 +9,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.arizonaui.biz.MyBusinessScreen;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.feature.business.R;
 import ru.mrlargha.feature.business.databinding.MyBusinessMainStatItemBinding;
 /* compiled from: MyBusinessMainInfoAdapter.kt */
@@ -32,8 +33,8 @@ public final class MyBusinessMainInfoAdapter extends RecyclerView.Adapter<Busine
         Intrinsics.checkNotNullExpressionValue(mainBusinessInfoStat, "get(...)");
         MyBusinessScreen.Companion.MainBusinessInfoStat mainBusinessInfoStat2 = mainBusinessInfoStat;
         MyBusinessMainStatItemBinding binding = holder.getBinding();
-        binding.title.setText(mainBusinessInfoStat2.getTitle());
-        binding.value.setText(mainBusinessInfoStat2.getValue());
+        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, mainBusinessInfoStat2.getTitle(), 0.0f, 1, null));
+        binding.value.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, mainBusinessInfoStat2.getValue(), 0.0f, 1, null));
         if (mainBusinessInfoStat2.getLabel() != null) {
             binding.labelContainer.setVisibility(0);
             binding.label.setText(mainBusinessInfoStat2.getLabel());
@@ -42,7 +43,7 @@ public final class MyBusinessMainInfoAdapter extends RecyclerView.Adapter<Busine
         }
         if (mainBusinessInfoStat2.getMaxValue() != null) {
             binding.maxValue.setVisibility(0);
-            binding.maxValue.setText("/ " + mainBusinessInfoStat2.getMaxValue());
+            binding.maxValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, "/ " + mainBusinessInfoStat2.getMaxValue(), 0.0f, 1, null));
             return;
         }
         binding.maxValue.setVisibility(8);

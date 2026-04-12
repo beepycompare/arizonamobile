@@ -454,7 +454,7 @@ public final class TransformableKt {
                     } else {
                         int i15 = i3;
                         transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
-                        ChannelResult.m10709boximpl(channel3.mo8396trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE));
+                        ChannelResult.m10710boximpl(channel3.mo8396trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE));
                         f6 = f5;
                         f3 = f4;
                         j2 = j;

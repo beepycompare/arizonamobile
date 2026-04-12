@@ -5,7 +5,6 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.os.Build;
 import android.os.LocaleList;
-import androidx.core.view.ViewCompat;
 import com.airbnb.lottie.utils.MiscUtils;
 /* loaded from: classes3.dex */
 public class LPaint extends Paint {
@@ -32,7 +31,7 @@ public class LPaint extends Paint {
     @Override // android.graphics.Paint
     public void setAlpha(int i) {
         if (Build.VERSION.SDK_INT < 30) {
-            setColor((MiscUtils.clamp(i, 0, 255) << 24) | (getColor() & ViewCompat.MEASURED_SIZE_MASK));
+            setColor((MiscUtils.clamp(i, 0, 255) << 24) | (getColor() & 16777215));
             return;
         }
         super.setAlpha(MiscUtils.clamp(i, 0, 255));

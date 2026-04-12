@@ -61,7 +61,6 @@ import com.arizonagames.feature.arizona.family.databinding.FamilyTerritoriesBind
 import com.arizonagames.feature.arizona.family.databinding.FamilyTopbarBinding;
 import com.davemorrissey.labs.subscaleview.ImageSource;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -79,7 +78,6 @@ import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.Dispatchers;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
@@ -87,6 +85,7 @@ import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceControl
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.TokenManagerKt;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.ui.kit.FlagsKt;
 /* compiled from: FamilyScreen.kt */
 @Metadata(d1 = {"\u0000ö\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u001b\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u00012\u00020\u0002:\u0004\u008c\u0001\u008d\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u00109\u001a\u00020:2\u0006\u0010;\u001a\u00020\u0011H\u0016J\u0018\u0010<\u001a\u00020:2\u0006\u0010=\u001a\u00020>2\u0006\u0010?\u001a\u00020\u0006H\u0016J\u0010\u0010@\u001a\u00020:2\u0006\u0010A\u001a\u00020\u001cH\u0002J\u0010\u0010B\u001a\u00020:2\u0006\u0010A\u001a\u00020CH\u0002J\u0010\u0010D\u001a\u00020:2\u0006\u0010A\u001a\u00020EH\u0002J\u0010\u0010F\u001a\u00020:2\u0006\u0010A\u001a\u00020GH\u0002J\u0010\u0010H\u001a\u00020:2\u0006\u0010A\u001a\u00020IH\u0002J\u0016\u0010J\u001a\u00020:2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u00060KH\u0002J\u0010\u0010L\u001a\u00020:2\u0006\u0010A\u001a\u00020\u001aH\u0002J\b\u0010M\u001a\u00020:H\u0002J\b\u0010N\u001a\u00020:H\u0002J\b\u0010O\u001a\u00020:H\u0002J\u0010\u0010P\u001a\u00020:2\u0006\u0010Q\u001a\u00020\u0006H\u0002J\u0010\u0010R\u001a\u00020:2\u0006\u0010S\u001a\u00020>H\u0002J\u0010\u0010T\u001a\u00020:2\u0006\u0010Q\u001a\u00020\u0006H\u0002J\u0010\u0010U\u001a\u00020:2\u0006\u0010S\u001a\u00020>H\u0002J\u0010\u0010V\u001a\u00020:2\u0006\u0010Q\u001a\u00020\u0006H\u0002J\b\u0010W\u001a\u00020:H\u0002J\b\u0010X\u001a\u00020:H\u0002J\b\u0010Y\u001a\u00020:H\u0002J\b\u0010Z\u001a\u00020:H\u0002J\b\u0010[\u001a\u00020:H\u0002J\u0016\u0010\\\u001a\u00020:2\f\u0010=\u001a\b\u0012\u0004\u0012\u00020]0KH\u0002J\b\u0010^\u001a\u00020:H\u0002J\u0010\u0010_\u001a\u00020:2\u0006\u0010=\u001a\u00020`H\u0002J\u0010\u0010a\u001a\u00020:2\u0006\u0010b\u001a\u00020cH\u0002J\u0018\u0010d\u001a\u00020:2\u0006\u0010e\u001a\u00020\u00062\u0006\u0010S\u001a\u00020>H\u0002J\b\u0010f\u001a\u00020:H\u0002J\b\u0010g\u001a\u00020:H\u0002J\b\u0010h\u001a\u00020:H\u0002J\u0010\u0010i\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010j\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010k\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010l\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010m\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010n\u001a\u00020:2\u0006\u0010b\u001a\u00020oH\u0002J\u0010\u0010p\u001a\u00020:2\u0006\u0010b\u001a\u00020cH\u0002J\b\u0010q\u001a\u00020:H\u0002J\u0010\u0010r\u001a\u00020:2\u0006\u0010b\u001a\u00020`H\u0002J\b\u0010s\u001a\u00020:H\u0002J\b\u0010t\u001a\u00020:H\u0002J\b\u0010u\u001a\u00020:H\u0002J\b\u0010v\u001a\u00020:H\u0002J\b\u0010x\u001a\u00020:H\u0002J\b\u0010z\u001a\u00020:H\u0002J\b\u0010|\u001a\u00020:H\u0002J\b\u0010~\u001a\u00020:H\u0002J\t\u0010\u0080\u0001\u001a\u00020:H\u0002J\t\u0010\u0082\u0001\u001a\u00020:H\u0002J\t\u0010\u0084\u0001\u001a\u00020:H\u0002J\t\u0010\u0086\u0001\u001a\u00020:H\u0002J\t\u0010\u0088\u0001\u001a\u00020:H\u0002J\u0013\u0010\u0089\u0001\u001a\u00020:2\b\u0010\u008a\u0001\u001a\u00030\u008b\u0001H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u00103\u001a\u000204¢\u0006\b\n\u0000\u001a\u0004\b5\u00106R\u000e\u00107\u001a\u000208X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010w\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010y\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010{\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010}\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u007f\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0081\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0083\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0085\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0087\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u008e\u0001"}, d2 = {"Lcom/arizonagames/feature/arizona/family/FamilyScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lcom/arizonagames/feature/arizona/family/databinding/FamilyMainBinding;", "createSelectedImage", "createSelectedImageMax", "createIsTitleDone", "", "createIsSloganDone", "mapCells", "xMargin", "", "yMargin", "membersCount", "Lcom/arizonagames/feature/arizona/family/data/FamilyMembersCount;", "familyData", "Lcom/arizonagames/feature/arizona/family/data/FamilyData;", "createInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyCreateData;", "colorsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CreateClanColorAdapter;", "mainMenuItemsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MainMenuAdapter;", "settingsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/SettingsAdapter;", "estateAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/EstateAdapter;", "charterAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CharterAdapter;", "warAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/WarsAdapter;", "membersAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MembersAdapter;", "charterMembersAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CharterMembersAdapter;", "ratingAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/RatingAdapter;", "territoryAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/TerritoryAdapter;", "meetingsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MeetingsAdapter;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lcom/arizonagames/feature/arizona/family/FamilyApi;", "setVisible", "", "visible", "onBackendMessage", "data", "", "subId", "setCreateInfo", "info", "setWarInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyWarData;", "setCharterInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyCharterData;", "setSettingsInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilySettingsData;", "setEstateInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyEstateData;", "setMainMenu", "", "setFamilyInfo", "setupAdapters", "clearAdapters", "setupNavigation", "requestMembers", "page", "requestMembersName", "name", "requestCharterMembers", "requestCharterMembersName", "requestRating", "requestTerritories", "requestTopTerritories", "requestMeetings", "loadMapRetrofit", "loadMembersCount", "setUniqCells", "Lcom/arizonagames/feature/arizona/family/data/UniqCellItem;", "setMap", "setFrameMap", "Lcom/arizonagames/feature/arizona/family/data/FrameMapData;", "setFrameCharter", "item", "Lcom/arizonagames/feature/arizona/family/data/CharterItem;", "setFrameMember", "id", "onClickMembersFrame", "setupCreateClanPage", "checkCreateBntState", "selectMenuItem", "selectSettingsItem", "selectEstateItem", "selectCharterItem", "selectWarItem", "selectMemberItem", "Lcom/arizonagames/feature/arizona/family/data/MemberItem;", "selectCharterMemberItem", "selectRatingItem", "selectTerritoryItem", "setupSort", "sortTerritory1", "sortTerritory2", "sortTerritory3", "sortcharter1state", "sortcharter1", "sortcharter2state", "sortcharter2", "sortcharter3state", "sortcharter3", "sortcharter4state", "sortcharter4", "sortMeetings1state", "sortMeetings1", "sortMeetings2state", "sortMeetings2", "sortMeetings3state", "sortMeetings3", "sortMembers1state", "sortMembers1", "sortMembers2state", "sortMembers2", "navigateTo", "nav", "Lcom/arizonagames/feature/arizona/family/FamilyScreen$Navigation;", "Navigation", "Spawner", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
@@ -297,7 +296,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         this.meetingsAdapter = new MeetingsAdapter();
         ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
         this.client = arizonaRetrofit;
-        this.api = (FamilyApi) ArizonaRetrofit.create$default(arizonaRetrofit, FamilyApi.class, false, null, null, 12, null);
+        this.api = (FamilyApi) ArizonaRetrofit.create$default(arizonaRetrofit, FamilyApi.class, false, null, null, 14, null);
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
         addViewToConstraintLayout(screen, -1, -1);
         setupNavigation();
@@ -486,14 +485,8 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyCreateClanBinding.buttonTitle.setText("Необходимо иметь");
         }
         familyCreateClanBinding.buttonCreateFamily.setAlpha(0.5f);
-        TextView textView = this.binding.create.createCost;
-        String format = String.format("%,d", Arrays.copyOf(new Object[]{Integer.valueOf(familyCreateData.getPrice())}, 1));
-        Intrinsics.checkNotNullExpressionValue(format, "format(...)");
-        textView.setText(StringsKt.replace$default(format, (char) AbstractJsonLexerKt.COMMA, ' ', false, 4, (Object) null) + " $");
-        TextView textView2 = this.binding.topbar.createMoney;
-        String format2 = String.format("%,d", Arrays.copyOf(new Object[]{Integer.valueOf(familyCreateData.getMoney())}, 1));
-        Intrinsics.checkNotNullExpressionValue(format2, "format(...)");
-        textView2.setText(StringsKt.replace$default(format2, (char) AbstractJsonLexerKt.COMMA, ' ', false, 4, (Object) null) + " $");
+        this.binding.create.createCost.setText(MoneyElementKt.toMoneyFormattedSpannable$default(familyCreateData.getPrice(), false, null, null, 7, null));
+        this.binding.topbar.createMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(familyCreateData.getMoney(), false, null, null, 7, null));
     }
 
     private final void setWarInfo(FamilyWarData familyWarData) {
@@ -521,7 +514,9 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     private final void setFamilyInfo(FamilyData familyData) {
+        Integer members;
         String str;
+        long j;
         this.familyData = familyData;
         this.membersAdapter.setManager(familyData.getManagement() == 1);
         this.estateAdapter.setFlagTitle(familyData.getFlag());
@@ -538,11 +533,10 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyTopbarBinding.messageContainer.setVisibility(0);
         }
         familyTopbarBinding.textRep.setText(familyData.getReputation() + " очк");
-        Integer members = familyData.getMembers();
-        if (members != null) {
+        if (familyData.getMembers() != null) {
             familyTopbarBinding.textDevil.setText(members.intValue() + " человек");
         }
-        familyTopbarBinding.textMoney.setText("$ " + familyData.getMoney());
+        familyTopbarBinding.textMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(familyData.getMoney(), false, null, null, 7, null));
         familyTopbarBinding.textCoins.setText(familyData.getCoins() + " шт");
         if (familyData.getBg() == -1) {
             familyTopbarBinding.flag.setImageBitmap(null);
@@ -582,15 +576,17 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyHomePageBinding.textCharter.setText(familyData.getFraction());
         }
         if (familyData.getVerification() == 1) {
+            j = 1;
             familyHomePageBinding.cardOfficial.setCardBackgroundColor(Color.parseColor("#1CC1FF3D"));
             familyHomePageBinding.cardOfficialText.setText("Приобретена");
             familyHomePageBinding.cardOfficialText.setTextColor(Color.parseColor("#C1FF3D"));
         } else {
+            j = 1;
             familyHomePageBinding.cardOfficial.setCardBackgroundColor(Color.parseColor("#32ABABAB"));
             familyHomePageBinding.cardOfficialText.setText("Отсутствует");
             familyHomePageBinding.cardOfficialText.setTextColor(Color.parseColor("#ABABAB"));
         }
-        if (familyData.getBrand() == 1) {
+        if (familyData.getBrand() == j) {
             familyHomePageBinding.cardBrend.setCardBackgroundColor(Color.parseColor("#1CC1FF3D"));
             familyHomePageBinding.cardBrendText.setText("Приобретен");
             familyHomePageBinding.cardBrendText.setTextColor(Color.parseColor("#C1FF3D"));
@@ -1020,7 +1016,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 String family_name = gangZoneItem != null ? gangZoneItem.getFamily_name() : null;
                 Integer valueOf = gangZoneItem != null ? Integer.valueOf(gangZoneItem.getFamily_flag()) : null;
                 Integer valueOf2 = gangZoneItem != null ? Integer.valueOf(gangZoneItem.getFamily_logo()) : null;
-                Integer valueOf3 = gangZoneItem != null ? Integer.valueOf(gangZoneItem.getFamily_money()) : null;
+                Long valueOf3 = gangZoneItem != null ? Long.valueOf(gangZoneItem.getFamily_money()) : null;
                 Integer valueOf4 = gangZoneItem != null ? Integer.valueOf(gangZoneItem.getFamily_moneta()) : null;
                 Iterator<T> it2 = familyScreen.binding.map.overlayView.get_uniqueData().iterator();
                 while (true) {
@@ -1067,7 +1063,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyMapFrameBinding.containerBalance.setVisibility(8);
         } else {
             familyMapFrameBinding.containerBalance.setVisibility(0);
-            familyMapFrameBinding.balance.setText(frameMapData.getBalance() + " $");
+            familyMapFrameBinding.balance.setText(MoneyElementKt.toMoneyFormattedSpannable$default(frameMapData.getBalance().longValue(), false, null, null, 7, null));
         }
         if (frameMapData.getCoins() == null) {
             familyMapFrameBinding.containerCoins.setVisibility(8);
@@ -1362,9 +1358,9 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     private final void checkCreateBntState() {
         FamilyCreateClanBinding familyCreateClanBinding = this.binding.create;
         FamilyCreateData familyCreateData = this.createInfo;
-        int price = familyCreateData != null ? familyCreateData.getPrice() : 200000;
+        long price = familyCreateData != null ? familyCreateData.getPrice() : 200000L;
         FamilyCreateData familyCreateData2 = this.createInfo;
-        if (price > (familyCreateData2 != null ? familyCreateData2.getMoney() : 0)) {
+        if (price > (familyCreateData2 != null ? familyCreateData2.getMoney() : 0L)) {
             familyCreateClanBinding.buttonCreateFamily.setCardBackgroundColor(Color.parseColor("#1AFFFFFF"));
             familyCreateClanBinding.createCost.setVisibility(0);
             familyCreateClanBinding.buttonTitle.setVisibility(0);

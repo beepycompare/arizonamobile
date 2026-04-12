@@ -2,7 +2,6 @@ package androidx.core.graphics;
 
 import android.graphics.Color;
 import androidx.core.content.res.CamColor;
-import androidx.core.view.ViewCompat;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.Objects;
 /* loaded from: classes2.dex */
@@ -195,7 +194,7 @@ public final class ColorUtils {
         if (i2 < 0 || i2 > 255) {
             throw new IllegalArgumentException("alpha must be between 0 and 255.");
         }
-        return (i & ViewCompat.MEASURED_SIZE_MASK) | (i2 << 24);
+        return (i & 16777215) | (i2 << 24);
     }
 
     public static void colorToLAB(int i, double[] dArr) {

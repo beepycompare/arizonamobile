@@ -21,4 +21,7 @@
     <include android:id="@+id/new_year_taxi" android:visibility="gone" layout="@layout/hud_counter_new_year"/>
     <include android:id="@+id/search_crystal" android:visibility="gone" layout="@layout/hud_counter_search_crystals"/>
     <include android:id="@+id/base_jumping" android:visibility="gone" layout="@layout/hud_counter_base_jumping"/>
+    <include android:id="@+id/supply" android:visibility="gone" layout="@layout/hud_supply"/>
+    <include android:id="@+id/shooting_gallery" android:visibility="gone" layout="@layout/hud_counter_shooting_gallery"/>
+    <include android:id="@+id/combine_condition" android:visibility="gone" layout="@layout/hud_counter_combine_condition"/>
 </FrameLayout>

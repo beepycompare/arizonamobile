@@ -100,7 +100,7 @@ public final class PagingState<Key, Value> {
 
     /* JADX WARN: Type inference failed for: r10v5, types: [Value, java.lang.Object] */
     /* JADX WARN: Type inference failed for: r10v9, types: [Value, java.lang.Object] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:41:0x00fe -> B:43:0x0114). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:41:0x00ff -> B:43:0x0115). Please submit an issue!!! */
     public final Value closestItemAroundPosition(int i, Function1<? super Value, Boolean> predicate) {
         int i2;
         int i3;

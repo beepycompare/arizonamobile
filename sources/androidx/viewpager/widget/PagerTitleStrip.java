@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.TextView;
-import androidx.core.view.ViewCompat;
 import androidx.core.widget.TextViewCompat;
 import androidx.viewpager.widget.ViewPager;
 import java.lang.ref.WeakReference;
@@ -134,7 +133,7 @@ public class PagerTitleStrip extends ViewGroup {
     public void setNonPrimaryAlpha(float f) {
         int i = ((int) (f * 255.0f)) & 255;
         this.mNonPrimaryAlpha = i;
-        int i2 = (i << 24) | (this.mTextColor & ViewCompat.MEASURED_SIZE_MASK);
+        int i2 = (i << 24) | (this.mTextColor & 16777215);
         this.mPrevText.setTextColor(i2);
         this.mNextText.setTextColor(i2);
     }
@@ -142,7 +141,7 @@ public class PagerTitleStrip extends ViewGroup {
     public void setTextColor(int i) {
         this.mTextColor = i;
         this.mCurrText.setTextColor(i);
-        int i2 = (this.mNonPrimaryAlpha << 24) | (this.mTextColor & ViewCompat.MEASURED_SIZE_MASK);
+        int i2 = (this.mNonPrimaryAlpha << 24) | (this.mTextColor & 16777215);
         this.mPrevText.setTextColor(i2);
         this.mNextText.setTextColor(i2);
     }

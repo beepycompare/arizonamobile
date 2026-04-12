@@ -3,8 +3,6 @@ package ru.mrlargha.commonui.elements.hud.presentation.hud_screens.imposter_game
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.view.View;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
@@ -195,13 +193,12 @@ public final class ImposterGameElement {
         Intrinsics.checkNotNullParameter(data, "data");
         try {
             if (MapperKt.isJsonValid(data)) {
-                Gson create = new GsonBuilder().setLenient().create();
-                JsonArray asJsonArray = ((JsonElement) create.fromJson(data, (Class<Object>) JsonElement.class)).getAsJsonArray();
+                JsonArray asJsonArray = ((JsonElement) MapperKt.getGson().fromJson(data, (Class<Object>) JsonElement.class)).getAsJsonArray();
                 Intrinsics.checkNotNull(asJsonArray);
                 JsonArray<JsonElement> jsonArray = asJsonArray;
                 ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(jsonArray, 10));
                 for (JsonElement jsonElement : jsonArray) {
-                    arrayList2.add(create.fromJson(jsonElement, (Class<Object>) ImposterGameToolItem.class));
+                    arrayList2.add(MapperKt.getGson().fromJson(jsonElement, (Class<Object>) ImposterGameToolItem.class));
                 }
                 arrayList = arrayList2;
             } else {
@@ -218,7 +215,7 @@ public final class ImposterGameElement {
         Intrinsics.checkNotNullParameter(data, "data");
         try {
             if (MapperKt.isJsonValid(data)) {
-                setInfo((ImposterGameRoleItem) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) ImposterGameRoleItem.class));
+                setInfo((ImposterGameRoleItem) MapperKt.getGson().fromJson(data, (Class<Object>) ImposterGameRoleItem.class));
                 return;
             }
             throw new JsonParseException("Json is not valid");

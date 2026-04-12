@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/promo" android:paddingBottom="@dimen/_2sdp" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/main_card" android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="#f220222e" app:backgroundSecondColor="#f215171f" app:borderMainColor="#26ffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_4sdp" app:gradientAngle="45">
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/inner_card" android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="@color/red" app:backgroundSecondColor="#f215171f" app:borderMainColor="#26ffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_4sdp" app:gradientAngle="90"/>
+        <ImageView android:layout_gravity="center" android:id="@+id/image" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitEnd"/>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent">
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="@dimen/_4sdp" android:layout_marginRight="@dimen/_2sdp" android:layout_weight="1">
+                <TextView android:textSize="@dimen/_5sdp" android:textColor="#b3ffffff" android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/_80sdp" android:maxLines="1" android:fontFamily="@font/heading_now_64_regular"/>
+                <TextView android:textSize="@dimen/_6sdp" android:textColor="#ffffff" android:id="@+id/timer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

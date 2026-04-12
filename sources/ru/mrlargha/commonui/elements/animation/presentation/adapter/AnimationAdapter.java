@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -78,6 +79,7 @@ public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onBindViewHolder(final AnimationHolder holder, int i) {
         String str;
+        String str2;
         Intrinsics.checkNotNullParameter(holder, "holder");
         final Animation animation = (Animation) CollectionsKt.getOrNull(this.animationList, i);
         if (animation == null) {
@@ -101,13 +103,20 @@ public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder
             }
             appCompatImageView2.setImageDrawable(ContextCompat.getDrawable(context3, R.drawable.ic_favorites_disabled));
         }
-        holder.getAnimationItemBinding().aiTittle.setText(animation.getName() + " (" + animation.getId() + ")");
+        TextView textView = holder.getAnimationItemBinding().aiTittle;
+        String name = animation.getName();
         if (this.isArizonaType) {
-            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/animation/img/animations/";
-        } else if (animation.getAddition() == 1) {
-            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/animation_pirate/";
+            str = "(" + animation.getId() + ")";
         } else {
-            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/animation/img/animations/";
+            str = "";
+        }
+        textView.setText(name + str);
+        if (this.isArizonaType) {
+            str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/animation/img/animations/";
+        } else if (animation.getAddition() == 1) {
+            str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/animation_pirate/";
+        } else {
+            str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/animation/img/animations/";
         }
         if (animation.getAddition() == 1) {
             holder.getAnimationItemBinding().aiFavorite.setVisibility(8);
@@ -119,9 +128,9 @@ public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder
             if (imageHover.length() > 0) {
                 AppCompatImageView aiImage = holder.getAnimationItemBinding().aiImage;
                 Intrinsics.checkNotNullExpressionValue(aiImage, "aiImage");
-                UtilsKt.gifLoadFromCdn(aiImage, str + imageHover, str + animation.getImage());
+                UtilsKt.gifLoadFromCdn(aiImage, str2 + imageHover, str2 + animation.getImage());
             } else {
-                Picasso.get().load(str).into(holder.getAnimationItemBinding().aiImage);
+                Picasso.get().load(str2).into(holder.getAnimationItemBinding().aiImage);
             }
         }
         if (!animation.isEnabled()) {

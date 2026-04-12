@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_gravity="bottom" android:id="@+id/root" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:gravity="top" android:orientation="horizontal" android:id="@+id/main" android:paddingTop="@dimen/_8sdp" android:paddingBottom="@dimen/_8sdp" android:layout_width="match_parent" android:layout_height="@dimen/_100sdp" android:paddingStart="@dimen/_8sdp" android:paddingEnd="@dimen/_8sdp">
+        <LinearLayout android:gravity="end" android:orientation="vertical" android:id="@+id/leftGroup" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+            <include android:id="@+id/leftItem0" layout="@layout/hud_element_damage_feed_item_left"/>
+            <include android:id="@+id/leftItem1" layout="@layout/hud_element_damage_feed_item_left"/>
+            <include android:id="@+id/leftItem2" layout="@layout/hud_element_damage_feed_item_left"/>
+            <include android:id="@+id/leftItem3" layout="@layout/hud_element_damage_feed_item_left"/>
+            <include android:id="@+id/leftItem4" layout="@layout/hud_element_damage_feed_item_left"/>
+            <include android:id="@+id/leftItem5" layout="@layout/hud_element_damage_feed_item_left"/>
+            <include android:id="@+id/leftItem6" layout="@layout/hud_element_damage_feed_item_left"/>
+        </LinearLayout>
+        <Space android:layout_width="@dimen/_80sdp" android:layout_height="1dp"/>
+        <LinearLayout android:gravity="start" android:orientation="vertical" android:id="@+id/rightGroup" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+            <include android:id="@+id/rightItem0" layout="@layout/hud_element_damage_feed_item_right"/>
+            <include android:id="@+id/rightItem1" layout="@layout/hud_element_damage_feed_item_right"/>
+            <include android:id="@+id/rightItem2" layout="@layout/hud_element_damage_feed_item_right"/>
+            <include android:id="@+id/rightItem3" layout="@layout/hud_element_damage_feed_item_right"/>
+            <include android:id="@+id/rightItem4" layout="@layout/hud_element_damage_feed_item_right"/>
+            <include android:id="@+id/rightItem5" layout="@layout/hud_element_damage_feed_item_right"/>
+            <include android:id="@+id/rightItem6" layout="@layout/hud_element_damage_feed_item_right"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

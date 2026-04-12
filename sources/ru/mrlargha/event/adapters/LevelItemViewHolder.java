@@ -14,13 +14,15 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.Job;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.event.data.AwardItemData;
 import ru.mrlargha.feature.event.databinding.EventAwardItemBinding;
 /* compiled from: AwardsAdapter.kt */
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u0001B+\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u001a\b\u0002\u0010\u0004\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005¢\u0006\u0004\b\t\u0010\nJ&\u0010\u0011\u001a\u00020\b2\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00072\u0006\u0010\u0015\u001a\u00020\u00072\u0006\u0010\u0016\u001a\u00020\u0006R \u0010\u0004\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lru/mrlargha/event/adapters/LevelItemViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "itemView", "Landroid/view/View;", "onClaimItem", "Lkotlin/Function2;", "", "", "", "<init>", "(Landroid/view/View;Lkotlin/jvm/functions/Function2;)V", "levelPassedColor", "levelNotPassedColor", "binding", "Lru/mrlargha/feature/event/databinding/EventAwardItemBinding;", "loadImageJob", "Lkotlinx/coroutines/Job;", "bind", "award", "Lru/mrlargha/event/data/AwardItemData;", "position", FirebaseAnalytics.Param.LEVEL, "isArizona", NotificationCompat.CATEGORY_EVENT}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B3\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u001a\b\u0002\u0010\u0006\u001a\u0014\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\t0\u0007¢\u0006\u0004\b\n\u0010\u000bJ\u001e\u0010\u0012\u001a\u00020\t2\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00032\u0006\u0010\u0016\u001a\u00020\u0003R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0006\u001a\u0014\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\t0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lru/mrlargha/event/adapters/LevelItemViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "completeColor", "", "itemView", "Landroid/view/View;", "onClaimItem", "Lkotlin/Function2;", "", "", "<init>", "(ILandroid/view/View;Lkotlin/jvm/functions/Function2;)V", "levelPassedColor", "levelNotPassedColor", "binding", "Lru/mrlargha/feature/event/databinding/EventAwardItemBinding;", "loadImageJob", "Lkotlinx/coroutines/Job;", "bind", "award", "Lru/mrlargha/event/data/AwardItemData;", "position", FirebaseAnalytics.Param.LEVEL, NotificationCompat.CATEGORY_EVENT}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
     private final EventAwardItemBinding binding;
+    private final int completeColor;
     private final int levelNotPassedColor;
     private final int levelPassedColor;
     private Job loadImageJob;
@@ -28,20 +30,21 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
-    public LevelItemViewHolder(View itemView, Function2<? super Boolean, ? super Integer, Unit> onClaimItem) {
+    public LevelItemViewHolder(int i, View itemView, Function2<? super Boolean, ? super Integer, Unit> onClaimItem) {
         super(itemView);
         Intrinsics.checkNotNullParameter(itemView, "itemView");
         Intrinsics.checkNotNullParameter(onClaimItem, "onClaimItem");
+        this.completeColor = i;
         this.onClaimItem = onClaimItem;
-        this.levelPassedColor = Color.parseColor("#F7FBFF");
+        this.levelPassedColor = i;
         this.levelNotPassedColor = Color.parseColor("#343940");
         EventAwardItemBinding bind = EventAwardItemBinding.bind(itemView);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
     }
 
-    public /* synthetic */ LevelItemViewHolder(View view, Function2 function2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(view, (i & 2) != 0 ? new Function2() { // from class: ru.mrlargha.event.adapters.LevelItemViewHolder$$ExternalSyntheticLambda0
+    public /* synthetic */ LevelItemViewHolder(int i, View view, Function2 function2, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(i, view, (i2 & 4) != 0 ? new Function2() { // from class: ru.mrlargha.event.adapters.LevelItemViewHolder$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 Unit unit;
@@ -53,7 +56,7 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
         } : function2);
     }
 
-    public final void bind(final AwardItemData award, int i, int i2, boolean z) {
+    public final void bind(final AwardItemData award, int i, int i2) {
         Intrinsics.checkNotNullParameter(award, "award");
         final int i3 = i + 1;
         Job job = this.loadImageJob;
@@ -78,10 +81,10 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
             eventAwardItemBinding.viewAfterLevel.setBackgroundColor(this.levelNotPassedColor);
         }
         eventAwardItemBinding.itemLevelNameUsually.setText(award.getTitle());
-        if (z) {
+        if (UtilsKt.isArizonaType()) {
             Picasso picasso = Picasso.get();
             String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso.load(resourceUrl$default + "/projects/arizona-rp/systems/event_battlepass/rewards/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
+            picasso.load(resourceUrl$default + "/projects/arizona-rp/systems/battlepass/easter-2026/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
         } else {
             Picasso picasso2 = Picasso.get();
             String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);

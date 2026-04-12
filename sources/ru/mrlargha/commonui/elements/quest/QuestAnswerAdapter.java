@@ -18,6 +18,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.databinding.RodinaQuestDialogItemBinding;
 import ru.mrlargha.commonui.elements.quest.QuestAnswerAdapter;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: QuestAnswerAdapter.kt */
 @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0001\u0013B)\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00020\u0005\u0012\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007¢\u0006\u0004\b\n\u0010\u000bJ\u0018\u0010\f\u001a\u00020\u00032\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\bH\u0016J\u0018\u0010\u0010\u001a\u00020\t2\u0006\u0010\u0011\u001a\u00020\u00032\u0006\u0010\u0012\u001a\u00020\bH\u0016R\u001a\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lru/mrlargha/commonui/elements/quest/QuestAnswerAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/quest/QuestAnswer;", "Lru/mrlargha/commonui/elements/quest/QuestAnswerAdapter$QuestAnswerViewHolder;", "answers", "", "onClick", "Lkotlin/Function1;", "", "", "<init>", "(Ljava/util/List;Lkotlin/jvm/functions/Function1;)V", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "QuestAnswerViewHolder", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -92,7 +93,7 @@ public final class QuestAnswerAdapter extends ListAdapter<QuestAnswer, QuestAnsw
                 }
             });
             RodinaQuestDialogItemBinding rodinaQuestDialogItemBinding = this.binding;
-            rodinaQuestDialogItemBinding.rodinaQuestDialogItemText.setText(questAnswer.getText());
+            rodinaQuestDialogItemBinding.rodinaQuestDialogItemText.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAnswer.getText(), 0.0f, 1, null));
             if (Intrinsics.areEqual(questAnswer.getEmoji(), " ")) {
                 rodinaQuestDialogItemBinding.rodinaQuestDialogItemEmoji.setText(Html.fromHtml("&#12539;"));
             } else if (EmojiCompat.get().getLoadState() == 1) {

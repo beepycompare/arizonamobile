@@ -12,6 +12,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.databinding.RodinaPersonalPropertyItemViewBinding;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: PersonalPropertyAdapter.kt */
 @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\u0018\u00002\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0001\u0011B\u0015\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\b\u001a\u00020\u00032\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0016J\u0018\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00032\u0006\u0010\u0010\u001a\u00020\fH\u0016¨\u0006\u0012"}, d2 = {"Lru/mrlargha/commonui/elements/personalproperty/PersonalPropertyAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/personalproperty/PersonalPropertyDetail;", "Lru/mrlargha/commonui/elements/personalproperty/PersonalPropertyAdapter$PersonalPropertyDetailViewHolder;", "details", "", "<init>", "(Ljava/util/List;)V", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "", "holder", "position", "PersonalPropertyDetailViewHolder", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -56,8 +57,8 @@ public final class PersonalPropertyAdapter extends ListAdapter<PersonalPropertyD
         public final void bind(PersonalPropertyDetail personalPropertyDetail) {
             Intrinsics.checkNotNullParameter(personalPropertyDetail, "personalPropertyDetail");
             RodinaPersonalPropertyItemViewBinding rodinaPersonalPropertyItemViewBinding = this.binding;
-            rodinaPersonalPropertyItemViewBinding.rodinaPersonalPropertyItemViewKey.setText(personalPropertyDetail.getTitle());
-            rodinaPersonalPropertyItemViewBinding.rodinaPersonalPropertyItemViewValue.setText(personalPropertyDetail.getValue());
+            rodinaPersonalPropertyItemViewBinding.rodinaPersonalPropertyItemViewKey.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, personalPropertyDetail.getTitle(), 0.0f, 1, null));
+            rodinaPersonalPropertyItemViewBinding.rodinaPersonalPropertyItemViewValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, personalPropertyDetail.getValue(), 0.0f, 1, null));
         }
 
         /* compiled from: PersonalPropertyAdapter.kt */

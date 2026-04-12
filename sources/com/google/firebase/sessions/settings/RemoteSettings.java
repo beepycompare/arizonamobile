@@ -67,7 +67,7 @@ public final class RemoteSettings implements SettingsProvider {
         Integer sessionRestartTimeout = this.settingsCache.sessionRestartTimeout();
         if (sessionRestartTimeout != null) {
             Duration.Companion companion = Duration.Companion;
-            return Duration.m10536boximpl(DurationKt.toDuration(sessionRestartTimeout.intValue(), DurationUnit.SECONDS));
+            return Duration.m10537boximpl(DurationKt.toDuration(sessionRestartTimeout.intValue(), DurationUnit.SECONDS));
         }
         return null;
     }
@@ -247,7 +247,7 @@ public final class RemoteSettings implements SettingsProvider {
 
     static {
         Duration.Companion companion = Duration.Companion;
-        defaultCacheDuration = (int) Duration.m10552getInWholeSecondsimpl(DurationKt.toDuration(24, DurationUnit.HOURS));
+        defaultCacheDuration = (int) Duration.m10553getInWholeSecondsimpl(DurationKt.toDuration(24, DurationUnit.HOURS));
         sanitizeRegex = new Regex("/");
     }
 }

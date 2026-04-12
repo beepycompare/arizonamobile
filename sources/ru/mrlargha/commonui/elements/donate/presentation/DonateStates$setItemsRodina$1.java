@@ -1,6 +1,5 @@
 package ru.mrlargha.commonui.elements.donate.presentation;
 
-import androidx.media3.extractor.ts.TsExtractor;
 import java.util.List;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
@@ -20,7 +19,7 @@ import ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateStates.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateStates$setItemsRodina$1", f = "DonateStates.kt", i = {}, l = {133, TsExtractor.TS_STREAM_TYPE_SPLICE_INFO}, m = "invokeSuspend", n = {}, nl = {TsExtractor.TS_STREAM_TYPE_SPLICE_INFO, -1}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateStates$setItemsRodina$1", f = "DonateStates.kt", i = {}, l = {132, 133}, m = "invokeSuspend", n = {}, nl = {133, -1}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateStates$setItemsRodina$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $categoriesId;

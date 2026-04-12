@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.autofill.HintConstants;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.media3.exoplayer.ExoPlayer;
 import androidx.media3.exoplayer.Renderer;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -81,10 +80,6 @@ public final class Authorization implements InterfaceController {
     private CountDownTimer timer;
     private BackgroundVideoBinding videoBinding;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void _init_$lambda$1(View view) {
-    }
-
     public Authorization(Activity targetActivity, int i) {
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         this.targetActivity = targetActivity;
@@ -114,37 +109,25 @@ public final class Authorization implements InterfaceController {
         RegistrationAccount.ContainerData userAuthData = getUserAuthData();
         this.rememberMe = userAuthData != null && userAuthData.getRememberMe();
         this.arizonaServers = MapsKt.mapOf(TuplesKt.to(1, "Phoenix"), TuplesKt.to(2, "Tucson"), TuplesKt.to(3, "Scottdale"), TuplesKt.to(4, "Chandler"), TuplesKt.to(5, "Brainburg"), TuplesKt.to(6, "Saint-Rose"), TuplesKt.to(7, "Mesa"), TuplesKt.to(8, "Red-Rock"), TuplesKt.to(9, "Yuma"), TuplesKt.to(10, "Surprise"), TuplesKt.to(11, "Prescott"), TuplesKt.to(12, "Glendale"), TuplesKt.to(13, "Kingman"), TuplesKt.to(14, "Winslow"), TuplesKt.to(15, "Payson"), TuplesKt.to(16, "Gilbert"), TuplesKt.to(17, "Show-Low"), TuplesKt.to(18, "Casa-Grande"), TuplesKt.to(19, "Page"), TuplesKt.to(20, "Sun-City"), TuplesKt.to(21, "Queen-Creek"), TuplesKt.to(22, "Sedona"), TuplesKt.to(23, "Holiday"), TuplesKt.to(24, "Wednesday"), TuplesKt.to(25, "Yava"), TuplesKt.to(26, "Faraway"), TuplesKt.to(27, "Bumble Bee"), TuplesKt.to(28, "Christmas"), TuplesKt.to(29, "Mirage"), TuplesKt.to(30, "Love"), TuplesKt.to(31, "Drake"), TuplesKt.to(32, "Space"), TuplesKt.to(101, "Mobile 1"), TuplesKt.to(102, "Mobile 2"), TuplesKt.to(103, "Mobile 3"));
-        this.rodinaServers = MapsKt.mapOf(TuplesKt.to(0, "Тестовы"), TuplesKt.to(1, "Центральный"), TuplesKt.to(2, "Южный"), TuplesKt.to(3, "Северный"), TuplesKt.to(4, "Восточный"), TuplesKt.to(5, "Западный"), TuplesKt.to(6, "Приморский"), TuplesKt.to(7, "Федеральный"), TuplesKt.to(101, "Москва"), TuplesKt.to(102, "Санкт-Петербург"));
+        this.rodinaServers = MapsKt.mapOf(TuplesKt.to(0, "Тестовы"), TuplesKt.to(1, "Центральный"), TuplesKt.to(2, "Южный"), TuplesKt.to(3, "Северный"), TuplesKt.to(4, "Восточный"), TuplesKt.to(5, "Западный"), TuplesKt.to(6, "Приморский"), TuplesKt.to(7, "Федеральный"), TuplesKt.to(101, "Москва"), TuplesKt.to(102, "Санкт-Петербург"), TuplesKt.to(103, "Екатеринбург"));
         this.recoveryHandlerId = RegistrationInterfaceType.RECOVERY_HANDLER.getId();
         this.videoBinding.video.addView(bind.auth, -1, -1);
-        ConstraintSet constraintSet = new ConstraintSet();
-        constraintSet.clone(this.videoBinding.video);
-        constraintSet.connect(bind.auth.getId(), 1, this.videoBinding.video.getId(), 1);
-        constraintSet.connect(bind.auth.getId(), 3, this.videoBinding.video.getId(), 3);
-        constraintSet.connect(bind.auth.getId(), 4, this.videoBinding.video.getId(), 4);
-        constraintSet.applyTo(this.videoBinding.video);
         bind.authForgotPassword.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Authorization._init_$lambda$0(Authorization.this, view);
             }
         });
-        bind.auth.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda5
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                Authorization._init_$lambda$1(view);
-            }
-        });
         if (getUserAuthData() == null) {
             setRegistrationWindow();
         }
-        bind.authRememberCheckbox.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda6
+        bind.authRememberCheckbox.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Authorization._init_$lambda$2(Authorization.this, view);
+                Authorization._init_$lambda$1(Authorization.this, view);
             }
         });
-        bind.authLoginButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda7
+        bind.authLoginButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Authorization.this.loginAction();
@@ -159,10 +142,10 @@ public final class Authorization implements InterfaceController {
         EditText authPasswordEdit = bind.authPasswordEdit;
         Intrinsics.checkNotNullExpressionValue(authPasswordEdit, "authPasswordEdit");
         checkRaisingContent(authPasswordEdit);
-        bind.authUsernameEdit.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda8
+        bind.authUsernameEdit.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda7
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public final void onGlobalLayout() {
-                Authorization._init_$lambda$5(Authorization.this);
+                Authorization._init_$lambda$4(Authorization.this);
             }
         });
         EditText authPasswordEdit2 = bind.authPasswordEdit;
@@ -189,10 +172,10 @@ public final class Authorization implements InterfaceController {
                 Authorization.this.enableLoginButton();
             }
         });
-        bind.authAccountRegistrationButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda9
+        bind.authAccountRegistrationButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Authorization._init_$lambda$7(Authorization.this, view);
+                Authorization._init_$lambda$6(Authorization.this, view);
             }
         });
         setFilter();
@@ -230,7 +213,7 @@ public final class Authorization implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void _init_$lambda$2(Authorization authorization, View view) {
+    public static final void _init_$lambda$1(Authorization authorization, View view) {
         if (authorization.rememberMe) {
             authorization.checkboxDisable();
             authorization.rememberMe = false;
@@ -241,7 +224,7 @@ public final class Authorization implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void _init_$lambda$5(Authorization authorization) {
+    public static final void _init_$lambda$4(Authorization authorization) {
         String obj;
         EditText authUsernameEdit = authorization.authorizationBinding.authUsernameEdit;
         Intrinsics.checkNotNullExpressionValue(authUsernameEdit, "authUsernameEdit");
@@ -276,7 +259,7 @@ public final class Authorization implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void _init_$lambda$7(Authorization authorization, View view) {
+    public static final void _init_$lambda$6(Authorization authorization, View view) {
         if (authorization.timer != null) {
             authorization.authorizationBinding.authLoginText.setText("Войти в аккаунт");
             CountDownTimer countDownTimer = authorization.timer;

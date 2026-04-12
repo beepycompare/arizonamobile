@@ -24,12 +24,12 @@ public final class H6 {
         this.f609a = counterConfigurationReporterType;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(12:1|2|3|(3:63|64|(9:66|(2:69|67)|70|6|7|8|(2:15|(8:18|7a|26|27|(4:30|(5:34|35|(1:37)(1:41)|38|39)|40|28)|44|45|(2:49|50)))|59|60))|5|6|7|8|(4:10|12|15|(2:18|7a))|59|60|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x005d, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(12:1|2|3|(3:63|64|(9:66|(2:69|67)|70|6|7|8|(2:15|(8:18|7b|26|27|(4:30|(5:34|35|(1:37)(1:41)|38|39)|40|28)|44|45|(2:49|50)))|59|60))|5|6|7|8|(4:10|12|15|(2:18|7b))|59|60|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x005e, code lost:
         r10 = 0;
      */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x007b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x007c A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

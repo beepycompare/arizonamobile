@@ -14,6 +14,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.arizonaui.biz.MyBusinessScreen;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.feature.business.R;
 import ru.mrlargha.feature.business.databinding.MyBusinessChildMenuItemBinding;
 /* compiled from: MyBusinessChildMenuAdapter.kt */
@@ -50,7 +51,7 @@ public final class MyBusinessChildMenuAdapter extends RecyclerView.Adapter<Busin
         Intrinsics.checkNotNullExpressionValue(subMenuItem, "get(...)");
         final MyBusinessScreen.Companion.SubMenuItem subMenuItem2 = subMenuItem;
         MyBusinessChildMenuItemBinding binding = holder.getBinding();
-        binding.title.setText(subMenuItem2.getTitle());
+        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, subMenuItem2.getTitle(), 0.0f, 1, null));
         EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
         ConstraintLayout myBusinessChildMenuItem = binding.myBusinessChildMenuItem;
         Intrinsics.checkNotNullExpressionValue(myBusinessChildMenuItem, "myBusinessChildMenuItem");

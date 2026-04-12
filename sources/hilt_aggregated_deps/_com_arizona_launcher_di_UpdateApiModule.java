@@ -1,4 +1,4 @@
 package hilt_aggregated_deps;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class _com_arizona_launcher_di_UpdateApiModule {
 }

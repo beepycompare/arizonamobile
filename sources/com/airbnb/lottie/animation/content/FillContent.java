@@ -6,7 +6,6 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
-import androidx.core.view.ViewCompat;
 import com.airbnb.lottie.L;
 import com.airbnb.lottie.LottieDrawable;
 import com.airbnb.lottie.LottieProperty;
@@ -101,7 +100,7 @@ public class FillContent implements DrawingContent, BaseKeyframeAnimation.Animat
         int intValue = ((ColorKeyframeAnimation) this.colorAnimation).getIntValue();
         float intValue2 = this.opacityAnimation.getValue().intValue() / 100.0f;
         int i2 = 0;
-        this.paint.setColor((MiscUtils.clamp((int) (i * intValue2), 0, 255) << 24) | (intValue & ViewCompat.MEASURED_SIZE_MASK));
+        this.paint.setColor((MiscUtils.clamp((int) (i * intValue2), 0, 255) << 24) | (intValue & 16777215));
         BaseKeyframeAnimation<ColorFilter, ColorFilter> baseKeyframeAnimation = this.colorFilterAnimation;
         if (baseKeyframeAnimation != null) {
             this.paint.setColorFilter(baseKeyframeAnimation.getValue());

@@ -27,6 +27,7 @@ import ru.mrlargha.feature.mobile.presentation.page.messenger.Messenger;
 import ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat;
 import ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage;
 import ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage;
+import ru.mrlargha.feature.mobile.presentation.page.rent_accessory.RentAccessoryPage;
 import ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage;
 import ru.mrlargha.feature.mobile.presentation.page.uber.UberChoseTaxi;
 import ru.mrlargha.feature.mobile.presentation.page.uber.UberComplete;
@@ -198,6 +199,8 @@ public final class HistoryManager {
                 HistoryManager.page.put(Integer.valueOf(i), new ArizonaRentPage());
             } else if (i == MobilePhonePage.ARIZONA_RENT_ADD.getId()) {
                 HistoryManager.page.put(Integer.valueOf(i), new ArizonaRentAddPage());
+            } else if (i == MobilePhonePage.RENT_ACCESSORY.getId()) {
+                HistoryManager.page.put(Integer.valueOf(i), new RentAccessoryPage());
             } else {
                 HistoryManager.page.put(0, new MobilePhoneMainPage());
             }

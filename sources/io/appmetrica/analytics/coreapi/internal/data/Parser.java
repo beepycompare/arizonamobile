@@ -16,12 +16,12 @@ public interface Parser<IN, OUT> {
             OUT out;
             try {
                 Result.Companion companion = Result.Companion;
-                out = (OUT) Result.m9182constructorimpl(parser.parse(in));
+                out = (OUT) Result.m9183constructorimpl(parser.parse(in));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                out = (OUT) Result.m9182constructorimpl(ResultKt.createFailure(th));
+                out = (OUT) Result.m9183constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9188isFailureimpl(out)) {
+            if (Result.m9189isFailureimpl(out)) {
                 return null;
             }
             return out;

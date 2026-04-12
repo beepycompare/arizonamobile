@@ -20,10 +20,11 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBoostModelUi;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateRateType;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateReplenishmentDialogPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupControllers$1", f = "DonateReplenishmentDialogPage.kt", i = {}, l = {278}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupControllers$1", f = "DonateReplenishmentDialogPage.kt", i = {}, l = {279}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateReplenishmentDialogPage$setupControllers$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ DonateBoostModelUi $model;
@@ -136,7 +137,7 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
                             this.this$0.getBinding().tvReceive.setText(DonateUtilsKt.formatWithSpaces(j));
                             this.this$0.getAmount = j;
                         } else if (i == 2) {
-                            this.this$0.getBinding().tvReceive.setText(DonateUtilsKt.formatWithSpaces(longValue));
+                            this.this$0.getBinding().tvReceive.setText(MoneyElementKt.toMoneyFormattedSpannable$default(longValue, false, null, null, 7, null));
                             this.this$0.getAmount = longValue;
                         } else if (i != 3) {
                             throw new NoWhenBranchMatchedException();

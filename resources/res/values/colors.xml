@@ -63,8 +63,8 @@
     <color name="cardview_light_background">#ffffffff</color>
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
-    <color name="color3">#73a7e2</color>
-    <color name="color4">#16191d</color>
+    <color name="color3">#fff0a1</color>
+    <color name="color4">#887200</color>
     <color name="color5">#879cd2</color>
     <color name="color6">#354463</color>
     <color name="colorAccent">@color/white</color>
@@ -489,8 +489,8 @@
     <color name="m3_sys_color_secondary_fixed_dim">@color/m3_ref_palette_secondary80</color>
     <color name="m3_sys_color_tertiary_fixed">@color/m3_ref_palette_tertiary90</color>
     <color name="m3_sys_color_tertiary_fixed_dim">@color/m3_ref_palette_tertiary80</color>
-    <color name="main">#f7fbff</color>
-    <color name="main_transparent">#805961ba</color>
+    <color name="main">#ffd500</color>
+    <color name="main_transparent">#80ffe419</color>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
     <color name="material_blue_grey_950">#ff21272b</color>
@@ -589,7 +589,7 @@
     <color name="rodina_green">#3ac748</color>
     <color name="rodina_red">#600117</color>
     <color name="rodina_white">#ffffff</color>
-    <color name="secondary">#f7fbff</color>
+    <color name="secondary">#ffd500</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>

@@ -53,6 +53,7 @@ import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.RodinaItemTypes;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.feature.workshop.R;
 import ru.mrlargha.feature.workshop.databinding.WorkshopButtonsContainerBinding;
 import ru.mrlargha.feature.workshop.databinding.WorkshopInfoContainerBinding;
@@ -199,8 +200,13 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         bind.infoContainers.sharpingInfoContainer.costField.nameTextView.setText(targetActivity.getString(ru.mrlargha.commonui.R.string.cost));
         bind.buttonsContainer.paintButtons.costFieldPainting.nameTextView.setText(targetActivity.getString(ru.mrlargha.commonui.R.string.cost));
         bind.infoContainers.sharpingInfoContainer.successChanceField.ivValueIcon.setImageResource(ru.mrlargha.commonui.R.drawable.ic_percent_16);
-        bind.buttonsContainer.paintButtons.costFieldPainting.ivValueIcon.setImageResource(ru.mrlargha.commonui.R.drawable.ic_dollar_16);
-        bind.infoContainers.sharpingInfoContainer.costField.ivValueIcon.setImageResource(ru.mrlargha.commonui.R.drawable.ic_dollar_16);
+        if (z) {
+            bind.buttonsContainer.paintButtons.costFieldPainting.ivValueIcon.setImageResource(-1);
+            bind.infoContainers.sharpingInfoContainer.costField.ivValueIcon.setImageResource(-1);
+        } else {
+            bind.buttonsContainer.paintButtons.costFieldPainting.ivValueIcon.setImageResource(ru.mrlargha.commonui.R.drawable.ic_dollar_16);
+            bind.infoContainers.sharpingInfoContainer.costField.ivValueIcon.setImageResource(ru.mrlargha.commonui.R.drawable.ic_dollar_16);
+        }
         leftItemUi(true);
         setCountsVisibility(false);
         bind.mainItemField.ivItemImage.setImageResource(ru.mrlargha.commonui.R.drawable.ic_empty_item);
@@ -1015,7 +1021,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         if (1 <= nextMultipleOfFive) {
             int i = 1;
             while (true) {
-                this.inventoryItemList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), ((InventoryItem) CollectionsKt.last((List<? extends Object>) this.inventoryItemList)).getSlot() + 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, 15728638, null));
+                this.inventoryItemList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), ((InventoryItem) CollectionsKt.last((List<? extends Object>) this.inventoryItemList)).getSlot() + 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, null, 32505854, null));
                 if (i == nextMultipleOfFive) {
                     break;
                 }
@@ -1025,7 +1031,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         List<InventoryItem> list = this.inventoryItemList;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem : list) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, 16774655, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, 33551871, null));
         }
         this.inventoryItemList = CollectionsKt.toMutableList((Collection) arrayList);
         this.inventoryAdapter.setArizona(this.isArizonaType);
@@ -1035,8 +1041,8 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     /* JADX WARN: Code restructure failed: missing block: B:45:0x015a, code lost:
         if (r3 != 4) goto L46;
      */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x025a  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x025f  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x024d  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0252  */
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1046,7 +1052,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         Integer itemStrength;
         Object obj2;
         Object obj3;
-        Integer amount;
+        Long amount;
         Intrinsics.checkNotNullParameter(data, "data");
         Log.d("TAG_WORKSHOP", "data: " + data + " ======= subID: " + i);
         if (i == 0) {
@@ -1153,12 +1159,12 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                     btnPaintEnableStatus(false);
                 }
                 this.binding.infoContainers.sharpingInfoContainer.successChanceField.valueTextView.setText(craftItemInfo.getChance() + " ");
-                this.binding.infoContainers.sharpingInfoContainer.costField.valueTextView.setText(craftItemInfo.getCost() + " ");
-                this.binding.buttonsContainer.paintButtons.costFieldPainting.valueTextView.setText(craftItemInfo.getCost() + " ");
+                this.binding.infoContainers.sharpingInfoContainer.costField.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", 3, null));
+                this.binding.buttonsContainer.paintButtons.costFieldPainting.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", 3, null));
                 InventoryItem inventoryItem = this.currentLeftItem;
-                int intValue = (inventoryItem != null || (amount = inventoryItem.getAmount()) == null) ? 0 : amount.intValue();
+                long longValue = (inventoryItem != null || (amount = inventoryItem.getAmount()) == null) ? 0L : amount.longValue();
                 Integer amount2 = craftItemInfo.getAmount();
-                int intValue2 = amount2 == null ? amount2.intValue() : 0;
+                int intValue = amount2 == null ? amount2.intValue() : 0;
                 if (this.isArizonaType || this.currentScreenType != 1 || this.currentLeftItem == null) {
                     return;
                 }
@@ -1172,8 +1178,9 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                 InventoryItem inventoryItem2 = this.currentLeftItem;
                 textView.setText(String.valueOf(inventoryItem2 != null ? inventoryItem2.getText() : null));
                 this.binding.leftItemField.tvNeedRes.setText("/" + craftItemInfo.getAmount());
+                int i4 = (intValue > longValue ? 1 : (intValue == longValue ? 0 : -1));
                 WorkshopScreenBinding workshopScreenBinding = this.binding;
-                if (intValue2 > intValue) {
+                if (i4 > 0) {
                     workshopScreenBinding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.red));
                     return;
                 } else {
@@ -1187,8 +1194,8 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                 btnSharpenEnableStatus(false);
             }
             this.binding.infoContainers.sharpingInfoContainer.successChanceField.valueTextView.setText(craftItemInfo.getChance() + " ");
-            this.binding.infoContainers.sharpingInfoContainer.costField.valueTextView.setText(craftItemInfo.getCost() + " ");
-            this.binding.buttonsContainer.paintButtons.costFieldPainting.valueTextView.setText(craftItemInfo.getCost() + " ");
+            this.binding.infoContainers.sharpingInfoContainer.costField.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", 3, null));
+            this.binding.buttonsContainer.paintButtons.costFieldPainting.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", 3, null));
             InventoryItem inventoryItem3 = this.currentLeftItem;
             if (inventoryItem3 != null) {
             }
@@ -1250,21 +1257,21 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                     }
                 }
                 ItemsInfo itemsInfo2 = (ItemsInfo) obj3;
-                arrayList.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type2, itemsInfo2 != null ? Integer.valueOf(itemsInfo2.getAcs_slot()) : null, null, false, false, null, null, null, 16580591, null));
+                arrayList.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type2, itemsInfo2 != null ? Integer.valueOf(itemsInfo2.getAcs_slot()) : null, null, false, false, null, null, null, null, 33357807, null));
             }
-            InventoryResponse inventoryResponse2 = new InventoryResponse(type, arrayList);
+            InventoryResponse inventoryResponse2 = new InventoryResponse(type, arrayList, 0, 4, null);
             if (inventoryResponse2.getType() == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
                 for (InventoryItem inventoryItem5 : inventoryResponse2.getItems()) {
                     Iterator<InventoryItem> it3 = this.inventoryItemList.iterator();
-                    int i4 = 0;
+                    int i5 = 0;
                     while (true) {
                         if (!it3.hasNext()) {
-                            i4 = -1;
+                            i5 = -1;
                             break;
                         } else if (it3.next().getSlot() == inventoryItem5.getSlot()) {
                             break;
                         } else {
-                            i4++;
+                            i5++;
                         }
                     }
                     Iterator<T> it4 = this.inventoryItemList.iterator();
@@ -1279,23 +1286,23 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                         }
                     }
                     InventoryItem updateInventoryItem = UtilsKt.updateInventoryItem((InventoryItem) obj, inventoryItem5);
-                    if (i4 >= 0) {
+                    if (i5 >= 0) {
                         Integer item3 = inventoryItem5.getItem();
                         List<InventoryItem> list = this.inventoryItemList;
                         if (item3 != null) {
                             if (updateInventoryItem == null) {
                                 updateInventoryItem = ConstantsKt.getEmptyInventoryItem();
                             }
-                            list.set(i4, updateInventoryItem);
+                            list.set(i5, updateInventoryItem);
                         } else {
-                            list.set(i4, inventoryItem5);
+                            list.set(i5, inventoryItem5);
                         }
                     }
                     if (this.isArizonaType && this.currentScreenType == 2 && (itemStrength = inventoryItem5.getItemStrength()) != null && itemStrength.intValue() == 100) {
                         this.binding.mainItemField.parentLayout.performClick();
                     }
                     this.inventoryAdapter.submitList(this.inventoryItemList);
-                    this.inventoryAdapter.notifyItemChanged(i4);
+                    this.inventoryAdapter.notifyItemChanged(i5);
                 }
             }
         }

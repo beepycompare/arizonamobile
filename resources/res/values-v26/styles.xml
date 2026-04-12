@@ -16,6 +16,18 @@
     </style>
     <style name="Base.Widget.AppCompat.Toolbar" parent="@style/Base.V26.Widget.AppCompat.Toolbar">
     </style>
+    <style name="DialogSmallContainer" parent="">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">@dimen/_260sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingHorizontal">@dimen/_12sdp</item>
+        <item name="android:paddingVertical">@dimen/_10sdp</item>
+        <item name="backgroundMainColor">#e6091422</item>
+        <item name="backgroundSecondColor">#e6399393</item>
+        <item name="borderMainColor">#1affffff</item>
+        <item name="borderWidth">@dimen/_1sdp</item>
+        <item name="corners">@dimen/_6sdp</item>
+    </style>
     <style name="Widget.Design.AppBarLayout" parent="@android:style/Widget">
         <item name="android:background">?attr/colorPrimary</item>
         <item name="android:stateListAnimator">@animator/design_appbar_state_list_animator</item>

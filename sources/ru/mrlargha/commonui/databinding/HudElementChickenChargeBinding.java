@@ -27,15 +27,24 @@ public final class HudElementChickenChargeBinding implements ViewBinding {
     public final CustomCardView greenZone;
     public final CustomCardView greenZone2;
     public final FrameLayout hided;
-    public final ImageView ivBg;
-    public final ImageView ivBgFinal;
+    public final ImageView ivBgLeftChiken;
+    public final ImageView ivBgLeftHay;
+    public final ImageView ivBgLeftSawmill;
+    public final ImageView ivBgMain;
+    public final ImageView ivBgMain2;
+    public final ImageView ivBgRightChiken;
+    public final ImageView ivBgRightHay;
+    public final ImageView ivBgRightSawmill;
+    public final ImageView ivBgText;
     public final LinearLayout main;
+    public final LinearLayout main2;
     public final TextView name1;
     public final TextView name2;
     public final FrameLayout pirates;
     public final CustomCardView player1progressbar;
     public final FrameLayout player1target;
     public final LinearLayout player1tooltip;
+    public final LinearLayout player2Info;
     public final CustomCardView player2progressbar;
     public final FrameLayout player2target;
     public final LinearLayout player2tooltip;
@@ -50,7 +59,7 @@ public final class HudElementChickenChargeBinding implements ViewBinding {
     public final FrameLayout zone;
     public final FrameLayout zone2;
 
-    private HudElementChickenChargeBinding(FrameLayout rootView, CustomCardView action, ImageView actionIc, TextView actionText, TextView chance1, TextView chance2, ImageView chickenGif, ImageView chickenGif2, CustomCardView close, TextView desc1, TextView desc2, LinearLayout finalContainer, CustomCardView greenZone, CustomCardView greenZone2, FrameLayout hided, ImageView ivBg, ImageView ivBgFinal, LinearLayout main, TextView name1, TextView name2, FrameLayout pirates, CustomCardView player1progressbar, FrameLayout player1target, LinearLayout player1tooltip, CustomCardView player2progressbar, FrameLayout player2target, LinearLayout player2tooltip, CustomCardView redZone, CustomCardView redZone2, TextView stage, TextView tvPercentSuccess, TextView tvResult, TextView tvWaitingYou, TextView tvYouWaiting, FrameLayout zone, FrameLayout zone2) {
+    private HudElementChickenChargeBinding(FrameLayout rootView, CustomCardView action, ImageView actionIc, TextView actionText, TextView chance1, TextView chance2, ImageView chickenGif, ImageView chickenGif2, CustomCardView close, TextView desc1, TextView desc2, LinearLayout finalContainer, CustomCardView greenZone, CustomCardView greenZone2, FrameLayout hided, ImageView ivBgLeftChiken, ImageView ivBgLeftHay, ImageView ivBgLeftSawmill, ImageView ivBgMain, ImageView ivBgMain2, ImageView ivBgRightChiken, ImageView ivBgRightHay, ImageView ivBgRightSawmill, ImageView ivBgText, LinearLayout main, LinearLayout main2, TextView name1, TextView name2, FrameLayout pirates, CustomCardView player1progressbar, FrameLayout player1target, LinearLayout player1tooltip, LinearLayout player2Info, CustomCardView player2progressbar, FrameLayout player2target, LinearLayout player2tooltip, CustomCardView redZone, CustomCardView redZone2, TextView stage, TextView tvPercentSuccess, TextView tvResult, TextView tvWaitingYou, TextView tvYouWaiting, FrameLayout zone, FrameLayout zone2) {
         this.rootView = rootView;
         this.action = action;
         this.actionIc = actionIc;
@@ -66,15 +75,24 @@ public final class HudElementChickenChargeBinding implements ViewBinding {
         this.greenZone = greenZone;
         this.greenZone2 = greenZone2;
         this.hided = hided;
-        this.ivBg = ivBg;
-        this.ivBgFinal = ivBgFinal;
+        this.ivBgLeftChiken = ivBgLeftChiken;
+        this.ivBgLeftHay = ivBgLeftHay;
+        this.ivBgLeftSawmill = ivBgLeftSawmill;
+        this.ivBgMain = ivBgMain;
+        this.ivBgMain2 = ivBgMain2;
+        this.ivBgRightChiken = ivBgRightChiken;
+        this.ivBgRightHay = ivBgRightHay;
+        this.ivBgRightSawmill = ivBgRightSawmill;
+        this.ivBgText = ivBgText;
         this.main = main;
+        this.main2 = main2;
         this.name1 = name1;
         this.name2 = name2;
         this.pirates = pirates;
         this.player1progressbar = player1progressbar;
         this.player1target = player1target;
         this.player1tooltip = player1tooltip;
+        this.player2Info = player2Info;
         this.player2progressbar = player2progressbar;
         this.player2target = player2target;
         this.player2tooltip = player2tooltip;
@@ -149,68 +167,104 @@ public final class HudElementChickenChargeBinding implements ViewBinding {
                                                             i = R.id.hided;
                                                             FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
                                                             if (frameLayout != null) {
-                                                                i = R.id.iv_bg;
+                                                                i = R.id.iv_bg_left_chiken;
                                                                 ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                                                                 if (imageView4 != null) {
-                                                                    i = R.id.iv_bg_final;
+                                                                    i = R.id.iv_bg_left_hay;
                                                                     ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                                                                     if (imageView5 != null) {
-                                                                        i = R.id.main;
-                                                                        LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                        if (linearLayout2 != null) {
-                                                                            i = R.id.name1;
-                                                                            TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                            if (textView6 != null) {
-                                                                                i = R.id.name2;
-                                                                                TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                if (textView7 != null) {
-                                                                                    FrameLayout frameLayout2 = (FrameLayout) rootView;
-                                                                                    i = R.id.player1progressbar;
-                                                                                    CustomCardView customCardView5 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
-                                                                                    if (customCardView5 != null) {
-                                                                                        i = R.id.player1target;
-                                                                                        FrameLayout frameLayout3 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                        if (frameLayout3 != null) {
-                                                                                            i = R.id.player1tooltip;
-                                                                                            LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                            if (linearLayout3 != null) {
-                                                                                                i = R.id.player2progressbar;
-                                                                                                CustomCardView customCardView6 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                if (customCardView6 != null) {
-                                                                                                    i = R.id.player2target;
-                                                                                                    FrameLayout frameLayout4 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                    if (frameLayout4 != null) {
-                                                                                                        i = R.id.player2tooltip;
-                                                                                                        LinearLayout linearLayout4 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                        if (linearLayout4 != null) {
-                                                                                                            i = R.id.red_zone;
-                                                                                                            CustomCardView customCardView7 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                            if (customCardView7 != null) {
-                                                                                                                i = R.id.red_zone2;
-                                                                                                                CustomCardView customCardView8 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                if (customCardView8 != null) {
-                                                                                                                    i = R.id.stage;
-                                                                                                                    TextView textView8 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                    if (textView8 != null) {
-                                                                                                                        i = R.id.tv_percent_success;
-                                                                                                                        TextView textView9 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                        if (textView9 != null) {
-                                                                                                                            i = R.id.tv_result;
-                                                                                                                            TextView textView10 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                            if (textView10 != null) {
-                                                                                                                                i = R.id.tv_waiting_you;
-                                                                                                                                TextView textView11 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                if (textView11 != null) {
-                                                                                                                                    i = R.id.tv_you_waiting;
-                                                                                                                                    TextView textView12 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                    if (textView12 != null) {
-                                                                                                                                        i = R.id.zone;
-                                                                                                                                        FrameLayout frameLayout5 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                        if (frameLayout5 != null) {
-                                                                                                                                            i = R.id.zone2;
-                                                                                                                                            FrameLayout frameLayout6 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                            if (frameLayout6 != null) {
-                                                                                                                                                return new HudElementChickenChargeBinding(frameLayout2, customCardView, imageView, textView, textView2, textView3, imageView2, imageView3, customCardView2, textView4, textView5, linearLayout, customCardView3, customCardView4, frameLayout, imageView4, imageView5, linearLayout2, textView6, textView7, frameLayout2, customCardView5, frameLayout3, linearLayout3, customCardView6, frameLayout4, linearLayout4, customCardView7, customCardView8, textView8, textView9, textView10, textView11, textView12, frameLayout5, frameLayout6);
+                                                                        i = R.id.iv_bg_left_sawmill;
+                                                                        ImageView imageView6 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                        if (imageView6 != null) {
+                                                                            i = R.id.iv_bg_main;
+                                                                            ImageView imageView7 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                            if (imageView7 != null) {
+                                                                                i = R.id.iv_bg_main2;
+                                                                                ImageView imageView8 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                if (imageView8 != null) {
+                                                                                    i = R.id.iv_bg_right_chiken;
+                                                                                    ImageView imageView9 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                    if (imageView9 != null) {
+                                                                                        i = R.id.iv_bg_right_hay;
+                                                                                        ImageView imageView10 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                        if (imageView10 != null) {
+                                                                                            i = R.id.iv_bg_right_sawmill;
+                                                                                            ImageView imageView11 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                            if (imageView11 != null) {
+                                                                                                i = R.id.iv_bg_text;
+                                                                                                ImageView imageView12 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                if (imageView12 != null) {
+                                                                                                    i = R.id.main;
+                                                                                                    LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                    if (linearLayout2 != null) {
+                                                                                                        i = R.id.main2;
+                                                                                                        LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                        if (linearLayout3 != null) {
+                                                                                                            i = R.id.name1;
+                                                                                                            TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                            if (textView6 != null) {
+                                                                                                                i = R.id.name2;
+                                                                                                                TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                if (textView7 != null) {
+                                                                                                                    FrameLayout frameLayout2 = (FrameLayout) rootView;
+                                                                                                                    i = R.id.player1progressbar;
+                                                                                                                    CustomCardView customCardView5 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                    if (customCardView5 != null) {
+                                                                                                                        i = R.id.player1target;
+                                                                                                                        FrameLayout frameLayout3 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                        if (frameLayout3 != null) {
+                                                                                                                            i = R.id.player1tooltip;
+                                                                                                                            LinearLayout linearLayout4 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                            if (linearLayout4 != null) {
+                                                                                                                                i = R.id.player2Info;
+                                                                                                                                LinearLayout linearLayout5 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                if (linearLayout5 != null) {
+                                                                                                                                    i = R.id.player2progressbar;
+                                                                                                                                    CustomCardView customCardView6 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                    if (customCardView6 != null) {
+                                                                                                                                        i = R.id.player2target;
+                                                                                                                                        FrameLayout frameLayout4 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                        if (frameLayout4 != null) {
+                                                                                                                                            i = R.id.player2tooltip;
+                                                                                                                                            LinearLayout linearLayout6 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                            if (linearLayout6 != null) {
+                                                                                                                                                i = R.id.red_zone;
+                                                                                                                                                CustomCardView customCardView7 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                if (customCardView7 != null) {
+                                                                                                                                                    i = R.id.red_zone2;
+                                                                                                                                                    CustomCardView customCardView8 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                    if (customCardView8 != null) {
+                                                                                                                                                        i = R.id.stage;
+                                                                                                                                                        TextView textView8 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                        if (textView8 != null) {
+                                                                                                                                                            i = R.id.tv_percent_success;
+                                                                                                                                                            TextView textView9 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                            if (textView9 != null) {
+                                                                                                                                                                i = R.id.tv_result;
+                                                                                                                                                                TextView textView10 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                if (textView10 != null) {
+                                                                                                                                                                    i = R.id.tv_waiting_you;
+                                                                                                                                                                    TextView textView11 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                    if (textView11 != null) {
+                                                                                                                                                                        i = R.id.tv_you_waiting;
+                                                                                                                                                                        TextView textView12 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                        if (textView12 != null) {
+                                                                                                                                                                            i = R.id.zone;
+                                                                                                                                                                            FrameLayout frameLayout5 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                            if (frameLayout5 != null) {
+                                                                                                                                                                                i = R.id.zone2;
+                                                                                                                                                                                FrameLayout frameLayout6 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                if (frameLayout6 != null) {
+                                                                                                                                                                                    return new HudElementChickenChargeBinding(frameLayout2, customCardView, imageView, textView, textView2, textView3, imageView2, imageView3, customCardView2, textView4, textView5, linearLayout, customCardView3, customCardView4, frameLayout, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10, imageView11, imageView12, linearLayout2, linearLayout3, textView6, textView7, frameLayout2, customCardView5, frameLayout3, linearLayout4, linearLayout5, customCardView6, frameLayout4, linearLayout6, customCardView7, customCardView8, textView8, textView9, textView10, textView11, textView12, frameLayout5, frameLayout6);
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                        }
+                                                                                                                                                                    }
+                                                                                                                                                                }
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }
+                                                                                                                                                }
                                                                                                                                             }
                                                                                                                                         }
                                                                                                                                     }

@@ -16,6 +16,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntRange;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: SettingsAdapter.kt */
 @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001b\u0012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\u0017\u001a\u00020\u00022\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0005H\u0016J\u0018\u0010\u001b\u001a\u00020\u00062\u0006\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u001d\u001a\u00020\u0005H\u0016J\b\u0010\u001e\u001a\u00020\u0005H\u0016J\u0016\u0010\u001f\u001a\u00020\u00062\u0006\u0010 \u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u000bJ\u000e\u0010!\u001a\u00020\u00062\u0006\u0010\"\u001a\u00020\u0014R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\r\u001a\b\u0012\u0004\u0012\u00020\u00050\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"Lcom/arizonagames/feature/arizona/family/adapters/SettingsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/arizonagames/feature/arizona/family/adapters/SettingsItemViewHolder;", "onClick", "Lkotlin/Function1;", "", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "estate", "settingsData", "Lcom/arizonagames/feature/arizona/family/data/FamilySettingsData;", "onlineCount", "items", "", "getItems", "()Ljava/util/List;", "setItems", "(Ljava/util/List;)V", "allianceName", "", "estateColor", "descColor", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "getItemCount", "setInfo", "haveEstate", "setAllianceTitle", "title", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
@@ -33,7 +34,7 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingsItemView
     public SettingsAdapter(Function1<? super Integer, Unit> onClick) {
         Intrinsics.checkNotNullParameter(onClick, "onClick");
         this.onClick = onClick;
-        this.settingsData = new FamilySettingsData(-1, -1, 0);
+        this.settingsData = new FamilySettingsData(-1L, -1L, 0);
         this.onlineCount = 40;
         this.items = CollectionsKt.toMutableList(new IntRange(0, 18));
         this.allianceName = "Создать альянс";
@@ -58,10 +59,59 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingsItemView
         return new SettingsItemViewHolder(inflate);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x00b8, code lost:
+        r2 = "???";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x00cb, code lost:
+        r2 = "Передать лидерство семьи другому игроку";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00d2, code lost:
+        r2 = "Внести или вынести игрока из черного списка";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x00d9, code lost:
+        r2 = "Редактировать  сообщение";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x00e0, code lost:
+        r2 = "Установить объявление для всех членов семьи";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x00e7, code lost:
+        r2 = "Установить кол-во дней для автоисключения";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00ee, code lost:
+        r2 = "Установить цену поминутной аренды";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x00f5, code lost:
+        r2 = "Установить цену на выход из семьи";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x0140, code lost:
+        r2 = "Выдать премию всем членам семьи";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x0146, code lost:
+        r2 = "Редактировать названия и настройки доступа рангам семьи";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:77:0x014c, code lost:
+        r2 = "Установить % сбора на баланс семьи";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x0157, code lost:
+        r2 = "Привязать или изменить Discord - канал";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x015d, code lost:
+        r2 = "Пополняйте или выводите средства и монеты";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x0163, code lost:
+        r2 = "Изменить цвет, иконку, тип, название, слоган";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x0169, code lost:
+        r2 = "Назначить или снять заместителя";
+     */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void onBindViewHolder(SettingsItemViewHolder holder, int i) {
         int i2;
         String str;
+        String str2;
         int parseColor;
         Intrinsics.checkNotNullParameter(holder, "holder");
         Integer num = (Integer) CollectionsKt.getOrNull(this.items, i);
@@ -132,7 +182,6 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingsItemView
                     i2 = R.drawable.family_menu_ic_info;
                     break;
             }
-            String str2 = "???";
             switch (intValue) {
                 case 0:
                     str = "Управление заместителями";
@@ -198,73 +247,26 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingsItemView
                     break;
             }
             switch (intValue) {
-                case 0:
-                    str2 = "Назначить или снять заместителя";
-                    break;
-                case 1:
-                    str2 = "Изменить цвет, иконку, тип, название, слоган";
-                    break;
-                case 2:
-                    str2 = "Пополняйте или выводите средства и монеты";
-                    break;
-                case 3:
-                    str2 = "Привязать или изменить Discord - канал";
-                    break;
                 case 4:
                     str2 = this.allianceName;
                     break;
-                case 5:
-                    str2 = "Установить % сбора на баланс семьи";
-                    break;
-                case 6:
-                    str2 = "Редактировать названия и настройки доступа рангам семьи";
-                    break;
-                case 7:
-                    str2 = "Выдать премию всем членам семьи";
-                    break;
                 case 8:
-                    if (this.settingsData.getVerificationPrice() != -1) {
-                        str2 = "Цена: " + this.settingsData.getVerificationPrice();
-                        break;
-                    }
-                    str2 = "Улучшение куплено";
-                    break;
-                case 9:
-                    if (this.settingsData.getBrandPrice() != -1) {
-                        str2 = "Цена: " + this.settingsData.getBrandPrice();
-                        break;
-                    }
-                    str2 = "Улучшение куплено";
-                    break;
-                case 10:
-                    str2 = "Установить цену на выход из семьи";
-                    break;
-                case 11:
-                    str2 = "Установить цену поминутной аренды";
-                    break;
-                case 12:
-                    str2 = "Установить кол-во дней для автоисключения";
-                    break;
-                case 13:
-                    str2 = "Установить объявление для всех членов семьи";
-                    break;
-                case 14:
-                    str2 = "Редактировать  сообщение";
-                    break;
-                case 15:
-                    str2 = "Внести или вынести игрока из черного списка";
-                    break;
-                case 16:
-                    str2 = "Передать лидерство семьи другому игроку";
-                    break;
-                case 17:
-                    if (this.estate != 2) {
-                        str2 = "Управление квартирой и улучшениями";
+                    if (this.settingsData.getVerificationPrice() == -1) {
                         break;
                     } else {
-                        str2 = "Управлеине поместьем и улучшениями";
+                        str2 = MoneyElementKt.toMoneyFormattedSpannable$default(this.settingsData.getVerificationPrice(), false, "Цена: ", null, 5, null);
                         break;
                     }
+                case 9:
+                    if (this.settingsData.getBrandPrice() == -1) {
+                        break;
+                    } else {
+                        str2 = MoneyElementKt.toMoneyFormattedSpannable$default(this.settingsData.getBrandPrice(), false, "Цена: ", null, 5, null);
+                        break;
+                    }
+                case 17:
+                    str2 = this.estate == 2 ? "Управлеине поместьем и улучшениями" : "Управление квартирой и улучшениями";
+                    break;
             }
             if (intValue == 17) {
                 if (this.estate == 2) {

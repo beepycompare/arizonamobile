@@ -177,7 +177,7 @@ public final class NumberButtonKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
-            TextKt.m2712TextNvy7gAk(str, ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(16), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131048);
+            TextKt.m2712TextNvy7gAk(str, ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(16), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131048);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -301,7 +301,7 @@ public final class NumberButtonKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
-            TextKt.m2712TextNvy7gAk(str, ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(16), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131048);
+            TextKt.m2712TextNvy7gAk(str, ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(16), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131048);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -427,7 +427,7 @@ public final class NumberButtonKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
-            TextKt.m2712TextNvy7gAk(str, OffsetKt.m778offsetVpY3zN4$default(ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), 0.0f, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(2)), 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(18), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131048);
+            TextKt.m2712TextNvy7gAk(str, OffsetKt.m778offsetVpY3zN4$default(ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), 0.0f, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(2)), 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(18), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131048);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

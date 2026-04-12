@@ -22,6 +22,9 @@ import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: SituationScreen.kt */
 @Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\u0018\u0000 $2\u00020\u0001:\u0002$%B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0002J\u0016\u0010\u0018\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019H\u0002J\u0010\u0010\u001b\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u001cH\u0002J\u0010\u0010\u001d\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u001eH\u0002J\u0010\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u0005H\u0002J\u0018\u0010\"\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020 2\u0006\u0010#\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006&"}, d2 = {"Lru/mrlargha/arizonaui/situation/SituationScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "situationScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "isMoreInfoOpened", "", "binding", "Lru/mrlargha/arizonaui/databinding/SituationScreenBinding;", "rolesAdapter", "Lru/mrlargha/arizonaui/situation/RolesAdapter;", "awardsAdapter", "Lru/mrlargha/arizonaui/situation/AwardsAdapter;", "statsAdapter", "Lru/mrlargha/arizonaui/situation/StatsAdapter;", "setAlertInfo", "", "data", "Lru/mrlargha/arizonaui/situation/SituationScreen$Companion$AlertInfo;", "setRolesInfo", "", "Lru/mrlargha/arizonaui/situation/SituationScreen$Companion$RoleInfo;", "setChosenRoleInfo", "Lru/mrlargha/arizonaui/situation/SituationScreen$Companion$ChosenRoleInfo;", "setFinalPageInfo", "Lru/mrlargha/arizonaui/situation/SituationScreen$Companion$FinalPageInfo;", "getHoursString", "", "count", "onBackendMessage", "subId", "Companion", "Spawner", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
@@ -159,8 +162,11 @@ public final class SituationScreen extends SAMPUIElement {
         situationScreenBinding.successRolePage.setVisibility(8);
         situationScreenBinding.alertPage.setVisibility(0);
         situationScreenBinding.mainPageTitle.setText(alertInfo.getTitle());
-        situationScreenBinding.mainPageDescription.setText(alertInfo.getDescription());
-        situationScreenBinding.actionButtonMoney.setText("+" + alertInfo.getJoinReward());
+        situationScreenBinding.mainPageDescription.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, alertInfo.getDescription(), 0.0f, 1, null));
+        situationScreenBinding.actionButtonMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(alertInfo.getJoinReward(), false, "+", null, 5, null));
+        ImageView dollarIc = situationScreenBinding.dollarIc;
+        Intrinsics.checkNotNullExpressionValue(dollarIc, "dollarIc");
+        dollarIc.setVisibility(UtilsKt.isArizonaType() ? 8 : 0);
         EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
         ConstraintLayout mainPageCloseButton = situationScreenBinding.mainPageCloseButton;
         Intrinsics.checkNotNullExpressionValue(mainPageCloseButton, "mainPageCloseButton");
@@ -224,7 +230,7 @@ public final class SituationScreen extends SAMPUIElement {
         situationScreenBinding.chooseRolePage.setVisibility(8);
         situationScreenBinding.successRolePage.setVisibility(0);
         situationScreenBinding.successRolePageRole.setText(chosenRoleInfo.getSubTitle());
-        situationScreenBinding.successRolePageDescription.setText(chosenRoleInfo.getDescription());
+        situationScreenBinding.successRolePageDescription.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, chosenRoleInfo.getDescription(), 0.0f, 1, null));
     }
 
     private final void setFinalPageInfo(Companion.FinalPageInfo finalPageInfo) {
@@ -575,28 +581,29 @@ public final class SituationScreen extends SAMPUIElement {
         }
 
         /* compiled from: SituationScreen.kt */
-        @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0013\b\u0086\b\u0018\u00002\u00020\u0001B'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\t\u0010\u0012\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0013\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0014\u001a\u00020\u0006HÆ\u0003J\t\u0010\u0015\u001a\u00020\bHÆ\u0003J1\u0010\u0016\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\bHÆ\u0001J\u0014\u0010\u0017\u001a\u00020\b2\b\u0010\u0018\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0019\u001a\u00020\u0006HÖ\u0081\u0004J\n\u0010\u001a\u001a\u00020\u0003HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\fR\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011¨\u0006\u001b"}, d2 = {"Lru/mrlargha/arizonaui/situation/SituationScreen$Companion$AlertInfo;", "", "title", "", "description", "joinReward", "", "joinable", "", "<init>", "(Ljava/lang/String;Ljava/lang/String;IZ)V", "getTitle", "()Ljava/lang/String;", "getDescription", "getJoinReward", "()I", "getJoinable", "()Z", "component1", "component2", "component3", "component4", "copy", "equals", "other", "hashCode", "toString", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0011\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001B'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\t\u0010\u0012\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0013\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0014\u001a\u00020\u0006HÆ\u0003J\t\u0010\u0015\u001a\u00020\bHÆ\u0003J1\u0010\u0016\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\bHÆ\u0001J\u0014\u0010\u0017\u001a\u00020\b2\b\u0010\u0018\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0019\u001a\u00020\u001aHÖ\u0081\u0004J\n\u0010\u001b\u001a\u00020\u0003HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\fR\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011¨\u0006\u001c"}, d2 = {"Lru/mrlargha/arizonaui/situation/SituationScreen$Companion$AlertInfo;", "", "title", "", "description", "joinReward", "", "joinable", "", "<init>", "(Ljava/lang/String;Ljava/lang/String;JZ)V", "getTitle", "()Ljava/lang/String;", "getDescription", "getJoinReward", "()J", "getJoinable", "()Z", "component1", "component2", "component3", "component4", "copy", "equals", "other", "hashCode", "", "toString", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
         /* loaded from: classes5.dex */
         public static final class AlertInfo {
             private final String description;
-            private final int joinReward;
+            private final long joinReward;
             private final boolean joinable;
             private final String title;
 
-            public static /* synthetic */ AlertInfo copy$default(AlertInfo alertInfo, String str, String str2, int i, boolean z, int i2, Object obj) {
-                if ((i2 & 1) != 0) {
+            public static /* synthetic */ AlertInfo copy$default(AlertInfo alertInfo, String str, String str2, long j, boolean z, int i, Object obj) {
+                if ((i & 1) != 0) {
                     str = alertInfo.title;
                 }
-                if ((i2 & 2) != 0) {
+                if ((i & 2) != 0) {
                     str2 = alertInfo.description;
                 }
-                if ((i2 & 4) != 0) {
-                    i = alertInfo.joinReward;
+                if ((i & 4) != 0) {
+                    j = alertInfo.joinReward;
                 }
-                if ((i2 & 8) != 0) {
+                if ((i & 8) != 0) {
                     z = alertInfo.joinable;
                 }
-                return alertInfo.copy(str, str2, i, z);
+                boolean z2 = z;
+                return alertInfo.copy(str, str2, j, z2);
             }
 
             public final String component1() {
@@ -607,7 +614,7 @@ public final class SituationScreen extends SAMPUIElement {
                 return this.description;
             }
 
-            public final int component3() {
+            public final long component3() {
                 return this.joinReward;
             }
 
@@ -615,10 +622,10 @@ public final class SituationScreen extends SAMPUIElement {
                 return this.joinable;
             }
 
-            public final AlertInfo copy(String title, String description, int i, boolean z) {
+            public final AlertInfo copy(String title, String description, long j, boolean z) {
                 Intrinsics.checkNotNullParameter(title, "title");
                 Intrinsics.checkNotNullParameter(description, "description");
-                return new AlertInfo(title, description, i, z);
+                return new AlertInfo(title, description, j, z);
             }
 
             public boolean equals(Object obj) {
@@ -633,22 +640,22 @@ public final class SituationScreen extends SAMPUIElement {
             }
 
             public int hashCode() {
-                return (((((this.title.hashCode() * 31) + this.description.hashCode()) * 31) + Integer.hashCode(this.joinReward)) * 31) + Boolean.hashCode(this.joinable);
+                return (((((this.title.hashCode() * 31) + this.description.hashCode()) * 31) + Long.hashCode(this.joinReward)) * 31) + Boolean.hashCode(this.joinable);
             }
 
             public String toString() {
                 String str = this.title;
                 String str2 = this.description;
-                int i = this.joinReward;
-                return "AlertInfo(title=" + str + ", description=" + str2 + ", joinReward=" + i + ", joinable=" + this.joinable + ")";
+                long j = this.joinReward;
+                return "AlertInfo(title=" + str + ", description=" + str2 + ", joinReward=" + j + ", joinable=" + this.joinable + ")";
             }
 
-            public AlertInfo(String title, String description, int i, boolean z) {
+            public AlertInfo(String title, String description, long j, boolean z) {
                 Intrinsics.checkNotNullParameter(title, "title");
                 Intrinsics.checkNotNullParameter(description, "description");
                 this.title = title;
                 this.description = description;
-                this.joinReward = i;
+                this.joinReward = j;
                 this.joinable = z;
             }
 
@@ -660,7 +667,7 @@ public final class SituationScreen extends SAMPUIElement {
                 return this.description;
             }
 
-            public final int getJoinReward() {
+            public final long getJoinReward() {
                 return this.joinReward;
             }
 

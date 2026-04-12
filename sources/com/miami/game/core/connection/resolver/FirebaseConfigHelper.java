@@ -158,20 +158,20 @@ public final class FirebaseConfigHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean hasReserve(FirebaseConfigLinks firebaseConfigLinks) {
-        Object m9182constructorimpl;
+        Object m9183constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9182constructorimpl = Result.m9182constructorimpl(INSTANCE.toReserve(firebaseConfigLinks));
+            m9183constructorimpl = Result.m9183constructorimpl(INSTANCE.toReserve(firebaseConfigLinks));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
+            m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
         }
-        return Result.m9189isSuccessimpl(m9182constructorimpl);
+        return Result.m9190isSuccessimpl(m9183constructorimpl);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final String fetchLink(FirebaseConfigLinks firebaseConfigLinks) {
-        Object m9182constructorimpl;
+        Object m9183constructorimpl;
         String rawLink = getRawLink(firebaseConfigLinks);
         if ((checkWithIsReachable(rawLink) || checkWithUnixSystemPing(rawLink) || checkWithLinuxNC(rawLink)) && isServiceAvailable(rawLink)) {
             return rawLink;
@@ -179,16 +179,16 @@ public final class FirebaseConfigHelper {
         try {
             Result.Companion companion = Result.Companion;
             FirebaseConfigHelper firebaseConfigHelper = this;
-            m9182constructorimpl = Result.m9182constructorimpl(getRawLink(toReserve(firebaseConfigLinks)));
+            m9183constructorimpl = Result.m9183constructorimpl(getRawLink(toReserve(firebaseConfigLinks)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
+            m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
         }
         String str = null;
-        if (Result.m9188isFailureimpl(m9182constructorimpl)) {
-            m9182constructorimpl = null;
+        if (Result.m9189isFailureimpl(m9183constructorimpl)) {
+            m9183constructorimpl = null;
         }
-        String str2 = (String) m9182constructorimpl;
+        String str2 = (String) m9183constructorimpl;
         if (str2 != null) {
             FirebaseConfigHelper firebaseConfigHelper2 = INSTANCE;
             if ((firebaseConfigHelper2.checkWithIsReachable(rawLink) || firebaseConfigHelper2.checkWithUnixSystemPing(rawLink) || firebaseConfigHelper2.checkWithLinuxNC(rawLink)) && firebaseConfigHelper2.isServiceAvailable(str2)) {
@@ -266,7 +266,7 @@ public final class FirebaseConfigHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence getChannelsState$lambda$0(FirebaseConfigLinks linkType) {
-        Object m9182constructorimpl;
+        Object m9183constructorimpl;
         Intrinsics.checkNotNullParameter(linkType, "linkType");
         String str = linkCache.get(linkType);
         if (str == null) {
@@ -276,15 +276,15 @@ public final class FirebaseConfigHelper {
         String rawLink = firebaseConfigHelper.getRawLink(linkType);
         try {
             Result.Companion companion = Result.Companion;
-            m9182constructorimpl = Result.m9182constructorimpl(firebaseConfigHelper.getRawLink(firebaseConfigHelper.toReserve(linkType)));
+            m9183constructorimpl = Result.m9183constructorimpl(firebaseConfigHelper.getRawLink(firebaseConfigHelper.toReserve(linkType)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
+            m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9188isFailureimpl(m9182constructorimpl)) {
-            m9182constructorimpl = null;
+        if (Result.m9189isFailureimpl(m9183constructorimpl)) {
+            m9183constructorimpl = null;
         }
-        String str2 = (String) m9182constructorimpl;
+        String str2 = (String) m9183constructorimpl;
         if (!Intrinsics.areEqual(str, rawLink) && Intrinsics.areEqual(str, str2)) {
             return "1";
         }

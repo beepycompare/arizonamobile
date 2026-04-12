@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 import kotlin.Metadata;
+import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
 import ru.mrlargha.commonui.R;
@@ -41,6 +42,7 @@ public final class SelectorDialog extends SAMPUIElement {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SelectorDialog(Activity targetActivity, int i, final InventoryItem item, final int i2) {
         super(targetActivity, i);
+        String name;
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         Intrinsics.checkNotNullParameter(item, "item");
         View inflate = LayoutInflater.from(targetActivity).inflate(R.layout.selector_dialog, (ViewGroup) null, false);
@@ -68,7 +70,8 @@ public final class SelectorDialog extends SAMPUIElement {
             TextView textView = bind.tvItemName;
             List<ItemsInfo> itemsName = UtilsKt.getItemsName();
             Integer item2 = item.getItem();
-            textView.setText(itemsName.get(item2 != null ? item2.intValue() : 0).getName());
+            ItemsInfo itemsInfo = (ItemsInfo) CollectionsKt.getOrNull(itemsName, item2 != null ? item2.intValue() : 0);
+            textView.setText((itemsInfo == null || (name = itemsInfo.getName()) == null) ? "" : name);
         }
         bind.btnFirstItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.dialog.SelectorDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener

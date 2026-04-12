@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/root" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:backgroundMainColor="#b62525" app:backgroundSecondColor="#8f1818" app:borderMainColor="#33ffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_4sdp">
+        <TextView android:textSize="@dimen/_7sdp" android:textColor="#ff6152" android:gravity="center" android:id="@+id/text" android:paddingLeft="@dimen/_6sdp" android:paddingTop="@dimen/_2sdp" android:paddingRight="@dimen/_6sdp" android:paddingBottom="@dimen/_2sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/_16sdp" android:text="ВЫ НЕ ОТЫГРАЛИ 15 МИН\10НЕ ПРОПУСТИ СЛЕДУЮЩИЙ!" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" android:paddingHorizontal="@dimen/_6sdp" android:paddingVertical="@dimen/_2sdp"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

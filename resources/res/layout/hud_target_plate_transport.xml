@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.mrlargha.commonui.utils.ui.CustomCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_gravity="top|center_horizontal" android:layout_width="@dimen/_180sdp" android:layout_height="wrap_content" app:backgroundMainColor="#cc111725" app:corners="@dimen/_6sdp">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_8sdp" android:layout_marginTop="@dimen/_7sdp" android:layout_marginRight="@dimen/_8sdp" android:layout_marginBottom="@dimen/_7sdp" android:layout_marginHorizontal="@dimen/_8sdp" android:layout_marginVertical="@dimen/_7sdp">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/_5sdp" android:textColor="#80ffffff" android:id="@+id/tv_title_user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Владелец:" android:fontFamily="@font/heading_now_64_regular"/>
+            <TextView android:textSize="@dimen/_5sdp" android:textColor="@color/white" android:id="@+id/tv_user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="James_Stevenson" android:fontFamily="@font/heading_now_64_regular" android:layout_marginStart="@dimen/_2sdp"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/_160sdp">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:id="@+id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="James_Stevenson" android:fontFamily="@font/heading_now_64_regular"/>
+                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:paddingLeft="@dimen/_2sdp" android:paddingRight="@dimen/_2sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/_3sdp" android:paddingHorizontal="@dimen/_2sdp" app:backgroundMainColor="#ffd52a" app:corners="@dimen/_2sdp">
+                        <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/black" android:id="@+id/tv_user_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:fontFamily="@font/heading_now_65_medium"/>
+                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                </LinearLayout>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end" android:id="@+id/limited_tag" android:paddingLeft="@dimen/_2sdp" android:paddingRight="@dimen/_2sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/_2sdp" app:corners="@dimen/_2sdp" app:gradientList="#FFBFDB, #D089FF, #8BB3FF, #AF8DFF">
+                    <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/black" android:layout_gravity="center" android:id="@+id/tv_limited" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/limited" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </FrameLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1">
+                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/trash_tag" android:paddingLeft="@dimen/_2sdp" android:paddingRight="@dimen/_2sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/_2sdp" app:backgroundMainColor="#8f8f8f" app:backgroundSecondColor="#ffffff" app:corners="@dimen/_2sdp">
+                        <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/black" android:layout_gravity="center" android:id="@+id/tv_trash" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/trash_i" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium"/>
+                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/rare_tag" android:paddingLeft="@dimen/_2sdp" android:paddingRight="@dimen/_2sdp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/_3sdp" android:paddingHorizontal="@dimen/_2sdp" app:backgroundMainColor="#0b7bc0" app:backgroundSecondColor="#6ee9ff" app:corners="@dimen/_2sdp">
+                        <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/black" android:layout_gravity="center" android:id="@+id/tv_rare" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rare_i" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium"/>
+                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/legend_tag" android:paddingLeft="@dimen/_2sdp" android:paddingRight="@dimen/_2sdp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/_3sdp" android:paddingHorizontal="@dimen/_2sdp" app:backgroundMainColor="#a85b0f" app:backgroundSecondColor="#ffd447" app:corners="@dimen/_2sdp">
+                        <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/black" android:layout_gravity="center" android:id="@+id/tv_legend" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/legend_i" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium"/>
+                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                </LinearLayout>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/count_container" android:paddingLeft="@dimen/_2sdp" android:paddingRight="@dimen/_2sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/_2sdp" app:backgroundMainColor="#73d934" app:corners="@dimen/_2sdp">
+                    <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/black" android:layout_gravity="center" android:id="@+id/tv_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Количество: 100+" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </LinearLayout>
+        </LinearLayout>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="match_parent" android:layout_height="@dimen/_8sdp" android:layout_marginTop="@dimen/_4sdp" android:layout_weight="1" app:backgroundMainColor="#620000" app:corners="@dimen/_2sdp">
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/progress_health" android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="#d94b42" app:corners="@dimen/_2sdp"/>
+            <TextView android:textSize="@dimen/_5sdp" android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/tv_health" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:fontFamily="@font/heading_now_65_medium"/>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    </LinearLayout>
+</ru.mrlargha.commonui.utils.ui.CustomCardView>

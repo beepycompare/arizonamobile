@@ -2,6 +2,7 @@ package ru.mrlargha.event;
 
 import android.graphics.Bitmap;
 import android.widget.ImageView;
+import androidx.window.core.layout.WindowSizeClass;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -15,11 +16,10 @@ import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 import ru.mrlargha.commonui.utils.UtilsKt;
-import ru.mrlargha.feature.event.R;
 import ru.mrlargha.feature.event.databinding.EventEventsItemBinding;
 /* compiled from: EventScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.event.EventScreen$updateEvent$1$12$1", f = "EventScreen.kt", i = {}, l = {489}, m = "invokeSuspend", n = {}, nl = {492}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.event.EventScreen$updateEvent$1$12$1", f = "EventScreen.kt", i = {}, l = {WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND}, m = "invokeSuspend", n = {}, nl = {483}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 final class EventScreen$updateEvent$1$12$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ String $it;
@@ -28,15 +28,15 @@ final class EventScreen$updateEvent$1$12$1 extends SuspendLambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public EventScreen$updateEvent$1$12$1(EventEventsItemBinding eventEventsItemBinding, String str, Continuation<? super EventScreen$updateEvent$1$12$1> continuation) {
+    public EventScreen$updateEvent$1$12$1(String str, EventEventsItemBinding eventEventsItemBinding, Continuation<? super EventScreen$updateEvent$1$12$1> continuation) {
         super(2, continuation);
-        this.$this_apply = eventEventsItemBinding;
         this.$it = str;
+        this.$this_apply = eventEventsItemBinding;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new EventScreen$updateEvent$1$12$1(this.$this_apply, this.$it, continuation);
+        return new EventScreen$updateEvent$1$12$1(this.$it, this.$this_apply, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -65,9 +65,6 @@ final class EventScreen$updateEvent$1$12$1 extends SuspendLambda implements Func
             ImageView ivEventBg = this.$this_apply.ivEventBg;
             Intrinsics.checkNotNullExpressionValue(ivEventBg, "ivEventBg");
             UtilsKt.setImage(ivEventBg, bitmap);
-        }
-        if (bitmap == null) {
-            this.$this_apply.ivEventBg.setImageResource(R.drawable.event_task_item_bg_test);
         }
         return Unit.INSTANCE;
     }

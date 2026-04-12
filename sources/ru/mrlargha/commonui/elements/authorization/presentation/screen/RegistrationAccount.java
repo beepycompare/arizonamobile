@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.autofill.HintConstants;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
@@ -66,10 +65,6 @@ public final class RegistrationAccount implements InterfaceController {
     private final Activity targetActivity;
     private final BackgroundVideoBinding videoBinding;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void _init_$lambda$7(View view) {
-    }
-
     public RegistrationAccount(Activity targetActivity, int i) {
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         this.targetActivity = targetActivity;
@@ -96,12 +91,6 @@ public final class RegistrationAccount implements InterfaceController {
         this.localPassword = "";
         this.localInvite = "";
         mainBinding.video.addView(bind.registrationAccount, -1, -1);
-        ConstraintSet constraintSet = new ConstraintSet();
-        constraintSet.clone(mainBinding.video);
-        constraintSet.connect(bind.registrationAccount.getId(), 1, mainBinding.video.getId(), 1);
-        constraintSet.connect(bind.registrationAccount.getId(), 3, mainBinding.video.getId(), 3);
-        constraintSet.connect(bind.registrationAccount.getId(), 4, mainBinding.video.getId(), 4);
-        constraintSet.applyTo(mainBinding.video);
         bind.registrationAccountNextButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -247,12 +236,6 @@ public final class RegistrationAccount implements InterfaceController {
                 RegistrationAccount._init_$lambda$6(RegistrationAccount.this, view);
             }
         });
-        bind.registrationAccount.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda2
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                RegistrationAccount._init_$lambda$7(view);
-            }
-        });
         setFilter();
     }
 
@@ -334,7 +317,7 @@ public final class RegistrationAccount implements InterfaceController {
         EditText editText = registrationAccountBinding.registrationAccountUsernamePlaceholder;
         InputFilter[] filters = editText.getFilters();
         Intrinsics.checkNotNullExpressionValue(filters, "getFilters(...)");
-        editText.setFilters((InputFilter[]) ArraysKt.plus(filters, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda4
+        editText.setFilters((InputFilter[]) ArraysKt.plus(filters, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit filter$lambda$0$0;
@@ -345,7 +328,7 @@ public final class RegistrationAccount implements InterfaceController {
         EditText editText2 = registrationAccountBinding.registrationAccountSurnamePlaceholder;
         InputFilter[] filters2 = editText2.getFilters();
         Intrinsics.checkNotNullExpressionValue(filters2, "getFilters(...)");
-        editText2.setFilters((InputFilter[]) ArraysKt.plus(filters2, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda5
+        editText2.setFilters((InputFilter[]) ArraysKt.plus(filters2, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit filter$lambda$0$1;
@@ -370,7 +353,7 @@ public final class RegistrationAccount implements InterfaceController {
     private final void checkRaisingContent(final EditText editText) {
         final Ref.IntRef intRef = new Ref.IntRef();
         final RegistrationAccountBinding registrationAccountBinding = this.registrationAccountBinding;
-        editText.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda3
+        editText.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 RegistrationAccount.checkRaisingContent$lambda$0$0(RegistrationAccountBinding.this, editText, this, intRef);

@@ -161,19 +161,19 @@ public final class _UtilJvmKt {
     }
 
     /* renamed from: checkDuration-HG0u8IE  reason: not valid java name */
-    public static final int m11027checkDurationHG0u8IE(String name, long j) {
+    public static final int m11028checkDurationHG0u8IE(String name, long j) {
         Intrinsics.checkNotNullParameter(name, "name");
-        if (Duration.m10564isNegativeimpl(j)) {
+        if (Duration.m10565isNegativeimpl(j)) {
             throw new IllegalStateException((name + " < 0").toString());
         }
-        long m10549getInWholeMillisecondsimpl = Duration.m10549getInWholeMillisecondsimpl(j);
-        if (m10549getInWholeMillisecondsimpl > SieveCacheKt.NodeLinkMask) {
+        long m10550getInWholeMillisecondsimpl = Duration.m10550getInWholeMillisecondsimpl(j);
+        if (m10550getInWholeMillisecondsimpl > SieveCacheKt.NodeLinkMask) {
             throw new IllegalArgumentException((name + " too large").toString());
         }
-        if (m10549getInWholeMillisecondsimpl == 0 && Duration.m10565isPositiveimpl(j)) {
+        if (m10550getInWholeMillisecondsimpl == 0 && Duration.m10566isPositiveimpl(j)) {
             throw new IllegalArgumentException((name + " too small").toString());
         }
-        return (int) m10549getInWholeMillisecondsimpl;
+        return (int) m10550getInWholeMillisecondsimpl;
     }
 
     public static final Headers toHeaders(List<Header> list) {

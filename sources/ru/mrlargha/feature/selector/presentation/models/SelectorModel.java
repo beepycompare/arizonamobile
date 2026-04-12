@@ -5,7 +5,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SelectorModel.kt */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001BM\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0003\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\n\u0012\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r¢\u0006\u0004\b\u000f\u0010\u0010J\t\u0010\u001d\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001e\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001f\u001a\u00020\u0006HÆ\u0003J\t\u0010 \u001a\u00020\u0003HÆ\u0003J\t\u0010!\u001a\u00020\u0003HÆ\u0003J\t\u0010\"\u001a\u00020\nHÆ\u0003J\t\u0010#\u001a\u00020\nHÆ\u0003J\u000f\u0010$\u001a\b\u0012\u0004\u0012\u00020\u000e0\rHÆ\u0003J_\u0010%\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\n2\u000e\b\u0002\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rHÆ\u0001J\u0014\u0010&\u001a\u00020'2\b\u0010(\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010)\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010*\u001a\u00020\u0006HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0012R\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0011\u0010\u0007\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0012R\u0011\u0010\b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0012R\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u0011\u0010\u000b\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0019R\u0017\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001c¨\u0006+"}, d2 = {"Lru/mrlargha/feature/selector/presentation/models/SelectorModel;", "", "currentIndex", "", "maxIndex", "title", "", FirebaseAnalytics.Param.PRICE, "currencyType", "declineButton", "Lru/mrlargha/feature/selector/presentation/models/SelectorButtonModel;", "confirmButton", "additionalInfo", "", "Lru/mrlargha/feature/selector/presentation/models/SelectorInfoModel;", "<init>", "(IILjava/lang/String;IILru/mrlargha/feature/selector/presentation/models/SelectorButtonModel;Lru/mrlargha/feature/selector/presentation/models/SelectorButtonModel;Ljava/util/List;)V", "getCurrentIndex", "()I", "getMaxIndex", "getTitle", "()Ljava/lang/String;", "getPrice", "getCurrencyType", "getDeclineButton", "()Lru/mrlargha/feature/selector/presentation/models/SelectorButtonModel;", "getConfirmButton", "getAdditionalInfo", "()Ljava/util/List;", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "copy", "equals", "", "other", "hashCode", "toString", "selector"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0019\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001BM\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\u0003\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\u000b\u0012\f\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000e¢\u0006\u0004\b\u0010\u0010\u0011J\t\u0010\u001f\u001a\u00020\u0003HÆ\u0003J\t\u0010 \u001a\u00020\u0003HÆ\u0003J\t\u0010!\u001a\u00020\u0006HÆ\u0003J\t\u0010\"\u001a\u00020\bHÆ\u0003J\t\u0010#\u001a\u00020\u0003HÆ\u0003J\t\u0010$\u001a\u00020\u000bHÆ\u0003J\t\u0010%\u001a\u00020\u000bHÆ\u0003J\u000f\u0010&\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000eHÆ\u0003J_\u0010'\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\u000e\b\u0002\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000eHÆ\u0001J\u0014\u0010(\u001a\u00020)2\b\u0010*\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010+\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010,\u001a\u00020\u0006HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0013R\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u0011\u0010\t\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0013R\u0011\u0010\n\u001a\u00020\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u0011\u0010\f\u001a\u00020\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001bR\u0017\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001e¨\u0006-"}, d2 = {"Lru/mrlargha/feature/selector/presentation/models/SelectorModel;", "", "currentIndex", "", "maxIndex", "title", "", FirebaseAnalytics.Param.PRICE, "", "currencyType", "declineButton", "Lru/mrlargha/feature/selector/presentation/models/SelectorButtonModel;", "confirmButton", "additionalInfo", "", "Lru/mrlargha/feature/selector/presentation/models/SelectorInfoModel;", "<init>", "(IILjava/lang/String;JILru/mrlargha/feature/selector/presentation/models/SelectorButtonModel;Lru/mrlargha/feature/selector/presentation/models/SelectorButtonModel;Ljava/util/List;)V", "getCurrentIndex", "()I", "getMaxIndex", "getTitle", "()Ljava/lang/String;", "getPrice", "()J", "getCurrencyType", "getDeclineButton", "()Lru/mrlargha/feature/selector/presentation/models/SelectorButtonModel;", "getConfirmButton", "getAdditionalInfo", "()Ljava/util/List;", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "copy", "equals", "", "other", "hashCode", "toString", "selector"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class SelectorModel {
     private final List<SelectorInfoModel> additionalInfo;
@@ -14,40 +14,38 @@ public final class SelectorModel {
     private final int currentIndex;
     private final SelectorButtonModel declineButton;
     private final int maxIndex;
-    private final int price;
+    private final long price;
     private final String title;
 
-    public static /* synthetic */ SelectorModel copy$default(SelectorModel selectorModel, int i, int i2, String str, int i3, int i4, SelectorButtonModel selectorButtonModel, SelectorButtonModel selectorButtonModel2, List list, int i5, Object obj) {
-        if ((i5 & 1) != 0) {
+    public static /* synthetic */ SelectorModel copy$default(SelectorModel selectorModel, int i, int i2, String str, long j, int i3, SelectorButtonModel selectorButtonModel, SelectorButtonModel selectorButtonModel2, List list, int i4, Object obj) {
+        if ((i4 & 1) != 0) {
             i = selectorModel.currentIndex;
         }
-        if ((i5 & 2) != 0) {
+        if ((i4 & 2) != 0) {
             i2 = selectorModel.maxIndex;
         }
-        if ((i5 & 4) != 0) {
+        if ((i4 & 4) != 0) {
             str = selectorModel.title;
         }
-        if ((i5 & 8) != 0) {
-            i3 = selectorModel.price;
+        if ((i4 & 8) != 0) {
+            j = selectorModel.price;
         }
-        if ((i5 & 16) != 0) {
-            i4 = selectorModel.currencyType;
+        if ((i4 & 16) != 0) {
+            i3 = selectorModel.currencyType;
         }
-        if ((i5 & 32) != 0) {
+        if ((i4 & 32) != 0) {
             selectorButtonModel = selectorModel.declineButton;
         }
-        if ((i5 & 64) != 0) {
+        if ((i4 & 64) != 0) {
             selectorButtonModel2 = selectorModel.confirmButton;
         }
         List<SelectorInfoModel> list2 = list;
-        if ((i5 & 128) != 0) {
+        if ((i4 & 128) != 0) {
             list2 = selectorModel.additionalInfo;
         }
-        SelectorButtonModel selectorButtonModel3 = selectorButtonModel2;
-        List list3 = list2;
-        int i6 = i4;
-        SelectorButtonModel selectorButtonModel4 = selectorButtonModel;
-        return selectorModel.copy(i, i2, str, i3, i6, selectorButtonModel4, selectorButtonModel3, list3);
+        long j2 = j;
+        String str2 = str;
+        return selectorModel.copy(i, i2, str2, j2, i3, selectorButtonModel, selectorButtonModel2, list2);
     }
 
     public final int component1() {
@@ -62,7 +60,7 @@ public final class SelectorModel {
         return this.title;
     }
 
-    public final int component4() {
+    public final long component4() {
         return this.price;
     }
 
@@ -82,12 +80,12 @@ public final class SelectorModel {
         return this.additionalInfo;
     }
 
-    public final SelectorModel copy(int i, int i2, String title, int i3, int i4, SelectorButtonModel declineButton, SelectorButtonModel confirmButton, List<SelectorInfoModel> additionalInfo) {
+    public final SelectorModel copy(int i, int i2, String title, long j, int i3, SelectorButtonModel declineButton, SelectorButtonModel confirmButton, List<SelectorInfoModel> additionalInfo) {
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(declineButton, "declineButton");
         Intrinsics.checkNotNullParameter(confirmButton, "confirmButton");
         Intrinsics.checkNotNullParameter(additionalInfo, "additionalInfo");
-        return new SelectorModel(i, i2, title, i3, i4, declineButton, confirmButton, additionalInfo);
+        return new SelectorModel(i, i2, title, j, i3, declineButton, confirmButton, additionalInfo);
     }
 
     public boolean equals(Object obj) {
@@ -102,21 +100,21 @@ public final class SelectorModel {
     }
 
     public int hashCode() {
-        return (((((((((((((Integer.hashCode(this.currentIndex) * 31) + Integer.hashCode(this.maxIndex)) * 31) + this.title.hashCode()) * 31) + Integer.hashCode(this.price)) * 31) + Integer.hashCode(this.currencyType)) * 31) + this.declineButton.hashCode()) * 31) + this.confirmButton.hashCode()) * 31) + this.additionalInfo.hashCode();
+        return (((((((((((((Integer.hashCode(this.currentIndex) * 31) + Integer.hashCode(this.maxIndex)) * 31) + this.title.hashCode()) * 31) + Long.hashCode(this.price)) * 31) + Integer.hashCode(this.currencyType)) * 31) + this.declineButton.hashCode()) * 31) + this.confirmButton.hashCode()) * 31) + this.additionalInfo.hashCode();
     }
 
     public String toString() {
         int i = this.currentIndex;
         int i2 = this.maxIndex;
         String str = this.title;
-        int i3 = this.price;
-        int i4 = this.currencyType;
+        long j = this.price;
+        int i3 = this.currencyType;
         SelectorButtonModel selectorButtonModel = this.declineButton;
         SelectorButtonModel selectorButtonModel2 = this.confirmButton;
-        return "SelectorModel(currentIndex=" + i + ", maxIndex=" + i2 + ", title=" + str + ", price=" + i3 + ", currencyType=" + i4 + ", declineButton=" + selectorButtonModel + ", confirmButton=" + selectorButtonModel2 + ", additionalInfo=" + this.additionalInfo + ")";
+        return "SelectorModel(currentIndex=" + i + ", maxIndex=" + i2 + ", title=" + str + ", price=" + j + ", currencyType=" + i3 + ", declineButton=" + selectorButtonModel + ", confirmButton=" + selectorButtonModel2 + ", additionalInfo=" + this.additionalInfo + ")";
     }
 
-    public SelectorModel(int i, int i2, String title, int i3, int i4, SelectorButtonModel declineButton, SelectorButtonModel confirmButton, List<SelectorInfoModel> additionalInfo) {
+    public SelectorModel(int i, int i2, String title, long j, int i3, SelectorButtonModel declineButton, SelectorButtonModel confirmButton, List<SelectorInfoModel> additionalInfo) {
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(declineButton, "declineButton");
         Intrinsics.checkNotNullParameter(confirmButton, "confirmButton");
@@ -124,8 +122,8 @@ public final class SelectorModel {
         this.currentIndex = i;
         this.maxIndex = i2;
         this.title = title;
-        this.price = i3;
-        this.currencyType = i4;
+        this.price = j;
+        this.currencyType = i3;
         this.declineButton = declineButton;
         this.confirmButton = confirmButton;
         this.additionalInfo = additionalInfo;
@@ -143,7 +141,7 @@ public final class SelectorModel {
         return this.title;
     }
 
-    public final int getPrice() {
+    public final long getPrice() {
         return this.price;
     }
 

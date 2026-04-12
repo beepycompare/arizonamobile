@@ -18,7 +18,6 @@ import androidx.constraintlayout.core.widgets.ConstraintWidgetContainer;
 import androidx.constraintlayout.core.widgets.Optimizer;
 import androidx.constraintlayout.core.widgets.analyzer.BasicMeasure;
 import androidx.core.internal.view.SupportMenu;
-import androidx.core.view.ViewCompat;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -942,11 +941,8 @@ public class ConstraintLayout extends ViewGroup {
     public void resolveMeasuredDimension(int i, int i2, int i3, int i4, boolean z, boolean z2) {
         int i5 = this.mMeasurer.mPaddingHeight;
         int resolveSizeAndState = resolveSizeAndState(i3 + this.mMeasurer.mPaddingWidth, i, 0);
-        int resolveSizeAndState2 = resolveSizeAndState(i4 + i5, i2, 0);
-        int i6 = resolveSizeAndState & ViewCompat.MEASURED_SIZE_MASK;
-        int i7 = resolveSizeAndState2 & ViewCompat.MEASURED_SIZE_MASK;
-        int min = Math.min(this.mMaxWidth, i6);
-        int min2 = Math.min(this.mMaxHeight, i7);
+        int min = Math.min(this.mMaxWidth, resolveSizeAndState & 16777215);
+        int min2 = Math.min(this.mMaxHeight, resolveSizeAndState(i4 + i5, i2, 0) & 16777215);
         if (z) {
             min |= 16777216;
         }
