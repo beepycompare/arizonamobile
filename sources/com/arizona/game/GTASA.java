@@ -68,7 +68,6 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     private InputPopup inputPopup = null;
     private InputStorage inputStorage = null;
     private boolean show_fps = false;
-    private boolean updated_graphics = false;
     private boolean full_screen = true;
     private boolean isKeyboadInstalled = false;
     private int voiceSettingPagination = 0;
@@ -86,7 +85,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     @Deprecated
     private final ConcurrentHashMap<Integer, SAMPUIElement> uiElements = new ConcurrentHashMap<>();
 
-    private native void InitSetting(boolean is_new_interface, int show_fps, boolean is_new_keyboard, boolean is_streamer, String version, int interfaces_count, String model, String notify_hash, String channels_state, boolean ambient_mode, boolean updated_graphics);
+    private native void InitSetting(boolean is_new_interface, int show_fps, boolean is_new_keyboard, boolean is_streamer, String version, int interfaces_count, String model, String notify_hash, String channels_state, boolean ambient_mode);
 
     private native void OnInputEnd(String str);
 
@@ -142,6 +141,8 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     /* renamed from: SetHudTimer2 */
     public native void lambda$hudSetTimer2$51(int seconds, int maxTime, int type);
+
+    public native void SetTreesNewState(boolean trees_new);
 
     public native void initSAMP();
 
@@ -241,8 +242,8 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         this.full_screen = defaultSharedPreferences.getBoolean(SettingsConstants.USE_FULLSCREEN, this.full_screen);
         FullScreenCall();
         this.show_fps = defaultSharedPreferences.getBoolean(SettingsConstants.SHOW_FPS, this.show_fps);
-        this.updated_graphics = defaultSharedPreferences.getBoolean(SettingsConstants.UPDATED_GRAPHICS, this.updated_graphics);
         initSAMPWrapper();
+        SetTreesNewState(defaultSharedPreferences.getBoolean(SettingsConstants.UPDATED_GRAPHICS, true));
         if (Build.VERSION.SDK_INT >= 31) {
             Log.d(TAG, "onCreate: gameMode" + ((GameManager) getSystemService(GameManager.class)).getGameMode());
         }
@@ -381,9 +382,8 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
             boolean z = defaultSharedPreferences.getBoolean(SettingsConstants.STREAMER_MODE, false);
             boolean z2 = defaultSharedPreferences.getBoolean(SettingsConstants.AMBIENT_SOUNDS, true);
             String string = defaultSharedPreferences.getString("token", "");
-            boolean z3 = defaultSharedPreferences.getBoolean(SettingsConstants.UPDATED_GRAPHICS, true);
-            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + z + "\n5. Ambient sounds: " + z2 + "\n6. Version: (release) 2.1 - v17.0.7\n7. Last element ID: " + UIElementID.getLastUIElementID() + "\n8. Device name: " + str + "\n9. Token: " + string + "\n10. Channels state: " + channelsState + "\n11. updated_graphics: " + z3);
-            InitSetting(true, show_fps, true, z, "(release) 2.1 - v17.0.7", UIElementID.getLastUIElementID(), str, string, channelsState, z2, z3);
+            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + z + "\n5. Ambient sounds: " + z2 + "\n6. Version: (release) 2.1 - v17.1.1\n7. Last element ID: " + UIElementID.getLastUIElementID() + "\n8. Device name: " + str + "\n9. Token: " + string + "\n10. Channels state: " + channelsState);
+            InitSetting(true, show_fps, true, z, "(release) 2.1 - v17.1.1", UIElementID.getLastUIElementID(), str, string, channelsState, z2);
             FirebaseCrashlytics.getInstance().setUserId(getUniqueID());
         } catch (LinkageError e) {
             Log.w(TAG, "Unable to call native method", e);

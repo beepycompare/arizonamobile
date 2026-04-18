@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <defaults>
     <entry>
-        <key>reserve_resource
+        <key>launcher_background_rodina
         </key>
-        <value>https://resources.azgames-cdn.ru/
-        </value>
-    </entry>
-    <entry>
-        <key>reserve_server_api
-        </key>
-        <value>https://server-api.azgames-cdn.ru/
-        </value>
-    </entry>
-    <entry>
-        <key>reserve_sound
-        </key>
-        <value>https://azgamesound-cdn.ru/
+        <value>/assets/images/mobile_launcher/background4.webp
         </value>
     </entry>
     <entry>
@@ -45,7 +33,7 @@
     <entry>
         <key>launcher_background
         </key>
-        <value>/assets/images/mobile_launcher/background.webp
+        <value>/assets/images/mobile_launcher/background2.webp
         </value>
     </entry>
     <entry>
@@ -73,6 +61,12 @@
         </value>
     </entry>
     <entry>
+        <key>reserve_resource
+        </key>
+        <value>https://resources.azgames-cdn.ru/
+        </value>
+    </entry>
+    <entry>
         <key>main_channel_rodina
         </key>
         <value>https://mob.azinternal.com
@@ -91,6 +85,12 @@
         </value>
     </entry>
     <entry>
+        <key>reserve_server_api
+        </key>
+        <value>https://server-api.azgames-cdn.ru/
+        </value>
+    </entry>
+    <entry>
         <key>reserve_hud_ping
         </key>
         <value>https://arz-reserve.samp-dl.com/
@@ -100,6 +100,12 @@
         <key>main_resource
         </key>
         <value>https://cdn.azresources.cloud/
+        </value>
+    </entry>
+    <entry>
+        <key>reserve_sound
+        </key>
+        <value>https://azgamesound-cdn.ru/
         </value>
     </entry>
     <entry>

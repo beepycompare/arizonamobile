@@ -187,7 +187,7 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
         MutableStateFlow<SettingsUiState> mutableStateFlow = this.stateStore;
         do {
             value = mutableStateFlow.getValue();
-        } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default(value, 0, null, null, null, false, null, false, null, 0, null, null, 2031, null)));
+        } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default(value, 0, null, null, null, false, null, false, null, false, 0, null, null, 4079, null)));
         this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, false, false, false, new com.miami.game.core.settings.ConnectionData(connectionData.getIp(), connectionData.getPort(), connectionData.getPassword()), 1023, null));
         ConnectionHolder.INSTANCE.setSettingsData(SettingsData.copy$default(ConnectionHolder.INSTANCE.getSettingsData(), 0, 0.0f, false, false, false, false, false, false, false, connectionData.getIp(), connectionData.getPort(), connectionData.getPassword(), FrameMetricsAggregator.EVERY_DURATION, null));
         ConnectionHolder.INSTANCE.getOnConnectTest().invoke();
@@ -271,7 +271,7 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
         MutableStateFlow<SettingsUiState> mutableStateFlow = this.stateStore;
         do {
             value = mutableStateFlow.getValue();
-        } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default(value, 0, null, null, null, true, null, false, null, 0, null, null, 2031, null)));
+        } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default(value, 0, null, null, null, true, null, false, null, false, 0, null, null, 4079, null)));
     }
 
     public final void closeTech() {
@@ -279,7 +279,7 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
         MutableStateFlow<SettingsUiState> mutableStateFlow = this.stateStore;
         do {
             value = mutableStateFlow.getValue();
-        } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default(value, 0, null, null, null, false, null, false, null, 0, null, null, 2031, null)));
+        } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default(value, 0, null, null, null, false, null, false, null, false, 0, null, null, 4079, null)));
     }
 
     private final void emitExternalNavigationAction(ExternalNavigationAction externalNavigationAction) {

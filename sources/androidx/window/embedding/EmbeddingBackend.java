@@ -95,7 +95,14 @@ public interface EmbeddingBackend {
                 jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.window.embedding.EmbeddingBackend.Companion.decorator$lambda$0(androidx.window.embedding.EmbeddingBackend):androidx.window.embedding.EmbeddingBackend
                 	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
                 	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-                Caused by: java.lang.NullPointerException
+                Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+                	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+                	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+                	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+                	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+                	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+                	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:65)
+                	... 1 more
                 */
             @Override // kotlin.jvm.functions.Function1
             public final java.lang.Object invoke(java.lang.Object r1) {
@@ -110,7 +117,13 @@ public interface EmbeddingBackend {
         };
 
         /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-            java.lang.NullPointerException
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+            	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+            	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.visit(MarkMethodsForInline.java:37)
             */
         /* JADX INFO: Access modifiers changed from: package-private */
         public static final androidx.window.embedding.EmbeddingBackend decorator$lambda$0(androidx.window.embedding.EmbeddingBackend r1) {
@@ -123,7 +136,13 @@ public interface EmbeddingBackend {
         }
 
         /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-            java.lang.NullPointerException
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+            	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+            	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.visit(MarkMethodsForInline.java:37)
             */
         /* JADX INFO: Access modifiers changed from: package-private */
         public static final androidx.window.embedding.EmbeddingBackend reset$lambda$1(androidx.window.embedding.EmbeddingBackend r1) {
@@ -157,7 +176,14 @@ public interface EmbeddingBackend {
                     jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.window.embedding.EmbeddingBackend.Companion.reset$lambda$1(androidx.window.embedding.EmbeddingBackend):androidx.window.embedding.EmbeddingBackend
                     	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
                     	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-                    Caused by: java.lang.NullPointerException
+                    Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+                    	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+                    	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+                    	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+                    	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+                    	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+                    	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:65)
+                    	... 1 more
                     */
                 @Override // kotlin.jvm.functions.Function1
                 public final java.lang.Object invoke(java.lang.Object r1) {

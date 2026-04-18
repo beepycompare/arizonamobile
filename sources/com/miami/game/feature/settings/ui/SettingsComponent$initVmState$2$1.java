@@ -1,6 +1,7 @@
 package com.miami.game.feature.settings.ui;
 
 import androidx.compose.ui.graphics.ImageBitmap;
+import androidx.core.app.FrameMetricsAggregator;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import com.miami.game.core.design.system.component.background.LauncherBackgroundState;
 import com.miami.game.feature.settings.ui.model.SettingsUiState;
@@ -54,7 +55,7 @@ final class SettingsComponent$initVmState$2$1 extends SuspendLambda implements F
             do {
                 value = mutableStateFlow.getValue();
                 imageBitmap = launcherBackgroundState.getImageBitmap();
-            } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default((SettingsUiState) value, 0, null, null, null, false, null, false, null, launcherBackgroundState.getVersion(), launcherBackgroundState.getFile(), imageBitmap, 255, null)));
+            } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default((SettingsUiState) value, 0, null, null, null, false, null, false, null, false, launcherBackgroundState.getVersion(), launcherBackgroundState.getFile(), imageBitmap, FrameMetricsAggregator.EVERY_DURATION, null)));
             return Unit.INSTANCE;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

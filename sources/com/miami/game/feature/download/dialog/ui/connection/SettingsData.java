@@ -214,7 +214,7 @@ public final class SettingsData {
     }
 
     public /* synthetic */ SettingsData(int i, float f, boolean z, boolean z2, boolean z3, boolean z4, boolean z5, boolean z6, boolean z7, String str, String str2, String str3, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i2 & 1) != 0 ? 1 : i, (i2 & 2) != 0 ? 1.0f : f, (i2 & 4) != 0 ? false : z, (i2 & 8) != 0 ? false : z2, (i2 & 16) != 0 ? false : z3, (i2 & 32) != 0 ? true : z4, (i2 & 64) != 0 ? true : z5, (i2 & 128) == 0 ? z6 : false, (i2 & 256) == 0 ? z7 : true, (i2 & 512) != 0 ? "192.168.0.133" : str, (i2 & 1024) != 0 ? "7777" : str2, (i2 & 2048) != 0 ? HintConstants.AUTOFILL_HINT_PASSWORD : str3);
+        this((i2 & 1) != 0 ? 1 : i, (i2 & 2) != 0 ? 1.0f : f, (i2 & 4) != 0 ? false : z, (i2 & 8) != 0 ? false : z2, (i2 & 16) == 0 ? z3 : false, (i2 & 32) != 0 ? true : z4, (i2 & 64) != 0 ? true : z5, (i2 & 128) != 0 ? true : z6, (i2 & 256) == 0 ? z7 : true, (i2 & 512) != 0 ? "192.168.0.133" : str, (i2 & 1024) != 0 ? "7777" : str2, (i2 & 2048) != 0 ? HintConstants.AUTOFILL_HINT_PASSWORD : str3);
     }
 
     public final String getIp() {

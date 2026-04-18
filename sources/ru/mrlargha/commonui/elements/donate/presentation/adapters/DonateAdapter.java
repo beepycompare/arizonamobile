@@ -37,7 +37,6 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemType;
 import ru.mrlargha.commonui.elements.donate.utils.CustomGridLayoutManager;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
-import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: DonateAdapter.kt */
 @Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 &2\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0003$%&B]\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012!\u0010\u0007\u001a\u001d\u0012\u0013\u0012\u00110\t¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\f\u0012\u0004\u0012\u00020\u00060\b\u0012#\u0010\r\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0002¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\u000e\u0012\u0004\u0012\u00020\u00060\b¢\u0006\u0004\b\u000f\u0010\u0010J\u0010\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u0003H\u0016J\u0018\u0010\u0018\u001a\u00020\u00032\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\tH\u0016J\u0014\u0010\u001c\u001a\u00060\u001dR\u00020\u00002\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\u0014\u0010\u001e\u001a\u00060\u001dR\u00020\u00002\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\u0014\u0010\u001f\u001a\u00060 R\u00020\u00002\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\u0018\u0010!\u001a\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u00032\u0006\u0010\"\u001a\u00020\tH\u0016J\u0010\u0010#\u001a\u00020\t2\u0006\u0010\"\u001a\u00020\tH\u0016R\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R,\u0010\u0007\u001a\u001d\u0012\u0013\u0012\u00110\t¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\f\u0012\u0004\u0012\u00020\u00060\b¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R.\u0010\r\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0002¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\u000e\u0012\u0004\u0012\u00020\u00060\b¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0014¨\u0006'"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "lastItemBind", "Lkotlin/Function0;", "", "onClick", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "id", "openDialog", "itemModel", "<init>", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "getLastItemBind", "()Lkotlin/jvm/functions/Function0;", "getOnClick", "()Lkotlin/jvm/functions/Function1;", "getOpenDialog", "onViewRecycled", "holder", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "createDefaultViewHolder", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateAdapter$DonateDefaultViewHolder;", "createWiViewHolder", "createPosterViewHolder", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateAdapter$DonatePosterViewHolder;", "onBindViewHolder", "position", "getItemViewType", "DonateDefaultViewHolder", "DonatePosterViewHolder", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -381,8 +380,8 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:19:0x0121, code lost:
-            if (r18.getTextGradientColor().size() > 1) goto L21;
+        /* JADX WARN: Code restructure failed: missing block: B:19:0x0119, code lost:
+            if (r10.getTextGradientColor().size() > 1) goto L21;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -412,7 +411,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
                 Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
                 imageView.setImageResource(UtilsKt.getArizonaType(context) ? R.drawable.ic_dollar : R.drawable.blueprint_ic_rub);
                 donateDefaultItemBinding.ivAzCoinIc.setImageTintList(ColorStateList.valueOf(Color.parseColor("#CCFFFFFF")));
-                donateDefaultItemBinding.tvAzCoins.setText(MoneyElementKt.toMoneyFormattedSpannable$default(donateItemModelUi.getTotalEarnings(), false, null, null, 7, null));
+                donateDefaultItemBinding.tvAzCoins.setText(String.valueOf(donateItemModelUi.getTotalEarnings()));
                 if (UtilsKt.isArizonaType()) {
                     ImageView ivAzCoinIc3 = donateDefaultItemBinding.ivAzCoinIc;
                     Intrinsics.checkNotNullExpressionValue(ivAzCoinIc3, "ivAzCoinIc");

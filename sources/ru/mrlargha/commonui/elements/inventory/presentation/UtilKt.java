@@ -65,8 +65,8 @@ public final class UtilKt {
         setEffect(ivEffectBackgroundTop, ivEffectBackground, ivEffectForeground, num);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x00e6, code lost:
-        if (r0 == null) goto L51;
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x00ef, code lost:
+        if (r0 == null) goto L55;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -106,7 +106,7 @@ public final class UtilKt {
                 ivEffectBackground.setVisibility(getEffect(itemsInfo).getEffectType() == InventoryEffectType.BACKGROUND ? 0 : 8);
                 ivEffectBackgroundTop.setVisibility(getEffect(itemsInfo).getEffectType() == InventoryEffectType.BACKGROUND_TOP ? 0 : 8);
                 ivEffectForeground.setVisibility(getEffect(itemsInfo).getEffectType() == InventoryEffectType.FOREGROUND ? 0 : 8);
-                obj2 = Glide.with(imageView.getContext()).load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/inventory/effects/" + itemsInfo.getEffect()).into(imageView);
+                obj2 = Glide.with(imageView.getContext()).load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + (UtilsKt.isArizonaType() ? "projects/arizona-rp/assets/images/inventory/effects/" : "projects/rodina-rp/assets/images/inventory/effects/") + itemsInfo.getEffect()).into(imageView);
             }
             ivEffectBackground.setImageDrawable(null);
             ivEffectBackground.setVisibility(8);

@@ -15,7 +15,6 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.DelayKt;
-import kotlinx.coroutines.Dispatchers;
 import retrofit2.Response;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
@@ -25,7 +24,7 @@ import ru.mrlargha.feature.mobile.presentation.page.rent_accessory.RentAccessory
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MobileRentAccessoryMainPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$checkUpdate$1", f = "MobileRentAccessoryMainPage.kt", i = {0}, l = {279}, m = "invokeSuspend", n = {"$this$launch"}, nl = {RouletteView.DEFAULT_ROULETTE_WIDTH}, s = {"L$0"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$checkUpdate$1", f = "MobileRentAccessoryMainPage.kt", i = {0}, l = {RouletteView.DEFAULT_ROULETTE_WIDTH}, m = "invokeSuspend", n = {"$this$launch"}, nl = {281}, s = {"L$0"}, v = 2)
 /* loaded from: classes6.dex */
 public final class MobileRentAccessoryMainPage$checkUpdate$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
@@ -51,9 +50,9 @@ public final class MobileRentAccessoryMainPage$checkUpdate$1 extends SuspendLamb
         return ((MobileRentAccessoryMainPage$checkUpdate$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0050  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x0031 -> B:14:0x0034). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0047  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x0032 -> B:14:0x0035). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -70,14 +69,14 @@ public final class MobileRentAccessoryMainPage$checkUpdate$1 extends SuspendLamb
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.throwOnFailure(obj);
-            BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getIO()), null, null, new AnonymousClass1(this.this$0, null), 3, null);
+            BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new AnonymousClass1(this.this$0, null), 3, null);
             if (CoroutineScopeKt.isActive(coroutineScope)) {
                 this.L$0 = coroutineScope;
                 this.label = 1;
                 if (DelayKt.delay(5000L, this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getIO()), null, null, new AnonymousClass1(this.this$0, null), 3, null);
+                BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new AnonymousClass1(this.this$0, null), 3, null);
                 if (CoroutineScopeKt.isActive(coroutineScope)) {
                     return Unit.INSTANCE;
                 }
@@ -88,7 +87,7 @@ public final class MobileRentAccessoryMainPage$checkUpdate$1 extends SuspendLamb
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: MobileRentAccessoryMainPage.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$checkUpdate$1$1", f = "MobileRentAccessoryMainPage.kt", i = {1, 1, 1}, l = {282, 286}, m = "invokeSuspend", n = {"ads", "it", "$i$a$-let-MobileRentAccessoryMainPage$checkUpdate$1$1$1"}, nl = {281, 295}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$checkUpdate$1$1", f = "MobileRentAccessoryMainPage.kt", i = {1, 1, 1}, l = {283, 287}, m = "invokeSuspend", n = {"ads", "it", "$i$a$-let-MobileRentAccessoryMainPage$checkUpdate$1$1$1"}, nl = {282, 296}, s = {"L$0", "L$1", "I$0"}, v = 2)
     /* renamed from: ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$checkUpdate$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

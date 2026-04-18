@@ -51,7 +51,7 @@ public final class SettingsComponent$observeSettingsState$1 extends SuspendLambd
             mutableStateFlow = this.this$0.stateStore;
             while (true) {
                 Object value = mutableStateFlow.getValue();
-                if (mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default((SettingsUiState) value, 0, settingState, null, null, false, new ConnectionData(settingState.getConnectionData().getIp(), settingState.getConnectionData().getPort(), settingState.getConnectionData().getPassword()), false, null, 0, null, null, 2013, null))) {
+                if (mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default((SettingsUiState) value, 0, settingState, null, null, false, new ConnectionData(settingState.getConnectionData().getIp(), settingState.getConnectionData().getPort(), settingState.getConnectionData().getPassword()), false, null, false, 0, null, null, 4061, null))) {
                     return Unit.INSTANCE;
                 }
             }

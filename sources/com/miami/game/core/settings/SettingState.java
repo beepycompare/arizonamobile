@@ -199,7 +199,7 @@ public final class SettingState {
     }
 
     public /* synthetic */ SettingState(float f, int i, boolean z, boolean z2, boolean z3, boolean z4, boolean z5, boolean z6, boolean z7, boolean z8, ConnectionData connectionData, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(f, i, (i2 & 4) != 0 ? false : z, (i2 & 8) != 0 ? false : z2, (i2 & 16) != 0 ? true : z3, (i2 & 32) != 0 ? false : z4, (i2 & 64) != 0 ? false : z5, (i2 & 128) != 0 ? true : z6, (i2 & 256) != 0 ? false : z7, (i2 & 512) != 0 ? false : z8, (i2 & 1024) != 0 ? new ConnectionData(null, null, null, 7, null) : connectionData);
+        this(f, i, (i2 & 4) != 0 ? false : z, (i2 & 8) != 0 ? false : z2, (i2 & 16) != 0 ? true : z3, (i2 & 32) != 0 ? false : z4, (i2 & 64) != 0 ? true : z5, (i2 & 128) != 0 ? true : z6, (i2 & 256) != 0 ? false : z7, (i2 & 512) != 0 ? false : z8, (i2 & 1024) != 0 ? new ConnectionData(null, null, null, 7, null) : connectionData);
     }
 
     public final ConnectionData getConnectionData() {

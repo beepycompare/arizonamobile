@@ -16,8 +16,6 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.CoroutineScopeKt;
-import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.flow.FlowKt;
 import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.coroutines.flow.StateFlow;
@@ -27,7 +25,7 @@ import ru.mrlargha.commonui.elements.donate.domain.models.DonateBadgesModel;
 import ru.mrlargha.commonui.elements.donate.domain.models.DonateItemModel;
 import ru.mrlargha.commonui.elements.donate.domain.repositories.DonateRepository;
 /* compiled from: DonateGetItemUseCase.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\fH\u0086@¢\u0006\u0002\u0010\u0018R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R \u0010\b\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\f0\u000b0\n0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\b\u0012\u0004\u0012\u00020\f0\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010\u000f\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\f0\u000b0\n0\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0019"}, d2 = {"Lru/mrlargha/commonui/elements/donate/domain/usecases/DonateGetItemUseCase;", "", "repository", "Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;", "<init>", "(Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;)V", "getRepository", "()Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;", "_itemList", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/commonui/elements/donate/domain/ResultState;", "", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;", "updatedItem", "", "itemList", "Lkotlinx/coroutines/flow/StateFlow;", "getItemList", "()Lkotlinx/coroutines/flow/StateFlow;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "updateItem", "", "item", "(Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0010H\u0086@¢\u0006\u0002\u0010\u001aR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR \u0010\f\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u000f0\u000e0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00100\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010\u0013\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u000f0\u000e0\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016¨\u0006\u001b"}, d2 = {"Lru/mrlargha/commonui/elements/donate/domain/usecases/DonateGetItemUseCase;", "", "repository", "Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "<init>", "(Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;Lkotlinx/coroutines/CoroutineScope;)V", "getRepository", "()Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "_itemList", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/commonui/elements/donate/domain/ResultState;", "", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;", "updatedItem", "", "itemList", "Lkotlinx/coroutines/flow/StateFlow;", "getItemList", "()Lkotlinx/coroutines/flow/StateFlow;", "updateItem", "", "item", "(Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DonateGetItemUseCase {
     private final MutableStateFlow<ResultState<List<DonateItemModel>>> _itemList;
@@ -36,20 +34,24 @@ public final class DonateGetItemUseCase {
     private final CoroutineScope scope;
     private final List<DonateItemModel> updatedItem;
 
-    public DonateGetItemUseCase(DonateRepository repository) {
+    public DonateGetItemUseCase(DonateRepository repository, CoroutineScope scope) {
         Intrinsics.checkNotNullParameter(repository, "repository");
+        Intrinsics.checkNotNullParameter(scope, "scope");
         this.repository = repository;
+        this.scope = scope;
         MutableStateFlow<ResultState<List<DonateItemModel>>> MutableStateFlow = StateFlowKt.MutableStateFlow(new ResultState.Success(CollectionsKt.emptyList()));
         this._itemList = MutableStateFlow;
         this.updatedItem = new ArrayList();
         this.itemList = FlowKt.asStateFlow(MutableStateFlow);
-        CoroutineScope CoroutineScope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO());
-        this.scope = CoroutineScope;
-        BuildersKt__Builders_commonKt.launch$default(CoroutineScope, null, null, new AnonymousClass1(null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(scope, null, null, new AnonymousClass1(null), 3, null);
     }
 
     public final DonateRepository getRepository() {
         return this.repository;
+    }
+
+    public final CoroutineScope getScope() {
+        return this.scope;
     }
 
     public final StateFlow<ResultState<List<DonateItemModel>>> getItemList() {
@@ -58,7 +60,7 @@ public final class DonateGetItemUseCase {
 
     /* compiled from: DonateGetItemUseCase.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase$1", f = "DonateGetItemUseCase.kt", i = {1, 2, 2, 2, 2, 2, 2}, l = {29, 30, 34}, m = "invokeSuspend", n = {"items", "items", "$this$forEach$iv", "element$iv", "updatedModel", "$i$f$forEach", "$i$a$-forEach-DonateGetItemUseCase$1$1"}, nl = {30, 32, 35}, s = {"L$0", "L$0", "L$1", "L$4", "L$5", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase$1", f = "DonateGetItemUseCase.kt", i = {1, 2, 2, 2, 2, 2, 2}, l = {32, 33, 37}, m = "invokeSuspend", n = {"items", "items", "$this$forEach$iv", "element$iv", "updatedModel", "$i$f$forEach", "$i$a$-forEach-DonateGetItemUseCase$1$1"}, nl = {33, 35, 38}, s = {"L$0", "L$0", "L$1", "L$4", "L$5", "I$0", "I$1"}, v = 2)
     /* renamed from: ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -164,8 +166,8 @@ public final class DonateGetItemUseCase {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x0185, code lost:
-        if (r4 == null) goto L99;
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x0189, code lost:
+        if (r4 == null) goto L102;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -182,7 +184,7 @@ public final class DonateGetItemUseCase {
             Iterable<DonateItemModel> iterable = (Iterable) success.getData();
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(iterable, 10));
             for (DonateItemModel donateItemModel2 : iterable) {
-                if (donateItemModel2.getKey() == donateItemModel.getKey()) {
+                if (donateItemModel2 != null && donateItemModel != null && donateItemModel2.getKey() == donateItemModel.getKey()) {
                     int position = donateItemModel.getPosition() > -1 ? donateItemModel.getPosition() : donateItemModel2.getPosition();
                     String name = donateItemModel.getName();
                     if (name.length() == 0) {

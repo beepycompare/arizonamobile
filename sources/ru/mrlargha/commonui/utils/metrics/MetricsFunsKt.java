@@ -209,7 +209,7 @@ public final class MetricsFunsKt {
             HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
             httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
-            builder.connectTimeout(30L, TimeUnit.SECONDS).writeTimeout(30L, TimeUnit.SECONDS).readTimeout(30L, TimeUnit.SECONDS).protocols(CollectionsKt.listOf(Protocol.HTTP_1_1));
+            builder.connectTimeout(30L, TimeUnit.SECONDS).writeTimeout(30L, TimeUnit.SECONDS).readTimeout(60L, TimeUnit.SECONDS).protocols(CollectionsKt.listOf(Protocol.HTTP_1_1));
             builder.addInterceptor(httpLoggingInterceptor);
             ((TrackUsAPI) new Retrofit.Builder().baseUrl("https://track-us.bidease.com/").addConverterFactory(GsonConverterFactory.create()).client(builder.build()).build().create(TrackUsAPI.class)).sendTrackUsReq(str3, action, "0", "1", "SampleManager", str6, deviceName, "Android", str5, "ru", "image").enqueue(new Callback<ResponseBody>() { // from class: ru.mrlargha.commonui.utils.metrics.MetricsFunsKt$sendTrackUsRequest$1
                 @Override // retrofit2.Callback

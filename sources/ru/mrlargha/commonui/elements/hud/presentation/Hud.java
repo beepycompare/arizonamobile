@@ -2005,6 +2005,9 @@ public final class Hud extends SAMPUIElement {
         }
         this.bodycam.event("");
         this.gatherCount.event("");
+        FrameLayout root = this.binding.targetPlate.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
+        root.setVisibility(8);
     }
 
     private final void resetHud() {

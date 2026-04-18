@@ -30,7 +30,7 @@ public final class ArizonaLauncherAPIModule {
     private final Retrofit retrofit;
 
     public ArizonaLauncherAPIModule() {
-        OkHttpClient build = new OkHttpClient().newBuilder().connectTimeout(30L, TimeUnit.SECONDS).writeTimeout(30L, TimeUnit.SECONDS).readTimeout(30L, TimeUnit.SECONDS).protocols(CollectionsKt.listOf(Protocol.HTTP_1_1)).cache(null).addInterceptor(new Interceptor() { // from class: com.arizona.launcher.di.ArizonaLauncherAPIModule$special$$inlined$-addInterceptor$1
+        OkHttpClient build = new OkHttpClient().newBuilder().connectTimeout(30L, TimeUnit.SECONDS).writeTimeout(30L, TimeUnit.SECONDS).readTimeout(60L, TimeUnit.SECONDS).protocols(CollectionsKt.listOf(Protocol.HTTP_1_1)).cache(null).addInterceptor(new Interceptor() { // from class: com.arizona.launcher.di.ArizonaLauncherAPIModule$special$$inlined$-addInterceptor$1
             @Override // okhttp3.Interceptor
             public final Response intercept(Interceptor.Chain chain) {
                 Intrinsics.checkNotNullParameter(chain, "chain");

@@ -30,7 +30,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.VideoAdviceBinding;
 /* compiled from: VideoAdvice.kt */
-@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000b\u0018\u00002\u00020\u0001:\u0001\u001bB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0005H\u0016J\b\u0010\u0013\u001a\u00020\u000fH\u0002J\u0010\u0010\u0014\u001a\u00020\u000f2\u0006\u0010\u0015\u001a\u00020\u0011H\u0002J\b\u0010\u0016\u001a\u00020\u000fH\u0002J\u0010\u0010\u0017\u001a\u00020\u000f2\u0006\u0010\u0018\u001a\u00020\u0005H\u0002J\n\u0010\u0019\u001a\u0004\u0018\u00010\u0011H\u0002J\u0006\u0010\u001a\u001a\u00020\u000bR\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/elements/video_advice/VideoAdvice;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "videoBackground", "Landroid/widget/FrameLayout;", "videoBackgroundBinding", "Lru/mrlargha/commonui/databinding/VideoAdviceBinding;", "playerItem", "Landroidx/media3/exoplayer/ExoPlayer;", "onBackendMessage", "", "data", "", "subId", "setupListeners", "playVideo", "path", "closeVideo", "showSkipQuest", "isShow", "getSAMPPath", "getMainBinding", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000b\u0018\u00002\u00020\u0001:\u0001\u001bB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0005H\u0016J\b\u0010\u0013\u001a\u00020\u000fH\u0002J\u0010\u0010\u0014\u001a\u00020\u000f2\u0006\u0010\u0015\u001a\u00020\u0011H\u0002J\b\u0010\u0016\u001a\u00020\u000fH\u0002J\u0010\u0010\u0017\u001a\u00020\u000f2\u0006\u0010\u0018\u001a\u00020\u0005H\u0002J\n\u0010\u0019\u001a\u0004\u0018\u00010\u0011H\u0002J\u0006\u0010\u001a\u001a\u00020\u000bR\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/elements/video_advice/VideoAdvice;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "videoBackground", "Landroid/widget/FrameLayout;", "videoBackgroundBinding", "Lru/mrlargha/commonui/databinding/VideoAdviceBinding;", "playerItem", "Landroidx/media3/exoplayer/ExoPlayer;", "onBackendMessage", "", "data", "", "subId", "setupListeners", "playVideo", "path", "closeVideo", "showSkipQuest", "isShow", "getSAMPPath", "getMainBinding", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class VideoAdvice extends SAMPUIElement {
     private ExoPlayer playerItem;
@@ -48,9 +48,6 @@ public final class VideoAdvice extends SAMPUIElement {
         VideoAdviceBinding bind = VideoAdviceBinding.bind(frameLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.videoBackgroundBinding = bind;
-        ExoPlayer build = new ExoPlayer.Builder(targetActivity).build();
-        Intrinsics.checkNotNullExpressionValue(build, "build(...)");
-        this.playerItem = build;
         addViewToConstraintLayout(frameLayout, -1, -1);
         setupListeners();
     }
@@ -85,6 +82,15 @@ public final class VideoAdvice extends SAMPUIElement {
             this.videoBackgroundBinding.videoAdviceBg.setVisibility(0);
             File file = new File(Environment.getExternalStorageDirectory(), getSAMPPath() + str);
             if (file.exists()) {
+                ExoPlayer exoPlayer = this.playerItem;
+                if (exoPlayer != null) {
+                    exoPlayer.stop();
+                }
+                ExoPlayer exoPlayer2 = this.playerItem;
+                if (exoPlayer2 != null) {
+                    exoPlayer2.release();
+                }
+                this.playerItem = null;
                 Uri parse = Uri.parse(file.getPath());
                 Intrinsics.checkNotNullExpressionValue(parse, "parse(...)");
                 ExoPlayer build = new ExoPlayer.Builder(getTargetActivity()).build();
@@ -93,23 +99,28 @@ public final class VideoAdvice extends SAMPUIElement {
                 playerView.setPlayer(build);
                 MediaItem fromUri = MediaItem.fromUri(parse);
                 Intrinsics.checkNotNullExpressionValue(fromUri, "fromUri(...)");
-                this.playerItem.setMediaItem(fromUri);
-                this.playerItem.addListener(new Player.Listener() { // from class: ru.mrlargha.commonui.elements.video_advice.VideoAdvice$playVideo$1$1
+                build.setMediaItem(fromUri);
+                build.addListener(new Player.Listener() { // from class: ru.mrlargha.commonui.elements.video_advice.VideoAdvice$playVideo$1$1
                     @Override // androidx.media3.common.Player.Listener
                     public void onPlaybackStateChanged(int i) {
-                        ExoPlayer exoPlayer;
-                        ExoPlayer exoPlayer2;
+                        ExoPlayer exoPlayer3;
+                        ExoPlayer exoPlayer4;
                         if (i == 4) {
-                            exoPlayer = VideoAdvice.this.playerItem;
-                            exoPlayer.stop();
-                            exoPlayer2 = VideoAdvice.this.playerItem;
-                            exoPlayer2.release();
+                            exoPlayer3 = VideoAdvice.this.playerItem;
+                            if (exoPlayer3 != null) {
+                                exoPlayer3.stop();
+                            }
+                            exoPlayer4 = VideoAdvice.this.playerItem;
+                            if (exoPlayer4 != null) {
+                                exoPlayer4.release();
+                            }
+                            VideoAdvice.this.playerItem = null;
                             SAMPUIElement.notifyClick$default(VideoAdvice.this, 0, VideoAdviceIds.STOP_VIDEO.getSubId(), null, 4, null);
                         }
                     }
                 });
-                this.playerItem.prepare();
-                this.playerItem.play();
+                build.prepare();
+                build.play();
                 return;
             }
             Toast.makeText(getTargetActivity(), "Видео файл не найден в памяти устройства. Сбросьте игру!", 1).show();
@@ -121,8 +132,15 @@ public final class VideoAdvice extends SAMPUIElement {
     }
 
     private final void closeVideo() {
-        this.playerItem.stop();
-        this.playerItem.release();
+        ExoPlayer exoPlayer = this.playerItem;
+        if (exoPlayer != null) {
+            exoPlayer.stop();
+        }
+        ExoPlayer exoPlayer2 = this.playerItem;
+        if (exoPlayer2 != null) {
+            exoPlayer2.release();
+        }
+        this.playerItem = null;
         this.videoBackground.setVisibility(8);
         this.videoBackgroundBinding.videoAdvice.setVisibility(8);
         this.videoBackgroundBinding.videoAdviceBg.setVisibility(8);

@@ -186,7 +186,7 @@ public final class CatalogScreen extends SAMPUIElement {
             if (text != null) {
                 text.clear();
             }
-            catalogScreen.catalogAdapter.addCatalogItems(catalogScreen.catalogItemList);
+            catalogScreen.catalogAdapter.setSearchItems(catalogScreen.catalogItemList);
             return true;
         }
         return false;

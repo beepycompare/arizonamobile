@@ -2588,6 +2588,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             case 11:
                 id = ArizonaBlockType.BLOCK_TYPE_ADMIN_FUND.getId();
                 break;
+            case 12:
+                id = ArizonaBlockType.BLOCK_TYPE_WAREHOUSE_MATTER.getId();
+                break;
             default:
                 id = 0;
                 break;

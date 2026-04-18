@@ -25,7 +25,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import com.google.gson.JsonParseException;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -46,6 +45,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.databinding.DialogWithdrawBinding;
@@ -54,7 +54,7 @@ import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.commonui.utils.ui.money.MoneyParts;
 /* compiled from: DialogWithdraw.kt */
-@Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\t\n\u0002\b\u0005\u0018\u0000 A2\u00020\u0001:\u0001ABO\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007\u0012\u0006\u0010\n\u001a\u00020\u0007\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u0005\u0012\u0006\u0010\u000e\u001a\u00020\u000f¢\u0006\u0004\b\u0010\u0010\u0011J\b\u0010 \u001a\u00020!H\u0002J$\u0010\"\u001a\u00020!*\u00020#2\u0006\u0010$\u001a\u00020#2\u0006\u0010%\u001a\u00020&2\b\b\u0002\u0010'\u001a\u00020\fJ\u001e\u0010(\u001a\u00020!*\u00020#2\u0006\u0010%\u001a\u00020&2\b\b\u0002\u0010'\u001a\u00020\fH\u0002J \u0010)\u001a\u00020!*\u00020&2\b\b\u0002\u0010*\u001a\u00020\u00052\b\b\u0002\u0010'\u001a\u00020\fH\u0002J \u0010+\u001a\u00020!*\u00020&2\b\b\u0002\u0010,\u001a\u00020\u00052\b\b\u0002\u0010'\u001a\u00020\fH\u0002J\f\u0010-\u001a\u00020\f*\u00020&H\u0002J\u0016\u0010.\u001a\u00020!*\u00020&2\b\b\u0002\u0010'\u001a\u00020\fH\u0002J\b\u0010/\u001a\u00020\u000fH\u0002J$\u00100\u001a\u00020!*\u00020&2\u0006\u00101\u001a\u00020#2\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u000203H\u0002J\f\u00105\u001a\u00020!*\u00020&H\u0002J,\u00106\u001a\u00020\f*\u00020&2\u0006\u0010$\u001a\u00020#2\u0006\u00107\u001a\u00020#2\u0006\u00108\u001a\u00020\u00052\u0006\u00109\u001a\u00020\u0005H\u0002J\u0010\u0010:\u001a\u00020!2\u0006\u0010;\u001a\u00020\u000fH\u0002J\u0006\u0010<\u001a\u00020=J\u000e\u0010>\u001a\u00020!2\u0006\u0010?\u001a\u00020\fJ\b\u0010@\u001a\u00020!H\u0002R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u0014*\u0004\u0018\u00010\u00130\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006B"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/DialogWithdraw;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "Landroid/text/SpannableString;", "info", "leftButtonText", "rightButtonText", "passwordMode", "", "sampDialogId", "hintInput", "", "<init>", "(Landroid/app/Activity;ILandroid/text/SpannableString;Landroid/text/SpannableString;Landroid/text/SpannableString;Landroid/text/SpannableString;ZILjava/lang/String;)V", "dialogLayout", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/DialogWithdrawBinding;", "text", "isKeyboardShowing", "scope", "Lkotlinx/coroutines/CoroutineScope;", "plusJob", "Lkotlinx/coroutines/Job;", "minusJob", "limits", "Lru/mrlargha/commonui/elements/dialogs/DialogWithdrawLimit;", "setupListeners", "", "onClickPlus", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "btnMinus", "et", "Landroid/widget/EditText;", "isDouble", "onClickMinus", "minusOne", "minusCount", "plusOne", "plusCount", "checkIsZero", "setFilter", "getInputCost", "setFocus", "cardView", "llOne", "Landroid/widget/LinearLayout;", "llTwo", "setLimit", "checkValidate", "customFieldLayout", "costType", "icCost", "savePassword", HintConstants.AUTOFILL_HINT_NEW_PASSWORD, "getEtSum", "", "checkActiveButton", AppMeasurementSdk.ConditionalUserProperty.ACTIVE, "checkEtValidates", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\t\n\u0002\b\u0005\u0018\u0000 @2\u00020\u0001:\u0001@BO\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007\u0012\u0006\u0010\n\u001a\u00020\u0007\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u0005\u0012\u0006\u0010\u000e\u001a\u00020\u000f¢\u0006\u0004\b\u0010\u0010\u0011J\b\u0010\u001f\u001a\u00020 H\u0002J$\u0010!\u001a\u00020 *\u00020\"2\u0006\u0010#\u001a\u00020\"2\u0006\u0010$\u001a\u00020%2\b\b\u0002\u0010&\u001a\u00020\fJ\u001e\u0010'\u001a\u00020 *\u00020\"2\u0006\u0010$\u001a\u00020%2\b\b\u0002\u0010&\u001a\u00020\fH\u0002J \u0010(\u001a\u00020 *\u00020%2\b\b\u0002\u0010)\u001a\u00020\u00052\b\b\u0002\u0010&\u001a\u00020\fH\u0002J \u0010*\u001a\u00020 *\u00020%2\b\b\u0002\u0010+\u001a\u00020\u00052\b\b\u0002\u0010&\u001a\u00020\fH\u0002J\f\u0010,\u001a\u00020\f*\u00020%H\u0002J\u0016\u0010-\u001a\u00020 *\u00020%2\b\b\u0002\u0010&\u001a\u00020\fH\u0002J\b\u0010.\u001a\u00020\u000fH\u0002J$\u0010/\u001a\u00020 *\u00020%2\u0006\u00100\u001a\u00020\"2\u0006\u00101\u001a\u0002022\u0006\u00103\u001a\u000202H\u0002J\f\u00104\u001a\u00020 *\u00020%H\u0002J,\u00105\u001a\u00020\f*\u00020%2\u0006\u0010#\u001a\u00020\"2\u0006\u00106\u001a\u00020\"2\u0006\u00107\u001a\u00020\u00052\u0006\u00108\u001a\u00020\u0005H\u0002J\u0010\u00109\u001a\u00020 2\u0006\u0010:\u001a\u00020\u000fH\u0002J\u0006\u0010;\u001a\u00020<J\u000e\u0010=\u001a\u00020 2\u0006\u0010>\u001a\u00020\fJ\b\u0010?\u001a\u00020 H\u0002R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u0014*\u0004\u0018\u00010\u00130\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006A"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/DialogWithdraw;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "Landroid/text/SpannableString;", "info", "leftButtonText", "rightButtonText", "passwordMode", "", "sampDialogId", "hintInput", "", "<init>", "(Landroid/app/Activity;ILandroid/text/SpannableString;Landroid/text/SpannableString;Landroid/text/SpannableString;Landroid/text/SpannableString;ZILjava/lang/String;)V", "dialogLayout", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/DialogWithdrawBinding;", "isKeyboardShowing", "scope", "Lkotlinx/coroutines/CoroutineScope;", "plusJob", "Lkotlinx/coroutines/Job;", "minusJob", "limits", "Lru/mrlargha/commonui/elements/dialogs/DialogWithdrawLimit;", "setupListeners", "", "onClickPlus", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "btnMinus", "et", "Landroid/widget/EditText;", "isDouble", "onClickMinus", "minusOne", "minusCount", "plusOne", "plusCount", "checkIsZero", "setFilter", "getInputCost", "setFocus", "cardView", "llOne", "Landroid/widget/LinearLayout;", "llTwo", "setLimit", "checkValidate", "customFieldLayout", "costType", "icCost", "savePassword", HintConstants.AUTOFILL_HINT_NEW_PASSWORD, "getEtSum", "", "checkActiveButton", AppMeasurementSdk.ConditionalUserProperty.ACTIVE, "checkEtValidates", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DialogWithdraw extends AbstractDialog {
     public static final String PASSWORD_SP_NAME = "PASSWORD_SP_FIELD";
@@ -67,7 +67,6 @@ public final class DialogWithdraw extends AbstractDialog {
     private final boolean passwordMode;
     private Job plusJob;
     private final CoroutineScope scope;
-    private String text;
     public static final Companion Companion = new Companion(null);
     private static final Map<Integer, String> inputHistory = new LinkedHashMap();
 
@@ -81,71 +80,71 @@ public final class DialogWithdraw extends AbstractDialog {
         Intrinsics.checkNotNullParameter(rightButtonText, "rightButtonText");
         Intrinsics.checkNotNullParameter(hintInput, "hintInput");
         this.passwordMode = z;
+        Object obj = null;
         View dialogLayout = LayoutInflater.from(targetActivity).inflate(R.layout.dialog_withdraw, (ViewGroup) null, false);
         this.dialogLayout = dialogLayout;
         DialogWithdrawBinding bind = DialogWithdrawBinding.bind(dialogLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
-        this.text = "";
         this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getMain());
+        Log.d(TAG, "info: " + ((Object) info) + ", caption: " + ((Object) caption) + ", leftButtonText: " + ((Object) leftButtonText) + ", rightButtonText: " + ((Object) rightButtonText) + ", hintInput: " + hintInput);
         bind.buttons.button1.setAlpha(0.5f);
         bind.buttons.button1.setEnabled(false);
-        if (MapperKt.isJsonValid(hintInput)) {
-            this.limits = (DialogWithdrawLimit) MapperKt.getGson().fromJson(hintInput, (Class<Object>) DialogWithdrawLimit.class);
-            Intrinsics.checkNotNullExpressionValue(dialogLayout, "dialogLayout");
-            addViewToConstraintLayout(dialogLayout, -2, -2);
-            setPosition(SAMPUIElement.PositionType.CENTER, 0, 0);
-            dialogLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda0
-                @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-                public final void onGlobalLayout() {
-                    DialogWithdraw.lambda$0$0(DialogWithdraw.this);
-                }
-            });
-            bind.infoText.setText(info);
-            bind.infoText.setMovementMethod(new ScrollingMovementMethod());
-            bind.caption.setText(caption);
-            setVisibility(true);
-            SpannableString spannableString = leftButtonText;
-            if (spannableString.length() == 0) {
-                bind.buttons.button1.setVisibility(8);
-            } else {
-                bind.buttons.tvAccept.setText(spannableString);
-                bind.buttons.button1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda1
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        DialogWithdraw.lambda$0$1(targetActivity, this, i2, view);
-                    }
-                });
+        if (MapperKt.isJsonValid(hintInput) && !Intrinsics.areEqual(hintInput, AbstractJsonLexerKt.NULL) && !Intrinsics.areEqual(hintInput, "{}") && hintInput.length() != 0) {
+            obj = MapperKt.getGson().fromJson(hintInput, (Class<Object>) DialogWithdrawLimit.class);
+        }
+        this.limits = (DialogWithdrawLimit) obj;
+        Intrinsics.checkNotNullExpressionValue(dialogLayout, "dialogLayout");
+        addViewToConstraintLayout(dialogLayout, -2, -2);
+        setPosition(SAMPUIElement.PositionType.CENTER, 0, 0);
+        dialogLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda0
+            @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+            public final void onGlobalLayout() {
+                DialogWithdraw.lambda$0$0(DialogWithdraw.this);
             }
-            SpannableString spannableString2 = rightButtonText;
-            if (spannableString2.length() == 0) {
-                bind.buttons.button2.setVisibility(8);
-            } else {
-                bind.buttons.tvCancel.setText(spannableString2);
-                bind.buttons.button2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda2
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        DialogWithdraw.lambda$0$2(targetActivity, this, i2, view);
-                    }
-                });
-            }
-            bind.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda3
+        });
+        bind.infoText.setText(info);
+        bind.infoText.setMovementMethod(new ScrollingMovementMethod());
+        bind.caption.setText(caption);
+        setVisibility(true);
+        SpannableString spannableString = leftButtonText;
+        if (spannableString.length() == 0) {
+            bind.buttons.button1.setVisibility(8);
+        } else {
+            bind.buttons.tvAccept.setText(spannableString);
+            bind.buttons.button1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogWithdraw.lambda$0$3(targetActivity, this, i2, view);
+                    DialogWithdraw.lambda$0$1(targetActivity, this, i2, view);
                 }
             });
-            bind.etK.setFilters(new InputFilter[]{new DecimalMaxValueFilter(FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, 0, 0, 7, null), new InputFilter.LengthFilter(7)});
-            setupListeners();
-            ViewCompat.setOnApplyWindowInsetsListener(bind.getRoot(), new OnApplyWindowInsetsListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda4
-                @Override // androidx.core.view.OnApplyWindowInsetsListener
-                public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-                    return DialogWithdraw._init_$lambda$1(DialogWithdraw.this, view, windowInsetsCompat);
-                }
-            });
-            return;
         }
-        throw new JsonParseException("Json is not valid");
+        SpannableString spannableString2 = rightButtonText;
+        if (spannableString2.length() == 0) {
+            bind.buttons.button2.setVisibility(8);
+        } else {
+            bind.buttons.tvCancel.setText(spannableString2);
+            bind.buttons.button2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda2
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    DialogWithdraw.lambda$0$2(targetActivity, this, i2, view);
+                }
+            });
+        }
+        bind.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda3
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                DialogWithdraw.lambda$0$3(targetActivity, this, i2, view);
+            }
+        });
+        bind.etK.setFilters(new InputFilter[]{new DecimalMaxValueFilter(FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, 0, 0, 7, null), new InputFilter.LengthFilter(7)});
+        setupListeners();
+        ViewCompat.setOnApplyWindowInsetsListener(bind.getRoot(), new OnApplyWindowInsetsListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda4
+            @Override // androidx.core.view.OnApplyWindowInsetsListener
+            public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+                return DialogWithdraw._init_$lambda$1(DialogWithdraw.this, view, windowInsetsCompat);
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -466,25 +465,34 @@ public final class DialogWithdraw extends AbstractDialog {
                 }
                 return;
             }
-            return;
-        }
-        Integer intOrNull = StringsKt.toIntOrNull(editText.getText().toString());
-        if (intOrNull != null) {
-            intOrNull.intValue();
-            if (intOrNull.intValue() < i) {
-                editText.setText("0");
-                Job job3 = this.plusJob;
-                if (job3 != null) {
-                    Job.DefaultImpls.cancel$default(job3, (CancellationException) null, 1, (Object) null);
+        } else {
+            Integer intOrNull = StringsKt.toIntOrNull(editText.getText().toString());
+            if (intOrNull != null) {
+                intOrNull.intValue();
+                if (intOrNull.intValue() < i) {
+                    editText.setText("0");
+                    Job job3 = this.plusJob;
+                    if (job3 != null) {
+                        Job.DefaultImpls.cancel$default(job3, (CancellationException) null, 1, (Object) null);
+                    }
+                    Job job4 = this.minusJob;
+                    if (job4 != null) {
+                        Job.DefaultImpls.cancel$default(job4, (CancellationException) null, 1, (Object) null);
+                        return;
+                    }
+                    return;
+                } else if (intOrNull.intValue() > 0) {
+                    editText.setText(String.valueOf(intOrNull.intValue() - i));
+                    return;
+                } else {
+                    return;
                 }
-                Job job4 = this.minusJob;
-                if (job4 != null) {
-                    Job.DefaultImpls.cancel$default(job4, (CancellationException) null, 1, (Object) null);
-                }
-            } else if (intOrNull.intValue() > 0) {
-                editText.setText(String.valueOf(intOrNull.intValue() - i));
             }
         }
+        StringCompanionObject stringCompanionObject3 = StringCompanionObject.INSTANCE;
+        String format3 = String.format(Locale.US, "%.3f", Arrays.copyOf(new Object[]{Float.valueOf(i)}, 1));
+        Intrinsics.checkNotNullExpressionValue(format3, "format(...)");
+        editText.setText(format3);
     }
 
     static /* synthetic */ void plusOne$default(DialogWithdraw dialogWithdraw, EditText editText, int i, boolean z, int i2, Object obj) {
@@ -501,64 +509,52 @@ public final class DialogWithdraw extends AbstractDialog {
     public final void plusOne(EditText editText, int i, boolean z) {
         if (z) {
             Float floatOrNull = StringsKt.toFloatOrNull(editText.getText().toString());
-            if (floatOrNull != null) {
-                floatOrNull.floatValue();
-                float f = i;
-                if (floatOrNull.floatValue() + f > 999.999d) {
+            float floatValue = floatOrNull != null ? floatOrNull.floatValue() : 0.0f;
+            float f = i + floatValue;
+            if (f <= 999.999d) {
+                if (floatValue < 999.0f) {
                     StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-                    String format = String.format(Locale.US, "%.3f", Arrays.copyOf(new Object[]{Float.valueOf(999.999f)}, 1));
+                    String format = String.format(Locale.US, "%.3f", Arrays.copyOf(new Object[]{Float.valueOf(f)}, 1));
                     Intrinsics.checkNotNullExpressionValue(format, "format(...)");
                     editText.setText(format);
-                    Job job = this.plusJob;
-                    if (job != null) {
-                        Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
-                    }
-                    Job job2 = this.minusJob;
-                    if (job2 != null) {
-                        Job.DefaultImpls.cancel$default(job2, (CancellationException) null, 1, (Object) null);
-                        return;
-                    }
-                    return;
-                } else if (floatOrNull.floatValue() < 999.0f) {
-                    float floatValue = floatOrNull.floatValue() + f;
-                    StringCompanionObject stringCompanionObject2 = StringCompanionObject.INSTANCE;
-                    String format2 = String.format(Locale.US, "%.3f", Arrays.copyOf(new Object[]{Float.valueOf(floatValue)}, 1));
-                    Intrinsics.checkNotNullExpressionValue(format2, "format(...)");
-                    editText.setText(format2);
-                    return;
-                } else {
                     return;
                 }
+                return;
             }
-            StringCompanionObject stringCompanionObject3 = StringCompanionObject.INSTANCE;
-            String format3 = String.format(Locale.US, "%.3f", Arrays.copyOf(new Object[]{Integer.valueOf(i)}, 1));
-            Intrinsics.checkNotNullExpressionValue(format3, "format(...)");
-            editText.setText(format3);
+            StringCompanionObject stringCompanionObject2 = StringCompanionObject.INSTANCE;
+            String format2 = String.format(Locale.US, "%.3f", Arrays.copyOf(new Object[]{Float.valueOf(999.999f)}, 1));
+            Intrinsics.checkNotNullExpressionValue(format2, "format(...)");
+            editText.setText(format2);
+            Job job = this.plusJob;
+            if (job != null) {
+                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            }
+            Job job2 = this.minusJob;
+            if (job2 != null) {
+                Job.DefaultImpls.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+                return;
+            }
             return;
         }
         Integer intOrNull = StringsKt.toIntOrNull(editText.getText().toString());
-        if (intOrNull != null) {
-            intOrNull.intValue();
-            if (intOrNull.intValue() + i > 999) {
-                editText.setText("999");
-                Job job3 = this.plusJob;
-                if (job3 != null) {
-                    Job.DefaultImpls.cancel$default(job3, (CancellationException) null, 1, (Object) null);
-                }
-                Job job4 = this.minusJob;
-                if (job4 != null) {
-                    Job.DefaultImpls.cancel$default(job4, (CancellationException) null, 1, (Object) null);
-                    return;
-                }
-                return;
-            } else if (intOrNull.intValue() < 999) {
-                editText.setText(String.valueOf(intOrNull.intValue() + i));
-                return;
-            } else {
+        int intValue = intOrNull != null ? intOrNull.intValue() : 0;
+        int i2 = i + intValue;
+        if (i2 <= 999) {
+            if (intValue < 999) {
+                editText.setText(String.valueOf(i2));
                 return;
             }
+            return;
         }
-        editText.setText(String.valueOf(i));
+        editText.setText("999");
+        Job job3 = this.plusJob;
+        if (job3 != null) {
+            Job.DefaultImpls.cancel$default(job3, (CancellationException) null, 1, (Object) null);
+        }
+        Job job4 = this.minusJob;
+        if (job4 != null) {
+            Job.DefaultImpls.cancel$default(job4, (CancellationException) null, 1, (Object) null);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -755,59 +751,54 @@ public final class DialogWithdraw extends AbstractDialog {
         return false;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x003e, code lost:
-        if (r3 < r8) goto L90;
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0047, code lost:
+        if (r16 < r11) goto L95;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0040, code lost:
-        r3 = r17.binding.tvError;
-        kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, "tvError");
-        r3.setVisibility(0);
-        r6 = r19;
-        android.util.Log.d(r6, "checkValidate: " + r5.getLimits().getMinForM());
-        r17.binding.tvError.setText(ru.mrlargha.commonui.utils.ui.money.MoneyElementKt.toMoneyFormattedSpannable$default(r8, false, "Минимум ", null, 5, null));
-        checkActiveButton(false);
-        r7 = 0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0080, code lost:
-        r6 = r19;
-        r3 = (r3 > r10 ? 1 : (r3 == r10 ? 0 : -1));
-        r4 = r17.binding;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0086, code lost:
-        if (r3 <= 0) goto L89;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0088, code lost:
-        r3 = r4.tvError;
-        kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, "tvError");
-        r3.setVisibility(0);
-        r7 = 0;
-        r17.binding.tvError.setText(ru.mrlargha.commonui.utils.ui.money.MoneyElementKt.toMoneyFormattedSpannable$default(r10, false, "Максимум ", null, 5, null));
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0049, code lost:
+        r6 = r21.binding.tvError;
+        kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r6, "tvError");
+        r6.setVisibility(0);
+        r6 = r23;
+        android.util.Log.d(r6, "checkValidate: " + r8.getLimits().getMinForM());
+        r21.binding.tvError.setText(ru.mrlargha.commonui.utils.ui.money.MoneyElementKt.toMoneyFormattedSpannable$default(r11, false, "Минимум ", null, 5, null));
         checkActiveButton(false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x00ac, code lost:
-        r7 = 0;
-        r3 = r4.tvError;
-        kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, "tvError");
-        r3.setVisibility(8);
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x008a, code lost:
+        r6 = r23;
+        r5 = (r16 > r13 ? 1 : (r16 == r13 ? 0 : -1));
+        r7 = r21.binding;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0090, code lost:
+        if (r5 <= 0) goto L94;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0092, code lost:
+        r5 = r7.tvError;
+        kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, "tvError");
+        r5.setVisibility(0);
+        r21.binding.tvError.setText(ru.mrlargha.commonui.utils.ui.money.MoneyElementKt.toMoneyFormattedSpannable$default(r13, false, "Максимум ", null, 5, null));
+        checkActiveButton(false);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x00b8, code lost:
+        r5 = r7.tvError;
+        kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, "tvError");
+        r5.setVisibility(8);
         checkActiveButton(true);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x0037, code lost:
-        if (r3 < r8) goto L90;
+    /* JADX WARN: Code restructure failed: missing block: B:88:0x01f5, code lost:
+        if (r5.intValue() < r9.intValue()) goto L51;
      */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r7v5 */
-    /* JADX WARN: Type inference failed for: r7v6, types: [int, boolean] */
-    /* JADX WARN: Type inference failed for: r7v7 */
-    /* JADX WARN: Type inference failed for: r7v8 */
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x003e, code lost:
+        if (r6 < r11) goto L95;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final boolean checkValidate(EditText editText, CustomCardView customCardView, CustomCardView customCardView2, int i, int i2) {
+        long j;
         String str;
         String str2;
-        ?? r7;
         Number valueOf;
-        Number valueOf2;
+        int valueOf2;
         DialogWithdrawLimitModel limits;
         DialogWithdrawLimitModel limits2;
         DialogWithdrawLimitModel limits3;
@@ -819,77 +810,86 @@ public final class DialogWithdraw extends AbstractDialog {
         long etSum = getEtSum();
         DialogWithdrawLimit dialogWithdrawLimit = this.limits;
         if (dialogWithdrawLimit != null) {
-            CustomCardView.changeValidate$default(customCardView, checkIsZero(editText), 0.0f, 2, null);
-            long minMoney = dialogWithdrawLimit.getLimits().getMinMoney();
-            long maxMoney = dialogWithdrawLimit.getLimits().getMaxMoney();
-            if (i == 0) {
-                str = "TAG";
-            } else {
-                str = "TAG";
-            }
-            if (getEtSum() < dialogWithdrawLimit.getLimits().getMinMoney()) {
-                checkActiveButton(r7);
-            }
-            long j = 0;
-            if (i == 0) {
-                Double doubleOrNull = StringsKt.toDoubleOrNull(editText.getText().toString());
-                valueOf = Double.valueOf(doubleOrNull != null ? doubleOrNull.doubleValue() : FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
-            } else {
-                Long longOrNull = StringsKt.toLongOrNull(editText.getText().toString());
-                valueOf = Long.valueOf(longOrNull != null ? longOrNull.longValue() : 0L);
-            }
-            if (i == 0) {
-                DialogWithdrawLimit dialogWithdrawLimit2 = this.limits;
-                valueOf2 = (dialogWithdrawLimit2 == null || (limits = dialogWithdrawLimit2.getLimits()) == null) ? Integer.valueOf((int) r7) : Double.valueOf(limits.getMinForK());
-            } else {
-                DialogWithdrawLimit dialogWithdrawLimit3 = this.limits;
-                if (i == 1) {
-                    if (dialogWithdrawLimit3 != null && (limits6 = dialogWithdrawLimit3.getLimits()) != null) {
-                        limits6.setCurrentKK(valueOf.longValue());
-                    }
-                    DialogWithdrawLimit dialogWithdrawLimit4 = this.limits;
-                    valueOf2 = Long.valueOf((dialogWithdrawLimit4 == null || (limits5 = dialogWithdrawLimit4.getLimits()) == null) ? 0L : limits5.getMinForKK());
+            try {
+                CustomCardView.changeValidate$default(customCardView, checkIsZero(editText), 0.0f, 2, null);
+                long minMoney = dialogWithdrawLimit.getLimits().getMinMoney();
+                long maxMoney = dialogWithdrawLimit.getLimits().getMaxMoney();
+                if (i == 0) {
+                    str = "TAG";
+                    j = etSum;
                 } else {
-                    if (dialogWithdrawLimit3 != null && (limits8 = dialogWithdrawLimit3.getLimits()) != null) {
-                        limits8.setCurrentM(valueOf.longValue());
+                    j = etSum;
+                    str = "TAG";
+                }
+                if (getEtSum() < dialogWithdrawLimit.getLimits().getMinMoney()) {
+                    checkActiveButton(false);
+                }
+                long j2 = 0;
+                if (i == 0) {
+                    Double doubleOrNull = StringsKt.toDoubleOrNull(editText.getText().toString());
+                    valueOf = Double.valueOf(doubleOrNull != null ? doubleOrNull.doubleValue() : FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
+                } else {
+                    Long longOrNull = StringsKt.toLongOrNull(editText.getText().toString());
+                    valueOf = Long.valueOf(longOrNull != null ? longOrNull.longValue() : 0L);
+                }
+                if (i == 0) {
+                    DialogWithdrawLimit dialogWithdrawLimit2 = this.limits;
+                    valueOf2 = (dialogWithdrawLimit2 == null || (limits = dialogWithdrawLimit2.getLimits()) == null) ? 0 : Double.valueOf(limits.getMinForK());
+                } else {
+                    DialogWithdrawLimit dialogWithdrawLimit3 = this.limits;
+                    if (i == 1) {
+                        if (dialogWithdrawLimit3 != null && (limits6 = dialogWithdrawLimit3.getLimits()) != null) {
+                            limits6.setCurrentKK(valueOf.longValue());
+                        }
+                        DialogWithdrawLimit dialogWithdrawLimit4 = this.limits;
+                        valueOf2 = Long.valueOf((dialogWithdrawLimit4 == null || (limits5 = dialogWithdrawLimit4.getLimits()) == null) ? 0L : limits5.getMinForKK());
+                    } else {
+                        if (dialogWithdrawLimit3 != null && (limits8 = dialogWithdrawLimit3.getLimits()) != null) {
+                            limits8.setCurrentM(valueOf.longValue());
+                        }
+                        DialogWithdrawLimit dialogWithdrawLimit5 = this.limits;
+                        valueOf2 = Long.valueOf((dialogWithdrawLimit5 == null || (limits7 = dialogWithdrawLimit5.getLimits()) == null) ? 0L : limits7.getMinForM());
                     }
-                    DialogWithdrawLimit dialogWithdrawLimit5 = this.limits;
-                    valueOf2 = Long.valueOf((dialogWithdrawLimit5 == null || (limits7 = dialogWithdrawLimit5.getLimits()) == null) ? 0L : limits7.getMinForM());
                 }
-            }
-            if (i == 0) {
-                DialogWithdrawLimit dialogWithdrawLimit6 = this.limits;
-                if (dialogWithdrawLimit6 != null && (limits2 = dialogWithdrawLimit6.getLimits()) != null) {
-                    j = limits2.getMaxForK();
-                }
-            } else {
-                DialogWithdrawLimit dialogWithdrawLimit7 = this.limits;
-                if (i != 1) {
-                    if (dialogWithdrawLimit7 != null && (limits4 = dialogWithdrawLimit7.getLimits()) != null) {
-                        j = limits4.getMaxForM();
+                if (i == 0) {
+                    DialogWithdrawLimit dialogWithdrawLimit6 = this.limits;
+                    if (dialogWithdrawLimit6 != null && (limits2 = dialogWithdrawLimit6.getLimits()) != null) {
+                        j2 = limits2.getMaxForK();
                     }
-                } else if (dialogWithdrawLimit7 != null && (limits3 = dialogWithdrawLimit7.getLimits()) != null) {
-                    j = limits3.getMaxForKK();
+                } else {
+                    DialogWithdrawLimit dialogWithdrawLimit7 = this.limits;
+                    if (i != 1) {
+                        if (dialogWithdrawLimit7 != null && (limits4 = dialogWithdrawLimit7.getLimits()) != null) {
+                            j2 = limits4.getMaxForM();
+                        }
+                    } else if (dialogWithdrawLimit7 != null && (limits3 = dialogWithdrawLimit7.getLimits()) != null) {
+                        j2 = limits3.getMaxForKK();
+                    }
                 }
-            }
-            if (i == 0) {
-                StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-                String format = String.format(Locale.US, "%.3f", Arrays.copyOf(new Object[]{valueOf}, 1));
-                Intrinsics.checkNotNullExpressionValue(format, "format(...)");
-                editText.setText(format);
-            }
-            if (i != 0 ? valueOf.intValue() < valueOf2.intValue() : valueOf.doubleValue() < valueOf2.doubleValue()) {
-                Log.d(str2, "getMinForK: " + valueOf2.doubleValue() + " " + valueOf + " ");
-                customCardView2.setBorder(SupportMenu.CATEGORY_MASK);
-                return r7;
-            } else if (valueOf.longValue() > j) {
-                customCardView2.setBorder(SupportMenu.CATEGORY_MASK);
-                return r7;
-            } else {
-                customCardView2.setBorder(Color.parseColor("#33FFFFFF"));
-                return true;
+                if (i == 0) {
+                    StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
+                    String format = String.format(Locale.US, "%.3f", Arrays.copyOf(new Object[]{valueOf}, 1));
+                    Intrinsics.checkNotNullExpressionValue(format, "format(...)");
+                    editText.setText(format);
+                }
+                if (i == 0) {
+                    if (valueOf.doubleValue() < valueOf2.doubleValue()) {
+                        Log.d(str2, "getMinForK: " + valueOf2.doubleValue() + " " + valueOf + " ");
+                        customCardView2.setBorder(SupportMenu.CATEGORY_MASK);
+                        return false;
+                    }
+                    if (valueOf.longValue() > j2) {
+                        customCardView2.setBorder(SupportMenu.CATEGORY_MASK);
+                        return false;
+                    }
+                    customCardView2.setBorder(Color.parseColor("#33FFFFFF"));
+                    return true;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
+        checkActiveButton(true);
         return true;
     }
 

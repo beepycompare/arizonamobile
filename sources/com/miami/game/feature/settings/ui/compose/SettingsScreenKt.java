@@ -342,7 +342,7 @@ public final class SettingsScreenKt {
         Intrinsics.checkNotNullParameter(onStreamer, "onStreamer");
         Intrinsics.checkNotNullParameter(onNotification, "onNotification");
         Composer startRestartGroup = composer.startRestartGroup(2102340413);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SettingsScreen)N(uiState,onRepairGame,onBackClick,onFontSize,onPageSize,onFullScreen,onShowFPS,onUpdatedGraphics,onShowChatTime,onAmbientSounds,onBugsReport,onShareLogs,onLongShareLogs,onPrivacyPolicy,onTech,onKeyboard,onStreamer,onNotification)125@4718L282,242@9755L246,135@5020L4713,119@4551L5451:SettingsScreen.kt#1gr92h");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SettingsScreen)N(uiState,onRepairGame,onBackClick,onFontSize,onPageSize,onFullScreen,onShowFPS,onUpdatedGraphics,onShowChatTime,onAmbientSounds,onBugsReport,onShareLogs,onLongShareLogs,onPrivacyPolicy,onTech,onKeyboard,onStreamer,onNotification)125@4718L282,246@9977L246,135@5020L4935,119@4551L5673:SettingsScreen.kt#1gr92h");
         if ((i & 6) == 0) {
             i3 = i | (startRestartGroup.changed(uiState) ? 4 : 2);
         } else {
@@ -459,7 +459,7 @@ public final class SettingsScreenKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SettingsScreen$lambda$2(SettingsUiState settingsUiState, Function1 function1, Function1 function12, Function0 function0, Function0 function02, Function0 function03, Function0 function04, Function0 function05, Function0 function06, Function0 function07, PaddingValues padding, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(padding, "padding");
-        ComposerKt.sourceInformation(composer, "CN(padding)137@5046L189,145@5249L4474:SettingsScreen.kt#1gr92h");
+        ComposerKt.sourceInformation(composer, "CN(padding)137@5046L189,145@5249L4696:SettingsScreen.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
@@ -493,7 +493,7 @@ public final class SettingsScreenKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, -1679091173, "C153@5549L21,154@5587L4122:SettingsScreen.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(composer, -1679084291, "C153@5549L21,154@5587L4344:SettingsScreen.kt#1gr92h");
             ScrollState rememberScrollState = ScrollKt.rememberScrollState(0, composer, 0, 1);
             float f = 68;
             float f2 = 8;
@@ -524,7 +524,7 @@ public final class SettingsScreenKt {
             Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, -512117141, "C169@6160L36,166@6035L3656:SettingsScreen.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(composer, -512110259, "C169@6160L36,166@6035L3878:SettingsScreen.kt#1gr92h");
             Modifier verticalScroll$default = ScrollKt.verticalScroll$default(ScrollBarKt.fadingTopBottomEdgesSimplified$default(ScrollBarKt.m9082verticalColumnScrollbarosbwsH8(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), rememberScrollState, 0.0f, false, 0.0f, 0.0f, composer, 6, 30), rememberScrollState, 0.0f, 0.0f, 6, null), rememberScrollState, false, null, false, 14, null);
             ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy2 = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(-Dp.m7555constructorimpl(4))), Alignment.Companion.getStart(), composer, 6);
@@ -551,7 +551,7 @@ public final class SettingsScreenKt {
             Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance2 = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, -1178197320, "C175@6452L40,176@6517L802,193@7344L2259,237@9628L41:SettingsScreen.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(composer, -1178190438, "C175@6452L40,176@6517L802,193@7344L2481,241@9850L41:SettingsScreen.kt#1gr92h");
             SpacerKt.Spacer(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(f2)), composer, 6);
             Modifier width = IntrinsicKt.width(Modifier.Companion, IntrinsicSize.Max);
             float f3 = 12;
@@ -615,7 +615,7 @@ public final class SettingsScreenKt {
             Updater.m4049setimpl(m4041constructorimpl5, materializeModifier5, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 867726177, "C196@7485L1033,216@8547L1030:SettingsScreen.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(composer, 867733059, "C196@7485L1144,218@8658L1141:SettingsScreen.kt#1gr92h");
             ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy4 = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(f2)), Alignment.Companion.getStart(), composer, 6);
             ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -641,10 +641,18 @@ public final class SettingsScreenKt {
             Updater.m4049setimpl(m4041constructorimpl6, materializeModifier6, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance4 = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, -1719022970, "C200@7691L237,205@7961L248,210@8242L246:SettingsScreen.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(composer, -1719019529, "C200@7691L237,205@7961L248:SettingsScreen.kt#1gr92h");
             SwitchButtonKt.SwitchButton("ПОЛНЫЙ ЭКРАН", function02, settingsUiState.getSettingState().getFullScreen(), composer, 6);
             SwitchButtonKt.SwitchButton("ДАТА И ВРЕМЯ В ЧАТЕ", function03, settingsUiState.getSettingState().getShowChatTime(), composer, 6);
-            SwitchButtonKt.SwitchButton("ЗВУКИ ОКРУЖЕНИЯ", function04, settingsUiState.getSettingState().getAmbientSounds(), composer, 6);
+            if (settingsUiState.isArizona()) {
+                composer.startReplaceGroup(-1718432452);
+                ComposerKt.sourceInformation(composer, "211@8303L262");
+                SwitchButtonKt.SwitchButton("ЗВУКИ ОКРУЖЕНИЯ", function04, settingsUiState.getSettingState().getAmbientSounds(), composer, 6);
+                composer.endReplaceGroup();
+            } else {
+                composer.startReplaceGroup(-1718146942);
+                composer.endReplaceGroup();
+            }
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();
@@ -676,10 +684,18 @@ public final class SettingsScreenKt {
             Updater.m4049setimpl(m4041constructorimpl7, materializeModifier7, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance5 = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 1238728928, "C220@8753L241,225@9027L233,230@9293L254:SettingsScreen.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(composer, 1238732369, "C222@8864L241,227@9138L233:SettingsScreen.kt#1gr92h");
             SwitchButtonKt.SwitchButton("УВЕДОМЛЕНИЯ", function05, settingsUiState.getSettingState().getNotifications(), composer, 6);
             SwitchButtonKt.SwitchButton("ОТОБРАЖАТЬ FPS", function06, settingsUiState.getSettingState().getShowFps(), composer, 6);
-            SwitchButtonKt.SwitchButton("ОБНОВЛЕННАЯ ГРАФИКА", function07, settingsUiState.getSettingState().getUpdatedGraphics(), composer, 6);
+            if (settingsUiState.isArizona()) {
+                composer.startReplaceGroup(1239308875);
+                ComposerKt.sourceInformation(composer, "233@9465L270");
+                SwitchButtonKt.SwitchButton("ОБНОВЛЕННАЯ ГРАФИКА", function07, settingsUiState.getSettingState().getUpdatedGraphics(), composer, 6);
+                composer.endReplaceGroup();
+            } else {
+                composer.startReplaceGroup(1239602073);
+                composer.endReplaceGroup();
+            }
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();
@@ -720,12 +736,12 @@ public final class SettingsScreenKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SettingsScreen$lambda$1(Function0 function0, Function0 function02, Function0 function03, Function0 function04, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C243@9769L222:SettingsScreen.kt#1gr92h");
+        ComposerKt.sourceInformation(composer, "C247@9991L222:SettingsScreen.kt#1gr92h");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1676831810, i, -1, "com.miami.game.feature.settings.ui.compose.SettingsScreen.<anonymous> (SettingsScreen.kt:243)");
+                ComposerKt.traceEventStart(1676831810, i, -1, "com.miami.game.feature.settings.ui.compose.SettingsScreen.<anonymous> (SettingsScreen.kt:247)");
             }
             SettingsBottomBarKt.SettingsBottomBar(function0, function02, function03, function04, composer, 0);
             if (ComposerKt.isTraceInProgress()) {
@@ -738,7 +754,7 @@ public final class SettingsScreenKt {
     public static final void BackgroundImage(final int i, Composer composer, final int i2) {
         int i3;
         Composer startRestartGroup = composer.startRestartGroup(-1060762892);
-        ComposerKt.sourceInformation(startRestartGroup, "C(BackgroundImage)N(backGroundId)256@10140L56,254@10072L208:SettingsScreen.kt#1gr92h");
+        ComposerKt.sourceInformation(startRestartGroup, "C(BackgroundImage)N(backGroundId)260@10362L56,258@10294L208:SettingsScreen.kt#1gr92h");
         if ((i2 & 6) == 0) {
             i3 = (startRestartGroup.changed(i) ? 4 : 2) | i2;
         } else {
@@ -748,7 +764,7 @@ public final class SettingsScreenKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1060762892, i3, -1, "com.miami.game.feature.settings.ui.compose.BackgroundImage (SettingsScreen.kt:253)");
+                ComposerKt.traceEventStart(-1060762892, i3, -1, "com.miami.game.feature.settings.ui.compose.BackgroundImage (SettingsScreen.kt:257)");
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(i, startRestartGroup, i3 & 14), (String) null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getCrop(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {

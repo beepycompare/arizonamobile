@@ -24,12 +24,13 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BackgroundManager.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.design.system.component.background.LauncherBackgroundWriter$syncRemoteAndUpdate$1", f = "BackgroundManager.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {248}, m = "invokeSuspend", n = {"$this$launch", "remotePath", "remoteFileName", "currentFileName", "dir", "currentFile", "fullUrl", TypedValues.AttributesType.S_TARGET, "tmp", "bmp", "downloaded"}, nl = {249}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "Z$0"}, v = 2)
+@DebugMetadata(c = "com.miami.game.core.design.system.component.background.LauncherBackgroundWriter$syncRemoteAndUpdate$1", f = "BackgroundManager.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {250}, m = "invokeSuspend", n = {"$this$launch", "key", "remotePath", "remoteFileName", "currentFileName", "dir", "currentFile", "fullUrl", TypedValues.AttributesType.S_TARGET, "tmp", "bmp", "downloaded"}, nl = {251}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0"}, v = 2)
 /* loaded from: classes4.dex */
 public final class LauncherBackgroundWriter$syncRemoteAndUpdate$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $maxSidePx;
     private /* synthetic */ Object L$0;
     Object L$1;
+    Object L$10;
     Object L$2;
     Object L$3;
     Object L$4;
@@ -61,15 +62,16 @@ public final class LauncherBackgroundWriter$syncRemoteAndUpdate$1 extends Suspen
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0350  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0351 A[Catch: all -> 0x040e, TryCatch #4 {all -> 0x040e, blocks: (B:25:0x00f4, B:27:0x015a, B:29:0x0160, B:31:0x0168, B:33:0x0170, B:75:0x0349, B:82:0x0376, B:84:0x037e, B:86:0x0386, B:78:0x0351, B:80:0x035c, B:81:0x0372, B:74:0x033f), top: B:111:0x00f4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x037e A[Catch: all -> 0x040e, TryCatch #4 {all -> 0x040e, blocks: (B:25:0x00f4, B:27:0x015a, B:29:0x0160, B:31:0x0168, B:33:0x0170, B:75:0x0349, B:82:0x0376, B:84:0x037e, B:86:0x0386, B:78:0x0351, B:80:0x035c, B:81:0x0372, B:74:0x033f), top: B:111:0x00f4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0386 A[Catch: all -> 0x040e, TRY_LEAVE, TryCatch #4 {all -> 0x040e, blocks: (B:25:0x00f4, B:27:0x015a, B:29:0x0160, B:31:0x0168, B:33:0x0170, B:75:0x0349, B:82:0x0376, B:84:0x037e, B:86:0x0386, B:78:0x0351, B:80:0x035c, B:81:0x0372, B:74:0x033f), top: B:111:0x00f4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x035f  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0360 A[Catch: all -> 0x0423, TryCatch #1 {all -> 0x0423, blocks: (B:29:0x0103, B:31:0x0169, B:33:0x016f, B:35:0x0177, B:37:0x017f, B:79:0x0358, B:86:0x0385, B:88:0x038d, B:90:0x0395, B:82:0x0360, B:84:0x036b, B:85:0x0381, B:78:0x034e), top: B:111:0x0103 }] */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x038d A[Catch: all -> 0x0423, TryCatch #1 {all -> 0x0423, blocks: (B:29:0x0103, B:31:0x0169, B:33:0x016f, B:35:0x0177, B:37:0x017f, B:79:0x0358, B:86:0x0385, B:88:0x038d, B:90:0x0395, B:82:0x0360, B:84:0x036b, B:85:0x0381, B:78:0x034e), top: B:111:0x0103 }] */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0395 A[Catch: all -> 0x0423, TRY_LEAVE, TryCatch #1 {all -> 0x0423, blocks: (B:29:0x0103, B:31:0x0169, B:33:0x016f, B:35:0x0177, B:37:0x017f, B:79:0x0358, B:86:0x0385, B:88:0x038d, B:90:0x0395, B:82:0x0360, B:84:0x036b, B:85:0x0381, B:78:0x034e), top: B:111:0x0103 }] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
+        boolean z;
         String buildLocalFileName;
         SharedPreferences sharedPreferences;
         File ensureDir;
@@ -91,7 +93,10 @@ public final class LauncherBackgroundWriter$syncRemoteAndUpdate$1 extends Suspen
                 ResultKt.throwOnFailure(obj);
                 Log.d("LauncherBgWriter", "syncRemoteAndUpdate: start");
                 LauncherBackgroundWriter.INSTANCE.ensureDefaultExists();
-                String string = LauncherBackgroundWriter.INSTANCE.getRemoteConfigProvider().getString("launcher_background");
+                z = LauncherBackgroundWriter.isArizona;
+                String str2 = z ? "launcher_background" : "launcher_background_rodina";
+                String string = LauncherBackgroundWriter.INSTANCE.getRemoteConfigProvider().getString(str2);
+                String str3 = str2;
                 Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
                 String obj2 = StringsKt.trim((CharSequence) string).toString();
                 Log.d("LauncherBgWriter", "syncRemoteAndUpdate: remotePath=[" + obj2 + "]");
@@ -190,15 +195,16 @@ public final class LauncherBackgroundWriter$syncRemoteAndUpdate$1 extends Suspen
                                             LauncherBackgroundWriter launcherBackgroundWriter = LauncherBackgroundWriter.INSTANCE;
                                             ImageBitmap asImageBitmap = decodeBitmapSafe != null ? AndroidImageBitmap_androidKt.asImageBitmap(decodeBitmapSafe) : null;
                                             this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
-                                            this.L$1 = SpillingKt.nullOutSpilledVariable(obj2);
-                                            this.L$2 = SpillingKt.nullOutSpilledVariable(buildLocalFileName);
-                                            this.L$3 = SpillingKt.nullOutSpilledVariable(string2);
-                                            this.L$4 = SpillingKt.nullOutSpilledVariable(str);
-                                            this.L$5 = SpillingKt.nullOutSpilledVariable(file);
-                                            this.L$6 = SpillingKt.nullOutSpilledVariable(buildRemoteUrl);
-                                            this.L$7 = SpillingKt.nullOutSpilledVariable(file2);
-                                            this.L$8 = SpillingKt.nullOutSpilledVariable(file3);
-                                            this.L$9 = SpillingKt.nullOutSpilledVariable(decodeBitmapSafe);
+                                            this.L$1 = SpillingKt.nullOutSpilledVariable(str3);
+                                            this.L$2 = SpillingKt.nullOutSpilledVariable(obj2);
+                                            this.L$3 = SpillingKt.nullOutSpilledVariable(buildLocalFileName);
+                                            this.L$4 = SpillingKt.nullOutSpilledVariable(string2);
+                                            this.L$5 = SpillingKt.nullOutSpilledVariable(str);
+                                            this.L$6 = SpillingKt.nullOutSpilledVariable(file);
+                                            this.L$7 = SpillingKt.nullOutSpilledVariable(buildRemoteUrl);
+                                            this.L$8 = SpillingKt.nullOutSpilledVariable(file2);
+                                            this.L$9 = SpillingKt.nullOutSpilledVariable(file3);
+                                            this.L$10 = SpillingKt.nullOutSpilledVariable(decodeBitmapSafe);
                                             this.Z$0 = booleanValue;
                                             this.label = 1;
                                             emitNew = launcherBackgroundWriter.emitNew(file2, asImageBitmap, this);
@@ -234,15 +240,16 @@ public final class LauncherBackgroundWriter$syncRemoteAndUpdate$1 extends Suspen
             } else if (i != 1) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             } else {
-                Bitmap bitmap = (Bitmap) this.L$9;
-                File file5 = (File) this.L$8;
-                File file6 = (File) this.L$7;
-                String str2 = (String) this.L$6;
-                File file7 = (File) this.L$5;
-                File file8 = (File) this.L$4;
-                String str3 = (String) this.L$3;
-                String str4 = (String) this.L$2;
-                String str5 = (String) this.L$1;
+                Bitmap bitmap = (Bitmap) this.L$10;
+                File file5 = (File) this.L$9;
+                File file6 = (File) this.L$8;
+                String str4 = (String) this.L$7;
+                File file7 = (File) this.L$6;
+                File file8 = (File) this.L$5;
+                String str5 = (String) this.L$4;
+                String str6 = (String) this.L$3;
+                String str7 = (String) this.L$2;
+                String str8 = (String) this.L$1;
                 ResultKt.throwOnFailure(obj);
             }
         } catch (Throwable th5) {
