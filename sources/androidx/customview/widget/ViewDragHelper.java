@@ -453,7 +453,7 @@ public class ViewDragHelper {
     }
 
     public boolean isPointerDown(int i) {
-        return ((1 << i) & this.mPointersDown) != 0;
+        return (this.mPointersDown & (1 << i)) != 0;
     }
 
     void setDragState(int i) {
@@ -720,7 +720,7 @@ public class ViewDragHelper {
     /* JADX WARN: Type inference failed for: r0v14 */
     /* JADX WARN: Type inference failed for: r0v15 */
     /* JADX WARN: Type inference failed for: r0v4, types: [int] */
-    /* JADX WARN: Type inference failed for: r3v3, types: [androidx.customview.widget.ViewDragHelper$Callback] */
+    /* JADX WARN: Type inference failed for: r2v1, types: [androidx.customview.widget.ViewDragHelper$Callback] */
     private void reportNewEdgeDrags(float f, float f2, int i) {
         boolean checkNewEdgeDrag = checkNewEdgeDrag(f, f2, i, 1);
         boolean z = checkNewEdgeDrag;
@@ -809,7 +809,7 @@ public class ViewDragHelper {
     }
 
     public boolean isEdgeTouched(int i, int i2) {
-        return isPointerDown(i2) && (i & this.mInitialEdgesTouched[i2]) != 0;
+        return isPointerDown(i2) && (this.mInitialEdgesTouched[i2] & i) != 0;
     }
 
     private void releaseViewForPointerUp() {

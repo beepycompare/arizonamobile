@@ -50,7 +50,7 @@ public final class CustomDividerKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-2147212628, i3, -1, "com.miami.game.core.design.system.component.other.CustomDivider (CustomDivider.kt:15)");
             }
-            BoxKt.Box(BackgroundKt.background$default(SizeKt.m850height3ABfNKs(SizeKt.fillMaxWidth(companion, 0.8f), Dp.m7555constructorimpl(1)), Brush.Companion.m4719horizontalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU()), Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.3f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), null, 0.0f, 6, null), startRestartGroup, 0);
+            BoxKt.Box(BackgroundKt.background$default(SizeKt.m850height3ABfNKs(SizeKt.fillMaxWidth(companion, 0.8f), Dp.m7555constructorimpl(1.0f)), Brush.Companion.m4719horizontalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU()), Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.3f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), null, 0.0f, 6, null), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

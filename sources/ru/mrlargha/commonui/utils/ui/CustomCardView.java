@@ -297,7 +297,7 @@ public final class CustomCardView extends FrameLayout {
     protected void onDraw(Canvas canvas) {
         RectF rectF;
         Intrinsics.checkNotNullParameter(canvas, "canvas");
-        float f = this.borderWidth / 3;
+        float f = this.borderWidth / 3.0f;
         if (this.hasBorder) {
             rectF = new RectF(f, f, getWidth() - f, getHeight() - f);
         } else {
@@ -318,8 +318,7 @@ public final class CustomCardView extends FrameLayout {
         setBorderGradient(paint);
         Path path = this.path;
         float f3 = this.borderWidth;
-        float f4 = 2;
-        RectF rectF2 = new RectF(f3 / f4, f3 / f4, getWidth() - (this.borderWidth / f4), getHeight() - (this.borderWidth / f4));
+        RectF rectF2 = new RectF(f3 / 2.0f, f3 / 2.0f, getWidth() - (this.borderWidth / 2.0f), getHeight() - (this.borderWidth / 2.0f));
         path.reset();
         path.addRoundRect(rectF2, this.radii, Path.Direction.CW);
         canvas.drawPath(path, paint);

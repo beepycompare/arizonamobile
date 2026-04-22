@@ -249,7 +249,7 @@ public final class RoundedPolygonKt {
         int i3 = 0;
         while (i2 < i) {
             float f4 = f;
-            long m8110plusybeJwSQ = PointKt.m8110plusybeJwSQ(Utils.m8141radialToCartesianL6JJ3z0$default(f4, (Utils.getFloatPi() / i) * 2 * i2, 0L, 4, null), FloatFloatPair.m12constructorimpl(f2, f3));
+            long m8110plusybeJwSQ = PointKt.m8110plusybeJwSQ(Utils.m8141radialToCartesianL6JJ3z0$default(f4, (Utils.getFloatPi() / i) * 2.0f * i2, 0L, 4, null), FloatFloatPair.m12constructorimpl(f2, f3));
             int i4 = i3 + 1;
             fArr[i3] = PointKt.m8106getXDnnuFBc(m8110plusybeJwSQ);
             i3 += 2;

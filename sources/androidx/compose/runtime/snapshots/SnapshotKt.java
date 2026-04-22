@@ -71,11 +71,10 @@ public final class SnapshotKt {
 
     static {
         openSnapshots = SnapshotIdSet.Companion.getEMPTY();
-        long j = 1;
-        nextSnapshotId = SnapshotId_jvmKt.toSnapshotId(1) + j;
-        long j2 = nextSnapshotId;
-        nextSnapshotId = j + j2;
-        GlobalSnapshot globalSnapshot2 = new GlobalSnapshot(j2, SnapshotIdSet.Companion.getEMPTY());
+        nextSnapshotId = SnapshotId_jvmKt.toSnapshotId(1) + 1;
+        long j = nextSnapshotId;
+        nextSnapshotId = 1 + j;
+        GlobalSnapshot globalSnapshot2 = new GlobalSnapshot(j, SnapshotIdSet.Companion.getEMPTY());
         openSnapshots = openSnapshots.set(globalSnapshot2.getSnapshotId());
         globalSnapshot = globalSnapshot2;
         snapshotInitializer = globalSnapshot2;

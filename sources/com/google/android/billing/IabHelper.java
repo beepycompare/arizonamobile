@@ -289,10 +289,10 @@ public class IabHelper {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:45:0x017e, code lost:
-        if (r11 != null) goto L43;
+        if (r9 != null) goto L43;
      */
     /* JADX WARN: Code restructure failed: missing block: B:48:0x01ae, code lost:
-        if (r11 != null) goto L43;
+        if (r9 != null) goto L43;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

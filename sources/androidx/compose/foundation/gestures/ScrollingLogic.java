@@ -115,7 +115,7 @@ public final class ScrollingLogic implements ScrollLogic {
         if (this.orientation == Orientation.Horizontal) {
             return Offset.m4519constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
         }
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
     }
 
     /* renamed from: singleAxisOffset-MK-Hz9U  reason: not valid java name */
@@ -154,7 +154,7 @@ public final class ScrollingLogic implements ScrollLogic {
     }
 
     public final float reverseIfNeeded(float f) {
-        return this.reverseDirection ? f * (-1) : f;
+        return this.reverseDirection ? f * (-1.0f) : f;
     }
 
     /* renamed from: reverseIfNeeded-MK-Hz9U  reason: not valid java name */
@@ -242,7 +242,7 @@ public final class ScrollingLogic implements ScrollLogic {
                         try {
                             scrollingLogic$doFlingAnimation$1.L$0 = longRef2;
                             scrollingLogic$doFlingAnimation$1.label = 1;
-                            if (scroll(mutatePriority, new ScrollingLogic$doFlingAnimation$2(scrollingLogic, longRef2, j, null), scrollingLogic$doFlingAnimation$1) == coroutine_suspended) {
+                            if (scrollingLogic.scroll(mutatePriority, new ScrollingLogic$doFlingAnimation$2(scrollingLogic, longRef2, j, null), scrollingLogic$doFlingAnimation$1) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                             longRef = longRef2;

@@ -26,12 +26,15 @@ public final class DataStoreImpl$InitDataStore$doRun$initData$1$api$1<T> impleme
         this.this$0 = dataStoreImpl;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0092, code lost:
+        if (r10.lock(null, r0) == r1) goto L32;
+     */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0077  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x009b A[Catch: all -> 0x00e5, TRY_LEAVE, TryCatch #0 {all -> 0x00e5, blocks: (B:30:0x0097, B:32:0x009b, B:47:0x00d9, B:48:0x00e4), top: B:53:0x0097 }] */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00bb A[Catch: all -> 0x0057, TRY_LEAVE, TryCatch #1 {all -> 0x0057, blocks: (B:21:0x0053, B:36:0x00b3, B:38:0x00bb), top: B:54:0x0053 }] */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00d2  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00d9 A[Catch: all -> 0x00e5, TRY_ENTER, TryCatch #0 {all -> 0x00e5, blocks: (B:30:0x0097, B:32:0x009b, B:47:0x00d9, B:48:0x00e4), top: B:53:0x0097 }] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0099 A[Catch: all -> 0x00e1, TRY_LEAVE, TryCatch #0 {all -> 0x00e1, blocks: (B:29:0x0095, B:31:0x0099, B:46:0x00d5, B:47:0x00e0), top: B:52:0x0095 }] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00b9 A[Catch: all -> 0x0057, TRY_LEAVE, TryCatch #1 {all -> 0x0057, blocks: (B:21:0x0053, B:35:0x00b1, B:37:0x00b9), top: B:53:0x0053 }] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00d5 A[Catch: all -> 0x00e1, TRY_ENTER, TryCatch #0 {all -> 0x00e1, blocks: (B:29:0x0095, B:31:0x0099, B:46:0x00d5, B:47:0x00e0), top: B:52:0x0095 }] */
     @Override // androidx.datastore.core.InitializerApi
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -40,14 +43,14 @@ public final class DataStoreImpl$InitDataStore$doRun$initData$1$api$1<T> impleme
         DataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1 dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1;
         int i;
         Mutex mutex;
-        DataStoreImpl dataStoreImpl;
         Ref.BooleanRef booleanRef;
         Ref.ObjectRef<T> objectRef;
+        DataStoreImpl dataStoreImpl;
         Mutex mutex2;
         Mutex mutex3;
+        Ref.ObjectRef<T> objectRef2;
         DataStoreImpl dataStoreImpl2;
         T t;
-        Ref.ObjectRef<T> objectRef2;
         try {
             if (continuation instanceof DataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1) {
                 dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1 = (DataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1) continuation;
@@ -59,20 +62,16 @@ public final class DataStoreImpl$InitDataStore$doRun$initData$1$api$1<T> impleme
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         mutex = this.$updateLock;
-                        Ref.BooleanRef booleanRef2 = this.$initializationComplete;
-                        Ref.ObjectRef<T> objectRef3 = this.$currentData;
-                        dataStoreImpl = this.this$0;
+                        booleanRef = this.$initializationComplete;
+                        objectRef = this.$currentData;
+                        DataStoreImpl dataStoreImpl3 = (DataStoreImpl<T>) this.this$0;
                         dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$0 = function2;
                         dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$1 = mutex;
-                        dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$2 = booleanRef2;
-                        dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$3 = objectRef3;
-                        dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$4 = dataStoreImpl;
+                        dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$2 = booleanRef;
+                        dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$3 = objectRef;
+                        dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$4 = dataStoreImpl3;
                         dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.label = 1;
-                        if (mutex.lock(null, dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1) != coroutine_suspended) {
-                            booleanRef = booleanRef2;
-                            objectRef = objectRef3;
-                        }
-                        return coroutine_suspended;
+                        dataStoreImpl = dataStoreImpl3;
                     } else if (i != 1) {
                         if (i != 2) {
                             if (i == 3) {
@@ -82,8 +81,7 @@ public final class DataStoreImpl$InitDataStore$doRun$initData$1$api$1<T> impleme
                                 try {
                                     ResultKt.throwOnFailure(obj);
                                     objectRef2.element = t;
-                                    objectRef = objectRef2;
-                                    T t2 = objectRef.element;
+                                    T t2 = objectRef2.element;
                                     mutex2.unlock(null);
                                     return t2;
                                 } catch (Throwable th) {
@@ -94,30 +92,29 @@ public final class DataStoreImpl$InitDataStore$doRun$initData$1$api$1<T> impleme
                             }
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        dataStoreImpl2 = (DataStoreImpl) dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$2;
-                        objectRef = (Ref.ObjectRef) dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$1;
+                        DataStoreImpl dataStoreImpl4 = (DataStoreImpl) dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$2;
+                        objectRef2 = (Ref.ObjectRef) dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$1;
                         mutex3 = (Mutex) dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$0;
                         try {
                             ResultKt.throwOnFailure(obj);
-                            if (Intrinsics.areEqual(obj, objectRef.element)) {
+                            dataStoreImpl2 = dataStoreImpl4;
+                            if (Intrinsics.areEqual(obj, objectRef2.element)) {
                                 dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$0 = mutex3;
-                                dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$1 = objectRef;
+                                dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$1 = objectRef2;
                                 dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$2 = obj;
                                 dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.label = 3;
                                 if (dataStoreImpl2.writeData$datastore_core(obj, false, dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1) != coroutine_suspended) {
                                     t = (T) obj;
-                                    objectRef2 = objectRef;
                                     mutex2 = mutex3;
                                     objectRef2.element = t;
-                                    objectRef = objectRef2;
-                                    T t22 = objectRef.element;
+                                    T t22 = objectRef2.element;
                                     mutex2.unlock(null);
                                     return t22;
                                 }
                                 return coroutine_suspended;
                             }
                             mutex2 = mutex3;
-                            T t222 = objectRef.element;
+                            T t222 = objectRef2.element;
                             mutex2.unlock(null);
                             return t222;
                         } catch (Throwable th2) {
@@ -127,13 +124,13 @@ public final class DataStoreImpl$InitDataStore$doRun$initData$1$api$1<T> impleme
                             throw th;
                         }
                     } else {
-                        objectRef = (Ref.ObjectRef) dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$3;
                         booleanRef = (Ref.BooleanRef) dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$2;
                         Function2<? super T, ? super Continuation<? super T>, ? extends Object> function22 = (Function2) dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                        dataStoreImpl = (DataStoreImpl) dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$4;
+                        objectRef = (Ref.ObjectRef) dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$3;
                         function2 = function22;
                         mutex = (Mutex) dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$1;
+                        dataStoreImpl = (DataStoreImpl<T>) ((DataStoreImpl) dataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1.L$4);
                     }
                     if (!booleanRef.element) {
                         throw new IllegalStateException("InitializerApi.updateData should not be called after initialization is complete.".toString());
@@ -148,8 +145,9 @@ public final class DataStoreImpl$InitDataStore$doRun$initData$1$api$1<T> impleme
                     if (invoke != coroutine_suspended) {
                         mutex3 = mutex;
                         obj = invoke;
+                        objectRef2 = objectRef;
                         dataStoreImpl2 = dataStoreImpl;
-                        if (Intrinsics.areEqual(obj, objectRef.element)) {
+                        if (Intrinsics.areEqual(obj, objectRef2.element)) {
                         }
                     }
                     return coroutine_suspended;

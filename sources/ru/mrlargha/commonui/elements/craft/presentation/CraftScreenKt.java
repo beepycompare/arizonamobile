@@ -7,9 +7,8 @@ import kotlin.Metadata;
 /* loaded from: classes6.dex */
 public final class CraftScreenKt {
     public static final String craftTimeConvert(long j) {
-        long j2;
         long abs = Math.abs((j * 1000) - System.currentTimeMillis());
         TimeUnit.MILLISECONDS.toDays(abs);
-        return (TimeUnit.MILLISECONDS.toHours(abs) % 24) + " ч. " + (TimeUnit.MILLISECONDS.toMinutes(abs) % 60) + " м. " + (TimeUnit.MILLISECONDS.toSeconds(abs) % j2) + " c.";
+        return (TimeUnit.MILLISECONDS.toHours(abs) % 24) + " ч. " + (TimeUnit.MILLISECONDS.toMinutes(abs) % 60) + " м. " + (TimeUnit.MILLISECONDS.toSeconds(abs) % 60) + " c.";
     }
 }

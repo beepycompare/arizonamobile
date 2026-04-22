@@ -954,9 +954,9 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
             } else {
                 int i6 = i4 >> 1;
                 i5 |= (-3158065) & i6;
-                i3 = (i6 & RELATIVE_DIR_FLAGS) >> 2;
+                i3 = (RELATIVE_DIR_FLAGS & i6) >> 2;
             }
-            return i5 | i3;
+            return i3 | i5;
         }
 
         public int getBoundingBoxMargin() {
@@ -1024,7 +1024,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
             int right;
             int abs4;
             int width = viewHolder.itemView.getWidth() + i;
-            int height = i2 + viewHolder.itemView.getHeight();
+            int height = viewHolder.itemView.getHeight() + i2;
             int left2 = i - viewHolder.itemView.getLeft();
             int top2 = i2 - viewHolder.itemView.getTop();
             int size = list.size();

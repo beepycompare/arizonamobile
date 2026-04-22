@@ -96,10 +96,10 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:14:0x002a, code lost:
-            if (r5.equals("END") == false) goto L29;
+            if (r4.equals("END") == false) goto L29;
          */
         /* JADX WARN: Code restructure failed: missing block: B:17:0x0033, code lost:
-            if (r5.equals("COM") == false) goto L29;
+            if (r4.equals("COM") == false) goto L29;
          */
         /* JADX WARN: Code restructure failed: missing block: B:20:0x0038, code lost:
             return androidx.sqlite.driver.SupportSQLiteStatement.Companion.TransactionOperation.END;

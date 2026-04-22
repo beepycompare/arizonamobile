@@ -35,7 +35,7 @@ public final class ScrollBarKt {
         Intrinsics.checkNotNullParameter(verticalColumnScrollbar, "$this$verticalColumnScrollbar");
         Intrinsics.checkNotNullParameter(scrollState, "scrollState");
         ComposerKt.sourceInformationMarkerStart(composer, 2015743295, "C(verticalColumnScrollbar)N(scrollState,width:c#ui.unit.Dp,showScrollBarTrack,scrollBarCornerRadius,endPadding)27@975L1364:ScrollBar.kt#8aq8qr");
-        final float m7555constructorimpl = (i2 & 2) != 0 ? Dp.m7555constructorimpl(4) : f;
+        final float m7555constructorimpl = (i2 & 2) != 0 ? Dp.m7555constructorimpl(4.0f) : f;
         boolean z2 = true;
         final boolean z3 = (i2 & 4) != 0 ? true : z;
         final float f4 = (i2 & 8) != 0 ? 4.0f : f2;
@@ -134,7 +134,7 @@ public final class ScrollBarKt {
             DrawScope.m5339drawRectAsUm42w$default(drawWithContent, Brush.Companion.m4728verticalGradient8A3gB4$default(Brush.Companion, new Pair[]{TuplesKt.to(Float.valueOf(0.0f), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())), TuplesKt.to(Float.valueOf(f), Color.m4762boximpl(Color.Companion.m4798getBlack0d7_KjU()))}, 0.0f, 0.0f, 0, 14, (Object) null), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m4693getDstIn0nO6VwU(), 62, null);
         }
         if (f2 > 0.0f) {
-            DrawScope.m5339drawRectAsUm42w$default(drawWithContent, Brush.Companion.m4728verticalGradient8A3gB4$default(Brush.Companion, new Pair[]{TuplesKt.to(Float.valueOf(1 - f2), Color.m4762boximpl(Color.Companion.m4798getBlack0d7_KjU())), TuplesKt.to(Float.valueOf(1.0f), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU()))}, 0.0f, 0.0f, 0, 14, (Object) null), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m4693getDstIn0nO6VwU(), 62, null);
+            DrawScope.m5339drawRectAsUm42w$default(drawWithContent, Brush.Companion.m4728verticalGradient8A3gB4$default(Brush.Companion, new Pair[]{TuplesKt.to(Float.valueOf(1.0f - f2), Color.m4762boximpl(Color.Companion.m4798getBlack0d7_KjU())), TuplesKt.to(Float.valueOf(1.0f), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU()))}, 0.0f, 0.0f, 0, 14, (Object) null), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m4693getDstIn0nO6VwU(), 62, null);
         }
         return Unit.INSTANCE;
     }

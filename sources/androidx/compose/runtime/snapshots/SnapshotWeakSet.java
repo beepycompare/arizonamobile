@@ -126,12 +126,6 @@ public final class SnapshotWeakSet<T> {
         return -(i3 + 1);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x002c, code lost:
-        return -(r4 + 1);
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     private final int findExactIndex(int i, T t, int i2) {
         int i3 = i - 1;
         while (true) {
@@ -144,23 +138,17 @@ public final class SnapshotWeakSet<T> {
             }
             i3--;
         }
-        int i4 = i + 1;
-        int i5 = this.size;
-        while (true) {
-            if (i4 < i5) {
-                if (this.hashes[i4] != i2) {
-                    break;
-                }
-                WeakReference<T> weakReference2 = this.values[i4];
-                if ((weakReference2 != null ? weakReference2.get() : null) == t) {
-                    return i4;
-                }
-                i4++;
-            } else {
-                i4 = this.size;
-                break;
+        int i4 = this.size;
+        for (int i5 = i + 1; i5 < i4; i5++) {
+            if (this.hashes[i5] != i2) {
+                return -(i5 + 1);
+            }
+            WeakReference<T> weakReference2 = this.values[i5];
+            if ((weakReference2 != null ? weakReference2.get() : null) == t) {
+                return i5;
             }
         }
+        return -(this.size + 1);
     }
 
     public final boolean isValid$runtime() {

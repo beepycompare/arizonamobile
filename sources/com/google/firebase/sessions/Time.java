@@ -74,7 +74,7 @@ public final class Time {
             PluginExceptionsKt.throwMissingFieldException(i, 1, Time$$serializer.INSTANCE.getDescriptor());
         }
         this.ms = j;
-        this.us = (i & 2) == 0 ? 1000 * j : j2;
+        this.us = (i & 2) == 0 ? j * 1000 : j2;
         if ((i & 4) == 0) {
             this.seconds = j / 1000;
         } else {
@@ -96,9 +96,8 @@ public final class Time {
 
     public Time(long j) {
         this.ms = j;
-        long j2 = 1000;
-        this.us = j * j2;
-        this.seconds = j / j2;
+        this.us = j * 1000;
+        this.seconds = j / 1000;
     }
 
     public final long getMs() {

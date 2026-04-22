@@ -1,7 +1,6 @@
 package androidx.constraintlayout.compose.carousel;
 
 import androidx.compose.animation.core.SpringSpec;
-import androidx.compose.runtime.ComposerImplKt;
 import androidx.compose.ui.unit.Dp;
 import java.util.Set;
 import kotlin.Metadata;
@@ -16,7 +15,7 @@ public final class SwipeableDefaults {
     public static final float StiffResistanceFactor = 20.0f;
     public static final SwipeableDefaults INSTANCE = new SwipeableDefaults();
     private static final SpringSpec<Float> AnimationSpec = new SpringSpec<>(0.0f, 0.0f, null, 7, null);
-    private static final float VelocityThreshold = Dp.m7555constructorimpl((float) ComposerImplKt.nodeKey);
+    private static final float VelocityThreshold = Dp.m7555constructorimpl(125.0f);
 
     private SwipeableDefaults() {
     }

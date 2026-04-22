@@ -10,7 +10,7 @@ public final class BottomAppBarTokens {
     public static final BottomAppBarTokens INSTANCE = new BottomAppBarTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
     private static final float ContainerElevation = ElevationTokens.INSTANCE.m3361getLevel2D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 80.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(80.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
 
     private BottomAppBarTokens() {

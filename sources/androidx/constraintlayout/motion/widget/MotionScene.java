@@ -571,7 +571,7 @@ public class MotionScene {
         }
 
         public boolean isTransitionFlag(int i) {
-            return (i & this.mTransitionFlags) != 0;
+            return (this.mTransitionFlags & i) != 0;
         }
 
         public void setTransitionFlag(int i) {

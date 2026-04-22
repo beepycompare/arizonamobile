@@ -7,17 +7,9 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class ListTokens {
     public static final int $stable = 0;
-    private static final float DividerLeadingSpace;
-    private static final float DividerTrailingSpace;
-    private static final float ListItemLeadingIconSize;
-    private static final float ListItemLeadingImageHeight;
-    private static final float ListItemLeadingImageWidth;
-    private static final float ListItemLeadingSpace;
-    private static final float ListItemOneLineContainerHeight;
-    private static final float ListItemSmallLeadingVideoHeight;
-    private static final float ListItemTrailingIconSize;
-    private static final float ListItemTrailingSpace;
     public static final ListTokens INSTANCE = new ListTokens();
+    private static final float DividerLeadingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float DividerTrailingSpace = Dp.m7555constructorimpl(16.0f);
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ColorSchemeKeyTokens ListItemContainerColor = ColorSchemeKeyTokens.Surface;
     private static final float ListItemContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
@@ -40,29 +32,37 @@ public final class ListTokens {
     private static final ColorSchemeKeyTokens ListItemHoverTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens ListItemLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final TypographyKeyTokens ListItemLabelTextFont = TypographyKeyTokens.BodyLarge;
-    private static final float ListItemLargeLeadingVideoHeight = Dp.m7555constructorimpl((float) 69.0d);
+    private static final float ListItemLargeLeadingVideoHeight = Dp.m7555constructorimpl(69.0f);
     private static final ColorSchemeKeyTokens ListItemLeadingAvatarColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final ColorSchemeKeyTokens ListItemLeadingAvatarLabelColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final TypographyKeyTokens ListItemLeadingAvatarLabelFont = TypographyKeyTokens.TitleMedium;
     private static final ShapeKeyTokens ListItemLeadingAvatarShape = ShapeKeyTokens.CornerFull;
-    private static final float ListItemLeadingAvatarSize = Dp.m7555constructorimpl((float) 40.0d);
+    private static final float ListItemLeadingAvatarSize = Dp.m7555constructorimpl(40.0f);
     private static final ColorSchemeKeyTokens ListItemLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final float ListItemLeadingIconSize = Dp.m7555constructorimpl(24.0f);
+    private static final float ListItemLeadingImageHeight = Dp.m7555constructorimpl(56.0f);
     private static final ShapeKeyTokens ListItemLeadingImageShape = ShapeKeyTokens.CornerNone;
+    private static final float ListItemLeadingImageWidth = Dp.m7555constructorimpl(56.0f);
+    private static final float ListItemLeadingSpace = Dp.m7555constructorimpl(16.0f);
     private static final ShapeKeyTokens ListItemLeadingVideoShape = ShapeKeyTokens.CornerNone;
-    private static final float ListItemLeadingVideoWidth = Dp.m7555constructorimpl((float) 100.0d);
+    private static final float ListItemLeadingVideoWidth = Dp.m7555constructorimpl(100.0f);
+    private static final float ListItemOneLineContainerHeight = Dp.m7555constructorimpl(56.0f);
     private static final ColorSchemeKeyTokens ListItemOverlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens ListItemOverlineFont = TypographyKeyTokens.LabelSmall;
     private static final ColorSchemeKeyTokens ListItemPressedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ListItemPressedLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens ListItemPressedTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens ListItemSelectedTrailingIconColor = ColorSchemeKeyTokens.Primary;
+    private static final float ListItemSmallLeadingVideoHeight = Dp.m7555constructorimpl(56.0f);
     private static final ColorSchemeKeyTokens ListItemSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens ListItemSupportingTextFont = TypographyKeyTokens.BodyMedium;
-    private static final float ListItemThreeLineContainerHeight = Dp.m7555constructorimpl((float) 88.0d);
+    private static final float ListItemThreeLineContainerHeight = Dp.m7555constructorimpl(88.0f);
     private static final ColorSchemeKeyTokens ListItemTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final float ListItemTrailingIconSize = Dp.m7555constructorimpl(24.0f);
+    private static final float ListItemTrailingSpace = Dp.m7555constructorimpl(16.0f);
     private static final ColorSchemeKeyTokens ListItemTrailingSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens ListItemTrailingSupportingTextFont = TypographyKeyTokens.LabelSmall;
-    private static final float ListItemTwoLineContainerHeight = Dp.m7555constructorimpl((float) 72.0d);
+    private static final float ListItemTwoLineContainerHeight = Dp.m7555constructorimpl(72.0f);
     private static final ColorSchemeKeyTokens ListItemUnselectedTrailingIconColor = ColorSchemeKeyTokens.OnSurface;
 
     private ListTokens() {
@@ -307,21 +307,5 @@ public final class ListTokens {
 
     public final ColorSchemeKeyTokens getListItemUnselectedTrailingIconColor() {
         return ListItemUnselectedTrailingIconColor;
-    }
-
-    static {
-        float f = (float) 16.0d;
-        DividerLeadingSpace = Dp.m7555constructorimpl(f);
-        DividerTrailingSpace = Dp.m7555constructorimpl(f);
-        float f2 = (float) 24.0d;
-        ListItemLeadingIconSize = Dp.m7555constructorimpl(f2);
-        float f3 = (float) 56.0d;
-        ListItemLeadingImageHeight = Dp.m7555constructorimpl(f3);
-        ListItemLeadingImageWidth = Dp.m7555constructorimpl(f3);
-        ListItemLeadingSpace = Dp.m7555constructorimpl(f);
-        ListItemOneLineContainerHeight = Dp.m7555constructorimpl(f3);
-        ListItemSmallLeadingVideoHeight = Dp.m7555constructorimpl(f3);
-        ListItemTrailingIconSize = Dp.m7555constructorimpl(f2);
-        ListItemTrailingSpace = Dp.m7555constructorimpl(f);
     }
 }

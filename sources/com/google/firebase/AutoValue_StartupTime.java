@@ -48,6 +48,6 @@ final class AutoValue_StartupTime extends StartupTime {
         long j = this.epochMillis;
         long j2 = this.elapsedRealtime;
         long j3 = this.uptimeMillis;
-        return ((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ ((int) (j2 ^ (j2 >>> 32)))) * 1000003) ^ ((int) ((j3 >>> 32) ^ j3));
+        return ((int) ((j3 >>> 32) ^ j3)) ^ ((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ ((int) (j2 ^ (j2 >>> 32)))) * 1000003);
     }
 }

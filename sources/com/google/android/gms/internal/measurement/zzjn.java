@@ -33,7 +33,7 @@ final class zzjn extends zzkh {
     public final int hashCode() {
         int hashCode = this.zza.hashCode() ^ 1000003;
         Supplier supplier = this.zzb;
-        return (hashCode * 1000003) ^ (supplier == null ? 0 : supplier.hashCode());
+        return (supplier == null ? 0 : supplier.hashCode()) ^ (hashCode * 1000003);
     }
 
     public final String toString() {

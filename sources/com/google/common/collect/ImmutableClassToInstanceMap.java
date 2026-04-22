@@ -74,7 +74,7 @@ public final class ImmutableClassToInstanceMap<B> extends ForwardingMap<Class<? 
         return this.delegate;
     }
 
-    /* JADX WARN: Type inference failed for: r2v2, types: [T extends B, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [T extends B, java.lang.Object] */
     @Override // com.google.common.collect.ClassToInstanceMap
     @CheckForNull
     public <T extends B> T getInstance(Class<T> type) {

@@ -51,7 +51,7 @@ public final class ConstrainScope {
     private final DimensionProperty width$delegate = new DimensionProperty(Dimension.Companion.getWrapContent());
     private final DimensionProperty height$delegate = new DimensionProperty(Dimension.Companion.getWrapContent());
 
-    /* JADX WARN: Type inference failed for: r15v5, types: [androidx.constraintlayout.compose.ConstrainScope$visibility$2] */
+    /* JADX WARN: Type inference failed for: r14v5, types: [androidx.constraintlayout.compose.ConstrainScope$visibility$2] */
     public ConstrainScope(Object obj, CLObject cLObject) {
         this.id = obj;
         this.containerObject = cLObject;
@@ -80,10 +80,9 @@ public final class ConstrainScope {
         this.rotationX$delegate = new FloatProperty(this, 0.0f, null, 2, null);
         this.rotationY$delegate = new FloatProperty(this, 0.0f, null, 2, null);
         this.rotationZ$delegate = new FloatProperty(this, 0.0f, null, 2, null);
-        float f = 0;
-        this.translationX$delegate = new DpProperty(this, Dp.m7555constructorimpl(f), null, 2, null);
-        this.translationY$delegate = new DpProperty(this, Dp.m7555constructorimpl(f), null, 2, null);
-        this.translationZ$delegate = new DpProperty(this, Dp.m7555constructorimpl(f), null, 2, null);
+        this.translationX$delegate = new DpProperty(this, Dp.m7555constructorimpl(0.0f), null, 2, null);
+        this.translationY$delegate = new DpProperty(this, Dp.m7555constructorimpl(0.0f), null, 2, null);
+        this.translationZ$delegate = new DpProperty(this, Dp.m7555constructorimpl(0.0f), null, 2, null);
         this.pivotX$delegate = new FloatProperty(this, 0.5f, null, 2, null);
         this.pivotY$delegate = new FloatProperty(this, 0.5f, null, 2, null);
         this.horizontalChainWeight$delegate = new FloatProperty(Float.NaN, "hWeight");
@@ -497,37 +496,37 @@ public final class ConstrainScope {
     /* renamed from: linkTo-8ZKsbrE$default  reason: not valid java name */
     public static /* synthetic */ void m7830linkTo8ZKsbrE$default(ConstrainScope constrainScope, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor2, float f, float f2, float f3, float f4, float f5, int i, Object obj) {
         if ((i & 4) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         float f6 = f;
         if ((i & 8) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         float f7 = f2;
         if ((i & 16) != 0) {
-            f3 = Dp.m7555constructorimpl(0);
+            f3 = Dp.m7555constructorimpl(0.0f);
         }
-        constrainScope.m7838linkTo8ZKsbrE(verticalAnchor, verticalAnchor2, f6, f7, f3, (i & 32) != 0 ? Dp.m7555constructorimpl(0) : f4, (i & 64) != 0 ? 0.5f : f5);
+        constrainScope.m7838linkTo8ZKsbrE(verticalAnchor, verticalAnchor2, f6, f7, f3, (i & 32) != 0 ? Dp.m7555constructorimpl(0.0f) : f4, (i & 64) != 0 ? 0.5f : f5);
     }
 
     /* renamed from: linkTo-8ZKsbrE$default  reason: not valid java name */
     public static /* synthetic */ void m7829linkTo8ZKsbrE$default(ConstrainScope constrainScope, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor2, float f, float f2, float f3, float f4, float f5, int i, Object obj) {
         if ((i & 4) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         float f6 = f;
         if ((i & 8) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         float f7 = f2;
         if ((i & 16) != 0) {
-            f3 = Dp.m7555constructorimpl(0);
+            f3 = Dp.m7555constructorimpl(0.0f);
         }
-        constrainScope.m7837linkTo8ZKsbrE(horizontalAnchor, horizontalAnchor2, f6, f7, f3, (i & 32) != 0 ? Dp.m7555constructorimpl(0) : f4, (i & 64) != 0 ? 0.5f : f5);
+        constrainScope.m7837linkTo8ZKsbrE(horizontalAnchor, horizontalAnchor2, f6, f7, f3, (i & 32) != 0 ? Dp.m7555constructorimpl(0.0f) : f4, (i & 64) != 0 ? 0.5f : f5);
     }
 
     /* renamed from: linkTo-R7zmacU$default  reason: not valid java name */
     public static /* synthetic */ void m7831linkToR7zmacU$default(ConstrainScope constrainScope, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor2, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor2, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, int i, Object obj) {
-        constrainScope.m7839linkToR7zmacU(verticalAnchor, horizontalAnchor, verticalAnchor2, horizontalAnchor2, (i & 16) != 0 ? Dp.m7555constructorimpl(0) : f, (i & 32) != 0 ? Dp.m7555constructorimpl(0) : f2, (i & 64) != 0 ? Dp.m7555constructorimpl(0) : f3, (i & 128) != 0 ? Dp.m7555constructorimpl(0) : f4, (i & 256) != 0 ? Dp.m7555constructorimpl(0) : f5, (i & 512) != 0 ? Dp.m7555constructorimpl(0) : f6, (i & 1024) != 0 ? Dp.m7555constructorimpl(0) : f7, (i & 2048) != 0 ? Dp.m7555constructorimpl(0) : f8, (i & 4096) != 0 ? 0.5f : f9, (i & 8192) != 0 ? 0.5f : f10);
+        constrainScope.m7839linkToR7zmacU(verticalAnchor, horizontalAnchor, verticalAnchor2, horizontalAnchor2, (i & 16) != 0 ? Dp.m7555constructorimpl(0.0f) : f, (i & 32) != 0 ? Dp.m7555constructorimpl(0.0f) : f2, (i & 64) != 0 ? Dp.m7555constructorimpl(0.0f) : f3, (i & 128) != 0 ? Dp.m7555constructorimpl(0.0f) : f4, (i & 256) != 0 ? Dp.m7555constructorimpl(0.0f) : f5, (i & 512) != 0 ? Dp.m7555constructorimpl(0.0f) : f6, (i & 1024) != 0 ? Dp.m7555constructorimpl(0.0f) : f7, (i & 2048) != 0 ? Dp.m7555constructorimpl(0.0f) : f8, (i & 4096) != 0 ? 0.5f : f9, (i & 8192) != 0 ? 0.5f : f10);
     }
 }

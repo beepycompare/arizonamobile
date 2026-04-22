@@ -161,8 +161,9 @@ public class ShadowDrawableWrapper extends DrawableWrapperCompat {
     private void drawShadow(Canvas canvas) {
         float f;
         int i;
-        int save = canvas.save();
-        canvas.rotate(this.rotation, this.contentBounds.centerX(), this.contentBounds.centerY());
+        Canvas canvas2 = canvas;
+        int save = canvas2.save();
+        canvas2.rotate(this.rotation, this.contentBounds.centerX(), this.contentBounds.centerY());
         float f2 = this.cornerRadius;
         float f3 = (-f2) - this.shadowSize;
         float f4 = f2 * 2.0f;
@@ -172,51 +173,52 @@ public class ShadowDrawableWrapper extends DrawableWrapperCompat {
         float f6 = f2 / ((f5 - (0.5f * f5)) + f2);
         float f7 = f2 / ((f5 - (SHADOW_TOP_SCALE * f5)) + f2);
         float f8 = f2 / ((f5 - (f5 * 1.0f)) + f2);
-        int save2 = canvas.save();
-        canvas.translate(this.contentBounds.left + f2, this.contentBounds.top + f2);
-        canvas.scale(f6, f7);
-        canvas.drawPath(this.cornerShadowPath, this.cornerShadowPaint);
+        int save2 = canvas2.save();
+        canvas2.translate(this.contentBounds.left + f2, this.contentBounds.top + f2);
+        canvas2.scale(f6, f7);
+        canvas2.drawPath(this.cornerShadowPath, this.cornerShadowPaint);
         if (z) {
-            canvas.scale(1.0f / f6, 1.0f);
+            canvas2.scale(1.0f / f6, 1.0f);
             f = 1.0f;
             i = save2;
-            canvas.drawRect(0.0f, f3, this.contentBounds.width() - f4, -this.cornerRadius, this.edgeShadowPaint);
+            canvas2.drawRect(0.0f, f3, this.contentBounds.width() - f4, -this.cornerRadius, this.edgeShadowPaint);
         } else {
             f = 1.0f;
             i = save2;
         }
-        canvas.restoreToCount(i);
-        int save3 = canvas.save();
-        canvas.translate(this.contentBounds.right - f2, this.contentBounds.bottom - f2);
-        canvas.scale(f6, f8);
-        canvas.rotate(180.0f);
-        canvas.drawPath(this.cornerShadowPath, this.cornerShadowPaint);
+        canvas2.restoreToCount(i);
+        int save3 = canvas2.save();
+        canvas2.translate(this.contentBounds.right - f2, this.contentBounds.bottom - f2);
+        canvas2.scale(f6, f8);
+        canvas2.rotate(180.0f);
+        canvas2.drawPath(this.cornerShadowPath, this.cornerShadowPaint);
         if (z) {
-            canvas.scale(f / f6, f);
-            canvas.drawRect(0.0f, f3, this.contentBounds.width() - f4, this.shadowSize + (-this.cornerRadius), this.edgeShadowPaint);
+            canvas2.scale(f / f6, f);
+            canvas2.drawRect(0.0f, f3, this.contentBounds.width() - f4, this.shadowSize + (-this.cornerRadius), this.edgeShadowPaint);
         }
-        canvas.restoreToCount(save3);
-        int save4 = canvas.save();
-        canvas.translate(this.contentBounds.left + f2, this.contentBounds.bottom - f2);
-        canvas.scale(f6, f8);
-        canvas.rotate(270.0f);
-        canvas.drawPath(this.cornerShadowPath, this.cornerShadowPaint);
+        canvas2.restoreToCount(save3);
+        int save4 = canvas2.save();
+        canvas2.translate(this.contentBounds.left + f2, this.contentBounds.bottom - f2);
+        canvas2.scale(f6, f8);
+        canvas2.rotate(270.0f);
+        canvas2.drawPath(this.cornerShadowPath, this.cornerShadowPaint);
         if (z2) {
-            canvas.scale(1.0f / f8, 1.0f);
-            canvas.drawRect(0.0f, f3, this.contentBounds.height() - f4, -this.cornerRadius, this.edgeShadowPaint);
+            canvas2.scale(1.0f / f8, 1.0f);
+            canvas2.drawRect(0.0f, f3, this.contentBounds.height() - f4, -this.cornerRadius, this.edgeShadowPaint);
         }
-        canvas.restoreToCount(save4);
-        int save5 = canvas.save();
-        canvas.translate(this.contentBounds.right - f2, this.contentBounds.top + f2);
-        canvas.scale(f6, f7);
-        canvas.rotate(90.0f);
-        canvas.drawPath(this.cornerShadowPath, this.cornerShadowPaint);
+        canvas2.restoreToCount(save4);
+        int save5 = canvas2.save();
+        canvas2.translate(this.contentBounds.right - f2, this.contentBounds.top + f2);
+        canvas2.scale(f6, f7);
+        canvas2.rotate(90.0f);
+        canvas2.drawPath(this.cornerShadowPath, this.cornerShadowPaint);
         if (z2) {
-            canvas.scale(1.0f / f7, 1.0f);
+            canvas2.scale(1.0f / f7, 1.0f);
             canvas.drawRect(0.0f, f3, this.contentBounds.height() - f4, -this.cornerRadius, this.edgeShadowPaint);
+            canvas2 = canvas;
         }
-        canvas.restoreToCount(save5);
-        canvas.restoreToCount(save);
+        canvas2.restoreToCount(save5);
+        canvas2.restoreToCount(save);
     }
 
     private void buildShadowCorners() {

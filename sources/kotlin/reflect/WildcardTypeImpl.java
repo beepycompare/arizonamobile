@@ -64,7 +64,7 @@ public final class WildcardTypeImpl implements WildcardType, TypeImpl {
     }
 
     public int hashCode() {
-        return Arrays.hashCode(getUpperBounds()) ^ Arrays.hashCode(getLowerBounds());
+        return Arrays.hashCode(getLowerBounds()) ^ Arrays.hashCode(getUpperBounds());
     }
 
     public String toString() {

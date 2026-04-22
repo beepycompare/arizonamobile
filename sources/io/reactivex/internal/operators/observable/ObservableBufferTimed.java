@@ -87,15 +87,16 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
                 try {
                     this.buffer = (U) ObjectHelper.requireNonNull(this.bufferSupplier.call(), "The buffer supplied is null");
                     this.downstream.onSubscribe(this);
-                    if (!this.cancelled) {
-                        Scheduler scheduler = this.scheduler;
-                        long j = this.timespan;
-                        Disposable schedulePeriodicallyDirect = scheduler.schedulePeriodicallyDirect(this, j, j, this.unit);
-                        if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.timer, null, schedulePeriodicallyDirect)) {
-                            return;
-                        }
-                        schedulePeriodicallyDirect.dispose();
+                    if (this.cancelled) {
+                        return;
                     }
+                    Scheduler scheduler = this.scheduler;
+                    long j = this.timespan;
+                    Disposable schedulePeriodicallyDirect = scheduler.schedulePeriodicallyDirect(this, j, j, this.unit);
+                    if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.timer, null, schedulePeriodicallyDirect)) {
+                        return;
+                    }
+                    schedulePeriodicallyDirect.dispose();
                 } catch (Throwable th) {
                     Exceptions.throwIfFatal(th);
                     dispose();
@@ -395,9 +396,10 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
             }
         }
 
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:45:0x0078 -> B:42:0x0075). Please submit an issue!!! */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:43:0x0076 -> B:40:0x0073). Please submit an issue!!! */
         @Override // io.reactivex.Observer
         public void onNext(T t) {
+            BufferExactBoundedObserver<T, U> bufferExactBoundedObserver;
             Throwable th;
             U u;
             synchronized (this) {
@@ -405,6 +407,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
                     u = this.buffer;
                 } catch (Throwable th2) {
                     th = th2;
+                    bufferExactBoundedObserver = this;
                     try {
                     } catch (Throwable th3) {
                         th = th3;
@@ -456,6 +459,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
                     }
                 } catch (Throwable th6) {
                     Throwable th7 = th6;
+                    bufferExactBoundedObserver = this;
                     throw th7;
                 }
             }

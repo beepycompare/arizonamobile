@@ -272,7 +272,7 @@ final class EdgeEffectWrapper {
         }
         EdgeEffect edgeEffect8 = this.rightEffectNegation;
         if (edgeEffect8 != null) {
-            edgeEffect8.setSize((int) (4294967295L & j), (int) (j >> 32));
+            edgeEffect8.setSize((int) (j & 4294967295L), (int) (j >> 32));
         }
     }
 }

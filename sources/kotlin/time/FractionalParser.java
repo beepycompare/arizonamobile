@@ -1,5 +1,6 @@
 package kotlin.time;
 
+import androidx.media3.common.C;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -44,27 +45,28 @@ public final class FractionalParser {
             i3 = (i3 << 3) + (i3 << 1) + (charAt2 - '0');
             i2++;
         }
-        for (int i4 = 0; i4 < 6 - (i2 - i); i4++) {
+        int i4 = 6 - (i2 - i);
+        for (int i5 = 0; i5 < i4; i5++) {
             i3 = (i3 << 1) + (i3 << 3);
         }
         int min2 = Math.min(i2 + 9, value.length());
-        int i5 = 0;
-        int i6 = i2;
-        while (i6 < min2) {
-            char charAt3 = value.charAt(i6);
+        int i6 = 0;
+        int i7 = i2;
+        while (i7 < min2) {
+            char charAt3 = value.charAt(i7);
             if ('0' > charAt3 || charAt3 >= ':') {
                 break;
             }
-            i5 = (i5 << 3) + (i5 << 1) + (charAt3 - '0');
-            i6++;
+            i6 = (i6 << 3) + (i6 << 1) + (charAt3 - '0');
+            i7++;
         }
-        for (int i7 = 0; i7 < 9 - (i6 - i2); i7++) {
-            i5 = (i5 << 1) + (i5 << 3);
+        for (int i8 = 0; i8 < 9 - (i7 - i2); i8++) {
+            i6 = (i6 << 1) + (i6 << 3);
         }
-        while (i6 < value.length() && '0' <= (charAt = value.charAt(i6)) && charAt < ':') {
-            i6++;
+        while (i7 < value.length() && '0' <= (charAt = value.charAt(i7)) && charAt < ':') {
+            i7++;
         }
-        callback.invoke(Integer.valueOf(i6));
-        return (i3 * 1000000000) + i5;
+        callback.invoke(Integer.valueOf(i7));
+        return (i3 * C.NANOS_PER_SECOND) + i6;
     }
 }

@@ -50,7 +50,9 @@ public class ArrayReadWriteBuf implements ReadWriteBuf {
     @Override // androidx.text.emoji.flatbuffer.ReadBuf
     public long getLong(int i) {
         byte[] bArr = this.buffer;
-        return (bArr[i] & 255) | ((bArr[i + 1] & 255) << 8) | ((bArr[i + 2] & 255) << 16) | ((bArr[i + 3] & 255) << 24) | ((bArr[i + 4] & 255) << 32) | ((bArr[i + 5] & 255) << 40) | ((bArr[i + 6] & 255) << 48) | (bArr[i + 7] << 56);
+        long j = (bArr[i] & 255) | ((bArr[i + 1] & 255) << 8) | ((bArr[i + 2] & 255) << 16) | ((bArr[i + 3] & 255) << 24) | ((bArr[i + 4] & 255) << 32);
+        int i2 = i + 6;
+        return (bArr[i + 7] << 56) | j | ((bArr[i + 5] & 255) << 40) | ((bArr[i2] & 255) << 48);
     }
 
     @Override // androidx.text.emoji.flatbuffer.ReadBuf

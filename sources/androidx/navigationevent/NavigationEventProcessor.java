@@ -442,7 +442,7 @@ public final class NavigationEventProcessor {
                         navigationEventHandler4 = navigationEventHandler8;
                         break;
                     }
-                    while (r5.hasNext()) {
+                    while (r4.hasNext()) {
                     }
                 }
                 return navigationEventHandler4;

@@ -69,7 +69,7 @@ public final class DiskLruCache implements AutoCloseable {
     public static final Companion Companion = new Companion(null);
     private static final Regex LEGAL_KEY_PATTERN = new Regex("[a-z0-9_-]{1,120}");
 
-    /* JADX WARN: Type inference failed for: r4v14, types: [coil3.disk.DiskLruCache$fileSystem$1] */
+    /* JADX WARN: Type inference failed for: r4v10, types: [coil3.disk.DiskLruCache$fileSystem$1] */
     public DiskLruCache(final FileSystem fileSystem, Path path, CoroutineContext coroutineContext, long j, int i, int i2) {
         this.directory = path;
         this.maxSize = j;

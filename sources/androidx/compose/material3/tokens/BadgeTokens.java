@@ -13,9 +13,9 @@ public final class BadgeTokens {
     private static final ColorSchemeKeyTokens LargeLabelTextColor = ColorSchemeKeyTokens.OnError;
     private static final TypographyKeyTokens LargeLabelTextFont = TypographyKeyTokens.LabelSmall;
     private static final ShapeKeyTokens LargeShape = ShapeKeyTokens.CornerFull;
-    private static final float LargeSize = Dp.m7555constructorimpl((float) 16.0d);
+    private static final float LargeSize = Dp.m7555constructorimpl(16.0f);
     private static final ShapeKeyTokens Shape = ShapeKeyTokens.CornerFull;
-    private static final float Size = Dp.m7555constructorimpl((float) 6.0d);
+    private static final float Size = Dp.m7555constructorimpl(6.0f);
 
     private BadgeTokens() {
     }

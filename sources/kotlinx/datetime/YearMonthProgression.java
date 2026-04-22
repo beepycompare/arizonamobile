@@ -111,7 +111,7 @@ public class YearMonthProgression implements Collection<YearMonth>, KMappedMarke
         return this.last;
     }
 
-    /* JADX WARN: Type inference failed for: r1v1, types: [kotlin.collections.LongIterator] */
+    /* JADX WARN: Type inference failed for: r1v2, types: [kotlin.collections.LongIterator] */
     @Override // java.util.Collection, java.lang.Iterable
     public Iterator<YearMonth> iterator() {
         return new YearMonthProgressionIterator(this.longProgression.iterator());

@@ -76,7 +76,7 @@ public final class TextFieldMagnifierKt {
             return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
         float lineTop = layoutResult.getLineTop(lineForOffset);
-        long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(((layoutResult.getLineBottom(lineForOffset) - lineTop) / 2) + lineTop) & 4294967295L) | (Float.floatToRawIntBits(coerceIn) << 32));
+        long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(((layoutResult.getLineBottom(lineForOffset) - lineTop) / 2.0f) + lineTop) & 4294967295L) | (Float.floatToRawIntBits(coerceIn) << 32));
         LayoutCoordinates textLayoutNodeCoordinates = textLayoutState.getTextLayoutNodeCoordinates();
         if (textLayoutNodeCoordinates != null) {
             if (!textLayoutNodeCoordinates.isAttached()) {

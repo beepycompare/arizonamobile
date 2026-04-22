@@ -39,7 +39,7 @@ public final class ResistanceConfig {
         if (f2 == 0.0f) {
             return 0.0f;
         }
-        return (this.basis / f2) * ((float) Math.sin((RangesKt.coerceIn(f / this.basis, -1.0f, 1.0f) * 3.1415927f) / 2));
+        return (this.basis / f2) * ((float) Math.sin((RangesKt.coerceIn(f / this.basis, -1.0f, 1.0f) * 3.1415927f) / 2.0f));
     }
 
     public boolean equals(Object obj) {

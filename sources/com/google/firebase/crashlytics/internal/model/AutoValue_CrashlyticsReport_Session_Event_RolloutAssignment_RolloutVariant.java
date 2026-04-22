@@ -39,7 +39,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_RolloutAssignment_RolloutV
     }
 
     public int hashCode() {
-        return ((this.rolloutId.hashCode() ^ 1000003) * 1000003) ^ this.variantId.hashCode();
+        return this.variantId.hashCode() ^ ((this.rolloutId.hashCode() ^ 1000003) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -509,10 +509,14 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
                     }
                     Paragraph.m6871paintLG529CI$default(paragraph$foundation, canvas, mo2027invoke0d7_KjU, shadow2, textDecoration2, drawStyle2, 0, 32, null);
                 }
-            } finally {
                 if (didOverflow$foundation) {
                     canvas.restore();
                 }
+            } catch (Throwable th) {
+                if (didOverflow$foundation) {
+                    canvas.restore();
+                }
+                throw th;
             }
         }
     }

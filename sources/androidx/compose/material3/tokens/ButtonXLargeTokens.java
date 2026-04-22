@@ -7,18 +7,18 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class ButtonXLargeTokens {
     public static final int $stable = 0;
-    private static final float LeadingSpace;
-    private static final float TrailingSpace;
     public static final ButtonXLargeTokens INSTANCE = new ButtonXLargeTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 136.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(136.0f);
     private static final ShapeKeyTokens ContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens ContainerShapeSquare = ShapeKeyTokens.CornerExtraLarge;
-    private static final float IconLabelSpace = Dp.m7555constructorimpl((float) 16.0d);
-    private static final float IconSize = Dp.m7555constructorimpl((float) 40.0d);
-    private static final float OutlinedOutlineWidth = Dp.m7555constructorimpl((float) 3.0d);
+    private static final float IconLabelSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float IconSize = Dp.m7555constructorimpl(40.0f);
+    private static final float LeadingSpace = Dp.m7555constructorimpl(64.0f);
+    private static final float OutlinedOutlineWidth = Dp.m7555constructorimpl(3.0f);
     private static final ShapeKeyTokens PressedContainerShape = ShapeKeyTokens.CornerLarge;
     private static final ShapeKeyTokens SelectedContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens SelectedContainerShapeSquare = ShapeKeyTokens.CornerExtraLarge;
+    private static final float TrailingSpace = Dp.m7555constructorimpl(64.0f);
 
     private ButtonXLargeTokens() {
     }
@@ -71,11 +71,5 @@ public final class ButtonXLargeTokens {
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
     public final float m3175getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
-    }
-
-    static {
-        float f = (float) 64.0d;
-        LeadingSpace = Dp.m7555constructorimpl(f);
-        TrailingSpace = Dp.m7555constructorimpl(f);
     }
 }

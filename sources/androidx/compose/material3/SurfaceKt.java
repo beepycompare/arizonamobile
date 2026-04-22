@@ -53,7 +53,7 @@ public final class SurfaceKt {
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
             Dp m7553boximpl;
-            m7553boximpl = Dp.m7553boximpl(Dp.m7555constructorimpl(0));
+            m7553boximpl = Dp.m7553boximpl(Dp.m7555constructorimpl(0.0f));
             return m7553boximpl;
         }
     }, 1, null);
@@ -74,10 +74,10 @@ public final class SurfaceKt {
             j2 = ColorSchemeKt.m1902contentColorForek8zF_U(j, composer, (i >> 6) & 14);
         }
         if ((i2 & 16) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i2 & 32) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         if ((i2 & 64) != 0) {
             borderStroke = null;
@@ -110,8 +110,8 @@ public final class SurfaceKt {
         final Shape rectangleShape = (i3 & 8) != 0 ? RectangleShapeKt.getRectangleShape() : shape;
         final long m1886getSurface0d7_KjU = (i3 & 16) != 0 ? MaterialTheme.INSTANCE.getColorScheme(composer, 6).m1886getSurface0d7_KjU() : j;
         long m1902contentColorForek8zF_U = (i3 & 32) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m1886getSurface0d7_KjU, composer, (i >> 12) & 14) : j2;
-        float m7555constructorimpl = (i3 & 64) != 0 ? Dp.m7555constructorimpl(0) : f;
-        final float m7555constructorimpl2 = (i3 & 128) != 0 ? Dp.m7555constructorimpl(0) : f2;
+        float m7555constructorimpl = (i3 & 64) != 0 ? Dp.m7555constructorimpl(0.0f) : f;
+        final float m7555constructorimpl2 = (i3 & 128) != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
         BorderStroke borderStroke2 = (i3 & 256) != 0 ? null : borderStroke;
         MutableInteractionSource mutableInteractionSource2 = (i3 & 512) == 0 ? mutableInteractionSource : null;
         if (ComposerKt.isTraceInProgress()) {
@@ -220,28 +220,20 @@ public final class SurfaceKt {
         ComposerKt.sourceInformationMarkerEnd(composer);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r20v1 */
-    /* JADX WARN: Type inference failed for: r20v2 */
-    /* JADX WARN: Type inference failed for: r20v3 */
     /* renamed from: Surface-d85dljk  reason: not valid java name */
     public static final void m2570Surfaced85dljk(final boolean z, final Function0<Unit> function0, Modifier modifier, boolean z2, Shape shape, long j, long j2, float f, float f2, BorderStroke borderStroke, MutableInteractionSource mutableInteractionSource, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, int i, int i2, int i3) {
-        ?? r20;
         ComposerKt.sourceInformationMarkerStart(composer, 1416521139, "C(Surface)N(selected,onClick,modifier,enabled,shape,color:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,tonalElevation:c#ui.unit.Dp,shadowElevation:c#ui.unit.Dp,border,interactionSource,content)306@16724L11,307@16771L22,316@17167L7,320@17341L916,317@17196L1061:Surface.kt#uh7d8r");
         final Modifier.Companion companion = (i3 & 4) != 0 ? Modifier.Companion : modifier;
         final boolean z3 = (i3 & 8) != 0 ? true : z2;
         final Shape rectangleShape = (i3 & 16) != 0 ? RectangleShapeKt.getRectangleShape() : shape;
         final long m1886getSurface0d7_KjU = (i3 & 32) != 0 ? MaterialTheme.INSTANCE.getColorScheme(composer, 6).m1886getSurface0d7_KjU() : j;
         long m1902contentColorForek8zF_U = (i3 & 64) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m1886getSurface0d7_KjU, composer, (i >> 15) & 14) : j2;
-        float m7555constructorimpl = (i3 & 128) != 0 ? Dp.m7555constructorimpl(0) : f;
-        final float m7555constructorimpl2 = (i3 & 256) != 0 ? Dp.m7555constructorimpl(0) : f2;
+        float m7555constructorimpl = (i3 & 128) != 0 ? Dp.m7555constructorimpl(0.0f) : f;
+        final float m7555constructorimpl2 = (i3 & 256) != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
         BorderStroke borderStroke2 = (i3 & 512) != 0 ? null : borderStroke;
-        MutableInteractionSource mutableInteractionSource2 = (i3 & 1024) == 0 ? mutableInteractionSource : null;
+        final MutableInteractionSource mutableInteractionSource2 = (i3 & 1024) == 0 ? mutableInteractionSource : null;
         if (ComposerKt.isTraceInProgress()) {
-            r20 = 1;
             ComposerKt.traceEventStart(1416521139, i, i2, "androidx.compose.material3.Surface (Surface.kt:313)");
-        } else {
-            r20 = 1;
         }
         if (mutableInteractionSource2 == null) {
             composer.startReplaceGroup(1528143336);
@@ -263,12 +255,8 @@ public final class SurfaceKt {
         Object consume = composer.consume(providableCompositionLocal);
         ComposerKt.sourceInformationMarkerEnd(composer);
         final float m7555constructorimpl3 = Dp.m7555constructorimpl(((Dp) consume).m7569unboximpl() + m7555constructorimpl);
-        ProvidedValue[] providedValueArr = new ProvidedValue[2];
-        providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4762boximpl(m1902contentColorForek8zF_U));
-        providedValueArr[r20] = providableCompositionLocal.provides(Dp.m7553boximpl(m7555constructorimpl3));
         final BorderStroke borderStroke3 = borderStroke2;
-        final MutableInteractionSource mutableInteractionSource3 = mutableInteractionSource2;
-        CompositionLocalKt.CompositionLocalProvider(providedValueArr, ComposableLambdaKt.rememberComposableLambda(1508735219, r20, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SurfaceKt$Surface$3
+        CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4762boximpl(m1902contentColorForek8zF_U)), providableCompositionLocal.provides(Dp.m7553boximpl(m7555constructorimpl3))}, ComposableLambdaKt.rememberComposableLambda(1508735219, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SurfaceKt$Surface$3
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
                 invoke(composer2, num.intValue());
@@ -294,7 +282,7 @@ public final class SurfaceKt {
                 Object consume2 = composer2.consume(CompositionLocalsKt.getLocalDensity());
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 m2575surfaceXOJAsU = SurfaceKt.m2575surfaceXOJAsU(minimumInteractiveComponentSize, shape2, m2576surfaceColorAtElevationCLU3JFs, borderStroke4, ((Density) consume2).mo405toPx0680j_4(m7555constructorimpl2));
-                Modifier childSemantics$default = ChildParentSemanticsKt.childSemantics$default(SelectableKt.m1089selectableO2vRcR0$default(m2575surfaceXOJAsU, z, mutableInteractionSource3, RippleKt.m2402rippleH2RKhps$default(false, 0.0f, 0L, 7, null), z3, null, function0, 16, null), null, 1, null);
+                Modifier childSemantics$default = ChildParentSemanticsKt.childSemantics$default(SelectableKt.m1089selectableO2vRcR0$default(m2575surfaceXOJAsU, z, mutableInteractionSource2, RippleKt.m2402rippleH2RKhps$default(false, 0.0f, 0L, 7, null), z3, null, function0, 16, null), null, 1, null);
                 Function2<Composer, Integer, Unit> function22 = function2;
                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), true);
@@ -343,28 +331,20 @@ public final class SurfaceKt {
         ComposerKt.sourceInformationMarkerEnd(composer);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r20v1 */
-    /* JADX WARN: Type inference failed for: r20v2 */
-    /* JADX WARN: Type inference failed for: r20v3 */
     /* renamed from: Surface-d85dljk  reason: not valid java name */
     public static final void m2571Surfaced85dljk(final boolean z, final Function1<? super Boolean, Unit> function1, Modifier modifier, boolean z2, Shape shape, long j, long j2, float f, float f2, BorderStroke borderStroke, MutableInteractionSource mutableInteractionSource, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, int i, int i2, int i3) {
-        ?? r20;
         ComposerKt.sourceInformationMarkerStart(composer, -1931279214, "C(Surface)N(checked,onCheckedChange,modifier,enabled,shape,color:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,tonalElevation:c#ui.unit.Dp,shadowElevation:c#ui.unit.Dp,border,interactionSource,content)413@22663L11,414@22710L22,423@23106L7,427@23280L926,424@23135L1071:Surface.kt#uh7d8r");
         final Modifier.Companion companion = (i3 & 4) != 0 ? Modifier.Companion : modifier;
         final boolean z3 = (i3 & 8) != 0 ? true : z2;
         final Shape rectangleShape = (i3 & 16) != 0 ? RectangleShapeKt.getRectangleShape() : shape;
         final long m1886getSurface0d7_KjU = (i3 & 32) != 0 ? MaterialTheme.INSTANCE.getColorScheme(composer, 6).m1886getSurface0d7_KjU() : j;
         long m1902contentColorForek8zF_U = (i3 & 64) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m1886getSurface0d7_KjU, composer, (i >> 15) & 14) : j2;
-        float m7555constructorimpl = (i3 & 128) != 0 ? Dp.m7555constructorimpl(0) : f;
-        final float m7555constructorimpl2 = (i3 & 256) != 0 ? Dp.m7555constructorimpl(0) : f2;
+        float m7555constructorimpl = (i3 & 128) != 0 ? Dp.m7555constructorimpl(0.0f) : f;
+        final float m7555constructorimpl2 = (i3 & 256) != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
         BorderStroke borderStroke2 = (i3 & 512) != 0 ? null : borderStroke;
-        MutableInteractionSource mutableInteractionSource2 = (i3 & 1024) == 0 ? mutableInteractionSource : null;
+        final MutableInteractionSource mutableInteractionSource2 = (i3 & 1024) == 0 ? mutableInteractionSource : null;
         if (ComposerKt.isTraceInProgress()) {
-            r20 = 1;
             ComposerKt.traceEventStart(-1931279214, i, i2, "androidx.compose.material3.Surface (Surface.kt:420)");
-        } else {
-            r20 = 1;
         }
         if (mutableInteractionSource2 == null) {
             composer.startReplaceGroup(643421417);
@@ -386,12 +366,8 @@ public final class SurfaceKt {
         Object consume = composer.consume(providableCompositionLocal);
         ComposerKt.sourceInformationMarkerEnd(composer);
         final float m7555constructorimpl3 = Dp.m7555constructorimpl(((Dp) consume).m7569unboximpl() + m7555constructorimpl);
-        ProvidedValue[] providedValueArr = new ProvidedValue[2];
-        providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4762boximpl(m1902contentColorForek8zF_U));
-        providedValueArr[r20] = providableCompositionLocal.provides(Dp.m7553boximpl(m7555constructorimpl3));
         final BorderStroke borderStroke3 = borderStroke2;
-        final MutableInteractionSource mutableInteractionSource3 = mutableInteractionSource2;
-        CompositionLocalKt.CompositionLocalProvider(providedValueArr, ComposableLambdaKt.rememberComposableLambda(-1839065134, r20, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SurfaceKt$Surface$4
+        CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4762boximpl(m1902contentColorForek8zF_U)), providableCompositionLocal.provides(Dp.m7553boximpl(m7555constructorimpl3))}, ComposableLambdaKt.rememberComposableLambda(-1839065134, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SurfaceKt$Surface$4
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
                 invoke(composer2, num.intValue());
@@ -417,7 +393,7 @@ public final class SurfaceKt {
                 Object consume2 = composer2.consume(CompositionLocalsKt.getLocalDensity());
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 m2575surfaceXOJAsU = SurfaceKt.m2575surfaceXOJAsU(minimumInteractiveComponentSize, shape2, m2576surfaceColorAtElevationCLU3JFs, borderStroke4, ((Density) consume2).mo405toPx0680j_4(m7555constructorimpl2));
-                Modifier childSemantics$default = ChildParentSemanticsKt.childSemantics$default(ToggleableKt.m1096toggleableO2vRcR0$default(m2575surfaceXOJAsU, z, mutableInteractionSource3, RippleKt.m2402rippleH2RKhps$default(false, 0.0f, 0L, 7, null), z3, null, function1, 16, null), null, 1, null);
+                Modifier childSemantics$default = ChildParentSemanticsKt.childSemantics$default(ToggleableKt.m1096toggleableO2vRcR0$default(m2575surfaceXOJAsU, z, mutableInteractionSource2, RippleKt.m2402rippleH2RKhps$default(false, 0.0f, 0L, 7, null), z3, null, function1, 16, null), null, 1, null);
                 Function2<Composer, Integer, Unit> function22 = function2;
                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), true);

@@ -21,11 +21,10 @@ public class CachedSettingsIo {
     }
 
     public JSONObject readCachedSettings() {
-        Throwable th;
         FileInputStream fileInputStream;
         JSONObject jSONObject;
         Logger.getLogger().d("Checking for cached settings...");
-        FileInputStream fileInputStream2 = null;
+        FileInputStream fileInputStream2 = 0;
         try {
             try {
                 File settingsFile = getSettingsFile();
@@ -46,17 +45,18 @@ public class CachedSettingsIo {
                 }
                 CommonUtils.closeOrLog(fileInputStream2, "Error while closing settings cache file.");
                 return jSONObject;
-            } catch (Throwable th2) {
-                th = th2;
-                CommonUtils.closeOrLog(null, "Error while closing settings cache file.");
+            } catch (Throwable th) {
+                th = th;
+                fileInputStream2 = "Checking for cached settings...";
+                CommonUtils.closeOrLog(fileInputStream2, "Error while closing settings cache file.");
                 throw th;
             }
         } catch (Exception e2) {
             e = e2;
             fileInputStream = null;
-        } catch (Throwable th3) {
-            th = th3;
-            CommonUtils.closeOrLog(null, "Error while closing settings cache file.");
+        } catch (Throwable th2) {
+            th = th2;
+            CommonUtils.closeOrLog(fileInputStream2, "Error while closing settings cache file.");
             throw th;
         }
     }

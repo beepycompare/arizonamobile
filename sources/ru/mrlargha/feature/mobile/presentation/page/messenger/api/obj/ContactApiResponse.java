@@ -418,10 +418,12 @@ public final class ContactApiResponse {
         String str4 = this.userImage;
         String str5 = ((str4 == null || !StringsKt.contains$default((CharSequence) str4, (CharSequence) "http:", false, 2, (Object) null)) && ((str = this.userImage) == null || !StringsKt.contains$default((CharSequence) str, (CharSequence) "https:", false, 2, (Object) null))) ? FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + this.userImage : this.userImage;
         MessageStatus messageStatus = this.isOnline ? MessageStatus.ONLINE : MessageStatus.OFFLINE;
+        String str6 = str5;
         boolean z = this.isPinned;
         boolean z2 = this.isMe;
-        boolean z3 = this.isNotificationsAllowed;
-        String str6 = "";
+        boolean z3 = true;
+        boolean z4 = this.isNotificationsAllowed;
+        String str7 = "";
         if (this.timestamp == null) {
             formatTimestamp$default = "";
         } else {
@@ -430,18 +432,20 @@ public final class ContactApiResponse {
             Intrinsics.checkNotNull(l);
             formatTimestamp$default = DateConverter.Companion.formatTimestamp$default(companion2, l.longValue(), false, 2, null);
         }
-        String str7 = this.lastLogin;
-        if ((str7 != null ? StringsKt.toLongOrNull(str7) : null) != null) {
+        String str8 = this.lastLogin;
+        if ((str8 != null ? StringsKt.toLongOrNull(str8) : null) != null) {
             DateConverter.Companion companion3 = DateConverter.Companion;
-            String str8 = this.lastLogin;
-            Intrinsics.checkNotNull(str8 != null ? StringsKt.toLongOrNull(str8) : null);
-            str6 = "Был в сети " + DateConverter.Companion.formatTimestamp$default(companion3, longOrNull.longValue(), false, 2, null);
+            String str9 = this.lastLogin;
+            Intrinsics.checkNotNull(str9 != null ? StringsKt.toLongOrNull(str9) : null);
+            str7 = "Был в сети " + DateConverter.Companion.formatTimestamp$default(companion3, longOrNull.longValue(), false, 2, null);
         }
-        String str9 = str6;
         Long l2 = this.timestamp;
         String str10 = this.lastLogin;
         Long longOrNull2 = str10 != null ? StringsKt.toLongOrNull(str10) : null;
         Boolean bool = this.hasRead;
-        return new ContactInfo(i, num, str2, str5, fromIndex, str3, formatPhoneNumber, messageStatus, z, this.isContact, z2, z3, bool != null ? bool.booleanValue() : true, this.isSendAvailable, this.isBlocked, formatTimestamp$default, str9, l2, longOrNull2);
+        if (bool != null) {
+            z3 = bool.booleanValue();
+        }
+        return new ContactInfo(i, num, str2, str6, fromIndex, str3, formatPhoneNumber, messageStatus, z, this.isContact, z2, z4, z3, this.isSendAvailable, this.isBlocked, formatTimestamp$default, str7, l2, longOrNull2);
     }
 }

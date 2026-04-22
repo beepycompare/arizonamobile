@@ -60,7 +60,7 @@ public final class ULongRange extends ULongProgression implements ClosedRange<UL
         if (m10436getLastsVKNKU() == -1) {
             throw new IllegalStateException("Cannot return the exclusive upper bound of a range that includes MAX_VALUE.".toString());
         }
-        return ULong.m9362constructorimpl(m10436getLastsVKNKU() + ULong.m9362constructorimpl(1 & 4294967295L));
+        return ULong.m9362constructorimpl(m10436getLastsVKNKU() + ULong.m9362constructorimpl(1L));
     }
 
     /* renamed from: contains-VKZWuLQ  reason: not valid java name */

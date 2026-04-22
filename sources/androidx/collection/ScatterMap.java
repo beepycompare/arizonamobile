@@ -261,41 +261,43 @@ public abstract class ScatterMap<K, V> {
     }
 
     public final String joinToString(CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function2<? super K, ? super V, ? extends CharSequence> function2) {
+        long[] jArr;
         Object[] objArr;
+        long[] jArr2;
         Object[] objArr2;
-        Object[] objArr3;
-        Object[] objArr4;
+        int i2;
         Intrinsics.checkNotNullParameter(separator, "separator");
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(postfix, "postfix");
         Intrinsics.checkNotNullParameter(truncated, "truncated");
         StringBuilder sb = new StringBuilder();
         sb.append(prefix);
-        Object[] objArr5 = this.keys;
-        Object[] objArr6 = this.values;
-        long[] jArr = this.metadata;
-        int length = jArr.length - 2;
+        Object[] objArr3 = this.keys;
+        Object[] objArr4 = this.values;
+        long[] jArr3 = this.metadata;
+        int length = jArr3.length - 2;
         if (length >= 0) {
-            int i2 = 0;
             int i3 = 0;
+            int i4 = 0;
             loop0: while (true) {
-                long j = jArr[i2];
-                int i4 = i2;
+                long j = jArr3[i3];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i5 = 8 - ((~(i4 - length)) >>> 31);
-                    int i6 = 0;
-                    while (i6 < i5) {
+                    int i5 = 8;
+                    int i6 = 8 - ((~(i3 - length)) >>> 31);
+                    int i7 = 0;
+                    while (i7 < i6) {
                         if ((j & 255) < 128) {
-                            int i7 = (i4 << 3) + i6;
-                            Object obj = objArr5[i7];
-                            objArr3 = objArr5;
-                            Object obj2 = objArr6[i7];
-                            objArr4 = objArr6;
-                            if (i3 == i) {
+                            int i8 = (i3 << 3) + i7;
+                            i2 = i5;
+                            Object obj = objArr3[i8];
+                            jArr2 = jArr3;
+                            Object obj2 = objArr4[i8];
+                            objArr2 = objArr3;
+                            if (i4 == i) {
                                 sb.append(truncated);
                                 break loop0;
                             }
-                            if (i3 != 0) {
+                            if (i4 != 0) {
                                 sb.append(separator);
                             }
                             if (function2 == null) {
@@ -305,31 +307,33 @@ public abstract class ScatterMap<K, V> {
                             } else {
                                 sb.append(function2.invoke(obj, obj2));
                             }
-                            i3++;
+                            i4++;
                         } else {
-                            objArr3 = objArr5;
-                            objArr4 = objArr6;
+                            jArr2 = jArr3;
+                            objArr2 = objArr3;
+                            i2 = i5;
                         }
-                        j >>= 8;
-                        i6++;
-                        objArr6 = objArr4;
-                        objArr5 = objArr3;
+                        j >>= i2;
+                        i7++;
+                        i5 = i2;
+                        objArr3 = objArr2;
+                        jArr3 = jArr2;
                     }
-                    objArr = objArr5;
-                    objArr2 = objArr6;
-                    if (i5 != 8) {
+                    jArr = jArr3;
+                    objArr = objArr3;
+                    if (i6 != i5) {
                         break;
                     }
                 } else {
-                    objArr = objArr5;
-                    objArr2 = objArr6;
+                    jArr = jArr3;
+                    objArr = objArr3;
                 }
-                if (i4 == length) {
+                if (i3 == length) {
                     break;
                 }
-                i2 = i4 + 1;
-                objArr6 = objArr2;
-                objArr5 = objArr;
+                i3++;
+                objArr3 = objArr;
+                jArr3 = jArr;
             }
         }
         sb.append(postfix);

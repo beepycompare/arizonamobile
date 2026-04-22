@@ -104,16 +104,11 @@ public final class NestedScrollNode extends Modifier.Node implements Traversable
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:19:0x004e, code lost:
-        if (r11 == r1) goto L20;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x006f, code lost:
-        if (r11 == r1) goto L20;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0071, code lost:
-        return r1;
+        if (r9 == r1) goto L20;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x006f  */
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPreFling-QWom1Mo */
     /*
@@ -121,6 +116,8 @@ public final class NestedScrollNode extends Modifier.Node implements Traversable
     */
     public Object mo895onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
         NestedScrollNode$onPreFling$1 nestedScrollNode$onPreFling$1;
+        Object obj;
+        Object coroutine_suspended;
         int i;
         long m7804getZero9UxMQ8M;
         long j2;
@@ -128,27 +125,28 @@ public final class NestedScrollNode extends Modifier.Node implements Traversable
             nestedScrollNode$onPreFling$1 = (NestedScrollNode$onPreFling$1) continuation;
             if ((nestedScrollNode$onPreFling$1.label & Integer.MIN_VALUE) != 0) {
                 nestedScrollNode$onPreFling$1.label -= Integer.MIN_VALUE;
-                Object obj = nestedScrollNode$onPreFling$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                obj = nestedScrollNode$onPreFling$1.result;
+                coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = nestedScrollNode$onPreFling$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     NestedScrollConnection parentConnection = getParentConnection();
-                    if (parentConnection != null) {
-                        nestedScrollNode$onPreFling$1.J$0 = j;
-                        nestedScrollNode$onPreFling$1.label = 1;
-                        obj = parentConnection.mo895onPreFlingQWom1Mo(j, nestedScrollNode$onPreFling$1);
-                    } else {
+                    if (parentConnection == null) {
                         m7804getZero9UxMQ8M = Velocity.Companion.m7804getZero9UxMQ8M();
-                        long j3 = m7804getZero9UxMQ8M;
-                        long j4 = j;
-                        j2 = j3;
                         NestedScrollConnection nestedScrollConnection = this.connection;
-                        long m7796minusAH228Gc = Velocity.m7796minusAH228Gc(j4, j2);
-                        nestedScrollNode$onPreFling$1.J$0 = j2;
+                        long m7796minusAH228Gc = Velocity.m7796minusAH228Gc(j, m7804getZero9UxMQ8M);
+                        nestedScrollNode$onPreFling$1.J$0 = m7804getZero9UxMQ8M;
                         nestedScrollNode$onPreFling$1.label = 2;
                         obj = nestedScrollConnection.mo895onPreFlingQWom1Mo(m7796minusAH228Gc, nestedScrollNode$onPreFling$1);
+                        if (obj != coroutine_suspended) {
+                            j2 = m7804getZero9UxMQ8M;
+                            return Velocity.m7784boximpl(Velocity.m7797plusAH228Gc(j2, ((Velocity) obj).m7802unboximpl()));
+                        }
+                        return coroutine_suspended;
                     }
+                    nestedScrollNode$onPreFling$1.J$0 = j;
+                    nestedScrollNode$onPreFling$1.label = 1;
+                    obj = parentConnection.mo895onPreFlingQWom1Mo(j, nestedScrollNode$onPreFling$1);
                 } else if (i != 1) {
                     if (i == 2) {
                         j2 = nestedScrollNode$onPreFling$1.J$0;
@@ -161,39 +159,39 @@ public final class NestedScrollNode extends Modifier.Node implements Traversable
                     ResultKt.throwOnFailure(obj);
                 }
                 m7804getZero9UxMQ8M = ((Velocity) obj).m7802unboximpl();
-                long j32 = m7804getZero9UxMQ8M;
-                long j42 = j;
-                j2 = j32;
                 NestedScrollConnection nestedScrollConnection2 = this.connection;
-                long m7796minusAH228Gc2 = Velocity.m7796minusAH228Gc(j42, j2);
-                nestedScrollNode$onPreFling$1.J$0 = j2;
+                long m7796minusAH228Gc2 = Velocity.m7796minusAH228Gc(j, m7804getZero9UxMQ8M);
+                nestedScrollNode$onPreFling$1.J$0 = m7804getZero9UxMQ8M;
                 nestedScrollNode$onPreFling$1.label = 2;
                 obj = nestedScrollConnection2.mo895onPreFlingQWom1Mo(m7796minusAH228Gc2, nestedScrollNode$onPreFling$1);
+                if (obj != coroutine_suspended) {
+                }
+                return coroutine_suspended;
             }
         }
         nestedScrollNode$onPreFling$1 = new NestedScrollNode$onPreFling$1(this, continuation);
-        Object obj2 = nestedScrollNode$onPreFling$1.result;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        obj = nestedScrollNode$onPreFling$1.result;
+        coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = nestedScrollNode$onPreFling$1.label;
         if (i != 0) {
         }
-        m7804getZero9UxMQ8M = ((Velocity) obj2).m7802unboximpl();
-        long j322 = m7804getZero9UxMQ8M;
-        long j422 = j;
-        j2 = j322;
+        m7804getZero9UxMQ8M = ((Velocity) obj).m7802unboximpl();
         NestedScrollConnection nestedScrollConnection22 = this.connection;
-        long m7796minusAH228Gc22 = Velocity.m7796minusAH228Gc(j422, j2);
-        nestedScrollNode$onPreFling$1.J$0 = j2;
+        long m7796minusAH228Gc22 = Velocity.m7796minusAH228Gc(j, m7804getZero9UxMQ8M);
+        nestedScrollNode$onPreFling$1.J$0 = m7804getZero9UxMQ8M;
         nestedScrollNode$onPreFling$1.label = 2;
-        obj2 = nestedScrollConnection22.mo895onPreFlingQWom1Mo(m7796minusAH228Gc22, nestedScrollNode$onPreFling$1);
+        obj = nestedScrollConnection22.mo895onPreFlingQWom1Mo(m7796minusAH228Gc22, nestedScrollNode$onPreFling$1);
+        if (obj != coroutine_suspended) {
+        }
+        return coroutine_suspended;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0040  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x008a  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0028  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x006b  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0090  */
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPostFling-RZ2iAVY */
     /*
@@ -203,11 +201,10 @@ public final class NestedScrollNode extends Modifier.Node implements Traversable
         NestedScrollNode$onPostFling$1 nestedScrollNode$onPostFling$1;
         int i;
         long j3;
-        long j4;
         long m7802unboximpl;
-        NestedScrollConnection parentConnection;
+        NestedScrollNode parentConnection;
         long m7804getZero9UxMQ8M;
-        long j5;
+        long j4;
         if (continuation instanceof NestedScrollNode$onPostFling$1) {
             nestedScrollNode$onPostFling$1 = (NestedScrollNode$onPostFling$1) continuation;
             if ((nestedScrollNode$onPostFling$1.label & Integer.MIN_VALUE) != 0) {
@@ -224,36 +221,37 @@ public final class NestedScrollNode extends Modifier.Node implements Traversable
                     nestedScrollNode$onPostFling$12.label = 1;
                     obj = nestedScrollConnection.mo572onPostFlingRZ2iAVY(j, j2, nestedScrollNode$onPostFling$12);
                     if (obj != coroutine_suspended) {
-                        j3 = j;
-                        j4 = j2;
+                        j3 = j2;
                     }
                     return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
-                        j5 = nestedScrollNode$onPostFling$12.J$0;
+                        j4 = nestedScrollNode$onPostFling$12.J$0;
                         ResultKt.throwOnFailure(obj);
                         m7804getZero9UxMQ8M = ((Velocity) obj).m7802unboximpl();
-                        m7802unboximpl = j5;
+                        m7802unboximpl = j4;
                         return Velocity.m7784boximpl(Velocity.m7797plusAH228Gc(m7802unboximpl, m7804getZero9UxMQ8M));
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    j4 = nestedScrollNode$onPostFling$12.J$1;
-                    j3 = nestedScrollNode$onPostFling$12.J$0;
+                    long j5 = nestedScrollNode$onPostFling$12.J$1;
+                    long j6 = nestedScrollNode$onPostFling$12.J$0;
                     ResultKt.throwOnFailure(obj);
+                    j3 = j5;
+                    j = j6;
                 }
                 m7802unboximpl = ((Velocity) obj).m7802unboximpl();
                 parentConnection = !isAttached() ? getParentConnection() : this.lastKnownParentNode;
                 if (parentConnection == null) {
-                    long m7797plusAH228Gc = Velocity.m7797plusAH228Gc(j3, m7802unboximpl);
-                    long m7796minusAH228Gc = Velocity.m7796minusAH228Gc(j4, m7802unboximpl);
+                    long m7797plusAH228Gc = Velocity.m7797plusAH228Gc(j, m7802unboximpl);
+                    long m7796minusAH228Gc = Velocity.m7796minusAH228Gc(j3, m7802unboximpl);
                     nestedScrollNode$onPostFling$12.J$0 = m7802unboximpl;
                     nestedScrollNode$onPostFling$12.label = 2;
                     obj = parentConnection.mo572onPostFlingRZ2iAVY(m7797plusAH228Gc, m7796minusAH228Gc, nestedScrollNode$onPostFling$12);
                     if (obj != coroutine_suspended) {
-                        j5 = m7802unboximpl;
+                        j4 = m7802unboximpl;
                         m7804getZero9UxMQ8M = ((Velocity) obj).m7802unboximpl();
-                        m7802unboximpl = j5;
+                        m7802unboximpl = j4;
                         return Velocity.m7784boximpl(Velocity.m7797plusAH228Gc(m7802unboximpl, m7804getZero9UxMQ8M));
                     }
                     return coroutine_suspended;
@@ -270,7 +268,8 @@ public final class NestedScrollNode extends Modifier.Node implements Traversable
         if (i != 0) {
         }
         m7802unboximpl = ((Velocity) obj2).m7802unboximpl();
-        parentConnection = !isAttached() ? getParentConnection() : this.lastKnownParentNode;
+        if (!isAttached()) {
+        }
         if (parentConnection == null) {
         }
     }

@@ -322,235 +322,229 @@ public class CarouselSwipeableState<T> {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x00a0, code lost:
-        if (snapInternalToOffset(r10, r0) == r1) goto L33;
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x00a9, code lost:
+        if (snapInternalToOffset(r11, r0) == r1) goto L32;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x01d4, code lost:
+        if (r13 == r1) goto L32;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0215  */
-    /* JADX WARN: Type inference failed for: r10v21, types: [float] */
-    /* JADX WARN: Type inference failed for: r10v76, types: [float] */
-    /* JADX WARN: Type inference failed for: r10v78, types: [float] */
-    /* JADX WARN: Type inference failed for: r10v89 */
-    /* JADX WARN: Type inference failed for: r10v90 */
-    /* JADX WARN: Type inference failed for: r10v91 */
-    /* JADX WARN: Type inference failed for: r10v92 */
-    /* JADX WARN: Type inference failed for: r2v0, types: [int] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0219  */
+    /* JADX WARN: Type inference failed for: r10v0, types: [androidx.constraintlayout.compose.carousel.CarouselSwipeableState<T>, androidx.constraintlayout.compose.carousel.CarouselSwipeableState, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r10v21 */
+    /* JADX WARN: Type inference failed for: r10v3, types: [androidx.constraintlayout.compose.carousel.CarouselSwipeableState] */
+    /* JADX WARN: Type inference failed for: r10v30 */
+    /* JADX WARN: Type inference failed for: r10v4 */
+    /* JADX WARN: Type inference failed for: r10v5, types: [androidx.constraintlayout.compose.carousel.CarouselSwipeableState, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r10v7, types: [androidx.constraintlayout.compose.carousel.CarouselSwipeableState] */
+    /* JADX WARN: Type inference failed for: r11v65, types: [androidx.constraintlayout.compose.carousel.CarouselSwipeableState] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object processNewAnchors$constraintlayout_compose_release(Map<Float, ? extends T> map, Map<Float, ? extends T> map2, Continuation<? super Unit> continuation) {
         CarouselSwipeableState$processNewAnchors$1 carouselSwipeableState$processNewAnchors$1;
-        ?? r2;
-        CarouselSwipeableState<T> carouselSwipeableState;
+        int i;
         Float offset;
-        CarouselSwipeableState<T> carouselSwipeableState2;
-        CarouselSwipeableState<T> carouselSwipeableState3;
+        float floatValue;
         Float offset2;
         Float offset3;
-        CarouselSwipeableState<T> carouselSwipeableState4;
+        Throwable th;
+        CarouselSwipeableState carouselSwipeableState;
         float f;
-        float f2;
-        try {
-            if (continuation instanceof CarouselSwipeableState$processNewAnchors$1) {
-                carouselSwipeableState$processNewAnchors$1 = (CarouselSwipeableState$processNewAnchors$1) continuation;
-                if ((carouselSwipeableState$processNewAnchors$1.label & Integer.MIN_VALUE) != 0) {
-                    carouselSwipeableState$processNewAnchors$1.label -= Integer.MIN_VALUE;
-                    Object obj = carouselSwipeableState$processNewAnchors$1.result;
-                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    r2 = carouselSwipeableState$processNewAnchors$1.label;
-                    if (r2 != 0) {
-                        ResultKt.throwOnFailure(obj);
-                        if (map.isEmpty()) {
-                            Float minOrNull = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
-                            Intrinsics.checkNotNull(minOrNull);
-                            this.minBound = minOrNull.floatValue();
-                            Float maxOrNull = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
-                            Intrinsics.checkNotNull(maxOrNull);
-                            this.maxBound = maxOrNull.floatValue();
-                            offset3 = CarouselSwipeableKt.getOffset(map2, getCurrentValue());
-                            if (offset3 == null) {
-                                throw new IllegalArgumentException("The initial value must have an associated anchor.".toString());
-                            }
-                            float floatValue = offset3.floatValue();
-                            carouselSwipeableState$processNewAnchors$1.label = 1;
-                        } else if (!Intrinsics.areEqual(map2, map)) {
-                            this.minBound = Float.NEGATIVE_INFINITY;
-                            this.maxBound = Float.POSITIVE_INFINITY;
-                            Float value = this.animationTarget.getValue();
-                            T t = null;
-                            if (value != null) {
-                                offset2 = CarouselSwipeableKt.getOffset(map2, map.get(value));
-                                if (offset2 != null) {
-                                    map = (Map<Float, ? extends T>) offset2.floatValue();
-                                } else {
-                                    Iterator<T> it = map2.keySet().iterator();
-                                    if (it.hasNext()) {
-                                        t = it.next();
-                                        if (it.hasNext()) {
-                                            float abs = Math.abs(((Number) t).floatValue() - value.floatValue());
-                                            do {
-                                                T next = it.next();
-                                                float abs2 = Math.abs(((Number) next).floatValue() - value.floatValue());
-                                                if (Float.compare(abs, abs2) > 0) {
-                                                    t = next;
-                                                    abs = abs2;
-                                                }
-                                            } while (it.hasNext());
-                                        }
-                                    }
-                                    Intrinsics.checkNotNull(t);
-                                    map = (Map<Float, ? extends T>) ((Number) t).floatValue();
-                                }
+        ?? r10;
+        if (continuation instanceof CarouselSwipeableState$processNewAnchors$1) {
+            carouselSwipeableState$processNewAnchors$1 = (CarouselSwipeableState$processNewAnchors$1) continuation;
+            if ((carouselSwipeableState$processNewAnchors$1.label & Integer.MIN_VALUE) != 0) {
+                carouselSwipeableState$processNewAnchors$1.label -= Integer.MIN_VALUE;
+                Object obj = carouselSwipeableState$processNewAnchors$1.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = carouselSwipeableState$processNewAnchors$1.label;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    if (map.isEmpty()) {
+                        Float minOrNull = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(minOrNull);
+                        this.minBound = minOrNull.floatValue();
+                        Float maxOrNull = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(maxOrNull);
+                        this.maxBound = maxOrNull.floatValue();
+                        offset3 = CarouselSwipeableKt.getOffset(map2, getCurrentValue());
+                        if (offset3 == null) {
+                            throw new IllegalArgumentException("The initial value must have an associated anchor.".toString());
+                        }
+                        float floatValue2 = offset3.floatValue();
+                        carouselSwipeableState$processNewAnchors$1.label = 1;
+                    } else if (!Intrinsics.areEqual(map2, map)) {
+                        this.minBound = Float.NEGATIVE_INFINITY;
+                        this.maxBound = Float.POSITIVE_INFINITY;
+                        Float value = this.animationTarget.getValue();
+                        T t = null;
+                        if (value != null) {
+                            offset2 = CarouselSwipeableKt.getOffset(map2, map.get(value));
+                            if (offset2 != null) {
+                                floatValue = offset2.floatValue();
                             } else {
-                                T t2 = map.get(Boxing.boxFloat(getOffset().getFloatValue()));
-                                if (Intrinsics.areEqual(t2, getCurrentValue())) {
-                                    t2 = getCurrentValue();
-                                }
-                                offset = CarouselSwipeableKt.getOffset(map2, t2);
-                                if (offset != null) {
-                                    map = offset.floatValue();
-                                } else {
-                                    Iterator<T> it2 = map2.keySet().iterator();
-                                    if (it2.hasNext()) {
-                                        t = it2.next();
-                                        if (it2.hasNext()) {
-                                            float abs3 = Math.abs(((Number) t).floatValue() - getOffset().getFloatValue());
-                                            do {
-                                                T next2 = it2.next();
-                                                float abs4 = Math.abs(((Number) next2).floatValue() - getOffset().getFloatValue());
-                                                if (Float.compare(abs3, abs4) > 0) {
-                                                    t = next2;
-                                                    abs3 = abs4;
-                                                }
-                                            } while (it2.hasNext());
-                                        }
+                                Iterator<T> it = map2.keySet().iterator();
+                                if (it.hasNext()) {
+                                    t = it.next();
+                                    if (it.hasNext()) {
+                                        float abs = Math.abs(((Number) t).floatValue() - value.floatValue());
+                                        do {
+                                            T next = it.next();
+                                            float abs2 = Math.abs(((Number) next).floatValue() - value.floatValue());
+                                            if (Float.compare(abs, abs2) > 0) {
+                                                t = next;
+                                                abs = abs2;
+                                            }
+                                        } while (it.hasNext());
                                     }
-                                    Intrinsics.checkNotNull(t);
-                                    map = ((Number) t).floatValue();
                                 }
+                                Intrinsics.checkNotNull(t);
+                                floatValue = ((Number) t).floatValue();
                             }
+                        } else {
+                            Object obj2 = map.get(Boxing.boxFloat(getOffset().getFloatValue()));
+                            if (Intrinsics.areEqual(obj2, getCurrentValue())) {
+                                obj2 = getCurrentValue();
+                            }
+                            offset = CarouselSwipeableKt.getOffset(map2, obj2);
+                            if (offset != null) {
+                                floatValue = offset.floatValue();
+                            } else {
+                                Iterator<T> it2 = map2.keySet().iterator();
+                                if (it2.hasNext()) {
+                                    t = it2.next();
+                                    if (it2.hasNext()) {
+                                        float abs3 = Math.abs(((Number) t).floatValue() - getOffset().getFloatValue());
+                                        do {
+                                            T next2 = it2.next();
+                                            float abs4 = Math.abs(((Number) next2).floatValue() - getOffset().getFloatValue());
+                                            if (Float.compare(abs3, abs4) > 0) {
+                                                t = next2;
+                                                abs3 = abs4;
+                                            }
+                                        } while (it2.hasNext());
+                                    }
+                                }
+                                Intrinsics.checkNotNull(t);
+                                floatValue = ((Number) t).floatValue();
+                            }
+                        }
+                        try {
                             try {
                                 AnimationSpec<Float> animationSpec = this.animationSpec;
                                 carouselSwipeableState$processNewAnchors$1.L$0 = this;
                                 carouselSwipeableState$processNewAnchors$1.L$1 = map2;
-                                carouselSwipeableState$processNewAnchors$1.F$0 = (float) map;
+                                carouselSwipeableState$processNewAnchors$1.F$0 = floatValue;
                                 carouselSwipeableState$processNewAnchors$1.label = 2;
-                                if (animateInternalToOffset((float) map, animationSpec, carouselSwipeableState$processNewAnchors$1) != coroutine_suspended) {
-                                    carouselSwipeableState3 = this;
-                                    f = map;
-                                    carouselSwipeableState3.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(f)));
-                                    Float minOrNull2 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
-                                    Intrinsics.checkNotNull(minOrNull2);
-                                    carouselSwipeableState3.minBound = minOrNull2.floatValue();
-                                    Float maxOrNull2 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
-                                    Intrinsics.checkNotNull(maxOrNull2);
-                                    carouselSwipeableState3.maxBound = maxOrNull2.floatValue();
-                                }
+                                Object animateInternalToOffset = animateInternalToOffset(floatValue, animationSpec, carouselSwipeableState$processNewAnchors$1);
+                                this = this;
                             } catch (CancellationException unused) {
-                                carouselSwipeableState2 = this;
-                                carouselSwipeableState$processNewAnchors$1.L$0 = carouselSwipeableState2;
+                                carouselSwipeableState$processNewAnchors$1.L$0 = (Object) this;
                                 carouselSwipeableState$processNewAnchors$1.L$1 = map2;
-                                carouselSwipeableState$processNewAnchors$1.F$0 = map;
+                                carouselSwipeableState$processNewAnchors$1.F$0 = floatValue;
                                 carouselSwipeableState$processNewAnchors$1.label = 3;
-                                if (carouselSwipeableState2.snapInternalToOffset(map, carouselSwipeableState$processNewAnchors$1) != coroutine_suspended) {
+                                if (((CarouselSwipeableState) this).snapInternalToOffset(floatValue, carouselSwipeableState$processNewAnchors$1) != coroutine_suspended) {
                                 }
                                 return coroutine_suspended;
-                            } catch (Throwable th) {
-                                th = th;
-                                carouselSwipeableState = this;
-                                carouselSwipeableState.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(map)));
-                                Float minOrNull3 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
-                                Intrinsics.checkNotNull(minOrNull3);
-                                carouselSwipeableState.minBound = minOrNull3.floatValue();
-                                Float maxOrNull3 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
-                                Intrinsics.checkNotNull(maxOrNull3);
-                                carouselSwipeableState.maxBound = maxOrNull3.floatValue();
-                                throw th;
                             }
-                        }
-                        return coroutine_suspended;
-                    } else if (r2 == 1) {
-                        ResultKt.throwOnFailure(obj);
-                        return Unit.INSTANCE;
-                    } else if (r2 == 2) {
-                        map = (Map<Float, ? extends T>) carouselSwipeableState$processNewAnchors$1.F$0;
-                        map2 = (Map) carouselSwipeableState$processNewAnchors$1.L$1;
-                        carouselSwipeableState2 = (CarouselSwipeableState) carouselSwipeableState$processNewAnchors$1.L$0;
-                        try {
-                            ResultKt.throwOnFailure(obj);
-                            carouselSwipeableState3 = carouselSwipeableState2;
-                            f = map;
-                            carouselSwipeableState3.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(f)));
-                            Float minOrNull22 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
-                            Intrinsics.checkNotNull(minOrNull22);
-                            carouselSwipeableState3.minBound = minOrNull22.floatValue();
-                            Float maxOrNull22 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
-                            Intrinsics.checkNotNull(maxOrNull22);
-                            carouselSwipeableState3.maxBound = maxOrNull22.floatValue();
-                        } catch (CancellationException unused2) {
-                            carouselSwipeableState$processNewAnchors$1.L$0 = carouselSwipeableState2;
-                            carouselSwipeableState$processNewAnchors$1.L$1 = map2;
-                            carouselSwipeableState$processNewAnchors$1.F$0 = map;
-                            carouselSwipeableState$processNewAnchors$1.label = 3;
-                            if (carouselSwipeableState2.snapInternalToOffset(map, carouselSwipeableState$processNewAnchors$1) != coroutine_suspended) {
-                                carouselSwipeableState4 = carouselSwipeableState2;
-                                f2 = map;
-                                carouselSwipeableState4.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(f2)));
-                                Float minOrNull4 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
-                                Intrinsics.checkNotNull(minOrNull4);
-                                carouselSwipeableState4.minBound = minOrNull4.floatValue();
-                                Float maxOrNull4 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
-                                Intrinsics.checkNotNull(maxOrNull4);
-                                carouselSwipeableState4.maxBound = maxOrNull4.floatValue();
-                                return Unit.INSTANCE;
-                            }
-                            return coroutine_suspended;
-                        }
-                    } else if (r2 != 3) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    } else {
-                        map = (Map<Float, ? extends T>) carouselSwipeableState$processNewAnchors$1.F$0;
-                        map2 = (Map) carouselSwipeableState$processNewAnchors$1.L$1;
-                        carouselSwipeableState = (CarouselSwipeableState) carouselSwipeableState$processNewAnchors$1.L$0;
-                        try {
-                            ResultKt.throwOnFailure(obj);
-                            carouselSwipeableState4 = carouselSwipeableState;
-                            f2 = map;
-                            carouselSwipeableState4.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(f2)));
-                            Float minOrNull42 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
-                            Intrinsics.checkNotNull(minOrNull42);
-                            carouselSwipeableState4.minBound = minOrNull42.floatValue();
-                            Float maxOrNull42 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
-                            Intrinsics.checkNotNull(maxOrNull42);
-                            carouselSwipeableState4.maxBound = maxOrNull42.floatValue();
                         } catch (Throwable th2) {
                             th = th2;
-                            carouselSwipeableState.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(map)));
-                            Float minOrNull32 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
-                            Intrinsics.checkNotNull(minOrNull32);
-                            carouselSwipeableState.minBound = minOrNull32.floatValue();
-                            Float maxOrNull32 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
-                            Intrinsics.checkNotNull(maxOrNull32);
-                            carouselSwipeableState.maxBound = maxOrNull32.floatValue();
+                            this.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(floatValue)));
+                            Float minOrNull2 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                            Intrinsics.checkNotNull(minOrNull2);
+                            this.minBound = minOrNull2.floatValue();
+                            Float maxOrNull2 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                            Intrinsics.checkNotNull(maxOrNull2);
+                            this.maxBound = maxOrNull2.floatValue();
                             throw th;
                         }
                     }
+                    return coroutine_suspended;
+                } else if (i != 1) {
+                    try {
+                        if (i == 2) {
+                            float f2 = carouselSwipeableState$processNewAnchors$1.F$0;
+                            map2 = (Map) carouselSwipeableState$processNewAnchors$1.L$1;
+                            CarouselSwipeableState carouselSwipeableState2 = (CarouselSwipeableState) carouselSwipeableState$processNewAnchors$1.L$0;
+                            try {
+                                ResultKt.throwOnFailure(obj);
+                                floatValue = f2;
+                                r10 = carouselSwipeableState2;
+                                r10.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(floatValue)));
+                                Float minOrNull3 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                                Intrinsics.checkNotNull(minOrNull3);
+                                r10.minBound = minOrNull3.floatValue();
+                                Float maxOrNull3 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                                Intrinsics.checkNotNull(maxOrNull3);
+                                r10.maxBound = maxOrNull3.floatValue();
+                            } catch (CancellationException unused2) {
+                                floatValue = f2;
+                                this = carouselSwipeableState2;
+                                carouselSwipeableState$processNewAnchors$1.L$0 = (Object) this;
+                                carouselSwipeableState$processNewAnchors$1.L$1 = map2;
+                                carouselSwipeableState$processNewAnchors$1.F$0 = floatValue;
+                                carouselSwipeableState$processNewAnchors$1.label = 3;
+                                if (((CarouselSwipeableState) this).snapInternalToOffset(floatValue, carouselSwipeableState$processNewAnchors$1) != coroutine_suspended) {
+                                    float f3 = floatValue;
+                                    carouselSwipeableState = (??[OBJECT, ARRAY]) this;
+                                    f = f3;
+                                    carouselSwipeableState.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(f)));
+                                    Float minOrNull4 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                                    Intrinsics.checkNotNull(minOrNull4);
+                                    carouselSwipeableState.minBound = minOrNull4.floatValue();
+                                    Float maxOrNull4 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                                    Intrinsics.checkNotNull(maxOrNull4);
+                                    carouselSwipeableState.maxBound = maxOrNull4.floatValue();
+                                    return Unit.INSTANCE;
+                                }
+                                return coroutine_suspended;
+                            }
+                        } else if (i != 3) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        } else {
+                            f = carouselSwipeableState$processNewAnchors$1.F$0;
+                            map2 = (Map) carouselSwipeableState$processNewAnchors$1.L$1;
+                            CarouselSwipeableState carouselSwipeableState3 = (CarouselSwipeableState) carouselSwipeableState$processNewAnchors$1.L$0;
+                            ResultKt.throwOnFailure(obj);
+                            carouselSwipeableState = carouselSwipeableState3;
+                            carouselSwipeableState.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(f)));
+                            Float minOrNull42 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                            Intrinsics.checkNotNull(minOrNull42);
+                            carouselSwipeableState.minBound = minOrNull42.floatValue();
+                            Float maxOrNull42 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                            Intrinsics.checkNotNull(maxOrNull42);
+                            carouselSwipeableState.maxBound = maxOrNull42.floatValue();
+                        }
+                    } catch (Throwable th3) {
+                        th = th3;
+                        floatValue = this;
+                        this = map;
+                        this.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(floatValue)));
+                        Float minOrNull22 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(minOrNull22);
+                        this.minBound = minOrNull22.floatValue();
+                        Float maxOrNull22 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(maxOrNull22);
+                        this.maxBound = maxOrNull22.floatValue();
+                        throw th;
+                    }
+                } else {
+                    ResultKt.throwOnFailure(obj);
                     return Unit.INSTANCE;
                 }
+                return Unit.INSTANCE;
             }
-            if (r2 != 0) {
-            }
-            return Unit.INSTANCE;
-        } catch (Throwable th3) {
-            th = th3;
-            carouselSwipeableState = r2;
         }
         carouselSwipeableState$processNewAnchors$1 = new CarouselSwipeableState$processNewAnchors$1(this, continuation);
-        Object obj2 = carouselSwipeableState$processNewAnchors$1.result;
+        Object obj3 = carouselSwipeableState$processNewAnchors$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        r2 = carouselSwipeableState$processNewAnchors$1.label;
+        i = carouselSwipeableState$processNewAnchors$1.label;
+        if (i != 0) {
+        }
+        return Unit.INSTANCE;
     }
 
     public final Function2<Float, Float, Float> getThresholds$constraintlayout_compose_release() {
@@ -611,16 +605,16 @@ public class CarouselSwipeableState<T> {
     public final SwipeProgress<T> getProgress() {
         List findBounds;
         Object currentValue;
-        Object obj;
         float f;
+        Object obj;
         Pair pair;
         findBounds = CarouselSwipeableKt.findBounds(getOffset().getFloatValue(), getAnchors$constraintlayout_compose_release().keySet());
         int size = findBounds.size();
         if (size == 0) {
             T currentValue2 = getCurrentValue();
             currentValue = getCurrentValue();
-            obj = currentValue2;
             f = 1.0f;
+            obj = currentValue2;
         } else if (size == 1) {
             Object value = MapsKt.getValue(getAnchors$constraintlayout_compose_release(), findBounds.get(0));
             currentValue = MapsKt.getValue(getAnchors$constraintlayout_compose_release(), findBounds.get(0));

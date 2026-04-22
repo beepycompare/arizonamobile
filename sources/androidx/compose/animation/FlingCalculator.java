@@ -44,9 +44,8 @@ public final class FlingCalculator {
         float f3;
         double splineDeceleration = getSplineDeceleration(f);
         f2 = FlingCalculatorKt.DecelerationRate;
-        double d = this.friction * this.magicPhysicalCoefficient;
         f3 = FlingCalculatorKt.DecelerationRate;
-        return (float) (d * Math.exp((f3 / (f2 - 1.0d)) * splineDeceleration));
+        return (float) (this.friction * this.magicPhysicalCoefficient * Math.exp((f3 / (f2 - 1.0d)) * splineDeceleration));
     }
 
     public final FlingInfo flingInfo(float f) {

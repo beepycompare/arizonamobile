@@ -1029,7 +1029,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         try {
             return this.videoSink.initialize(format);
         } catch (VideoSink.VideoSinkException e) {
-            throw createRendererException(e, format, 7000);
+            throw this.createRendererException(e, format, 7000);
         }
     }
 
@@ -1375,7 +1375,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
             mediaCodecVideoRenderer.renderOutputBufferV21(mediaCodecAdapter, i, j, releaseTimeNs);
             releaseTimeNs = releaseTimeNs;
         }
-        updateVideoFrameProcessingOffsetCounters(earlyUs);
+        mediaCodecVideoRenderer.updateVideoFrameProcessingOffsetCounters(earlyUs);
         mediaCodecVideoRenderer.lastFrameReleaseTimeNs = releaseTimeNs;
     }
 

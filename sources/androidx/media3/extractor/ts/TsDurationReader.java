@@ -67,9 +67,8 @@ final class TsDurationReader {
 
     private int readFirstPcrValue(ExtractorInput extractorInput, PositionHolder positionHolder, int i) throws IOException {
         int min = (int) Math.min(this.timestampSearchBytes, extractorInput.getLength());
-        long j = 0;
-        if (extractorInput.getPosition() != j) {
-            positionHolder.position = j;
+        if (extractorInput.getPosition() != 0) {
+            positionHolder.position = 0L;
             return 1;
         }
         this.packetBuffer.reset(min);

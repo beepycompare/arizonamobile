@@ -141,23 +141,8 @@ public final class HudTargetPlateTransportModel {
         this.userNumber = i3;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public /* synthetic */ HudTargetPlateTransportModel(List list, List list2, int i, int i2, String str, List list3, Tag tag, int i3, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(list, list2, i, i2, str, list3, r9, r10);
-        int i5;
-        Tag tag2;
-        list = (i4 & 1) != 0 ? null : list;
-        list2 = (i4 & 2) != 0 ? null : list2;
-        if ((i4 & 64) != 0) {
-            i5 = i3;
-            tag2 = null;
-        } else {
-            i5 = i3;
-            tag2 = tag;
-        }
+        this((i4 & 1) != 0 ? null : list, (i4 & 2) != 0 ? null : list2, i, i2, str, list3, (i4 & 64) != 0 ? null : tag, i3);
     }
 
     public final List<Tag> getAdditionalTags() {

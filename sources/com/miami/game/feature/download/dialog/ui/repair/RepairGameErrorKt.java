@@ -230,7 +230,7 @@ public final class RepairGameErrorKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2140470458, i, -1, "com.miami.game.feature.download.dialog.ui.repair.RepairGameErrorDialogContent.<anonymous> (RepairGameError.kt:69)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_check_files_error, composer, 0), (String) null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(100)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, Painter.$stable | 432, 120);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_check_files_error, composer, 0), (String) null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(100.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, Painter.$stable | 432, 120);
             TextKt.m2712TextNvy7gAk("ОШИБКА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodyMedium(), composer, 6, 0, 131070);
             DialogDescriptionTextKt.DialogDescriptionText("Ты приближаешься к землям, где магия и сила стихий соединяются, образуя таинственные и непредсказуемые явления.", composer, 6);
             ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");

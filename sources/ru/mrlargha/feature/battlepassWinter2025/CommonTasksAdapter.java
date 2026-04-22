@@ -100,7 +100,7 @@ public final class CommonTasksAdapter extends RecyclerView.Adapter<RodinaBattleP
         } else {
             binding.progressDoneContainer.setVisibility(8);
             binding.progressInPercentText.setVisibility(0);
-            binding.progressInPercentText.setText(((int) ((commonTaskInfo2.validCurrentProgress() / commonTaskInfo2.getTotalProgress()) * 100)) + "%");
+            binding.progressInPercentText.setText(((int) ((commonTaskInfo2.validCurrentProgress() / commonTaskInfo2.getTotalProgress()) * 100.0f)) + "%");
             binding.itemRewardDescription.setTextColor(-1);
             binding.itemCount.setTextColor(-1);
         }

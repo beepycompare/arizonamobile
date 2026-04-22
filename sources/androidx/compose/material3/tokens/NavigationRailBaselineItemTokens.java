@@ -7,16 +7,16 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class NavigationRailBaselineItemTokens {
     public static final int $stable = 0;
-    private static final float ActiveIndicatorLeadingSpace;
-    private static final float ActiveIndicatorTrailingSpace;
     public static final NavigationRailBaselineItemTokens INSTANCE = new NavigationRailBaselineItemTokens();
-    private static final float ActiveIndicatorIconLabelSpace = Dp.m7555constructorimpl((float) 8.0d);
+    private static final float ActiveIndicatorIconLabelSpace = Dp.m7555constructorimpl(8.0f);
+    private static final float ActiveIndicatorLeadingSpace = Dp.m7555constructorimpl(16.0f);
     private static final ShapeKeyTokens ActiveIndicatorShape = ShapeKeyTokens.CornerFull;
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 64.0d);
+    private static final float ActiveIndicatorTrailingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(64.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
-    private static final float ContainerVerticalSpace = Dp.m7555constructorimpl((float) 6.0d);
-    private static final float HeaderSpaceMinimum = Dp.m7555constructorimpl((float) 40.0d);
-    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
+    private static final float ContainerVerticalSpace = Dp.m7555constructorimpl(6.0f);
+    private static final float HeaderSpaceMinimum = Dp.m7555constructorimpl(40.0f);
+    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
 
     private NavigationRailBaselineItemTokens() {
     }
@@ -62,11 +62,5 @@ public final class NavigationRailBaselineItemTokens {
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
     public final float m3558getIconSizeD9Ej5fM() {
         return IconSize;
-    }
-
-    static {
-        float f = (float) 16.0d;
-        ActiveIndicatorLeadingSpace = Dp.m7555constructorimpl(f);
-        ActiveIndicatorTrailingSpace = Dp.m7555constructorimpl(f);
     }
 }

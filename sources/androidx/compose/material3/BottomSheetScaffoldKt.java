@@ -141,8 +141,8 @@ public final class BottomSheetScaffoldKt {
     /* JADX WARN: Removed duplicated region for block: B:185:0x0238  */
     /* JADX WARN: Removed duplicated region for block: B:192:0x024e  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:282:0x04c0  */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x04e2  */
+    /* JADX WARN: Removed duplicated region for block: B:282:0x04bf  */
+    /* JADX WARN: Removed duplicated region for block: B:285:0x04e1  */
     /* JADX WARN: Removed duplicated region for block: B:287:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0067  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0071  */
@@ -407,7 +407,7 @@ public final class BottomSheetScaffoldKt {
                                     j6 = ColorSchemeKt.m1902contentColorForek8zF_U(j5, startRestartGroup, (i4 >> 18) & 14);
                                     i4 &= -29360129;
                                 }
-                                m7555constructorimpl = i8 != 0 ? Dp.m7555constructorimpl(0) : f3;
+                                m7555constructorimpl = i8 != 0 ? Dp.m7555constructorimpl(0.0f) : f3;
                                 m1747getElevationD9Ej5fM = i10 != 0 ? BottomSheetDefaults.INSTANCE.m1747getElevationD9Ej5fM() : f4;
                                 lambda$1392012807$material3 = i12 != 0 ? ComposableSingletons$BottomSheetScaffoldKt.INSTANCE.getLambda$1392012807$material3() : function2;
                                 z3 = i15 != 0 ? true : z;
@@ -1190,7 +1190,7 @@ public final class BottomSheetScaffoldKt {
         float offset = sheetState.getAnchoredDraggableState$material3().getOffset();
         float minAnchor = sheetState.getAnchoredDraggableState$material3().getAnchors().minAnchor();
         float f = offset < minAnchor ? minAnchor - offset : 0.0f;
-        graphicsLayerScope.setScaleY(f > 0.0f ? 1 / ((Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() & 4294967295L)) + f) / Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() & 4294967295L))) : 1.0f);
+        graphicsLayerScope.setScaleY(f > 0.0f ? 1.0f / ((Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() & 4294967295L)) + f) / Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() & 4294967295L))) : 1.0f);
         graphicsLayerScope.mo4973setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, 0.0f));
         return Unit.INSTANCE;
     }

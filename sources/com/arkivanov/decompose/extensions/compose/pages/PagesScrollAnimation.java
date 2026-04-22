@@ -51,7 +51,7 @@ public interface PagesScrollAnimation {
                 return true;
             }
             if (obj instanceof Default) {
-                Default r3 = (Default) obj;
+                Default r2 = (Default) obj;
                 return true;
             }
             return false;

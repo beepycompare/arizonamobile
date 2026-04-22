@@ -418,6 +418,7 @@ public final class ArizonaRentAddPage extends MobilePage {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setupListeners$lambda$0$8(ArizonaRentAddPage arizonaRentAddPage, View view) {
+        Log.e("TAG", "setupListeners: " + arizonaRentAddPage.adState.getValue().getCost());
         MobilePage.sendFrontendMessage$default(arizonaRentAddPage, MobilePHoneSendSubIds.RENT_ADD_AD.getSubIds(), 0, StringKt.toStringJson(arizonaRentAddPage.adState.getValue()), 2, null);
     }
 

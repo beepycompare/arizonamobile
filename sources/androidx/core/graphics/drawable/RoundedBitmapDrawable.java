@@ -125,7 +125,7 @@ public abstract class RoundedBitmapDrawable extends Drawable {
                 roundedBitmapDrawable.mCornerRadius = min2 * 0.5f;
             } else {
                 roundedBitmapDrawable = this;
-                roundedBitmapDrawable.gravityCompatApply(roundedBitmapDrawable.mGravity, roundedBitmapDrawable.mBitmapWidth, roundedBitmapDrawable.mBitmapHeight, getBounds(), roundedBitmapDrawable.mDstRect);
+                roundedBitmapDrawable.gravityCompatApply(roundedBitmapDrawable.mGravity, roundedBitmapDrawable.mBitmapWidth, roundedBitmapDrawable.mBitmapHeight, roundedBitmapDrawable.getBounds(), roundedBitmapDrawable.mDstRect);
             }
             roundedBitmapDrawable.mDstRectF.set(roundedBitmapDrawable.mDstRect);
             if (roundedBitmapDrawable.mBitmapShader != null) {

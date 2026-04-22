@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -505,7 +506,9 @@ public final class MobileRentAccessoryCreateAddPage {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setupListeners$lambda$0$2(MobileRentAccessoryCreateAddPage mobileRentAccessoryCreateAddPage, MobileRentAccessoryAddBinding mobileRentAccessoryAddBinding, View view) {
-        mobileRentAccessoryCreateAddPage.parentContainer.sendFrontendMessage(MobilePHoneSendSubIds.RENT_ACCESSORY_CREATE_ADD.getSubIds(), 0, StringKt.toStringJson(new MobileRentAccessoryCreateAddModel(String.valueOf(mobileRentAccessoryCreateAddPage.sumCost), mobileRentAccessoryCreateAddPage.currentCategory, String.valueOf(mobileRentAccessoryAddBinding.etDesc.getText()))));
+        MobileRentAccessoryCreateAddModel mobileRentAccessoryCreateAddModel = new MobileRentAccessoryCreateAddModel(String.valueOf(mobileRentAccessoryCreateAddPage.sumCost), mobileRentAccessoryCreateAddPage.currentCategory, String.valueOf(mobileRentAccessoryAddBinding.etDesc.getText()));
+        Log.e("TAG", "setupListeners: " + mobileRentAccessoryCreateAddModel);
+        mobileRentAccessoryCreateAddPage.parentContainer.sendFrontendMessage(MobilePHoneSendSubIds.RENT_ACCESSORY_CREATE_ADD.getSubIds(), 0, StringKt.toStringJson(mobileRentAccessoryCreateAddModel));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

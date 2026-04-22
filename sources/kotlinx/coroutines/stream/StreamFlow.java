@@ -33,24 +33,27 @@ public final class StreamFlow<T> implements Flow<T> {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x005f A[Catch: all -> 0x0037, TRY_LEAVE, TryCatch #0 {all -> 0x0037, blocks: (B:12:0x0032, B:22:0x0059, B:24:0x005f), top: B:35:0x0032 }] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0043  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0061 A[Catch: all -> 0x007c, TRY_LEAVE, TryCatch #1 {all -> 0x007c, blocks: (B:22:0x005b, B:24:0x0061), top: B:39:0x005b }] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0074 A[SYNTHETIC] */
     @Override // kotlinx.coroutines.flow.Flow
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public Object collect(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
         StreamFlow$collect$1 streamFlow$collect$1;
+        Object coroutine_suspended;
         int i;
         StreamFlow<T> streamFlow;
-        FlowCollector<? super T> flowCollector2;
+        Throwable th;
         Iterator<T> it;
+        FlowCollector<? super T> flowCollector2;
         if (continuation instanceof StreamFlow$collect$1) {
             streamFlow$collect$1 = (StreamFlow$collect$1) continuation;
             if ((streamFlow$collect$1.label & Integer.MIN_VALUE) != 0) {
                 streamFlow$collect$1.label -= Integer.MIN_VALUE;
                 Object obj = streamFlow$collect$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = streamFlow$collect$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
@@ -58,12 +61,12 @@ public final class StreamFlow<T> implements Flow<T> {
                         throw new IllegalStateException("Stream.consumeAsFlow can be collected only once".toString());
                     }
                     try {
-                        flowCollector2 = flowCollector;
+                        streamFlow = this;
                         it = this.stream.iterator();
+                        flowCollector2 = flowCollector;
+                    } catch (Throwable th2) {
                         streamFlow = this;
-                    } catch (Throwable th) {
-                        th = th;
-                        streamFlow = this;
+                        th = th2;
                         streamFlow.stream.close();
                         throw th;
                     }
@@ -72,38 +75,48 @@ public final class StreamFlow<T> implements Flow<T> {
                 } else {
                     it = (Iterator) streamFlow$collect$1.L$2;
                     FlowCollector<? super T> flowCollector3 = (FlowCollector) streamFlow$collect$1.L$1;
-                    streamFlow = (StreamFlow) streamFlow$collect$1.L$0;
+                    StreamFlow<T> streamFlow2 = (StreamFlow) streamFlow$collect$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
                         flowCollector2 = flowCollector3;
-                    } catch (Throwable th2) {
-                        th = th2;
+                        streamFlow = streamFlow2;
+                    } catch (Throwable th3) {
+                        th = th3;
+                        streamFlow = streamFlow2;
                         streamFlow.stream.close();
                         throw th;
                     }
                 }
-                while (it.hasNext()) {
-                    streamFlow$collect$1.L$0 = streamFlow;
-                    streamFlow$collect$1.L$1 = flowCollector2;
-                    streamFlow$collect$1.L$2 = it;
-                    streamFlow$collect$1.label = 1;
-                    if (flowCollector2.emit((T) it.next(), streamFlow$collect$1) == coroutine_suspended) {
-                        return coroutine_suspended;
+                do {
+                    try {
+                        if (!it.hasNext()) {
+                            streamFlow$collect$1.L$0 = streamFlow;
+                            streamFlow$collect$1.L$1 = flowCollector2;
+                            streamFlow$collect$1.L$2 = it;
+                            streamFlow$collect$1.label = 1;
+                        } else {
+                            streamFlow.stream.close();
+                            return Unit.INSTANCE;
+                        }
+                    } catch (Throwable th4) {
+                        th = th4;
+                        streamFlow.stream.close();
+                        throw th;
                     }
-                }
-                streamFlow.stream.close();
-                return Unit.INSTANCE;
+                } while (flowCollector2.emit((T) it.next(), streamFlow$collect$1) != coroutine_suspended);
+                return coroutine_suspended;
             }
         }
         streamFlow$collect$1 = new StreamFlow$collect$1(this, continuation);
         Object obj2 = streamFlow$collect$1.result;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = streamFlow$collect$1.label;
         if (i != 0) {
         }
-        while (it.hasNext()) {
-        }
-        streamFlow.stream.close();
-        return Unit.INSTANCE;
+        do {
+            if (!it.hasNext()) {
+            }
+        } while (flowCollector2.emit((T) it.next(), streamFlow$collect$1) != coroutine_suspended);
+        return coroutine_suspended;
     }
 }

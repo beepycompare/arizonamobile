@@ -24,12 +24,13 @@ public final class C0543r6 implements Cf {
         try {
             String a2 = this.f1202a.a();
             if (a2 != null && a2.length() > 0) {
-                return !StringsKt.contains$default((CharSequence) a2, (CharSequence) StringUtils.PROCESS_POSTFIX_DELIMITER, false, 2, (Object) null);
+                if (!StringsKt.contains$default((CharSequence) a2, (CharSequence) StringUtils.PROCESS_POSTFIX_DELIMITER, false, 2, (Object) null)) {
+                    return true;
+                }
             }
-            return false;
         } catch (Throwable unused) {
-            return false;
         }
+        return false;
     }
 
     public C0543r6(Cf cf) {

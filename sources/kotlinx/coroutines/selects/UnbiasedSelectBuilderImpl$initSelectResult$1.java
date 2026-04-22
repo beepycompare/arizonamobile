@@ -36,6 +36,8 @@ public final class UnbiasedSelectBuilderImpl$initSelectResult$1 extends SuspendL
         return ((UnbiasedSelectBuilderImpl$initSelectResult$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v9, types: [kotlin.Unit, java.lang.Object] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         CancellableContinuationImpl cancellableContinuationImpl;
@@ -57,7 +59,8 @@ public final class UnbiasedSelectBuilderImpl$initSelectResult$1 extends SuspendL
             }
             cancellableContinuationImpl2 = ((UnbiasedSelectBuilderImpl) this.this$0).cont;
             SelectOldKt.resumeUndispatched(cancellableContinuationImpl2, obj);
-            return Unit.INSTANCE;
+            this = Unit.INSTANCE;
+            return this;
         } catch (Throwable th) {
             cancellableContinuationImpl = ((UnbiasedSelectBuilderImpl) this.this$0).cont;
             SelectOldKt.resumeUndispatchedWithException(cancellableContinuationImpl, th);

@@ -21,7 +21,7 @@ public interface ContentScale {
             public long mo6209computeScaleFactorH7hwNQA(long j, long j2) {
                 float m6213computeFillMaxDimensioniLBOSCw;
                 m6213computeFillMaxDimensioniLBOSCw = ContentScaleKt.m6213computeFillMaxDimensioniLBOSCw(j, j2);
-                return ScaleFactor.m6326constructorimpl((Float.floatToRawIntBits(m6213computeFillMaxDimensioniLBOSCw) << 32) | (4294967295L & Float.floatToRawIntBits(m6213computeFillMaxDimensioniLBOSCw)));
+                return ScaleFactor.m6326constructorimpl((Float.floatToRawIntBits(m6213computeFillMaxDimensioniLBOSCw) << 32) | (Float.floatToRawIntBits(m6213computeFillMaxDimensioniLBOSCw) & 4294967295L));
             }
         };
         private static final ContentScale Fit = new ContentScale() { // from class: androidx.compose.ui.layout.ContentScale$Companion$Fit$1
@@ -30,7 +30,7 @@ public interface ContentScale {
             public long mo6209computeScaleFactorH7hwNQA(long j, long j2) {
                 float m6214computeFillMinDimensioniLBOSCw;
                 m6214computeFillMinDimensioniLBOSCw = ContentScaleKt.m6214computeFillMinDimensioniLBOSCw(j, j2);
-                return ScaleFactor.m6326constructorimpl((Float.floatToRawIntBits(m6214computeFillMinDimensioniLBOSCw) << 32) | (4294967295L & Float.floatToRawIntBits(m6214computeFillMinDimensioniLBOSCw)));
+                return ScaleFactor.m6326constructorimpl((Float.floatToRawIntBits(m6214computeFillMinDimensioniLBOSCw) << 32) | (Float.floatToRawIntBits(m6214computeFillMinDimensioniLBOSCw) & 4294967295L));
             }
         };
         private static final ContentScale FillHeight = new ContentScale() { // from class: androidx.compose.ui.layout.ContentScale$Companion$FillHeight$1

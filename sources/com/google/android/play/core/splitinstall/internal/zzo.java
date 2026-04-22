@@ -26,7 +26,7 @@ final class zzo extends zzp {
 
     public final int hashCode() {
         long j = this.zzb;
-        return ((this.zza ^ 1000003) * 1000003) ^ ((int) (j ^ (j >>> 32)));
+        return ((int) (j ^ (j >>> 32))) ^ ((this.zza ^ 1000003) * 1000003);
     }
 
     public final String toString() {

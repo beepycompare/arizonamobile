@@ -71,7 +71,7 @@ public final class ChatEmoji {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0072, code lost:
-        if (ru.mrlargha.commonui.utils.emoji.ChatEmoji.INSTANCE.validCp(r4) != false) goto L23;
+        if (ru.mrlargha.commonui.utils.emoji.ChatEmoji.INSTANCE.validCp(r3) != false) goto L23;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

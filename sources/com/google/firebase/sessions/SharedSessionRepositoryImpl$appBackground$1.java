@@ -35,6 +35,8 @@ final class SharedSessionRepositoryImpl$appBackground$1 extends SuspendLambda im
         return ((SharedSessionRepositoryImpl$appBackground$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r6v10 */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         TimeProvider timeProvider;
@@ -44,13 +46,16 @@ final class SharedSessionRepositoryImpl$appBackground$1 extends SuspendLambda im
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 this.label = 1;
-                if (this.this$0.sessionDataStore.updateData(new AnonymousClass1(this.this$0, null), this) == coroutine_suspended) {
+                Object updateData = this.this$0.sessionDataStore.updateData(new AnonymousClass1(this.this$0, null), this);
+                this = updateData;
+                if (updateData == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             } else {
                 ResultKt.throwOnFailure(obj);
+                this = this;
             }
         } catch (Exception e) {
             Log.d(FirebaseSessions.TAG, "App backgrounded, failed to update data. Message: " + e.getMessage());
@@ -97,9 +102,8 @@ final class SharedSessionRepositoryImpl$appBackground$1 extends SuspendLambda im
             IntrinsicsKt.getCOROUTINE_SUSPENDED();
             if (this.label == 0) {
                 ResultKt.throwOnFailure(obj);
-                SessionData sessionData = (SessionData) this.L$0;
                 timeProvider = this.this$0.timeProvider;
-                return SessionData.copy$default(sessionData, null, timeProvider.currentTime(), null, 5, null);
+                return SessionData.copy$default((SessionData) this.L$0, null, timeProvider.currentTime(), null, 5, null);
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }

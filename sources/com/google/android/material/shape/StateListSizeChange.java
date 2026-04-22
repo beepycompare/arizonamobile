@@ -199,13 +199,15 @@ public class StateListSizeChange {
         }
 
         public int getChange(int i) {
+            float f;
             if (this.type == SizeChangeType.PERCENT) {
-                return (int) (this.amount * i);
+                f = this.amount * i;
+            } else if (this.type != SizeChangeType.PIXELS) {
+                return 0;
+            } else {
+                f = this.amount;
             }
-            if (this.type == SizeChangeType.PIXELS) {
-                return (int) this.amount;
-            }
-            return 0;
+            return (int) f;
         }
     }
 }

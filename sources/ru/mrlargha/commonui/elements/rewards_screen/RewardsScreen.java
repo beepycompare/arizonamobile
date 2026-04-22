@@ -189,11 +189,8 @@ public final class RewardsScreen extends SAMPUIElement {
     /* JADX INFO: Access modifiers changed from: private */
     public final String formatTime(long j) {
         long j2 = j / 1000;
-        long j3 = 60;
-        long j4 = j2 / j3;
-        long j5 = j2 % j3;
         StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-        String format = String.format("%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(j4), Long.valueOf(j5)}, 2));
+        String format = String.format("%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(j2 / 60), Long.valueOf(j2 % 60)}, 2));
         Intrinsics.checkNotNullExpressionValue(format, "format(...)");
         return format;
     }

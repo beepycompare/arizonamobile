@@ -215,14 +215,17 @@ public class BottomSheetDragHandleView extends AppCompatImageView implements Acc
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v0, types: [com.google.android.material.bottomsheet.BottomSheetDragHandleView] */
+    /* JADX WARN: Type inference failed for: r2v1, types: [android.view.View] */
+    /* JADX WARN: Type inference failed for: r2v2, types: [android.view.View] */
     private BottomSheetBehavior<?> findParentBottomSheetBehavior() {
-        View view = this;
         while (true) {
-            view = getParentView(view);
-            if (view == null) {
+            this = getParentView(this);
+            if (this == 0) {
                 return null;
             }
-            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+            ViewGroup.LayoutParams layoutParams = this.getLayoutParams();
             if (layoutParams instanceof CoordinatorLayout.LayoutParams) {
                 CoordinatorLayout.Behavior behavior = ((CoordinatorLayout.LayoutParams) layoutParams).getBehavior();
                 if (behavior instanceof BottomSheetBehavior) {

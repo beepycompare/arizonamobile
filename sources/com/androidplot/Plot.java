@@ -389,10 +389,10 @@ public abstract class Plot<SeriesType extends Series, FormatterType extends Form
         com.halfhp.fig.Fig.configure(getContext(), r6, r8);
      */
     /* JADX WARN: Code restructure failed: missing block: B:41:0x00c9, code lost:
-        r7 = move-exception;
+        r6 = move-exception;
      */
     /* JADX WARN: Code restructure failed: missing block: B:43:0x00cf, code lost:
-        throw new java.lang.RuntimeException(r7);
+        throw new java.lang.RuntimeException(r6);
      */
     /* JADX WARN: Code restructure failed: missing block: B:57:?, code lost:
         return;

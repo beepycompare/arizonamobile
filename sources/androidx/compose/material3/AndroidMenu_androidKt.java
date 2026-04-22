@@ -75,8 +75,8 @@ public final class AndroidMenu_androidKt {
     /* JADX WARN: Removed duplicated region for block: B:121:0x0168  */
     /* JADX WARN: Removed duplicated region for block: B:131:0x018d  */
     /* JADX WARN: Removed duplicated region for block: B:138:0x019f  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x03b9  */
-    /* JADX WARN: Removed duplicated region for block: B:214:0x03d1  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x03b8  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x03d0  */
     /* JADX WARN: Removed duplicated region for block: B:216:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0050  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0053  */
@@ -250,8 +250,7 @@ public final class AndroidMenu_androidKt {
                         } else {
                             Modifier.Companion companion = i5 != 0 ? Modifier.Companion : obj2;
                             if (i6 != 0) {
-                                float f7 = 0;
-                                j3 = DpOffset.m7611constructorimpl((Float.floatToRawIntBits(Dp.m7555constructorimpl(f7)) << i7) | (Float.floatToRawIntBits(Dp.m7555constructorimpl(f7)) & 4294967295L));
+                                j3 = DpOffset.m7611constructorimpl((Float.floatToRawIntBits(Dp.m7555constructorimpl(0.0f)) << i7) | (Float.floatToRawIntBits(Dp.m7555constructorimpl(0.0f)) & 4294967295L));
                             }
                             if ((i3 & 16) != 0) {
                                 scrollState3 = ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1);
@@ -492,10 +491,10 @@ public final class AndroidMenu_androidKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:109:0x018e  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x01dc  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x01e5  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x01f4  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x018d  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x01db  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x01e4  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x01f3  */
     /* JADX WARN: Removed duplicated region for block: B:119:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:36:0x0066  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
@@ -607,14 +606,12 @@ public final class AndroidMenu_androidKt {
                                     companion = Modifier.Companion;
                                 }
                                 if (i4 != 0) {
-                                    float f = 0;
-                                    float m7555constructorimpl = Dp.m7555constructorimpl(f);
-                                    float m7555constructorimpl2 = Dp.m7555constructorimpl(f);
+                                    float m7555constructorimpl = Dp.m7555constructorimpl(0.0f);
+                                    float m7555constructorimpl2 = Dp.m7555constructorimpl(0.0f);
                                     long floatToRawIntBits = Float.floatToRawIntBits(m7555constructorimpl);
-                                    int floatToRawIntBits2 = Float.floatToRawIntBits(m7555constructorimpl2);
                                     i7 = -57345;
                                     modifier3 = companion;
-                                    j2 = DpOffset.m7611constructorimpl((floatToRawIntBits2 & 4294967295L) | (floatToRawIntBits << 32));
+                                    j2 = DpOffset.m7611constructorimpl((Float.floatToRawIntBits(m7555constructorimpl2) & 4294967295L) | (floatToRawIntBits << 32));
                                 } else {
                                     i7 = -57345;
                                     modifier3 = companion;
@@ -756,11 +753,11 @@ public final class AndroidMenu_androidKt {
     /* JADX WARN: Removed duplicated region for block: B:47:0x0084  */
     /* JADX WARN: Removed duplicated region for block: B:57:0x009f  */
     /* JADX WARN: Removed duplicated region for block: B:58:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x00cd  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0158  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x015d  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x016d  */
     /* JADX WARN: Removed duplicated region for block: B:93:? A[RETURN, SYNTHETIC] */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Replaced by a DropdownMenu function with a ScrollState parameter", replaceWith = @ReplaceWith(expression = "DropdownMenu(expanded,onDismissRequest, modifier, offset, rememberScrollState(), properties, content)", imports = {"androidx.compose.foundation.rememberScrollState"}))
     /* renamed from: DropdownMenu-ILWXrKs  reason: not valid java name */
@@ -780,8 +777,8 @@ public final class AndroidMenu_androidKt {
         final Modifier modifier2;
         final long j2;
         ScopeUpdateScope endRestartGroup;
+        Composer composer3;
         long j3;
-        float f;
         Composer startRestartGroup = composer.startRestartGroup(1744198621);
         ComposerKt.sourceInformation(startRestartGroup, "C(DropdownMenu)N(expanded,onDismissRequest,modifier,offset:c#ui.unit.DpOffset,properties,content)163@6066L21,158@5902L252:AndroidMenu.android.kt#uh7d8r");
         if ((i2 & 1) != 0) {
@@ -835,17 +832,19 @@ public final class AndroidMenu_androidKt {
                     } else {
                         Modifier.Companion companion = i6 != 0 ? Modifier.Companion : obj;
                         if (i4 != 0) {
-                            float m7555constructorimpl = Dp.m7555constructorimpl(0);
-                            j3 = DpOffset.m7611constructorimpl((Float.floatToRawIntBits(Dp.m7555constructorimpl(f)) & 4294967295L) | (Float.floatToRawIntBits(m7555constructorimpl) << 32));
+                            composer3 = startRestartGroup;
+                            j3 = DpOffset.m7611constructorimpl((Float.floatToRawIntBits(Dp.m7555constructorimpl(0.0f)) & 4294967295L) | (Float.floatToRawIntBits(Dp.m7555constructorimpl(0.0f)) << 32));
                         } else {
+                            composer3 = startRestartGroup;
                             j3 = j;
                         }
                         PopupProperties popupProperties3 = i5 != 0 ? new PopupProperties(true, false, false, false, 14, (DefaultConstructorMarker) null) : popupProperties;
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(1744198621, i3, -1, "androidx.compose.material3.DropdownMenu (AndroidMenu.android.kt:158)");
                         }
-                        composer2 = startRestartGroup;
-                        m1708DropdownMenuIlH_yew(z2, function02, companion, j3, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj2, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
+                        Composer composer4 = composer3;
+                        composer2 = composer4;
+                        m1708DropdownMenuIlH_yew(z2, function02, companion, j3, ScrollKt.rememberScrollState(0, composer4, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj2, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }

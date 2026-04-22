@@ -78,7 +78,7 @@ public final class TextFieldDefaults$decorator$2 implements TextFieldDecorator {
         Composer startRestartGroup = composer.startRestartGroup(-94654579);
         ComposerKt.sourceInformation(startRestartGroup, "C(Decoration)N(innerTextField)191@10152L718:TextFieldDefaults.kt#uh7d8r");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(function2) ? 4 : 2) | i;
+            i2 = i | (startRestartGroup.changedInstance(function2) ? 4 : 2);
         } else {
             i2 = i;
         }

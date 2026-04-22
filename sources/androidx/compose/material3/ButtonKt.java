@@ -83,8 +83,8 @@ public final class ButtonKt {
     /* JADX WARN: Removed duplicated region for block: B:112:0x0140  */
     /* JADX WARN: Removed duplicated region for block: B:113:0x0142  */
     /* JADX WARN: Removed duplicated region for block: B:116:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x0317  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x032d  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x0312  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x0328  */
     /* JADX WARN: Removed duplicated region for block: B:188:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x004f  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0052  */
@@ -100,6 +100,9 @@ public final class ButtonKt {
     /* JADX WARN: Removed duplicated region for block: B:82:0x00e3  */
     /* JADX WARN: Removed duplicated region for block: B:91:0x00fe  */
     /* JADX WARN: Removed duplicated region for block: B:92:0x0101  */
+    /* JADX WARN: Type inference failed for: r12v5, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r12v6 */
+    /* JADX WARN: Type inference failed for: r12v7 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -130,21 +133,25 @@ public final class ButtonKt {
         Shape shape3;
         ButtonColors buttonColors4;
         Modifier modifier3;
+        boolean z4;
+        BorderStroke borderStroke3;
         int i10;
         final PaddingValues contentPadding;
-        BorderStroke borderStroke3;
-        boolean z4;
+        BorderStroke borderStroke4;
+        boolean z5;
         MutableInteractionSource mutableInteractionSource3;
         int i11;
         Shape shape4;
         int i12;
         Modifier modifier4;
+        ?? r12;
         MutableInteractionSource mutableInteractionSource4;
-        MutableInteractionSource mutableInteractionSource5;
         State<Dp> shadowElevation$material3;
         int i13;
         int i14;
+        Object obj3;
         int i15;
+        Object obj4;
         Composer startRestartGroup = composer.startRestartGroup(-1310015664);
         ComposerKt.sourceInformation(startRestartGroup, "C(Button)N(onClick,modifier,enabled,shape,colors,elevation,border,contentPadding,interactionSource,content)129@6472L22,137@6736L590,127@6398L928:Button.kt#uh7d8r");
         if ((i2 & 1) != 0) {
@@ -171,16 +178,20 @@ public final class ButtonKt {
                 i3 |= startRestartGroup.changed(z2) ? 256 : 128;
                 if ((i & 3072) == 0) {
                     if ((i2 & 8) == 0) {
-                        obj = shape;
-                        if (startRestartGroup.changed(obj)) {
+                        obj3 = shape;
+                        if (startRestartGroup.changed(obj3)) {
                             i15 = 2048;
+                            obj4 = obj3;
                             i3 |= i15;
+                            obj = obj4;
                         }
                     } else {
-                        obj = shape;
+                        obj3 = shape;
                     }
                     i15 = 1024;
+                    obj4 = obj3;
                     i3 |= i15;
+                    obj = obj4;
                 } else {
                     obj = shape;
                 }
@@ -255,17 +266,18 @@ public final class ButtonKt {
                                 if ((i2 & 32) != 0) {
                                     i3 &= -458753;
                                 }
-                                mutableInteractionSource3 = mutableInteractionSource;
                                 i11 = i3;
+                                r12 = 1;
                                 shape4 = obj;
-                                borderStroke3 = obj2;
+                                borderStroke4 = obj2;
                                 modifier4 = modifier;
                                 contentPadding = paddingValues;
-                                z4 = z2;
+                                mutableInteractionSource3 = mutableInteractionSource;
+                                z5 = z2;
                                 i12 = -1310015664;
                             } else {
                                 Modifier.Companion companion = i7 != 0 ? Modifier.Companion : modifier;
-                                boolean z5 = i4 != 0 ? true : z2;
+                                boolean z6 = i4 != 0 ? true : z2;
                                 if ((i2 & 8) != 0) {
                                     i3 &= -7169;
                                     shape3 = ButtonDefaults.INSTANCE.getShape(startRestartGroup, 6);
@@ -281,32 +293,30 @@ public final class ButtonKt {
                                 int i17 = i3;
                                 if ((i2 & 32) != 0) {
                                     modifier3 = companion;
+                                    z4 = true;
+                                    borderStroke3 = null;
                                     buttonElevation2 = ButtonDefaults.INSTANCE.m1764buttonElevationR_JCAzs(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
                                     i10 = i17 & (-458753);
                                 } else {
                                     modifier3 = companion;
+                                    z4 = true;
+                                    borderStroke3 = null;
                                     i10 = i17;
                                 }
                                 if (i5 != 0) {
-                                    obj2 = null;
+                                    obj2 = borderStroke3;
                                 }
                                 contentPadding = i6 != 0 ? ButtonDefaults.INSTANCE.getContentPadding() : paddingValues;
-                                boolean z6 = z5;
-                                borderStroke3 = obj2;
-                                z4 = z6;
-                                if (i9 != 0) {
-                                    i11 = i10;
-                                    buttonColors2 = buttonColors4;
-                                    shape4 = shape3;
-                                    mutableInteractionSource3 = null;
-                                } else {
-                                    mutableInteractionSource3 = mutableInteractionSource;
-                                    i11 = i10;
-                                    buttonColors2 = buttonColors4;
-                                    shape4 = shape3;
-                                }
+                                boolean z7 = z6;
+                                borderStroke4 = obj2;
+                                z5 = z7;
+                                mutableInteractionSource3 = i9 != 0 ? borderStroke3 : mutableInteractionSource;
+                                i11 = i10;
+                                buttonColors2 = buttonColors4;
+                                shape4 = shape3;
                                 i12 = -1310015664;
                                 modifier4 = modifier3;
+                                r12 = z4;
                             }
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
@@ -329,36 +339,34 @@ public final class ButtonKt {
                                 startRestartGroup.endReplaceGroup();
                                 mutableInteractionSource4 = mutableInteractionSource3;
                             }
-                            long m1756containerColorvNxB06k$material3 = buttonColors2.m1756containerColorvNxB06k$material3(z4);
+                            long m1756containerColorvNxB06k$material3 = buttonColors2.m1756containerColorvNxB06k$material3(z5);
                             Modifier modifier5 = modifier4;
-                            final long m1757contentColorvNxB06k$material3 = buttonColors2.m1757contentColorvNxB06k$material3(z4);
+                            final long m1757contentColorvNxB06k$material3 = buttonColors2.m1757contentColorvNxB06k$material3(z5);
                             if (buttonElevation2 == null) {
                                 startRestartGroup.startReplaceGroup(1691921830);
                                 startRestartGroup.endReplaceGroup();
-                                mutableInteractionSource5 = mutableInteractionSource3;
                                 shadowElevation$material3 = null;
                             } else {
                                 startRestartGroup.startReplaceGroup(-499611205);
                                 ComposerKt.sourceInformation(startRestartGroup, "126@6335L43");
-                                mutableInteractionSource5 = mutableInteractionSource3;
-                                shadowElevation$material3 = buttonElevation2.shadowElevation$material3(z4, mutableInteractionSource4, startRestartGroup, ((i11 >> 6) & 14) | ((i11 >> 9) & 896));
+                                shadowElevation$material3 = buttonElevation2.shadowElevation$material3(z5, mutableInteractionSource4, startRestartGroup, ((i11 >> 6) & 14) | ((i11 >> 9) & 896));
                                 startRestartGroup.endReplaceGroup();
                             }
-                            float m7569unboximpl = shadowElevation$material3 != null ? shadowElevation$material3.getValue().m7569unboximpl() : Dp.m7555constructorimpl(0);
+                            float m7569unboximpl = shadowElevation$material3 != null ? shadowElevation$material3.getValue().m7569unboximpl() : Dp.m7555constructorimpl(0.0f);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -499606842, "CC(remember):Button.kt#9igjgp");
                             Object rememberedValue2 = startRestartGroup.rememberedValue();
                             if (rememberedValue2 == Composer.Companion.getEmpty()) {
                                 rememberedValue2 = new Function1() { // from class: androidx.compose.material3.ButtonKt$$ExternalSyntheticLambda1
                                     @Override // kotlin.jvm.functions.Function1
-                                    public final Object invoke(Object obj3) {
-                                        return ButtonKt.Button$lambda$2$lambda$1((SemanticsPropertyReceiver) obj3);
+                                    public final Object invoke(Object obj5) {
+                                        return ButtonKt.Button$lambda$2$lambda$1((SemanticsPropertyReceiver) obj5);
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue2);
                             }
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ButtonColors buttonColors5 = buttonColors2;
-                            SurfaceKt.m2572Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(modifier5, false, (Function1) rememberedValue2, 1, null), z4, shape4, m1756containerColorvNxB06k$material3, m1757contentColorvNxB06k$material3, 0.0f, m7569unboximpl, borderStroke3, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(-535639973, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ButtonKt$Button$2
+                            MutableInteractionSource mutableInteractionSource5 = mutableInteractionSource3;
+                            SurfaceKt.m2572Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(modifier5, false, (Function1) rememberedValue2, r12, null), z5, shape4, m1756containerColorvNxB06k$material3, m1757contentColorvNxB06k$material3, 0.0f, m7569unboximpl, borderStroke4, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(-535639973, r12, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ButtonKt$Button$2
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                     invoke(composer3, num.intValue());
@@ -443,14 +451,14 @@ public final class ButtonKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
+                            composer2 = startRestartGroup;
+                            buttonColors3 = buttonColors2;
+                            z3 = z5;
+                            shape2 = shape4;
+                            borderStroke2 = borderStroke4;
                             paddingValues2 = contentPadding;
                             modifier2 = modifier5;
-                            composer2 = startRestartGroup;
                             buttonElevation3 = buttonElevation2;
-                            z3 = z4;
-                            shape2 = shape4;
-                            borderStroke2 = borderStroke3;
-                            buttonColors3 = buttonColors5;
                             mutableInteractionSource2 = mutableInteractionSource5;
                         } else {
                             startRestartGroup.skipToGroupEnd();
@@ -468,8 +476,8 @@ public final class ButtonKt {
                         if (endRestartGroup != null) {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ButtonKt$$ExternalSyntheticLambda2
                                 @Override // kotlin.jvm.functions.Function2
-                                public final Object invoke(Object obj3, Object obj4) {
-                                    return ButtonKt.Button$lambda$3(Function0.this, modifier2, z3, shape2, buttonColors3, buttonElevation3, borderStroke2, paddingValues2, mutableInteractionSource2, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
+                                public final Object invoke(Object obj5, Object obj6) {
+                                    return ButtonKt.Button$lambda$3(Function0.this, modifier2, z3, shape2, buttonColors3, buttonElevation3, borderStroke2, paddingValues2, mutableInteractionSource2, function3, i, i2, (Composer) obj5, ((Integer) obj6).intValue());
                                 }
                             });
                             return;

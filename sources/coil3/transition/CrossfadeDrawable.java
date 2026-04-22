@@ -438,9 +438,8 @@ public final class CrossfadeDrawable extends Drawable implements Drawable.Callba
         int width = rect.width();
         int height = rect.height();
         double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(intrinsicWidth, intrinsicHeight, width, height, this.scale);
-        double d = 2;
-        int roundToInt = MathKt.roundToInt((width - (intrinsicWidth * computeSizeMultiplier)) / d);
-        int roundToInt2 = MathKt.roundToInt((height - (computeSizeMultiplier * intrinsicHeight)) / d);
+        int roundToInt = MathKt.roundToInt((width - (intrinsicWidth * computeSizeMultiplier)) / 2.0d);
+        int roundToInt2 = MathKt.roundToInt((height - (computeSizeMultiplier * intrinsicHeight)) / 2.0d);
         drawable.setBounds(rect.left + roundToInt, rect.top + roundToInt2, rect.right - roundToInt, rect.bottom - roundToInt2);
     }
 

@@ -23,9 +23,9 @@ final class AutoValue_ExternalPrivacyContext extends ExternalPrivacyContext {
             return true;
         }
         if (obj instanceof ExternalPrivacyContext) {
+            ExternalPrivacyContext externalPrivacyContext = (ExternalPrivacyContext) obj;
             ExternalPRequestContext externalPRequestContext = this.prequest;
-            ExternalPRequestContext prequest = ((ExternalPrivacyContext) obj).getPrequest();
-            return externalPRequestContext == null ? prequest == null : externalPRequestContext.equals(prequest);
+            return externalPRequestContext == null ? externalPrivacyContext.getPrequest() == null : externalPRequestContext.equals(externalPrivacyContext.getPrequest());
         }
         return false;
     }

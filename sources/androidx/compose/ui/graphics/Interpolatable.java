@@ -31,7 +31,7 @@ public interface Interpolatable {
             }
             Object lerp = obj instanceof Interpolatable ? ((Interpolatable) obj).lerp(obj2, f) : null;
             if (lerp == null && (obj2 instanceof Interpolatable)) {
-                lerp = ((Interpolatable) obj2).lerp(obj, 1 - f);
+                lerp = ((Interpolatable) obj2).lerp(obj, 1.0f - f);
             }
             if (lerp != null) {
                 return lerp;

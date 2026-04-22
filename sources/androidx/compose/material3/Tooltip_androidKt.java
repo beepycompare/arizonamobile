@@ -47,12 +47,14 @@ public final class Tooltip_androidKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x0124  */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x012d  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0236  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0248  */
-    /* JADX WARN: Removed duplicated region for block: B:158:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x01d3  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0229  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x0235  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x0246  */
+    /* JADX WARN: Removed duplicated region for block: B:159:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:29:0x0055  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x006a  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x0070  */
@@ -79,22 +81,23 @@ public final class Tooltip_androidKt {
         long j5;
         long j6;
         int i4;
+        float f3;
         int i5;
-        final float f3;
-        final Modifier modifier2;
-        final long j7;
-        final Shape shape2;
-        final long j8;
-        final long j9;
         final float f4;
+        final long j7;
+        final long j8;
+        final float f5;
+        final Modifier modifier2;
+        final Shape shape2;
+        final long j9;
         ScopeUpdateScope endRestartGroup;
-        Modifier modifier3;
-        Shape shape3;
-        long j10;
-        float f5;
-        float f6;
         int i6;
+        long j10;
+        Shape shape3;
         long j11;
+        float f6;
+        float f7;
+        Modifier modifier3;
         long j12;
         long j13;
         int i7;
@@ -169,8 +172,12 @@ public final class Tooltip_androidKt {
             i4 = i2 & 32;
             if (i4 == 0) {
                 i3 |= 1572864;
-            } else if ((i & 1572864) == 0) {
-                i3 |= startRestartGroup.changed(f) ? 1048576 : 524288;
+                f3 = f;
+            } else {
+                f3 = f;
+                if ((i & 1572864) == 0) {
+                    i3 |= startRestartGroup.changed(f3) ? 1048576 : 524288;
+                }
             }
             i5 = i2 & 64;
             if (i5 == 0) {
@@ -201,12 +208,10 @@ public final class Tooltip_androidKt {
                         }
                         i6 = i3;
                         modifier3 = companion;
-                        j11 = j4;
                         shape3 = obj;
-                        j12 = j5;
-                        j13 = j6;
-                        f6 = f;
-                        f5 = f2;
+                        j13 = j5;
+                        f6 = f2;
+                        f7 = f3;
                     } else {
                         if (i10 != 0) {
                             companion = Modifier.Companion;
@@ -227,59 +232,77 @@ public final class Tooltip_androidKt {
                             j6 = TooltipDefaults.INSTANCE.getPlainTooltipContainerColor(startRestartGroup, 6);
                             i3 &= -458753;
                         }
-                        float m7555constructorimpl = i4 != 0 ? Dp.m7555constructorimpl(0) : f;
-                        if (i5 != 0) {
-                            shape3 = obj;
-                            j10 = j5;
-                            f6 = m7555constructorimpl;
-                            f5 = Dp.m7555constructorimpl(0);
+                        float m7555constructorimpl = i4 != 0 ? Dp.m7555constructorimpl(0.0f) : f3;
+                        if (i5 == 0) {
                             i6 = i3;
+                            j10 = j4;
+                            shape3 = obj;
+                            j11 = j6;
+                            long j14 = j5;
+                            f6 = f2;
+                            f7 = m7555constructorimpl;
                             modifier3 = companion;
+                            j12 = j14;
+                            startRestartGroup.endDefaults();
+                            if (ComposerKt.isTraceInProgress()) {
+                                ComposerKt.traceEventStart(2114904198, i6, -1, "androidx.compose.material3.PlainTooltipAndroid (Tooltip.android.kt:61)");
+                            }
+                            int i11 = i6 << 3;
+                            long j15 = j10;
+                            TooltipKt.m2894PlainTooltipgv3ox5I(tooltipScope, modifier3, TooltipDefaults.INSTANCE.m2885caretShapeEaSLcWc(j10), TooltipDefaults.INSTANCE.m2887getPlainTooltipMaxWidthD9Ej5fM(), shape3, j12, j11, f7, f6, function2, startRestartGroup, (i11 & 1879048192) | (i6 & 14) | 3072 | (i6 & 112) | (i11 & 57344) | (i11 & 458752) | (i11 & 3670016) | (i11 & 29360128) | (i11 & 234881024), 0);
+                            if (ComposerKt.isTraceInProgress()) {
+                                ComposerKt.traceEventEnd();
+                            }
+                            modifier2 = modifier3;
+                            f4 = f6;
+                            f5 = f7;
+                            j9 = j11;
+                            j8 = j12;
+                            shape2 = shape3;
+                            j7 = j15;
                         } else {
-                            modifier3 = companion;
                             shape3 = obj;
-                            j10 = j5;
-                            f5 = f2;
-                            f6 = m7555constructorimpl;
+                            j13 = j5;
+                            f6 = Dp.m7555constructorimpl(0.0f);
+                            f7 = m7555constructorimpl;
                             i6 = i3;
+                            modifier3 = companion;
                         }
-                        j11 = j4;
-                        j12 = j10;
-                        j13 = j6;
                     }
+                    j10 = j4;
+                    j12 = j13;
+                    j11 = j6;
                     startRestartGroup.endDefaults();
                     if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(2114904198, i6, -1, "androidx.compose.material3.PlainTooltipAndroid (Tooltip.android.kt:61)");
                     }
-                    int i11 = i6 << 3;
-                    long j14 = j11;
-                    TooltipKt.m2894PlainTooltipgv3ox5I(tooltipScope, modifier3, TooltipDefaults.INSTANCE.m2885caretShapeEaSLcWc(j11), TooltipDefaults.INSTANCE.m2887getPlainTooltipMaxWidthD9Ej5fM(), shape3, j12, j13, f6, f5, function2, startRestartGroup, (i11 & 1879048192) | (i6 & 14) | 3072 | (i6 & 112) | (i11 & 57344) | (i11 & 458752) | (i11 & 3670016) | (i11 & 29360128) | (i11 & 234881024), 0);
+                    int i112 = i6 << 3;
+                    long j152 = j10;
+                    TooltipKt.m2894PlainTooltipgv3ox5I(tooltipScope, modifier3, TooltipDefaults.INSTANCE.m2885caretShapeEaSLcWc(j10), TooltipDefaults.INSTANCE.m2887getPlainTooltipMaxWidthD9Ej5fM(), shape3, j12, j11, f7, f6, function2, startRestartGroup, (i112 & 1879048192) | (i6 & 14) | 3072 | (i6 & 112) | (i112 & 57344) | (i112 & 458752) | (i112 & 3670016) | (i112 & 29360128) | (i112 & 234881024), 0);
                     if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventEnd();
                     }
                     modifier2 = modifier3;
-                    f3 = f5;
                     f4 = f6;
-                    j9 = j13;
+                    f5 = f7;
+                    j9 = j11;
                     j8 = j12;
                     shape2 = shape3;
-                    j7 = j14;
+                    j7 = j152;
                 } else {
                     startRestartGroup.skipToGroupEnd();
-                    f3 = f2;
-                    modifier2 = companion;
+                    f4 = f2;
                     j7 = j4;
-                    shape2 = obj;
                     j8 = j5;
+                    f5 = f3;
+                    modifier2 = companion;
+                    shape2 = obj;
                     j9 = j6;
-                    f4 = f;
                 }
                 endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup != null) {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.Tooltip_androidKt$$ExternalSyntheticLambda2
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj2, Object obj3) {
-                            return Tooltip_androidKt.PlainTooltipAndroid_7QI4Sbk$lambda$0(TooltipScope.this, modifier2, j7, shape2, j8, j9, f4, f3, function2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                            return Tooltip_androidKt.PlainTooltipAndroid_7QI4Sbk$lambda$0(TooltipScope.this, modifier2, j7, shape2, j8, j9, f5, f4, function2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                         }
                     });
                     return;
@@ -317,15 +340,15 @@ public final class Tooltip_androidKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:104:0x0128  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0149  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x0154  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x0209  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x0215  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x0237  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x0245  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x0258  */
-    /* JADX WARN: Removed duplicated region for block: B:177:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0148  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0153  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x0205  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0211  */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x0233  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x0241  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x0254  */
+    /* JADX WARN: Removed duplicated region for block: B:178:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:29:0x0055  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x006a  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x0070  */
@@ -513,11 +536,11 @@ public final class Tooltip_androidKt {
                                     } else {
                                         j11 = j3;
                                     }
-                                    float m7555constructorimpl2 = i6 != 0 ? Dp.m7555constructorimpl(0) : f5;
+                                    float m7555constructorimpl2 = i6 != 0 ? Dp.m7555constructorimpl(0.0f) : f5;
                                     if (i8 != 0) {
                                         f5 = m7555constructorimpl2;
                                         i10 = i9;
-                                        m7555constructorimpl = Dp.m7555constructorimpl(0);
+                                        m7555constructorimpl = Dp.m7555constructorimpl(0.0f);
                                         j12 = j9;
                                         shape4 = shape3;
                                         j13 = j11;

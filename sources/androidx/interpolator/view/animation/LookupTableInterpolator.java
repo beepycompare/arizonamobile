@@ -23,9 +23,8 @@ abstract class LookupTableInterpolator implements Interpolator {
         float[] fArr = this.mValues;
         int min = Math.min((int) ((fArr.length - 1) * f), fArr.length - 2);
         float f2 = this.mStepSize;
-        float f3 = (f - (min * f2)) / f2;
         float[] fArr2 = this.mValues;
-        float f4 = fArr2[min];
-        return f4 + (f3 * (fArr2[min + 1] - f4));
+        float f3 = fArr2[min];
+        return f3 + (((f - (min * f2)) / f2) * (fArr2[min + 1] - f3));
     }
 }

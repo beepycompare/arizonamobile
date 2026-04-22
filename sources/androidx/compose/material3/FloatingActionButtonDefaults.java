@@ -17,7 +17,7 @@ import kotlin.Metadata;
 public final class FloatingActionButtonDefaults {
     public static final int $stable = 0;
     public static final FloatingActionButtonDefaults INSTANCE = new FloatingActionButtonDefaults();
-    private static final float LargeIconSize = Dp.m7555constructorimpl(36);
+    private static final float LargeIconSize = Dp.m7555constructorimpl(36.0f);
 
     private FloatingActionButtonDefaults() {
     }
@@ -160,16 +160,16 @@ public final class FloatingActionButtonDefaults {
     /* renamed from: bottomAppBarFabElevation-a9UjIt4$default  reason: not valid java name */
     public static /* synthetic */ FloatingActionButtonElevation m2103bottomAppBarFabElevationa9UjIt4$default(FloatingActionButtonDefaults floatingActionButtonDefaults, float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m7555constructorimpl(0);
+            f3 = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m7555constructorimpl(0);
+            f4 = Dp.m7555constructorimpl(0.0f);
         }
         return floatingActionButtonDefaults.m2104bottomAppBarFabElevationa9UjIt4(f, f2, f3, f4);
     }

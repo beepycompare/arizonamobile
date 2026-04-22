@@ -149,10 +149,10 @@ public final class CertificateScreen extends SAMPUIElement {
         if (mainInfo != null) {
             setMainInfo(mainInfo);
             float zoom = mainInfo.getObjectViewer().getObjectModel().getZoom() * this.zoomMultipler * 1.8f;
-            float f = zoom * 3;
+            float f = zoom * 3.0f;
             this.scene.scaleModel(mainInfo.getObjectViewer().getObjectModel().getId(), f);
             certificateScreen = this;
-            launch$default = BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), Dispatchers.getMain(), null, new CertificateScreen$startAnimatedScreen$2$1(f, zoom, (f - zoom) / 600, certificateScreen, mainInfo, null), 2, null);
+            launch$default = BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), Dispatchers.getMain(), null, new CertificateScreen$startAnimatedScreen$2$1(f, zoom, (f - zoom) / 600.0f, certificateScreen, mainInfo, null), 2, null);
             certificateScreen.blockTimerJob = launch$default;
         } else {
             certificateScreen = this;

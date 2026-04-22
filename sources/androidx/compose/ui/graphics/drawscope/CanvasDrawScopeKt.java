@@ -29,7 +29,7 @@ public final class CanvasDrawScopeKt {
             public void inset(float f, float f2, float f3, float f4) {
                 Canvas canvas = DrawContext.this.getCanvas();
                 DrawContext drawContext2 = DrawContext.this;
-                long m4587constructorimpl = Size.m4587constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5272getSizeNHjbRc() & 4294967295L)) - (f4 + f2)) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5272getSizeNHjbRc() >> 32)) - (f3 + f)) << 32));
+                long m4587constructorimpl = Size.m4587constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5272getSizeNHjbRc() >> 32)) - (f3 + f)) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5272getSizeNHjbRc() & 4294967295L)) - (f4 + f2)) & 4294967295L));
                 if (!(Float.intBitsToFloat((int) (m4587constructorimpl >> 32)) >= 0.0f && Float.intBitsToFloat((int) (m4587constructorimpl & 4294967295L)) >= 0.0f)) {
                     InlineClassHelperKt.throwIllegalArgumentException("Width and height must be greater than or equal to zero");
                 }

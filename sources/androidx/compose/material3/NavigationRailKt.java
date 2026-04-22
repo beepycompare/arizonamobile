@@ -75,17 +75,17 @@ import kotlin.ranges.RangesKt;
 /* loaded from: classes.dex */
 public final class NavigationRailKt {
     private static final String IconLayoutIdTag = "icon";
-    private static final float IndicatorHorizontalPadding;
     private static final String IndicatorLayoutIdTag = "indicator";
     private static final String IndicatorRippleLayoutIdTag = "indicatorRipple";
-    private static final float IndicatorVerticalPaddingNoLabel;
-    private static final float IndicatorVerticalPaddingWithLabel;
     private static final String LabelLayoutIdTag = "label";
-    private static final float NavigationRailItemVerticalPadding;
-    private static final float NavigationRailVerticalPadding;
-    private static final float NavigationRailHeaderPadding = Dp.m7555constructorimpl(8);
+    private static final float NavigationRailVerticalPadding = Dp.m7555constructorimpl(4.0f);
+    private static final float NavigationRailHeaderPadding = Dp.m7555constructorimpl(8.0f);
     private static final float NavigationRailItemWidth = NavigationRailCollapsedTokens.INSTANCE.m3562getNarrowContainerWidthD9Ej5fM();
     private static final float NavigationRailItemHeight = NavigationRailVerticalItemTokens.INSTANCE.m3575getActiveIndicatorWidthD9Ej5fM();
+    private static final float NavigationRailItemVerticalPadding = Dp.m7555constructorimpl(4.0f);
+    private static final float IndicatorHorizontalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m3575getActiveIndicatorWidthD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / 2.0f);
+    private static final float IndicatorVerticalPaddingWithLabel = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m3574getActiveIndicatorHeightD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / 2.0f);
+    private static final float IndicatorVerticalPaddingNoLabel = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m3575getActiveIndicatorWidthD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / 2.0f);
     private static final ProvidableCompositionLocal<NavigationRailOverride> LocalNavigationRailOverride = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.material3.NavigationRailKt$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
@@ -621,7 +621,7 @@ public final class NavigationRailKt {
                                             Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             Density density = (Density) consume;
-                                            long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits((density.mo399roundToPx0680j_4(f) - density.mo399roundToPx0680j_4(NavigationRailVerticalItemTokens.INSTANCE.m3575getActiveIndicatorWidthD9Ej5fM())) / 2) << c) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+                                            long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits((density.mo399roundToPx0680j_4(f) - density.mo399roundToPx0680j_4(NavigationRailVerticalItemTokens.INSTANCE.m3575getActiveIndicatorWidthD9Ej5fM())) / 2.0f) << c) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
                                             Unit unit = Unit.INSTANCE;
                                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -474539147, "CC(remember):NavigationRail.kt#9igjgp");
                                             changed = startRestartGroup.changed(mutableInteractionSource5) | startRestartGroup.changed(m4519constructorimpl);
@@ -779,7 +779,7 @@ public final class NavigationRailKt {
                                     Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     Density density2 = (Density) consume2;
-                                    long m4519constructorimpl2 = Offset.m4519constructorimpl((Float.floatToRawIntBits((density2.mo399roundToPx0680j_4(f2) - density2.mo399roundToPx0680j_4(NavigationRailVerticalItemTokens.INSTANCE.m3575getActiveIndicatorWidthD9Ej5fM())) / 2) << c) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+                                    long m4519constructorimpl2 = Offset.m4519constructorimpl((Float.floatToRawIntBits((density2.mo399roundToPx0680j_4(f2) - density2.mo399roundToPx0680j_4(NavigationRailVerticalItemTokens.INSTANCE.m3575getActiveIndicatorWidthD9Ej5fM())) / 2.0f) << c) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
                                     Unit unit2 = Unit.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -474539147, "CC(remember):NavigationRail.kt#9igjgp");
                                     changed = startRestartGroup.changed(mutableInteractionSource52) | startRestartGroup.changed(m4519constructorimpl2);
@@ -1028,10 +1028,9 @@ public final class NavigationRailKt {
                                 Placeable mo6216measureBRTryo0 = measurable2.mo6216measureBRTryo0(m7498copyZbe2FdA$default);
                                 int width = mo6216measureBRTryo0.getWidth();
                                 f = NavigationRailKt.IndicatorHorizontalPadding;
-                                float f2 = 2;
-                                int i5 = width + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(f * f2));
+                                int i5 = width + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(f * 2.0f));
                                 int roundToInt = MathKt.roundToInt(i5 * coerceAtLeast);
-                                int height = mo6216measureBRTryo0.getHeight() + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl((function24 == null ? NavigationRailKt.IndicatorVerticalPaddingNoLabel : NavigationRailKt.IndicatorVerticalPaddingWithLabel) * f2));
+                                int height = mo6216measureBRTryo0.getHeight() + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl((function24 == null ? NavigationRailKt.IndicatorVerticalPaddingNoLabel : NavigationRailKt.IndicatorVerticalPaddingWithLabel) * 2.0f));
                                 int size2 = list2.size();
                                 for (int i6 = 0; i6 < size2; i6++) {
                                     Measurable measurable3 = list.get(i6);
@@ -1270,20 +1269,19 @@ public final class NavigationRailKt {
         float height = placeable2.getHeight() + measureScope.mo405toPx0680j_4(f2);
         float f3 = NavigationRailItemVerticalPadding;
         float f4 = height + measureScope.mo405toPx0680j_4(f3) + placeable.getHeight();
-        float f5 = 2;
-        final float coerceAtLeast = RangesKt.coerceAtLeast((Constraints.m7509getMinHeightimpl(j) - f4) / f5, measureScope.mo405toPx0680j_4(f2));
-        float f6 = f4 + (coerceAtLeast * f5);
-        final float height2 = ((z ? coerceAtLeast : (f6 - placeable2.getHeight()) / f5) - coerceAtLeast) * (1 - f);
+        final float coerceAtLeast = RangesKt.coerceAtLeast((Constraints.m7509getMinHeightimpl(j) - f4) / 2.0f, measureScope.mo405toPx0680j_4(f2));
+        float f5 = f4 + (coerceAtLeast * 2.0f);
+        final float height2 = ((z ? coerceAtLeast : (f5 - placeable2.getHeight()) / 2.0f) - coerceAtLeast) * (1.0f - f);
         final float height3 = placeable2.getHeight() + coerceAtLeast + measureScope.mo405toPx0680j_4(f2) + measureScope.mo405toPx0680j_4(f3);
         final int m7525constrainWidthK40F9xA = ConstraintsKt.m7525constrainWidthK40F9xA(j, Math.max(placeable2.getWidth(), Math.max(placeable.getWidth(), placeable4 != null ? placeable4.getWidth() : 0)));
         final int width = (m7525constrainWidthK40F9xA - placeable.getWidth()) / 2;
         final int width2 = (m7525constrainWidthK40F9xA - placeable2.getWidth()) / 2;
         final int width3 = (m7525constrainWidthK40F9xA - placeable3.getWidth()) / 2;
-        final float f7 = coerceAtLeast - measureScope.mo405toPx0680j_4(f2);
-        return MeasureScope.layout$default(measureScope, m7525constrainWidthK40F9xA, MathKt.roundToInt(f6), null, new Function1() { // from class: androidx.compose.material3.NavigationRailKt$$ExternalSyntheticLambda0
+        final float f6 = coerceAtLeast - measureScope.mo405toPx0680j_4(f2);
+        return MeasureScope.layout$default(measureScope, m7525constrainWidthK40F9xA, MathKt.roundToInt(f5), null, new Function1() { // from class: androidx.compose.material3.NavigationRailKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return NavigationRailKt.placeLabelAndIcon_zUg2_y0$lambda$22(Placeable.this, z, f, placeable, width, height3, height2, placeable2, width2, coerceAtLeast, placeable3, width3, f7, m7525constrainWidthK40F9xA, measureScope, (Placeable.PlacementScope) obj);
+                return NavigationRailKt.placeLabelAndIcon_zUg2_y0$lambda$22(Placeable.this, z, f, placeable, width, height3, height2, placeable2, width2, coerceAtLeast, placeable3, width3, f6, m7525constrainWidthK40F9xA, measureScope, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
@@ -1319,15 +1317,5 @@ public final class NavigationRailKt {
 
     public static final ProvidableCompositionLocal<NavigationRailOverride> getLocalNavigationRailOverride() {
         return LocalNavigationRailOverride;
-    }
-
-    static {
-        float f = 4;
-        NavigationRailVerticalPadding = Dp.m7555constructorimpl(f);
-        NavigationRailItemVerticalPadding = Dp.m7555constructorimpl(f);
-        float f2 = 2;
-        IndicatorHorizontalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m3575getActiveIndicatorWidthD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / f2);
-        IndicatorVerticalPaddingWithLabel = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m3574getActiveIndicatorHeightD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / f2);
-        IndicatorVerticalPaddingNoLabel = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m3575getActiveIndicatorWidthD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / f2);
     }
 }

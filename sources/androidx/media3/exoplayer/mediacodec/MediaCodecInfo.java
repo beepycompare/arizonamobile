@@ -312,7 +312,7 @@ public final class MediaCodecInfo {
 
     private float computeMaxSupportedFrameRate(int i, int i2) {
         float f = 1024.0f;
-        if (isVideoSizeAndRateSupportedV21(i, i2, 1024.0f)) {
+        if (isVideoSizeAndRateSupportedV21(i, i2, 1024.0d)) {
             return 1024.0f;
         }
         float f2 = 0.0f;

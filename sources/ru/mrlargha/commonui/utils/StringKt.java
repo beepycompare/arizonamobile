@@ -126,19 +126,18 @@ public final class StringKt {
 
     public static final String thousandsCut(double d) {
         String str;
-        String valueOf;
         if (d >= 1000000.0d) {
-            d /= 1000000;
+            d /= 1000000.0d;
             str = "M";
         } else if (d < 1000.0d) {
             str = "";
         } else {
-            d /= 1000;
+            d /= 1000.0d;
             str = "K";
         }
-        double d2 = 10;
-        double floor = Math.floor(d * d2) / d2;
-        if (String.valueOf(floor).charAt(valueOf.length() - 1) == '0') {
+        double floor = Math.floor(d * 10.0d) / 10.0d;
+        String valueOf = String.valueOf(floor);
+        if (valueOf.charAt(valueOf.length() - 1) == '0') {
             return ((int) floor) + str;
         }
         return floor + str;

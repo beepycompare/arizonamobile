@@ -46,9 +46,8 @@ public class LongProgression implements Iterable<Long>, KMappedMarker {
 
     public boolean isEmpty() {
         int i = (this.step > 0L ? 1 : (this.step == 0L ? 0 : -1));
-        long j = this.first;
-        long j2 = this.last;
-        return i > 0 ? j > j2 : j < j2;
+        int i2 = (this.first > this.last ? 1 : (this.first == this.last ? 0 : -1));
+        return i > 0 ? i2 > 0 : i2 < 0;
     }
 
     public boolean equals(Object obj) {
@@ -66,12 +65,11 @@ public class LongProgression implements Iterable<Long>, KMappedMarker {
         if (isEmpty()) {
             return -1;
         }
-        long j = 31;
-        long j2 = this.first;
-        long j3 = this.last;
-        long j4 = j * (((j2 ^ (j2 >>> 32)) * j) + (j3 ^ (j3 >>> 32)));
-        long j5 = this.step;
-        return (int) (j4 + (j5 ^ (j5 >>> 32)));
+        long j = this.first;
+        long j2 = this.last;
+        long j3 = 31 * (((j ^ (j >>> 32)) * 31) + (j2 ^ (j2 >>> 32)));
+        long j4 = this.step;
+        return (int) (j3 + (j4 ^ (j4 >>> 32)));
     }
 
     public String toString() {

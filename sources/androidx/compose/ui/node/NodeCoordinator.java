@@ -539,8 +539,8 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     public Set<AlignmentLine> getProvidedAlignmentLines() {
         LinkedHashSet linkedHashSet = null;
-        for (NodeCoordinator nodeCoordinator = this; nodeCoordinator != null; nodeCoordinator = nodeCoordinator.wrapped) {
-            MeasureResult measureResult = nodeCoordinator._measureResult;
+        while (this != null) {
+            MeasureResult measureResult = this._measureResult;
             Map<AlignmentLine, Integer> alignmentLines = measureResult != null ? measureResult.getAlignmentLines() : null;
             if (alignmentLines != null && (!alignmentLines.isEmpty())) {
                 if (linkedHashSet == null) {
@@ -548,6 +548,7 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
                 }
                 linkedHashSet.addAll(alignmentLines.keySet());
             }
+            this = this.wrapped;
         }
         return linkedHashSet == null ? SetsKt.emptySet() : linkedHashSet;
     }
@@ -1347,14 +1348,13 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
         rectCache.setTop(-Float.intBitsToFloat(i2));
         rectCache.setRight(getMeasuredWidth() + Float.intBitsToFloat(i));
         rectCache.setBottom(getMeasuredHeight() + Float.intBitsToFloat(i2));
-        NodeCoordinator nodeCoordinator = this;
-        while (nodeCoordinator != findRootCoordinates) {
-            nodeCoordinator.rectInParent$ui(rectCache, false, true);
+        while (this != findRootCoordinates) {
+            this.rectInParent$ui(rectCache, false, true);
             if (rectCache.isEmpty()) {
                 return Rect.Companion.getZero();
             }
-            nodeCoordinator = nodeCoordinator.wrappedBy;
-            Intrinsics.checkNotNull(nodeCoordinator);
+            this = this.wrappedBy;
+            Intrinsics.checkNotNull(this);
         }
         return MutableRectKt.toRect(rectCache);
     }
@@ -1457,21 +1457,20 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
 
     /* renamed from: transformToAncestor-EL8BTi8 */
     private final void m6515transformToAncestorEL8BTi8(NodeCoordinator nodeCoordinator, float[] fArr) {
-        NodeCoordinator nodeCoordinator2 = this;
-        while (!Intrinsics.areEqual(nodeCoordinator2, nodeCoordinator)) {
-            OwnedLayer ownedLayer = nodeCoordinator2.layer;
+        while (!Intrinsics.areEqual(this, nodeCoordinator)) {
+            OwnedLayer ownedLayer = this.layer;
             if (ownedLayer != null) {
                 ownedLayer.mo6598transform58bKbWc(fArr);
             }
-            long mo6464getPositionnOccac = nodeCoordinator2.mo6464getPositionnOccac();
+            long mo6464getPositionnOccac = this.mo6464getPositionnOccac();
             if (!IntOffset.m7682equalsimpl0(mo6464getPositionnOccac, IntOffset.Companion.m7694getZeronOccac())) {
                 float[] fArr2 = tmpMatrix;
                 Matrix.m5025resetimpl(fArr2);
                 Matrix.m5038translateimpl$default(fArr2, IntOffset.m7683getXimpl(mo6464getPositionnOccac), IntOffset.m7684getYimpl(mo6464getPositionnOccac), 0.0f, 4, null);
                 Matrix.m5035timesAssign58bKbWc(fArr, fArr2);
             }
-            nodeCoordinator2 = nodeCoordinator2.wrappedBy;
-            Intrinsics.checkNotNull(nodeCoordinator2);
+            this = this.wrappedBy;
+            Intrinsics.checkNotNull(this);
         }
     }
 
@@ -2042,12 +2041,11 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         float max = Math.max(0.0f, intBitsToFloat < 0.0f ? -intBitsToFloat : intBitsToFloat - getMeasuredWidth());
         float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, intBitsToFloat2 < 0.0f ? -intBitsToFloat2 : intBitsToFloat2 - getMeasuredHeight())) & 4294967295L) | (Float.floatToRawIntBits(max) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(max) << 32) | (Float.floatToRawIntBits(Math.max(0.0f, intBitsToFloat2 < 0.0f ? -intBitsToFloat2 : intBitsToFloat2 - getMeasuredHeight())) & 4294967295L));
     }
 
     /* renamed from: calculateMinimumTouchTargetPadding-E7KxVPU */
     protected final long m6516calculateMinimumTouchTargetPaddingE7KxVPU(long j) {
-        float max = Math.max(0.0f, (Float.intBitsToFloat((int) (j >> 32)) - getMeasuredWidth()) / 2.0f);
-        return Size.m4587constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, (Float.intBitsToFloat((int) (j & 4294967295L)) - getMeasuredHeight()) / 2.0f)) & 4294967295L) | (Float.floatToRawIntBits(max) << 32));
+        return Size.m4587constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, (Float.intBitsToFloat((int) (j >> 32)) - getMeasuredWidth()) / 2.0f)) << 32) | (Float.floatToRawIntBits(Math.max(0.0f, (Float.intBitsToFloat((int) (j & 4294967295L)) - getMeasuredHeight()) / 2.0f)) & 4294967295L));
     }
 }

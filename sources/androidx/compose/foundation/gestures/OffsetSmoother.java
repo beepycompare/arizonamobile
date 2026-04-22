@@ -41,8 +41,7 @@ public final class OffsetSmoother {
         for (int i3 = 0; i3 < size3; i3++) {
             arrayList2.add(Float.valueOf(Float.intBitsToFloat((int) (4294967295L & list3.get(i3).m4537unboximpl()))));
         }
-        float averageOfFloat2 = (float) CollectionsKt.averageOfFloat(arrayList2);
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(averageOfFloat2) & 4294967295L) | (Float.floatToRawIntBits(averageOfFloat) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(averageOfFloat) << 32) | (Float.floatToRawIntBits((float) CollectionsKt.averageOfFloat(arrayList2)) & 4294967295L));
     }
 
     public final void reset() {

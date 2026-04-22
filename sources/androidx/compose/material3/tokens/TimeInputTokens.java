@@ -7,8 +7,6 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class TimeInputTokens {
     public static final int $stable = 0;
-    private static final float PeriodSelectorContainerHeight;
-    private static final float TimeFieldContainerHeight;
     public static final TimeInputTokens INSTANCE = new TimeInputTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainerHigh;
     private static final float ContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
@@ -16,11 +14,12 @@ public final class TimeInputTokens {
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ColorSchemeKeyTokens HeadlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeadlineFont = TypographyKeyTokens.LabelMedium;
+    private static final float PeriodSelectorContainerHeight = Dp.m7555constructorimpl(72.0f);
     private static final ShapeKeyTokens PeriodSelectorContainerShape = ShapeKeyTokens.CornerSmall;
-    private static final float PeriodSelectorContainerWidth = Dp.m7555constructorimpl((float) 52.0d);
+    private static final float PeriodSelectorContainerWidth = Dp.m7555constructorimpl(52.0f);
     private static final TypographyKeyTokens PeriodSelectorLabelTextFont = TypographyKeyTokens.TitleMedium;
     private static final ColorSchemeKeyTokens PeriodSelectorOutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float PeriodSelectorOutlineWidth = Dp.m7555constructorimpl((float) 1.0d);
+    private static final float PeriodSelectorOutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens PeriodSelectorSelectedContainerColor = ColorSchemeKeyTokens.TertiaryContainer;
     private static final ColorSchemeKeyTokens PeriodSelectorSelectedFocusLabelTextColor = ColorSchemeKeyTokens.OnTertiaryContainer;
     private static final ColorSchemeKeyTokens PeriodSelectorSelectedHoverLabelTextColor = ColorSchemeKeyTokens.OnTertiaryContainer;
@@ -31,12 +30,13 @@ public final class TimeInputTokens {
     private static final ColorSchemeKeyTokens PeriodSelectorUnselectedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens PeriodSelectorUnselectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TimeFieldContainerColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
+    private static final float TimeFieldContainerHeight = Dp.m7555constructorimpl(72.0f);
     private static final ShapeKeyTokens TimeFieldContainerShape = ShapeKeyTokens.CornerSmall;
-    private static final float TimeFieldContainerWidth = Dp.m7555constructorimpl((float) 96.0d);
+    private static final float TimeFieldContainerWidth = Dp.m7555constructorimpl(96.0f);
     private static final ColorSchemeKeyTokens TimeFieldFocusContainerColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final ColorSchemeKeyTokens TimeFieldFocusLabelTextColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens TimeFieldFocusOutlineColor = ColorSchemeKeyTokens.Primary;
-    private static final float TimeFieldFocusOutlineWidth = Dp.m7555constructorimpl((float) 2.0d);
+    private static final float TimeFieldFocusOutlineWidth = Dp.m7555constructorimpl(2.0f);
     private static final ColorSchemeKeyTokens TimeFieldHoverLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens TimeFieldLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final TypographyKeyTokens TimeFieldLabelTextFont = TypographyKeyTokens.DisplayMedium;
@@ -46,12 +46,6 @@ public final class TimeInputTokens {
     private static final TypographyKeyTokens TimeFieldSupportingTextFont = TypographyKeyTokens.BodySmall;
 
     private TimeInputTokens() {
-    }
-
-    static {
-        float f = (float) 72.0d;
-        PeriodSelectorContainerHeight = Dp.m7555constructorimpl(f);
-        TimeFieldContainerHeight = Dp.m7555constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {

@@ -132,7 +132,7 @@ final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Sessio
         CrashlyticsReport.Session.Device device = this.device;
         int hashCode6 = (hashCode5 ^ (device == null ? 0 : device.hashCode())) * 1000003;
         List<CrashlyticsReport.Session.Event> list = this.events;
-        return ((hashCode6 ^ (list != null ? list.hashCode() : 0)) * 1000003) ^ this.generatorType;
+        return this.generatorType ^ ((hashCode6 ^ (list != null ? list.hashCode() : 0)) * 1000003);
     }
 
     @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session

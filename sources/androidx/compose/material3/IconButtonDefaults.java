@@ -112,15 +112,24 @@ public final class IconButtonDefaults {
 
     /* renamed from: iconButtonVibrantColors-ro_MJ88  reason: not valid java name */
     public final IconButtonColors m2140iconButtonVibrantColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+        long j5;
+        long j6;
         ComposerKt.sourceInformationMarkerStart(composer, 1036440437, "C(iconButtonVibrantColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color)132@5742L11:IconButtonDefaults.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
         long m4808getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4771copywmQWz5c$default = (i2 & 8) != 0 ? Color.m4771copywmQWz5c$default(m4808getUnspecified0d7_KjU2, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j4;
+        if ((i2 & 8) != 0) {
+            long j7 = m4808getUnspecified0d7_KjU2;
+            j6 = Color.m4771copywmQWz5c$default(j7, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            j5 = j7;
+        } else {
+            j5 = m4808getUnspecified0d7_KjU2;
+            j6 = j4;
+        }
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1036440437, i, -1, "androidx.compose.material3.IconButtonDefaults.iconButtonVibrantColors (IconButtonDefaults.kt:132)");
         }
-        IconButtonColors m2125copyjRlVdoo = defaultIconButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2125copyjRlVdoo(m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4771copywmQWz5c$default);
+        IconButtonColors m2125copyjRlVdoo = defaultIconButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2125copyjRlVdoo(m4808getUnspecified0d7_KjU, j5, m4808getUnspecified0d7_KjU3, j6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -169,6 +178,7 @@ public final class IconButtonDefaults {
         long j7;
         long j8;
         long j9;
+        long j10;
         ComposerKt.sourceInformationMarkerStart(composer, 1402082449, "C(iconToggleButtonColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color,checkedContainerColor:c#ui.graphics.Color,checkedContentColor:c#ui.graphics.Color)196@8713L7,203@9068L11,204@9141L7:IconButtonDefaults.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         if ((i2 & 2) != 0) {
@@ -181,9 +191,9 @@ public final class IconButtonDefaults {
         }
         long m4808getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
         if ((i2 & 8) != 0) {
-            long j10 = j7;
-            j9 = Color.m4771copywmQWz5c$default(j10, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
-            j8 = j10;
+            long j11 = j7;
+            j9 = Color.m4771copywmQWz5c$default(j11, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            j8 = j11;
         } else {
             j8 = j7;
             j9 = j4;
@@ -191,13 +201,17 @@ public final class IconButtonDefaults {
         long m4808getUnspecified0d7_KjU3 = (i2 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
         long m4808getUnspecified0d7_KjU4 = (i2 & 32) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j6;
         if (ComposerKt.isTraceInProgress()) {
+            j10 = m4808getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(1402082449, i, -1, "androidx.compose.material3.IconButtonDefaults.iconToggleButtonColors (IconButtonDefaults.kt:203)");
+        } else {
+            j10 = m4808getUnspecified0d7_KjU;
         }
         ColorScheme colorScheme = MaterialTheme.INSTANCE.getColorScheme(composer, 6);
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume2 = composer.consume(ContentColorKt.getLocalContentColor());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        IconToggleButtonColors m2163copytNS2XkQ = m2132defaultIconToggleButtonColors4WTKRHQ$material3(colorScheme, ((Color) consume2).m4782unboximpl()).m2163copytNS2XkQ(m4808getUnspecified0d7_KjU, j8, m4808getUnspecified0d7_KjU2, j9, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4);
+        long j12 = j10;
+        IconToggleButtonColors m2163copytNS2XkQ = m2132defaultIconToggleButtonColors4WTKRHQ$material3(colorScheme, ((Color) consume2).m4782unboximpl()).m2163copytNS2XkQ(j12, j8, m4808getUnspecified0d7_KjU2, j9, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -231,17 +245,30 @@ public final class IconButtonDefaults {
 
     /* renamed from: iconToggleButtonVibrantColors-5tl4gsc  reason: not valid java name */
     public final IconToggleButtonColors m2142iconToggleButtonVibrantColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
+        long j7;
+        long j8;
+        long j9;
         ComposerKt.sourceInformationMarkerStart(composer, -1027328773, "C(iconToggleButtonVibrantColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color,checkedContainerColor:c#ui.graphics.Color,checkedContentColor:c#ui.graphics.Color)267@12180L11:IconButtonDefaults.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
         long m4808getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4771copywmQWz5c$default = (i2 & 8) != 0 ? Color.m4771copywmQWz5c$default(m4808getUnspecified0d7_KjU2, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j4;
+        if ((i2 & 8) != 0) {
+            long j10 = m4808getUnspecified0d7_KjU2;
+            j8 = Color.m4771copywmQWz5c$default(j10, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            j7 = j10;
+        } else {
+            j7 = m4808getUnspecified0d7_KjU2;
+            j8 = j4;
+        }
         long m4808getUnspecified0d7_KjU4 = (i2 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
         long m4808getUnspecified0d7_KjU5 = (i2 & 32) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j6;
         if (ComposerKt.isTraceInProgress()) {
+            j9 = m4808getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(-1027328773, i, -1, "androidx.compose.material3.IconButtonDefaults.iconToggleButtonVibrantColors (IconButtonDefaults.kt:267)");
+        } else {
+            j9 = m4808getUnspecified0d7_KjU;
         }
-        IconToggleButtonColors m2163copytNS2XkQ = defaultIconToggleButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2163copytNS2XkQ(m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4771copywmQWz5c$default, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5);
+        IconToggleButtonColors m2163copytNS2XkQ = defaultIconToggleButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2163copytNS2XkQ(j9, j7, m4808getUnspecified0d7_KjU3, j8, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -275,14 +302,17 @@ public final class IconButtonDefaults {
     /* renamed from: filledIconButtonColors-ro_MJ88  reason: not valid java name */
     public final IconButtonColors m2135filledIconButtonColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -245481051, "C(filledIconButtonColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color)313@14404L31,317@14601L11:IconButtonDefaults.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
-        long m1902contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m4808getUnspecified0d7_KjU, composer, i & 14) : j2;
-        long m4808getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4808getUnspecified0d7_KjU3 = (i2 & 8) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j4;
+        if ((i2 & 1) != 0) {
+            j = Color.Companion.m4808getUnspecified0d7_KjU();
+        }
+        long j5 = j;
+        long m1902contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(j5, composer, i & 14) : j2;
+        long m4808getUnspecified0d7_KjU = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
+        long m4808getUnspecified0d7_KjU2 = (i2 & 8) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j4;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-245481051, i, -1, "androidx.compose.material3.IconButtonDefaults.filledIconButtonColors (IconButtonDefaults.kt:317)");
         }
-        IconButtonColors m2125copyjRlVdoo = getDefaultFilledIconButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2125copyjRlVdoo(m4808getUnspecified0d7_KjU, m1902contentColorForek8zF_U, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3);
+        IconButtonColors m2125copyjRlVdoo = getDefaultFilledIconButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2125copyjRlVdoo(j5, m1902contentColorForek8zF_U, m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -315,6 +345,7 @@ public final class IconButtonDefaults {
 
     /* renamed from: filledIconToggleButtonColors-5tl4gsc  reason: not valid java name */
     public final IconToggleButtonColors m2136filledIconToggleButtonColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
+        long j7;
         ComposerKt.sourceInformationMarkerStart(composer, 1473292947, "C(filledIconToggleButtonColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color,checkedContainerColor:c#ui.graphics.Color,checkedContentColor:c#ui.graphics.Color)368@17217L38,370@17311L11:IconButtonDefaults.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
@@ -323,9 +354,12 @@ public final class IconButtonDefaults {
         long m4808getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
         long m1902contentColorForek8zF_U = (i2 & 32) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m4808getUnspecified0d7_KjU5, composer, (i >> 12) & 14) : j6;
         if (ComposerKt.isTraceInProgress()) {
+            j7 = m4808getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(1473292947, i, -1, "androidx.compose.material3.IconButtonDefaults.filledIconToggleButtonColors (IconButtonDefaults.kt:370)");
+        } else {
+            j7 = m4808getUnspecified0d7_KjU;
         }
-        IconToggleButtonColors m2163copytNS2XkQ = getDefaultFilledIconToggleButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2163copytNS2XkQ(m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m1902contentColorForek8zF_U);
+        IconToggleButtonColors m2163copytNS2XkQ = getDefaultFilledIconToggleButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2163copytNS2XkQ(j7, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m1902contentColorForek8zF_U);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -359,14 +393,17 @@ public final class IconButtonDefaults {
     /* renamed from: filledTonalIconButtonColors-ro_MJ88  reason: not valid java name */
     public final IconButtonColors m2137filledTonalIconButtonColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 562762851, "C(filledTonalIconButtonColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color)421@19956L31,425@20153L11:IconButtonDefaults.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
-        long m1902contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m4808getUnspecified0d7_KjU, composer, i & 14) : j2;
-        long m4808getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4808getUnspecified0d7_KjU3 = (i2 & 8) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j4;
+        if ((i2 & 1) != 0) {
+            j = Color.Companion.m4808getUnspecified0d7_KjU();
+        }
+        long j5 = j;
+        long m1902contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(j5, composer, i & 14) : j2;
+        long m4808getUnspecified0d7_KjU = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
+        long m4808getUnspecified0d7_KjU2 = (i2 & 8) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j4;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(562762851, i, -1, "androidx.compose.material3.IconButtonDefaults.filledTonalIconButtonColors (IconButtonDefaults.kt:425)");
         }
-        IconButtonColors m2125copyjRlVdoo = getDefaultFilledTonalIconButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2125copyjRlVdoo(m4808getUnspecified0d7_KjU, m1902contentColorForek8zF_U, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3);
+        IconButtonColors m2125copyjRlVdoo = getDefaultFilledTonalIconButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2125copyjRlVdoo(j5, m1902contentColorForek8zF_U, m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -399,6 +436,7 @@ public final class IconButtonDefaults {
 
     /* renamed from: filledTonalIconToggleButtonColors-5tl4gsc  reason: not valid java name */
     public final IconToggleButtonColors m2138filledTonalIconToggleButtonColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
+        long j7;
         ComposerKt.sourceInformationMarkerStart(composer, 2130748241, "C(filledTonalIconToggleButtonColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color,checkedContainerColor:c#ui.graphics.Color,checkedContentColor:c#ui.graphics.Color)470@22481L31,474@22725L38,476@22819L11:IconButtonDefaults.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m1902contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m4808getUnspecified0d7_KjU, composer, i & 14) : j2;
@@ -407,9 +445,12 @@ public final class IconButtonDefaults {
         long m4808getUnspecified0d7_KjU4 = (i2 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
         long m1902contentColorForek8zF_U2 = (i2 & 32) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m4808getUnspecified0d7_KjU4, composer, (i >> 12) & 14) : j6;
         if (ComposerKt.isTraceInProgress()) {
+            j7 = m4808getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(2130748241, i, -1, "androidx.compose.material3.IconButtonDefaults.filledTonalIconToggleButtonColors (IconButtonDefaults.kt:476)");
+        } else {
+            j7 = m4808getUnspecified0d7_KjU;
         }
-        IconToggleButtonColors m2163copytNS2XkQ = getDefaultFilledTonalIconToggleButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2163copytNS2XkQ(m4808getUnspecified0d7_KjU, m1902contentColorForek8zF_U, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m1902contentColorForek8zF_U2);
+        IconToggleButtonColors m2163copytNS2XkQ = getDefaultFilledTonalIconToggleButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2163copytNS2XkQ(j7, m1902contentColorForek8zF_U, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m1902contentColorForek8zF_U2);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -518,15 +559,24 @@ public final class IconButtonDefaults {
 
     /* renamed from: outlinedIconButtonVibrantColors-ro_MJ88  reason: not valid java name */
     public final IconButtonColors m2144outlinedIconButtonVibrantColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+        long j5;
+        long j6;
         ComposerKt.sourceInformationMarkerStart(composer, -278201933, "C(outlinedIconButtonVibrantColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color)603@28773L11:IconButtonDefaults.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
         long m4808getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4771copywmQWz5c$default = (i2 & 8) != 0 ? Color.m4771copywmQWz5c$default(m4808getUnspecified0d7_KjU2, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j4;
+        if ((i2 & 8) != 0) {
+            long j7 = m4808getUnspecified0d7_KjU2;
+            j6 = Color.m4771copywmQWz5c$default(j7, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            j5 = j7;
+        } else {
+            j5 = m4808getUnspecified0d7_KjU2;
+            j6 = j4;
+        }
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-278201933, i, -1, "androidx.compose.material3.IconButtonDefaults.outlinedIconButtonVibrantColors (IconButtonDefaults.kt:603)");
         }
-        IconButtonColors m2125copyjRlVdoo = defaultOutlinedIconButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2125copyjRlVdoo(m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4771copywmQWz5c$default);
+        IconButtonColors m2125copyjRlVdoo = defaultOutlinedIconButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2125copyjRlVdoo(m4808getUnspecified0d7_KjU, j5, m4808getUnspecified0d7_KjU3, j6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -637,17 +687,30 @@ public final class IconButtonDefaults {
 
     /* renamed from: outlinedIconToggleButtonVibrantColors-5tl4gsc  reason: not valid java name */
     public final IconToggleButtonColors m2146outlinedIconToggleButtonVibrantColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
+        long j7;
+        long j8;
+        long j9;
         ComposerKt.sourceInformationMarkerStart(composer, -142016199, "C(outlinedIconToggleButtonVibrantColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color,checkedContainerColor:c#ui.graphics.Color,checkedContentColor:c#ui.graphics.Color)743@35442L38,745@35536L11:IconButtonDefaults.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
         long m4808getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4771copywmQWz5c$default = (i2 & 8) != 0 ? Color.m4771copywmQWz5c$default(m4808getUnspecified0d7_KjU2, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j4;
+        if ((i2 & 8) != 0) {
+            long j10 = m4808getUnspecified0d7_KjU2;
+            j8 = Color.m4771copywmQWz5c$default(j10, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            j7 = j10;
+        } else {
+            j7 = m4808getUnspecified0d7_KjU2;
+            j8 = j4;
+        }
         long m4808getUnspecified0d7_KjU4 = (i2 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
         long m1902contentColorForek8zF_U = (i2 & 32) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m4808getUnspecified0d7_KjU4, composer, (i >> 12) & 14) : j6;
         if (ComposerKt.isTraceInProgress()) {
+            j9 = m4808getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(-142016199, i, -1, "androidx.compose.material3.IconButtonDefaults.outlinedIconToggleButtonVibrantColors (IconButtonDefaults.kt:745)");
+        } else {
+            j9 = m4808getUnspecified0d7_KjU;
         }
-        IconToggleButtonColors m2163copytNS2XkQ = defaultOutlinedIconToggleButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2163copytNS2XkQ(m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4771copywmQWz5c$default, m4808getUnspecified0d7_KjU4, m1902contentColorForek8zF_U);
+        IconToggleButtonColors m2163copytNS2XkQ = defaultOutlinedIconToggleButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2163copytNS2XkQ(j9, j7, m4808getUnspecified0d7_KjU3, j8, m4808getUnspecified0d7_KjU4, m1902contentColorForek8zF_U);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -815,7 +878,7 @@ public final class IconButtonDefaults {
                 if (IconButtonWidthOption.m2151equalsimpl0(i, IconButtonWidthOption.Companion.m2157getWiderc6NtMs())) {
                     m7555constructorimpl = Dp.m7555constructorimpl(SmallIconButtonTokens.INSTANCE.m3740getWideLeadingSpaceD9Ej5fM() + SmallIconButtonTokens.INSTANCE.m3741getWideTrailingSpaceD9Ej5fM());
                 } else {
-                    m7555constructorimpl = Dp.m7555constructorimpl(0);
+                    m7555constructorimpl = Dp.m7555constructorimpl(0.0f);
                 }
             } else {
                 m7555constructorimpl = Dp.m7555constructorimpl(SmallIconButtonTokens.INSTANCE.m3734getDefaultLeadingSpaceD9Ej5fM() + SmallIconButtonTokens.INSTANCE.m3734getDefaultLeadingSpaceD9Ej5fM());

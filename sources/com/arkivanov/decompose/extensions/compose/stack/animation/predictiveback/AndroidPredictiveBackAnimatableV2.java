@@ -411,7 +411,7 @@ public final class AndroidPredictiveBackAnimatableV2 implements PredictiveBackAn
         }
         int i = WhenMappings.$EnumSwitchMapping$0[getEdge().ordinal()];
         if (i == 1) {
-            f2 = ((f - (initialScaleFactor() * f)) / 2.0f) - (density.mo405toPx0680j_4(Dp.m7555constructorimpl(8)) * getProgress());
+            f2 = ((f - (initialScaleFactor() * f)) / 2.0f) - (density.mo405toPx0680j_4(Dp.m7555constructorimpl(8.0f)) * getProgress());
         } else if (i != 2 && i != 3) {
             throw new NoWhenBranchMatchedException();
         }
@@ -450,6 +450,6 @@ public final class AndroidPredictiveBackAnimatableV2 implements PredictiveBackAn
         if (f == 0.0f) {
             return 0.0f;
         }
-        return MathHelpersKt.lerp(((f / 20.0f) - density.mo405toPx0680j_4(Dp.m7555constructorimpl(8))) * ((getTouchY() - this.initialEvent.getTouchY()) / f) * RangesKt.coerceAtMost(getProgress() * 3.0f, 1.0f), 0.0f, getFinishProgress());
+        return MathHelpersKt.lerp(((f / 20.0f) - density.mo405toPx0680j_4(Dp.m7555constructorimpl(8.0f))) * ((getTouchY() - this.initialEvent.getTouchY()) / f) * RangesKt.coerceAtMost(getProgress() * 3.0f, 1.0f), 0.0f, getFinishProgress());
     }
 }

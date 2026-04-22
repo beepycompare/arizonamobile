@@ -733,134 +733,134 @@ public final class BasicTooltipKt {
                         return ((C00221) create(awaitPointerEventScope, continuation)).invokeSuspend(Unit.INSTANCE);
                     }
 
-                    /* JADX WARN: Code restructure failed: missing block: B:38:0x00ff, code lost:
-                        if (r3 == r0) goto L28;
+                    /* JADX WARN: Code restructure failed: missing block: B:22:0x008b, code lost:
+                        if (r5 == r1) goto L31;
                      */
-                    /* JADX WARN: Multi-variable type inference failed */
-                    /* JADX WARN: Type inference failed for: r2v0, types: [int] */
-                    /* JADX WARN: Type inference failed for: r2v1 */
-                    /* JADX WARN: Type inference failed for: r2v13, types: [kotlinx.coroutines.flow.MutableStateFlow] */
-                    /* JADX WARN: Type inference failed for: r2v2, types: [kotlinx.coroutines.flow.MutableStateFlow] */
-                    /* JADX WARN: Type inference failed for: r2v23 */
-                    /* JADX WARN: Type inference failed for: r2v24 */
+                    /* JADX WARN: Removed duplicated region for block: B:39:0x00f9  */
+                    /* JADX WARN: Removed duplicated region for block: B:42:0x00fe A[Catch: all -> 0x0021, TRY_LEAVE, TryCatch #0 {all -> 0x0021, blocks: (B:8:0x001a, B:40:0x00fa, B:42:0x00fe), top: B:48:0x001a }] */
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     /*
                         Code decompiled incorrectly, please refer to instructions dump.
                     */
                     public final Object invokeSuspend(Object obj) {
-                        long longPressTimeoutMillis;
-                        Object awaitFirstDown$default;
-                        MutableStateFlow mutableStateFlow;
-                        PointerEventPass pointerEventPass;
                         AwaitPointerEventScope awaitPointerEventScope;
-                        PointerEventPass pointerEventPass2;
-                        MutableStateFlow mutableStateFlow2;
+                        MutableStateFlow MutableStateFlow;
+                        long longPressTimeoutMillis;
+                        PointerEventPass pointerEventPass;
+                        Object awaitFirstDown$default;
                         AwaitPointerEventScope awaitPointerEventScope2;
-                        MutableStateFlow mutableStateFlow3;
+                        MutableStateFlow mutableStateFlow;
+                        MutableStateFlow mutableStateFlow2;
                         Object waitForUpOrCancellation;
+                        PointerInputChange pointerInputChange;
                         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                        MutableStateFlow mutableStateFlow4 = this.label;
-                        try {
-                            if (mutableStateFlow4 == 0) {
-                                ResultKt.throwOnFailure(obj);
-                                AwaitPointerEventScope awaitPointerEventScope3 = (AwaitPointerEventScope) this.L$0;
-                                MutableStateFlow MutableStateFlow = StateFlowKt.MutableStateFlow(Boxing.boxBoolean(false));
-                                longPressTimeoutMillis = awaitPointerEventScope3.getViewConfiguration().getLongPressTimeoutMillis();
-                                PointerEventPass pointerEventPass3 = PointerEventPass.Initial;
-                                this.L$0 = awaitPointerEventScope3;
-                                this.L$1 = MutableStateFlow;
-                                this.L$2 = pointerEventPass3;
-                                this.J$0 = longPressTimeoutMillis;
-                                this.label = 1;
-                                awaitFirstDown$default = TapGestureDetectorKt.awaitFirstDown$default(awaitPointerEventScope3, false, pointerEventPass3, this, 1, null);
-                                if (awaitFirstDown$default != coroutine_suspended) {
-                                    mutableStateFlow = MutableStateFlow;
-                                    pointerEventPass = pointerEventPass3;
-                                    awaitPointerEventScope = awaitPointerEventScope3;
-                                }
-                                return coroutine_suspended;
-                            } else if (mutableStateFlow4 != 1) {
-                                if (mutableStateFlow4 != 2) {
-                                    if (mutableStateFlow4 == 3) {
-                                        MutableStateFlow mutableStateFlow5 = (MutableStateFlow) this.L$0;
+                        int i = this.label;
+                        if (i == 0) {
+                            ResultKt.throwOnFailure(obj);
+                            awaitPointerEventScope = (AwaitPointerEventScope) this.L$0;
+                            MutableStateFlow = StateFlowKt.MutableStateFlow(Boxing.boxBoolean(false));
+                            longPressTimeoutMillis = awaitPointerEventScope.getViewConfiguration().getLongPressTimeoutMillis();
+                            pointerEventPass = PointerEventPass.Initial;
+                            this.L$0 = awaitPointerEventScope;
+                            this.L$1 = MutableStateFlow;
+                            this.L$2 = pointerEventPass;
+                            this.J$0 = longPressTimeoutMillis;
+                            this.label = 1;
+                            awaitFirstDown$default = TapGestureDetectorKt.awaitFirstDown$default(awaitPointerEventScope, false, pointerEventPass, this, 1, null);
+                        } else if (i != 1) {
+                            if (i != 2) {
+                                if (i == 3) {
+                                    mutableStateFlow2 = (MutableStateFlow) this.L$0;
+                                    try {
                                         ResultKt.throwOnFailure(obj);
                                         waitForUpOrCancellation = obj;
-                                        mutableStateFlow4 = mutableStateFlow5;
-                                        PointerInputChange pointerInputChange = (PointerInputChange) waitForUpOrCancellation;
+                                        pointerInputChange = (PointerInputChange) waitForUpOrCancellation;
                                         if (pointerInputChange != null) {
                                             pointerInputChange.consume();
                                         }
-                                        mutableStateFlow4.tryEmit(Boxing.boxBoolean(false));
+                                        mutableStateFlow2.tryEmit(Boxing.boxBoolean(false));
                                         return Unit.INSTANCE;
+                                    } catch (Throwable th) {
+                                        th = th;
+                                        mutableStateFlow2.tryEmit(Boxing.boxBoolean(false));
+                                        throw th;
                                     }
-                                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                                 }
-                                PointerEventPass pointerEventPass4 = (PointerEventPass) this.L$2;
-                                mutableStateFlow3 = (MutableStateFlow) this.L$1;
-                                awaitPointerEventScope2 = (AwaitPointerEventScope) this.L$0;
-                                try {
-                                    ResultKt.throwOnFailure(obj);
-                                    mutableStateFlow3.tryEmit(Boxing.boxBoolean(false));
-                                } catch (PointerEventTimeoutCancellationException unused) {
-                                    pointerEventPass2 = pointerEventPass4;
-                                    mutableStateFlow2 = mutableStateFlow3;
-                                    BuildersKt__Builders_commonKt.launch$default(this.$$this$coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass3(mutableStateFlow2, this.$state, null), 1, null);
-                                    this.L$0 = mutableStateFlow2;
-                                    this.L$1 = null;
-                                    this.L$2 = null;
-                                    this.label = 3;
-                                    waitForUpOrCancellation = TapGestureDetectorKt.waitForUpOrCancellation(awaitPointerEventScope2, pointerEventPass2, this);
-                                    mutableStateFlow4 = mutableStateFlow2;
-                                } catch (Throwable th) {
-                                    th = th;
-                                    mutableStateFlow4 = mutableStateFlow3;
-                                    mutableStateFlow4.tryEmit(Boxing.boxBoolean(false));
-                                    throw th;
-                                }
-                                return Unit.INSTANCE;
-                            } else {
-                                long j = this.J$0;
-                                pointerEventPass = (PointerEventPass) this.L$2;
-                                awaitPointerEventScope = (AwaitPointerEventScope) this.L$0;
-                                ResultKt.throwOnFailure(obj);
-                                longPressTimeoutMillis = j;
-                                mutableStateFlow = (MutableStateFlow) this.L$1;
-                                awaitFirstDown$default = obj;
+                                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
-                            int m6088getTypeT8wyACA = ((PointerInputChange) awaitFirstDown$default).m6088getTypeT8wyACA();
-                            if (PointerType.m6156equalsimpl0(m6088getTypeT8wyACA, PointerType.Companion.m6163getTouchT8wyACA()) || PointerType.m6156equalsimpl0(m6088getTypeT8wyACA, PointerType.Companion.m6162getStylusT8wyACA())) {
+                            PointerEventPass pointerEventPass2 = (PointerEventPass) this.L$2;
+                            mutableStateFlow = (MutableStateFlow) this.L$1;
+                            awaitPointerEventScope2 = (AwaitPointerEventScope) this.L$0;
+                            try {
+                                ResultKt.throwOnFailure(obj);
+                                mutableStateFlow.tryEmit(Boxing.boxBoolean(false));
+                            } catch (PointerEventTimeoutCancellationException unused) {
+                                pointerEventPass = pointerEventPass2;
+                                MutableStateFlow = mutableStateFlow;
+                                BuildersKt__Builders_commonKt.launch$default(this.$$this$coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass3(MutableStateFlow, this.$state, null), 1, null);
+                                this.L$0 = MutableStateFlow;
+                                this.L$1 = null;
+                                this.L$2 = null;
+                                this.label = 3;
+                                waitForUpOrCancellation = TapGestureDetectorKt.waitForUpOrCancellation(awaitPointerEventScope2, pointerEventPass, this);
+                                if (waitForUpOrCancellation != coroutine_suspended) {
+                                }
+                                return coroutine_suspended;
+                            } catch (Throwable th2) {
+                                th = th2;
+                                mutableStateFlow2 = mutableStateFlow;
+                                mutableStateFlow2.tryEmit(Boxing.boxBoolean(false));
+                                throw th;
+                            }
+                            return Unit.INSTANCE;
+                        } else {
+                            long j = this.J$0;
+                            ResultKt.throwOnFailure(obj);
+                            longPressTimeoutMillis = j;
+                            awaitPointerEventScope = (AwaitPointerEventScope) this.L$0;
+                            pointerEventPass = (PointerEventPass) this.L$2;
+                            MutableStateFlow = (MutableStateFlow) this.L$1;
+                            awaitFirstDown$default = obj;
+                        }
+                        int m6088getTypeT8wyACA = ((PointerInputChange) awaitFirstDown$default).m6088getTypeT8wyACA();
+                        if (PointerType.m6156equalsimpl0(m6088getTypeT8wyACA, PointerType.Companion.m6163getTouchT8wyACA()) || PointerType.m6156equalsimpl0(m6088getTypeT8wyACA, PointerType.Companion.m6162getStylusT8wyACA())) {
+                            try {
                                 try {
                                     this.L$0 = awaitPointerEventScope;
-                                    this.L$1 = mutableStateFlow;
+                                    this.L$1 = MutableStateFlow;
                                     this.L$2 = pointerEventPass;
                                     this.label = 2;
                                     if (awaitPointerEventScope.withTimeout(longPressTimeoutMillis, new C00231(pointerEventPass, null), this) != coroutine_suspended) {
-                                        mutableStateFlow3 = mutableStateFlow;
-                                        mutableStateFlow3.tryEmit(Boxing.boxBoolean(false));
+                                        mutableStateFlow = MutableStateFlow;
+                                        mutableStateFlow.tryEmit(Boxing.boxBoolean(false));
                                     }
                                 } catch (PointerEventTimeoutCancellationException unused2) {
-                                    pointerEventPass2 = pointerEventPass;
-                                    mutableStateFlow2 = mutableStateFlow;
                                     awaitPointerEventScope2 = awaitPointerEventScope;
-                                    BuildersKt__Builders_commonKt.launch$default(this.$$this$coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass3(mutableStateFlow2, this.$state, null), 1, null);
-                                    this.L$0 = mutableStateFlow2;
+                                    BuildersKt__Builders_commonKt.launch$default(this.$$this$coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass3(MutableStateFlow, this.$state, null), 1, null);
+                                    this.L$0 = MutableStateFlow;
                                     this.L$1 = null;
                                     this.L$2 = null;
                                     this.label = 3;
-                                    waitForUpOrCancellation = TapGestureDetectorKt.waitForUpOrCancellation(awaitPointerEventScope2, pointerEventPass2, this);
-                                    mutableStateFlow4 = mutableStateFlow2;
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    mutableStateFlow4 = mutableStateFlow;
-                                    mutableStateFlow4.tryEmit(Boxing.boxBoolean(false));
-                                    throw th;
+                                    waitForUpOrCancellation = TapGestureDetectorKt.waitForUpOrCancellation(awaitPointerEventScope2, pointerEventPass, this);
+                                    if (waitForUpOrCancellation != coroutine_suspended) {
+                                        mutableStateFlow2 = MutableStateFlow;
+                                        pointerInputChange = (PointerInputChange) waitForUpOrCancellation;
+                                        if (pointerInputChange != null) {
+                                        }
+                                        mutableStateFlow2.tryEmit(Boxing.boxBoolean(false));
+                                        return Unit.INSTANCE;
+                                    }
+                                    return coroutine_suspended;
                                 }
                                 return coroutine_suspended;
+                            } catch (Throwable th3) {
+                                th = th3;
+                                mutableStateFlow2 = MutableStateFlow;
+                                mutableStateFlow2.tryEmit(Boxing.boxBoolean(false));
+                                throw th;
                             }
-                            return Unit.INSTANCE;
-                        } catch (Throwable th3) {
-                            th = th3;
                         }
+                        return Unit.INSTANCE;
                     }
 
                     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1154,10 +1154,10 @@ public final class BasicTooltipKt {
                             kotlin.ResultKt.throwOnFailure(r12)
                             goto L39
                         L17:
-                            java.lang.IllegalStateException r12 = new java.lang.IllegalStateException
-                            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
-                            r12.<init>(r0)
-                            throw r12
+                            java.lang.IllegalStateException r11 = new java.lang.IllegalStateException
+                            java.lang.String r12 = "call to 'resume' before 'invoke' with coroutine"
+                            r11.<init>(r12)
+                            throw r11
                         L1f:
                             kotlin.ResultKt.throwOnFailure(r12)
                             java.lang.Object r12 = r11.L$0

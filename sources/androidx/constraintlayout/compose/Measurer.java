@@ -638,16 +638,15 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
         DrawScope.m5332drawLineNGM6Ib0$default(drawScope, m4809getWhite0d7_KjU, OffsetKt.Offset(f2, m4593getHeightimpl), OffsetKt.Offset(f2, f3), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
         DrawScope.m5332drawLineNGM6Ib0$default(drawScope, m4809getWhite0d7_KjU, OffsetKt.Offset(f2, f3), OffsetKt.Offset(m4596getWidthimpl, f3), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
         DrawScope.m5332drawLineNGM6Ib0$default(drawScope, m4809getWhite0d7_KjU, OffsetKt.Offset(m4596getWidthimpl, f3), OffsetKt.Offset(m4596getWidthimpl, m4593getHeightimpl), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
-        float f4 = 1;
-        float f5 = m4596getWidthimpl + f4;
-        float f6 = m4593getHeightimpl + f4;
+        float f4 = m4596getWidthimpl + 1.0f;
+        float f5 = m4593getHeightimpl + 1.0f;
         long m4798getBlack0d7_KjU = Color.Companion.m4798getBlack0d7_KjU();
-        float f7 = f5 + layoutCurrentWidth;
-        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, m4798getBlack0d7_KjU, OffsetKt.Offset(f5, f6), OffsetKt.Offset(f7, f6), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
-        float f8 = layoutCurrentHeight + f6;
-        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, m4798getBlack0d7_KjU, OffsetKt.Offset(f7, f6), OffsetKt.Offset(f7, f8), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
-        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, m4798getBlack0d7_KjU, OffsetKt.Offset(f7, f8), OffsetKt.Offset(f5, f8), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
-        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, m4798getBlack0d7_KjU, OffsetKt.Offset(f5, f8), OffsetKt.Offset(f5, f6), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
+        float f6 = f4 + layoutCurrentWidth;
+        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, m4798getBlack0d7_KjU, OffsetKt.Offset(f4, f5), OffsetKt.Offset(f6, f5), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
+        float f7 = layoutCurrentHeight + f5;
+        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, m4798getBlack0d7_KjU, OffsetKt.Offset(f6, f5), OffsetKt.Offset(f6, f7), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
+        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, m4798getBlack0d7_KjU, OffsetKt.Offset(f6, f7), OffsetKt.Offset(f4, f7), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
+        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, m4798getBlack0d7_KjU, OffsetKt.Offset(f4, f7), OffsetKt.Offset(f4, f5), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
     }
 
     /* renamed from: getColor-wrIjXm8$default  reason: not valid java name */
@@ -739,7 +738,7 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
                                     startRestartGroup.startReplaceGroup(-208561607);
                                     ComposerKt.sourceInformation(startRestartGroup, "2139@85017L418");
                                     String str = designElement.getParams().get("text");
-                                    BasicTextKt.m1157BasicTextVhcvRP8(str != null ? str : "text", PaddingKt.m818padding3ABfNKs(BackgroundKt.m264backgroundbw27NRU$default(ClipKt.clip(LayoutIdKt.layoutId(Modifier.Companion, id), RoundedCornerShapeKt.RoundedCornerShape(20)), m7948getColorwrIjXm8(designElement.getParams().get(TtmlNode.ATTR_TTS_BACKGROUND_COLOR), Color.Companion.m4804getLightGray0d7_KjU()), null, 2, null), Dp.m7555constructorimpl(8)), getTextStyle(designElement.getParams()), (Function1) null, 0, false, 0, 0, (ColorProducer) null, startRestartGroup, 0, (int) TypedValues.PositionType.TYPE_PERCENT_HEIGHT);
+                                    BasicTextKt.m1157BasicTextVhcvRP8(str != null ? str : "text", PaddingKt.m818padding3ABfNKs(BackgroundKt.m264backgroundbw27NRU$default(ClipKt.clip(LayoutIdKt.layoutId(Modifier.Companion, id), RoundedCornerShapeKt.RoundedCornerShape(20)), m7948getColorwrIjXm8(designElement.getParams().get(TtmlNode.ATTR_TTS_BACKGROUND_COLOR), Color.Companion.m4804getLightGray0d7_KjU()), null, 2, null), Dp.m7555constructorimpl(8.0f)), getTextStyle(designElement.getParams()), (Function1) null, 0, false, 0, 0, (ColorProducer) null, startRestartGroup, 0, (int) TypedValues.PositionType.TYPE_PERCENT_HEIGHT);
                                     startRestartGroup.endReplaceGroup();
                                     break;
                                 }
@@ -822,7 +821,7 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1238768549, "C2154@85808L221:ConstraintLayout.kt#fysre8");
-                                    BasicTextKt.m1157BasicTextVhcvRP8(str4, PaddingKt.m818padding3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(8)), getTextStyle(designElement.getParams()), (Function1) null, 0, false, 0, 0, (ColorProducer) null, startRestartGroup, 48, (int) TypedValues.PositionType.TYPE_PERCENT_HEIGHT);
+                                    BasicTextKt.m1157BasicTextVhcvRP8(str4, PaddingKt.m818padding3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(8.0f)), getTextStyle(designElement.getParams()), (Function1) null, 0, false, 0, 0, (ColorProducer) null, startRestartGroup, 48, (int) TypedValues.PositionType.TYPE_PERCENT_HEIGHT);
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     startRestartGroup.endNode();

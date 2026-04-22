@@ -231,7 +231,7 @@ public final class zzfb {
             }
             return zzcq.asInterface(DynamiteModule.load(context, versionPolicy, ModuleDescriptor.MODULE_ID).instantiate("com.google.android.gms.measurement.internal.AppMeasurementDynamiteService"));
         } catch (DynamiteModule.LoadingException e) {
-            zzN(e, true, false);
+            this.zzN(e, true, false);
             return null;
         }
     }

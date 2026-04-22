@@ -30,10 +30,9 @@ public final class MinimumInteractiveModifierNode extends Modifier.Node implemen
     public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         final int width;
         final int height;
-        float f = 0;
-        float m7555constructorimpl = Dp.m7555constructorimpl(RangesKt.coerceAtLeast(((Dp) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, InteractiveComponentSizeKt.getLocalMinimumInteractiveComponentSize())).m7569unboximpl(), Dp.m7555constructorimpl(f)));
+        float m7555constructorimpl = Dp.m7555constructorimpl(RangesKt.coerceAtLeast(((Dp) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, InteractiveComponentSizeKt.getLocalMinimumInteractiveComponentSize())).m7569unboximpl(), Dp.m7555constructorimpl(0.0f)));
         final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
-        boolean z = isAttached() && !Float.isNaN(m7555constructorimpl) && Dp.m7554compareTo0680j_4(m7555constructorimpl, Dp.m7555constructorimpl(f)) > 0;
+        boolean z = isAttached() && !Float.isNaN(m7555constructorimpl) && Dp.m7554compareTo0680j_4(m7555constructorimpl, Dp.m7555constructorimpl(0.0f)) > 0;
         int i = Float.isNaN(m7555constructorimpl) ? 0 : measureScope.mo399roundToPx0680j_4(m7555constructorimpl);
         if (z) {
             width = Math.max(mo6216measureBRTryo0.getWidth(), i);

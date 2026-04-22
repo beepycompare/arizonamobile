@@ -11,6 +11,6 @@ public final class Key_androidKt {
     }
 
     public static final long Key(int i) {
-        return Key.m5618constructorimpl((i << 32) | (0 & 4294967295L));
+        return Key.m5618constructorimpl(i << 32);
     }
 }

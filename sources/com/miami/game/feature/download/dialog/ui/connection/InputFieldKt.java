@@ -109,8 +109,7 @@ public final class InputFieldKt {
             ImageKt.Image(PainterResources_androidKt.painterResource(i, startRestartGroup, (i3 >> 6) & 14), (String) null, SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             Modifier m869width3ABfNKs = SizeKt.m869width3ABfNKs(Modifier.Companion, f);
             String value = state.getValue();
-            float f2 = 24;
-            TextStyle m7016copyp1EtxEg$default = TextStyle.m7016copyp1EtxEg$default(MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6), null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6), null, null, null, 0, 0, null, 16646140, null);
+            TextStyle m7016copyp1EtxEg$default = TextStyle.m7016copyp1EtxEg$default(MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(24.0f), startRestartGroup, 6), null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(24.0f), startRestartGroup, 6), null, null, null, 0, 0, null, 16646140, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -295204344, "CC(remember):InputField.kt#9igjgp");
             boolean z = (i4 & 14) == 4;
             Object rememberedValue = startRestartGroup.rememberedValue();

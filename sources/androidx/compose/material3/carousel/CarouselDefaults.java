@@ -22,9 +22,9 @@ public final class CarouselDefaults {
     public static final int $stable = 0;
     public static final float MediumLargeItemDiffThreshold = 0.85f;
     public static final CarouselDefaults INSTANCE = new CarouselDefaults();
-    private static final float MinSmallItemSize = Dp.m7555constructorimpl(40);
-    private static final float MaxSmallItemSize = Dp.m7555constructorimpl(56);
-    private static final float AnchorSize = Dp.m7555constructorimpl(10);
+    private static final float MinSmallItemSize = Dp.m7555constructorimpl(40.0f);
+    private static final float MaxSmallItemSize = Dp.m7555constructorimpl(56.0f);
+    private static final float AnchorSize = Dp.m7555constructorimpl(10.0f);
 
     private CarouselDefaults() {
     }

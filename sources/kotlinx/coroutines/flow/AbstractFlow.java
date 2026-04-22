@@ -22,7 +22,6 @@ public abstract class AbstractFlow<T> implements Flow<T>, CancellableFlow<T> {
     public final Object collect(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
         AbstractFlow$collect$1 abstractFlow$collect$1;
         int i;
-        Throwable th;
         SafeCollector safeCollector;
         if (continuation instanceof AbstractFlow$collect$1) {
             abstractFlow$collect$1 = (AbstractFlow$collect$1) continuation;
@@ -41,8 +40,8 @@ public abstract class AbstractFlow<T> implements Flow<T>, CancellableFlow<T> {
                             return coroutine_suspended;
                         }
                         safeCollector = safeCollector2;
-                    } catch (Throwable th2) {
-                        th = th2;
+                    } catch (Throwable th) {
+                        th = th;
                         safeCollector = safeCollector2;
                         safeCollector.releaseIntercepted();
                         throw th;
@@ -53,8 +52,8 @@ public abstract class AbstractFlow<T> implements Flow<T>, CancellableFlow<T> {
                     safeCollector = (SafeCollector) abstractFlow$collect$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th3) {
-                        th = th3;
+                    } catch (Throwable th2) {
+                        th = th2;
                         safeCollector.releaseIntercepted();
                         throw th;
                     }

@@ -229,6 +229,6 @@ public final class DateTimeComponentsContents implements DateFieldContainer, Tim
     public int hashCode() {
         int hashCode = (this.date.hashCode() ^ this.time.hashCode()) ^ this.offset.hashCode();
         String str = this.timeZoneId;
-        return hashCode ^ (str != null ? str.hashCode() : 0);
+        return (str != null ? str.hashCode() : 0) ^ hashCode;
     }
 }

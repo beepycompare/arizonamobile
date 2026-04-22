@@ -86,9 +86,18 @@ public class PicassoExecutorService extends ThreadPoolExecutor {
 
         @Override // java.lang.Comparable
         public int compareTo(PicassoFutureTask picassoFutureTask) {
+            int ordinal;
+            int ordinal2;
             Picasso.Priority priority = this.hunter.getPriority();
             Picasso.Priority priority2 = picassoFutureTask.hunter.getPriority();
-            return priority == priority2 ? this.hunter.sequence - picassoFutureTask.hunter.sequence : priority2.ordinal() - priority.ordinal();
+            if (priority == priority2) {
+                ordinal = this.hunter.sequence;
+                ordinal2 = picassoFutureTask.hunter.sequence;
+            } else {
+                ordinal = priority2.ordinal();
+                ordinal2 = priority.ordinal();
+            }
+            return ordinal - ordinal2;
         }
     }
 }

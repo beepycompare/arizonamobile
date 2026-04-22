@@ -21,7 +21,6 @@ public interface WindowInfo {
 
     /* renamed from: getContainerSize-YbymL2g */
     default long mo6721getContainerSizeYbymL2g() {
-        long j = Integer.MIN_VALUE;
-        return IntSize.m7721constructorimpl((j & 4294967295L) | (j << 32));
+        return IntSize.m7721constructorimpl(-9223372034707292160L);
     }
 }

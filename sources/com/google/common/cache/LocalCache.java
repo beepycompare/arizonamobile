@@ -1403,7 +1403,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
     }
 
     Segment<K, V> segmentFor(int hash) {
-        return this.segments[(hash >>> this.segmentShift) & this.segmentMask];
+        return this.segments[this.segmentMask & (hash >>> this.segmentShift)];
     }
 
     Segment<K, V> createSegment(int initialCapacity, long maxSegmentWeight, AbstractCache.StatsCounter statsCounter) {
@@ -1546,6 +1546,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         }
 
         V get(K key, int hash, CacheLoader<? super K, V> loader) throws ExecutionException {
+            Segment<K, V> segment;
             K k;
             int i;
             CacheLoader<? super K, V> cacheLoader;
@@ -1556,6 +1557,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                 try {
                     try {
                         if (this.count == 0 || (entry = getEntry(key, hash)) == null) {
+                            segment = this;
                             k = key;
                             i = hash;
                             cacheLoader = loader;
@@ -1569,18 +1571,19 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                                 postReadCleanup();
                                 return scheduleRefresh;
                             }
+                            segment = this;
                             k = key;
                             i = hash;
                             cacheLoader = loader;
                             ValueReference<K, V> valueReference = entry.getValueReference();
                             if (valueReference.isLoading()) {
-                                V waitForLoadingValue = waitForLoadingValue(entry, k, valueReference);
-                                postReadCleanup();
+                                V waitForLoadingValue = segment.waitForLoadingValue(entry, k, valueReference);
+                                segment.postReadCleanup();
                                 return waitForLoadingValue;
                             }
                         }
-                        V lockedGetOrLoad = lockedGetOrLoad(k, i, cacheLoader);
-                        postReadCleanup();
+                        V lockedGetOrLoad = segment.lockedGetOrLoad(k, i, cacheLoader);
+                        segment.postReadCleanup();
                         return lockedGetOrLoad;
                     } catch (ExecutionException e) {
                         e = e;
@@ -1612,23 +1615,39 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
 
         @CheckForNull
         V get(Object key, int hash) {
+            Segment<K, V> segment;
             try {
                 if (this.count != 0) {
                     long read = this.map.ticker.read();
                     ReferenceEntry<K, V> liveEntry = getLiveEntry(key, hash, read);
-                    if (liveEntry == null) {
+                    if (liveEntry != null) {
+                        V v = liveEntry.getValueReference().get();
+                        try {
+                            if (v != null) {
+                                recordRead(liveEntry, read);
+                                V scheduleRefresh = scheduleRefresh(liveEntry, liveEntry.getKey(), hash, v, read, this.map.defaultLoader);
+                                postReadCleanup();
+                                return scheduleRefresh;
+                            }
+                            segment = this;
+                            segment.tryDrainReferenceQueues();
+                        } catch (Throwable th) {
+                            th = th;
+                            Throwable th2 = th;
+                            postReadCleanup();
+                            throw th2;
+                        }
+                    } else {
+                        postReadCleanup();
                         return null;
                     }
-                    V v = liveEntry.getValueReference().get();
-                    if (v != null) {
-                        recordRead(liveEntry, read);
-                        return scheduleRefresh(liveEntry, liveEntry.getKey(), hash, v, read, this.map.defaultLoader);
-                    }
-                    tryDrainReferenceQueues();
+                } else {
+                    segment = this;
                 }
+                segment.postReadCleanup();
                 return null;
-            } finally {
-                postReadCleanup();
+            } catch (Throwable th3) {
+                th = th3;
             }
         }
 
@@ -2334,6 +2353,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
          */
         /* JADX WARN: Code restructure failed: missing block: B:16:0x0047, code lost:
             r12 = r0;
+            r3 = r11;
          */
         /* JADX WARN: Code restructure failed: missing block: B:18:0x004e, code lost:
             if (r9.isActive() == false) goto L30;
@@ -2344,13 +2364,16 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         /* JADX WARN: Code restructure failed: missing block: B:20:0x0053, code lost:
             r11.modCount++;
          */
+        /* JADX WARN: Code restructure failed: missing block: B:21:0x0059, code lost:
+            r3 = r11;
+         */
         /* JADX WARN: Code restructure failed: missing block: B:22:0x005b, code lost:
-            r0.set(r1, removeValueFromChain(r4, r5, r6, r13, r8, r9, r10));
-            r11.count--;
+            r0.set(r1, r3.removeValueFromChain(r4, r5, r6, r13, r8, r9, r10));
+            r3.count--;
          */
         /* JADX WARN: Code restructure failed: missing block: B:23:0x0068, code lost:
-            unlock();
-            postWriteCleanup();
+            r3.unlock();
+            r3.postWriteCleanup();
          */
         /* JADX WARN: Code restructure failed: missing block: B:24:0x006e, code lost:
             return r8;
@@ -2360,6 +2383,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             Code decompiled incorrectly, please refer to instructions dump.
         */
         V remove(Object key, int hash) {
+            Segment<K, V> segment;
             ReferenceEntry<K, V> referenceEntry;
             lock();
             try {
@@ -2370,6 +2394,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                 referenceEntry = referenceEntry2;
             } catch (Throwable th) {
                 th = th;
+                segment = this;
             }
             while (true) {
                 if (referenceEntry == null) {
@@ -2379,21 +2404,24 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                 if (referenceEntry.getHash() == hash && key2 != null && this.map.keyEquivalence.equivalent(key, key2)) {
                     break;
                 }
+                segment = this;
                 int i = hash;
                 try {
                     referenceEntry = referenceEntry.getNext();
+                    this = segment;
                     hash = i;
                 } catch (Throwable th2) {
                     th = th2;
                 }
                 th = th2;
                 Throwable th3 = th;
-                unlock();
-                postWriteCleanup();
+                segment.unlock();
+                segment.postWriteCleanup();
                 throw th3;
             }
-            unlock();
-            postWriteCleanup();
+            Segment<K, V> segment2 = this;
+            segment2.unlock();
+            segment2.postWriteCleanup();
             return null;
         }
 
@@ -2415,6 +2443,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
          */
         /* JADX WARN: Code restructure failed: missing block: B:16:0x004f, code lost:
             r13 = r0;
+            r4 = r12;
          */
         /* JADX WARN: Code restructure failed: missing block: B:17:0x0052, code lost:
             if (r9 != null) goto L33;
@@ -2428,9 +2457,12 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         /* JADX WARN: Code restructure failed: missing block: B:21:0x005d, code lost:
             r12.modCount++;
          */
+        /* JADX WARN: Code restructure failed: missing block: B:22:0x0062, code lost:
+            r4 = r12;
+         */
         /* JADX WARN: Code restructure failed: missing block: B:23:0x0064, code lost:
-            r0.set(r1, removeValueFromChain(r5, r6, r7, r14, r9, r10, r11));
-            r12.count--;
+            r0.set(r1, r4.removeValueFromChain(r5, r6, r7, r14, r9, r10, r11));
+            r4.count--;
          */
         /* JADX WARN: Code restructure failed: missing block: B:24:0x0072, code lost:
             if (r11 != com.google.common.cache.RemovalCause.EXPLICIT) goto L23;
@@ -2439,8 +2471,8 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             r2 = false;
          */
         /* JADX WARN: Code restructure failed: missing block: B:27:0x0076, code lost:
-            unlock();
-            postWriteCleanup();
+            r4.unlock();
+            r4.postWriteCleanup();
          */
         /* JADX WARN: Code restructure failed: missing block: B:28:0x007c, code lost:
             return r2;
@@ -2449,6 +2481,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             Code decompiled incorrectly, please refer to instructions dump.
         */
         boolean remove(Object key, int hash, Object value) {
+            Segment<K, V> segment;
             ReferenceEntry<K, V> referenceEntry;
             lock();
             try {
@@ -2460,6 +2493,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                 referenceEntry = referenceEntry2;
             } catch (Throwable th) {
                 th = th;
+                segment = this;
             }
             while (true) {
                 if (referenceEntry == null) {
@@ -2469,21 +2503,24 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                 if (referenceEntry.getHash() == hash && key2 != null && this.map.keyEquivalence.equivalent(key, key2)) {
                     break;
                 }
+                segment = this;
                 int i = hash;
                 try {
                     referenceEntry = referenceEntry.getNext();
+                    this = segment;
                     hash = i;
                 } catch (Throwable th2) {
                     th = th2;
                 }
                 th = th2;
                 Throwable th3 = th;
-                unlock();
-                postWriteCleanup();
+                segment.unlock();
+                segment.postWriteCleanup();
                 throw th3;
             }
-            unlock();
-            postWriteCleanup();
+            Segment<K, V> segment2 = this;
+            segment2.unlock();
+            segment2.postWriteCleanup();
             return false;
         }
 
@@ -2543,6 +2580,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         }
 
         void clear() {
+            Segment<K, V> segment;
             RemovalCause removalCause;
             if (this.count == 0) {
                 return;
@@ -2552,39 +2590,48 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                 preWriteCleanup(this.map.ticker.read());
                 AtomicReferenceArray<ReferenceEntry<K, V>> atomicReferenceArray = this.table;
                 for (int i = 0; i < atomicReferenceArray.length(); i++) {
-                    for (ReferenceEntry<K, V> referenceEntry = atomicReferenceArray.get(i); referenceEntry != null; referenceEntry = referenceEntry.getNext()) {
+                    ReferenceEntry<K, V> referenceEntry = atomicReferenceArray.get(i);
+                    while (referenceEntry != null) {
                         if (referenceEntry.getValueReference().isActive()) {
                             K key = referenceEntry.getKey();
                             V v = referenceEntry.getValueReference().get();
                             try {
                                 if (key != null && v != null) {
                                     removalCause = RemovalCause.EXPLICIT;
-                                    enqueueNotification(key, referenceEntry.getHash(), v, referenceEntry.getValueReference().getWeight(), removalCause);
+                                    segment = this;
+                                    segment.enqueueNotification(key, referenceEntry.getHash(), v, referenceEntry.getValueReference().getWeight(), removalCause);
                                 }
-                                enqueueNotification(key, referenceEntry.getHash(), v, referenceEntry.getValueReference().getWeight(), removalCause);
+                                segment.enqueueNotification(key, referenceEntry.getHash(), v, referenceEntry.getValueReference().getWeight(), removalCause);
                             } catch (Throwable th) {
                                 th = th;
-                                unlock();
-                                postWriteCleanup();
+                                segment.unlock();
+                                segment.postWriteCleanup();
                                 throw th;
                             }
                             removalCause = RemovalCause.COLLECTED;
+                            segment = this;
+                        } else {
+                            segment = this;
                         }
+                        referenceEntry = referenceEntry.getNext();
+                        this = segment;
                     }
                 }
+                segment = this;
                 for (int i2 = 0; i2 < atomicReferenceArray.length(); i2++) {
                     atomicReferenceArray.set(i2, null);
                 }
-                clearReferenceQueues();
-                this.writeQueue.clear();
-                this.accessQueue.clear();
-                this.readCount.set(0);
-                this.modCount++;
-                this.count = 0;
-                unlock();
-                postWriteCleanup();
+                segment.clearReferenceQueues();
+                segment.writeQueue.clear();
+                segment.accessQueue.clear();
+                segment.readCount.set(0);
+                segment.modCount++;
+                segment.count = 0;
+                segment.unlock();
+                segment.postWriteCleanup();
             } catch (Throwable th2) {
                 th = th2;
+                segment = this;
             }
         }
 
@@ -2625,6 +2672,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         }
 
         boolean reclaimKey(ReferenceEntry<K, V> entry, int hash) {
+            Segment<K, V> segment;
             AtomicReferenceArray<ReferenceEntry<K, V>> atomicReferenceArray;
             int length;
             ReferenceEntry<K, V> referenceEntry;
@@ -2637,36 +2685,42 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                 referenceEntry2 = referenceEntry;
             } catch (Throwable th) {
                 th = th;
+                segment = this;
             }
             while (referenceEntry2 != null) {
                 if (referenceEntry2 != entry) {
+                    segment = this;
                     int i = hash;
                     try {
                         referenceEntry2 = referenceEntry2.getNext();
+                        this = segment;
                         hash = i;
                     } catch (Throwable th2) {
                         th = th2;
                     }
                 } else {
                     this.modCount++;
-                    atomicReferenceArray.set(length, removeValueFromChain(referenceEntry, referenceEntry2, referenceEntry2.getKey(), hash, referenceEntry2.getValueReference().get(), referenceEntry2.getValueReference(), RemovalCause.COLLECTED));
-                    this.count--;
-                    unlock();
-                    postWriteCleanup();
+                    segment = this;
+                    atomicReferenceArray.set(length, segment.removeValueFromChain(referenceEntry, referenceEntry2, referenceEntry2.getKey(), hash, referenceEntry2.getValueReference().get(), referenceEntry2.getValueReference(), RemovalCause.COLLECTED));
+                    segment.count--;
+                    segment.unlock();
+                    segment.postWriteCleanup();
                     return true;
                 }
                 th = th2;
                 Throwable th3 = th;
-                unlock();
-                postWriteCleanup();
+                segment.unlock();
+                segment.postWriteCleanup();
                 throw th3;
             }
-            unlock();
-            postWriteCleanup();
+            Segment<K, V> segment2 = this;
+            segment2.unlock();
+            segment2.postWriteCleanup();
             return false;
         }
 
         boolean reclaimValue(K key, int hash, ValueReference<K, V> valueReference) {
+            Segment<K, V> segment;
             AtomicReferenceArray<ReferenceEntry<K, V>> atomicReferenceArray;
             int length;
             ReferenceEntry<K, V> referenceEntry;
@@ -2679,30 +2733,35 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                 referenceEntry2 = referenceEntry;
             } catch (Throwable th) {
                 th = th;
+                segment = this;
             }
             while (referenceEntry2 != null) {
                 K key2 = referenceEntry2.getKey();
                 if (referenceEntry2.getHash() == hash && key2 != null && this.map.keyEquivalence.equivalent(key, key2)) {
                     if (referenceEntry2.getValueReference() != valueReference) {
-                        unlock();
-                        if (!isHeldByCurrentThread()) {
-                            postWriteCleanup();
+                        Segment<K, V> segment2 = this;
+                        segment2.unlock();
+                        if (!segment2.isHeldByCurrentThread()) {
+                            segment2.postWriteCleanup();
                         }
                         return false;
                     }
                     this.modCount++;
-                    atomicReferenceArray.set(length, removeValueFromChain(referenceEntry, referenceEntry2, key2, hash, valueReference.get(), valueReference, RemovalCause.COLLECTED));
-                    this.count--;
-                    unlock();
-                    if (!isHeldByCurrentThread()) {
-                        postWriteCleanup();
+                    segment = this;
+                    atomicReferenceArray.set(length, segment.removeValueFromChain(referenceEntry, referenceEntry2, key2, hash, valueReference.get(), valueReference, RemovalCause.COLLECTED));
+                    segment.count--;
+                    segment.unlock();
+                    if (!segment.isHeldByCurrentThread()) {
+                        segment.postWriteCleanup();
                     }
                     return true;
                 }
+                segment = this;
                 int i = hash;
                 ValueReference<K, V> valueReference2 = valueReference;
                 try {
                     referenceEntry2 = referenceEntry2.getNext();
+                    this = segment;
                     hash = i;
                     valueReference = valueReference2;
                 } catch (Throwable th2) {
@@ -2710,15 +2769,16 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                 }
                 th = th2;
                 Throwable th3 = th;
-                unlock();
-                if (!isHeldByCurrentThread()) {
-                    postWriteCleanup();
+                segment.unlock();
+                if (!segment.isHeldByCurrentThread()) {
+                    segment.postWriteCleanup();
                 }
                 throw th3;
             }
-            unlock();
-            if (!isHeldByCurrentThread()) {
-                postWriteCleanup();
+            Segment<K, V> segment3 = this;
+            segment3.unlock();
+            if (!segment3.isHeldByCurrentThread()) {
+                segment3.postWriteCleanup();
             }
             return false;
         }
@@ -3785,7 +3845,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
 
         @Override // java.util.Map.Entry
         public int hashCode() {
-            return this.key.hashCode() ^ this.value.hashCode();
+            return this.value.hashCode() ^ this.key.hashCode();
         }
 
         @Override // java.util.Map.Entry

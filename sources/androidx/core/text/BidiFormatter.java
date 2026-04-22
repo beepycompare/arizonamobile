@@ -375,7 +375,9 @@ public final class BidiFormatter {
                 if (c == '<') {
                     return skipTagForward();
                 }
-                return c == '&' ? skipEntityForward() : cachedDirectionality;
+                if (c == '&') {
+                    return skipEntityForward();
+                }
             }
             return cachedDirectionality;
         }
@@ -395,7 +397,9 @@ public final class BidiFormatter {
                 if (c == '>') {
                     return skipTagBackward();
                 }
-                return c == ';' ? skipEntityBackward() : cachedDirectionality;
+                if (c == ';') {
+                    return skipEntityBackward();
+                }
             }
             return cachedDirectionality;
         }

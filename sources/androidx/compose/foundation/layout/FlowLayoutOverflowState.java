@@ -195,8 +195,8 @@ public final class FlowLayoutOverflowState {
                 intIntPair = this.seeMoreSize;
                 if (this.getOverflowMeasurable == null) {
                     placeable = this.seeMorePlaceable;
-                    measurable2 = measurable;
                     placeable2 = placeable;
+                    measurable2 = measurable;
                 }
                 measurable2 = measurable;
                 placeable2 = null;
@@ -212,8 +212,8 @@ public final class FlowLayoutOverflowState {
                 intIntPair = this.collapseSize;
                 if (this.getOverflowMeasurable == null) {
                     placeable = this.collapsePlaceable;
-                    measurable2 = measurable;
                     placeable2 = placeable;
+                    measurable2 = measurable;
                 }
                 measurable2 = measurable;
                 placeable2 = null;

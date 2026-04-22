@@ -163,7 +163,7 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
         if (z) {
             animateChildTo(v, 0, this.enterAnimDuration, this.enterAnimInterpolator);
         } else {
-            v.setTranslationY(0);
+            v.setTranslationY(0.0f);
         }
     }
 

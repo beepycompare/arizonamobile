@@ -7,22 +7,16 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class DockedToolbarTokens {
     public static final int $stable = 0;
-    private static final float ContainerLeadingSpace;
-    private static final float ContainerTrailingSpace;
     public static final DockedToolbarTokens INSTANCE = new DockedToolbarTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 64.0d);
-    private static final float ContainerMaxSpacing = Dp.m7555constructorimpl((float) 32.0d);
-    private static final float ContainerMinSpacing = Dp.m7555constructorimpl((float) 4.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(64.0f);
+    private static final float ContainerLeadingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float ContainerMaxSpacing = Dp.m7555constructorimpl(32.0f);
+    private static final float ContainerMinSpacing = Dp.m7555constructorimpl(4.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
+    private static final float ContainerTrailingSpace = Dp.m7555constructorimpl(16.0f);
 
     private DockedToolbarTokens() {
-    }
-
-    static {
-        float f = (float) 16.0d;
-        ContainerLeadingSpace = Dp.m7555constructorimpl(f);
-        ContainerTrailingSpace = Dp.m7555constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {

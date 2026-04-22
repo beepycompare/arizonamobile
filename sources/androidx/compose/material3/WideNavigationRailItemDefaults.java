@@ -1,5 +1,6 @@
 package androidx.compose.material3;
 
+import androidx.compose.material3.NavigationItemIconPosition;
 import androidx.compose.material3.tokens.NavigationRailColorTokens;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
@@ -17,7 +18,8 @@ public final class WideNavigationRailItemDefaults {
 
     /* renamed from: iconPositionFor-s8pcRp0  reason: not valid java name */
     public final int m2950iconPositionFors8pcRp0(boolean z) {
-        return z ? NavigationItemIconPosition.Companion.m2309getStartxw1Ddg() : NavigationItemIconPosition.Companion.m2310getTopxw1Ddg();
+        NavigationItemIconPosition.Companion companion = NavigationItemIconPosition.Companion;
+        return z ? companion.m2309getStartxw1Ddg() : companion.m2310getTopxw1Ddg();
     }
 
     public final NavigationItemColors colors(Composer composer, int i) {
@@ -35,18 +37,40 @@ public final class WideNavigationRailItemDefaults {
 
     /* renamed from: colors-69fazGs  reason: not valid java name */
     public final NavigationItemColors m2949colors69fazGs(long j, long j2, long j3, long j4, long j5, long j6, long j7, Composer composer, int i, int i2) {
+        long j8;
+        long j9;
+        long j10;
+        long j11;
+        long j12;
         ComposerKt.sourceInformationMarkerStart(composer, 1759081702, "C(colors)N(selectedIconColor:c#ui.graphics.Color,selectedTextColor:c#ui.graphics.Color,selectedIndicatorColor:c#ui.graphics.Color,unselectedIconColor:c#ui.graphics.Color,unselectedTextColor:c#ui.graphics.Color,disabledIconColor:c#ui.graphics.Color,disabledTextColor:c#ui.graphics.Color)906@43491L5,907@43579L5,908@43672L5,909@43759L5,910@43851L5,914@44078L11:WideNavigationRail.kt#uh7d8r");
         long value = (i2 & 1) != 0 ? ColorSchemeKt.getValue(NavigationRailColorTokens.INSTANCE.getItemActiveIcon(), composer, 6) : j;
         long value2 = (i2 & 2) != 0 ? ColorSchemeKt.getValue(NavigationRailColorTokens.INSTANCE.getItemActiveLabelText(), composer, 6) : j2;
         long value3 = (i2 & 4) != 0 ? ColorSchemeKt.getValue(NavigationRailColorTokens.INSTANCE.getItemActiveIndicator(), composer, 6) : j3;
         long value4 = (i2 & 8) != 0 ? ColorSchemeKt.getValue(NavigationRailColorTokens.INSTANCE.getItemInactiveIcon(), composer, 6) : j4;
         long value5 = (i2 & 16) != 0 ? ColorSchemeKt.getValue(NavigationRailColorTokens.INSTANCE.getItemInactiveLabelText(), composer, 6) : j5;
-        long m4771copywmQWz5c$default = (i2 & 32) != 0 ? Color.m4771copywmQWz5c$default(value4, 0.38f, 0.0f, 0.0f, 0.0f, 14, null) : j6;
-        long m4771copywmQWz5c$default2 = (i2 & 64) != 0 ? Color.m4771copywmQWz5c$default(value5, 0.38f, 0.0f, 0.0f, 0.0f, 14, null) : j7;
-        if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(1759081702, i, -1, "androidx.compose.material3.WideNavigationRailItemDefaults.colors (WideNavigationRail.kt:914)");
+        if ((i2 & 32) != 0) {
+            long j13 = value4;
+            j9 = Color.m4771copywmQWz5c$default(j13, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
+            j8 = j13;
+        } else {
+            j8 = value4;
+            j9 = j6;
         }
-        NavigationItemColors m2292copy4JmcsL4 = getDefaultWideNavigationRailItemColors(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2292copy4JmcsL4(value, value2, value3, value4, value5, m4771copywmQWz5c$default, m4771copywmQWz5c$default2);
+        if ((i2 & 64) != 0) {
+            long j14 = value5;
+            j11 = Color.m4771copywmQWz5c$default(j14, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
+            j10 = j14;
+        } else {
+            j10 = value5;
+            j11 = j7;
+        }
+        if (ComposerKt.isTraceInProgress()) {
+            j12 = value;
+            ComposerKt.traceEventStart(1759081702, i, -1, "androidx.compose.material3.WideNavigationRailItemDefaults.colors (WideNavigationRail.kt:914)");
+        } else {
+            j12 = value;
+        }
+        NavigationItemColors m2292copy4JmcsL4 = getDefaultWideNavigationRailItemColors(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2292copy4JmcsL4(j12, value2, value3, j8, j10, j9, j11);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

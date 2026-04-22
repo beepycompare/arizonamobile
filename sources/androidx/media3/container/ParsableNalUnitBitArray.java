@@ -82,10 +82,7 @@ public final class ParsableNalUnitBitArray {
             }
         }
         int i6 = this.byteLimit;
-        if (i4 >= i6) {
-            return i4 == i6 && i5 == 0;
-        }
-        return true;
+        return i4 < i6 || (i4 == i6 && i5 == 0);
     }
 
     public boolean readBit() {

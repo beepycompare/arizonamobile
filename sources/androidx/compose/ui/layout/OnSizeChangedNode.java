@@ -12,13 +12,11 @@ import kotlin.jvm.functions.Function1;
 public final class OnSizeChangedNode extends Modifier.Node implements LayoutAwareModifierNode {
     public static final int $stable = 8;
     private Function1<? super IntSize, Unit> onSizeChanged;
-    private long previousSize;
     private final boolean shouldAutoInvalidate = true;
+    private long previousSize = IntSize.m7721constructorimpl(-9223372034707292160L);
 
     public OnSizeChangedNode(Function1<? super IntSize, Unit> function1) {
         this.onSizeChanged = function1;
-        long j = Integer.MIN_VALUE;
-        this.previousSize = IntSize.m7721constructorimpl((j & 4294967295L) | (j << 32));
     }
 
     @Override // androidx.compose.ui.Modifier.Node
@@ -28,8 +26,7 @@ public final class OnSizeChangedNode extends Modifier.Node implements LayoutAwar
 
     public final void update(Function1<? super IntSize, Unit> function1) {
         this.onSizeChanged = function1;
-        long j = Integer.MIN_VALUE;
-        this.previousSize = IntSize.m7721constructorimpl((j & 4294967295L) | (j << 32));
+        this.previousSize = IntSize.m7721constructorimpl(-9223372034707292160L);
     }
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode

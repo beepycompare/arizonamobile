@@ -560,6 +560,7 @@ public class FlexboxHelper {
         int size;
         int paddingLeft;
         int paddingRight;
+        FlexboxHelper flexboxHelper;
         int i;
         int i2;
         ensureChildrenFrozen(this.mFlexContainer.getFlexItemCount());
@@ -597,17 +598,20 @@ public class FlexboxHelper {
         while (i5 < size2) {
             FlexLine flexLine = flexLinesInternal.get(i5);
             if (flexLine.mMainSize < i4 && flexLine.mAnyItemsHaveFlexGrow) {
+                flexboxHelper = this;
                 i = widthMeasureSpec;
                 i2 = heightMeasureSpec;
-                expandFlexItems(i, i2, flexLine, i4, i3, false);
+                flexboxHelper.expandFlexItems(i, i2, flexLine, i4, i3, false);
             } else {
+                flexboxHelper = this;
                 i = widthMeasureSpec;
                 i2 = heightMeasureSpec;
                 if (flexLine.mMainSize > i4 && flexLine.mAnyItemsHaveFlexShrink) {
-                    shrinkFlexItems(i, i2, flexLine, i4, i3, false);
+                    flexboxHelper.shrinkFlexItems(i, i2, flexLine, i4, i3, false);
                 }
             }
             i5++;
+            this = flexboxHelper;
             widthMeasureSpec = i;
             heightMeasureSpec = i2;
         }
@@ -942,9 +946,8 @@ public class FlexboxHelper {
             } else if (flexLinesInternal.size() >= 2) {
                 int alignContent = this.mFlexContainer.getAlignContent();
                 if (alignContent == 1) {
-                    int i4 = i2 - sumOfCrossSize;
                     FlexLine flexLine = new FlexLine();
-                    flexLine.mCrossSize = i4;
+                    flexLine.mCrossSize = i2 - sumOfCrossSize;
                     flexLinesInternal.add(0, flexLine);
                 } else if (alignContent == 2) {
                     this.mFlexContainer.setFlexLines(constructFlexLinesForAlignContentCenter(flexLinesInternal, i2, sumOfCrossSize));

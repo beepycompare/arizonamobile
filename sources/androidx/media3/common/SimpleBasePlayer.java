@@ -1350,18 +1350,20 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         Preconditions.checkArgument(i >= 0 && i2 >= i && i3 >= 0);
         final State state = this.state;
         int windowCount = state.timeline.getWindowCount();
-        if (shouldHandleCommand(20) && windowCount != 0 && i < windowCount) {
-            final int min = Math.min(i2, windowCount);
-            final int min2 = Math.min(i3, windowCount - (min - i));
-            if (i != min && min2 != i) {
-                updateStateForPendingOperation(handleMoveMediaItems(i, min, min2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda50
-                    @Override // com.google.common.base.Supplier
-                    public final Object get() {
-                        return SimpleBasePlayer.this.m8151lambda$moveMediaItems$4$androidxmedia3commonSimpleBasePlayer(state, i, min, min2);
-                    }
-                });
-            }
+        if (!shouldHandleCommand(20) || windowCount == 0 || i >= windowCount) {
+            return;
         }
+        final int min = Math.min(i2, windowCount);
+        final int min2 = Math.min(i3, windowCount - (min - i));
+        if (i == min || min2 == i) {
+            return;
+        }
+        updateStateForPendingOperation(handleMoveMediaItems(i, min, min2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda50
+            @Override // com.google.common.base.Supplier
+            public final Object get() {
+                return SimpleBasePlayer.this.m8151lambda$moveMediaItems$4$androidxmedia3commonSimpleBasePlayer(state, i, min, min2);
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

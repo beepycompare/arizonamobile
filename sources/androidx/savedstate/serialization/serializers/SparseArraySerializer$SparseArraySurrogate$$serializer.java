@@ -71,8 +71,8 @@ public final /* synthetic */ class SparseArraySerializer$SparseArraySurrogate$$s
         CompositeDecoder beginStructure = decoder.beginStructure(serialDescriptor);
         lazyArr = SparseArraySerializer.SparseArraySurrogate.$childSerializers;
         if (beginStructure.decodeSequentially()) {
-            list = (List) beginStructure.decodeSerializableElement(serialDescriptor, 0, (DeserializationStrategy) lazyArr[0].getValue(), null);
-            list2 = (List) beginStructure.decodeSerializableElement(serialDescriptor, 1, new ArrayListSerializer(this.typeSerial0), null);
+            list2 = (List) beginStructure.decodeSerializableElement(serialDescriptor, 0, (DeserializationStrategy) lazyArr[0].getValue(), null);
+            list = (List) beginStructure.decodeSerializableElement(serialDescriptor, 1, new ArrayListSerializer(this.typeSerial0), null);
             i = 3;
         } else {
             boolean z = true;
@@ -84,12 +84,12 @@ public final /* synthetic */ class SparseArraySerializer$SparseArraySurrogate$$s
                 if (decodeElementIndex == -1) {
                     z = false;
                 } else if (decodeElementIndex == 0) {
-                    list3 = (List) beginStructure.decodeSerializableElement(serialDescriptor, 0, (DeserializationStrategy) lazyArr[0].getValue(), list3);
+                    list4 = (List) beginStructure.decodeSerializableElement(serialDescriptor, 0, (DeserializationStrategy) lazyArr[0].getValue(), list4);
                     i2 |= 1;
                 } else if (decodeElementIndex != 1) {
                     throw new UnknownFieldException(decodeElementIndex);
                 } else {
-                    list4 = (List) beginStructure.decodeSerializableElement(serialDescriptor, 1, new ArrayListSerializer(this.typeSerial0), list4);
+                    list3 = (List) beginStructure.decodeSerializableElement(serialDescriptor, 1, new ArrayListSerializer(this.typeSerial0), list3);
                     i2 |= 2;
                 }
             }
@@ -98,7 +98,7 @@ public final /* synthetic */ class SparseArraySerializer$SparseArraySurrogate$$s
             i = i2;
         }
         beginStructure.endStructure(serialDescriptor);
-        return new SparseArraySerializer.SparseArraySurrogate<>(i, list, list2, null);
+        return new SparseArraySerializer.SparseArraySurrogate<>(i, list2, list, null);
     }
 
     public final void serialize(Encoder encoder, SparseArraySerializer.SparseArraySurrogate<T> value) {

@@ -30,7 +30,7 @@ public abstract class OnPageChangeListenerHelper {
         if (i3 > pageCount$viewpagerdotsindicator_release || i2 < 0) {
             return;
         }
-        onPageScrolled$viewpagerdotsindicator_release(i2, i3, f2 % 1);
+        onPageScrolled$viewpagerdotsindicator_release(i2, i3, f2 % 1.0f);
         int i4 = this.lastLeftPosition;
         if (i4 != -1) {
             if (i2 > i4) {

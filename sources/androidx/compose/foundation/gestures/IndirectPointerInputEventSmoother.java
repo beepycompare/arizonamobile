@@ -61,7 +61,7 @@ public final class IndirectPointerInputEventSmoother {
                 intBitsToFloat2 = (float) CollectionsKt.averageOfFloat(arrayList2);
             }
         }
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L));
     }
 
     /* compiled from: IndirectPointerInputDragCycleDetector.kt */

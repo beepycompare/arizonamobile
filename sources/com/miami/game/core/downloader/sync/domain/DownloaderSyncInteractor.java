@@ -126,11 +126,7 @@ public final class DownloaderSyncInteractor {
                                 j = this.this$0._currentTime;
                                 j2 = this.this$0._lastTime;
                                 long j3 = j - j2;
-                                long j4 = 0;
-                                if (j3 > 0) {
-                                    j4 = 1000 * (longValue / j3);
-                                }
-                                BytesAndSpeedState bytesAndSpeedState = new BytesAndSpeedState(longValue, j4);
+                                BytesAndSpeedState bytesAndSpeedState = new BytesAndSpeedState(longValue, j3 > 0 ? 1000 * (longValue / j3) : 0L);
                                 anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(obj);
                                 anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(anonymousClass1);
                                 anonymousClass1.L$2 = SpillingKt.nullOutSpilledVariable(obj);

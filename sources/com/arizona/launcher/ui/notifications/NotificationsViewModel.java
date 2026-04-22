@@ -199,7 +199,7 @@ public final class NotificationsViewModel extends ViewModel implements INotifica
                             this._notificationsLiveData.postValue(list5);
                             MutableLiveData<Integer> mutableLiveData = this._notificationsCountData;
                             ArrayList arrayList3 = new ArrayList();
-                            while (r3.hasNext()) {
+                            while (r2.hasNext()) {
                             }
                             mutableLiveData.postValue(Boxing.boxInt(arrayList3.size()));
                             return Unit.INSTANCE;
@@ -223,7 +223,7 @@ public final class NotificationsViewModel extends ViewModel implements INotifica
                         this._notificationsLiveData.postValue(list5);
                         MutableLiveData<Integer> mutableLiveData2 = this._notificationsCountData;
                         ArrayList arrayList32 = new ArrayList();
-                        while (r3.hasNext()) {
+                        while (r2.hasNext()) {
                         }
                         mutableLiveData2.postValue(Boxing.boxInt(arrayList32.size()));
                         return Unit.INSTANCE;

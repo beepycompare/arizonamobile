@@ -69,6 +69,6 @@ public final class FlowLineInfo {
     }
 
     public /* synthetic */ FlowLineInfo(int i, int i2, float f, float f2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i3 & 1) != 0 ? 0 : i, (i3 & 2) != 0 ? 0 : i2, (i3 & 4) != 0 ? Dp.m7555constructorimpl(0) : f, (i3 & 8) != 0 ? Dp.m7555constructorimpl(0) : f2, null);
+        this((i3 & 1) != 0 ? 0 : i, (i3 & 2) != 0 ? 0 : i2, (i3 & 4) != 0 ? Dp.m7555constructorimpl(0.0f) : f, (i3 & 8) != 0 ? Dp.m7555constructorimpl(0.0f) : f2, null);
     }
 }

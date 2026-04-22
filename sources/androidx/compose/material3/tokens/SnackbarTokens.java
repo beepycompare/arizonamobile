@@ -20,11 +20,11 @@ public final class SnackbarTokens {
     private static final ColorSchemeKeyTokens FocusIconColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final ColorSchemeKeyTokens HoverIconColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final ColorSchemeKeyTokens PressedIconColor = ColorSchemeKeyTokens.InverseOnSurface;
-    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
+    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
     private static final ColorSchemeKeyTokens SupportingTextColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final TypographyKeyTokens SupportingTextFont = TypographyKeyTokens.BodyMedium;
-    private static final float SingleLineContainerHeight = Dp.m7555constructorimpl((float) 48.0d);
-    private static final float TwoLinesContainerHeight = Dp.m7555constructorimpl((float) 68.0d);
+    private static final float SingleLineContainerHeight = Dp.m7555constructorimpl(48.0f);
+    private static final float TwoLinesContainerHeight = Dp.m7555constructorimpl(68.0f);
 
     private SnackbarTokens() {
     }

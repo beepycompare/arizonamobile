@@ -250,8 +250,8 @@ public final class FocusOwnerImpl implements FocusOwner {
                     if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                         while (parent$ui != null) {
                             if ((parent$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
-                                MutableVector mutableVector = null;
                                 Modifier.Node node = parent$ui;
+                                MutableVector mutableVector = null;
                                 while (node != null) {
                                     if (node instanceof FocusTargetNode) {
                                         ((FocusTargetNode) node).dispatchFocusCallbacks$ui(FocusStateImpl.ActiveParent, FocusStateImpl.Inactive);
@@ -343,7 +343,7 @@ public final class FocusOwnerImpl implements FocusOwner {
         return true;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x00bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x00b6, code lost:
         continue;
      */
     @Override // androidx.compose.ui.focus.FocusOwner
@@ -353,7 +353,6 @@ public final class FocusOwnerImpl implements FocusOwner {
     */
     public Boolean mo4421focusSearchULY8qGw(int i, Rect rect, final Function1<? super FocusTargetNode, Boolean> function1) {
         final FocusTargetNode findFocusTargetNode = findFocusTargetNode();
-        MutableVector mutableVector = null;
         if (findFocusTargetNode != null) {
             FocusRequester m4451customFocusSearchOMvw8 = FocusTraversalKt.m4451customFocusSearchOMvw8(findFocusTargetNode, i, this.owner.getLayoutDirection());
             if (Intrinsics.areEqual(m4451customFocusSearchOMvw8, FocusRequester.Companion.getCancel())) {
@@ -382,32 +381,31 @@ public final class FocusOwnerImpl implements FocusOwner {
                     MutableVector<FocusRequesterModifierNode> focusRequesterNodes$ui = m4451customFocusSearchOMvw8.getFocusRequesterNodes$ui();
                     FocusRequesterModifierNode[] focusRequesterModifierNodeArr = focusRequesterNodes$ui.content;
                     int size = focusRequesterNodes$ui.getSize();
-                    int i2 = 0;
                     boolean z2 = false;
-                    while (i2 < size) {
+                    for (int i2 = 0; i2 < size; i2++) {
                         FocusRequesterModifierNode focusRequesterModifierNode = focusRequesterModifierNodeArr[i2];
                         int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
                         if (!focusRequesterModifierNode.getNode().isAttached()) {
                             InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
                         }
-                        MutableVector mutableVector2 = new MutableVector(new Modifier.Node[16], 0);
+                        MutableVector mutableVector = new MutableVector(new Modifier.Node[16], 0);
                         Modifier.Node child$ui = focusRequesterModifierNode.getNode().getChild$ui();
                         if (child$ui == null) {
-                            DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, focusRequesterModifierNode.getNode(), false);
+                            DelegatableNodeKt.addLayoutNodeChildren(mutableVector, focusRequesterModifierNode.getNode(), false);
                         } else {
-                            mutableVector2.add(child$ui);
+                            mutableVector.add(child$ui);
                         }
                         while (true) {
-                            if (mutableVector2.getSize() != 0) {
-                                Modifier.Node node = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
+                            if (mutableVector.getSize() != 0) {
+                                Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
                                 if ((node.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
-                                    DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node, false);
+                                    DelegatableNodeKt.addLayoutNodeChildren(mutableVector, node, false);
                                 } else {
                                     while (true) {
                                         if (node == null) {
                                             break;
                                         } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0) {
-                                            MutableVector mutableVector3 = mutableVector;
+                                            MutableVector mutableVector2 = null;
                                             while (node != null) {
                                                 if (node instanceof FocusTargetNode) {
                                                     if (function1.invoke((FocusTargetNode) node).booleanValue()) {
@@ -422,39 +420,34 @@ public final class FocusOwnerImpl implements FocusOwner {
                                                             if (i3 == 1) {
                                                                 node = delegate$ui;
                                                             } else {
-                                                                if (mutableVector3 == null) {
-                                                                    mutableVector3 = new MutableVector(new Modifier.Node[16], 0);
+                                                                if (mutableVector2 == null) {
+                                                                    mutableVector2 = new MutableVector(new Modifier.Node[16], 0);
                                                                 }
                                                                 if (node != null) {
-                                                                    if (mutableVector3 != null) {
-                                                                        mutableVector3.add(node);
+                                                                    if (mutableVector2 != null) {
+                                                                        mutableVector2.add(node);
                                                                     }
                                                                     node = null;
                                                                 }
-                                                                if (mutableVector3 != null) {
-                                                                    mutableVector3.add(delegate$ui);
+                                                                if (mutableVector2 != null) {
+                                                                    mutableVector2.add(delegate$ui);
                                                                 }
                                                             }
                                                         }
                                                     }
                                                     if (i3 == 1) {
-                                                        mutableVector = null;
                                                     }
                                                 }
-                                                node = DelegatableNodeKt.pop(mutableVector3);
-                                                mutableVector = null;
+                                                node = DelegatableNodeKt.pop(mutableVector2);
                                             }
                                             continue;
                                         } else {
                                             node = node.getChild$ui();
-                                            mutableVector = null;
                                         }
                                     }
                                 }
                             }
                         }
-                        i2++;
-                        mutableVector = null;
                     }
                     z = z2;
                 }
@@ -1947,9 +1940,9 @@ public final class FocusOwnerImpl implements FocusOwner {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v22 */
-    /* JADX WARN: Type inference failed for: r2v25 */
-    /* JADX WARN: Type inference failed for: r2v27 */
+    /* JADX WARN: Type inference failed for: r1v22 */
+    /* JADX WARN: Type inference failed for: r1v25 */
+    /* JADX WARN: Type inference failed for: r1v27 */
     /* renamed from: nearestAncestorIncludingSelf-64DMado  reason: not valid java name */
     private final /* synthetic */ <T> T m4426nearestAncestorIncludingSelf64DMado(DelegatableNode delegatableNode, int i) {
         NodeChain nodes$ui;

@@ -41,6 +41,7 @@ public final class SearchBarKt$DockedSearchBarLayout$2$2$1 implements MultiConte
         Integer valueOf3;
         Integer num;
         List<? extends Measurable> list2 = list.get(0);
+        int i = 1;
         List<? extends Measurable> list3 = list.get(1);
         collapsedBounds = SearchBarKt.getCollapsedBounds(this.$state);
         int lerp = MathHelpersKt.lerp(collapsedBounds.getHeight(), measureScope.mo399roundToPx0680j_4(this.$maxHeight), this.$state.getProgress());
@@ -48,8 +49,8 @@ public final class SearchBarKt$DockedSearchBarLayout$2$2$1 implements MultiConte
         long m7498copyZbe2FdA$default = Constraints.m7498copyZbe2FdA$default(m7523constrainN9IONVI, 0, 0, 0, 0, 10, null);
         ArrayList arrayList = new ArrayList(list2.size());
         int size = list2.size();
-        for (int i = 0; i < size; i++) {
-            arrayList.add(list2.get(i).mo6216measureBRTryo0(m7498copyZbe2FdA$default));
+        for (int i2 = 0; i2 < size; i2++) {
+            arrayList.add(list2.get(i2).mo6216measureBRTryo0(m7498copyZbe2FdA$default));
         }
         final ArrayList arrayList2 = arrayList;
         if (arrayList2.isEmpty()) {
@@ -58,16 +59,16 @@ public final class SearchBarKt$DockedSearchBarLayout$2$2$1 implements MultiConte
             valueOf = Integer.valueOf(((Placeable) arrayList2.get(0)).getWidth());
             int lastIndex = CollectionsKt.getLastIndex(arrayList2);
             if (1 <= lastIndex) {
-                int i2 = 1;
+                int i3 = 1;
                 while (true) {
-                    Integer valueOf4 = Integer.valueOf(((Placeable) arrayList2.get(i2)).getWidth());
+                    Integer valueOf4 = Integer.valueOf(((Placeable) arrayList2.get(i3)).getWidth());
                     if (valueOf4.compareTo(valueOf) > 0) {
                         valueOf = valueOf4;
                     }
-                    if (i2 == lastIndex) {
+                    if (i3 == lastIndex) {
                         break;
                     }
-                    i2++;
+                    i3++;
                 }
             }
         }
@@ -79,16 +80,16 @@ public final class SearchBarKt$DockedSearchBarLayout$2$2$1 implements MultiConte
             valueOf2 = Integer.valueOf(((Placeable) arrayList2.get(0)).getHeight());
             int lastIndex2 = CollectionsKt.getLastIndex(arrayList2);
             if (1 <= lastIndex2) {
-                int i3 = 1;
+                int i4 = 1;
                 while (true) {
-                    Integer valueOf5 = Integer.valueOf(((Placeable) arrayList2.get(i3)).getHeight());
+                    Integer valueOf5 = Integer.valueOf(((Placeable) arrayList2.get(i4)).getHeight());
                     if (valueOf5.compareTo(valueOf2) > 0) {
                         valueOf2 = valueOf5;
                     }
-                    if (i3 == lastIndex2) {
+                    if (i4 == lastIndex2) {
                         break;
                     }
-                    i3++;
+                    i4++;
                 }
             }
         }
@@ -97,8 +98,8 @@ public final class SearchBarKt$DockedSearchBarLayout$2$2$1 implements MultiConte
         long m7498copyZbe2FdA$default2 = Constraints.m7498copyZbe2FdA$default(ConstraintsKt.m7528offsetNN6EwU$default(m7498copyZbe2FdA$default, 0, -intValue2, 1, null), 0, intValue, 0, 0, 13, null);
         ArrayList arrayList3 = new ArrayList(list3.size());
         int size2 = list3.size();
-        for (int i4 = 0; i4 < size2; i4++) {
-            arrayList3.add(list3.get(i4).mo6216measureBRTryo0(m7498copyZbe2FdA$default2));
+        for (int i5 = 0; i5 < size2; i5++) {
+            arrayList3.add(list3.get(i5).mo6216measureBRTryo0(m7498copyZbe2FdA$default2));
         }
         final ArrayList arrayList4 = arrayList3;
         if (arrayList4.isEmpty()) {
@@ -107,16 +108,16 @@ public final class SearchBarKt$DockedSearchBarLayout$2$2$1 implements MultiConte
             valueOf3 = Integer.valueOf(((Placeable) arrayList4.get(0)).getHeight());
             int lastIndex3 = CollectionsKt.getLastIndex(arrayList4);
             if (1 <= lastIndex3) {
-                int i5 = 1;
+                int i6 = 1;
                 while (true) {
-                    Integer valueOf6 = Integer.valueOf(((Placeable) arrayList4.get(i5)).getHeight());
+                    Integer valueOf6 = Integer.valueOf(((Placeable) arrayList4.get(i6)).getHeight());
                     if (valueOf6.compareTo(valueOf3) > 0) {
                         valueOf3 = valueOf6;
                     }
-                    if (i5 == lastIndex3) {
+                    if (i6 == lastIndex3) {
                         break;
                     }
-                    i5++;
+                    i6++;
                 }
             }
         }
@@ -128,25 +129,21 @@ public final class SearchBarKt$DockedSearchBarLayout$2$2$1 implements MultiConte
             Integer valueOf7 = Integer.valueOf(((Placeable) arrayList4.get(0)).getWidth());
             int lastIndex4 = CollectionsKt.getLastIndex(arrayList4);
             if (1 <= lastIndex4) {
-                Integer num5 = valueOf7;
-                int i6 = 1;
                 while (true) {
-                    Integer valueOf8 = Integer.valueOf(((Placeable) arrayList4.get(i6)).getWidth());
-                    if (valueOf8.compareTo(num5) > 0) {
-                        num5 = valueOf8;
+                    Integer valueOf8 = Integer.valueOf(((Placeable) arrayList4.get(i)).getWidth());
+                    if (valueOf8.compareTo(valueOf7) > 0) {
+                        valueOf7 = valueOf8;
                     }
-                    if (i6 == lastIndex4) {
+                    if (i == lastIndex4) {
                         break;
                     }
-                    i6++;
+                    i++;
                 }
-                num = num5;
-            } else {
-                num = valueOf7;
             }
+            num = valueOf7;
         }
-        Integer num6 = num;
-        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7525constrainWidthK40F9xA(m7523constrainN9IONVI, Math.max(intValue, num6 != null ? num6.intValue() : 0)), ConstraintsKt.m7524constrainHeightK40F9xA(m7523constrainN9IONVI, intValue3), null, new Function1() { // from class: androidx.compose.material3.SearchBarKt$DockedSearchBarLayout$2$2$1$$ExternalSyntheticLambda0
+        Integer num5 = num;
+        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7525constrainWidthK40F9xA(m7523constrainN9IONVI, Math.max(intValue, num5 != null ? num5.intValue() : 0)), ConstraintsKt.m7524constrainHeightK40F9xA(m7523constrainN9IONVI, intValue3), null, new Function1() { // from class: androidx.compose.material3.SearchBarKt$DockedSearchBarLayout$2$2$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return SearchBarKt$DockedSearchBarLayout$2$2$1.measure_3p2s80s$lambda$8(arrayList2, arrayList4, intValue2, (Placeable.PlacementScope) obj);

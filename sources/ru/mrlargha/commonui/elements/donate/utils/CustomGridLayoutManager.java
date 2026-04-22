@@ -108,16 +108,21 @@ public final class CustomGridLayoutManager extends LinearLayoutManager {
     private final void layoutLine(List<? extends View> list, List<? extends RecyclerView.LayoutParams> list2, int i, int i2) {
         int paddingLeft = getPaddingLeft();
         int size = list.size();
-        for (int i3 = 0; i3 < size; i3++) {
+        int i3 = 0;
+        while (i3 < size) {
             View view = list.get(i3);
             RecyclerView.LayoutParams layoutParams = list2.get(i3);
-            int decoratedMeasuredWidth = getDecoratedMeasuredWidth(view);
+            int decoratedMeasuredWidth = this.getDecoratedMeasuredWidth(view);
             int i4 = (i2 - layoutParams.topMargin) - layoutParams.bottomMargin;
             view.measure(View.MeasureSpec.makeMeasureSpec(decoratedMeasuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(i4, 1073741824));
             int i5 = layoutParams.leftMargin + paddingLeft;
             int i6 = (layoutParams.topMargin + i) - this.verticalScrollOffset;
-            layoutDecoratedWithMargins(view, i5, i6, i5 + decoratedMeasuredWidth, i6 + i4);
+            int i7 = i6 + i4;
+            CustomGridLayoutManager customGridLayoutManager = this;
+            customGridLayoutManager.layoutDecoratedWithMargins(view, i5, i6, i5 + decoratedMeasuredWidth, i7);
             paddingLeft += decoratedMeasuredWidth + layoutParams.leftMargin + layoutParams.rightMargin;
+            i3++;
+            this = customGridLayoutManager;
         }
     }
 

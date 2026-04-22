@@ -20,12 +20,11 @@ final class ConstantBitrateSeeker extends ConstantBitrateSeekMap implements Seek
 
     private ConstantBitrateSeeker(long j, long j2, int i, int i2, boolean z, boolean z2) {
         super(j, j2, i, i2, z, z2);
-        long j3 = j;
         this.firstFramePosition = j2;
         this.bitrate = i;
         this.frameSize = i2;
         this.allowSeeksIfLengthUnknown = z;
-        this.dataEndPosition = j3 == -1 ? -1L : j3;
+        this.dataEndPosition = j == -1 ? -1L : j;
     }
 
     @Override // androidx.media3.extractor.mp3.Seeker

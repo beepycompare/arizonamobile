@@ -12,9 +12,9 @@ public final class SearchViewTokens {
     private static final float ContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
     private static final ColorSchemeKeyTokens DividerColor = ColorSchemeKeyTokens.Outline;
     private static final ShapeKeyTokens DockedContainerShape = ShapeKeyTokens.CornerExtraLarge;
-    private static final float DockedHeaderContainerHeight = Dp.m7555constructorimpl((float) 56.0d);
+    private static final float DockedHeaderContainerHeight = Dp.m7555constructorimpl(56.0f);
     private static final ShapeKeyTokens FullScreenContainerShape = ShapeKeyTokens.CornerNone;
-    private static final float FullScreenHeaderContainerHeight = Dp.m7555constructorimpl((float) 72.0d);
+    private static final float FullScreenHeaderContainerHeight = Dp.m7555constructorimpl(72.0f);
     private static final ColorSchemeKeyTokens HeaderInputTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final TypographyKeyTokens HeaderInputTextFont = TypographyKeyTokens.BodyLarge;
     private static final ColorSchemeKeyTokens HeaderLeadingIconColor = ColorSchemeKeyTokens.OnSurface;

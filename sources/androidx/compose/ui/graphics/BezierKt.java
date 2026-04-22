@@ -210,21 +210,20 @@ public final class BezierKt {
         float[] points = pathSegment.getPoints();
         int i3 = WhenMappings.$EnumSwitchMapping$0[pathSegment.getType().ordinal()];
         if (i3 == 3) {
-            float f = 2;
-            float f2 = points[i2 + 2];
-            float f3 = (f2 - points[i2]) * f;
-            return writeValidRootInUnitRange((-f3) / ((f * (points[i2 + 4] - f2)) - f3), fArr, i);
+            float f = points[i2 + 2];
+            float f2 = (f - points[i2]) * 2.0f;
+            return writeValidRootInUnitRange((-f2) / ((2.0f * (points[i2 + 4] - f)) - f2), fArr, i);
         } else if (i3 != 4) {
             return 0;
         } else {
-            float f4 = points[i2 + 2];
-            float f5 = (f4 - points[i2]) * 3.0f;
-            float f6 = points[i2 + 4];
-            float f7 = (f6 - f4) * 3.0f;
-            float f8 = (points[i2 + 6] - f6) * 3.0f;
-            int findQuadraticRoots = findQuadraticRoots(f5, f7, f8, fArr, i);
-            float f9 = (f7 - f5) * 2.0f;
-            return findQuadraticRoots + writeValidRootInUnitRange((-f9) / (((f8 - f7) * 2.0f) - f9), fArr, i + findQuadraticRoots);
+            float f3 = points[i2 + 2];
+            float f4 = (f3 - points[i2]) * 3.0f;
+            float f5 = points[i2 + 4];
+            float f6 = (f5 - f3) * 3.0f;
+            float f7 = (points[i2 + 6] - f5) * 3.0f;
+            int findQuadraticRoots = findQuadraticRoots(f4, f6, f7, fArr, i);
+            float f8 = (f6 - f4) * 2.0f;
+            return findQuadraticRoots + writeValidRootInUnitRange((-f8) / (((f7 - f6) * 2.0f) - f8), fArr, i + findQuadraticRoots);
         }
     }
 

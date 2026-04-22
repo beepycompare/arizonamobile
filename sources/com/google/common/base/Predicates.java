@@ -419,7 +419,7 @@ public final class Predicates {
         }
 
         public int hashCode() {
-            return this.f.hashCode() ^ this.p.hashCode();
+            return this.p.hashCode() ^ this.f.hashCode();
         }
 
         public String toString() {

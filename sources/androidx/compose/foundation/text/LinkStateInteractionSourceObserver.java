@@ -29,15 +29,15 @@ public final class LinkStateInteractionSourceObserver {
     }
 
     public final boolean isFocused() {
-        return (this.interactionState.getIntValue() & this.Focused) != 0;
+        return (this.Focused & this.interactionState.getIntValue()) != 0;
     }
 
     public final boolean isHovered() {
-        return (this.interactionState.getIntValue() & this.Hovered) != 0;
+        return (this.Hovered & this.interactionState.getIntValue()) != 0;
     }
 
     public final boolean isPressed() {
-        return (this.interactionState.getIntValue() & this.Pressed) != 0;
+        return (this.Pressed & this.interactionState.getIntValue()) != 0;
     }
 
     public final Object collectInteractionsForLinks(Continuation<? super Unit> continuation) {

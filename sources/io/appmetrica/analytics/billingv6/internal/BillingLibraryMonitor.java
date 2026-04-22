@@ -43,17 +43,19 @@ public final class BillingLibraryMonitor implements BillingMonitor, n {
 
     @Override // io.appmetrica.analytics.billinginterface.internal.config.BillingConfigChangedListener
     public synchronized void onBillingConfigChanged(BillingConfig billingConfig) {
-        if (Intrinsics.areEqual(this.g, billingConfig)) {
-            return;
-        }
-        this.g = billingConfig;
-        if (billingConfig != null && !this.h) {
-            this.h = true;
-            BillingClient build = BillingClient.newBuilder(this.f349a).setListener(new l()).enablePendingPurchases().build();
-            try {
-                build.startConnection(new b(billingConfig, build, new BillingLibraryMonitor$updateBilling$1(this), new d(build), this));
-            } catch (Throwable unused) {
+        BillingLibraryMonitor billingLibraryMonitor;
+        if (!Intrinsics.areEqual(this.g, billingConfig)) {
+            this.g = billingConfig;
+            if (billingConfig != null && !this.h) {
+                this.h = true;
+                BillingClient build = BillingClient.newBuilder(this.f349a).setListener(new l()).enablePendingPurchases().build();
+                billingLibraryMonitor = this;
+                try {
+                    build.startConnection(new b(billingConfig, build, new BillingLibraryMonitor$updateBilling$1(this), new d(build), billingLibraryMonitor));
+                } catch (Throwable unused) {
+                }
             }
+            billingLibraryMonitor = this;
         }
     }
 

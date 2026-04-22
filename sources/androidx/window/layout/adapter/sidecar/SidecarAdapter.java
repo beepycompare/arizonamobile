@@ -155,21 +155,19 @@ public final class SidecarAdapter {
             fold = HardwareFoldingFeature.Type.Companion.getHINGE();
         }
         int sidecarDevicePosture$window_release = Companion.getSidecarDevicePosture$window_release(deviceState);
-        if (sidecarDevicePosture$window_release == 0 || sidecarDevicePosture$window_release == 1) {
-            return null;
+        if (sidecarDevicePosture$window_release != 0 && sidecarDevicePosture$window_release != 1) {
+            if (sidecarDevicePosture$window_release == 2) {
+                state = FoldingFeature.State.HALF_OPENED;
+            } else if (sidecarDevicePosture$window_release == 3) {
+                state = FoldingFeature.State.FLAT;
+            } else if (sidecarDevicePosture$window_release != 4) {
+                state = FoldingFeature.State.FLAT;
+            }
+            Rect rect = feature.getRect();
+            Intrinsics.checkNotNullExpressionValue(rect, "getRect(...)");
+            return new HardwareFoldingFeature(new Bounds(rect), fold, state);
         }
-        if (sidecarDevicePosture$window_release == 2) {
-            state = FoldingFeature.State.HALF_OPENED;
-        } else if (sidecarDevicePosture$window_release == 3) {
-            state = FoldingFeature.State.FLAT;
-        } else if (sidecarDevicePosture$window_release == 4) {
-            return null;
-        } else {
-            state = FoldingFeature.State.FLAT;
-        }
-        Rect rect = feature.getRect();
-        Intrinsics.checkNotNullExpressionValue(rect, "getRect(...)");
-        return new HardwareFoldingFeature(new Bounds(rect), fold, state);
+        return null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

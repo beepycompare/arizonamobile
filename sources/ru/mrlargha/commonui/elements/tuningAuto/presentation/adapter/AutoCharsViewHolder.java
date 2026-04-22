@@ -25,7 +25,7 @@ public final class AutoCharsViewHolder extends RecyclerView.ViewHolder {
         ItemCharacteristicBinding itemCharacteristicBinding = this.binding;
         itemCharacteristicBinding.tvTitle.setText(item.getName());
         itemCharacteristicBinding.tvProgressCount.setText(String.valueOf((int) item.getValue()));
-        itemCharacteristicBinding.progressView.setProgressBarsFinish((int) ((item.getValue() / item.getValueMax()) * 10));
+        itemCharacteristicBinding.progressView.setProgressBarsFinish((int) ((item.getValue() / item.getValueMax()) * 10.0f));
         if (item.getValueOffset() > 0.0f) {
             TextView tvProgressCountPlus = itemCharacteristicBinding.tvProgressCountPlus;
             Intrinsics.checkNotNullExpressionValue(tvProgressCountPlus, "tvProgressCountPlus");

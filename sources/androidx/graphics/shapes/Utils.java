@@ -27,7 +27,7 @@ public final class Utils {
     }
 
     public static final float interpolate(float f, float f2, float f3) {
-        return ((1 - f3) * f) + (f3 * f2);
+        return ((1.0f - f3) * f) + (f3 * f2);
     }
 
     public static final float positiveModulo(float f, float f2) {
@@ -114,16 +114,14 @@ public final class Utils {
     public static final float findMinimum(float f, float f2, float f3, FindMinimumFunction f4) {
         Intrinsics.checkNotNullParameter(f4, "f");
         while (f2 - f > f3) {
-            float f5 = 2;
-            float f6 = 3;
-            float f7 = ((f5 * f) + f2) / f6;
-            float f8 = ((f5 * f2) + f) / f6;
-            if (f4.invoke(f7) < f4.invoke(f8)) {
-                f2 = f8;
+            float f5 = ((2.0f * f) + f2) / 3.0f;
+            float f6 = ((2.0f * f2) + f) / 3.0f;
+            if (f4.invoke(f5) < f4.invoke(f6)) {
+                f2 = f6;
             } else {
-                f = f7;
+                f = f5;
             }
         }
-        return (f + f2) / 2;
+        return (f + f2) / 2.0f;
     }
 }

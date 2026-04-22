@@ -102,10 +102,10 @@ public class IdManager implements InstallIdProvider {
 
     /* JADX WARN: Can't wrap try/catch for region: R(8:1|(7:13|14|4|5|6|7|8)|3|4|5|6|7|8) */
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0037, code lost:
-        r0 = move-exception;
+        r5 = move-exception;
      */
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0038, code lost:
-        com.google.firebase.crashlytics.internal.Logger.getLogger().w("Error getting Firebase installation id.", r0);
+        com.google.firebase.crashlytics.internal.Logger.getLogger().w("Error getting Firebase installation id.", r5);
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

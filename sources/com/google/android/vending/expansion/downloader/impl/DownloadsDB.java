@@ -182,6 +182,7 @@ public class DownloadsDB {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public DownloadInfo getDownloadInfoByFileName(String str) {
+        Throwable th;
         Cursor cursor = null;
         try {
             Cursor query = this.mHelper.getReadableDatabase().query(DownloadColumns.TABLE_NAME, DC_PROJECTION, "FN = ?", new String[]{str}, null, null, null);
@@ -194,8 +195,8 @@ public class DownloadsDB {
                         }
                         return downloadInfoFromCursor;
                     }
-                } catch (Throwable th) {
-                    th = th;
+                } catch (Throwable th2) {
+                    th = th2;
                     cursor = query;
                     if (cursor != null) {
                         cursor.close();
@@ -207,8 +208,8 @@ public class DownloadsDB {
                 query.close();
             }
             return null;
-        } catch (Throwable th2) {
-            th = th2;
+        } catch (Throwable th3) {
+            th = th3;
         }
     }
 
@@ -219,6 +220,7 @@ public class DownloadsDB {
     }
 
     public DownloadInfo[] getDownloads() {
+        Throwable th;
         Cursor cursor = null;
         try {
             Cursor query = this.mHelper.getReadableDatabase().query(DownloadColumns.TABLE_NAME, DC_PROJECTION, null, null, null, null, null);
@@ -239,8 +241,8 @@ public class DownloadsDB {
                         }
                         return downloadInfoArr;
                     }
-                } catch (Throwable th) {
-                    th = th;
+                } catch (Throwable th2) {
+                    th = th2;
                     cursor = query;
                     if (cursor != null) {
                         cursor.close();
@@ -252,8 +254,8 @@ public class DownloadsDB {
                 query.close();
             }
             return null;
-        } catch (Throwable th2) {
-            th = th2;
+        } catch (Throwable th3) {
+            th = th3;
         }
     }
 

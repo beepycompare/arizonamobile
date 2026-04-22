@@ -303,7 +303,7 @@ public class Flags {
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // kotlinx.metadata.internal.metadata.deserialization.Flags.FlagField
         public Boolean get(int i) {
-            Boolean valueOf = Boolean.valueOf((i & (1 << this.offset)) != 0);
+            Boolean valueOf = Boolean.valueOf(((1 << this.offset) & i) != 0);
             if (valueOf == null) {
                 $$$reportNull$$$0(0);
             }
@@ -319,7 +319,7 @@ public class Flags {
         }
 
         public int invert(int i) {
-            return i ^ (1 << this.offset);
+            return (1 << this.offset) ^ i;
         }
     }
 

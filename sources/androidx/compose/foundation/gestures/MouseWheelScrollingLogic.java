@@ -322,7 +322,7 @@ public final class MouseWheelScrollingLogic {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x010b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0109, code lost:
         if (r0.invoke(r1, r9) != r10) goto L11;
      */
     /* JADX WARN: Multi-variable type inference failed */
@@ -392,7 +392,7 @@ public final class MouseWheelScrollingLogic {
                 }
                 m529calculateVelocity9UxMQ8M = this.velocityTracker.m529calculateVelocity9UxMQ8M();
                 if (Velocity.m7792equalsimpl0(m529calculateVelocity9UxMQ8M, Velocity.Companion.m7804getZero9UxMQ8M())) {
-                    m529calculateVelocity9UxMQ8M = scrollingLogic2.m592toVelocityadjELrA(scrollingLogic2.reverseIfNeeded(Math.signum(floatRef.element)) * Math.min(Math.abs(floatRef.element) / 100, f3) * 1000);
+                    m529calculateVelocity9UxMQ8M = scrollingLogic2.m592toVelocityadjELrA(scrollingLogic2.reverseIfNeeded(Math.signum(floatRef.element)) * Math.min(Math.abs(floatRef.element) / 100.0f, f3) * 1000.0f);
                 }
                 Function2<Velocity, Continuation<? super Unit>, Object> function2 = this.onScrollStopped;
                 Velocity m7784boximpl = Velocity.m7784boximpl(m529calculateVelocity9UxMQ8M);

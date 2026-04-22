@@ -636,7 +636,7 @@ public final class Multisets {
         @Override // com.google.common.collect.Multiset.Entry
         public int hashCode() {
             E element = getElement();
-            return (element == null ? 0 : element.hashCode()) ^ getCount();
+            return getCount() ^ (element == null ? 0 : element.hashCode());
         }
 
         @Override // com.google.common.collect.Multiset.Entry

@@ -51,10 +51,9 @@ public final class RoundedCorner {
             this.smoothing = cornerRounding != null ? cornerRounding.getSmoothing() : 0.0f;
             float m8102dotProductybeJwSQ = PointKt.m8102dotProductybeJwSQ(m8100divso9K2fw, m8100divso9K2fw2);
             this.cosAngle = m8102dotProductybeJwSQ;
-            float f = 1;
-            float sqrt = (float) Math.sqrt(f - Utils.square(m8102dotProductybeJwSQ));
+            float sqrt = (float) Math.sqrt(1.0f - Utils.square(m8102dotProductybeJwSQ));
             this.sinAngle = sqrt;
-            this.expectedRoundCut = ((double) sqrt) > 0.001d ? (radius * (m8102dotProductybeJwSQ + f)) / sqrt : 0.0f;
+            this.expectedRoundCut = ((double) sqrt) > 0.001d ? (radius * (m8102dotProductybeJwSQ + 1.0f)) / sqrt : 0.0f;
         } else {
             this.d1 = FloatFloatPair.m12constructorimpl(0.0f, 0.0f);
             this.d2 = FloatFloatPair.m12constructorimpl(0.0f, 0.0f);
@@ -121,7 +120,7 @@ public final class RoundedCorner {
     }
 
     public final float getExpectedCut() {
-        return (1 + this.smoothing) * this.expectedRoundCut;
+        return (1.0f + this.smoothing) * this.expectedRoundCut;
     }
 
     /* renamed from: getCenter-1ufDz9w  reason: not valid java name */
@@ -174,7 +173,7 @@ public final class RoundedCorner {
     /* renamed from: computeFlankingCurve-oAJzIJU  reason: not valid java name */
     private final Cubic m8116computeFlankingCurveoAJzIJU(float f, float f2, long j, long j2, long j3, long j4, long j5, float f3) {
         long m8103getDirectionDnnuFBc = PointKt.m8103getDirectionDnnuFBc(PointKt.m8109minusybeJwSQ(j2, j));
-        long m8110plusybeJwSQ = PointKt.m8110plusybeJwSQ(j, PointKt.m8112timesso9K2fw(PointKt.m8112timesso9K2fw(m8103getDirectionDnnuFBc, f), 1 + f2));
+        long m8110plusybeJwSQ = PointKt.m8110plusybeJwSQ(j, PointKt.m8112timesso9K2fw(PointKt.m8112timesso9K2fw(m8103getDirectionDnnuFBc, f), 1.0f + f2));
         long j6 = j3;
         long m8108interpolatedLqxh1s = PointKt.m8108interpolatedLqxh1s(j6, PointKt.m8100divso9K2fw(PointKt.m8110plusybeJwSQ(j3, j4), 2.0f), f2);
         long m8110plusybeJwSQ2 = PointKt.m8110plusybeJwSQ(j5, PointKt.m8112timesso9K2fw(Utils.directionVector(PointKt.m8106getXDnnuFBc(m8108interpolatedLqxh1s) - PointKt.m8106getXDnnuFBc(j5), PointKt.m8107getYDnnuFBc(m8108interpolatedLqxh1s) - PointKt.m8107getYDnnuFBc(j5)), f3));

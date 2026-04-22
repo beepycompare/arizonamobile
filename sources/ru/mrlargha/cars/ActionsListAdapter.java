@@ -76,9 +76,8 @@ public final class ActionsListAdapter extends ListAdapter<ActionButtonInfo, View
         this.activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int i2 = displayMetrics.widthPixels;
         int i3 = displayMetrics.heightPixels;
-        double d = 100;
-        binding.carsActionItem.getLayoutParams().width = (int) ((i2 * 8.85d) / d);
-        binding.carsActionItem.getLayoutParams().height = (int) ((i3 * 6.94d) / d);
+        binding.carsActionItem.getLayoutParams().width = (int) ((i2 * 8.85d) / 100.0d);
+        binding.carsActionItem.getLayoutParams().height = (int) ((i3 * 6.94d) / 100.0d);
         final ActionButtonInfo item = getItem(i);
         binding.getRoot().setBackground(Color.parseColor("#65000000"));
         String color = item.getColor();

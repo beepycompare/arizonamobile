@@ -585,7 +585,7 @@ public final class ReplaySubject<T> extends Subject<T> {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:14:0x0025, code lost:
-            return r1;
+            return r0;
          */
         @Override // io.reactivex.subjects.ReplaySubject.ReplayBuffer
         /*
@@ -743,9 +743,8 @@ public final class ReplaySubject<T> extends Subject<T> {
             long now = this.scheduler.now(this.unit) - this.maxAge;
             TimedNode<T> timedNode3 = timedNode2.get();
             while (true) {
-                TimedNode<T> timedNode4 = timedNode3;
                 timedNode = timedNode2;
-                timedNode2 = timedNode4;
+                timedNode2 = timedNode3;
                 if (timedNode2 == null || timedNode2.time > now) {
                     break;
                 }
@@ -830,7 +829,7 @@ public final class ReplaySubject<T> extends Subject<T> {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:14:0x0023, code lost:
-            return r0;
+            return r1;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.

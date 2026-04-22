@@ -62,16 +62,14 @@ public final class InternalHexConverter {
             sb.append(hexCode.charAt((b >> 4) & 15));
             sb.append(hexCode.charAt(b & Ascii.SI));
         }
+        String sb2 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
         if (z) {
-            String sb2 = sb.toString();
-            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
             String lowerCase = sb2.toLowerCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
             return lowerCase;
         }
-        String sb3 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb3, "toString(...)");
-        return sb3;
+        return sb2;
     }
 
     public final String toHexString(int i) {

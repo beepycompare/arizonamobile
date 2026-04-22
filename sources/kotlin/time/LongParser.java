@@ -22,9 +22,8 @@ public final class LongParser {
     private LongParser(long j, boolean z) {
         this.overflowLimit = j;
         this.allowSign = z;
-        long j2 = 10;
-        this.overflowThreshold = j / j2;
-        this.lastDigitMax = j % j2;
+        this.overflowThreshold = j / 10;
+        this.lastDigitMax = j % 10;
     }
 
     public final long parse(String value, int i, Function3<? super Integer, ? super Integer, ? super Boolean, Unit> callback) {

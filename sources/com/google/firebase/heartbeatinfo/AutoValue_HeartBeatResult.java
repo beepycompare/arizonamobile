@@ -46,6 +46,6 @@ final class AutoValue_HeartBeatResult extends HeartBeatResult {
     }
 
     public int hashCode() {
-        return ((this.userAgent.hashCode() ^ 1000003) * 1000003) ^ this.usedDates.hashCode();
+        return this.usedDates.hashCode() ^ ((this.userAgent.hashCode() ^ 1000003) * 1000003);
     }
 }

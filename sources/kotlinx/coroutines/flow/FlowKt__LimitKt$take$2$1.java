@@ -29,7 +29,7 @@ public final class FlowKt__LimitKt$take$2$1<T> implements FlowCollector {
         if (r5.emit(r7, r0) == r1) goto L23;
      */
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0061, code lost:
-        if (r7 == r1) goto L23;
+        if (r6 == r1) goto L23;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0039  */

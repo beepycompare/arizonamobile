@@ -211,8 +211,8 @@ public final class TriggerBasedInvalidationTracker {
     public final Object syncTriggers$room_runtime(Continuation<? super Unit> continuation) {
         TriggerBasedInvalidationTracker$syncTriggers$1 triggerBasedInvalidationTracker$syncTriggers$1;
         int i;
-        CloseBarrier closeBarrier;
         Throwable th;
+        CloseBarrier closeBarrier;
         if (continuation instanceof TriggerBasedInvalidationTracker$syncTriggers$1) {
             triggerBasedInvalidationTracker$syncTriggers$1 = (TriggerBasedInvalidationTracker$syncTriggers$1) continuation;
             if ((triggerBasedInvalidationTracker$syncTriggers$1.label & Integer.MIN_VALUE) != 0) {
@@ -232,8 +232,8 @@ public final class TriggerBasedInvalidationTracker {
                             }
                             closeBarrier = closeBarrier$room_runtime;
                         } catch (Throwable th2) {
-                            closeBarrier = closeBarrier$room_runtime;
                             th = th2;
+                            closeBarrier = closeBarrier$room_runtime;
                             closeBarrier.unblock$room_runtime();
                             throw th;
                         }
@@ -365,21 +365,21 @@ public final class TriggerBasedInvalidationTracker {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0043  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x008b  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0085 -> B:20:0x0087). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0089  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0084 -> B:19:0x0087). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object stopTrackingTable(PooledConnection pooledConnection, int i, Continuation<? super Unit> continuation) {
         TriggerBasedInvalidationTracker$stopTrackingTable$1 triggerBasedInvalidationTracker$stopTrackingTable$1;
         int i2;
-        int i3;
-        PooledConnection pooledConnection2;
+        String str;
         int length;
         String[] strArr;
-        String str;
+        PooledConnection pooledConnection2;
+        int i3;
         if (continuation instanceof TriggerBasedInvalidationTracker$stopTrackingTable$1) {
             triggerBasedInvalidationTracker$stopTrackingTable$1 = (TriggerBasedInvalidationTracker$stopTrackingTable$1) continuation;
             if ((triggerBasedInvalidationTracker$stopTrackingTable$1.label & Integer.MIN_VALUE) != 0) {
@@ -391,24 +391,23 @@ public final class TriggerBasedInvalidationTracker {
                     ResultKt.throwOnFailure(obj);
                     String str2 = this.tablesNames[i];
                     String[] strArr2 = TRIGGERS;
-                    i3 = 0;
-                    pooledConnection2 = pooledConnection;
+                    str = str2;
                     length = strArr2.length;
                     strArr = strArr2;
-                    str = str2;
+                    pooledConnection2 = pooledConnection;
+                    i3 = 0;
                     if (i3 < length) {
                     }
                 } else if (i2 != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     length = triggerBasedInvalidationTracker$stopTrackingTable$1.I$1;
-                    int i4 = triggerBasedInvalidationTracker$stopTrackingTable$1.I$0;
-                    strArr = (String[]) triggerBasedInvalidationTracker$stopTrackingTable$1.L$2;
-                    PooledConnection pooledConnection3 = (PooledConnection) triggerBasedInvalidationTracker$stopTrackingTable$1.L$0;
-                    ResultKt.throwOnFailure(obj);
+                    i3 = triggerBasedInvalidationTracker$stopTrackingTable$1.I$0;
                     str = (String) triggerBasedInvalidationTracker$stopTrackingTable$1.L$1;
-                    i3 = i4 + 1;
-                    pooledConnection2 = pooledConnection3;
+                    ResultKt.throwOnFailure(obj);
+                    strArr = (String[]) triggerBasedInvalidationTracker$stopTrackingTable$1.L$2;
+                    pooledConnection2 = (PooledConnection) triggerBasedInvalidationTracker$stopTrackingTable$1.L$0;
+                    i3++;
                     if (i3 < length) {
                         String str3 = "DROP TRIGGER IF EXISTS `" + Companion.getTriggerName(str, strArr[i3]) + '`';
                         triggerBasedInvalidationTracker$stopTrackingTable$1.L$0 = pooledConnection2;
@@ -420,10 +419,7 @@ public final class TriggerBasedInvalidationTracker {
                         if (TransactorKt.execSQL(pooledConnection2, str3, triggerBasedInvalidationTracker$stopTrackingTable$1) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        pooledConnection3 = pooledConnection2;
-                        i4 = i3;
-                        i3 = i4 + 1;
-                        pooledConnection2 = pooledConnection3;
+                        i3++;
                         if (i3 < length) {
                             return Unit.INSTANCE;
                         }
@@ -441,17 +437,17 @@ public final class TriggerBasedInvalidationTracker {
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x003b  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x005e  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0063 A[Catch: all -> 0x0089, TryCatch #0 {all -> 0x0089, blocks: (B:12:0x002f, B:20:0x0058, B:25:0x0063, B:27:0x0067, B:35:0x0081, B:30:0x0074, B:31:0x0077, B:17:0x004b), top: B:41:0x0022 }] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0077 A[Catch: all -> 0x0089, TryCatch #0 {all -> 0x0089, blocks: (B:12:0x002f, B:20:0x0058, B:25:0x0063, B:27:0x0067, B:35:0x0081, B:30:0x0074, B:31:0x0077, B:17:0x004b), top: B:41:0x0022 }] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0064 A[Catch: all -> 0x008a, TryCatch #0 {all -> 0x008a, blocks: (B:12:0x002f, B:21:0x0059, B:26:0x0064, B:28:0x0068, B:36:0x0082, B:31:0x0075, B:32:0x0078, B:17:0x004b), top: B:42:0x0022 }] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0078 A[Catch: all -> 0x008a, TryCatch #0 {all -> 0x008a, blocks: (B:12:0x002f, B:21:0x0059, B:26:0x0064, B:28:0x0068, B:36:0x0082, B:31:0x0075, B:32:0x0078, B:17:0x004b), top: B:42:0x0022 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object refreshInvalidation$room_runtime(String[] strArr, Function0<Unit> function0, Function0<Unit> function02, Continuation<? super Boolean> continuation) {
         TriggerBasedInvalidationTracker$refreshInvalidation$1 triggerBasedInvalidationTracker$refreshInvalidation$1;
         int i;
-        int[] component2;
+        int[] iArr;
         try {
             if (continuation instanceof TriggerBasedInvalidationTracker$refreshInvalidation$1) {
                 triggerBasedInvalidationTracker$refreshInvalidation$1 = (TriggerBasedInvalidationTracker$refreshInvalidation$1) continuation;
@@ -463,7 +459,7 @@ public final class TriggerBasedInvalidationTracker {
                     boolean z = true;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        component2 = validateTableNames$room_runtime(strArr).component2();
+                        int[] component2 = validateTableNames$room_runtime(strArr).component2();
                         function0.invoke();
                         triggerBasedInvalidationTracker$refreshInvalidation$1.L$0 = function02;
                         triggerBasedInvalidationTracker$refreshInvalidation$1.L$1 = component2;
@@ -472,22 +468,23 @@ public final class TriggerBasedInvalidationTracker {
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
+                        iArr = component2;
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        component2 = (int[]) triggerBasedInvalidationTracker$refreshInvalidation$1.L$1;
+                        iArr = (int[]) triggerBasedInvalidationTracker$refreshInvalidation$1.L$1;
                         function02 = (Function0) triggerBasedInvalidationTracker$refreshInvalidation$1.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
                     Set set = (Set) obj;
-                    if (!(component2.length != 0)) {
+                    if (!(iArr.length != 0)) {
                         if (!set.isEmpty()) {
                             return Boxing.boxBoolean(z);
                         }
                         z = false;
                         return Boxing.boxBoolean(z);
                     }
-                    for (int i2 : component2) {
+                    for (int i2 : iArr) {
                         if (set.contains(Boxing.boxInt(i2))) {
                             break;
                         }
@@ -499,7 +496,7 @@ public final class TriggerBasedInvalidationTracker {
             if (i != 0) {
             }
             Set set2 = (Set) obj;
-            if (!(component2.length != 0)) {
+            if (!(iArr.length != 0)) {
             }
         } finally {
             function02.invoke();
@@ -581,7 +578,6 @@ public final class TriggerBasedInvalidationTracker {
         TriggerBasedInvalidationTracker$notifyInvalidation$1 triggerBasedInvalidationTracker$notifyInvalidation$1;
         int i;
         CloseBarrier closeBarrier;
-        Throwable th;
         Set<Integer> set;
         if (continuation instanceof TriggerBasedInvalidationTracker$notifyInvalidation$1) {
             triggerBasedInvalidationTracker$notifyInvalidation$1 = (TriggerBasedInvalidationTracker$notifyInvalidation$1) continuation;
@@ -613,9 +609,9 @@ public final class TriggerBasedInvalidationTracker {
                                 closeBarrier = closeBarrier$room_runtime;
                                 obj = useConnection;
                             }
-                        } catch (Throwable th2) {
+                        } catch (Throwable th) {
+                            th = th;
                             closeBarrier = closeBarrier$room_runtime;
-                            th = th2;
                             closeBarrier.unblock$room_runtime();
                             throw th;
                         }
@@ -628,8 +624,8 @@ public final class TriggerBasedInvalidationTracker {
                     closeBarrier = (CloseBarrier) triggerBasedInvalidationTracker$notifyInvalidation$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th3) {
-                        th = th3;
+                    } catch (Throwable th2) {
+                        th = th2;
                         closeBarrier.unblock$room_runtime();
                         throw th;
                     }
@@ -658,7 +654,7 @@ public final class TriggerBasedInvalidationTracker {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0053, code lost:
-        if (r7 == r1) goto L20;
+        if (r4 == r6) goto L20;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0041  */

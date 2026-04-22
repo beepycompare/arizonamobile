@@ -134,8 +134,8 @@ public final class PublisherCoroutine<T> extends AbstractCoroutine<Unit> impleme
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0051  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0054  */
     @Override // kotlinx.coroutines.channels.SendChannel
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -143,7 +143,6 @@ public final class PublisherCoroutine<T> extends AbstractCoroutine<Unit> impleme
     public Object send(T t, Continuation<? super Unit> continuation) {
         PublisherCoroutine$send$1 publisherCoroutine$send$1;
         int i;
-        PublisherCoroutine<T> publisherCoroutine;
         Throwable doLockedNext;
         if (continuation instanceof PublisherCoroutine$send$1) {
             publisherCoroutine$send$1 = (PublisherCoroutine$send$1) continuation;
@@ -161,15 +160,14 @@ public final class PublisherCoroutine<T> extends AbstractCoroutine<Unit> impleme
                     if (Mutex.DefaultImpls.lock$default(mutex, null, publisherCoroutine$send$1, 1, null) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    publisherCoroutine = this;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     t = (T) publisherCoroutine$send$1.L$1;
-                    publisherCoroutine = (PublisherCoroutine) publisherCoroutine$send$1.L$0;
+                    this = (PublisherCoroutine) publisherCoroutine$send$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                doLockedNext = publisherCoroutine.doLockedNext(t);
+                doLockedNext = this.doLockedNext(t);
                 if (doLockedNext == null) {
                     throw doLockedNext;
                 }
@@ -182,14 +180,13 @@ public final class PublisherCoroutine<T> extends AbstractCoroutine<Unit> impleme
         i = publisherCoroutine$send$1.label;
         if (i != 0) {
         }
-        doLockedNext = publisherCoroutine.doLockedNext(t);
+        doLockedNext = this.doLockedNext(t);
         if (doLockedNext == null) {
         }
     }
 
     private final Throwable doLockedNext(T t) {
-        long j;
-        long j2;
+        PublisherCoroutine<T> publisherCoroutine;
         if (t == null) {
             unlockAndCheckCompleted();
             throw new NullPointerException("Attempted to emit `null` inside a reactive publisher");
@@ -199,17 +196,21 @@ public final class PublisherCoroutine<T> extends AbstractCoroutine<Unit> impleme
         } else {
             try {
                 this.subscriber.onNext(t);
-                do {
-                    j = _nRequested$volatile$FU.get(this);
+                while (true) {
+                    long j = _nRequested$volatile$FU.get(this);
                     if (j < 0 || j == Long.MAX_VALUE) {
                         break;
                     }
-                    j2 = j - 1;
-                } while (!_nRequested$volatile$FU.compareAndSet(this, j, j2));
-                if (j2 == 0) {
-                    return null;
+                    long j2 = j - 1;
+                    publisherCoroutine = this;
+                    if (!_nRequested$volatile$FU.compareAndSet(publisherCoroutine, j, j2)) {
+                        this = publisherCoroutine;
+                    } else if (j2 == 0) {
+                        return null;
+                    }
                 }
-                unlockAndCheckCompleted();
+                publisherCoroutine = this;
+                publisherCoroutine.unlockAndCheckCompleted();
                 return null;
             } catch (Throwable th) {
                 this.cancelled = true;
@@ -253,47 +254,56 @@ public final class PublisherCoroutine<T> extends AbstractCoroutine<Unit> impleme
 
     @Override // org.reactivestreams.Subscription
     public void request(long j) {
-        long j2;
-        int i;
-        long j3;
         if (j <= 0) {
             cancelCoroutine(new IllegalArgumentException("non-positive subscription request " + j));
             return;
         }
-        do {
-            j2 = _nRequested$volatile$FU.get(this);
-            i = (j2 > 0L ? 1 : (j2 == 0L ? 0 : -1));
+        while (true) {
+            long j2 = _nRequested$volatile$FU.get(this);
+            int i = (j2 > 0L ? 1 : (j2 == 0L ? 0 : -1));
             if (i < 0) {
                 return;
             }
-            long j4 = j2 + j;
-            j3 = (j4 < 0 || j == Long.MAX_VALUE) ? Long.MAX_VALUE : j4;
-            if (j2 == j3) {
+            long j3 = j2 + j;
+            long j4 = (j3 < 0 || j == Long.MAX_VALUE) ? Long.MAX_VALUE : j3;
+            if (j2 == j4) {
                 return;
             }
-        } while (!_nRequested$volatile$FU.compareAndSet(this, j2, j3));
-        if (i == 0) {
-            unlockAndCheckCompleted();
+            PublisherCoroutine<T> publisherCoroutine = this;
+            if (_nRequested$volatile$FU.compareAndSet(publisherCoroutine, j2, j4)) {
+                if (i == 0) {
+                    publisherCoroutine.unlockAndCheckCompleted();
+                    return;
+                }
+                return;
+            }
+            this = publisherCoroutine;
         }
     }
 
     private final void signalCompleted(Throwable th, boolean z) {
-        long j;
-        int i;
-        do {
-            j = _nRequested$volatile$FU.get(this);
+        while (true) {
+            long j = _nRequested$volatile$FU.get(this);
             if (j == -2) {
                 return;
             }
-            i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
+            int i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
             if (i < 0) {
                 throw new IllegalStateException("Check failed.");
             }
-        } while (!_nRequested$volatile$FU.compareAndSet(this, j, -1L));
-        if (i == 0) {
-            doLockedSignalCompleted(th, z);
-        } else if (Mutex.DefaultImpls.tryLock$default(this.mutex, null, 1, null)) {
-            doLockedSignalCompleted(th, z);
+            PublisherCoroutine<T> publisherCoroutine = this;
+            if (_nRequested$volatile$FU.compareAndSet(publisherCoroutine, j, -1L)) {
+                if (i == 0) {
+                    publisherCoroutine.doLockedSignalCompleted(th, z);
+                    return;
+                } else if (Mutex.DefaultImpls.tryLock$default(publisherCoroutine.mutex, null, 1, null)) {
+                    publisherCoroutine.doLockedSignalCompleted(th, z);
+                    return;
+                } else {
+                    return;
+                }
+            }
+            this = publisherCoroutine;
         }
     }
 

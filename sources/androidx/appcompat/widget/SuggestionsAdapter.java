@@ -300,7 +300,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements View.OnClickLi
             return super.getView(i, view, viewGroup);
         } catch (RuntimeException e) {
             Log.w(LOG_TAG, "Search suggestions cursor threw exception.", e);
-            View newView = newView(this.mProviderContext, getCursor(), viewGroup);
+            View newView = this.newView(this.mProviderContext, this.getCursor(), viewGroup);
             if (newView != null) {
                 ((ChildViewCache) newView.getTag()).mText1.setText(e.toString());
             }
@@ -314,7 +314,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements View.OnClickLi
             return super.getDropDownView(i, view, viewGroup);
         } catch (RuntimeException e) {
             Log.w(LOG_TAG, "Search suggestions cursor threw exception.", e);
-            View newDropDownView = newDropDownView(this.mProviderContext, getCursor(), viewGroup);
+            View newDropDownView = this.newDropDownView(this.mProviderContext, this.getCursor(), viewGroup);
             if (newDropDownView != null) {
                 ((ChildViewCache) newDropDownView.getTag()).mText1.setText(e.toString());
             }

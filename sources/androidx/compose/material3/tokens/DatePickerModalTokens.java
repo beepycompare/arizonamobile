@@ -7,72 +7,54 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class DatePickerModalTokens {
     public static final int $stable = 0;
-    private static final float ContainerWidth;
-    private static final float DateContainerHeight;
-    private static final float DateContainerWidth;
-    private static final float DateStateLayerHeight;
-    private static final float DateStateLayerWidth;
-    private static final float HeaderContainerWidth;
-    private static final float RangeSelectionActiveIndicatorContainerHeight;
-    private static final float SelectionYearContainerHeight;
-    private static final float SelectionYearContainerWidth;
-    private static final float SelectionYearStateLayerHeight;
-    private static final float SelectionYearStateLayerWidth;
     public static final DatePickerModalTokens INSTANCE = new DatePickerModalTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainerHigh;
     private static final float ContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 568.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(568.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraLarge;
+    private static final float ContainerWidth = Dp.m7555constructorimpl(360.0f);
+    private static final float DateContainerHeight = Dp.m7555constructorimpl(40.0f);
     private static final ShapeKeyTokens DateContainerShape = ShapeKeyTokens.CornerFull;
+    private static final float DateContainerWidth = Dp.m7555constructorimpl(40.0f);
     private static final TypographyKeyTokens DateLabelTextFont = TypographyKeyTokens.BodyLarge;
     private static final ColorSchemeKeyTokens DateSelectedContainerColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens DateSelectedLabelTextColor = ColorSchemeKeyTokens.OnPrimary;
+    private static final float DateStateLayerHeight = Dp.m7555constructorimpl(40.0f);
     private static final ShapeKeyTokens DateStateLayerShape = ShapeKeyTokens.CornerFull;
+    private static final float DateStateLayerWidth = Dp.m7555constructorimpl(40.0f);
     private static final ColorSchemeKeyTokens DateTodayContainerOutlineColor = ColorSchemeKeyTokens.Primary;
-    private static final float DateTodayContainerOutlineWidth = Dp.m7555constructorimpl((float) 1.0d);
+    private static final float DateTodayContainerOutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens DateTodayLabelTextColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens DateUnselectedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float HeaderContainerHeight = Dp.m7555constructorimpl((float) 120.0d);
+    private static final float HeaderContainerHeight = Dp.m7555constructorimpl(120.0f);
+    private static final float HeaderContainerWidth = Dp.m7555constructorimpl(360.0f);
     private static final ColorSchemeKeyTokens HeaderHeadlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeaderHeadlineFont = TypographyKeyTokens.HeadlineLarge;
     private static final ColorSchemeKeyTokens HeaderSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeaderSupportingTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens RangeSelectionActiveIndicatorContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
+    private static final float RangeSelectionActiveIndicatorContainerHeight = Dp.m7555constructorimpl(40.0f);
     private static final ShapeKeyTokens RangeSelectionActiveIndicatorContainerShape = ShapeKeyTokens.CornerFull;
     private static final float RangeSelectionContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
     private static final ShapeKeyTokens RangeSelectionContainerShape = ShapeKeyTokens.CornerNone;
     private static final ColorSchemeKeyTokens SelectionDateInRangeLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final float RangeSelectionHeaderContainerHeight = Dp.m7555constructorimpl((float) 128.0d);
+    private static final float RangeSelectionHeaderContainerHeight = Dp.m7555constructorimpl(128.0f);
     private static final TypographyKeyTokens RangeSelectionHeaderHeadlineFont = TypographyKeyTokens.TitleLarge;
     private static final ColorSchemeKeyTokens RangeSelectionMonthSubheadColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens RangeSelectionMonthSubheadFont = TypographyKeyTokens.TitleSmall;
     private static final ColorSchemeKeyTokens WeekdaysLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final TypographyKeyTokens WeekdaysLabelTextFont = TypographyKeyTokens.BodyLarge;
+    private static final float SelectionYearContainerHeight = Dp.m7555constructorimpl(36.0f);
+    private static final float SelectionYearContainerWidth = Dp.m7555constructorimpl(72.0f);
     private static final TypographyKeyTokens SelectionYearLabelTextFont = TypographyKeyTokens.BodyLarge;
     private static final ColorSchemeKeyTokens SelectionYearSelectedContainerColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectionYearSelectedLabelTextColor = ColorSchemeKeyTokens.OnPrimary;
+    private static final float SelectionYearStateLayerHeight = Dp.m7555constructorimpl(36.0f);
     private static final ShapeKeyTokens SelectionYearStateLayerShape = ShapeKeyTokens.CornerFull;
+    private static final float SelectionYearStateLayerWidth = Dp.m7555constructorimpl(72.0f);
     private static final ColorSchemeKeyTokens SelectionYearUnselectedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
 
     private DatePickerModalTokens() {
-    }
-
-    static {
-        float f = (float) 360.0d;
-        ContainerWidth = Dp.m7555constructorimpl(f);
-        float f2 = (float) 40.0d;
-        DateContainerHeight = Dp.m7555constructorimpl(f2);
-        DateContainerWidth = Dp.m7555constructorimpl(f2);
-        DateStateLayerHeight = Dp.m7555constructorimpl(f2);
-        DateStateLayerWidth = Dp.m7555constructorimpl(f2);
-        HeaderContainerWidth = Dp.m7555constructorimpl(f);
-        RangeSelectionActiveIndicatorContainerHeight = Dp.m7555constructorimpl(f2);
-        float f3 = (float) 36.0d;
-        SelectionYearContainerHeight = Dp.m7555constructorimpl(f3);
-        float f4 = (float) 72.0d;
-        SelectionYearContainerWidth = Dp.m7555constructorimpl(f4);
-        SelectionYearStateLayerHeight = Dp.m7555constructorimpl(f3);
-        SelectionYearStateLayerWidth = Dp.m7555constructorimpl(f4);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {

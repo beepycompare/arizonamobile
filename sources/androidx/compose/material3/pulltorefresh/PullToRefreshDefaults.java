@@ -94,7 +94,7 @@ public final class PullToRefreshDefaults {
     }
 
     static {
-        float m7555constructorimpl = Dp.m7555constructorimpl(80);
+        float m7555constructorimpl = Dp.m7555constructorimpl(80.0f);
         PositionalThreshold = m7555constructorimpl;
         IndicatorMaxDistance = m7555constructorimpl;
         Elevation = ElevationTokens.INSTANCE.m3361getLevel2D9Ej5fM();
@@ -856,12 +856,12 @@ public final class PullToRefreshDefaults {
                                     L95:
                                         androidx.compose.material3.internal.FloatProducer r14 = (androidx.compose.material3.internal.FloatProducer) r14
                                         androidx.compose.runtime.ComposerKt.sourceInformationMarkerEnd(r8)
-                                        long r12 = r11.$color
-                                        androidx.compose.material3.pulltorefresh.PullToRefreshKt.m3104access$CircularArrowProgressIndicatorRPmYEkk(r14, r12, r8, r2)
+                                        long r11 = r11.$color
+                                        androidx.compose.material3.pulltorefresh.PullToRefreshKt.m3104access$CircularArrowProgressIndicatorRPmYEkk(r14, r11, r8, r2)
                                         r8.endReplaceGroup()
                                     La2:
-                                        boolean r12 = androidx.compose.runtime.ComposerKt.isTraceInProgress()
-                                        if (r12 == 0) goto Lab
+                                        boolean r11 = androidx.compose.runtime.ComposerKt.isTraceInProgress()
+                                        if (r11 == 0) goto Lab
                                         androidx.compose.runtime.ComposerKt.traceEventEnd()
                                     Lab:
                                         return

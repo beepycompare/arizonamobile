@@ -64,7 +64,7 @@ public final class TypeVariableImpl implements TypeVariable<GenericDeclaration>,
     }
 
     public int hashCode() {
-        return getName().hashCode() ^ getGenericDeclaration().hashCode();
+        return getGenericDeclaration().hashCode() ^ getName().hashCode();
     }
 
     public String toString() {

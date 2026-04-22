@@ -13,7 +13,7 @@ public final class GeometryUtilsKt {
             return f < 0.0f ? "-Infinity" : "Infinity";
         }
         int max = Math.max(i, 0);
-        float pow = (float) Math.pow(10.0f, max);
+        float pow = (float) Math.pow(10.0d, max);
         float f2 = f * pow;
         int i2 = (int) f2;
         if (f2 - i2 >= 0.5f) {

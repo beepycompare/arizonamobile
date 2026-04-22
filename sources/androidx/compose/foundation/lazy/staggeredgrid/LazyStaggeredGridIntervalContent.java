@@ -98,7 +98,7 @@ public final class LazyStaggeredGridIntervalContent extends LazyLayoutIntervalCo
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [androidx.compose.foundation.lazy.layout.MutableIntervalList] */
+    /* JADX WARN: Type inference failed for: r1v1, types: [androidx.compose.foundation.lazy.layout.MutableIntervalList] */
     @Override // androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridScope
     public void items(int i, Function1<? super Integer, ? extends Object> function1, Function1<? super Integer, ? extends Object> function12, Function1<? super Integer, StaggeredGridItemSpan> function13, Function4<? super LazyStaggeredGridItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4) {
         getIntervals().addInterval(i, new LazyStaggeredGridInterval(function1, function12, function13, function4));

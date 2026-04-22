@@ -48,15 +48,14 @@ public final class FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1<T> implement
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0053  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0073  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00a7  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00aa  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x007a -> B:31:0x00a4). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x0093 -> B:27:0x0096). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x005a  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00af  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x007f -> B:31:0x00a9). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x0098 -> B:27:0x009b). Please submit an issue!!! */
     @Override // kotlinx.coroutines.flow.Flow
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -65,12 +64,11 @@ public final class FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1<T> implement
         AnonymousClass1 anonymousClass1;
         int i;
         long j;
+        long j2;
         FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1<T> flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1;
-        int i2;
-        FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1<T> flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$12;
         FlowCollector<? super T> flowCollector2;
+        int i2;
         Throwable th;
-        Object catchImpl;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
             if ((anonymousClass1.label & Integer.MIN_VALUE) != 0) {
@@ -81,79 +79,114 @@ public final class FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1<T> implement
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     j = 0;
-                    flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1 = this;
-                    Flow flow = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1.$this_retryWhen$inlined;
-                    anonymousClass1.L$0 = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1;
+                    Flow flow = this.$this_retryWhen$inlined;
+                    anonymousClass1.L$0 = this;
                     anonymousClass1.L$1 = flowCollector;
                     anonymousClass1.L$2 = null;
                     anonymousClass1.J$0 = j;
+                    i2 = 0;
                     anonymousClass1.I$0 = 0;
                     anonymousClass1.label = 1;
-                    catchImpl = FlowKt.catchImpl(flow, flowCollector, anonymousClass1);
-                    if (catchImpl != coroutine_suspended) {
+                    obj = FlowKt.catchImpl(flow, flowCollector, anonymousClass1);
+                    if (obj != coroutine_suspended) {
                     }
                     return coroutine_suspended;
                 } else if (i == 1) {
-                    i2 = anonymousClass1.I$0;
-                    j = anonymousClass1.J$0;
-                    flowCollector2 = (FlowCollector) anonymousClass1.L$1;
-                    flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$12 = (FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1) anonymousClass1.L$0;
+                    int i3 = anonymousClass1.I$0;
+                    long j3 = anonymousClass1.J$0;
+                    FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1<T> flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$12 = (FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1) anonymousClass1.L$0;
                     ResultKt.throwOnFailure(obj);
+                    i2 = i3;
+                    flowCollector2 = (FlowCollector) anonymousClass1.L$1;
+                    flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1 = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$12;
+                    j2 = j3;
                     th = (Throwable) obj;
                     if (th != null) {
                     }
-                    flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1 = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$12;
+                    long j4 = j2;
+                    flowCollector = flowCollector2;
+                    this = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1;
+                    j = j4;
                     if (i2 == 0) {
                     }
+                    Flow flow2 = this.$this_retryWhen$inlined;
+                    anonymousClass1.L$0 = this;
+                    anonymousClass1.L$1 = flowCollector;
+                    anonymousClass1.L$2 = null;
+                    anonymousClass1.J$0 = j;
+                    i2 = 0;
+                    anonymousClass1.I$0 = 0;
+                    anonymousClass1.label = 1;
+                    obj = FlowKt.catchImpl(flow2, flowCollector, anonymousClass1);
+                    if (obj != coroutine_suspended) {
+                    }
+                    return coroutine_suspended;
                 } else if (i != 2) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    j = anonymousClass1.J$0;
+                    j2 = anonymousClass1.J$0;
                     Throwable th2 = (Throwable) anonymousClass1.L$2;
                     flowCollector2 = (FlowCollector) anonymousClass1.L$1;
-                    flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$12 = (FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1) anonymousClass1.L$0;
+                    flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1 = (FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1) anonymousClass1.L$0;
                     ResultKt.throwOnFailure(obj);
                     if (!((Boolean) obj).booleanValue()) {
-                        j++;
+                        j2++;
                         i2 = 1;
-                        flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1 = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$12;
+                        long j42 = j2;
+                        flowCollector = flowCollector2;
+                        this = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1;
+                        j = j42;
                         if (i2 == 0) {
                             return Unit.INSTANCE;
                         }
-                        flowCollector = flowCollector2;
-                        Flow flow2 = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1.$this_retryWhen$inlined;
-                        anonymousClass1.L$0 = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1;
+                        Flow flow22 = this.$this_retryWhen$inlined;
+                        anonymousClass1.L$0 = this;
                         anonymousClass1.L$1 = flowCollector;
                         anonymousClass1.L$2 = null;
                         anonymousClass1.J$0 = j;
+                        i2 = 0;
                         anonymousClass1.I$0 = 0;
                         anonymousClass1.label = 1;
-                        catchImpl = FlowKt.catchImpl(flow2, flowCollector, anonymousClass1);
-                        if (catchImpl != coroutine_suspended) {
+                        obj = FlowKt.catchImpl(flow22, flowCollector, anonymousClass1);
+                        if (obj != coroutine_suspended) {
+                            long j5 = j;
+                            flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1 = this;
                             flowCollector2 = flowCollector;
-                            i2 = 0;
-                            flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$12 = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1;
-                            obj = catchImpl;
+                            j2 = j5;
                             th = (Throwable) obj;
                             if (th != null) {
-                                Function4 function4 = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$12.$predicate$inlined;
-                                Long boxLong = Boxing.boxLong(j);
-                                anonymousClass1.L$0 = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$12;
+                                Function4 function4 = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1.$predicate$inlined;
+                                Long boxLong = Boxing.boxLong(j2);
+                                anonymousClass1.L$0 = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1;
                                 anonymousClass1.L$1 = flowCollector2;
                                 anonymousClass1.L$2 = th;
-                                anonymousClass1.J$0 = j;
+                                anonymousClass1.J$0 = j2;
                                 anonymousClass1.label = 2;
                                 Object invoke = function4.invoke(flowCollector2, th, boxLong, anonymousClass1);
                                 if (invoke != coroutine_suspended) {
-                                    obj = invoke;
                                     th2 = th;
+                                    obj = invoke;
                                     if (!((Boolean) obj).booleanValue()) {
                                         throw th2;
                                     }
                                 }
                             }
-                            flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1 = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$12;
+                            long j422 = j2;
+                            flowCollector = flowCollector2;
+                            this = flowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1;
+                            j = j422;
                             if (i2 == 0) {
+                            }
+                            Flow flow222 = this.$this_retryWhen$inlined;
+                            anonymousClass1.L$0 = this;
+                            anonymousClass1.L$1 = flowCollector;
+                            anonymousClass1.L$2 = null;
+                            anonymousClass1.J$0 = j;
+                            i2 = 0;
+                            anonymousClass1.I$0 = 0;
+                            anonymousClass1.label = 1;
+                            obj = FlowKt.catchImpl(flow222, flowCollector, anonymousClass1);
+                            if (obj != coroutine_suspended) {
                             }
                         }
                         return coroutine_suspended;

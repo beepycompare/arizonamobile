@@ -25,10 +25,10 @@ public interface BaselineAnchorable {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: linkTo-VpY3zN4");
         }
         if ((i & 2) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 4) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         baselineAnchorable.mo7817linkToVpY3zN4(baselineAnchor, f, f2);
     }
@@ -39,10 +39,10 @@ public interface BaselineAnchorable {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: linkTo-VpY3zN4");
         }
         if ((i & 2) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 4) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         baselineAnchorable.mo7818linkToVpY3zN4(horizontalAnchor, f, f2);
     }

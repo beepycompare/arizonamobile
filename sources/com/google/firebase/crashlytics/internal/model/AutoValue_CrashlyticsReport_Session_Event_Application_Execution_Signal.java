@@ -47,7 +47,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Sign
 
     public int hashCode() {
         long j = this.address;
-        return ((((this.name.hashCode() ^ 1000003) * 1000003) ^ this.code.hashCode()) * 1000003) ^ ((int) (j ^ (j >>> 32)));
+        return ((int) (j ^ (j >>> 32))) ^ ((((this.name.hashCode() ^ 1000003) * 1000003) ^ this.code.hashCode()) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -93,7 +93,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Sign
                 if (this.code == null) {
                     sb.append(" code");
                 }
-                if ((1 & this.set$0) == 0) {
+                if ((this.set$0 & 1) == 0) {
                     sb.append(" address");
                 }
                 throw new IllegalStateException("Missing required properties:" + ((Object) sb));

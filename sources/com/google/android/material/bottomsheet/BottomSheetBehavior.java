@@ -1220,13 +1220,18 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
 
     private int calculatePeekHeight() {
         int i;
+        int i2;
+        int i3;
         if (this.peekHeightAuto) {
-            return Math.min(Math.max(this.peekHeightMin, this.parentHeight - ((this.parentWidth * 9) / 16)), this.childHeight) + this.insetBottom;
+            i = Math.min(Math.max(this.peekHeightMin, this.parentHeight - ((this.parentWidth * 9) / 16)), this.childHeight);
+            i2 = this.insetBottom;
+        } else if (!this.gestureInsetBottomIgnored && !this.paddingBottomSystemWindowInsets && (i3 = this.gestureInsetBottom) > 0) {
+            return Math.max(this.peekHeight, i3 + this.peekHeightGestureInsetBuffer);
+        } else {
+            i = this.peekHeight;
+            i2 = this.insetBottom;
         }
-        if (!this.gestureInsetBottomIgnored && !this.paddingBottomSystemWindowInsets && (i = this.gestureInsetBottom) > 0) {
-            return Math.max(this.peekHeight, i + this.peekHeightGestureInsetBuffer);
-        }
-        return this.peekHeight + this.insetBottom;
+        return i + i2;
     }
 
     private void calculateCollapsedOffset() {

@@ -7,18 +7,18 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class ButtonMediumTokens {
     public static final int $stable = 0;
-    private static final float IconSize;
-    private static final float LeadingSpace;
-    private static final float TrailingSpace;
     public static final ButtonMediumTokens INSTANCE = new ButtonMediumTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 56.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(56.0f);
     private static final ShapeKeyTokens ContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens ContainerShapeSquare = ShapeKeyTokens.CornerLarge;
-    private static final float IconLabelSpace = Dp.m7555constructorimpl((float) 8.0d);
-    private static final float OutlinedOutlineWidth = Dp.m7555constructorimpl((float) 1.0d);
+    private static final float IconLabelSpace = Dp.m7555constructorimpl(8.0f);
+    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
+    private static final float LeadingSpace = Dp.m7555constructorimpl(24.0f);
+    private static final float OutlinedOutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final ShapeKeyTokens PressedContainerShape = ShapeKeyTokens.CornerMedium;
     private static final ShapeKeyTokens SelectedContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens SelectedContainerShapeSquare = ShapeKeyTokens.CornerLarge;
+    private static final float TrailingSpace = Dp.m7555constructorimpl(24.0f);
 
     private ButtonMediumTokens() {
     }
@@ -71,12 +71,5 @@ public final class ButtonMediumTokens {
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
     public final float m3163getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
-    }
-
-    static {
-        float f = (float) 24.0d;
-        IconSize = Dp.m7555constructorimpl(f);
-        LeadingSpace = Dp.m7555constructorimpl(f);
-        TrailingSpace = Dp.m7555constructorimpl(f);
     }
 }

@@ -44,21 +44,31 @@ public final class FlowableGroupBy<T, K, V> extends AbstractFlowableWithUpstream
 
     @Override // io.reactivex.Flowable
     protected void subscribeActual(Subscriber<? super GroupedFlowable<K, V>> subscriber) {
+        Subscriber<? super GroupedFlowable<K, V>> subscriber2;
+        Exception exc;
+        Map<K, Object> concurrentHashMap;
         ConcurrentLinkedQueue concurrentLinkedQueue;
-        Map<K, Object> apply;
         try {
             if (this.mapFactory == null) {
-                apply = new ConcurrentHashMap<>();
-                concurrentLinkedQueue = null;
+                try {
+                    concurrentHashMap = new ConcurrentHashMap<>();
+                    concurrentLinkedQueue = null;
+                } catch (Exception e) {
+                    exc = e;
+                    subscriber2 = subscriber;
+                    Exceptions.throwIfFatal(exc);
+                    subscriber2.onSubscribe(EmptyComponent.INSTANCE);
+                    subscriber2.onError(exc);
+                    return;
+                }
             } else {
                 concurrentLinkedQueue = new ConcurrentLinkedQueue();
-                apply = this.mapFactory.apply(new EvictionAction(concurrentLinkedQueue));
+                concurrentHashMap = this.mapFactory.apply(new EvictionAction(concurrentLinkedQueue));
             }
-            this.source.subscribe((FlowableSubscriber) new GroupBySubscriber(subscriber, this.keySelector, this.valueSelector, this.bufferSize, this.delayError, apply, concurrentLinkedQueue));
-        } catch (Exception e) {
-            Exceptions.throwIfFatal(e);
-            subscriber.onSubscribe(EmptyComponent.INSTANCE);
-            subscriber.onError(e);
+            this.source.subscribe((FlowableSubscriber) new GroupBySubscriber(subscriber, this.keySelector, this.valueSelector, this.bufferSize, this.delayError, concurrentHashMap, concurrentLinkedQueue));
+        } catch (Exception e2) {
+            subscriber2 = subscriber;
+            exc = e2;
         }
     }
 

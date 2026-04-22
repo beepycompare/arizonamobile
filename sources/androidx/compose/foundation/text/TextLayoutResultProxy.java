@@ -89,11 +89,12 @@ public final class TextLayoutResultProxy {
             if (!layoutCoordinates2.isAttached()) {
                 layoutCoordinates2 = null;
             }
-            if (layoutCoordinates2 == null || (layoutCoordinates = this.decorationBoxCoordinates) == null) {
-                return j;
+            if (layoutCoordinates2 != null && (layoutCoordinates = this.decorationBoxCoordinates) != null) {
+                LayoutCoordinates layoutCoordinates3 = layoutCoordinates.isAttached() ? layoutCoordinates : null;
+                if (layoutCoordinates3 != null) {
+                    return layoutCoordinates2.mo6225localPositionOfR5De75A(layoutCoordinates3, j);
+                }
             }
-            LayoutCoordinates layoutCoordinates3 = layoutCoordinates.isAttached() ? layoutCoordinates : null;
-            return layoutCoordinates3 == null ? j : layoutCoordinates2.mo6225localPositionOfR5De75A(layoutCoordinates3, j);
         }
         return j;
     }
@@ -106,17 +107,18 @@ public final class TextLayoutResultProxy {
             if (!layoutCoordinates2.isAttached()) {
                 layoutCoordinates2 = null;
             }
-            if (layoutCoordinates2 == null || (layoutCoordinates = this.decorationBoxCoordinates) == null) {
-                return j;
+            if (layoutCoordinates2 != null && (layoutCoordinates = this.decorationBoxCoordinates) != null) {
+                LayoutCoordinates layoutCoordinates3 = layoutCoordinates.isAttached() ? layoutCoordinates : null;
+                if (layoutCoordinates3 != null) {
+                    return layoutCoordinates3.mo6225localPositionOfR5De75A(layoutCoordinates2, j);
+                }
             }
-            LayoutCoordinates layoutCoordinates3 = layoutCoordinates.isAttached() ? layoutCoordinates : null;
-            return layoutCoordinates3 == null ? j : layoutCoordinates3.mo6225localPositionOfR5De75A(layoutCoordinates2, j);
         }
         return j;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x001c, code lost:
-        if (r2 == null) goto L13;
+        if (r1 == null) goto L13;
      */
     /* renamed from: coercedInVisibleBoundsOfInputText-MK-Hz9U  reason: not valid java name */
     /*

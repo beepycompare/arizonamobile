@@ -11,21 +11,17 @@ public final class OutlinedTextFieldTokens {
     public static final float DisabledLabelOpacity = 0.38f;
     public static final float DisabledLeadingIconOpacity = 0.38f;
     public static final float DisabledOutlineOpacity = 0.12f;
-    private static final float DisabledOutlineWidth;
     public static final float DisabledSupportingOpacity = 0.38f;
     public static final float DisabledTrailingIconOpacity = 0.38f;
-    private static final float HoverOutlineWidth;
-    private static final float LeadingIconSize;
-    private static final float OutlineWidth;
-    private static final float TrailingIconSize;
     public static final OutlinedTextFieldTokens INSTANCE = new OutlinedTextFieldTokens();
     private static final ColorSchemeKeyTokens CaretColor = ColorSchemeKeyTokens.Primary;
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 56.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(56.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraSmall;
     private static final ColorSchemeKeyTokens DisabledInputColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens DisabledLabelColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens DisabledLeadingIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens DisabledOutlineColor = ColorSchemeKeyTokens.OnSurface;
+    private static final float DisabledOutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens DisabledSupportingColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens DisabledTrailingIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ErrorFocusCaretColor = ColorSchemeKeyTokens.Error;
@@ -51,13 +47,14 @@ public final class OutlinedTextFieldTokens {
     private static final ColorSchemeKeyTokens FocusLabelColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens FocusLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens FocusOutlineColor = ColorSchemeKeyTokens.Primary;
-    private static final float FocusOutlineWidth = Dp.m7555constructorimpl((float) 2.0d);
+    private static final float FocusOutlineWidth = Dp.m7555constructorimpl(2.0f);
     private static final ColorSchemeKeyTokens FocusSupportingColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens FocusTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens HoverInputColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens HoverLabelColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens HoverLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens HoverOutlineColor = ColorSchemeKeyTokens.OnSurface;
+    private static final float HoverOutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens HoverSupportingColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens HoverTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens InputColor = ColorSchemeKeyTokens.OnSurface;
@@ -68,22 +65,15 @@ public final class OutlinedTextFieldTokens {
     private static final ColorSchemeKeyTokens LabelColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens LabelFont = TypographyKeyTokens.BodyLarge;
     private static final ColorSchemeKeyTokens LeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final float LeadingIconSize = Dp.m7555constructorimpl(24.0f);
     private static final ColorSchemeKeyTokens OutlineColor = ColorSchemeKeyTokens.Outline;
+    private static final float OutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens SupportingColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens SupportingFont = TypographyKeyTokens.BodySmall;
     private static final ColorSchemeKeyTokens TrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final float TrailingIconSize = Dp.m7555constructorimpl(24.0f);
 
     private OutlinedTextFieldTokens() {
-    }
-
-    static {
-        float f = (float) 1.0d;
-        DisabledOutlineWidth = Dp.m7555constructorimpl(f);
-        HoverOutlineWidth = Dp.m7555constructorimpl(f);
-        float f2 = (float) 24.0d;
-        LeadingIconSize = Dp.m7555constructorimpl(f2);
-        OutlineWidth = Dp.m7555constructorimpl(f);
-        TrailingIconSize = Dp.m7555constructorimpl(f2);
     }
 
     public final ColorSchemeKeyTokens getCaretColor() {

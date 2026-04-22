@@ -63,9 +63,8 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
                                 return CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$1(CombinedClickableNode.this, (Offset) obj);
                             }
                         };
-                        AnonymousClass3 anonymousClass3 = new AnonymousClass3(this.this$0, null);
                         final CombinedClickableNode combinedClickableNode3 = this.this$0;
-                        Object detectTapGestures = TapGestureDetectorKt.detectTapGestures(pointerInputScope, function1, function12, anonymousClass3, new Function1() { // from class: androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$$ExternalSyntheticLambda2
+                        Object detectTapGestures = TapGestureDetectorKt.detectTapGestures(pointerInputScope, function1, function12, new AnonymousClass3(this.this$0, null), new Function1() { // from class: androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$$ExternalSyntheticLambda2
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj) {
                                 return CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$2(CombinedClickableNode.this, (Offset) obj);
@@ -75,9 +74,8 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
                     }
                 }
                 function12 = null;
-                AnonymousClass3 anonymousClass32 = new AnonymousClass3(this.this$0, null);
                 final CombinedClickableNode combinedClickableNode32 = this.this$0;
-                Object detectTapGestures2 = TapGestureDetectorKt.detectTapGestures(pointerInputScope, function1, function12, anonymousClass32, new Function1() { // from class: androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$$ExternalSyntheticLambda2
+                Object detectTapGestures2 = TapGestureDetectorKt.detectTapGestures(pointerInputScope, function1, function12, new AnonymousClass3(this.this$0, null), new Function1() { // from class: androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
                         return CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$2(CombinedClickableNode.this, (Offset) obj);
@@ -91,9 +89,8 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
         if (this.this$0.getEnabled()) {
         }
         function12 = null;
-        AnonymousClass3 anonymousClass322 = new AnonymousClass3(this.this$0, null);
         final CombinedClickableNode combinedClickableNode322 = this.this$0;
-        Object detectTapGestures22 = TapGestureDetectorKt.detectTapGestures(pointerInputScope, function1, function12, anonymousClass322, new Function1() { // from class: androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$$ExternalSyntheticLambda2
+        Object detectTapGestures22 = TapGestureDetectorKt.detectTapGestures(pointerInputScope, function1, function12, new AnonymousClass3(this.this$0, null), new Function1() { // from class: androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$2(CombinedClickableNode.this, (Offset) obj);

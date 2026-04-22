@@ -42,7 +42,7 @@ public final class MarqueeModifierNode$restartAnimation$1 extends SuspendLambda 
         if (r5.join(r4) == r0) goto L14;
      */
     /* JADX WARN: Code restructure failed: missing block: B:16:0x003c, code lost:
-        if (r5 == r0) goto L14;
+        if (r4 == r0) goto L14;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x003e, code lost:
         return r0;

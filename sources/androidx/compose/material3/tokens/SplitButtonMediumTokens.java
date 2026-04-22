@@ -8,19 +8,19 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class SplitButtonMediumTokens {
     public static final int $stable = 0;
-    private static final float LeadingButtonLeadingSpace;
-    private static final float LeadingButtonTrailingSpace;
-    private static final float TrailingButtonLeadingSpace;
-    private static final float TrailingButtonTrailingSpace;
     public static final SplitButtonMediumTokens INSTANCE = new SplitButtonMediumTokens();
-    private static final float BetweenSpace = Dp.m7555constructorimpl((float) 2.0d);
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 56.0d);
+    private static final float BetweenSpace = Dp.m7555constructorimpl(2.0f);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(56.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
     private static final CornerSize InnerCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueExtraSmall();
     private static final CornerSize InnerHoveredCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueMedium();
     private static final CornerSize InnerPressedCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueMedium();
-    private static final float TrailingIconSize = Dp.m7555constructorimpl((float) 26.0d);
+    private static final float LeadingButtonLeadingSpace = Dp.m7555constructorimpl(24.0f);
+    private static final float LeadingButtonTrailingSpace = Dp.m7555constructorimpl(24.0f);
+    private static final float TrailingIconSize = Dp.m7555constructorimpl(26.0f);
     private static final float TrailingInnerSelectedCornerCornerSizePercent = 50.0f;
+    private static final float TrailingButtonLeadingSpace = Dp.m7555constructorimpl(15.0f);
+    private static final float TrailingButtonTrailingSpace = Dp.m7555constructorimpl(15.0f);
 
     private SplitButtonMediumTokens() {
     }
@@ -78,14 +78,5 @@ public final class SplitButtonMediumTokens {
     /* renamed from: getTrailingButtonTrailingSpace-D9Ej5fM  reason: not valid java name */
     public final float m3758getTrailingButtonTrailingSpaceD9Ej5fM() {
         return TrailingButtonTrailingSpace;
-    }
-
-    static {
-        float f = (float) 24.0d;
-        LeadingButtonLeadingSpace = Dp.m7555constructorimpl(f);
-        LeadingButtonTrailingSpace = Dp.m7555constructorimpl(f);
-        float f2 = (float) 15.0d;
-        TrailingButtonLeadingSpace = Dp.m7555constructorimpl(f2);
-        TrailingButtonTrailingSpace = Dp.m7555constructorimpl(f2);
     }
 }

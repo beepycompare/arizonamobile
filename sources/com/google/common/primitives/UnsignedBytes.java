@@ -182,7 +182,7 @@ public final class UnsignedBytes {
                             return compare;
                         }
                         int numberOfTrailingZeros = Long.numberOfTrailingZeros(j2 ^ j3) & (-8);
-                        return ((int) ((j2 >>> numberOfTrailingZeros) & 255)) - ((int) ((j3 >>> numberOfTrailingZeros) & 255));
+                        return ((int) ((j2 >>> numberOfTrailingZeros) & 255)) - ((int) (255 & (j3 >>> numberOfTrailingZeros)));
                     }
                     i2 += 8;
                 }

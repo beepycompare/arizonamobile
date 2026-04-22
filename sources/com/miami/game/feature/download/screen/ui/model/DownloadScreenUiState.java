@@ -167,24 +167,8 @@ public final class DownloadScreenUiState {
         this.launcherUpdateRes = i;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public /* synthetic */ DownloadScreenUiState(String str, String str2, String str3, boolean z, boolean z2, double d, Uri uri, boolean z3, boolean z4, boolean z5, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, str2, str3, z, z2, d, uri, z3, z4, r13, r14);
-        int i3;
-        boolean z6;
-        str2 = (i2 & 2) != 0 ? "" : str2;
-        str3 = (i2 & 4) != 0 ? "" : str3;
-        z4 = (i2 & 256) != 0 ? false : z4;
-        if ((i2 & 512) != 0) {
-            i3 = i;
-            z6 = false;
-        } else {
-            i3 = i;
-            z6 = z5;
-        }
+        this(str, (i2 & 2) != 0 ? "" : str2, (i2 & 4) != 0 ? "" : str3, z, z2, d, uri, z3, (i2 & 256) != 0 ? false : z4, (i2 & 512) != 0 ? false : z5, i);
     }
 
     public final String getTextDownload() {

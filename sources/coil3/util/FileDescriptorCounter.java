@@ -45,6 +45,6 @@ final class FileDescriptorCounter {
     private final boolean checkFileDescriptors() {
         int i = decodesSinceLastFileDescriptorCheck;
         decodesSinceLastFileDescriptorCheck = i + 1;
-        return i >= 30 || SystemClock.uptimeMillis() > lastFileDescriptorCheckTimestamp + ((long) 30000);
+        return i >= 30 || SystemClock.uptimeMillis() > lastFileDescriptorCheckTimestamp + 30000;
     }
 }

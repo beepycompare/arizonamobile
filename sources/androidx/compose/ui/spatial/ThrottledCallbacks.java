@@ -484,15 +484,14 @@ public final class ThrottledCallbacks {
         }
         Entry next = entry2 != null ? entry2.getNext() : null;
         while (true) {
-            Entry entry3 = next;
-            Entry entry4 = entry2;
-            entry2 = entry3;
+            Entry entry3 = entry2;
+            entry2 = next;
             if (entry2 == null) {
                 return false;
             }
             if (entry2 == entry) {
-                if (entry4 != null) {
-                    entry4.setNext(entry2.getNext());
+                if (entry3 != null) {
+                    entry3.setNext(entry2.getNext());
                 }
                 entry.setNext(null);
                 return true;

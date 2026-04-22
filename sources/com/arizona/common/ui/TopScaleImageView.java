@@ -62,7 +62,7 @@ public final class TopScaleImageView extends AppCompatImageView {
         Matrix imageMatrix = getImageMatrix();
         float f4 = this.usedScaleFactor;
         imageMatrix.setScale(f4, f4, 0.0f, 0.0f);
-        imageMatrix.postTranslate((f - f3) / 2, 0.0f);
+        imageMatrix.postTranslate((f - f3) / 2.0f, 0.0f);
         setImageMatrix(imageMatrix);
         return super.setFrame(i, i2, i3, i4);
     }

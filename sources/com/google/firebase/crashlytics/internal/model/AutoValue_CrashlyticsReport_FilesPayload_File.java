@@ -42,7 +42,7 @@ final class AutoValue_CrashlyticsReport_FilesPayload_File extends CrashlyticsRep
     }
 
     public int hashCode() {
-        return ((this.filename.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.contents);
+        return Arrays.hashCode(this.contents) ^ ((this.filename.hashCode() ^ 1000003) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

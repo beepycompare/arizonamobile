@@ -230,7 +230,6 @@ public class SlidingPaneLayout extends ViewGroup implements Openable {
         int i2;
         int i3;
         int i4;
-        View childAt;
         boolean z;
         View view2 = view;
         boolean isLayoutRtlSupport = isLayoutRtlSupport();
@@ -251,7 +250,11 @@ public class SlidingPaneLayout extends ViewGroup implements Openable {
         }
         int childCount = getChildCount();
         int i5 = 0;
-        while (i5 < childCount && (childAt = getChildAt(i5)) != view2) {
+        while (i5 < childCount) {
+            View childAt = getChildAt(i5);
+            if (childAt == view2) {
+                return;
+            }
             if (childAt.getVisibility() == 8) {
                 z = isLayoutRtlSupport;
             } else {

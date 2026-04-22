@@ -346,7 +346,6 @@ public final class MobileRentAccessoryModel {
 
     public final double calculateDistanceToEnter(MobileRentAccessoryMainAdapter.Companion.UserPosition userPositon) {
         Intrinsics.checkNotNullParameter(userPositon, "userPositon");
-        double d = 2;
-        return Math.sqrt(Math.pow(this.enterX - userPositon.getX(), d) + Math.pow(this.enterY - userPositon.getY(), d) + Math.pow(this.enterZ - userPositon.getZ(), d));
+        return Math.sqrt(Math.pow(this.enterX - userPositon.getX(), 2.0d) + Math.pow(this.enterY - userPositon.getY(), 2.0d) + Math.pow(this.enterZ - userPositon.getZ(), 2.0d));
     }
 }

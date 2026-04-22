@@ -13,16 +13,20 @@ public final class j implements b {
         this.f449a = fVar;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r8v4 */
+    /* JADX WARN: Type inference failed for: r8v7, types: [io.appmetrica.analytics.identifiers.impl.f] */
+    /* JADX WARN: Type inference failed for: r8v8 */
+    /* JADX WARN: Type inference failed for: r8v9 */
     @Override // io.appmetrica.analytics.identifiers.impl.b
     public final c a(Context context) {
         c cVar;
-        f fVar;
         try {
             try {
                 try {
                     m mVar = (m) ((o) this.f449a.a(context));
                     cVar = new c(IdentifierStatus.OK, new a("huawei", mVar.a(), Boolean.valueOf(mVar.b())), null, 4);
-                    fVar = this.f449a;
+                    this = this.f449a;
                 } catch (Throwable unused) {
                 }
             } catch (g e) {
@@ -31,16 +35,16 @@ public final class j implements b {
                     message = "unknown exception during binding huawei services";
                 }
                 cVar = new c(IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE, null, message);
-                fVar = this.f449a;
-                fVar.b(context);
+                this = this.f449a;
+                this.b(context);
                 return cVar;
             } catch (Throwable th) {
                 cVar = new c(IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE, null, "exception while fetching hoaid: " + th.getMessage());
-                fVar = this.f449a;
-                fVar.b(context);
+                this = this.f449a;
+                this.b(context);
                 return cVar;
             }
-            fVar.b(context);
+            this.b(context);
             return cVar;
         } catch (Throwable th2) {
             try {

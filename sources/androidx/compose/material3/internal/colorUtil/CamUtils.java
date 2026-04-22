@@ -131,11 +131,11 @@ public final class CamUtils {
     }
 
     public final double yFromLstar(double d) {
-        return (d > 8.0d ? Math.pow((d + 16.0d) / 116.0d, 3.0d) : d / 903.2962962962963d) * 100.0d;
+        return d > 8.0d ? Math.pow((d + 16.0d) / 116.0d, 3.0d) * 100.0d : (d / 903.2962962962963d) * 100.0d;
     }
 
     private final float linearized(int i) {
         float f = i / 255.0f;
-        return (f <= 0.04045f ? f / 12.92f : (float) Math.pow((f + 0.055f) / 1.055f, 2.4f)) * 100.0f;
+        return (f <= 0.04045f ? f / 12.92f : (float) Math.pow((f + 0.055f) / 1.055f, 2.4000000953674316d)) * 100.0f;
     }
 }

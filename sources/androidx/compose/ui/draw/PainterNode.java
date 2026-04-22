@@ -232,14 +232,14 @@ final class PainterNode extends Modifier.Node implements LayoutModifierNode, Dra
         } else {
             intBitsToFloat2 = Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() & 4294967295L));
         }
-        long m4587constructorimpl = Size.m4587constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
+        long m4587constructorimpl = Size.m4587constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L));
         if (Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() >> 32)) != 0.0f && Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() & 4294967295L)) != 0.0f) {
             m4605getZeroNHjbRc = ScaleFactorKt.m6347timesUQTWf7w(m4587constructorimpl, this.contentScale.mo6209computeScaleFactorH7hwNQA(m4587constructorimpl, contentDrawScope.mo5346getSizeNHjbRc()));
         } else {
             m4605getZeroNHjbRc = Size.Companion.m4605getZeroNHjbRc();
         }
         long j = m4605getZeroNHjbRc;
-        long mo4246alignKFBX0sM = this.alignment.mo4246alignKFBX0sM(IntSize.m7721constructorimpl((Math.round(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Math.round(Float.intBitsToFloat((int) (j >> 32))) << 32)), IntSize.m7721constructorimpl((Math.round(Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() >> 32))) << 32) | (Math.round(Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() & 4294967295L))) & 4294967295L)), contentDrawScope.getLayoutDirection());
+        long mo4246alignKFBX0sM = this.alignment.mo4246alignKFBX0sM(IntSize.m7721constructorimpl((Math.round(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Math.round(Float.intBitsToFloat((int) (j >> 32))) << 32)), IntSize.m7721constructorimpl((Math.round(Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() & 4294967295L))) & 4294967295L) | (Math.round(Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() >> 32))) << 32)), contentDrawScope.getLayoutDirection());
         float m7683getXimpl = IntOffset.m7683getXimpl(mo4246alignKFBX0sM);
         float m7684getYimpl = IntOffset.m7684getYimpl(mo4246alignKFBX0sM);
         ContentDrawScope contentDrawScope2 = contentDrawScope;

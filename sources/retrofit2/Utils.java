@@ -365,7 +365,7 @@ public final class Utils {
         public int hashCode() {
             int hashCode = Arrays.hashCode(this.typeArguments) ^ this.rawType.hashCode();
             Type type = this.ownerType;
-            return hashCode ^ (type != null ? type.hashCode() : 0);
+            return (type != null ? type.hashCode() : 0) ^ hashCode;
         }
 
         public String toString() {
@@ -456,7 +456,7 @@ public final class Utils {
 
         public int hashCode() {
             Type type = this.lowerBound;
-            return (type != null ? type.hashCode() + 31 : 1) ^ (this.upperBound.hashCode() + 31);
+            return (this.upperBound.hashCode() + 31) ^ (type != null ? type.hashCode() + 31 : 1);
         }
 
         public String toString() {

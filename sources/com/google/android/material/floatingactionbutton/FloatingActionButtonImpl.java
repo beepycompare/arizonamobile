@@ -476,7 +476,6 @@ public class FloatingActionButtonImpl {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void show(final InternalVisibilityChangedListener internalVisibilityChangedListener, final boolean z) {
         AnimatorSet createDefaultAnimator;
-        FloatingActionButtonImpl floatingActionButtonImpl;
         if (isOrWillBeShown()) {
             return;
         }
@@ -497,10 +496,8 @@ public class FloatingActionButtonImpl {
             MotionSpec motionSpec = this.showMotionSpec;
             if (motionSpec != null) {
                 createDefaultAnimator = createAnimator(motionSpec, 1.0f, 1.0f, 1.0f);
-                floatingActionButtonImpl = this;
             } else {
                 createDefaultAnimator = createDefaultAnimator(1.0f, 1.0f, 1.0f, SHOW_ANIM_DURATION_ATTR, SHOW_ANIM_EASING_ATTR);
-                floatingActionButtonImpl = this;
             }
             createDefaultAnimator.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.floatingactionbutton.FloatingActionButtonImpl.2
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -520,7 +517,7 @@ public class FloatingActionButtonImpl {
                     }
                 }
             });
-            ArrayList<Animator.AnimatorListener> arrayList = floatingActionButtonImpl.showListeners;
+            ArrayList<Animator.AnimatorListener> arrayList = this.showListeners;
             if (arrayList != null) {
                 Iterator<Animator.AnimatorListener> it = arrayList.iterator();
                 while (it.hasNext()) {

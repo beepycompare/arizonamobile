@@ -28,8 +28,10 @@ public final class C0801o {
         long j;
         String str2;
         String str3;
-        long j2;
         int i;
+        long j2;
+        String str4;
+        int i2;
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         AppUpdateInfo.Factory factory = this.f1558a;
         long j3 = bundle.getLong("APPLICATION_ID", 0L);
@@ -51,9 +53,9 @@ public final class C0801o {
             string4 = "";
         }
         long j5 = bundle.getLong("AVAILABLE_VERSION_CODE_LONG", bundle.getInt("AVAILABLE_VERSION_CODE"));
-        int i2 = bundle.getInt("INSTALL_STATUS", 0);
-        String str4 = string;
-        int i3 = bundle.getInt("UPDATE_AVAILABILITY", 0);
+        int i3 = bundle.getInt("INSTALL_STATUS", 0);
+        String str5 = string;
+        int i4 = bundle.getInt("UPDATE_AVAILABILITY", 0);
         int coerceIn = RangesKt.coerceIn(bundle.getInt("UPDATE_PRIORITY", 0), (ClosedRange<Integer>) new IntRange(0, 5));
         Date time = this.b.f1551a.getTime();
         Intrinsics.checkNotNullExpressionValue(time, "calendar.time");
@@ -64,18 +66,22 @@ public final class C0801o {
             str = "";
             j = j3;
             str2 = string2;
-            str3 = str4;
-            i = coerceIn;
+            str3 = str5;
+            i = i4;
+            str4 = string5;
+            i2 = coerceIn;
             j2 = j4;
         } else {
             str = string6;
             j = j3;
             str2 = string2;
-            str3 = str4;
+            str3 = str5;
+            i = i4;
             j2 = j4;
-            i = coerceIn;
+            str4 = string5;
+            i2 = coerceIn;
         }
-        return factory.create$sdk_public_appupdate_release(j, str3, str2, j2, string3, string4, j5, i2, i3, i, string5, str);
+        return factory.create$sdk_public_appupdate_release(j, str3, str2, j2, string3, string4, j5, i3, i, i2, str4, str);
     }
 
     public static Bundle a(AppUpdateInfo appUpdateInfo) {

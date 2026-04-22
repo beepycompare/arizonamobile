@@ -148,8 +148,7 @@ public interface Density extends FontScaling {
     /* renamed from: toSize-XkaWNTQ */
     default long mo406toSizeXkaWNTQ(long j) {
         if (j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
-            float mo405toPx0680j_4 = mo405toPx0680j_4(DpSize.m7653getWidthD9Ej5fM(j));
-            return Size.m4587constructorimpl((Float.floatToRawIntBits(mo405toPx0680j_4(DpSize.m7651getHeightD9Ej5fM(j))) & 4294967295L) | (Float.floatToRawIntBits(mo405toPx0680j_4) << 32));
+            return Size.m4587constructorimpl((Float.floatToRawIntBits(mo405toPx0680j_4(DpSize.m7653getWidthD9Ej5fM(j))) << 32) | (Float.floatToRawIntBits(mo405toPx0680j_4(DpSize.m7651getHeightD9Ej5fM(j))) & 4294967295L));
         }
         return Size.Companion.m4604getUnspecifiedNHjbRc();
     }

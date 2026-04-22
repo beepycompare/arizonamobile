@@ -99,18 +99,19 @@ public class CombinedParallelSampleBandwidthEstimator implements BandwidthEstima
         Preconditions.checkState(this.streamCount > 0);
         int i = this.streamCount - 1;
         this.streamCount = i;
-        if (i <= 0) {
-            long elapsedRealtime = (int) (this.clock.elapsedRealtime() - this.sampleStartTimeMs);
-            if (elapsedRealtime > 0) {
-                this.bandwidthStatistic.addSample(this.sampleBytesTransferred, 1000 * elapsedRealtime);
-                int i2 = this.totalSamplesAdded + 1;
-                this.totalSamplesAdded = i2;
-                if (i2 > this.minSamples && this.totalBytesTransferred > this.minBytesTransferred) {
-                    this.bandwidthEstimate = this.bandwidthStatistic.getBandwidthEstimate();
-                }
-                maybeNotifyBandwidthSample((int) elapsedRealtime, this.sampleBytesTransferred, this.bandwidthEstimate);
-                this.sampleBytesTransferred = 0L;
+        if (i > 0) {
+            return;
+        }
+        long elapsedRealtime = (int) (this.clock.elapsedRealtime() - this.sampleStartTimeMs);
+        if (elapsedRealtime > 0) {
+            this.bandwidthStatistic.addSample(this.sampleBytesTransferred, 1000 * elapsedRealtime);
+            int i2 = this.totalSamplesAdded + 1;
+            this.totalSamplesAdded = i2;
+            if (i2 > this.minSamples && this.totalBytesTransferred > this.minBytesTransferred) {
+                this.bandwidthEstimate = this.bandwidthStatistic.getBandwidthEstimate();
             }
+            maybeNotifyBandwidthSample((int) elapsedRealtime, this.sampleBytesTransferred, this.bandwidthEstimate);
+            this.sampleBytesTransferred = 0L;
         }
     }
 

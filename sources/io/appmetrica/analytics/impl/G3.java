@@ -137,17 +137,13 @@ public final class G3 {
                 newConfigBuilder.withCustomHosts(AbstractC0271gb.a(jSONObject.optJSONArray("customHosts")));
             }
             if (jSONObject.has("additional_config")) {
-                try {
-                    C7 c7 = this.f590a;
-                    jSONObject.optJSONObject("additional_config");
-                    c7.getClass();
-                    return newConfigBuilder;
-                } catch (Throwable unused2) {
-                    return null;
-                }
+                C7 c7 = this.f590a;
+                jSONObject.optJSONObject("additional_config");
+                c7.getClass();
             }
             return newConfigBuilder;
-        } catch (Throwable unused3) {
+        } catch (Throwable unused2) {
+            return null;
         }
     }
 

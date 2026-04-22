@@ -203,7 +203,7 @@ public final class HandwritingGesture_androidKt {
         } else if (m1394getLineForHandwritingGestured4ec7I2 == -1) {
             return TextRange.Companion.m7008getZerod9O1mEE();
         }
-        float lineTop = (textLayoutResult.getLineTop(m1394getLineForHandwritingGestured4ec7I2) + textLayoutResult.getLineBottom(m1394getLineForHandwritingGestured4ec7I2)) / 2;
+        float lineTop = (textLayoutResult.getLineTop(m1394getLineForHandwritingGestured4ec7I2) + textLayoutResult.getLineBottom(m1394getLineForHandwritingGestured4ec7I2)) / 2.0f;
         int i = (int) (mo6230screenToLocalMKHz9U >> 32);
         int i2 = (int) (mo6230screenToLocalMKHz9U2 >> 32);
         return textLayoutResult.getMultiParagraph().m6865getRangeForRect86BmAI(new Rect(Math.min(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), lineTop - 0.1f, Math.max(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), lineTop + 0.1f), TextGranularity.Companion.m6965getCharacterDRrd7Zo(), TextInclusionStrategy.Companion.getAnyOverlap());

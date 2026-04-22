@@ -137,7 +137,7 @@ public final class VelocityTrackerKt {
             float f3 = fArr2[i4];
             if (f != f3) {
                 float f4 = (z ? -fArr[i4] : fArr[i3] - fArr[i4]) / (f - f3);
-                f2 += (f4 - (Math.signum(f2) * ((float) Math.sqrt(2 * Math.abs(f2))))) * Math.abs(f4);
+                f2 += (f4 - (Math.signum(f2) * ((float) Math.sqrt(2.0f * Math.abs(f2))))) * Math.abs(f4);
                 if (i3 == i2) {
                     f2 *= 0.5f;
                 }
@@ -145,11 +145,11 @@ public final class VelocityTrackerKt {
             i3--;
             f = f3;
         }
-        return Math.signum(f2) * ((float) Math.sqrt(2 * Math.abs(f2)));
+        return Math.signum(f2) * ((float) Math.sqrt(2.0f * Math.abs(f2)));
     }
 
     private static final float kineticEnergyToVelocity(float f) {
-        return Math.signum(f) * ((float) Math.sqrt(2 * Math.abs(f)));
+        return Math.signum(f) * ((float) Math.sqrt(2.0f * Math.abs(f)));
     }
 
     private static final float dot(float[] fArr, float[] fArr2) {

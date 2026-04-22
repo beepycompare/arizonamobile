@@ -26,7 +26,7 @@ public final class BlurKt {
     /* renamed from: blur-1fqS-gw  reason: not valid java name */
     public static final Modifier m4292blur1fqSgw(Modifier modifier, final float f, final float f2, final Shape shape) {
         int m5168getDecal3opZhB0;
-        final boolean z;
+        boolean z;
         if (shape != null) {
             m5168getDecal3opZhB0 = TileMode.Companion.m5167getClamp3opZhB0();
             z = true;
@@ -35,8 +35,8 @@ public final class BlurKt {
             z = false;
         }
         final int i = m5168getDecal3opZhB0;
-        float f3 = 0;
-        return ((Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(f3)) <= 0 || Dp.m7554compareTo0680j_4(f2, Dp.m7555constructorimpl(f3)) <= 0) && !z) ? modifier : GraphicsLayerModifierKt.graphicsLayer(modifier, new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.compose.ui.draw.BlurKt$blur$1
+        final boolean z2 = z;
+        return ((Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0.0f)) <= 0 || Dp.m7554compareTo0680j_4(f2, Dp.m7555constructorimpl(0.0f)) <= 0) && !z2) ? modifier : GraphicsLayerModifierKt.graphicsLayer(modifier, new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.compose.ui.draw.BlurKt$blur$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -51,15 +51,15 @@ public final class BlurKt {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(GraphicsLayerScope graphicsLayerScope) {
-                float f4 = graphicsLayerScope.mo405toPx0680j_4(f);
-                float f5 = graphicsLayerScope.mo405toPx0680j_4(f2);
-                graphicsLayerScope.setRenderEffect((f4 <= 0.0f || f5 <= 0.0f) ? null : RenderEffectKt.m5096BlurEffect3YTHUZs(f4, f5, i));
+                float f3 = graphicsLayerScope.mo405toPx0680j_4(f);
+                float f4 = graphicsLayerScope.mo405toPx0680j_4(f2);
+                graphicsLayerScope.setRenderEffect((f3 <= 0.0f || f4 <= 0.0f) ? null : RenderEffectKt.m5096BlurEffect3YTHUZs(f3, f4, i));
                 Shape shape2 = shape;
                 if (shape2 == null) {
                     shape2 = RectangleShapeKt.getRectangleShape();
                 }
                 graphicsLayerScope.setShape(shape2);
-                graphicsLayerScope.setClip(z);
+                graphicsLayerScope.setClip(z2);
             }
         });
     }

@@ -44,11 +44,29 @@ public final class FlowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1<T> impl
         this.$action$inlined = function3;
     }
 
+    /* JADX WARN: Can't wrap try/catch for region: R(12:1|(2:3|(9:5|6|7|(1:(1:(1:(5:12|13|14|15|16)(2:22|23))(2:24|25))(2:26|27))(2:38|39)|28|29|30|(3:32|15|16)|33))|45|6|7|(0)(0)|28|29|30|(0)|33|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0066, code lost:
+        if (r10.collect(r9, r0) == r1) goto L33;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x008e, code lost:
+        r9 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x008f, code lost:
+        r9 = r8.$action$inlined;
+        r0.L$0 = r9;
+        r0.L$1 = null;
+        r0.label = 2;
+        r9 = kotlinx.coroutines.flow.FlowKt__EmittersKt.invokeSafely$FlowKt__EmittersKt(new kotlinx.coroutines.flow.ThrowingCollector(r9), r9, r9, r0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x00a5, code lost:
+        if (r9 == r1) goto L33;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:50:?, code lost:
+        throw r9;
+     */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00a9 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:56:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0054  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0081  */
     @Override // kotlinx.coroutines.flow.Flow
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -57,10 +75,7 @@ public final class FlowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1<T> impl
         AnonymousClass1 anonymousClass1;
         Object coroutine_suspended;
         int i;
-        FlowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1<T> flowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1;
-        Object invokeSafely$FlowKt__EmittersKt;
         SafeCollector safeCollector;
-        Throwable th;
         SafeCollector safeCollector2;
         Function3 function3;
         try {
@@ -73,41 +88,23 @@ public final class FlowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1<T> impl
                     i = anonymousClass1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        try {
-                            Flow flow = this.$this_onCompletion$inlined;
-                            anonymousClass1.L$0 = this;
-                            anonymousClass1.L$1 = flowCollector;
-                            anonymousClass1.label = 1;
-                            if (flow.collect(flowCollector, anonymousClass1) != coroutine_suspended) {
-                                flowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1 = this;
-                            }
-                        } catch (Throwable th2) {
-                            th = th2;
-                            flowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1 = this;
-                            Function3 function32 = flowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1.$action$inlined;
-                            anonymousClass1.L$0 = th;
-                            anonymousClass1.L$1 = null;
-                            anonymousClass1.label = 2;
-                            invokeSafely$FlowKt__EmittersKt = FlowKt__EmittersKt.invokeSafely$FlowKt__EmittersKt(new ThrowingCollector(th), function32, th, anonymousClass1);
-                            if (invokeSafely$FlowKt__EmittersKt != coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                            throw th;
-                        }
-                        return coroutine_suspended;
+                        Flow flow = this.$this_onCompletion$inlined;
+                        anonymousClass1.L$0 = this;
+                        anonymousClass1.L$1 = flowCollector;
+                        anonymousClass1.label = 1;
                     } else if (i != 1) {
                         if (i == 2) {
-                            Throwable th3 = (Throwable) anonymousClass1.L$0;
+                            Throwable th = (Throwable) anonymousClass1.L$0;
                             ResultKt.throwOnFailure(obj);
-                            throw th3;
+                            throw th;
                         } else if (i == 3) {
                             safeCollector2 = (SafeCollector) anonymousClass1.L$0;
                             try {
                                 ResultKt.throwOnFailure(obj);
                                 safeCollector2.releaseIntercepted();
                                 return Unit.INSTANCE;
-                            } catch (Throwable th4) {
-                                th = th4;
+                            } catch (Throwable th2) {
+                                th = th2;
                                 safeCollector2.releaseIntercepted();
                                 throw th;
                             }
@@ -116,22 +113,11 @@ public final class FlowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1<T> impl
                         }
                     } else {
                         flowCollector = (FlowCollector) anonymousClass1.L$1;
-                        flowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1 = (FlowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1) anonymousClass1.L$0;
-                        try {
-                            ResultKt.throwOnFailure(obj);
-                        } catch (Throwable th5) {
-                            th = th5;
-                            Function3 function322 = flowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1.$action$inlined;
-                            anonymousClass1.L$0 = th;
-                            anonymousClass1.L$1 = null;
-                            anonymousClass1.label = 2;
-                            invokeSafely$FlowKt__EmittersKt = FlowKt__EmittersKt.invokeSafely$FlowKt__EmittersKt(new ThrowingCollector(th), function322, th, anonymousClass1);
-                            if (invokeSafely$FlowKt__EmittersKt != coroutine_suspended) {
-                            }
-                        }
+                        this = (FlowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1) anonymousClass1.L$0;
+                        ResultKt.throwOnFailure(obj);
                     }
                     safeCollector = new SafeCollector(flowCollector, anonymousClass1.getContext());
-                    function3 = flowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1.$action$inlined;
+                    function3 = this.$action$inlined;
                     anonymousClass1.L$0 = safeCollector;
                     anonymousClass1.L$1 = null;
                     anonymousClass1.label = 3;
@@ -143,15 +129,15 @@ public final class FlowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1<T> impl
                     return coroutine_suspended;
                 }
             }
-            function3 = flowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1.$action$inlined;
+            function3 = this.$action$inlined;
             anonymousClass1.L$0 = safeCollector;
             anonymousClass1.L$1 = null;
             anonymousClass1.label = 3;
             if (function3.invoke(safeCollector, null, anonymousClass1) != coroutine_suspended) {
             }
             return coroutine_suspended;
-        } catch (Throwable th6) {
-            th = th6;
+        } catch (Throwable th3) {
+            th = th3;
             safeCollector2 = safeCollector;
             safeCollector2.releaseIntercepted();
             throw th;

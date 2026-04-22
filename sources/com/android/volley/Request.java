@@ -393,9 +393,18 @@ public abstract class Request<T> implements Comparable<Request<T>> {
     }
 
     public int compareTo(Request<T> request) {
+        int ordinal;
+        int ordinal2;
         Priority priority = getPriority();
         Priority priority2 = request.getPriority();
-        return priority == priority2 ? this.mSequence.intValue() - request.mSequence.intValue() : priority2.ordinal() - priority.ordinal();
+        if (priority == priority2) {
+            ordinal = this.mSequence.intValue();
+            ordinal2 = request.mSequence.intValue();
+        } else {
+            ordinal = priority2.ordinal();
+            ordinal2 = priority.ordinal();
+        }
+        return ordinal - ordinal2;
     }
 
     public String toString() {

@@ -123,7 +123,7 @@ public final class PrintHelper {
         @Override // android.print.PrintDocumentAdapter
         public void onLayout(PrintAttributes printAttributes, PrintAttributes printAttributes2, CancellationSignal cancellationSignal, PrintDocumentAdapter.LayoutResultCallback layoutResultCallback, Bundle bundle) {
             this.mAttributes = printAttributes2;
-            layoutResultCallback.onLayoutFinished(new PrintDocumentInfo.Builder(this.mJobName).setContentType(1).setPageCount(1).build(), !printAttributes2.equals(printAttributes));
+            layoutResultCallback.onLayoutFinished(new PrintDocumentInfo.Builder(this.mJobName).setContentType(1).setPageCount(1).build(), true ^ printAttributes2.equals(printAttributes));
         }
 
         @Override // android.print.PrintDocumentAdapter
@@ -197,7 +197,7 @@ public final class PrintHelper {
             if (cancellationSignal.isCanceled()) {
                 layoutResultCallback.onLayoutCancelled();
             } else if (this.mBitmap != null) {
-                layoutResultCallback.onLayoutFinished(new PrintDocumentInfo.Builder(this.mJobName).setContentType(1).setPageCount(1).build(), !printAttributes2.equals(printAttributes));
+                layoutResultCallback.onLayoutFinished(new PrintDocumentInfo.Builder(this.mJobName).setContentType(1).setPageCount(1).build(), true ^ printAttributes2.equals(printAttributes));
             } else {
                 this.mLoadBitmap = new AsyncTask<Uri, Boolean, Bitmap>() { // from class: androidx.print.PrintHelper.PrintUriAdapter.1
                     @Override // android.os.AsyncTask

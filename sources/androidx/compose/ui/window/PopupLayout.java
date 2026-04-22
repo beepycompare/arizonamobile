@@ -181,7 +181,7 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
                 return Boolean.valueOf((parentLayoutCoordinates == null || PopupLayout.this.m7810getPopupContentSizebOM6tXw() == null) ? false : true);
             }
         });
-        float m7555constructorimpl = Dp.m7555constructorimpl(8);
+        float m7555constructorimpl = Dp.m7555constructorimpl(8.0f);
         this.maxSupportedElevation = m7555constructorimpl;
         this.previousWindowVisibleFrame = new Rect();
         this.snapshotStateObserver = new SnapshotStateObserver(new PopupLayout$snapshotStateObserver$1(this));

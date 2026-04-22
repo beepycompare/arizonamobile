@@ -193,6 +193,11 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
         }
 
         /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r11v0, types: [androidx.compose.foundation.gestures.DragGestureNode$initializePointerInputNode$1$1] */
+        /* JADX WARN: Type inference failed for: r11v1, types: [androidx.compose.foundation.gestures.DragGestureNode$initializePointerInputNode$1$1] */
+        /* JADX WARN: Type inference failed for: r11v10 */
+        /* JADX WARN: Type inference failed for: r11v11 */
+        /* JADX WARN: Type inference failed for: r11v8 */
         /* JADX WARN: Type inference failed for: r1v0, types: [int] */
         /* JADX WARN: Type inference failed for: r1v1, types: [kotlinx.coroutines.CoroutineScope] */
         /* JADX WARN: Type inference failed for: r1v4 */
@@ -209,8 +214,10 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
                     CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
                     this.L$0 = coroutineScope;
                     this.label = 1;
+                    Object detectDragGestures = DragGestureDetectorKt.detectDragGestures(this.$this_SuspendingPointerInputModifierNode, this.this$0.getOrientationLock(), this.$onDragStart, this.$onDragEnd, this.$onDragCancel, this.$shouldAwaitTouchSlop, this.$onDrag, (Continuation) this);
                     r1 = coroutineScope;
-                    if (DragGestureDetectorKt.detectDragGestures(this.$this_SuspendingPointerInputModifierNode, this.this$0.getOrientationLock(), this.$onDragStart, this.$onDragEnd, this.$onDragCancel, this.$shouldAwaitTouchSlop, this.$onDrag, this) == coroutine_suspended) {
+                    this = detectDragGestures;
+                    if (detectDragGestures == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (r1 != 1) {
@@ -219,6 +226,7 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
                     CoroutineScope coroutineScope2 = (CoroutineScope) this.L$0;
                     ResultKt.throwOnFailure(obj);
                     r1 = coroutineScope2;
+                    this = this;
                 }
             } catch (CancellationException e) {
                 channel = this.this$0.channel;

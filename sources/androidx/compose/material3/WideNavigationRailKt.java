@@ -74,20 +74,20 @@ import kotlin.ranges.RangesKt;
 /* loaded from: classes.dex */
 public final class WideNavigationRailKt {
     private static final String HeaderLayoutIdTag = "header";
-    private static final float ItemStartIconIndicatorVerticalPadding;
-    private static final float ItemTopIconIndicatorHorizontalPadding;
-    private static final float ItemTopIconIndicatorVerticalPadding;
     private static final float PredictiveBackPivotFractionY = 0.5f;
-    private static final float WNRItemNoLabelIndicatorPadding;
-    private static final float ItemHorizontalPadding = Dp.m7555constructorimpl(20);
+    private static final float WNRItemNoLabelIndicatorPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m3575getActiveIndicatorWidthD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / 2.0f);
+    private static final float ItemHorizontalPadding = Dp.m7555constructorimpl(20.0f);
     private static final float WNRVerticalPadding = NavigationRailCollapsedTokens.INSTANCE.m3563getTopSpaceD9Ej5fM();
     private static final float WNRHeaderPadding = NavigationRailBaselineItemTokens.INSTANCE.m3557getHeaderSpaceMinimumD9Ej5fM();
     private static final float CollapsedRailWidth = NavigationRailCollapsedTokens.INSTANCE.m3560getContainerWidthD9Ej5fM();
     private static final float ExpandedRailMinWidth = NavigationRailExpandedTokens.INSTANCE.m3566getContainerWidthMinimumD9Ej5fM();
     private static final float ExpandedRailMaxWidth = NavigationRailExpandedTokens.INSTANCE.m3565getContainerWidthMaximumD9Ej5fM();
     private static final float TopIconItemMinHeight = NavigationRailBaselineItemTokens.INSTANCE.m3555getContainerHeightD9Ej5fM();
-    private static final float PredictiveBackMaxScaleXDistance = Dp.m7555constructorimpl(24);
-    private static final float PredictiveBackMaxScaleYDistance = Dp.m7555constructorimpl(48);
+    private static final float ItemTopIconIndicatorVerticalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m3574getActiveIndicatorHeightD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / 2.0f);
+    private static final float ItemTopIconIndicatorHorizontalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m3575getActiveIndicatorWidthD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / 2.0f);
+    private static final float ItemStartIconIndicatorVerticalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailHorizontalItemTokens.INSTANCE.m3569getActiveIndicatorHeightD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / 2.0f);
+    private static final float PredictiveBackMaxScaleXDistance = Dp.m7555constructorimpl(24.0f);
+    private static final float PredictiveBackMaxScaleYDistance = Dp.m7555constructorimpl(48.0f);
     private static final ProvidableCompositionLocal<WideNavigationRailOverride> LocalWideNavigationRailOverride = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.material3.WideNavigationRailKt$$ExternalSyntheticLambda11
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
@@ -504,7 +504,7 @@ public final class WideNavigationRailKt {
             } else {
                 startRestartGroup.startReplaceGroup(-597966102);
                 startRestartGroup.endReplaceGroup();
-                m7569unboximpl = Dp.m7555constructorimpl(0);
+                m7569unboximpl = Dp.m7555constructorimpl(0.0f);
             }
             float f = m7569unboximpl;
             FiniteAnimationSpec value = MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultSpatial, startRestartGroup, 6);
@@ -518,7 +518,7 @@ public final class WideNavigationRailKt {
             if (!z2) {
                 m7555constructorimpl = NavigationRailCollapsedTokens.INSTANCE.m3561getItemVerticalSpaceD9Ej5fM();
             } else {
-                m7555constructorimpl = Dp.m7555constructorimpl(0);
+                m7555constructorimpl = Dp.m7555constructorimpl(0.0f);
             }
             FiniteAnimationSpec finiteAnimationSpec = value;
             State<Dp> m161animateDpAsStateAjpBEmI3 = AnimateAsStateKt.m161animateDpAsStateAjpBEmI(m7555constructorimpl, finiteAnimationSpec, null, null, startRestartGroup, 0, 12);
@@ -557,8 +557,8 @@ public final class WideNavigationRailKt {
     /* JADX WARN: Removed duplicated region for block: B:123:0x0161  */
     /* JADX WARN: Removed duplicated region for block: B:124:0x0164  */
     /* JADX WARN: Removed duplicated region for block: B:141:0x019b  */
-    /* JADX WARN: Removed duplicated region for block: B:210:0x02f4  */
-    /* JADX WARN: Removed duplicated region for block: B:213:0x030e  */
+    /* JADX WARN: Removed duplicated region for block: B:210:0x02f3  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x030d  */
     /* JADX WARN: Removed duplicated region for block: B:215:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:38:0x006f  */
     /* JADX WARN: Removed duplicated region for block: B:46:0x0084  */
@@ -806,7 +806,7 @@ public final class WideNavigationRailKt {
                     if (i5 != 0) {
                         obj4 = null;
                     }
-                    float m7555constructorimpl = i6 != 0 ? Dp.m7555constructorimpl(0) : f2;
+                    float m7555constructorimpl = i6 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
                     if ((i3 & 256) != 0) {
                         windowInsets3 = WideNavigationRailDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
                         i4 &= -234881025;
@@ -1640,14 +1640,6 @@ public final class WideNavigationRailKt {
 
     public static final float getWNRItemNoLabelIndicatorPadding() {
         return WNRItemNoLabelIndicatorPadding;
-    }
-
-    static {
-        float f = 2;
-        WNRItemNoLabelIndicatorPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m3575getActiveIndicatorWidthD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / f);
-        ItemTopIconIndicatorVerticalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m3574getActiveIndicatorHeightD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / f);
-        ItemTopIconIndicatorHorizontalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m3575getActiveIndicatorWidthD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / f);
-        ItemStartIconIndicatorVerticalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationRailHorizontalItemTokens.INSTANCE.m3569getActiveIndicatorHeightD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m3558getIconSizeD9Ej5fM()) / f);
     }
 
     public static final ProvidableCompositionLocal<WideNavigationRailOverride> getLocalWideNavigationRailOverride() {

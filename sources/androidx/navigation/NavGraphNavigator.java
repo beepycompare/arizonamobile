@@ -55,7 +55,7 @@ public class NavGraphNavigator extends Navigator<NavGraph> {
         }
     }
 
-    /* JADX WARN: Type inference failed for: r2v16, types: [android.os.Bundle, T] */
+    /* JADX WARN: Type inference failed for: r2v15, types: [android.os.Bundle, T] */
     /* JADX WARN: Type inference failed for: r8v1, types: [android.os.Bundle, T] */
     private final void navigate(NavBackStackEntry navBackStackEntry, NavOptions navOptions, Navigator.Extras extras) {
         NavDestination navDestination;

@@ -32,32 +32,21 @@ public class DynamicTableModel extends TableModel {
         return rectF2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0023  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0026  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     private float calculateCellSize(RectF rectF, TableModel.Axis axis, int i) {
         int i2;
         float height;
-        float f;
-        int i3;
-        int i4 = AnonymousClass1.$SwitchMap$com$androidplot$ui$TableModel$Axis[axis.ordinal()];
-        if (i4 == 1) {
+        int i3 = AnonymousClass1.$SwitchMap$com$androidplot$ui$TableModel$Axis[axis.ordinal()];
+        if (i3 == 1) {
             i2 = this.numRows;
             height = rectF.height();
-        } else if (i4 != 2) {
-            i3 = 0;
-            f = 0.0f;
-            return f / (i3 == 0 ? i3 : i);
+        } else if (i3 != 2) {
+            i2 = 0;
+            height = 0.0f;
         } else {
             i2 = this.numColumns;
             height = rectF.width();
         }
-        int i5 = i2;
-        f = height;
-        i3 = i5;
-        return f / (i3 == 0 ? i3 : i);
+        return height / (i2 != 0 ? i2 : i);
     }
 
     public int getNumRows() {

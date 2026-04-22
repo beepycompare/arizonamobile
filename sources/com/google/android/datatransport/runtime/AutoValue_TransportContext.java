@@ -46,7 +46,7 @@ final class AutoValue_TransportContext extends TransportContext {
     }
 
     public int hashCode() {
-        return ((((this.backendName.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.extras)) * 1000003) ^ this.priority.hashCode();
+        return this.priority.hashCode() ^ ((((this.backendName.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.extras)) * 1000003);
     }
 
     /* loaded from: classes3.dex */

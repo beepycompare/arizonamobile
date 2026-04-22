@@ -73,11 +73,9 @@ public final class SpringEstimationKt {
                 while (d5 > 0.001d && i < 100) {
                     i++;
                     double d13 = d * log;
-                    double d14 = d6;
-                    double exp2 = log - ((((d2 + (d8 * log)) * Math.exp(d13)) + d6) / ((((1 + d13) * d8) + d7) * Math.exp(d13)));
+                    double exp2 = log - ((((d2 + (d8 * log)) * Math.exp(d13)) + d6) / ((((1.0d + d13) * d8) + d7) * Math.exp(d13)));
                     d5 = Math.abs(log - exp2);
                     log = exp2;
-                    d6 = d14;
                 }
                 return log;
             } else if (d8 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE && d2 > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
@@ -89,11 +87,9 @@ public final class SpringEstimationKt {
         while (d5 > 0.001d) {
             i++;
             double d132 = d * log;
-            double d142 = d6;
-            double exp22 = log - ((((d2 + (d8 * log)) * Math.exp(d132)) + d6) / ((((1 + d132) * d8) + d7) * Math.exp(d132)));
+            double exp22 = log - ((((d2 + (d8 * log)) * Math.exp(d132)) + d6) / ((((1.0d + d132) * d8) + d7) * Math.exp(d132)));
             d5 = Math.abs(log - exp22);
             log = exp22;
-            d6 = d142;
         }
         return log;
     }

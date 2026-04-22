@@ -43,12 +43,18 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1<T> implements Fl
         this.$action$inlined = function3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0068, code lost:
-        if (r2.invoke(r6, r7, r0) == r1) goto L21;
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0054, code lost:
+        if (r7 == r1) goto L21;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0068, code lost:
+        if (r5.invoke(r6, r7, r0) == r1) goto L21;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x006a, code lost:
+        return r1;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0042  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x005b  */
     @Override // kotlinx.coroutines.flow.Flow
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -56,7 +62,6 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1<T> implements Fl
     public Object collect(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
         AnonymousClass1 anonymousClass1;
         int i;
-        FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1<T> flowKt__ErrorsKt$catch$$inlined$unsafeFlow$1;
         Throwable th;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
@@ -72,10 +77,6 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1<T> implements Fl
                     anonymousClass1.L$1 = flowCollector;
                     anonymousClass1.label = 1;
                     obj = FlowKt.catchImpl(flow, flowCollector, anonymousClass1);
-                    if (obj != coroutine_suspended) {
-                        flowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 = this;
-                    }
-                    return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
                         ResultKt.throwOnFailure(obj);
@@ -84,12 +85,12 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1<T> implements Fl
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     flowCollector = (FlowCollector) anonymousClass1.L$1;
-                    flowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 = (FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1) anonymousClass1.L$0;
+                    this = (FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1) anonymousClass1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 th = (Throwable) obj;
                 if (th != null) {
-                    Function3 function3 = flowKt__ErrorsKt$catch$$inlined$unsafeFlow$1.$action$inlined;
+                    Function3 function3 = this.$action$inlined;
                     anonymousClass1.L$0 = null;
                     anonymousClass1.L$1 = null;
                     anonymousClass1.label = 2;

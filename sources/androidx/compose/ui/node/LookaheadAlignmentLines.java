@@ -38,6 +38,6 @@ public final class LookaheadAlignmentLines extends AlignmentLines {
         LookaheadDelegate lookaheadDelegate = nodeCoordinator.getLookaheadDelegate();
         Intrinsics.checkNotNull(lookaheadDelegate);
         long mo6464getPositionnOccac = lookaheadDelegate.mo6464getPositionnOccac();
-        return Offset.m4532plusMKHz9U(Offset.m4519constructorimpl((Float.floatToRawIntBits(IntOffset.m7683getXimpl(mo6464getPositionnOccac)) << 32) | (Float.floatToRawIntBits(IntOffset.m7684getYimpl(mo6464getPositionnOccac)) & 4294967295L)), j);
+        return Offset.m4532plusMKHz9U(Offset.m4519constructorimpl((Float.floatToRawIntBits(IntOffset.m7684getYimpl(mo6464getPositionnOccac)) & 4294967295L) | (Float.floatToRawIntBits(IntOffset.m7683getXimpl(mo6464getPositionnOccac)) << 32)), j);
     }
 }

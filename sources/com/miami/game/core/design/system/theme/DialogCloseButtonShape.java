@@ -22,7 +22,7 @@ public final class DialogCloseButtonShape implements Shape {
         Intrinsics.checkNotNullParameter(density, "density");
         Path path$default = PathParser.toPath$default(new PathParser().parsePathString("M153.1,94.82L155.77,22.82C156.24,10.35,146.26,0,133.79,0H25.12C13.29,0,3.58,9.36,3.14,21.18L0.47,93.18C0,105.65,9.98,116,22.45,116H131.12C142.95,116,152.66,106.64,153.1,94.82Z"), null, 1, null);
         float[] m5016constructorimpl$default = Matrix.m5016constructorimpl$default(null, 1, null);
-        Matrix.m5032scaleimpl$default(m5016constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 157, Float.intBitsToFloat((int) (j & 4294967295L)) / 116, 0.0f, 4, null);
+        Matrix.m5032scaleimpl$default(m5016constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 157.0f, Float.intBitsToFloat((int) (j & 4294967295L)) / 116.0f, 0.0f, 4, null);
         path$default.mo4663transform58bKbWc(m5016constructorimpl$default);
         return new Outline.Generic(path$default);
     }

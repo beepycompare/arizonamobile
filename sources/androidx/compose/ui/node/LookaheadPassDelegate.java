@@ -187,13 +187,12 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
                         layoutNode2 = LookaheadPassDelegate.this.getLayoutNode();
                         placementScope = LayoutNodeKt.requireOwner(layoutNode2).getPlacementScope();
                     }
-                    Placeable.PlacementScope placementScope2 = placementScope;
                     LookaheadPassDelegate lookaheadPassDelegate = LookaheadPassDelegate.this;
                     outerCoordinator2 = lookaheadPassDelegate.getOuterCoordinator();
                     LookaheadDelegate lookaheadDelegate2 = outerCoordinator2.getLookaheadDelegate();
                     Intrinsics.checkNotNull(lookaheadDelegate2);
                     j = lookaheadPassDelegate.lastPosition;
-                    Placeable.PlacementScope.m6282place70tqf50$default(placementScope2, lookaheadDelegate2, j, 0.0f, 2, null);
+                    Placeable.PlacementScope.m6282place70tqf50$default(placementScope, lookaheadDelegate2, j, 0.0f, 2, null);
                 }
             }
             outerCoordinator = LookaheadPassDelegate.this.getOuterCoordinator();
@@ -203,13 +202,12 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
             }
             if (placementScope == null) {
             }
-            Placeable.PlacementScope placementScope22 = placementScope;
             LookaheadPassDelegate lookaheadPassDelegate2 = LookaheadPassDelegate.this;
             outerCoordinator2 = lookaheadPassDelegate2.getOuterCoordinator();
             LookaheadDelegate lookaheadDelegate22 = outerCoordinator2.getLookaheadDelegate();
             Intrinsics.checkNotNull(lookaheadDelegate22);
             j = lookaheadPassDelegate2.lastPosition;
-            Placeable.PlacementScope.m6282place70tqf50$default(placementScope22, lookaheadDelegate22, j, 0.0f, 2, null);
+            Placeable.PlacementScope.m6282place70tqf50$default(placementScope, lookaheadDelegate22, j, 0.0f, 2, null);
         }
     };
 
@@ -656,19 +654,18 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
         setLayoutState(LayoutNode.LayoutState.Idle);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0044 A[Catch: all -> 0x00e4, TryCatch #0 {all -> 0x00e4, blocks: (B:3:0x0004, B:5:0x000e, B:6:0x0013, B:9:0x002d, B:14:0x0037, B:16:0x0044, B:22:0x0055, B:24:0x005f, B:25:0x0066, B:19:0x004a, B:27:0x006e, B:29:0x0090, B:31:0x00a0, B:36:0x00b1, B:37:0x00b6, B:39:0x00d8, B:30:0x0095), top: B:47:0x0004 }] */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0090 A[Catch: all -> 0x00e4, TryCatch #0 {all -> 0x00e4, blocks: (B:3:0x0004, B:5:0x000e, B:6:0x0013, B:9:0x002d, B:14:0x0037, B:16:0x0044, B:22:0x0055, B:24:0x005f, B:25:0x0066, B:19:0x004a, B:27:0x006e, B:29:0x0090, B:31:0x00a0, B:36:0x00b1, B:37:0x00b6, B:39:0x00d8, B:30:0x0095), top: B:47:0x0004 }] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0095 A[Catch: all -> 0x00e4, TryCatch #0 {all -> 0x00e4, blocks: (B:3:0x0004, B:5:0x000e, B:6:0x0013, B:9:0x002d, B:14:0x0037, B:16:0x0044, B:22:0x0055, B:24:0x005f, B:25:0x0066, B:19:0x004a, B:27:0x006e, B:29:0x0090, B:31:0x00a0, B:36:0x00b1, B:37:0x00b6, B:39:0x00d8, B:30:0x0095), top: B:47:0x0004 }] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00ac  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00b1 A[Catch: all -> 0x00e4, TryCatch #0 {all -> 0x00e4, blocks: (B:3:0x0004, B:5:0x000e, B:6:0x0013, B:9:0x002d, B:14:0x0037, B:16:0x0044, B:22:0x0055, B:24:0x005f, B:25:0x0066, B:19:0x004a, B:27:0x006e, B:29:0x0090, B:31:0x00a0, B:36:0x00b1, B:37:0x00b6, B:39:0x00d8, B:30:0x0095), top: B:47:0x0004 }] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0044 A[Catch: all -> 0x00e2, TryCatch #0 {all -> 0x00e2, blocks: (B:3:0x0004, B:5:0x000e, B:6:0x0013, B:9:0x002d, B:14:0x0037, B:16:0x0044, B:22:0x0055, B:24:0x005f, B:25:0x0066, B:19:0x004a, B:27:0x006e, B:29:0x0089, B:31:0x0097, B:36:0x00a8, B:37:0x00ad, B:39:0x00d6, B:30:0x008e), top: B:47:0x0004 }] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0089 A[Catch: all -> 0x00e2, TryCatch #0 {all -> 0x00e2, blocks: (B:3:0x0004, B:5:0x000e, B:6:0x0013, B:9:0x002d, B:14:0x0037, B:16:0x0044, B:22:0x0055, B:24:0x005f, B:25:0x0066, B:19:0x004a, B:27:0x006e, B:29:0x0089, B:31:0x0097, B:36:0x00a8, B:37:0x00ad, B:39:0x00d6, B:30:0x008e), top: B:47:0x0004 }] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x008e A[Catch: all -> 0x00e2, TryCatch #0 {all -> 0x00e2, blocks: (B:3:0x0004, B:5:0x000e, B:6:0x0013, B:9:0x002d, B:14:0x0037, B:16:0x0044, B:22:0x0055, B:24:0x005f, B:25:0x0066, B:19:0x004a, B:27:0x006e, B:29:0x0089, B:31:0x0097, B:36:0x00a8, B:37:0x00ad, B:39:0x00d6, B:30:0x008e), top: B:47:0x0004 }] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00a8 A[Catch: all -> 0x00e2, TryCatch #0 {all -> 0x00e2, blocks: (B:3:0x0004, B:5:0x000e, B:6:0x0013, B:9:0x002d, B:14:0x0037, B:16:0x0044, B:22:0x0055, B:24:0x005f, B:25:0x0066, B:19:0x004a, B:27:0x006e, B:29:0x0089, B:31:0x0097, B:36:0x00a8, B:37:0x00ad, B:39:0x00d6, B:30:0x008e), top: B:47:0x0004 }] */
     /* renamed from: remeasure-BRTryo0  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean m6480remeasureBRTryo0(long j) {
         boolean z;
-        long m7721constructorimpl;
         LookaheadDelegate lookaheadDelegate;
         LayoutNode layoutNode = getLayoutNode();
         try {
@@ -706,20 +703,15 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
                         alignmentLinesOwner.getAlignmentLines().setUsedDuringParentMeasurement$ui(false);
                     }
                 });
-                if (this.measuredOnce) {
-                    long j2 = Integer.MIN_VALUE;
-                    m7721constructorimpl = IntSize.m7721constructorimpl((j2 & 4294967295L) | (j2 << 32));
-                } else {
-                    m7721constructorimpl = m6277getMeasuredSizeYbymL2g();
-                }
+                long j2 = !this.measuredOnce ? m6277getMeasuredSizeYbymL2g() : IntSize.m7721constructorimpl(-9223372034707292160L);
                 this.measuredOnce = true;
                 lookaheadDelegate = getOuterCoordinator().getLookaheadDelegate();
                 if (!(lookaheadDelegate == null)) {
                     InlineClassHelperKt.throwIllegalStateException("Lookahead result from lookaheadRemeasure cannot be null");
                 }
                 this.layoutNodeLayoutDelegate.m6461performLookaheadMeasureBRTryo0$ui(j);
-                m6280setMeasuredSizeozmzZPI(IntSize.m7721constructorimpl((lookaheadDelegate.getHeight() & 4294967295L) | (lookaheadDelegate.getWidth() << 32)));
-                return ((int) (m7721constructorimpl >> 32)) == lookaheadDelegate.getWidth() || ((int) (m7721constructorimpl & 4294967295L)) != lookaheadDelegate.getHeight();
+                m6280setMeasuredSizeozmzZPI(IntSize.m7721constructorimpl((lookaheadDelegate.getWidth() << 32) | (lookaheadDelegate.getHeight() & 4294967295L)));
+                return ((int) (j2 >> 32)) == lookaheadDelegate.getWidth() || ((int) (j2 & 4294967295L)) != lookaheadDelegate.getHeight();
             }
             z = true;
             layoutNode2.setCanMultiMeasure$ui(z);
@@ -740,15 +732,15 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
                     alignmentLinesOwner.getAlignmentLines().setUsedDuringParentMeasurement$ui(false);
                 }
             });
-            if (this.measuredOnce) {
+            if (!this.measuredOnce) {
             }
             this.measuredOnce = true;
             lookaheadDelegate = getOuterCoordinator().getLookaheadDelegate();
             if (!(lookaheadDelegate == null)) {
             }
             this.layoutNodeLayoutDelegate.m6461performLookaheadMeasureBRTryo0$ui(j);
-            m6280setMeasuredSizeozmzZPI(IntSize.m7721constructorimpl((lookaheadDelegate.getHeight() & 4294967295L) | (lookaheadDelegate.getWidth() << 32)));
-            if (((int) (m7721constructorimpl >> 32)) == lookaheadDelegate.getWidth()) {
+            m6280setMeasuredSizeozmzZPI(IntSize.m7721constructorimpl((lookaheadDelegate.getWidth() << 32) | (lookaheadDelegate.getHeight() & 4294967295L)));
+            if (((int) (j2 >> 32)) == lookaheadDelegate.getWidth()) {
             }
         } catch (Throwable th) {
             layoutNode.rethrowWithComposeStackTrace(th);
@@ -1071,7 +1063,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
             lookaheadPassDelegate = this;
             try {
                 lookaheadPassDelegate.m6477placeSelfMLgxB_4(this.lastPosition, 0.0f, this.lastLayerBlock, this.lastExplicitLayer);
-                if (isPlaced$ui && !lookaheadPassDelegate.onNodePlacedCalled && (parent$ui = getLayoutNode().getParent$ui()) != null) {
+                if (isPlaced$ui && !lookaheadPassDelegate.onNodePlacedCalled && (parent$ui = lookaheadPassDelegate.getLayoutNode().getParent$ui()) != null) {
                     LayoutNode.requestLookaheadRelayout$ui$default(parent$ui, false, 1, null);
                 }
                 lookaheadPassDelegate.relayoutWithoutParentInProgress = false;

@@ -220,8 +220,8 @@ public final class DerivedSnapshotState<T> extends StateObjectImpl implements De
                                     }
                                     j >>= i4;
                                     i10++;
-                                    i8 = i4;
                                     i5 = i3;
+                                    i8 = i4;
                                 }
                                 i2 = i5;
                                 if (i9 != i8) {
@@ -259,9 +259,12 @@ public final class DerivedSnapshotState<T> extends StateObjectImpl implements De
 
     private final ResultRecord<T> currentRecord(ResultRecord<T> resultRecord, Snapshot snapshot, boolean z, Function0<? extends T> function0) {
         SnapshotMutationPolicy<T> policy;
+        long[] jArr;
+        long[] jArr2;
         int i;
         ResultRecord<T> resultRecord2 = resultRecord;
         DerivedSnapshotState<T> derivedSnapshotState = this;
+        int i2 = 0;
         if (!resultRecord2.isValid(derivedSnapshotState, snapshot)) {
             final MutableObjectIntMap mutableObjectIntMap = new MutableObjectIntMap(0, 1, null);
             final IntRef intRef = (IntRef) SnapshotStateKt__DerivedStateKt.calculationBlockNestedLevel.get();
@@ -273,8 +276,8 @@ public final class DerivedSnapshotState<T> extends StateObjectImpl implements De
             MutableVector<DerivedStateObserver> derivedStateObservers = SnapshotStateKt.derivedStateObservers();
             DerivedStateObserver[] derivedStateObserverArr = derivedStateObservers.content;
             int size = derivedStateObservers.getSize();
-            for (int i2 = 0; i2 < size; i2++) {
-                derivedStateObserverArr[i2].start(derivedSnapshotState);
+            for (int i3 = 0; i3 < size; i3++) {
+                derivedStateObserverArr[i3].start(derivedSnapshotState);
             }
             try {
                 intRef.setElement(element + 1);
@@ -289,8 +292,8 @@ public final class DerivedSnapshotState<T> extends StateObjectImpl implements De
                 intRef.setElement(element);
                 DerivedStateObserver[] derivedStateObserverArr2 = derivedStateObservers.content;
                 int size2 = derivedStateObservers.getSize();
-                for (int i3 = 0; i3 < size2; i3++) {
-                    derivedStateObserverArr2[i3].done(derivedSnapshotState);
+                for (int i4 = 0; i4 < size2; i4++) {
+                    derivedStateObserverArr2[i4].done(derivedSnapshotState);
                 }
                 synchronized (SnapshotKt.getLock()) {
                     Snapshot current = Snapshot.Companion.getCurrent();
@@ -319,8 +322,8 @@ public final class DerivedSnapshotState<T> extends StateObjectImpl implements De
             } catch (Throwable th) {
                 DerivedStateObserver[] derivedStateObserverArr3 = derivedStateObservers.content;
                 int size3 = derivedStateObservers.getSize();
-                for (int i4 = 0; i4 < size3; i4++) {
-                    derivedStateObserverArr3[i4].done(derivedSnapshotState);
+                for (int i5 = 0; i5 < size3; i5++) {
+                    derivedStateObserverArr3[i5].done(derivedSnapshotState);
                 }
                 throw th;
             }
@@ -329,8 +332,8 @@ public final class DerivedSnapshotState<T> extends StateObjectImpl implements De
             MutableVector<DerivedStateObserver> derivedStateObservers2 = SnapshotStateKt.derivedStateObservers();
             DerivedStateObserver[] derivedStateObserverArr4 = derivedStateObservers2.content;
             int size4 = derivedStateObservers2.getSize();
-            for (int i5 = 0; i5 < size4; i5++) {
-                derivedStateObserverArr4[i5].start(derivedSnapshotState);
+            for (int i6 = 0; i6 < size4; i6++) {
+                derivedStateObserverArr4[i6].start(derivedSnapshotState);
             }
             try {
                 ObjectIntMap<StateObject> dependencies = resultRecord2.getDependencies();
@@ -342,43 +345,48 @@ public final class DerivedSnapshotState<T> extends StateObjectImpl implements De
                 int element2 = intRef3.getElement();
                 Object[] objArr = dependencies.keys;
                 int[] iArr = dependencies.values;
-                long[] jArr = dependencies.metadata;
-                int length = jArr.length - 2;
+                long[] jArr3 = dependencies.metadata;
+                int length = jArr3.length - 2;
                 if (length >= 0) {
-                    int i6 = 0;
+                    int i7 = 0;
                     while (true) {
-                        long j = jArr[i6];
-                        long[] jArr2 = jArr;
+                        long j = jArr3[i7];
                         if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                            int i7 = 8;
-                            int i8 = 8 - ((~(i6 - length)) >>> 31);
-                            int i9 = 0;
-                            while (i9 < i8) {
+                            int i8 = 8;
+                            int i9 = 8 - ((~(i7 - length)) >>> 31);
+                            while (i2 < i9) {
                                 if ((j & 255) < 128) {
-                                    int i10 = (i6 << 3) + i9;
-                                    i = i7;
+                                    int i10 = (i7 << 3) + i2;
+                                    i = i8;
                                     StateObject stateObject = (StateObject) objArr[i10];
+                                    jArr2 = jArr3;
                                     intRef3.setElement(element2 + iArr[i10]);
                                     Function1<Object, Unit> readObserver = snapshot.getReadObserver();
                                     if (readObserver != null) {
                                         readObserver.invoke(stateObject);
                                     }
                                 } else {
-                                    i = i7;
+                                    jArr2 = jArr3;
+                                    i = i8;
                                 }
                                 j >>= i;
-                                i9++;
-                                i7 = i;
+                                i2++;
+                                i8 = i;
+                                jArr3 = jArr2;
                             }
-                            if (i8 != i7) {
+                            jArr = jArr3;
+                            if (i9 != i8) {
                                 break;
                             }
+                        } else {
+                            jArr = jArr3;
                         }
-                        if (i6 == length) {
+                        if (i7 == length) {
                             break;
                         }
-                        i6++;
-                        jArr = jArr2;
+                        i7++;
+                        jArr3 = jArr;
+                        i2 = 0;
                     }
                 }
                 intRef3.setElement(element2);

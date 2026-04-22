@@ -76,16 +76,16 @@ public final class AbsoluteCutCornerShapeKt {
     /* renamed from: AbsoluteCutCornerShape-a9UjIt4$default  reason: not valid java name */
     public static /* synthetic */ AbsoluteCutCornerShape m1112AbsoluteCutCornerShapea9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m7555constructorimpl(0);
+            f3 = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m7555constructorimpl(0);
+            f4 = Dp.m7555constructorimpl(0.0f);
         }
         return m1111AbsoluteCutCornerShapea9UjIt4(f, f2, f3, f4);
     }

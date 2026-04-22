@@ -101,19 +101,19 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
     @Override // androidx.compose.foundation.relocation.BringIntoViewResponder
     public Object bringChildIntoView(Function0<Rect> function0, Continuation<? super Unit> continuation) {
         Rect invoke = function0.invoke();
-        if (invoke != null && !m436isMaxVisibleEQwtKw$default(this, invoke, 0L, 0L, 3, null)) {
-            CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(continuation), 1);
-            cancellableContinuationImpl.initCancellability();
-            if (this.bringIntoViewRequests.enqueue(new Request(function0, cancellableContinuationImpl)) && !this.isAnimationRunning) {
-                m438launchAnimationgyyYBs$default(this, 0L, 1, null);
-            }
-            Object result = cancellableContinuationImpl.getResult();
-            if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
-                DebugProbesKt.probeCoroutineSuspended(continuation);
-            }
-            return result == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? result : Unit.INSTANCE;
+        if (invoke == null || m436isMaxVisibleEQwtKw$default(this, invoke, 0L, 0L, 3, null)) {
+            return Unit.INSTANCE;
         }
-        return Unit.INSTANCE;
+        CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(continuation), 1);
+        cancellableContinuationImpl.initCancellability();
+        if (this.bringIntoViewRequests.enqueue(new Request(function0, cancellableContinuationImpl)) && !this.isAnimationRunning) {
+            m438launchAnimationgyyYBs$default(this, 0L, 1, null);
+        }
+        Object result = cancellableContinuationImpl.getResult();
+        if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
+            DebugProbesKt.probeCoroutineSuspended(continuation);
+        }
+        return result == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? result : Unit.INSTANCE;
     }
 
     public final void onFocusBoundsChanged(LayoutCoordinates layoutCoordinates) {
@@ -126,7 +126,7 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
             contentInViewNode = this;
             if (!m436isMaxVisibleEQwtKw$default(contentInViewNode, focusedChildBounds, this.viewportSize, 0L, 2, null)) {
                 contentInViewNode.trackingFocusedChild = true;
-                m438launchAnimationgyyYBs$default(this, 0L, 1, null);
+                m438launchAnimationgyyYBs$default(contentInViewNode, 0L, 1, null);
             }
         }
         contentInViewNode.childWasMaxVisibleBeforeViewportShrunk = false;
@@ -142,26 +142,25 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
         }
         long j2 = this.viewportSize;
         this.viewportSize = j;
-        if (m433compareToTemP2vQ(j, j2) < 0) {
-            if (!this.reverseDirection) {
-                if (this.orientation == Orientation.Vertical) {
-                    m7694getZeronOccac = IntOffset.m7677constructorimpl((0 << 32) | ((((int) (j2 & 4294967295L)) - ((int) (j & 4294967295L))) & 4294967295L));
-                } else {
-                    m7694getZeronOccac = IntOffset.m7677constructorimpl(((((int) (j2 >> 32)) - ((int) (j >> 32))) << 32) | (0 & 4294967295L));
-                }
-            } else {
-                m7694getZeronOccac = IntOffset.Companion.m7694getZeronOccac();
-            }
-            long j3 = m7694getZeronOccac;
-            Rect invoke = this.getFocusedRect.invoke();
-            if (invoke != null && !this.isAnimationRunning && !this.trackingFocusedChild && m436isMaxVisibleEQwtKw$default(this, invoke, j2, 0L, 2, null)) {
-                if (m436isMaxVisibleEQwtKw$default(this, invoke, 0L, j3, 1, null)) {
-                    return;
-                }
-                this.trackingFocusedChild = true;
-                m437launchAnimationgyyYBs(j3);
-            }
+        if (m433compareToTemP2vQ(j, j2) >= 0) {
+            return;
         }
+        if (!this.reverseDirection) {
+            if (this.orientation == Orientation.Vertical) {
+                m7694getZeronOccac = IntOffset.m7677constructorimpl((((int) (j2 & 4294967295L)) - ((int) (j & 4294967295L))) & 4294967295L);
+            } else {
+                m7694getZeronOccac = IntOffset.m7677constructorimpl((((int) (j2 >> 32)) - ((int) (j >> 32))) << 32);
+            }
+        } else {
+            m7694getZeronOccac = IntOffset.Companion.m7694getZeronOccac();
+        }
+        long j3 = m7694getZeronOccac;
+        Rect invoke = this.getFocusedRect.invoke();
+        if (invoke == null || this.isAnimationRunning || this.trackingFocusedChild || !m436isMaxVisibleEQwtKw$default(this, invoke, j2, 0L, 2, null) || m436isMaxVisibleEQwtKw$default(this, invoke, 0L, j3, 1, null)) {
+            return;
+        }
+        this.trackingFocusedChild = true;
+        m437launchAnimationgyyYBs(j3);
     }
 
     /* renamed from: onRemeasuredLegacy-ozmzZPI  reason: not valid java name */
@@ -169,12 +168,10 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
         Rect focusedChildBounds;
         long j2 = this.viewportSize;
         this.viewportSize = j;
-        if (m433compareToTemP2vQ(j, j2) >= 0 || this.isAnimationRunning || this.trackingFocusedChild || (focusedChildBounds = getFocusedChildBounds()) == null) {
+        if (m433compareToTemP2vQ(j, j2) >= 0 || this.isAnimationRunning || this.trackingFocusedChild || (focusedChildBounds = getFocusedChildBounds()) == null || !m436isMaxVisibleEQwtKw$default(this, focusedChildBounds, j2, 0L, 2, null)) {
             return;
         }
-        if (m436isMaxVisibleEQwtKw$default(this, focusedChildBounds, j2, 0L, 2, null)) {
-            this.childWasMaxVisibleBeforeViewportShrunk = true;
-        }
+        this.childWasMaxVisibleBeforeViewportShrunk = true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

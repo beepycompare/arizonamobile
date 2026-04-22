@@ -429,8 +429,8 @@ public class AuthorizationClient implements Serializable {
                 return null;
             } else {
                 boolean contains = ServerProtocol.errorsUserCanceled.contains(string);
-                AuthorizationClient authorizationClient = AuthorizationClient.this;
-                return contains ? Result.createCancelResult(authorizationClient.pendingRequest, null) : Result.createErrorResult(authorizationClient.pendingRequest, string, string3, string2);
+                AuthorizationRequest authorizationRequest = AuthorizationClient.this.pendingRequest;
+                return contains ? Result.createCancelResult(authorizationRequest, null) : Result.createErrorResult(authorizationRequest, string, string3, string2);
             }
         }
 
@@ -1065,13 +1065,13 @@ public class AuthorizationClient implements Serializable {
             List<AuthHandler> list = authorizationClient.handlersToTry;
             if (list == null || list.isEmpty()) {
                 if (authorizationClient.pendingRequest != null) {
-                    completeWithFailure();
+                    authorizationClient.completeWithFailure();
                     return;
                 }
                 return;
             }
             authorizationClient.currentHandler = authorizationClient.handlersToTry.remove(0);
-        } while (!tryCurrentHandler());
+        } while (!authorizationClient.tryCurrentHandler());
     }
 
     void validateSameFbidAndFinish(Result result) {

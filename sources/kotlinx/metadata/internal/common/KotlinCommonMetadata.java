@@ -68,16 +68,16 @@ public final class KotlinCommonMetadata {
         Intrinsics.checkNotNullExpressionValue(qualifiedNames, "getQualifiedNames(...)");
         NameResolverImpl nameResolverImpl = new NameResolverImpl(strings, qualifiedNames);
         if (packageFragment.hasPackage()) {
-            ProtoBuf.Package r3 = packageFragment.getPackage();
-            Intrinsics.checkNotNullExpressionValue(r3, "getPackage(...)");
-            kmModuleFragment.setPkg(ReadersKt.toKmPackage$default(r3, nameResolverImpl, false, null, 6, null));
+            ProtoBuf.Package r2 = packageFragment.getPackage();
+            Intrinsics.checkNotNullExpressionValue(r2, "getPackage(...)");
+            kmModuleFragment.setPkg(ReadersKt.toKmPackage$default(r2, nameResolverImpl, false, null, 6, null));
         }
         List<ProtoBuf.Class> class_List = packageFragment.getClass_List();
         Intrinsics.checkNotNullExpressionValue(class_List, "getClass_List(...)");
         List<KmClass> classes = kmModuleFragment.getClasses();
-        for (ProtoBuf.Class r4 : class_List) {
-            Intrinsics.checkNotNull(r4);
-            classes.add(ReadersKt.toKmClass$default(r4, nameResolverImpl, false, null, 6, null));
+        for (ProtoBuf.Class r3 : class_List) {
+            Intrinsics.checkNotNull(r3);
+            classes.add(ReadersKt.toKmClass$default(r3, nameResolverImpl, false, null, 6, null));
         }
         return kmModuleFragment;
     }

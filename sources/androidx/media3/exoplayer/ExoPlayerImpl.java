@@ -3208,26 +3208,13 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
 
         @Override // androidx.media3.exoplayer.video.VideoFrameMetadataListener
         public void onVideoFrameAboutToBeRendered(long j, long j2, Format format, MediaFormat mediaFormat) {
-            long j3;
-            long j4;
-            Format format2;
-            MediaFormat mediaFormat2;
             VideoFrameMetadataListener videoFrameMetadataListener = this.internalVideoFrameMetadataListener;
             if (videoFrameMetadataListener != null) {
                 videoFrameMetadataListener.onVideoFrameAboutToBeRendered(j, j2, format, mediaFormat);
-                mediaFormat2 = mediaFormat;
-                format2 = format;
-                j4 = j2;
-                j3 = j;
-            } else {
-                j3 = j;
-                j4 = j2;
-                format2 = format;
-                mediaFormat2 = mediaFormat;
             }
             VideoFrameMetadataListener videoFrameMetadataListener2 = this.videoFrameMetadataListener;
             if (videoFrameMetadataListener2 != null) {
-                videoFrameMetadataListener2.onVideoFrameAboutToBeRendered(j3, j4, format2, mediaFormat2);
+                videoFrameMetadataListener2.onVideoFrameAboutToBeRendered(j, j2, format, mediaFormat);
             }
         }
 

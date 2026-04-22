@@ -90,7 +90,7 @@ public final class TextMeasurer {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:27:0x0037, code lost:
-            if (r2 != false) goto L18;
+            if (r1 != false) goto L18;
          */
         /* JADX WARN: Removed duplicated region for block: B:34:0x0055  */
         /* JADX WARN: Removed duplicated region for block: B:41:0x0069  */

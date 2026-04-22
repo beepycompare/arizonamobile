@@ -115,26 +115,13 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
         MediaMetadataRetriever build = this.factory.build();
         try {
             this.initializer.initializeRetriever(build, t);
-            try {
-                Bitmap decodeFrame = decodeFrame(t, build, longValue, num.intValue(), i, i2, downsampleStrategy2);
-                if (Build.VERSION.SDK_INT >= 29) {
-                    UByte$$ExternalSyntheticBackport0.m9256m((Object) build);
-                } else {
-                    build.release();
-                }
-                return BitmapResource.obtain(decodeFrame, this.bitmapPool);
-            } catch (Throwable th) {
-                th = th;
-                Throwable th2 = th;
-                if (Build.VERSION.SDK_INT >= 29) {
-                    UByte$$ExternalSyntheticBackport0.m9256m((Object) build);
-                } else {
-                    build.release();
-                }
-                throw th2;
+            return BitmapResource.obtain(decodeFrame(t, build, longValue, num.intValue(), i, i2, downsampleStrategy2), this.bitmapPool);
+        } finally {
+            if (Build.VERSION.SDK_INT >= 29) {
+                UByte$$ExternalSyntheticBackport0.m9256m((Object) build);
+            } else {
+                build.release();
             }
-        } catch (Throwable th3) {
-            th = th3;
         }
     }
 

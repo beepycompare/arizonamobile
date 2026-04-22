@@ -24,7 +24,7 @@ public abstract class RunOnce {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:25:0x005d, code lost:
-        if (r8.lock(null, r0) == r1) goto L32;
+        if (r7.lock(null, r0) == r1) goto L32;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x0045  */
@@ -38,7 +38,6 @@ public abstract class RunOnce {
         int i;
         Mutex mutex;
         Mutex mutex2;
-        Throwable th;
         try {
             if (continuation instanceof RunOnce$runIfNeeded$1) {
                 runOnce$runIfNeeded$1 = (RunOnce$runIfNeeded$1) continuation;
@@ -63,8 +62,8 @@ public abstract class RunOnce {
                                 this.didRun.complete(Unit.INSTANCE);
                                 mutex2.unlock(null);
                                 return Unit.INSTANCE;
-                            } catch (Throwable th2) {
-                                th = th2;
+                            } catch (Throwable th) {
+                                th = th;
                                 mutex2.unlock(null);
                                 throw th;
                             }
@@ -92,9 +91,9 @@ public abstract class RunOnce {
             }
             if (this.didRun.isCompleted()) {
             }
-        } catch (Throwable th3) {
+        } catch (Throwable th2) {
+            th = th2;
             mutex2 = mutex;
-            th = th3;
             mutex2.unlock(null);
             throw th;
         }

@@ -414,10 +414,10 @@ public final class Sonic {
         public void interpolateFrame(int i, long j, long j2) {
             int i2 = 0;
             while (i2 < Sonic.this.channelCount) {
-                long j3 = j;
-                this.outputBuffer[(Sonic.this.outputFrameCount * Sonic.this.channelCount) + i2] = interpolate(this.pitchBuffer, (Sonic.this.channelCount * i) + i2, j3, j2);
+                SonicFloatImpl sonicFloatImpl = this;
+                this.outputBuffer[(Sonic.this.outputFrameCount * Sonic.this.channelCount) + i2] = sonicFloatImpl.interpolate(this.pitchBuffer, (Sonic.this.channelCount * i) + i2, j, j2);
                 i2++;
-                j = j3;
+                this = sonicFloatImpl;
             }
         }
 
@@ -608,10 +608,10 @@ public final class Sonic {
         public void interpolateFrame(int i, long j, long j2) {
             int i2 = 0;
             while (i2 < Sonic.this.channelCount) {
-                long j3 = j;
-                this.outputBuffer[(Sonic.this.outputFrameCount * Sonic.this.channelCount) + i2] = interpolate(this.pitchBuffer, (Sonic.this.channelCount * i) + i2, j3, j2);
+                SonicShortImpl sonicShortImpl = this;
+                this.outputBuffer[(Sonic.this.outputFrameCount * Sonic.this.channelCount) + i2] = sonicShortImpl.interpolate(this.pitchBuffer, (Sonic.this.channelCount * i) + i2, j, j2);
                 i2++;
-                j = j3;
+                this = sonicShortImpl;
             }
         }
 

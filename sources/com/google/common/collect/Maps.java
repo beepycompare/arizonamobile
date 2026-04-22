@@ -2602,9 +2602,9 @@ public final class Maps {
             try {
                 return super.remove(o);
             } catch (UnsupportedOperationException unused) {
-                for (Map.Entry<K, V> entry : map().entrySet()) {
+                for (Map.Entry<K, V> entry : this.map().entrySet()) {
                     if (Objects.equal(o, entry.getValue())) {
-                        map().remove(entry.getKey());
+                        this.map().remove(entry.getKey());
                         return true;
                     }
                 }
@@ -2618,12 +2618,12 @@ public final class Maps {
                 return super.removeAll((Collection) Preconditions.checkNotNull(c));
             } catch (UnsupportedOperationException unused) {
                 HashSet newHashSet = Sets.newHashSet();
-                for (Map.Entry<K, V> entry : map().entrySet()) {
+                for (Map.Entry<K, V> entry : this.map().entrySet()) {
                     if (c.contains(entry.getValue())) {
                         newHashSet.add(entry.getKey());
                     }
                 }
-                return map().keySet().removeAll(newHashSet);
+                return this.map().keySet().removeAll(newHashSet);
             }
         }
 
@@ -2633,12 +2633,12 @@ public final class Maps {
                 return super.retainAll((Collection) Preconditions.checkNotNull(c));
             } catch (UnsupportedOperationException unused) {
                 HashSet newHashSet = Sets.newHashSet();
-                for (Map.Entry<K, V> entry : map().entrySet()) {
+                for (Map.Entry<K, V> entry : this.map().entrySet()) {
                     if (c.contains(entry.getValue())) {
                         newHashSet.add(entry.getKey());
                     }
                 }
-                return map().keySet().retainAll(newHashSet);
+                return this.map().keySet().retainAll(newHashSet);
             }
         }
 
@@ -2720,11 +2720,11 @@ public final class Maps {
             } catch (UnsupportedOperationException unused) {
                 HashSet newHashSetWithExpectedSize = Sets.newHashSetWithExpectedSize(c.size());
                 for (Object obj : c) {
-                    if (contains(obj) && (obj instanceof Map.Entry)) {
+                    if (this.contains(obj) && (obj instanceof Map.Entry)) {
                         newHashSetWithExpectedSize.add(((Map.Entry) obj).getKey());
                     }
                 }
-                return map().keySet().retainAll(newHashSetWithExpectedSize);
+                return this.map().keySet().retainAll(newHashSetWithExpectedSize);
             }
         }
     }

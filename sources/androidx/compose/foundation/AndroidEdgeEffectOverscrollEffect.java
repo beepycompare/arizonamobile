@@ -430,7 +430,7 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0052, code lost:
-        if (r14.invoke(r12, r0) == r1) goto L35;
+        if (r14.invoke(r11, r0) == r1) goto L35;
      */
     /* JADX WARN: Code restructure failed: missing block: B:49:0x0135, code lost:
         if (r15 == r1) goto L35;
@@ -557,7 +557,8 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
         if ((9223372034707292159L & j) == InlineClassHelperKt.UnspecifiedPackedFloats) {
             j = SizeKt.m4606getCenteruvyYCjk(this.containerSize);
         }
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / Float.intBitsToFloat((int) (this.containerSize & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / Float.intBitsToFloat((int) (this.containerSize >> 32))) << 32));
+        float intBitsToFloat = Float.intBitsToFloat((int) (j & 4294967295L)) / Float.intBitsToFloat((int) (this.containerSize & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / Float.intBitsToFloat((int) (this.containerSize >> 32))) << 32));
     }
 
     @Override // androidx.compose.foundation.OverscrollEffect
@@ -668,7 +669,7 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
         int i = (int) (j & 4294967295L);
         float intBitsToFloat2 = Float.intBitsToFloat(i) / Float.intBitsToFloat((int) (this.containerSize & 4294967295L));
         EdgeEffect orCreateBottomEffect = this.edgeEffectWrapper.getOrCreateBottomEffect();
-        return EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateBottomEffect) == 0.0f ? (-EdgeEffectCompat.INSTANCE.onPullDistanceCompat(orCreateBottomEffect, -intBitsToFloat2, 1 - intBitsToFloat)) * Float.intBitsToFloat((int) (this.containerSize & 4294967295L)) : Float.intBitsToFloat(i);
+        return EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateBottomEffect) == 0.0f ? (-EdgeEffectCompat.INSTANCE.onPullDistanceCompat(orCreateBottomEffect, -intBitsToFloat2, 1.0f - intBitsToFloat)) * Float.intBitsToFloat((int) (this.containerSize & 4294967295L)) : Float.intBitsToFloat(i);
     }
 
     /* renamed from: pullLeft-k-4lQ0M  reason: not valid java name */
@@ -677,7 +678,7 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
         int i = (int) (j >> 32);
         float intBitsToFloat2 = Float.intBitsToFloat(i) / Float.intBitsToFloat((int) (this.containerSize >> 32));
         EdgeEffect orCreateLeftEffect = this.edgeEffectWrapper.getOrCreateLeftEffect();
-        return EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateLeftEffect) == 0.0f ? EdgeEffectCompat.INSTANCE.onPullDistanceCompat(orCreateLeftEffect, intBitsToFloat2, 1 - intBitsToFloat) * Float.intBitsToFloat((int) (this.containerSize >> 32)) : Float.intBitsToFloat(i);
+        return EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateLeftEffect) == 0.0f ? EdgeEffectCompat.INSTANCE.onPullDistanceCompat(orCreateLeftEffect, intBitsToFloat2, 1.0f - intBitsToFloat) * Float.intBitsToFloat((int) (this.containerSize >> 32)) : Float.intBitsToFloat(i);
     }
 
     /* renamed from: pullRight-k-4lQ0M  reason: not valid java name */

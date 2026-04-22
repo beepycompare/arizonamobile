@@ -90,7 +90,7 @@ public final class Shadow {
     }
 
     public /* synthetic */ Shadow(float f, long j, float f2, long j2, float f3, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(f, (i2 & 2) != 0 ? Color.Companion.m4798getBlack0d7_KjU() : j, (i2 & 4) != 0 ? Dp.m7555constructorimpl(0) : f2, (i2 & 8) != 0 ? DpOffset.Companion.m7626getZeroRKDOV3M() : j2, (i2 & 16) != 0 ? 1.0f : f3, (i2 & 32) != 0 ? DrawScope.Companion.m5348getDefaultBlendMode0nO6VwU() : i, (DefaultConstructorMarker) null);
+        this(f, (i2 & 2) != 0 ? Color.Companion.m4798getBlack0d7_KjU() : j, (i2 & 4) != 0 ? Dp.m7555constructorimpl(0.0f) : f2, (i2 & 8) != 0 ? DpOffset.Companion.m7626getZeroRKDOV3M() : j2, (i2 & 16) != 0 ? 1.0f : f3, (i2 & 32) != 0 ? DrawScope.Companion.m5348getDefaultBlendMode0nO6VwU() : i, (DefaultConstructorMarker) null);
     }
 
     private Shadow(float f, long j, float f2, long j2, float f3, int i) {
@@ -127,6 +127,6 @@ public final class Shadow {
     }
 
     public /* synthetic */ Shadow(float f, Brush brush, float f2, long j, float f3, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(f, brush, (i2 & 4) != 0 ? Dp.m7555constructorimpl(0) : f2, (i2 & 8) != 0 ? DpOffset.Companion.m7626getZeroRKDOV3M() : j, (i2 & 16) != 0 ? 1.0f : f3, (i2 & 32) != 0 ? DrawScope.Companion.m5348getDefaultBlendMode0nO6VwU() : i, (DefaultConstructorMarker) null);
+        this(f, brush, (i2 & 4) != 0 ? Dp.m7555constructorimpl(0.0f) : f2, (i2 & 8) != 0 ? DpOffset.Companion.m7626getZeroRKDOV3M() : j, (i2 & 16) != 0 ? 1.0f : f3, (i2 & 32) != 0 ? DrawScope.Companion.m5348getDefaultBlendMode0nO6VwU() : i, (DefaultConstructorMarker) null);
     }
 }

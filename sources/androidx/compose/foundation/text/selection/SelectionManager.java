@@ -890,59 +890,59 @@ public final class SelectionManager {
         int i3;
         Pair<AnnotatedString, TextRange> pair;
         Pair<AnnotatedString, TextRange> pair2 = null;
-        if (getSelection() != null && !this.selectionRegistrar.getSelectables$foundation().isEmpty()) {
-            AnnotatedString.Builder builder = new AnnotatedString.Builder(0, 1, null);
-            List<Selectable> sort = this.selectionRegistrar.sort(requireContainerCoordinates$foundation());
-            ListIterator<Selectable> listIterator = sort.listIterator(sort.size());
-            while (true) {
-                if (!listIterator.hasPrevious()) {
-                    i = -1;
-                    break;
-                }
-                Selection selection = this.selectionRegistrar.getSubselections().get(listIterator.previous().getSelectableId());
-                if (selection != null && selection.getStart().getOffset() != selection.getEnd().getOffset()) {
-                    i = listIterator.nextIndex();
-                    break;
-                }
-            }
-            if (i != -1) {
-                int size = sort.size();
-                int i4 = 0;
-                i2 = -1;
-                i3 = -1;
-                while (i4 < size) {
-                    Selectable selectable = sort.get(i4);
-                    Selection selection2 = this.selectionRegistrar.getSubselections().get(selectable.getSelectableId());
-                    if (selection2 != null) {
-                        AnnotatedString text = selectable.getText();
-                        long TextRange = TextRangeKt.TextRange(selection2.getStart().getOffset(), selection2.getEnd().getOffset());
-                        boolean z = i4 >= i;
-                        selectable.getSelectableId();
-                        if (i2 == -1) {
-                            i2 = TextRange.m7001getMinimpl(TextRange);
-                            builder.append(text, 0, TextRange.m7001getMinimpl(TextRange));
-                        }
-                        pair = pair2;
-                        builder.append(text, TextRange.m7001getMinimpl(TextRange), TextRange.m7000getMaximpl(TextRange));
-                        if (!z) {
-                            builder.append('\n');
-                        } else {
-                            i3 = builder.getLength();
-                            builder.append(text, TextRange.m7000getMaximpl(TextRange), text.length());
-                        }
-                    } else {
-                        pair = pair2;
-                    }
-                    i4++;
-                    pair2 = pair;
-                }
-            } else {
-                i2 = -1;
-                i3 = -1;
-            }
-            return (i2 == -1 || i3 == -1) ? pair2 : new Pair<>(builder.toAnnotatedString(), TextRange.m6991boximpl(TextRangeKt.TextRange(i2, i3)));
+        if (getSelection() == null || this.selectionRegistrar.getSelectables$foundation().isEmpty()) {
+            return null;
         }
-        return null;
+        AnnotatedString.Builder builder = new AnnotatedString.Builder(0, 1, null);
+        List<Selectable> sort = this.selectionRegistrar.sort(requireContainerCoordinates$foundation());
+        ListIterator<Selectable> listIterator = sort.listIterator(sort.size());
+        while (true) {
+            if (!listIterator.hasPrevious()) {
+                i = -1;
+                break;
+            }
+            Selection selection = this.selectionRegistrar.getSubselections().get(listIterator.previous().getSelectableId());
+            if (selection != null && selection.getStart().getOffset() != selection.getEnd().getOffset()) {
+                i = listIterator.nextIndex();
+                break;
+            }
+        }
+        if (i != -1) {
+            int size = sort.size();
+            int i4 = 0;
+            i2 = -1;
+            i3 = -1;
+            while (i4 < size) {
+                Selectable selectable = sort.get(i4);
+                Selection selection2 = this.selectionRegistrar.getSubselections().get(selectable.getSelectableId());
+                if (selection2 != null) {
+                    AnnotatedString text = selectable.getText();
+                    long TextRange = TextRangeKt.TextRange(selection2.getStart().getOffset(), selection2.getEnd().getOffset());
+                    boolean z = i4 >= i;
+                    selectable.getSelectableId();
+                    if (i2 == -1) {
+                        i2 = TextRange.m7001getMinimpl(TextRange);
+                        builder.append(text, 0, TextRange.m7001getMinimpl(TextRange));
+                    }
+                    pair = pair2;
+                    builder.append(text, TextRange.m7001getMinimpl(TextRange), TextRange.m7000getMaximpl(TextRange));
+                    if (!z) {
+                        builder.append('\n');
+                    } else {
+                        i3 = builder.getLength();
+                        builder.append(text, TextRange.m7000getMaximpl(TextRange), text.length());
+                    }
+                } else {
+                    pair = pair2;
+                }
+                i4++;
+                pair2 = pair;
+            }
+        } else {
+            i2 = -1;
+            i3 = -1;
+        }
+        return (i2 == -1 || i3 == -1) ? pair2 : new Pair<>(builder.toAnnotatedString(), TextRange.m6991boximpl(TextRangeKt.TextRange(i2, i3)));
     }
 
     public final void forEachSelectableWithSelection$foundation(Function4<? super Long, ? super AnnotatedString, ? super TextRange, ? super Boolean, Boolean> function4) {
@@ -1077,7 +1077,7 @@ public final class SelectionManager {
             return null;
         }
         Rect m4564translatek4lQ0M = intersect.m4564translatek4lQ0M(LayoutCoordinatesKt.positionInRoot(layoutCoordinates));
-        return Rect.copy$default(m4564translatek4lQ0M, 0.0f, 0.0f, 0.0f, m4564translatek4lQ0M.getBottom() + (SelectionHandlesKt.getHandleHeight() * 4), 7, null);
+        return Rect.copy$default(m4564translatek4lQ0M, 0.0f, 0.0f, 0.0f, m4564translatek4lQ0M.getBottom() + (SelectionHandlesKt.getHandleHeight() * 4.0f), 7, null);
     }
 
     public final void onRelease() {

@@ -227,11 +227,11 @@ public final class ChildrenNavigator<C, T, N extends NavState<? extends C>> {
     /* JADX WARN: Type inference failed for: r3v4, types: [com.arkivanov.decompose.router.children.ChildItemFactory, com.arkivanov.decompose.router.children.ChildItemFactory<C, T>] */
     /* JADX WARN: Type inference failed for: r3v5, types: [com.arkivanov.decompose.router.children.ChildItemFactory, com.arkivanov.decompose.router.children.ChildItemFactory<C, T>] */
     /* JADX WARN: Type inference failed for: r3v6, types: [com.arkivanov.decompose.router.children.ChildItemFactory, com.arkivanov.decompose.router.children.ChildItemFactory<C, T>] */
-    /* JADX WARN: Type inference failed for: r8v12 */
-    /* JADX WARN: Type inference failed for: r8v13 */
-    /* JADX WARN: Type inference failed for: r8v15, types: [com.arkivanov.decompose.router.children.ChildItem$Created, java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r8v16, types: [com.arkivanov.decompose.router.children.ChildItem$Created, java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r8v17, types: [com.arkivanov.decompose.router.children.ChildItem$Created, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r8v10, types: [com.arkivanov.decompose.router.children.ChildItem$Created, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r8v11, types: [com.arkivanov.decompose.router.children.ChildItem$Created, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r8v12, types: [com.arkivanov.decompose.router.children.ChildItem$Created, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r8v7 */
+    /* JADX WARN: Type inference failed for: r8v8 */
     private final void restoreDefault(N n, List<SerializableContainer> list) {
         ?? destroyed;
         HashMap hashMap = new HashMap();
@@ -283,11 +283,11 @@ public final class ChildrenNavigator<C, T, N extends NavState<? extends C>> {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r11v12 */
-    /* JADX WARN: Type inference failed for: r11v13 */
-    /* JADX WARN: Type inference failed for: r11v15, types: [com.arkivanov.decompose.router.children.ChildItem$Created, java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r11v16, types: [com.arkivanov.decompose.router.children.ChildItem$Created, java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r11v17, types: [com.arkivanov.decompose.router.children.ChildItem$Created, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r11v10, types: [com.arkivanov.decompose.router.children.ChildItem$Created, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r11v11, types: [com.arkivanov.decompose.router.children.ChildItem$Created, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r11v12, types: [com.arkivanov.decompose.router.children.ChildItem$Created, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r11v7 */
+    /* JADX WARN: Type inference failed for: r11v8 */
     /* JADX WARN: Type inference failed for: r6v5, types: [com.arkivanov.decompose.router.children.ChildItemFactory, com.arkivanov.decompose.router.children.ChildItemFactory<C, T>] */
     /* JADX WARN: Type inference failed for: r6v6, types: [com.arkivanov.decompose.router.children.ChildItemFactory, com.arkivanov.decompose.router.children.ChildItemFactory<C, T>] */
     /* JADX WARN: Type inference failed for: r6v7, types: [com.arkivanov.decompose.router.children.ChildItemFactory, com.arkivanov.decompose.router.children.ChildItemFactory<C, T>] */

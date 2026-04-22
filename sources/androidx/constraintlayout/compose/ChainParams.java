@@ -9,7 +9,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class ChainParams implements HelperParams {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final ChainParams Default;
+    private static final ChainParams Default = new ChainParams(Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Float.NaN, null);
     private final float bottomGoneMargin;
     private final float bottomMargin;
     private final float endGoneMargin;
@@ -94,10 +94,5 @@ public final class ChainParams implements HelperParams {
         public final ChainParams getDefault$constraintlayout_compose_release() {
             return ChainParams.Default;
         }
-    }
-
-    static {
-        float f = 0;
-        Default = new ChainParams(Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Float.NaN, null);
     }
 }

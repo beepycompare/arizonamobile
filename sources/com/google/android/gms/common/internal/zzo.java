@@ -106,44 +106,29 @@ final class zzo implements ServiceConnection, zzr {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ ConnectionResult zzj(String str, Executor executor) {
-        zzq zzqVar;
-        ConnectionTracker zzi;
-        Context zzg;
-        zzn zznVar;
         try {
             Intent zza = zzah.zza(this.zza.zzg(), this.zzf);
             this.zzc = 3;
             StrictMode.VmPolicy zza2 = com.google.android.gms.common.util.zzd.zza();
             try {
-                zzqVar = this.zza;
-                zzi = zzqVar.zzi();
-                zzg = zzqVar.zzg();
-                zznVar = this.zzf;
-            } catch (Throwable th) {
-                th = th;
-            }
-            try {
+                zzq zzqVar = this.zza;
+                ConnectionTracker zzi = zzqVar.zzi();
+                Context zzg = zzqVar.zzg();
+                zzn zznVar = this.zzf;
                 boolean zza3 = zzi.zza(zzg, str, zza, this, 4225, executor);
                 this.zzd = zza3;
                 if (zza3) {
                     zzqVar.zzh().sendMessageDelayed(zzqVar.zzh().obtainMessage(1, zznVar), zzqVar.zzj());
-                    ConnectionResult connectionResult = ConnectionResult.RESULT_SUCCESS;
-                    StrictMode.setVmPolicy(zza2);
-                    return connectionResult;
+                    return ConnectionResult.RESULT_SUCCESS;
                 }
                 this.zzc = 2;
                 try {
                     zzqVar.zzi().unbindService(zzqVar.zzg(), this);
                 } catch (IllegalArgumentException unused) {
                 }
-                ConnectionResult connectionResult2 = new ConnectionResult(16);
+                return new ConnectionResult(16);
+            } finally {
                 StrictMode.setVmPolicy(zza2);
-                return connectionResult2;
-            } catch (Throwable th2) {
-                th = th2;
-                Throwable th3 = th;
-                StrictMode.setVmPolicy(zza2);
-                throw th3;
             }
         } catch (zzaf e) {
             return e.zza;

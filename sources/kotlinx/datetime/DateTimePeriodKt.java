@@ -28,21 +28,17 @@ public final class DateTimePeriodKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final long totalMonths(int i, int i2) {
-        long j = 12;
-        long j2 = (i * j) + i2;
-        long j3 = j2 / j;
-        if (SieveCacheKt.NodeMetaAndPreviousMask > j3 || j3 > SieveCacheKt.NodeLinkMask) {
+        long j = (i * 12) + i2;
+        long j2 = j / 12;
+        if (SieveCacheKt.NodeMetaAndPreviousMask > j2 || j2 > SieveCacheKt.NodeLinkMask) {
             throw new IllegalArgumentException(("The total number of years in " + i + " years and " + i2 + " months overflows an Int").toString());
         }
-        return j2;
+        return j;
     }
 
     private static final long totalNanoseconds(int i, int i2, int i3, long j) {
-        long j2 = 60;
-        long j3 = ((i * j2) + i2) * j2;
-        long j4 = 1000000000;
         try {
-            return MathKt.multiplyAndAdd(j3 + (j / j4) + i3, C.NANOS_PER_SECOND, j % j4);
+            return MathKt.multiplyAndAdd((((i * 60) + i2) * 60) + (j / C.NANOS_PER_SECOND) + i3, C.NANOS_PER_SECOND, j % C.NANOS_PER_SECOND);
         } catch (ArithmeticException unused) {
             throw new IllegalArgumentException("The total number of nanoseconds in " + i + " hours, " + i2 + " minutes, " + i3 + " seconds, and " + j + " nanoseconds overflows a Long");
         }

@@ -143,11 +143,12 @@ public abstract class zzga extends com.google.android.gms.internal.measurement.z
                 parcel2.writeNoException();
                 if (zzw == null) {
                     parcel2.writeInt(0);
+                    break;
                 } else {
                     parcel2.writeInt(1);
                     zzw.writeToParcel(parcel2, 1);
+                    break;
                 }
-                break;
             case 24:
                 com.google.android.gms.internal.measurement.zzbn.zzf(parcel);
                 List zzx = zzx((zzr) com.google.android.gms.internal.measurement.zzbn.zzb(parcel, zzr.CREATOR), (Bundle) com.google.android.gms.internal.measurement.zzbn.zzb(parcel, Bundle.CREATOR));

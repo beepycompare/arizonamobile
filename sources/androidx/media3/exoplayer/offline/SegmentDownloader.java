@@ -322,7 +322,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
                 priorityTaskManager.proceed(-4000);
             }
             RunnableFutureTask<T, ?> runnableFutureTask2 = supplier.get();
-            addActiveRunnable(runnableFutureTask2);
+            this.addActiveRunnable(runnableFutureTask2);
             this.executor.execute(runnableFutureTask2);
             try {
                 return runnableFutureTask2.get();
@@ -336,7 +336,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
                 }
             } finally {
                 runnableFutureTask2.blockUntilFinished();
-                removeActiveRunnable((RunnableFutureTask<?, ?>) runnableFutureTask2);
+                this.removeActiveRunnable((RunnableFutureTask<?, ?>) runnableFutureTask2);
             }
         }
         throw new InterruptedException();

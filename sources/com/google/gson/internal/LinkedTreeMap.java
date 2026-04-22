@@ -432,19 +432,29 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
         }
 
         public Node<K, V> first() {
-            Node<K, V> node = this;
-            for (Node<K, V> node2 = this.left; node2 != null; node2 = node2.left) {
-                node = node2;
+            Node<K, V> node = this.left;
+            while (true) {
+                Node<K, V> node2 = node;
+                Node<K, V> node3 = this;
+                this = node2;
+                if (this == null) {
+                    return node3;
+                }
+                node = this.left;
             }
-            return node;
         }
 
         public Node<K, V> last() {
-            Node<K, V> node = this;
-            for (Node<K, V> node2 = this.right; node2 != null; node2 = node2.right) {
-                node = node2;
+            Node<K, V> node = this.right;
+            while (true) {
+                Node<K, V> node2 = node;
+                Node<K, V> node3 = this;
+                this = node2;
+                if (this == null) {
+                    return node3;
+                }
+                node = this.right;
             }
-            return node;
         }
     }
 

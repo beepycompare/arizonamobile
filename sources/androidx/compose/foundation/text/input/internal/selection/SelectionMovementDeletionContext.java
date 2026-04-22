@@ -280,7 +280,7 @@ public final class SelectionMovementDeletionContext {
         if (lineForOffset >= textLayoutResult.getLineCount()) {
             return Integer.MAX_VALUE;
         }
-        float lineBottom = textLayoutResult.getLineBottom(lineForOffset) - 1;
+        float lineBottom = textLayoutResult.getLineBottom(lineForOffset) - 1.0f;
         float cachedX = this.textPreparedSelectionState.getCachedX();
         if ((isLtr() && cachedX >= textLayoutResult.getLineRight(lineForOffset)) || (!isLtr() && cachedX <= textLayoutResult.getLineLeft(lineForOffset))) {
             return textLayoutResult.getLineEnd(lineForOffset, true);

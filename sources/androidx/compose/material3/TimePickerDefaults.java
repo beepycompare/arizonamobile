@@ -30,6 +30,7 @@ public final class TimePickerDefaults {
 
     /* renamed from: colors-u3YEpmA  reason: not valid java name */
     public final TimePickerColors m2736colorsu3YEpmA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, Composer composer, int i, int i2, int i3) {
+        long j15;
         ComposerKt.sourceInformationMarkerStart(composer, -646352288, "C(colors)N(clockDialColor:c#ui.graphics.Color,clockDialSelectedContentColor:c#ui.graphics.Color,clockDialUnselectedContentColor:c#ui.graphics.Color,selectorColor:c#ui.graphics.Color,containerColor:c#ui.graphics.Color,periodSelectorBorderColor:c#ui.graphics.Color,periodSelectorSelectedContainerColor:c#ui.graphics.Color,periodSelectorUnselectedContainerColor:c#ui.graphics.Color,periodSelectorSelectedContentColor:c#ui.graphics.Color,periodSelectorUnselectedContentColor:c#ui.graphics.Color,timeSelectorSelectedContainerColor:c#ui.graphics.Color,timeSelectorUnselectedContainerColor:c#ui.graphics.Color,timeSelectorSelectedContentColor:c#ui.graphics.Color,timeSelectorUnselectedContentColor:c#ui.graphics.Color)331@16569L11:TimePicker.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i3 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m4808getUnspecified0d7_KjU2 = (i3 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
@@ -46,9 +47,12 @@ public final class TimePickerDefaults {
         long m4808getUnspecified0d7_KjU13 = (i3 & 4096) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j13;
         long m4808getUnspecified0d7_KjU14 = (i3 & 8192) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j14;
         if (ComposerKt.isTraceInProgress()) {
+            j15 = m4808getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(-646352288, i, i2, "androidx.compose.material3.TimePickerDefaults.colors (TimePicker.kt:331)");
+        } else {
+            j15 = m4808getUnspecified0d7_KjU;
         }
-        TimePickerColors m2717copydVHXu7A = getDefaultTimePickerColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2717copydVHXu7A(m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m4808getUnspecified0d7_KjU6, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU7, m4808getUnspecified0d7_KjU8, m4808getUnspecified0d7_KjU9, m4808getUnspecified0d7_KjU10, m4808getUnspecified0d7_KjU11, m4808getUnspecified0d7_KjU12, m4808getUnspecified0d7_KjU13, m4808getUnspecified0d7_KjU14);
+        TimePickerColors m2717copydVHXu7A = getDefaultTimePickerColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2717copydVHXu7A(j15, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m4808getUnspecified0d7_KjU6, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU7, m4808getUnspecified0d7_KjU8, m4808getUnspecified0d7_KjU9, m4808getUnspecified0d7_KjU10, m4808getUnspecified0d7_KjU11, m4808getUnspecified0d7_KjU12, m4808getUnspecified0d7_KjU13, m4808getUnspecified0d7_KjU14);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

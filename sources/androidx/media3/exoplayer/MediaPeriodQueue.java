@@ -125,26 +125,30 @@ public final class MediaPeriodQueue {
 
     public void invalidatePreloadPool(Timeline timeline) {
         MediaPeriodHolder mediaPeriodHolder;
+        MediaPeriodQueue mediaPeriodQueue;
         if (this.preloadConfiguration.targetPreloadDurationUs == C.TIME_UNSET || (mediaPeriodHolder = this.loading) == null) {
             releasePreloadPool();
             return;
         }
         ArrayList arrayList = new ArrayList();
         Pair<Object, Long> defaultPeriodPositionOfNextWindow = getDefaultPeriodPositionOfNextWindow(timeline, mediaPeriodHolder.info.id.periodUid, 0L);
-        if (defaultPeriodPositionOfNextWindow != null && !timeline.getWindow(timeline.getPeriodByUid(defaultPeriodPositionOfNextWindow.first, this.period).windowIndex, this.window).isLive()) {
+        if (defaultPeriodPositionOfNextWindow == null || timeline.getWindow(timeline.getPeriodByUid(defaultPeriodPositionOfNextWindow.first, this.period).windowIndex, this.window).isLive()) {
+            mediaPeriodQueue = this;
+        } else {
             long resolvePeriodUidToWindowSequenceNumberInPreloadPeriods = resolvePeriodUidToWindowSequenceNumberInPreloadPeriods(defaultPeriodPositionOfNextWindow.first);
             if (resolvePeriodUidToWindowSequenceNumberInPreloadPeriods == -1) {
                 resolvePeriodUidToWindowSequenceNumberInPreloadPeriods = this.nextWindowSequenceNumber;
                 this.nextWindowSequenceNumber = 1 + resolvePeriodUidToWindowSequenceNumberInPreloadPeriods;
             }
-            MediaPeriodInfo mediaPeriodInfoForPeriodPosition = getMediaPeriodInfoForPeriodPosition(timeline, defaultPeriodPositionOfNextWindow.first, ((Long) defaultPeriodPositionOfNextWindow.second).longValue(), resolvePeriodUidToWindowSequenceNumberInPreloadPeriods);
-            MediaPeriodHolder removePreloadedMediaPeriodHolder = removePreloadedMediaPeriodHolder(mediaPeriodInfoForPeriodPosition);
+            mediaPeriodQueue = this;
+            MediaPeriodInfo mediaPeriodInfoForPeriodPosition = mediaPeriodQueue.getMediaPeriodInfoForPeriodPosition(timeline, defaultPeriodPositionOfNextWindow.first, ((Long) defaultPeriodPositionOfNextWindow.second).longValue(), resolvePeriodUidToWindowSequenceNumberInPreloadPeriods);
+            MediaPeriodHolder removePreloadedMediaPeriodHolder = mediaPeriodQueue.removePreloadedMediaPeriodHolder(mediaPeriodInfoForPeriodPosition);
             if (removePreloadedMediaPeriodHolder == null) {
-                removePreloadedMediaPeriodHolder = this.mediaPeriodHolderFactory.create(mediaPeriodInfoForPeriodPosition, (mediaPeriodHolder.getRendererOffset() + mediaPeriodHolder.info.durationUs) - mediaPeriodInfoForPeriodPosition.startPositionUs);
+                removePreloadedMediaPeriodHolder = mediaPeriodQueue.mediaPeriodHolderFactory.create(mediaPeriodInfoForPeriodPosition, (mediaPeriodHolder.getRendererOffset() + mediaPeriodHolder.info.durationUs) - mediaPeriodInfoForPeriodPosition.startPositionUs);
             }
             arrayList.add(removePreloadedMediaPeriodHolder);
         }
-        releaseAndResetPreloadPriorityList(arrayList);
+        mediaPeriodQueue.releaseAndResetPreloadPriorityList(arrayList);
     }
 
     public void releasePreloadPool() {
@@ -361,14 +365,8 @@ public final class MediaPeriodQueue {
         return removeAfter(mediaPeriodHolder2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0064  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x006e  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public MediaPeriodInfo getUpdatedMediaPeriodInfo(Timeline timeline, MediaPeriodInfo mediaPeriodInfo) {
         long durationUs;
-        long j;
         boolean z;
         MediaSource.MediaPeriodId mediaPeriodId = mediaPeriodInfo.id;
         boolean isLastInPeriod = isLastInPeriod(mediaPeriodId);
@@ -378,21 +376,15 @@ public final class MediaPeriodQueue {
         long adGroupTimeUs = (mediaPeriodId.isAd() || mediaPeriodId.nextAdGroupIndex == -1) ? -9223372036854775807L : this.period.getAdGroupTimeUs(mediaPeriodId.nextAdGroupIndex);
         if (mediaPeriodId.isAd()) {
             durationUs = this.period.getAdDurationUs(mediaPeriodId.adGroupIndex, mediaPeriodId.adIndexInAdGroup);
-        } else if (adGroupTimeUs == C.TIME_UNSET || adGroupTimeUs == Long.MIN_VALUE) {
-            durationUs = this.period.getDurationUs();
         } else {
-            j = adGroupTimeUs;
-            if (!mediaPeriodId.isAd()) {
-                z = this.period.isServerSideInsertedAdGroup(mediaPeriodId.adGroupIndex);
-            } else {
-                z = mediaPeriodId.nextAdGroupIndex != -1 && this.period.isServerSideInsertedAdGroup(mediaPeriodId.nextAdGroupIndex);
-            }
-            return new MediaPeriodInfo(mediaPeriodId, mediaPeriodInfo.startPositionUs, mediaPeriodInfo.requestedContentPositionUs, adGroupTimeUs, j, mediaPeriodInfo.isPrecededByTransitionFromSameStream, z, isLastInPeriod, isLastInWindow, isLastInTimeline);
+            durationUs = (adGroupTimeUs == C.TIME_UNSET || adGroupTimeUs == Long.MIN_VALUE) ? this.period.getDurationUs() : adGroupTimeUs;
         }
-        j = durationUs;
-        if (!mediaPeriodId.isAd()) {
+        if (mediaPeriodId.isAd()) {
+            z = this.period.isServerSideInsertedAdGroup(mediaPeriodId.adGroupIndex);
+        } else {
+            z = mediaPeriodId.nextAdGroupIndex != -1 && this.period.isServerSideInsertedAdGroup(mediaPeriodId.nextAdGroupIndex);
         }
-        return new MediaPeriodInfo(mediaPeriodId, mediaPeriodInfo.startPositionUs, mediaPeriodInfo.requestedContentPositionUs, adGroupTimeUs, j, mediaPeriodInfo.isPrecededByTransitionFromSameStream, z, isLastInPeriod, isLastInWindow, isLastInTimeline);
+        return new MediaPeriodInfo(mediaPeriodId, mediaPeriodInfo.startPositionUs, mediaPeriodInfo.requestedContentPositionUs, adGroupTimeUs, durationUs, mediaPeriodInfo.isPrecededByTransitionFromSameStream, z, isLastInPeriod, isLastInWindow, isLastInTimeline);
     }
 
     public MediaSource.MediaPeriodId resolveMediaPeriodIdForAds(Timeline timeline, Object obj, long j) {
@@ -678,9 +670,9 @@ public final class MediaPeriodQueue {
         long j4;
         long j5;
         long j6;
-        long j7 = j;
+        long j7;
         timeline.getPeriodByUid(obj, this.period);
-        int adGroupIndexAfterPositionUs = this.period.getAdGroupIndexAfterPositionUs(j7);
+        int adGroupIndexAfterPositionUs = this.period.getAdGroupIndexAfterPositionUs(j);
         Timeline.Period period = this.period;
         int i = 1;
         if (adGroupIndexAfterPositionUs == -1) {
@@ -711,7 +703,9 @@ public final class MediaPeriodQueue {
         } else {
             j4 = -9223372036854775807L;
             j6 = (j4 != C.TIME_UNSET || j4 == Long.MIN_VALUE) ? this.period.durationUs : j4;
-            if (j6 != C.TIME_UNSET && j7 >= j6) {
+            if (j6 != C.TIME_UNSET || j < j6) {
+                j7 = j;
+            } else {
                 if (!isLastInTimeline && z2) {
                     i = 0;
                 }
@@ -723,11 +717,8 @@ public final class MediaPeriodQueue {
         if (j4 != C.TIME_UNSET) {
         }
         if (j6 != C.TIME_UNSET) {
-            if (!isLastInTimeline) {
-                i = 0;
-            }
-            j7 = Math.max(0L, j6 - i);
         }
+        j7 = j;
         return new MediaPeriodInfo(mediaPeriodId, j7, j2, j4, j6, z, z3, isLastInPeriod, isLastInWindow, isLastInTimeline);
     }
 

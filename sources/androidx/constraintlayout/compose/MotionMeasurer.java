@@ -94,21 +94,14 @@ public final class MotionMeasurer extends Measurer2 {
 
     /* renamed from: performInterpolationMeasure-LzAeyeM  reason: not valid java name */
     public final long m7996performInterpolationMeasureLzAeyeM(long j, LayoutDirection layoutDirection, ConstraintSet constraintSet, ConstraintSet constraintSet2, TransitionImpl transitionImpl, List<? extends Measurable> list, Map<Measurable, Placeable> map, int i, float f, CompositionSource compositionSource, ShouldInvalidateCallback shouldInvalidateCallback) {
-        long j2;
-        MotionMeasurer motionMeasurer;
         LayoutInformationReceiver layoutInformationReceiver;
         LayoutInformationReceiver layoutInformationReceiver2;
         setPlaceables(map);
         boolean m7993needsRemeasureNN6EwU = m7993needsRemeasureNN6EwU(j, compositionSource, shouldInvalidateCallback);
         if (this.lastProgressInInterpolation != f || ((((layoutInformationReceiver = getLayoutInformationReceiver()) == null || layoutInformationReceiver.getForcedWidth() != Integer.MIN_VALUE) && ((layoutInformationReceiver2 = getLayoutInformationReceiver()) == null || layoutInformationReceiver2.getForcedHeight() != Integer.MIN_VALUE)) || m7993needsRemeasureNN6EwU)) {
-            j2 = j;
-            motionMeasurer = this;
-            motionMeasurer.m7994recalculateInterpolation36Wf7g4(j2, layoutDirection, constraintSet, constraintSet2, transitionImpl, list, i, f, m7993needsRemeasureNN6EwU);
-        } else {
-            j2 = j;
-            motionMeasurer = this;
+            m7994recalculateInterpolation36Wf7g4(j, layoutDirection, constraintSet, constraintSet2, transitionImpl, list, i, f, m7993needsRemeasureNN6EwU);
         }
-        motionMeasurer.oldConstraints = Constraints.m7495boximpl(j2);
+        this.oldConstraints = Constraints.m7495boximpl(j);
         return IntSizeKt.IntSize(getRoot().getWidth(), getRoot().getHeight());
     }
 
@@ -327,32 +320,29 @@ public final class MotionMeasurer extends Measurer2 {
         float[] fArr2 = new float[numberKeyPositions];
         float[] fArr3 = new float[numberKeyPositions];
         this.transition.fillKeyPositions(widgetFrame, fArr, fArr2, fArr3);
-        int i = 1;
-        int i2 = numberKeyPositions - 1;
-        if (i2 < 0) {
+        int i = numberKeyPositions - 1;
+        if (i < 0) {
             return;
         }
-        int i3 = 0;
+        int i2 = 0;
         while (true) {
-            float f3 = fArr3[i3] / 100.0f;
-            float f4 = i - f3;
+            float f3 = fArr3[i2] / 100.0f;
+            float f4 = 1.0f - f3;
             float width = (widgetFrame.width() * f4) + (widgetFrame2.width() * f3);
             float height = (f4 * widgetFrame.height()) + (f3 * widgetFrame2.height());
-            float f5 = (fArr[i3] * f) + (width / 2.0f);
-            float f6 = (fArr2[i3] * f2) + (height / 2.0f);
+            float f5 = (fArr[i2] * f) + (width / 2.0f);
+            float f6 = (fArr2[i2] * f2) + (height / 2.0f);
             Path Path = AndroidPath_androidKt.Path();
             Path.moveTo(f5 - 20.0f, f6);
             Path.lineTo(f5, f6 + 20.0f);
             Path.lineTo(f5 + 20.0f, f6);
             Path.lineTo(f5, f6 - 20.0f);
             Path.close();
-            int i4 = i3;
             DrawScope.m5336drawPathLG529CI$default(drawScope, Path, j, 1.0f, new Stroke(3.0f, 0.0f, 0, 0, null, 30, null), null, 0, 48, null);
-            if (i4 == i2) {
+            if (i2 == i) {
                 return;
             }
-            i3 = i4 + 1;
-            i = 1;
+            i2++;
         }
     }
 

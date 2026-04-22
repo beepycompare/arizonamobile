@@ -198,65 +198,43 @@ public final class SimpleCache implements Cache {
 
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized CacheSpan startReadWrite(String str, long j, long j2) throws InterruptedException, Cache.CacheException {
-        try {
-            try {
-                Preconditions.checkState(!this.released);
-                checkInitialization();
-                while (true) {
-                    CacheSpan startReadWriteNonBlocking = startReadWriteNonBlocking(str, j, j2);
-                    long j3 = j2;
-                    long j4 = j;
-                    String str2 = str;
-                    if (startReadWriteNonBlocking != null) {
-                        return startReadWriteNonBlocking;
-                    }
-                    wait();
-                    str = str2;
-                    j = j4;
-                    j2 = j3;
-                }
-            } catch (Throwable th) {
-                th = th;
-                throw th;
+        CacheSpan startReadWriteNonBlocking;
+        Preconditions.checkState(!this.released);
+        checkInitialization();
+        while (true) {
+            startReadWriteNonBlocking = startReadWriteNonBlocking(str, j, j2);
+            if (startReadWriteNonBlocking == null) {
+                wait();
             }
-        } catch (Throwable th2) {
-            th = th2;
-            throw th;
         }
+        return startReadWriteNonBlocking;
     }
 
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized CacheSpan startReadWriteNonBlocking(String str, long j, long j2) throws Cache.CacheException {
-        try {
-            try {
-                Preconditions.checkState(!this.released);
-                checkInitialization();
-                SimpleCacheSpan span = getSpan(str, j, j2);
-                if (span.isCached) {
-                    return touchSpan(str, span);
-                } else if (this.contentIndex.getOrAdd(str).lockRange(j, span.length)) {
-                    return span;
-                } else {
-                    return null;
-                }
-            } catch (Throwable th) {
-                th = th;
-                throw th;
-            }
-        } catch (Throwable th2) {
-            th = th2;
-            throw th;
+        Preconditions.checkState(!this.released);
+        checkInitialization();
+        SimpleCacheSpan span = getSpan(str, j, j2);
+        if (span.isCached) {
+            return touchSpan(str, span);
+        } else if (this.contentIndex.getOrAdd(str).lockRange(j, span.length)) {
+            return span;
+        } else {
+            return null;
         }
     }
 
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized File startFile(String str, long j, long j2) throws Cache.CacheException {
         Throwable th;
+        SimpleCache simpleCache;
+        CachedContent cachedContent;
+        File file;
         try {
             try {
                 Preconditions.checkState(!this.released);
                 checkInitialization();
-                CachedContent cachedContent = this.contentIndex.get(str);
+                cachedContent = this.contentIndex.get(str);
                 Preconditions.checkNotNull(cachedContent);
                 Preconditions.checkState(cachedContent.isFullyLocked(j, j2));
                 if (!this.cacheDir.exists()) {
@@ -265,23 +243,25 @@ public final class SimpleCache implements Cache {
                         removeStaleSpans();
                     } catch (Throwable th2) {
                         th = th2;
+                        simpleCache = this;
                         throw th;
                     }
                 }
                 this.evictor.onStartFile(this, str, j, j2);
-                File file = new File(this.cacheDir, Integer.toString(this.random.nextInt(10)));
+                file = new File(this.cacheDir, Integer.toString(this.random.nextInt(10)));
                 if (!file.exists()) {
                     createCacheDirectories(file);
                 }
-                return SimpleCacheSpan.getCacheFile(file, cachedContent.id, j, System.currentTimeMillis());
             } catch (Throwable th3) {
                 th = th3;
+                simpleCache = this;
                 th = th;
                 throw th;
             }
         } catch (Throwable th4) {
             th = th4;
         }
+        return SimpleCacheSpan.getCacheFile(file, cachedContent.id, j, System.currentTimeMillis());
     }
 
     @Override // androidx.media3.datasource.cache.Cache
@@ -375,18 +355,17 @@ public final class SimpleCache implements Cache {
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized long getCachedBytes(String str, long j, long j2) {
         long j3;
-        long j4 = j2 == -1 ? Long.MAX_VALUE : j + j2;
+        long j4 = j2 == -1 ? Long.MAX_VALUE : j2 + j;
         long j5 = j4 >= 0 ? j4 : Long.MAX_VALUE;
-        long j6 = j;
         j3 = 0;
-        while (j6 < j5) {
-            long cachedLength = getCachedLength(str, j6, j5 - j6);
+        while (j < j5) {
+            long cachedLength = getCachedLength(str, j, j5 - j);
             if (cachedLength > 0) {
                 j3 += cachedLength;
             } else {
                 cachedLength = -cachedLength;
             }
-            j6 += cachedLength;
+            j += cachedLength;
         }
         return j3;
     }

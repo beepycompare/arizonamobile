@@ -71,9 +71,8 @@ public final class ToggleSwitchListAdapter extends ListAdapter<ToggleSwitchInfo,
         this.activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int i2 = displayMetrics.widthPixels;
         int i3 = displayMetrics.heightPixels;
-        double d = 100;
-        binding.carsSwitchableItem.getLayoutParams().width = (int) ((i2 * 11.97d) / d);
-        binding.carsSwitchableItem.getLayoutParams().height = (int) ((i3 * 6.94d) / d);
+        binding.carsSwitchableItem.getLayoutParams().width = (int) ((i2 * 11.97d) / 100.0d);
+        binding.carsSwitchableItem.getLayoutParams().height = (int) ((i3 * 6.94d) / 100.0d);
         final ToggleSwitchInfo item = getItem(i);
         binding.itemName.setText(item.getTitle());
         binding.carSwitch.setChecked(item.getValue() == 1);

@@ -86,11 +86,7 @@ public final class Averages {
     }
 
     private final long calculateAverageTime(long j, long j2) {
-        if (j2 == 0) {
-            return j;
-        }
-        long j3 = 4;
-        return ((j2 / j3) * 3) + (j / j3);
+        return j2 == 0 ? j : ((j2 / 4) * 3) + (j / 4);
     }
 
     private final int calculateAverageCount(int i, int i2) {

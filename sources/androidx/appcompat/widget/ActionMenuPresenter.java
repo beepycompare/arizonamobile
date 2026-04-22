@@ -309,7 +309,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     public boolean dismissPopupMenus() {
-        return hideOverflowMenu() | hideSubMenus();
+        return hideSubMenus() | hideOverflowMenu();
     }
 
     public boolean hideSubMenus() {

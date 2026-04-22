@@ -43,7 +43,7 @@ final class AutoValue_ExperimentIds extends ExperimentIds {
     }
 
     public int hashCode() {
-        return ((Arrays.hashCode(this.clearBlob) ^ 1000003) * 1000003) ^ Arrays.hashCode(this.encryptedBlob);
+        return Arrays.hashCode(this.encryptedBlob) ^ ((Arrays.hashCode(this.clearBlob) ^ 1000003) * 1000003);
     }
 
     /* loaded from: classes3.dex */

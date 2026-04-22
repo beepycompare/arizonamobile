@@ -149,8 +149,8 @@ public final class IndicatorViewController {
             indicatorViewController.createCaptionAnimators(arrayList, this.helperTextEnabled, this.helperTextView, 2, i, i2);
             indicatorViewController.createCaptionAnimators(arrayList, indicatorViewController.errorEnabled, indicatorViewController.errorView, 1, i, i2);
             AnimatorSetCompat.playTogether(animatorSet, arrayList);
-            final TextView captionViewFromDisplayState = getCaptionViewFromDisplayState(i);
-            final TextView captionViewFromDisplayState2 = getCaptionViewFromDisplayState(i2);
+            final TextView captionViewFromDisplayState = indicatorViewController.getCaptionViewFromDisplayState(i);
+            final TextView captionViewFromDisplayState2 = indicatorViewController.getCaptionViewFromDisplayState(i2);
             animatorSet.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.textfield.IndicatorViewController.1
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
@@ -182,7 +182,7 @@ public final class IndicatorViewController {
             animatorSet.start();
         } else {
             indicatorViewController = this;
-            setCaptionViewVisibilities(i, i2);
+            indicatorViewController.setCaptionViewVisibilities(i, i2);
         }
         indicatorViewController.textInputView.updateEditTextBackground();
         indicatorViewController.textInputView.updateLabelState(z);

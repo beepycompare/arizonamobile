@@ -135,16 +135,12 @@ public final class ChildLayerDependenciesTracker {
     }
 
     public final void removeDependencies(Function1<? super GraphicsLayer, Unit> function1) {
-        ChildLayerDependenciesTracker childLayerDependenciesTracker;
         GraphicsLayer graphicsLayer = this.dependency;
         if (graphicsLayer != null) {
             function1.invoke(graphicsLayer);
-            childLayerDependenciesTracker = this;
-            childLayerDependenciesTracker.dependency = null;
-        } else {
-            childLayerDependenciesTracker = this;
+            this.dependency = null;
         }
-        MutableScatterSet mutableScatterSet = childLayerDependenciesTracker.dependenciesSet;
+        MutableScatterSet mutableScatterSet = this.dependenciesSet;
         if (mutableScatterSet != null) {
             MutableScatterSet mutableScatterSet2 = mutableScatterSet;
             Object[] objArr = mutableScatterSet2.elements;

@@ -70,23 +70,23 @@ import kotlinx.coroutines.CoroutineScope;
 @Metadata(d1 = {"\u0000t\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a8\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0011\u0010\b\u001a\r\u0012\u0004\u0012\u00020\u00010\t¢\u0006\u0002\b\nH\u0007¢\u0006\u0002\u0010\u000b\u001af\u0010\f\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00032\u0006\u0010\u0010\u001a\u00020\u00032\b\b\u0002\u0010\u0011\u001a\u00020\u00052\b\b\u0002\u0010\u0012\u001a\u00020\u00052\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0013\u001a\u00020\u00072\u0017\u0010\u0014\u001a\u0013\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00010\u0015¢\u0006\u0002\b\u0017H\u0007¢\u0006\u0002\u0010\u0018\u001a,\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001a2\u0017\u0010\u0014\u001a\u0013\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00010\u0015¢\u0006\u0002\b\u0017H\u0003¢\u0006\u0002\u0010\u001c\u001aP\u0010\u001d\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u001e*\u00020\u00162\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u0002H\u001e0\u001f2(\b\u0004\u0010 \u001a\"\u0012\u0013\u0012\u0011H\u001e¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b(#\u0012\u0004\u0012\u00020\u00010\u0015¢\u0006\u0002\b\nH\u0086\b¢\u0006\u0002\u0010$\u001ao\u0010%\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u001e*\u00020\u00162\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u0002H\u001e0\u001f2G\b\u0004\u0010 \u001aA\u0012\u0013\u0012\u0011H\u001e¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b(#\u0012\u001d\u0012\u001b\u0012\b\u0012\u00060'R\u00020(0\u001a¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b()\u0012\u0004\u0012\u00020\u00010&¢\u0006\u0002\b\nH\u0086\b¢\u0006\u0002\u0010*¨\u0006+²\u0006\n\u0010,\u001a\u00020-X\u008a\u008e\u0002²\u0006\n\u0010.\u001a\u00020/X\u008a\u008e\u0002²\u0006\n\u00100\u001a\u00020\u0003X\u008a\u008e\u0002"}, d2 = {"ItemHolder", "", CmcdData.OBJECT_TYPE_INIT_SEGMENT, "", "slotPrefix", "", "showSlot", "", "function", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "(ILjava/lang/String;ZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "MotionCarousel", "motionScene", "Landroidx/constraintlayout/compose/MotionScene;", "initialSlotIndex", "numSlots", "backwardTransition", "forwardTransition", "showSlots", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/constraintlayout/compose/MotionCarouselScope;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/constraintlayout/compose/MotionScene;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "rememberStateOfItemsProvider", "Landroidx/compose/runtime/State;", "Landroidx/constraintlayout/compose/MotionItemsProvider;", "(Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "items", ExifInterface.GPS_DIRECTION_TRUE, "", "itemContent", "Lkotlin/ParameterName;", "name", "item", "(Landroidx/constraintlayout/compose/MotionCarouselScope;Ljava/util/List;Lkotlin/jvm/functions/Function3;)V", "itemsWithProperties", "Lkotlin/Function2;", "Landroidx/constraintlayout/compose/MotionLayoutScope$MotionProperties;", "Landroidx/constraintlayout/compose/MotionLayoutScope;", "properties", "(Landroidx/constraintlayout/compose/MotionCarouselScope;Ljava/util/List;Lkotlin/jvm/functions/Function4;)V", "constraintlayout-compose_release", "componentWidth", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/constraintlayout/compose/CarouselState;", "currentIndex"}, k = 2, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class MotionCarouselKt {
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0121  */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0125  */
     /* JADX WARN: Removed duplicated region for block: B:105:0x012d  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0151  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x019e  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x01d0  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x01ec  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x020f  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0287  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0298  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x02d2  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x03b8  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x0414  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x0451  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x0479  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x04d6  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x04e5  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0152  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x019a  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x01cc  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x01e8  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x020b  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0283  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x0294  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x02ce  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x03b2  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x040e  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x044b  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x0471  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x04cb  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x04d8  */
     /* JADX WARN: Removed duplicated region for block: B:176:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:46:0x0085  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x0088  */
@@ -97,11 +97,11 @@ public final class MotionCarouselKt {
     /* JADX WARN: Removed duplicated region for block: B:78:0x00de  */
     /* JADX WARN: Removed duplicated region for block: B:79:0x00e1  */
     /* JADX WARN: Removed duplicated region for block: B:88:0x00fd  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x010d  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0110  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0113  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0118  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x010e  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0111  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x011e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -118,29 +118,29 @@ public final class MotionCarouselKt {
         final boolean z2;
         final int i10;
         Object rememberedValue;
+        String str4;
         CarouselSwipeableState rememberCarouselSwipeableState;
         float floatValue;
         Object rememberedValue2;
         Object rememberedValue3;
         final MutableIntState mutableIntState;
-        String str4;
+        String str5;
         int i11;
         Map mapOf;
         Object rememberedValue4;
         MutableState mutableState;
         float f;
-        Object obj4;
+        String str6;
         float f2;
-        CarouselSwipeableState carouselSwipeableState;
-        androidx.compose.runtime.State<MotionItemsProvider> state;
+        final androidx.compose.runtime.State<MotionItemsProvider> state;
         Modifier m8029carouselSwipeablepPrIpRY;
         Object rememberedValue5;
         Object rememberedValue6;
         Object rememberedValue7;
-        final String str5;
-        Object obj5;
-        final String str6;
+        final String str7;
+        final String str8;
         MutableState mutableState2;
+        MotionCarouselKt$MotionCarousel$1$1 motionCarouselKt$MotionCarousel$1$1;
         ScopeUpdateScope endRestartGroup;
         Composer startRestartGroup = composer.startRestartGroup(-1035994944);
         ComposerKt.sourceInformation(startRestartGroup, "C(MotionCarousel)P(4,3,5!1,2,7,6)153@6669L37,155@6734L39,156@6799L47,159@6937L107,162@7069L33,177@7610L46,230@9571L49,215@8950L1326:MotionCarousel.kt#fysre8");
@@ -204,11 +204,11 @@ public final class MotionCarouselKt {
                     }
                     i10 = i5;
                     if ((4793491 & i10) == 4793490 || !startRestartGroup.getSkipping()) {
-                        String str7 = i12 == 0 ? "backward" : obj;
+                        String str9 = i12 == 0 ? "backward" : obj;
                         if (i7 != 0) {
                             obj2 = "forward";
                         }
-                        final String str8 = i8 == 0 ? "slot" : obj3;
+                        final String str10 = i8 == 0 ? "slot" : obj3;
                         final boolean z3 = i9 == 0 ? false : z2;
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1035994944, i10, -1, "androidx.constraintlayout.compose.MotionCarousel (MotionCarousel.kt:147)");
@@ -222,8 +222,8 @@ public final class MotionCarouselKt {
                         }
                         final MutableFloatState mutableFloatState = (MutableFloatState) rememberedValue;
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        String str9 = obj2;
-                        String str10 = str7;
+                        String str11 = obj2;
+                        str4 = str9;
                         rememberCarouselSwipeableState = CarouselSwipeableKt.rememberCarouselSwipeableState(TtmlNode.START, null, null, startRestartGroup, 6, 6);
                         floatValue = rememberCarouselSwipeableState.getOffset().getFloatValue() / MotionCarousel$lambda$1(mutableFloatState);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162028863, "CC(remember):MotionCarousel.kt#9igjgp");
@@ -248,71 +248,68 @@ public final class MotionCarouselKt {
                             mapOf = MapsKt.mapOf(TuplesKt.to(Float.valueOf(-MotionCarousel$lambda$1(mutableFloatState)), "previous"), TuplesKt.to(Float.valueOf(0.0f), TtmlNode.START));
                         } else {
                             Pair pair = TuplesKt.to(Float.valueOf(MotionCarousel$lambda$1(mutableFloatState)), "next");
-                            str4 = TtmlNode.START;
+                            str5 = TtmlNode.START;
                             i11 = 2;
                             mapOf = MapsKt.mapOf(TuplesKt.to(Float.valueOf(-MotionCarousel$lambda$1(mutableFloatState)), "previous"), TuplesKt.to(Float.valueOf(0.0f), TtmlNode.START), pair);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162050338, "CC(remember):MotionCarousel.kt#9igjgp");
                             rememberedValue4 = startRestartGroup.rememberedValue();
                             Map map = mapOf;
                             if (rememberedValue4 == Composer.Companion.getEmpty()) {
-                                rememberedValue4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(str9, null, i11, null);
+                                rememberedValue4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(str11, null, i11, null);
                                 startRestartGroup.updateRememberedValue(rememberedValue4);
                             }
                             mutableState = (MutableState) rememberedValue4;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             if (floatValue >= 0.0f && MotionCarousel$lambda$4(mutableState3).getIndex() > 0) {
                                 MotionCarousel$lambda$4(mutableState3).setDirection(MotionCarouselDirection.BACKWARD);
-                                mutableState.setValue(str10);
-                                f = (-1) * floatValue;
+                                mutableState.setValue(str4);
+                                f = (-1.0f) * floatValue;
                             } else {
                                 MotionCarousel$lambda$4(mutableState3).setDirection(MotionCarouselDirection.FORWARD);
-                                mutableState.setValue(str9);
+                                mutableState.setValue(str11);
                                 f = floatValue;
                             }
                             startRestartGroup.startReplaceGroup(1162062662);
                             ComposerKt.sourceInformation(startRestartGroup, "");
                             if (rememberCarouselSwipeableState.isAnimationRunning()) {
-                                obj4 = str10;
+                                str6 = str11;
                                 f2 = f;
-                                carouselSwipeableState = rememberCarouselSwipeableState;
                                 state = rememberStateOfItemsProvider;
                             } else {
-                                obj4 = str10;
+                                str6 = str11;
                                 f2 = f;
                                 if (MotionCarousel$lambda$4(mutableState3).getDirection() == MotionCarouselDirection.FORWARD && ((String) rememberCarouselSwipeableState.getCurrentValue()).equals("next")) {
                                     startRestartGroup.startReplaceGroup(1664382685);
                                     ComposerKt.sourceInformation(startRestartGroup, "193@8202L260,193@8181L281");
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162069496, "CC(remember):MotionCarousel.kt#9igjgp");
                                     boolean changed = startRestartGroup.changed(rememberStateOfItemsProvider) | startRestartGroup.changed(rememberCarouselSwipeableState);
-                                    MotionCarouselKt$MotionCarousel$1$1 rememberedValue8 = startRestartGroup.rememberedValue();
+                                    Object rememberedValue8 = startRestartGroup.rememberedValue();
                                     if (changed || rememberedValue8 == Composer.Companion.getEmpty()) {
-                                        MotionCarouselKt$MotionCarousel$1$1 motionCarouselKt$MotionCarousel$1$1 = new MotionCarouselKt$MotionCarousel$1$1(rememberStateOfItemsProvider, rememberCarouselSwipeableState, str4, mutableState3, null);
                                         state = rememberStateOfItemsProvider;
-                                        carouselSwipeableState = rememberCarouselSwipeableState;
                                         mutableState2 = mutableState3;
-                                        rememberedValue8 = motionCarouselKt$MotionCarousel$1$1;
-                                        startRestartGroup.updateRememberedValue(rememberedValue8);
+                                        MotionCarouselKt$MotionCarousel$1$1 motionCarouselKt$MotionCarousel$1$12 = new MotionCarouselKt$MotionCarousel$1$1(rememberStateOfItemsProvider, rememberCarouselSwipeableState, str5, mutableState3, null);
+                                        startRestartGroup.updateRememberedValue(motionCarouselKt$MotionCarousel$1$12);
+                                        motionCarouselKt$MotionCarousel$1$1 = motionCarouselKt$MotionCarousel$1$12;
                                     } else {
-                                        carouselSwipeableState = rememberCarouselSwipeableState;
+                                        motionCarouselKt$MotionCarousel$1$1 = rememberedValue8;
                                         state = rememberStateOfItemsProvider;
                                         mutableState2 = mutableState3;
                                     }
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    EffectsKt.LaunchedEffect((Object) true, (Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object>) rememberedValue8, startRestartGroup, 6);
+                                    EffectsKt.LaunchedEffect((Object) true, (Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object>) motionCarouselKt$MotionCarousel$1$1, startRestartGroup, 6);
                                     startRestartGroup.endReplaceGroup();
                                 } else {
-                                    carouselSwipeableState = rememberCarouselSwipeableState;
                                     state = rememberStateOfItemsProvider;
-                                    String str11 = str4;
+                                    String str12 = str5;
                                     mutableState2 = mutableState3;
-                                    if (MotionCarousel$lambda$4(mutableState2).getDirection() == MotionCarouselDirection.BACKWARD && ((String) carouselSwipeableState.getCurrentValue()).equals("previous")) {
+                                    if (MotionCarousel$lambda$4(mutableState2).getDirection() == MotionCarouselDirection.BACKWARD && ((String) rememberCarouselSwipeableState.getCurrentValue()).equals("previous")) {
                                         startRestartGroup.startReplaceGroup(1664841950);
                                         ComposerKt.sourceInformation(startRestartGroup, "204@8666L227,204@8645L248");
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162084311, "CC(remember):MotionCarousel.kt#9igjgp");
-                                        boolean changed2 = startRestartGroup.changed(carouselSwipeableState);
+                                        boolean changed2 = startRestartGroup.changed(rememberCarouselSwipeableState);
                                         MotionCarouselKt$MotionCarousel$2$1 rememberedValue9 = startRestartGroup.rememberedValue();
                                         if (changed2 || rememberedValue9 == Composer.Companion.getEmpty()) {
-                                            rememberedValue9 = new MotionCarouselKt$MotionCarousel$2$1(carouselSwipeableState, str11, mutableState2, null);
+                                            rememberedValue9 = new MotionCarouselKt$MotionCarousel$2$1(rememberCarouselSwipeableState, str12, mutableState2, null);
                                             startRestartGroup.updateRememberedValue(rememberedValue9);
                                         }
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -326,10 +323,10 @@ public final class MotionCarouselKt {
                                 mutableIntState.setIntValue(MotionCarousel$lambda$4(mutableState2).getIndex());
                             }
                             startRestartGroup.endReplaceGroup();
-                            String str12 = (String) mutableState.getValue();
-                            m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), carouselSwipeableState, map, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
+                            String str13 = (String) mutableState.getValue();
+                            m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
                                 @Override // kotlin.jvm.functions.Function2
-                                public final ThresholdConfig invoke(String str13, String str14) {
+                                public final ThresholdConfig invoke(String str14, String str15) {
                                     return new FractionalThreshold(0.3f);
                                 }
                             }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8034getVelocityThresholdD9Ej5fM() : 0.0f);
@@ -379,7 +376,6 @@ public final class MotionCarouselKt {
                             }
                             final Ref ref3 = (Ref) ref;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            final androidx.compose.runtime.State<MotionItemsProvider> state2 = state;
                             final int i13 = i6;
                             Function3<MotionLayoutScope, Composer, Integer, Unit> function3 = new Function3<MotionLayoutScope, Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$$inlined$MotionLayout-6oYECBM$1
                                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -411,12 +407,12 @@ public final class MotionCarouselKt {
                                     while (i15 < i13) {
                                         MotionCarousel$lambda$7 = MotionCarouselKt.MotionCarousel$lambda$7(mutableIntState);
                                         final int i16 = (MotionCarousel$lambda$7 + i15) - i;
-                                        final boolean z4 = i16 >= 0 && i16 < ((MotionItemsProvider) state2.getValue()).count();
-                                        String str13 = str8;
+                                        final boolean z4 = i16 >= 0 && i16 < ((MotionItemsProvider) state.getValue()).count();
+                                        String str14 = str10;
                                         boolean z5 = z3;
                                         final int i17 = i15;
-                                        final androidx.compose.runtime.State state3 = state2;
-                                        final String str14 = str8;
+                                        final androidx.compose.runtime.State state2 = state;
+                                        final String str15 = str10;
                                         ComposableLambda rememberComposableLambda = ComposableLambdaKt.rememberComposableLambda(-2020349941, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$5$1
                                             /* JADX INFO: Access modifiers changed from: package-private */
                                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -438,15 +434,15 @@ public final class MotionCarouselKt {
                                                         ComposerKt.traceEventStart(-2020349941, i18, -1, "androidx.constraintlayout.compose.MotionCarousel.<anonymous>.<anonymous> (MotionCarousel.kt:236)");
                                                     }
                                                     if (z4) {
-                                                        if (state3.getValue().hasItemsWithProperties()) {
+                                                        if (state2.getValue().hasItemsWithProperties()) {
                                                             composer3.startReplaceGroup(-2023112919);
                                                             ComposerKt.sourceInformation(composer3, "238@10004L33,239@10105L8");
-                                                            state3.getValue().getContent(i16, motionLayoutScope.motionProperties(str14 + i17, composer3, 0)).invoke(composer3, 0);
+                                                            state2.getValue().getContent(i16, motionLayoutScope.motionProperties(str15 + i17, composer3, 0)).invoke(composer3, 0);
                                                             composer3.endReplaceGroup();
                                                         } else {
                                                             composer3.startReplaceGroup(-2022913031);
                                                             ComposerKt.sourceInformation(composer3, "241@10198L8");
-                                                            state3.getValue().getContent(i16).invoke(composer3, 0);
+                                                            state2.getValue().getContent(i16).invoke(composer3, 0);
                                                             composer3.endReplaceGroup();
                                                         }
                                                     }
@@ -460,7 +456,7 @@ public final class MotionCarouselKt {
                                             }
                                         }, composer2, 54);
                                         int i18 = i10;
-                                        MotionCarouselKt.ItemHolder(i17, str13, z5, rememberComposableLambda, composer2, ((i18 >> 12) & 896) | ((i18 >> 12) & 112) | 3072);
+                                        MotionCarouselKt.ItemHolder(i17, str14, z5, rememberComposableLambda, composer2, ((i18 >> 12) & 896) | ((i18 >> 12) & 112) | 3072);
                                         i15 = i17 + 1;
                                     }
                                     composer2.endReplaceGroup();
@@ -470,19 +466,18 @@ public final class MotionCarouselKt {
                                     }
                                 }
                             };
-                            String str13 = str8;
+                            String str14 = str10;
                             boolean z4 = z3;
-                            MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str12, 257, m7910getNonebfy_xzQ, onSizeChanged, mutableState4, ref3, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function3, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
+                            MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str13, 257, m7910getNonebfy_xzQ, onSizeChanged, mutableState4, ref3, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function3, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
+                            str7 = str14;
                             z2 = z4;
-                            str5 = str9;
-                            obj5 = obj4;
-                            str6 = str13;
+                            str8 = str6;
                         }
-                        str4 = TtmlNode.START;
+                        str5 = TtmlNode.START;
                         i11 = 2;
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162050338, "CC(remember):MotionCarousel.kt#9igjgp");
                         rememberedValue4 = startRestartGroup.rememberedValue();
@@ -494,17 +489,17 @@ public final class MotionCarouselKt {
                         if (floatValue >= 0.0f) {
                         }
                         MotionCarousel$lambda$4(mutableState3).setDirection(MotionCarouselDirection.FORWARD);
-                        mutableState.setValue(str9);
+                        mutableState.setValue(str11);
                         f = floatValue;
                         startRestartGroup.startReplaceGroup(1162062662);
                         ComposerKt.sourceInformation(startRestartGroup, "");
                         if (rememberCarouselSwipeableState.isAnimationRunning()) {
                         }
                         startRestartGroup.endReplaceGroup();
-                        String str122 = (String) mutableState.getValue();
-                        m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), carouselSwipeableState, map2, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
+                        String str132 = (String) mutableState.getValue();
+                        m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map2, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
                             @Override // kotlin.jvm.functions.Function2
-                            public final ThresholdConfig invoke(String str132, String str14) {
+                            public final ThresholdConfig invoke(String str142, String str15) {
                                 return new FractionalThreshold(0.3f);
                             }
                         }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map2.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8034getVelocityThresholdD9Ej5fM() : 0.0f);
@@ -530,7 +525,6 @@ public final class MotionCarouselKt {
                         }
                         final Ref ref32 = (Ref) ref4;
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        final androidx.compose.runtime.State state22 = state;
                         final int i132 = i6;
                         Function3<MotionLayoutScope, Composer, Integer, Unit> function32 = new Function3<MotionLayoutScope, Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$$inlined$MotionLayout-6oYECBM$1
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -562,12 +556,12 @@ public final class MotionCarouselKt {
                                 while (i15 < i132) {
                                     MotionCarousel$lambda$7 = MotionCarouselKt.MotionCarousel$lambda$7(mutableIntState);
                                     final int i16 = (MotionCarousel$lambda$7 + i15) - i;
-                                    final boolean z42 = i16 >= 0 && i16 < ((MotionItemsProvider) state22.getValue()).count();
-                                    String str132 = str8;
+                                    final boolean z42 = i16 >= 0 && i16 < ((MotionItemsProvider) state.getValue()).count();
+                                    String str142 = str10;
                                     boolean z5 = z3;
                                     final int i17 = i15;
-                                    final androidx.compose.runtime.State<? extends MotionItemsProvider> state3 = state22;
-                                    final String str14 = str8;
+                                    final androidx.compose.runtime.State<? extends MotionItemsProvider> state2 = state;
+                                    final String str15 = str10;
                                     ComposableLambda rememberComposableLambda = ComposableLambdaKt.rememberComposableLambda(-2020349941, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$5$1
                                         /* JADX INFO: Access modifiers changed from: package-private */
                                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -589,15 +583,15 @@ public final class MotionCarouselKt {
                                                     ComposerKt.traceEventStart(-2020349941, i18, -1, "androidx.constraintlayout.compose.MotionCarousel.<anonymous>.<anonymous> (MotionCarousel.kt:236)");
                                                 }
                                                 if (z42) {
-                                                    if (state3.getValue().hasItemsWithProperties()) {
+                                                    if (state2.getValue().hasItemsWithProperties()) {
                                                         composer3.startReplaceGroup(-2023112919);
                                                         ComposerKt.sourceInformation(composer3, "238@10004L33,239@10105L8");
-                                                        state3.getValue().getContent(i16, motionLayoutScope.motionProperties(str14 + i17, composer3, 0)).invoke(composer3, 0);
+                                                        state2.getValue().getContent(i16, motionLayoutScope.motionProperties(str15 + i17, composer3, 0)).invoke(composer3, 0);
                                                         composer3.endReplaceGroup();
                                                     } else {
                                                         composer3.startReplaceGroup(-2022913031);
                                                         ComposerKt.sourceInformation(composer3, "241@10198L8");
-                                                        state3.getValue().getContent(i16).invoke(composer3, 0);
+                                                        state2.getValue().getContent(i16).invoke(composer3, 0);
                                                         composer3.endReplaceGroup();
                                                     }
                                                 }
@@ -611,7 +605,7 @@ public final class MotionCarouselKt {
                                         }
                                     }, composer2, 54);
                                     int i18 = i10;
-                                    MotionCarouselKt.ItemHolder(i17, str132, z5, rememberComposableLambda, composer2, ((i18 >> 12) & 896) | ((i18 >> 12) & 112) | 3072);
+                                    MotionCarouselKt.ItemHolder(i17, str142, z5, rememberComposableLambda, composer2, ((i18 >> 12) & 896) | ((i18 >> 12) & 112) | 3072);
                                     i15 = i17 + 1;
                                 }
                                 composer2.endReplaceGroup();
@@ -621,25 +615,24 @@ public final class MotionCarouselKt {
                                 }
                             }
                         };
-                        String str132 = str8;
+                        String str142 = str10;
                         boolean z42 = z3;
-                        MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str122, 257, m7910getNonebfy_xzQ2, onSizeChanged2, mutableState42, ref32, defaultInvalidationStrategy2, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function32, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
+                        MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str132, 257, m7910getNonebfy_xzQ2, onSizeChanged2, mutableState42, ref32, defaultInvalidationStrategy2, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function32, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         if (ComposerKt.isTraceInProgress()) {
                         }
+                        str7 = str142;
                         z2 = z42;
-                        str5 = str9;
-                        obj5 = obj4;
-                        str6 = str132;
+                        str8 = str6;
                     } else {
                         startRestartGroup.skipToGroupEnd();
-                        str5 = obj2;
-                        str6 = obj3;
-                        obj5 = obj;
+                        str4 = obj;
+                        str8 = obj2;
+                        str7 = obj3;
                     }
                     endRestartGroup = startRestartGroup.endRestartGroup();
                     if (endRestartGroup == null) {
-                        final String str14 = obj5;
+                        final String str15 = str4;
                         endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$6
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -655,7 +648,7 @@ public final class MotionCarouselKt {
                             }
 
                             public final void invoke(Composer composer2, int i14) {
-                                MotionCarouselKt.MotionCarousel(MotionScene.this, i, i2, str14, str5, str6, z2, function1, composer2, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
+                                MotionCarouselKt.MotionCarousel(MotionScene.this, i, i2, str15, str8, str7, z2, function1, composer2, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
                             }
                         });
                         return;
@@ -688,8 +681,8 @@ public final class MotionCarouselKt {
                 }
                 final MutableFloatState mutableFloatState2 = (MutableFloatState) rememberedValue;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                String str92 = obj2;
-                String str102 = str7;
+                String str112 = obj2;
+                str4 = str9;
                 rememberCarouselSwipeableState = CarouselSwipeableKt.rememberCarouselSwipeableState(TtmlNode.START, null, null, startRestartGroup, 6, 6);
                 floatValue = rememberCarouselSwipeableState.getOffset().getFloatValue() / MotionCarousel$lambda$1(mutableFloatState2);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162028863, "CC(remember):MotionCarousel.kt#9igjgp");
@@ -706,7 +699,7 @@ public final class MotionCarouselKt {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 if (MotionCarousel$lambda$7(mutableIntState) != 0) {
                 }
-                str4 = TtmlNode.START;
+                str5 = TtmlNode.START;
                 i11 = 2;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162050338, "CC(remember):MotionCarousel.kt#9igjgp");
                 rememberedValue4 = startRestartGroup.rememberedValue();
@@ -718,17 +711,17 @@ public final class MotionCarouselKt {
                 if (floatValue >= 0.0f) {
                 }
                 MotionCarousel$lambda$4(mutableState32).setDirection(MotionCarouselDirection.FORWARD);
-                mutableState.setValue(str92);
+                mutableState.setValue(str112);
                 f = floatValue;
                 startRestartGroup.startReplaceGroup(1162062662);
                 ComposerKt.sourceInformation(startRestartGroup, "");
                 if (rememberCarouselSwipeableState.isAnimationRunning()) {
                 }
                 startRestartGroup.endReplaceGroup();
-                String str1222 = (String) mutableState.getValue();
-                m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), carouselSwipeableState, map22, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
+                String str1322 = (String) mutableState.getValue();
+                m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map22, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
                     @Override // kotlin.jvm.functions.Function2
-                    public final ThresholdConfig invoke(String str1322, String str142) {
+                    public final ThresholdConfig invoke(String str1422, String str152) {
                         return new FractionalThreshold(0.3f);
                     }
                 }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map22.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8034getVelocityThresholdD9Ej5fM() : 0.0f);
@@ -754,7 +747,6 @@ public final class MotionCarouselKt {
                 }
                 final Ref ref322 = (Ref) ref42;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                final androidx.compose.runtime.State state222 = state;
                 final int i1322 = i6;
                 Function3<MotionLayoutScope, Composer, Integer, Unit> function322 = new Function3<MotionLayoutScope, Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$$inlined$MotionLayout-6oYECBM$1
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -786,12 +778,12 @@ public final class MotionCarouselKt {
                         while (i15 < i1322) {
                             MotionCarousel$lambda$7 = MotionCarouselKt.MotionCarousel$lambda$7(mutableIntState);
                             final int i16 = (MotionCarousel$lambda$7 + i15) - i;
-                            final boolean z422 = i16 >= 0 && i16 < ((MotionItemsProvider) state222.getValue()).count();
-                            String str1322 = str8;
+                            final boolean z422 = i16 >= 0 && i16 < ((MotionItemsProvider) state.getValue()).count();
+                            String str1422 = str10;
                             boolean z5 = z3;
                             final int i17 = i15;
-                            final androidx.compose.runtime.State<? extends MotionItemsProvider> state3 = state222;
-                            final String str142 = str8;
+                            final androidx.compose.runtime.State<? extends MotionItemsProvider> state2 = state;
+                            final String str152 = str10;
                             ComposableLambda rememberComposableLambda = ComposableLambdaKt.rememberComposableLambda(-2020349941, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$5$1
                                 /* JADX INFO: Access modifiers changed from: package-private */
                                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -813,15 +805,15 @@ public final class MotionCarouselKt {
                                             ComposerKt.traceEventStart(-2020349941, i18, -1, "androidx.constraintlayout.compose.MotionCarousel.<anonymous>.<anonymous> (MotionCarousel.kt:236)");
                                         }
                                         if (z422) {
-                                            if (state3.getValue().hasItemsWithProperties()) {
+                                            if (state2.getValue().hasItemsWithProperties()) {
                                                 composer3.startReplaceGroup(-2023112919);
                                                 ComposerKt.sourceInformation(composer3, "238@10004L33,239@10105L8");
-                                                state3.getValue().getContent(i16, motionLayoutScope.motionProperties(str142 + i17, composer3, 0)).invoke(composer3, 0);
+                                                state2.getValue().getContent(i16, motionLayoutScope.motionProperties(str152 + i17, composer3, 0)).invoke(composer3, 0);
                                                 composer3.endReplaceGroup();
                                             } else {
                                                 composer3.startReplaceGroup(-2022913031);
                                                 ComposerKt.sourceInformation(composer3, "241@10198L8");
-                                                state3.getValue().getContent(i16).invoke(composer3, 0);
+                                                state2.getValue().getContent(i16).invoke(composer3, 0);
                                                 composer3.endReplaceGroup();
                                             }
                                         }
@@ -835,7 +827,7 @@ public final class MotionCarouselKt {
                                 }
                             }, composer2, 54);
                             int i18 = i10;
-                            MotionCarouselKt.ItemHolder(i17, str1322, z5, rememberComposableLambda, composer2, ((i18 >> 12) & 896) | ((i18 >> 12) & 112) | 3072);
+                            MotionCarouselKt.ItemHolder(i17, str1422, z5, rememberComposableLambda, composer2, ((i18 >> 12) & 896) | ((i18 >> 12) & 112) | 3072);
                             i15 = i17 + 1;
                         }
                         composer2.endReplaceGroup();
@@ -845,16 +837,15 @@ public final class MotionCarouselKt {
                         }
                     }
                 };
-                String str1322 = str8;
+                String str1422 = str10;
                 boolean z422 = z3;
-                MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str1222, 257, m7910getNonebfy_xzQ22, onSizeChanged22, mutableState422, ref322, defaultInvalidationStrategy22, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function322, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
+                MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str1322, 257, m7910getNonebfy_xzQ22, onSizeChanged22, mutableState422, ref322, defaultInvalidationStrategy22, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function322, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 if (ComposerKt.isTraceInProgress()) {
                 }
+                str7 = str1422;
                 z2 = z422;
-                str5 = str92;
-                obj5 = obj4;
-                str6 = str1322;
+                str8 = str6;
                 endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup == null) {
                 }
@@ -889,8 +880,8 @@ public final class MotionCarouselKt {
             }
             final MutableFloatState mutableFloatState22 = (MutableFloatState) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            String str922 = obj2;
-            String str1022 = str7;
+            String str1122 = obj2;
+            str4 = str9;
             rememberCarouselSwipeableState = CarouselSwipeableKt.rememberCarouselSwipeableState(TtmlNode.START, null, null, startRestartGroup, 6, 6);
             floatValue = rememberCarouselSwipeableState.getOffset().getFloatValue() / MotionCarousel$lambda$1(mutableFloatState22);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162028863, "CC(remember):MotionCarousel.kt#9igjgp");
@@ -907,7 +898,7 @@ public final class MotionCarouselKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             if (MotionCarousel$lambda$7(mutableIntState) != 0) {
             }
-            str4 = TtmlNode.START;
+            str5 = TtmlNode.START;
             i11 = 2;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162050338, "CC(remember):MotionCarousel.kt#9igjgp");
             rememberedValue4 = startRestartGroup.rememberedValue();
@@ -919,17 +910,17 @@ public final class MotionCarouselKt {
             if (floatValue >= 0.0f) {
             }
             MotionCarousel$lambda$4(mutableState322).setDirection(MotionCarouselDirection.FORWARD);
-            mutableState.setValue(str922);
+            mutableState.setValue(str1122);
             f = floatValue;
             startRestartGroup.startReplaceGroup(1162062662);
             ComposerKt.sourceInformation(startRestartGroup, "");
             if (rememberCarouselSwipeableState.isAnimationRunning()) {
             }
             startRestartGroup.endReplaceGroup();
-            String str12222 = (String) mutableState.getValue();
-            m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), carouselSwipeableState, map222, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
+            String str13222 = (String) mutableState.getValue();
+            m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map222, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
                 @Override // kotlin.jvm.functions.Function2
-                public final ThresholdConfig invoke(String str13222, String str142) {
+                public final ThresholdConfig invoke(String str14222, String str152) {
                     return new FractionalThreshold(0.3f);
                 }
             }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map222.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8034getVelocityThresholdD9Ej5fM() : 0.0f);
@@ -955,7 +946,6 @@ public final class MotionCarouselKt {
             }
             final Ref ref3222 = (Ref) ref422;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            final androidx.compose.runtime.State state2222 = state;
             final int i13222 = i6;
             Function3<MotionLayoutScope, Composer, Integer, Unit> function3222 = new Function3<MotionLayoutScope, Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$$inlined$MotionLayout-6oYECBM$1
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -987,12 +977,12 @@ public final class MotionCarouselKt {
                     while (i15 < i13222) {
                         MotionCarousel$lambda$7 = MotionCarouselKt.MotionCarousel$lambda$7(mutableIntState);
                         final int i16 = (MotionCarousel$lambda$7 + i15) - i;
-                        final boolean z4222 = i16 >= 0 && i16 < ((MotionItemsProvider) state2222.getValue()).count();
-                        String str13222 = str8;
+                        final boolean z4222 = i16 >= 0 && i16 < ((MotionItemsProvider) state.getValue()).count();
+                        String str14222 = str10;
                         boolean z5 = z3;
                         final int i17 = i15;
-                        final androidx.compose.runtime.State<? extends MotionItemsProvider> state3 = state2222;
-                        final String str142 = str8;
+                        final androidx.compose.runtime.State<? extends MotionItemsProvider> state2 = state;
+                        final String str152 = str10;
                         ComposableLambda rememberComposableLambda = ComposableLambdaKt.rememberComposableLambda(-2020349941, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$5$1
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1014,15 +1004,15 @@ public final class MotionCarouselKt {
                                         ComposerKt.traceEventStart(-2020349941, i18, -1, "androidx.constraintlayout.compose.MotionCarousel.<anonymous>.<anonymous> (MotionCarousel.kt:236)");
                                     }
                                     if (z4222) {
-                                        if (state3.getValue().hasItemsWithProperties()) {
+                                        if (state2.getValue().hasItemsWithProperties()) {
                                             composer3.startReplaceGroup(-2023112919);
                                             ComposerKt.sourceInformation(composer3, "238@10004L33,239@10105L8");
-                                            state3.getValue().getContent(i16, motionLayoutScope.motionProperties(str142 + i17, composer3, 0)).invoke(composer3, 0);
+                                            state2.getValue().getContent(i16, motionLayoutScope.motionProperties(str152 + i17, composer3, 0)).invoke(composer3, 0);
                                             composer3.endReplaceGroup();
                                         } else {
                                             composer3.startReplaceGroup(-2022913031);
                                             ComposerKt.sourceInformation(composer3, "241@10198L8");
-                                            state3.getValue().getContent(i16).invoke(composer3, 0);
+                                            state2.getValue().getContent(i16).invoke(composer3, 0);
                                             composer3.endReplaceGroup();
                                         }
                                     }
@@ -1036,7 +1026,7 @@ public final class MotionCarouselKt {
                             }
                         }, composer2, 54);
                         int i18 = i10;
-                        MotionCarouselKt.ItemHolder(i17, str13222, z5, rememberComposableLambda, composer2, ((i18 >> 12) & 896) | ((i18 >> 12) & 112) | 3072);
+                        MotionCarouselKt.ItemHolder(i17, str14222, z5, rememberComposableLambda, composer2, ((i18 >> 12) & 896) | ((i18 >> 12) & 112) | 3072);
                         i15 = i17 + 1;
                     }
                     composer2.endReplaceGroup();
@@ -1046,16 +1036,15 @@ public final class MotionCarouselKt {
                     }
                 }
             };
-            String str13222 = str8;
+            String str14222 = str10;
             boolean z4222 = z3;
-            MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str12222, 257, m7910getNonebfy_xzQ222, onSizeChanged222, mutableState4222, ref3222, defaultInvalidationStrategy222, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function3222, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
+            MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str13222, 257, m7910getNonebfy_xzQ222, onSizeChanged222, mutableState4222, ref3222, defaultInvalidationStrategy222, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function3222, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             if (ComposerKt.isTraceInProgress()) {
             }
+            str7 = str14222;
             z2 = z4222;
-            str5 = str922;
-            obj5 = obj4;
-            str6 = str13222;
+            str8 = str6;
             endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup == null) {
             }
@@ -1094,8 +1083,8 @@ public final class MotionCarouselKt {
         }
         final MutableFloatState mutableFloatState222 = (MutableFloatState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        String str9222 = obj2;
-        String str10222 = str7;
+        String str11222 = obj2;
+        str4 = str9;
         rememberCarouselSwipeableState = CarouselSwipeableKt.rememberCarouselSwipeableState(TtmlNode.START, null, null, startRestartGroup, 6, 6);
         floatValue = rememberCarouselSwipeableState.getOffset().getFloatValue() / MotionCarousel$lambda$1(mutableFloatState222);
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162028863, "CC(remember):MotionCarousel.kt#9igjgp");
@@ -1112,7 +1101,7 @@ public final class MotionCarouselKt {
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
         if (MotionCarousel$lambda$7(mutableIntState) != 0) {
         }
-        str4 = TtmlNode.START;
+        str5 = TtmlNode.START;
         i11 = 2;
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162050338, "CC(remember):MotionCarousel.kt#9igjgp");
         rememberedValue4 = startRestartGroup.rememberedValue();
@@ -1124,17 +1113,17 @@ public final class MotionCarouselKt {
         if (floatValue >= 0.0f) {
         }
         MotionCarousel$lambda$4(mutableState3222).setDirection(MotionCarouselDirection.FORWARD);
-        mutableState.setValue(str9222);
+        mutableState.setValue(str11222);
         f = floatValue;
         startRestartGroup.startReplaceGroup(1162062662);
         ComposerKt.sourceInformation(startRestartGroup, "");
         if (rememberCarouselSwipeableState.isAnimationRunning()) {
         }
         startRestartGroup.endReplaceGroup();
-        String str122222 = (String) mutableState.getValue();
-        m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), carouselSwipeableState, map2222, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
+        String str132222 = (String) mutableState.getValue();
+        m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map2222, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
             @Override // kotlin.jvm.functions.Function2
-            public final ThresholdConfig invoke(String str132222, String str142) {
+            public final ThresholdConfig invoke(String str142222, String str152) {
                 return new FractionalThreshold(0.3f);
             }
         }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map2222.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8034getVelocityThresholdD9Ej5fM() : 0.0f);
@@ -1160,7 +1149,6 @@ public final class MotionCarouselKt {
         }
         final Ref ref32222 = (Ref) ref4222;
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        final androidx.compose.runtime.State state22222 = state;
         final int i132222 = i6;
         Function3<MotionLayoutScope, Composer, Integer, Unit> function32222 = new Function3<MotionLayoutScope, Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$$inlined$MotionLayout-6oYECBM$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1192,12 +1180,12 @@ public final class MotionCarouselKt {
                 while (i15 < i132222) {
                     MotionCarousel$lambda$7 = MotionCarouselKt.MotionCarousel$lambda$7(mutableIntState);
                     final int i16 = (MotionCarousel$lambda$7 + i15) - i;
-                    final boolean z42222 = i16 >= 0 && i16 < ((MotionItemsProvider) state22222.getValue()).count();
-                    String str132222 = str8;
+                    final boolean z42222 = i16 >= 0 && i16 < ((MotionItemsProvider) state.getValue()).count();
+                    String str142222 = str10;
                     boolean z5 = z3;
                     final int i17 = i15;
-                    final androidx.compose.runtime.State<? extends MotionItemsProvider> state3 = state22222;
-                    final String str142 = str8;
+                    final androidx.compose.runtime.State<? extends MotionItemsProvider> state2 = state;
+                    final String str152 = str10;
                     ComposableLambda rememberComposableLambda = ComposableLambdaKt.rememberComposableLambda(-2020349941, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$5$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1219,15 +1207,15 @@ public final class MotionCarouselKt {
                                     ComposerKt.traceEventStart(-2020349941, i18, -1, "androidx.constraintlayout.compose.MotionCarousel.<anonymous>.<anonymous> (MotionCarousel.kt:236)");
                                 }
                                 if (z42222) {
-                                    if (state3.getValue().hasItemsWithProperties()) {
+                                    if (state2.getValue().hasItemsWithProperties()) {
                                         composer3.startReplaceGroup(-2023112919);
                                         ComposerKt.sourceInformation(composer3, "238@10004L33,239@10105L8");
-                                        state3.getValue().getContent(i16, motionLayoutScope.motionProperties(str142 + i17, composer3, 0)).invoke(composer3, 0);
+                                        state2.getValue().getContent(i16, motionLayoutScope.motionProperties(str152 + i17, composer3, 0)).invoke(composer3, 0);
                                         composer3.endReplaceGroup();
                                     } else {
                                         composer3.startReplaceGroup(-2022913031);
                                         ComposerKt.sourceInformation(composer3, "241@10198L8");
-                                        state3.getValue().getContent(i16).invoke(composer3, 0);
+                                        state2.getValue().getContent(i16).invoke(composer3, 0);
                                         composer3.endReplaceGroup();
                                     }
                                 }
@@ -1241,7 +1229,7 @@ public final class MotionCarouselKt {
                         }
                     }, composer2, 54);
                     int i18 = i10;
-                    MotionCarouselKt.ItemHolder(i17, str132222, z5, rememberComposableLambda, composer2, ((i18 >> 12) & 896) | ((i18 >> 12) & 112) | 3072);
+                    MotionCarouselKt.ItemHolder(i17, str142222, z5, rememberComposableLambda, composer2, ((i18 >> 12) & 896) | ((i18 >> 12) & 112) | 3072);
                     i15 = i17 + 1;
                 }
                 composer2.endReplaceGroup();
@@ -1251,16 +1239,15 @@ public final class MotionCarouselKt {
                 }
             }
         };
-        String str132222 = str8;
+        String str142222 = str10;
         boolean z42222 = z3;
-        MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str122222, 257, m7910getNonebfy_xzQ2222, onSizeChanged2222, mutableState42222, ref32222, defaultInvalidationStrategy2222, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function32222, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
+        MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str132222, 257, m7910getNonebfy_xzQ2222, onSizeChanged2222, mutableState42222, ref32222, defaultInvalidationStrategy2222, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function32222, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
         if (ComposerKt.isTraceInProgress()) {
         }
+        str7 = str142222;
         z2 = z42222;
-        str5 = str9222;
-        obj5 = obj4;
-        str6 = str132222;
+        str8 = str6;
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup == null) {
         }
@@ -1304,8 +1291,7 @@ public final class MotionCarouselKt {
             }
             Modifier layoutId$default = ConstraintLayoutTagKt.layoutId$default(Modifier.Companion, str + i, null, 2, null);
             if (z) {
-                float f = 20;
-                layoutId$default = BorderKt.m275borderxT4_qwU(ClipKt.clip(layoutId$default, RoundedCornerShapeKt.m1126RoundedCornerShape0680j_4(Dp.m7555constructorimpl(f))), Dp.m7555constructorimpl(2), ColorKt.Color(0, 0, 0, 60), RoundedCornerShapeKt.m1126RoundedCornerShape0680j_4(Dp.m7555constructorimpl(f)));
+                layoutId$default = BorderKt.m275borderxT4_qwU(ClipKt.clip(layoutId$default, RoundedCornerShapeKt.m1126RoundedCornerShape0680j_4(Dp.m7555constructorimpl(20.0f))), Dp.m7555constructorimpl(2.0f), ColorKt.Color(0, 0, 0, 60), RoundedCornerShapeKt.m1126RoundedCornerShape0680j_4(Dp.m7555constructorimpl(20.0f)));
             }
             Alignment center = Alignment.Companion.getCenter();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");

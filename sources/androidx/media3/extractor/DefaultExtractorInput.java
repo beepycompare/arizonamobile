@@ -33,11 +33,15 @@ public final class DefaultExtractorInput implements ExtractorInput {
 
     @Override // androidx.media3.extractor.ExtractorInput, androidx.media3.common.DataReader
     public int read(byte[] bArr, int i, int i2) throws IOException {
+        DefaultExtractorInput defaultExtractorInput;
         int readFromPeekBuffer = readFromPeekBuffer(bArr, i, i2);
         if (readFromPeekBuffer == 0) {
-            readFromPeekBuffer = readFromUpstream(bArr, i, i2, 0, true);
+            defaultExtractorInput = this;
+            readFromPeekBuffer = defaultExtractorInput.readFromUpstream(bArr, i, i2, 0, true);
+        } else {
+            defaultExtractorInput = this;
         }
-        commitBytesRead(readFromPeekBuffer);
+        defaultExtractorInput.commitBytesRead(readFromPeekBuffer);
         return readFromPeekBuffer;
     }
 
@@ -58,12 +62,16 @@ public final class DefaultExtractorInput implements ExtractorInput {
 
     @Override // androidx.media3.extractor.ExtractorInput
     public int skip(int i) throws IOException {
+        DefaultExtractorInput defaultExtractorInput;
         int skipFromPeekBuffer = skipFromPeekBuffer(i);
         if (skipFromPeekBuffer == 0) {
             byte[] bArr = this.scratchSpace;
-            skipFromPeekBuffer = readFromUpstream(bArr, 0, Math.min(i, bArr.length), 0, true);
+            defaultExtractorInput = this;
+            skipFromPeekBuffer = defaultExtractorInput.readFromUpstream(bArr, 0, Math.min(i, bArr.length), 0, true);
+        } else {
+            defaultExtractorInput = this;
         }
-        commitBytesRead(skipFromPeekBuffer);
+        defaultExtractorInput.commitBytesRead(skipFromPeekBuffer);
         return skipFromPeekBuffer;
     }
 
@@ -125,13 +133,15 @@ public final class DefaultExtractorInput implements ExtractorInput {
         ensureSpaceForPeek(i);
         int i2 = this.peekBufferLength - this.peekBufferPosition;
         while (i2 < i) {
+            DefaultExtractorInput defaultExtractorInput = this;
             int i3 = i;
             boolean z2 = z;
-            i2 = readFromUpstream(this.peekBuffer, this.peekBufferPosition, i3, i2, z2);
+            i2 = defaultExtractorInput.readFromUpstream(this.peekBuffer, this.peekBufferPosition, i3, i2, z2);
             if (i2 == -1) {
                 return false;
             }
-            this.peekBufferLength = this.peekBufferPosition + i2;
+            defaultExtractorInput.peekBufferLength = defaultExtractorInput.peekBufferPosition + i2;
+            this = defaultExtractorInput;
             i = i3;
             z = z2;
         }

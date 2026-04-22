@@ -64,12 +64,12 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes.dex */
 public final class TabKt {
     private static final float SmallTabHeight = PrimaryNavigationTabTokens.INSTANCE.m3697getContainerHeightD9Ej5fM();
-    private static final float LargeTabHeight = Dp.m7555constructorimpl(72);
-    private static final float HorizontalTextPadding = Dp.m7555constructorimpl(16);
-    private static final float SingleLineTextBaselineWithIcon = Dp.m7555constructorimpl(14);
-    private static final float DoubleLineTextBaselineWithIcon = Dp.m7555constructorimpl(6);
+    private static final float LargeTabHeight = Dp.m7555constructorimpl(72.0f);
+    private static final float HorizontalTextPadding = Dp.m7555constructorimpl(16.0f);
+    private static final float SingleLineTextBaselineWithIcon = Dp.m7555constructorimpl(14.0f);
+    private static final float DoubleLineTextBaselineWithIcon = Dp.m7555constructorimpl(6.0f);
     private static final long IconDistanceFromBaseline = TextUnitKt.getSp(20);
-    private static final float TextDistanceFromLeadingIcon = Dp.m7555constructorimpl(8);
+    private static final float TextDistanceFromLeadingIcon = Dp.m7555constructorimpl(8.0f);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LeadingIconTab_wqdebIU$lambda$2(boolean z, Function0 function0, Function2 function2, Function2 function22, Modifier modifier, boolean z2, long j, long j2, MutableInteractionSource mutableInteractionSource, int i, int i2, Composer composer, int i3) {

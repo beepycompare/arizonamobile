@@ -26,7 +26,7 @@ public final class ConverterKt {
 
     public static final float pxToDp(float f, Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        return f / (context.getResources().getDisplayMetrics().densityDpi / 160);
+        return f / (context.getResources().getDisplayMetrics().densityDpi / 160.0f);
     }
 
     public static final byte[] intToByteArray(int i) {

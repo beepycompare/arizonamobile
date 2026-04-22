@@ -74,7 +74,7 @@ public final class AnalogTimePickerState implements TimePickerState {
         MutableState mutableStateOf$default;
         this.state = timePickerState;
         this.userOverride = ref;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7553boximpl(Dp.m7555constructorimpl(0)), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7553boximpl(Dp.m7555constructorimpl(0.0f)), null, 2, null);
         this.currentDiameter$delegate = mutableStateOf$default;
         this.hourAngle = ((timePickerState.getHour() % 12) * 0.5235988f) - 1.5707964f;
         this.minuteAngle = (timePickerState.getMinute() * 0.10471976f) - 1.5707964f;
@@ -220,11 +220,11 @@ public final class AnalogTimePickerState implements TimePickerState {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final int toHour(float f) {
-        return ((int) ((f + (0.2617994f + 1.5707963267948966d)) / 0.5235988f)) % 12;
+        return ((int) ((f + 1.8325957218792777d) / 0.5235987901687622d)) % 12;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final int toMinute(float f) {
-        return ((int) ((f + (0.05235988f + 1.5707963267948966d)) / 0.10471976f)) % 60;
+        return ((int) ((f + 1.6231562058117728d) / 0.10471975803375244d)) % 60;
     }
 }

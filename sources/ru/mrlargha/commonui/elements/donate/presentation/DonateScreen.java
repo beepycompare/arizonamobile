@@ -362,20 +362,21 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         if (pagesContainer.getVisibility() == 0) {
             donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), 2, 2);
             donateScreen.setPage(Pages.PURCHASE);
-            int i = UtilsKt.getArizonaType(donateScreen.getTargetActivity()) ? 10 : 13;
+            int size = UtilsKt.getArizonaType(donateScreen.getTargetActivity()) ? 10 : donateScreen.categoryAdapter.getCurrentList().size();
+            Log.d(donateScreen.getCLASS_TAG(), "setupListeners: " + size);
             donateScreen.categoryAdapter.rateCategory();
-            donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), i, 4);
+            donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), size, 4);
             if (UtilsKt.getArizonaType(donateScreen.getTargetActivity())) {
                 DonateStates donateStates = donateScreen.states;
                 if (donateStates != null) {
-                    donateStates.setItemsArizona(i, false);
+                    donateStates.setItemsArizona(size, false);
                     return;
                 }
                 return;
             }
             DonateStates donateStates2 = donateScreen.states;
             if (donateStates2 != null) {
-                donateStates2.setItemsRodina(i, false, false);
+                donateStates2.setItemsRodina(size, false, false);
             }
         }
     }

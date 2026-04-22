@@ -31,7 +31,7 @@ public final class LazyLayoutSemanticsKt {
 
     public static final float estimatedLazyMaxScrollOffset(int i, int i2, boolean z) {
         if (z) {
-            return estimatedLazyScrollOffset(i, i2) + 100;
+            return estimatedLazyScrollOffset(i, i2) + 100.0f;
         }
         return estimatedLazyScrollOffset(i, i2);
     }

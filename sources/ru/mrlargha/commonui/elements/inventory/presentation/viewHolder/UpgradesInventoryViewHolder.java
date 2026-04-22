@@ -11,7 +11,6 @@ import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.adjust.sdk.Constants;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -23,6 +22,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.text.StringsKt;
+import kotlin.time.DurationKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
@@ -75,7 +75,7 @@ public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
         this.onItemClicked = onItemClicked;
     }
 
-    /* JADX WARN: Type inference failed for: r0v50, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.UpgradesInventoryViewHolder$bind$1$6] */
+    /* JADX WARN: Type inference failed for: r0v49, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.UpgradesInventoryViewHolder$bind$1$6] */
     public final void bind(final InventoryItem itemVal) {
         Object obj;
         Job launch$default;
@@ -217,11 +217,9 @@ public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
             this.countDownTimer = new CountDownTimer(longValue) { // from class: ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.UpgradesInventoryViewHolder$bind$1$6
                 @Override // android.os.CountDownTimer
                 public void onTick(long j) {
-                    long j2 = (long) Constants.ONE_HOUR;
-                    long j3 = 60000;
                     TextView textView = itemSubInventoryBinding.tvTitleText;
                     StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-                    String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Integer.valueOf((int) (j / j2)), Integer.valueOf((int) ((j % j2) / j3)), Integer.valueOf((int) ((j % j3) / 1000))}, 3));
+                    String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Integer.valueOf((int) (j / DurationKt.MILLIS_IN_HOUR)), Integer.valueOf((int) ((j % DurationKt.MILLIS_IN_HOUR) / 60000)), Integer.valueOf((int) ((j % 60000) / 1000))}, 3));
                     Intrinsics.checkNotNullExpressionValue(format, "format(...)");
                     textView.setText(format);
                 }

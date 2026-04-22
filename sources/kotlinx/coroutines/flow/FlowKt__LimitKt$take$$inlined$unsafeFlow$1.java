@@ -53,7 +53,6 @@ public final class FlowKt__LimitKt$take$$inlined$unsafeFlow$1<T> implements Flow
     public Object collect(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
         AnonymousClass1 anonymousClass1;
         int i;
-        AbortFlowException e;
         Object obj;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
@@ -72,8 +71,8 @@ public final class FlowKt__LimitKt$take$$inlined$unsafeFlow$1<T> implements Flow
                         if (this.$this_take$inlined.collect(new FlowKt__LimitKt$take$2$1(intRef, this.$count$inlined, flowCollector, obj3), anonymousClass1) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                    } catch (AbortFlowException e2) {
-                        e = e2;
+                    } catch (AbortFlowException e) {
+                        e = e;
                         obj = obj3;
                         FlowExceptions_commonKt.checkOwnership(e, obj);
                         return Unit.INSTANCE;
@@ -84,8 +83,8 @@ public final class FlowKt__LimitKt$take$$inlined$unsafeFlow$1<T> implements Flow
                     obj = anonymousClass1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj2);
-                    } catch (AbortFlowException e3) {
-                        e = e3;
+                    } catch (AbortFlowException e2) {
+                        e = e2;
                         FlowExceptions_commonKt.checkOwnership(e, obj);
                         return Unit.INSTANCE;
                     }

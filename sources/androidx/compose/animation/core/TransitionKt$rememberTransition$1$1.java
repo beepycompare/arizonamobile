@@ -42,14 +42,14 @@ public final class TransitionKt$rememberTransition$1$1 extends SuspendLambda imp
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Mutex compositionContinuationMutex$animation_core;
+        Mutex mutex;
         TransitionState transitionState;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             ((SeekableTransitionState) this.$transitionState).observeTotalDuration$animation_core();
-            compositionContinuationMutex$animation_core = ((SeekableTransitionState) this.$transitionState).getCompositionContinuationMutex$animation_core();
+            Mutex compositionContinuationMutex$animation_core = ((SeekableTransitionState) this.$transitionState).getCompositionContinuationMutex$animation_core();
             TransitionState transitionState2 = this.$transitionState;
             this.L$0 = compositionContinuationMutex$animation_core;
             this.L$1 = transitionState2;
@@ -57,12 +57,13 @@ public final class TransitionKt$rememberTransition$1$1 extends SuspendLambda imp
             if (compositionContinuationMutex$animation_core.lock(null, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
+            mutex = compositionContinuationMutex$animation_core;
             transitionState = transitionState2;
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             transitionState = (TransitionState) this.L$1;
-            compositionContinuationMutex$animation_core = (Mutex) this.L$0;
+            mutex = (Mutex) this.L$0;
             ResultKt.throwOnFailure(obj);
         }
         try {
@@ -74,10 +75,10 @@ public final class TransitionKt$rememberTransition$1$1 extends SuspendLambda imp
             }
             ((SeekableTransitionState) transitionState).setCompositionContinuation$animation_core(null);
             Unit unit = Unit.INSTANCE;
-            compositionContinuationMutex$animation_core.unlock(null);
+            mutex.unlock(null);
             return Unit.INSTANCE;
         } catch (Throwable th) {
-            compositionContinuationMutex$animation_core.unlock(null);
+            mutex.unlock(null);
             throw th;
         }
     }

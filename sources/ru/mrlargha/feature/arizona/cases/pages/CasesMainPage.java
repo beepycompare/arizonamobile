@@ -271,7 +271,7 @@ public final class CasesMainPage implements CasesBasePage {
             discountContainer.setVisibility(0);
             arizonaCasesMainPageBinding.tvDiscount.setText(Constants.FILENAME_SEQUENCE_SEPARATOR + casesInfoModel.getDiscount() + "%");
             Integer cost = casesInfoModel.getCost();
-            double intValue = (cost != null ? cost.intValue() : 0) * (casesInfoModel.getDiscount() / 100);
+            double intValue = (cost != null ? cost.intValue() : 0) * (casesInfoModel.getDiscount() / 100.0d);
             Integer cost2 = casesInfoModel.getCost();
             arizonaCasesMainPageBinding.tvOpenCase.setText("Открыть за " + ((int) ((cost2 != null ? cost2.intValue() : 0) - intValue)));
             return;

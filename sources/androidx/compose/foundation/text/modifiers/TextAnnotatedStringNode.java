@@ -505,11 +505,9 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
                 function12.invoke(textLayoutResult.getPlaceholderRects());
             }
             final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.Companion.m7517fitPrioritizingWidthZbe2FdA((int) (textLayoutResult.m6974getSizeYbymL2g() >> 32), (int) (textLayoutResult.m6974getSizeYbymL2g() >> 32), (int) (textLayoutResult.m6974getSizeYbymL2g() & 4294967295L), (int) (textLayoutResult.m6974getSizeYbymL2g() & 4294967295L)));
-            int m6974getSizeYbymL2g = (int) (textLayoutResult.m6974getSizeYbymL2g() >> 32);
-            int m6974getSizeYbymL2g2 = (int) (textLayoutResult.m6974getSizeYbymL2g() & 4294967295L);
             Map<AlignmentLine, Integer> map = this.baselineCache;
             Intrinsics.checkNotNull(map);
-            return measureScope.layout(m6974getSizeYbymL2g, m6974getSizeYbymL2g2, map, new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$$ExternalSyntheticLambda0
+            return measureScope.layout((int) (textLayoutResult.m6974getSizeYbymL2g() >> 32), (int) (textLayoutResult.m6974getSizeYbymL2g() & 4294967295L), map, new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit measure_3p2s80s$lambda$0$0;

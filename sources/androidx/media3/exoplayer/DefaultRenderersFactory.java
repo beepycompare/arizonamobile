@@ -157,6 +157,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
 
     protected void buildVideoRenderers(Context context, int i, MediaCodecSelector mediaCodecSelector, boolean z, Handler handler, VideoRendererEventListener videoRendererEventListener, long j, ArrayList<Renderer> arrayList) {
         int i2;
+        int i3;
         MediaCodecVideoRenderer.Builder experimentalSetLateThresholdToDropDecoderInputUs = new MediaCodecVideoRenderer.Builder(context).setCodecAdapterFactory(getCodecAdapterFactory()).setMediaCodecSelector(mediaCodecSelector).setAllowedJoiningTimeMs(j).setEnableDecoderFallback(z).setEventHandler(handler).setEventListener(videoRendererEventListener).setMaxDroppedFramesToNotify(50).experimentalSetParseAv1SampleDependencies(this.parseAv1SampleDependencies).experimentalSetLateThresholdToDropDecoderInputUs(this.lateThresholdToDropDecoderInputUs);
         if (Build.VERSION.SDK_INT >= 34) {
             experimentalSetLateThresholdToDropDecoderInputUs = experimentalSetLateThresholdToDropDecoderInputUs.experimentalSetEnableMediaCodecBufferDecodeOnlyFlag(this.enableMediaCodecBufferDecodeOnlyFlag);
@@ -179,7 +180,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
                     size = i2;
                     i2 = size;
                     try {
-                        int i3 = i2 + 1;
+                        i3 = i2 + 1;
                         try {
                             arrayList.add(i2, (Renderer) Class.forName("androidx.media3.decoder.av1.Libdav1dVideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
                             Log.i(TAG, "Loaded Libdav1dVideoRenderer.");
@@ -189,33 +190,41 @@ public class DefaultRenderersFactory implements RenderersFactory {
                             arrayList.add(i3, (Renderer) Class.forName("androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
                             Log.i(TAG, "Loaded FfmpegVideoRenderer.");
                         }
-                        arrayList.add(i3, (Renderer) Class.forName("androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
-                        Log.i(TAG, "Loaded FfmpegVideoRenderer.");
-                    } catch (Exception e) {
-                        throw new IllegalStateException("Error instantiating AV1 extension", e);
+                    } catch (ClassNotFoundException unused3) {
                     }
+                    arrayList.add(i3, (Renderer) Class.forName("androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
+                    Log.i(TAG, "Loaded FfmpegVideoRenderer.");
                 }
-            } catch (ClassNotFoundException unused3) {
+            } catch (Exception e) {
+                throw new IllegalStateException("Error instantiating VP9 extension", e);
             }
+        } catch (ClassNotFoundException unused4) {
+        }
+        try {
+            i3 = i2 + 1;
+            arrayList.add(i2, (Renderer) Class.forName("androidx.media3.decoder.av1.Libdav1dVideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
+            Log.i(TAG, "Loaded Libdav1dVideoRenderer.");
             try {
-                int i32 = i2 + 1;
-                arrayList.add(i2, (Renderer) Class.forName("androidx.media3.decoder.av1.Libdav1dVideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
-                Log.i(TAG, "Loaded Libdav1dVideoRenderer.");
-            } catch (ClassNotFoundException unused4) {
-            }
-            try {
-                arrayList.add(i32, (Renderer) Class.forName("androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
+                arrayList.add(i3, (Renderer) Class.forName("androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
                 Log.i(TAG, "Loaded FfmpegVideoRenderer.");
             } catch (ClassNotFoundException unused5) {
             } catch (Exception e2) {
                 throw new IllegalStateException("Error instantiating FFmpeg extension", e2);
             }
         } catch (Exception e3) {
-            throw new IllegalStateException("Error instantiating VP9 extension", e3);
+            throw new IllegalStateException("Error instantiating AV1 extension", e3);
         }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(18:74|75|12|13|14|(2:15|16)|17|18|19|(2:20|21)|22|23|24|25|26|(5:28|29|30|31|32)|34|35) */
+    /* JADX WARN: Can't wrap try/catch for region: R(17:(2:15|16)|17|18|19|(2:20|21)|22|23|24|25|26|28|29|30|31|32|34|35) */
+    /* JADX WARN: Can't wrap try/catch for region: R(21:(5:7|8|9|10|11)|12|13|14|15|16|17|18|19|20|21|22|23|24|(2:25|26)|28|29|30|31|32|(2:34|35)) */
+    /* JADX WARN: Can't wrap try/catch for region: R(22:74|75|12|13|14|(2:15|16)|17|18|19|(2:20|21)|22|23|24|25|26|28|29|30|31|32|34|35) */
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x014b, code lost:
+        r11 = r1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0157, code lost:
+        r1 = r11;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -223,7 +232,6 @@ public class DefaultRenderersFactory implements RenderersFactory {
         int i2;
         int i3;
         int i4;
-        int i5;
         arrayList.add(new MediaCodecAudioRenderer(context, getCodecAdapterFactory(), mediaCodecSelector, z, handler, audioRendererEventListener, audioSink));
         if (i == 0) {
             return;
@@ -248,60 +256,50 @@ public class DefaultRenderersFactory implements RenderersFactory {
                     try {
                         try {
                             try {
-                                arrayList.add(i2, (Renderer) Class.forName("androidx.media3.decoder.opus.LibopusAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
-                                Log.i(TAG, "Loaded LibopusAudioRenderer.");
-                            } catch (ClassNotFoundException unused3) {
-                                i2 = i3;
-                                i3 = i2;
-                                i4 = i3 + 1;
-                                arrayList.add(i3, (Renderer) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
-                                Log.i(TAG, "Loaded LibflacAudioRenderer.");
-                                i5 = i4 + 1;
-                                arrayList.add(i4, (Renderer) Class.forName("androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
-                                Log.i(TAG, "Loaded FfmpegAudioRenderer.");
                                 try {
+                                    arrayList.add(i2, (Renderer) Class.forName("androidx.media3.decoder.opus.LibopusAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
+                                    Log.i(TAG, "Loaded LibopusAudioRenderer.");
+                                } catch (ClassNotFoundException unused3) {
+                                    i2 = i3;
+                                    i3 = i2;
+                                    i4 = i3 + 1;
+                                    arrayList.add(i3, (Renderer) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
+                                    Log.i(TAG, "Loaded LibflacAudioRenderer.");
+                                    int i5 = i4 + 1;
+                                    arrayList.add(i4, (Renderer) Class.forName("androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
+                                    Log.i(TAG, "Loaded FfmpegAudioRenderer.");
                                     int i6 = i5 + 1;
-                                    try {
-                                        arrayList.add(i5, (Renderer) Class.forName("androidx.media3.decoder.iamf.LibiamfAudioRenderer").getConstructor(Context.class, Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(context, handler, audioRendererEventListener, audioSink));
-                                        Log.i(TAG, "Loaded LibiamfAudioRenderer.");
-                                    } catch (ClassNotFoundException unused4) {
-                                        i5 = i6;
-                                        i6 = i5;
-                                        arrayList.add(i6, (Renderer) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
-                                        Log.i(TAG, "Loaded MpeghAudioRenderer.");
-                                    }
+                                    arrayList.add(i5, (Renderer) Class.forName("androidx.media3.decoder.iamf.LibiamfAudioRenderer").getConstructor(Context.class, Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(context, handler, audioRendererEventListener, audioSink));
+                                    Log.i(TAG, "Loaded LibiamfAudioRenderer.");
                                     arrayList.add(i6, (Renderer) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
                                     Log.i(TAG, "Loaded MpeghAudioRenderer.");
-                                } catch (Exception e) {
-                                    throw new IllegalStateException("Error instantiating IAMF extension", e);
                                 }
-                            }
-                            try {
-                                arrayList.add(i3, (Renderer) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
-                                Log.i(TAG, "Loaded LibflacAudioRenderer.");
-                            } catch (ClassNotFoundException unused5) {
-                                i3 = i4;
-                                i4 = i3;
-                                i5 = i4 + 1;
-                                arrayList.add(i4, (Renderer) Class.forName("androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
-                                Log.i(TAG, "Loaded FfmpegAudioRenderer.");
-                                int i62 = i5 + 1;
-                                arrayList.add(i5, (Renderer) Class.forName("androidx.media3.decoder.iamf.LibiamfAudioRenderer").getConstructor(Context.class, Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(context, handler, audioRendererEventListener, audioSink));
+                                try {
+                                    arrayList.add(i3, (Renderer) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
+                                    Log.i(TAG, "Loaded LibflacAudioRenderer.");
+                                } catch (ClassNotFoundException unused4) {
+                                    i3 = i4;
+                                    i4 = i3;
+                                    int i52 = i4 + 1;
+                                    arrayList.add(i4, (Renderer) Class.forName("androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
+                                    Log.i(TAG, "Loaded FfmpegAudioRenderer.");
+                                    int i62 = i52 + 1;
+                                    arrayList.add(i52, (Renderer) Class.forName("androidx.media3.decoder.iamf.LibiamfAudioRenderer").getConstructor(Context.class, Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(context, handler, audioRendererEventListener, audioSink));
+                                    Log.i(TAG, "Loaded LibiamfAudioRenderer.");
+                                    arrayList.add(i62, (Renderer) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
+                                    Log.i(TAG, "Loaded MpeghAudioRenderer.");
+                                }
+                                int i622 = i52 + 1;
+                                arrayList.add(i52, (Renderer) Class.forName("androidx.media3.decoder.iamf.LibiamfAudioRenderer").getConstructor(Context.class, Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(context, handler, audioRendererEventListener, audioSink));
                                 Log.i(TAG, "Loaded LibiamfAudioRenderer.");
-                                arrayList.add(i62, (Renderer) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
+                                arrayList.add(i622, (Renderer) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
                                 Log.i(TAG, "Loaded MpeghAudioRenderer.");
+                            } catch (Exception e) {
+                                throw new IllegalStateException("Error instantiating IAMF extension", e);
                             }
-                            i5 = i4 + 1;
+                            int i522 = i4 + 1;
                             arrayList.add(i4, (Renderer) Class.forName("androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
                             Log.i(TAG, "Loaded FfmpegAudioRenderer.");
-                            try {
-                                int i622 = i5 + 1;
-                                arrayList.add(i5, (Renderer) Class.forName("androidx.media3.decoder.iamf.LibiamfAudioRenderer").getConstructor(Context.class, Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(context, handler, audioRendererEventListener, audioSink));
-                                Log.i(TAG, "Loaded LibiamfAudioRenderer.");
-                            } catch (ClassNotFoundException unused6) {
-                            }
-                            arrayList.add(i622, (Renderer) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
-                            Log.i(TAG, "Loaded MpeghAudioRenderer.");
                         } catch (Exception e2) {
                             throw new IllegalStateException("Error instantiating FFmpeg extension", e2);
                         }
@@ -310,7 +308,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
                         throw new IllegalStateException("Error instantiating FLAC extension", e3);
                     }
                 }
-            } catch (ClassNotFoundException unused7) {
+            } catch (ClassNotFoundException unused5) {
             }
             try {
                 i3 = i2 + 1;
@@ -319,26 +317,26 @@ public class DefaultRenderersFactory implements RenderersFactory {
                 i4 = i3 + 1;
                 arrayList.add(i3, (Renderer) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
                 Log.i(TAG, "Loaded LibflacAudioRenderer.");
-                i5 = i4 + 1;
+                int i5222 = i4 + 1;
                 try {
                     arrayList.add(i4, (Renderer) Class.forName("androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
                     Log.i(TAG, "Loaded FfmpegAudioRenderer.");
-                } catch (ClassNotFoundException unused8) {
-                    i4 = i5;
-                    i5 = i4;
-                    int i6222 = i5 + 1;
-                    arrayList.add(i5, (Renderer) Class.forName("androidx.media3.decoder.iamf.LibiamfAudioRenderer").getConstructor(Context.class, Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(context, handler, audioRendererEventListener, audioSink));
+                } catch (ClassNotFoundException unused6) {
+                    i4 = i5222;
+                    i5222 = i4;
+                    int i6222 = i5222 + 1;
+                    arrayList.add(i5222, (Renderer) Class.forName("androidx.media3.decoder.iamf.LibiamfAudioRenderer").getConstructor(Context.class, Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(context, handler, audioRendererEventListener, audioSink));
                     Log.i(TAG, "Loaded LibiamfAudioRenderer.");
                     arrayList.add(i6222, (Renderer) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
                     Log.i(TAG, "Loaded MpeghAudioRenderer.");
                 }
-                int i62222 = i5 + 1;
-                arrayList.add(i5, (Renderer) Class.forName("androidx.media3.decoder.iamf.LibiamfAudioRenderer").getConstructor(Context.class, Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(context, handler, audioRendererEventListener, audioSink));
+                int i62222 = i5222 + 1;
+                arrayList.add(i5222, (Renderer) Class.forName("androidx.media3.decoder.iamf.LibiamfAudioRenderer").getConstructor(Context.class, Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(context, handler, audioRendererEventListener, audioSink));
                 Log.i(TAG, "Loaded LibiamfAudioRenderer.");
                 try {
                     arrayList.add(i62222, (Renderer) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
                     Log.i(TAG, "Loaded MpeghAudioRenderer.");
-                } catch (ClassNotFoundException unused9) {
+                } catch (ClassNotFoundException unused7) {
                 } catch (Exception e4) {
                     throw new IllegalStateException("Error instantiating MPEG-H extension", e4);
                 }

@@ -369,7 +369,7 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
 
     /* renamed from: calculateHeight-mKXJcVc  reason: not valid java name */
     private final int m2707calculateHeightmKXJcVc(Density density, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, long j, boolean z, float f) {
-        int mo399roundToPx0680j_4 = density.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.paddingValues.mo770calculateTopPaddingD9Ej5fM() + this.paddingValues.mo767calculateBottomPaddingD9Ej5fM())) + ((i2 <= 0 || z) ? 0 : Math.max(density.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.minimizedLabelHalfHeight * 2)), MathHelpersKt.lerp(0, i2, MotionTokens.INSTANCE.getEasingEmphasizedAccelerateCubicBezier().transform(f)))) + ComparisonsKt.maxOf(i, i7, i5, i6, z ? 0 : MathHelpersKt.lerp(i2, 0, f));
+        int mo399roundToPx0680j_4 = density.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.paddingValues.mo770calculateTopPaddingD9Ej5fM() + this.paddingValues.mo767calculateBottomPaddingD9Ej5fM())) + ((i2 <= 0 || z) ? 0 : Math.max(density.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.minimizedLabelHalfHeight * 2.0f)), MathHelpersKt.lerp(0, i2, MotionTokens.INSTANCE.getEasingEmphasizedAccelerateCubicBezier().transform(f)))) + ComparisonsKt.maxOf(i, i7, i5, i6, z ? 0 : MathHelpersKt.lerp(i2, 0, f));
         if (!z) {
             i2 = 0;
         }

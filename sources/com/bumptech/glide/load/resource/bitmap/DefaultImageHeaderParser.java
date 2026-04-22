@@ -437,7 +437,7 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
 
         @Override // com.bumptech.glide.load.resource.bitmap.DefaultImageHeaderParser.Reader
         public int getUInt16() throws Reader.EndOfFileException {
-            return (getUInt8() << 8) | getUInt8();
+            return getUInt8() | (getUInt8() << 8);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.DefaultImageHeaderParser.Reader
@@ -478,7 +478,7 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
 
         @Override // com.bumptech.glide.load.resource.bitmap.DefaultImageHeaderParser.Reader
         public int getUInt16() throws IOException {
-            return (getUInt8() << 8) | getUInt8();
+            return getUInt8() | (getUInt8() << 8);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.DefaultImageHeaderParser.Reader

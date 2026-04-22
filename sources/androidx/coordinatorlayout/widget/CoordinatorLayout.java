@@ -173,8 +173,8 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
             context2 = context;
             coordinatorLayout.saveAttributeDataForStyleable(context2, R.styleable.CoordinatorLayout, attributeSet, typedArray, 0, R.style.Widget_Support_CoordinatorLayout);
         } else {
-            context2 = context;
             coordinatorLayout = this;
+            context2 = context;
             coordinatorLayout.saveAttributeDataForStyleable(context2, R.styleable.CoordinatorLayout, attributeSet, typedArray, i, 0);
         }
         int resourceId = typedArray.getResourceId(R.styleable.CoordinatorLayout_keylines, 0);
@@ -190,10 +190,10 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
         }
         coordinatorLayout.mStatusBarBackground = typedArray.getDrawable(R.styleable.CoordinatorLayout_statusBarBackground);
         typedArray.recycle();
-        setupForInsets();
+        coordinatorLayout.setupForInsets();
         super.setOnHierarchyChangeListener(new HierarchyChangeListener());
-        if (ViewCompat.getImportantForAccessibility(this) == 0) {
-            ViewCompat.setImportantForAccessibility(this, 1);
+        if (ViewCompat.getImportantForAccessibility(coordinatorLayout) == 0) {
+            ViewCompat.setImportantForAccessibility(coordinatorLayout, 1);
         }
     }
 
@@ -1314,6 +1314,7 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
 
     @Override // androidx.core.view.NestedScrollingParent2
     public void onNestedScrollAccepted(View view, View view2, int i, int i2) {
+        CoordinatorLayout coordinatorLayout;
         View view3;
         View view4;
         int i3;
@@ -1324,21 +1325,24 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
         int childCount = getChildCount();
         int i5 = 0;
         while (i5 < childCount) {
-            View childAt = getChildAt(i5);
+            View childAt = this.getChildAt(i5);
             LayoutParams layoutParams = (LayoutParams) childAt.getLayoutParams();
             if (layoutParams.isNestedScrollAccepted(i2) && (behavior = layoutParams.getBehavior()) != null) {
+                coordinatorLayout = this;
                 view3 = view;
                 view4 = view2;
                 i3 = i;
                 i4 = i2;
-                behavior.onNestedScrollAccepted(this, childAt, view3, view4, i3, i4);
+                behavior.onNestedScrollAccepted(coordinatorLayout, childAt, view3, view4, i3, i4);
             } else {
+                coordinatorLayout = this;
                 view3 = view;
                 view4 = view2;
                 i3 = i;
                 i4 = i2;
             }
             i5++;
+            this = coordinatorLayout;
             view = view3;
             view2 = view4;
             i = i3;
@@ -1450,6 +1454,7 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
     @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public boolean onNestedFling(View view, float f, float f2, boolean z) {
         Behavior behavior;
+        CoordinatorLayout coordinatorLayout;
         View view2;
         float f3;
         float f4;
@@ -1458,34 +1463,39 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
         int i = 0;
         boolean z3 = false;
         while (i < childCount) {
-            View childAt = getChildAt(i);
+            View childAt = this.getChildAt(i);
             if (childAt.getVisibility() != 8) {
                 LayoutParams layoutParams = (LayoutParams) childAt.getLayoutParams();
                 if (layoutParams.isNestedScrollAccepted(0) && (behavior = layoutParams.getBehavior()) != null) {
+                    coordinatorLayout = this;
                     view2 = view;
                     f3 = f;
                     f4 = f2;
                     z2 = z;
-                    z3 |= behavior.onNestedFling(this, childAt, view2, f3, f4, z2);
+                    z3 |= behavior.onNestedFling(coordinatorLayout, childAt, view2, f3, f4, z2);
                     i++;
+                    this = coordinatorLayout;
                     view = view2;
                     f = f3;
                     f2 = f4;
                     z = z2;
                 }
             }
+            coordinatorLayout = this;
             view2 = view;
             f3 = f;
             f4 = f2;
             z2 = z;
             i++;
+            this = coordinatorLayout;
             view = view2;
             f = f3;
             f2 = f4;
             z = z2;
         }
+        CoordinatorLayout coordinatorLayout2 = this;
         if (z3) {
-            onChildViewsChanged(1);
+            coordinatorLayout2.onChildViewsChanged(1);
         }
         return z3;
     }
@@ -1493,6 +1503,7 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
     @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public boolean onNestedPreFling(View view, float f, float f2) {
         Behavior behavior;
+        CoordinatorLayout coordinatorLayout;
         View view2;
         float f3;
         float f4;
@@ -1500,24 +1511,28 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
         int i = 0;
         boolean z = false;
         while (i < childCount) {
-            View childAt = getChildAt(i);
+            View childAt = this.getChildAt(i);
             if (childAt.getVisibility() != 8) {
                 LayoutParams layoutParams = (LayoutParams) childAt.getLayoutParams();
                 if (layoutParams.isNestedScrollAccepted(0) && (behavior = layoutParams.getBehavior()) != null) {
+                    coordinatorLayout = this;
                     view2 = view;
                     f3 = f;
                     f4 = f2;
-                    z |= behavior.onNestedPreFling(this, childAt, view2, f3, f4);
+                    z |= behavior.onNestedPreFling(coordinatorLayout, childAt, view2, f3, f4);
                     i++;
+                    this = coordinatorLayout;
                     view = view2;
                     f = f3;
                     f2 = f4;
                 }
             }
+            coordinatorLayout = this;
             view2 = view;
             f3 = f;
             f4 = f2;
             i++;
+            this = coordinatorLayout;
             view = view2;
             f = f3;
             f2 = f4;

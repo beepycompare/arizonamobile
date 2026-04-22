@@ -78,24 +78,13 @@ public class XYGraphWidget extends Widget {
     /* loaded from: classes3.dex */
     public static class LineLabelRenderer {
         public void drawLabel(Canvas canvas, LineLabelStyle lineLabelStyle, Number number, float f, float f2, boolean z) {
-            Canvas canvas2;
             int save = canvas.save();
             try {
                 String format = lineLabelStyle.format.format(number);
                 canvas.rotate(lineLabelStyle.getRotation(), f, f2);
-                canvas2 = canvas;
-                try {
-                    drawLabel(canvas2, format, lineLabelStyle.getPaint(), f, f2, z);
-                    canvas2.restoreToCount(save);
-                } catch (Throwable th) {
-                    th = th;
-                    Throwable th2 = th;
-                    canvas2.restoreToCount(save);
-                    throw th2;
-                }
-            } catch (Throwable th3) {
-                th = th3;
-                canvas2 = canvas;
+                drawLabel(canvas, format, lineLabelStyle.getPaint(), f, f2, z);
+            } finally {
+                canvas.restoreToCount(save);
             }
         }
 
@@ -326,29 +315,48 @@ public class XYGraphWidget extends Widget {
     }
 
     protected void drawDomainLine(Canvas canvas, float f, Number number, Paint paint, boolean z, boolean z2) {
+        float f2;
+        boolean z3;
         if (paint != null) {
             canvas.drawLine(f, this.gridRect.top - this.lineExtensionTop, f, this.gridRect.bottom + this.lineExtensionBottom, paint);
+            f2 = f;
+        } else {
+            f2 = f;
         }
         if (z2) {
             if (isLineLabelEnabled(Edge.TOP)) {
-                drawLineLabel(canvas, Edge.TOP, number, f, this.labelRect.top, z);
+                z3 = z;
+                drawLineLabel(canvas, Edge.TOP, number, f2, this.labelRect.top, z3);
+            } else {
+                z3 = z;
             }
             if (isLineLabelEnabled(Edge.BOTTOM)) {
-                drawLineLabel(canvas, Edge.BOTTOM, number, f, this.labelRect.bottom, z);
+                drawLineLabel(canvas, Edge.BOTTOM, number, f2, this.labelRect.bottom, z3);
             }
         }
     }
 
     protected void drawRangeLine(Canvas canvas, float f, Number number, Paint paint, boolean z, boolean z2) {
+        float f2;
+        boolean z3;
+        float f3;
         if (paint != null) {
-            canvas.drawLine(this.gridRect.left - this.lineExtensionLeft, f, this.gridRect.right + this.lineExtensionRight, f, paint);
+            f2 = f;
+            canvas.drawLine(this.gridRect.left - this.lineExtensionLeft, f2, this.gridRect.right + this.lineExtensionRight, f, paint);
+        } else {
+            f2 = f;
         }
         if (z2) {
             if (isLineLabelEnabled(Edge.LEFT)) {
-                drawLineLabel(canvas, Edge.LEFT, number, this.labelRect.left, f, z);
+                z3 = z;
+                f3 = f2;
+                drawLineLabel(canvas, Edge.LEFT, number, this.labelRect.left, f3, z3);
+            } else {
+                z3 = z;
+                f3 = f2;
             }
             if (isLineLabelEnabled(Edge.RIGHT)) {
-                drawLineLabel(canvas, Edge.RIGHT, number, this.labelRect.right, f, z);
+                drawLineLabel(canvas, Edge.RIGHT, number, this.labelRect.right, f3, z3);
             }
         }
     }

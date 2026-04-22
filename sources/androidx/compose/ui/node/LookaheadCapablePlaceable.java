@@ -409,13 +409,12 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
 
     private final LookaheadCapablePlaceable findAncestorRulerDefiner(Ruler ruler) {
         LookaheadCapablePlaceable parent;
-        LookaheadCapablePlaceable lookaheadCapablePlaceable = this;
         while (true) {
-            RulerTrackingMap rulerTrackingMap = lookaheadCapablePlaceable.rulerValues;
-            if ((rulerTrackingMap != null && rulerTrackingMap.contains(ruler)) || (parent = lookaheadCapablePlaceable.getParent()) == null) {
-                return lookaheadCapablePlaceable;
+            RulerTrackingMap rulerTrackingMap = this.rulerValues;
+            if ((rulerTrackingMap != null && rulerTrackingMap.contains(ruler)) || (parent = this.getParent()) == null) {
+                return this;
             }
-            lookaheadCapablePlaceable = parent;
+            this = parent;
         }
     }
 

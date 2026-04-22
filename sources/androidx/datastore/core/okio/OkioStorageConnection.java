@@ -161,18 +161,18 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
     /* JADX WARN: Removed duplicated region for block: B:36:0x00c9 A[Catch: all -> 0x00ef, IOException -> 0x00f2, TRY_ENTER, TryCatch #5 {IOException -> 0x00f2, blocks: (B:36:0x00c9, B:38:0x00d1, B:42:0x00e0, B:48:0x00eb, B:49:0x00ee), top: B:75:0x0025 }] */
     /* JADX WARN: Removed duplicated region for block: B:42:0x00e0 A[Catch: all -> 0x00ef, IOException -> 0x00f2, TRY_ENTER, TRY_LEAVE, TryCatch #5 {IOException -> 0x00f2, blocks: (B:36:0x00c9, B:38:0x00d1, B:42:0x00e0, B:48:0x00eb, B:49:0x00ee), top: B:75:0x0025 }] */
     /* JADX WARN: Type inference failed for: r0v3, types: [okio.FileSystem] */
-    /* JADX WARN: Type inference failed for: r0v5, types: [okio.FileSystem] */
     /* JADX WARN: Type inference failed for: r10v2 */
     /* JADX WARN: Type inference failed for: r10v4, types: [kotlinx.coroutines.sync.Mutex] */
     /* JADX WARN: Type inference failed for: r10v5 */
     /* JADX WARN: Type inference failed for: r10v6 */
     /* JADX WARN: Type inference failed for: r2v1 */
     /* JADX WARN: Type inference failed for: r2v2, types: [okio.Path] */
-    /* JADX WARN: Type inference failed for: r9v13, types: [androidx.datastore.core.Closeable] */
-    /* JADX WARN: Type inference failed for: r9v15 */
-    /* JADX WARN: Type inference failed for: r9v16, types: [androidx.datastore.core.Closeable] */
-    /* JADX WARN: Type inference failed for: r9v30, types: [androidx.datastore.core.Closeable] */
-    /* JADX WARN: Type inference failed for: r9v31 */
+    /* JADX WARN: Type inference failed for: r8v4, types: [okio.FileSystem] */
+    /* JADX WARN: Type inference failed for: r9v11, types: [androidx.datastore.core.Closeable] */
+    /* JADX WARN: Type inference failed for: r9v13 */
+    /* JADX WARN: Type inference failed for: r9v14, types: [androidx.datastore.core.Closeable] */
+    /* JADX WARN: Type inference failed for: r9v26, types: [androidx.datastore.core.Closeable] */
+    /* JADX WARN: Type inference failed for: r9v27 */
     @Override // androidx.datastore.core.StorageConnection
     /*
         Code decompiled incorrectly, please refer to instructions dump.

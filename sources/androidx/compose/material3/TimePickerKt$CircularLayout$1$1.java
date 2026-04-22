@@ -31,11 +31,11 @@ public final class TimePickerKt$CircularLayout$1$1 implements MeasurePolicy {
         Measurable measurable;
         Measurable measurable2;
         final float m7507getMaxHeightimpl = Constraints.m7507getMaxHeightimpl(j) * this.$radiusToSizeRatio;
+        int i = 0;
         long m7498copyZbe2FdA$default = Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
         ArrayList arrayList = new ArrayList(list.size());
         List<? extends Measurable> list2 = list;
         int size = list2.size();
-        int i = 0;
         for (int i2 = 0; i2 < size; i2++) {
             Measurable measurable3 = list.get(i2);
             Measurable measurable4 = measurable3;

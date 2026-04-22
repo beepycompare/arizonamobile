@@ -65,18 +65,31 @@ public final class NetworkFetcher implements Fetcher {
         this.connectivityChecker = connectivityChecker;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x013c, code lost:
-        if (r15 == null) goto L80;
+    /* JADX WARN: Can't wrap try/catch for region: R(14:1|(2:3|(12:5|6|7|(4:(1:(1:(4:12|13|14|15)(2:18|19))(6:20|21|22|23|24|(1:26)(1:29)))(4:37|38|39|40)|33|(1:35)|36)(11:60|61|62|(4:64|(2:74|75)|67|(2:69|(2:71|28)))|76|45|(2:54|55)|47|48|(3:50|24|(0)(0))|28)|41|(2:43|44)|45|(0)|47|48|(0)|28))|81|6|7|(0)(0)|41|(0)|45|(0)|47|48|(0)|28) */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0046, code lost:
+        r0 = move-exception;
      */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0047, code lost:
+        r15 = r0;
+        r14 = r14;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0134, code lost:
+        if (r15 == null) goto L47;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x0193, code lost:
+        if (r15 == r1) goto L28;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x010c A[Catch: Exception -> 0x007e, TRY_LEAVE, TryCatch #2 {Exception -> 0x007e, blocks: (B:27:0x0079, B:47:0x0104, B:49:0x010c), top: B:97:0x0079 }] */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0130  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x016f  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0176 A[Catch: Exception -> 0x01ab, TRY_LEAVE, TryCatch #3 {Exception -> 0x01ab, blocks: (B:67:0x0172, B:69:0x0176), top: B:99:0x0172 }] */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x01aa A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x01c0  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0138 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0107 A[Catch: Exception -> 0x019d, TRY_LEAVE, TryCatch #1 {Exception -> 0x019d, blocks: (B:45:0x00ff, B:47:0x0107, B:31:0x0091, B:33:0x009a, B:40:0x00d1, B:42:0x00df, B:36:0x00b1, B:38:0x00bb), top: B:76:0x0091 }] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0161  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0168 A[Catch: Exception -> 0x0046, TryCatch #4 {Exception -> 0x0046, blocks: (B:14:0x0041, B:64:0x0196, B:59:0x0164, B:61:0x0168), top: B:81:0x0025 }] */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0130 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:83:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r14v2, types: [kotlin.jvm.internal.Ref$ObjectRef] */
+    /* JADX WARN: Type inference failed for: r14v30, types: [kotlin.jvm.internal.Ref$ObjectRef] */
+    /* JADX WARN: Type inference failed for: r14v33 */
     /* JADX WARN: Type inference failed for: r2v1, types: [T, coil3.disk.DiskCache$Snapshot] */
     /* JADX WARN: Type inference failed for: r7v8, types: [T, coil3.network.NetworkResponse] */
     @Override // coil3.fetch.Fetcher
@@ -85,231 +98,187 @@ public final class NetworkFetcher implements Fetcher {
     */
     public Object fetch(Continuation<? super FetchResult> continuation) {
         NetworkFetcher$fetch$1 networkFetcher$fetch$1;
+        Object obj;
+        Object coroutine_suspended;
         int i;
+        Exception exc;
         Ref.ObjectRef objectRef;
         Ref.ObjectRef objectRef2;
         Ref.ObjectRef objectRef3;
         CacheStrategy.ReadResult readResult;
+        Object read;
+        NetworkRequest request;
+        NetworkFetcher networkFetcher;
         Ref.ObjectRef objectRef4;
-        Exception exc;
         Ref.ObjectRef objectRef5;
-        NetworkRequest newRequest;
         NetworkRequest networkRequest;
-        Ref.ObjectRef objectRef6;
-        Ref.ObjectRef objectRef7;
-        NetworkRequest networkRequest2;
-        CacheStrategy.ReadResult readResult2;
         SourceFetchResult sourceFetchResult;
-        DiskCache.Snapshot snapshot;
         if (continuation instanceof NetworkFetcher$fetch$1) {
             networkFetcher$fetch$1 = (NetworkFetcher$fetch$1) continuation;
             if ((networkFetcher$fetch$1.label & Integer.MIN_VALUE) != 0) {
                 networkFetcher$fetch$1.label -= Integer.MIN_VALUE;
-                Object obj = networkFetcher$fetch$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                obj = networkFetcher$fetch$1.result;
+                coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = networkFetcher$fetch$1.label;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    Ref.ObjectRef objectRef8 = new Ref.ObjectRef();
-                    objectRef8.element = readFromDiskCache();
-                    try {
-                        objectRef2 = new Ref.ObjectRef();
-                    } catch (Exception e) {
-                        e = e;
-                        objectRef = objectRef8;
-                        exc = e;
-                        snapshot = (DiskCache.Snapshot) objectRef.element;
-                        if (snapshot != null) {
-                        }
-                        throw exc;
-                    }
-                    try {
+                if (i == 0) {
+                    if (i == 1) {
+                        objectRef3 = (Ref.ObjectRef) networkFetcher$fetch$1.L$1;
+                        Ref.ObjectRef objectRef6 = (Ref.ObjectRef) networkFetcher$fetch$1.L$0;
                         try {
-                            if (objectRef8.element != 0) {
-                                Long size = getFileSystem().metadata(((DiskCache.Snapshot) objectRef8.element).getMetadata()).getSize();
-                                if (size != null && size.longValue() == 0) {
-                                    return new SourceFetchResult(toImageSource((DiskCache.Snapshot) objectRef8.element), getMimeType(this.url, null), DataSource.DISK);
-                                }
-                                objectRef2.element = toNetworkResponseOrNull((DiskCache.Snapshot) objectRef8.element);
-                                if (objectRef2.element != 0) {
-                                    NetworkRequest newRequest2 = newRequest();
-                                    Options options = this.options;
-                                    networkFetcher$fetch$1.L$0 = objectRef8;
-                                    networkFetcher$fetch$1.L$1 = objectRef2;
-                                    networkFetcher$fetch$1.label = 1;
-                                    Object read = this.cacheStrategy.getValue().read((NetworkResponse) objectRef2.element, newRequest2, options, networkFetcher$fetch$1);
-                                    if (read == coroutine_suspended) {
-                                        return coroutine_suspended;
-                                    }
-                                    objectRef4 = objectRef8;
-                                    obj = read;
-                                }
+                            ResultKt.throwOnFailure(obj);
+                            read = obj;
+                            objectRef2 = objectRef6;
+                        } catch (Exception e) {
+                            exc = e;
+                            objectRef = objectRef6;
+                        }
+                    } else if (i != 2) {
+                        if (i == 3) {
+                            SourceFetchResult sourceFetchResult2 = (SourceFetchResult) networkFetcher$fetch$1.L$4;
+                            NetworkRequest networkRequest2 = (NetworkRequest) networkFetcher$fetch$1.L$3;
+                            Ref.ObjectRef objectRef7 = (Ref.ObjectRef) networkFetcher$fetch$1.L$2;
+                            CacheStrategy.ReadResult readResult2 = (CacheStrategy.ReadResult) networkFetcher$fetch$1.L$1;
+                            ?? r14 = (Ref.ObjectRef) networkFetcher$fetch$1.L$0;
+                            ResultKt.throwOnFailure(obj);
+                            this = r14;
+                            return (SourceFetchResult) obj;
+                        }
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        networkRequest = (NetworkRequest) networkFetcher$fetch$1.L$3;
+                        objectRef5 = (Ref.ObjectRef) networkFetcher$fetch$1.L$2;
+                        readResult = (CacheStrategy.ReadResult) networkFetcher$fetch$1.L$1;
+                        Ref.ObjectRef objectRef8 = (Ref.ObjectRef) networkFetcher$fetch$1.L$0;
+                        try {
+                            ResultKt.throwOnFailure(obj);
+                            networkFetcher = this;
+                            objectRef4 = objectRef8;
+                            sourceFetchResult = (SourceFetchResult) obj;
+                            if (sourceFetchResult == null) {
+                                return sourceFetchResult;
                             }
-                            networkFetcher$fetch$1.L$0 = objectRef3;
+                            networkFetcher$fetch$1.L$0 = objectRef4;
                             networkFetcher$fetch$1.L$1 = SpillingKt.nullOutSpilledVariable(readResult);
                             networkFetcher$fetch$1.L$2 = SpillingKt.nullOutSpilledVariable(objectRef5);
                             networkFetcher$fetch$1.L$3 = SpillingKt.nullOutSpilledVariable(networkRequest);
-                            networkFetcher$fetch$1.label = 2;
-                            obj = executeNetworkRequest(networkRequest, new NetworkFetcher$fetch$fetchResult$1(objectRef3, this, objectRef5, networkRequest, null), networkFetcher$fetch$1);
-                            if (obj != coroutine_suspended) {
-                                objectRef6 = objectRef3;
-                                objectRef7 = objectRef5;
-                                networkRequest2 = networkRequest;
-                                sourceFetchResult = (SourceFetchResult) obj;
-                                if (sourceFetchResult != null) {
-                                }
-                            }
-                            return coroutine_suspended;
+                            networkFetcher$fetch$1.L$4 = SpillingKt.nullOutSpilledVariable(sourceFetchResult);
+                            networkFetcher$fetch$1.label = 3;
+                            obj = networkFetcher.executeNetworkRequest(networkFetcher.newRequest(), new NetworkFetcher$fetch$2(networkFetcher, null), networkFetcher$fetch$1);
+                            this = objectRef4;
                         } catch (Exception e2) {
-                            e = e2;
-                            exc = e;
-                            objectRef = objectRef3;
-                            snapshot = (DiskCache.Snapshot) objectRef.element;
-                            if (snapshot != null) {
-                                UtilsKt.closeQuietly(snapshot);
-                            }
-                            throw exc;
-                        }
-                        newRequest = newRequest();
-                        networkRequest = newRequest;
-                    } catch (Exception e3) {
-                        e = e3;
-                        exc = e;
-                        objectRef = objectRef3;
-                        snapshot = (DiskCache.Snapshot) objectRef.element;
-                        if (snapshot != null) {
-                        }
-                        throw exc;
-                    }
-                    objectRef3 = objectRef8;
-                    readResult = null;
-                    objectRef5 = objectRef2;
-                    if (readResult != null) {
-                        try {
-                            newRequest = readResult.getRequest();
-                        } catch (Exception e4) {
-                            exc = e4;
-                            objectRef = objectRef3;
-                            snapshot = (DiskCache.Snapshot) objectRef.element;
-                            if (snapshot != null) {
-                            }
-                            throw exc;
+                            exc = e2;
+                            objectRef = objectRef8;
                         }
                     }
-                } else if (i != 1) {
-                    if (i != 2) {
-                        if (i == 3) {
-                            SourceFetchResult sourceFetchResult2 = (SourceFetchResult) networkFetcher$fetch$1.L$4;
-                            NetworkRequest networkRequest3 = (NetworkRequest) networkFetcher$fetch$1.L$3;
-                            Ref.ObjectRef objectRef9 = (Ref.ObjectRef) networkFetcher$fetch$1.L$2;
-                            CacheStrategy.ReadResult readResult3 = (CacheStrategy.ReadResult) networkFetcher$fetch$1.L$1;
-                            objectRef = (Ref.ObjectRef) networkFetcher$fetch$1.L$0;
-                            try {
-                                ResultKt.throwOnFailure(obj);
-                                try {
-                                    return (SourceFetchResult) obj;
-                                } catch (Exception e5) {
-                                    e = e5;
-                                    exc = e;
-                                    snapshot = (DiskCache.Snapshot) objectRef.element;
-                                    if (snapshot != null) {
-                                    }
-                                    throw exc;
-                                }
-                            } catch (Exception e6) {
-                                exc = e6;
-                                snapshot = (DiskCache.Snapshot) objectRef.element;
-                                if (snapshot != null) {
-                                }
-                                throw exc;
-                            }
-                        }
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    DiskCache.Snapshot snapshot = (DiskCache.Snapshot) objectRef.element;
+                    if (snapshot != null) {
+                        UtilsKt.closeQuietly(snapshot);
                     }
-                    networkRequest2 = (NetworkRequest) networkFetcher$fetch$1.L$3;
-                    objectRef7 = (Ref.ObjectRef) networkFetcher$fetch$1.L$2;
-                    readResult = (CacheStrategy.ReadResult) networkFetcher$fetch$1.L$1;
-                    objectRef6 = (Ref.ObjectRef) networkFetcher$fetch$1.L$0;
-                    try {
-                        ResultKt.throwOnFailure(obj);
-                        try {
-                            sourceFetchResult = (SourceFetchResult) obj;
-                            if (sourceFetchResult != null) {
-                                networkFetcher$fetch$1.L$0 = objectRef6;
-                                networkFetcher$fetch$1.L$1 = SpillingKt.nullOutSpilledVariable(readResult);
-                                networkFetcher$fetch$1.L$2 = SpillingKt.nullOutSpilledVariable(objectRef7);
-                                networkFetcher$fetch$1.L$3 = SpillingKt.nullOutSpilledVariable(networkRequest2);
-                                networkFetcher$fetch$1.L$4 = SpillingKt.nullOutSpilledVariable(sourceFetchResult);
-                                networkFetcher$fetch$1.label = 3;
-                                obj = executeNetworkRequest(newRequest(), new NetworkFetcher$fetch$2(this, null), networkFetcher$fetch$1);
-                                if (obj != coroutine_suspended) {
-                                    objectRef = objectRef6;
-                                    return (SourceFetchResult) obj;
-                                }
+                    throw exc;
+                }
+                ResultKt.throwOnFailure(obj);
+                objectRef2 = new Ref.ObjectRef();
+                objectRef2.element = readFromDiskCache();
+                try {
+                    objectRef3 = new Ref.ObjectRef();
+                    if (objectRef2.element != null) {
+                        Long size = getFileSystem().metadata(((DiskCache.Snapshot) objectRef2.element).getMetadata()).getSize();
+                        if (size != null && size.longValue() == 0) {
+                            return new SourceFetchResult(toImageSource((DiskCache.Snapshot) objectRef2.element), getMimeType(this.url, null), DataSource.DISK);
+                        }
+                        objectRef3.element = toNetworkResponseOrNull((DiskCache.Snapshot) objectRef2.element);
+                        if (objectRef3.element != null) {
+                            NetworkRequest newRequest = newRequest();
+                            Options options = this.options;
+                            networkFetcher$fetch$1.L$0 = objectRef2;
+                            networkFetcher$fetch$1.L$1 = objectRef3;
+                            networkFetcher$fetch$1.label = 1;
+                            read = this.cacheStrategy.getValue().read((NetworkResponse) objectRef3.element, newRequest, options, networkFetcher$fetch$1);
+                            if (read == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            return sourceFetchResult;
-                        } catch (Exception e7) {
-                            exc = e7;
-                            objectRef = objectRef6;
-                            snapshot = (DiskCache.Snapshot) objectRef.element;
-                            if (snapshot != null) {
-                            }
-                            throw exc;
                         }
-                    } catch (Exception e8) {
-                        exc = e8;
-                        objectRef = objectRef6;
-                        snapshot = (DiskCache.Snapshot) objectRef.element;
-                        if (snapshot != null) {
-                        }
-                        throw exc;
                     }
-                } else {
-                    objectRef2 = (Ref.ObjectRef) networkFetcher$fetch$1.L$1;
-                    objectRef4 = (Ref.ObjectRef) networkFetcher$fetch$1.L$0;
-                    try {
-                        ResultKt.throwOnFailure(obj);
-                    } catch (Exception e9) {
-                        exc = e9;
-                        objectRef = objectRef4;
-                        snapshot = (DiskCache.Snapshot) objectRef.element;
-                        if (snapshot != null) {
+                    readResult = null;
+                    Ref.ObjectRef objectRef9 = objectRef2;
+                    Ref.ObjectRef objectRef10 = objectRef3;
+                    if (readResult != null) {
+                        try {
+                            request = readResult.getRequest();
+                        } catch (Exception e3) {
+                            exc = e3;
+                            objectRef = objectRef9;
                         }
-                        throw exc;
                     }
+                    request = newRequest();
+                    NetworkRequest networkRequest3 = request;
+                    networkFetcher = this;
+                    networkFetcher$fetch$1.L$0 = objectRef9;
+                    networkFetcher$fetch$1.L$1 = SpillingKt.nullOutSpilledVariable(readResult);
+                    networkFetcher$fetch$1.L$2 = SpillingKt.nullOutSpilledVariable(objectRef10);
+                    networkFetcher$fetch$1.L$3 = SpillingKt.nullOutSpilledVariable(networkRequest3);
+                    networkFetcher$fetch$1.label = 2;
+                    obj = networkFetcher.executeNetworkRequest(networkRequest3, new NetworkFetcher$fetch$fetchResult$1(objectRef9, networkFetcher, objectRef10, networkRequest3, null), networkFetcher$fetch$1);
+                    if (obj != coroutine_suspended) {
+                        objectRef4 = objectRef9;
+                        objectRef5 = objectRef10;
+                        networkRequest = networkRequest3;
+                        sourceFetchResult = (SourceFetchResult) obj;
+                        if (sourceFetchResult == null) {
+                        }
+                    }
+                    return coroutine_suspended;
+                } catch (Exception e4) {
+                    exc = e4;
+                    objectRef = objectRef2;
                 }
-                readResult2 = (CacheStrategy.ReadResult) obj;
-                if (readResult2.getResponse() == null) {
-                    return new SourceFetchResult(toImageSource((DiskCache.Snapshot) objectRef4.element), getMimeType(this.url, readResult2.getResponse().getHeaders().get("Content-Type")), DataSource.DISK);
+                readResult = (CacheStrategy.ReadResult) read;
+                if (readResult.getResponse() != null) {
+                    return new SourceFetchResult(toImageSource((DiskCache.Snapshot) objectRef2.element), getMimeType(this.url, readResult.getResponse().getHeaders().get("Content-Type")), DataSource.DISK);
                 }
-                objectRef3 = objectRef4;
-                readResult = readResult2;
-                objectRef5 = objectRef2;
+                Ref.ObjectRef objectRef92 = objectRef2;
+                Ref.ObjectRef objectRef102 = objectRef3;
                 if (readResult != null) {
                 }
-                newRequest = newRequest();
-                networkRequest = newRequest;
-                networkFetcher$fetch$1.L$0 = objectRef3;
+                request = newRequest();
+                NetworkRequest networkRequest32 = request;
+                networkFetcher = this;
+                networkFetcher$fetch$1.L$0 = objectRef92;
                 networkFetcher$fetch$1.L$1 = SpillingKt.nullOutSpilledVariable(readResult);
-                networkFetcher$fetch$1.L$2 = SpillingKt.nullOutSpilledVariable(objectRef5);
-                networkFetcher$fetch$1.L$3 = SpillingKt.nullOutSpilledVariable(networkRequest);
+                networkFetcher$fetch$1.L$2 = SpillingKt.nullOutSpilledVariable(objectRef102);
+                networkFetcher$fetch$1.L$3 = SpillingKt.nullOutSpilledVariable(networkRequest32);
                 networkFetcher$fetch$1.label = 2;
-                obj = executeNetworkRequest(networkRequest, new NetworkFetcher$fetch$fetchResult$1(objectRef3, this, objectRef5, networkRequest, null), networkFetcher$fetch$1);
+                obj = networkFetcher.executeNetworkRequest(networkRequest32, new NetworkFetcher$fetch$fetchResult$1(objectRef92, networkFetcher, objectRef102, networkRequest32, null), networkFetcher$fetch$1);
                 if (obj != coroutine_suspended) {
                 }
                 return coroutine_suspended;
             }
         }
         networkFetcher$fetch$1 = new NetworkFetcher$fetch$1(this, continuation);
-        Object obj2 = networkFetcher$fetch$1.result;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        obj = networkFetcher$fetch$1.result;
+        coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = networkFetcher$fetch$1.label;
-        if (i != 0) {
+        if (i == 0) {
         }
-        readResult2 = (CacheStrategy.ReadResult) obj2;
-        if (readResult2.getResponse() == null) {
+        readResult = (CacheStrategy.ReadResult) read;
+        if (readResult.getResponse() != null) {
         }
+        Ref.ObjectRef objectRef922 = objectRef2;
+        Ref.ObjectRef objectRef1022 = objectRef3;
+        if (readResult != null) {
+        }
+        request = newRequest();
+        NetworkRequest networkRequest322 = request;
+        networkFetcher = this;
+        networkFetcher$fetch$1.L$0 = objectRef922;
+        networkFetcher$fetch$1.L$1 = SpillingKt.nullOutSpilledVariable(readResult);
+        networkFetcher$fetch$1.L$2 = SpillingKt.nullOutSpilledVariable(objectRef1022);
+        networkFetcher$fetch$1.L$3 = SpillingKt.nullOutSpilledVariable(networkRequest322);
+        networkFetcher$fetch$1.label = 2;
+        obj = networkFetcher.executeNetworkRequest(networkRequest322, new NetworkFetcher$fetch$fetchResult$1(objectRef922, networkFetcher, objectRef1022, networkRequest322, null), networkFetcher$fetch$1);
+        if (obj != coroutine_suspended) {
+        }
+        return coroutine_suspended;
     }
 
     private final DiskCache.Snapshot readFromDiskCache() {
@@ -322,15 +291,15 @@ public final class NetworkFetcher implements Fetcher {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:59:0x0140, code lost:
-        if (r0.writeTo(r3, r4, r6) == r7) goto L46;
+        if (r0.writeTo(r10, r3, r6) == r7) goto L46;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x006f  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x00b9 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:32:0x00ba  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x00d8 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x015b  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0166  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x015a  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0165  */
     /* JADX WARN: Removed duplicated region for block: B:78:0x00d9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -344,9 +313,9 @@ public final class NetworkFetcher implements Fetcher {
         NetworkResponse response;
         DiskCache.Editor editor;
         DiskCache.Editor openEditor;
+        Exception exc;
         NetworkResponse networkResponse5;
         NetworkResponse networkResponse6;
-        Exception exc;
         DiskCache.Editor editor2;
         NetworkResponseBody body;
         NetworkResponseBody body2;
@@ -460,9 +429,9 @@ public final class NetworkFetcher implements Fetcher {
                             }
                             throw th;
                         } catch (Exception e2) {
+                            exc = e2;
                             networkResponse5 = networkResponse4;
                             networkResponse6 = response;
-                            exc = e2;
                             editor2 = editor;
                             UtilsKt.abortQuietly(editor2);
                             body = networkResponse5.getBody();

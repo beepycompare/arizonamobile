@@ -24,7 +24,7 @@ public final class FlowKt__CountKt$count$4<T> implements FlowCollector {
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x004f  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x004e  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -33,7 +33,6 @@ public final class FlowKt__CountKt$count$4<T> implements FlowCollector {
         FlowKt__CountKt$count$4$emit$1 flowKt__CountKt$count$4$emit$1;
         Object obj;
         int i;
-        FlowKt__CountKt$count$4<T> flowKt__CountKt$count$4;
         if (continuation instanceof FlowKt__CountKt$count$4$emit$1) {
             flowKt__CountKt$count$4$emit$1 = (FlowKt__CountKt$count$4$emit$1) continuation;
             if ((flowKt__CountKt$count$4$emit$1.label & Integer.MIN_VALUE) != 0) {
@@ -50,16 +49,15 @@ public final class FlowKt__CountKt$count$4<T> implements FlowCollector {
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    flowKt__CountKt$count$4 = this;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    flowKt__CountKt$count$4 = (FlowKt__CountKt$count$4) flowKt__CountKt$count$4$emit$1.L$0;
+                    this = (FlowKt__CountKt$count$4) flowKt__CountKt$count$4$emit$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 if (((Boolean) obj).booleanValue()) {
-                    flowKt__CountKt$count$4.$i.element++;
-                    int i2 = flowKt__CountKt$count$4.$i.element;
+                    this.$i.element++;
+                    int i2 = this.$i.element;
                 }
                 return Unit.INSTANCE;
             }

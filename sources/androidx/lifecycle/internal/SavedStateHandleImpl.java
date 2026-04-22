@@ -146,7 +146,7 @@ public final class SavedStateHandleImpl {
             }
             return (T) this.regular.get(key);
         } catch (ClassCastException unused) {
-            remove(key);
+            this.remove(key);
             return null;
         }
     }

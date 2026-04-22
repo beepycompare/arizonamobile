@@ -37,10 +37,9 @@ final class TabRowKt$ScrollableTabRowImpl$1$1$2$1 implements MultiContentMeasure
     @Override // androidx.compose.ui.layout.MultiContentMeasurePolicy
     /* renamed from: measure-3p2s80s */
     public final MeasureResult mo762measure3p2s80s(final MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
-        MeasureScope measureScope2 = measureScope;
         List<? extends Measurable> list2 = list.get(0);
         List<? extends Measurable> list3 = list.get(1);
-        final int i = measureScope2.mo399roundToPx0680j_4(this.$edgePadding);
+        final int i = measureScope.mo399roundToPx0680j_4(this.$edgePadding);
         int size = list2.size();
         int i2 = 0;
         List<? extends Measurable> list4 = list2;
@@ -50,60 +49,59 @@ final class TabRowKt$ScrollableTabRowImpl$1$1$2$1 implements MultiContentMeasure
         }
         int intValue = i2.intValue();
         int i4 = i * 2;
-        int i5 = intValue;
-        long m7498copyZbe2FdA$default = Constraints.m7498copyZbe2FdA$default(j, measureScope2.mo399roundToPx0680j_4(this.$minTabWidth), 0, i5, intValue, 2, null);
+        long m7498copyZbe2FdA$default = Constraints.m7498copyZbe2FdA$default(j, measureScope.mo399roundToPx0680j_4(this.$minTabWidth), 0, intValue, intValue, 2, null);
         Ref.FloatRef floatRef = new Ref.FloatRef();
         floatRef.element = this.$edgePadding;
         ArrayList arrayList = new ArrayList(list2.size());
         int size3 = list4.size();
-        for (int i6 = 0; i6 < size3; i6++) {
-            arrayList.add(list2.get(i6).mo6216measureBRTryo0(m7498copyZbe2FdA$default));
+        for (int i5 = 0; i5 < size3; i5++) {
+            arrayList.add(list2.get(i5).mo6216measureBRTryo0(m7498copyZbe2FdA$default));
         }
         ArrayList arrayList2 = arrayList;
         MutableIntList mutableIntList = new MutableIntList(0, 1, null);
         int size4 = list4.size();
-        for (int i7 = 0; i7 < size4; i7++) {
-            mutableIntList.add(list2.get(i7).maxIntrinsicWidth(Integer.MAX_VALUE));
+        for (int i6 = 0; i6 < size4; i6++) {
+            mutableIntList.add(list2.get(i6).maxIntrinsicWidth(Integer.MAX_VALUE));
         }
         float f = this.$minTabWidth;
         ArrayList arrayList3 = new ArrayList(size);
-        int i8 = i4;
-        int i9 = 0;
-        while (i9 < size) {
-            float m7569unboximpl = ((Dp) ComparisonsKt.maxOf(Dp.m7553boximpl(f), Dp.m7553boximpl(measureScope2.mo402toDpu2uoSUM(((Placeable) arrayList2.get(i9)).getWidth())))).m7569unboximpl();
-            i8 += measureScope2.mo399roundToPx0680j_4(m7569unboximpl);
-            TabPosition tabPosition = new TabPosition(floatRef.element, m7569unboximpl, ((Dp) ComparisonsKt.maxOf(Dp.m7553boximpl(Dp.m7555constructorimpl(measureScope2.mo402toDpu2uoSUM(mutableIntList.get(i9)) - Dp.m7555constructorimpl(TabKt.getHorizontalTextPadding() * 2))), Dp.m7553boximpl(Dp.m7555constructorimpl(24)))).m7569unboximpl(), null);
+        int i7 = i4;
+        int i8 = 0;
+        while (i8 < size) {
+            float m7569unboximpl = ((Dp) ComparisonsKt.maxOf(Dp.m7553boximpl(f), Dp.m7553boximpl(measureScope.mo402toDpu2uoSUM(((Placeable) arrayList2.get(i8)).getWidth())))).m7569unboximpl();
+            i7 += measureScope.mo399roundToPx0680j_4(m7569unboximpl);
+            TabPosition tabPosition = new TabPosition(floatRef.element, m7569unboximpl, ((Dp) ComparisonsKt.maxOf(Dp.m7553boximpl(Dp.m7555constructorimpl(measureScope.mo402toDpu2uoSUM(mutableIntList.get(i8)) - Dp.m7555constructorimpl(TabKt.getHorizontalTextPadding() * 2.0f))), Dp.m7553boximpl(Dp.m7555constructorimpl(24.0f)))).m7569unboximpl(), null);
             floatRef.element = Dp.m7555constructorimpl(floatRef.element + m7569unboximpl);
             arrayList3.add(tabPosition);
-            i9++;
+            i8++;
             arrayList2 = arrayList2;
         }
         final ArrayList arrayList4 = arrayList2;
         final ArrayList arrayList5 = arrayList3;
         this.$scope.setTabPositions(arrayList5);
-        int i10 = this.$selectedTabIndex;
+        int i9 = this.$selectedTabIndex;
         ArrayList arrayList6 = new ArrayList(list3.size());
         int size5 = list3.size();
-        int i11 = 0;
-        while (i11 < size5) {
-            int i12 = i5;
-            i5 = i12;
-            arrayList6.add(list3.get(i11).mo6216measureBRTryo0(Constraints.m7497copyZbe2FdA(j, 0, measureScope2.mo399roundToPx0680j_4(((TabPosition) arrayList5.get(i10)).m2605getContentWidthD9Ej5fM()), 0, i12)));
-            i11++;
-            measureScope2 = measureScope;
+        int i10 = 0;
+        while (i10 < size5) {
+            int i11 = intValue;
+            intValue = i11;
+            arrayList6.add(list3.get(i10).mo6216measureBRTryo0(Constraints.m7497copyZbe2FdA(j, 0, measureScope.mo399roundToPx0680j_4(((TabPosition) arrayList5.get(i9)).m2605getContentWidthD9Ej5fM()), 0, i11)));
+            i10++;
             floatRef = floatRef;
             list3 = list3;
+            i9 = i9;
         }
         final Ref.FloatRef floatRef2 = floatRef;
         final ArrayList arrayList7 = arrayList6;
         final float f2 = this.$edgePadding;
         final ScrollableTabData scrollableTabData = this.$scrollableTabData;
-        final int i13 = this.$selectedTabIndex;
-        final int i14 = i5;
-        return MeasureScope.layout$default(measureScope, i8, i5, null, new Function1() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowImpl$1$1$2$1$$ExternalSyntheticLambda0
+        final int i12 = this.$selectedTabIndex;
+        final int i13 = intValue;
+        return MeasureScope.layout$default(measureScope, i7, intValue, null, new Function1() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowImpl$1$1$2$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return TabRowKt$ScrollableTabRowImpl$1$1$2$1.measure_3p2s80s$lambda$7(Ref.FloatRef.this, f2, arrayList4, arrayList7, scrollableTabData, measureScope, i, arrayList5, i13, i14, (Placeable.PlacementScope) obj);
+                return TabRowKt$ScrollableTabRowImpl$1$1$2$1.measure_3p2s80s$lambda$7(Ref.FloatRef.this, f2, arrayList4, arrayList7, scrollableTabData, measureScope, i, arrayList5, i12, i13, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }

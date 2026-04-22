@@ -176,7 +176,7 @@ public final class ScrollingLogic2D implements ScrollLogic {
                         try {
                             scrollingLogic2D$doFlingAnimation$1.L$0 = longRef2;
                             scrollingLogic2D$doFlingAnimation$1.label = 1;
-                            if (scroll(mutatePriority, new ScrollingLogic2D$doFlingAnimation$2(scrollingLogic2D, j, longRef2, null), scrollingLogic2D$doFlingAnimation$1) == coroutine_suspended) {
+                            if (scrollingLogic2D.scroll(mutatePriority, new ScrollingLogic2D$doFlingAnimation$2(scrollingLogic2D, j, longRef2, null), scrollingLogic2D$doFlingAnimation$1) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                             longRef = longRef2;
@@ -284,7 +284,6 @@ public final class ScrollingLogic2D implements ScrollLogic {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float doFlingAnimation_QWom1Mo$toMagnitudeFloat(long j) {
-        double d = 2;
-        return (float) Math.sqrt(((float) Math.pow(Float.intBitsToFloat((int) (j >> 32)), d)) + ((float) Math.pow(Float.intBitsToFloat((int) (j & 4294967295L)), d)));
+        return (float) Math.sqrt(((float) Math.pow(Float.intBitsToFloat((int) (j >> 32)), 2.0d)) + ((float) Math.pow(Float.intBitsToFloat((int) (j & 4294967295L)), 2.0d)));
     }
 }

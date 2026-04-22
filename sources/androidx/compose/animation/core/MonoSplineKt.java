@@ -10,14 +10,12 @@ public final class MonoSplineKt {
 
     public static final float hermiteDifferential(float f, float f2, float f3, float f4, float f5, float f6) {
         float f7 = f2 * f2;
-        float f8 = 2;
-        return (f * ((f5 - ((f8 * f2) * ((f8 * f5) + f6))) + ((3 * (f5 + f6)) * f7))) - ((6 * (f2 - f7)) * (f3 - f4));
+        return (f * ((f5 - ((2.0f * f2) * ((2.0f * f5) + f6))) + ((3.0f * (f5 + f6)) * f7))) - ((6.0f * (f2 - f7)) * (f3 - f4));
     }
 
     public static final float hermiteInterpolate(float f, float f2, float f3, float f4, float f5, float f6) {
         float f7 = f2 * f2;
         float f8 = f7 * f2;
-        float f9 = 2;
-        return ((((f5 * f) * ((f2 - (f9 * f7)) + f8)) + ((f * f6) * (f8 - f7))) + f3) - (((3 * f7) - (f9 * f8)) * (f3 - f4));
+        return ((((f5 * f) * ((f2 - (2.0f * f7)) + f8)) + ((f * f6) * (f8 - f7))) + f3) - (((3.0f * f7) - (2.0f * f8)) * (f3 - f4));
     }
 }

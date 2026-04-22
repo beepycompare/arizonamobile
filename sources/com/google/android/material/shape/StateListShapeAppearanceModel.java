@@ -46,7 +46,7 @@ public class StateListShapeAppearanceModel {
         private StateListCornerSize topRightCornerSizeOverride;
 
         private boolean containsFlag(int i, int i2) {
-            return (i2 | i) == i;
+            return (i | i2) == i;
         }
 
         public Builder(StateListShapeAppearanceModel stateListShapeAppearanceModel) {

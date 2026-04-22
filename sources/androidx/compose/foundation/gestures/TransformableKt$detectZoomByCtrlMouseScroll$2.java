@@ -47,12 +47,12 @@ public final class TransformableKt$detectZoomByCtrlMouseScroll$2 extends Restric
         return ((TransformableKt$detectZoomByCtrlMouseScroll$2) create(awaitPointerEventScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x008f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x008e, code lost:
         if (r13 == r0) goto L13;
      */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x003b A[Catch: all -> 0x0027, TRY_ENTER, TryCatch #0 {all -> 0x0027, blocks: (B:7:0x0012, B:26:0x0092, B:28:0x0096, B:23:0x0058, B:19:0x003b, B:22:0x004b, B:12:0x0023), top: B:35:0x0008 }] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00ab  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:24:0x008f -> B:26:0x0092). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x003b A[Catch: all -> 0x0027, TRY_ENTER, TryCatch #0 {all -> 0x0027, blocks: (B:7:0x0012, B:26:0x0091, B:28:0x0095, B:23:0x0058, B:19:0x003b, B:22:0x004b, B:12:0x0023), top: B:35:0x0008 }] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00aa  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:24:0x008e -> B:26:0x0091). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -73,7 +73,7 @@ public final class TransformableKt$detectZoomByCtrlMouseScroll$2 extends Restric
                 ResultKt.throwOnFailure(obj);
                 m4537unboximpl = ((Offset) obj).m4537unboximpl();
                 this.$channel.mo8396trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
-                this.$channel.mo8396trySendJP2dKIU(new TransformEvent.TransformDelta((float) Math.pow(2.0f, Float.intBitsToFloat((int) (m4537unboximpl & 4294967295L)) / 545.0f), Offset.Companion.m4543getZeroF1C5BW0(), 0.0f, null));
+                this.$channel.mo8396trySendJP2dKIU(new TransformEvent.TransformDelta((float) Math.pow(2.0d, Float.intBitsToFloat((int) (m4537unboximpl & 4294967295L)) / 545.0f), Offset.Companion.m4543getZeroF1C5BW0(), 0.0f, null));
                 this.L$0 = awaitPointerEventScope;
                 this.label = 2;
                 obj = TransformableKt.awaitCtrlMouseScrollOrNull(awaitPointerEventScope, this.$scrollConfig, this);
@@ -85,7 +85,7 @@ public final class TransformableKt$detectZoomByCtrlMouseScroll$2 extends Restric
                 Offset offset = (Offset) obj;
                 if (offset != null) {
                     m4537unboximpl = offset.m4537unboximpl();
-                    this.$channel.mo8396trySendJP2dKIU(new TransformEvent.TransformDelta((float) Math.pow(2.0f, Float.intBitsToFloat((int) (m4537unboximpl & 4294967295L)) / 545.0f), Offset.Companion.m4543getZeroF1C5BW0(), 0.0f, null));
+                    this.$channel.mo8396trySendJP2dKIU(new TransformEvent.TransformDelta((float) Math.pow(2.0d, Float.intBitsToFloat((int) (m4537unboximpl & 4294967295L)) / 545.0f), Offset.Companion.m4543getZeroF1C5BW0(), 0.0f, null));
                     this.L$0 = awaitPointerEventScope;
                     this.label = 2;
                     obj = TransformableKt.awaitCtrlMouseScrollOrNull(awaitPointerEventScope, this.$scrollConfig, this);
@@ -100,7 +100,7 @@ public final class TransformableKt$detectZoomByCtrlMouseScroll$2 extends Restric
                         }
                         m4537unboximpl = ((Offset) obj).m4537unboximpl();
                         this.$channel.mo8396trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
-                        this.$channel.mo8396trySendJP2dKIU(new TransformEvent.TransformDelta((float) Math.pow(2.0f, Float.intBitsToFloat((int) (m4537unboximpl & 4294967295L)) / 545.0f), Offset.Companion.m4543getZeroF1C5BW0(), 0.0f, null));
+                        this.$channel.mo8396trySendJP2dKIU(new TransformEvent.TransformDelta((float) Math.pow(2.0d, Float.intBitsToFloat((int) (m4537unboximpl & 4294967295L)) / 545.0f), Offset.Companion.m4543getZeroF1C5BW0(), 0.0f, null));
                         this.L$0 = awaitPointerEventScope;
                         this.label = 2;
                         obj = TransformableKt.awaitCtrlMouseScrollOrNull(awaitPointerEventScope, this.$scrollConfig, this);

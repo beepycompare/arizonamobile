@@ -215,15 +215,13 @@ public final class LazyListMeasuredItem implements LazyListItemInfo, LazyLayoutM
     /* renamed from: getOffset-Bjo55l4  reason: not valid java name */
     public long mo931getOffsetBjo55l4(int i) {
         if (i == 0 && getPlaceablesCount() == 0) {
-            if (isVertical()) {
-                return IntOffset.m7677constructorimpl((4294967295L & getOffset()) | (0 << 32));
-            }
-            return IntOffset.m7677constructorimpl((4294967295L & 0) | (getOffset() << 32));
+            boolean isVertical = isVertical();
+            int offset = getOffset();
+            return isVertical ? IntOffset.m7677constructorimpl(offset & 4294967295L) : IntOffset.m7677constructorimpl(offset << 32);
         }
         int[] iArr = this.placeableOffsets;
         int i2 = i * 2;
-        int i3 = iArr[i2];
-        return IntOffset.m7677constructorimpl((4294967295L & iArr[i2 + 1]) | (i3 << 32));
+        return IntOffset.m7677constructorimpl((iArr[i2 + 1] & 4294967295L) | (iArr[i2] << 32));
     }
 
     public final void applyScrollDelta(int i, boolean z) {
@@ -335,17 +333,15 @@ public final class LazyListMeasuredItem implements LazyListItemInfo, LazyLayoutM
 
     /* renamed from: copy-4Tuh3kE  reason: not valid java name */
     private final long m928copy4Tuh3kE(long j, Function1<? super Integer, Integer> function1) {
+        int intValue;
         int m7684getYimpl;
-        long j2;
         if (isVertical()) {
-            int m7683getXimpl = IntOffset.m7683getXimpl(j);
+            intValue = IntOffset.m7683getXimpl(j);
             m7684getYimpl = function1.invoke(Integer.valueOf(IntOffset.m7684getYimpl(j))).intValue();
-            j2 = m7683getXimpl;
         } else {
-            int intValue = function1.invoke(Integer.valueOf(IntOffset.m7683getXimpl(j))).intValue();
+            intValue = function1.invoke(Integer.valueOf(IntOffset.m7683getXimpl(j))).intValue();
             m7684getYimpl = IntOffset.m7684getYimpl(j);
-            j2 = intValue;
         }
-        return IntOffset.m7677constructorimpl((j2 << 32) | (m7684getYimpl & 4294967295L));
+        return IntOffset.m7677constructorimpl((m7684getYimpl & 4294967295L) | (intValue << 32));
     }
 }

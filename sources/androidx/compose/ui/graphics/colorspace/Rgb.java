@@ -69,9 +69,8 @@ public final class Rgb extends ColorSpace {
                 float f4;
                 double invoke = Rgb.this.getOetfOrig$ui_graphics().invoke(d);
                 f3 = Rgb.this.min;
-                double d2 = f3;
                 f4 = Rgb.this.max;
-                return Double.valueOf(RangesKt.coerceIn(invoke, d2, f4));
+                return Double.valueOf(RangesKt.coerceIn(invoke, f3, f4));
             }
 
             @Override // kotlin.jvm.functions.Function1
@@ -100,9 +99,8 @@ public final class Rgb extends ColorSpace {
                 float f4;
                 DoubleFunction eotfOrig$ui_graphics = Rgb.this.getEotfOrig$ui_graphics();
                 f3 = Rgb.this.min;
-                double d2 = f3;
                 f4 = Rgb.this.max;
-                return Double.valueOf(eotfOrig$ui_graphics.invoke(RangesKt.coerceIn(d, d2, f4)));
+                return Double.valueOf(eotfOrig$ui_graphics.invoke(RangesKt.coerceIn(d, f3, f4)));
             }
 
             @Override // kotlin.jvm.functions.Function1
@@ -620,20 +618,19 @@ public final class Rgb extends ColorSpace {
             float f6 = fArr[5];
             float x = whitePoint.getX();
             float y = whitePoint.getY();
-            float f7 = 1;
-            float f8 = (f7 - f) / f2;
-            float f9 = f / f2;
-            float f10 = (f3 / f4) - f9;
-            float f11 = (x / y) - f9;
-            float f12 = ((f7 - f3) / f4) - f8;
-            float f13 = (f5 / f6) - f9;
-            float f14 = (((((f7 - x) / y) - f8) * f10) - (f11 * f12)) / (((((f7 - f5) / f6) - f8) * f10) - (f12 * f13));
-            float f15 = (f11 - (f13 * f14)) / f10;
-            float f16 = (1.0f - f15) - f14;
-            float f17 = f16 / f2;
-            float f18 = f15 / f4;
-            float f19 = f14 / f6;
-            return new float[]{f17 * f, f16, f17 * ((1.0f - f) - f2), f18 * f3, f15, f18 * ((1.0f - f3) - f4), f19 * f5, f14, f19 * ((1.0f - f5) - f6)};
+            float f7 = (1.0f - f) / f2;
+            float f8 = f / f2;
+            float f9 = (f3 / f4) - f8;
+            float f10 = (x / y) - f8;
+            float f11 = ((1.0f - f3) / f4) - f7;
+            float f12 = (f5 / f6) - f8;
+            float f13 = (((((1.0f - x) / y) - f7) * f9) - (f10 * f11)) / (((((1.0f - f5) / f6) - f7) * f9) - (f11 * f12));
+            float f14 = (f10 - (f12 * f13)) / f9;
+            float f15 = (1.0f - f14) - f13;
+            float f16 = f15 / f2;
+            float f17 = f14 / f4;
+            float f18 = f13 / f6;
+            return new float[]{f16 * f, f15, f16 * ((1.0f - f) - f2), f17 * f3, f14, f17 * ((1.0f - f3) - f4), f18 * f5, f13, f18 * ((1.0f - f5) - f6)};
         }
 
         /* JADX INFO: Access modifiers changed from: private */

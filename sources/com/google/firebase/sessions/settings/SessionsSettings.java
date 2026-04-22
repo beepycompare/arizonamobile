@@ -95,8 +95,14 @@ public final class SessionsSettings {
         return Duration.m10566isPositiveimpl(j) && Duration.m10561isFiniteimpl(j);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0059, code lost:
-        if (r6.updateSettings(r0) != r1) goto L11;
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x004a, code lost:
+        if (r6.updateSettings(r0) == r1) goto L19;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0058, code lost:
+        if (r5.updateSettings(r0) != r1) goto L11;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x005a, code lost:
+        return r1;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x003d  */
@@ -106,7 +112,6 @@ public final class SessionsSettings {
     public final Object updateSettings(Continuation<? super Unit> continuation) {
         SessionsSettings$updateSettings$1 sessionsSettings$updateSettings$1;
         int i;
-        SessionsSettings sessionsSettings;
         if (continuation instanceof SessionsSettings$updateSettings$1) {
             sessionsSettings$updateSettings$1 = (SessionsSettings$updateSettings$1) continuation;
             if ((sessionsSettings$updateSettings$1.label & Integer.MIN_VALUE) != 0) {
@@ -119,10 +124,6 @@ public final class SessionsSettings {
                     SettingsProvider settingsProvider = this.localOverrideSettings;
                     sessionsSettings$updateSettings$1.L$0 = this;
                     sessionsSettings$updateSettings$1.label = 1;
-                    if (settingsProvider.updateSettings(sessionsSettings$updateSettings$1) != coroutine_suspended) {
-                        sessionsSettings = this;
-                    }
-                    return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
                         ResultKt.throwOnFailure(obj);
@@ -130,10 +131,10 @@ public final class SessionsSettings {
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    sessionsSettings = (SessionsSettings) sessionsSettings$updateSettings$1.L$0;
+                    this = (SessionsSettings) sessionsSettings$updateSettings$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                SettingsProvider settingsProvider2 = sessionsSettings.remoteSettings;
+                SettingsProvider settingsProvider2 = this.remoteSettings;
                 sessionsSettings$updateSettings$1.L$0 = null;
                 sessionsSettings$updateSettings$1.label = 2;
             }
@@ -144,7 +145,7 @@ public final class SessionsSettings {
         i = sessionsSettings$updateSettings$1.label;
         if (i != 0) {
         }
-        SettingsProvider settingsProvider22 = sessionsSettings.remoteSettings;
+        SettingsProvider settingsProvider22 = this.remoteSettings;
         sessionsSettings$updateSettings$1.L$0 = null;
         sessionsSettings$updateSettings$1.label = 2;
     }

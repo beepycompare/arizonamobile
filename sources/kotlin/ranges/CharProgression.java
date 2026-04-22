@@ -47,8 +47,8 @@ public class CharProgression implements Iterable<Character>, KMappedMarker {
 
     public boolean isEmpty() {
         int i = this.step;
-        char c = this.first;
-        return i > 0 ? Intrinsics.compare((int) c, (int) this.last) > 0 : Intrinsics.compare((int) c, (int) this.last) < 0;
+        int compare = Intrinsics.compare((int) this.first, (int) this.last);
+        return i > 0 ? compare > 0 : compare < 0;
     }
 
     public boolean equals(Object obj) {

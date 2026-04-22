@@ -65,14 +65,14 @@ public final class InternalMutatorMutex$mutateWith$2<R> extends SuspendLambda im
     /* JADX WARN: Type inference failed for: r1v0, types: [int, kotlinx.coroutines.sync.Mutex] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        InternalMutatorMutex.Mutator mutator;
         Mutex mutex;
         Function2 function2;
-        InternalMutatorMutex.Mutator mutator;
         InternalMutatorMutex internalMutatorMutex;
         Object obj2;
         Throwable th;
-        InternalMutatorMutex internalMutatorMutex2;
         InternalMutatorMutex.Mutator mutator2;
+        InternalMutatorMutex internalMutatorMutex2;
         Mutex mutex2;
         AtomicReference atomicReference;
         AtomicReference atomicReference2;
@@ -85,21 +85,19 @@ public final class InternalMutatorMutex$mutateWith$2<R> extends SuspendLambda im
                     MutatePriority mutatePriority = this.$priority;
                     CoroutineContext.Element element = ((CoroutineScope) this.L$0).getCoroutineContext().get(Job.Key);
                     Intrinsics.checkNotNull(element);
-                    InternalMutatorMutex.Mutator mutator3 = new InternalMutatorMutex.Mutator(mutatePriority, (Job) element);
-                    this.this$0.tryMutateOrCancel(mutator3);
+                    mutator = new InternalMutatorMutex.Mutator(mutatePriority, (Job) element);
+                    this.this$0.tryMutateOrCancel(mutator);
                     mutex = this.this$0.mutex;
                     function2 = this.$block;
                     Object obj3 = this.$receiver;
-                    InternalMutatorMutex internalMutatorMutex3 = this.this$0;
-                    this.L$0 = mutator3;
+                    internalMutatorMutex = this.this$0;
+                    this.L$0 = mutator;
                     this.L$1 = mutex;
                     this.L$2 = function2;
                     this.L$3 = obj3;
-                    this.L$4 = internalMutatorMutex3;
+                    this.L$4 = internalMutatorMutex;
                     this.label = 1;
                     if (mutex.lock(null, this) != coroutine_suspended) {
-                        mutator = mutator3;
-                        internalMutatorMutex = internalMutatorMutex3;
                         obj2 = obj3;
                     }
                     return coroutine_suspended;
@@ -123,11 +121,12 @@ public final class InternalMutatorMutex$mutateWith$2<R> extends SuspendLambda im
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    internalMutatorMutex = (InternalMutatorMutex) this.L$4;
                     obj2 = this.L$3;
                     function2 = (Function2) this.L$2;
-                    mutator = (InternalMutatorMutex.Mutator) this.L$0;
+                    InternalMutatorMutex.Mutator mutator3 = (InternalMutatorMutex.Mutator) this.L$0;
                     ResultKt.throwOnFailure(obj);
+                    internalMutatorMutex = (InternalMutatorMutex) this.L$4;
+                    mutator = mutator3;
                     mutex = (Mutex) this.L$1;
                 }
                 this.L$0 = mutator;
@@ -138,10 +137,11 @@ public final class InternalMutatorMutex$mutateWith$2<R> extends SuspendLambda im
                 this.label = 2;
                 Object invoke = function2.invoke(obj2, this);
                 if (invoke != coroutine_suspended) {
-                    internalMutatorMutex2 = internalMutatorMutex;
-                    mutex2 = mutex;
+                    Mutex mutex3 = mutex;
                     obj = invoke;
                     mutator2 = mutator;
+                    mutex2 = mutex3;
+                    internalMutatorMutex2 = internalMutatorMutex;
                     atomicReference2 = internalMutatorMutex2.currentMutator;
                     MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(atomicReference2, mutator2, null);
                     mutex2.unlock(null);
@@ -150,8 +150,8 @@ public final class InternalMutatorMutex$mutateWith$2<R> extends SuspendLambda im
                 return coroutine_suspended;
             } catch (Throwable th3) {
                 th = th3;
-                internalMutatorMutex2 = internalMutatorMutex;
                 mutator2 = mutator;
+                internalMutatorMutex2 = internalMutatorMutex;
                 atomicReference = internalMutatorMutex2.currentMutator;
                 MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(atomicReference, mutator2, null);
                 throw th;

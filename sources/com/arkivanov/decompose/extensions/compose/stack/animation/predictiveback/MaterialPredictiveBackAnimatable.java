@@ -300,9 +300,9 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
                 }
                 throw new NoWhenBranchMatchedException();
             }
-            return ((f3 - f) / 2.0f) + (density.mo405toPx0680j_4(Dp.m7555constructorimpl(8)) * getProgress());
+            return ((f3 - f) / 2.0f) + (density.mo405toPx0680j_4(Dp.m7555constructorimpl(8.0f)) * getProgress());
         }
-        return ((f - f3) / 2.0f) - (density.mo405toPx0680j_4(Dp.m7555constructorimpl(8)) * getProgress());
+        return ((f - f3) / 2.0f) - (density.mo405toPx0680j_4(Dp.m7555constructorimpl(8.0f)) * getProgress());
     }
 
     @Override // com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.PredictiveBackAnimatable
@@ -329,6 +329,6 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
         if (f == 0.0f) {
             return 0.0f;
         }
-        return ((f / 20.0f) - density.mo405toPx0680j_4(Dp.m7555constructorimpl(8))) * ((getTouchY() - this.initialEvent.getTouchY()) / f) * RangesKt.coerceAtMost(getProgress() * 3.0f, 1.0f);
+        return ((f / 20.0f) - density.mo405toPx0680j_4(Dp.m7555constructorimpl(8.0f))) * ((getTouchY() - this.initialEvent.getTouchY()) / f) * RangesKt.coerceAtMost(getProgress() * 3.0f, 1.0f);
     }
 }

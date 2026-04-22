@@ -69,13 +69,13 @@ public class WebDialog extends Dialog {
             return super.build();
         }
 
-        /* JADX WARN: Type inference failed for: r1v1, types: [com.facebook.widget.WebDialog$BuilderBase, com.facebook.widget.WebDialog$Builder] */
+        /* JADX WARN: Type inference failed for: r0v1, types: [com.facebook.widget.WebDialog$BuilderBase, com.facebook.widget.WebDialog$Builder] */
         @Override // com.facebook.widget.WebDialog.BuilderBase
         public /* bridge */ /* synthetic */ Builder setOnCompleteListener(OnCompleteListener onCompleteListener) {
             return super.setOnCompleteListener(onCompleteListener);
         }
 
-        /* JADX WARN: Type inference failed for: r1v1, types: [com.facebook.widget.WebDialog$BuilderBase, com.facebook.widget.WebDialog$Builder] */
+        /* JADX WARN: Type inference failed for: r0v1, types: [com.facebook.widget.WebDialog$BuilderBase, com.facebook.widget.WebDialog$Builder] */
         @Override // com.facebook.widget.WebDialog.BuilderBase
         public /* bridge */ /* synthetic */ Builder setTheme(int i) {
             return super.setTheme(i);
@@ -318,7 +318,7 @@ public class WebDialog extends Dialog {
             return this;
         }
 
-        /* JADX WARN: Type inference failed for: r1v1, types: [com.facebook.widget.WebDialog$BuilderBase, com.facebook.widget.WebDialog$FeedDialogBuilder] */
+        /* JADX WARN: Type inference failed for: r0v1, types: [com.facebook.widget.WebDialog$BuilderBase, com.facebook.widget.WebDialog$FeedDialogBuilder] */
         @Override // com.facebook.widget.WebDialog.BuilderBase
         public /* bridge */ /* synthetic */ FeedDialogBuilder setOnCompleteListener(OnCompleteListener onCompleteListener) {
             return super.setOnCompleteListener(onCompleteListener);
@@ -334,7 +334,7 @@ public class WebDialog extends Dialog {
             return this;
         }
 
-        /* JADX WARN: Type inference failed for: r1v1, types: [com.facebook.widget.WebDialog$BuilderBase, com.facebook.widget.WebDialog$FeedDialogBuilder] */
+        /* JADX WARN: Type inference failed for: r0v1, types: [com.facebook.widget.WebDialog$BuilderBase, com.facebook.widget.WebDialog$FeedDialogBuilder] */
         @Override // com.facebook.widget.WebDialog.BuilderBase
         public /* bridge */ /* synthetic */ FeedDialogBuilder setTheme(int i) {
             return super.setTheme(i);
@@ -382,13 +382,13 @@ public class WebDialog extends Dialog {
             return this;
         }
 
-        /* JADX WARN: Type inference failed for: r1v1, types: [com.facebook.widget.WebDialog$BuilderBase, com.facebook.widget.WebDialog$RequestsDialogBuilder] */
+        /* JADX WARN: Type inference failed for: r0v1, types: [com.facebook.widget.WebDialog$BuilderBase, com.facebook.widget.WebDialog$RequestsDialogBuilder] */
         @Override // com.facebook.widget.WebDialog.BuilderBase
         public /* bridge */ /* synthetic */ RequestsDialogBuilder setOnCompleteListener(OnCompleteListener onCompleteListener) {
             return super.setOnCompleteListener(onCompleteListener);
         }
 
-        /* JADX WARN: Type inference failed for: r1v1, types: [com.facebook.widget.WebDialog$BuilderBase, com.facebook.widget.WebDialog$RequestsDialogBuilder] */
+        /* JADX WARN: Type inference failed for: r0v1, types: [com.facebook.widget.WebDialog$BuilderBase, com.facebook.widget.WebDialog$RequestsDialogBuilder] */
         @Override // com.facebook.widget.WebDialog.BuilderBase
         public /* bridge */ /* synthetic */ RequestsDialogBuilder setTheme(int i) {
             return super.setTheme(i);

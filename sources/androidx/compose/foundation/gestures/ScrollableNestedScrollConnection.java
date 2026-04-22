@@ -42,7 +42,7 @@ public final class ScrollableNestedScrollConnection implements NestedScrollConne
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0035  */
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPostFling-RZ2iAVY  reason: not valid java name */
     /*
@@ -82,8 +82,9 @@ public final class ScrollableNestedScrollConnection implements NestedScrollConne
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    j2 = scrollableNestedScrollConnection$onPostFling$1.J$0;
+                    long j3 = scrollableNestedScrollConnection$onPostFling$1.J$0;
                     ResultKt.throwOnFailure(obj);
+                    j2 = j3;
                 }
                 m7804getZero9UxMQ8M2 = ((Velocity) obj).m7802unboximpl();
                 m7804getZero9UxMQ8M = Velocity.m7796minusAH228Gc(j2, m7804getZero9UxMQ8M2);

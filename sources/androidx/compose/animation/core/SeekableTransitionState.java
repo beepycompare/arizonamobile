@@ -327,7 +327,7 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
             return;
         }
         float f = ((float) progressNanos) / ((float) animationSpecDuration);
-        seekingAnimationState.setValue((seekingAnimationState.getStart().get$animation_core(0) * (1 - f)) + (f * 1.0f));
+        seekingAnimationState.setValue((seekingAnimationState.getStart().get$animation_core(0) * (1.0f - f)) + (f * 1.0f));
     }
 
     public final Object snapTo(S s, Continuation<? super Unit> continuation) {

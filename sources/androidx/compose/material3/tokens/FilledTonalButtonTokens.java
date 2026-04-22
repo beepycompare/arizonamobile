@@ -13,7 +13,7 @@ public final class FilledTonalButtonTokens {
     public static final FilledTonalButtonTokens INSTANCE = new FilledTonalButtonTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final float ContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 40.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(40.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens DisabledContainerColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
@@ -30,7 +30,7 @@ public final class FilledTonalButtonTokens {
     private static final ColorSchemeKeyTokens FocusIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens HoverIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final float IconSize = Dp.m7555constructorimpl((float) 18.0d);
+    private static final float IconSize = Dp.m7555constructorimpl(18.0f);
     private static final ColorSchemeKeyTokens PressedIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
 
     private FilledTonalButtonTokens() {

@@ -16,7 +16,7 @@ public final class AndroidViewHolder_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float toComposeOffset(int i) {
-        return i * (-1);
+        return i * (-1.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

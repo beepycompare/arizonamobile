@@ -211,7 +211,7 @@ public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda imple
                                     break;
                                 }
                                 copyOnWriteArrayList = ((PagingDataPresenter) this.this$0).onPagesUpdatedListeners;
-                                while (r14.hasNext()) {
+                                while (r13.hasNext()) {
                                 }
                                 return Unit.INSTANCE;
                             case 3:
@@ -273,7 +273,7 @@ public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda imple
                                 if (!(pageEvent instanceof PageEvent.Insert)) {
                                 }
                                 copyOnWriteArrayList = ((PagingDataPresenter) this.this$0).onPagesUpdatedListeners;
-                                while (r14.hasNext()) {
+                                while (r13.hasNext()) {
                                 }
                                 return Unit.INSTANCE;
                             case 5:
@@ -291,7 +291,7 @@ public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda imple
                                 if (!(pageEvent instanceof PageEvent.Insert)) {
                                 }
                                 copyOnWriteArrayList = ((PagingDataPresenter) this.this$0).onPagesUpdatedListeners;
-                                while (r14.hasNext()) {
+                                while (r13.hasNext()) {
                                 }
                                 return Unit.INSTANCE;
                             default:

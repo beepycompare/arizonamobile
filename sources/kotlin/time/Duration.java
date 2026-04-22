@@ -2,6 +2,7 @@ package kotlin.time;
 
 import androidx.collection.SieveCacheKt;
 import androidx.exifinterface.media.ExifInterface;
+import androidx.media3.common.C;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import kotlin.Deprecated;
@@ -657,7 +658,7 @@ public final class Duration implements Comparable<Duration> {
         if (m10564isInfiniteimpl(j)) {
             return 0;
         }
-        return (int) (m10562isInMillisimpl(j) ? DurationKt.access$millisToNanos(m10559getValueimpl(j) % 1000) : m10559getValueimpl(j) % 1000000000);
+        return (int) (m10562isInMillisimpl(j) ? DurationKt.access$millisToNanos(m10559getValueimpl(j) % 1000) : m10559getValueimpl(j) % C.NANOS_PER_SECOND);
     }
 
     /* renamed from: toDouble-impl  reason: not valid java name */

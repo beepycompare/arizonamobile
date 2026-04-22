@@ -43,7 +43,7 @@ final class AutoValue_CrashlyticsReport_FilesPayload extends CrashlyticsReport.F
     public int hashCode() {
         int hashCode = (this.files.hashCode() ^ 1000003) * 1000003;
         String str = this.orgId;
-        return hashCode ^ (str == null ? 0 : str.hashCode());
+        return (str == null ? 0 : str.hashCode()) ^ hashCode;
     }
 
     @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.FilesPayload

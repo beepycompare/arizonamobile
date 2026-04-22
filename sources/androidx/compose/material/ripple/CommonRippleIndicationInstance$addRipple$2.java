@@ -40,6 +40,8 @@ final class CommonRippleIndicationInstance$addRipple$2 extends SuspendLambda imp
         return ((CommonRippleIndicationInstance$addRipple$2) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v4, types: [kotlin.Unit, java.lang.Object] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         SnapshotStateMap snapshotStateMap;
@@ -60,7 +62,8 @@ final class CommonRippleIndicationInstance$addRipple$2 extends SuspendLambda imp
             }
             snapshotStateMap2 = this.this$0.ripples;
             snapshotStateMap2.remove(this.$interaction);
-            return Unit.INSTANCE;
+            this = Unit.INSTANCE;
+            return this;
         } catch (Throwable th) {
             snapshotStateMap = this.this$0.ripples;
             snapshotStateMap.remove(this.$interaction);

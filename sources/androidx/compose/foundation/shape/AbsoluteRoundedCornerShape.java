@@ -64,6 +64,6 @@ public final class AbsoluteRoundedCornerShape extends CornerBasedShape {
 
     /* renamed from: toRadius-Bz7bX_o  reason: not valid java name */
     private final long m1113toRadiusBz7bX_o(float f) {
-        return CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
+        return CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 }

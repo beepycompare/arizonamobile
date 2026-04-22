@@ -86,19 +86,19 @@ public final class TrieNode<K, V> {
     }
 
     public final boolean hasEntryAt$runtime(int i) {
-        return (i & this.dataMap) != 0;
+        return (this.dataMap & i) != 0;
     }
 
     private final boolean hasNodeAt(int i) {
-        return (i & this.nodeMap) != 0;
+        return (this.nodeMap & i) != 0;
     }
 
     public final int entryKeyIndex$runtime(int i) {
-        return Integer.bitCount((i - 1) & this.dataMap) * 2;
+        return Integer.bitCount(this.dataMap & (i - 1)) * 2;
     }
 
     public final int nodeIndex$runtime(int i) {
-        return (this.buffer.length - 1) - Integer.bitCount((i - 1) & this.nodeMap);
+        return (this.buffer.length - 1) - Integer.bitCount(this.nodeMap & (i - 1));
     }
 
     private final K keyAtIndex(int i) {
@@ -159,7 +159,7 @@ public final class TrieNode<K, V> {
                 trieNode.dataMap = this.nodeMap;
                 return trieNode;
             }
-            return new TrieNode<>(this.dataMap ^ i2, i2 ^ this.nodeMap, TrieNodeKt.access$replaceNodeWithEntry(this.buffer, i, entryKeyIndex$runtime(i2), objArr[0], objArr[1]));
+            return new TrieNode<>(this.dataMap ^ i2, this.nodeMap ^ i2, TrieNodeKt.access$replaceNodeWithEntry(this.buffer, i, entryKeyIndex$runtime(i2), objArr[0], objArr[1]));
         }
         Object[] objArr2 = this.buffer;
         Object[] copyOf = Arrays.copyOf(objArr2, objArr2.length);
@@ -189,7 +189,7 @@ public final class TrieNode<K, V> {
         if (objArr.length == 1) {
             return null;
         }
-        return new TrieNode<>(this.dataMap, i2 ^ this.nodeMap, TrieNodeKt.access$removeNodeAtIndex(objArr, i));
+        return new TrieNode<>(this.dataMap, this.nodeMap ^ i2, TrieNodeKt.access$removeNodeAtIndex(objArr, i));
     }
 
     private final TrieNode<K, V> mutableRemoveNodeAtIndex(int i, int i2, MutabilityOwnership mutabilityOwnership) {
@@ -202,7 +202,7 @@ public final class TrieNode<K, V> {
             this.nodeMap ^= i2;
             return this;
         }
-        return new TrieNode<>(this.dataMap, i2 ^ this.nodeMap, TrieNodeKt.access$removeNodeAtIndex(objArr, i), mutabilityOwnership);
+        return new TrieNode<>(this.dataMap, this.nodeMap ^ i2, TrieNodeKt.access$removeNodeAtIndex(objArr, i), mutabilityOwnership);
     }
 
     private final Object[] bufferMoveEntryToNode(int i, int i2, int i3, K k, V v, int i4, MutabilityOwnership mutabilityOwnership) {
@@ -221,7 +221,7 @@ public final class TrieNode<K, V> {
             this.nodeMap |= i2;
             return this;
         }
-        return new TrieNode<>(this.dataMap ^ i2, i2 | this.nodeMap, bufferMoveEntryToNode(i, i2, i3, k, v, i4, mutabilityOwnership), mutabilityOwnership);
+        return new TrieNode<>(this.dataMap ^ i2, this.nodeMap | i2, bufferMoveEntryToNode(i, i2, i3, k, v, i4, mutabilityOwnership), mutabilityOwnership);
     }
 
     private final TrieNode<K, V> makeNode(int i, K k, V v, int i2, K k2, V v2, int i3, MutabilityOwnership mutabilityOwnership) {
@@ -680,7 +680,6 @@ public final class TrieNode<K, V> {
     }
 
     public final TrieNode<K, V> mutablePut(int i, K k, V v, int i2, PersistentHashMapBuilder<K, V> persistentHashMapBuilder) {
-        PersistentHashMapBuilder<K, V> persistentHashMapBuilder2;
         TrieNode<K, V> mutablePut;
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
         if (hasEntryAt$runtime(indexSegment)) {
@@ -696,12 +695,10 @@ public final class TrieNode<K, V> {
             TrieNode<K, V> nodeAtIndex$runtime = nodeAtIndex$runtime(nodeIndex$runtime);
             if (i2 == 30) {
                 mutablePut = nodeAtIndex$runtime.mutableCollisionPut(k, v, persistentHashMapBuilder);
-                persistentHashMapBuilder2 = persistentHashMapBuilder;
             } else {
-                persistentHashMapBuilder2 = persistentHashMapBuilder;
-                mutablePut = nodeAtIndex$runtime.mutablePut(i, k, v, i2 + 5, persistentHashMapBuilder2);
+                mutablePut = nodeAtIndex$runtime.mutablePut(i, k, v, i2 + 5, persistentHashMapBuilder);
             }
-            return nodeAtIndex$runtime == mutablePut ? this : mutableUpdateNodeAtIndex(nodeIndex$runtime, mutablePut, persistentHashMapBuilder2.getOwnership());
+            return nodeAtIndex$runtime == mutablePut ? this : mutableUpdateNodeAtIndex(nodeIndex$runtime, mutablePut, persistentHashMapBuilder.getOwnership());
         } else {
             persistentHashMapBuilder.setSize(persistentHashMapBuilder.size() + 1);
             return mutableInsertEntryAt(indexSegment, k, v, persistentHashMapBuilder.getOwnership());
@@ -713,9 +710,7 @@ public final class TrieNode<K, V> {
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
         if (hasEntryAt$runtime(indexSegment)) {
             int entryKeyIndex$runtime = entryKeyIndex$runtime(indexSegment);
-            if (Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$runtime))) {
-                return removeEntryAtIndex(entryKeyIndex$runtime, indexSegment);
-            }
+            return Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$runtime)) ? removeEntryAtIndex(entryKeyIndex$runtime, indexSegment) : this;
         } else if (hasNodeAt(indexSegment)) {
             int nodeIndex$runtime = nodeIndex$runtime(indexSegment);
             TrieNode<K, V> nodeAtIndex$runtime = nodeAtIndex$runtime(nodeIndex$runtime);
@@ -725,8 +720,9 @@ public final class TrieNode<K, V> {
                 remove = nodeAtIndex$runtime.remove(i, k, i2 + 5);
             }
             return replaceNode(nodeAtIndex$runtime, remove, nodeIndex$runtime, indexSegment);
+        } else {
+            return this;
         }
-        return this;
     }
 
     private final TrieNode<K, V> replaceNode(TrieNode<K, V> trieNode, TrieNode<K, V> trieNode2, int i, int i2) {
@@ -769,9 +765,7 @@ public final class TrieNode<K, V> {
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
         if (hasEntryAt$runtime(indexSegment)) {
             int entryKeyIndex$runtime = entryKeyIndex$runtime(indexSegment);
-            if (Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$runtime)) && Intrinsics.areEqual(v, valueAtKeyIndex(entryKeyIndex$runtime))) {
-                return removeEntryAtIndex(entryKeyIndex$runtime, indexSegment);
-            }
+            return (Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$runtime)) && Intrinsics.areEqual(v, valueAtKeyIndex(entryKeyIndex$runtime))) ? removeEntryAtIndex(entryKeyIndex$runtime, indexSegment) : this;
         } else if (hasNodeAt(indexSegment)) {
             int nodeIndex$runtime = nodeIndex$runtime(indexSegment);
             TrieNode<K, V> nodeAtIndex$runtime = nodeAtIndex$runtime(nodeIndex$runtime);
@@ -781,29 +775,32 @@ public final class TrieNode<K, V> {
                 remove = nodeAtIndex$runtime.remove(i, k, v, i2 + 5);
             }
             return replaceNode(nodeAtIndex$runtime, remove, nodeIndex$runtime, indexSegment);
+        } else {
+            return this;
         }
-        return this;
     }
 
     public final TrieNode<K, V> mutableRemove(int i, K k, V v, int i2, PersistentHashMapBuilder<K, V> persistentHashMapBuilder) {
+        PersistentHashMapBuilder<K, V> persistentHashMapBuilder2;
         TrieNode<K, V> mutableRemove;
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
         if (hasEntryAt$runtime(indexSegment)) {
             int entryKeyIndex$runtime = entryKeyIndex$runtime(indexSegment);
-            if (Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$runtime)) && Intrinsics.areEqual(v, valueAtKeyIndex(entryKeyIndex$runtime))) {
-                return mutableRemoveEntryAtIndex(entryKeyIndex$runtime, indexSegment, persistentHashMapBuilder);
-            }
+            return (Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$runtime)) && Intrinsics.areEqual(v, valueAtKeyIndex(entryKeyIndex$runtime))) ? mutableRemoveEntryAtIndex(entryKeyIndex$runtime, indexSegment, persistentHashMapBuilder) : this;
         } else if (hasNodeAt(indexSegment)) {
             int nodeIndex$runtime = nodeIndex$runtime(indexSegment);
             TrieNode<K, V> nodeAtIndex$runtime = nodeAtIndex$runtime(nodeIndex$runtime);
             if (i2 == 30) {
                 mutableRemove = nodeAtIndex$runtime.mutableCollisionRemove(k, v, persistentHashMapBuilder);
+                persistentHashMapBuilder2 = persistentHashMapBuilder;
             } else {
-                mutableRemove = nodeAtIndex$runtime.mutableRemove(i, k, v, i2 + 5, persistentHashMapBuilder);
+                persistentHashMapBuilder2 = persistentHashMapBuilder;
+                mutableRemove = nodeAtIndex$runtime.mutableRemove(i, k, v, i2 + 5, persistentHashMapBuilder2);
             }
-            return mutableReplaceNode(nodeAtIndex$runtime, mutableRemove, nodeIndex$runtime, indexSegment, persistentHashMapBuilder.getOwnership());
+            return mutableReplaceNode(nodeAtIndex$runtime, mutableRemove, nodeIndex$runtime, indexSegment, persistentHashMapBuilder2.getOwnership());
+        } else {
+            return this;
         }
-        return this;
     }
 
     public final void accept$runtime(Function5<? super TrieNode<K, V>, ? super Integer, ? super Integer, ? super Integer, ? super Integer, Unit> function5) {

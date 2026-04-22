@@ -63,7 +63,7 @@ public final class CoroutinesRoom {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:24:0x005a, code lost:
-            if (r9 == r1) goto L18;
+            if (r4 == r8) goto L18;
          */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
         /* JADX WARN: Removed duplicated region for block: B:17:0x003e  */
@@ -121,28 +121,24 @@ public final class CoroutinesRoom {
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:24:0x0088, code lost:
-            if (r8 == r4) goto L20;
+        /* JADX WARN: Code restructure failed: missing block: B:24:0x0077, code lost:
+            if (r10 == r15) goto L20;
          */
-        /* JADX WARN: Removed duplicated region for block: B:10:0x002d  */
-        /* JADX WARN: Removed duplicated region for block: B:17:0x0062  */
-        /* JADX WARN: Removed duplicated region for block: B:28:0x00d1  */
-        /* JADX WARN: Removed duplicated region for block: B:30:0x00d6 A[RETURN] */
-        /* JADX WARN: Removed duplicated region for block: B:31:0x00d7 A[RETURN] */
+        /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x0057  */
+        /* JADX WARN: Removed duplicated region for block: B:28:0x00c0  */
+        /* JADX WARN: Removed duplicated region for block: B:30:0x00c5 A[RETURN] */
+        /* JADX WARN: Removed duplicated region for block: B:31:0x00c6 A[RETURN] */
         @Deprecated(message = "No longer called by generated implementation")
         @JvmStatic
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
-        public final <R> Object execute(RoomDatabase roomDatabase, boolean z, CancellationSignal cancellationSignal, Callable<R> callable, Continuation<? super R> continuation) {
+        public final <R> Object execute(RoomDatabase roomDatabase, boolean z, final CancellationSignal cancellationSignal, Callable<R> callable, Continuation<? super R> continuation) {
             CoroutinesRoom$Companion$execute$3 coroutinesRoom$Companion$execute$3;
             int i;
-            final CancellationSignal cancellationSignal2;
-            Callable<R> callable2;
-            Object coroutineContext;
             final Job launch$default;
             Object result;
-            RoomDatabase roomDatabase2 = roomDatabase;
             if (continuation instanceof CoroutinesRoom$Companion$execute$3) {
                 coroutinesRoom$Companion$execute$3 = (CoroutinesRoom$Companion$execute$3) continuation;
                 if ((coroutinesRoom$Companion$execute$3.label & Integer.MIN_VALUE) != 0) {
@@ -152,45 +148,41 @@ public final class CoroutinesRoom {
                     i = coroutinesRoom$Companion$execute$3.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        if (roomDatabase2.isOpenInternal$room_runtime() && roomDatabase2.inTransaction()) {
+                        if (roomDatabase.isOpenInternal$room_runtime() && roomDatabase.inTransaction()) {
                             return callable.call();
                         }
-                        coroutinesRoom$Companion$execute$3.L$0 = roomDatabase2;
-                        cancellationSignal2 = cancellationSignal;
-                        coroutinesRoom$Companion$execute$3.L$1 = cancellationSignal2;
-                        callable2 = callable;
-                        coroutinesRoom$Companion$execute$3.L$2 = callable2;
+                        coroutinesRoom$Companion$execute$3.L$0 = roomDatabase;
+                        coroutinesRoom$Companion$execute$3.L$1 = cancellationSignal;
+                        coroutinesRoom$Companion$execute$3.L$2 = callable;
                         coroutinesRoom$Companion$execute$3.label = 1;
-                        coroutineContext = DBUtil.getCoroutineContext(roomDatabase2, z, coroutinesRoom$Companion$execute$3);
+                        obj = DBUtil.getCoroutineContext(roomDatabase, z, coroutinesRoom$Companion$execute$3);
                     } else if (i != 1) {
                         if (i == 2) {
-                            CoroutineContext coroutineContext2 = (CoroutineContext) coroutinesRoom$Companion$execute$3.L$3;
-                            Callable callable3 = (Callable) coroutinesRoom$Companion$execute$3.L$2;
-                            CancellationSignal cancellationSignal3 = (CancellationSignal) coroutinesRoom$Companion$execute$3.L$1;
-                            RoomDatabase roomDatabase3 = (RoomDatabase) coroutinesRoom$Companion$execute$3.L$0;
+                            CoroutineContext coroutineContext = (CoroutineContext) coroutinesRoom$Companion$execute$3.L$3;
+                            Callable callable2 = (Callable) coroutinesRoom$Companion$execute$3.L$2;
+                            CancellationSignal cancellationSignal2 = (CancellationSignal) coroutinesRoom$Companion$execute$3.L$1;
+                            RoomDatabase roomDatabase2 = (RoomDatabase) coroutinesRoom$Companion$execute$3.L$0;
                             ResultKt.throwOnFailure(obj);
                             return obj;
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        CancellationSignal cancellationSignal4 = (CancellationSignal) coroutinesRoom$Companion$execute$3.L$1;
+                        callable = (Callable) coroutinesRoom$Companion$execute$3.L$2;
+                        cancellationSignal = (CancellationSignal) coroutinesRoom$Companion$execute$3.L$1;
+                        roomDatabase = (RoomDatabase) coroutinesRoom$Companion$execute$3.L$0;
                         ResultKt.throwOnFailure(obj);
-                        callable2 = (Callable) coroutinesRoom$Companion$execute$3.L$2;
-                        roomDatabase2 = (RoomDatabase) coroutinesRoom$Companion$execute$3.L$0;
-                        coroutineContext = obj;
-                        cancellationSignal2 = cancellationSignal4;
                     }
-                    CoroutineContext coroutineContext3 = (CoroutineContext) coroutineContext;
-                    coroutinesRoom$Companion$execute$3.L$0 = roomDatabase2;
-                    coroutinesRoom$Companion$execute$3.L$1 = cancellationSignal2;
-                    coroutinesRoom$Companion$execute$3.L$2 = callable2;
-                    coroutinesRoom$Companion$execute$3.L$3 = coroutineContext3;
+                    CoroutineContext coroutineContext2 = (CoroutineContext) obj;
+                    coroutinesRoom$Companion$execute$3.L$0 = roomDatabase;
+                    coroutinesRoom$Companion$execute$3.L$1 = cancellationSignal;
+                    coroutinesRoom$Companion$execute$3.L$2 = callable;
+                    coroutinesRoom$Companion$execute$3.L$3 = coroutineContext2;
                     coroutinesRoom$Companion$execute$3.label = 2;
                     CoroutinesRoom$Companion$execute$3 coroutinesRoom$Companion$execute$32 = coroutinesRoom$Companion$execute$3;
                     CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(coroutinesRoom$Companion$execute$32), 1);
                     cancellableContinuationImpl.initCancellability();
                     CancellableContinuationImpl cancellableContinuationImpl2 = cancellableContinuationImpl;
-                    launch$default = BuildersKt__Builders_commonKt.launch$default(roomDatabase2.getCoroutineScope(), coroutineContext3, null, new CoroutinesRoom$Companion$execute$4$job$1(callable2, cancellableContinuationImpl2, null), 2, null);
+                    launch$default = BuildersKt__Builders_commonKt.launch$default(roomDatabase.getCoroutineScope(), coroutineContext2, null, new CoroutinesRoom$Companion$execute$4$job$1(callable, cancellableContinuationImpl2, null), 2, null);
                     cancellableContinuationImpl2.invokeOnCancellation(new Function1<Throwable, Unit>() { // from class: androidx.room.CoroutinesRoom$Companion$execute$4$1
                         @Override // kotlin.jvm.functions.Function1
                         public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
@@ -200,9 +192,9 @@ public final class CoroutinesRoom {
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(Throwable th) {
-                            CancellationSignal cancellationSignal5 = cancellationSignal2;
-                            if (cancellationSignal5 != null) {
-                                cancellationSignal5.cancel();
+                            CancellationSignal cancellationSignal3 = cancellationSignal;
+                            if (cancellationSignal3 != null) {
+                                cancellationSignal3.cancel();
                             }
                             Job.DefaultImpls.cancel$default(launch$default, (CancellationException) null, 1, (Object) null);
                         }
@@ -220,17 +212,17 @@ public final class CoroutinesRoom {
             i = coroutinesRoom$Companion$execute$3.label;
             if (i != 0) {
             }
-            CoroutineContext coroutineContext32 = (CoroutineContext) coroutineContext;
-            coroutinesRoom$Companion$execute$3.L$0 = roomDatabase2;
-            coroutinesRoom$Companion$execute$3.L$1 = cancellationSignal2;
-            coroutinesRoom$Companion$execute$3.L$2 = callable2;
-            coroutinesRoom$Companion$execute$3.L$3 = coroutineContext32;
+            CoroutineContext coroutineContext22 = (CoroutineContext) obj2;
+            coroutinesRoom$Companion$execute$3.L$0 = roomDatabase;
+            coroutinesRoom$Companion$execute$3.L$1 = cancellationSignal;
+            coroutinesRoom$Companion$execute$3.L$2 = callable;
+            coroutinesRoom$Companion$execute$3.L$3 = coroutineContext22;
             coroutinesRoom$Companion$execute$3.label = 2;
             CoroutinesRoom$Companion$execute$3 coroutinesRoom$Companion$execute$322 = coroutinesRoom$Companion$execute$3;
             CancellableContinuationImpl cancellableContinuationImpl3 = new CancellableContinuationImpl(IntrinsicsKt.intercepted(coroutinesRoom$Companion$execute$322), 1);
             cancellableContinuationImpl3.initCancellability();
             CancellableContinuationImpl cancellableContinuationImpl22 = cancellableContinuationImpl3;
-            launch$default = BuildersKt__Builders_commonKt.launch$default(roomDatabase2.getCoroutineScope(), coroutineContext32, null, new CoroutinesRoom$Companion$execute$4$job$1(callable2, cancellableContinuationImpl22, null), 2, null);
+            launch$default = BuildersKt__Builders_commonKt.launch$default(roomDatabase.getCoroutineScope(), coroutineContext22, null, new CoroutinesRoom$Companion$execute$4$job$1(callable, cancellableContinuationImpl22, null), 2, null);
             cancellableContinuationImpl22.invokeOnCancellation(new Function1<Throwable, Unit>() { // from class: androidx.room.CoroutinesRoom$Companion$execute$4$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
@@ -240,9 +232,9 @@ public final class CoroutinesRoom {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(Throwable th) {
-                    CancellationSignal cancellationSignal5 = cancellationSignal2;
-                    if (cancellationSignal5 != null) {
-                        cancellationSignal5.cancel();
+                    CancellationSignal cancellationSignal3 = cancellationSignal;
+                    if (cancellationSignal3 != null) {
+                        cancellationSignal3.cancel();
                     }
                     Job.DefaultImpls.cancel$default(launch$default, (CancellationException) null, 1, (Object) null);
                 }

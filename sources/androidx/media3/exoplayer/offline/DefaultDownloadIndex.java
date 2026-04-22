@@ -76,8 +76,8 @@ public final class DefaultDownloadIndex implements WritableDownloadIndex {
         this.initializationLock = new Object();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x0016, code lost:
-        if (r4 != null) goto L8;
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0021, code lost:
+        if (r3 != null) goto L9;
      */
     @Override // androidx.media3.exoplayer.offline.DownloadIndex
     /*
@@ -90,12 +90,12 @@ public final class DefaultDownloadIndex implements WritableDownloadIndex {
             Cursor cursor = getCursor(WHERE_ID_EQUALS, new String[]{str});
             if (cursor.getCount() == 0) {
                 downloadForCurrentRow = null;
+                if (cursor == null) {
+                    return null;
+                }
             } else {
                 cursor.moveToNext();
                 downloadForCurrentRow = getDownloadForCurrentRow(cursor);
-                if (cursor == null) {
-                    return downloadForCurrentRow;
-                }
             }
             cursor.close();
             return downloadForCurrentRow;

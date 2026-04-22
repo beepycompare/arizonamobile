@@ -166,8 +166,8 @@ public final class DividerKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit HorizontalDivider_9IZ8Weo$lambda$1$lambda$0(float f, long j, DrawScope drawScope) {
-        float f2 = 2;
-        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(drawScope.mo405toPx0680j_4(f) / f2) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) << 32) | (Float.floatToRawIntBits(drawScope.mo405toPx0680j_4(f) / f2) & 4294967295L)), drawScope.mo405toPx0680j_4(f), 0, null, 0.0f, null, 0, 496, null);
+        float f2 = drawScope.mo405toPx0680j_4(f);
+        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(drawScope.mo405toPx0680j_4(f) / 2.0f) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) << 32) | (Float.floatToRawIntBits(drawScope.mo405toPx0680j_4(f) / 2.0f) & 4294967295L)), f2, 0, null, 0.0f, null, 0, 496, null);
         return Unit.INSTANCE;
     }
 
@@ -294,12 +294,10 @@ public final class DividerKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit VerticalDivider_9IZ8Weo$lambda$4$lambda$3(float f, long j, DrawScope drawScope) {
-        float f2;
-        float f3 = drawScope.mo405toPx0680j_4(f);
-        long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(drawScope.mo405toPx0680j_4(f) / f2) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
-        float f4 = drawScope.mo405toPx0680j_4(f) / 2;
+        float f2 = drawScope.mo405toPx0680j_4(f);
+        long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(drawScope.mo405toPx0680j_4(f) / 2.0f) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
         float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L));
-        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, m4519constructorimpl, Offset.m4519constructorimpl((Float.floatToRawIntBits(f4) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L)), f3, 0, null, 0.0f, null, 0, 496, null);
+        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, m4519constructorimpl, Offset.m4519constructorimpl((Float.floatToRawIntBits(drawScope.mo405toPx0680j_4(f) / 2.0f) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L)), f2, 0, null, 0.0f, null, 0, 496, null);
         return Unit.INSTANCE;
     }
 

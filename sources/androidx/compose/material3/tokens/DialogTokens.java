@@ -21,7 +21,7 @@ public final class DialogTokens {
     private static final ColorSchemeKeyTokens SupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens SupportingTextFont = TypographyKeyTokens.BodyMedium;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.Secondary;
-    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
+    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
 
     private DialogTokens() {
     }

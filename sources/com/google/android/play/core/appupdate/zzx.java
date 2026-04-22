@@ -35,7 +35,7 @@ final class zzx extends AppUpdateOptions {
     }
 
     public final int hashCode() {
-        return ((this.zza ^ 1000003) * 1000003) ^ (true != this.zzb ? 1237 : 1231);
+        return (true != this.zzb ? 1237 : 1231) ^ ((this.zza ^ 1000003) * 1000003);
     }
 
     public final String toString() {

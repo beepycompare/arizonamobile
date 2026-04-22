@@ -328,26 +328,25 @@ public class NavDestination {
 
     public final int[] buildDeepLinkIds(NavDestination navDestination) {
         ArrayDeque arrayDeque = new ArrayDeque();
-        NavGraph navGraph = this;
         while (true) {
-            Intrinsics.checkNotNull(navGraph);
-            NavGraph navGraph2 = navGraph.parent;
+            Intrinsics.checkNotNull(this);
+            NavGraph navGraph = this.parent;
             if ((navDestination != null ? navDestination.parent : null) != null) {
-                NavGraph navGraph3 = navDestination.parent;
-                Intrinsics.checkNotNull(navGraph3);
-                if (navGraph3.findNode(navGraph.getId()) == navGraph) {
-                    arrayDeque.addFirst(navGraph);
+                NavGraph navGraph2 = navDestination.parent;
+                Intrinsics.checkNotNull(navGraph2);
+                if (navGraph2.findNode(this.getId()) == this) {
+                    arrayDeque.addFirst(this);
                     break;
                 }
             }
-            if (navGraph2 == null || navGraph2.getStartDestinationId() != navGraph.getId()) {
-                arrayDeque.addFirst(navGraph);
+            if (navGraph == null || navGraph.getStartDestinationId() != this.getId()) {
+                arrayDeque.addFirst(this);
             }
-            if (Intrinsics.areEqual(navGraph2, navDestination)) {
+            if (Intrinsics.areEqual(navGraph, navDestination)) {
                 break;
             }
-            navGraph = navGraph2;
-            if (navGraph == null) {
+            this = navGraph;
+            if (this == null) {
                 break;
             }
         }

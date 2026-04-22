@@ -197,7 +197,7 @@ public final class TsExtractor implements Extractor {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x001e, code lost:
-        r1 = r1 + 1;
+        r0 = r0 + 1;
      */
     @Override // androidx.media3.extractor.Extractor
     /*
@@ -578,7 +578,7 @@ public final class TsExtractor implements Extractor {
         private TsPayloadReader.EsInfo readEsInfo(ParsableByteArray parsableByteArray, int i) {
             int i2;
             int position = parsableByteArray.getPosition();
-            int i3 = position + i;
+            int i3 = i + position;
             int i4 = -1;
             String str = null;
             ArrayList arrayList = null;

@@ -35,6 +35,7 @@ public class PlayCoreDialogWrapperActivity extends Activity {
     @Override // android.app.Activity
     protected final void onCreate(Bundle bundle) {
         Intent intent;
+        PlayCoreDialogWrapperActivity playCoreDialogWrapperActivity;
         int intExtra = getIntent().getIntExtra("window_flags", 0);
         if (intExtra != 0) {
             getWindow().getDecorView().setSystemUiVisibility(intExtra);
@@ -54,13 +55,15 @@ public class PlayCoreDialogWrapperActivity extends Activity {
                 return;
             }
             try {
+                playCoreDialogWrapperActivity = this;
                 try {
-                    startIntentSenderForResult(((PendingIntent) extras.get("confirmation_intent")).getIntentSender(), 0, intent2, 0, 0, 0);
+                    playCoreDialogWrapperActivity.startIntentSenderForResult(((PendingIntent) extras.get("confirmation_intent")).getIntentSender(), 0, intent2, 0, 0, 0);
                 } catch (IntentSender.SendIntentException unused) {
-                    zza();
-                    finish();
+                    playCoreDialogWrapperActivity.zza();
+                    playCoreDialogWrapperActivity.finish();
                 }
             } catch (IntentSender.SendIntentException unused2) {
+                playCoreDialogWrapperActivity = this;
             }
         } else {
             this.zza = (ResultReceiver) bundle.getParcelable("result_receiver");

@@ -366,6 +366,7 @@ public class IconCompat extends CustomVersionedParcelable {
 
     public void addToShortcutIntent(Intent intent, Drawable drawable, Context context) {
         Bitmap bitmap;
+        Bitmap createBitmap;
         checkResource(context);
         int i = this.mType;
         if (i == 1) {
@@ -382,14 +383,16 @@ public class IconCompat extends CustomVersionedParcelable {
                 }
                 Drawable drawable2 = ContextCompat.getDrawable(createPackageContext, this.mInt1);
                 if (drawable2.getIntrinsicWidth() > 0 && drawable2.getIntrinsicHeight() > 0) {
-                    bitmap = Bitmap.createBitmap(drawable2.getIntrinsicWidth(), drawable2.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
-                    drawable2.setBounds(0, 0, bitmap.getWidth(), bitmap.getHeight());
-                    drawable2.draw(new Canvas(bitmap));
+                    createBitmap = Bitmap.createBitmap(drawable2.getIntrinsicWidth(), drawable2.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+                    drawable2.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+                    drawable2.draw(new Canvas(createBitmap));
+                    bitmap = createBitmap;
                 }
                 int launcherLargeIconSize = ((ActivityManager) createPackageContext.getSystemService("activity")).getLauncherLargeIconSize();
-                bitmap = Bitmap.createBitmap(launcherLargeIconSize, launcherLargeIconSize, Bitmap.Config.ARGB_8888);
-                drawable2.setBounds(0, 0, bitmap.getWidth(), bitmap.getHeight());
-                drawable2.draw(new Canvas(bitmap));
+                createBitmap = Bitmap.createBitmap(launcherLargeIconSize, launcherLargeIconSize, Bitmap.Config.ARGB_8888);
+                drawable2.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+                drawable2.draw(new Canvas(createBitmap));
+                bitmap = createBitmap;
             } catch (PackageManager.NameNotFoundException e) {
                 throw new IllegalArgumentException("Can't find package " + this.mObj1, e);
             }

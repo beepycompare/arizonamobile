@@ -237,10 +237,11 @@ public class SampleQueue implements TrackOutput {
     }
 
     public final synchronized boolean seekTo(long j, boolean z) {
+        SampleQueue sampleQueue;
         Throwable th;
         long j2;
         int findSampleAfter;
-        SampleQueue sampleQueue;
+        SampleQueue sampleQueue2;
         try {
             try {
                 rewind();
@@ -250,10 +251,12 @@ public class SampleQueue implements TrackOutput {
                     int i = this.length;
                     if (z2) {
                         try {
+                            int i2 = i - this.readPosition;
+                            sampleQueue = this;
                             j2 = j;
                             try {
-                                findSampleAfter = findSampleAfter(relativeIndex, i - this.readPosition, j2, z);
-                                sampleQueue = this;
+                                findSampleAfter = sampleQueue.findSampleAfter(relativeIndex, i2, j2, z);
+                                sampleQueue2 = sampleQueue;
                             } catch (Throwable th2) {
                                 th = th2;
                                 th = th;
@@ -261,16 +264,18 @@ public class SampleQueue implements TrackOutput {
                             }
                         } catch (Throwable th3) {
                             th = th3;
+                            sampleQueue = this;
                             throw th;
                         }
                     } else {
                         j2 = j;
                         try {
-                            int i2 = i - this.readPosition;
-                            sampleQueue = this;
-                            findSampleAfter = sampleQueue.findSampleBefore(relativeIndex, i2, j2, true);
+                            int i3 = i - this.readPosition;
+                            sampleQueue2 = this;
+                            findSampleAfter = sampleQueue2.findSampleBefore(relativeIndex, i3, j2, true);
                         } catch (Throwable th4) {
                             th = th4;
+                            sampleQueue = this;
                             th = th;
                             throw th;
                         }
@@ -278,21 +283,23 @@ public class SampleQueue implements TrackOutput {
                     if (findSampleAfter == -1) {
                         return false;
                     }
-                    sampleQueue.startTimeUs = j2;
-                    sampleQueue.readPosition += findSampleAfter;
+                    sampleQueue2.startTimeUs = j2;
+                    sampleQueue2.readPosition += findSampleAfter;
                     return true;
                 }
-                return false;
             } catch (Throwable th5) {
                 th = th5;
             }
         } catch (Throwable th6) {
             th = th6;
+            sampleQueue = this;
         }
+        return false;
     }
 
     public final synchronized int getSkipCount(long j, boolean z) {
         Throwable th;
+        SampleQueue sampleQueue;
         try {
             try {
                 int relativeIndex = getRelativeIndex(this.readPosition);
@@ -302,6 +309,7 @@ public class SampleQueue implements TrackOutput {
                             return this.length - this.readPosition;
                         } catch (Throwable th2) {
                             th = th2;
+                            sampleQueue = this;
                             throw th;
                         }
                     }
@@ -314,6 +322,7 @@ public class SampleQueue implements TrackOutput {
                 return 0;
             } catch (Throwable th3) {
                 th = th3;
+                sampleQueue = this;
                 th = th;
                 throw th;
             }
@@ -497,6 +506,7 @@ public class SampleQueue implements TrackOutput {
 
     private synchronized long discardSampleMetadataTo(long j, boolean z, boolean z2) {
         Throwable th;
+        SampleQueue sampleQueue;
         try {
             try {
                 int i = this.length;
@@ -512,6 +522,7 @@ public class SampleQueue implements TrackOutput {
                                 }
                             } catch (Throwable th2) {
                                 th = th2;
+                                sampleQueue = this;
                                 throw th;
                             }
                         }
@@ -525,6 +536,7 @@ public class SampleQueue implements TrackOutput {
                 return -1L;
             } catch (Throwable th3) {
                 th = th3;
+                sampleQueue = this;
                 th = th;
                 throw th;
             }

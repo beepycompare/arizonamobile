@@ -62,7 +62,7 @@ public final class SpringSimulation {
         double d4 = this.naturalFreq;
         double d5 = (-f4) * d4;
         if (f4 > 1.0f) {
-            double sqrt = d4 * Math.sqrt(d3 - 1);
+            double sqrt = d4 * Math.sqrt(d3 - 1.0d);
             double d6 = d5 + sqrt;
             double d7 = d5 - sqrt;
             double d8 = f3;
@@ -80,14 +80,13 @@ public final class SpringSimulation {
             d = d16 * Math.exp(d15);
             exp = (d16 * Math.exp(d15) * (-this.naturalFreq)) + (d14 * Math.exp(d15));
         } else {
-            double d17 = 1;
-            double sqrt2 = d4 * Math.sqrt(d17 - d3);
-            double d18 = f3;
-            double d19 = (d17 / sqrt2) * (((-d5) * d18) + f2);
-            double d20 = sqrt2 * d2;
-            double d21 = d2 * d5;
-            double exp2 = Math.exp(d21) * ((Math.cos(d20) * d18) + (Math.sin(d20) * d19));
-            exp = (d5 * exp2) + (Math.exp(d21) * (((-sqrt2) * d18 * Math.sin(d20)) + (sqrt2 * d19 * Math.cos(d20))));
+            double sqrt2 = d4 * Math.sqrt(1.0d - d3);
+            double d17 = f3;
+            double d18 = (1.0d / sqrt2) * (((-d5) * d17) + f2);
+            double d19 = sqrt2 * d2;
+            double d20 = d2 * d5;
+            double exp2 = Math.exp(d20) * ((Math.cos(d19) * d17) + (Math.sin(d19) * d18));
+            exp = (d5 * exp2) + (Math.exp(d20) * (((-sqrt2) * d17 * Math.sin(d19)) + (sqrt2 * d18 * Math.cos(d19))));
             d = exp2;
         }
         return Motion.m191constructorimpl((Float.floatToRawIntBits((float) exp) & 4294967295L) | (Float.floatToRawIntBits((float) (d + this.finalPosition)) << 32));

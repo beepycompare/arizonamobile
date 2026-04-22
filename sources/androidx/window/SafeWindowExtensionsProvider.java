@@ -24,10 +24,9 @@ public final class SafeWindowExtensionsProvider {
             if (isWindowExtensionsPresent() && isWindowExtensionsValid$window_release()) {
                 return WindowExtensionsProvider.getWindowExtensions();
             }
-            return null;
         } catch (Exception unused) {
-            return null;
         }
+        return null;
     }
 
     public final Class<?> getWindowExtensionsClass$window_release() {

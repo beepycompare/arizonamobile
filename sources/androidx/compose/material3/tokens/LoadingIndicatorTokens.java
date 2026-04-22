@@ -7,22 +7,16 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class LoadingIndicatorTokens {
     public static final int $stable = 0;
-    private static final float ContainerHeight;
-    private static final float ContainerWidth;
     public static final LoadingIndicatorTokens INSTANCE = new LoadingIndicatorTokens();
     private static final ColorSchemeKeyTokens ActiveIndicatorColor = ColorSchemeKeyTokens.Primary;
-    private static final float ActiveSize = Dp.m7555constructorimpl((float) 38.0d);
+    private static final float ActiveSize = Dp.m7555constructorimpl(38.0f);
     private static final ColorSchemeKeyTokens ContainedActiveColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens ContainedContainerColor = ColorSchemeKeyTokens.PrimaryContainer;
+    private static final float ContainerHeight = Dp.m7555constructorimpl(48.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
+    private static final float ContainerWidth = Dp.m7555constructorimpl(48.0f);
 
     private LoadingIndicatorTokens() {
-    }
-
-    static {
-        float f = (float) 48.0d;
-        ContainerHeight = Dp.m7555constructorimpl(f);
-        ContainerWidth = Dp.m7555constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getActiveIndicatorColor() {

@@ -160,47 +160,65 @@ public class GridCore extends VirtualLayout {
     }
 
     private void handleSpans(int[][] iArr) {
-        if (!isSpansRespectWidgetOrder()) {
-            for (int i = 0; i < iArr.length; i++) {
-                int rowByIndex = getRowByIndex(iArr[i][0]);
-                int colByIndex = getColByIndex(iArr[i][0]);
-                int[] iArr2 = iArr[i];
-                if (!invalidatePositions(rowByIndex, colByIndex, iArr2[1], iArr2[2])) {
-                    break;
-                }
-                ConstraintWidget constraintWidget = this.mWidgets[i];
-                int[] iArr3 = iArr[i];
-                connectWidget(constraintWidget, rowByIndex, colByIndex, iArr3[1], iArr3[2]);
-                this.mSpanIds.add(this.mWidgets[i].stringId);
+        if (isSpansRespectWidgetOrder()) {
+            return;
+        }
+        int i = 0;
+        while (i < iArr.length) {
+            int rowByIndex = this.getRowByIndex(iArr[i][0]);
+            int colByIndex = this.getColByIndex(iArr[i][0]);
+            int[] iArr2 = iArr[i];
+            if (!this.invalidatePositions(rowByIndex, colByIndex, iArr2[1], iArr2[2])) {
+                return;
             }
+            ConstraintWidget constraintWidget = this.mWidgets[i];
+            int[] iArr3 = iArr[i];
+            GridCore gridCore = this;
+            gridCore.connectWidget(constraintWidget, rowByIndex, colByIndex, iArr3[1], iArr3[2]);
+            gridCore.mSpanIds.add(gridCore.mWidgets[i].stringId);
+            i++;
+            this = gridCore;
         }
     }
 
     private void arrangeWidgets() {
+        GridCore gridCore;
         int[][] iArr;
         int i;
-        for (int i2 = 0; i2 < this.mWidgetsCount; i2++) {
+        int i2 = 0;
+        while (i2 < this.mWidgetsCount) {
             if (!this.mSpanIds.contains(this.mWidgets[i2].stringId)) {
-                int nextPosition = getNextPosition();
-                int rowByIndex = getRowByIndex(nextPosition);
-                int colByIndex = getColByIndex(nextPosition);
+                int nextPosition = this.getNextPosition();
+                int rowByIndex = this.getRowByIndex(nextPosition);
+                int colByIndex = this.getColByIndex(nextPosition);
                 if (nextPosition == -1) {
                     return;
                 }
-                if (isSpansRespectWidgetOrder() && (iArr = this.mSpanMatrix) != null && (i = this.mSpanIndex) < iArr.length) {
+                if (this.isSpansRespectWidgetOrder() && (iArr = this.mSpanMatrix) != null && (i = this.mSpanIndex) < iArr.length) {
                     int[] iArr2 = iArr[i];
                     if (iArr2[0] == nextPosition) {
                         this.mPositionMatrix[rowByIndex][colByIndex] = true;
-                        if (invalidatePositions(rowByIndex, colByIndex, iArr2[1], iArr2[2])) {
+                        if (this.invalidatePositions(rowByIndex, colByIndex, iArr2[1], iArr2[2])) {
                             ConstraintWidget constraintWidget = this.mWidgets[i2];
                             int[] iArr3 = this.mSpanMatrix[this.mSpanIndex];
-                            connectWidget(constraintWidget, rowByIndex, colByIndex, iArr3[1], iArr3[2]);
-                            this.mSpanIndex++;
+                            int i3 = iArr3[1];
+                            int i4 = iArr3[2];
+                            gridCore = this;
+                            gridCore.connectWidget(constraintWidget, rowByIndex, colByIndex, i3, i4);
+                            gridCore.mSpanIndex++;
+                            i2++;
+                            this = gridCore;
                         }
                     }
                 }
-                connectWidget(this.mWidgets[i2], rowByIndex, colByIndex, 1, 1);
+                gridCore = this;
+                gridCore.connectWidget(gridCore.mWidgets[i2], rowByIndex, colByIndex, 1, 1);
+                i2++;
+                this = gridCore;
             }
+            gridCore = this;
+            i2++;
+            this = gridCore;
         }
     }
 

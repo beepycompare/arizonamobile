@@ -373,9 +373,8 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         }
         employmentCenterSalaryTableBinding.totalBonus.setText("+" + i2 + "%");
         long j = i2;
-        long j2 = 100;
-        employmentCenterSalaryTableBinding.total.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary() + ((jobInfo.getHourSalary() * j) / j2), false, null, null, 7, null));
-        employmentCenterMainBinding.salary.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary() + ((j * jobInfo.getHourSalary()) / j2), false, null, null, 7, null));
+        employmentCenterSalaryTableBinding.total.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary() + ((jobInfo.getHourSalary() * j) / 100), false, null, null, 7, null));
+        employmentCenterMainBinding.salary.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary() + ((j * jobInfo.getHourSalary()) / 100), false, null, null, 7, null));
         employmentCenterMainBinding.buttonInfo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.employment.center.EmploymentScreen$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

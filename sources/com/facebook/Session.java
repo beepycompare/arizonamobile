@@ -346,7 +346,7 @@ public class Session implements Serializable {
 
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.os.AsyncTask
-        public void onPostExecute(Void r3) {
+        public void onPostExecute(Void r2) {
             synchronized (Session.this) {
                 Session.this.autoPublishAsyncTask = null;
             }

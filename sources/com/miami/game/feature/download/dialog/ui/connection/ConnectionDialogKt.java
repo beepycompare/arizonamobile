@@ -124,9 +124,8 @@ public final class ConnectionDialogKt {
             }
             final MutableState mutableState3 = (MutableState) rememberedValue3;
             ComposerKt.sourceInformationMarkerEnd(composer);
-            float f = 12;
-            SpacerKt.Spacer(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(f)), composer, 6);
-            Modifier m850height3ABfNKs = SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(60));
+            SpacerKt.Spacer(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(12.0f)), composer, 6);
+            Modifier m850height3ABfNKs = SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(60.0f));
             ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), composer, 0);
             ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -153,16 +152,16 @@ public final class ConnectionDialogKt {
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, -967227730, "C36@1651L75,39@1739L81,42@1833L90:ConnectionDialog.kt#yp5s1q");
-            InputFieldKt.m9091InputFieldrAjV9yQ(mutableState, Dp.m7555constructorimpl(140), R.drawable.input, composer, 54);
-            InputFieldKt.m9091InputFieldrAjV9yQ(mutableState2, Dp.m7555constructorimpl(50), R.drawable.input_port, composer, 54);
-            InputFieldKt.m9091InputFieldrAjV9yQ(mutableState3, Dp.m7555constructorimpl(120), R.drawable.input_password, composer, 54);
+            InputFieldKt.m9091InputFieldrAjV9yQ(mutableState, Dp.m7555constructorimpl(140.0f), R.drawable.input, composer, 54);
+            InputFieldKt.m9091InputFieldrAjV9yQ(mutableState2, Dp.m7555constructorimpl(50.0f), R.drawable.input_port, composer, 54);
+            InputFieldKt.m9091InputFieldrAjV9yQ(mutableState3, Dp.m7555constructorimpl(120.0f), R.drawable.input_password, composer, 54);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
-            SpacerKt.Spacer(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(f)), composer, 6);
+            SpacerKt.Spacer(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(12.0f)), composer, 6);
             ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), composer, 0);
             ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");

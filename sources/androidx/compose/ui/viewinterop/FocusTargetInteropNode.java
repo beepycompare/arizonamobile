@@ -65,7 +65,7 @@ final class FocusTargetInteropNode extends DelegatingNode implements ObserverMod
                 return Unit.INSTANCE;
             }
 
-            /* JADX WARN: Type inference failed for: r1v2, types: [T, java.lang.Object] */
+            /* JADX WARN: Type inference failed for: r2v3, types: [T, java.lang.Object] */
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2() {
                 objectRef.element = CompositionLocalConsumerModifierNodeKt.currentValueOf(this, PinnableContainerKt.getLocalPinnableContainer());

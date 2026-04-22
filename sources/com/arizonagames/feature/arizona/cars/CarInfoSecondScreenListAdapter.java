@@ -79,9 +79,8 @@ public final class CarInfoSecondScreenListAdapter extends ListAdapter<CarInfoSec
         this.activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int i3 = displayMetrics.widthPixels;
         int i4 = displayMetrics.heightPixels;
-        double d = 100;
-        binding.carsFirstScreenCarParamItem.getLayoutParams().width = (int) ((i3 * 11.56d) / d);
-        binding.carsFirstScreenCarParamItem.getLayoutParams().height = (int) ((i4 * 6.94d) / d);
+        binding.carsFirstScreenCarParamItem.getLayoutParams().width = (int) ((i3 * 11.56d) / 100.0d);
+        binding.carsFirstScreenCarParamItem.getLayoutParams().height = (int) ((i4 * 6.94d) / 100.0d);
         final CarInfoSecondScreen item = getItem(i);
         binding.itemValue.setText(item.getTitle());
         if (item.getRarity() != null) {

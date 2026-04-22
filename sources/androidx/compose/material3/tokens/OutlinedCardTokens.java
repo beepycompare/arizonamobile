@@ -21,9 +21,9 @@ public final class OutlinedCardTokens {
     private static final float HoverContainerElevation = ElevationTokens.INSTANCE.m3360getLevel1D9Ej5fM();
     private static final ColorSchemeKeyTokens HoverOutlineColor = ColorSchemeKeyTokens.OutlineVariant;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.Primary;
-    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
+    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
     private static final ColorSchemeKeyTokens OutlineColor = ColorSchemeKeyTokens.OutlineVariant;
-    private static final float OutlineWidth = Dp.m7555constructorimpl((float) 1.0d);
+    private static final float OutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final float PressedContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens PressedOutlineColor = ColorSchemeKeyTokens.OutlineVariant;
 

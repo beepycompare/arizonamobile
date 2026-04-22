@@ -42,8 +42,8 @@ final class ReportDrawnKt$ReportDrawnAfter$1$1 extends SuspendLambda implements 
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        FullyDrawnReporter fullyDrawnReporter;
         Throwable th;
+        FullyDrawnReporter fullyDrawnReporter;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -60,8 +60,8 @@ final class ReportDrawnKt$ReportDrawnAfter$1$1 extends SuspendLambda implements 
                     }
                     fullyDrawnReporter = fullyDrawnReporter2;
                 } catch (Throwable th2) {
-                    fullyDrawnReporter = fullyDrawnReporter2;
                     th = th2;
+                    fullyDrawnReporter = fullyDrawnReporter2;
                     fullyDrawnReporter.removeReporter();
                     throw th;
                 }

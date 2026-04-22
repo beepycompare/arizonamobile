@@ -56,16 +56,13 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
         return ((TransformGestureDetectorKt$detectTransformGestures$2) create(awaitPointerEventScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x009e, code lost:
-        if (r3 == r1) goto L52;
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x009a, code lost:
+        if (r3 == r1) goto L59;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x013b, code lost:
-        if (androidx.compose.ui.geometry.Offset.m4524equalsimpl0(r7, androidx.compose.ui.geometry.Offset.Companion.m4543getZeroF1C5BW0()) == false) goto L57;
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x0133, code lost:
+        if (androidx.compose.ui.geometry.Offset.m4524equalsimpl0(r7, androidx.compose.ui.geometry.Offset.Companion.m4543getZeroF1C5BW0()) == false) goto L64;
      */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v3 */
-    /* JADX WARN: Type inference failed for: r5v4, types: [int] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x009e -> B:17:0x00a1). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x009a -> B:17:0x009d). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -78,21 +75,18 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
         AwaitPointerEventScope awaitPointerEventScope;
         float f3;
         int i2;
-        float f4;
         Object awaitPointerEvent$default;
         int i3;
         Object obj2;
+        float f4;
         int i4;
-        float f5;
-        int i5;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i6 = this.label;
-        float f6 = 1.0f;
-        int i7 = 2;
-        float f7 = 0.0f;
-        boolean z = false;
-        int i8 = 1;
-        if (i6 == 0) {
+        int i5 = this.label;
+        int i6 = 2;
+        float f5 = 1.0f;
+        float f6 = 0.0f;
+        int i7 = 1;
+        if (i5 == 0) {
             ResultKt.throwOnFailure(obj);
             AwaitPointerEventScope awaitPointerEventScope2 = (AwaitPointerEventScope) this.L$0;
             long m4543getZeroF1C5BW0 = Offset.Companion.m4543getZeroF1C5BW0();
@@ -115,8 +109,8 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
                 i2 = 0;
             }
             return coroutine_suspended;
-        } else if (i6 != 1) {
-            if (i6 == 2) {
+        } else if (i5 != 1) {
+            if (i5 == 2) {
                 i2 = this.I$1;
                 f3 = this.F$2;
                 i = this.I$0;
@@ -125,87 +119,83 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
                 f2 = this.F$0;
                 awaitPointerEventScope = (AwaitPointerEventScope) this.L$0;
                 ResultKt.throwOnFailure(obj);
-                f4 = 1.0f;
                 awaitPointerEvent$default = obj;
                 PointerEvent pointerEvent = (PointerEvent) awaitPointerEvent$default;
                 List<PointerInputChange> changes = pointerEvent.getChanges();
+                float f7 = f5;
                 int size = changes.size();
-                float f8 = f7;
-                int i9 = z;
+                float f8 = f6;
+                int i8 = 0;
                 while (true) {
-                    if (i9 >= size) {
-                        i3 = z;
+                    if (i8 >= size) {
+                        i3 = 0;
                         break;
-                    } else if (changes.get(i9).isConsumed()) {
-                        i3 = i8;
+                    } else if (changes.get(i8).isConsumed()) {
+                        i3 = i7;
                         break;
                     } else {
-                        i9++;
+                        i8++;
                     }
                 }
-                if (i3) {
-                    obj2 = coroutine_suspended;
-                    i4 = i8;
-                    f5 = f3;
-                } else {
+                if (i3 == 0) {
                     float calculateZoom = TransformGestureDetectorKt.calculateZoom(pointerEvent);
                     float calculateRotation = TransformGestureDetectorKt.calculateRotation(pointerEvent);
-                    f5 = f3;
+                    f4 = f3;
                     long calculatePan = TransformGestureDetectorKt.calculatePan(pointerEvent);
                     if (i == 0) {
                         f *= calculateZoom;
                         f2 += calculateRotation;
                         j = Offset.m4532plusMKHz9U(j, calculatePan);
-                        float calculateCentroidSize = TransformGestureDetectorKt.calculateCentroidSize(pointerEvent, z);
-                        obj2 = coroutine_suspended;
-                        i4 = 1;
-                        float abs = Math.abs(1 - f) * calculateCentroidSize;
+                        float calculateCentroidSize = TransformGestureDetectorKt.calculateCentroidSize(pointerEvent, false);
+                        float abs = Math.abs(f7 - f) * calculateCentroidSize;
                         float abs2 = Math.abs(((3.1415927f * f2) * calculateCentroidSize) / 180.0f);
                         float m4525getDistanceimpl = Offset.m4525getDistanceimpl(j);
-                        if (abs > f5 || abs2 > f5 || m4525getDistanceimpl > f5) {
-                            i2 = (!this.$panZoomLock || abs2 >= f5) ? 0 : 1;
+                        if (abs > f4 || abs2 > f4 || m4525getDistanceimpl > f4) {
+                            i2 = (!this.$panZoomLock || abs2 >= f4) ? 0 : 1;
                             i = 1;
                         }
-                    } else {
-                        obj2 = coroutine_suspended;
-                        i4 = 1;
                     }
                     if (i != 0) {
                         long calculateCentroid = TransformGestureDetectorKt.calculateCentroid(pointerEvent, false);
                         if (i2 != 0) {
                             calculateRotation = f8;
                         }
-                        if (calculateRotation == f8 && calculateZoom == f4) {
-                            i5 = i2;
+                        if (calculateRotation == f8 && calculateZoom == f7) {
+                            obj2 = coroutine_suspended;
+                            i4 = i2;
                         } else {
-                            i5 = i2;
+                            obj2 = coroutine_suspended;
+                            i4 = i2;
                         }
                         this.$onGesture.invoke(Offset.m4516boximpl(calculateCentroid), Offset.m4516boximpl(calculatePan), Boxing.boxFloat(calculateZoom), Boxing.boxFloat(calculateRotation));
                         List<PointerInputChange> changes2 = pointerEvent.getChanges();
                         int size2 = changes2.size();
-                        for (int i10 = 0; i10 < size2; i10++) {
-                            PointerInputChange pointerInputChange = changes2.get(i10);
+                        for (int i9 = 0; i9 < size2; i9++) {
+                            PointerInputChange pointerInputChange = changes2.get(i9);
                             if (PointerEventKt.positionChanged(pointerInputChange)) {
                                 pointerInputChange.consume();
                             }
                         }
                     } else {
-                        i5 = i2;
+                        obj2 = coroutine_suspended;
+                        i4 = i2;
                     }
-                    i2 = i5;
+                    i2 = i4;
+                } else {
+                    obj2 = coroutine_suspended;
+                    f4 = f3;
                 }
-                if (!i3) {
+                if (i3 == 0) {
                     List<PointerInputChange> changes3 = pointerEvent.getChanges();
                     int size3 = changes3.size();
-                    for (int i11 = 0; i11 < size3; i11++) {
-                        if (changes3.get(i11).getPressed()) {
-                            f3 = f5;
-                            i8 = i4;
-                            f6 = f4;
-                            f7 = f8;
+                    for (int i10 = 0; i10 < size3; i10++) {
+                        if (changes3.get(i10).getPressed()) {
+                            f3 = f4;
+                            f6 = f8;
+                            f5 = f7;
                             coroutine_suspended = obj2;
-                            i7 = 2;
-                            z = false;
+                            i6 = 2;
+                            i7 = 1;
                         }
                     }
                 }
@@ -229,8 +219,7 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
         this.I$0 = i;
         this.F$2 = f3;
         this.I$1 = i2;
-        this.label = i7;
-        f4 = f6;
-        awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope, null, this, i8, null);
+        this.label = i6;
+        awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope, null, this, i7, null);
     }
 }

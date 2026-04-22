@@ -29,14 +29,14 @@ public final class AndroidConfig implements ScrollConfig {
         if (Build.VERSION.SDK_INT > 26) {
             return ViewConfigurationApi26Impl.INSTANCE.getVerticalScrollFactor(this.viewConfiguration);
         }
-        return density.mo405toPx0680j_4(Dp.m7555constructorimpl(64));
+        return density.mo405toPx0680j_4(Dp.m7555constructorimpl(64.0f));
     }
 
     public final float getHorizontalScrollFactor$foundation(Density density) {
         if (Build.VERSION.SDK_INT > 26) {
             return ViewConfigurationApi26Impl.INSTANCE.getHorizontalScrollFactor(this.viewConfiguration);
         }
-        return density.mo405toPx0680j_4(Dp.m7555constructorimpl(64));
+        return density.mo405toPx0680j_4(Dp.m7555constructorimpl(64.0f));
     }
 
     @Override // androidx.compose.foundation.gestures.ScrollConfig

@@ -41,6 +41,8 @@ final class CommonRippleNode$addRipple$2 extends SuspendLambda implements Functi
         return ((CommonRippleNode$addRipple$2) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v6, types: [kotlin.Unit, java.lang.Object] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         MutableScatterMap mutableScatterMap;
@@ -62,7 +64,8 @@ final class CommonRippleNode$addRipple$2 extends SuspendLambda implements Functi
             mutableScatterMap2 = this.this$0.ripples;
             mutableScatterMap2.remove(this.$interaction);
             DrawModifierNodeKt.invalidateDraw(this.this$0);
-            return Unit.INSTANCE;
+            this = Unit.INSTANCE;
+            return this;
         } catch (Throwable th) {
             mutableScatterMap = this.this$0.ripples;
             mutableScatterMap.remove(this.$interaction);

@@ -3837,8 +3837,8 @@ public final class AppBarKt {
     /* JADX WARN: Removed duplicated region for block: B:112:0x013f  */
     /* JADX WARN: Removed duplicated region for block: B:122:0x016c  */
     /* JADX WARN: Removed duplicated region for block: B:129:0x017d  */
-    /* JADX WARN: Removed duplicated region for block: B:198:0x0358  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x0373  */
+    /* JADX WARN: Removed duplicated region for block: B:198:0x0354  */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x036f  */
     /* JADX WARN: Removed duplicated region for block: B:203:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x004e  */
@@ -4047,7 +4047,7 @@ public final class AppBarKt {
                             }
                             TextStyle value = TypographyKt.getValue(AppBarMediumFlexibleTokens.INSTANCE.getTitleFont(), startRestartGroup, 6);
                             TextStyle value2 = TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6);
-                            float m7555constructorimpl = Dp.m7555constructorimpl(0);
+                            float m7555constructorimpl = Dp.m7555constructorimpl(0.0f);
                             TextStyle value3 = TypographyKt.getValue(AppBarMediumFlexibleTokens.INSTANCE.getSubtitleFont(), startRestartGroup, 6);
                             TextStyle value4 = TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getSubtitleFont(), startRestartGroup, 6);
                             float m2920getMediumAppBarCollapsedHeightD9Ej5fM = (Dp.m7560equalsimpl0(m7575getUnspecifiedD9Ej5fM, Dp.Companion.m7575getUnspecifiedD9Ej5fM()) || Dp.m7560equalsimpl0(m7575getUnspecifiedD9Ej5fM, Dp.Companion.m7574getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2920getMediumAppBarCollapsedHeightD9Ej5fM() : m7575getUnspecifiedD9Ej5fM;
@@ -5551,12 +5551,14 @@ public final class AppBarKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0127  */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0129  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0132  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x0265  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x027c  */
-    /* JADX WARN: Removed duplicated region for block: B:166:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0128  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x01d7  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x0242  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0254  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x026a  */
+    /* JADX WARN: Removed duplicated region for block: B:164:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:48:0x0086  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0089  */
     /* JADX WARN: Removed duplicated region for block: B:59:0x00a4  */
@@ -5572,6 +5574,7 @@ public final class AppBarKt {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final void m1723FlexibleBottomAppBarwBhsO_E(Modifier modifier, long j, long j2, PaddingValues paddingValues, Arrangement.Horizontal horizontal, float f, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+        Modifier.Companion companion;
         int i3;
         long j3;
         long j4;
@@ -5582,8 +5585,8 @@ public final class AppBarKt {
         int i6;
         int i7;
         Composer composer2;
-        final Modifier modifier2;
         final WindowInsets windowInsets2;
+        final Modifier modifier2;
         final long j5;
         final long j6;
         final PaddingValues paddingValues2;
@@ -5591,15 +5594,12 @@ public final class AppBarKt {
         final float f2;
         final BottomAppBarScrollBehavior bottomAppBarScrollBehavior2;
         ScopeUpdateScope endRestartGroup;
-        Modifier.Companion companion;
         float m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3;
         WindowInsets windowInsets3;
         BottomAppBarScrollBehavior bottomAppBarScrollBehavior3;
         WindowInsets windowInsets4;
         long j7;
         long j8;
-        PaddingValues paddingValues3;
-        Arrangement.Horizontal horizontal3;
         int i8;
         int i9;
         Composer startRestartGroup = composer.startRestartGroup(-1717957447);
@@ -5607,9 +5607,12 @@ public final class AppBarKt {
         int i10 = i2 & 1;
         if (i10 != 0) {
             i3 = i | 6;
+            companion = modifier;
         } else if ((i & 6) == 0) {
-            i3 = (startRestartGroup.changed(modifier) ? 4 : 2) | i;
+            companion = modifier;
+            i3 = (startRestartGroup.changed(companion) ? 4 : 2) | i;
         } else {
+            companion = modifier;
             i3 = i;
         }
         if ((i & 48) == 0) {
@@ -5687,16 +5690,13 @@ public final class AppBarKt {
                                 if ((i2 & 64) != 0) {
                                     i3 &= -3670017;
                                 }
-                                companion = modifier;
                                 m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3 = f;
                                 windowInsets4 = windowInsets;
                                 bottomAppBarScrollBehavior3 = bottomAppBarScrollBehavior;
-                                j7 = j3;
-                                j8 = j4;
-                                paddingValues3 = obj;
-                                horizontal3 = obj2;
                             } else {
-                                companion = i10 != 0 ? Modifier.Companion : modifier;
+                                if (i10 != 0) {
+                                    companion = Modifier.Companion;
+                                }
                                 if ((i2 & 2) != 0) {
                                     j3 = BottomAppBarDefaults.INSTANCE.getContainerColor(startRestartGroup, 6);
                                     i3 &= -113;
@@ -5705,8 +5705,12 @@ public final class AppBarKt {
                                     j4 = ColorSchemeKt.m1902contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 3) & 14);
                                     i3 &= -897;
                                 }
-                                PaddingValues flexibleContentPadding$material3 = i11 != 0 ? BottomAppBarDefaults.INSTANCE.getFlexibleContentPadding$material3() : obj;
-                                Arrangement.Horizontal flexibleHorizontalArrangement$material3 = i4 != 0 ? BottomAppBarDefaults.INSTANCE.getFlexibleHorizontalArrangement$material3() : obj2;
+                                if (i11 != 0) {
+                                    obj = BottomAppBarDefaults.INSTANCE.getFlexibleContentPadding$material3();
+                                }
+                                if (i4 != 0) {
+                                    obj2 = BottomAppBarDefaults.INSTANCE.getFlexibleHorizontalArrangement$material3();
+                                }
                                 m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3 = i5 != 0 ? BottomAppBarDefaults.INSTANCE.m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3() : f;
                                 if ((i2 & 64) != 0) {
                                     windowInsets3 = BottomAppBarDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
@@ -5718,46 +5722,61 @@ public final class AppBarKt {
                                     windowInsets4 = windowInsets3;
                                     j7 = j3;
                                     j8 = j4;
-                                    paddingValues3 = flexibleContentPadding$material3;
-                                    horizontal3 = flexibleHorizontalArrangement$material3;
                                     bottomAppBarScrollBehavior3 = null;
+                                    PaddingValues paddingValues3 = obj;
+                                    Arrangement.Horizontal horizontal3 = obj2;
+                                    startRestartGroup.endDefaults();
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventStart(-1717957447, i3, -1, "androidx.compose.material3.FlexibleBottomAppBar (AppBar.kt:1297)");
+                                    }
+                                    int i12 = i3 << 6;
+                                    int i13 = i3 << 3;
+                                    composer2 = startRestartGroup;
+                                    Modifier modifier3 = companion;
+                                    m1721BottomAppBarLayoutt5fmz9U(((Float.floatToRawIntBits(m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3) & Integer.MAX_VALUE) < 2139095040 || Float.isNaN(m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3) || Dp.m7554compareTo0680j_4(m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3, Dp.m7555constructorimpl(0.0f)) <= 0) ? BottomAppBarDefaults.INSTANCE.m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3() : m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3, horizontal3, modifier3, j7, j8, AppBarTokens.INSTANCE.m3120getContainerElevationD9Ej5fM(), paddingValues3, windowInsets4, bottomAppBarScrollBehavior3, function3, composer2, ((i3 >> 9) & 112) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i12 & 896) | (i12 & 7168) | (i12 & 57344) | (3670016 & (i3 << 9)) | (29360128 & i13) | (234881024 & i13) | (i13 & 1879048192), 0);
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventEnd();
+                                    }
+                                    f2 = m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3;
+                                    horizontal2 = horizontal3;
+                                    modifier2 = modifier3;
+                                    j5 = j7;
+                                    j6 = j8;
+                                    paddingValues2 = paddingValues3;
+                                    windowInsets2 = windowInsets4;
+                                    bottomAppBarScrollBehavior2 = bottomAppBarScrollBehavior3;
                                 } else {
                                     bottomAppBarScrollBehavior3 = bottomAppBarScrollBehavior;
                                     windowInsets4 = windowInsets3;
-                                    j7 = j3;
-                                    j8 = j4;
-                                    paddingValues3 = flexibleContentPadding$material3;
-                                    horizontal3 = flexibleHorizontalArrangement$material3;
                                 }
                             }
+                            j7 = j3;
+                            j8 = j4;
+                            PaddingValues paddingValues32 = obj;
+                            Arrangement.Horizontal horizontal32 = obj2;
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(-1717957447, i3, -1, "androidx.compose.material3.FlexibleBottomAppBar (AppBar.kt:1297)");
                             }
-                            float m1745getFlexibleBottomAppBarHeightD9Ej5fM$material32 = ((Float.floatToRawIntBits(m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3) & Integer.MAX_VALUE) >= 2139095040 || Float.isNaN(m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3) || Dp.m7554compareTo0680j_4(m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3, Dp.m7555constructorimpl((float) 0)) <= 0) ? BottomAppBarDefaults.INSTANCE.m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3() : m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3;
-                            float m3120getContainerElevationD9Ej5fM = AppBarTokens.INSTANCE.m3120getContainerElevationD9Ej5fM();
-                            int i12 = i3 << 6;
-                            int i13 = ((i3 >> 9) & 112) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i12 & 896) | (i12 & 7168) | (i12 & 57344) | (3670016 & (i3 << 9));
-                            int i14 = i3 << 3;
-                            Modifier modifier3 = companion;
+                            int i122 = i3 << 6;
+                            int i132 = i3 << 3;
                             composer2 = startRestartGroup;
-                            m1721BottomAppBarLayoutt5fmz9U(m1745getFlexibleBottomAppBarHeightD9Ej5fM$material32, horizontal3, modifier3, j7, j8, m3120getContainerElevationD9Ej5fM, paddingValues3, windowInsets4, bottomAppBarScrollBehavior3, function3, composer2, i13 | (29360128 & i14) | (234881024 & i14) | (i14 & 1879048192), 0);
+                            Modifier modifier32 = companion;
+                            m1721BottomAppBarLayoutt5fmz9U(((Float.floatToRawIntBits(m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3) & Integer.MAX_VALUE) < 2139095040 || Float.isNaN(m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3) || Dp.m7554compareTo0680j_4(m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3, Dp.m7555constructorimpl(0.0f)) <= 0) ? BottomAppBarDefaults.INSTANCE.m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3() : m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3, horizontal32, modifier32, j7, j8, AppBarTokens.INSTANCE.m3120getContainerElevationD9Ej5fM(), paddingValues32, windowInsets4, bottomAppBarScrollBehavior3, function3, composer2, ((i3 >> 9) & 112) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i122 & 896) | (i122 & 7168) | (i122 & 57344) | (3670016 & (i3 << 9)) | (29360128 & i132) | (234881024 & i132) | (i132 & 1879048192), 0);
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventEnd();
                             }
                             f2 = m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3;
-                            horizontal2 = horizontal3;
-                            modifier2 = modifier3;
+                            horizontal2 = horizontal32;
+                            modifier2 = modifier32;
                             j5 = j7;
                             j6 = j8;
-                            paddingValues2 = paddingValues3;
+                            paddingValues2 = paddingValues32;
                             windowInsets2 = windowInsets4;
                             bottomAppBarScrollBehavior2 = bottomAppBarScrollBehavior3;
                         } else {
                             composer2 = startRestartGroup;
                             composer2.skipToGroupEnd();
-                            modifier2 = modifier;
                             windowInsets2 = windowInsets;
+                            modifier2 = companion;
                             j5 = j3;
                             j6 = j4;
                             paddingValues2 = obj;
@@ -7806,14 +7825,12 @@ public final class AppBarKt {
     }
 
     static {
-        float f = 16;
-        float f2 = 12;
-        float m7555constructorimpl = Dp.m7555constructorimpl(Dp.m7555constructorimpl(f) - Dp.m7555constructorimpl(f2));
+        float m7555constructorimpl = Dp.m7555constructorimpl(Dp.m7555constructorimpl(16.0f) - Dp.m7555constructorimpl(12.0f));
         BottomAppBarHorizontalPadding = m7555constructorimpl;
-        float m7555constructorimpl2 = Dp.m7555constructorimpl(Dp.m7555constructorimpl(f) - Dp.m7555constructorimpl(f2));
+        float m7555constructorimpl2 = Dp.m7555constructorimpl(Dp.m7555constructorimpl(16.0f) - Dp.m7555constructorimpl(12.0f));
         BottomAppBarVerticalPadding = m7555constructorimpl2;
-        FABHorizontalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(f) - m7555constructorimpl);
-        FABVerticalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(f2) - m7555constructorimpl2);
+        FABHorizontalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(16.0f) - m7555constructorimpl);
+        FABVerticalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(12.0f) - m7555constructorimpl2);
         LocalSingleRowTopAppBarOverride = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.material3.AppBarKt$$ExternalSyntheticLambda25
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
@@ -7831,10 +7848,10 @@ public final class AppBarKt {
             }
         }, 1, null);
         TopTitleAlphaEasing = new CubicBezierEasing(0.8f, 0.0f, 0.8f, 0.15f);
-        MediumTitleBottomPadding = Dp.m7555constructorimpl(24);
-        LargeTitleBottomPadding = Dp.m7555constructorimpl(28);
-        float m7555constructorimpl3 = Dp.m7555constructorimpl(4);
+        MediumTitleBottomPadding = Dp.m7555constructorimpl(24.0f);
+        LargeTitleBottomPadding = Dp.m7555constructorimpl(28.0f);
+        float m7555constructorimpl3 = Dp.m7555constructorimpl(4.0f);
         TopAppBarHorizontalPadding = m7555constructorimpl3;
-        TopAppBarTitleInset = Dp.m7555constructorimpl(Dp.m7555constructorimpl(f) - m7555constructorimpl3);
+        TopAppBarTitleInset = Dp.m7555constructorimpl(Dp.m7555constructorimpl(16.0f) - m7555constructorimpl3);
     }
 }

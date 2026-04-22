@@ -267,9 +267,10 @@ public class CircularProgressDrawable extends Drawable implements Animatable {
 
     private void applyFinishTranslation(float f, Ring ring) {
         updateRingColor(f, ring);
+        float floor = (float) (Math.floor(ring.getStartingRotation() / 0.8f) + 1.0d);
         ring.setStartTrim(ring.getStartingStartTrim() + (((ring.getStartingEndTrim() - 0.01f) - ring.getStartingStartTrim()) * f));
         ring.setEndTrim(ring.getStartingEndTrim());
-        ring.setRotation(ring.getStartingRotation() + ((((float) (Math.floor(ring.getStartingRotation() / 0.8f) + 1.0d)) - ring.getStartingRotation()) * f));
+        ring.setRotation(ring.getStartingRotation() + ((floor - ring.getStartingRotation()) * f));
     }
 
     void applyTransformation(float f, Ring ring, boolean z) {

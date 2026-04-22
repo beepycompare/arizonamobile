@@ -230,43 +230,46 @@ public final class MotionRenderDebug {
         canvas.restore();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0029, code lost:
-        if (r13.length != (r12 * 2)) goto L18;
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0027, code lost:
+        if (r8.length != (r7 * 2)) goto L18;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void draw(Canvas canvas, Motion motion, int i, int i2, int i3, int i4) {
         int drawPath = motion.getDrawPath();
-        int i5 = (i2 <= 0 || drawPath != 0) ? drawPath : 1;
-        if (i5 == 0) {
+        if (i2 > 0 && drawPath == 0) {
+            drawPath = 1;
+        }
+        if (drawPath == 0) {
             return;
         }
         this.mKeyFrameCount = motion.buildKeyFrames(this.mKeyFramePoints, this.mPathMode, null);
-        if (i5 >= 1) {
-            int i6 = i / 16;
+        if (drawPath >= 1) {
+            int i5 = i / 16;
             float[] fArr = this.mPoints;
             if (fArr != null) {
                 Intrinsics.checkNotNull(fArr);
             }
-            this.mPoints = new float[i6 * 2];
+            this.mPoints = new float[i5 * 2];
             this.mPath = new Path();
-            int i7 = this.mShadowTranslate;
-            canvas.translate(i7, i7);
+            int i6 = this.mShadowTranslate;
+            canvas.translate(i6, i6);
             this.mPaint.setColor(this.mShadowColor);
             this.mFillPaint.setColor(this.mShadowColor);
             this.mPaintKeyframes.setColor(this.mShadowColor);
             this.mPaintGraph.setColor(this.mShadowColor);
-            motion.buildPath(this.mPoints, i6);
-            drawAll(canvas, i5, this.mKeyFrameCount, motion, i3, i4);
+            motion.buildPath(this.mPoints, i5);
+            int i7 = drawPath;
+            drawAll(canvas, i7, this.mKeyFrameCount, motion, i3, i4);
             this.mPaint.setColor(this.mRedColor);
             this.mPaintKeyframes.setColor(this.mKeyframeColor);
             this.mFillPaint.setColor(this.mKeyframeColor);
             this.mPaintGraph.setColor(this.mGraphColor);
             int i8 = this.mShadowTranslate;
             canvas.translate(-i8, -i8);
-            drawAll(canvas, i5, this.mKeyFrameCount, motion, i3, i4);
-            if (i5 == 5) {
+            drawAll(canvas, i7, this.mKeyFrameCount, motion, i3, i4);
+            if (i7 == 5) {
                 drawRectangle(canvas, motion);
             }
         }
@@ -337,7 +340,7 @@ public final class MotionRenderDebug {
         int i8 = motionRenderDebug.mShadowTranslate;
         canvas2.translate(-i8, -i8);
         if (z) {
-            drawBasicPath(canvas2);
+            motionRenderDebug.drawBasicPath(canvas2);
         }
         if (z2) {
             motionRenderDebug.drawTicks(canvas2, 1, motionRenderDebug.mKeyFrameCount, motion2, i4, i5);
@@ -480,17 +483,17 @@ public final class MotionRenderDebug {
     }
 
     private final void drawPathRelativeTicks(Canvas canvas, float f, float f2) {
-        float[] fArr = this.mPoints;
-        Intrinsics.checkNotNull(fArr);
-        float f3 = fArr[0];
+        float[] fArr;
         float[] fArr2 = this.mPoints;
         Intrinsics.checkNotNull(fArr2);
-        float f4 = fArr2[1];
+        float f3 = fArr2[0];
         float[] fArr3 = this.mPoints;
         Intrinsics.checkNotNull(fArr3);
+        float f4 = fArr3[1];
         float[] fArr4 = this.mPoints;
         Intrinsics.checkNotNull(fArr4);
-        float f5 = fArr3[fArr4.length - 2];
+        Intrinsics.checkNotNull(this.mPoints);
+        float f5 = fArr4[fArr.length - 2];
         float[] fArr5 = this.mPoints;
         Intrinsics.checkNotNull(fArr5);
         float[] fArr6 = this.mPoints;
@@ -506,9 +509,9 @@ public final class MotionRenderDebug {
         path.moveTo(f, f2);
         path.lineTo(f10, f11);
         float hypot2 = (float) Math.hypot(f10 - f, f11 - f2);
-        String str = "" + (((int) ((100 * hypot2) / hypot)) / 100.0f);
+        String str = "" + (((int) ((100.0f * hypot2) / hypot)) / 100.0f);
         getTextBounds(str, this.mTextPaint);
-        canvas.drawTextOnPath(str, path, (hypot2 / 2) - (this.mBounds.width() / 2), -20.0f, this.mTextPaint);
+        canvas.drawTextOnPath(str, path, (hypot2 / 2.0f) - (this.mBounds.width() / 2), -20.0f, this.mTextPaint);
         canvas.drawLine(f, f2, f10, f11, this.mPaintGraph);
     }
 
@@ -538,17 +541,17 @@ public final class MotionRenderDebug {
     }
 
     private final void drawPathCartesianTicks(Canvas canvas, float f, float f2) {
-        float[] fArr = this.mPoints;
-        Intrinsics.checkNotNull(fArr);
-        float f3 = fArr[0];
+        float[] fArr;
         float[] fArr2 = this.mPoints;
         Intrinsics.checkNotNull(fArr2);
-        float f4 = fArr2[1];
+        float f3 = fArr2[0];
         float[] fArr3 = this.mPoints;
         Intrinsics.checkNotNull(fArr3);
+        float f4 = fArr3[1];
         float[] fArr4 = this.mPoints;
         Intrinsics.checkNotNull(fArr4);
-        float f5 = fArr3[fArr4.length - 2];
+        Intrinsics.checkNotNull(this.mPoints);
+        float f5 = fArr4[fArr.length - 2];
         float[] fArr5 = this.mPoints;
         Intrinsics.checkNotNull(fArr5);
         float[] fArr6 = this.mPoints;
@@ -558,28 +561,24 @@ public final class MotionRenderDebug {
         float max = Math.max(f4, f6);
         float min2 = f - Math.min(f3, f5);
         float max2 = Math.max(f4, f6) - f2;
-        float f7 = 100;
-        String str = "" + (((int) (((f7 * min2) / Math.abs(f5 - f3)) + 0.5d)) / 100.0f);
+        String str = "" + (((int) (((100.0f * min2) / Math.abs(f5 - f3)) + 0.5d)) / 100.0f);
         getTextBounds(str, this.mTextPaint);
-        float f8 = 2;
-        canvas.drawText(str, ((min2 / f8) - (this.mBounds.width() / 2)) + min, f2 - 20, this.mTextPaint);
+        canvas.drawText(str, ((min2 / 2.0f) - (this.mBounds.width() / 2)) + min, f2 - 20.0f, this.mTextPaint);
         canvas.drawLine(f, f2, Math.min(f3, f5), f2, this.mPaintGraph);
-        String str2 = "" + (((int) (((f7 * max2) / Math.abs(f6 - f4)) + 0.5d)) / 100.0f);
+        String str2 = "" + (((int) (((100.0f * max2) / Math.abs(f6 - f4)) + 0.5d)) / 100.0f);
         getTextBounds(str2, this.mTextPaint);
-        canvas.drawText(str2, f + 5, max - ((max2 / f8) - (this.mBounds.height() / 2)), this.mTextPaint);
+        canvas.drawText(str2, f + 5.0f, max - ((max2 / 2.0f) - (this.mBounds.height() / 2)), this.mTextPaint);
         canvas.drawLine(f, f2, f, Math.max(f4, f6), this.mPaintGraph);
     }
 
     private final void drawPathScreenTicks(Canvas canvas, float f, float f2, int i, int i2, int i3, int i4) {
-        float f3 = 100;
-        String str = "" + (((int) ((((f - (i / 2)) * f3) / (i3 - i)) + 0.5d)) / 100.0f);
+        String str = "" + (((int) ((((f - (i / 2)) * 100.0f) / (i3 - i)) + 0.5d)) / 100.0f);
         getTextBounds(str, this.mTextPaint);
-        float f4 = 2;
-        canvas.drawText(str, ((f / f4) - (this.mBounds.width() / 2)) + 0.0f, f2 - 20, this.mTextPaint);
+        canvas.drawText(str, ((f / 2.0f) - (this.mBounds.width() / 2)) + 0.0f, f2 - 20.0f, this.mTextPaint);
         canvas.drawLine(f, f2, Math.min(0.0f, 1.0f), f2, this.mPaintGraph);
-        String str2 = "" + (((int) (((f3 * (f2 - (i2 / 2))) / (i4 - i2)) + 0.5d)) / 100.0f);
+        String str2 = "" + (((int) ((((f2 - (i2 / 2)) * 100.0f) / (i4 - i2)) + 0.5d)) / 100.0f);
         getTextBounds(str2, this.mTextPaint);
-        canvas.drawText(str2, f + 5, 0.0f - ((f2 / f4) - (this.mBounds.height() / 2)), this.mTextPaint);
+        canvas.drawText(str2, f + 5.0f, 0.0f - ((f2 / 2.0f) - (this.mBounds.height() / 2)), this.mTextPaint);
         canvas.drawLine(f, f2, f, Math.max(0.0f, 1.0f), this.mPaintGraph);
     }
 
@@ -589,7 +588,7 @@ public final class MotionRenderDebug {
         path.reset();
         int i = 0;
         while (true) {
-            motion.buildRect(i / 50, this.mRectangle, 0);
+            motion.buildRect(i / 50.0f, this.mRectangle, 0);
             Path path2 = this.mPath;
             Intrinsics.checkNotNull(path2);
             float[] fArr = this.mRectangle;

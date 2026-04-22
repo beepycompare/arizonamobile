@@ -384,12 +384,9 @@ public final class TextFieldSelectionManager {
             @Override // androidx.compose.foundation.text.selection.MouseSelectionObserver
             /* renamed from: onStart-9KIMszo */
             public boolean mo1516onStart9KIMszo(long j, SelectionAdjustment selectionAdjustment, int i) {
+                LegacyTextFieldState state$foundation;
                 long j2;
-                if (!TextFieldSelectionManager.this.getEnabled() || TextFieldSelectionManager.this.getValue$foundation().getText().length() == 0) {
-                    return false;
-                }
-                LegacyTextFieldState state$foundation = TextFieldSelectionManager.this.getState$foundation();
-                if (state$foundation == null || state$foundation.getLayoutResult() == null) {
+                if (!TextFieldSelectionManager.this.getEnabled() || TextFieldSelectionManager.this.getValue$foundation().getText().length() == 0 || (state$foundation = TextFieldSelectionManager.this.getState$foundation()) == null || state$foundation.getLayoutResult() == null) {
                     return false;
                 }
                 FocusRequester focusRequester = TextFieldSelectionManager.this.getFocusRequester();
@@ -942,7 +939,6 @@ public final class TextFieldSelectionManager {
     public final Object updateClipboardEntry$foundation(Continuation<? super Unit> continuation) {
         TextFieldSelectionManager$updateClipboardEntry$1 textFieldSelectionManager$updateClipboardEntry$1;
         int i;
-        TextFieldSelectionManager textFieldSelectionManager;
         if (continuation instanceof TextFieldSelectionManager$updateClipboardEntry$1) {
             textFieldSelectionManager$updateClipboardEntry$1 = (TextFieldSelectionManager$updateClipboardEntry$1) continuation;
             if ((textFieldSelectionManager$updateClipboardEntry$1.label & Integer.MIN_VALUE) != 0) {
@@ -960,16 +956,15 @@ public final class TextFieldSelectionManager {
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        textFieldSelectionManager = this;
                     }
                     return Unit.INSTANCE;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    textFieldSelectionManager = (TextFieldSelectionManager) textFieldSelectionManager$updateClipboardEntry$1.L$0;
+                    this = (TextFieldSelectionManager) textFieldSelectionManager$updateClipboardEntry$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                textFieldSelectionManager.setHasAvailableTextToPaste(((Boolean) obj).booleanValue());
+                this.setHasAvailableTextToPaste(((Boolean) obj).booleanValue());
                 return Unit.INSTANCE;
             }
         }
@@ -979,7 +974,7 @@ public final class TextFieldSelectionManager {
         i = textFieldSelectionManager$updateClipboardEntry$1.label;
         if (i != 0) {
         }
-        textFieldSelectionManager.setHasAvailableTextToPaste(((Boolean) obj2).booleanValue());
+        this.setHasAvailableTextToPaste(((Boolean) obj2).booleanValue());
         return Unit.INSTANCE;
     }
 
@@ -1108,7 +1103,7 @@ public final class TextFieldSelectionManager {
         Intrinsics.checkNotNull(layoutResult);
         TextLayoutResult value = layoutResult.getValue();
         Rect cursorRect = value.getCursorRect(RangesKt.coerceIn(originalToTransformed, 0, value.getLayoutInput().getText().length()));
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(cursorRect.getLeft() + (density.mo405toPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness()) / 2)) << 32) | (Float.floatToRawIntBits(cursorRect.getBottom()) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(cursorRect.getBottom()) & 4294967295L) | (Float.floatToRawIntBits(cursorRect.getLeft() + (density.mo405toPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness()) / 2.0f)) << 32));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1226,7 +1221,7 @@ public final class TextFieldSelectionManager {
                 }
                 int i = (int) (m4543getZeroF1C5BW0 >> c);
                 int i2 = (int) (m4543getZeroF1C5BW02 >> c);
-                return new Rect(Math.min(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.min(f, f2), Math.max(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.max(Float.intBitsToFloat((int) (m4543getZeroF1C5BW0 & j)), Float.intBitsToFloat((int) (m4543getZeroF1C5BW02 & j))) + (Dp.m7555constructorimpl(25) * legacyTextFieldState.getTextDelegate().getDensity().getDensity()));
+                return new Rect(Math.min(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.min(f, f2), Math.max(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.max(Float.intBitsToFloat((int) (m4543getZeroF1C5BW0 & j)), Float.intBitsToFloat((int) (m4543getZeroF1C5BW02 & j))) + (Dp.m7555constructorimpl(25.0f) * legacyTextFieldState.getTextDelegate().getDensity().getDensity()));
             }
         }
         return Rect.Companion.getZero();

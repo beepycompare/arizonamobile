@@ -39,25 +39,25 @@ public final class JsonTreeReader {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0057  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00e7  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x00ab -> B:27:0x00b2). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00d8  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00e2  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x00ab -> B:27:0x00b1). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object readObject(DeepRecursiveScope<Unit, JsonElement> deepRecursiveScope, Continuation<? super JsonElement> continuation) {
         JsonTreeReader$readObject$2 jsonTreeReader$readObject$2;
         int i;
-        JsonTreeReader jsonTreeReader;
+        JsonTreeReader$readObject$2 jsonTreeReader$readObject$22;
         LinkedHashMap linkedHashMap;
         int i2;
-        JsonTreeReader$readObject$2 jsonTreeReader$readObject$22;
         byte b;
         DeepRecursiveScope<Unit, JsonElement> deepRecursiveScope2;
+        JsonTreeReader jsonTreeReader = this;
         if (continuation instanceof JsonTreeReader$readObject$2) {
             jsonTreeReader$readObject$2 = (JsonTreeReader$readObject$2) continuation;
             if ((jsonTreeReader$readObject$2.label & Integer.MIN_VALUE) != 0) {
@@ -67,15 +67,14 @@ public final class JsonTreeReader {
                 i = jsonTreeReader$readObject$2.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    byte consumeNextToken = this.lexer.consumeNextToken((byte) 6);
-                    if (this.lexer.peekNextToken() == 4) {
-                        AbstractJsonLexer.fail$default(this.lexer, "Unexpected leading comma", 0, null, 6, null);
+                    byte consumeNextToken = jsonTreeReader.lexer.consumeNextToken((byte) 6);
+                    if (jsonTreeReader.lexer.peekNextToken() == 4) {
+                        AbstractJsonLexer.fail$default(jsonTreeReader.lexer, "Unexpected leading comma", 0, null, 6, null);
                         throw new KotlinNothingValueException();
                     }
-                    jsonTreeReader = this;
+                    jsonTreeReader$readObject$22 = jsonTreeReader$readObject$2;
                     linkedHashMap = new LinkedHashMap();
                     i2 = 0;
-                    jsonTreeReader$readObject$22 = jsonTreeReader$readObject$2;
                     b = consumeNextToken;
                     deepRecursiveScope2 = deepRecursiveScope;
                     if (jsonTreeReader.lexer.canConsumeValue()) {
@@ -88,61 +87,58 @@ public final class JsonTreeReader {
                     byte b2 = jsonTreeReader$readObject$2.B$0;
                     int i4 = jsonTreeReader$readObject$2.I$0;
                     String str = (String) jsonTreeReader$readObject$2.L$3;
-                    linkedHashMap = (LinkedHashMap) jsonTreeReader$readObject$2.L$2;
-                    jsonTreeReader = (JsonTreeReader) jsonTreeReader$readObject$2.L$1;
                     DeepRecursiveScope<Unit, JsonElement> deepRecursiveScope3 = (DeepRecursiveScope) jsonTreeReader$readObject$2.L$0;
                     ResultKt.throwOnFailure(obj);
-                    jsonTreeReader$readObject$22 = jsonTreeReader$readObject$2;
-                    int i5 = i4;
+                    JsonTreeReader$readObject$2 jsonTreeReader$readObject$23 = jsonTreeReader$readObject$2;
+                    i2 = i4;
+                    jsonTreeReader = (JsonTreeReader) jsonTreeReader$readObject$2.L$1;
+                    linkedHashMap = (LinkedHashMap) jsonTreeReader$readObject$2.L$2;
+                    jsonTreeReader$readObject$22 = jsonTreeReader$readObject$23;
                     linkedHashMap.put(str, (JsonElement) obj);
-                    byte consumeNextToken2 = jsonTreeReader.lexer.consumeNextToken();
-                    if (consumeNextToken2 == 4) {
-                        if (consumeNextToken2 != 7) {
-                            AbstractJsonLexer.fail$default(jsonTreeReader.lexer, "Expected end of the object or comma", 0, null, 6, null);
-                            throw new KotlinNothingValueException();
-                        }
-                        b = consumeNextToken2;
-                        if (b == 6) {
-                            jsonTreeReader.lexer.consumeNextToken((byte) 7);
-                        } else if (b == 4) {
-                            if (!jsonTreeReader.trailingCommaAllowed) {
-                                JsonExceptionsKt.invalidTrailingComma$default(jsonTreeReader.lexer, null, 1, null);
-                                throw new KotlinNothingValueException();
+                    b = jsonTreeReader.lexer.consumeNextToken();
+                    if (b != 4) {
+                        deepRecursiveScope2 = deepRecursiveScope3;
+                        if (jsonTreeReader.lexer.canConsumeValue()) {
+                            String consumeStringLenient = jsonTreeReader.isLenient ? jsonTreeReader.lexer.consumeStringLenient() : jsonTreeReader.lexer.consumeString();
+                            jsonTreeReader.lexer.consumeNextToken((byte) 5);
+                            Unit unit = Unit.INSTANCE;
+                            jsonTreeReader$readObject$22.L$0 = deepRecursiveScope2;
+                            jsonTreeReader$readObject$22.L$1 = jsonTreeReader;
+                            jsonTreeReader$readObject$22.L$2 = linkedHashMap;
+                            jsonTreeReader$readObject$22.L$3 = consumeStringLenient;
+                            jsonTreeReader$readObject$22.I$0 = i2;
+                            jsonTreeReader$readObject$22.B$0 = b;
+                            jsonTreeReader$readObject$22.I$1 = 0;
+                            jsonTreeReader$readObject$22.label = 1;
+                            Object callRecursive = deepRecursiveScope2.callRecursive(unit, jsonTreeReader$readObject$22);
+                            if (callRecursive == coroutine_suspended) {
+                                return coroutine_suspended;
                             }
-                            jsonTreeReader.lexer.consumeNextToken((byte) 7);
+                            String str2 = consumeStringLenient;
+                            deepRecursiveScope3 = deepRecursiveScope2;
+                            obj = callRecursive;
+                            str = str2;
+                            linkedHashMap.put(str, (JsonElement) obj);
+                            b = jsonTreeReader.lexer.consumeNextToken();
+                            if (b != 4) {
+                            }
+                        }
+                        if (b == 6) {
                         }
                         return new JsonObject(linkedHashMap);
                     }
-                    i2 = i5;
-                    b = consumeNextToken2;
-                    deepRecursiveScope2 = deepRecursiveScope3;
-                    if (jsonTreeReader.lexer.canConsumeValue()) {
-                        String consumeStringLenient = jsonTreeReader.isLenient ? jsonTreeReader.lexer.consumeStringLenient() : jsonTreeReader.lexer.consumeString();
-                        jsonTreeReader.lexer.consumeNextToken((byte) 5);
-                        Unit unit = Unit.INSTANCE;
-                        jsonTreeReader$readObject$22.L$0 = deepRecursiveScope2;
-                        jsonTreeReader$readObject$22.L$1 = jsonTreeReader;
-                        jsonTreeReader$readObject$22.L$2 = linkedHashMap;
-                        jsonTreeReader$readObject$22.L$3 = consumeStringLenient;
-                        jsonTreeReader$readObject$22.I$0 = i2;
-                        jsonTreeReader$readObject$22.B$0 = b;
-                        jsonTreeReader$readObject$22.I$1 = 0;
-                        jsonTreeReader$readObject$22.label = 1;
-                        Object callRecursive = deepRecursiveScope2.callRecursive(unit, jsonTreeReader$readObject$22);
-                        if (callRecursive == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        String str2 = consumeStringLenient;
-                        deepRecursiveScope3 = deepRecursiveScope2;
-                        obj = callRecursive;
-                        i5 = i2;
-                        str = str2;
-                        linkedHashMap.put(str, (JsonElement) obj);
-                        byte consumeNextToken22 = jsonTreeReader.lexer.consumeNextToken();
-                        if (consumeNextToken22 == 4) {
-                        }
+                    if (b != 7) {
+                        AbstractJsonLexer.fail$default(jsonTreeReader.lexer, "Expected end of the object or comma", 0, null, 6, null);
+                        throw new KotlinNothingValueException();
                     }
                     if (b == 6) {
+                        jsonTreeReader.lexer.consumeNextToken((byte) 7);
+                    } else if (b == 4) {
+                        if (!jsonTreeReader.trailingCommaAllowed) {
+                            JsonExceptionsKt.invalidTrailingComma$default(jsonTreeReader.lexer, null, 1, null);
+                            throw new KotlinNothingValueException();
+                        }
+                        jsonTreeReader.lexer.consumeNextToken((byte) 7);
                     }
                     return new JsonObject(linkedHashMap);
                 } else {
@@ -150,7 +146,7 @@ public final class JsonTreeReader {
                 }
             }
         }
-        jsonTreeReader$readObject$2 = new JsonTreeReader$readObject$2(this, continuation);
+        jsonTreeReader$readObject$2 = new JsonTreeReader$readObject$2(jsonTreeReader, continuation);
         Object obj2 = jsonTreeReader$readObject$2.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = jsonTreeReader$readObject$2.label;

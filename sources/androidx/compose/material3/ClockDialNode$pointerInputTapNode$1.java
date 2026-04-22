@@ -71,9 +71,8 @@ public final class ClockDialNode$pointerInputTapNode$1 implements PointerInputEv
 
     @Override // androidx.compose.ui.input.pointer.PointerInputEventHandler
     public final Object invoke(PointerInputScope pointerInputScope, Continuation<? super Unit> continuation) {
-        AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.this$0, null);
         final ClockDialNode clockDialNode = this.this$0;
-        Object detectTapGestures$default = TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, null, anonymousClass1, new Function1() { // from class: androidx.compose.material3.ClockDialNode$pointerInputTapNode$1$$ExternalSyntheticLambda0
+        Object detectTapGestures$default = TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, null, new AnonymousClass1(this.this$0, null), new Function1() { // from class: androidx.compose.material3.ClockDialNode$pointerInputTapNode$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return ClockDialNode$pointerInputTapNode$1.invoke$lambda$0(ClockDialNode.this, (Offset) obj);

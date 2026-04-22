@@ -120,13 +120,14 @@ public final class DatePickerKt$HorizontalMonthsList$1 implements Function2<Comp
         final DatePickerColors datePickerColors = this.$colors;
         Object rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
-            rememberedValue2 = new Function1() { // from class: androidx.compose.material3.DatePickerKt$HorizontalMonthsList$1$$ExternalSyntheticLambda1
+            Function1 function12 = new Function1() { // from class: androidx.compose.material3.DatePickerKt$HorizontalMonthsList$1$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     return DatePickerKt$HorizontalMonthsList$1.invoke$lambda$5$lambda$4(IntRange.this, calendarModel, calendarMonth, function1, calendarDate, l, datePickerFormatter, selectableDates, datePickerColors, (LazyListScope) obj);
                 }
             };
-            composer.updateRememberedValue(rememberedValue2);
+            composer.updateRememberedValue(function12);
+            rememberedValue2 = function12;
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         LazyDslKt.LazyRow(semantics$default, lazyListState, null, false, null, null, rememberSnapFlingBehavior$material3, false, null, (Function1) rememberedValue2, composer, 0, 444);

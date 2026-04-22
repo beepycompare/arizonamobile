@@ -7,21 +7,21 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class MediumIconButtonTokens {
     public static final int $stable = 0;
-    private static final float DefaultLeadingSpace;
-    private static final float DefaultTrailingSpace;
-    private static final float IconSize;
-    private static final float NarrowLeadingSpace;
-    private static final float NarrowTrailingSpace;
-    private static final float WideLeadingSpace;
-    private static final float WideTrailingSpace;
     public static final MediumIconButtonTokens INSTANCE = new MediumIconButtonTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 56.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(56.0f);
     private static final ShapeKeyTokens ContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens ContainerShapeSquare = ShapeKeyTokens.CornerLarge;
-    private static final float OutlinedOutlineWidth = Dp.m7555constructorimpl((float) 1.0d);
+    private static final float DefaultLeadingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float DefaultTrailingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
+    private static final float NarrowLeadingSpace = Dp.m7555constructorimpl(12.0f);
+    private static final float NarrowTrailingSpace = Dp.m7555constructorimpl(12.0f);
+    private static final float OutlinedOutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final ShapeKeyTokens PressedContainerShape = ShapeKeyTokens.CornerMedium;
     private static final ShapeKeyTokens SelectedContainerShapeRound = ShapeKeyTokens.CornerLarge;
     private static final ShapeKeyTokens SelectedContainerShapeSquare = ShapeKeyTokens.CornerFull;
+    private static final float WideLeadingSpace = Dp.m7555constructorimpl(24.0f);
+    private static final float WideTrailingSpace = Dp.m7555constructorimpl(24.0f);
 
     private MediumIconButtonTokens() {
     }
@@ -89,18 +89,5 @@ public final class MediumIconButtonTokens {
     /* renamed from: getWideTrailingSpace-D9Ej5fM  reason: not valid java name */
     public final float m3531getWideTrailingSpaceD9Ej5fM() {
         return WideTrailingSpace;
-    }
-
-    static {
-        float f = (float) 16.0d;
-        DefaultLeadingSpace = Dp.m7555constructorimpl(f);
-        DefaultTrailingSpace = Dp.m7555constructorimpl(f);
-        float f2 = (float) 24.0d;
-        IconSize = Dp.m7555constructorimpl(f2);
-        float f3 = (float) 12.0d;
-        NarrowLeadingSpace = Dp.m7555constructorimpl(f3);
-        NarrowTrailingSpace = Dp.m7555constructorimpl(f3);
-        WideLeadingSpace = Dp.m7555constructorimpl(f2);
-        WideTrailingSpace = Dp.m7555constructorimpl(f2);
     }
 }

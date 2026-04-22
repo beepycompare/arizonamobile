@@ -376,14 +376,13 @@ public class AppEventsLogger {
 
         private void write() {
             ObjectOutputStream objectOutputStream;
-            Throwable th;
             ObjectOutputStream objectOutputStream2 = null;
             try {
                 try {
                     objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(this.context.openFileOutput(PERSISTED_EVENTS_FILENAME, 0)));
-                } catch (Throwable th2) {
+                } catch (Throwable th) {
+                    th = th;
                     objectOutputStream = null;
-                    th = th2;
                 }
             } catch (Exception e) {
                 e = e;
@@ -396,8 +395,8 @@ public class AppEventsLogger {
                 objectOutputStream2 = objectOutputStream;
                 Log.d(AppEventsLogger.TAG, "Got unexpected exception: " + e.toString());
                 Utility.closeQuietly(objectOutputStream2);
-            } catch (Throwable th3) {
-                th = th3;
+            } catch (Throwable th2) {
+                th = th2;
                 Utility.closeQuietly(objectOutputStream);
                 throw th;
             }
@@ -514,8 +513,9 @@ public class AppEventsLogger {
             return list;
         }
 
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x005e -> B:26:0x005b). Please submit an issue!!! */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x005f -> B:26:0x005c). Please submit an issue!!! */
         public int populateRequest(Request request, boolean z, boolean z2, boolean z3) {
+            SessionEventsState sessionEventsState;
             Throwable th;
             synchronized (this) {
                 try {
@@ -524,16 +524,19 @@ public class AppEventsLogger {
                     this.accumulatedEvents.clear();
                     JSONArray jSONArray = new JSONArray();
                     for (AppEvent appEvent : this.inFlightEvents) {
+                        sessionEventsState = this;
                         Request request2 = request;
                         boolean z4 = z2;
                         boolean z5 = z3;
                         try {
                             if (!z && appEvent.getIsImplicit()) {
+                                this = sessionEventsState;
                                 request = request2;
                                 z2 = z4;
                                 z3 = z5;
                             }
                             jSONArray.put(appEvent.getJSONObject());
+                            this = sessionEventsState;
                             request = request2;
                             z2 = z4;
                             z3 = z5;
@@ -544,17 +547,19 @@ public class AppEventsLogger {
                         }
                     }
                     if (jSONArray.length() != 0) {
-                        populateRequest(request, i, jSONArray, z2, z3);
+                        this.populateRequest(request, i, jSONArray, z2, z3);
                         return jSONArray.length();
                     }
                     try {
                         return 0;
                     } catch (Throwable th3) {
                         th = th3;
+                        sessionEventsState = this;
                         throw th;
                     }
                 } catch (Throwable th4) {
                     th = th4;
+                    sessionEventsState = this;
                     th = th;
                     throw th;
                 }

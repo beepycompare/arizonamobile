@@ -165,12 +165,8 @@ public abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMetho
                     return KotlinExtensions.awaitNullable(adapt, continuation);
                 }
                 return KotlinExtensions.await(adapt, continuation);
-            } catch (LinkageError e) {
+            } catch (LinkageError | ThreadDeath | VirtualMachineError e) {
                 throw e;
-            } catch (ThreadDeath e2) {
-                throw e2;
-            } catch (VirtualMachineError e3) {
-                throw e3;
             } catch (Throwable th) {
                 return KotlinExtensions.suspendAndThrow(th, continuation);
             }

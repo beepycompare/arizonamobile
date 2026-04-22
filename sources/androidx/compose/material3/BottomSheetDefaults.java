@@ -13,7 +13,6 @@ import androidx.compose.material3.internal.Strings_androidKt;
 import androidx.compose.material3.tokens.ScrimTokens;
 import androidx.compose.material3.tokens.SheetBottomTokens;
 import androidx.compose.runtime.Composer;
-import androidx.compose.runtime.ComposerImplKt;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
@@ -35,12 +34,12 @@ import kotlin.jvm.functions.Function2;
 /* loaded from: classes.dex */
 public final class BottomSheetDefaults {
     public static final int $stable = 0;
-    private static final float PositionalThreshold;
-    private static final float SheetPeekHeight;
     public static final BottomSheetDefaults INSTANCE = new BottomSheetDefaults();
     private static final float Elevation = SheetBottomTokens.INSTANCE.m3715getDockedModalContainerElevationD9Ej5fM();
-    private static final float SheetMaxWidth = Dp.m7555constructorimpl(640);
-    private static final float VelocityThreshold = Dp.m7555constructorimpl((float) ComposerImplKt.nodeKey);
+    private static final float SheetPeekHeight = Dp.m7555constructorimpl(56.0f);
+    private static final float SheetMaxWidth = Dp.m7555constructorimpl(640.0f);
+    private static final float PositionalThreshold = Dp.m7555constructorimpl(56.0f);
+    private static final float VelocityThreshold = Dp.m7555constructorimpl(125.0f);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DragHandle_lgZ2HuY$lambda$2(BottomSheetDefaults bottomSheetDefaults, Modifier modifier, float f, float f2, Shape shape, long j, int i, int i2, Composer composer, int i3) {
@@ -88,12 +87,6 @@ public final class BottomSheetDefaults {
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         return value;
-    }
-
-    static {
-        float f = 56;
-        SheetPeekHeight = Dp.m7555constructorimpl(f);
-        PositionalThreshold = Dp.m7555constructorimpl(f);
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */

@@ -16,11 +16,7 @@ public class DefaultLottieFetchResult implements LottieFetchResult {
 
     @Override // com.airbnb.lottie.network.LottieFetchResult
     public boolean isSuccessful() {
-        try {
-            return this.connection.getResponseCode() / 100 == 2;
-        } catch (IOException unused) {
-            return false;
-        }
+        return this.connection.getResponseCode() / 100 == 2;
     }
 
     @Override // com.airbnb.lottie.network.LottieFetchResult

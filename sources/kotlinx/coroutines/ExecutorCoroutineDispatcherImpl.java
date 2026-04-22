@@ -105,7 +105,7 @@ public final class ExecutorCoroutineDispatcherImpl extends ExecutorCoroutineDisp
         try {
             return scheduledExecutorService.schedule(runnable, j, TimeUnit.MILLISECONDS);
         } catch (RejectedExecutionException e) {
-            cancelJobOnRejection(coroutineContext, e);
+            this.cancelJobOnRejection(coroutineContext, e);
             return null;
         }
     }

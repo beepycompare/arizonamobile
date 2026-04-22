@@ -144,24 +144,15 @@ public final class AnimatedContentMeasurePolicy implements MeasurePolicy {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(Placeable.PlacementScope placementScope) {
-                Placeable[] placeableArr2;
-                Placeable[] placeableArr3 = placeableArr;
+                Placeable[] placeableArr2 = placeableArr;
                 AnimatedContentMeasurePolicy animatedContentMeasurePolicy = this;
                 int i5 = width;
                 int i6 = height;
-                int length = placeableArr3.length;
-                int i7 = 0;
-                while (i7 < length) {
-                    Placeable placeable5 = placeableArr3[i7];
+                for (Placeable placeable5 : placeableArr2) {
                     if (placeable5 != null) {
-                        placeableArr2 = placeableArr3;
-                        long mo4246alignKFBX0sM = animatedContentMeasurePolicy.getRootScope().getContentAlignment().mo4246alignKFBX0sM(IntSize.m7721constructorimpl((placeable5.getWidth() << 32) | (placeable5.getHeight() & 4294967295L)), IntSize.m7721constructorimpl((i6 & 4294967295L) | (i5 << 32)), LayoutDirection.Ltr);
+                        long mo4246alignKFBX0sM = animatedContentMeasurePolicy.getRootScope().getContentAlignment().mo4246alignKFBX0sM(IntSize.m7721constructorimpl((placeable5.getWidth() << 32) | (placeable5.getHeight() & 4294967295L)), IntSize.m7721constructorimpl((i5 << 32) | (i6 & 4294967295L)), LayoutDirection.Ltr);
                         Placeable.PlacementScope.place$default(placementScope, placeable5, IntOffset.m7683getXimpl(mo4246alignKFBX0sM), IntOffset.m7684getYimpl(mo4246alignKFBX0sM), 0.0f, 4, null);
-                    } else {
-                        placeableArr2 = placeableArr3;
                     }
-                    i7++;
-                    placeableArr3 = placeableArr2;
                 }
             }
         }, 4, null);

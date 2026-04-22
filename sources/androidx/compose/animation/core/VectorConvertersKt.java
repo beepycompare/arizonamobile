@@ -134,7 +134,7 @@ public final class VectorConvertersKt {
     });
 
     public static final float lerp(float f, float f2, float f3) {
-        return (f * (1 - f3)) + (f2 * f3);
+        return (f * (1.0f - f3)) + (f2 * f3);
     }
 
     public static final <T, V extends AnimationVector> TwoWayConverter<T, V> TwoWayConverter(Function1<? super T, ? extends V> function1, Function1<? super V, ? extends T> function12) {

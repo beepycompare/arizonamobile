@@ -25,10 +25,7 @@ public final class ShadowKt {
             shape = RectangleShapeKt.getRectangleShape();
         }
         if ((i & 4) != 0) {
-            z = false;
-            if (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0)) > 0) {
-                z = true;
-            }
+            z = Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0.0f)) > 0;
         }
         return m4371shadowziNgDLE(modifier, f, shape, z);
     }
@@ -44,10 +41,7 @@ public final class ShadowKt {
         boolean z2;
         Shape rectangleShape = (i & 2) != 0 ? RectangleShapeKt.getRectangleShape() : shape;
         if ((i & 4) != 0) {
-            z2 = false;
-            if (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0)) > 0) {
-                z2 = true;
-            }
+            z2 = Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0.0f)) > 0;
         } else {
             z2 = z;
         }
@@ -83,6 +77,6 @@ public final class ShadowKt {
 
     /* renamed from: shadow-s4CzXII  reason: not valid java name */
     public static final Modifier m4369shadows4CzXII(Modifier modifier, float f, Shape shape, boolean z, long j, long j2) {
-        return (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl((float) 0)) > 0 || z) ? modifier.then(new ShadowGraphicsLayerElement(f, shape, z, j, j2, null)) : modifier;
+        return (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0.0f)) > 0 || z) ? modifier.then(new ShadowGraphicsLayerElement(f, shape, z, j, j2, null)) : modifier;
     }
 }

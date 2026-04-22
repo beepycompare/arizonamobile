@@ -546,7 +546,7 @@ public class BottomAppBar extends Toolbar implements CoordinatorLayout.AttachedB
                 if ((view instanceof FloatingActionButton) || (view instanceof ExtendedFloatingActionButton)) {
                     return view;
                 }
-                while (r0.hasNext()) {
+                while (r3.hasNext()) {
                 }
             }
             return null;
@@ -750,10 +750,11 @@ public class BottomAppBar extends Toolbar implements CoordinatorLayout.AttachedB
             int right = isLayoutRtl ? actionMenuView.getRight() : actionMenuView.getLeft();
             int i4 = isLayoutRtl ? this.rightInset : -this.leftInset;
             if (getNavigationIcon() == null) {
-                i2 = getResources().getDimensionPixelOffset(R.dimen.m3_bottomappbar_horizontal_padding);
+                int dimensionPixelOffset = getResources().getDimensionPixelOffset(R.dimen.m3_bottomappbar_horizontal_padding);
                 if (!isLayoutRtl) {
-                    i2 = -i2;
+                    dimensionPixelOffset = -dimensionPixelOffset;
                 }
+                i2 = dimensionPixelOffset;
             }
             return measuredWidth - ((right + i4) + i2);
         }

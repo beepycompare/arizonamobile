@@ -21,26 +21,26 @@ public final class SemanticsPropertiesKt$ActionPropertyKey$1<T> extends Lambda i
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0014, code lost:
-        if (r3 == null) goto L11;
+        if (r2 == null) goto L11;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v2, types: [kotlin.Function] */
-    /* JADX WARN: Type inference failed for: r3v6 */
-    /* JADX WARN: Type inference failed for: r3v7 */
+    /* JADX WARN: Type inference failed for: r2v2, types: [kotlin.Function] */
+    /* JADX WARN: Type inference failed for: r2v6 */
+    /* JADX WARN: Type inference failed for: r2v7 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final AccessibilityAction<T> invoke(AccessibilityAction<T> accessibilityAction, AccessibilityAction<T> accessibilityAction2) {
         String label;
-        ?? r3;
+        ?? r2;
         if (accessibilityAction == null || (label = accessibilityAction.getLabel()) == null) {
             label = accessibilityAction2.getLabel();
         }
         if (accessibilityAction != null) {
             T action = accessibilityAction.getAction();
-            r3 = action;
+            r2 = action;
         }
-        r3 = accessibilityAction2.getAction();
-        return new AccessibilityAction<>(label, r3);
+        r2 = accessibilityAction2.getAction();
+        return new AccessibilityAction<>(label, r2);
     }
 }

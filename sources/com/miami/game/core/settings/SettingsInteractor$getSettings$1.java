@@ -51,7 +51,6 @@ public final class SettingsInteractor$getSettings$1 extends SuspendLambda implem
     public final Object invokeSuspend(Object obj) {
         LocalRepository localRepository;
         LocalRepository localRepository2;
-        Object withContext;
         boolean z;
         MutableStateFlow mutableStateFlow;
         Object value;
@@ -68,11 +67,12 @@ public final class SettingsInteractor$getSettings$1 extends SuspendLambda implem
             this.Z$0 = areNotificationsEnabled;
             this.I$0 = 0;
             this.label = 1;
-            withContext = BuildersKt.withContext(Dispatchers.getIO(), new SettingsInteractor$getSettings$1$invokeSuspend$$inlined$getSuspend$1(localRepository3, SettingsInteractor.SettingsKey, null), this);
+            Object withContext = BuildersKt.withContext(Dispatchers.getIO(), new SettingsInteractor$getSettings$1$invokeSuspend$$inlined$getSuspend$1(localRepository3, SettingsInteractor.SettingsKey, null), this);
             if (withContext == coroutine_suspended) {
                 return coroutine_suspended;
             }
             z = areNotificationsEnabled;
+            obj = withContext;
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
@@ -80,10 +80,9 @@ public final class SettingsInteractor$getSettings$1 extends SuspendLambda implem
             String str = (String) this.L$1;
             IKeyValueRepository iKeyValueRepository = (IKeyValueRepository) this.L$0;
             ResultKt.throwOnFailure(obj);
-            withContext = obj;
             z = z2;
         }
-        SettingState settingState = (SettingState) withContext;
+        SettingState settingState = (SettingState) obj;
         if (settingState == null) {
             settingState = SettingState.Companion.init(this.this$0.isTablet());
         }

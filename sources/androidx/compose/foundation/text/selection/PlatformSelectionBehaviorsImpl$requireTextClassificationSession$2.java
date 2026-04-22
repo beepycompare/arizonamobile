@@ -62,7 +62,6 @@ public final class PlatformSelectionBehaviorsImpl$requireTextClassificationSessi
         Mutex mutex;
         PlatformSelectionBehaviorsImpl platformSelectionBehaviorsImpl;
         Mutex mutex2;
-        Throwable th;
         TextClassifier textClassifier;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
@@ -93,8 +92,8 @@ public final class PlatformSelectionBehaviorsImpl$requireTextClassificationSessi
                     this.label = 3;
                     Object withTimeoutOrNull = TimeoutKt.withTimeoutOrNull(200L, new AnonymousClass1(textClassifier, this.$block, null), this);
                     return withTimeoutOrNull != coroutine_suspended ? coroutine_suspended : withTimeoutOrNull;
-                } catch (Throwable th2) {
-                    th = th2;
+                } catch (Throwable th) {
+                    th = th;
                     mutex2.unlock(null);
                     throw th;
                 }
@@ -123,9 +122,9 @@ public final class PlatformSelectionBehaviorsImpl$requireTextClassificationSessi
             Object withTimeoutOrNull3 = TimeoutKt.withTimeoutOrNull(200L, new AnonymousClass1(textClassifier, this.$block, null), this);
             if (withTimeoutOrNull3 != coroutine_suspended) {
             }
-        } catch (Throwable th3) {
+        } catch (Throwable th2) {
+            th = th2;
             mutex2 = mutex;
-            th = th3;
             mutex2.unlock(null);
             throw th;
         }

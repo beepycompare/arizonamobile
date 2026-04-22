@@ -85,7 +85,7 @@ public final class SimpleProducerScopeImpl<T> implements SimpleProducerScope<T>,
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x003a  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x003b  */
     @Override // androidx.paging.SimpleProducerScope
     /*
         Code decompiled incorrectly, please refer to instructions dump.

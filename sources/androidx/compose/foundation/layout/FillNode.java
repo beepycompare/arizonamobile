@@ -44,8 +44,8 @@ final class FillNode extends Modifier.Node implements LayoutModifierNode {
     public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         int m7510getMinWidthimpl;
         int m7508getMaxWidthimpl;
-        int m7507getMaxHeightimpl;
         int i;
+        int i2;
         if (!Constraints.m7504getHasBoundedWidthimpl(j) || this.direction == Direction.Vertical) {
             m7510getMinWidthimpl = Constraints.m7510getMinWidthimpl(j);
             m7508getMaxWidthimpl = Constraints.m7508getMaxWidthimpl(j);
@@ -63,8 +63,9 @@ final class FillNode extends Modifier.Node implements LayoutModifierNode {
         }
         if (!Constraints.m7503getHasBoundedHeightimpl(j) || this.direction == Direction.Horizontal) {
             int m7509getMinHeightimpl = Constraints.m7509getMinHeightimpl(j);
-            m7507getMaxHeightimpl = Constraints.m7507getMaxHeightimpl(j);
+            int m7507getMaxHeightimpl = Constraints.m7507getMaxHeightimpl(j);
             i = m7509getMinHeightimpl;
+            i2 = m7507getMaxHeightimpl;
         } else {
             int round2 = Math.round(Constraints.m7507getMaxHeightimpl(j) * this.fraction);
             int m7509getMinHeightimpl2 = Constraints.m7509getMinHeightimpl(j);
@@ -75,9 +76,9 @@ final class FillNode extends Modifier.Node implements LayoutModifierNode {
             if (round2 <= i) {
                 i = round2;
             }
-            m7507getMaxHeightimpl = i;
+            i2 = i;
         }
-        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(ConstraintsKt.Constraints(m7510getMinWidthimpl, m7508getMaxWidthimpl, i, m7507getMaxHeightimpl));
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(ConstraintsKt.Constraints(m7510getMinWidthimpl, m7508getMaxWidthimpl, i, i2));
         return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.FillNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {

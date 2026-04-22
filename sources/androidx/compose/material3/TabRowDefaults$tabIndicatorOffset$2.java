@@ -50,7 +50,7 @@ final class TabRowDefaults$tabIndicatorOffset$2 implements Function3<Modifier, C
                     IntOffset m7674boximpl;
                     State state = State.this;
                     Density density = (Density) obj;
-                    m7674boximpl = IntOffset.m7674boximpl(IntOffset.m7677constructorimpl((density.mo399roundToPx0680j_4(TabRowDefaults$tabIndicatorOffset$2.invoke$lambda$1(state)) << 32) | (0 & 4294967295L)));
+                    m7674boximpl = IntOffset.m7674boximpl(IntOffset.m7677constructorimpl(density.mo399roundToPx0680j_4(TabRowDefaults$tabIndicatorOffset$2.invoke$lambda$1(state)) << 32));
                     return m7674boximpl;
                 }
             };

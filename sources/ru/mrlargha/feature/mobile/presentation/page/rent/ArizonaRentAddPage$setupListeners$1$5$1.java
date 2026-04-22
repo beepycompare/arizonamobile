@@ -93,7 +93,7 @@ public final class ArizonaRentAddPage$setupListeners$1$5$1 extends SuspendLambda
                 Integer intOrNull = StringsKt.toIntOrNull(String.valueOf(this.$this_with.etCostKk.getText()));
                 int intValue = intOrNull != null ? intOrNull.intValue() : 0;
                 Integer intOrNull2 = StringsKt.toIntOrNull(String.valueOf(this.$it));
-                long j = MoneyElementKt.toLong(new MoneyParts(0, intValue, intOrNull2 != null ? intOrNull2.intValue() : 0));
+                long j = MoneyElementKt.toLong(new MoneyParts(0, intValue, (intOrNull2 != null ? intOrNull2.intValue() : 0) * 1000));
                 mutableStateFlow = this.this$0.adState;
                 mutableStateFlow2 = this.this$0.adState;
                 this.L$0 = SpillingKt.nullOutSpilledVariable(intOrNull);

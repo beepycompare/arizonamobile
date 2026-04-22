@@ -9,7 +9,6 @@ import androidx.compose.ui.layout.Placeable;
 import androidx.compose.ui.unit.Constraints;
 import androidx.compose.ui.unit.Dp;
 import androidx.compose.ui.util.ListUtilsKt;
-import androidx.media3.exoplayer.RendererCapabilities;
 import java.util.List;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
@@ -30,7 +29,7 @@ final class TimePickerDialogKt$TimePickerCustomLayout$measurePolicy$1$1 implemen
     public static final Unit measure_3p2s80s$lambda$3(boolean z, int i, Placeable placeable, int i2, Placeable placeable2, int i3, int i4, int i5, MeasureScope measureScope, Placeable placeable3, int i6, int i7, int i8, int i9, Placeable.PlacementScope placementScope) {
         if (z) {
             int height = i4 - ((((i + placeable.getHeight()) + i2) + placeable2.getHeight()) + i3);
-            int i10 = i4 >= i5 ? measureScope.mo399roundToPx0680j_4(Dp.m7555constructorimpl(16)) : 0;
+            int i10 = i4 >= i5 ? measureScope.mo399roundToPx0680j_4(Dp.m7555constructorimpl(16.0f)) : 0;
             Placeable.PlacementScope.place$default(placementScope, placeable3, i6, i6, 0.0f, 4, null);
             int i11 = height / 2;
             int i12 = i + i11;
@@ -69,15 +68,14 @@ final class TimePickerDialogKt$TimePickerCustomLayout$measurePolicy$1$1 implemen
                         while (i4 < size3) {
                             Measurable measurable3 = list.get(i4);
                             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable3), "actions")) {
-                                float f = 24;
-                                final int i5 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(f));
-                                final int i6 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl((float) RendererCapabilities.DECODER_SUPPORT_MASK));
-                                final int i7 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(f));
-                                final int i8 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(16));
-                                final int i9 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(4));
-                                final int i10 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(8));
-                                final int i11 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(f));
-                                int i12 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(f));
+                                final int i5 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(24.0f));
+                                final int i6 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(384.0f));
+                                final int i7 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(24.0f));
+                                final int i8 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(16.0f));
+                                final int i9 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(4.0f));
+                                final int i10 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(8.0f));
+                                final int i11 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(24.0f));
+                                int i12 = measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(24.0f));
                                 final Placeable mo6216measureBRTryo0 = measurable2.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 11, null));
                                 if (mo6216measureBRTryo0.getWidth() <= mo6216measureBRTryo0.getHeight() || mo6216measureBRTryo0.getHeight() < MathKt.truncate(measureScope2.mo405toPx0680j_4(TimePickerKt.getClockDialMinContainerSize()))) {
                                     i = i12;

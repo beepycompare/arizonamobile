@@ -23,9 +23,9 @@ final class AutoValue_ExternalPRequestContext extends ExternalPRequestContext {
             return true;
         }
         if (obj instanceof ExternalPRequestContext) {
+            ExternalPRequestContext externalPRequestContext = (ExternalPRequestContext) obj;
             Integer num = this.originAssociatedProductId;
-            Integer originAssociatedProductId = ((ExternalPRequestContext) obj).getOriginAssociatedProductId();
-            return num == null ? originAssociatedProductId == null : num.equals(originAssociatedProductId);
+            return num == null ? externalPRequestContext.getOriginAssociatedProductId() == null : num.equals(externalPRequestContext.getOriginAssociatedProductId());
         }
         return false;
     }

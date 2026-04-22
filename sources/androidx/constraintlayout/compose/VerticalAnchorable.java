@@ -22,10 +22,10 @@ public interface VerticalAnchorable {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: linkTo-VpY3zN4");
         }
         if ((i & 2) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 4) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         verticalAnchorable.mo7814linkToVpY3zN4(verticalAnchor, f, f2);
     }

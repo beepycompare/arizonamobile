@@ -2,6 +2,7 @@ package androidx.media3.datasource;
 
 import android.net.TrafficStats;
 import android.net.Uri;
+import android.support.v4.media.session.PlaybackStateCompat;
 import androidx.media3.common.PlaybackException;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
@@ -424,7 +425,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
         }
         byte[] bArr = new byte[4096];
         while (j > 0) {
-            int read = ((InputStream) Util.castNonNull(this.inputStream)).read(bArr, 0, (int) Math.min(j, 4096));
+            int read = ((InputStream) Util.castNonNull(this.inputStream)).read(bArr, 0, (int) Math.min(j, (long) PlaybackStateCompat.ACTION_SKIP_TO_QUEUE_ITEM));
             if (Thread.currentThread().isInterrupted()) {
                 throw new HttpDataSource.HttpDataSourceException(new InterruptedIOException(), dataSpec, 2000, 1);
             }

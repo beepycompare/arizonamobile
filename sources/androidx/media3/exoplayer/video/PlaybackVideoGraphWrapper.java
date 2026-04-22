@@ -346,14 +346,9 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     /* JADX INFO: Access modifiers changed from: private */
     public boolean registerInput(Format format, int i) throws VideoSink.VideoSinkException {
         PlaybackVideoGraphWrapper playbackVideoGraphWrapper;
-        GlUtil.GlException glException;
         if (i == 0) {
             Preconditions.checkState(this.state == 0);
             ColorInfo adjustedInputColorInfo = getAdjustedInputColorInfo(format.colorInfo);
-            try {
-            } catch (GlUtil.GlException e) {
-                glException = e;
-            }
             try {
                 if (this.requestOpenGlToneMapping) {
                     adjustedInputColorInfo = ColorInfo.SDR_BT709_LIMITED;
@@ -374,38 +369,32 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
                     HandlerWrapper handlerWrapper = this.handler;
                     Objects.requireNonNull(handlerWrapper);
                     playbackVideoGraphWrapper = this;
-                    try {
-                        VideoGraph create = factory.create(context, colorInfo, debugViewProvider, playbackVideoGraphWrapper, new ExoPlayerImpl$VirtualDeviceIdChangeListener$$ExternalSyntheticLambda1(handlerWrapper), 0L, false);
-                        playbackVideoGraphWrapper.videoGraph = create;
-                        create.setCompositionEffects(playbackVideoGraphWrapper.compositionEffects);
-                        playbackVideoGraphWrapper.videoGraph.setCompositorSettings(playbackVideoGraphWrapper.compositorSettings);
-                        playbackVideoGraphWrapper.videoGraph.initialize();
-                        Pair<Surface, Size> pair = playbackVideoGraphWrapper.currentSurfaceAndSize;
-                        if (pair != null) {
-                            Size size = (Size) playbackVideoGraphWrapper.currentSurfaceAndSize.second;
-                            maybeSetOutputSurfaceInfo((Surface) pair.first, size.getWidth(), size.getHeight());
-                        }
-                        playbackVideoGraphWrapper.defaultVideoSink.initialize(format);
-                        VideoSink videoSink = playbackVideoGraphWrapper.defaultVideoSink;
-                        DefaultVideoSinkListener defaultVideoSinkListener = new DefaultVideoSinkListener();
-                        HandlerWrapper handlerWrapper2 = playbackVideoGraphWrapper.handler;
-                        Objects.requireNonNull(handlerWrapper2);
-                        videoSink.setListener(defaultVideoSinkListener, new ExoPlayerImpl$VirtualDeviceIdChangeListener$$ExternalSyntheticLambda1(handlerWrapper2));
-                        playbackVideoGraphWrapper.state = 1;
-                    } catch (VideoFrameProcessingException e2) {
-                        e = e2;
-                        throw new VideoSink.VideoSinkException(e, format);
+                    VideoGraph create = factory.create(context, colorInfo, debugViewProvider, playbackVideoGraphWrapper, new ExoPlayerImpl$VirtualDeviceIdChangeListener$$ExternalSyntheticLambda1(handlerWrapper), 0L, false);
+                    playbackVideoGraphWrapper.videoGraph = create;
+                    create.setCompositionEffects(playbackVideoGraphWrapper.compositionEffects);
+                    playbackVideoGraphWrapper.videoGraph.setCompositorSettings(playbackVideoGraphWrapper.compositorSettings);
+                    playbackVideoGraphWrapper.videoGraph.initialize();
+                    Pair<Surface, Size> pair = playbackVideoGraphWrapper.currentSurfaceAndSize;
+                    if (pair != null) {
+                        Size size = (Size) playbackVideoGraphWrapper.currentSurfaceAndSize.second;
+                        playbackVideoGraphWrapper.maybeSetOutputSurfaceInfo((Surface) pair.first, size.getWidth(), size.getHeight());
                     }
-                } catch (VideoFrameProcessingException e3) {
-                    e = e3;
+                    playbackVideoGraphWrapper.defaultVideoSink.initialize(format);
+                    VideoSink videoSink = playbackVideoGraphWrapper.defaultVideoSink;
+                    DefaultVideoSinkListener defaultVideoSinkListener = new DefaultVideoSinkListener();
+                    HandlerWrapper handlerWrapper2 = playbackVideoGraphWrapper.handler;
+                    Objects.requireNonNull(handlerWrapper2);
+                    videoSink.setListener(defaultVideoSinkListener, new ExoPlayerImpl$VirtualDeviceIdChangeListener$$ExternalSyntheticLambda1(handlerWrapper2));
+                    playbackVideoGraphWrapper.state = 1;
+                } catch (VideoFrameProcessingException e) {
+                    throw new VideoSink.VideoSinkException(e, format);
                 }
-            } catch (GlUtil.GlException e4) {
-                glException = e4;
-                throw new VideoSink.VideoSinkException(glException, format);
+            } catch (GlUtil.GlException e2) {
+                throw new VideoSink.VideoSinkException(e2, format);
             }
         } else {
             playbackVideoGraphWrapper = this;
-            if (!isInitialized()) {
+            if (!playbackVideoGraphWrapper.isInitialized()) {
                 return false;
             }
         }
@@ -413,8 +402,8 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             ((VideoGraph) Preconditions.checkNotNull(playbackVideoGraphWrapper.videoGraph)).registerInput(i);
             playbackVideoGraphWrapper.registeredVideoInputCount++;
             return true;
-        } catch (VideoFrameProcessingException e5) {
-            throw new VideoSink.VideoSinkException(e5, format);
+        } catch (VideoFrameProcessingException e3) {
+            throw new VideoSink.VideoSinkException(e3, format);
         }
     }
 

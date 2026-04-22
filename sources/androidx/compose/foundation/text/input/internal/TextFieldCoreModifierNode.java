@@ -267,10 +267,10 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
     private final void m1428updateScrollStatetIlFzwE(Density density, int i, int i2, long j, LayoutDirection layoutDirection) {
         TextLayoutResult layoutResult;
         Rect cursorRectInScroller;
-        long j2;
+        int i3;
         boolean z;
         float f;
-        int i3;
+        int i4;
         this.scrollState.setViewportSize$foundation(i);
         this.scrollState.setMaxValue$foundation(i2 - i);
         int m1424calculateOffsetToFollow8ffj60Q = m1424calculateOffsetToFollow8ffj60Q(j, i, i2);
@@ -280,10 +280,10 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
         Rect cursorRect = layoutResult.getCursorRect(RangesKt.coerceIn(m1424calculateOffsetToFollow8ffj60Q, (ClosedRange<Integer>) new IntRange(0, layoutResult.getLayoutInput().getText().length())));
         cursorRectInScroller = TextFieldCoreModifierKt.getCursorRectInScroller(density, cursorRect, layoutDirection == LayoutDirection.Rtl, i2);
         if (cursorRectInScroller.getLeft() == this.previousCursorRect.getLeft() && cursorRectInScroller.getTop() == this.previousCursorRect.getTop() && i2 == this.previousTextLayoutSize) {
-            j2 = j;
+            i3 = i2;
             z = false;
         } else {
-            j2 = j;
+            i3 = i2;
             z = true;
         }
         if (z || i != this.previousContainerSize) {
@@ -292,11 +292,11 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
             float bottom = z2 ? cursorRectInScroller.getBottom() : cursorRectInScroller.getRight();
             int value = this.scrollState.getValue();
             float f2 = value + i;
-            float f3 = (bottom <= f2 && (top >= (f = (float) value) || bottom - top <= ((float) i))) ? (i3 >= 0 || bottom - top > ((float) i)) ? 0.0f : top - f : bottom - f2;
-            this.previousSelection = TextRange.m6991boximpl(j2);
+            float f3 = (bottom <= f2 && (top >= (f = (float) value) || bottom - top <= ((float) i))) ? (i4 >= 0 || bottom - top > ((float) i)) ? 0.0f : top - f : bottom - f2;
+            this.previousSelection = TextRange.m6991boximpl(j);
             this.previousCursorRect = cursorRectInScroller;
             this.previousContainerSize = i;
-            this.previousTextLayoutSize = i2;
+            this.previousTextLayoutSize = i3;
             BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, CoroutineStart.UNDISPATCHED, new TextFieldCoreModifierNode$updateScrollState$1(this, f3, z, cursorRect, null), 1, null);
         }
     }

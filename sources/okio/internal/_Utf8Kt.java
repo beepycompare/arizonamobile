@@ -21,11 +21,11 @@ public final class _Utf8Kt {
         return commonToUtf8String(bArr, i, i2);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x0094, code lost:
-        if ((r16[r5] & 192) == 128) goto L66;
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x0094, code lost:
+        if ((r16[r5] & 192) == 128) goto L37;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x0105, code lost:
-        if ((r16[r5] & 192) == 128) goto L27;
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x0103, code lost:
+        if ((r16[r5] & 192) == 128) goto L67;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -36,181 +36,185 @@ public final class _Utf8Kt {
         int i5;
         int i6;
         int i7;
-        int i8;
-        int i9 = i;
+        int i8 = i;
         Intrinsics.checkNotNullParameter(bArr, "<this>");
-        if (i9 < 0 || i2 > bArr.length || i9 > i2) {
-            throw new ArrayIndexOutOfBoundsException("size=" + bArr.length + " beginIndex=" + i9 + " endIndex=" + i2);
+        if (i8 < 0 || i2 > bArr.length || i8 > i2) {
+            throw new ArrayIndexOutOfBoundsException("size=" + bArr.length + " beginIndex=" + i8 + " endIndex=" + i2);
         }
-        char[] cArr = new char[i2 - i9];
-        int i10 = 0;
-        while (i9 < i2) {
-            byte b = bArr[i9];
+        char[] cArr = new char[i2 - i8];
+        int i9 = 0;
+        while (i8 < i2) {
+            byte b = bArr[i8];
             if (b >= 0) {
-                i3 = i10 + 1;
-                cArr[i10] = (char) b;
-                i9++;
-                while (i9 < i2) {
-                    byte b2 = bArr[i9];
+                int i10 = i9 + 1;
+                cArr[i9] = (char) b;
+                i8++;
+                while (i8 < i2) {
+                    byte b2 = bArr[i8];
                     if (b2 < 0) {
                         break;
                     }
-                    i9++;
-                    cArr[i3] = (char) b2;
-                    i3++;
+                    i8++;
+                    cArr[i10] = (char) b2;
+                    i10++;
                 }
                 Unit unit = Unit.INSTANCE;
-            } else if ((b >> 5) == -2) {
-                int i11 = i9 + 1;
-                if (i2 <= i11) {
-                    i3 = i10 + 1;
-                    cArr[i10] = (char) Utf8.REPLACEMENT_CODE_POINT;
-                } else {
-                    byte b3 = bArr[i11];
-                    if ((b3 & 192) == 128) {
-                        int i12 = (b << 6) ^ (b3 ^ 3968);
-                        if (i12 < 128) {
-                            i3 = i10 + 1;
-                            cArr[i10] = (char) Utf8.REPLACEMENT_CODE_POINT;
-                        } else {
-                            i3 = i10 + 1;
-                            cArr[i10] = (char) i12;
-                        }
-                        Unit unit2 = Unit.INSTANCE;
-                        i4 = 2;
-                        i9 += i4;
-                        Unit unit3 = Unit.INSTANCE;
+                i9 = i10;
+            } else {
+                if ((b >> 5) == -2) {
+                    int i11 = i8 + 1;
+                    if (i2 <= i11) {
+                        i3 = i9 + 1;
+                        cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
                     } else {
-                        i3 = i10 + 1;
-                        cArr[i10] = (char) Utf8.REPLACEMENT_CODE_POINT;
-                    }
-                }
-                Unit unit4 = Unit.INSTANCE;
-                i4 = 1;
-                i9 += i4;
-                Unit unit32 = Unit.INSTANCE;
-            } else if ((b >> 4) == -2) {
-                int i13 = i9 + 2;
-                if (i2 <= i13) {
-                    i3 = i10 + 1;
-                    cArr[i10] = (char) Utf8.REPLACEMENT_CODE_POINT;
-                    Unit unit5 = Unit.INSTANCE;
-                    int i14 = i9 + 1;
-                    if (i2 > i14) {
-                    }
-                    i5 = 1;
-                } else {
-                    byte b4 = bArr[i9 + 1];
-                    if ((b4 & 192) == 128) {
-                        byte b5 = bArr[i13];
-                        if ((b5 & 192) == 128) {
-                            int i15 = (b << Ascii.FF) ^ ((b5 ^ (-123008)) ^ (b4 << 6));
-                            if (i15 < 2048) {
-                                i3 = i10 + 1;
-                                cArr[i10] = (char) Utf8.REPLACEMENT_CODE_POINT;
-                            } else if (55296 > i15 || i15 >= 57344) {
-                                i3 = i10 + 1;
-                                cArr[i10] = (char) i15;
+                        byte b3 = bArr[i11];
+                        if ((b3 & 192) == 128) {
+                            int i12 = (b << 6) ^ (b3 ^ 3968);
+                            if (i12 < 128) {
+                                i3 = i9 + 1;
+                                cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                                Unit unit2 = Unit.INSTANCE;
                             } else {
-                                i3 = i10 + 1;
-                                cArr[i10] = (char) Utf8.REPLACEMENT_CODE_POINT;
+                                int i13 = i9 + 1;
+                                cArr[i9] = (char) i12;
+                                Unit unit3 = Unit.INSTANCE;
+                                i3 = i13;
                             }
-                            Unit unit6 = Unit.INSTANCE;
-                            i5 = 3;
+                            i7 = 2;
+                            i8 += i7;
+                            Unit unit4 = Unit.INSTANCE;
                         } else {
-                            i3 = i10 + 1;
-                            cArr[i10] = (char) Utf8.REPLACEMENT_CODE_POINT;
-                            Unit unit7 = Unit.INSTANCE;
+                            i3 = i9 + 1;
+                            cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                        }
+                    }
+                    Unit unit5 = Unit.INSTANCE;
+                    i7 = 1;
+                    i8 += i7;
+                    Unit unit42 = Unit.INSTANCE;
+                } else if ((b >> 4) == -2) {
+                    int i14 = i8 + 2;
+                    if (i2 <= i14) {
+                        i3 = i9 + 1;
+                        cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                        Unit unit6 = Unit.INSTANCE;
+                        int i15 = i8 + 1;
+                        if (i2 > i15) {
+                        }
+                        i6 = 1;
+                    } else {
+                        byte b4 = bArr[i8 + 1];
+                        if ((b4 & 192) == 128) {
+                            byte b5 = bArr[i14];
+                            if ((b5 & 192) == 128) {
+                                int i16 = (b << Ascii.FF) ^ ((b5 ^ (-123008)) ^ (b4 << 6));
+                                if (i16 < 2048) {
+                                    i3 = i9 + 1;
+                                    cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                                } else if (55296 > i16 || i16 >= 57344) {
+                                    int i17 = i9 + 1;
+                                    cArr[i9] = (char) i16;
+                                    Unit unit7 = Unit.INSTANCE;
+                                    i3 = i17;
+                                    i6 = 3;
+                                } else {
+                                    i3 = i9 + 1;
+                                    cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                                }
+                                Unit unit8 = Unit.INSTANCE;
+                                i6 = 3;
+                            } else {
+                                i3 = i9 + 1;
+                                cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                                Unit unit9 = Unit.INSTANCE;
+                                i6 = 2;
+                            }
+                        } else {
+                            i3 = i9 + 1;
+                            cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                            Unit unit10 = Unit.INSTANCE;
+                            i6 = 1;
+                        }
+                    }
+                    i8 += i6;
+                    Unit unit11 = Unit.INSTANCE;
+                } else if ((b >> 3) == -2) {
+                    int i18 = i8 + 3;
+                    if (i2 <= i18) {
+                        i3 = i9 + 1;
+                        cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                        Unit unit12 = Unit.INSTANCE;
+                        int i19 = i8 + 1;
+                        if (i2 > i19 && (bArr[i19] & 192) == 128) {
+                            int i20 = i8 + 2;
+                            if (i2 > i20) {
+                            }
                             i5 = 2;
                         }
-                    } else {
-                        i3 = i10 + 1;
-                        cArr[i10] = (char) Utf8.REPLACEMENT_CODE_POINT;
-                        Unit unit8 = Unit.INSTANCE;
                         i5 = 1;
-                    }
-                }
-                i9 += i5;
-                Unit unit9 = Unit.INSTANCE;
-            } else {
-                if ((b >> 3) == -2) {
-                    int i16 = i9 + 3;
-                    if (i2 <= i16) {
-                        i6 = i10 + 1;
-                        cArr[i10] = Utf8.REPLACEMENT_CHARACTER;
-                        Unit unit10 = Unit.INSTANCE;
-                        int i17 = i9 + 1;
-                        if (i2 > i17 && (bArr[i17] & 192) == 128) {
-                            int i18 = i9 + 2;
-                            if (i2 > i18) {
-                            }
-                            i8 = 2;
-                        }
-                        i8 = 1;
                     } else {
-                        byte b6 = bArr[i9 + 1];
+                        byte b6 = bArr[i8 + 1];
                         if ((b6 & 192) == 128) {
-                            byte b7 = bArr[i9 + 2];
+                            byte b7 = bArr[i8 + 2];
                             if ((b7 & 192) == 128) {
-                                byte b8 = bArr[i16];
+                                byte b8 = bArr[i18];
                                 if ((b8 & 192) == 128) {
-                                    int i19 = (b << Ascii.DC2) ^ (((b8 ^ 3678080) ^ (b7 << 6)) ^ (b6 << Ascii.FF));
-                                    if (i19 > 1114111) {
-                                        i6 = i10 + 1;
-                                        cArr[i10] = Utf8.REPLACEMENT_CHARACTER;
-                                    } else if (55296 <= i19 && i19 < 57344) {
-                                        i6 = i10 + 1;
-                                        cArr[i10] = Utf8.REPLACEMENT_CHARACTER;
-                                    } else if (i19 < 65536) {
-                                        i6 = i10 + 1;
-                                        cArr[i10] = Utf8.REPLACEMENT_CHARACTER;
+                                    int i21 = (b << Ascii.DC2) ^ (((b8 ^ 3678080) ^ (b7 << 6)) ^ (b6 << Ascii.FF));
+                                    if (i21 > 1114111) {
+                                        i3 = i9 + 1;
+                                        cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                                    } else if (55296 <= i21 && i21 < 57344) {
+                                        i3 = i9 + 1;
+                                        cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                                    } else if (i21 < 65536) {
+                                        i3 = i9 + 1;
+                                        cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
                                     } else {
-                                        if (i19 != 65533) {
-                                            cArr[i10] = (char) ((i19 >>> 10) + Utf8.HIGH_SURROGATE_HEADER);
-                                            i7 = i10 + 2;
-                                            cArr[i10 + 1] = (char) ((i19 & 1023) + Utf8.LOG_SURROGATE_HEADER);
+                                        if (i21 != 65533) {
+                                            cArr[i9] = (char) ((i21 >>> 10) + Utf8.HIGH_SURROGATE_HEADER);
+                                            i4 = i9 + 2;
+                                            cArr[i9 + 1] = (char) ((i21 & 1023) + Utf8.LOG_SURROGATE_HEADER);
                                         } else {
-                                            cArr[i10] = Utf8.REPLACEMENT_CHARACTER;
-                                            i7 = i10 + 1;
+                                            cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                                            i4 = i9 + 1;
                                         }
-                                        Unit unit11 = Unit.INSTANCE;
-                                        i6 = i7;
-                                        i8 = 4;
+                                        Unit unit13 = Unit.INSTANCE;
+                                        i3 = i4;
+                                        i5 = 4;
                                     }
-                                    Unit unit12 = Unit.INSTANCE;
-                                    i8 = 4;
+                                    Unit unit14 = Unit.INSTANCE;
+                                    i5 = 4;
                                 } else {
-                                    i6 = i10 + 1;
-                                    cArr[i10] = Utf8.REPLACEMENT_CHARACTER;
-                                    Unit unit13 = Unit.INSTANCE;
-                                    i8 = 3;
+                                    i3 = i9 + 1;
+                                    cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                                    Unit unit15 = Unit.INSTANCE;
+                                    i5 = 3;
                                 }
                             } else {
-                                i6 = i10 + 1;
-                                cArr[i10] = Utf8.REPLACEMENT_CHARACTER;
-                                Unit unit14 = Unit.INSTANCE;
-                                i8 = 2;
+                                i3 = i9 + 1;
+                                cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                                Unit unit16 = Unit.INSTANCE;
+                                i5 = 2;
                             }
                         } else {
-                            i6 = i10 + 1;
-                            cArr[i10] = Utf8.REPLACEMENT_CHARACTER;
-                            Unit unit15 = Unit.INSTANCE;
-                            i8 = 1;
+                            i3 = i9 + 1;
+                            cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                            Unit unit17 = Unit.INSTANCE;
+                            i5 = 1;
                         }
                     }
-                    i9 += i8;
-                    Unit unit16 = Unit.INSTANCE;
+                    i8 += i5;
+                    Unit unit18 = Unit.INSTANCE;
                 } else {
-                    i6 = i10 + 1;
-                    cArr[i10] = Utf8.REPLACEMENT_CHARACTER;
-                    Integer.valueOf(i9);
-                    i9++;
+                    i3 = i9 + 1;
+                    cArr[i9] = Utf8.REPLACEMENT_CHARACTER;
+                    Integer.valueOf(i8);
+                    i8++;
                 }
-                i10 = i6;
+                i9 = i3;
             }
-            i10 = i3;
         }
-        return StringsKt.concatToString(cArr, 0, i10);
+        return StringsKt.concatToString(cArr, 0, i9);
     }
 
     public static final byte[] commonAsUtf8ToByteArray(String str) {

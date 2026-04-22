@@ -39,7 +39,7 @@ public final class DeleteSurroundingTextCommand implements EditCommand {
         int selectionStart$ui_text = editingBuffer.getSelectionStart$ui_text();
         int i3 = this.lengthBeforeCursor;
         int i4 = selectionStart$ui_text - i3;
-        if (((selectionStart$ui_text ^ i4) & (i3 ^ selectionStart$ui_text)) < 0) {
+        if (((i3 ^ selectionStart$ui_text) & (selectionStart$ui_text ^ i4)) < 0) {
             i4 = 0;
         }
         editingBuffer.delete$ui_text(Math.max(0, i4), editingBuffer.getSelectionStart$ui_text());

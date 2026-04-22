@@ -158,7 +158,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                 layoutNodeSubcompositionsState = this;
                 move$default(layoutNodeSubcompositionsState, indexOf, i, 0, 4, null);
                 layoutNodeSubcompositionsState.currentIndex++;
-                subcompose(layoutNode2, obj, false, function2);
+                layoutNodeSubcompositionsState.subcompose(layoutNode2, obj, false, function2);
                 if (layoutState$ui != LayoutNode.LayoutState.Measuring || layoutState$ui == LayoutNode.LayoutState.LayingOut) {
                     return layoutNode2.getChildMeasurables$ui();
                 }
@@ -167,7 +167,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
         }
         layoutNodeSubcompositionsState = this;
         layoutNodeSubcompositionsState.currentIndex++;
-        subcompose(layoutNode2, obj, false, function2);
+        layoutNodeSubcompositionsState.subcompose(layoutNode2, obj, false, function2);
         if (layoutState$ui != LayoutNode.LayoutState.Measuring) {
         }
         return layoutNode2.getChildMeasurables$ui();
@@ -885,7 +885,8 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                         InlineClassHelperKt.throwIndexOutOfBoundsException("Index (" + i + ") is out of bound of [0, " + size + ')');
                     }
                     if (this.hasPremeasured.contains(i)) {
-                        return IntSize.m7721constructorimpl((layoutNode.getChildren$ui().get(i).getWidth() << 32) | (layoutNode.getChildren$ui().get(i).getHeight() & 4294967295L));
+                        int width = layoutNode.getChildren$ui().get(i).getWidth();
+                        return IntSize.m7721constructorimpl((layoutNode.getChildren$ui().get(i).getHeight() & 4294967295L) | (width << 32));
                     }
                 }
                 return IntSize.Companion.m7731getZeroYbymL2g();

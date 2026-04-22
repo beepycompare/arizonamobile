@@ -41,7 +41,7 @@ final class AnchoredDraggableNode$onDragStopped$1 extends SuspendLambda implemen
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0044, code lost:
-        if (r8 == r0) goto L17;
+        if (r7 == r0) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0067, code lost:
         if (r1.mo241applyToFlingBMRW4eQ(r3, new androidx.compose.foundation.gestures.AnchoredDraggableNode$onDragStopped$1.AnonymousClass1(r7.this$0, null), r7) == r0) goto L17;

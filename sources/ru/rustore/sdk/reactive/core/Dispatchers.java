@@ -54,8 +54,8 @@ public final class Dispatchers {
                 this.$handler.postDelayed(
                 /*  JADX ERROR: Method code generation error
                     jadx.core.utils.exceptions.CodegenException: Error generate insn: 0x0015: INVOKE  
-                      (wrap: android.os.Handler : 0x000e: IGET  (r4v1 android.os.Handler A[REMOVE]) = (r1v0 'this' ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1 A[IMMUTABLE_TYPE, THIS]) ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2.1.$handler android.os.Handler)
-                      (wrap: java.lang.Runnable : 0x0012: CONSTRUCTOR  (r0v2 java.lang.Runnable A[REMOVE]) = (r5v0 'block' kotlin.jvm.functions.Function0<kotlin.Unit> A[DONT_INLINE]) call: ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1$$ExternalSyntheticLambda1.<init>(kotlin.jvm.functions.Function0):void type: CONSTRUCTOR)
+                      (wrap: android.os.Handler : 0x000e: IGET  (r1v1 android.os.Handler A[REMOVE]) = (r1v0 'this' ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1 A[IMMUTABLE_TYPE, THIS]) ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2.1.$handler android.os.Handler)
+                      (wrap: java.lang.Runnable : 0x0012: CONSTRUCTOR  (r4v1 java.lang.Runnable A[REMOVE]) = (r5v0 'block' kotlin.jvm.functions.Function0<kotlin.Unit> A[DONT_INLINE]) call: ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1$$ExternalSyntheticLambda1.<init>(kotlin.jvm.functions.Function0):void type: CONSTRUCTOR)
                       (wrap: long : 0x000a: INVOKE  (r2v1 long A[REMOVE]) = (r4v0 'timeUnit' java.util.concurrent.TimeUnit), (r2v0 'j' long) type: VIRTUAL call: java.util.concurrent.TimeUnit.toMillis(long):long)
                      type: VIRTUAL call: android.os.Handler.postDelayed(java.lang.Runnable, long):boolean in method: ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2.1.executeDelayed(long, java.util.concurrent.TimeUnit, kotlin.jvm.functions.Function0<kotlin.Unit>):ru.rustore.sdk.reactive.core.Disposable, file: classes6.dex
                     	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:309)
@@ -95,14 +95,14 @@ public final class Dispatchers {
                     java.lang.String r0 = "block"
                     kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, r0)
                     long r2 = r4.toMillis(r2)
-                    android.os.Handler r4 = r1.$handler
-                    ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1$$ExternalSyntheticLambda1 r0 = new ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1$$ExternalSyntheticLambda1
-                    r0.<init>(r5)
-                    r4.postDelayed(r0, r2)
-                    ru.rustore.sdk.reactive.core.SimpleDisposable r2 = new ru.rustore.sdk.reactive.core.SimpleDisposable
-                    r2.<init>()
-                    ru.rustore.sdk.reactive.core.Disposable r2 = (ru.rustore.sdk.reactive.core.Disposable) r2
-                    return r2
+                    android.os.Handler r1 = r1.$handler
+                    ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1$$ExternalSyntheticLambda1 r4 = new ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1$$ExternalSyntheticLambda1
+                    r4.<init>(r5)
+                    r1.postDelayed(r4, r2)
+                    ru.rustore.sdk.reactive.core.SimpleDisposable r1 = new ru.rustore.sdk.reactive.core.SimpleDisposable
+                    r1.<init>()
+                    ru.rustore.sdk.reactive.core.Disposable r1 = (ru.rustore.sdk.reactive.core.Disposable) r1
+                    return r1
                 */
                 throw new UnsupportedOperationException("Method not decompiled: ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2.AnonymousClass1.executeDelayed(long, java.util.concurrent.TimeUnit, kotlin.jvm.functions.Function0):ru.rustore.sdk.reactive.core.Disposable");
             }
@@ -125,8 +125,8 @@ public final class Dispatchers {
                 this.$handler.post(
                 /*  JADX ERROR: Method code generation error
                     jadx.core.utils.exceptions.CodegenException: Error generate insn: 0x000c: INVOKE  
-                      (wrap: android.os.Handler : 0x0005: IGET  (r0v1 android.os.Handler A[REMOVE]) = (r2v0 'this' ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1 A[IMMUTABLE_TYPE, THIS]) ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2.1.$handler android.os.Handler)
-                      (wrap: java.lang.Runnable : 0x0009: CONSTRUCTOR  (r1v0 java.lang.Runnable A[REMOVE]) = (r3v0 'block' kotlin.jvm.functions.Function0<kotlin.Unit> A[DONT_INLINE]) call: ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1$$ExternalSyntheticLambda0.<init>(kotlin.jvm.functions.Function0):void type: CONSTRUCTOR)
+                      (wrap: android.os.Handler : 0x0005: IGET  (r1v1 android.os.Handler A[REMOVE]) = (r1v0 'this' ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1 A[IMMUTABLE_TYPE, THIS]) ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2.1.$handler android.os.Handler)
+                      (wrap: java.lang.Runnable : 0x0009: CONSTRUCTOR  (r0v1 java.lang.Runnable A[REMOVE]) = (r2v0 'block' kotlin.jvm.functions.Function0<kotlin.Unit> A[DONT_INLINE]) call: ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1$$ExternalSyntheticLambda0.<init>(kotlin.jvm.functions.Function0):void type: CONSTRUCTOR)
                      type: VIRTUAL call: android.os.Handler.post(java.lang.Runnable):boolean in method: ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2.1.execute(kotlin.jvm.functions.Function0<kotlin.Unit>):void, file: classes6.dex
                     	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:309)
                     	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:272)
@@ -161,11 +161,11 @@ public final class Dispatchers {
                 /*
                     this = this;
                     java.lang.String r0 = "block"
-                    kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, r0)
-                    android.os.Handler r0 = r2.$handler
-                    ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1$$ExternalSyntheticLambda0 r1 = new ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1$$ExternalSyntheticLambda0
-                    r1.<init>(r3)
-                    r0.post(r1)
+                    kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, r0)
+                    android.os.Handler r1 = r1.$handler
+                    ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1$$ExternalSyntheticLambda0 r0 = new ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2$1$$ExternalSyntheticLambda0
+                    r0.<init>(r2)
+                    r1.post(r0)
                     return
                 */
                 throw new UnsupportedOperationException("Method not decompiled: ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2.AnonymousClass1.execute(kotlin.jvm.functions.Function0):void");
@@ -194,7 +194,7 @@ public final class Dispatchers {
                 Intrinsics.checkNotNullParameter(block, "block");
                 Runnable runnable = 
                 /*  JADX ERROR: Method code generation error
-                    jadx.core.utils.exceptions.CodegenException: Error generate insn: 0x000c: CONSTRUCTOR  (r0v2 'runnable' java.lang.Runnable) = (r5v0 'block' kotlin.jvm.functions.Function0<kotlin.Unit> A[DONT_INLINE]) call: ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$$ExternalSyntheticLambda2.<init>(kotlin.jvm.functions.Function0):void type: CONSTRUCTOR in method: ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2.1.executeDelayed(long, java.util.concurrent.TimeUnit, kotlin.jvm.functions.Function0<kotlin.Unit>):ru.rustore.sdk.reactive.core.Disposable, file: classes6.dex
+                    jadx.core.utils.exceptions.CodegenException: Error generate insn: 0x000c: CONSTRUCTOR  (r0v3 'runnable' java.lang.Runnable) = (r4v0 'block' kotlin.jvm.functions.Function0<kotlin.Unit> A[DONT_INLINE]) call: ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$$ExternalSyntheticLambda2.<init>(kotlin.jvm.functions.Function0):void type: CONSTRUCTOR in method: ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2.1.executeDelayed(long, java.util.concurrent.TimeUnit, kotlin.jvm.functions.Function0<kotlin.Unit>):ru.rustore.sdk.reactive.core.Disposable, file: classes6.dex
                     	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:309)
                     	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:272)
                     	at jadx.core.codegen.RegionGen.makeSimpleBlock(RegionGen.java:91)
@@ -222,18 +222,18 @@ public final class Dispatchers {
                 /*
                     this = this;
                     java.lang.String r0 = "timeUnit"
-                    kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, r0)
+                    kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, r0)
                     java.lang.String r0 = "block"
-                    kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, r0)
+                    kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, r0)
                     ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$$ExternalSyntheticLambda2 r0 = new ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$$ExternalSyntheticLambda2
-                    r0.<init>(r5)
-                    ru.rustore.sdk.reactive.core.Dispatchers r5 = ru.rustore.sdk.reactive.core.Dispatchers.INSTANCE
-                    java.util.concurrent.ScheduledThreadPoolExecutor r5 = ru.rustore.sdk.reactive.core.Dispatchers.access$getScheduler(r5)
-                    java.util.concurrent.ScheduledFuture r2 = r5.schedule(r0, r2, r4)
-                    ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$executeDelayed$disposable$1 r3 = new ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$executeDelayed$disposable$1
-                    r3.<init>(r2)
-                    ru.rustore.sdk.reactive.core.Disposable r3 = (ru.rustore.sdk.reactive.core.Disposable) r3
-                    return r3
+                    r0.<init>(r4)
+                    ru.rustore.sdk.reactive.core.Dispatchers r4 = ru.rustore.sdk.reactive.core.Dispatchers.INSTANCE
+                    java.util.concurrent.ScheduledThreadPoolExecutor r4 = ru.rustore.sdk.reactive.core.Dispatchers.access$getScheduler(r4)
+                    java.util.concurrent.ScheduledFuture r0 = r4.schedule(r0, r1, r3)
+                    ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$executeDelayed$disposable$1 r1 = new ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$executeDelayed$disposable$1
+                    r1.<init>(r0)
+                    ru.rustore.sdk.reactive.core.Disposable r1 = (ru.rustore.sdk.reactive.core.Disposable) r1
+                    return r1
                 */
                 throw new UnsupportedOperationException("Method not decompiled: ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2.AnonymousClass1.executeDelayed(long, java.util.concurrent.TimeUnit, kotlin.jvm.functions.Function0):ru.rustore.sdk.reactive.core.Disposable");
             }
@@ -312,8 +312,8 @@ public final class Dispatchers {
                 threadPool.execute(
                 /*  JADX ERROR: Method code generation error
                     jadx.core.utils.exceptions.CodegenException: Error generate insn: 0x0010: INVOKE  
-                      (r0v2 'threadPool' java.util.concurrent.ThreadPoolExecutor)
-                      (wrap: java.lang.Runnable : 0x000d: CONSTRUCTOR  (r1v0 java.lang.Runnable A[REMOVE]) = (r3v0 'block' kotlin.jvm.functions.Function0<kotlin.Unit> A[DONT_INLINE]) call: ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$$ExternalSyntheticLambda1.<init>(kotlin.jvm.functions.Function0):void type: CONSTRUCTOR)
+                      (r1v3 'threadPool' java.util.concurrent.ThreadPoolExecutor)
+                      (wrap: java.lang.Runnable : 0x000d: CONSTRUCTOR  (r0v0 java.lang.Runnable A[REMOVE]) = (r2v0 'block' kotlin.jvm.functions.Function0<kotlin.Unit> A[DONT_INLINE]) call: ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$$ExternalSyntheticLambda1.<init>(kotlin.jvm.functions.Function0):void type: CONSTRUCTOR)
                      type: VIRTUAL call: java.util.concurrent.ThreadPoolExecutor.execute(java.lang.Runnable):void in method: ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2.1.execute(kotlin.jvm.functions.Function0<kotlin.Unit>):void, file: classes6.dex
                     	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:309)
                     	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:272)
@@ -347,13 +347,13 @@ public final class Dispatchers {
                     */
                 /*
                     this = this;
-                    java.lang.String r0 = "block"
-                    kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, r0)
-                    ru.rustore.sdk.reactive.core.Dispatchers r0 = ru.rustore.sdk.reactive.core.Dispatchers.INSTANCE
-                    java.util.concurrent.ThreadPoolExecutor r0 = ru.rustore.sdk.reactive.core.Dispatchers.access$getThreadPool(r0)
-                    ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$$ExternalSyntheticLambda1 r1 = new ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$$ExternalSyntheticLambda1
-                    r1.<init>(r3)
-                    r0.execute(r1)
+                    java.lang.String r1 = "block"
+                    kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, r1)
+                    ru.rustore.sdk.reactive.core.Dispatchers r1 = ru.rustore.sdk.reactive.core.Dispatchers.INSTANCE
+                    java.util.concurrent.ThreadPoolExecutor r1 = ru.rustore.sdk.reactive.core.Dispatchers.access$getThreadPool(r1)
+                    ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$$ExternalSyntheticLambda1 r0 = new ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2$1$$ExternalSyntheticLambda1
+                    r0.<init>(r2)
+                    r1.execute(r0)
                     return
                 */
                 throw new UnsupportedOperationException("Method not decompiled: ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2.AnonymousClass1.execute(kotlin.jvm.functions.Function0):void");

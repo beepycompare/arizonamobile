@@ -31,11 +31,7 @@ public final class UncontainedCarouselStrategy extends CarouselStrategy {
             float f7 = f6 / 2.0f;
             return createCenterAlignedKeylineState(containerWidth, f4, f5, max, Math.max(Math.min(3.0f * f7, f5), getSmallItemSizeMin() + f4), extraSmallSize2, f7);
         }
-        int i = 1;
-        if (f6 <= 0.0f) {
-            i = 0;
-        }
-        return createLeftAlignedKeylineState(view.getContext(), f4, containerWidth, f5, max, calculateMediumChildSize(extraSmallSize, f5, f6), i, extraSmallSize2);
+        return createLeftAlignedKeylineState(view.getContext(), f4, containerWidth, f5, max, calculateMediumChildSize(extraSmallSize, f5, f6), f6 <= 0.0f ? 0 : 1, extraSmallSize2);
     }
 
     private float calculateMediumChildSize(float f, float f2, float f3) {

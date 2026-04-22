@@ -72,6 +72,9 @@ public final class LazyLayoutPagerKt {
         return Unit.INSTANCE;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:163:0x0210, code lost:
+        if (r7 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L189;
+     */
     /* JADX WARN: Removed duplicated region for block: B:102:0x013a  */
     /* JADX WARN: Removed duplicated region for block: B:105:0x0140  */
     /* JADX WARN: Removed duplicated region for block: B:110:0x014e  */
@@ -79,10 +82,10 @@ public final class LazyLayoutPagerKt {
     /* JADX WARN: Removed duplicated region for block: B:118:0x0164  */
     /* JADX WARN: Removed duplicated region for block: B:121:0x016c  */
     /* JADX WARN: Removed duplicated region for block: B:128:0x017f  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x01b3  */
-    /* JADX WARN: Removed duplicated region for block: B:217:0x042d  */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x043c  */
-    /* JADX WARN: Removed duplicated region for block: B:222:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01b5  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x043a  */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x0449  */
+    /* JADX WARN: Removed duplicated region for block: B:224:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:73:0x00ea  */
     /* JADX WARN: Removed duplicated region for block: B:74:0x00ef  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x0108  */
@@ -106,6 +109,7 @@ public final class LazyLayoutPagerKt {
         final int i10;
         final float f3;
         ScopeUpdateScope endRestartGroup;
+        int i11;
         Modifier.Companion companion;
         Composer startRestartGroup = composer.startRestartGroup(-572816025);
         ComposerKt.sourceInformation(startRestartGroup, "C(Pager)N(modifier,state,contentPadding,reverseLayout,orientation,flingBehavior,userScrollEnabled,overscrollEffect,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,pageSize,pageNestedScrollConnection,key,horizontalAlignment,verticalAlignment,snapPosition,pageContent)109@5362L39,109@5277L124,113@5428L24,129@6071L19,116@5486L615,132@6127L70,135@6239L82,137@6381L7,139@6430L121,164@7268L301,159@7099L1450:LazyLayoutPager.kt#g6yjnt");
@@ -135,8 +139,8 @@ public final class LazyLayoutPagerKt {
         if ((i2 & 12582912) == 0) {
             i5 |= startRestartGroup.changed(overscrollEffect) ? 8388608 : 4194304;
         }
-        int i11 = i4 & 256;
-        if (i11 != 0) {
+        int i12 = i4 & 256;
+        if (i12 != 0) {
             i5 |= 100663296;
         } else if ((i2 & 100663296) == 0) {
             i6 = 196608;
@@ -183,37 +187,39 @@ public final class LazyLayoutPagerKt {
                 i10 = i;
                 f3 = f2;
             } else {
-                int i12 = i11 != 0 ? 0 : i;
-                float m7555constructorimpl = i7 != 0 ? Dp.m7555constructorimpl(0) : f2;
+                int i13 = i12 != 0 ? 0 : i;
+                float m7555constructorimpl = i7 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-572816025, i5, i9, "androidx.compose.foundation.pager.Pager (LazyLayoutPager.kt:102)");
                 }
-                if (!(i12 >= 0)) {
-                    InlineClassHelperKt.throwIllegalArgumentException("beyondViewportPageCount should be greater than or equal to 0, you selected " + i12);
+                if (!(i13 >= 0)) {
+                    InlineClassHelperKt.throwIllegalArgumentException("beyondViewportPageCount should be greater than or equal to 0, you selected " + i13);
                 }
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -720319826, "CC(remember):LazyLayoutPager.kt#9igjgp");
-                int i13 = i5 & 112;
-                boolean z3 = i13 == 32;
+                int i14 = i5 & 112;
+                boolean z3 = i14 == 32;
                 Object rememberedValue = startRestartGroup.rememberedValue();
-                if (z3 || rememberedValue == Composer.Companion.getEmpty()) {
-                    rememberedValue = new Function0() { // from class: androidx.compose.foundation.pager.LazyLayoutPagerKt$$ExternalSyntheticLambda0
-                        @Override // kotlin.jvm.functions.Function0
-                        public final Object invoke() {
-                            int pageCount;
-                            pageCount = PagerState.this.getPageCount();
-                            return Integer.valueOf(pageCount);
-                        }
-                    };
-                    startRestartGroup.updateRememberedValue(rememberedValue);
+                if (z3) {
+                    i11 = i13;
+                } else {
+                    i11 = i13;
                 }
-                Function0 function0 = (Function0) rememberedValue;
+                rememberedValue = new Function0() { // from class: androidx.compose.foundation.pager.LazyLayoutPagerKt$$ExternalSyntheticLambda0
+                    @Override // kotlin.jvm.functions.Function0
+                    public final Object invoke() {
+                        int pageCount;
+                        pageCount = PagerState.this.getPageCount();
+                        return Integer.valueOf(pageCount);
+                    }
+                };
+                startRestartGroup.updateRememberedValue(rememberedValue);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                int i14 = i5 >> 3;
-                int i15 = i14 & 14;
-                int i16 = i9 >> 15;
-                int i17 = i5;
-                int i18 = i12;
-                Function0<PagerLazyLayoutItemProvider> rememberPagerItemProviderLambda = rememberPagerItemProviderLambda(pagerState, function4, function1, function0, startRestartGroup, i15 | (i16 & 112) | (i9 & 896));
+                int i15 = i5 >> 3;
+                int i16 = i15 & 14;
+                int i17 = i9 >> 15;
+                int i18 = i5;
+                int i19 = i11;
+                Function0<PagerLazyLayoutItemProvider> rememberPagerItemProviderLambda = rememberPagerItemProviderLambda(pagerState, function4, function1, (Function0) rememberedValue, startRestartGroup, i16 | (i17 & 112) | (i9 & 896));
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)600@27430L68:Effects.kt#9igjgp");
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 683736516, "CC(remember):Effects.kt#9igjgp");
                 Object rememberedValue2 = startRestartGroup.rememberedValue();
@@ -225,7 +231,7 @@ public final class LazyLayoutPagerKt {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -720297158, "CC(remember):LazyLayoutPager.kt#9igjgp");
-                boolean z4 = i13 == 32;
+                boolean z4 = i14 == 32;
                 Object rememberedValue3 = startRestartGroup.rememberedValue();
                 if (z4 || rememberedValue3 == Composer.Companion.getEmpty()) {
                     rememberedValue3 = new Function0() { // from class: androidx.compose.foundation.pager.LazyLayoutPagerKt$$ExternalSyntheticLambda1
@@ -239,14 +245,15 @@ public final class LazyLayoutPagerKt {
                     startRestartGroup.updateRememberedValue(rememberedValue3);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                int i19 = i17 >> 9;
-                int i20 = i9 << 15;
-                LazyLayoutMeasurePolicy m1079rememberPagerMeasurePolicy8u0NR3k = PagerMeasurePolicyKt.m1079rememberPagerMeasurePolicy8u0NR3k(rememberPagerItemProviderLambda, pagerState, paddingValues, z, orientation, i18, m7555constructorimpl, pageSize, horizontal, vertical, snapPosition, coroutineScope, (Function0) rememberedValue3, startRestartGroup, (i17 & 65520) | (i19 & 458752) | (i19 & 3670016) | ((i9 << 21) & 29360128) | (i20 & 234881024) | (i20 & 1879048192), i16 & 14);
+                int i20 = i18 >> 9;
+                int i21 = (i18 & 65520) | (i20 & 458752) | (i20 & 3670016) | ((i9 << 21) & 29360128);
+                int i22 = i9 << 15;
+                LazyLayoutMeasurePolicy m1079rememberPagerMeasurePolicy8u0NR3k = PagerMeasurePolicyKt.m1079rememberPagerMeasurePolicy8u0NR3k(rememberPagerItemProviderLambda, pagerState, paddingValues, z, orientation, i19, m7555constructorimpl, pageSize, horizontal, vertical, snapPosition, coroutineScope, (Function0) rememberedValue3, startRestartGroup, i21 | (i22 & 234881024) | (i22 & 1879048192), i17 & 14);
                 pagerState2 = pagerState;
                 float f4 = m7555constructorimpl;
-                LazyLayoutSemanticState rememberPagerSemanticState = PagerSemanticsKt.rememberPagerSemanticState(pagerState2, orientation == Orientation.Vertical, startRestartGroup, i15);
+                LazyLayoutSemanticState rememberPagerSemanticState = PagerSemanticsKt.rememberPagerSemanticState(pagerState2, orientation == Orientation.Vertical, startRestartGroup, i16);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -720291719, "CC(remember):LazyLayoutPager.kt#9igjgp");
-                boolean z5 = (i13 == 32) | ((i17 & 458752) == 131072);
+                boolean z5 = (i14 == 32) | ((i18 & 458752) == 131072);
                 Object rememberedValue4 = startRestartGroup.rememberedValue();
                 if (z5 || rememberedValue4 == Composer.Companion.getEmpty()) {
                     rememberedValue4 = new PagerWrapperFlingBehavior(targetedFlingBehavior, pagerState2);
@@ -259,7 +266,7 @@ public final class LazyLayoutPagerKt {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 BringIntoViewSpec bringIntoViewSpec = (BringIntoViewSpec) consume;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -720285568, "CC(remember):LazyLayoutPager.kt#9igjgp");
-                boolean changed = (i13 == 32) | startRestartGroup.changed(bringIntoViewSpec);
+                boolean changed = (i14 == 32) | startRestartGroup.changed(bringIntoViewSpec);
                 Object rememberedValue5 = startRestartGroup.rememberedValue();
                 if (changed || rememberedValue5 == Composer.Companion.getEmpty()) {
                     rememberedValue5 = new PagerBringIntoViewSpec(pagerState2, bringIntoViewSpec);
@@ -270,21 +277,22 @@ public final class LazyLayoutPagerKt {
                 if (z2) {
                     startRestartGroup.startReplaceGroup(-853822717);
                     ComposerKt.sourceInformation(startRestartGroup, "147@6714L167");
-                    companion = LazyLayoutBeyondBoundsModifierLocalKt.lazyLayoutBeyondBoundsModifier(Modifier.Companion, PagerBeyondBoundsModifierKt.rememberPagerBeyondBoundsState(pagerState2, i18, startRestartGroup, ((i17 >> 21) & 112) | i15), pagerState2.getBeyondBoundsInfo$foundation(), z, orientation);
+                    companion = LazyLayoutBeyondBoundsModifierLocalKt.lazyLayoutBeyondBoundsModifier(Modifier.Companion, PagerBeyondBoundsModifierKt.rememberPagerBeyondBoundsState(pagerState2, i19, startRestartGroup, ((i18 >> 21) & 112) | i16), pagerState2.getBeyondBoundsInfo$foundation(), z, orientation);
                     startRestartGroup.endReplaceGroup();
                 } else {
                     startRestartGroup.startReplaceGroup(-853392933);
                     startRestartGroup.endReplaceGroup();
                     companion = Modifier.Companion;
                 }
+                Modifier lazyLayoutSemantics = LazyLayoutSemanticsKt.lazyLayoutSemantics(modifier.then(pagerState2.getRemeasurementModifier$foundation()).then(pagerState2.getAwaitLayoutModifier$foundation()), rememberPagerItemProviderLambda, rememberPagerSemanticState, orientation, z2, z, startRestartGroup, ((i18 << 6) & 458752) | (i15 & 7168) | ((i18 >> 6) & 57344));
                 nestedScrollConnection2 = nestedScrollConnection;
-                LazyLayoutKt.LazyLayout(rememberPagerItemProviderLambda, NestedScrollModifierKt.nestedScroll$default(dragDirectionDetector(ScrollableAreaKt.scrollableArea(PagerKt.pagerSemantics(LazyLayoutSemanticsKt.lazyLayoutSemantics(modifier.then(pagerState2.getRemeasurementModifier$foundation()).then(pagerState2.getAwaitLayoutModifier$foundation()), rememberPagerItemProviderLambda, rememberPagerSemanticState, orientation, z2, z, startRestartGroup, ((i17 << 6) & 458752) | (i14 & 7168) | ((i17 >> 6) & 57344)), pagerState2, orientation == Orientation.Vertical, coroutineScope, z2).then(companion), pagerState2, orientation, overscrollEffect, z2, z, pagerWrapperFlingBehavior, pagerState2.getInternalInteractionSource$foundation(), pagerBringIntoViewSpec), pagerState2), nestedScrollConnection2, null, 2, null), pagerState2.getPrefetchState$foundation(), m1079rememberPagerMeasurePolicy8u0NR3k, startRestartGroup, 0, 0);
+                LazyLayoutKt.LazyLayout(rememberPagerItemProviderLambda, NestedScrollModifierKt.nestedScroll$default(dragDirectionDetector(ScrollableAreaKt.scrollableArea(PagerKt.pagerSemantics(lazyLayoutSemantics, pagerState2, orientation == Orientation.Vertical, coroutineScope, z2).then(companion), pagerState2, orientation, overscrollEffect, z2, z, pagerWrapperFlingBehavior, pagerState2.getInternalInteractionSource$foundation(), pagerBringIntoViewSpec), pagerState2), nestedScrollConnection2, null, 2, null), pagerState2.getPrefetchState$foundation(), m1079rememberPagerMeasurePolicy8u0NR3k, startRestartGroup, 0, 0);
                 composer2 = startRestartGroup;
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 f3 = f4;
-                i10 = i18;
+                i10 = i19;
             }
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup == null) {

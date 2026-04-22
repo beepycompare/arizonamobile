@@ -707,9 +707,9 @@ public final class SieveCache<K, V> {
                             jArr3[i18] = (jArr3[i18] & (-4294967296L)) | findFirstAvailableSlot;
                             jArr3[i8] = (jArr3[i8] & 4294967295L) | (-4294967296L);
                         } else {
-                            jArr3[i8] = (Integer.MAX_VALUE << 32) | findFirstAvailableSlot;
+                            jArr3[i8] = 9223372032559808512L | findFirstAvailableSlot;
                         }
-                        jArr3[findFirstAvailableSlot] = (i8 << 32) | Integer.MAX_VALUE;
+                        jArr3[findFirstAvailableSlot] = (i8 << 32) | SieveCacheKt.NodeLinkMask;
                     } else {
                         i2 = i3;
                         objArr = objArr2;
@@ -893,63 +893,50 @@ public final class SieveCache<K, V> {
 
     /* JADX WARN: Multi-variable type inference failed */
     public boolean equals(Object obj) {
-        boolean z;
-        boolean z2;
-        boolean z3 = true;
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof SieveCache)) {
-            return false;
-        }
-        SieveCache sieveCache = (SieveCache) obj;
-        if (sieveCache.getSize() != getSize() || sieveCache._count != this._count) {
-            return false;
-        }
-        Object[] objArr = this.keys;
-        Object[] objArr2 = this.values;
-        long[] jArr = this.metadata;
-        int length = jArr.length - 2;
-        if (length < 0) {
-            return true;
-        }
-        int i = 0;
-        while (true) {
-            long j = jArr[i];
-            if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                int i2 = 8 - ((~(i - length)) >>> 31);
-                int i3 = 0;
-                while (i3 < i2) {
-                    if ((255 & j) < 128) {
-                        int i4 = (i << 3) + i3;
-                        Object obj2 = objArr[i4];
-                        z2 = z3;
-                        Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type K of androidx.collection.SieveCache");
-                        Object obj3 = objArr2[i4];
-                        Intrinsics.checkNotNull(obj3, "null cannot be cast to non-null type V of androidx.collection.SieveCache");
-                        if (!Intrinsics.areEqual(obj3, sieveCache.get(obj2))) {
-                            return false;
+        if (obj instanceof SieveCache) {
+            SieveCache sieveCache = (SieveCache) obj;
+            if (sieveCache.getSize() == getSize() && sieveCache._count == this._count) {
+                Object[] objArr = this.keys;
+                Object[] objArr2 = this.values;
+                long[] jArr = this.metadata;
+                int length = jArr.length - 2;
+                if (length >= 0) {
+                    int i = 0;
+                    while (true) {
+                        long j = jArr[i];
+                        if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                            int i2 = 8 - ((~(i - length)) >>> 31);
+                            for (int i3 = 0; i3 < i2; i3++) {
+                                if ((255 & j) < 128) {
+                                    int i4 = (i << 3) + i3;
+                                    Object obj2 = objArr[i4];
+                                    Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type K of androidx.collection.SieveCache");
+                                    Object obj3 = objArr2[i4];
+                                    Intrinsics.checkNotNull(obj3, "null cannot be cast to non-null type V of androidx.collection.SieveCache");
+                                    if (!Intrinsics.areEqual(obj3, sieveCache.get(obj2))) {
+                                        return false;
+                                    }
+                                }
+                                j >>= 8;
+                            }
+                            if (i2 != 8) {
+                                break;
+                            }
                         }
-                    } else {
-                        z2 = z3;
+                        if (i == length) {
+                            break;
+                        }
+                        i++;
                     }
-                    j >>= 8;
-                    i3++;
-                    z3 = z2;
                 }
-                z = z3;
-                if (i2 != 8) {
-                    return z;
-                }
-            } else {
-                z = z3;
+                return true;
             }
-            if (i == length) {
-                return z;
-            }
-            i++;
-            z3 = z;
+            return false;
         }
+        return false;
     }
 
     public String toString() {

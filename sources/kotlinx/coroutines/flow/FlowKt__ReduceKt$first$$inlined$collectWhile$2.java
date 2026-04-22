@@ -47,8 +47,8 @@ public final class FlowKt__ReduceKt$first$$inlined$collectWhile$2<T> implements 
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0058  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -57,7 +57,6 @@ public final class FlowKt__ReduceKt$first$$inlined$collectWhile$2<T> implements 
         AnonymousClass1 anonymousClass1;
         Object obj;
         int i;
-        FlowKt__ReduceKt$first$$inlined$collectWhile$2<T> flowKt__ReduceKt$first$$inlined$collectWhile$2;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
             if ((anonymousClass1.label & Integer.MIN_VALUE) != 0) {
@@ -75,19 +74,18 @@ public final class FlowKt__ReduceKt$first$$inlined$collectWhile$2<T> implements 
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    flowKt__ReduceKt$first$$inlined$collectWhile$2 = this;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     t = (T) anonymousClass1.L$1;
-                    flowKt__ReduceKt$first$$inlined$collectWhile$2 = (FlowKt__ReduceKt$first$$inlined$collectWhile$2) anonymousClass1.L$0;
+                    this = (FlowKt__ReduceKt$first$$inlined$collectWhile$2) anonymousClass1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 if (((Boolean) obj).booleanValue()) {
                     return Unit.INSTANCE;
                 }
-                flowKt__ReduceKt$first$$inlined$collectWhile$2.$result$inlined.element = t;
-                throw new AbortFlowException(flowKt__ReduceKt$first$$inlined$collectWhile$2);
+                this.$result$inlined.element = t;
+                throw new AbortFlowException(this);
             }
         }
         anonymousClass1 = new AnonymousClass1(continuation);

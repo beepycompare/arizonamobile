@@ -122,7 +122,8 @@ public final class PublishProcessor<T> extends FlowableProcessor<T> {
             return;
         }
         this.error = th;
-        for (PublishSubscription<T> publishSubscription : this.subscribers.getAndSet(publishSubscriptionArr2)) {
+        PublishSubscription<T>[] andSet = this.subscribers.getAndSet(publishSubscriptionArr2);
+        for (PublishSubscription<T> publishSubscription : andSet) {
             publishSubscription.onError(th);
         }
     }
@@ -134,7 +135,8 @@ public final class PublishProcessor<T> extends FlowableProcessor<T> {
         if (publishSubscriptionArr == publishSubscriptionArr2) {
             return;
         }
-        for (PublishSubscription<T> publishSubscription : this.subscribers.getAndSet(publishSubscriptionArr2)) {
+        PublishSubscription<T>[] andSet = this.subscribers.getAndSet(publishSubscriptionArr2);
+        for (PublishSubscription<T> publishSubscription : andSet) {
             publishSubscription.onComplete();
         }
     }

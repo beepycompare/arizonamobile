@@ -5,6 +5,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
@@ -57,9 +58,8 @@ public final class CircleProgressbarListAdapter extends ListAdapter<CircleProgre
         this.activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int i2 = displayMetrics.widthPixels;
         int i3 = displayMetrics.heightPixels;
-        double d = 100;
-        binding.carsCircleItem.getLayoutParams().width = (int) ((i2 * 9.11d) / d);
-        binding.carsCircleItem.getLayoutParams().height = (int) ((i3 * 12.87d) / d);
+        binding.carsCircleItem.getLayoutParams().width = (int) ((i2 * 9.11d) / 100.0d);
+        binding.carsCircleItem.getLayoutParams().height = (int) ((i3 * 12.87d) / 100.0d);
         CircleProgressBarInfo item = getItem(i);
         String icon = item.getIcon();
         switch (icon.hashCode()) {
@@ -91,7 +91,10 @@ public final class CircleProgressbarListAdapter extends ListAdapter<CircleProgre
         binding.progress.setMax(item.getMaxValue());
         binding.progress.setProgress(item.getValue());
         binding.paramName.setText(item.getTitle());
-        binding.paramValue.setText(item.getValue() + " / " + item.getMaxValue() + " " + item.getPostfix());
+        TextView textView = binding.paramValue;
+        int value = item.getValue();
+        int maxValue = item.getMaxValue();
+        textView.setText(value + " / " + maxValue + " " + item.getPostfix());
     }
 
     /* compiled from: CircleProgressbarListAdapter.kt */

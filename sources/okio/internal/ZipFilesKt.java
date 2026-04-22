@@ -1,6 +1,6 @@
 package okio.internal;
 
-import android.support.v4.media.session.PlaybackStateCompat;
+import androidx.media3.exoplayer.Renderer;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -63,7 +63,18 @@ public final class ZipFilesKt {
         return openZip(path, fileSystem, function1);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:202:0x0120 A[Catch: all -> 0x01df, TryCatch #13 {all -> 0x01df, blocks: (B:142:0x001d, B:144:0x002e, B:145:0x0036, B:149:0x0054, B:151:0x005f, B:202:0x0120, B:203:0x0123, B:204:0x0124, B:231:0x0199, B:235:0x01ac, B:236:0x01ad, B:239:0x01bb, B:240:0x01c2, B:244:0x01c8, B:245:0x01de, B:146:0x003e, B:148:0x0047, B:205:0x013b, B:208:0x0148, B:210:0x0158, B:212:0x0164, B:213:0x016a, B:214:0x016f, B:215:0x0176, B:216:0x0177, B:196:0x0111), top: B:271:0x001d }] */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0123 A[Catch: all -> 0x01df, TryCatch #13 {all -> 0x01df, blocks: (B:142:0x001d, B:144:0x002e, B:145:0x0036, B:149:0x0054, B:151:0x005f, B:202:0x0120, B:203:0x0123, B:204:0x0124, B:231:0x0199, B:235:0x01ac, B:236:0x01ad, B:239:0x01bb, B:240:0x01c2, B:244:0x01c8, B:245:0x01de, B:146:0x003e, B:148:0x0047, B:205:0x013b, B:208:0x0148, B:210:0x0158, B:212:0x0164, B:213:0x016a, B:214:0x016f, B:215:0x0176, B:216:0x0177, B:196:0x0111), top: B:271:0x001d }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public static final ZipFileSystem openZip(Path zipPath, FileSystem fileSystem, Function1<? super ZipEntry, Boolean> predicate) throws IOException {
+        EocdRecord eocdRecord;
+        Unit unit;
+        Throwable th;
+        Throwable th2;
+        Unit unit2;
+        BufferedSource bufferedSource;
         int readIntLe;
         Intrinsics.checkNotNullParameter(zipPath, "zipPath");
         Intrinsics.checkNotNullParameter(fileSystem, "fileSystem");
@@ -71,70 +82,105 @@ public final class ZipFilesKt {
         FileHandle openReadOnly = fileSystem.openReadOnly(zipPath);
         try {
             FileHandle fileHandle = openReadOnly;
-            long size = fileHandle.size() - 22;
-            long j = 0;
-            if (size < 0) {
+            long size = fileHandle.size();
+            long j = size - 22;
+            long j2 = 0;
+            if (j < 0) {
                 throw new IOException("not a zip: size=" + fileHandle.size());
             }
-            long max = Math.max(size - PlaybackStateCompat.ACTION_PREPARE_FROM_SEARCH, 0L);
+            long max = Math.max(size - 65558, 0L);
             while (true) {
-                BufferedSource buffer = Okio.buffer(fileHandle.source(size));
+                BufferedSource buffer = Okio.buffer(fileHandle.source(j));
                 if (buffer.readIntLe() == END_OF_CENTRAL_DIRECTORY_SIGNATURE) {
                     EocdRecord readEocdRecord = readEocdRecord(buffer);
                     String readUtf8 = buffer.readUtf8(readEocdRecord.getCommentByteCount());
                     buffer.close();
-                    long j2 = size - 20;
-                    Throwable th = null;
-                    if (j2 > j) {
-                        BufferedSource buffer2 = Okio.buffer(fileHandle.source(j2));
-                        BufferedSource bufferedSource = buffer2;
-                        if (bufferedSource.readIntLe() == ZIP64_LOCATOR_SIGNATURE) {
-                            int readIntLe2 = bufferedSource.readIntLe();
-                            long readLongLe = bufferedSource.readLongLe();
-                            if (bufferedSource.readIntLe() != 1 || readIntLe2 != 0) {
-                                throw new IOException("unsupported zip: spanned");
-                            }
-                            BufferedSource buffer3 = Okio.buffer(fileHandle.source(readLongLe));
-                            BufferedSource bufferedSource2 = buffer3;
-                            if (bufferedSource2.readIntLe() != ZIP64_EOCD_RECORD_SIGNATURE) {
-                                throw new IOException("bad zip: expected " + getHex(ZIP64_EOCD_RECORD_SIGNATURE) + " but was " + getHex(readIntLe));
-                            }
-                            readEocdRecord = readZip64EocdRecord(bufferedSource2, readEocdRecord);
-                            Unit unit = Unit.INSTANCE;
-                            if (buffer3 != null) {
+                    long j3 = j - 20;
+                    Throwable th3 = null;
+                    if (j3 > j2) {
+                        BufferedSource buffer2 = Okio.buffer(fileHandle.source(j3));
+                        try {
+                            BufferedSource bufferedSource2 = buffer2;
+                            if (bufferedSource2.readIntLe() == ZIP64_LOCATOR_SIGNATURE) {
+                                int readIntLe2 = bufferedSource2.readIntLe();
+                                long readLongLe = bufferedSource2.readLongLe();
+                                if (bufferedSource2.readIntLe() != 1 || readIntLe2 != 0) {
+                                    throw new IOException("unsupported zip: spanned");
+                                }
+                                BufferedSource buffer3 = Okio.buffer(fileHandle.source(readLongLe));
                                 try {
-                                    buffer3.close();
-                                    Unit unit2 = Unit.INSTANCE;
-                                } catch (Throwable th2) {
-                                    th = th2;
+                                    bufferedSource = buffer3;
+                                } catch (Throwable th4) {
+                                    eocdRecord = readEocdRecord;
+                                    if (buffer3 != null) {
+                                        try {
+                                            buffer3.close();
+                                            Unit unit3 = Unit.INSTANCE;
+                                        } catch (Throwable th5) {
+                                            try {
+                                                ExceptionsKt.addSuppressed(th4, th5);
+                                            } catch (Throwable th6) {
+                                                th = th6;
+                                                Throwable th7 = th;
+                                                if (buffer2 != null) {
+                                                    buffer2.close();
+                                                    Unit unit4 = Unit.INSTANCE;
+                                                }
+                                                th = th7;
+                                                readEocdRecord = eocdRecord;
+                                                unit = null;
+                                                if (th == null) {
+                                                }
+                                            }
+                                        }
+                                    }
+                                    th2 = th4;
+                                    readEocdRecord = eocdRecord;
+                                    unit2 = null;
+                                }
+                                if (bufferedSource.readIntLe() != ZIP64_EOCD_RECORD_SIGNATURE) {
+                                    throw new IOException("bad zip: expected " + getHex(ZIP64_EOCD_RECORD_SIGNATURE) + " but was " + getHex(readIntLe));
+                                }
+                                readEocdRecord = readZip64EocdRecord(bufferedSource, readEocdRecord);
+                                unit2 = Unit.INSTANCE;
+                                if (buffer3 != null) {
+                                    try {
+                                        buffer3.close();
+                                        Unit unit5 = Unit.INSTANCE;
+                                    } catch (Throwable th8) {
+                                        th2 = th8;
+                                    }
+                                }
+                                th2 = null;
+                                if (th2 != null) {
+                                    throw th2;
+                                }
+                                Unit unit6 = unit2;
+                            }
+                            unit = Unit.INSTANCE;
+                            if (buffer2 != null) {
+                                try {
+                                    buffer2.close();
+                                    Unit unit7 = Unit.INSTANCE;
+                                } catch (Throwable th9) {
+                                    th = th9;
                                 }
                             }
                             th = null;
-                            if (th != null) {
-                                throw th;
-                            }
-                            Unit unit3 = unit;
+                        } catch (Throwable th10) {
+                            th = th10;
+                            eocdRecord = readEocdRecord;
                         }
-                        Unit unit4 = Unit.INSTANCE;
-                        if (buffer2 != null) {
-                            try {
-                                buffer2.close();
-                                Unit unit5 = Unit.INSTANCE;
-                            } catch (Throwable th3) {
-                                th = th3;
-                            }
-                        }
-                        th = null;
-                        if (th != null) {
+                        if (th == null) {
                             throw th;
                         }
-                        Unit unit6 = unit4;
+                        Unit unit8 = unit;
                     }
                     ArrayList arrayList = new ArrayList();
                     BufferedSource buffer4 = Okio.buffer(fileHandle.source(readEocdRecord.getCentralDirectoryOffset()));
                     BufferedSource bufferedSource3 = buffer4;
                     long entryCount = readEocdRecord.getEntryCount();
-                    for (long j3 = 0; j3 < entryCount; j3++) {
+                    for (long j4 = 0; j4 < entryCount; j4++) {
                         ZipEntry readCentralDirectoryZipEntry = readCentralDirectoryZipEntry(bufferedSource3);
                         if (readCentralDirectoryZipEntry.getOffset() >= readEocdRecord.getCentralDirectoryOffset()) {
                             throw new IOException("bad zip: local file header offset >= central directory offset");
@@ -143,47 +189,47 @@ public final class ZipFilesKt {
                             arrayList.add(readCentralDirectoryZipEntry);
                         }
                     }
-                    Unit unit7 = Unit.INSTANCE;
+                    Unit unit9 = Unit.INSTANCE;
                     if (buffer4 != null) {
                         try {
                             buffer4.close();
-                            Unit unit8 = Unit.INSTANCE;
-                        } catch (Throwable th4) {
-                            th = th4;
+                            Unit unit10 = Unit.INSTANCE;
+                        } catch (Throwable th11) {
+                            th3 = th11;
                         }
                     }
-                    Throwable th5 = th;
-                    if (th5 != null) {
-                        throw th5;
+                    Throwable th12 = th3;
+                    if (th12 != null) {
+                        throw th12;
                     }
-                    Unit unit9 = unit7;
+                    Unit unit11 = unit9;
                     ZipFileSystem zipFileSystem = new ZipFileSystem(zipPath, fileSystem, buildIndex(arrayList), readUtf8);
                     if (openReadOnly != null) {
                         try {
                             openReadOnly.close();
-                            Unit unit10 = Unit.INSTANCE;
+                            Unit unit12 = Unit.INSTANCE;
                         } catch (Throwable unused) {
                         }
                     }
                     return zipFileSystem;
                 }
                 buffer.close();
-                size--;
-                if (size < max) {
+                j--;
+                if (j < max) {
                     throw new IOException("not a zip: end of central directory signature not found");
                 }
-                j = 0;
+                j2 = 0;
             }
-        } catch (Throwable th6) {
+        } catch (Throwable th13) {
             if (openReadOnly != null) {
                 try {
                     openReadOnly.close();
-                    Unit unit11 = Unit.INSTANCE;
-                } catch (Throwable th7) {
-                    ExceptionsKt.addSuppressed(th6, th7);
+                    Unit unit13 = Unit.INSTANCE;
+                } catch (Throwable th14) {
+                    ExceptionsKt.addSuppressed(th13, th14);
                 }
             }
-            throw th6;
+            throw th13;
         }
     }
 
@@ -246,7 +292,7 @@ public final class ZipFilesKt {
         if (StringsKt.contains$default((CharSequence) readUtf8, (char) 0, false, 2, (Object) null)) {
             throw new IOException("bad zip: filename contains 0x00");
         }
-        long j = longRef2.element == MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE ? 8 : 0L;
+        long j = longRef2.element == MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE ? 8L : 0L;
         long j2 = longRef.element == MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE ? j + 8 : j;
         if (longRef3.element == MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE) {
             j2 += 8;
@@ -446,7 +492,7 @@ public final class ZipFilesKt {
     }
 
     public static final long filetimeToEpochMillis(long j) {
-        return (j / 10000) - 11644473600000L;
+        return (j / Renderer.DEFAULT_DURATION_TO_PROGRESS_US) - 11644473600000L;
     }
 
     public static final Long dosDateTimeToEpochMillis(int i, int i2) {

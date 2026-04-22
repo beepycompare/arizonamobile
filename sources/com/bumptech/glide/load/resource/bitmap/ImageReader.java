@@ -115,19 +115,19 @@ public interface ImageReader {
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public ImageHeaderParser.ImageType getImageType() throws IOException {
-            RecyclableBufferedInputStream recyclableBufferedInputStream;
-            Throwable th;
+            RecyclableBufferedInputStream recyclableBufferedInputStream = null;
             try {
-                recyclableBufferedInputStream = new RecyclableBufferedInputStream(new FileInputStream(this.file), this.byteArrayPool);
+                RecyclableBufferedInputStream recyclableBufferedInputStream2 = new RecyclableBufferedInputStream(new FileInputStream(this.file), this.byteArrayPool);
                 try {
-                    ImageHeaderParser.ImageType type = ImageHeaderParserUtils.getType(this.parsers, recyclableBufferedInputStream, this.byteArrayPool);
+                    ImageHeaderParser.ImageType type = ImageHeaderParserUtils.getType(this.parsers, recyclableBufferedInputStream2, this.byteArrayPool);
                     try {
-                        recyclableBufferedInputStream.close();
+                        recyclableBufferedInputStream2.close();
                     } catch (IOException unused) {
                     }
                     return type;
-                } catch (Throwable th2) {
-                    th = th2;
+                } catch (Throwable th) {
+                    th = th;
+                    recyclableBufferedInputStream = recyclableBufferedInputStream2;
                     if (recyclableBufferedInputStream != null) {
                         try {
                             recyclableBufferedInputStream.close();
@@ -136,27 +136,26 @@ public interface ImageReader {
                     }
                     throw th;
                 }
-            } catch (Throwable th3) {
-                recyclableBufferedInputStream = null;
-                th = th3;
+            } catch (Throwable th2) {
+                th = th2;
             }
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public int getImageOrientation() throws IOException {
-            RecyclableBufferedInputStream recyclableBufferedInputStream;
-            Throwable th;
+            RecyclableBufferedInputStream recyclableBufferedInputStream = null;
             try {
-                recyclableBufferedInputStream = new RecyclableBufferedInputStream(new FileInputStream(this.file), this.byteArrayPool);
+                RecyclableBufferedInputStream recyclableBufferedInputStream2 = new RecyclableBufferedInputStream(new FileInputStream(this.file), this.byteArrayPool);
                 try {
-                    int orientation = ImageHeaderParserUtils.getOrientation(this.parsers, recyclableBufferedInputStream, this.byteArrayPool);
+                    int orientation = ImageHeaderParserUtils.getOrientation(this.parsers, recyclableBufferedInputStream2, this.byteArrayPool);
                     try {
-                        recyclableBufferedInputStream.close();
+                        recyclableBufferedInputStream2.close();
                     } catch (IOException unused) {
                     }
                     return orientation;
-                } catch (Throwable th2) {
-                    th = th2;
+                } catch (Throwable th) {
+                    th = th;
+                    recyclableBufferedInputStream = recyclableBufferedInputStream2;
                     if (recyclableBufferedInputStream != null) {
                         try {
                             recyclableBufferedInputStream.close();
@@ -165,27 +164,26 @@ public interface ImageReader {
                     }
                     throw th;
                 }
-            } catch (Throwable th3) {
-                recyclableBufferedInputStream = null;
-                th = th3;
+            } catch (Throwable th2) {
+                th = th2;
             }
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public boolean hasJpegMpf() throws IOException {
-            FileInputStream fileInputStream;
-            Throwable th;
+            FileInputStream fileInputStream = null;
             try {
-                fileInputStream = new FileInputStream(this.file);
+                FileInputStream fileInputStream2 = new FileInputStream(this.file);
                 try {
-                    boolean hasJpegMpf = ImageHeaderParserUtils.hasJpegMpf(this.parsers, fileInputStream, this.byteArrayPool);
+                    boolean hasJpegMpf = ImageHeaderParserUtils.hasJpegMpf(this.parsers, fileInputStream2, this.byteArrayPool);
                     try {
-                        fileInputStream.close();
+                        fileInputStream2.close();
                     } catch (IOException unused) {
                     }
                     return hasJpegMpf;
-                } catch (Throwable th2) {
-                    th = th2;
+                } catch (Throwable th) {
+                    th = th;
+                    fileInputStream = fileInputStream2;
                     if (fileInputStream != null) {
                         try {
                             fileInputStream.close();
@@ -194,9 +192,8 @@ public interface ImageReader {
                     }
                     throw th;
                 }
-            } catch (Throwable th3) {
-                fileInputStream = null;
-                th = th3;
+            } catch (Throwable th2) {
+                th = th2;
             }
         }
     }

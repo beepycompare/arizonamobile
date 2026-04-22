@@ -243,7 +243,7 @@ public final class LazyGridDslKt {
                                 } else {
                                     lazyGridState3 = obj2;
                                 }
-                                PaddingValues m811PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj3;
+                                PaddingValues m811PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj3;
                                 if (i6 != 0) {
                                     z3 = false;
                                 }
@@ -591,7 +591,7 @@ public final class LazyGridDslKt {
                                         lazyGridState2 = LazyGridStateKt.rememberLazyGridState(0, 0, startRestartGroup, 0, 3);
                                         i3 &= -897;
                                     }
-                                    PaddingValues m811PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj;
+                                    PaddingValues m811PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj;
                                     if (i5 != 0) {
                                         z3 = false;
                                     }
@@ -951,7 +951,7 @@ public final class LazyGridDslKt {
                                 } else {
                                     lazyGridState3 = obj2;
                                 }
-                                PaddingValues m811PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj3;
+                                PaddingValues m811PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj3;
                                 if (i6 != 0) {
                                     z3 = false;
                                 }
@@ -1300,7 +1300,7 @@ public final class LazyGridDslKt {
                                         lazyGridState2 = LazyGridStateKt.rememberLazyGridState(0, 0, startRestartGroup, 0, 3);
                                         i3 &= -897;
                                     }
-                                    PaddingValues m811PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj;
+                                    PaddingValues m811PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj;
                                     if (i5 != 0) {
                                         z3 = false;
                                     }

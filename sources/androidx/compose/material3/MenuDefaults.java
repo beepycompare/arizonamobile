@@ -19,7 +19,7 @@ public final class MenuDefaults {
     public static final MenuDefaults INSTANCE = new MenuDefaults();
     private static final float TonalElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
     private static final float ShadowElevation = MenuTokens.INSTANCE.m3532getContainerElevationD9Ej5fM();
-    private static final PaddingValues DropdownMenuItemContentPadding = PaddingKt.m812PaddingValuesYgX7TsA(MenuKt.access$getDropdownMenuItemHorizontalPadding$p(), Dp.m7555constructorimpl(0));
+    private static final PaddingValues DropdownMenuItemContentPadding = PaddingKt.m812PaddingValuesYgX7TsA(MenuKt.access$getDropdownMenuItemHorizontalPadding$p(), Dp.m7555constructorimpl(0.0f));
 
     private MenuDefaults() {
     }
@@ -75,6 +75,7 @@ public final class MenuDefaults {
 
     /* renamed from: itemColors-5tl4gsc  reason: not valid java name */
     public final MenuItemColors m2236itemColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
+        long j7;
         ComposerKt.sourceInformationMarkerStart(composer, -1278543580, "C(itemColors)N(textColor:c#ui.graphics.Color,leadingIconColor:c#ui.graphics.Color,trailingIconColor:c#ui.graphics.Color,disabledTextColor:c#ui.graphics.Color,disabledLeadingIconColor:c#ui.graphics.Color,disabledTrailingIconColor:c#ui.graphics.Color)224@10924L11:Menu.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
@@ -83,9 +84,12 @@ public final class MenuDefaults {
         long m4808getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
         long m4808getUnspecified0d7_KjU6 = (i2 & 32) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j6;
         if (ComposerKt.isTraceInProgress()) {
+            j7 = m4808getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(-1278543580, i, -1, "androidx.compose.material3.MenuDefaults.itemColors (Menu.kt:224)");
+        } else {
+            j7 = m4808getUnspecified0d7_KjU;
         }
-        MenuItemColors m2238copytNS2XkQ = getDefaultMenuItemColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2238copytNS2XkQ(m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m4808getUnspecified0d7_KjU6);
+        MenuItemColors m2238copytNS2XkQ = getDefaultMenuItemColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2238copytNS2XkQ(j7, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m4808getUnspecified0d7_KjU6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

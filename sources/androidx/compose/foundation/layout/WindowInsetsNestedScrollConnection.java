@@ -79,18 +79,19 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Object getAnimationController(Continuation<? super WindowInsetsAnimationController> continuation) {
-        Object obj = this.animationController;
-        if (obj == null) {
+        WindowInsetsAnimationController windowInsetsAnimationController = this.animationController;
+        if (windowInsetsAnimationController == null) {
             CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(continuation), 1);
             cancellableContinuationImpl.initCancellability();
             this.continuation = cancellableContinuationImpl;
             requestAnimationController();
-            obj = cancellableContinuationImpl.getResult();
-            if (obj == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
+            Object result = cancellableContinuationImpl.getResult();
+            if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
                 DebugProbesKt.probeCoroutineSuspended(continuation);
             }
+            return result;
         }
-        return obj;
+        return windowInsetsAnimationController;
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection

@@ -2906,10 +2906,10 @@ public final class CoreTextFieldKt {
                                             kotlin.ResultKt.throwOnFailure(r10)
                                             goto L34
                                         Lf:
-                                            java.lang.IllegalStateException r10 = new java.lang.IllegalStateException
-                                            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
-                                            r10.<init>(r0)
-                                            throw r10
+                                            java.lang.IllegalStateException r9 = new java.lang.IllegalStateException
+                                            java.lang.String r10 = "call to 'resume' before 'invoke' with coroutine"
+                                            r9.<init>(r10)
+                                            throw r9
                                         L17:
                                             kotlin.ResultKt.throwOnFailure(r10)
                                             androidx.compose.ui.input.pointer.PointerInputScope r1 = r9.$this_pointerInput
@@ -2924,12 +2924,12 @@ public final class CoreTextFieldKt {
                                             r4 = 0
                                             r7 = 7
                                             r8 = 0
-                                            java.lang.Object r10 = androidx.compose.foundation.gestures.TapGestureDetectorKt.detectTapGestures$default(r1, r2, r3, r4, r5, r6, r7, r8)
-                                            if (r10 != r0) goto L34
+                                            java.lang.Object r9 = androidx.compose.foundation.gestures.TapGestureDetectorKt.detectTapGestures$default(r1, r2, r3, r4, r5, r6, r7, r8)
+                                            if (r9 != r0) goto L34
                                             return r0
                                         L34:
-                                            kotlin.Unit r10 = kotlin.Unit.INSTANCE
-                                            return r10
+                                            kotlin.Unit r9 = kotlin.Unit.INSTANCE
+                                            return r9
                                         */
                                         throw new UnsupportedOperationException("Method not decompiled: androidx.compose.foundation.text.CoreTextFieldKt$TextFieldCursorHandle$2$1.AnonymousClass1.AnonymousClass2.invokeSuspend(java.lang.Object):java.lang.Object");
                                     }

@@ -55,7 +55,7 @@ public final class BalloonIndicatorType extends IndicatorType {
     }
 
     public /* synthetic */ BalloonIndicatorType(DotGraphic dotGraphic, float f, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? new DotGraphic(Dp.m7555constructorimpl(12), 0L, null, null, 0L, 30, null) : dotGraphic, (i & 2) != 0 ? 1.5f : f);
+        this((i & 1) != 0 ? new DotGraphic(Dp.m7555constructorimpl(12.0f), 0L, null, null, 0L, 30, null) : dotGraphic, (i & 2) != 0 ? 1.5f : f);
     }
 
     public BalloonIndicatorType(DotGraphic dotsGraphic, float f) {

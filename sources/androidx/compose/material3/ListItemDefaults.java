@@ -76,6 +76,7 @@ public final class ListItemDefaults {
 
     /* renamed from: colors-J08w3-E  reason: not valid java name */
     public final ListItemColors m2210colorsJ08w3E(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, Composer composer, int i, int i2) {
+        long j10;
         ComposerKt.sourceInformationMarkerStart(composer, -352515689, "C(colors)N(containerColor:c#ui.graphics.Color,headlineColor:c#ui.graphics.Color,leadingIconColor:c#ui.graphics.Color,overlineColor:c#ui.graphics.Color,supportingColor:c#ui.graphics.Color,trailingIconColor:c#ui.graphics.Color,disabledHeadlineColor:c#ui.graphics.Color,disabledLeadingIconColor:c#ui.graphics.Color,disabledTrailingIconColor:c#ui.graphics.Color)576@23403L11:ListItem.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
@@ -87,9 +88,12 @@ public final class ListItemDefaults {
         long m4808getUnspecified0d7_KjU8 = (i2 & 128) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j8;
         long m4808getUnspecified0d7_KjU9 = (i2 & 256) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j9;
         if (ComposerKt.isTraceInProgress()) {
+            j10 = m4808getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(-352515689, i, -1, "androidx.compose.material3.ListItemDefaults.colors (ListItem.kt:576)");
+        } else {
+            j10 = m4808getUnspecified0d7_KjU;
         }
-        ListItemColors m2195copy5r9EGqc = getDefaultListItemColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2195copy5r9EGqc(m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m4808getUnspecified0d7_KjU6, m4808getUnspecified0d7_KjU7, m4808getUnspecified0d7_KjU8, m4808getUnspecified0d7_KjU9);
+        ListItemColors m2195copy5r9EGqc = getDefaultListItemColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2195copy5r9EGqc(j10, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m4808getUnspecified0d7_KjU6, m4808getUnspecified0d7_KjU7, m4808getUnspecified0d7_KjU8, m4808getUnspecified0d7_KjU9);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

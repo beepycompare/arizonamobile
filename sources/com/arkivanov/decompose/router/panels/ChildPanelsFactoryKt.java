@@ -65,8 +65,8 @@ public final class ChildPanelsFactoryKt {
         return childPanels(ctx, source, pair != null ? new Triple(pair.getFirst(), pair.getSecond(), BuiltinSerializersKt.NothingSerializer()) : null, initialPanels, key, onStateChanged, z, mainFactory, detailsFactory, new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$childPanels$3
             /* JADX WARN: Incorrect types in method signature: (Ljava/lang/Void;TCtx;)Ljava/lang/Void; */
             @Override // kotlin.jvm.functions.Function2
-            public final Void invoke(Void r2, GenericComponentContext genericComponentContext) {
-                Intrinsics.checkNotNullParameter(r2, "<unused var>");
+            public final Void invoke(Void r1, GenericComponentContext genericComponentContext) {
+                Intrinsics.checkNotNullParameter(r1, "<unused var>");
                 Intrinsics.checkNotNullParameter(genericComponentContext, "<unused var>");
                 throw new IllegalStateException("Can't instantiate Nothing".toString());
             }

@@ -322,7 +322,7 @@ public class SafeIterableMap<K, V> implements Iterable<Map.Entry<K, V>> {
 
         @Override // java.util.Map.Entry
         public int hashCode() {
-            return this.mKey.hashCode() ^ this.mValue.hashCode();
+            return this.mValue.hashCode() ^ this.mKey.hashCode();
         }
     }
 }

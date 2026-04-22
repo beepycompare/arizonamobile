@@ -106,10 +106,10 @@ public final class JvmMetadataExtensions implements MetadataExtensions {
         Intrinsics.checkNotNullParameter(proto, "proto");
         Intrinsics.checkNotNullParameter(c, "c");
         JvmClassExtension jvm = JvmExtensionNodesKt.getJvm(kmClass);
-        ProtoBuf.Class r0 = proto;
+        ProtoBuf.Class r3 = proto;
         GeneratedMessageLite.GeneratedExtension<ProtoBuf.Class, Integer> anonymousObjectOriginName = JvmProtoBuf.anonymousObjectOriginName;
         Intrinsics.checkNotNullExpressionValue(anonymousObjectOriginName, "anonymousObjectOriginName");
-        Integer num = (Integer) ProtoBufUtilKt.getExtensionOrNull(r0, anonymousObjectOriginName);
+        Integer num = (Integer) ProtoBufUtilKt.getExtensionOrNull(r3, anonymousObjectOriginName);
         if (num != null) {
             jvm.setAnonymousObjectOriginName(c.get(num.intValue()));
         }
@@ -120,14 +120,14 @@ public final class JvmMetadataExtensions implements MetadataExtensions {
         }
         GeneratedMessageLite.GeneratedExtension<ProtoBuf.Class, Integer> classModuleName = JvmProtoBuf.classModuleName;
         Intrinsics.checkNotNullExpressionValue(classModuleName, "classModuleName");
-        Integer num2 = (Integer) ProtoBufUtilKt.getExtensionOrNull(r0, classModuleName);
+        Integer num2 = (Integer) ProtoBufUtilKt.getExtensionOrNull(r3, classModuleName);
         if (num2 == null || (str = c.get(num2.intValue())) == null) {
             str = JvmProtoBufUtil.DEFAULT_MODULE_NAME;
         }
         jvm.setModuleName(str);
         GeneratedMessageLite.GeneratedExtension<ProtoBuf.Class, Integer> jvmClassFlags = JvmProtoBuf.jvmClassFlags;
         Intrinsics.checkNotNullExpressionValue(jvmClassFlags, "jvmClassFlags");
-        Integer num3 = (Integer) ProtoBufUtilKt.getExtensionOrNull(r0, jvmClassFlags);
+        Integer num3 = (Integer) ProtoBufUtilKt.getExtensionOrNull(r3, jvmClassFlags);
         if (num3 != null) {
             jvm.setJvmFlags(num3.intValue());
         }

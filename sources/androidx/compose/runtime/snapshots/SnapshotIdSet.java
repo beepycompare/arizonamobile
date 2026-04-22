@@ -34,8 +34,7 @@ public final class SnapshotIdSet implements Iterable<Long>, KMappedMarker {
     public final boolean get(long j) {
         long[] jArr;
         long j2 = j - this.lowerBound;
-        long j3 = 0;
-        return (Intrinsics.compare(j2, j3) < 0 || Intrinsics.compare(j2, (long) 64) >= 0) ? (Intrinsics.compare(j2, (long) 64) < 0 || Intrinsics.compare(j2, (long) 128) >= 0) ? Intrinsics.compare(j2, j3) <= 0 && (jArr = this.belowBound) != null && SnapshotId_jvmKt.binarySearch(jArr, j) >= 0 : ((1 << (((int) j2) - 64)) & this.upperSet) != 0 : ((1 << ((int) j2)) & this.lowerSet) != 0;
+        return (Intrinsics.compare(j2, 0L) < 0 || Intrinsics.compare(j2, 64L) >= 0) ? (Intrinsics.compare(j2, 64L) < 0 || Intrinsics.compare(j2, 128L) >= 0) ? Intrinsics.compare(j2, 0L) <= 0 && (jArr = this.belowBound) != null && SnapshotId_jvmKt.binarySearch(jArr, j) >= 0 : ((1 << (((int) j2) + (-64))) & this.upperSet) != 0 : ((1 << ((int) j2)) & this.lowerSet) != 0;
     }
 
     public final SnapshotIdSet set(long j) {
@@ -44,78 +43,72 @@ public final class SnapshotIdSet implements Iterable<Long>, KMappedMarker {
         long[] jArr;
         long j4 = j - this.lowerBound;
         long j5 = 0;
-        if (Intrinsics.compare(j4, j5) >= 0 && Intrinsics.compare(j4, 64) < 0) {
+        if (Intrinsics.compare(j4, 0L) >= 0 && Intrinsics.compare(j4, 64L) < 0) {
             long j6 = 1 << ((int) j4);
             long j7 = this.lowerSet;
             if ((j7 & j6) == 0) {
                 return new SnapshotIdSet(this.upperSet, j7 | j6, this.lowerBound, this.belowBound);
             }
-        } else {
-            long j8 = 64;
-            if (Intrinsics.compare(j4, j8) >= 0 && Intrinsics.compare(j4, 128) < 0) {
-                long j9 = 1 << (((int) j4) - 64);
+        } else if (Intrinsics.compare(j4, 64L) >= 0 && Intrinsics.compare(j4, 128L) < 0) {
+            long j8 = 1 << (((int) j4) - 64);
+            long j9 = this.upperSet;
+            if ((j9 & j8) == 0) {
+                return new SnapshotIdSet(j9 | j8, this.lowerSet, this.lowerBound, this.belowBound);
+            }
+        } else if (Intrinsics.compare(j4, 128L) >= 0) {
+            if (!get(j)) {
                 long j10 = this.upperSet;
-                if ((j10 & j9) == 0) {
-                    return new SnapshotIdSet(j10 | j9, this.lowerSet, this.lowerBound, this.belowBound);
+                long j11 = this.lowerSet;
+                long j12 = this.lowerBound;
+                long j13 = ((j + 1) / 64) * 64;
+                if (Intrinsics.compare(j13, 0L) < 0) {
+                    j13 = 9223372036854775680L;
                 }
-            } else {
-                long j11 = 128;
-                if (Intrinsics.compare(j4, j11) >= 0) {
-                    if (!get(j)) {
-                        long j12 = this.upperSet;
-                        long j13 = this.lowerSet;
-                        long j14 = this.lowerBound;
-                        long j15 = 1;
-                        long j16 = ((j + j15) / j8) * j8;
-                        if (Intrinsics.compare(j16, j5) < 0) {
-                            j16 = (Long.MAX_VALUE - j11) + j15;
-                        }
-                        SnapshotIdArrayBuilder snapshotIdArrayBuilder = null;
-                        long j17 = j12;
-                        while (true) {
-                            if (Intrinsics.compare(j14, j16) >= 0) {
-                                j2 = j13;
-                                j3 = j14;
-                                break;
-                            }
-                            if (j13 != 0) {
-                                if (snapshotIdArrayBuilder == null) {
-                                    snapshotIdArrayBuilder = new SnapshotIdArrayBuilder(this.belowBound);
-                                }
-                                int i = 0;
-                                while (i < 64) {
-                                    long j18 = j13;
-                                    if ((j13 & (1 << i)) != 0) {
-                                        snapshotIdArrayBuilder.add(i + j14);
-                                    }
-                                    i++;
-                                    j13 = j18;
-                                }
-                            }
-                            if (j17 == 0) {
-                                j3 = j16;
-                                j2 = 0;
-                                break;
-                            }
-                            j14 += j8;
-                            j13 = j17;
-                            j17 = 0;
-                        }
-                        if (snapshotIdArrayBuilder == null || (jArr = snapshotIdArrayBuilder.toArray()) == null) {
-                            jArr = this.belowBound;
-                        }
-                        return new SnapshotIdSet(j17, j2, j3, jArr).set(j);
+                SnapshotIdArrayBuilder snapshotIdArrayBuilder = null;
+                long j14 = j10;
+                while (true) {
+                    if (Intrinsics.compare(j12, j13) >= 0) {
+                        j2 = j11;
+                        j3 = j12;
+                        break;
                     }
-                } else {
-                    long[] jArr2 = this.belowBound;
-                    if (jArr2 == null) {
-                        return new SnapshotIdSet(this.upperSet, this.lowerSet, this.lowerBound, new long[]{j});
+                    if (j11 != j5) {
+                        if (snapshotIdArrayBuilder == null) {
+                            snapshotIdArrayBuilder = new SnapshotIdArrayBuilder(this.belowBound);
+                        }
+                        int i = 0;
+                        while (i < 64) {
+                            long j15 = j5;
+                            if ((j11 & (1 << i)) != j5) {
+                                snapshotIdArrayBuilder.add(i + j12);
+                            }
+                            i++;
+                            j5 = j15;
+                        }
                     }
-                    int binarySearch = SnapshotId_jvmKt.binarySearch(jArr2, j);
-                    if (binarySearch < 0) {
-                        return new SnapshotIdSet(this.upperSet, this.lowerSet, this.lowerBound, SnapshotId_jvmKt.withIdInsertedAt(jArr2, -(binarySearch + 1), j));
+                    j2 = j5;
+                    if (j14 == j2) {
+                        j3 = j13;
+                        break;
                     }
+                    j12 += 64;
+                    j11 = j14;
+                    j5 = j2;
+                    j14 = j5;
                 }
+                if (snapshotIdArrayBuilder == null || (jArr = snapshotIdArrayBuilder.toArray()) == null) {
+                    jArr = this.belowBound;
+                }
+                return new SnapshotIdSet(j14, j2, j3, jArr).set(j);
+            }
+        } else {
+            long[] jArr2 = this.belowBound;
+            if (jArr2 == null) {
+                return new SnapshotIdSet(this.upperSet, this.lowerSet, this.lowerBound, new long[]{j});
+            }
+            int binarySearch = SnapshotId_jvmKt.binarySearch(jArr2, j);
+            if (binarySearch < 0) {
+                return new SnapshotIdSet(this.upperSet, this.lowerSet, this.lowerBound, SnapshotId_jvmKt.withIdInsertedAt(jArr2, -(binarySearch + 1), j));
             }
         }
         return this;
@@ -125,72 +118,30 @@ public final class SnapshotIdSet implements Iterable<Long>, KMappedMarker {
         long[] jArr;
         int binarySearch;
         long j2 = j - this.lowerBound;
-        long j3 = 0;
-        if (Intrinsics.compare(j2, j3) >= 0 && Intrinsics.compare(j2, 64) < 0) {
-            long j4 = 1 << ((int) j2);
-            long j5 = this.lowerSet;
-            if ((j5 & j4) != 0) {
-                return new SnapshotIdSet(this.upperSet, j5 & (~j4), this.lowerBound, this.belowBound);
+        if (Intrinsics.compare(j2, 0L) >= 0 && Intrinsics.compare(j2, 64L) < 0) {
+            long j3 = 1 << ((int) j2);
+            long j4 = this.lowerSet;
+            if ((j4 & j3) != 0) {
+                return new SnapshotIdSet(this.upperSet, j4 & (~j3), this.lowerBound, this.belowBound);
             }
-        } else if (Intrinsics.compare(j2, 64) >= 0 && Intrinsics.compare(j2, 128) < 0) {
-            long j6 = 1 << (((int) j2) - 64);
-            long j7 = this.upperSet;
-            if ((j7 & j6) != 0) {
-                return new SnapshotIdSet(j7 & (~j6), this.lowerSet, this.lowerBound, this.belowBound);
+        } else if (Intrinsics.compare(j2, 64L) >= 0 && Intrinsics.compare(j2, 128L) < 0) {
+            long j5 = 1 << (((int) j2) - 64);
+            long j6 = this.upperSet;
+            if ((j6 & j5) != 0) {
+                return new SnapshotIdSet(j6 & (~j5), this.lowerSet, this.lowerBound, this.belowBound);
             }
-        } else if (Intrinsics.compare(j2, j3) < 0 && (jArr = this.belowBound) != null && (binarySearch = SnapshotId_jvmKt.binarySearch(jArr, j)) >= 0) {
+        } else if (Intrinsics.compare(j2, 0L) < 0 && (jArr = this.belowBound) != null && (binarySearch = SnapshotId_jvmKt.binarySearch(jArr, j)) >= 0) {
             return new SnapshotIdSet(this.upperSet, this.lowerSet, this.lowerBound, SnapshotId_jvmKt.withIdRemovedAt(jArr, binarySearch));
         }
         return this;
     }
 
     public final SnapshotIdSet andNot(SnapshotIdSet snapshotIdSet) {
-        SnapshotIdSet snapshotIdSet2;
-        SnapshotIdSet snapshotIdSet3 = EMPTY;
-        if (snapshotIdSet == snapshotIdSet3) {
+        SnapshotIdSet snapshotIdSet2 = EMPTY;
+        if (snapshotIdSet == snapshotIdSet2) {
             return this;
         }
-        if (this == snapshotIdSet3) {
-            return snapshotIdSet3;
-        }
-        long j = snapshotIdSet.lowerBound;
-        long j2 = this.lowerBound;
-        if (j == j2) {
-            long[] jArr = snapshotIdSet.belowBound;
-            long[] jArr2 = this.belowBound;
-            if (jArr == jArr2) {
-                return new SnapshotIdSet((~snapshotIdSet.upperSet) & this.upperSet, (~snapshotIdSet.lowerSet) & this.lowerSet, j2, jArr2);
-            }
-        }
-        long[] jArr3 = snapshotIdSet.belowBound;
-        if (jArr3 != null) {
-            snapshotIdSet2 = this;
-            for (long j3 : jArr3) {
-                snapshotIdSet2 = snapshotIdSet2.clear(j3);
-            }
-        } else {
-            snapshotIdSet2 = this;
-        }
-        if (snapshotIdSet.lowerSet != 0) {
-            for (int i = 0; i < 64; i++) {
-                if ((snapshotIdSet.lowerSet & (1 << i)) != 0) {
-                    snapshotIdSet2 = snapshotIdSet2.clear(snapshotIdSet.lowerBound + i);
-                }
-            }
-        }
-        if (snapshotIdSet.upperSet != 0) {
-            for (int i2 = 0; i2 < 64; i2++) {
-                if ((snapshotIdSet.upperSet & (1 << i2)) != 0) {
-                    snapshotIdSet2 = snapshotIdSet2.clear(snapshotIdSet.lowerBound + i2 + 64);
-                }
-            }
-        }
-        return snapshotIdSet2;
-    }
-
-    public final SnapshotIdSet and(SnapshotIdSet snapshotIdSet) {
-        SnapshotIdSet snapshotIdSet2 = EMPTY;
-        if (Intrinsics.areEqual(snapshotIdSet, snapshotIdSet2) || Intrinsics.areEqual(this, snapshotIdSet2)) {
+        if (this == snapshotIdSet2) {
             return snapshotIdSet2;
         }
         long j = snapshotIdSet.lowerBound;
@@ -199,88 +150,124 @@ public final class SnapshotIdSet implements Iterable<Long>, KMappedMarker {
             long[] jArr = snapshotIdSet.belowBound;
             long[] jArr2 = this.belowBound;
             if (jArr == jArr2) {
-                long j3 = this.upperSet;
-                long j4 = snapshotIdSet.upperSet;
-                long j5 = this.lowerSet;
-                long j6 = snapshotIdSet.lowerSet;
-                return ((j3 & j4) == 0 && (j5 & j6) == 0 && jArr2 == null) ? snapshotIdSet2 : new SnapshotIdSet(j3 & j4, j5 & j6, j2, jArr2);
+                return new SnapshotIdSet((~snapshotIdSet.upperSet) & this.upperSet, this.lowerSet & (~snapshotIdSet.lowerSet), j2, jArr2);
             }
         }
-        SnapshotIdSet snapshotIdSet3 = snapshotIdSet2;
-        int i = 0;
-        if (this.belowBound == null) {
-            long[] jArr3 = this.belowBound;
-            if (jArr3 != null) {
-                for (long j7 : jArr3) {
-                    if (snapshotIdSet.get(j7)) {
-                        snapshotIdSet3 = snapshotIdSet3.set(j7);
+        long[] jArr3 = snapshotIdSet.belowBound;
+        if (jArr3 != null) {
+            for (long j3 : jArr3) {
+                this = this.clear(j3);
+            }
+        }
+        if (snapshotIdSet.lowerSet != 0) {
+            for (int i = 0; i < 64; i++) {
+                if ((snapshotIdSet.lowerSet & (1 << i)) != 0) {
+                    this = this.clear(snapshotIdSet.lowerBound + i);
+                }
+            }
+        }
+        if (snapshotIdSet.upperSet != 0) {
+            for (int i2 = 0; i2 < 64; i2++) {
+                if ((snapshotIdSet.upperSet & (1 << i2)) != 0) {
+                    this = this.clear(snapshotIdSet.lowerBound + i2 + 64);
+                }
+            }
+        }
+        return this;
+    }
+
+    public final SnapshotIdSet and(SnapshotIdSet snapshotIdSet) {
+        SnapshotIdSet snapshotIdSet2 = EMPTY;
+        if (!Intrinsics.areEqual(snapshotIdSet, snapshotIdSet2) && !Intrinsics.areEqual(this, snapshotIdSet2)) {
+            long j = snapshotIdSet.lowerBound;
+            long j2 = this.lowerBound;
+            if (j == j2) {
+                long[] jArr = snapshotIdSet.belowBound;
+                long[] jArr2 = this.belowBound;
+                if (jArr == jArr2) {
+                    long j3 = this.upperSet;
+                    long j4 = snapshotIdSet.upperSet;
+                    long j5 = this.lowerSet;
+                    long j6 = snapshotIdSet.lowerSet;
+                    long j7 = j5 & j6;
+                    if ((j3 & j4) != 0 || j7 != 0 || jArr2 != null) {
+                        return new SnapshotIdSet(j3 & j4, j5 & j6, j2, jArr2);
                     }
                 }
             }
-            SnapshotIdSet snapshotIdSet4 = snapshotIdSet3;
-            if (this.lowerSet != 0) {
-                for (int i2 = 0; i2 < 64; i2++) {
-                    if ((this.lowerSet & (1 << i2)) != 0) {
-                        long j8 = this.lowerBound + i2;
+            int i = 0;
+            if (this.belowBound == null) {
+                long[] jArr3 = this.belowBound;
+                if (jArr3 != null) {
+                    for (long j8 : jArr3) {
                         if (snapshotIdSet.get(j8)) {
-                            snapshotIdSet4 = snapshotIdSet4.set(j8);
+                            snapshotIdSet2 = snapshotIdSet2.set(j8);
+                        }
+                    }
+                }
+                if (this.lowerSet != 0) {
+                    for (int i2 = 0; i2 < 64; i2++) {
+                        if ((this.lowerSet & (1 << i2)) != 0) {
+                            long j9 = this.lowerBound + i2;
+                            if (snapshotIdSet.get(j9)) {
+                                snapshotIdSet2 = snapshotIdSet2.set(j9);
+                            }
+                        }
+                    }
+                }
+                if (this.upperSet != 0) {
+                    while (i < 64) {
+                        if ((this.upperSet & (1 << i)) != 0) {
+                            long j10 = this.lowerBound + i + 64;
+                            if (snapshotIdSet.get(j10)) {
+                                snapshotIdSet2 = snapshotIdSet2.set(j10);
+                            }
+                        }
+                        i++;
+                    }
+                }
+                return snapshotIdSet2;
+            }
+            long[] jArr4 = snapshotIdSet.belowBound;
+            if (jArr4 != null) {
+                for (long j11 : jArr4) {
+                    if (get(j11)) {
+                        snapshotIdSet2 = snapshotIdSet2.set(j11);
+                    }
+                }
+            }
+            if (snapshotIdSet.lowerSet != 0) {
+                for (int i3 = 0; i3 < 64; i3++) {
+                    if ((snapshotIdSet.lowerSet & (1 << i3)) != 0) {
+                        long j12 = snapshotIdSet.lowerBound + i3;
+                        if (get(j12)) {
+                            snapshotIdSet2 = snapshotIdSet2.set(j12);
                         }
                     }
                 }
             }
-            if (this.upperSet != 0) {
+            if (snapshotIdSet.upperSet != 0) {
                 while (i < 64) {
-                    if ((this.upperSet & (1 << i)) != 0) {
-                        long j9 = this.lowerBound + i + 64;
-                        if (snapshotIdSet.get(j9)) {
-                            snapshotIdSet4 = snapshotIdSet4.set(j9);
+                    if ((snapshotIdSet.upperSet & (1 << i)) != 0) {
+                        long j13 = snapshotIdSet.lowerBound + i + 64;
+                        if (get(j13)) {
+                            snapshotIdSet2 = snapshotIdSet2.set(j13);
                         }
                     }
                     i++;
                 }
             }
-            return snapshotIdSet4;
+            return snapshotIdSet2;
         }
-        long[] jArr4 = snapshotIdSet.belowBound;
-        if (jArr4 != null) {
-            for (long j10 : jArr4) {
-                if (get(j10)) {
-                    snapshotIdSet3 = snapshotIdSet3.set(j10);
-                }
-            }
-        }
-        SnapshotIdSet snapshotIdSet5 = snapshotIdSet3;
-        if (snapshotIdSet.lowerSet != 0) {
-            for (int i3 = 0; i3 < 64; i3++) {
-                if ((snapshotIdSet.lowerSet & (1 << i3)) != 0) {
-                    long j11 = snapshotIdSet.lowerBound + i3;
-                    if (get(j11)) {
-                        snapshotIdSet5 = snapshotIdSet5.set(j11);
-                    }
-                }
-            }
-        }
-        if (snapshotIdSet.upperSet != 0) {
-            while (i < 64) {
-                if ((snapshotIdSet.upperSet & (1 << i)) != 0) {
-                    long j12 = snapshotIdSet.lowerBound + i + 64;
-                    if (get(j12)) {
-                        snapshotIdSet5 = snapshotIdSet5.set(j12);
-                    }
-                }
-                i++;
-            }
-        }
-        return snapshotIdSet5;
+        return snapshotIdSet2;
     }
 
     public final SnapshotIdSet or(SnapshotIdSet snapshotIdSet) {
-        SnapshotIdSet snapshotIdSet2;
-        SnapshotIdSet snapshotIdSet3 = EMPTY;
-        if (snapshotIdSet == snapshotIdSet3) {
+        SnapshotIdSet snapshotIdSet2 = EMPTY;
+        if (snapshotIdSet == snapshotIdSet2) {
             return this;
         }
-        if (this == snapshotIdSet3) {
+        if (this == snapshotIdSet2) {
             return snapshotIdSet;
         }
         long j = snapshotIdSet.lowerBound;
@@ -289,7 +276,7 @@ public final class SnapshotIdSet implements Iterable<Long>, KMappedMarker {
             long[] jArr = snapshotIdSet.belowBound;
             long[] jArr2 = this.belowBound;
             if (jArr == jArr2) {
-                return new SnapshotIdSet(snapshotIdSet.upperSet | this.upperSet, snapshotIdSet.lowerSet | this.lowerSet, j2, jArr2);
+                return new SnapshotIdSet(snapshotIdSet.upperSet | this.upperSet, this.lowerSet | snapshotIdSet.lowerSet, j2, jArr2);
             }
         }
         int i = 0;
@@ -319,29 +306,26 @@ public final class SnapshotIdSet implements Iterable<Long>, KMappedMarker {
         }
         long[] jArr4 = snapshotIdSet.belowBound;
         if (jArr4 != null) {
-            snapshotIdSet2 = this;
             for (long j4 : jArr4) {
-                snapshotIdSet2 = snapshotIdSet2.set(j4);
+                this = this.set(j4);
             }
-        } else {
-            snapshotIdSet2 = this;
         }
         if (snapshotIdSet.lowerSet != 0) {
             for (int i3 = 0; i3 < 64; i3++) {
                 if ((snapshotIdSet.lowerSet & (1 << i3)) != 0) {
-                    snapshotIdSet2 = snapshotIdSet2.set(snapshotIdSet.lowerBound + i3);
+                    this = this.set(snapshotIdSet.lowerBound + i3);
                 }
             }
         }
         if (snapshotIdSet.upperSet != 0) {
             while (i < 64) {
                 if ((snapshotIdSet.upperSet & (1 << i)) != 0) {
-                    snapshotIdSet2 = snapshotIdSet2.set(snapshotIdSet.lowerBound + i + 64);
+                    this = this.set(snapshotIdSet.lowerBound + i + 64);
                 }
                 i++;
             }
         }
-        return snapshotIdSet2;
+        return this;
     }
 
     @Override // java.lang.Iterable

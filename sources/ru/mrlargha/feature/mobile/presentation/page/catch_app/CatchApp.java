@@ -261,7 +261,7 @@ public final class CatchApp implements MobileController {
         mobilePhoneCatchAppPageBinding.leftTime.setText(String.valueOf(catchAppInfo.getTotalCount()));
     }
 
-    /* JADX WARN: Type inference failed for: r3v5, types: [ru.mrlargha.feature.mobile.presentation.page.catch_app.CatchApp$startTimer$1$1] */
+    /* JADX WARN: Type inference failed for: r3v3, types: [ru.mrlargha.feature.mobile.presentation.page.catch_app.CatchApp$startTimer$1$1] */
     private final void startTimer(int i) {
         final MobilePhoneCatchAppPageBinding mobilePhoneCatchAppPageBinding = this.binding;
         final long j = i * 1000;

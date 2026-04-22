@@ -21,7 +21,6 @@ import android.util.Log;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import com.adjust.sdk.Constants;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -401,8 +400,7 @@ public final class UpdateService extends Hilt_UpdateService {
             intent2 = intent.setFlags(270532608);
         }
         UpdateService updateService = this;
-        long j = 1024;
-        Notification build = new NotificationCompat.Builder(updateService, UPDATE_SERVICE_CHANNEL_ID).setContentTitle(getString(R.string.update)).setContentText("Осталось времени: " + timeLeft()).setSmallIcon(R.mipmap.ic_launcher_foreground).setContentIntent(PendingIntent.getActivity(updateService, 0, intent2, 67108864)).setProgress((int) (this.mTotalLength / j), (int) (this.mDownloadedLength / j), z).build();
+        Notification build = new NotificationCompat.Builder(updateService, UPDATE_SERVICE_CHANNEL_ID).setContentTitle(getString(R.string.update)).setContentText("Осталось времени: " + timeLeft()).setSmallIcon(R.mipmap.ic_launcher_foreground).setContentIntent(PendingIntent.getActivity(updateService, 0, intent2, 67108864)).setProgress((int) (this.mTotalLength / 1024), (int) (this.mDownloadedLength / 1024), z).build();
         Intrinsics.checkNotNullExpressionValue(build, "build(...)");
         return build;
     }
@@ -875,9 +873,8 @@ public final class UpdateService extends Hilt_UpdateService {
         Message obtain = Message.obtain(this.mInHandler, 4);
         obtain.getData().putString(NotificationCompat.CATEGORY_STATUS, "DownloadGameData");
         obtain.getData().putBoolean("withProgress", !z);
-        long j = 1024;
-        obtain.getData().putInt("current", ((int) (this.mDownloadedLength / j)) + 1);
-        obtain.getData().putInt("total", (int) (this.mTotalLength / j));
+        obtain.getData().putInt("current", ((int) (this.mDownloadedLength / 1024)) + 1);
+        obtain.getData().putInt("total", (int) (this.mTotalLength / 1024));
         obtain.getData().putLong("total_all", this.mTotalLength - this.mDownloadedLength);
         obtain.getData().putLong("current_len", this.mDownloadedLength);
         obtain.getData().putString("timeLeft", timeLeft());
@@ -918,17 +915,15 @@ public final class UpdateService extends Hilt_UpdateService {
             return "0 sec";
         }
         Intrinsics.checkNotNull(this.mSpeedCalculator);
-        double d2 = 1000;
-        double bytesPerSecondAndFlush = ((this.mTotalLength - this.mDownloadedLength) / (speedCalculator.getBytesPerSecondAndFlush() + 1.0E-5d)) * d2;
-        double d3 = 60;
-        double d4 = (bytesPerSecondAndFlush / d2) % d3;
-        double d5 = (bytesPerSecondAndFlush / 60000) % d3;
-        String str2 = (bytesPerSecondAndFlush / ((double) Constants.ONE_HOUR)) % 24 >= 1.0d ? ((int) d) + " h, " : "";
-        String str3 = d5 >= 1.0d ? ((int) d5) + " min, " : "";
-        if (d4 < 1.0d) {
+        double bytesPerSecondAndFlush = ((this.mTotalLength - this.mDownloadedLength) / (speedCalculator.getBytesPerSecondAndFlush() + 1.0E-5d)) * 1000.0d;
+        double d2 = (bytesPerSecondAndFlush / 1000.0d) % 60.0d;
+        double d3 = (bytesPerSecondAndFlush / 60000.0d) % 60.0d;
+        String str2 = (bytesPerSecondAndFlush / 3600000.0d) % 24.0d >= 1.0d ? ((int) d) + " h, " : "";
+        String str3 = d3 >= 1.0d ? ((int) d3) + " min, " : "";
+        if (d2 < 1.0d) {
             str = "";
         } else {
-            str = ((int) d4) + " sec";
+            str = ((int) d2) + " sec";
         }
         String str4 = str2 + str3 + str;
         return Intrinsics.areEqual(str4, "") ? "0 sec" : str4;
@@ -996,7 +991,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void checkLauncherUpdate$lambda$0(UpdateService updateService, String str) {
         try {
-            boolean z = new JSONObject(str).getInt("launcherVersion") > 1711;
+            boolean z = new JSONObject(str).getInt("launcherVersion") > 1712;
             Message obtain = Message.obtain(updateService.mInHandler, 3);
             obtain.getData().putBoolean(NEED_UPDATE_MSG, z);
             obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);

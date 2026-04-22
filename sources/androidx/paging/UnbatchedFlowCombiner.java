@@ -44,7 +44,7 @@ public final class UnbatchedFlowCombiner<T1, T2> {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:25:0x006e, code lost:
-        if (r15.await(r0) == r1) goto L46;
+        if (r14.await(r0) == r1) goto L46;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
@@ -66,7 +66,6 @@ public final class UnbatchedFlowCombiner<T1, T2> {
         Mutex mutex;
         Object obj2;
         Mutex mutex2;
-        Throwable th;
         Mutex mutex3;
         int length;
         int i3;
@@ -103,8 +102,8 @@ public final class UnbatchedFlowCombiner<T1, T2> {
                                 Unit unit = Unit.INSTANCE;
                                 mutex3.unlock(null);
                                 return Unit.INSTANCE;
-                            } catch (Throwable th2) {
-                                th = th2;
+                            } catch (Throwable th) {
+                                th = th;
                                 mutex3.unlock(null);
                                 throw th;
                             }
@@ -162,10 +161,9 @@ public final class UnbatchedFlowCombiner<T1, T2> {
                             return Unit.INSTANCE;
                         }
                         return coroutine_suspended;
-                    } catch (Throwable th3) {
-                        Mutex mutex4 = mutex2;
-                        th = th3;
-                        mutex3 = mutex4;
+                    } catch (Throwable th2) {
+                        th = th2;
+                        mutex3 = mutex2;
                         mutex3.unlock(null);
                         throw th;
                     }

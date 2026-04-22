@@ -25,7 +25,7 @@ public final class TextPainter {
     private TextPainter() {
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00e6  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00e5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

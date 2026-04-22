@@ -43,38 +43,45 @@ public final class MouseWheelScrollingLogic$busyReceive$2 extends SuspendLambda 
         return ((MouseWheelScrollingLogic$busyReceive$2) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v0, types: [int] */
-    /* JADX WARN: Type inference failed for: r1v1, types: [kotlinx.coroutines.Job] */
-    /* JADX WARN: Type inference failed for: r1v3, types: [kotlinx.coroutines.Job] */
-    /* JADX WARN: Type inference failed for: r1v6 */
-    /* JADX WARN: Type inference failed for: r1v7 */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Job launch$default;
+        Throwable th;
+        Job job;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        ?? r1 = this.label;
-        try {
-            if (r1 == 0) {
-                ResultKt.throwOnFailure(obj);
-                launch$default = BuildersKt__Builders_commonKt.launch$default((CoroutineScope) this.L$0, null, null, new MouseWheelScrollingLogic$busyReceive$2$job$1(null), 3, null);
+        int i = this.label;
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            launch$default = BuildersKt__Builders_commonKt.launch$default((CoroutineScope) this.L$0, null, null, new MouseWheelScrollingLogic$busyReceive$2$job$1(null), 3, null);
+            try {
                 this.L$0 = launch$default;
                 this.label = 1;
-                obj = this.$this_busyReceive.receive(this);
-                r1 = launch$default;
-                if (obj == coroutine_suspended) {
+                Object receive = this.$this_busyReceive.receive(this);
+                if (receive == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-            } else if (r1 != 1) {
-                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-            } else {
-                Job job = (Job) this.L$0;
-                ResultKt.throwOnFailure(obj);
-                r1 = job;
+                obj = receive;
+                job = launch$default;
+            } catch (Throwable th2) {
+                th = th2;
+                job = launch$default;
+                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                throw th;
             }
-            return (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj;
-        } finally {
-            Job.DefaultImpls.cancel$default((Job) r1, (CancellationException) null, 1, (Object) null);
+        } else if (i != 1) {
+            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        } else {
+            job = (Job) this.L$0;
+            try {
+                ResultKt.throwOnFailure(obj);
+            } catch (Throwable th3) {
+                th = th3;
+                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                throw th;
+            }
         }
+        MouseWheelScrollingLogic.MouseWheelScrollDelta mouseWheelScrollDelta = (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj;
+        Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        return mouseWheelScrollDelta;
     }
 }

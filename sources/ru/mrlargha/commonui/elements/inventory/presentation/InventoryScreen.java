@@ -1586,6 +1586,11 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
                 Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
                 InventoryResponse inventoryResponse = (InventoryResponse) fromJson;
+                if (inventoryResponse.getType() != ArizonaBlockType.BLOCK_TYPE_WAREHOUSE_MATTER.getId() && inventoryResponse.getType() != ArizonaBlockType.BLOCK_TYPE_SOCIAL_HOUSE.getId()) {
+                    RecyclerView rvCategoryMenu = this.binding.rvCategoryMenu;
+                    Intrinsics.checkNotNullExpressionValue(rvCategoryMenu, "rvCategoryMenu");
+                    rvCategoryMenu.setVisibility(0);
+                }
                 int type = inventoryResponse.getType();
                 if (type == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
                     this.mainInventoryAdapter.setMaxItems(inventoryResponse.getMaxSlot());
@@ -1798,6 +1803,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     Intrinsics.checkNotNullExpressionValue(fromJson2, "fromJson(...)");
                     Skin skin = (Skin) fromJson2;
                     this.vehicleVisibilityState = skin.getVehicle();
+                    RecyclerView rvCategoryMenu2 = this.binding.rvCategoryMenu;
+                    Intrinsics.checkNotNullExpressionValue(rvCategoryMenu2, "rvCategoryMenu");
+                    rvCategoryMenu2.setVisibility(0);
                     if (this.isArizonaType) {
                         getAndShowMenuButtonsArz(skin.getButtons());
                     } else {
@@ -1821,9 +1829,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 z = false;
                             }
                             if (!z) {
-                                r10 = 8;
+                                r12 = 8;
                             }
-                            textView.setVisibility(r10);
+                            textView.setVisibility(r12);
                             this.binding.layoutWarehouse.etStoreMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(warehouseMoney.getMoney(), false, null, null, 7, null));
                             boolean z3 = this.isArizonaType;
                             MainInventoryBinding mainInventoryBinding = this.binding;
@@ -2463,9 +2471,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     InventoryItem copy$default = InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, 33554175, null);
                     GuardInfo guardInfo6 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
                     if (guardInfo6 != null && (id = guardInfo6.getId()) != null) {
-                        r10 = id.intValue();
+                        r12 = id.intValue();
                     }
-                    new SelectorDialog(targetActivity, currentBackendId, copy$default, r10);
+                    new SelectorDialog(targetActivity, currentBackendId, copy$default, r12);
                 }
             } else if (i == 5) {
                 setVisible(true);
@@ -2590,6 +2598,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 break;
             case 12:
                 id = ArizonaBlockType.BLOCK_TYPE_WAREHOUSE_MATTER.getId();
+                break;
+            case 13:
+                id = ArizonaBlockType.BLOCK_TYPE_SOCIAL_HOUSE.getId();
                 break;
             default:
                 id = 0;
@@ -3164,7 +3175,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         String str;
         this.binding.layoutVehicle.ivOilBar.setProgress(vehicleInfoBars.getOil());
         this.binding.layoutVehicle.tvOilCount.setText(String.valueOf(vehicleInfoBars.getOil()));
-        this.binding.layoutVehicle.ivEngineBar.setProgress((int) ((vehicleInfoBars.getHealth() / vehicleInfoBars.getMaxHealth()) * 100));
+        this.binding.layoutVehicle.ivEngineBar.setProgress((int) ((vehicleInfoBars.getHealth() / vehicleInfoBars.getMaxHealth()) * 100.0d));
         this.binding.layoutVehicle.tvEngineCount.setText(String.valueOf(vehicleInfoBars.getHealth()));
         if (this.isArizonaType) {
             str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/inventory/vehicles/512/" + vehicleInfoBars.getSkin().getModel() + ".webp";
@@ -3236,15 +3247,20 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
 
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
     public void setVisible(boolean z) {
-        int i;
         Log.d("Inventory", "setVisible: " + z);
+        TextView etStoreMoney = this.binding.layoutWarehouse.etStoreMoney;
+        Intrinsics.checkNotNullExpressionValue(etStoreMoney, "etStoreMoney");
+        int i = 8;
+        etStoreMoney.setVisibility(8);
         ConstraintLayout constraintLayout = this.binding.parentLayout;
         if (z) {
             i = 0;
         } else {
+            RecyclerView rvCategoryMenu = this.binding.rvCategoryMenu;
+            Intrinsics.checkNotNullExpressionValue(rvCategoryMenu, "rvCategoryMenu");
+            rvCategoryMenu.setVisibility(8);
             this.guardInventoryList.clear();
             this.guardAccessoriesList.clear();
-            i = 8;
         }
         constraintLayout.setVisibility(i);
     }

@@ -187,11 +187,12 @@ public final class zabi implements zaca, zau {
                 zabiVar.zai.unlock();
             } catch (Throwable th) {
                 th = th;
+                Throwable th2 = th;
                 zabiVar.zai.unlock();
-                throw th;
+                throw th2;
             }
-        } catch (Throwable th2) {
-            th = th2;
+        } catch (Throwable th3) {
+            th = th3;
             zabiVar = this;
         }
     }

@@ -38,7 +38,7 @@ public final class WrappedDrawableState extends Drawable.ConstantState {
     public int getChangingConfigurations() {
         int i = this.mChangingConfigurations;
         Drawable.ConstantState constantState = this.mDrawableState;
-        return i | (constantState != null ? constantState.getChangingConfigurations() : 0);
+        return (constantState != null ? constantState.getChangingConfigurations() : 0) | i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

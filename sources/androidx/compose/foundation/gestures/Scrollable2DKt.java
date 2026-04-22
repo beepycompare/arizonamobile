@@ -85,8 +85,7 @@ public final class Scrollable2DKt {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getMagnitude-TH1AsA0  reason: not valid java name */
     public static final float m567getMagnitudeTH1AsA0(long j) {
-        double d = 2;
-        return (float) Math.sqrt(((float) Math.pow(Velocity.m7793getXimpl(j), d)) + ((float) Math.pow(Velocity.m7794getYimpl(j), d)));
+        return (float) Math.sqrt(((float) Math.pow(Velocity.m7793getXimpl(j), 2.0d)) + ((float) Math.pow(Velocity.m7794getYimpl(j), 2.0d)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

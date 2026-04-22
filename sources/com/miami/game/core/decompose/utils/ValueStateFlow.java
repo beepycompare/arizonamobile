@@ -41,8 +41,14 @@ public final class ValueStateFlow<T> implements StateFlow<T> {
         return CollectionsKt.listOf(this.store.getValue());
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0042  */
+    /* JADX WARN: Type inference failed for: r5v0, types: [com.miami.game.core.decompose.utils.ValueStateFlow<T>, com.miami.game.core.decompose.utils.ValueStateFlow] */
+    /* JADX WARN: Type inference failed for: r5v1, types: [com.arkivanov.decompose.Cancellation] */
+    /* JADX WARN: Type inference failed for: r5v10 */
+    /* JADX WARN: Type inference failed for: r5v4 */
+    /* JADX WARN: Type inference failed for: r5v9 */
     @Override // kotlinx.coroutines.flow.SharedFlow, kotlinx.coroutines.flow.Flow
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -50,65 +56,57 @@ public final class ValueStateFlow<T> implements StateFlow<T> {
     public Object collect(FlowCollector<? super T> flowCollector, Continuation<?> continuation) {
         ValueStateFlow$collect$1 valueStateFlow$collect$1;
         int i;
-        Cancellation cancellation;
-        if (continuation instanceof ValueStateFlow$collect$1) {
-            valueStateFlow$collect$1 = (ValueStateFlow$collect$1) continuation;
-            if ((valueStateFlow$collect$1.label & Integer.MIN_VALUE) != 0) {
-                valueStateFlow$collect$1.label -= Integer.MIN_VALUE;
-                Object obj = valueStateFlow$collect$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = valueStateFlow$collect$1.label;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    final MutableStateFlow MutableStateFlow = StateFlowKt.MutableStateFlow(this.store.getValue());
-                    Function1<? super T, Unit> function1 = new Function1() { // from class: com.miami.game.core.decompose.utils.ValueStateFlow$$ExternalSyntheticLambda0
-                        @Override // kotlin.jvm.functions.Function1
-                        public final Object invoke(Object obj2) {
-                            return ValueStateFlow.collect$lambda$0(MutableStateFlow.this, obj2);
-                        }
-                    };
-                    Cancellation subscribe = this.store.subscribe(function1);
-                    try {
+        try {
+            if (continuation instanceof ValueStateFlow$collect$1) {
+                valueStateFlow$collect$1 = (ValueStateFlow$collect$1) continuation;
+                if ((valueStateFlow$collect$1.label & Integer.MIN_VALUE) != 0) {
+                    valueStateFlow$collect$1.label -= Integer.MIN_VALUE;
+                    Object obj = valueStateFlow$collect$1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = valueStateFlow$collect$1.label;
+                    if (i != 0) {
+                        ResultKt.throwOnFailure(obj);
+                        final MutableStateFlow MutableStateFlow = StateFlowKt.MutableStateFlow(this.store.getValue());
+                        Function1<? super T, Unit> function1 = new Function1() { // from class: com.miami.game.core.decompose.utils.ValueStateFlow$$ExternalSyntheticLambda0
+                            @Override // kotlin.jvm.functions.Function1
+                            public final Object invoke(Object obj2) {
+                                return ValueStateFlow.collect$lambda$0(MutableStateFlow.this, obj2);
+                            }
+                        };
+                        Cancellation subscribe = this.store.subscribe(function1);
                         valueStateFlow$collect$1.L$0 = SpillingKt.nullOutSpilledVariable(flowCollector);
                         valueStateFlow$collect$1.L$1 = SpillingKt.nullOutSpilledVariable(MutableStateFlow);
                         valueStateFlow$collect$1.L$2 = SpillingKt.nullOutSpilledVariable(function1);
                         valueStateFlow$collect$1.L$3 = subscribe;
                         valueStateFlow$collect$1.label = 1;
+                        this = subscribe;
                         if (MutableStateFlow.collect(flowCollector, valueStateFlow$collect$1) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        cancellation = subscribe;
-                    } catch (Throwable th) {
-                        th = th;
-                        cancellation = subscribe;
-                        cancellation.cancel();
-                        throw th;
-                    }
-                } else if (i != 1) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    cancellation = (Cancellation) valueStateFlow$collect$1.L$3;
-                    Function1 function12 = (Function1) valueStateFlow$collect$1.L$2;
-                    MutableStateFlow mutableStateFlow = (MutableStateFlow) valueStateFlow$collect$1.L$1;
-                    FlowCollector flowCollector2 = (FlowCollector) valueStateFlow$collect$1.L$0;
-                    try {
+                    } else if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        ValueStateFlow<T> valueStateFlow = (ValueStateFlow<T>) ((Cancellation) valueStateFlow$collect$1.L$3);
+                        Function1 function12 = (Function1) valueStateFlow$collect$1.L$2;
+                        MutableStateFlow mutableStateFlow = (MutableStateFlow) valueStateFlow$collect$1.L$1;
+                        FlowCollector flowCollector2 = (FlowCollector) valueStateFlow$collect$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th2) {
-                        th = th2;
-                        cancellation.cancel();
-                        throw th;
+                        this = valueStateFlow;
                     }
+                    throw new KotlinNothingValueException();
                 }
-                throw new KotlinNothingValueException();
             }
+            if (i != 0) {
+            }
+            throw new KotlinNothingValueException();
+        } catch (Throwable th) {
+            this.cancel();
+            throw th;
         }
         valueStateFlow$collect$1 = new ValueStateFlow$collect$1(this, continuation);
         Object obj2 = valueStateFlow$collect$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = valueStateFlow$collect$1.label;
-        if (i != 0) {
-        }
-        throw new KotlinNothingValueException();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

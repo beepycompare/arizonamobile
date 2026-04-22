@@ -473,10 +473,9 @@ public final class Buffer {
             byte[] bArr = writableSegment$okio.data;
             int i2 = writableSegment$okio.limit + countDigitsIn;
             while (j != 0) {
-                long j2 = 10;
                 i2--;
-                bArr[i2] = getHEX_DIGIT_BYTES()[(int) (j % j2)];
-                j /= j2;
+                bArr[i2] = getHEX_DIGIT_BYTES()[(int) (j % 10)];
+                j /= 10;
             }
             if (z) {
                 bArr[i2 - 1] = 45;
@@ -895,7 +894,7 @@ public final class Buffer {
                 return readUtf8Line(buffer, j2);
             }
             okio.Buffer buffer2 = new okio.Buffer();
-            buffer.copyTo(buffer2, 0L, Math.min(32, buffer.size()));
+            buffer.copyTo(buffer2, 0L, Math.min(32L, buffer.size()));
             throw new EOFException("\\n not found: limit=" + Math.min(buffer.size(), j) + " content=" + buffer2.readByteString().hex() + Typography.ellipsis);
         }
         throw new IllegalArgumentException(("limit < 0: " + j).toString());

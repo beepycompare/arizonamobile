@@ -219,7 +219,7 @@ public abstract class Striped<L> {
 
         @Override // com.google.common.util.concurrent.Striped
         final int indexFor(Object key) {
-            return Striped.smear(key.hashCode()) & this.mask;
+            return this.mask & Striped.smear(key.hashCode());
         }
 
         @Override // com.google.common.util.concurrent.Striped

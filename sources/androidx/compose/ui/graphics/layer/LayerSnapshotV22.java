@@ -32,11 +32,11 @@ public final class LayerSnapshotV22 implements LayerSnapshotImpl {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x004b  */
-    /* JADX WARN: Type inference failed for: r10v13, types: [java.lang.AutoCloseable] */
-    /* JADX WARN: Type inference failed for: r10v14 */
-    /* JADX WARN: Type inference failed for: r10v4, types: [java.lang.AutoCloseable] */
-    /* JADX WARN: Type inference failed for: r10v5 */
-    /* JADX WARN: Type inference failed for: r10v6, types: [java.lang.AutoCloseable] */
+    /* JADX WARN: Type inference failed for: r9v13, types: [java.lang.AutoCloseable] */
+    /* JADX WARN: Type inference failed for: r9v14 */
+    /* JADX WARN: Type inference failed for: r9v4, types: [java.lang.AutoCloseable] */
+    /* JADX WARN: Type inference failed for: r9v5 */
+    /* JADX WARN: Type inference failed for: r9v6, types: [java.lang.AutoCloseable] */
     @Override // androidx.compose.ui.graphics.layer.LayerSnapshotImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.

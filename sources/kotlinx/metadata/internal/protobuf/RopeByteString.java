@@ -482,7 +482,7 @@ public class RopeByteString extends ByteString {
             return Byte.valueOf(nextByte());
         }
 
-        /* JADX WARN: Type inference failed for: r0v8, types: [kotlinx.metadata.internal.protobuf.ByteString$ByteIterator] */
+        /* JADX WARN: Type inference failed for: r0v6, types: [kotlinx.metadata.internal.protobuf.ByteString$ByteIterator] */
         @Override // kotlinx.metadata.internal.protobuf.ByteString.ByteIterator
         public byte nextByte() {
             if (!this.bytes.hasNext()) {

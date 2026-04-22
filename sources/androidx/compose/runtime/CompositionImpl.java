@@ -487,8 +487,8 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v12, types: [java.lang.Object[]] */
-    /* JADX WARN: Type inference failed for: r1v14, types: [java.util.Set[]] */
+    /* JADX WARN: Type inference failed for: r1v11, types: [java.lang.Object[]] */
+    /* JADX WARN: Type inference failed for: r1v13, types: [java.util.Set[]] */
     @Override // androidx.compose.runtime.ControlledComposition
     public void recordModificationsOf(Set<? extends Object> set) {
         Object obj;
@@ -2195,7 +2195,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                 }
                 throw th;
             } catch (Throwable th2) {
-                abandonChanges();
+                this.abandonChanges();
                 throw th2;
             }
         }
@@ -2214,7 +2214,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                 }
                 throw th;
             } catch (Throwable th2) {
-                abandonChanges();
+                this.abandonChanges();
                 throw th2;
             }
         }

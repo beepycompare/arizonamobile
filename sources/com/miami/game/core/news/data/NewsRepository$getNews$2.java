@@ -50,7 +50,7 @@ public final class NewsRepository$getNews$2 extends SuspendLambda implements Fun
         if (r5 == r0) goto L16;
      */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0055 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.

@@ -238,7 +238,7 @@ public final class FlowMeasureLazyPolicy implements FlowLineMeasurePolicy {
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 List subcompose;
-                subcompose = SubcomposeMeasureScope.this.subcompose(Integer.valueOf(r3), ComposableLambdaKt.composableLambdaInstance(-195060736, true, new Function2() { // from class: androidx.compose.foundation.layout.FlowMeasureLazyPolicy$$ExternalSyntheticLambda0
+                subcompose = SubcomposeMeasureScope.this.subcompose(Integer.valueOf(r2), ComposableLambdaKt.composableLambdaInstance(-195060736, true, new Function2() { // from class: androidx.compose.foundation.layout.FlowMeasureLazyPolicy$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj3, Object obj4) {
                         Unit measure_0kLqBqw$lambda$1$0;

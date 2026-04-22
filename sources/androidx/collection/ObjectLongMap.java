@@ -277,8 +277,10 @@ public abstract class ObjectLongMap<K> {
     }
 
     public final String joinToString(CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated) {
-        long j;
+        long[] jArr;
+        long[] jArr2;
         int i2;
+        int i3;
         Intrinsics.checkNotNullParameter(separator, "separator");
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(postfix, "postfix");
@@ -286,52 +288,59 @@ public abstract class ObjectLongMap<K> {
         StringBuilder sb = new StringBuilder();
         sb.append(prefix);
         Object[] objArr = this.keys;
-        long[] jArr = this.values;
-        long[] jArr2 = this.metadata;
-        int length = jArr2.length - 2;
+        long[] jArr3 = this.values;
+        long[] jArr4 = this.metadata;
+        int length = jArr4.length - 2;
         if (length >= 0) {
-            int i3 = 0;
             int i4 = 0;
+            int i5 = 0;
             loop0: while (true) {
-                long j2 = jArr2[i3];
-                if ((((~j2) << 7) & j2 & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i5 = 8;
-                    int i6 = 8 - ((~(i3 - length)) >>> 31);
-                    int i7 = 0;
-                    while (i7 < i6) {
-                        if ((j2 & 255) < 128) {
-                            int i8 = (i3 << 3) + i7;
-                            i2 = i5;
-                            Object obj = objArr[i8];
-                            j = j2;
-                            long j3 = jArr[i8];
-                            if (i4 == i) {
+                long j = jArr4[i4];
+                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i6 = 8;
+                    int i7 = 8 - ((~(i4 - length)) >>> 31);
+                    int i8 = 0;
+                    while (i8 < i7) {
+                        if ((j & 255) < 128) {
+                            int i9 = (i4 << 3) + i8;
+                            Object obj = objArr[i9];
+                            i2 = i6;
+                            i3 = i8;
+                            long j2 = jArr3[i9];
+                            jArr2 = jArr4;
+                            if (i5 == i) {
                                 sb.append(truncated);
                                 break loop0;
                             }
-                            if (i4 != 0) {
+                            if (i5 != 0) {
                                 sb.append(separator);
                             }
                             sb.append(obj);
                             sb.append('=');
-                            sb.append(j3);
-                            i4++;
+                            sb.append(j2);
+                            i5++;
                         } else {
-                            j = j2;
-                            i2 = i5;
+                            jArr2 = jArr4;
+                            i2 = i6;
+                            i3 = i8;
                         }
-                        j2 = j >> i2;
-                        i7++;
-                        i5 = i2;
+                        j >>= i2;
+                        i8 = i3 + 1;
+                        i6 = i2;
+                        jArr4 = jArr2;
                     }
-                    if (i6 != i5) {
+                    jArr = jArr4;
+                    if (i7 != i6) {
                         break;
                     }
+                } else {
+                    jArr = jArr4;
                 }
-                if (i3 == length) {
+                if (i4 == length) {
                     break;
                 }
-                i3++;
+                i4++;
+                jArr4 = jArr;
             }
         }
         sb.append(postfix);
@@ -421,10 +430,10 @@ public abstract class ObjectLongMap<K> {
         return sb22;
     }
 
-    public final String joinToString(CharSequence charSequence, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function2<? super K, ? super Long, ? extends CharSequence> transform) {
-        Object[] objArr;
-        Object[] objArr2;
-        CharSequence separator = charSequence;
+    public final String joinToString(CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function2<? super K, ? super Long, ? extends CharSequence> transform) {
+        long[] jArr;
+        long[] jArr2;
+        int i2;
         Intrinsics.checkNotNullParameter(separator, "separator");
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(postfix, "postfix");
@@ -432,55 +441,56 @@ public abstract class ObjectLongMap<K> {
         Intrinsics.checkNotNullParameter(transform, "transform");
         StringBuilder sb = new StringBuilder();
         sb.append(prefix);
-        Object[] objArr3 = this.keys;
-        long[] jArr = this.values;
-        long[] jArr2 = this.metadata;
-        int length = jArr2.length - 2;
+        Object[] objArr = this.keys;
+        long[] jArr3 = this.values;
+        long[] jArr4 = this.metadata;
+        int length = jArr4.length - 2;
         if (length >= 0) {
-            int i2 = 0;
             int i3 = 0;
+            int i4 = 0;
             loop0: while (true) {
-                long j = jArr2[i2];
-                int i4 = i2;
+                long j = jArr4[i3];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i5 = 8 - ((~(i4 - length)) >>> 31);
-                    int i6 = 0;
-                    while (i6 < i5) {
+                    int i5 = 8;
+                    int i6 = 8 - ((~(i3 - length)) >>> 31);
+                    int i7 = 0;
+                    while (i7 < i6) {
                         if ((j & 255) < 128) {
-                            int i7 = (i4 << 3) + i6;
-                            Object obj = objArr3[i7];
-                            long j2 = jArr[i7];
-                            objArr2 = objArr3;
-                            if (i3 == i) {
+                            int i8 = (i3 << 3) + i7;
+                            i2 = i5;
+                            Object obj = objArr[i8];
+                            long j2 = jArr3[i8];
+                            jArr2 = jArr4;
+                            if (i4 == i) {
                                 sb.append(truncated);
                                 break loop0;
                             }
-                            if (i3 != 0) {
+                            if (i4 != 0) {
                                 sb.append(separator);
                             }
                             sb.append(transform.invoke(obj, Long.valueOf(j2)));
-                            i3++;
+                            i4++;
                         } else {
-                            objArr2 = objArr3;
+                            jArr2 = jArr4;
+                            i2 = i5;
                         }
-                        j >>= 8;
-                        i6++;
-                        separator = charSequence;
-                        objArr3 = objArr2;
+                        j >>= i2;
+                        i7++;
+                        i5 = i2;
+                        jArr4 = jArr2;
                     }
-                    objArr = objArr3;
-                    if (i5 != 8) {
+                    jArr = jArr4;
+                    if (i6 != i5) {
                         break;
                     }
                 } else {
-                    objArr = objArr3;
+                    jArr = jArr4;
                 }
-                if (i4 == length) {
+                if (i3 == length) {
                     break;
                 }
-                i2 = i4 + 1;
-                separator = charSequence;
-                objArr3 = objArr;
+                i3++;
+                jArr4 = jArr;
             }
             String sb2 = sb.toString();
             Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
@@ -794,229 +804,104 @@ public abstract class ObjectLongMap<K> {
         }
     }
 
-    public final String joinToString(CharSequence charSequence, CharSequence prefix, CharSequence postfix, int i, Function2<? super K, ? super Long, ? extends CharSequence> transform) {
-        Object[] objArr;
-        Object[] objArr2;
-        CharSequence separator = charSequence;
+    public final String joinToString(CharSequence separator, CharSequence prefix, CharSequence postfix, int i, Function2<? super K, ? super Long, ? extends CharSequence> transform) {
+        long[] jArr;
+        long[] jArr2;
+        int i2;
         Intrinsics.checkNotNullParameter(separator, "separator");
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(postfix, "postfix");
         Intrinsics.checkNotNullParameter(transform, "transform");
         StringBuilder sb = new StringBuilder();
         sb.append(prefix);
-        Object[] objArr3 = this.keys;
-        long[] jArr = this.values;
-        long[] jArr2 = this.metadata;
-        int length = jArr2.length - 2;
-        if (length >= 0) {
-            int i2 = 0;
-            int i3 = 0;
-            loop0: while (true) {
-                long j = jArr2[i2];
-                int i4 = i2;
-                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i5 = 8 - ((~(i4 - length)) >>> 31);
-                    int i6 = 0;
-                    while (i6 < i5) {
-                        if ((j & 255) < 128) {
-                            int i7 = (i4 << 3) + i6;
-                            Object obj = objArr3[i7];
-                            long j2 = jArr[i7];
-                            objArr2 = objArr3;
-                            if (i3 == i) {
-                                sb.append((CharSequence) r5);
-                                break loop0;
-                            }
-                            if (i3 != 0) {
-                                sb.append(separator);
-                            }
-                            sb.append(transform.invoke(obj, Long.valueOf(j2)));
-                            i3++;
-                        } else {
-                            objArr2 = objArr3;
-                        }
-                        j >>= 8;
-                        i6++;
-                        separator = charSequence;
-                        objArr3 = objArr2;
-                    }
-                    objArr = objArr3;
-                    if (i5 != 8) {
-                        break;
-                    }
-                } else {
-                    objArr = objArr3;
-                }
-                if (i4 == length) {
-                    break;
-                }
-                i2 = i4 + 1;
-                separator = charSequence;
-                objArr3 = objArr;
-            }
-            String sb2 = sb.toString();
-            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-            return sb2;
-        }
-        sb.append(postfix);
-        String sb22 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
-        return sb22;
-    }
-
-    public final String joinToString(CharSequence separator, CharSequence prefix, CharSequence postfix, Function2<? super K, ? super Long, ? extends CharSequence> transform) {
-        Object[] objArr;
-        Object[] objArr2;
-        Intrinsics.checkNotNullParameter(separator, "separator");
-        Intrinsics.checkNotNullParameter(prefix, "prefix");
-        Intrinsics.checkNotNullParameter(postfix, "postfix");
-        Intrinsics.checkNotNullParameter(transform, "transform");
-        StringBuilder sb = new StringBuilder();
-        sb.append(prefix);
-        Object[] objArr3 = this.keys;
-        long[] jArr = this.values;
-        long[] jArr2 = this.metadata;
-        int length = jArr2.length - 2;
-        if (length >= 0) {
-            int i = 0;
-            int i2 = 0;
-            loop0: while (true) {
-                long j = jArr2[i];
-                int i3 = i;
-                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i4 = 8 - ((~(i3 - length)) >>> 31);
-                    int i5 = 0;
-                    while (i5 < i4) {
-                        if ((j & 255) < 128) {
-                            int i6 = (i3 << 3) + i5;
-                            Object obj = objArr3[i6];
-                            long j2 = jArr[i6];
-                            objArr2 = objArr3;
-                            if (i2 == -1) {
-                                sb.append((CharSequence) r5);
-                                break loop0;
-                            }
-                            if (i2 != 0) {
-                                sb.append(separator);
-                            }
-                            sb.append(transform.invoke(obj, Long.valueOf(j2)));
-                            i2++;
-                        } else {
-                            objArr2 = objArr3;
-                        }
-                        j >>= 8;
-                        i5++;
-                        objArr3 = objArr2;
-                    }
-                    objArr = objArr3;
-                    if (i4 != 8) {
-                        break;
-                    }
-                } else {
-                    objArr = objArr3;
-                }
-                if (i3 == length) {
-                    break;
-                }
-                i = i3 + 1;
-                objArr3 = objArr;
-            }
-        }
-        sb.append(postfix);
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-        return sb2;
-    }
-
-    public final String joinToString(CharSequence separator, CharSequence prefix, Function2<? super K, ? super Long, ? extends CharSequence> transform) {
-        Object[] objArr;
-        Object[] objArr2;
-        Intrinsics.checkNotNullParameter(separator, "separator");
-        Intrinsics.checkNotNullParameter(prefix, "prefix");
-        Intrinsics.checkNotNullParameter(transform, "transform");
-        StringBuilder sb = new StringBuilder();
-        sb.append(prefix);
-        Object[] objArr3 = this.keys;
-        long[] jArr = this.values;
-        long[] jArr2 = this.metadata;
-        int length = jArr2.length - 2;
-        if (length >= 0) {
-            int i = 0;
-            int i2 = 0;
-            loop0: while (true) {
-                long j = jArr2[i];
-                int i3 = i;
-                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i4 = 8 - ((~(i3 - length)) >>> 31);
-                    int i5 = 0;
-                    while (i5 < i4) {
-                        if ((j & 255) < 128) {
-                            int i6 = (i3 << 3) + i5;
-                            Object obj = objArr3[i6];
-                            long j2 = jArr[i6];
-                            objArr2 = objArr3;
-                            if (i2 == -1) {
-                                sb.append((CharSequence) r5);
-                                break loop0;
-                            }
-                            if (i2 != 0) {
-                                sb.append(separator);
-                            }
-                            sb.append(transform.invoke(obj, Long.valueOf(j2)));
-                            i2++;
-                        } else {
-                            objArr2 = objArr3;
-                        }
-                        j >>= 8;
-                        i5++;
-                        objArr3 = objArr2;
-                    }
-                    objArr = objArr3;
-                    if (i4 != 8) {
-                        break;
-                    }
-                } else {
-                    objArr = objArr3;
-                }
-                if (i3 == length) {
-                    break;
-                }
-                i = i3 + 1;
-                objArr3 = objArr;
-            }
-        }
-        sb.append((CharSequence) r4);
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-        return sb2;
-    }
-
-    public final String joinToString(CharSequence separator, Function2<? super K, ? super Long, ? extends CharSequence> transform) {
-        int i;
-        Intrinsics.checkNotNullParameter(separator, "separator");
-        Intrinsics.checkNotNullParameter(transform, "transform");
-        StringBuilder sb = new StringBuilder();
-        sb.append((CharSequence) "");
         Object[] objArr = this.keys;
-        long[] jArr = this.values;
-        long[] jArr2 = this.metadata;
-        int length = jArr2.length - 2;
+        long[] jArr3 = this.values;
+        long[] jArr4 = this.metadata;
+        int length = jArr4.length - 2;
         if (length >= 0) {
-            int i2 = 0;
             int i3 = 0;
+            int i4 = 0;
             loop0: while (true) {
-                long j = jArr2[i2];
-                int i4 = i2;
+                long j = jArr4[i3];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
                     int i5 = 8;
-                    int i6 = 8 - ((~(i4 - length)) >>> 31);
+                    int i6 = 8 - ((~(i3 - length)) >>> 31);
                     int i7 = 0;
                     while (i7 < i6) {
                         if ((j & 255) < 128) {
-                            int i8 = (i4 << 3) + i7;
-                            i = i5;
+                            int i8 = (i3 << 3) + i7;
+                            i2 = i5;
                             Object obj = objArr[i8];
-                            long j2 = jArr[i8];
+                            long j2 = jArr3[i8];
+                            jArr2 = jArr4;
+                            if (i4 == i) {
+                                sb.append((CharSequence) r5);
+                                break loop0;
+                            }
+                            if (i4 != 0) {
+                                sb.append(separator);
+                            }
+                            sb.append(transform.invoke(obj, Long.valueOf(j2)));
+                            i4++;
+                        } else {
+                            jArr2 = jArr4;
+                            i2 = i5;
+                        }
+                        j >>= i2;
+                        i7++;
+                        i5 = i2;
+                        jArr4 = jArr2;
+                    }
+                    jArr = jArr4;
+                    if (i6 != i5) {
+                        break;
+                    }
+                } else {
+                    jArr = jArr4;
+                }
+                if (i3 == length) {
+                    break;
+                }
+                i3++;
+                jArr4 = jArr;
+            }
+        }
+        sb.append(postfix);
+        String sb2 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+        return sb2;
+    }
+
+    public final String joinToString(CharSequence separator, CharSequence prefix, CharSequence postfix, Function2<? super K, ? super Long, ? extends CharSequence> transform) {
+        long[] jArr;
+        long[] jArr2;
+        int i;
+        Intrinsics.checkNotNullParameter(separator, "separator");
+        Intrinsics.checkNotNullParameter(prefix, "prefix");
+        Intrinsics.checkNotNullParameter(postfix, "postfix");
+        Intrinsics.checkNotNullParameter(transform, "transform");
+        StringBuilder sb = new StringBuilder();
+        sb.append(prefix);
+        Object[] objArr = this.keys;
+        long[] jArr3 = this.values;
+        long[] jArr4 = this.metadata;
+        int length = jArr4.length - 2;
+        if (length >= 0) {
+            int i2 = 0;
+            int i3 = 0;
+            loop0: while (true) {
+                long j = jArr4[i2];
+                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i4 = 8;
+                    int i5 = 8 - ((~(i2 - length)) >>> 31);
+                    int i6 = 0;
+                    while (i6 < i5) {
+                        if ((j & 255) < 128) {
+                            int i7 = (i2 << 3) + i6;
+                            i = i4;
+                            Object obj = objArr[i7];
+                            long j2 = jArr3[i7];
+                            jArr2 = jArr4;
                             if (i3 == -1) {
                                 sb.append((CharSequence) r5);
                                 break loop0;
@@ -1027,20 +912,159 @@ public abstract class ObjectLongMap<K> {
                             sb.append(transform.invoke(obj, Long.valueOf(j2)));
                             i3++;
                         } else {
-                            i = i5;
+                            jArr2 = jArr4;
+                            i = i4;
                         }
                         j >>= i;
-                        i7++;
-                        i5 = i;
+                        i6++;
+                        i4 = i;
+                        jArr4 = jArr2;
                     }
-                    if (i6 != i5) {
+                    jArr = jArr4;
+                    if (i5 != i4) {
                         break;
                     }
+                } else {
+                    jArr = jArr4;
                 }
-                if (i4 == length) {
+                if (i2 == length) {
                     break;
                 }
-                i2 = i4 + 1;
+                i2++;
+                jArr4 = jArr;
+            }
+        }
+        sb.append(postfix);
+        String sb2 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+        return sb2;
+    }
+
+    public final String joinToString(CharSequence separator, CharSequence prefix, Function2<? super K, ? super Long, ? extends CharSequence> transform) {
+        long[] jArr;
+        long[] jArr2;
+        int i;
+        Intrinsics.checkNotNullParameter(separator, "separator");
+        Intrinsics.checkNotNullParameter(prefix, "prefix");
+        Intrinsics.checkNotNullParameter(transform, "transform");
+        StringBuilder sb = new StringBuilder();
+        sb.append(prefix);
+        Object[] objArr = this.keys;
+        long[] jArr3 = this.values;
+        long[] jArr4 = this.metadata;
+        int length = jArr4.length - 2;
+        if (length >= 0) {
+            int i2 = 0;
+            int i3 = 0;
+            loop0: while (true) {
+                long j = jArr4[i2];
+                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i4 = 8;
+                    int i5 = 8 - ((~(i2 - length)) >>> 31);
+                    int i6 = 0;
+                    while (i6 < i5) {
+                        if ((j & 255) < 128) {
+                            int i7 = (i2 << 3) + i6;
+                            i = i4;
+                            Object obj = objArr[i7];
+                            long j2 = jArr3[i7];
+                            jArr2 = jArr4;
+                            if (i3 == -1) {
+                                sb.append((CharSequence) r5);
+                                break loop0;
+                            }
+                            if (i3 != 0) {
+                                sb.append(separator);
+                            }
+                            sb.append(transform.invoke(obj, Long.valueOf(j2)));
+                            i3++;
+                        } else {
+                            jArr2 = jArr4;
+                            i = i4;
+                        }
+                        j >>= i;
+                        i6++;
+                        i4 = i;
+                        jArr4 = jArr2;
+                    }
+                    jArr = jArr4;
+                    if (i5 != i4) {
+                        break;
+                    }
+                } else {
+                    jArr = jArr4;
+                }
+                if (i2 == length) {
+                    break;
+                }
+                i2++;
+                jArr4 = jArr;
+            }
+        }
+        sb.append((CharSequence) r4);
+        String sb2 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+        return sb2;
+    }
+
+    public final String joinToString(CharSequence separator, Function2<? super K, ? super Long, ? extends CharSequence> transform) {
+        long[] jArr;
+        long[] jArr2;
+        int i;
+        Intrinsics.checkNotNullParameter(separator, "separator");
+        Intrinsics.checkNotNullParameter(transform, "transform");
+        StringBuilder sb = new StringBuilder();
+        sb.append((CharSequence) "");
+        Object[] objArr = this.keys;
+        long[] jArr3 = this.values;
+        long[] jArr4 = this.metadata;
+        int length = jArr4.length - 2;
+        if (length >= 0) {
+            int i2 = 0;
+            int i3 = 0;
+            loop0: while (true) {
+                long j = jArr4[i2];
+                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i4 = 8;
+                    int i5 = 8 - ((~(i2 - length)) >>> 31);
+                    int i6 = 0;
+                    while (i6 < i5) {
+                        if ((j & 255) < 128) {
+                            int i7 = (i2 << 3) + i6;
+                            i = i4;
+                            Object obj = objArr[i7];
+                            long j2 = jArr3[i7];
+                            jArr2 = jArr4;
+                            if (i3 == -1) {
+                                sb.append((CharSequence) r5);
+                                break loop0;
+                            }
+                            if (i3 != 0) {
+                                sb.append(separator);
+                            }
+                            sb.append(transform.invoke(obj, Long.valueOf(j2)));
+                            i3++;
+                        } else {
+                            jArr2 = jArr4;
+                            i = i4;
+                        }
+                        j >>= i;
+                        i6++;
+                        jArr4 = jArr2;
+                        i4 = i;
+                    }
+                    jArr = jArr4;
+                    if (i5 != i4) {
+                        break;
+                    }
+                } else {
+                    jArr = jArr4;
+                }
+                if (i2 == length) {
+                    break;
+                }
+                i2++;
+                jArr4 = jArr;
             }
         }
         sb.append((CharSequence) r3);
@@ -1050,30 +1074,32 @@ public abstract class ObjectLongMap<K> {
     }
 
     public final String joinToString(Function2<? super K, ? super Long, ? extends CharSequence> transform) {
+        long[] jArr;
+        long[] jArr2;
         int i;
         Intrinsics.checkNotNullParameter(transform, "transform");
         StringBuilder sb = new StringBuilder();
         sb.append((CharSequence) "");
         Object[] objArr = this.keys;
-        long[] jArr = this.values;
-        long[] jArr2 = this.metadata;
-        int length = jArr2.length - 2;
+        long[] jArr3 = this.values;
+        long[] jArr4 = this.metadata;
+        int length = jArr4.length - 2;
         if (length >= 0) {
             int i2 = 0;
             int i3 = 0;
             loop0: while (true) {
-                long j = jArr2[i2];
-                int i4 = i2;
+                long j = jArr4[i2];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i5 = 8;
-                    int i6 = 8 - ((~(i4 - length)) >>> 31);
-                    int i7 = 0;
-                    while (i7 < i6) {
+                    int i4 = 8;
+                    int i5 = 8 - ((~(i2 - length)) >>> 31);
+                    int i6 = 0;
+                    while (i6 < i5) {
                         if ((j & 255) < 128) {
-                            int i8 = (i4 << 3) + i7;
-                            i = i5;
-                            Object obj = objArr[i8];
-                            long j2 = jArr[i8];
+                            int i7 = (i2 << 3) + i6;
+                            i = i4;
+                            Object obj = objArr[i7];
+                            long j2 = jArr3[i7];
+                            jArr2 = jArr4;
                             if (i3 == -1) {
                                 sb.append((CharSequence) r5);
                                 break loop0;
@@ -1084,20 +1110,26 @@ public abstract class ObjectLongMap<K> {
                             sb.append(transform.invoke(obj, Long.valueOf(j2)));
                             i3++;
                         } else {
-                            i = i5;
+                            jArr2 = jArr4;
+                            i = i4;
                         }
                         j >>= i;
-                        i7++;
-                        i5 = i;
+                        i6++;
+                        jArr4 = jArr2;
+                        i4 = i;
                     }
-                    if (i6 != i5) {
+                    jArr = jArr4;
+                    if (i5 != i4) {
                         break;
                     }
+                } else {
+                    jArr = jArr4;
                 }
-                if (i4 == length) {
+                if (i2 == length) {
                     break;
                 }
-                i2 = i4 + 1;
+                i2++;
+                jArr4 = jArr;
             }
         }
         sb.append((CharSequence) r3);

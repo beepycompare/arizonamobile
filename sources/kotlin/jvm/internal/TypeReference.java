@@ -140,7 +140,9 @@ public final class TypeReference implements KType {
         KType kType = this.platformTypeUpperBound;
         if (kType instanceof TypeReference) {
             String asString = ((TypeReference) kType).asString(true);
-            return Intrinsics.areEqual(asString, str) ? str : Intrinsics.areEqual(asString, new StringBuilder().append(str).append('?').toString()) ? str + '!' : "(" + str + ".." + asString + ')';
+            if (!Intrinsics.areEqual(asString, str)) {
+                return Intrinsics.areEqual(asString, new StringBuilder().append(str).append('?').toString()) ? str + '!' : "(" + str + ".." + asString + ')';
+            }
         }
         return str;
     }

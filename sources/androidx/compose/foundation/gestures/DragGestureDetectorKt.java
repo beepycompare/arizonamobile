@@ -3415,9 +3415,9 @@ public final class DragGestureDetectorKt {
     }
 
     static {
-        float m7555constructorimpl = Dp.m7555constructorimpl((float) 0.125d);
+        float m7555constructorimpl = Dp.m7555constructorimpl(0.125f);
         mouseSlop = m7555constructorimpl;
-        float m7555constructorimpl2 = Dp.m7555constructorimpl(18);
+        float m7555constructorimpl2 = Dp.m7555constructorimpl(18.0f);
         defaultTouchSlop = m7555constructorimpl2;
         mouseToTouchSlopRatio = m7555constructorimpl / m7555constructorimpl2;
     }

@@ -27,7 +27,7 @@ public final class InteractiveComponentSizeKt {
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
             Dp m7553boximpl;
-            m7553boximpl = Dp.m7553boximpl(Dp.m7555constructorimpl(48));
+            m7553boximpl = Dp.m7553boximpl(Dp.m7555constructorimpl(48.0f));
             return m7553boximpl;
         }
     });

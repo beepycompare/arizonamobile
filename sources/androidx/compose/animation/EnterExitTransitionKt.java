@@ -224,8 +224,7 @@ public final class EnterExitTransitionKt {
 
                 /* renamed from: invoke-mzRDjE0  reason: not valid java name */
                 public final long m97invokemzRDjE0(long j) {
-                    long j2 = 0;
-                    return IntSize.m7721constructorimpl((j2 & 4294967295L) | (j2 << 32));
+                    return IntSize.m7721constructorimpl(0L);
                 }
             };
         }
@@ -255,8 +254,7 @@ public final class EnterExitTransitionKt {
 
                 /* renamed from: invoke-mzRDjE0  reason: not valid java name */
                 public final long m100invokemzRDjE0(long j) {
-                    long j2 = 0;
-                    return IntSize.m7721constructorimpl((j2 & 4294967295L) | (j2 << 32));
+                    return IntSize.m7721constructorimpl(0L);
                 }
             };
         }
@@ -354,7 +352,7 @@ public final class EnterExitTransitionKt {
 
             /* renamed from: invoke-mzRDjE0  reason: not valid java name */
             public final long m98invokemzRDjE0(long j) {
-                return IntSize.m7721constructorimpl((function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L) | (((int) (j >> 32)) << 32));
+                return IntSize.m7721constructorimpl((((int) (j >> 32)) << 32) | (function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L));
             }
         });
     }
@@ -446,7 +444,7 @@ public final class EnterExitTransitionKt {
 
             /* renamed from: invoke-mzRDjE0  reason: not valid java name */
             public final long m101invokemzRDjE0(long j) {
-                return IntSize.m7721constructorimpl((function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L) | (((int) (j >> 32)) << 32));
+                return IntSize.m7721constructorimpl((((int) (j >> 32)) << 32) | (function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L));
             }
         });
     }
@@ -486,7 +484,7 @@ public final class EnterExitTransitionKt {
 
             /* renamed from: invoke-mHKZG7I  reason: not valid java name */
             public final long m102invokemHKZG7I(long j) {
-                return IntOffset.m7677constructorimpl((function1.invoke(Integer.valueOf((int) (j >> 32))).intValue() << 32) | (0 & 4294967295L));
+                return IntOffset.m7677constructorimpl(function1.invoke(Integer.valueOf((int) (j >> 32))).intValue() << 32);
             }
         });
     }
@@ -526,7 +524,7 @@ public final class EnterExitTransitionKt {
 
             /* renamed from: invoke-mHKZG7I  reason: not valid java name */
             public final long m103invokemHKZG7I(long j) {
-                return IntOffset.m7677constructorimpl((function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L) | (0 << 32));
+                return IntOffset.m7677constructorimpl(function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L);
             }
         });
     }
@@ -566,7 +564,7 @@ public final class EnterExitTransitionKt {
 
             /* renamed from: invoke-mHKZG7I  reason: not valid java name */
             public final long m104invokemHKZG7I(long j) {
-                return IntOffset.m7677constructorimpl((function1.invoke(Integer.valueOf((int) (j >> 32))).intValue() << 32) | (0 & 4294967295L));
+                return IntOffset.m7677constructorimpl(function1.invoke(Integer.valueOf((int) (j >> 32))).intValue() << 32);
             }
         });
     }
@@ -606,7 +604,7 @@ public final class EnterExitTransitionKt {
 
             /* renamed from: invoke-mHKZG7I  reason: not valid java name */
             public final long m105invokemHKZG7I(long j) {
-                return IntOffset.m7677constructorimpl((function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L) | (0 << 32));
+                return IntOffset.m7677constructorimpl(function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L);
             }
         });
     }
@@ -1283,21 +1281,35 @@ public final class EnterExitTransitionKt {
             /* renamed from: invoke-LIALnN8  reason: not valid java name */
             public final long m95invokeLIALnN8(EnterExitState enterExitState) {
                 TransformOrigin transformOrigin;
+                long m119getTransformOriginSzJe1aQ;
+                long m119getTransformOriginSzJe1aQ2;
                 int i = WhenMappings.$EnumSwitchMapping$0[enterExitState.ordinal()];
                 if (i != 1) {
                     transformOrigin = null;
                     if (i == 2) {
                         Scale scale3 = enterTransition.getData$animation().getScale();
-                        if (scale3 != null || (scale3 = exitTransition.getData$animation().getScale()) != null) {
-                            transformOrigin = TransformOrigin.m5172boximpl(scale3.m119getTransformOriginSzJe1aQ());
+                        if (scale3 != null) {
+                            m119getTransformOriginSzJe1aQ = scale3.m119getTransformOriginSzJe1aQ();
+                        } else {
+                            Scale scale4 = exitTransition.getData$animation().getScale();
+                            if (scale4 != null) {
+                                m119getTransformOriginSzJe1aQ = scale4.m119getTransformOriginSzJe1aQ();
+                            }
                         }
+                        transformOrigin = TransformOrigin.m5172boximpl(m119getTransformOriginSzJe1aQ);
                     } else if (i != 3) {
                         throw new NoWhenBranchMatchedException();
                     } else {
-                        Scale scale4 = exitTransition.getData$animation().getScale();
-                        if (scale4 != null || (scale4 = enterTransition.getData$animation().getScale()) != null) {
-                            transformOrigin = TransformOrigin.m5172boximpl(scale4.m119getTransformOriginSzJe1aQ());
+                        Scale scale5 = exitTransition.getData$animation().getScale();
+                        if (scale5 != null) {
+                            m119getTransformOriginSzJe1aQ2 = scale5.m119getTransformOriginSzJe1aQ();
+                        } else {
+                            Scale scale6 = enterTransition.getData$animation().getScale();
+                            if (scale6 != null) {
+                                m119getTransformOriginSzJe1aQ2 = scale6.m119getTransformOriginSzJe1aQ();
+                            }
                         }
+                        transformOrigin = TransformOrigin.m5172boximpl(m119getTransformOriginSzJe1aQ2);
                     }
                 } else {
                     transformOrigin = TransformOrigin.this;

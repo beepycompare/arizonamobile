@@ -120,8 +120,7 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
 
     /* renamed from: getSize-YbymL2g$ui */
     public final long m6472getSizeYbymL2g$ui() {
-        int width = getWidth();
-        return IntSize.m7721constructorimpl((getHeight() & 4294967295L) | (width << 32));
+        return IntSize.m7721constructorimpl((getWidth() << 32) | (getHeight() & 4294967295L));
     }
 
     /* renamed from: getConstraints-msEJaDk$ui */
@@ -255,15 +254,14 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     /* renamed from: positionIn-iSbpLlY$ui */
     public final long m6475positionIniSbpLlY$ui(LookaheadDelegate lookaheadDelegate, boolean z) {
         long m7694getZeronOccac = IntOffset.Companion.m7694getZeronOccac();
-        LookaheadDelegate lookaheadDelegate2 = this;
-        while (!Intrinsics.areEqual(lookaheadDelegate2, lookaheadDelegate)) {
-            if (!lookaheadDelegate2.isPlacedUnderMotionFrameOfReference() || !z) {
-                m7694getZeronOccac = IntOffset.m7687plusqkQi6aY(m7694getZeronOccac, lookaheadDelegate2.mo6464getPositionnOccac());
+        while (!Intrinsics.areEqual(this, lookaheadDelegate)) {
+            if (!this.isPlacedUnderMotionFrameOfReference() || !z) {
+                m7694getZeronOccac = IntOffset.m7687plusqkQi6aY(m7694getZeronOccac, this.mo6464getPositionnOccac());
             }
-            NodeCoordinator wrappedBy$ui = lookaheadDelegate2.coordinator.getWrappedBy$ui();
+            NodeCoordinator wrappedBy$ui = this.coordinator.getWrappedBy$ui();
             Intrinsics.checkNotNull(wrappedBy$ui);
-            lookaheadDelegate2 = wrappedBy$ui.getLookaheadDelegate();
-            Intrinsics.checkNotNull(lookaheadDelegate2);
+            this = wrappedBy$ui.getLookaheadDelegate();
+            Intrinsics.checkNotNull(this);
         }
         return m7694getZeronOccac;
     }

@@ -34,7 +34,7 @@ final class zzb extends zzt {
     }
 
     public final int hashCode() {
-        return ((this.zza.hashCode() ^ 1000003) * 1000003) ^ this.zzb.hashCode();
+        return this.zzb.hashCode() ^ ((this.zza.hashCode() ^ 1000003) * 1000003);
     }
 
     public final String toString() {

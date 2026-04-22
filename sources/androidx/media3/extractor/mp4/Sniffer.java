@@ -27,92 +27,96 @@ public final class Sniffer {
         int i;
         long j;
         int i2;
-        int i3;
         long j2;
+        int i3;
         int i4;
+        long j3;
+        int i5;
         int[] iArr;
         long length = extractorInput.getLength();
-        long j3 = -1;
-        int i5 = (length > (-1L) ? 1 : (length == (-1L) ? 0 : -1));
-        long j4 = PlaybackStateCompat.ACTION_SKIP_TO_QUEUE_ITEM;
-        if (i5 != 0 && length <= PlaybackStateCompat.ACTION_SKIP_TO_QUEUE_ITEM) {
-            j4 = length;
+        long j4 = -1;
+        int i6 = (length > (-1L) ? 1 : (length == (-1L) ? 0 : -1));
+        long j5 = PlaybackStateCompat.ACTION_SKIP_TO_QUEUE_ITEM;
+        if (i6 != 0 && length <= PlaybackStateCompat.ACTION_SKIP_TO_QUEUE_ITEM) {
+            j5 = length;
         }
-        int i6 = (int) j4;
+        int i7 = (int) j5;
         ParsableByteArray parsableByteArray = new ParsableByteArray(64);
-        int i7 = 0;
         int i8 = 0;
+        int i9 = 0;
         boolean z3 = false;
-        while (i8 < i6) {
+        while (i9 < i7) {
             parsableByteArray.reset(8);
             boolean z4 = true;
-            if (!extractorInput.peekFully(parsableByteArray.getData(), i7, 8, true)) {
+            if (!extractorInput.peekFully(parsableByteArray.getData(), i8, 8, true)) {
                 break;
             }
             long readUnsignedInt = parsableByteArray.readUnsignedInt();
             int readInt = parsableByteArray.readInt();
             if (readUnsignedInt == 1) {
-                j = j3;
+                j = j4;
                 extractorInput.peekFully(parsableByteArray.getData(), 8, 8);
-                i3 = 16;
+                i4 = 16;
                 parsableByteArray.setLimit(16);
-                readUnsignedInt = parsableByteArray.readLong();
-                i2 = i8;
+                i2 = i9;
+                j2 = parsableByteArray.readLong();
+                i3 = i6;
             } else {
-                j = j3;
+                j = j4;
                 if (readUnsignedInt == 0) {
                     long length2 = extractorInput.getLength();
                     if (length2 != j) {
-                        i2 = i8;
                         readUnsignedInt = (length2 - extractorInput.getPeekPosition()) + 8;
-                        i3 = 8;
                     }
                 }
-                i2 = i8;
-                i3 = 8;
+                long j6 = readUnsignedInt;
+                i2 = i9;
+                j2 = j6;
+                i3 = i6;
+                i4 = 8;
             }
-            long j5 = readUnsignedInt;
-            long j6 = i3;
-            if (j5 < j6) {
+            long j7 = i4;
+            if (j2 < j7) {
                 sniffFailure = null;
-                if (readInt != 1718773093 || i3 != 8) {
-                    return new AtomSizeTooSmallSniffFailure(readInt, j5, i3);
+                if (readInt != 1718773093 || i4 != 8) {
+                    return new AtomSizeTooSmallSniffFailure(readInt, j2, i4);
                 }
-                j5 = j6;
+                j2 = j7;
             } else {
                 sniffFailure = null;
             }
-            int i9 = i2 + i3;
+            int i10 = i2 + i4;
             if (readInt == 1836019574) {
-                i6 += (int) j5;
-                if (i5 != 0 && i6 > length) {
-                    i6 = (int) length;
+                i7 += (int) j2;
+                if (i3 != 0 && i7 > length) {
+                    i7 = (int) length;
                 }
-                i8 = i9;
-                j3 = j;
-                i7 = 0;
+                i9 = i10;
+                i6 = i3;
+                j4 = j;
+                i8 = 0;
             } else {
                 if (readInt != 1953653099 && readInt != 1835297121 && readInt != 1835626086) {
                     if (readInt != 1836019558 && readInt != 1836475768) {
                         if (readInt == 1835295092) {
                             z3 = true;
                         }
-                        if (readInt != 1937007212 || j5 <= 1000000) {
-                            j2 = length;
-                            if ((i9 + j5) - j6 < i6) {
-                                int i10 = (int) (j5 - j6);
-                                i8 = i9 + i10;
+                        if (readInt != 1937007212 || j2 <= 1000000) {
+                            j3 = length;
+                            if ((i10 + j2) - j7 < i7) {
+                                int i11 = (int) (j2 - j7);
+                                i9 = i10 + i11;
                                 if (readInt != 1718909296) {
-                                    i4 = 0;
-                                    if (i10 != 0) {
-                                        extractorInput.advancePeekPosition(i10);
+                                    i5 = 0;
+                                    if (i11 != 0) {
+                                        extractorInput.advancePeekPosition(i11);
                                     }
-                                } else if (i10 < 8) {
-                                    return new AtomSizeTooSmallSniffFailure(readInt, i10, 8);
+                                } else if (i11 < 8) {
+                                    return new AtomSizeTooSmallSniffFailure(readInt, i11, 8);
                                 } else {
-                                    parsableByteArray.reset(i10);
-                                    i4 = 0;
-                                    extractorInput.peekFully(parsableByteArray.getData(), 0, i10);
+                                    parsableByteArray.reset(i11);
+                                    i5 = 0;
+                                    extractorInput.peekFully(parsableByteArray.getData(), 0, i11);
                                     int readInt2 = parsableByteArray.readInt();
                                     if (isCompatibleBrand(readInt2, z2)) {
                                         z3 = true;
@@ -121,18 +125,18 @@ public final class Sniffer {
                                     int bytesLeft = parsableByteArray.bytesLeft() / 4;
                                     if (!z3 && bytesLeft > 0) {
                                         iArr = new int[bytesLeft];
-                                        int i11 = 0;
+                                        int i12 = 0;
                                         while (true) {
-                                            if (i11 >= bytesLeft) {
+                                            if (i12 >= bytesLeft) {
                                                 z4 = z3;
                                                 break;
                                             }
                                             int readInt3 = parsableByteArray.readInt();
-                                            iArr[i11] = readInt3;
+                                            iArr[i12] = readInt3;
                                             if (isCompatibleBrand(readInt3, z2)) {
                                                 break;
                                             }
-                                            i11++;
+                                            i12++;
                                         }
                                     } else {
                                         z4 = z3;
@@ -151,16 +155,17 @@ public final class Sniffer {
                     i = 1;
                     break;
                 }
-                j2 = length;
-                i4 = 0;
-                i8 = i9;
-                i7 = i4;
-                j3 = j;
-                length = j2;
+                j3 = length;
+                i5 = 0;
+                i9 = i10;
+                i8 = i5;
+                i6 = i3;
+                j4 = j;
+                length = j3;
             }
         }
         sniffFailure = null;
-        i = i7;
+        i = i8;
         if (z3) {
             if (z != i) {
                 if (i != 0) {

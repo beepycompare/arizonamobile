@@ -39,7 +39,7 @@ public final class EntityUpsertionAdapter<T> {
         try {
             return this.insertionAdapter.insertAndReturnId(t);
         } catch (SQLiteConstraintException e) {
-            checkUniquenessException(e);
+            this.checkUniquenessException(e);
             this.updateAdapter.handle(t);
             return -1L;
         }

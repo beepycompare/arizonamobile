@@ -29,10 +29,9 @@ public final class C0141ba implements Bo {
                 }
                 return FilesKt.readText$default(fileFromSdkStorage, null, 1, null);
             }
-            return null;
         } catch (Throwable unused) {
-            return null;
         }
+        return null;
     }
 
     @Override // io.appmetrica.analytics.impl.Bo

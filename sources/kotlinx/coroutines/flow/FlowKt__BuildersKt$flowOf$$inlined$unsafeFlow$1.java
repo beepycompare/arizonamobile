@@ -45,8 +45,8 @@ public final class FlowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1<T> implements
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x003f  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0066  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0061 -> B:19:0x0064). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x006a  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0064 -> B:20:0x0066). Please submit an issue!!! */
     @Override // kotlinx.coroutines.flow.Flow
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -55,9 +55,9 @@ public final class FlowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1<T> implements
         AnonymousClass1 anonymousClass1;
         int i;
         int i2;
-        FlowCollector<? super T> flowCollector2;
-        int length;
         FlowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1<T> flowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1;
+        int length;
+        FlowCollector<? super T> flowCollector2;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
             if ((anonymousClass1.label & Integer.MIN_VALUE) != 0) {
@@ -68,20 +68,21 @@ public final class FlowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1<T> implements
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     i2 = 0;
-                    flowCollector2 = flowCollector;
-                    length = this.$elements$inlined.length;
                     flowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1 = this;
+                    length = this.$elements$inlined.length;
+                    flowCollector2 = flowCollector;
                     if (i2 < length) {
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     length = anonymousClass1.I$1;
-                    i2 = anonymousClass1.I$0;
-                    flowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1 = (FlowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1) anonymousClass1.L$0;
+                    int i3 = anonymousClass1.I$0;
+                    FlowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1<T> flowKt__BuildersKt$flowOf$$inlined$unsafeFlow$12 = (FlowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1) anonymousClass1.L$0;
                     ResultKt.throwOnFailure(obj);
                     FlowCollector<? super T> flowCollector3 = (FlowCollector) anonymousClass1.L$1;
-                    i2++;
+                    i2 = i3 + 1;
+                    flowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1 = flowKt__BuildersKt$flowOf$$inlined$unsafeFlow$12;
                     flowCollector2 = flowCollector3;
                     if (i2 < length) {
                         Object obj2 = flowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1.$elements$inlined[i2];
@@ -90,12 +91,14 @@ public final class FlowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1<T> implements
                         anonymousClass1.I$0 = i2;
                         anonymousClass1.I$1 = length;
                         anonymousClass1.label = 1;
-                        Object emit = flowCollector2.emit(obj2, anonymousClass1);
-                        flowCollector3 = flowCollector2;
-                        if (emit == coroutine_suspended) {
+                        if (flowCollector2.emit(obj2, anonymousClass1) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        i2++;
+                        flowKt__BuildersKt$flowOf$$inlined$unsafeFlow$12 = flowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1;
+                        i3 = i2;
+                        flowCollector3 = flowCollector2;
+                        i2 = i3 + 1;
+                        flowKt__BuildersKt$flowOf$$inlined$unsafeFlow$1 = flowKt__BuildersKt$flowOf$$inlined$unsafeFlow$12;
                         flowCollector2 = flowCollector3;
                         if (i2 < length) {
                             return Unit.INSTANCE;

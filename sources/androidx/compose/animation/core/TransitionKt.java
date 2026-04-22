@@ -12,6 +12,7 @@ import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.runtime.State;
 import androidx.compose.runtime.snapshots.Snapshot;
 import androidx.compose.runtime.snapshots.SnapshotStateObserver;
+import androidx.compose.ui.geometry.InlineClassHelperKt;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.geometry.Rect;
 import androidx.compose.ui.geometry.Size;
@@ -897,8 +898,7 @@ public final class TransitionKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-428458074, i3, -1, "androidx.compose.animation.core.animateIntOffset.<anonymous> (Transition.kt:2070)");
                 }
-                long j = 1;
-                SpringSpec<IntOffset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m7674boximpl(IntOffset.m7677constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
+                SpringSpec<IntOffset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m7674boximpl(IntOffset.m7677constructorimpl(InlineClassHelperKt.Uint64Low32)), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -1062,8 +1062,7 @@ public final class TransitionKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(811932052, i3, -1, "androidx.compose.animation.core.animateIntSize.<anonymous> (Transition.kt:2132)");
                 }
-                long j = 1;
-                SpringSpec<IntSize> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntSize.m7718boximpl(IntSize.m7721constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
+                SpringSpec<IntSize> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntSize.m7718boximpl(IntSize.m7721constructorimpl(InlineClassHelperKt.Uint64Low32)), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }

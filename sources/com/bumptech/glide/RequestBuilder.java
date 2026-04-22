@@ -471,45 +471,13 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
 
     private Request buildRequestRecursive(Object obj, Target<TranscodeType> target, RequestListener<TranscodeType> requestListener, RequestCoordinator requestCoordinator, TransitionOptions<?, ? super TranscodeType> transitionOptions, Priority priority, int i, int i2, BaseRequestOptions<?> baseRequestOptions, Executor executor) {
         ErrorRequestCoordinator errorRequestCoordinator;
-        ErrorRequestCoordinator errorRequestCoordinator2;
-        Object obj2;
-        Target<TranscodeType> target2;
-        RequestListener<TranscodeType> requestListener2;
-        TransitionOptions<?, ? super TranscodeType> transitionOptions2;
-        Priority priority2;
-        int i3;
-        int i4;
-        BaseRequestOptions<?> baseRequestOptions2;
-        Executor executor2;
-        RequestBuilder<TranscodeType> requestBuilder;
         if (this.errorBuilder != null) {
             errorRequestCoordinator = new ErrorRequestCoordinator(obj, requestCoordinator);
-            errorRequestCoordinator2 = errorRequestCoordinator;
-            requestBuilder = this;
-            obj2 = obj;
-            target2 = target;
-            requestListener2 = requestListener;
-            transitionOptions2 = transitionOptions;
-            priority2 = priority;
-            i3 = i;
-            i4 = i2;
-            baseRequestOptions2 = baseRequestOptions;
-            executor2 = executor;
+            requestCoordinator = errorRequestCoordinator;
         } else {
             errorRequestCoordinator = null;
-            errorRequestCoordinator2 = requestCoordinator;
-            obj2 = obj;
-            target2 = target;
-            requestListener2 = requestListener;
-            transitionOptions2 = transitionOptions;
-            priority2 = priority;
-            i3 = i;
-            i4 = i2;
-            baseRequestOptions2 = baseRequestOptions;
-            executor2 = executor;
-            requestBuilder = this;
         }
-        Request buildThumbnailRequestRecursive = requestBuilder.buildThumbnailRequestRecursive(obj2, target2, requestListener2, errorRequestCoordinator2, transitionOptions2, priority2, i3, i4, baseRequestOptions2, executor2);
+        Request buildThumbnailRequestRecursive = buildThumbnailRequestRecursive(obj, target, requestListener, requestCoordinator, transitionOptions, priority, i, i2, baseRequestOptions, executor);
         if (errorRequestCoordinator == null) {
             return buildThumbnailRequestRecursive;
         }
@@ -519,13 +487,14 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
             overrideWidth = baseRequestOptions.getOverrideWidth();
             overrideHeight = baseRequestOptions.getOverrideHeight();
         }
-        RequestBuilder<TranscodeType> requestBuilder2 = this.errorBuilder;
-        ErrorRequestCoordinator errorRequestCoordinator3 = errorRequestCoordinator;
-        errorRequestCoordinator3.setRequests(buildThumbnailRequestRecursive, requestBuilder2.buildRequestRecursive(obj, target, requestListener, errorRequestCoordinator3, requestBuilder2.transitionOptions, requestBuilder2.getPriority(), overrideWidth, overrideHeight, this.errorBuilder, executor));
-        return errorRequestCoordinator3;
+        int i3 = overrideHeight;
+        RequestBuilder<TranscodeType> requestBuilder = this.errorBuilder;
+        ErrorRequestCoordinator errorRequestCoordinator2 = errorRequestCoordinator;
+        errorRequestCoordinator2.setRequests(buildThumbnailRequestRecursive, requestBuilder.buildRequestRecursive(obj, target, requestListener, errorRequestCoordinator2, requestBuilder.transitionOptions, requestBuilder.getPriority(), overrideWidth, i3, this.errorBuilder, executor));
+        return errorRequestCoordinator2;
     }
 
-    /* JADX WARN: Type inference failed for: r1v2, types: [com.bumptech.glide.request.BaseRequestOptions] */
+    /* JADX WARN: Type inference failed for: r1v1, types: [com.bumptech.glide.request.BaseRequestOptions] */
     private Request buildThumbnailRequestRecursive(Object obj, Target<TranscodeType> target, RequestListener<TranscodeType> requestListener, RequestCoordinator requestCoordinator, TransitionOptions<?, ? super TranscodeType> transitionOptions, Priority priority, int i, int i2, BaseRequestOptions<?> baseRequestOptions, Executor executor) {
         Priority thumbnailPriority;
         RequestBuilder<TranscodeType> requestBuilder = this.thumbnailBuilder;

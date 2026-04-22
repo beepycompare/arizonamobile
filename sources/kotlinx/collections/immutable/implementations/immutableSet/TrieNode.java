@@ -61,11 +61,11 @@ public final class TrieNode<E> {
     }
 
     private final boolean hasNoCellAt(int i) {
-        return (i & this.bitmap) == 0;
+        return (this.bitmap & i) == 0;
     }
 
     public final int indexOfCellAt$kotlinx_collections_immutable(int i) {
-        return Integer.bitCount((i - 1) & this.bitmap);
+        return Integer.bitCount(this.bitmap & (i - 1));
     }
 
     private final E elementAtIndex(int i) {
@@ -740,49 +740,46 @@ public final class TrieNode<E> {
     public final TrieNode<E> remove(int i, E e, int i2) {
         TrieNode<E> remove;
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
-        if (!hasNoCellAt(indexSegment)) {
-            int indexOfCellAt$kotlinx_collections_immutable = indexOfCellAt$kotlinx_collections_immutable(indexSegment);
-            Object obj = this.buffer[indexOfCellAt$kotlinx_collections_immutable];
-            if (obj instanceof TrieNode) {
-                TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$kotlinx_collections_immutable);
-                if (i2 == 30) {
-                    remove = nodeAtIndex.collisionRemove(e);
-                } else {
-                    remove = nodeAtIndex.remove(i, e, i2 + 5);
-                }
-                if (nodeAtIndex != remove) {
-                    return canonicalizeNodeAtIndex(indexOfCellAt$kotlinx_collections_immutable, remove, null);
-                }
-            } else if (Intrinsics.areEqual(e, obj)) {
-                return removeCellAtIndex(indexOfCellAt$kotlinx_collections_immutable, indexSegment, null);
-            }
+        if (hasNoCellAt(indexSegment)) {
+            return this;
         }
-        return this;
+        int indexOfCellAt$kotlinx_collections_immutable = indexOfCellAt$kotlinx_collections_immutable(indexSegment);
+        Object obj = this.buffer[indexOfCellAt$kotlinx_collections_immutable];
+        if (!(obj instanceof TrieNode)) {
+            return Intrinsics.areEqual(e, obj) ? removeCellAtIndex(indexOfCellAt$kotlinx_collections_immutable, indexSegment, null) : this;
+        }
+        TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$kotlinx_collections_immutable);
+        if (i2 == 30) {
+            remove = nodeAtIndex.collisionRemove(e);
+        } else {
+            remove = nodeAtIndex.remove(i, e, i2 + 5);
+        }
+        return nodeAtIndex == remove ? this : canonicalizeNodeAtIndex(indexOfCellAt$kotlinx_collections_immutable, remove, null);
     }
 
     public final TrieNode<E> mutableRemove(int i, E e, int i2, PersistentHashSetBuilder<?> mutator) {
         TrieNode<E> mutableRemove;
         Intrinsics.checkNotNullParameter(mutator, "mutator");
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
-        if (!hasNoCellAt(indexSegment)) {
-            int indexOfCellAt$kotlinx_collections_immutable = indexOfCellAt$kotlinx_collections_immutable(indexSegment);
-            Object obj = this.buffer[indexOfCellAt$kotlinx_collections_immutable];
-            if (obj instanceof TrieNode) {
-                TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$kotlinx_collections_immutable);
-                if (i2 == 30) {
-                    mutableRemove = nodeAtIndex.mutableCollisionRemove(e, mutator);
-                } else {
-                    mutableRemove = nodeAtIndex.mutableRemove(i, e, i2 + 5, mutator);
-                }
-                if (nodeAtIndex.ownedBy == mutator.getOwnership$kotlinx_collections_immutable() || nodeAtIndex != mutableRemove) {
-                    return canonicalizeNodeAtIndex(indexOfCellAt$kotlinx_collections_immutable, mutableRemove, mutator.getOwnership$kotlinx_collections_immutable());
-                }
-            } else if (Intrinsics.areEqual(e, obj)) {
-                mutator.setSize(mutator.size() - 1);
-                return removeCellAtIndex(indexOfCellAt$kotlinx_collections_immutable, indexSegment, mutator.getOwnership$kotlinx_collections_immutable());
-            }
+        if (hasNoCellAt(indexSegment)) {
+            return this;
         }
-        return this;
+        int indexOfCellAt$kotlinx_collections_immutable = indexOfCellAt$kotlinx_collections_immutable(indexSegment);
+        Object obj = this.buffer[indexOfCellAt$kotlinx_collections_immutable];
+        if (obj instanceof TrieNode) {
+            TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$kotlinx_collections_immutable);
+            if (i2 == 30) {
+                mutableRemove = nodeAtIndex.mutableCollisionRemove(e, mutator);
+            } else {
+                mutableRemove = nodeAtIndex.mutableRemove(i, e, i2 + 5, mutator);
+            }
+            return (nodeAtIndex.ownedBy == mutator.getOwnership$kotlinx_collections_immutable() || nodeAtIndex != mutableRemove) ? canonicalizeNodeAtIndex(indexOfCellAt$kotlinx_collections_immutable, mutableRemove, mutator.getOwnership$kotlinx_collections_immutable()) : this;
+        } else if (Intrinsics.areEqual(e, obj)) {
+            mutator.setSize(mutator.size() - 1);
+            return removeCellAtIndex(indexOfCellAt$kotlinx_collections_immutable, indexSegment, mutator.getOwnership$kotlinx_collections_immutable());
+        } else {
+            return this;
+        }
     }
 
     /* compiled from: TrieNode.kt */

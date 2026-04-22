@@ -1449,7 +1449,7 @@ public class FragmentedMp4Extractor implements Extractor {
             } else {
                 i = this.fragment.sampleIsSyncFrameTable[this.currentSampleIndex] ? 1 : 0;
             }
-            return getEncryptionBoxIfEncrypted() != null ? i | 1073741824 : i;
+            return getEncryptionBoxIfEncrypted() != null ? 1073741824 | i : i;
         }
 
         public boolean next() {

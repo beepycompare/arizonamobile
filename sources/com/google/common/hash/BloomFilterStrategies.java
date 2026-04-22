@@ -56,10 +56,11 @@ public enum BloomFilterStrategies implements BloomFilter.Strategy {
             byte[] bytesInternal = Hashing.murmur3_128().hashObject(object, funnel).getBytesInternal();
             long lowerEight = lowerEight(bytesInternal);
             long upperEight = upperEight(bytesInternal);
+            long j = lowerEight;
             boolean z = false;
             for (int i = 0; i < numHashFunctions; i++) {
-                z |= bits.set((Long.MAX_VALUE & lowerEight) % bitSize);
-                lowerEight += upperEight;
+                z |= bits.set((Long.MAX_VALUE & j) % bitSize);
+                j += upperEight;
             }
             return z;
         }

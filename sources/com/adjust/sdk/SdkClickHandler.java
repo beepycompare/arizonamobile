@@ -101,8 +101,6 @@ public class SdkClickHandler implements ISdkClickHandler {
         Boolean bool2;
         String str2;
         String str3;
-        Boolean bool3;
-        long j5;
         String str4;
         IActivityHandler iActivityHandler2 = this.activityHandlerWeakRef.get();
         String str5 = activityPackage.getParameters().get("source");
@@ -143,7 +141,7 @@ public class SdkClickHandler implements ISdkClickHandler {
             str2 = null;
             str3 = null;
         }
-        Boolean bool4 = bool2;
+        Boolean bool3 = bool2;
         boolean z5 = str5 != null && str5.equals(Constants.PREINSTALL);
         boolean z6 = str5 != null && str5.equals(Constants.LICENSE_VERIFICATION);
         ResponseData sendActivityPackageSync = this.activityPackageSender.sendActivityPackageSync(activityPackage, generateSendingParametersI());
@@ -153,7 +151,7 @@ public class SdkClickHandler implements ISdkClickHandler {
                 retrySendingI(activityPackage, sdkClickResponseData.retryIn);
                 return;
             }
-            Boolean bool5 = bool;
+            Boolean bool4 = bool;
             this.lastPackageRetryInMilli = 0L;
             if (iActivityHandler == null) {
                 return;
@@ -163,22 +161,17 @@ public class SdkClickHandler implements ISdkClickHandler {
                 return;
             }
             if (z) {
-                bool3 = bool5;
-                j5 = j2;
                 SharedPreferencesManager.getDefaultInstance(iActivityHandler.getContext()).removeRawReferrer(str6, activityPackage.getClickTimeInMilliseconds());
-            } else {
-                bool3 = bool5;
-                j5 = j2;
             }
             if (z2) {
                 sdkClickResponseData.clickTime = j;
                 sdkClickResponseData.installBegin = j3;
                 sdkClickResponseData.installReferrer = str;
                 sdkClickResponseData.clickTimeServer = j4;
-                sdkClickResponseData.installBeginServer = j5;
+                sdkClickResponseData.installBeginServer = j2;
                 sdkClickResponseData.installVersion = str2;
-                sdkClickResponseData.googlePlayInstant = bool3;
-                sdkClickResponseData.isClick = bool4;
+                sdkClickResponseData.googlePlayInstant = bool4;
+                sdkClickResponseData.isClick = bool3;
                 sdkClickResponseData.referrerApi = str3;
                 sdkClickResponseData.isInstallReferrer = true;
             }

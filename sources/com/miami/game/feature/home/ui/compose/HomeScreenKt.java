@@ -449,7 +449,6 @@ public final class HomeScreenKt {
     public static final void HomeContent(final HomeUiState uiState, final State<Integer> notificationState, final Function0<Unit> onClickGame, final Function0<Unit> onClickServer, final Function0<Unit> onClickShop, final Function1<? super String, Unit> onClickNews, final Function1<? super String, Unit> onClickSocial, final Function0<Unit> onClickAccount, final Function0<Unit> onClickForum, final Function0<Unit> onClickSettings, final Function0<Unit> onClickSetup, final Function0<Unit> onClickNotifications, final Function0<Unit> onLongClickGame, Composer composer, final int i, final int i2) {
         int i3;
         int i4;
-        int i5;
         Composer composer2;
         Intrinsics.checkNotNullParameter(uiState, "uiState");
         Intrinsics.checkNotNullParameter(notificationState, "notificationState");
@@ -471,52 +470,49 @@ public final class HomeScreenKt {
         } else {
             i3 = i;
         }
-        int i6 = i3;
         if ((i & 48) == 0) {
-            i4 = i6 | (startRestartGroup.changed(notificationState) ? 32 : 16);
-        } else {
-            i4 = i6;
+            i3 |= startRestartGroup.changed(notificationState) ? 32 : 16;
         }
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-            i4 |= startRestartGroup.changedInstance(onClickGame) ? 256 : 128;
+            i3 |= startRestartGroup.changedInstance(onClickGame) ? 256 : 128;
         }
         if ((i & 3072) == 0) {
-            i4 |= startRestartGroup.changedInstance(onClickServer) ? 2048 : 1024;
+            i3 |= startRestartGroup.changedInstance(onClickServer) ? 2048 : 1024;
         }
         if ((i & 24576) == 0) {
-            i4 |= startRestartGroup.changedInstance(onClickShop) ? 16384 : 8192;
+            i3 |= startRestartGroup.changedInstance(onClickShop) ? 16384 : 8192;
         }
         if ((196608 & i) == 0) {
-            i4 |= startRestartGroup.changedInstance(onClickNews) ? 131072 : 65536;
+            i3 |= startRestartGroup.changedInstance(onClickNews) ? 131072 : 65536;
         }
         if ((1572864 & i) == 0) {
-            i4 |= startRestartGroup.changedInstance(onClickSocial) ? 1048576 : 524288;
+            i3 |= startRestartGroup.changedInstance(onClickSocial) ? 1048576 : 524288;
         }
         if ((12582912 & i) == 0) {
-            i4 |= startRestartGroup.changedInstance(onClickAccount) ? 8388608 : 4194304;
+            i3 |= startRestartGroup.changedInstance(onClickAccount) ? 8388608 : 4194304;
         }
         if ((100663296 & i) == 0) {
-            i4 |= startRestartGroup.changedInstance(onClickForum) ? 67108864 : 33554432;
+            i3 |= startRestartGroup.changedInstance(onClickForum) ? 67108864 : 33554432;
         }
         if ((805306368 & i) == 0) {
-            i4 |= startRestartGroup.changedInstance(onClickSettings) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+            i3 |= startRestartGroup.changedInstance(onClickSettings) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
         }
-        int i7 = i4;
+        int i5 = i3;
         if ((i2 & 48) == 0) {
-            i5 = i2 | (startRestartGroup.changedInstance(onClickNotifications) ? 32 : 16);
+            i4 = i2 | (startRestartGroup.changedInstance(onClickNotifications) ? 32 : 16);
         } else {
-            i5 = i2;
+            i4 = i2;
         }
         if ((i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-            i5 |= startRestartGroup.changedInstance(onLongClickGame) ? 256 : 128;
+            i4 |= startRestartGroup.changedInstance(onLongClickGame) ? 256 : 128;
         }
-        int i8 = i5;
-        if (!startRestartGroup.shouldExecute(((i7 & 306783379) == 306783378 && (i8 & 145) == 144) ? false : true, i7 & 1)) {
+        int i6 = i4;
+        if (!startRestartGroup.shouldExecute(((306783379 & i5) == 306783378 && (i6 & 145) == 144) ? false : true, i5 & 1)) {
             composer2 = startRestartGroup;
             composer2.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(258468589, i7, i8, "com.miami.game.feature.home.ui.compose.HomeContent (HomeScreen.kt:195)");
+                ComposerKt.traceEventStart(258468589, i5, i6, "com.miami.game.feature.home.ui.compose.HomeContent (HomeScreen.kt:195)");
             }
             Modifier fillMaxSize$default = SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
@@ -545,7 +541,7 @@ public final class HomeScreenKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -637544234, "C201@7482L523,216@8014L382,227@8406L266:HomeScreen.kt#dswm0d");
-            Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(PaddingKt.m822paddingqDBjuR0$default(boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getCenterStart()), Dp.m7555constructorimpl(32), 0.0f, 0.0f, Dp.m7555constructorimpl(16), 6, null), 0.0f, 1, null);
+            Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(PaddingKt.m822paddingqDBjuR0$default(boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getCenterStart()), Dp.m7555constructorimpl(32.0f), 0.0f, 0.0f, Dp.m7555constructorimpl(16.0f), 6, null), 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), Alignment.Companion.getStart(), startRestartGroup, 6);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -572,11 +568,11 @@ public final class HomeScreenKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1749381735, "C206@7696L110,210@7819L104,214@7936L59:HomeScreen.kt#dswm0d");
-            int i9 = i7 & 14;
-            int i10 = i7 >> 15;
-            SocialContentKt.SocialContent(uiState, onClickSocial, startRestartGroup, (i10 & 112) | i9);
-            NewsContentKt.NewsContent(uiState, onClickNews, startRestartGroup, ((i7 >> 12) & 112) | i9);
-            ShopContentKt.ShopContent(uiState.getXDonate(), uiState.isArizona(), onClickShop, startRestartGroup, (i7 >> 6) & 896);
+            int i7 = i5 & 14;
+            int i8 = i5 >> 15;
+            SocialContentKt.SocialContent(uiState, onClickSocial, startRestartGroup, (i8 & 112) | i7);
+            NewsContentKt.NewsContent(uiState, onClickNews, startRestartGroup, ((i5 >> 12) & 112) | i7);
+            ShopContentKt.ShopContent(uiState.getXDonate(), uiState.isArizona(), onClickShop, startRestartGroup, (i5 >> 6) & 896);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -610,7 +606,7 @@ public final class HomeScreenKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1659112318, "C217@8066L320:HomeScreen.kt#dswm0d");
-            MenuContentKt.MenuContent(uiState, notificationState, onClickAccount, onClickForum, onClickSettings, onClickNotifications, startRestartGroup, (i7 & WebSocketProtocol.PAYLOAD_SHORT) | (i10 & 896) | (i10 & 7168) | (57344 & i10) | ((i8 << 12) & 458752));
+            MenuContentKt.MenuContent(uiState, notificationState, onClickAccount, onClickForum, onClickSettings, onClickNotifications, startRestartGroup, (i5 & WebSocketProtocol.PAYLOAD_SHORT) | (i8 & 896) | (i8 & 7168) | (57344 & i8) | ((i6 << 12) & 458752));
             composer2 = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -645,8 +641,8 @@ public final class HomeScreenKt {
             ComposerKt.sourceInformationMarkerStart(composer2, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer2, 863299728, "C228@8461L201:HomeScreen.kt#dswm0d");
-            int i11 = i7 >> 3;
-            PlayContentKt.PlayContent(uiState, onClickGame, onClickServer, onLongClickGame, composer2, (i11 & 896) | i9 | (i11 & 112) | ((i8 << 3) & 7168));
+            int i9 = i5 >> 3;
+            PlayContentKt.PlayContent(uiState, onClickGame, onClickServer, onLongClickGame, composer2, (i9 & 896) | i7 | (i9 & 112) | ((i6 << 3) & 7168));
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();
@@ -683,7 +679,7 @@ public final class HomeScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1764360146, i, -1, "com.miami.game.feature.home.ui.compose.NewsItemUiPreview (HomeScreen.kt:242)");
             }
-            BoxKt.Box(PaddingKt.m818padding3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7555constructorimpl(36)), startRestartGroup, 6);
+            BoxKt.Box(PaddingKt.m818padding3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7555constructorimpl(36.0f)), startRestartGroup, 6);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

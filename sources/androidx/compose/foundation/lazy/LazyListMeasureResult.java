@@ -173,8 +173,7 @@ public final class LazyListMeasureResult implements LazyListLayoutInfo, MeasureR
     @Override // androidx.compose.foundation.lazy.LazyListLayoutInfo
     /* renamed from: getViewportSize-YbymL2g */
     public long mo923getViewportSizeYbymL2g() {
-        int width = getWidth();
-        return IntSize.m7721constructorimpl((getHeight() & 4294967295L) | (width << 32));
+        return IntSize.m7721constructorimpl((getWidth() << 32) | (getHeight() & 4294967295L));
     }
 
     @Override // androidx.compose.foundation.lazy.LazyListLayoutInfo

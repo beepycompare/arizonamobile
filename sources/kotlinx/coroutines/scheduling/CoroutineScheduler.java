@@ -173,35 +173,38 @@ public final class CoroutineScheduler implements Executor, Closeable {
             int i3 = (int) (2097151 & j);
             long j2 = (2097152 + j) & PARKED_VERSION_MASK;
             if (i3 == i) {
-                i3 = i2 == 0 ? parkedWorkersStackNextIndex(worker) : i2;
+                i3 = i2 == 0 ? this.parkedWorkersStackNextIndex(worker) : i2;
             }
             if (i3 >= 0) {
-                if (parkedWorkersStack$volatile$FU.compareAndSet(this, j, j2 | i3)) {
+                CoroutineScheduler coroutineScheduler = this;
+                if (parkedWorkersStack$volatile$FU.compareAndSet(coroutineScheduler, j, j2 | i3)) {
                     return;
                 }
+                this = coroutineScheduler;
             }
         }
     }
 
     public final boolean parkedWorkersStackPush(Worker worker) {
-        long j;
-        long j2;
-        int indexInArray;
         if (worker.getNextParkedWorker() != NOT_IN_STACK) {
             return false;
         }
         AtomicLongFieldUpdater atomicLongFieldUpdater = parkedWorkersStack$volatile$FU;
-        do {
-            j = atomicLongFieldUpdater.get(this);
+        while (true) {
+            long j = atomicLongFieldUpdater.get(this);
             int i = (int) (2097151 & j);
-            j2 = (2097152 + j) & PARKED_VERSION_MASK;
-            indexInArray = worker.getIndexInArray();
+            long j2 = (2097152 + j) & PARKED_VERSION_MASK;
+            int indexInArray = worker.getIndexInArray();
             if (DebugKt.getASSERTIONS_ENABLED() && indexInArray == 0) {
                 throw new AssertionError();
             }
             worker.setNextParkedWorker(this.workers.get(i));
-        } while (!parkedWorkersStack$volatile$FU.compareAndSet(this, j, j2 | indexInArray));
-        return true;
+            CoroutineScheduler coroutineScheduler = this;
+            if (parkedWorkersStack$volatile$FU.compareAndSet(coroutineScheduler, j, j2 | indexInArray)) {
+                return true;
+            }
+            this = coroutineScheduler;
+        }
     }
 
     private final Worker parkedWorkersStackPop() {
@@ -213,10 +216,14 @@ public final class CoroutineScheduler implements Executor, Closeable {
                 return null;
             }
             long j2 = (2097152 + j) & PARKED_VERSION_MASK;
-            int parkedWorkersStackNextIndex = parkedWorkersStackNextIndex(worker);
-            if (parkedWorkersStackNextIndex >= 0 && parkedWorkersStack$volatile$FU.compareAndSet(this, j, parkedWorkersStackNextIndex | j2)) {
-                worker.setNextParkedWorker(NOT_IN_STACK);
-                return worker;
+            int parkedWorkersStackNextIndex = this.parkedWorkersStackNextIndex(worker);
+            if (parkedWorkersStackNextIndex >= 0) {
+                CoroutineScheduler coroutineScheduler = this;
+                if (parkedWorkersStack$volatile$FU.compareAndSet(coroutineScheduler, j, parkedWorkersStackNextIndex | j2)) {
+                    worker.setNextParkedWorker(NOT_IN_STACK);
+                    return worker;
+                }
+                this = coroutineScheduler;
             }
         }
     }
@@ -262,15 +269,18 @@ public final class CoroutineScheduler implements Executor, Closeable {
     }
 
     private final boolean tryAcquireCpuPermit() {
-        long j;
         AtomicLongFieldUpdater access$getControlState$volatile$FU = access$getControlState$volatile$FU();
-        do {
-            j = access$getControlState$volatile$FU.get(this);
+        while (true) {
+            long j = access$getControlState$volatile$FU.get(this);
             if (((int) ((CPU_PERMITS_MASK & j) >> 42)) == 0) {
                 return false;
             }
-        } while (!access$getControlState$volatile$FU().compareAndSet(this, j, j - 4398046511104L));
-        return true;
+            CoroutineScheduler coroutineScheduler = this;
+            if (access$getControlState$volatile$FU().compareAndSet(coroutineScheduler, j, j - 4398046511104L)) {
+                return true;
+            }
+            this = coroutineScheduler;
+        }
     }
 
     private final long releaseCpuPermit() {
@@ -754,7 +764,7 @@ public final class CoroutineScheduler implements Executor, Closeable {
             int i5 = i4 ^ (i4 << 5);
             this.rngState = i5;
             int i6 = i - 1;
-            return (i6 & i) == 0 ? i5 & i6 : (i5 & Integer.MAX_VALUE) % i;
+            return (i6 & i) == 0 ? i6 & i5 : (Integer.MAX_VALUE & i5) % i;
         }
 
         private final void park() {
@@ -804,20 +814,12 @@ public final class CoroutineScheduler implements Executor, Closeable {
 
         private final Task findBlockingTask() {
             Task pollBlocking = this.localQueue.pollBlocking();
-            if (pollBlocking == null) {
-                Task removeFirstOrNull = CoroutineScheduler.this.globalBlockingQueue.removeFirstOrNull();
-                return removeFirstOrNull == null ? trySteal(1) : removeFirstOrNull;
-            }
-            return pollBlocking;
+            return (pollBlocking == null && (pollBlocking = CoroutineScheduler.this.globalBlockingQueue.removeFirstOrNull()) == null) ? trySteal(1) : pollBlocking;
         }
 
         private final Task findCpuTask() {
             Task pollCpu = this.localQueue.pollCpu();
-            if (pollCpu == null) {
-                Task removeFirstOrNull = CoroutineScheduler.this.globalBlockingQueue.removeFirstOrNull();
-                return removeFirstOrNull == null ? trySteal(2) : removeFirstOrNull;
-            }
-            return pollCpu;
+            return (pollCpu == null && (pollCpu = CoroutineScheduler.this.globalBlockingQueue.removeFirstOrNull()) == null) ? trySteal(2) : pollCpu;
         }
 
         private final Task findAnyTask(boolean z) {

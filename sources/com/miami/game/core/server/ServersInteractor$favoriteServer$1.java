@@ -42,10 +42,10 @@ public final class ServersInteractor$favoriteServer$1 extends SuspendLambda impl
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x003f, code lost:
-        if (r13.favoriteServerDAO().addFavorite(com.miami.game.core.server.data.FavoriteServerEntityKt.toFavoriteEntity(r12.$serverModel), r12) == r0) goto L19;
+        if (r12.favoriteServerDAO().addFavorite(com.miami.game.core.server.data.FavoriteServerEntityKt.toFavoriteEntity(r11.$serverModel), r11) == r0) goto L19;
      */
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0059, code lost:
-        if (r13.favoriteServerDAO().removeFromFavorite(com.miami.game.core.server.data.FavoriteServerEntityKt.toFavoriteEntity(r12.$serverModel), r12) == r0) goto L19;
+        if (r12.favoriteServerDAO().removeFromFavorite(com.miami.game.core.server.data.FavoriteServerEntityKt.toFavoriteEntity(r11.$serverModel), r11) == r0) goto L19;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x005b, code lost:
         return r0;

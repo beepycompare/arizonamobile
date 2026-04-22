@@ -114,11 +114,10 @@ public final class PlaybackStats {
                     return false;
                 }
                 Format format = this.format;
-                Format format2 = eventTimeAndFormat.format;
                 if (format != null) {
-                    return format.equals(format2);
+                    return format.equals(eventTimeAndFormat.format);
                 }
-                if (format2 == null) {
+                if (eventTimeAndFormat.format == null) {
                     return true;
                 }
             }

@@ -136,7 +136,7 @@ final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implem
                     final Lifecycle.Event downFrom = Lifecycle.Event.Companion.downFrom(state);
                     final Mutex Mutex$default = MutexKt.Mutex$default(false, 1, null);
                     objectRef.element = new LifecycleEventObserver() { // from class: androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1
-                        /* JADX WARN: Type inference failed for: r9v5, types: [T, kotlinx.coroutines.Job] */
+                        /* JADX WARN: Type inference failed for: r7v4, types: [T, kotlinx.coroutines.Job] */
                         @Override // androidx.lifecycle.LifecycleEventObserver
                         public final void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
                             ?? launch$default;
@@ -201,8 +201,8 @@ final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implem
                             public final Object invokeSuspend(Object obj) {
                                 Mutex mutex;
                                 Function2<CoroutineScope, Continuation<? super Unit>, Object> function2;
-                                Mutex mutex2;
                                 Throwable th;
+                                Mutex mutex2;
                                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                                 int i = this.label;
                                 try {
@@ -244,8 +244,9 @@ final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implem
                                     }
                                     return coroutine_suspended;
                                 } catch (Throwable th3) {
-                                    mutex2 = mutex;
+                                    Mutex mutex3 = mutex;
                                     th = th3;
+                                    mutex2 = mutex3;
                                     mutex2.unlock(null);
                                     throw th;
                                 }

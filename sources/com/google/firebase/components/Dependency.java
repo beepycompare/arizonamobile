@@ -99,7 +99,7 @@ public final class Dependency {
     }
 
     public int hashCode() {
-        return ((((this.anInterface.hashCode() ^ 1000003) * 1000003) ^ this.type) * 1000003) ^ this.injection;
+        return this.injection ^ ((((this.anInterface.hashCode() ^ 1000003) * 1000003) ^ this.type) * 1000003);
     }
 
     public String toString() {

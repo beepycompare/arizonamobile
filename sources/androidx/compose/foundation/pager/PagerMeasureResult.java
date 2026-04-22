@@ -199,8 +199,7 @@ public final class PagerMeasureResult implements PagerLayoutInfo, MeasureResult 
     @Override // androidx.compose.foundation.pager.PagerLayoutInfo
     /* renamed from: getViewportSize-YbymL2g */
     public long mo1076getViewportSizeYbymL2g() {
-        int width = getWidth();
-        return IntSize.m7721constructorimpl((getHeight() & 4294967295L) | (width << 32));
+        return IntSize.m7721constructorimpl((getWidth() << 32) | (getHeight() & 4294967295L));
     }
 
     @Override // androidx.compose.foundation.pager.PagerLayoutInfo

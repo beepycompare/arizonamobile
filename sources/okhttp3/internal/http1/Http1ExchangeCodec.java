@@ -412,7 +412,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
                 return this.this$0.getSocket().getSource().read(sink, j);
             } catch (IOException e) {
                 this.this$0.getCarrier().noNewExchanges();
-                responseBodyComplete(Http1ExchangeCodec.TRAILERS_RESPONSE_BODY_TRUNCATED);
+                this.responseBodyComplete(Http1ExchangeCodec.TRAILERS_RESPONSE_BODY_TRUNCATED);
                 throw e;
             }
         }

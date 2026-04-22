@@ -45,13 +45,12 @@ public final class zzod {
     private final int zzg() {
         try {
             String str = (String) this.zza.get("PolicyVersion");
-            if (TextUtils.isEmpty(str)) {
-                return -1;
+            if (!TextUtils.isEmpty(str)) {
+                return Integer.parseInt(str);
             }
-            return Integer.parseInt(str);
         } catch (NumberFormatException unused) {
-            return -1;
         }
+        return -1;
     }
 
     public final boolean equals(Object obj) {
@@ -162,9 +161,8 @@ public final class zzod {
         Preconditions.checkArgument(true);
         Map map = this.zza;
         int i2 = true != "1".equals(map.get("gdprApplies")) ? 0 : 2;
-        boolean equals = "1".equals(map.get("EnableAdvertiserConsentMode"));
         int i3 = i2 | 4;
-        if (equals) {
+        if ("1".equals(map.get("EnableAdvertiserConsentMode"))) {
             i3 = i2 | 12;
         }
         sb.append("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_".charAt(i3));

@@ -44,70 +44,65 @@ public final class FlowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1<T>
         this.$this_flow$inlined = flowCollector;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0074, code lost:
-        if (r2.emit(r9, r0) == r1) goto L24;
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0055, code lost:
+        if (r7 == r1) goto L24;
      */
-    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x006d, code lost:
+        if (r7.emit(r6, r0) == r1) goto L24;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x006f, code lost:
+        return r1;
+     */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0047  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0077  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x007a  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0043  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0076  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public Object emit(T t, Continuation<? super Unit> continuation) {
         AnonymousClass1 anonymousClass1;
+        Object obj;
         int i;
         boolean z;
-        Object obj;
-        T t2;
-        FlowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1<T> flowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
             if ((anonymousClass1.label & Integer.MIN_VALUE) != 0) {
                 anonymousClass1.label -= Integer.MIN_VALUE;
-                Object obj2 = anonymousClass1.result;
+                obj = anonymousClass1.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = anonymousClass1.label;
                 z = true;
                 if (i != 0) {
-                    ResultKt.throwOnFailure(obj2);
+                    ResultKt.throwOnFailure(obj);
                     Function2 function2 = this.$predicate$inlined;
                     anonymousClass1.L$0 = this;
                     anonymousClass1.L$1 = t;
                     anonymousClass1.label = 1;
-                    Object invoke = function2.invoke(t, anonymousClass1);
-                    if (invoke != coroutine_suspended) {
-                        obj = invoke;
-                        t2 = t;
-                        flowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1 = this;
-                    }
-                    return coroutine_suspended;
+                    obj = function2.invoke(t, anonymousClass1);
                 } else if (i != 1) {
                     if (i == 2) {
-                        flowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1 = (FlowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1) anonymousClass1.L$0;
-                        ResultKt.throwOnFailure(obj2);
+                        this = (FlowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1) anonymousClass1.L$0;
+                        ResultKt.throwOnFailure(obj);
                         if (!z) {
-                            throw new AbortFlowException(flowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1);
+                            throw new AbortFlowException(this);
                         }
                         return Unit.INSTANCE;
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    Object obj3 = anonymousClass1.L$1;
-                    ResultKt.throwOnFailure(obj2);
-                    t2 = obj3;
-                    flowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1 = (FlowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1) anonymousClass1.L$0;
-                    obj = obj2;
+                    t = (T) anonymousClass1.L$1;
+                    this = (FlowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1) anonymousClass1.L$0;
+                    ResultKt.throwOnFailure(obj);
                 }
                 if (((Boolean) obj).booleanValue()) {
                     z = false;
                 } else {
-                    FlowCollector flowCollector = flowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1.$this_flow$inlined;
-                    anonymousClass1.L$0 = flowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1;
+                    FlowCollector flowCollector = this.$this_flow$inlined;
+                    anonymousClass1.L$0 = this;
                     anonymousClass1.L$1 = null;
                     anonymousClass1.label = 2;
                 }
@@ -116,7 +111,7 @@ public final class FlowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1<T>
             }
         }
         anonymousClass1 = new AnonymousClass1(continuation);
-        Object obj22 = anonymousClass1.result;
+        obj = anonymousClass1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = anonymousClass1.label;
         z = true;

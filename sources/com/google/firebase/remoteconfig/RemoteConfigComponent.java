@@ -94,13 +94,19 @@ public class RemoteConfigComponent implements FirebaseRemoteConfigInterop {
 
     public synchronized FirebaseRemoteConfig get(String str) {
         Throwable th;
+        RemoteConfigComponent remoteConfigComponent;
+        ConfigCacheClient cacheClient;
+        ConfigCacheClient cacheClient2;
+        ConfigCacheClient cacheClient3;
+        ConfigSharedPrefsClient sharedPrefsClient;
+        ConfigGetParameterHandler getHandler;
         try {
             try {
-                ConfigCacheClient cacheClient = getCacheClient(str, FETCH_FILE_NAME);
-                ConfigCacheClient cacheClient2 = getCacheClient(str, ACTIVATE_FILE_NAME);
-                ConfigCacheClient cacheClient3 = getCacheClient(str, DEFAULTS_FILE_NAME);
-                ConfigSharedPrefsClient sharedPrefsClient = getSharedPrefsClient(this.context, this.appId, str);
-                ConfigGetParameterHandler getHandler = getGetHandler(cacheClient2, cacheClient3);
+                cacheClient = getCacheClient(str, FETCH_FILE_NAME);
+                cacheClient2 = getCacheClient(str, ACTIVATE_FILE_NAME);
+                cacheClient3 = getCacheClient(str, DEFAULTS_FILE_NAME);
+                sharedPrefsClient = getSharedPrefsClient(this.context, this.appId, str);
+                getHandler = getGetHandler(cacheClient2, cacheClient3);
                 final Personalization personalization = getPersonalization(this.firebaseApp, str, this.analyticsConnector);
                 if (personalization != null) {
                     try {
@@ -113,18 +119,20 @@ public class RemoteConfigComponent implements FirebaseRemoteConfigInterop {
                         });
                     } catch (Throwable th2) {
                         th = th2;
+                        remoteConfigComponent = this;
                         throw th;
                     }
                 }
-                return get(this.firebaseApp, str, this.firebaseInstallations, this.firebaseAbt, this.executor, cacheClient, cacheClient2, cacheClient3, getFetchHandler(str, cacheClient, sharedPrefsClient), getHandler, sharedPrefsClient, getRolloutsStateSubscriptionsHandler(cacheClient2, cacheClient3));
             } catch (Throwable th3) {
                 th = th3;
+                remoteConfigComponent = this;
                 th = th;
                 throw th;
             }
         } catch (Throwable th4) {
             th = th4;
         }
+        return get(this.firebaseApp, str, this.firebaseInstallations, this.firebaseAbt, this.executor, cacheClient, cacheClient2, cacheClient3, getFetchHandler(str, cacheClient, sharedPrefsClient), getHandler, sharedPrefsClient, getRolloutsStateSubscriptionsHandler(cacheClient2, cacheClient3));
     }
 
     synchronized FirebaseRemoteConfig get(FirebaseApp firebaseApp, String str, FirebaseInstallationsApi firebaseInstallationsApi, FirebaseABTesting firebaseABTesting, Executor executor, ConfigCacheClient configCacheClient, ConfigCacheClient configCacheClient2, ConfigCacheClient configCacheClient3, ConfigFetchHandler configFetchHandler, ConfigGetParameterHandler configGetParameterHandler, ConfigSharedPrefsClient configSharedPrefsClient, RolloutsStateSubscriptionsHandler rolloutsStateSubscriptionsHandler) {

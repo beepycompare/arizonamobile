@@ -23,8 +23,7 @@ final class Constants {
         taylor_2_bound = sqrt;
         double sqrt2 = Math.sqrt(sqrt);
         taylor_n_bound = sqrt2;
-        double d = 1;
-        upper_taylor_2_bound = d / sqrt;
-        upper_taylor_n_bound = d / sqrt2;
+        upper_taylor_2_bound = 1.0d / sqrt;
+        upper_taylor_n_bound = 1.0d / sqrt2;
     }
 }

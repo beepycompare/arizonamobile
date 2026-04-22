@@ -43,7 +43,7 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
             try {
                 return (D) AsyncTaskLoader.this.onLoadInBackground();
             } catch (OperationCanceledException e) {
-                if (isCancelled()) {
+                if (this.isCancelled()) {
                     return null;
                 }
                 throw e;

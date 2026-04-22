@@ -324,10 +324,10 @@ public final class PagerKt {
                                         snapPosition3 = snapPosition;
                                     } else {
                                         Modifier.Companion companion = i30 != 0 ? Modifier.Companion : obj;
-                                        PaddingValues m811PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : paddingValues;
+                                        PaddingValues m811PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : paddingValues;
                                         PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                         int i33 = i8 != 0 ? 0 : i9;
-                                        float m7555constructorimpl = i10 != 0 ? Dp.m7555constructorimpl(0) : f2;
+                                        float m7555constructorimpl = i10 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
                                         if (i11 != 0) {
                                             vertical2 = Alignment.Companion.getCenterVertically();
                                         }
@@ -636,9 +636,9 @@ public final class PagerKt {
     /* JADX WARN: Removed duplicated region for block: B:146:0x01b3  */
     /* JADX WARN: Removed duplicated region for block: B:149:0x01c6  */
     /* JADX WARN: Removed duplicated region for block: B:156:0x01d9  */
-    /* JADX WARN: Removed duplicated region for block: B:213:0x0310  */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x032a  */
-    /* JADX WARN: Removed duplicated region for block: B:218:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x030f  */
+    /* JADX WARN: Removed duplicated region for block: B:217:0x0329  */
+    /* JADX WARN: Removed duplicated region for block: B:219:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0046  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x0049  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0067  */
@@ -855,10 +855,10 @@ public final class PagerKt {
                                         paddingValues3 = paddingValues;
                                     } else {
                                         companion = i28 != 0 ? Modifier.Companion : obj;
-                                        PaddingValues m811PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : paddingValues;
+                                        PaddingValues m811PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : paddingValues;
                                         PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                         i22 = i8 != 0 ? 0 : i9;
-                                        float m7555constructorimpl = i10 != 0 ? Dp.m7555constructorimpl(0) : f2;
+                                        float m7555constructorimpl = i10 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
                                         if (i11 != 0) {
                                             obj2 = Alignment.Companion.getCenterVertically();
                                         }
@@ -1379,10 +1379,10 @@ public final class PagerKt {
                                         snapPosition3 = snapPosition;
                                     } else {
                                         Modifier.Companion companion = i30 != 0 ? Modifier.Companion : obj;
-                                        PaddingValues m811PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : paddingValues;
+                                        PaddingValues m811PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : paddingValues;
                                         PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                         int i33 = i8 != 0 ? 0 : i9;
-                                        float m7555constructorimpl = i10 != 0 ? Dp.m7555constructorimpl(0) : f2;
+                                        float m7555constructorimpl = i10 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
                                         if (i11 != 0) {
                                             obj2 = Alignment.Companion.getCenterHorizontally();
                                         }
@@ -1694,9 +1694,9 @@ public final class PagerKt {
     /* JADX WARN: Removed duplicated region for block: B:146:0x01b3  */
     /* JADX WARN: Removed duplicated region for block: B:149:0x01c6  */
     /* JADX WARN: Removed duplicated region for block: B:156:0x01d9  */
-    /* JADX WARN: Removed duplicated region for block: B:213:0x0310  */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x032a  */
-    /* JADX WARN: Removed duplicated region for block: B:218:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x030f  */
+    /* JADX WARN: Removed duplicated region for block: B:217:0x0329  */
+    /* JADX WARN: Removed duplicated region for block: B:219:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0046  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x0049  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0067  */
@@ -1913,10 +1913,10 @@ public final class PagerKt {
                                         paddingValues3 = paddingValues;
                                     } else {
                                         companion = i28 != 0 ? Modifier.Companion : obj;
-                                        PaddingValues m811PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : paddingValues;
+                                        PaddingValues m811PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : paddingValues;
                                         PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                         i22 = i8 != 0 ? 0 : i9;
-                                        float m7555constructorimpl = i10 != 0 ? Dp.m7555constructorimpl(0) : f2;
+                                        float m7555constructorimpl = i10 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
                                         if (i11 != 0) {
                                             obj2 = Alignment.Companion.getCenterHorizontally();
                                         }

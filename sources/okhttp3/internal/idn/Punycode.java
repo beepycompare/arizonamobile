@@ -337,9 +337,9 @@ public final class Punycode {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v0, types: [char] */
-    /* JADX WARN: Type inference failed for: r1v3 */
-    /* JADX WARN: Type inference failed for: r1v6, types: [int] */
+    /* JADX WARN: Type inference failed for: r0v0, types: [char] */
+    /* JADX WARN: Type inference failed for: r0v3 */
+    /* JADX WARN: Type inference failed for: r0v6, types: [int] */
     private final List<Integer> codePoints(String str, int i, int i2) {
         ArrayList arrayList = new ArrayList();
         while (i < i2) {

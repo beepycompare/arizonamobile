@@ -49,16 +49,16 @@ public final class DataStoreImpl$readDataOrHandleCorruption$2<T> extends Suspend
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0034, code lost:
         if (r7 == r0) goto L20;
      */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0064  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0065  */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         boolean z;
-        Object obj2;
         int i;
+        Object obj2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i2 = this.label;
         if (i2 == 0) {
@@ -84,15 +84,17 @@ public final class DataStoreImpl$readDataOrHandleCorruption$2<T> extends Suspend
             this.label = 2;
             Object version = this.this$0.getCoordinator().getVersion(this);
             if (version != coroutine_suspended) {
-                obj2 = obj;
+                Object obj3 = obj;
                 obj = version;
+                obj2 = obj3;
                 i = ((Number) obj).intValue();
                 return new Data(obj2, obj2 != null ? obj2.hashCode() : 0, i);
             }
             return coroutine_suspended;
         }
-        obj2 = obj;
+        Object obj4 = obj;
         i = this.$preLockVersion;
+        obj2 = obj4;
         return new Data(obj2, obj2 != null ? obj2.hashCode() : 0, i);
     }
 }

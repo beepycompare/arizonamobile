@@ -176,9 +176,8 @@ final class VeilModifierNode extends Modifier.Node implements DrawModifierNode {
                 long mo6224getSizeYbymL2g = parentLayoutCoordinates.mo6224getSizeYbymL2g();
                 m4605getZeroNHjbRc = Size.m4587constructorimpl((Float.floatToRawIntBits((int) (mo6224getSizeYbymL2g & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6224getSizeYbymL2g >> 32)) << 32));
             }
-            long positionInParent = LayoutCoordinatesKt.positionInParent(requireLayoutCoordinates);
             ContentDrawScope contentDrawScope2 = contentDrawScope;
-            DrawScope.m5340drawRectnJ9OG0$default(contentDrawScope2, animate.getValue().m4782unboximpl(), Offset.m4519constructorimpl(positionInParent ^ (-9223372034707292160L)), m4605getZeroNHjbRc, 0.0f, null, null, 0, 120, null);
+            DrawScope.m5340drawRectnJ9OG0$default(contentDrawScope2, animate.getValue().m4782unboximpl(), Offset.m4519constructorimpl((-9223372034707292160L) ^ LayoutCoordinatesKt.positionInParent(requireLayoutCoordinates)), m4605getZeroNHjbRc, 0.0f, null, null, 0, 120, null);
             return;
         }
         DrawScope.m5340drawRectnJ9OG0$default(contentDrawScope, animate.getValue().m4782unboximpl(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);

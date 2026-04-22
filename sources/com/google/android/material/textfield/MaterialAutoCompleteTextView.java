@@ -344,9 +344,7 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
             if (hasSelectedColor() && hasSelectedRippleColor()) {
                 int[] iArr = {16843623, -16842919};
                 int[] iArr2 = {16842913, -16842919};
-                int colorForState = MaterialAutoCompleteTextView.this.simpleItemSelectedRippleColor.getColorForState(iArr2, 0);
-                int colorForState2 = MaterialAutoCompleteTextView.this.simpleItemSelectedRippleColor.getColorForState(iArr, 0);
-                return new ColorStateList(new int[][]{iArr2, iArr, new int[0]}, new int[]{MaterialColors.layer(MaterialAutoCompleteTextView.this.simpleItemSelectedColor, colorForState), MaterialColors.layer(MaterialAutoCompleteTextView.this.simpleItemSelectedColor, colorForState2), MaterialAutoCompleteTextView.this.simpleItemSelectedColor});
+                return new ColorStateList(new int[][]{iArr2, iArr, new int[0]}, new int[]{MaterialColors.layer(MaterialAutoCompleteTextView.this.simpleItemSelectedColor, MaterialAutoCompleteTextView.this.simpleItemSelectedRippleColor.getColorForState(iArr2, 0)), MaterialColors.layer(MaterialAutoCompleteTextView.this.simpleItemSelectedColor, MaterialAutoCompleteTextView.this.simpleItemSelectedRippleColor.getColorForState(iArr, 0)), MaterialAutoCompleteTextView.this.simpleItemSelectedColor});
             }
             return null;
         }

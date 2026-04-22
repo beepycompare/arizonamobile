@@ -831,6 +831,7 @@ public class SubsamplingScaleImageView extends View {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void doubleTapZoom(PointF pointF, PointF pointF2) {
+        SubsamplingScaleImageView subsamplingScaleImageView;
         if (!this.panEnabled) {
             PointF pointF3 = this.sRequestedCenter;
             if (pointF3 != null) {
@@ -853,13 +854,16 @@ public class SubsamplingScaleImageView extends View {
             setScaleAndCenter(f2, pointF);
         } else {
             if (i == 2 || !z || !this.panEnabled) {
-                new AnimationBuilder(f2, pointF).withInterruptible(false).withDuration(this.doubleTapZoomDuration).withOrigin(4).start();
+                subsamplingScaleImageView = this;
+                new AnimationBuilder(f2, pointF).withInterruptible(false).withDuration(subsamplingScaleImageView.doubleTapZoomDuration).withOrigin(4).start();
             } else if (i == 1) {
-                new AnimationBuilder(f2, pointF, pointF2).withInterruptible(false).withDuration(this.doubleTapZoomDuration).withOrigin(4).start();
+                subsamplingScaleImageView = this;
+                new AnimationBuilder(f2, pointF, pointF2).withInterruptible(false).withDuration(subsamplingScaleImageView.doubleTapZoomDuration).withOrigin(4).start();
             }
-            invalidate();
+            subsamplingScaleImageView.invalidate();
         }
-        invalidate();
+        subsamplingScaleImageView = this;
+        subsamplingScaleImageView.invalidate();
     }
 
     @Override // android.view.View
@@ -1147,6 +1151,8 @@ public class SubsamplingScaleImageView extends View {
 
     private synchronized void initialiseBaseLayer(Point point) {
         Throwable th;
+        SubsamplingScaleImageView subsamplingScaleImageView;
+        SubsamplingScaleImageView subsamplingScaleImageView2;
         try {
             try {
                 debug("initialiseBaseLayer maxTileDimensions=%dx%d", Integer.valueOf(point.x), Integer.valueOf(point.y));
@@ -1160,22 +1166,26 @@ public class SubsamplingScaleImageView extends View {
                         this.fullImageSampleSize = calculateInSampleSize / 2;
                     } catch (Throwable th2) {
                         th = th2;
+                        subsamplingScaleImageView = this;
                         throw th;
                     }
                 }
                 if (this.fullImageSampleSize == 1 && this.sRegion == null && sWidth() < point.x && sHeight() < point.y) {
                     this.decoder.recycle();
                     this.decoder = null;
-                    execute(new BitmapLoadTask(this, getContext(), this.bitmapDecoderFactory, this.uri, false));
+                    subsamplingScaleImageView2 = this;
+                    subsamplingScaleImageView2.execute(new BitmapLoadTask(subsamplingScaleImageView2, getContext(), this.bitmapDecoderFactory, this.uri, false));
                 } else {
-                    initialiseTileMap(point);
-                    for (Tile tile : this.tileMap.get(Integer.valueOf(this.fullImageSampleSize))) {
-                        execute(new TileLoadTask(this, this.decoder, tile));
+                    subsamplingScaleImageView2 = this;
+                    subsamplingScaleImageView2.initialiseTileMap(point);
+                    for (Tile tile : subsamplingScaleImageView2.tileMap.get(Integer.valueOf(subsamplingScaleImageView2.fullImageSampleSize))) {
+                        subsamplingScaleImageView2.execute(new TileLoadTask(subsamplingScaleImageView2, subsamplingScaleImageView2.decoder, tile));
                     }
-                    refreshRequiredTiles(true);
+                    subsamplingScaleImageView2.refreshRequiredTiles(true);
                 }
             } catch (Throwable th3) {
                 th = th3;
+                subsamplingScaleImageView = this;
                 th = th;
                 throw th;
             }

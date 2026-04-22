@@ -7,21 +7,19 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class TimePickerTokens {
     public static final int $stable = 0;
-    private static final float PeriodSelectorVerticalContainerHeight;
-    private static final float TimeSelectorContainerHeight;
     public static final TimePickerTokens INSTANCE = new TimePickerTokens();
     private static final ColorSchemeKeyTokens ClockDialColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
-    private static final float ClockDialContainerSize = Dp.m7555constructorimpl((float) 256.0d);
+    private static final float ClockDialContainerSize = Dp.m7555constructorimpl(256.0f);
     private static final TypographyKeyTokens ClockDialLabelTextFont = TypographyKeyTokens.BodyLarge;
     private static final ColorSchemeKeyTokens ClockDialSelectedLabelTextColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens ClockDialSelectorCenterContainerColor = ColorSchemeKeyTokens.Primary;
     private static final ShapeKeyTokens ClockDialSelectorCenterContainerShape = ShapeKeyTokens.CornerFull;
-    private static final float ClockDialSelectorCenterContainerSize = Dp.m7555constructorimpl((float) 8.0d);
+    private static final float ClockDialSelectorCenterContainerSize = Dp.m7555constructorimpl(8.0f);
     private static final ColorSchemeKeyTokens ClockDialSelectorHandleContainerColor = ColorSchemeKeyTokens.Primary;
     private static final ShapeKeyTokens ClockDialSelectorHandleContainerShape = ShapeKeyTokens.CornerFull;
-    private static final float ClockDialSelectorHandleContainerSize = Dp.m7555constructorimpl((float) 48.0d);
+    private static final float ClockDialSelectorHandleContainerSize = Dp.m7555constructorimpl(48.0f);
     private static final ColorSchemeKeyTokens ClockDialSelectorTrackContainerColor = ColorSchemeKeyTokens.Primary;
-    private static final float ClockDialSelectorTrackContainerWidth = Dp.m7555constructorimpl((float) 2.0d);
+    private static final float ClockDialSelectorTrackContainerWidth = Dp.m7555constructorimpl(2.0f);
     private static final ShapeKeyTokens ClockDialShape = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens ClockDialUnselectedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainerHigh;
@@ -30,11 +28,11 @@ public final class TimePickerTokens {
     private static final ColorSchemeKeyTokens HeadlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeadlineFont = TypographyKeyTokens.LabelMedium;
     private static final ShapeKeyTokens PeriodSelectorContainerShape = ShapeKeyTokens.CornerSmall;
-    private static final float PeriodSelectorHorizontalContainerHeight = Dp.m7555constructorimpl((float) 38.0d);
-    private static final float PeriodSelectorHorizontalContainerWidth = Dp.m7555constructorimpl((float) 216.0d);
+    private static final float PeriodSelectorHorizontalContainerHeight = Dp.m7555constructorimpl(38.0f);
+    private static final float PeriodSelectorHorizontalContainerWidth = Dp.m7555constructorimpl(216.0f);
     private static final TypographyKeyTokens PeriodSelectorLabelTextFont = TypographyKeyTokens.TitleMedium;
     private static final ColorSchemeKeyTokens PeriodSelectorOutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float PeriodSelectorOutlineWidth = Dp.m7555constructorimpl((float) 1.0d);
+    private static final float PeriodSelectorOutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens PeriodSelectorSelectedContainerColor = ColorSchemeKeyTokens.TertiaryContainer;
     private static final ColorSchemeKeyTokens PeriodSelectorSelectedFocusLabelTextColor = ColorSchemeKeyTokens.OnTertiaryContainer;
     private static final ColorSchemeKeyTokens PeriodSelectorSelectedHoverLabelTextColor = ColorSchemeKeyTokens.OnTertiaryContainer;
@@ -44,10 +42,12 @@ public final class TimePickerTokens {
     private static final ColorSchemeKeyTokens PeriodSelectorUnselectedHoverLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens PeriodSelectorUnselectedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens PeriodSelectorUnselectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float PeriodSelectorVerticalContainerWidth = Dp.m7555constructorimpl((float) 52.0d);
-    private static final float TimeSelector24HVerticalContainerWidth = Dp.m7555constructorimpl((float) 114.0d);
+    private static final float PeriodSelectorVerticalContainerHeight = Dp.m7555constructorimpl(80.0f);
+    private static final float PeriodSelectorVerticalContainerWidth = Dp.m7555constructorimpl(52.0f);
+    private static final float TimeSelector24HVerticalContainerWidth = Dp.m7555constructorimpl(114.0f);
+    private static final float TimeSelectorContainerHeight = Dp.m7555constructorimpl(80.0f);
     private static final ShapeKeyTokens TimeSelectorContainerShape = ShapeKeyTokens.CornerSmall;
-    private static final float TimeSelectorContainerWidth = Dp.m7555constructorimpl((float) 96.0d);
+    private static final float TimeSelectorContainerWidth = Dp.m7555constructorimpl(96.0f);
     private static final TypographyKeyTokens TimeSelectorLabelTextFont = TypographyKeyTokens.DisplayLarge;
     private static final ColorSchemeKeyTokens TimeSelectorSelectedContainerColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final ColorSchemeKeyTokens TimeSelectorSelectedFocusLabelTextColor = ColorSchemeKeyTokens.OnPrimaryContainer;
@@ -63,12 +63,6 @@ public final class TimePickerTokens {
     private static final ColorSchemeKeyTokens TimeSelectorUnselectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
 
     private TimePickerTokens() {
-    }
-
-    static {
-        float f = (float) 80.0d;
-        PeriodSelectorVerticalContainerHeight = Dp.m7555constructorimpl(f);
-        TimeSelectorContainerHeight = Dp.m7555constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getClockDialColor() {

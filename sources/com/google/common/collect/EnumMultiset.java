@@ -103,10 +103,10 @@ public final class EnumMultiset<E extends Enum<E>> extends AbstractMultiset<E> i
 
     private boolean isActuallyE(@CheckForNull Object o) {
         if (o instanceof Enum) {
-            Enum r5 = (Enum) o;
-            int ordinal = r5.ordinal();
+            Enum r4 = (Enum) o;
+            int ordinal = r4.ordinal();
             E[] eArr = this.enumConstants;
-            if (ordinal < eArr.length && eArr[ordinal] == r5) {
+            if (ordinal < eArr.length && eArr[ordinal] == r4) {
                 return true;
             }
         }

@@ -216,17 +216,24 @@ public class Grid extends VirtualLayout {
     }
 
     private boolean arrangeWidgets() {
+        Grid grid;
         View[] views = getViews(this.mContainer);
-        for (int i = 0; i < this.mCount; i++) {
-            if (!this.mSpanIds.contains(Integer.valueOf(this.mIds[i]))) {
-                int nextPosition = getNextPosition();
-                int rowByIndex = getRowByIndex(nextPosition);
-                int colByIndex = getColByIndex(nextPosition);
+        int i = 0;
+        while (i < this.mCount) {
+            if (this.mSpanIds.contains(Integer.valueOf(this.mIds[i]))) {
+                grid = this;
+            } else {
+                int nextPosition = this.getNextPosition();
+                int rowByIndex = this.getRowByIndex(nextPosition);
+                int colByIndex = this.getColByIndex(nextPosition);
                 if (nextPosition == -1) {
                     return false;
                 }
-                connectView(views[i], rowByIndex, colByIndex, 1, 1);
+                grid = this;
+                grid.connectView(views[i], rowByIndex, colByIndex, 1, 1);
             }
+            i++;
+            this = grid;
         }
         return true;
     }
@@ -283,17 +290,23 @@ public class Grid extends VirtualLayout {
 
     private boolean handleSpans(int[] iArr, int[][] iArr2) {
         View[] views = getViews(this.mContainer);
-        for (int i = 0; i < iArr2.length; i++) {
-            int rowByIndex = getRowByIndex(iArr2[i][0]);
-            int colByIndex = getColByIndex(iArr2[i][0]);
+        int i = 0;
+        while (i < iArr2.length) {
+            int rowByIndex = this.getRowByIndex(iArr2[i][0]);
+            int colByIndex = this.getColByIndex(iArr2[i][0]);
             int[] iArr3 = iArr2[i];
-            if (!invalidatePositions(rowByIndex, colByIndex, iArr3[1], iArr3[2])) {
+            if (!this.invalidatePositions(rowByIndex, colByIndex, iArr3[1], iArr3[2])) {
                 return false;
             }
             View view = views[i];
             int[] iArr4 = iArr2[i];
-            connectView(view, rowByIndex, colByIndex, iArr4[1], iArr4[2]);
-            this.mSpanIds.add(Integer.valueOf(iArr[i]));
+            int i2 = iArr4[1];
+            int i3 = iArr4[2];
+            Grid grid = this;
+            grid.connectView(view, rowByIndex, colByIndex, i2, i3);
+            grid.mSpanIds.add(Integer.valueOf(iArr[i]));
+            i++;
+            this = grid;
         }
         return true;
     }
@@ -328,7 +341,6 @@ public class Grid extends VirtualLayout {
 
     @Override // androidx.constraintlayout.widget.ConstraintHelper, android.view.View
     public void onDraw(Canvas canvas) {
-        View[] viewArr;
         super.onDraw(canvas);
         if (isInEditMode()) {
             Paint paint = new Paint();
@@ -338,11 +350,18 @@ public class Grid extends VirtualLayout {
             int left = getLeft();
             int bottom = getBottom();
             int right = getRight();
-            for (View view : this.mBoxViews) {
+            View[] viewArr = this.mBoxViews;
+            int length = viewArr.length;
+            int i = 0;
+            while (i < length) {
+                View view = viewArr[i];
                 int top2 = view.getTop() - top;
                 int bottom2 = view.getBottom() - top;
-                canvas.drawRect(view.getLeft() - left, 0.0f, view.getRight() - left, bottom - top, paint);
-                canvas.drawRect(0.0f, top2, right - left, bottom2, paint);
+                Canvas canvas2 = canvas;
+                canvas2.drawRect(view.getLeft() - left, 0.0f, view.getRight() - left, bottom - top, paint);
+                canvas2.drawRect(0.0f, top2, right - left, bottom2, paint);
+                i++;
+                canvas = canvas2;
             }
         }
     }

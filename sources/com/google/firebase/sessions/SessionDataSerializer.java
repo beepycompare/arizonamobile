@@ -42,10 +42,10 @@ public final class SessionDataSerializer implements Serializer<SessionData> {
     @Override // androidx.datastore.core.Serializer
     public Object readFrom(InputStream inputStream, Continuation<? super SessionData> continuation) {
         try {
-            Json.Default r3 = Json.Default;
+            Json.Default r0 = Json.Default;
             String decodeToString = StringsKt.decodeToString(ByteStreamsKt.readBytes(inputStream));
-            r3.getSerializersModule();
-            return (SessionData) r3.decodeFromString(SessionData.Companion.serializer(), decodeToString);
+            r0.getSerializersModule();
+            return (SessionData) r0.decodeFromString(SessionData.Companion.serializer(), decodeToString);
         } catch (Exception e) {
             throw new CorruptionException("Cannot parse session data", e);
         }

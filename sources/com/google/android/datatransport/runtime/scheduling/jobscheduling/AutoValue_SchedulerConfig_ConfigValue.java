@@ -49,7 +49,7 @@ final class AutoValue_SchedulerConfig_ConfigValue extends SchedulerConfig.Config
     public int hashCode() {
         long j = this.delta;
         long j2 = this.maxAllowedDelay;
-        return ((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.flags.hashCode();
+        return this.flags.hashCode() ^ ((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003);
     }
 
     /* loaded from: classes3.dex */

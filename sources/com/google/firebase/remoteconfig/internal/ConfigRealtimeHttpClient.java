@@ -343,9 +343,9 @@ public class ConfigRealtimeHttpClient {
     /* JADX WARN: Type inference failed for: r12v17, types: [java.io.InputStream] */
     /* JADX WARN: Type inference failed for: r12v2 */
     /* JADX WARN: Type inference failed for: r12v3 */
-    /* JADX WARN: Type inference failed for: r12v33, types: [java.io.InputStream] */
+    /* JADX WARN: Type inference failed for: r12v32, types: [java.io.InputStream] */
     /* JADX WARN: Type inference failed for: r12v4 */
-    /* JADX WARN: Type inference failed for: r12v45 */
+    /* JADX WARN: Type inference failed for: r12v44 */
     /* JADX WARN: Type inference failed for: r12v5, types: [java.io.InputStream] */
     /* JADX WARN: Type inference failed for: r6v1 */
     /* JADX WARN: Type inference failed for: r6v10, types: [java.lang.Object, java.lang.Integer] */

@@ -40,10 +40,10 @@ public final class NestedMutableSnapshot extends MutableSnapshot {
         deactivate();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0070, code lost:
-        if (r2 == null) goto L36;
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0070, code lost:
+        if (r10 == null) goto L33;
      */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x008d A[Catch: all -> 0x00de, TryCatch #1 {all -> 0x00de, blocks: (B:20:0x0054, B:24:0x0062, B:26:0x006a, B:30:0x0081, B:32:0x008d, B:33:0x0092, B:28:0x0072, B:29:0x007b), top: B:47:0x003e }] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x008d A[Catch: all -> 0x00de, TryCatch #0 {, blocks: (B:13:0x0038, B:15:0x0040, B:18:0x0047, B:22:0x0062, B:24:0x006a, B:28:0x0081, B:30:0x008d, B:31:0x0092, B:26:0x0072, B:27:0x007b), top: B:41:0x0038 }] */
     @Override // androidx.compose.runtime.snapshots.MutableSnapshot
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -64,59 +64,50 @@ public final class NestedMutableSnapshot extends MutableSnapshot {
             map = null;
         }
         synchronized (SnapshotKt.getLock()) {
-            try {
-                SnapshotKt.validateOpen(this);
-            } catch (Throwable th) {
-                th = th;
-            }
-            try {
-                if (modified$runtime != null && modified$runtime.getSize() != 0) {
-                    nestedMutableSnapshot = this;
-                    SnapshotApplyResult innerApplyLocked$runtime = nestedMutableSnapshot.innerApplyLocked$runtime(this.parent.getSnapshotId(), modified$runtime, map, this.parent.getInvalid$runtime());
-                    if (Intrinsics.areEqual(innerApplyLocked$runtime, SnapshotApplyResult.Success.INSTANCE)) {
-                        MutableScatterSet<StateObject> modified$runtime2 = nestedMutableSnapshot.parent.getModified$runtime();
-                        if (modified$runtime2 != null) {
-                            modified$runtime2.addAll(modified$runtime);
-                        }
-                        nestedMutableSnapshot.parent.setModified$runtime(modified$runtime);
-                        setModified$runtime(null);
-                        if (Intrinsics.compare(nestedMutableSnapshot.parent.getSnapshotId(), snapshotId) < 0) {
-                            nestedMutableSnapshot.parent.advance$runtime();
-                        }
-                        MutableSnapshot mutableSnapshot = nestedMutableSnapshot.parent;
-                        mutableSnapshot.setInvalid$runtime(mutableSnapshot.getInvalid$runtime().clear(snapshotId).andNot(getPreviousIds$runtime()));
-                        nestedMutableSnapshot.parent.recordPrevious$runtime(snapshotId);
-                        nestedMutableSnapshot.parent.recordPreviousPinnedSnapshot$runtime(takeoverPinnedSnapshot$runtime());
-                        nestedMutableSnapshot.parent.recordPreviousList$runtime(getPreviousIds$runtime());
-                        nestedMutableSnapshot.parent.recordPreviousPinnedSnapshots$runtime(getPreviousPinnedSnapshots$runtime());
-                        Unit unit = Unit.INSTANCE;
-                        setApplied$runtime(true);
-                        deactivate();
-                        SnapshotObserverKt.dispatchObserverOnApplied(nestedMutableSnapshot, modified$runtime);
-                        return SnapshotApplyResult.Success.INSTANCE;
-                    }
-                    return innerApplyLocked$runtime;
-                }
+            SnapshotKt.validateOpen(this);
+            if (modified$runtime != null && modified$runtime.getSize() != 0) {
                 nestedMutableSnapshot = this;
-                closeAndReleasePinning$runtime();
-                Unit unit2 = Unit.INSTANCE;
-                if (Intrinsics.compare(nestedMutableSnapshot.parent.getSnapshotId(), snapshotId) < 0) {
+                SnapshotApplyResult innerApplyLocked$runtime = nestedMutableSnapshot.innerApplyLocked$runtime(this.parent.getSnapshotId(), modified$runtime, map, this.parent.getInvalid$runtime());
+                if (Intrinsics.areEqual(innerApplyLocked$runtime, SnapshotApplyResult.Success.INSTANCE)) {
+                    MutableScatterSet<StateObject> modified$runtime2 = nestedMutableSnapshot.parent.getModified$runtime();
+                    if (modified$runtime2 != null) {
+                        modified$runtime2.addAll(modified$runtime);
+                    }
+                    nestedMutableSnapshot.parent.setModified$runtime(modified$runtime);
+                    nestedMutableSnapshot.setModified$runtime(null);
+                    if (Intrinsics.compare(nestedMutableSnapshot.parent.getSnapshotId(), snapshotId) < 0) {
+                        nestedMutableSnapshot.parent.advance$runtime();
+                    }
+                    MutableSnapshot mutableSnapshot = nestedMutableSnapshot.parent;
+                    mutableSnapshot.setInvalid$runtime(mutableSnapshot.getInvalid$runtime().clear(snapshotId).andNot(nestedMutableSnapshot.getPreviousIds$runtime()));
+                    nestedMutableSnapshot.parent.recordPrevious$runtime(snapshotId);
+                    nestedMutableSnapshot.parent.recordPreviousPinnedSnapshot$runtime(nestedMutableSnapshot.takeoverPinnedSnapshot$runtime());
+                    nestedMutableSnapshot.parent.recordPreviousList$runtime(nestedMutableSnapshot.getPreviousIds$runtime());
+                    nestedMutableSnapshot.parent.recordPreviousPinnedSnapshots$runtime(nestedMutableSnapshot.getPreviousPinnedSnapshots$runtime());
+                    Unit unit = Unit.INSTANCE;
+                    nestedMutableSnapshot.setApplied$runtime(true);
+                    nestedMutableSnapshot.deactivate();
+                    SnapshotObserverKt.dispatchObserverOnApplied(nestedMutableSnapshot, modified$runtime);
+                    return SnapshotApplyResult.Success.INSTANCE;
                 }
-                MutableSnapshot mutableSnapshot2 = nestedMutableSnapshot.parent;
-                mutableSnapshot2.setInvalid$runtime(mutableSnapshot2.getInvalid$runtime().clear(snapshotId).andNot(getPreviousIds$runtime()));
-                nestedMutableSnapshot.parent.recordPrevious$runtime(snapshotId);
-                nestedMutableSnapshot.parent.recordPreviousPinnedSnapshot$runtime(takeoverPinnedSnapshot$runtime());
-                nestedMutableSnapshot.parent.recordPreviousList$runtime(getPreviousIds$runtime());
-                nestedMutableSnapshot.parent.recordPreviousPinnedSnapshots$runtime(getPreviousPinnedSnapshots$runtime());
-                Unit unit3 = Unit.INSTANCE;
-                setApplied$runtime(true);
-                deactivate();
-                SnapshotObserverKt.dispatchObserverOnApplied(nestedMutableSnapshot, modified$runtime);
-                return SnapshotApplyResult.Success.INSTANCE;
-            } catch (Throwable th2) {
-                th = th2;
-                throw th;
+                return innerApplyLocked$runtime;
             }
+            nestedMutableSnapshot = this;
+            nestedMutableSnapshot.closeAndReleasePinning$runtime();
+            Unit unit2 = Unit.INSTANCE;
+            if (Intrinsics.compare(nestedMutableSnapshot.parent.getSnapshotId(), snapshotId) < 0) {
+            }
+            MutableSnapshot mutableSnapshot2 = nestedMutableSnapshot.parent;
+            mutableSnapshot2.setInvalid$runtime(mutableSnapshot2.getInvalid$runtime().clear(snapshotId).andNot(nestedMutableSnapshot.getPreviousIds$runtime()));
+            nestedMutableSnapshot.parent.recordPrevious$runtime(snapshotId);
+            nestedMutableSnapshot.parent.recordPreviousPinnedSnapshot$runtime(nestedMutableSnapshot.takeoverPinnedSnapshot$runtime());
+            nestedMutableSnapshot.parent.recordPreviousList$runtime(nestedMutableSnapshot.getPreviousIds$runtime());
+            nestedMutableSnapshot.parent.recordPreviousPinnedSnapshots$runtime(nestedMutableSnapshot.getPreviousPinnedSnapshots$runtime());
+            Unit unit3 = Unit.INSTANCE;
+            nestedMutableSnapshot.setApplied$runtime(true);
+            nestedMutableSnapshot.deactivate();
+            SnapshotObserverKt.dispatchObserverOnApplied(nestedMutableSnapshot, modified$runtime);
+            return SnapshotApplyResult.Success.INSTANCE;
         }
     }
 

@@ -91,7 +91,7 @@ interface SideCalculator {
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedOffsets-MK-Hz9U */
             public long mo845consumedOffsetsMKHz9U(long j) {
-                return Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
+                return Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (4294967295L & Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)))));
             }
         };
         private static final SideCalculator$Companion$RightSideCalculator$1 RightSideCalculator = new SideCalculator() { // from class: androidx.compose.foundation.layout.SideCalculator$Companion$RightSideCalculator$1
@@ -147,7 +147,7 @@ interface SideCalculator {
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedOffsets-MK-Hz9U */
             public long mo845consumedOffsetsMKHz9U(long j) {
-                return Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
+                return Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (4294967295L & Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)))));
             }
         };
 

@@ -45,8 +45,7 @@ public interface DrawTransform {
 
     /* renamed from: getCenter-F1C5BW0 */
     default long mo5271getCenterF1C5BW0() {
-        float f = 2;
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5272getSizeNHjbRc() >> 32)) / f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5272getSizeNHjbRc() & 4294967295L)) / f) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5272getSizeNHjbRc() >> 32)) / 2.0f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5272getSizeNHjbRc() & 4294967295L)) / 2.0f) & 4294967295L));
     }
 
     /* renamed from: clipRect-N_I0leg$default  reason: not valid java name */

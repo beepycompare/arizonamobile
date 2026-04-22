@@ -92,6 +92,9 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
         return Unit.INSTANCE;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r13v2 */
+    /* JADX WARN: Type inference failed for: r26v0, types: [androidx.compose.runtime.Composer] */
     public final void invoke(Composer composer, int i) {
         final List customScrollActions;
         ComposerKt.sourceInformation(composer, "C822@36607L24,823@36673L59,824@36770L55,828@37006L318,849@37841L116,853@38004L2404,845@37628L2780:DateRangePicker.kt#uh7d8r");
@@ -162,17 +165,16 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
         final DatePickerColors datePickerColors = this.$colors;
         Object rememberedValue4 = composer.rememberedValue();
         if (changedInstance || rememberedValue4 == Composer.Companion.getEmpty()) {
-            Object obj = new Function1() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$$ExternalSyntheticLambda2
+            rememberedValue4 = new Function1() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
-                public final Object invoke(Object obj2) {
-                    return DateRangePickerKt$VerticalMonthsList$1.invoke$lambda$7$lambda$6(IntRange.this, calendarModel, calendarMonth, l3, l4, function1, calendarDate, datePickerFormatter, selectableDates, datePickerColors, customScrollActions, (LazyListScope) obj2);
+                public final Object invoke(Object obj) {
+                    return DateRangePickerKt$VerticalMonthsList$1.invoke$lambda$7$lambda$6(IntRange.this, calendarModel, calendarMonth, l3, l4, function1, calendarDate, datePickerFormatter, selectableDates, datePickerColors, customScrollActions, (LazyListScope) obj);
                 }
             };
-            composer.updateRememberedValue(obj);
-            rememberedValue4 = obj;
+            composer.updateRememberedValue(rememberedValue4);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyDslKt.LazyColumn(semantics$default, lazyListState, null, false, null, null, null, false, null, (Function1) rememberedValue4, composer, 0, TypedValues.PositionType.TYPE_CURVE_FIT);
+        LazyDslKt.LazyColumn(semantics$default, lazyListState, null, false, null, null, null, false, null, rememberedValue4, composer, 0, TypedValues.PositionType.TYPE_CURVE_FIT);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -210,8 +212,8 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
             }
 
             /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r23v0, types: [androidx.compose.runtime.Composer] */
-            /* JADX WARN: Type inference failed for: r2v24 */
+            /* JADX WARN: Type inference failed for: r1v16 */
+            /* JADX WARN: Type inference failed for: r21v0, types: [androidx.compose.runtime.Composer] */
             public final void invoke(LazyItemScope lazyItemScope, int i, Composer composer, int i2) {
                 int i3;
                 SelectedRangeInfo selectedRangeInfo;
@@ -282,9 +284,9 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
                         rememberedValue = SelectedRangeInfo.Companion.calculateRangeInfo(plusMonths, calendarModel2.getCanonicalDate(l3.longValue()), calendarModel2.getCanonicalDate(l4.longValue()));
                         composer.updateRememberedValue(rememberedValue);
                     }
+                    selectedRangeInfo = rememberedValue;
                     ComposerKt.sourceInformationMarkerEnd(composer);
                     composer.endReplaceGroup();
-                    selectedRangeInfo = rememberedValue;
                 } else {
                     composer.startReplaceGroup(186488258);
                     composer.endReplaceGroup();

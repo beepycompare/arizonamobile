@@ -142,33 +142,33 @@ public final class FileStorageConnection<T> implements StorageConnection<T> {
         i = fileStorageConnection$readScope$1.label;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(3:(9:(2:3|(12:5|6|7|(1:(1:(8:11|12|13|14|15|16|17|(5:19|(2:24|25)|27|28|29)(1:30))(2:41|42))(1:43))(1:66)|44|45|46|47|48|49|(6:52|14|15|16|17|(0)(0))|51))|44|45|46|47|48|49|(0)|51)|7|(0)(0)) */
+    /* JADX WARN: Can't wrap try/catch for region: R(3:(5:(5:(2:3|(12:5|6|7|(1:(1:(8:11|12|13|14|15|16|17|(5:19|(2:24|25)|27|28|29)(1:30))(2:41|42))(1:43))(1:66)|44|45|46|47|49|50|(6:53|14|15|16|17|(0)(0))|52))|49|50|(0)|52)|44|45|46|47)|7|(0)(0)) */
     /* JADX WARN: Code restructure failed: missing block: B:21:0x006d, code lost:
-        if (r10.lock(null, r1) == r2) goto L51;
+        if (r10.lock(null, r1) == r2) goto L52;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x0101, code lost:
-        r9 = th;
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x0100, code lost:
+        r8 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0102, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0101, code lost:
         r10 = r1;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0028  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x0056  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00b6 A[Catch: all -> 0x0101, IOException -> 0x0104, TRY_ENTER, TryCatch #0 {all -> 0x0101, blocks: (B:34:0x00b6, B:36:0x00bc, B:39:0x00c5, B:40:0x00e9, B:41:0x00ea, B:44:0x00f2, B:50:0x00fd, B:51:0x0100), top: B:64:0x0026 }] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00f2 A[Catch: all -> 0x0101, IOException -> 0x0104, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x0101, blocks: (B:34:0x00b6, B:36:0x00bc, B:39:0x00c5, B:40:0x00e9, B:41:0x00ea, B:44:0x00f2, B:50:0x00fd, B:51:0x0100), top: B:64:0x0026 }] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00b6 A[Catch: all -> 0x0100, IOException -> 0x0103, TRY_ENTER, TryCatch #0 {all -> 0x0100, blocks: (B:34:0x00b6, B:36:0x00bc, B:39:0x00c5, B:40:0x00e9, B:41:0x00ea, B:44:0x00f2, B:50:0x00fc, B:51:0x00ff), top: B:64:0x0026 }] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00f2 A[Catch: all -> 0x0100, IOException -> 0x0103, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x0100, blocks: (B:34:0x00b6, B:36:0x00bc, B:39:0x00c5, B:40:0x00e9, B:41:0x00ea, B:44:0x00f2, B:50:0x00fc, B:51:0x00ff), top: B:64:0x0026 }] */
     /* JADX WARN: Type inference failed for: r10v3 */
     /* JADX WARN: Type inference failed for: r10v4, types: [kotlinx.coroutines.sync.Mutex] */
     /* JADX WARN: Type inference failed for: r10v5 */
     /* JADX WARN: Type inference failed for: r10v6 */
     /* JADX WARN: Type inference failed for: r3v1 */
     /* JADX WARN: Type inference failed for: r3v2, types: [java.io.File] */
-    /* JADX WARN: Type inference failed for: r9v12, types: [androidx.datastore.core.Closeable] */
-    /* JADX WARN: Type inference failed for: r9v14 */
-    /* JADX WARN: Type inference failed for: r9v15, types: [androidx.datastore.core.Closeable] */
-    /* JADX WARN: Type inference failed for: r9v30, types: [androidx.datastore.core.Closeable] */
-    /* JADX WARN: Type inference failed for: r9v31 */
+    /* JADX WARN: Type inference failed for: r9v22, types: [androidx.datastore.core.Closeable] */
+    /* JADX WARN: Type inference failed for: r9v23 */
+    /* JADX WARN: Type inference failed for: r9v6, types: [androidx.datastore.core.Closeable] */
+    /* JADX WARN: Type inference failed for: r9v8 */
+    /* JADX WARN: Type inference failed for: r9v9, types: [androidx.datastore.core.Closeable] */
     @Override // androidx.datastore.core.StorageConnection
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -180,7 +180,6 @@ public final class FileStorageConnection<T> implements StorageConnection<T> {
         Mutex mutex;
         File file;
         FileWriteScope fileWriteScope;
-        Throwable th;
         FileWriteScope fileWriteScope2;
         Mutex mutex2;
         File file2;
@@ -215,8 +214,8 @@ public final class FileStorageConnection<T> implements StorageConnection<T> {
                                             try {
                                                 fileWriteScope2.close();
                                                 th = null;
-                                            } catch (Throwable th2) {
-                                                th = th2;
+                                            } catch (Throwable th) {
+                                                th = th;
                                             }
                                             if (th != null) {
                                                 if (file2.exists() && !FileMoves_androidKt.atomicMoveTo(file2, this.file)) {
@@ -227,12 +226,12 @@ public final class FileStorageConnection<T> implements StorageConnection<T> {
                                                 return Unit.INSTANCE;
                                             }
                                             throw th;
-                                        } catch (Throwable th3) {
-                                            th = th3;
+                                        } catch (Throwable th2) {
+                                            th = th2;
                                             try {
                                                 fileWriteScope2.close();
-                                            } catch (Throwable th4) {
-                                                ExceptionsKt.addSuppressed(th, th4);
+                                            } catch (Throwable th3) {
+                                                ExceptionsKt.addSuppressed(th, th3);
                                             }
                                             throw th;
                                         }
@@ -269,8 +268,8 @@ public final class FileStorageConnection<T> implements StorageConnection<T> {
                         if (function2.invoke(fileWriteScope, fileStorageConnection$writeScope$1) != coroutine_suspended) {
                         }
                         return coroutine_suspended;
-                    } catch (Throwable th5) {
-                        th = th5;
+                    } catch (Throwable th4) {
+                        th = th4;
                         fileWriteScope2 = fileWriteScope;
                         fileWriteScope2.close();
                         throw th;
@@ -284,8 +283,8 @@ public final class FileStorageConnection<T> implements StorageConnection<T> {
                     throw e;
                 }
                 file = new File(this.file.getAbsolutePath() + ".tmp");
-            } catch (Throwable th6) {
-                th = th6;
+            } catch (Throwable th5) {
+                th = th5;
                 mutex.unlock(null);
                 throw th;
             }

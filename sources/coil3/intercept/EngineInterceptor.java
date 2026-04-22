@@ -152,24 +152,23 @@ public final class EngineInterceptor implements Interceptor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x0212, code lost:
-        if (r0 == r9) goto L31;
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x0212, code lost:
+        if (r1 == r9) goto L31;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x014c A[Catch: all -> 0x0225, TRY_LEAVE, TryCatch #0 {all -> 0x0225, blocks: (B:38:0x0142, B:40:0x014c), top: B:77:0x0142 }] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0192 A[Catch: all -> 0x007d, TryCatch #3 {all -> 0x007d, blocks: (B:17:0x0077, B:46:0x0187, B:42:0x0157, B:47:0x0192, B:49:0x019a, B:63:0x021f, B:64:0x0224), top: B:83:0x002a }] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x01c2  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x01c7  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0232  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0237  */
-    /* JADX WARN: Type inference failed for: r2v10 */
-    /* JADX WARN: Type inference failed for: r2v12, types: [T, coil3.request.Options] */
-    /* JADX WARN: Type inference failed for: r2v19, types: [T, coil3.ComponentRegistry] */
-    /* JADX WARN: Type inference failed for: r2v25 */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0147 A[Catch: all -> 0x00a9, TRY_LEAVE, TryCatch #1 {all -> 0x00a9, blocks: (B:22:0x009e, B:38:0x013d, B:40:0x0147), top: B:76:0x009e }] */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x018f A[Catch: all -> 0x007d, TryCatch #2 {all -> 0x007d, blocks: (B:17:0x0077, B:46:0x0187, B:42:0x014d, B:47:0x018f, B:49:0x0197, B:62:0x021f, B:63:0x0224), top: B:78:0x002a }] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01ba  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x01bf  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x022d  */
+    /* JADX WARN: Type inference failed for: r1v15, types: [T, coil3.ComponentRegistry] */
+    /* JADX WARN: Type inference failed for: r1v6, types: [T, coil3.ComponentRegistry] */
+    /* JADX WARN: Type inference failed for: r1v8, types: [T, coil3.request.Options] */
+    /* JADX WARN: Type inference failed for: r2v14 */
     /* JADX WARN: Type inference failed for: r2v3, types: [int] */
-    /* JADX WARN: Type inference failed for: r2v9, types: [T, coil3.ComponentRegistry] */
+    /* JADX WARN: Type inference failed for: r2v6 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -181,22 +180,21 @@ public final class EngineInterceptor implements Interceptor {
         EngineInterceptor$execute$1 engineInterceptor$execute$12;
         ImageRequest imageRequest2;
         Object obj2;
-        EventListener eventListener2;
         Ref.ObjectRef objectRef2;
-        T t;
         Ref.ObjectRef objectRef3;
         Ref.ObjectRef objectRef4;
         Ref.ObjectRef objectRef5;
+        EventListener eventListener2;
         Options options2;
+        T t;
         Options options3;
         FetchResult fetchResult;
         Ref.ObjectRef objectRef6;
-        ExecuteResult executeResult;
         Ref.ObjectRef objectRef7;
-        Ref.ObjectRef objectRef8;
+        ExecuteResult executeResult;
         ImageRequest imageRequest3;
         Object obj3;
-        Ref.ObjectRef objectRef9;
+        Ref.ObjectRef objectRef8;
         EventListener eventListener3;
         Options options4;
         ImageSource source2;
@@ -204,252 +202,229 @@ public final class EngineInterceptor implements Interceptor {
         Object obj5;
         EngineInterceptor engineInterceptor = this;
         try {
-            try {
-                if (continuation instanceof EngineInterceptor$execute$1) {
-                    engineInterceptor$execute$1 = (EngineInterceptor$execute$1) continuation;
-                    if ((engineInterceptor$execute$1.label & Integer.MIN_VALUE) != 0) {
-                        engineInterceptor$execute$1.label -= Integer.MIN_VALUE;
-                        EngineInterceptor$execute$1 engineInterceptor$execute$13 = engineInterceptor$execute$1;
-                        Object obj6 = engineInterceptor$execute$13.result;
-                        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                        objectRef = engineInterceptor$execute$13.label;
-                        if (objectRef != 0) {
-                            ResultKt.throwOnFailure(obj6);
-                            Ref.ObjectRef objectRef10 = new Ref.ObjectRef();
-                            T t2 = options;
-                            objectRef10.element = t2;
-                            Ref.ObjectRef objectRef11 = new Ref.ObjectRef();
-                            objectRef11.element = engineInterceptor.imageLoader.getComponents();
-                            Ref.ObjectRef objectRef12 = new Ref.ObjectRef();
-                            try {
-                                objectRef10.element = engineInterceptor.requestService.updateOptions((Options) objectRef10.element);
-                                if (imageRequest.getFetcherFactory() != null || imageRequest.getDecoderFactory() != null) {
-                                    objectRef11.element = UtilsKt.addFirst(UtilsKt.addFirst(((ComponentRegistry) objectRef11.element).newBuilder(), imageRequest.getFetcherFactory()), imageRequest.getDecoderFactory()).build();
-                                }
-                                engineInterceptor$execute$13.L$0 = imageRequest;
-                                engineInterceptor$execute$13.L$1 = obj;
-                                engineInterceptor$execute$13.L$2 = SpillingKt.nullOutSpilledVariable(t2);
-                                engineInterceptor$execute$13.L$3 = eventListener;
-                                engineInterceptor$execute$13.L$4 = objectRef10;
-                                engineInterceptor$execute$13.L$5 = objectRef11;
-                                engineInterceptor$execute$13.L$6 = objectRef12;
-                                engineInterceptor$execute$13.L$7 = objectRef12;
-                                engineInterceptor$execute$13.label = 1;
-                                Object fetch = engineInterceptor.fetch((ComponentRegistry) objectRef11.element, imageRequest, obj, (Options) objectRef10.element, eventListener, engineInterceptor$execute$13);
-                                engineInterceptor$execute$12 = engineInterceptor$execute$13;
-                                if (fetch == coroutine_suspended) {
-                                    return coroutine_suspended;
-                                }
+            if (continuation instanceof EngineInterceptor$execute$1) {
+                engineInterceptor$execute$1 = (EngineInterceptor$execute$1) continuation;
+                if ((engineInterceptor$execute$1.label & Integer.MIN_VALUE) != 0) {
+                    engineInterceptor$execute$1.label -= Integer.MIN_VALUE;
+                    EngineInterceptor$execute$1 engineInterceptor$execute$13 = engineInterceptor$execute$1;
+                    Object obj6 = engineInterceptor$execute$13.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    objectRef = engineInterceptor$execute$13.label;
+                    if (objectRef != 0) {
+                        ResultKt.throwOnFailure(obj6);
+                        Ref.ObjectRef objectRef9 = new Ref.ObjectRef();
+                        T t2 = options;
+                        objectRef9.element = t2;
+                        Ref.ObjectRef objectRef10 = new Ref.ObjectRef();
+                        objectRef10.element = engineInterceptor.imageLoader.getComponents();
+                        Ref.ObjectRef objectRef11 = new Ref.ObjectRef();
+                        try {
+                            objectRef9.element = engineInterceptor.requestService.updateOptions((Options) objectRef9.element);
+                            if (imageRequest.getFetcherFactory() != null || imageRequest.getDecoderFactory() != null) {
+                                objectRef10.element = UtilsKt.addFirst(UtilsKt.addFirst(((ComponentRegistry) objectRef10.element).newBuilder(), imageRequest.getFetcherFactory()), imageRequest.getDecoderFactory()).build();
+                            }
+                            engineInterceptor$execute$13.L$0 = imageRequest;
+                            engineInterceptor$execute$13.L$1 = obj;
+                            engineInterceptor$execute$13.L$2 = SpillingKt.nullOutSpilledVariable(t2);
+                            engineInterceptor$execute$13.L$3 = eventListener;
+                            engineInterceptor$execute$13.L$4 = objectRef9;
+                            engineInterceptor$execute$13.L$5 = objectRef10;
+                            engineInterceptor$execute$13.L$6 = objectRef11;
+                            engineInterceptor$execute$13.L$7 = objectRef11;
+                            engineInterceptor$execute$13.label = 1;
+                            Object fetch = engineInterceptor.fetch((ComponentRegistry) objectRef10.element, imageRequest, obj, (Options) objectRef9.element, eventListener, engineInterceptor$execute$13);
+                            engineInterceptor$execute$12 = engineInterceptor$execute$13;
+                            if (fetch != coroutine_suspended) {
                                 imageRequest2 = imageRequest;
                                 obj2 = obj;
-                                eventListener2 = eventListener;
-                                objectRef2 = objectRef10;
-                                t = fetch;
-                                objectRef3 = objectRef11;
-                                objectRef4 = objectRef12;
+                                objectRef2 = objectRef9;
+                                objectRef3 = objectRef10;
+                                objectRef4 = objectRef11;
                                 objectRef5 = objectRef4;
+                                eventListener2 = eventListener;
+                                t = fetch;
                                 options2 = t2;
-                            } catch (Throwable th) {
-                                th = th;
-                                objectRef = objectRef12;
-                                T t3 = objectRef.element;
-                                if (t3 instanceof SourceFetchResult) {
-                                }
-                                if (sourceFetchResult != null) {
-                                    UtilsKt.closeQuietly(source);
-                                }
-                                throw th;
                             }
-                        } else if (objectRef == 1) {
-                            objectRef4 = (Ref.ObjectRef) engineInterceptor$execute$13.L$7;
-                            objectRef5 = (Ref.ObjectRef) engineInterceptor$execute$13.L$6;
-                            Ref.ObjectRef objectRef13 = (Ref.ObjectRef) engineInterceptor$execute$13.L$5;
-                            Ref.ObjectRef objectRef14 = (Ref.ObjectRef) engineInterceptor$execute$13.L$4;
-                            EventListener eventListener4 = (EventListener) engineInterceptor$execute$13.L$3;
-                            Options options5 = (Options) engineInterceptor$execute$13.L$2;
-                            Object obj7 = engineInterceptor$execute$13.L$1;
-                            ImageRequest imageRequest4 = (ImageRequest) engineInterceptor$execute$13.L$0;
-                            try {
-                                ResultKt.throwOnFailure(obj6);
-                                objectRef3 = objectRef13;
-                                engineInterceptor$execute$12 = engineInterceptor$execute$13;
-                                imageRequest2 = imageRequest4;
-                                eventListener2 = eventListener4;
-                                objectRef2 = objectRef14;
-                                obj2 = obj7;
-                                t = obj6;
-                                options2 = options5;
-                            } catch (Throwable th2) {
-                                th = th2;
-                                objectRef = objectRef5;
-                                T t32 = objectRef.element;
-                                if (t32 instanceof SourceFetchResult) {
-                                }
-                                if (sourceFetchResult != null) {
-                                }
-                                throw th;
+                            return coroutine_suspended;
+                        } catch (Throwable th) {
+                            th = th;
+                            objectRef = objectRef11;
+                            T t3 = objectRef.element;
+                            sourceFetchResult = t3 instanceof SourceFetchResult ? (SourceFetchResult) t3 : null;
+                            if (sourceFetchResult != null && (source = sourceFetchResult.getSource()) != null) {
+                                UtilsKt.closeQuietly(source);
                             }
-                        } else if (objectRef != 2) {
-                            if (objectRef == 3) {
-                                ExecuteResult executeResult2 = (ExecuteResult) engineInterceptor$execute$13.L$7;
-                                Ref.ObjectRef objectRef15 = (Ref.ObjectRef) engineInterceptor$execute$13.L$6;
-                                Ref.ObjectRef objectRef16 = (Ref.ObjectRef) engineInterceptor$execute$13.L$5;
-                                Ref.ObjectRef objectRef17 = (Ref.ObjectRef) engineInterceptor$execute$13.L$4;
-                                EventListener eventListener5 = (EventListener) engineInterceptor$execute$13.L$3;
-                                Options options6 = (Options) engineInterceptor$execute$13.L$2;
-                                Object obj8 = engineInterceptor$execute$13.L$1;
-                                ImageRequest imageRequest5 = (ImageRequest) engineInterceptor$execute$13.L$0;
-                                ResultKt.throwOnFailure(obj6);
-                                obj5 = obj6;
-                                ExecuteResult executeResult3 = (ExecuteResult) obj5;
-                                Utils_androidKt.prepareToDraw(executeResult3.getImage());
-                                return executeResult3;
-                            }
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                        } else {
-                            objectRef6 = (Ref.ObjectRef) engineInterceptor$execute$13.L$6;
-                            objectRef8 = (Ref.ObjectRef) engineInterceptor$execute$13.L$5;
-                            objectRef9 = (Ref.ObjectRef) engineInterceptor$execute$13.L$4;
-                            eventListener3 = (EventListener) engineInterceptor$execute$13.L$3;
-                            options4 = (Options) engineInterceptor$execute$13.L$2;
-                            obj3 = engineInterceptor$execute$13.L$1;
-                            imageRequest3 = (ImageRequest) engineInterceptor$execute$13.L$0;
+                            throw th;
+                        }
+                    } else if (objectRef == 1) {
+                        objectRef4 = (Ref.ObjectRef) engineInterceptor$execute$13.L$7;
+                        objectRef5 = (Ref.ObjectRef) engineInterceptor$execute$13.L$6;
+                        Ref.ObjectRef objectRef12 = (Ref.ObjectRef) engineInterceptor$execute$13.L$5;
+                        Ref.ObjectRef objectRef13 = (Ref.ObjectRef) engineInterceptor$execute$13.L$4;
+                        eventListener2 = (EventListener) engineInterceptor$execute$13.L$3;
+                        Options options5 = (Options) engineInterceptor$execute$13.L$2;
+                        Object obj7 = engineInterceptor$execute$13.L$1;
+                        ImageRequest imageRequest4 = (ImageRequest) engineInterceptor$execute$13.L$0;
+                        try {
                             ResultKt.throwOnFailure(obj6);
+                            objectRef3 = objectRef12;
                             engineInterceptor$execute$12 = engineInterceptor$execute$13;
-                            obj4 = obj6;
-                            Ref.ObjectRef objectRef18 = objectRef8;
-                            executeResult = (ExecuteResult) obj4;
-                            objectRef7 = objectRef18;
-                            eventListener2 = eventListener3;
-                            options3 = options4;
-                            obj2 = obj3;
-                            objectRef2 = objectRef9;
-                            imageRequest2 = imageRequest3;
-                            T t4 = objectRef6.element;
-                            sourceFetchResult = t4 instanceof SourceFetchResult ? (SourceFetchResult) t4 : null;
-                            if (sourceFetchResult != null && (source2 = sourceFetchResult.getSource()) != null) {
-                                UtilsKt.closeQuietly(source2);
-                            }
-                            Ref.ObjectRef objectRef19 = objectRef2;
-                            EventListener eventListener6 = eventListener2;
-                            Logger logger = engineInterceptor.logger;
-                            engineInterceptor$execute$12.L$0 = SpillingKt.nullOutSpilledVariable(imageRequest2);
-                            engineInterceptor$execute$12.L$1 = SpillingKt.nullOutSpilledVariable(obj2);
-                            engineInterceptor$execute$12.L$2 = SpillingKt.nullOutSpilledVariable(options3);
-                            engineInterceptor$execute$12.L$3 = SpillingKt.nullOutSpilledVariable(eventListener6);
-                            engineInterceptor$execute$12.L$4 = SpillingKt.nullOutSpilledVariable(objectRef19);
-                            engineInterceptor$execute$12.L$5 = SpillingKt.nullOutSpilledVariable(objectRef7);
-                            engineInterceptor$execute$12.L$6 = SpillingKt.nullOutSpilledVariable(objectRef6);
-                            engineInterceptor$execute$12.L$7 = SpillingKt.nullOutSpilledVariable(executeResult);
-                            engineInterceptor$execute$12.label = 3;
-                            Object transform = EngineInterceptorKt.transform(executeResult, imageRequest2, (Options) objectRef2.element, eventListener6, logger, engineInterceptor$execute$12);
-                            obj5 = transform;
-                        }
-                        options3 = options2;
-                        objectRef4.element = t;
-                        fetchResult = (FetchResult) objectRef5.element;
-                        if (fetchResult instanceof SourceFetchResult) {
-                            objectRef6 = objectRef5;
-                            Ref.ObjectRef objectRef20 = objectRef3;
-                            engineInterceptor = this;
-                            if (!(fetchResult instanceof ImageFetchResult)) {
-                                throw new NoWhenBranchMatchedException();
-                            }
-                            executeResult = new ExecuteResult(((ImageFetchResult) objectRef6.element).getImage(), ((ImageFetchResult) objectRef6.element).isSampled(), ((ImageFetchResult) objectRef6.element).getDataSource(), null);
-                            objectRef7 = objectRef20;
-                            T t42 = objectRef6.element;
-                            if (t42 instanceof SourceFetchResult) {
+                            imageRequest2 = imageRequest4;
+                            objectRef2 = objectRef13;
+                            obj2 = obj7;
+                            t = obj6;
+                            options2 = options5;
+                        } catch (Throwable th2) {
+                            th = th2;
+                            objectRef = objectRef5;
+                            T t32 = objectRef.element;
+                            if (t32 instanceof SourceFetchResult) {
                             }
                             if (sourceFetchResult != null) {
+                                UtilsKt.closeQuietly(source);
                             }
-                            Ref.ObjectRef objectRef192 = objectRef2;
-                            EventListener eventListener62 = eventListener2;
-                            Logger logger2 = engineInterceptor.logger;
-                            engineInterceptor$execute$12.L$0 = SpillingKt.nullOutSpilledVariable(imageRequest2);
-                            engineInterceptor$execute$12.L$1 = SpillingKt.nullOutSpilledVariable(obj2);
-                            engineInterceptor$execute$12.L$2 = SpillingKt.nullOutSpilledVariable(options3);
-                            engineInterceptor$execute$12.L$3 = SpillingKt.nullOutSpilledVariable(eventListener62);
-                            engineInterceptor$execute$12.L$4 = SpillingKt.nullOutSpilledVariable(objectRef192);
-                            engineInterceptor$execute$12.L$5 = SpillingKt.nullOutSpilledVariable(objectRef7);
-                            engineInterceptor$execute$12.L$6 = SpillingKt.nullOutSpilledVariable(objectRef6);
-                            engineInterceptor$execute$12.L$7 = SpillingKt.nullOutSpilledVariable(executeResult);
-                            engineInterceptor$execute$12.label = 3;
-                            Object transform2 = EngineInterceptorKt.transform(executeResult, imageRequest2, (Options) objectRef2.element, eventListener62, logger2, engineInterceptor$execute$12);
-                            obj5 = transform2;
-                        } else {
-                            CoroutineContext decoderCoroutineContext = imageRequest2.getDecoderCoroutineContext();
-                            objectRef6 = objectRef5;
-                            objectRef8 = objectRef3;
-                            engineInterceptor = this;
-                            engineInterceptor$execute$12.L$0 = imageRequest2;
-                            engineInterceptor$execute$12.L$1 = SpillingKt.nullOutSpilledVariable(obj2);
-                            engineInterceptor$execute$12.L$2 = SpillingKt.nullOutSpilledVariable(options3);
-                            engineInterceptor$execute$12.L$3 = eventListener2;
-                            engineInterceptor$execute$12.L$4 = objectRef2;
-                            engineInterceptor$execute$12.L$5 = SpillingKt.nullOutSpilledVariable(objectRef8);
-                            engineInterceptor$execute$12.L$6 = objectRef6;
-                            engineInterceptor$execute$12.L$7 = null;
-                            engineInterceptor$execute$12.label = 2;
-                            Object withContext = BuildersKt.withContext(decoderCoroutineContext, new EngineInterceptor$execute$executeResult$1(engineInterceptor, objectRef6, objectRef8, imageRequest2, obj2, objectRef2, eventListener2, null), engineInterceptor$execute$12);
-                            if (withContext == coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                            imageRequest3 = imageRequest2;
-                            obj3 = obj2;
-                            objectRef9 = objectRef2;
-                            eventListener3 = eventListener2;
-                            options4 = options3;
-                            obj4 = withContext;
-                            Ref.ObjectRef objectRef182 = objectRef8;
-                            executeResult = (ExecuteResult) obj4;
-                            objectRef7 = objectRef182;
-                            eventListener2 = eventListener3;
-                            options3 = options4;
-                            obj2 = obj3;
-                            objectRef2 = objectRef9;
-                            imageRequest2 = imageRequest3;
-                            T t422 = objectRef6.element;
-                            if (t422 instanceof SourceFetchResult) {
-                            }
-                            if (sourceFetchResult != null) {
-                                UtilsKt.closeQuietly(source2);
-                            }
-                            Ref.ObjectRef objectRef1922 = objectRef2;
-                            EventListener eventListener622 = eventListener2;
-                            Logger logger22 = engineInterceptor.logger;
-                            engineInterceptor$execute$12.L$0 = SpillingKt.nullOutSpilledVariable(imageRequest2);
-                            engineInterceptor$execute$12.L$1 = SpillingKt.nullOutSpilledVariable(obj2);
-                            engineInterceptor$execute$12.L$2 = SpillingKt.nullOutSpilledVariable(options3);
-                            engineInterceptor$execute$12.L$3 = SpillingKt.nullOutSpilledVariable(eventListener622);
-                            engineInterceptor$execute$12.L$4 = SpillingKt.nullOutSpilledVariable(objectRef1922);
-                            engineInterceptor$execute$12.L$5 = SpillingKt.nullOutSpilledVariable(objectRef7);
-                            engineInterceptor$execute$12.L$6 = SpillingKt.nullOutSpilledVariable(objectRef6);
-                            engineInterceptor$execute$12.L$7 = SpillingKt.nullOutSpilledVariable(executeResult);
-                            engineInterceptor$execute$12.label = 3;
-                            Object transform22 = EngineInterceptorKt.transform(executeResult, imageRequest2, (Options) objectRef2.element, eventListener622, logger22, engineInterceptor$execute$12);
-                            obj5 = transform22;
+                            throw th;
                         }
+                    } else if (objectRef != 2) {
+                        if (objectRef == 3) {
+                            ExecuteResult executeResult2 = (ExecuteResult) engineInterceptor$execute$13.L$7;
+                            Ref.ObjectRef objectRef14 = (Ref.ObjectRef) engineInterceptor$execute$13.L$6;
+                            Ref.ObjectRef objectRef15 = (Ref.ObjectRef) engineInterceptor$execute$13.L$5;
+                            Ref.ObjectRef objectRef16 = (Ref.ObjectRef) engineInterceptor$execute$13.L$4;
+                            EventListener eventListener4 = (EventListener) engineInterceptor$execute$13.L$3;
+                            Options options6 = (Options) engineInterceptor$execute$13.L$2;
+                            Object obj8 = engineInterceptor$execute$13.L$1;
+                            ImageRequest imageRequest5 = (ImageRequest) engineInterceptor$execute$13.L$0;
+                            ResultKt.throwOnFailure(obj6);
+                            obj5 = obj6;
+                            ExecuteResult executeResult3 = (ExecuteResult) obj5;
+                            Utils_androidKt.prepareToDraw(executeResult3.getImage());
+                            return executeResult3;
+                        }
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        objectRef6 = (Ref.ObjectRef) engineInterceptor$execute$13.L$6;
+                        objectRef7 = (Ref.ObjectRef) engineInterceptor$execute$13.L$5;
+                        objectRef8 = (Ref.ObjectRef) engineInterceptor$execute$13.L$4;
+                        eventListener3 = (EventListener) engineInterceptor$execute$13.L$3;
+                        options4 = (Options) engineInterceptor$execute$13.L$2;
+                        obj3 = engineInterceptor$execute$13.L$1;
+                        imageRequest3 = (ImageRequest) engineInterceptor$execute$13.L$0;
+                        ResultKt.throwOnFailure(obj6);
+                        engineInterceptor$execute$12 = engineInterceptor$execute$13;
+                        obj4 = obj6;
+                        executeResult = (ExecuteResult) obj4;
+                        objectRef2 = objectRef8;
+                        options3 = options4;
+                        imageRequest2 = imageRequest3;
+                        eventListener2 = eventListener3;
+                        obj2 = obj3;
+                        T t4 = objectRef6.element;
+                        sourceFetchResult = t4 instanceof SourceFetchResult ? (SourceFetchResult) t4 : null;
+                        if (sourceFetchResult != null && (source2 = sourceFetchResult.getSource()) != null) {
+                            UtilsKt.closeQuietly(source2);
+                        }
+                        Logger logger = engineInterceptor.logger;
+                        engineInterceptor$execute$12.L$0 = SpillingKt.nullOutSpilledVariable(imageRequest2);
+                        engineInterceptor$execute$12.L$1 = SpillingKt.nullOutSpilledVariable(obj2);
+                        engineInterceptor$execute$12.L$2 = SpillingKt.nullOutSpilledVariable(options3);
+                        engineInterceptor$execute$12.L$3 = SpillingKt.nullOutSpilledVariable(eventListener2);
+                        engineInterceptor$execute$12.L$4 = SpillingKt.nullOutSpilledVariable(objectRef2);
+                        engineInterceptor$execute$12.L$5 = SpillingKt.nullOutSpilledVariable(objectRef7);
+                        engineInterceptor$execute$12.L$6 = SpillingKt.nullOutSpilledVariable(objectRef6);
+                        engineInterceptor$execute$12.L$7 = SpillingKt.nullOutSpilledVariable(executeResult);
+                        engineInterceptor$execute$12.label = 3;
+                        Object transform = EngineInterceptorKt.transform(executeResult, imageRequest2, (Options) objectRef2.element, eventListener2, logger, engineInterceptor$execute$12);
+                        obj5 = transform;
+                    }
+                    options3 = options2;
+                    objectRef4.element = t;
+                    fetchResult = (FetchResult) objectRef5.element;
+                    if (fetchResult instanceof SourceFetchResult) {
+                        objectRef6 = objectRef5;
+                        objectRef7 = objectRef3;
+                        engineInterceptor = this;
+                        if (!(fetchResult instanceof ImageFetchResult)) {
+                            throw new NoWhenBranchMatchedException();
+                        }
+                        executeResult = new ExecuteResult(((ImageFetchResult) objectRef6.element).getImage(), ((ImageFetchResult) objectRef6.element).isSampled(), ((ImageFetchResult) objectRef6.element).getDataSource(), null);
+                        T t42 = objectRef6.element;
+                        if (t42 instanceof SourceFetchResult) {
+                        }
+                        if (sourceFetchResult != null) {
+                        }
+                        Logger logger2 = engineInterceptor.logger;
+                        engineInterceptor$execute$12.L$0 = SpillingKt.nullOutSpilledVariable(imageRequest2);
+                        engineInterceptor$execute$12.L$1 = SpillingKt.nullOutSpilledVariable(obj2);
+                        engineInterceptor$execute$12.L$2 = SpillingKt.nullOutSpilledVariable(options3);
+                        engineInterceptor$execute$12.L$3 = SpillingKt.nullOutSpilledVariable(eventListener2);
+                        engineInterceptor$execute$12.L$4 = SpillingKt.nullOutSpilledVariable(objectRef2);
+                        engineInterceptor$execute$12.L$5 = SpillingKt.nullOutSpilledVariable(objectRef7);
+                        engineInterceptor$execute$12.L$6 = SpillingKt.nullOutSpilledVariable(objectRef6);
+                        engineInterceptor$execute$12.L$7 = SpillingKt.nullOutSpilledVariable(executeResult);
+                        engineInterceptor$execute$12.label = 3;
+                        Object transform2 = EngineInterceptorKt.transform(executeResult, imageRequest2, (Options) objectRef2.element, eventListener2, logger2, engineInterceptor$execute$12);
+                        obj5 = transform2;
+                    } else {
+                        CoroutineContext decoderCoroutineContext = imageRequest2.getDecoderCoroutineContext();
+                        objectRef6 = objectRef5;
+                        objectRef7 = objectRef3;
+                        engineInterceptor = this;
+                        engineInterceptor$execute$12.L$0 = imageRequest2;
+                        engineInterceptor$execute$12.L$1 = SpillingKt.nullOutSpilledVariable(obj2);
+                        engineInterceptor$execute$12.L$2 = SpillingKt.nullOutSpilledVariable(options3);
+                        engineInterceptor$execute$12.L$3 = eventListener2;
+                        engineInterceptor$execute$12.L$4 = objectRef2;
+                        engineInterceptor$execute$12.L$5 = SpillingKt.nullOutSpilledVariable(objectRef7);
+                        engineInterceptor$execute$12.L$6 = objectRef6;
+                        engineInterceptor$execute$12.L$7 = null;
+                        engineInterceptor$execute$12.label = 2;
+                        Object withContext = BuildersKt.withContext(decoderCoroutineContext, new EngineInterceptor$execute$executeResult$1(this, objectRef6, objectRef7, imageRequest2, obj2, objectRef2, eventListener2, null), engineInterceptor$execute$12);
+                        if (withContext == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        imageRequest3 = imageRequest2;
+                        obj3 = obj2;
+                        objectRef8 = objectRef2;
+                        eventListener3 = eventListener2;
+                        options4 = options3;
+                        obj4 = withContext;
+                        executeResult = (ExecuteResult) obj4;
+                        objectRef2 = objectRef8;
+                        options3 = options4;
+                        imageRequest2 = imageRequest3;
+                        eventListener2 = eventListener3;
+                        obj2 = obj3;
+                        T t422 = objectRef6.element;
+                        if (t422 instanceof SourceFetchResult) {
+                        }
+                        if (sourceFetchResult != null) {
+                            UtilsKt.closeQuietly(source2);
+                        }
+                        Logger logger22 = engineInterceptor.logger;
+                        engineInterceptor$execute$12.L$0 = SpillingKt.nullOutSpilledVariable(imageRequest2);
+                        engineInterceptor$execute$12.L$1 = SpillingKt.nullOutSpilledVariable(obj2);
+                        engineInterceptor$execute$12.L$2 = SpillingKt.nullOutSpilledVariable(options3);
+                        engineInterceptor$execute$12.L$3 = SpillingKt.nullOutSpilledVariable(eventListener2);
+                        engineInterceptor$execute$12.L$4 = SpillingKt.nullOutSpilledVariable(objectRef2);
+                        engineInterceptor$execute$12.L$5 = SpillingKt.nullOutSpilledVariable(objectRef7);
+                        engineInterceptor$execute$12.L$6 = SpillingKt.nullOutSpilledVariable(objectRef6);
+                        engineInterceptor$execute$12.L$7 = SpillingKt.nullOutSpilledVariable(executeResult);
+                        engineInterceptor$execute$12.label = 3;
+                        Object transform22 = EngineInterceptorKt.transform(executeResult, imageRequest2, (Options) objectRef2.element, eventListener2, logger22, engineInterceptor$execute$12);
+                        obj5 = transform22;
                     }
                 }
-                objectRef4.element = t;
-                fetchResult = (FetchResult) objectRef5.element;
-                if (fetchResult instanceof SourceFetchResult) {
-                }
-            } catch (Throwable th3) {
-                th = th3;
-                objectRef = objectRef5;
-                T t322 = objectRef.element;
-                sourceFetchResult = t322 instanceof SourceFetchResult ? (SourceFetchResult) t322 : null;
-                if (sourceFetchResult != null && (source = sourceFetchResult.getSource()) != null) {
-                    UtilsKt.closeQuietly(source);
-                }
-                throw th;
             }
             if (objectRef != 0) {
             }
             options3 = options2;
-        } catch (Throwable th4) {
-            th = th4;
+            objectRef4.element = t;
+            fetchResult = (FetchResult) objectRef5.element;
+            if (fetchResult instanceof SourceFetchResult) {
+            }
+        } catch (Throwable th3) {
+            th = th3;
         }
         engineInterceptor$execute$1 = new EngineInterceptor$execute$1(engineInterceptor, continuation);
         EngineInterceptor$execute$1 engineInterceptor$execute$132 = engineInterceptor$execute$1;

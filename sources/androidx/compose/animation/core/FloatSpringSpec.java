@@ -59,8 +59,7 @@ public final class FloatSpringSpec implements FloatAnimationSpec {
     public long getDurationNanos(float f, float f2, float f3) {
         float stiffness = this.spring.getStiffness();
         float dampingRatio = this.spring.getDampingRatio();
-        float f4 = f - f2;
-        float f5 = this.visibilityThreshold;
-        return SpringEstimationKt.estimateAnimationDurationMillis(stiffness, dampingRatio, f3 / f5, f4 / f5, 1.0f) * 1000000;
+        float f4 = this.visibilityThreshold;
+        return SpringEstimationKt.estimateAnimationDurationMillis(stiffness, dampingRatio, f3 / f4, (f - f2) / f4, 1.0f) * 1000000;
     }
 }

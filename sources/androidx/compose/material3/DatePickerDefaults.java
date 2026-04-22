@@ -80,6 +80,8 @@ public final class DatePickerDefaults {
 
     /* renamed from: colors-bSRYm20  reason: not valid java name */
     public final DatePickerColors m1984colorsbSRYm20(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, TextFieldColors textFieldColors, Composer composer, int i, int i2, int i3, int i4) {
+        TextFieldColors textFieldColors2;
+        long j25;
         ComposerKt.sourceInformationMarkerStart(composer, 1991626358, "C(colors)N(containerColor:c#ui.graphics.Color,titleContentColor:c#ui.graphics.Color,headlineContentColor:c#ui.graphics.Color,weekdayContentColor:c#ui.graphics.Color,subheadContentColor:c#ui.graphics.Color,navigationContentColor:c#ui.graphics.Color,yearContentColor:c#ui.graphics.Color,disabledYearContentColor:c#ui.graphics.Color,currentYearContentColor:c#ui.graphics.Color,selectedYearContentColor:c#ui.graphics.Color,disabledSelectedYearContentColor:c#ui.graphics.Color,selectedYearContainerColor:c#ui.graphics.Color,disabledSelectedYearContainerColor:c#ui.graphics.Color,dayContentColor:c#ui.graphics.Color,disabledDayContentColor:c#ui.graphics.Color,selectedDayContentColor:c#ui.graphics.Color,disabledSelectedDayContentColor:c#ui.graphics.Color,selectedDayContainerColor:c#ui.graphics.Color,disabledSelectedDayContainerColor:c#ui.graphics.Color,todayContentColor:c#ui.graphics.Color,todayDateBorderColor:c#ui.graphics.Color,dayInSelectionRangeContentColor:c#ui.graphics.Color,dayInSelectionRangeContainerColor:c#ui.graphics.Color,dividerColor:c#ui.graphics.Color,dateTextFieldColors)516@24067L11,516@24079L23:DatePicker.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i4 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m4808getUnspecified0d7_KjU2 = (i4 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
@@ -105,11 +107,16 @@ public final class DatePickerDefaults {
         long m4808getUnspecified0d7_KjU22 = (2097152 & i4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j22;
         long m4808getUnspecified0d7_KjU23 = (4194304 & i4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j23;
         long m4808getUnspecified0d7_KjU24 = (8388608 & i4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j24;
-        TextFieldColors textFieldColors2 = (i4 & 16777216) != 0 ? null : textFieldColors;
+        TextFieldColors textFieldColors3 = (i4 & 16777216) != 0 ? null : textFieldColors;
         if (ComposerKt.isTraceInProgress()) {
+            textFieldColors2 = textFieldColors3;
+            j25 = m4808getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(1991626358, i, i2, "androidx.compose.material3.DatePickerDefaults.colors (DatePicker.kt:516)");
+        } else {
+            textFieldColors2 = textFieldColors3;
+            j25 = m4808getUnspecified0d7_KjU;
         }
-        DatePickerColors m1957copytNwlRmA = getDefaultDatePickerColors(MaterialTheme.INSTANCE.getColorScheme(composer, 6), composer, (i3 >> 12) & 112).m1957copytNwlRmA(m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m4808getUnspecified0d7_KjU6, m4808getUnspecified0d7_KjU7, m4808getUnspecified0d7_KjU8, m4808getUnspecified0d7_KjU9, m4808getUnspecified0d7_KjU10, m4808getUnspecified0d7_KjU11, m4808getUnspecified0d7_KjU12, m4808getUnspecified0d7_KjU13, m4808getUnspecified0d7_KjU14, m4808getUnspecified0d7_KjU15, m4808getUnspecified0d7_KjU16, m4808getUnspecified0d7_KjU17, m4808getUnspecified0d7_KjU18, m4808getUnspecified0d7_KjU19, m4808getUnspecified0d7_KjU20, m4808getUnspecified0d7_KjU21, m4808getUnspecified0d7_KjU23, m4808getUnspecified0d7_KjU22, m4808getUnspecified0d7_KjU24, textFieldColors2);
+        DatePickerColors m1957copytNwlRmA = getDefaultDatePickerColors(MaterialTheme.INSTANCE.getColorScheme(composer, 6), composer, (i3 >> 12) & 112).m1957copytNwlRmA(j25, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m4808getUnspecified0d7_KjU6, m4808getUnspecified0d7_KjU7, m4808getUnspecified0d7_KjU8, m4808getUnspecified0d7_KjU9, m4808getUnspecified0d7_KjU10, m4808getUnspecified0d7_KjU11, m4808getUnspecified0d7_KjU12, m4808getUnspecified0d7_KjU13, m4808getUnspecified0d7_KjU14, m4808getUnspecified0d7_KjU15, m4808getUnspecified0d7_KjU16, m4808getUnspecified0d7_KjU17, m4808getUnspecified0d7_KjU18, m4808getUnspecified0d7_KjU19, m4808getUnspecified0d7_KjU20, m4808getUnspecified0d7_KjU21, m4808getUnspecified0d7_KjU23, m4808getUnspecified0d7_KjU22, m4808getUnspecified0d7_KjU24, textFieldColors2);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

@@ -848,10 +848,10 @@ public final class BasicTooltipKt {
                             kotlin.ResultKt.throwOnFailure(r12)
                             goto L39
                         L17:
-                            java.lang.IllegalStateException r12 = new java.lang.IllegalStateException
-                            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
-                            r12.<init>(r0)
-                            throw r12
+                            java.lang.IllegalStateException r11 = new java.lang.IllegalStateException
+                            java.lang.String r12 = "call to 'resume' before 'invoke' with coroutine"
+                            r11.<init>(r12)
+                            throw r11
                         L1f:
                             kotlin.ResultKt.throwOnFailure(r12)
                             java.lang.Object r12 = r11.L$0

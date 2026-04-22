@@ -89,6 +89,7 @@ public final class RealInterceptorChain implements Interceptor.Chain {
     public Object proceed(Continuation<? super ImageResult> continuation) {
         RealInterceptorChain$proceed$1 realInterceptorChain$proceed$1;
         int i;
+        RealInterceptorChain realInterceptorChain;
         Interceptor interceptor;
         if (continuation instanceof RealInterceptorChain$proceed$1) {
             realInterceptorChain$proceed$1 = (RealInterceptorChain$proceed$1) continuation;
@@ -100,7 +101,8 @@ public final class RealInterceptorChain implements Interceptor.Chain {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Interceptor interceptor2 = this.interceptors.get(this.index);
-                    RealInterceptorChain copy$default = copy$default(this, this.index + 1, null, null, 6, null);
+                    realInterceptorChain = this;
+                    RealInterceptorChain copy$default = copy$default(realInterceptorChain, this.index + 1, null, null, 6, null);
                     realInterceptorChain$proceed$1.L$0 = interceptor2;
                     realInterceptorChain$proceed$1.L$1 = SpillingKt.nullOutSpilledVariable(copy$default);
                     realInterceptorChain$proceed$1.label = 1;
@@ -113,12 +115,13 @@ public final class RealInterceptorChain implements Interceptor.Chain {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    RealInterceptorChain realInterceptorChain = (RealInterceptorChain) realInterceptorChain$proceed$1.L$1;
+                    RealInterceptorChain realInterceptorChain2 = (RealInterceptorChain) realInterceptorChain$proceed$1.L$1;
                     interceptor = (Interceptor) realInterceptorChain$proceed$1.L$0;
                     ResultKt.throwOnFailure(obj);
+                    realInterceptorChain = this;
                 }
                 ImageResult imageResult = (ImageResult) obj;
-                checkRequest(imageResult.getRequest(), interceptor);
+                realInterceptorChain.checkRequest(imageResult.getRequest(), interceptor);
                 return imageResult;
             }
         }
@@ -129,7 +132,7 @@ public final class RealInterceptorChain implements Interceptor.Chain {
         if (i != 0) {
         }
         ImageResult imageResult2 = (ImageResult) obj2;
-        checkRequest(imageResult2.getRequest(), interceptor);
+        realInterceptorChain.checkRequest(imageResult2.getRequest(), interceptor);
         return imageResult2;
     }
 

@@ -172,7 +172,7 @@ public final class zabe extends GoogleApiClient implements zabz {
         } else {
             zabeVar = this;
         }
-        zabeVar.zal = new zabi(zabeVar.zan, zabeVar, zabeVar.zaj, zabeVar.zao, zabeVar.zat, zabeVar.zac, zabeVar.zae, zabeVar.zaf, zabeVar.zag, zabeVar.zav, this);
+        zabeVar.zal = new zabi(zabeVar.zan, zabeVar, zabeVar.zaj, zabeVar.zao, zabeVar.zat, zabeVar.zac, zabeVar.zae, zabeVar.zaf, zabeVar.zag, zabeVar.zav, zabeVar);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

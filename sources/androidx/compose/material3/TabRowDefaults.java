@@ -31,8 +31,8 @@ import kotlin.jvm.functions.Function2;
 public final class TabRowDefaults {
     public static final int $stable = 0;
     public static final TabRowDefaults INSTANCE = new TabRowDefaults();
-    private static final float ScrollableTabRowMinTabWidth = Dp.m7555constructorimpl(90);
-    private static final float ScrollableTabRowEdgeStartPadding = Dp.m7555constructorimpl(52);
+    private static final float ScrollableTabRowMinTabWidth = Dp.m7555constructorimpl(90.0f);
+    private static final float ScrollableTabRowEdgeStartPadding = Dp.m7555constructorimpl(52.0f);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Indicator_9IZ8Weo$lambda$0(TabRowDefaults tabRowDefaults, Modifier modifier, float f, long j, int i, int i2, Composer composer, int i3) {
@@ -283,8 +283,8 @@ public final class TabRowDefaults {
     /* JADX WARN: Removed duplicated region for block: B:59:0x00a4  */
     /* JADX WARN: Removed duplicated region for block: B:60:0x00a6  */
     /* JADX WARN: Removed duplicated region for block: B:63:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x013d  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x013c  */
     /* JADX WARN: Removed duplicated region for block: B:95:? A[RETURN, SYNTHETIC] */
     /* renamed from: PrimaryIndicator-10LGxhE  reason: not valid java name */
     /*
@@ -360,7 +360,7 @@ public final class TabRowDefaults {
                         } else {
                             companion = i7 != 0 ? Modifier.Companion : obj;
                             if (i8 != 0) {
-                                f3 = Dp.m7555constructorimpl(24);
+                                f3 = Dp.m7555constructorimpl(24.0f);
                             }
                             if (i4 != 0) {
                                 f4 = PrimaryNavigationTabTokens.INSTANCE.m3695getActiveIndicatorHeightD9Ej5fM();

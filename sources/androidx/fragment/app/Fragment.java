@@ -1844,7 +1844,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
     public final <I, O> ActivityResultLauncher<I> registerForActivityResult(ActivityResultContract<I, O> activityResultContract, ActivityResultCallback<O> activityResultCallback) {
         return prepareCallInternal(activityResultContract, new Function<Void, ActivityResultRegistry>() { // from class: androidx.fragment.app.Fragment.7
             @Override // androidx.arch.core.util.Function
-            public ActivityResultRegistry apply(Void r2) {
+            public ActivityResultRegistry apply(Void r1) {
                 boolean z = Fragment.this.mHost instanceof ActivityResultRegistryOwner;
                 Fragment fragment = Fragment.this;
                 if (z) {

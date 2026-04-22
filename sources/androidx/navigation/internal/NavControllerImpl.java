@@ -654,7 +654,7 @@ public final class NavControllerImpl {
             final Ref.BooleanRef booleanRef2 = new Ref.BooleanRef();
             navControllerImpl = this;
             z3 = z2;
-            popBackStackInternal$navigation_runtime_release((Navigator) it.next(), this.backQueue.last(), z3, new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda14
+            navControllerImpl.popBackStackInternal$navigation_runtime_release((Navigator) it.next(), this.backQueue.last(), z3, new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda14
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     return NavControllerImpl.executePopOperations$lambda$10(Ref.BooleanRef.this, booleanRef, navControllerImpl, z3, arrayDeque, (NavBackStackEntry) obj);
@@ -663,6 +663,7 @@ public final class NavControllerImpl {
             if (!booleanRef2.element) {
                 break;
             }
+            this = navControllerImpl;
             z2 = z3;
         }
         if (z3) {
@@ -686,7 +687,7 @@ public final class NavControllerImpl {
             }
             if (!arrayDeque.isEmpty()) {
                 NavBackStackEntryState first = arrayDeque.first();
-                for (NavDestination navDestination2 : SequencesKt.takeWhile(SequencesKt.generateSequence(findDestination$navigation_runtime_release$default(this, first.getDestinationId(), null, 2, null), new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda3
+                for (NavDestination navDestination2 : SequencesKt.takeWhile(SequencesKt.generateSequence(findDestination$navigation_runtime_release$default(navControllerImpl, first.getDestinationId(), null, 2, null), new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
                         return NavControllerImpl.executePopOperations$lambda$14((NavDestination) obj);
@@ -1024,7 +1025,7 @@ public final class NavControllerImpl {
                 navControllerImpl = this;
             }
             navControllerImpl._graph = graph;
-            onGraphCreated$navigation_runtime_release(bundle);
+            navControllerImpl.onGraphCreated$navigation_runtime_release(bundle);
             return;
         }
         int size = graph.getNodes().size();
@@ -1576,12 +1577,14 @@ public final class NavControllerImpl {
         if (arrayDeque != null) {
             NavDestination navDestination = graph$navigation_runtime_release;
             for (NavBackStackEntryState navBackStackEntryState : arrayDeque) {
-                NavDestination findDestinationComprehensive$navigation_runtime_release$default = findDestinationComprehensive$navigation_runtime_release$default(this, navDestination, navBackStackEntryState.getDestinationId(), true, null, 8, null);
+                NavControllerImpl navControllerImpl = this;
+                NavDestination findDestinationComprehensive$navigation_runtime_release$default = findDestinationComprehensive$navigation_runtime_release$default(navControllerImpl, navDestination, navBackStackEntryState.getDestinationId(), true, null, 8, null);
                 if (findDestinationComprehensive$navigation_runtime_release$default == null) {
-                    throw new IllegalStateException(("Restore State failed: destination " + NavDestination.Companion.getDisplayName(getNavContext(), navBackStackEntryState.getDestinationId()) + " cannot be found from the current destination " + navDestination).toString());
+                    throw new IllegalStateException(("Restore State failed: destination " + NavDestination.Companion.getDisplayName(navControllerImpl.getNavContext(), navBackStackEntryState.getDestinationId()) + " cannot be found from the current destination " + navDestination).toString());
                 }
-                arrayList.add(navBackStackEntryState.instantiate(getNavContext(), findDestinationComprehensive$navigation_runtime_release$default, getHostLifecycleState$navigation_runtime_release(), this.viewModel));
+                arrayList.add(navBackStackEntryState.instantiate(navControllerImpl.getNavContext(), findDestinationComprehensive$navigation_runtime_release$default, navControllerImpl.getHostLifecycleState$navigation_runtime_release(), navControllerImpl.viewModel));
                 navDestination = findDestinationComprehensive$navigation_runtime_release$default;
+                this = navControllerImpl;
             }
         }
         return arrayList;

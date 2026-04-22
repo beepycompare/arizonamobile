@@ -55,9 +55,9 @@ final class WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2$on
 
     /* JADX WARN: Type inference failed for: r1v0, types: [int] */
     /* JADX WARN: Type inference failed for: r1v1 */
-    /* JADX WARN: Type inference failed for: r1v13, types: [kotlinx.coroutines.Job] */
-    /* JADX WARN: Type inference failed for: r1v16 */
-    /* JADX WARN: Type inference failed for: r1v17 */
+    /* JADX WARN: Type inference failed for: r1v11, types: [kotlinx.coroutines.Job] */
+    /* JADX WARN: Type inference failed for: r1v14 */
+    /* JADX WARN: Type inference failed for: r1v15 */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Throwable th;

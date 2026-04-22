@@ -18,16 +18,20 @@ public final class JvmFileHandle extends FileHandle {
 
     @Override // okio.FileHandle
     protected synchronized void protectedResize(long j) {
+        JvmFileHandle jvmFileHandle;
         try {
             try {
                 long size = size();
                 long j2 = j - size;
                 if (j2 > 0) {
                     int i = (int) j2;
-                    protectedWrite(size, new byte[i], 0, i);
+                    jvmFileHandle = this;
+                    jvmFileHandle.protectedWrite(size, new byte[i], 0, i);
                 } else {
-                    this.randomAccessFile.setLength(j);
+                    jvmFileHandle = this;
+                    jvmFileHandle.randomAccessFile.setLength(j);
                 }
+                return;
             } catch (Throwable th) {
                 th = th;
                 throw th;
@@ -36,6 +40,7 @@ public final class JvmFileHandle extends FileHandle {
             th = th2;
             throw th;
         }
+        throw th;
     }
 
     @Override // okio.FileHandle

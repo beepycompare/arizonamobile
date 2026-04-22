@@ -69,7 +69,7 @@ public final class FlowKt__LimitKt$transformWhile$1<R> extends SuspendLambda imp
                 e = e;
                 flowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$1 = flowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$12;
                 FlowExceptions_commonKt.checkOwnership(e, flowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$1);
-                JobKt.ensureActive(getContext());
+                JobKt.ensureActive(this.getContext());
                 return Unit.INSTANCE;
             }
         } else if (i != 1) {
@@ -81,7 +81,7 @@ public final class FlowKt__LimitKt$transformWhile$1<R> extends SuspendLambda imp
             } catch (AbortFlowException e2) {
                 e = e2;
                 FlowExceptions_commonKt.checkOwnership(e, flowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$1);
-                JobKt.ensureActive(getContext());
+                JobKt.ensureActive(this.getContext());
                 return Unit.INSTANCE;
             }
         }

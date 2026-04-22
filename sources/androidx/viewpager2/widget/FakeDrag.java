@@ -34,7 +34,7 @@ final class FakeDrag {
             return false;
         }
         this.mActualDraggedDistance = 0;
-        this.mRequestedDragDistance = 0;
+        this.mRequestedDragDistance = 0.0f;
         this.mFakeDragBeginTime = SystemClock.uptimeMillis();
         beginFakeVelocityTracker();
         this.mScrollEventAdapter.notifyBeginFakeDrag();

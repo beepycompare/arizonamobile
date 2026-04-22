@@ -80,11 +80,12 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
                 Observer<? super V> observer = this.downstream;
                 observer.onSubscribe(this);
                 observer.onNext(this.window);
-                if (!this.cancelled) {
-                    Scheduler scheduler = this.scheduler;
-                    long j = this.timespan;
-                    this.timer.replace(scheduler.schedulePeriodicallyDirect(this, j, j, this.unit));
+                if (this.cancelled) {
+                    return;
                 }
+                Scheduler scheduler = this.scheduler;
+                long j = this.timespan;
+                this.timer.replace(scheduler.schedulePeriodicallyDirect(this, j, j, this.unit));
             }
         }
 

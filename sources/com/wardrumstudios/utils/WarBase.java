@@ -32,6 +32,8 @@ public class WarBase extends NvEventQueueActivity {
         this.mUsbReceiver = new BroadcastReceiver() { // from class: com.wardrumstudios.utils.WarBase.1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
+                WarBase warBase;
+                String str;
                 String action = intent.getAction();
                 System.out.println("BroadcastReceiver WarMedia Base " + action.toString());
                 UsbDevice usbDevice = (UsbDevice) intent.getParcelableExtra("device");
@@ -42,22 +44,28 @@ public class WarBase extends NvEventQueueActivity {
                     } else if ("android.hardware.usb.action.USB_DEVICE_DETACHED".equals(action)) {
                         Log.e(WarBase.TAG, "BroadcastReceiver -> ACTION_USB_DEVICE_DETACHED " + usbDevice.toString());
                         WarBase.this.USBDeviceDetached(usbDevice, usbDevice.getDeviceName());
-                    } else if ("android.bluetooth.device.action.ACL_CONNECTED".equals(action)) {
-                        BluetoothDevice bluetoothDevice = (BluetoothDevice) intent.getParcelableExtra("android.bluetooth.device.extra.DEVICE");
-                        Log.e(WarBase.TAG, "BroadcastReceiver ACTION_ACL_CONNECTED name " + bluetoothDevice.getName());
-                        if (bluetoothDevice == null || bluetoothDevice.getName() == null || !bluetoothDevice.getName().equals("GS controller")) {
-                            return;
-                        }
-                        WarBase.this.SetGamepad(bluetoothDevice.getName());
-                    } else if (!"android.bluetooth.device.action.ACL_DISCONNECTED".equals(action)) {
-                        Log.e(WarBase.TAG, "BroadcastReceiver -> UNKNOWN ACTION : " + action.toString());
                     } else {
-                        BluetoothDevice bluetoothDevice2 = (BluetoothDevice) intent.getParcelableExtra("android.bluetooth.device.extra.DEVICE");
-                        Log.e(WarBase.TAG, "BroadcastReceiver ACTION_ACL_DISCONNECTED name " + bluetoothDevice2.getName());
-                        if (bluetoothDevice2 == null || !bluetoothDevice2.getName().equals("GS controller")) {
+                        if ("android.bluetooth.device.action.ACL_CONNECTED".equals(action)) {
+                            BluetoothDevice bluetoothDevice = (BluetoothDevice) intent.getParcelableExtra("android.bluetooth.device.extra.DEVICE");
+                            Log.e(WarBase.TAG, "BroadcastReceiver ACTION_ACL_CONNECTED name " + bluetoothDevice.getName());
+                            if (bluetoothDevice == null || bluetoothDevice.getName() == null || !bluetoothDevice.getName().equals("GS controller")) {
+                                return;
+                            }
+                            warBase = WarBase.this;
+                            str = bluetoothDevice.getName();
+                        } else if (!"android.bluetooth.device.action.ACL_DISCONNECTED".equals(action)) {
+                            Log.e(WarBase.TAG, "BroadcastReceiver -> UNKNOWN ACTION : " + action.toString());
                             return;
+                        } else {
+                            BluetoothDevice bluetoothDevice2 = (BluetoothDevice) intent.getParcelableExtra("android.bluetooth.device.extra.DEVICE");
+                            Log.e(WarBase.TAG, "BroadcastReceiver ACTION_ACL_DISCONNECTED name " + bluetoothDevice2.getName());
+                            if (bluetoothDevice2 == null || !bluetoothDevice2.getName().equals("GS controller")) {
+                                return;
+                            }
+                            warBase = WarBase.this;
+                            str = "";
                         }
-                        WarBase.this.SetGamepad("");
+                        warBase.SetGamepad(str);
                     }
                 } catch (Exception unused) {
                 }

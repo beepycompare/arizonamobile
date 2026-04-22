@@ -19,19 +19,14 @@ import kotlin.ranges.RangesKt;
 public abstract class Placeable implements Measured {
     public static final int $stable = 8;
     private int height;
-    private long measuredSize;
     private int width;
+    private long measuredSize = IntSize.m7721constructorimpl(0);
     private long measurementConstraints = PlaceableKt.access$getDefaultConstraints$p();
     private long apparentToRealOffset = IntOffset.Companion.m7694getZeronOccac();
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: placeAt-f8xVGno */
     public abstract void mo6217placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1);
-
-    public Placeable() {
-        long j = 0;
-        this.measuredSize = IntSize.m7721constructorimpl((j & 4294967295L) | (j << 32));
-    }
 
     public final int getWidth() {
         return this.width;

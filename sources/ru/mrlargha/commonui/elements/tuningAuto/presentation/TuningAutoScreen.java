@@ -979,9 +979,9 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
     /* JADX WARN: Type inference failed for: r0v15 */
     /* JADX WARN: Type inference failed for: r0v16 */
     /* JADX WARN: Type inference failed for: r0v29 */
-    /* JADX WARN: Type inference failed for: r12v67 */
-    /* JADX WARN: Type inference failed for: r12v68 */
-    /* JADX WARN: Type inference failed for: r12v69 */
+    /* JADX WARN: Type inference failed for: r12v64 */
+    /* JADX WARN: Type inference failed for: r12v65 */
+    /* JADX WARN: Type inference failed for: r12v66 */
     /* JADX WARN: Type inference failed for: r6v10 */
     /* JADX WARN: Type inference failed for: r6v11 */
     /* JADX WARN: Type inference failed for: r6v9 */
@@ -1247,19 +1247,17 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
                 layoutWheelSettingsBinding.tvRearWheels.setText(wheelSettings.getTitle());
                 layoutWheelSettingsBinding.tvRearMinus.setText(String.valueOf(wheelSettings.getMin()));
                 layoutWheelSettingsBinding.tvRearPlus.setText(String.valueOf(wheelSettings.getMax()));
-                double d = 100;
-                layoutWheelSettingsBinding.seekBarRear.setMin((int) (wheelSettings.getMin() * d));
-                layoutWheelSettingsBinding.seekBarRear.setMax((int) (wheelSettings.getMax() * d));
-                layoutWheelSettingsBinding.seekBarRear.setProgress((int) (wheelSettings.getValue() * d));
+                layoutWheelSettingsBinding.seekBarRear.setMin((int) (wheelSettings.getMin() * 100.0d));
+                layoutWheelSettingsBinding.seekBarRear.setMax((int) (wheelSettings.getMax() * 100.0d));
+                layoutWheelSettingsBinding.seekBarRear.setProgress((int) (wheelSettings.getValue() * 100.0d));
                 layoutWheelSettingsBinding.tvRearMiddle.setText(String.valueOf(wheelSettings.getValue()));
             } else if (id != null && id.intValue() == 1) {
                 layoutWheelSettingsBinding.tvFrontWheels.setText(wheelSettings.getTitle());
                 layoutWheelSettingsBinding.tvFrontMinus.setText(String.valueOf(wheelSettings.getMin()));
                 layoutWheelSettingsBinding.tvFrontPlus.setText(String.valueOf(wheelSettings.getMax()));
-                double d2 = 100;
-                layoutWheelSettingsBinding.seekBarFront.setMin((int) (wheelSettings.getMin() * d2));
-                layoutWheelSettingsBinding.seekBarFront.setMax((int) (wheelSettings.getMax() * d2));
-                layoutWheelSettingsBinding.seekBarFront.setProgress((int) (wheelSettings.getValue() * d2));
+                layoutWheelSettingsBinding.seekBarFront.setMin((int) (wheelSettings.getMin() * 100.0d));
+                layoutWheelSettingsBinding.seekBarFront.setMax((int) (wheelSettings.getMax() * 100.0d));
+                layoutWheelSettingsBinding.seekBarFront.setProgress((int) (wheelSettings.getValue() * 100.0d));
                 layoutWheelSettingsBinding.tvFrontMiddle.setText(String.valueOf(wheelSettings.getValue()));
             }
         }
@@ -1270,10 +1268,9 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         AppCompatTextView tvFrontWheels = layoutWheelSettingsBinding2.tvFrontWheels;
         Intrinsics.checkNotNullExpressionValue(tvFrontWheels, "tvFrontWheels");
         tvFrontWheels.setVisibility(0);
-        double d3 = 100;
-        final int step = (int) (list.get(0).getStep() * d3);
+        final int step = (int) (list.get(0).getStep() * 100.0d);
         if (list.size() > 1) {
-            i = (int) (list.get(1).getStep() * d3);
+            i = (int) (list.get(1).getStep() * 100.0d);
         } else {
             ConstraintLayout layoutFrontWheels2 = layoutWheelSettingsBinding2.layoutFrontWheels;
             Intrinsics.checkNotNullExpressionValue(layoutFrontWheels2, "layoutFrontWheels");
@@ -1309,15 +1306,15 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
             public void onProgressChanged(SeekBar seekBar, int i2, boolean z) {
                 Integer id2;
                 int i3 = step;
-                double d4 = ((i2 / i3) * i3) / 100.0d;
-                layoutWheelSettingsBinding2.tvRearMiddle.setText(String.valueOf(d4));
-                if (Intrinsics.areEqual(objectRef.element, d4)) {
+                double d = ((i2 / i3) * i3) / 100.0d;
+                layoutWheelSettingsBinding2.tvRearMiddle.setText(String.valueOf(d));
+                if (Intrinsics.areEqual(objectRef.element, d)) {
                     return;
                 }
                 TuningAutoScreen tuningAutoScreen = this;
                 WheelSettings wheelSettings2 = (WheelSettings) CollectionsKt.firstOrNull((List<? extends Object>) list);
-                tuningAutoScreen.sendData(StringKt.toStringJson(new UpdateDashboard((wheelSettings2 == null || (id2 = wheelSettings2.getId()) == null) ? 0 : id2.intValue(), d4)), 7);
-                objectRef.element = Double.valueOf(d4);
+                tuningAutoScreen.sendData(StringKt.toStringJson(new UpdateDashboard((wheelSettings2 == null || (id2 = wheelSettings2.getId()) == null) ? 0 : id2.intValue(), d)), 7);
+                objectRef.element = Double.valueOf(d);
             }
         });
         layoutWheelSettingsBinding2.btnFrontMinus.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda15
@@ -1347,15 +1344,15 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
             @Override // android.widget.SeekBar.OnSeekBarChangeListener
             public void onProgressChanged(SeekBar seekBar, int i3, boolean z) {
                 int i4 = i2;
-                double d4 = ((i3 / i4) * i4) / 100.0d;
-                layoutWheelSettingsBinding2.tvFrontMiddle.setText(String.valueOf(d4));
-                if (list.size() <= 1 || Intrinsics.areEqual(objectRef2.element, d4)) {
+                double d = ((i3 / i4) * i4) / 100.0d;
+                layoutWheelSettingsBinding2.tvFrontMiddle.setText(String.valueOf(d));
+                if (list.size() <= 1 || Intrinsics.areEqual(objectRef2.element, d)) {
                     return;
                 }
                 TuningAutoScreen tuningAutoScreen = this;
                 Integer id2 = list.get(1).getId();
-                tuningAutoScreen.sendData(StringKt.toStringJson(new UpdateDashboard(id2 != null ? id2.intValue() : 0, d4)), 7);
-                objectRef2.element = Double.valueOf(d4);
+                tuningAutoScreen.sendData(StringKt.toStringJson(new UpdateDashboard(id2 != null ? id2.intValue() : 0, d)), 7);
+                objectRef2.element = Double.valueOf(d);
             }
         });
     }

@@ -15,8 +15,7 @@ public final class TransformationsKt {
     public static final Paint newScaledShaderPaint(Bitmap bitmap, int i, int i2) {
         Matrix matrix = new Matrix();
         float computeSizeMultiplier = (float) DecodeUtils.computeSizeMultiplier(bitmap.getWidth(), bitmap.getHeight(), i, i2, Scale.FILL);
-        float f = 2;
-        matrix.setTranslate((i - (bitmap.getWidth() * computeSizeMultiplier)) / f, (i2 - (bitmap.getHeight() * computeSizeMultiplier)) / f);
+        matrix.setTranslate((i - (bitmap.getWidth() * computeSizeMultiplier)) / 2.0f, (i2 - (bitmap.getHeight() * computeSizeMultiplier)) / 2.0f);
         matrix.preScale(computeSizeMultiplier, computeSizeMultiplier);
         Paint paint = new Paint(3);
         BitmapShader bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);

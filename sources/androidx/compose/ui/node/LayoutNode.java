@@ -671,7 +671,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                 return Unit.INSTANCE;
             }
 
-            /* JADX WARN: Type inference failed for: r6v7, types: [androidx.compose.ui.semantics.SemanticsConfiguration, T] */
+            /* JADX WARN: Type inference failed for: r5v7, types: [androidx.compose.ui.semantics.SemanticsConfiguration, T] */
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2() {
                 NodeChain nodes$ui = LayoutNode.this.getNodes$ui();
@@ -1536,7 +1536,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
             getOuterCoordinator$ui().draw(canvas, graphicsLayer);
             Unit unit = Unit.INSTANCE;
         } catch (Throwable th) {
-            rethrowWithComposeStackTrace(th);
+            this.rethrowWithComposeStackTrace(th);
             throw new KotlinNothingValueException();
         }
     }
@@ -1995,14 +1995,14 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
             layoutNode = this;
             requestLookaheadRemeasure$ui$default(layoutNode, false, false, false, 5, null);
         } else {
-            requestRemeasure$ui$default(this, false, false, false, 5, null);
             layoutNode = this;
+            requestRemeasure$ui$default(layoutNode, false, false, false, 5, null);
         }
         Constraints m6459getLastConstraintsDWUhwKw = layoutNode.layoutDelegate.m6459getLastConstraintsDWUhwKw();
         Owner owner = layoutNode.owner;
         if (m6459getLastConstraintsDWUhwKw != null) {
             if (owner != null) {
-                owner.mo6602measureAndLayout0kLqBqw(this, m6459getLastConstraintsDWUhwKw.m7514unboximpl());
+                owner.mo6602measureAndLayout0kLqBqw(layoutNode, m6459getLastConstraintsDWUhwKw.m7514unboximpl());
             }
         } else if (owner != null) {
             Owner.measureAndLayout$default(owner, false, 1, null);

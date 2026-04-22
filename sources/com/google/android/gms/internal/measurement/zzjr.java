@@ -147,45 +147,55 @@ public final class zzjr implements zzjv {
                 Log.w("ConfigurationContentLdr", "Unable to acquire ContentProviderClient, using default values");
                 return Collections.emptyMap();
             }
-            Cursor query = acquireUnstableContentProviderClient.query(uri, zza, null, null, null);
             try {
-                if (query == null) {
-                    Log.w("ConfigurationContentLdr", "ContentProvider query returned null cursor, using default values");
-                    return Collections.emptyMap();
-                }
-                int count = query.getCount();
-                if (count == 0) {
-                    Map emptyMap = Collections.emptyMap();
-                    query.close();
-                    return emptyMap;
-                }
-                Map arrayMap = count <= 256 ? new ArrayMap(count) : new HashMap(count, 1.0f);
-                while (query.moveToNext()) {
-                    arrayMap.put(query.getString(0), query.getString(1));
-                }
-                if (query.isAfterLast()) {
-                    query.close();
-                    return arrayMap;
-                }
-                Log.w("ConfigurationContentLdr", "Cursor read incomplete (ContentProvider dead?), using default values");
-                Map emptyMap2 = Collections.emptyMap();
-                query.close();
-                return emptyMap2;
-            } catch (Throwable th) {
-                if (query != null) {
-                    try {
-                        query.close();
-                    } catch (Throwable th2) {
-                        th.addSuppressed(th2);
+                Cursor query = acquireUnstableContentProviderClient.query(uri, zza, null, null, null);
+                try {
+                    if (query == null) {
+                        Log.w("ConfigurationContentLdr", "ContentProvider query returned null cursor, using default values");
+                        Map emptyMap = Collections.emptyMap();
+                        acquireUnstableContentProviderClient.release();
+                        return emptyMap;
                     }
+                    int count = query.getCount();
+                    if (count == 0) {
+                        Map emptyMap2 = Collections.emptyMap();
+                        query.close();
+                        acquireUnstableContentProviderClient.release();
+                        return emptyMap2;
+                    }
+                    Map arrayMap = count <= 256 ? new ArrayMap(count) : new HashMap(count, 1.0f);
+                    while (query.moveToNext()) {
+                        arrayMap.put(query.getString(0), query.getString(1));
+                    }
+                    if (query.isAfterLast()) {
+                        query.close();
+                        acquireUnstableContentProviderClient.release();
+                        return arrayMap;
+                    }
+                    Log.w("ConfigurationContentLdr", "Cursor read incomplete (ContentProvider dead?), using default values");
+                    Map emptyMap3 = Collections.emptyMap();
+                    query.close();
+                    acquireUnstableContentProviderClient.release();
+                    return emptyMap3;
+                } catch (Throwable th) {
+                    if (query != null) {
+                        try {
+                            query.close();
+                        } catch (Throwable th2) {
+                            th.addSuppressed(th2);
+                        }
+                    }
+                    throw th;
                 }
-                throw th;
+            } catch (RemoteException e) {
+                Log.w("ConfigurationContentLdr", "ContentProvider query failed, using default values", e);
+                Map emptyMap4 = Collections.emptyMap();
+                acquireUnstableContentProviderClient.release();
+                return emptyMap4;
             }
-        } catch (RemoteException e) {
-            Log.w("ConfigurationContentLdr", "ContentProvider query failed, using default values", e);
-            return Collections.emptyMap();
-        } finally {
+        } catch (Throwable th3) {
             acquireUnstableContentProviderClient.release();
+            throw th3;
         }
     }
 }

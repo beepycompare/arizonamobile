@@ -55,7 +55,7 @@ final class TsBinarySearchSeeker extends BinarySearchSeeker {
                         }
                         return BinarySearchSeeker.TimestampSearchResult.targetFoundResult(j2 + j4);
                     } else if (100000 + adjustTsTimestamp > j) {
-                        return BinarySearchSeeker.TimestampSearchResult.targetFoundResult(j2 + findSyncBytePosition);
+                        return BinarySearchSeeker.TimestampSearchResult.targetFoundResult(findSyncBytePosition + j2);
                     } else {
                         j4 = findSyncBytePosition;
                         j5 = adjustTsTimestamp;

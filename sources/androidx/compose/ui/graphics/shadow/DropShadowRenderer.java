@@ -55,7 +55,7 @@ public final class DropShadowRenderer extends ShadowRenderer {
             m5483createOuterShadowBitmapD_oqF2M = dropShadowRenderer.m5482createOuterShadowBitmapCqks5Fs(j, path, f, f2);
         } else {
             dropShadowRenderer = this;
-            m5483createOuterShadowBitmapD_oqF2M = dropShadowRenderer.m5483createOuterShadowBitmapD_oqF2M(j, f, f2, j2);
+            m5483createOuterShadowBitmapD_oqF2M = m5483createOuterShadowBitmapD_oqF2M(j, f, f2, j2);
         }
         dropShadowRenderer.shadowBitmap = m5483createOuterShadowBitmapD_oqF2M;
     }
@@ -93,22 +93,21 @@ public final class DropShadowRenderer extends ShadowRenderer {
                     drawScope.getDrawContext().getTransform().translate(f3, f3);
                 }
             }
-            DrawScope.m5330drawImagegbVJVH8$default(drawScope, imageBitmap, Offset.m4519constructorimpl((4294967295L & Float.floatToRawIntBits(f2)) | (Float.floatToRawIntBits(f2) << 32)), f, null, colorFilter, i, 8, null);
+            DrawScope.m5330drawImagegbVJVH8$default(drawScope, imageBitmap, Offset.m4519constructorimpl((Float.floatToRawIntBits(f2) << 32) | (4294967295L & Float.floatToRawIntBits(f2))), f, null, colorFilter, i, 8, null);
         }
     }
 
     /* renamed from: createOuterShadowBitmap-Cqks5Fs  reason: not valid java name */
     private final ImageBitmap m5482createOuterShadowBitmapCqks5Fs(long j, Path path, float f, float f2) {
-        float f3 = 2;
-        float f4 = (f * f3) + (f3 * f2);
-        ImageBitmap m5008ImageBitmapx__hDU$default = ImageBitmapKt.m5008ImageBitmapx__hDU$default((int) Math.ceil(Float.intBitsToFloat((int) (j >> 32)) + f4), (int) Math.ceil(Float.intBitsToFloat((int) (j & 4294967295L)) + f4), ImageBitmapConfig.Companion.m5002getAlpha8_sVssgQ(), false, null, 24, null);
+        float f3 = (f * 2.0f) + (f2 * 2.0f);
+        ImageBitmap m5008ImageBitmapx__hDU$default = ImageBitmapKt.m5008ImageBitmapx__hDU$default((int) Math.ceil(Float.intBitsToFloat((int) (j >> 32)) + f3), (int) Math.ceil(Float.intBitsToFloat((int) (j & 4294967295L)) + f3), ImageBitmapConfig.Companion.m5002getAlpha8_sVssgQ(), false, null, 24, null);
         Canvas Canvas = CanvasKt.Canvas(m5008ImageBitmapx__hDU$default);
         if (f2 > 0.0f) {
-            float f5 = f + f2;
-            Canvas.translate(f5, f5);
+            float f4 = f + f2;
+            Canvas.translate(f4, f4);
             Canvas.drawPath(path, this.paint);
             Paint m5481configureShadowFoewPVk$default = BlurKt.m5481configureShadowFoewPVk$default(this.paint, 0L, 0, f > 0.0f ? Blur_androidKt.BlurFilter(f) : null, PaintingStyle.Companion.m5054getStrokeTiuSbCo(), 3, null);
-            m5481configureShadowFoewPVk$default.setStrokeWidth(2.0f * f2);
+            m5481configureShadowFoewPVk$default.setStrokeWidth(f2 * 2.0f);
             Unit unit = Unit.INSTANCE;
             Canvas.drawPath(path, m5481configureShadowFoewPVk$default);
             return m5008ImageBitmapx__hDU$default;
@@ -121,10 +120,9 @@ public final class DropShadowRenderer extends ShadowRenderer {
 
     /* renamed from: createOuterShadowBitmap-D_oqF2M  reason: not valid java name */
     private final ImageBitmap m5483createOuterShadowBitmapD_oqF2M(long j, float f, float f2, long j2) {
-        float f3 = 2;
-        float f4 = (f * f3) + (f3 * f2);
-        float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32)) + f4;
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L)) + f4;
+        float f3 = (f * 2.0f) + (2.0f * f2);
+        float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32)) + f3;
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L)) + f3;
         ImageBitmap m5008ImageBitmapx__hDU$default = ImageBitmapKt.m5008ImageBitmapx__hDU$default((int) Math.ceil(intBitsToFloat), (int) Math.ceil(intBitsToFloat2), ImageBitmapConfig.Companion.m5002getAlpha8_sVssgQ(), false, null, 24, null);
         CanvasKt.Canvas(m5008ImageBitmapx__hDU$default).drawRoundRect(f, f, intBitsToFloat - f, intBitsToFloat2 - f, Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat((int) (j2 & 4294967295L)), BlurKt.m5481configureShadowFoewPVk$default(this.paint, 0L, 0, f > 0.0f ? Blur_androidKt.BlurFilter(f) : null, 0, 11, null));
         return m5008ImageBitmapx__hDU$default;

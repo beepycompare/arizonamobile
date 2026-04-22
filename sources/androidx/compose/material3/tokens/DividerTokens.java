@@ -9,7 +9,7 @@ public final class DividerTokens {
     public static final int $stable = 0;
     public static final DividerTokens INSTANCE = new DividerTokens();
     private static final ColorSchemeKeyTokens Color = ColorSchemeKeyTokens.OutlineVariant;
-    private static final float Thickness = Dp.m7555constructorimpl((float) 1.0d);
+    private static final float Thickness = Dp.m7555constructorimpl(1.0f);
 
     private DividerTokens() {
     }

@@ -25,7 +25,7 @@ public abstract class zzks<MessageType extends zzks<MessageType, BuilderType>, B
             zzcB(zzlkVar);
             return zzle.zza(zzlkVar, bArr);
         } catch (IOException e) {
-            String name = getClass().getName();
+            String name = this.getClass().getName();
             StringBuilder sb = new StringBuilder(String.valueOf(name).length() + 72);
             sb.append("Serializing ");
             sb.append(name);

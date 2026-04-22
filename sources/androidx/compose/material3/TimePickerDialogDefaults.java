@@ -26,7 +26,7 @@ import kotlin.jvm.functions.Function2;
 public final class TimePickerDialogDefaults {
     public static final int $stable = 0;
     public static final TimePickerDialogDefaults INSTANCE = new TimePickerDialogDefaults();
-    private static final float MinHeightForTimePicker = Dp.m7555constructorimpl(300);
+    private static final float MinHeightForTimePicker = Dp.m7555constructorimpl(300.0f);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DisplayModeToggle_S7Bxtbk$lambda$0(TimePickerDialogDefaults timePickerDialogDefaults, Function0 function0, int i, Modifier modifier, int i2, int i3, Composer composer, int i4) {
@@ -187,8 +187,8 @@ public final class TimePickerDialogDefaults {
     /* JADX WARN: Removed duplicated region for block: B:26:0x004c  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x004e  */
     /* JADX WARN: Removed duplicated region for block: B:30:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00d9  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00d8  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00e4  */
     /* JADX WARN: Removed duplicated region for block: B:49:? A[RETURN, SYNTHETIC] */
     /* renamed from: Title-pK_nZyw  reason: not valid java name */
     /*
@@ -225,7 +225,7 @@ public final class TimePickerDialogDefaults {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(1546564986, i4, -1, "androidx.compose.material3.TimePickerDialogDefaults.Title (TimePickerDialog.kt:294)");
                 }
-                Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(companion, 0.0f, 0.0f, 0.0f, Dp.m7555constructorimpl(20), 7, null);
+                Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(companion, 0.0f, 0.0f, 0.0f, Dp.m7555constructorimpl(20.0f), 7, null);
                 Modifier modifier3 = companion;
                 TextStyle labelMedium = MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getLabelMedium();
                 if (TimePickerDisplayMode.m2746equalsimpl0(i, TimePickerDisplayMode.Companion.m2751getPickerONbchU())) {

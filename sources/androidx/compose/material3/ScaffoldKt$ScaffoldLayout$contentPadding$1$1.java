@@ -16,7 +16,7 @@ public final class ScaffoldKt$ScaffoldLayout$contentPadding$1$1 implements Paddi
     /* JADX INFO: Access modifiers changed from: package-private */
     public ScaffoldKt$ScaffoldLayout$contentPadding$1$1() {
         MutableState mutableStateOf$default;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)), null, 2, null);
         this.paddingHolder$delegate = mutableStateOf$default;
     }
 

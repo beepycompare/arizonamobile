@@ -60,8 +60,7 @@ public final class AndroidPathMeasure implements PathMeasure {
             float f2 = fArr[0];
             float[] fArr2 = this.positionArray;
             Intrinsics.checkNotNull(fArr2);
-            float f3 = fArr2[1];
-            return Offset.m4519constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f3) & 4294967295L));
+            return Offset.m4519constructorimpl((Float.floatToRawIntBits(fArr2[1]) & 4294967295L) | (Float.floatToRawIntBits(f2) << 32));
         }
         return Offset.Companion.m4542getUnspecifiedF1C5BW0();
     }
@@ -81,8 +80,7 @@ public final class AndroidPathMeasure implements PathMeasure {
             float f2 = fArr[0];
             float[] fArr2 = this.tangentArray;
             Intrinsics.checkNotNull(fArr2);
-            float f3 = fArr2[1];
-            return Offset.m4519constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f3) & 4294967295L));
+            return Offset.m4519constructorimpl((Float.floatToRawIntBits(fArr2[1]) & 4294967295L) | (Float.floatToRawIntBits(f2) << 32));
         }
         return Offset.Companion.m4542getUnspecifiedF1C5BW0();
     }

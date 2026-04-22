@@ -90,7 +90,7 @@ public abstract class ResponseBody implements Closeable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v3, types: [T, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r6v5, types: [T, java.lang.Object] */
     private final <T> T consumeSource(ResponseBody responseBody, Function1<? super BufferedSource, ? extends T> function1, Function1<? super T, Integer> function12) {
         long contentLength = responseBody.contentLength();
         if (contentLength > SieveCacheKt.NodeLinkMask) {
@@ -109,16 +109,15 @@ public abstract class ResponseBody implements Closeable {
                     th = (Object) th;
                 }
             }
-            Throwable th2 = th;
+            th = th;
             obj = (Object) invoke;
+        } catch (Throwable th2) {
             th = th2;
-        } catch (Throwable th3) {
-            th = th3;
             if (source != null) {
                 try {
                     source.close();
-                } catch (Throwable th4) {
-                    ExceptionsKt.addSuppressed(th, th4);
+                } catch (Throwable th3) {
+                    ExceptionsKt.addSuppressed(th, th3);
                 }
             }
         }
@@ -143,9 +142,9 @@ public abstract class ResponseBody implements Closeable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Throwable] */
-    /* JADX WARN: Type inference failed for: r2v1, types: [java.lang.Throwable] */
-    /* JADX WARN: Type inference failed for: r2v5 */
+    /* JADX WARN: Type inference failed for: r4v1, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r4v2, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r4v6 */
     public final String string() throws IOException {
         BufferedSource source = source();
         String th = null;
@@ -159,8 +158,9 @@ public abstract class ResponseBody implements Closeable {
                     th = th2;
                 }
             }
-            th = th;
+            String str = th;
             th = readString;
+            th = str;
         } catch (Throwable th3) {
             th = th3;
             if (source != null) {
@@ -347,9 +347,9 @@ public abstract class ResponseBody implements Closeable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v1, types: [java.lang.Throwable] */
-    /* JADX WARN: Type inference failed for: r4v11 */
-    /* JADX WARN: Type inference failed for: r4v2, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r3v1, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r3v11 */
+    /* JADX WARN: Type inference failed for: r3v2, types: [java.lang.Throwable] */
     public final byte[] bytes() throws IOException {
         long contentLength = contentLength();
         if (contentLength > SieveCacheKt.NodeLinkMask) {
@@ -389,9 +389,9 @@ public abstract class ResponseBody implements Closeable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v1, types: [java.lang.Throwable] */
-    /* JADX WARN: Type inference failed for: r4v11 */
-    /* JADX WARN: Type inference failed for: r4v2, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r3v1, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r3v11 */
+    /* JADX WARN: Type inference failed for: r3v2, types: [java.lang.Throwable] */
     public final ByteString byteString() throws IOException {
         long contentLength = contentLength();
         if (contentLength > SieveCacheKt.NodeLinkMask) {

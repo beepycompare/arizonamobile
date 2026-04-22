@@ -205,7 +205,7 @@ public final class RealBufferedSource {
                 return Buffer.readUtf8Line(realBufferedSource.bufferField, j2);
             }
             Buffer buffer = new Buffer();
-            realBufferedSource.bufferField.copyTo(buffer, 0L, Math.min(32, realBufferedSource.bufferField.size()));
+            realBufferedSource.bufferField.copyTo(buffer, 0L, Math.min(32L, realBufferedSource.bufferField.size()));
             throw new EOFException("\\n not found: limit=" + Math.min(realBufferedSource.bufferField.size(), j) + " content=" + buffer.readByteString().hex() + Typography.ellipsis);
         }
         throw new IllegalArgumentException(("limit < 0: " + j).toString());

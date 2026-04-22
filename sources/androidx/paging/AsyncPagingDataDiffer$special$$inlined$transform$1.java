@@ -12,6 +12,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.YieldKt;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
+import kotlinx.coroutines.flow.FlowKt;
 /* compiled from: Emitters.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n¨\u0006\u0004"}, d2 = {"<anonymous>", "", "R", "Lkotlinx/coroutines/flow/FlowCollector;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$transform$1"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.paging.AsyncPagingDataDiffer$special$$inlined$transform$1", f = "AsyncPagingDataDiffer.kt", i = {}, l = {36}, m = "invokeSuspend", n = {}, s = {}, v = 1)
@@ -76,31 +77,31 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
             this.$$this$flow = flowCollector;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:25:0x0096, code lost:
-            if (kotlinx.coroutines.flow.FlowKt.firstOrNull(r7.this$0.getInGetItem$paging_runtime(), new androidx.paging.AsyncPagingDataDiffer$loadStateFlow$1$1(null), r0) != r1) goto L18;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:29:0x00a5, code lost:
-            if (r9.emit(r8, r0) != r1) goto L12;
+        /* JADX WARN: Code restructure failed: missing block: B:30:0x00a6, code lost:
+            if (r9.emit(r8, r0) == r1) goto L21;
          */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
         /* JADX WARN: Removed duplicated region for block: B:18:0x0052  */
+        /* JADX WARN: Removed duplicated region for block: B:27:0x0099  */
         @Override // kotlinx.coroutines.flow.FlowCollector
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public final Object emit(T t, Continuation<? super Unit> continuation) {
             C00341 c00341;
+            Object coroutine_suspended;
             int i;
             FlowCollector<CombinedLoadStates> flowCollector;
             CombinedLoadStates combinedLoadStates;
             CombinedLoadStates combinedLoadStates2;
             FlowCollector<CombinedLoadStates> flowCollector2;
+            FlowCollector<CombinedLoadStates> flowCollector3;
             if (continuation instanceof C00341) {
                 c00341 = (C00341) continuation;
                 if ((c00341.label & Integer.MIN_VALUE) != 0) {
                     c00341.label -= Integer.MIN_VALUE;
                     Object obj = c00341.result;
-                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = c00341.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
@@ -130,11 +131,10 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        flowCollector2 = (FlowCollector) c00341.L$1;
-                        combinedLoadStates2 = (CombinedLoadStates) c00341.L$0;
+                        flowCollector3 = (FlowCollector) c00341.L$1;
+                        combinedLoadStates = (CombinedLoadStates) c00341.L$0;
                         ResultKt.throwOnFailure(obj);
-                        flowCollector = flowCollector2;
-                        combinedLoadStates = combinedLoadStates2;
+                        flowCollector = flowCollector3;
                         c00341.L$0 = null;
                         c00341.L$1 = null;
                         c00341.label = 3;
@@ -142,17 +142,29 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
                     c00341.L$0 = combinedLoadStates2;
                     c00341.L$1 = flowCollector2;
                     c00341.label = 2;
+                    if (FlowKt.firstOrNull(this.this$0.getInGetItem$paging_runtime(), new AsyncPagingDataDiffer$loadStateFlow$1$1(null), c00341) != coroutine_suspended) {
+                        flowCollector3 = flowCollector2;
+                        combinedLoadStates = combinedLoadStates2;
+                        flowCollector = flowCollector3;
+                        c00341.L$0 = null;
+                        c00341.L$1 = null;
+                        c00341.label = 3;
+                    }
+                    return coroutine_suspended;
                 }
             }
             c00341 = new C00341(continuation);
             Object obj2 = c00341.result;
-            Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             i = c00341.label;
             if (i != 0) {
             }
             c00341.L$0 = combinedLoadStates2;
             c00341.L$1 = flowCollector2;
             c00341.label = 2;
+            if (FlowKt.firstOrNull(this.this$0.getInGetItem$paging_runtime(), new AsyncPagingDataDiffer$loadStateFlow$1$1(null), c00341) != coroutine_suspended) {
+            }
+            return coroutine_suspended;
         }
     }
 

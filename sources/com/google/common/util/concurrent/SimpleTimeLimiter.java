@@ -120,7 +120,7 @@ public final class SimpleTimeLimiter implements TimeLimiter {
             submit.cancel(true);
             throw e;
         } catch (ExecutionException e2) {
-            wrapAndThrowExecutionExceptionOrError(e2.getCause());
+            this.wrapAndThrowExecutionExceptionOrError(e2.getCause());
             throw new AssertionError();
         } catch (TimeoutException e3) {
             e = e3;
@@ -139,7 +139,7 @@ public final class SimpleTimeLimiter implements TimeLimiter {
         try {
             return (T) Uninterruptibles.getUninterruptibly(submit, timeoutDuration, timeoutUnit);
         } catch (ExecutionException e) {
-            wrapAndThrowExecutionExceptionOrError(e.getCause());
+            this.wrapAndThrowExecutionExceptionOrError(e.getCause());
             throw new AssertionError();
         } catch (TimeoutException e2) {
             submit.cancel(true);

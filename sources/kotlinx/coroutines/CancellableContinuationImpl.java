@@ -557,31 +557,34 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         while (true) {
             Object obj = atomicReferenceFieldUpdater.get(this);
             if (obj instanceof NotCompleted) {
+                CancellableContinuationImpl<T> cancellableContinuationImpl = this;
                 R r2 = r;
                 int i2 = i;
                 Function3<? super Throwable, ? super R, ? super CoroutineContext, Unit> function32 = function3;
-                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$volatile$FU, this, obj, resumedState((NotCompleted) obj, r2, i2, function32, null))) {
-                    detachChildIfNonReusable();
-                    dispatchResume(i2);
+                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$volatile$FU, cancellableContinuationImpl, obj, cancellableContinuationImpl.resumedState((NotCompleted) obj, r2, i2, function32, null))) {
+                    cancellableContinuationImpl.detachChildIfNonReusable();
+                    cancellableContinuationImpl.dispatchResume(i2);
                     return;
                 }
+                this = cancellableContinuationImpl;
                 r = r2;
                 i = i2;
                 function3 = function32;
             } else {
+                CancellableContinuationImpl<T> cancellableContinuationImpl2 = this;
                 R r3 = r;
                 Function3<? super Throwable, ? super R, ? super CoroutineContext, Unit> function33 = function3;
                 if (obj instanceof CancelledContinuation) {
                     CancelledContinuation cancelledContinuation = (CancelledContinuation) obj;
                     if (cancelledContinuation.makeResumed()) {
                         if (function33 != null) {
-                            callOnCancellation(function33, cancelledContinuation.cause, r3);
+                            cancellableContinuationImpl2.callOnCancellation(function33, cancelledContinuation.cause, r3);
                             return;
                         }
                         return;
                     }
                 }
-                alreadyResumedError(r3);
+                cancellableContinuationImpl2.alreadyResumedError(r3);
                 throw new KotlinNothingValueException();
             }
         }
@@ -592,13 +595,15 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         while (true) {
             Object obj2 = atomicReferenceFieldUpdater.get(this);
             if (obj2 instanceof NotCompleted) {
+                CancellableContinuationImpl<T> cancellableContinuationImpl = this;
                 R r2 = r;
                 Object obj3 = obj;
                 Function3<? super Throwable, ? super R, ? super CoroutineContext, Unit> function32 = function3;
-                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$volatile$FU, this, obj2, resumedState((NotCompleted) obj2, r2, this.resumeMode, function32, obj3))) {
-                    detachChildIfNonReusable();
+                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$volatile$FU, cancellableContinuationImpl, obj2, cancellableContinuationImpl.resumedState((NotCompleted) obj2, r2, this.resumeMode, function32, obj3))) {
+                    cancellableContinuationImpl.detachChildIfNonReusable();
                     return CancellableContinuationImplKt.RESUME_TOKEN;
                 }
+                this = cancellableContinuationImpl;
                 r = r2;
                 function3 = function32;
                 obj = obj3;

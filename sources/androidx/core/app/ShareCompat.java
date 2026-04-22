@@ -347,7 +347,9 @@ public final class ShareCompat {
                 if (text instanceof Spanned) {
                     return Html.toHtml((Spanned) text);
                 }
-                return text != null ? Html.escapeHtml(text) : stringExtra;
+                if (text != null) {
+                    return Html.escapeHtml(text);
+                }
             }
             return stringExtra;
         }

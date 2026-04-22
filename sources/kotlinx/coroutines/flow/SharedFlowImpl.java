@@ -684,6 +684,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Object emitSuspend(T t, Continuation<? super Unit> continuation) {
+        SharedFlowImpl<T> sharedFlowImpl;
         Throwable th;
         Continuation<Unit>[] findSlotsToResumeLocked;
         Emitter emitter;
@@ -699,17 +700,20 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
                         cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(Unit.INSTANCE));
                         findSlotsToResumeLocked = findSlotsToResumeLocked(continuationArr);
                         emitter = null;
+                        sharedFlowImpl = this;
                     } catch (Throwable th2) {
                         th = th2;
+                        sharedFlowImpl = this;
                         throw th;
                     }
                 } else {
+                    sharedFlowImpl = this;
                     try {
-                        Emitter emitter2 = new Emitter(this, getHead() + getTotalSize(), t, cancellableContinuationImpl2);
-                        enqueueLocked(emitter2);
-                        this.queueSize++;
-                        if (this.bufferCapacity == 0) {
-                            continuationArr = findSlotsToResumeLocked(continuationArr);
+                        Emitter emitter2 = new Emitter(sharedFlowImpl, getHead() + getTotalSize(), t, cancellableContinuationImpl2);
+                        sharedFlowImpl.enqueueLocked(emitter2);
+                        sharedFlowImpl.queueSize++;
+                        if (sharedFlowImpl.bufferCapacity == 0) {
+                            continuationArr = sharedFlowImpl.findSlotsToResumeLocked(continuationArr);
                         }
                         findSlotsToResumeLocked = continuationArr;
                         emitter = emitter2;
@@ -735,6 +739,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
                 return result == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? result : Unit.INSTANCE;
             } catch (Throwable th4) {
                 th = th4;
+                sharedFlowImpl = this;
             }
         }
     }
@@ -782,17 +787,21 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
 
     @Override // kotlinx.coroutines.flow.MutableSharedFlow
     public void resetReplayCache() {
+        SharedFlowImpl<T> sharedFlowImpl;
         synchronized (this) {
             try {
+                sharedFlowImpl = this;
                 try {
-                    updateBufferLocked(getBufferEndIndex(), this.minCollectorIndex, getBufferEndIndex(), getQueueEndIndex());
+                    sharedFlowImpl.updateBufferLocked(getBufferEndIndex(), this.minCollectorIndex, getBufferEndIndex(), getQueueEndIndex());
                     Unit unit = Unit.INSTANCE;
                 } catch (Throwable th) {
                     th = th;
-                    throw th;
+                    Throwable th2 = th;
+                    throw th2;
                 }
-            } catch (Throwable th2) {
-                th = th2;
+            } catch (Throwable th3) {
+                th = th3;
+                sharedFlowImpl = this;
             }
         }
     }

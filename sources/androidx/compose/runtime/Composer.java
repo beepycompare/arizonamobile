@@ -278,7 +278,8 @@ public interface Composer {
 
         @Deprecated(message = "Use setDiagnosticStackTraceMode instead")
         public final void setDiagnosticStackTraceEnabled(boolean z) {
-            ComposerKt.m3983setComposeStackTraceMode76WK1J0(z ? ComposeStackTraceMode.Companion.m4245getSourceInformationMD5MrJc() : ComposeStackTraceMode.Companion.m4244getNoneMD5MrJc());
+            ComposeStackTraceMode.Companion companion = ComposeStackTraceMode.Companion;
+            ComposerKt.m3983setComposeStackTraceMode76WK1J0(z ? companion.m4245getSourceInformationMD5MrJc() : companion.m4244getNoneMD5MrJc());
         }
     }
 }

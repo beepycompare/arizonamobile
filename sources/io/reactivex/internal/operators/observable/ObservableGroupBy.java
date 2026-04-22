@@ -87,7 +87,7 @@ public final class ObservableGroupBy<T, K, V> extends AbstractObservableWithUpst
                 } catch (Throwable th) {
                     Exceptions.throwIfFatal(th);
                     this.upstream.dispose();
-                    onError(th);
+                    this.onError(th);
                 }
             } catch (Throwable th2) {
                 Exceptions.throwIfFatal(th2);

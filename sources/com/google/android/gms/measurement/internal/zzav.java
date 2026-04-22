@@ -446,8 +446,8 @@ public final class zzav extends zzos {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00d2  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00da  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -455,6 +455,7 @@ public final class zzav extends zzos {
         Cursor cursor;
         Cursor cursor2;
         Cursor cursor3;
+        Cursor cursor4;
         zzpj zzpjVar;
         zzg();
         zzaw();
@@ -463,67 +464,63 @@ public final class zzav extends zzos {
             zzpjVar = 0;
             cursor2 = null;
             cursor2 = null;
-            try {
-                cursor3 = zze().query("upload_queue", new String[]{"rowId", "app_id", "measurement_batch", "upload_uri", "upload_headers", "upload_type", "retry_count", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "associated_row_id", "last_upload_timestamp"}, "rowId=?", new String[]{String.valueOf(j)}, null, null, null, "1");
-            } catch (SQLiteException e) {
-                e = e;
-                cursor3 = cursor2;
-                try {
-                    this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. rowId", Long.valueOf(j), e);
-                    zzpjVar = cursor2;
-                    if (cursor3 != null) {
-                    }
-                    return zzpjVar;
-                } catch (Throwable th) {
-                    th = th;
-                    if (cursor3 != null) {
-                        cursor3.close();
-                    }
-                    throw th;
-                }
-            } catch (Throwable th2) {
-                th = th2;
-                cursor3 = cursor;
-                if (cursor3 != null) {
-                }
-                throw th;
-            }
-        } catch (SQLiteException e2) {
-            e = e2;
+        } catch (SQLiteException e) {
+            e = e;
             cursor2 = null;
-        } catch (Throwable th3) {
-            th = th3;
+        } catch (Throwable th) {
+            th = th;
             cursor = null;
         }
         try {
+            cursor4 = zze().query("upload_queue", new String[]{"rowId", "app_id", "measurement_batch", "upload_uri", "upload_headers", "upload_type", "retry_count", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "associated_row_id", "last_upload_timestamp"}, "rowId=?", new String[]{String.valueOf(j)}, null, null, null, "1");
+            try {
+                try {
+                } catch (SQLiteException e2) {
+                    e = e2;
+                    this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. rowId", Long.valueOf(j), e);
+                    zzpjVar = cursor2;
+                    if (cursor4 != null) {
+                    }
+                    return zzpjVar;
+                }
+            } catch (Throwable th2) {
+                th = th2;
+                cursor3 = cursor4;
+                if (cursor3 != null) {
+                    cursor3.close();
+                }
+                throw th;
+            }
         } catch (SQLiteException e3) {
             e = e3;
+            cursor4 = cursor2;
             this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. rowId", Long.valueOf(j), e);
             zzpjVar = cursor2;
-            if (cursor3 != null) {
+            if (cursor4 != null) {
             }
             return zzpjVar;
-        } catch (Throwable th4) {
-            th = th4;
+        } catch (Throwable th3) {
+            th = th3;
+            cursor3 = cursor;
             if (cursor3 != null) {
             }
             throw th;
         }
-        if (!cursor3.moveToFirst()) {
-            if (cursor3 != null) {
-                cursor3.close();
+        if (!cursor4.moveToFirst()) {
+            if (cursor4 != null) {
+                cursor4.close();
             }
             return zzpjVar;
         }
-        zzpj zzaF = zzaF((String) Preconditions.checkNotNull(cursor3.getString(1)), j, cursor3.getBlob(2), cursor3.getString(3), cursor3.getString(4), cursor3.getInt(5), cursor3.getInt(6), cursor3.getLong(7), cursor3.getLong(8), cursor3.getLong(9));
-        if (cursor3 != null) {
-            cursor3.close();
+        zzpj zzaF = zzaF((String) Preconditions.checkNotNull(cursor4.getString(1)), j, cursor4.getBlob(2), cursor4.getString(3), cursor4.getString(4), cursor4.getInt(5), cursor4.getInt(6), cursor4.getLong(7), cursor4.getLong(8), cursor4.getLong(9));
+        if (cursor4 != null) {
+            cursor4.close();
         }
         return zzaF;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0150  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x013f  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0148  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -533,27 +530,38 @@ public final class zzav extends zzos {
         Cursor cursor2;
         List list;
         Cursor cursor3;
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
         Preconditions.checkNotEmpty(str);
         zzg();
         zzaw();
         try {
-            SQLiteDatabase zze2 = zze();
-            int i2 = 0;
-            int i3 = 2;
-            int i4 = 3;
-            String[] strArr = {"rowId", "app_id", "measurement_batch", "upload_uri", "upload_headers", "upload_type", "retry_count", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "associated_row_id", "last_upload_timestamp"};
-            String zzaH = zzaH(zzooVar.zza);
-            String zzaG = zzaG();
-            StringBuilder sb = new StringBuilder(String.valueOf(zzaH).length() + 17 + zzaG.length());
-            sb.append("app_id=?");
-            sb.append(zzaH);
-            sb.append(" AND NOT ");
-            sb.append(zzaG);
-            int i5 = 7;
-            int i6 = 8;
-            int i7 = 6;
-            int i8 = 5;
-            cursor3 = zze2.query("upload_queue", strArr, sb.toString(), new String[]{str}, null, null, "creation_timestamp ASC", i > 0 ? String.valueOf(i) : null);
+            try {
+                SQLiteDatabase zze2 = zze();
+                i2 = 0;
+                i3 = 2;
+                i4 = 3;
+                String[] strArr = {"rowId", "app_id", "measurement_batch", "upload_uri", "upload_headers", "upload_type", "retry_count", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "associated_row_id", "last_upload_timestamp"};
+                String zzaH = zzaH(zzooVar.zza);
+                String zzaG = zzaG();
+                StringBuilder sb = new StringBuilder(String.valueOf(zzaH).length() + 17 + zzaG.length());
+                sb.append("app_id=?");
+                sb.append(zzaH);
+                sb.append(" AND NOT ");
+                sb.append(zzaG);
+                i5 = 7;
+                i6 = 8;
+                i7 = 6;
+                i8 = 5;
+                cursor3 = zze2.query("upload_queue", strArr, sb.toString(), new String[]{str}, null, null, "creation_timestamp ASC", i > 0 ? String.valueOf(i) : null);
+            } catch (Throwable th) {
+                th = th;
+            }
             try {
                 list = new ArrayList();
                 while (cursor3.moveToNext()) {
@@ -590,43 +598,33 @@ public final class zzav extends zzos {
                         i6 = 8;
                     } catch (SQLiteException e) {
                         e = e;
-                        try {
-                            this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. appId", str2, e);
-                            list = Collections.emptyList();
-                            cursor3 = cursor2;
-                            if (cursor3 != null) {
-                            }
-                            return list;
-                        } catch (Throwable th) {
-                            th = th;
-                            cursor = cursor2;
-                            if (cursor != null) {
-                                cursor.close();
-                            }
-                            throw th;
+                        this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. appId", str2, e);
+                        list = Collections.emptyList();
+                        cursor3 = cursor2;
+                        if (cursor3 != null) {
                         }
-                    } catch (Throwable th2) {
-                        th = th2;
-                        cursor = cursor2;
-                        if (cursor != null) {
-                        }
-                        throw th;
+                        return list;
                     }
                 }
             } catch (SQLiteException e2) {
                 e = e2;
                 str2 = str;
                 cursor2 = cursor3;
-            } catch (Throwable th3) {
-                th = th3;
-                cursor2 = cursor3;
+            } catch (Throwable th2) {
+                th = th2;
+                Cursor cursor4 = cursor3;
+                cursor = cursor4;
+                if (cursor != null) {
+                    cursor.close();
+                }
+                throw th;
             }
         } catch (SQLiteException e3) {
             e = e3;
             str2 = str;
             cursor2 = null;
-        } catch (Throwable th4) {
-            th = th4;
+        } catch (Throwable th3) {
+            th = th3;
             cursor = null;
             if (cursor != null) {
             }
@@ -668,10 +666,10 @@ public final class zzav extends zzos {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0034  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x003e  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x003c  */
     /* JADX WARN: Type inference failed for: r1v0 */
     /* JADX WARN: Type inference failed for: r1v1, types: [android.database.Cursor] */
-    /* JADX WARN: Type inference failed for: r1v3 */
+    /* JADX WARN: Type inference failed for: r1v2 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -699,8 +697,8 @@ public final class zzav extends zzos {
                     return null;
                 }
             } catch (Throwable th) {
-                r1 = zze2;
                 th = th;
+                r1 = zze2;
                 if (r1 != 0) {
                     r1.close();
                 }
@@ -1269,15 +1267,14 @@ public final class zzav extends zzos {
     /* JADX WARN: Code restructure failed: missing block: B:10:0x003e, code lost:
         if (r6 != null) goto L10;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0058, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0057, code lost:
         if (r6 == null) goto L11;
      */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0069  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final zzjl zzX(String str) {
-        Throwable th;
         SQLiteException e;
         Cursor cursor;
         Preconditions.checkNotNull(str);
@@ -1296,8 +1293,8 @@ public final class zzav extends zzos {
                     e = e2;
                     this.zzu.zzaV().zzb().zzb("Error querying database.", e);
                 }
-            } catch (Throwable th2) {
-                th = th2;
+            } catch (Throwable th) {
+                th = th;
                 cursor2 = "select consent_state, consent_source from consent_settings where app_id=? limit 1;";
                 if (cursor2 != null) {
                     cursor2.close();
@@ -1307,8 +1304,8 @@ public final class zzav extends zzos {
         } catch (SQLiteException e3) {
             e = e3;
             cursor = null;
-        } catch (Throwable th3) {
-            th = th3;
+        } catch (Throwable th2) {
+            th = th2;
             if (cursor2 != null) {
             }
             throw th;

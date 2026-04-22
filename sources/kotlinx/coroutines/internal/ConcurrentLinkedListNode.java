@@ -116,7 +116,7 @@ public abstract class ConcurrentLinkedListNode<N extends ConcurrentLinkedListNod
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v1, types: [kotlinx.coroutines.internal.ConcurrentLinkedListNode] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [kotlinx.coroutines.internal.ConcurrentLinkedListNode] */
     private final N getAliveSegmentRight() {
         ?? next;
         if (DebugKt.getASSERTIONS_ENABLED() && isTail()) {

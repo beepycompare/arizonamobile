@@ -433,8 +433,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
         this.clipboard = new AndroidClipboard(getClipboardManager());
         this.snapshotObserver = new OwnerSnapshotObserver(new AndroidComposeView$snapshotObserver$1(this));
         this.measureAndLayoutDelegate = new MeasureAndLayoutDelegate(getRoot());
-        long j = Integer.MAX_VALUE;
-        this.globalPosition = IntOffset.m7677constructorimpl((j & 4294967295L) | (j << 32));
+        this.globalPosition = IntOffset.m7677constructorimpl(9223372034707292159L);
         this.tmpPositionArray = new int[]{0, 0};
         float[] m5016constructorimpl$default = Matrix.m5016constructorimpl$default(null, 1, null);
         this.tmpMatrix = m5016constructorimpl$default;
@@ -499,7 +498,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             @Override // java.lang.Runnable
             public void run() {
                 MotionEvent motionEvent;
-                long j2;
+                long j;
                 AndroidComposeView.this.removeCallbacks(this);
                 motionEvent = AndroidComposeView.this.previousMotionEvent;
                 if (motionEvent != null) {
@@ -517,8 +516,8 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                         i = 2;
                     }
                     AndroidComposeView androidComposeView3 = AndroidComposeView.this;
-                    j2 = androidComposeView3.relayoutTime;
-                    androidComposeView3.sendSimulatedEvent(motionEvent, i, j2, false);
+                    j = androidComposeView3.relayoutTime;
+                    androidComposeView3.sendSimulatedEvent(motionEvent, i, j, false);
                 }
             }
         };
@@ -2009,9 +2008,8 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             if (z) {
                 try {
                     function0 = this.resendMotionEventOnLayout;
-                } catch (Throwable th) {
+                } finally {
                     Trace.endSection();
-                    throw th;
                 }
             } else {
                 function0 = null;
@@ -2022,7 +2020,6 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             MeasureAndLayoutDelegate.dispatchOnPositionedCallbacks$default(this.measureAndLayoutDelegate, false, 1, null);
             dispatchPendingInteropLayoutCallbacks();
             Unit unit = Unit.INSTANCE;
-            Trace.endSection();
         }
     }
 
@@ -2148,7 +2145,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
     /* renamed from: pack-ZIaKswc  reason: not valid java name */
     private final long m6651packZIaKswc(int i, int i2) {
-        return ULong.m9362constructorimpl(ULong.m9362constructorimpl(i2) | ULong.m9362constructorimpl(ULong.m9362constructorimpl(i) << 32));
+        return ULong.m9362constructorimpl(ULong.m9362constructorimpl(ULong.m9362constructorimpl(i) << 32) | ULong.m9362constructorimpl(i2));
     }
 
     /* renamed from: convertMeasureSpec-I7RO_PI  reason: not valid java name */
@@ -2971,7 +2968,8 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
     public long mo6165localToScreenMKHz9U(long j) {
         recalculateWindowPosition();
         long m5022mapMKHz9U = Matrix.m5022mapMKHz9U(this.viewToWindowMatrix, j);
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (m5022mapMKHz9U & 4294967295L)) + Float.intBitsToFloat((int) (this.windowPosition & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (m5022mapMKHz9U >> 32)) + Float.intBitsToFloat((int) (this.windowPosition >> 32))) << 32));
+        float intBitsToFloat = Float.intBitsToFloat((int) (m5022mapMKHz9U & 4294967295L)) + Float.intBitsToFloat((int) (this.windowPosition & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (m5022mapMKHz9U >> 32)) + Float.intBitsToFloat((int) (this.windowPosition >> 32))) << 32));
     }
 
     @Override // androidx.compose.ui.input.pointer.MatrixPositionCalculator
@@ -2986,7 +2984,8 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
     /* renamed from: screenToLocal-MK-Hz9U */
     public long mo6166screenToLocalMKHz9U(long j) {
         recalculateWindowPosition();
-        return Matrix.m5022mapMKHz9U(this.windowToViewMatrix, Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (this.windowPosition >> 32))) << 32) | (4294967295L & Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (this.windowPosition & 4294967295L))))));
+        float intBitsToFloat = Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (this.windowPosition & 4294967295L));
+        return Matrix.m5022mapMKHz9U(this.windowToViewMatrix, Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (this.windowPosition >> 32))) << 32)));
     }
 
     private final void recalculateWindowPosition() {

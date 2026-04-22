@@ -186,14 +186,13 @@ public final class DurationKt {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:348:0x01c6, code lost:
-        if (r5 == r22.length()) goto L107;
+        if (r5 == r23.length()) goto L107;
      */
     /* JADX WARN: Code restructure failed: missing block: B:350:0x01ce, code lost:
-        if (r22.charAt(r5) == 'S') goto L100;
+        if (r23.charAt(r5) == 'S') goto L100;
      */
     /* JADX WARN: Code restructure failed: missing block: B:352:0x01d1, code lost:
-        r9 = r15 * fractionDigitsToNanos((r10 * 1000000000) + r13, kotlin.time.DurationUnit.SECONDS);
-        r5 = r5;
+        r9 = r15 * fractionDigitsToNanos((r10 * androidx.media3.common.C.NANOS_PER_SECOND) + r13, kotlin.time.DurationUnit.SECONDS);
      */
     /* JADX WARN: Removed duplicated region for block: B:261:0x0077  */
     /* JADX WARN: Removed duplicated region for block: B:267:0x008c  */
@@ -203,12 +202,12 @@ public final class DurationKt {
     /* JADX WARN: Removed duplicated region for block: B:303:0x010a  */
     /* JADX WARN: Removed duplicated region for block: B:307:0x011d  */
     /* JADX WARN: Removed duplicated region for block: B:318:0x0138  */
-    /* JADX WARN: Removed duplicated region for block: B:366:0x021c  */
-    /* JADX WARN: Removed duplicated region for block: B:399:0x0291  */
-    /* JADX WARN: Removed duplicated region for block: B:401:0x0298  */
-    /* JADX WARN: Removed duplicated region for block: B:409:0x028f A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:366:0x021a  */
+    /* JADX WARN: Removed duplicated region for block: B:399:0x028f  */
+    /* JADX WARN: Removed duplicated region for block: B:401:0x0296  */
+    /* JADX WARN: Removed duplicated region for block: B:409:0x028d A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:419:0x0101 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:421:0x01fa A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:420:0x01f8 A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:425:0x0082 A[ADDED_TO_REGION, EDGE_INSN: B:425:0x0082->B:264:0x0082 ?: BREAK  , SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:431:0x00c9 A[SYNTHETIC] */
     /*
@@ -353,9 +352,9 @@ public final class DurationKt {
                                         for (int i16 = 0; i16 < i15; i16++) {
                                             i13 = (i13 << 1) + (i13 << 3);
                                         }
-                                        int i17 = i12;
-                                        while (i17 < str.length() && '0' <= (charAt = str.charAt(i17)) && charAt < ':') {
-                                            i17++;
+                                        i4 = i12;
+                                        while (i4 < str.length() && '0' <= (charAt = str.charAt(i4)) && charAt < ':') {
+                                            i4++;
                                         }
                                         if (z) {
                                             throw new IllegalArgumentException(str2);
@@ -476,7 +475,7 @@ public final class DurationKt {
         if (r10 != r1) goto L113;
      */
     /* JADX WARN: Code restructure failed: missing block: B:304:0x0196, code lost:
-        r2 = (r14 * 1000000000) + r12;
+        r2 = (r14 * androidx.media3.common.C.NANOS_PER_SECOND) + r12;
         r4 = r13;
         r13 = r10;
      */
@@ -635,9 +634,8 @@ public final class DurationKt {
                         j7 = j2;
                     }
                 } else if (i16 == 2) {
-                    long j8 = 1000000;
-                    j3 += j5 / j8;
-                    j2 = j7 + (j5 % j8);
+                    j3 += j5 / 1000000;
+                    j2 = j7 + (j5 % 1000000);
                     j7 = j2;
                 } else {
                     j3 = addMillisWithoutOverflow(j3, DurationUnitKt.convertDurationUnitToMilliseconds(j5, defaultDurationUnitByShortNameOrNull));

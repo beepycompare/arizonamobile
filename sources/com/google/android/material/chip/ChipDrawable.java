@@ -296,13 +296,11 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
     private float getCurrentChipIconHeight() {
         Drawable drawable = this.currentChecked ? this.checkedIcon : this.chipIcon;
         float f = this.chipIconSize;
-        if (f <= 0.0f && drawable != null) {
-            f = (float) Math.ceil(ViewUtils.dpToPx(this.context, 24));
-            if (drawable.getIntrinsicHeight() <= f) {
-                return drawable.getIntrinsicHeight();
-            }
+        if (f > 0.0f || drawable == null) {
+            return f;
         }
-        return f;
+        float ceil = (float) Math.ceil(ViewUtils.dpToPx(this.context, 24));
+        return ((float) drawable.getIntrinsicHeight()) <= ceil ? drawable.getIntrinsicHeight() : ceil;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -32,7 +32,7 @@ public final class DataStoreInMemoryCache<T> {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x002a, code lost:
-        if (r6.getVersion() > ((androidx.datastore.core.Data) r2).getVersion()) goto L24;
+        if (r5.getVersion() > ((androidx.datastore.core.Data) r1).getVersion()) goto L24;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

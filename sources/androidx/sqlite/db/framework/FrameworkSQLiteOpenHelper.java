@@ -246,7 +246,7 @@ public final class FrameworkSQLiteOpenHelper implements SupportSQLiteOpenHelper 
                 } catch (InterruptedException unused2) {
                 }
                 try {
-                    return getWritableOrReadableDatabase(z);
+                    return this.getWritableOrReadableDatabase(z);
                 } catch (Throwable th) {
                     th = th;
                     if (th instanceof CallbackException) {
@@ -269,7 +269,7 @@ public final class FrameworkSQLiteOpenHelper implements SupportSQLiteOpenHelper 
                     }
                     this.context.deleteDatabase(databaseName);
                     try {
-                        return getWritableOrReadableDatabase(z);
+                        return this.getWritableOrReadableDatabase(z);
                     } catch (CallbackException e) {
                         throw e.getCause();
                     }

@@ -21,7 +21,7 @@ public final class MaterialFadeThrough extends MaterialVisibility<FadeThroughPro
         super.clearAdditionalAnimatorProvider();
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [com.google.android.material.transition.FadeThroughProvider, com.google.android.material.transition.VisibilityAnimatorProvider] */
+    /* JADX WARN: Type inference failed for: r0v1, types: [com.google.android.material.transition.FadeThroughProvider, com.google.android.material.transition.VisibilityAnimatorProvider] */
     @Override // com.google.android.material.transition.MaterialVisibility
     public /* bridge */ /* synthetic */ FadeThroughProvider getPrimaryAnimatorProvider() {
         return super.getPrimaryAnimatorProvider();

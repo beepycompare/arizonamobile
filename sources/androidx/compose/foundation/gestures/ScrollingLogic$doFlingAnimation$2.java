@@ -55,8 +55,8 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
         FlingBehavior flingBehavior;
         float m584toFloatTH1AsA0;
         Ref.LongRef longRef;
-        ScrollingLogic scrollingLogic2;
         long j;
+        ScrollingLogic scrollingLogic2;
         long m585updateQWom1Mo;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
@@ -95,9 +95,9 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
                 return coroutine_suspended;
             }
             longRef = longRef2;
+            j = j3;
             obj = performFling;
             scrollingLogic2 = scrollingLogic;
-            j = j3;
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {

@@ -8,10 +8,10 @@ import kotlin.Metadata;
 public final class NavigationBarVerticalItemTokens {
     public static final int $stable = 0;
     public static final NavigationBarVerticalItemTokens INSTANCE = new NavigationBarVerticalItemTokens();
-    private static final float ActiveIndicatorHeight = Dp.m7555constructorimpl((float) 32.0d);
-    private static final float ActiveIndicatorWidth = Dp.m7555constructorimpl((float) 56.0d);
-    private static final float ContainerBetweenSpace = Dp.m7555constructorimpl((float) 6.0d);
-    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
+    private static final float ActiveIndicatorHeight = Dp.m7555constructorimpl(32.0f);
+    private static final float ActiveIndicatorWidth = Dp.m7555constructorimpl(56.0f);
+    private static final float ContainerBetweenSpace = Dp.m7555constructorimpl(6.0f);
+    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
 
     private NavigationBarVerticalItemTokens() {
     }

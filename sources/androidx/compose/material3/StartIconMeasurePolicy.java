@@ -79,18 +79,15 @@ final class StartIconMeasurePolicy implements MeasurePolicy {
                     Measurable measurable2 = list.get(i2);
                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable2), Constants.ScionAnalytics.PARAM_LABEL)) {
                         Placeable mo6216measureBRTryo02 = measurable2.mo6216measureBRTryo0(ConstraintsKt.m7528offsetNN6EwU$default(m7498copyZbe2FdA$default, -(mo6216measureBRTryo0.getWidth() + measureScope2.mo399roundToPx0680j_4(this.startIconToLabelHorizontalPadding)), 0, 2, null));
-                        float f = 2;
-                        int width = mo6216measureBRTryo0.getWidth() + mo6216measureBRTryo02.getWidth() + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.startIconToLabelHorizontalPadding + Dp.m7555constructorimpl(this.indicatorHorizontalPadding * f)));
-                        int max = Math.max(mo6216measureBRTryo0.getHeight(), mo6216measureBRTryo02.getHeight()) + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.indicatorVerticalPadding * f));
+                        int width = mo6216measureBRTryo0.getWidth() + mo6216measureBRTryo02.getWidth() + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.startIconToLabelHorizontalPadding + Dp.m7555constructorimpl(this.indicatorHorizontalPadding * 2.0f)));
+                        int max = Math.max(mo6216measureBRTryo0.getHeight(), mo6216measureBRTryo02.getHeight()) + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.indicatorVerticalPadding * 2.0f));
                         int roundToInt = MathKt.roundToInt(width * floatValue);
                         int size3 = list2.size();
-                        int i3 = 0;
-                        while (i3 < size3) {
+                        for (int i3 = 0; i3 < size3; i3++) {
                             Measurable measurable3 = list.get(i3);
                             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable3), "indicatorRipple")) {
-                                List<? extends Measurable> list3 = list2;
                                 Placeable mo6216measureBRTryo03 = measurable3.mo6216measureBRTryo0(ConstraintsKt.m7523constrainN9IONVI(m7498copyZbe2FdA$default, Constraints.Companion.m7518fixedJhjzzOo(width, max)));
-                                int size4 = list3.size();
+                                int size4 = list2.size();
                                 int i4 = 0;
                                 while (i4 < size4) {
                                     Measurable measurable4 = list.get(i4);
@@ -103,8 +100,6 @@ final class StartIconMeasurePolicy implements MeasurePolicy {
                                 ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
                                 throw new KotlinNothingValueException();
                             }
-                            i3++;
-                            list2 = list2;
                         }
                         ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
                         throw new KotlinNothingValueException();
@@ -134,7 +129,7 @@ final class StartIconMeasurePolicy implements MeasurePolicy {
                 for (int i3 = 0; i3 < size2; i3++) {
                     IntrinsicMeasurable intrinsicMeasurable2 = list.get(i3);
                     if (Intrinsics.areEqual(LayoutUtilKt.getLayoutId(intrinsicMeasurable2), Constants.ScionAnalytics.PARAM_LABEL)) {
-                        return maxIntrinsicWidth + intrinsicMeasurable2.maxIntrinsicWidth(i) + intrinsicMeasureScope.mo399roundToPx0680j_4(Dp.m7555constructorimpl(Dp.m7555constructorimpl(this.indicatorHorizontalPadding * 2) + this.startIconToLabelHorizontalPadding));
+                        return maxIntrinsicWidth + intrinsicMeasurable2.maxIntrinsicWidth(i) + intrinsicMeasureScope.mo399roundToPx0680j_4(Dp.m7555constructorimpl(Dp.m7555constructorimpl(this.indicatorHorizontalPadding * 2.0f) + this.startIconToLabelHorizontalPadding));
                     }
                 }
                 ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
@@ -157,7 +152,7 @@ final class StartIconMeasurePolicy implements MeasurePolicy {
                 for (int i3 = 0; i3 < size2; i3++) {
                     IntrinsicMeasurable intrinsicMeasurable2 = list.get(i3);
                     if (Intrinsics.areEqual(LayoutUtilKt.getLayoutId(intrinsicMeasurable2), Constants.ScionAnalytics.PARAM_LABEL)) {
-                        return Math.max(maxIntrinsicHeight, intrinsicMeasurable2.maxIntrinsicHeight(i)) + intrinsicMeasureScope.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.indicatorVerticalPadding * 2));
+                        return Math.max(maxIntrinsicHeight, intrinsicMeasurable2.maxIntrinsicHeight(i)) + intrinsicMeasureScope.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.indicatorVerticalPadding * 2.0f));
                     }
                 }
                 ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");

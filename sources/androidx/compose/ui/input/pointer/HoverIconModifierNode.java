@@ -204,12 +204,12 @@ public abstract class HoverIconModifierNode extends Modifier.Node implements Tra
     }
 
     private final void displayIconFromCurrentNodeOrDescendantsWithCursorInBounds() {
-        HoverIconModifierNode hoverIconModifierNode;
+        HoverIconModifierNode findDescendantNodeWithCursorInBounds;
         if (this.cursorInBoundsOfNode) {
-            if (this.overrideDescendants || (hoverIconModifierNode = findDescendantNodeWithCursorInBounds()) == null) {
-                hoverIconModifierNode = this;
+            if (!this.overrideDescendants && (findDescendantNodeWithCursorInBounds = findDescendantNodeWithCursorInBounds()) != null) {
+                this = findDescendantNodeWithCursorInBounds;
             }
-            hoverIconModifierNode.displayIcon();
+            this.displayIcon();
         }
     }
 

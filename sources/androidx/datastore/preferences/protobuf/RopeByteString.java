@@ -115,7 +115,7 @@ public final class RopeByteString extends ByteString {
                 this.pieces = new PieceIterator(RopeByteString.this);
             }
 
-            /* JADX WARN: Type inference failed for: r0v5, types: [androidx.datastore.preferences.protobuf.ByteString$ByteIterator] */
+            /* JADX WARN: Type inference failed for: r1v4, types: [androidx.datastore.preferences.protobuf.ByteString$ByteIterator] */
             private ByteString.ByteIterator nextPiece() {
                 if (this.pieces.hasNext()) {
                     return this.pieces.next().iterator();
@@ -522,13 +522,10 @@ public final class RopeByteString extends ByteString {
                 throw new IndexOutOfBoundsException();
             }
             int readSkipInternal = readSkipInternal(b, offset, length);
-            if (readSkipInternal == 0) {
-                if (length > 0 || availableInternal() == 0) {
-                    return -1;
-                }
+            if (readSkipInternal != 0 || (length <= 0 && availableInternal() != 0)) {
                 return readSkipInternal;
             }
-            return readSkipInternal;
+            return -1;
         }
 
         @Override // java.io.InputStream

@@ -134,7 +134,7 @@ public final class FlattenedPageController<T> {
             List<PageEvent<T>> list2 = asEvents2;
             ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
             int i22 = 0;
-            while (r9.hasNext()) {
+            while (r8.hasNext()) {
             }
             return arrayList2;
         } finally {

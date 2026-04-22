@@ -119,10 +119,7 @@ public final class DataStoreFactory {
         Intrinsics.checkNotNullParameter(storage, "storage");
         Intrinsics.checkNotNullParameter(migrations, "migrations");
         Intrinsics.checkNotNullParameter(scope, "scope");
-        if (replaceFileCorruptionHandler == null) {
-            replaceFileCorruptionHandler = (ReplaceFileCorruptionHandler<T>) new NoOpCorruptionHandler();
-        }
-        return new DataStoreImpl(storage, CollectionsKt.listOf(DataMigrationInitializer.Companion.getInitializer(migrations)), replaceFileCorruptionHandler, scope);
+        return new DataStoreImpl(storage, CollectionsKt.listOf(DataMigrationInitializer.Companion.getInitializer(migrations)), replaceFileCorruptionHandler != null ? replaceFileCorruptionHandler : new NoOpCorruptionHandler(), scope);
     }
 
     public static /* synthetic */ DataStore createInDeviceProtectedStorage$default(DataStoreFactory dataStoreFactory, Context context, String str, Serializer serializer, ReplaceFileCorruptionHandler replaceFileCorruptionHandler, List list, CoroutineScope coroutineScope, int i, Object obj) {

@@ -40,7 +40,7 @@ public final class Size {
 
     public int hashCode() {
         int i = this.zaa;
-        return ((i >>> 16) | (i << 16)) ^ this.zab;
+        return this.zab ^ ((i >>> 16) | (i << 16));
     }
 
     public String toString() {

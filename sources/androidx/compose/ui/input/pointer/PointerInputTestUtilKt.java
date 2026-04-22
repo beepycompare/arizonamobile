@@ -106,8 +106,7 @@ public final class PointerInputTestUtilKt {
     /* renamed from: invokeOverAllPasses-H0pRuoY$default  reason: not valid java name */
     public static /* synthetic */ void m6136invokeOverAllPassesH0pRuoY$default(Function3 function3, PointerEvent pointerEvent, long j, int i, Object obj) {
         if ((i & 2) != 0) {
-            long j2 = Integer.MAX_VALUE;
-            j = IntSize.m7721constructorimpl((j2 & 4294967295L) | (j2 << 32));
+            j = IntSize.m7721constructorimpl(9223372034707292159L);
         }
         m6135invokeOverAllPassesH0pRuoY(function3, pointerEvent, j);
     }
@@ -115,8 +114,7 @@ public final class PointerInputTestUtilKt {
     /* renamed from: invokeOverPass-hUlJWOE$default  reason: not valid java name */
     public static /* synthetic */ void m6138invokeOverPasshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j, int i, Object obj) {
         if ((i & 4) != 0) {
-            long j2 = Integer.MAX_VALUE;
-            j = IntSize.m7721constructorimpl((j2 & 4294967295L) | (j2 << 32));
+            j = IntSize.m7721constructorimpl(9223372034707292159L);
         }
         m6137invokeOverPasshUlJWOE(function3, pointerEvent, pointerEventPass, j);
     }
@@ -124,8 +122,7 @@ public final class PointerInputTestUtilKt {
     /* renamed from: invokeOverPasses-hUlJWOE$default  reason: not valid java name */
     public static /* synthetic */ void m6142invokeOverPasseshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, PointerEventPass[] pointerEventPassArr, long j, int i, Object obj) {
         if ((i & 4) != 0) {
-            long j2 = Integer.MAX_VALUE;
-            j = IntSize.m7721constructorimpl((j2 & 4294967295L) | (j2 << 32));
+            j = IntSize.m7721constructorimpl(9223372034707292159L);
         }
         m6140invokeOverPasseshUlJWOE(function3, pointerEvent, pointerEventPassArr, j);
     }
@@ -133,8 +130,7 @@ public final class PointerInputTestUtilKt {
     /* renamed from: invokeOverPasses-hUlJWOE$default  reason: not valid java name */
     public static /* synthetic */ void m6141invokeOverPasseshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, List list, long j, int i, Object obj) {
         if ((i & 4) != 0) {
-            long j2 = Integer.MAX_VALUE;
-            j = IntSize.m7721constructorimpl((j2 & 4294967295L) | (j2 << 32));
+            j = IntSize.m7721constructorimpl(9223372034707292159L);
         }
         m6139invokeOverPasseshUlJWOE(function3, pointerEvent, list, j);
     }

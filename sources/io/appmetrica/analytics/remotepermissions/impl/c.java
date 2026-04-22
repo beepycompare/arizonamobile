@@ -26,7 +26,7 @@ public final class c implements ProtobufConverter {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0021, code lost:
-        if (r7 == null) goto L12;
+        if (r5 == null) goto L12;
      */
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */

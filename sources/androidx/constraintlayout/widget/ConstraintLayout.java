@@ -616,6 +616,7 @@ public class ConstraintLayout extends ViewGroup {
     }
 
     private void setChildrenConstraints() {
+        ConstraintLayout constraintLayout;
         boolean isInEditMode = isInEditMode();
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
@@ -671,14 +672,20 @@ public class ConstraintLayout extends ViewGroup {
             View childAt4 = getChildAt(i6);
             this.mTempMapIdToWidget.put(childAt4.getId(), getViewWidget(childAt4));
         }
-        for (int i7 = 0; i7 < childCount; i7++) {
-            View childAt5 = getChildAt(i7);
-            ConstraintWidget viewWidget2 = getViewWidget(childAt5);
-            if (viewWidget2 != null) {
+        int i7 = 0;
+        while (i7 < childCount) {
+            View childAt5 = this.getChildAt(i7);
+            ConstraintWidget viewWidget2 = this.getViewWidget(childAt5);
+            if (viewWidget2 == null) {
+                constraintLayout = this;
+            } else {
                 LayoutParams layoutParams = (LayoutParams) childAt5.getLayoutParams();
                 this.mLayoutWidget.add(viewWidget2);
-                applyConstraintsFromLayoutParams(isInEditMode, childAt5, viewWidget2, layoutParams, this.mTempMapIdToWidget);
+                constraintLayout = this;
+                constraintLayout.applyConstraintsFromLayoutParams(isInEditMode, childAt5, viewWidget2, layoutParams, this.mTempMapIdToWidget);
             }
+            i7++;
+            this = constraintLayout;
         }
     }
 

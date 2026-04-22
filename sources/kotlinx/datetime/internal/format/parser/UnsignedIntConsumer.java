@@ -44,17 +44,11 @@ public final class UnsignedIntConsumer<Receiver> extends NumberConsumer<Receiver
             Integer num2 = this.minLength;
             if (num2 == null || i2 - i >= num2.intValue()) {
                 parseAsciiIntOrNull = NumberConsumerKt.parseAsciiIntOrNull(input, i, i2);
-                if (parseAsciiIntOrNull == null) {
-                    return NumberConsumptionError.ExpectedInt.INSTANCE;
+                if (parseAsciiIntOrNull != null) {
+                    withoutReassigning = NumberConsumerKt.setWithoutReassigning(this.setter, receiver, Integer.valueOf(this.multiplyByMinus1 ? -parseAsciiIntOrNull.intValue() : parseAsciiIntOrNull.intValue()));
+                    return withoutReassigning;
                 }
-                AssignableField<Receiver, Integer> assignableField = this.setter;
-                boolean z = this.multiplyByMinus1;
-                int intValue = parseAsciiIntOrNull.intValue();
-                if (z) {
-                    intValue = -intValue;
-                }
-                withoutReassigning = NumberConsumerKt.setWithoutReassigning(assignableField, receiver, Integer.valueOf(intValue));
-                return withoutReassigning;
+                return NumberConsumptionError.ExpectedInt.INSTANCE;
             }
             return new NumberConsumptionError.TooFewDigits(this.minLength.intValue());
         }

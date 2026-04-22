@@ -350,7 +350,7 @@ public final class RecomposeScopeImpl implements ScopeUpdateScope, RecomposeScop
     }
 
     private final boolean getFlag(int i) {
-        return (i & this.flags) != 0;
+        return (this.flags & i) != 0;
     }
 
     private final void setFlag(int i, boolean z) {

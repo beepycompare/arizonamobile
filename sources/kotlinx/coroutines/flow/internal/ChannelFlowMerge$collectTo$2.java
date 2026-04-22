@@ -42,14 +42,13 @@ public final class ChannelFlowMerge$collectTo$2<T> implements FlowCollector {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003a  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object emit(Flow<? extends T> flow, Continuation<? super Unit> continuation) {
         ChannelFlowMerge$collectTo$2$emit$1 channelFlowMerge$collectTo$2$emit$1;
         int i;
-        ChannelFlowMerge$collectTo$2<T> channelFlowMerge$collectTo$2;
         if (continuation instanceof ChannelFlowMerge$collectTo$2$emit$1) {
             channelFlowMerge$collectTo$2$emit$1 = (ChannelFlowMerge$collectTo$2$emit$1) continuation;
             if ((channelFlowMerge$collectTo$2$emit$1.label & Integer.MIN_VALUE) != 0) {
@@ -70,15 +69,14 @@ public final class ChannelFlowMerge$collectTo$2<T> implements FlowCollector {
                     if (semaphore.acquire(channelFlowMerge$collectTo$2$emit$1) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    channelFlowMerge$collectTo$2 = this;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     flow = (Flow) channelFlowMerge$collectTo$2$emit$1.L$1;
-                    channelFlowMerge$collectTo$2 = (ChannelFlowMerge$collectTo$2) channelFlowMerge$collectTo$2$emit$1.L$0;
+                    this = (ChannelFlowMerge$collectTo$2) channelFlowMerge$collectTo$2$emit$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                BuildersKt__Builders_commonKt.launch$default(channelFlowMerge$collectTo$2.$scope, null, null, new AnonymousClass1(flow, channelFlowMerge$collectTo$2.$collector, channelFlowMerge$collectTo$2.$semaphore, null), 3, null);
+                BuildersKt__Builders_commonKt.launch$default(this.$scope, null, null, new AnonymousClass1(flow, this.$collector, this.$semaphore, null), 3, null);
                 return Unit.INSTANCE;
             }
         }
@@ -88,7 +86,7 @@ public final class ChannelFlowMerge$collectTo$2<T> implements FlowCollector {
         i = channelFlowMerge$collectTo$2$emit$1.label;
         if (i != 0) {
         }
-        BuildersKt__Builders_commonKt.launch$default(channelFlowMerge$collectTo$2.$scope, null, null, new AnonymousClass1(flow, channelFlowMerge$collectTo$2.$collector, channelFlowMerge$collectTo$2.$semaphore, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.$scope, null, null, new AnonymousClass1(flow, this.$collector, this.$semaphore, null), 3, null);
         return Unit.INSTANCE;
     }
 
@@ -123,6 +121,8 @@ public final class ChannelFlowMerge$collectTo$2<T> implements FlowCollector {
             return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r4v4, types: [kotlin.Unit, java.lang.Object] */
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -140,7 +140,8 @@ public final class ChannelFlowMerge$collectTo$2<T> implements FlowCollector {
                     ResultKt.throwOnFailure(obj);
                 }
                 this.$semaphore.release();
-                return Unit.INSTANCE;
+                this = Unit.INSTANCE;
+                return this;
             } catch (Throwable th) {
                 this.$semaphore.release();
                 throw th;

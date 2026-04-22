@@ -658,36 +658,21 @@ public final class SpotifyPage implements MobileController {
         throw new NoSuchElementException("Collection contains no element matching the predicate.");
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x003f, code lost:
-        if (r0.isEmpty() != false) goto L44;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void addPlayedTrack(int i, final int i2) {
-        Exception exc;
         try {
             CountDownTimer countDownTimer = this.timer;
             if (countDownTimer != null) {
                 if (countDownTimer == null) {
-                    try {
-                        Intrinsics.throwUninitializedPropertyAccessException("timer");
-                        countDownTimer = null;
-                    } catch (Exception e) {
-                        exc = e;
-                        exc.printStackTrace();
-                        Log.d("SpotifyPage", "addPlayedTrack");
-                    }
+                    Intrinsics.throwUninitializedPropertyAccessException("timer");
+                    countDownTimer = null;
                 }
                 countDownTimer.cancel();
             }
             this.playingTrackId = Integer.valueOf(i);
             final ArrayList arrayList = new ArrayList();
-            try {
-                if (!this.spotifyTrackListAdapter.getCurrentTrackList().isEmpty()) {
-                    List<ArizonaSpotifyTrackResponse> currentTrackList = this.spotifyTrackListAdapter.getCurrentTrackList();
-                    if (currentTrackList instanceof Collection) {
-                    }
+            if (!this.spotifyTrackListAdapter.getCurrentTrackList().isEmpty()) {
+                List<ArizonaSpotifyTrackResponse> currentTrackList = this.spotifyTrackListAdapter.getCurrentTrackList();
+                if (!(currentTrackList instanceof Collection) || !currentTrackList.isEmpty()) {
                     for (ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse : currentTrackList) {
                         if (arizonaSpotifyTrackResponse.getId() == i) {
                             for (Object obj : this.spotifyTrackListAdapter.getCurrentTrackList()) {
@@ -754,15 +739,11 @@ public final class SpotifyPage implements MobileController {
                         }
                     }
                 }
-                this.api.getTrackListByFavourites(CollectionsKt.listOf(Integer.valueOf(i))).enqueue(new SpotifyPage$addPlayedTrack$2(this, i, i2, arrayList));
-            } catch (Exception e2) {
-                e = e2;
-                exc = e;
-                exc.printStackTrace();
-                Log.d("SpotifyPage", "addPlayedTrack");
             }
-        } catch (Exception e3) {
-            e = e3;
+            this.api.getTrackListByFavourites(CollectionsKt.listOf(Integer.valueOf(i))).enqueue(new SpotifyPage$addPlayedTrack$2(this, i, i2, arrayList));
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d("SpotifyPage", "addPlayedTrack");
         }
     }
 

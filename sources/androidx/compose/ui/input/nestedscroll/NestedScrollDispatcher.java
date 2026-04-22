@@ -133,14 +133,14 @@ public final class NestedScrollDispatcher {
         return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x004f, code lost:
-        if (r12 == r0) goto L25;
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x004d, code lost:
+        if (r0 == r1) goto L25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x006e, code lost:
-        if (r12 == r0) goto L25;
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x006a, code lost:
+        if (r0 == r1) goto L25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0070, code lost:
-        return r0;
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x006c, code lost:
+        return r1;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x003a  */

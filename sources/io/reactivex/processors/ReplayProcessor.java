@@ -372,10 +372,10 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
         /* JADX WARN: Code restructure failed: missing block: B:37:0x006d, code lost:
             r14.index = null;
             r14.cancelled = true;
-            r14 = r13.error;
+            r13 = r13.error;
          */
         /* JADX WARN: Code restructure failed: missing block: B:38:0x0073, code lost:
-            if (r14 != null) goto L37;
+            if (r13 != null) goto L37;
          */
         /* JADX WARN: Code restructure failed: missing block: B:39:0x0075, code lost:
             r1.onComplete();
@@ -384,7 +384,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
             return;
          */
         /* JADX WARN: Code restructure failed: missing block: B:41:0x0079, code lost:
-            r1.onError(r14);
+            r1.onError(r13);
          */
         /* JADX WARN: Code restructure failed: missing block: B:42:0x007c, code lost:
             return;
@@ -823,9 +823,8 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
             long now = this.scheduler.now(this.unit) - this.maxAge;
             TimedNode<T> timedNode3 = timedNode2.get();
             while (true) {
-                TimedNode<T> timedNode4 = timedNode3;
                 timedNode = timedNode2;
-                timedNode2 = timedNode4;
+                timedNode2 = timedNode3;
                 if (timedNode2 == null || timedNode2.time > now) {
                     break;
                 }

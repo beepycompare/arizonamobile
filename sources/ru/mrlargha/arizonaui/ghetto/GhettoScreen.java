@@ -228,8 +228,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
         Bitmap decodeStream = BitmapFactory.decodeStream(getTargetActivity().getResources().openRawResource(R.raw.ghetto_map));
         final SubsamplingScaleImageView subsamplingScaleImageView = this.binding.map.mapView;
         subsamplingScaleImageView.setImage(ImageSource.bitmap(decodeStream));
-        float f = 300;
-        subsamplingScaleImageView.setScaleAndCenter(2.0f, new PointF(this.xMargin + f, this.yMargin + f));
+        subsamplingScaleImageView.setScaleAndCenter(2.0f, new PointF(this.xMargin + 300.0f, this.yMargin + 300.0f));
         subsamplingScaleImageView.setMaxScale(10.0f);
         final Ref.FloatRef floatRef = new Ref.FloatRef();
         final Ref.FloatRef floatRef2 = new Ref.FloatRef();
@@ -248,7 +247,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
         gridOverlayView.setLinkedImageView(mapView, this.mapCells, this.xMargin, this.yMargin, this.cellWidth, this.cellHeight);
         this.binding.map.mapView.setOnStateChangedListener(new SubsamplingScaleImageView.OnStateChangedListener() { // from class: ru.mrlargha.arizonaui.ghetto.GhettoScreen$setMap$2
             @Override // com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView.OnStateChangedListener
-            public void onScaleChanged(float f2, int i) {
+            public void onScaleChanged(float f, int i) {
                 GhettoMainBinding ghettoMainBinding;
                 ghettoMainBinding = GhettoScreen.this.binding;
                 ghettoMainBinding.map.overlayView.invalidate();

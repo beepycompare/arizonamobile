@@ -70,7 +70,7 @@ public final class OnlineContentKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(400238897, i2, -1, "com.miami.game.feature.home.ui.compose.OnlineContent (OnlineContent.kt:44)");
             }
-            Modifier m820paddingVpY3zN4$default = PaddingKt.m820paddingVpY3zN4$default(BorderKt.m277borderziNgDLE(BackgroundKt.m263backgroundbw27NRU(PaddingKt.m822paddingqDBjuR0$default(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(27)), 0.0f, 0.0f, 0.0f, Dp.m7555constructorimpl(6), 7, null), Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), new RoundedParallelogramLeftShape(0.0f, 0.04f, 1, null)), Dp.m7555constructorimpl(1), Brush.Companion.m4727verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4804getLightGray0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new RoundedParallelogramLeftShape(0.0f, 0.04f, 1, null)), Dp.m7555constructorimpl(14), 0.0f, 2, null);
+            Modifier m820paddingVpY3zN4$default = PaddingKt.m820paddingVpY3zN4$default(BorderKt.m277borderziNgDLE(BackgroundKt.m263backgroundbw27NRU(PaddingKt.m822paddingqDBjuR0$default(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(27.0f)), 0.0f, 0.0f, 0.0f, Dp.m7555constructorimpl(6.0f), 7, null), Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), new RoundedParallelogramLeftShape(0.0f, 0.04f, 1, null)), Dp.m7555constructorimpl(1.0f), Brush.Companion.m4727verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4804getLightGray0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new RoundedParallelogramLeftShape(0.0f, 0.04f, 1, null)), Dp.m7555constructorimpl(14.0f), 0.0f, 2, null);
             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), centerVertically, startRestartGroup, 54);
@@ -101,7 +101,7 @@ public final class OnlineContentKt {
             Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null);
             Alignment.Vertical centerVertically2 = Alignment.Companion.getCenterVertically();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
-            MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(4)), centerVertically2, startRestartGroup, 54);
+            MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(4.0f)), centerVertically2, startRestartGroup, 54);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
             int hashCode2 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
@@ -129,23 +129,21 @@ public final class OnlineContentKt {
             if (uiState.getQueue() > 0) {
                 startRestartGroup.startReplaceGroup(756124780);
                 ComposerKt.sourceInformation(startRestartGroup, "73@3251L10,74@3308L13,70@3119L224,77@3395L36,76@3364L181,84@3720L10,85@3777L13,81@3566L246");
-                float f = 11;
-                i3 = 0;
-                TextKt.m2712TextNvy7gAk("Очередь", null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, 390, 0, 131050);
-                ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.queue_ic, startRestartGroup, 0), (String) null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(13)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
-                TextKt.m2712TextNvy7gAk(String.valueOf(uiState.getQueue()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
+                TextKt.m2712TextNvy7gAk("Очередь", null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, 390, 0, 131050);
+                ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.queue_ic, startRestartGroup, 0), (String) null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(13.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
+                i3 = 6;
+                TextKt.m2712TextNvy7gAk(String.valueOf(uiState.getQueue()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
                 startRestartGroup = startRestartGroup;
                 startRestartGroup.endReplaceGroup();
             } else {
-                i3 = 0;
+                i3 = 6;
                 startRestartGroup.startReplaceGroup(756829193);
                 startRestartGroup.endReplaceGroup();
             }
-            float f2 = 11;
             composer2 = startRestartGroup;
-            TextKt.m2712TextNvy7gAk("Онлайн", null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, 390, 0, 131050);
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.online_ic, composer2, i3), (String) null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(13)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer2, Painter.$stable | 432, 120);
-            TextKt.m2712TextNvy7gAk(String.valueOf(uiState.getOnline()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f2), composer2, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
+            TextKt.m2712TextNvy7gAk("Онлайн", null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), startRestartGroup, i3), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, 390, 0, 131050);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.online_ic, composer2, 0), (String) null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(13.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer2, Painter.$stable | 432, 120);
+            TextKt.m2712TextNvy7gAk(String.valueOf(uiState.getOnline()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), composer2, i3), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();

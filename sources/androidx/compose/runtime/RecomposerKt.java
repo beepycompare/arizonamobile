@@ -14,7 +14,7 @@ public final class RecomposerKt {
     private static final Object FramePending = new Object();
 
     private static final long getRecomposerCompoundHashKey() {
-        return 1000;
+        return 1000L;
     }
 
     public static final <R> Object withRunningRecomposer(Function3<? super CoroutineScope, ? super Recomposer, ? super Continuation<? super R>, ? extends Object> function3, Continuation<? super R> continuation) {

@@ -143,12 +143,7 @@ public class WarGameService implements GameHelper.GameHelperListener, ResultCall
                             @Override // com.google.android.gms.common.api.ResultCallback
                             public void onResult(Snapshots.DeleteSnapshotResult deleteSnapshotResult) {
                                 int statusCode2 = deleteSnapshotResult.getStatus().getStatusCode();
-                                AnonymousClass7 anonymousClass7 = AnonymousClass7.this;
-                                if (statusCode2 == 0) {
-                                    WarGameService.this.debugLog("Successfully deleted snapshot.");
-                                } else {
-                                    WarGameService.this.debugLog("Error deleting snapshot! status: " + statusCode2);
-                                }
+                                WarGameService.this.debugLog(statusCode2 == 0 ? "Successfully deleted snapshot." : "Error deleting snapshot! status: " + statusCode2);
                             }
                         });
                         return;

@@ -570,19 +570,25 @@ public final class AdPlaybackState {
     }
 
     public int getAdGroupIndexForPositionUs(long j, long j2) {
+        AdPlaybackState adPlaybackState;
         int i = this.adGroupCount - 1;
         int i2 = i - (isLivePostrollPlaceholder(i) ? 1 : 0);
-        while (i2 >= 0) {
+        while (true) {
+            adPlaybackState = this;
+            if (i2 < 0) {
+                break;
+            }
             long j3 = j;
             long j4 = j2;
-            if (!isPositionBeforeAdGroup(j3, j4, i2)) {
+            if (!adPlaybackState.isPositionBeforeAdGroup(j3, j4, i2)) {
                 break;
             }
             i2--;
+            this = adPlaybackState;
             j = j3;
             j2 = j4;
         }
-        if (i2 < 0 || !getAdGroup(i2).hasUnplayedAds()) {
+        if (i2 < 0 || !adPlaybackState.getAdGroup(i2).hasUnplayedAds()) {
             return -1;
         }
         return i2;

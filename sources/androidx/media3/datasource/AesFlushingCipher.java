@@ -47,37 +47,34 @@ public final class AesFlushingCipher {
     }
 
     public void update(byte[] bArr, int i, int i2, byte[] bArr2, int i3) {
-        int i4 = i;
-        int i5 = i2;
-        int i6 = i3;
         do {
-            int i7 = this.pendingXorBytes;
-            if (i7 > 0) {
-                bArr2[i6] = (byte) (bArr[i4] ^ this.flushedBlock[this.blockSize - i7]);
-                i6++;
-                i4++;
-                this.pendingXorBytes = i7 - 1;
-                i5--;
+            int i4 = this.pendingXorBytes;
+            if (i4 > 0) {
+                bArr2[i3] = (byte) (bArr[i] ^ this.flushedBlock[this.blockSize - i4]);
+                i3++;
+                i++;
+                this.pendingXorBytes = i4 - 1;
+                i2--;
             } else {
-                int nonFlushingUpdate = nonFlushingUpdate(bArr, i4, i5, bArr2, i6);
-                if (i5 == nonFlushingUpdate) {
+                int nonFlushingUpdate = nonFlushingUpdate(bArr, i, i2, bArr2, i3);
+                if (i2 == nonFlushingUpdate) {
                     return;
                 }
-                int i8 = i5 - nonFlushingUpdate;
-                int i9 = 0;
-                Preconditions.checkState(i8 < this.blockSize);
-                int i10 = i6 + nonFlushingUpdate;
-                int i11 = this.blockSize - i8;
-                this.pendingXorBytes = i11;
-                Preconditions.checkState(nonFlushingUpdate(this.zerosBlock, 0, i11, this.flushedBlock, 0) == this.blockSize);
-                while (i9 < i8) {
-                    bArr2[i10] = this.flushedBlock[i9];
-                    i9++;
-                    i10++;
+                int i5 = i2 - nonFlushingUpdate;
+                int i6 = 0;
+                Preconditions.checkState(i5 < this.blockSize);
+                int i7 = i3 + nonFlushingUpdate;
+                int i8 = this.blockSize - i5;
+                this.pendingXorBytes = i8;
+                Preconditions.checkState(nonFlushingUpdate(this.zerosBlock, 0, i8, this.flushedBlock, 0) == this.blockSize);
+                while (i6 < i5) {
+                    bArr2[i7] = this.flushedBlock[i6];
+                    i6++;
+                    i7++;
                 }
                 return;
             }
-        } while (i5 != 0);
+        } while (i2 != 0);
     }
 
     private int nonFlushingUpdate(byte[] bArr, int i, int i2, byte[] bArr2, int i3) {

@@ -341,47 +341,42 @@ public class MotionController {
     private float getPreCycleDistance() {
         float f;
         float[] fArr = new float[2];
-        float f2 = 1.0f / 99;
         double d = 0.0d;
         double d2 = 0.0d;
-        int i = 0;
-        float f3 = 0.0f;
-        while (i < 100) {
-            float f4 = i * f2;
-            double d3 = f4;
+        float f2 = 0.0f;
+        for (int i = 0; i < 100; i++) {
+            float f3 = i * 0.01010101f;
+            double d3 = f3;
             Easing easing = this.mStartMotionPath.mKeyFrameEasing;
             Iterator<MotionPaths> it = this.mMotionPaths.iterator();
-            float f5 = Float.NaN;
-            float f6 = 0.0f;
+            float f4 = Float.NaN;
+            float f5 = 0.0f;
             while (it.hasNext()) {
                 MotionPaths next = it.next();
                 if (next.mKeyFrameEasing != null) {
-                    if (next.mTime < f4) {
+                    if (next.mTime < f3) {
                         easing = next.mKeyFrameEasing;
-                        f6 = next.mTime;
-                    } else if (Float.isNaN(f5)) {
                         f5 = next.mTime;
+                    } else if (Float.isNaN(f4)) {
+                        f4 = next.mTime;
                     }
                 }
             }
             if (easing != null) {
-                if (Float.isNaN(f5)) {
-                    f5 = 1.0f;
+                if (Float.isNaN(f4)) {
+                    f4 = 1.0f;
                 }
-                d3 = (((float) easing.get((f4 - f6) / f)) * (f5 - f6)) + f6;
+                d3 = (((float) easing.get((f3 - f5) / f)) * (f4 - f5)) + f5;
             }
-            double d4 = d3;
-            this.mSpline[0].getPos(d4, this.mInterpolateData);
-            int i2 = i;
-            this.mStartMotionPath.getCenter(d4, this.mInterpolateVariables, this.mInterpolateData, fArr, 0);
-            if (i2 > 0) {
-                f3 += (float) Math.hypot(d2 - fArr[1], d - fArr[0]);
+            this.mSpline[0].getPos(d3, this.mInterpolateData);
+            this.mStartMotionPath.getCenter(d3, this.mInterpolateVariables, this.mInterpolateData, fArr, 0);
+            if (i > 0) {
+                f2 += (float) Math.hypot(d2 - fArr[1], d - fArr[0]);
             }
             d = fArr[0];
             d2 = fArr[1];
-            i = i2 + 1;
         }
-        return f3;
+        return f2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -962,7 +957,7 @@ public class MotionController {
         }
         motionController.mStartMotionPath.mTime = 0.0f;
         motionController.mStartMotionPath.mPosition = 0.0f;
-        readView(motionController.mStartMotionPath);
+        motionController.readView(motionController.mStartMotionPath);
         motionController.mStartMotionPath.setBounds(rect2.left, rect2.top, rect2.width(), rect2.height());
         ConstraintSet.Constraint parameters = constraintSet.getParameters(motionController.mId);
         motionController.mStartMotionPath.applyParameters(parameters);
@@ -1018,7 +1013,7 @@ public class MotionController {
         }
         motionController.mEndMotionPath.mTime = 1.0f;
         motionController.mEndMotionPath.mPosition = 1.0f;
-        readView(motionController.mEndMotionPath);
+        motionController.readView(motionController.mEndMotionPath);
         motionController.mEndMotionPath.setBounds(rect.left, rect.top, rect.width(), rect.height());
         motionController.mEndMotionPath.applyParameters(constraintSet.getParameters(motionController.mId));
         motionController.mEndPoint.setState(rect, constraintSet, i3, motionController.mId);
@@ -1068,10 +1063,11 @@ public class MotionController {
         if (easing != null) {
             float f6 = (Float.isNaN(f5) ? 1.0f : f5) - f2;
             double d = (f - f2) / f6;
-            f = (((float) easing.get(d)) * f6) + f2;
+            float f7 = (((float) easing.get(d)) * f6) + f2;
             if (fArr != null) {
                 fArr[0] = (float) easing.getDiff(d);
             }
+            return f7;
         }
         return f;
     }
@@ -1374,10 +1370,8 @@ public class MotionController {
         } else {
             float f5 = this.mEndMotionPath.mX - this.mStartMotionPath.mX;
             float f6 = this.mEndMotionPath.mY - this.mStartMotionPath.mY;
-            float f7 = f5 + (this.mEndMotionPath.mWidth - this.mStartMotionPath.mWidth);
-            float f8 = (this.mEndMotionPath.mHeight - this.mStartMotionPath.mHeight) + f6;
-            fArr[0] = (f5 * (1.0f - f2)) + (f7 * f2);
-            fArr[1] = (f6 * (1.0f - f3)) + (f8 * f3);
+            fArr[0] = (f5 * (1.0f - f2)) + ((f5 + (this.mEndMotionPath.mWidth - this.mStartMotionPath.mWidth)) * f2);
+            fArr[1] = (f6 * (1.0f - f3)) + (((this.mEndMotionPath.mHeight - this.mStartMotionPath.mHeight) + f6) * f3);
             velocityMatrix.clear();
             velocityMatrix.setRotationVelocity(viewSpline3, adjustedPosition);
             velocityMatrix.setTranslationVelocity(viewSpline, viewSpline2, adjustedPosition);

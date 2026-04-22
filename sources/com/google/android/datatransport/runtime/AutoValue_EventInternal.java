@@ -115,7 +115,7 @@ final class AutoValue_EventInternal extends EventInternal {
         Integer num2 = this.productId;
         int hashCode4 = (hashCode3 ^ (num2 == null ? 0 : num2.hashCode())) * 1000003;
         String str = this.pseudonymousId;
-        return ((((hashCode4 ^ (str != null ? str.hashCode() : 0)) * 1000003) ^ Arrays.hashCode(this.experimentIdsClear)) * 1000003) ^ Arrays.hashCode(this.experimentIdsEncrypted);
+        return Arrays.hashCode(this.experimentIdsEncrypted) ^ ((((hashCode4 ^ (str != null ? str.hashCode() : 0)) * 1000003) ^ Arrays.hashCode(this.experimentIdsClear)) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

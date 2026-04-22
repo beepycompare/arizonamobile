@@ -30,13 +30,12 @@ public final class YearMonthJvmKt {
 
     public static final YearMonth fromEpochMonths(YearMonth.Companion companion, long j) {
         Intrinsics.checkNotNullParameter(companion, "<this>");
-        long j2 = 12;
-        long j3 = j / j2;
-        if ((j ^ j2) < 0 && j3 * j2 != j) {
-            j3--;
+        long j2 = j / 12;
+        if ((j ^ 12) < 0 && j2 * 12 != j) {
+            j2--;
         }
-        long j4 = j % j2;
-        return new YearMonth((int) (j3 + 1970), ((int) (j4 + (j2 & (((j4 ^ j2) & ((-j4) | j4)) >> 63)))) + 1);
+        long j3 = j % 12;
+        return new YearMonth((int) (j2 + 1970), ((int) (j3 + (12 & (((j3 ^ 12) & ((-j3) | j3)) >> 63)))) + 1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

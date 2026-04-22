@@ -130,13 +130,13 @@ public final class TwoDimensionalFocusSearchKt {
     private static final FocusTargetNode m4472findBestCandidate4WY_MpI(MutableVector<FocusTargetNode> mutableVector, Rect rect, int i) {
         Rect translate;
         if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4409getLeftdhqQ8s())) {
-            translate = rect.translate((rect.getRight() - rect.getLeft()) + 1, 0.0f);
+            translate = rect.translate((rect.getRight() - rect.getLeft()) + 1.0f, 0.0f);
         } else if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4412getRightdhqQ8s())) {
-            translate = rect.translate(-((rect.getRight() - rect.getLeft()) + 1), 0.0f);
+            translate = rect.translate(-((rect.getRight() - rect.getLeft()) + 1.0f), 0.0f);
         } else if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4413getUpdhqQ8s())) {
-            translate = rect.translate(0.0f, (rect.getBottom() - rect.getTop()) + 1);
+            translate = rect.translate(0.0f, (rect.getBottom() - rect.getTop()) + 1.0f);
         } else if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4406getDowndhqQ8s())) {
-            translate = rect.translate(0.0f, -((rect.getBottom() - rect.getTop()) + 1));
+            translate = rect.translate(0.0f, -((rect.getBottom() - rect.getTop()) + 1.0f));
         } else {
             throw new IllegalStateException(InvalidFocusDirection.toString());
         }
@@ -208,31 +208,25 @@ public final class TwoDimensionalFocusSearchKt {
     }
 
     private static final float isBetterCandidate_I7lrPNg$minorAxisDistance(Rect rect, int i, Rect rect2) {
-        float f;
-        float f2;
         float top;
-        float bottom;
         float top2;
-        if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4409getLeftdhqQ8s()) || FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4412getRightdhqQ8s())) {
-            float top3 = rect2.getTop();
-            float bottom2 = rect2.getBottom() - rect2.getTop();
-            f = 2;
-            f2 = top3 + (bottom2 / f);
-            top = rect.getTop();
-            bottom = rect.getBottom();
-            top2 = rect.getTop();
-        } else if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4413getUpdhqQ8s()) || FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4406getDowndhqQ8s())) {
-            float left = rect2.getLeft();
-            float right = rect2.getRight() - rect2.getLeft();
-            f = 2;
-            f2 = left + (right / f);
-            top = rect.getLeft();
-            bottom = rect.getRight();
+        float bottom;
+        float top3;
+        if (!FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4409getLeftdhqQ8s()) && !FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4412getRightdhqQ8s())) {
+            if (!FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4413getUpdhqQ8s()) && !FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4406getDowndhqQ8s())) {
+                throw new IllegalStateException(InvalidFocusDirection.toString());
+            }
+            top = rect2.getLeft() + ((rect2.getRight() - rect2.getLeft()) / 2.0f);
             top2 = rect.getLeft();
+            bottom = rect.getRight();
+            top3 = rect.getLeft();
         } else {
-            throw new IllegalStateException(InvalidFocusDirection.toString());
+            top = rect2.getTop() + ((rect2.getBottom() - rect2.getTop()) / 2.0f);
+            top2 = rect.getTop();
+            bottom = rect.getBottom();
+            top3 = rect.getTop();
         }
-        return f2 - (top + ((bottom - top2) / f));
+        return top - (top2 + ((bottom - top3) / 2.0f));
     }
 
     private static final long isBetterCandidate_I7lrPNg$weightedDistance(int i, Rect rect, Rect rect2) {

@@ -3647,8 +3647,8 @@ public final class NavHostKt {
                                                     }
 
                                                     /* JADX WARN: Multi-variable type inference failed */
-                                                    /* JADX WARN: Type inference failed for: r0v10 */
-                                                    /* JADX WARN: Type inference failed for: r0v11, types: [java.lang.Object] */
+                                                    /* JADX WARN: Type inference failed for: r0v10, types: [java.lang.Object] */
+                                                    /* JADX WARN: Type inference failed for: r0v8 */
                                                     /* JADX WARN: Type inference failed for: r0v9 */
                                                     public final void invoke(final AnimatedContentScope animatedContentScope, final NavBackStackEntry navBackStackEntry2, Composer composer3, int i16) {
                                                         boolean NavHost$lambda$43;

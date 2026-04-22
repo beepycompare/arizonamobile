@@ -61,7 +61,7 @@ final class AutoValue_RolloutAssignment extends RolloutAssignment {
 
     public int hashCode() {
         long j = this.templateVersion;
-        return ((((((((this.rolloutId.hashCode() ^ 1000003) * 1000003) ^ this.variantId.hashCode()) * 1000003) ^ this.parameterKey.hashCode()) * 1000003) ^ this.parameterValue.hashCode()) * 1000003) ^ ((int) (j ^ (j >>> 32)));
+        return ((int) (j ^ (j >>> 32))) ^ ((((((((this.rolloutId.hashCode() ^ 1000003) * 1000003) ^ this.variantId.hashCode()) * 1000003) ^ this.parameterKey.hashCode()) * 1000003) ^ this.parameterValue.hashCode()) * 1000003);
     }
 
     /* loaded from: classes4.dex */
@@ -132,7 +132,7 @@ final class AutoValue_RolloutAssignment extends RolloutAssignment {
                 if (this.parameterValue == null) {
                     sb.append(" parameterValue");
                 }
-                if ((1 & this.set$0) == 0) {
+                if ((this.set$0 & 1) == 0) {
                     sb.append(" templateVersion");
                 }
                 throw new IllegalStateException("Missing required properties:" + ((Object) sb));

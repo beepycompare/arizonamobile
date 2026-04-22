@@ -60,9 +60,8 @@ public abstract class GservicesValue<T> {
                 t = (T) zza(this.zza);
             } catch (SecurityException unused) {
                 long clearCallingIdentity = Binder.clearCallingIdentity();
-                Object zza = zza(this.zza);
+                t = (T) this.zza(this.zza);
                 Binder.restoreCallingIdentity(clearCallingIdentity);
-                t = (T) zza;
             }
             return t;
         } finally {

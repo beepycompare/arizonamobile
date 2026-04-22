@@ -71,9 +71,8 @@ public abstract class LegendWidget<ItemT extends LegendItem> extends Widget {
     }
 
     private RectF getIconRect(RectF rectF) {
-        float height = rectF.top + (rectF.height() / 2.0f);
         RectF rectF2 = this.iconSize.getRectF(rectF);
-        rectF2.offsetTo(rectF.left + 1.0f, height - (rectF2.height() / 2.0f));
+        rectF2.offsetTo(rectF.left + 1.0f, (rectF.top + (rectF.height() / 2.0f)) - (rectF2.height() / 2.0f));
         return rectF2;
     }
 

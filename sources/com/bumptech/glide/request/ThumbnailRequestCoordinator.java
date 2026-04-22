@@ -105,14 +105,20 @@ public class ThumbnailRequestCoordinator implements RequestCoordinator, Request 
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v2, types: [com.bumptech.glide.request.RequestCoordinator] */
+    /* JADX WARN: Type inference failed for: r2v4 */
     @Override // com.bumptech.glide.request.RequestCoordinator
     public RequestCoordinator getRoot() {
-        RequestCoordinator root;
+        ?? r2;
         synchronized (this.requestLock) {
             RequestCoordinator requestCoordinator = this.parent;
-            root = requestCoordinator != null ? requestCoordinator.getRoot() : this;
+            this = this;
+            if (requestCoordinator != null) {
+                r2 = requestCoordinator.getRoot();
+            }
         }
-        return root;
+        return r2;
     }
 
     @Override // com.bumptech.glide.request.Request

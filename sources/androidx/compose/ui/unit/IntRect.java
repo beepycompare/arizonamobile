@@ -144,8 +144,7 @@ public final class IntRect {
 
     /* renamed from: getSize-YbymL2g  reason: not valid java name */
     public final long m7710getSizeYbymL2g() {
-        int width = getWidth();
-        return IntSize.m7721constructorimpl((getHeight() & 4294967295L) | (width << 32));
+        return IntSize.m7721constructorimpl((getWidth() << 32) | (getHeight() & 4294967295L));
     }
 
     public final boolean isEmpty() {
@@ -187,20 +186,17 @@ public final class IntRect {
 
     /* renamed from: getTopLeft-nOcc-ac  reason: not valid java name */
     public final long m7712getTopLeftnOccac() {
-        int i = this.left;
-        return IntOffset.m7677constructorimpl((this.top & 4294967295L) | (i << 32));
+        return IntOffset.m7677constructorimpl((this.left << 32) | (this.top & 4294967295L));
     }
 
     /* renamed from: getTopCenter-nOcc-ac  reason: not valid java name */
     public final long m7711getTopCenternOccac() {
-        int width = this.left + (getWidth() / 2);
-        return IntOffset.m7677constructorimpl((this.top & 4294967295L) | (width << 32));
+        return IntOffset.m7677constructorimpl(((this.left + (getWidth() / 2)) << 32) | (this.top & 4294967295L));
     }
 
     /* renamed from: getTopRight-nOcc-ac  reason: not valid java name */
     public final long m7713getTopRightnOccac() {
-        int i = this.right;
-        return IntOffset.m7677constructorimpl((this.top & 4294967295L) | (i << 32));
+        return IntOffset.m7677constructorimpl((this.right << 32) | (this.top & 4294967295L));
     }
 
     /* renamed from: getCenterLeft-nOcc-ac  reason: not valid java name */
@@ -223,20 +219,17 @@ public final class IntRect {
 
     /* renamed from: getBottomLeft-nOcc-ac  reason: not valid java name */
     public final long m7705getBottomLeftnOccac() {
-        int i = this.left;
-        return IntOffset.m7677constructorimpl((this.bottom & 4294967295L) | (i << 32));
+        return IntOffset.m7677constructorimpl((this.left << 32) | (this.bottom & 4294967295L));
     }
 
     /* renamed from: getBottomCenter-nOcc-ac  reason: not valid java name */
     public final long m7704getBottomCenternOccac() {
-        int width = this.left + (getWidth() / 2);
-        return IntOffset.m7677constructorimpl((this.bottom & 4294967295L) | (width << 32));
+        return IntOffset.m7677constructorimpl(((this.left + (getWidth() / 2)) << 32) | (this.bottom & 4294967295L));
     }
 
     /* renamed from: getBottomRight-nOcc-ac  reason: not valid java name */
     public final long m7706getBottomRightnOccac() {
-        int i = this.right;
-        return IntOffset.m7677constructorimpl((this.bottom & 4294967295L) | (i << 32));
+        return IntOffset.m7677constructorimpl((this.right << 32) | (this.bottom & 4294967295L));
     }
 
     /* renamed from: contains--gyyYBs  reason: not valid java name */

@@ -15,6 +15,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.StatFs;
+import android.support.v4.media.session.PlaybackStateCompat;
 import android.util.Log;
 import androidx.activity.ComponentActivity;
 import androidx.activity.EdgeToEdge;
@@ -605,17 +606,17 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     private final String convertBytesToHumanReadable(long j) {
         if (j >= 1073741824) {
             StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-            String format = String.format("%.2f Gb", Arrays.copyOf(new Object[]{Double.valueOf(j / 1073741824)}, 1));
+            String format = String.format("%.2f Gb", Arrays.copyOf(new Object[]{Double.valueOf(j / 1.073741824E9d)}, 1));
             Intrinsics.checkNotNullExpressionValue(format, "format(...)");
             return format;
-        } else if (j >= 1048576) {
+        } else if (j >= PlaybackStateCompat.ACTION_SET_CAPTIONING_ENABLED) {
             StringCompanionObject stringCompanionObject2 = StringCompanionObject.INSTANCE;
-            String format2 = String.format("%.2f Mb", Arrays.copyOf(new Object[]{Double.valueOf(j / 1048576)}, 1));
+            String format2 = String.format("%.2f Mb", Arrays.copyOf(new Object[]{Double.valueOf(j / 1048576.0d)}, 1));
             Intrinsics.checkNotNullExpressionValue(format2, "format(...)");
             return format2;
         } else if (j >= 1024) {
             StringCompanionObject stringCompanionObject3 = StringCompanionObject.INSTANCE;
-            String format3 = String.format("%.2f Kb", Arrays.copyOf(new Object[]{Double.valueOf(j / 1024)}, 1));
+            String format3 = String.format("%.2f Kb", Arrays.copyOf(new Object[]{Double.valueOf(j / 1024.0d)}, 1));
             Intrinsics.checkNotNullExpressionValue(format3, "format(...)");
             return format3;
         } else {

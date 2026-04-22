@@ -226,10 +226,10 @@ public final class MediaFormatUtil {
         mediaFormat.setFloat(KEY_PIXEL_WIDTH_HEIGHT_RATIO_FLOAT, f);
         int i2 = 1073741824;
         if (f < 1.0f) {
-            i2 = (int) (f * 1073741824);
+            i2 = (int) (f * 1.07374182E9f);
             i = 1073741824;
         } else if (f > 1.0f) {
-            i = (int) (1073741824 / f);
+            i = (int) (1.07374182E9f / f);
         } else {
             i2 = 1;
             i = 1;

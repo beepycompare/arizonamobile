@@ -101,19 +101,17 @@ public final class DebugCoroutineInfoImpl {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x003e  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0048  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x006a  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004c -> B:25:0x0063). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x005d -> B:24:0x0060). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0043  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0068  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004a -> B:25:0x0061). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x005b -> B:24:0x005e). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object yieldFrames(SequenceScope<? super StackTraceElement> sequenceScope, CoroutineStackFrame coroutineStackFrame, Continuation<? super Unit> continuation) {
         DebugCoroutineInfoImpl$yieldFrames$1 debugCoroutineInfoImpl$yieldFrames$1;
         int i;
-        CoroutineStackFrame coroutineStackFrame2;
-        DebugCoroutineInfoImpl debugCoroutineInfoImpl;
         if (continuation instanceof DebugCoroutineInfoImpl$yieldFrames$1) {
             debugCoroutineInfoImpl$yieldFrames$1 = (DebugCoroutineInfoImpl$yieldFrames$1) continuation;
             if ((debugCoroutineInfoImpl$yieldFrames$1.label & Integer.MIN_VALUE) != 0) {
@@ -123,45 +121,43 @@ public final class DebugCoroutineInfoImpl {
                 i = debugCoroutineInfoImpl$yieldFrames$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    coroutineStackFrame2 = coroutineStackFrame;
-                    debugCoroutineInfoImpl = this;
-                    if (coroutineStackFrame2 == null) {
+                    if (coroutineStackFrame == null) {
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    DebugCoroutineInfoImpl debugCoroutineInfoImpl2 = (DebugCoroutineInfoImpl) debugCoroutineInfoImpl$yieldFrames$1.L$2;
-                    CoroutineStackFrame coroutineStackFrame3 = (CoroutineStackFrame) debugCoroutineInfoImpl$yieldFrames$1.L$1;
+                    this = (DebugCoroutineInfoImpl) debugCoroutineInfoImpl$yieldFrames$1.L$2;
+                    CoroutineStackFrame coroutineStackFrame2 = (CoroutineStackFrame) debugCoroutineInfoImpl$yieldFrames$1.L$1;
                     SequenceScope<? super StackTraceElement> sequenceScope2 = (SequenceScope) debugCoroutineInfoImpl$yieldFrames$1.L$0;
                     ResultKt.throwOnFailure(obj);
-                    coroutineStackFrame2 = coroutineStackFrame3;
-                    debugCoroutineInfoImpl = debugCoroutineInfoImpl2;
-                    sequenceScope = sequenceScope2;
-                    coroutineStackFrame2 = coroutineStackFrame2.getCallerFrame();
-                    if (coroutineStackFrame2 == null) {
+                    SequenceScope<? super StackTraceElement> sequenceScope3 = sequenceScope2;
+                    coroutineStackFrame = coroutineStackFrame2;
+                    sequenceScope = sequenceScope3;
+                    coroutineStackFrame = coroutineStackFrame.getCallerFrame();
+                    if (coroutineStackFrame == null) {
                         return Unit.INSTANCE;
                     }
-                    if (coroutineStackFrame2 == null) {
-                        StackTraceElement stackTraceElement = coroutineStackFrame2.getStackTraceElement();
+                    if (coroutineStackFrame == null) {
+                        StackTraceElement stackTraceElement = coroutineStackFrame.getStackTraceElement();
                         if (stackTraceElement != null) {
                             debugCoroutineInfoImpl$yieldFrames$1.L$0 = sequenceScope;
-                            debugCoroutineInfoImpl$yieldFrames$1.L$1 = coroutineStackFrame2;
-                            debugCoroutineInfoImpl$yieldFrames$1.L$2 = debugCoroutineInfoImpl;
+                            debugCoroutineInfoImpl$yieldFrames$1.L$1 = coroutineStackFrame;
+                            debugCoroutineInfoImpl$yieldFrames$1.L$2 = this;
                             debugCoroutineInfoImpl$yieldFrames$1.label = 1;
                             if (sequenceScope.yield(stackTraceElement, debugCoroutineInfoImpl$yieldFrames$1) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
+                            CoroutineStackFrame coroutineStackFrame3 = coroutineStackFrame;
                             sequenceScope2 = sequenceScope;
-                            debugCoroutineInfoImpl2 = debugCoroutineInfoImpl;
-                            coroutineStackFrame3 = coroutineStackFrame2;
                             coroutineStackFrame2 = coroutineStackFrame3;
-                            debugCoroutineInfoImpl = debugCoroutineInfoImpl2;
-                            sequenceScope = sequenceScope2;
+                            SequenceScope<? super StackTraceElement> sequenceScope32 = sequenceScope2;
+                            coroutineStackFrame = coroutineStackFrame2;
+                            sequenceScope = sequenceScope32;
                         }
-                        coroutineStackFrame2 = coroutineStackFrame2.getCallerFrame();
-                        if (coroutineStackFrame2 == null) {
+                        coroutineStackFrame = coroutineStackFrame.getCallerFrame();
+                        if (coroutineStackFrame == null) {
                         }
-                        if (coroutineStackFrame2 == null) {
+                        if (coroutineStackFrame == null) {
                             return Unit.INSTANCE;
                         }
                     }

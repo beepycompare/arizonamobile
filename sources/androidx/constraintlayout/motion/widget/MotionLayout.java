@@ -2238,14 +2238,14 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             canvas.drawLine(f, f2, Math.min(0.0f, 1.0f), f2, this.mPaintGraph);
             String str2 = "" + (((int) ((((f2 - (i2 / 2)) * 100.0f) / (MotionLayout.this.getHeight() - i2)) + 0.5d)) / 100.0f);
             getTextBounds(str2, this.mTextPaint);
-            canvas.drawText(str2, 5.0f + f, 0.0f - ((f2 / 2.0f) - (this.mBounds.height() / 2)), this.mTextPaint);
+            canvas.drawText(str2, f + 5.0f, 0.0f - ((f2 / 2.0f) - (this.mBounds.height() / 2)), this.mTextPaint);
             canvas.drawLine(f, f2, f, Math.max(0.0f, 1.0f), this.mPaintGraph);
         }
 
         private void drawRectangle(Canvas canvas, MotionController motionController) {
             this.mPath.reset();
             for (int i = 0; i <= 50; i++) {
-                motionController.buildRect(i / 50, this.mRectangle, 0);
+                motionController.buildRect(i / 50.0f, this.mRectangle, 0);
                 Path path = this.mPath;
                 float[] fArr = this.mRectangle;
                 path.moveTo(fArr[0], fArr[1]);
@@ -2652,36 +2652,24 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     @Override // androidx.constraintlayout.widget.ConstraintLayout, android.view.ViewGroup, android.view.View
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        MotionLayout motionLayout;
         this.mInLayout = true;
         try {
             if (this.mScene == null) {
                 super.onLayout(z, i, i2, i3, i4);
-                this.mInLayout = false;
                 return;
             }
-            motionLayout = this;
             int i5 = i3 - i;
             int i6 = i4 - i2;
-            try {
-                if (motionLayout.mLastLayoutWidth != i5 || motionLayout.mLastLayoutHeight != i6) {
-                    rebuildScene();
-                    evaluate(true);
-                }
-                motionLayout.mLastLayoutWidth = i5;
-                motionLayout.mLastLayoutHeight = i6;
-                motionLayout.mOldWidth = i5;
-                motionLayout.mOldHeight = i6;
-                motionLayout.mInLayout = false;
-            } catch (Throwable th) {
-                th = th;
-                Throwable th2 = th;
-                motionLayout.mInLayout = false;
-                throw th2;
+            if (this.mLastLayoutWidth != i5 || this.mLastLayoutHeight != i6) {
+                rebuildScene();
+                evaluate(true);
             }
-        } catch (Throwable th3) {
-            th = th3;
-            motionLayout = this;
+            this.mLastLayoutWidth = i5;
+            this.mLastLayoutHeight = i6;
+            this.mOldWidth = i5;
+            this.mOldHeight = i6;
+        } finally {
+            this.mInLayout = false;
         }
     }
 

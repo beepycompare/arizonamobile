@@ -113,7 +113,7 @@ import kotlinx.coroutines.flow.SharedFlowKt;
 /* loaded from: classes.dex */
 public final class BasicTextFieldKt {
     private static final TextFieldDecorator DefaultTextFieldDecorator = BasicTextFieldKt$DefaultTextFieldDecorator$1.INSTANCE;
-    private static final long MinTouchTargetSizeForHandles;
+    private static final long MinTouchTargetSizeForHandles = DpKt.m7577DpSizeYgX7TsA(Dp.m7555constructorimpl(40.0f), Dp.m7555constructorimpl(40.0f));
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicTextField$lambda$0(TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, TextFieldLineLimits textFieldLineLimits, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, OutputTransformation outputTransformation, TextFieldDecorator textFieldDecorator, ScrollState scrollState, int i, int i2, int i3, Composer composer, int i4) {
@@ -2020,11 +2020,6 @@ public final class BasicTextFieldKt {
                 }
             });
         }
-    }
-
-    static {
-        float f = 40;
-        MinTouchTargetSizeForHandles = DpKt.m7577DpSizeYgX7TsA(Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

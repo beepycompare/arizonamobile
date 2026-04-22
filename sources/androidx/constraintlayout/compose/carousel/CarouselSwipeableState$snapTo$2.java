@@ -37,7 +37,6 @@ public final class CarouselSwipeableState$snapTo$2<T> implements FlowCollector {
         int i;
         Float offset;
         Object snapInternalToOffset;
-        CarouselSwipeableState$snapTo$2<T> carouselSwipeableState$snapTo$2;
         if (continuation instanceof CarouselSwipeableState$snapTo$2$emit$1) {
             carouselSwipeableState$snapTo$2$emit$1 = (CarouselSwipeableState$snapTo$2$emit$1) continuation;
             if ((carouselSwipeableState$snapTo$2$emit$1.label & Integer.MIN_VALUE) != 0) {
@@ -59,14 +58,13 @@ public final class CarouselSwipeableState$snapTo$2<T> implements FlowCollector {
                     if (snapInternalToOffset == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    carouselSwipeableState$snapTo$2 = this;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    carouselSwipeableState$snapTo$2 = (CarouselSwipeableState$snapTo$2) carouselSwipeableState$snapTo$2$emit$1.L$0;
+                    this = (CarouselSwipeableState$snapTo$2) carouselSwipeableState$snapTo$2$emit$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                carouselSwipeableState$snapTo$2.this$0.setCurrentValue(carouselSwipeableState$snapTo$2.$targetValue);
+                this.this$0.setCurrentValue(this.$targetValue);
                 return Unit.INSTANCE;
             }
         }
@@ -76,7 +74,7 @@ public final class CarouselSwipeableState$snapTo$2<T> implements FlowCollector {
         i = carouselSwipeableState$snapTo$2$emit$1.label;
         if (i != 0) {
         }
-        carouselSwipeableState$snapTo$2.this$0.setCurrentValue(carouselSwipeableState$snapTo$2.$targetValue);
+        this.this$0.setCurrentValue(this.$targetValue);
         return Unit.INSTANCE;
     }
 }

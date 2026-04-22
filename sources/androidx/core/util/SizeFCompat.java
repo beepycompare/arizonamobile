@@ -31,7 +31,7 @@ public final class SizeFCompat {
     }
 
     public int hashCode() {
-        return Float.floatToIntBits(this.mWidth) ^ Float.floatToIntBits(this.mHeight);
+        return Float.floatToIntBits(this.mHeight) ^ Float.floatToIntBits(this.mWidth);
     }
 
     public String toString() {

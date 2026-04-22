@@ -101,7 +101,7 @@ public final class zznp<T> implements zznx<T> {
         int zzy = zzy(i);
         long j = zzy & 1048575;
         if (j != 1048575) {
-            return (zzop.zzd(obj, j) & (1 << (zzy >>> 20))) != 0;
+            return ((1 << (zzy >>> 20)) & zzop.zzd(obj, j)) != 0;
         }
         int zzx = zzx(i);
         long j2 = zzx & 1048575;
@@ -3157,1152 +3157,1219 @@ public final class zznp<T> implements zznx<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Code restructure failed: missing block: B:104:0x02bf, code lost:
-        r6 = r11;
-        r5 = r12;
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x02ca, code lost:
+        r7 = r5;
+        r8 = r40;
+        r15 = r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:117:0x0338, code lost:
-        r2 = r10;
-        r10 = r0;
-        r0 = r2;
-        r8 = r41;
-        r4 = r5;
-        r2 = r9;
-        r6 = r11;
-        r5 = r12;
-        r3 = r13;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:118:0x0342, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x02ce, code lost:
+        r5 = r11;
+        r4 = r12;
+        r6 = r13;
         r14 = r20;
-        r7 = r21;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:481:0x0ad6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:472:0x0aff, code lost:
         throw new com.google.android.gms.internal.measurement.zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:581:0x0dde, code lost:
-        if (r14 == 1048575) goto L54;
+    /* JADX WARN: Code restructure failed: missing block: B:573:0x0e03, code lost:
+        if (r14 == 1048575) goto L46;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:582:0x0de0, code lost:
-        r0.putInt(r13, r14, r15);
+    /* JADX WARN: Code restructure failed: missing block: B:574:0x0e05, code lost:
+        r8.putInt(r10, r14, r15);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:583:0x0de4, code lost:
-        r0 = r1.zzj;
+    /* JADX WARN: Code restructure failed: missing block: B:575:0x0e09, code lost:
+        r1 = r0.zzj;
         r2 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:585:0x0dea, code lost:
-        if (r0 >= r1.zzk) goto L87;
+    /* JADX WARN: Code restructure failed: missing block: B:577:0x0e0f, code lost:
+        if (r1 >= r0.zzk) goto L79;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:586:0x0dec, code lost:
-        r3 = r1.zzi;
-        r6 = r1.zzl;
-        r8 = r1.zzc;
-        r3 = r3[r0];
-        r8 = r8[r3];
-        r10 = com.google.android.gms.internal.measurement.zzop.zzn(r13, r1.zzx(r3) & 1048575);
+    /* JADX WARN: Code restructure failed: missing block: B:578:0x0e11, code lost:
+        r5 = r0.zzi;
+        r7 = r0.zzl;
+        r8 = r0.zzc;
+        r5 = r5[r1];
+        r8 = r8[r5];
+        r11 = com.google.android.gms.internal.measurement.zzop.zzn(r10, r0.zzx(r5) & 1048575);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:587:0x0e04, code lost:
-        if (r10 == null) goto L86;
+    /* JADX WARN: Code restructure failed: missing block: B:579:0x0e29, code lost:
+        if (r11 == null) goto L78;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:588:0x0e06, code lost:
-        r11 = r1.zzr(r3);
+    /* JADX WARN: Code restructure failed: missing block: B:580:0x0e2b, code lost:
+        r12 = r0.zzr(r5);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:589:0x0e0a, code lost:
-        if (r11 == null) goto L85;
+    /* JADX WARN: Code restructure failed: missing block: B:581:0x0e2f, code lost:
+        if (r12 == null) goto L77;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:590:0x0e0c, code lost:
-        r3 = ((com.google.android.gms.internal.measurement.zznf) r1.zzq(r3)).zze();
-        r10 = ((com.google.android.gms.internal.measurement.zzng) r10).entrySet().iterator();
+    /* JADX WARN: Code restructure failed: missing block: B:582:0x0e31, code lost:
+        r5 = ((com.google.android.gms.internal.measurement.zznf) r0.zzq(r5)).zze();
+        r11 = ((com.google.android.gms.internal.measurement.zzng) r11).entrySet().iterator();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:592:0x0e24, code lost:
-        if (r10.hasNext() == false) goto L83;
+    /* JADX WARN: Code restructure failed: missing block: B:584:0x0e49, code lost:
+        if (r11.hasNext() == false) goto L75;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:593:0x0e26, code lost:
-        r12 = (java.util.Map.Entry) r10.next();
+    /* JADX WARN: Code restructure failed: missing block: B:585:0x0e4b, code lost:
+        r13 = (java.util.Map.Entry) r11.next();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:594:0x0e3a, code lost:
-        if (r11.zza(((java.lang.Integer) r12.getValue()).intValue()) != false) goto L66;
+    /* JADX WARN: Code restructure failed: missing block: B:586:0x0e5f, code lost:
+        if (r12.zza(((java.lang.Integer) r13.getValue()).intValue()) != false) goto L58;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:595:0x0e3c, code lost:
-        if (r2 != 0) goto L73;
+    /* JADX WARN: Code restructure failed: missing block: B:587:0x0e61, code lost:
+        if (r2 != 0) goto L65;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:596:0x0e3e, code lost:
-        r2 = r6.zza(r13);
+    /* JADX WARN: Code restructure failed: missing block: B:588:0x0e63, code lost:
+        r2 = r7.zza(r10);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:597:0x0e42, code lost:
-        r14 = com.google.android.gms.internal.measurement.zznf.zzc(r3, r12.getKey(), r12.getValue());
+    /* JADX WARN: Code restructure failed: missing block: B:589:0x0e67, code lost:
+        r14 = com.google.android.gms.internal.measurement.zznf.zzc(r5, r13.getKey(), r13.getValue());
         r15 = com.google.android.gms.internal.measurement.zzlh.zzb;
         r15 = new byte[r14];
         r17 = com.google.android.gms.internal.measurement.zzlm.zzb;
-        r17 = r0;
+        r17 = r1;
         r0 = new com.google.android.gms.internal.measurement.zzlk(r15, 0, r14);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:598:0x0e5c, code lost:
-        com.google.android.gms.internal.measurement.zznf.zzb(r0, r3, r12.getKey(), r12.getValue());
+    /* JADX WARN: Code restructure failed: missing block: B:590:0x0e81, code lost:
+        com.google.android.gms.internal.measurement.zznf.zzb(r0, r5, r13.getKey(), r13.getValue());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:599:0x0e67, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:591:0x0e8c, code lost:
         r2.zzk((r8 << 3) | 2, com.google.android.gms.internal.measurement.zzle.zza(r0, r15));
-        r10.remove();
-        r0 = r17;
+        r11.remove();
+        r1 = r17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:600:0x0e80, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:592:0x0ea5, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:602:0x0e86, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:594:0x0eab, code lost:
         throw new java.lang.RuntimeException(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:604:0x0e8c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:596:0x0eb1, code lost:
         r2 = r2;
-        r0 = r0 + 1;
-        r1 = r37;
+        r1 = r1 + 1;
+        r0 = r36;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:605:0x0e9a, code lost:
-        if (r2 == null) goto L90;
+    /* JADX WARN: Code restructure failed: missing block: B:597:0x0ec0, code lost:
+        if (r2 == null) goto L82;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:606:0x0e9c, code lost:
-        ((com.google.android.gms.internal.measurement.zzmf) r13).zzc = r2;
+    /* JADX WARN: Code restructure failed: missing block: B:598:0x0ec2, code lost:
+        ((com.google.android.gms.internal.measurement.zzmf) r10).zzc = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:607:0x0ea4, code lost:
-        if (r9 != 0) goto L95;
+    /* JADX WARN: Code restructure failed: missing block: B:599:0x0eca, code lost:
+        if (r9 != 0) goto L87;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:608:0x0ea6, code lost:
-        if (r4 != r5) goto L92;
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0192, code lost:
+        r8 = r40;
+        r15 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:611:0x0eb0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:600:0x0ecc, code lost:
+        if (r3 != r4) goto L84;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:603:0x0ed6, code lost:
         throw new com.google.android.gms.internal.measurement.zzmr(r30);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:612:0x0eb1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:604:0x0ed7, code lost:
         r12 = r30;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:613:0x0eb3, code lost:
-        if (r4 > r5) goto L98;
+    /* JADX WARN: Code restructure failed: missing block: B:605:0x0ed9, code lost:
+        if (r3 > r4) goto L90;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:614:0x0eb5, code lost:
-        if (r7 != r9) goto L98;
+    /* JADX WARN: Code restructure failed: missing block: B:606:0x0edb, code lost:
+        if (r6 != r9) goto L90;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:615:0x0eb7, code lost:
-        return r4;
+    /* JADX WARN: Code restructure failed: missing block: B:607:0x0edd, code lost:
+        return r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:617:0x0ebd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:609:0x0ee3, code lost:
         throw new com.google.android.gms.internal.measurement.zzmr(r12);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x018c, code lost:
-        r8 = r41;
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x01cb, code lost:
+        r2 = r9;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x01c5, code lost:
-        r3 = r9;
-        r6 = r11;
-        r5 = r12;
-        r7 = r13;
+    /* JADX WARN: Code restructure failed: missing block: B:91:0x0274, code lost:
+        r15 = r5;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x0242, code lost:
-        r3 = r2;
-        r2 = r0;
-        r0 = r10;
-        r10 = r3;
-        r8 = r41;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:94:0x026d, code lost:
-        r3 = r7;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x05b9  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x0660  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x06b5  */
-    /* JADX WARN: Removed duplicated region for block: B:566:0x0d7d A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:570:0x0d8b  */
-    /* JADX WARN: Removed duplicated region for block: B:674:0x0059 A[SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r2v10, types: [java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r2v11 */
+    /* JADX WARN: Removed duplicated region for block: B:215:0x05d1  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x0674  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x006b  */
+    /* JADX WARN: Removed duplicated region for block: B:270:0x06c9  */
+    /* JADX WARN: Removed duplicated region for block: B:558:0x0d9d A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:562:0x0dac  */
+    /* JADX WARN: Removed duplicated region for block: B:662:0x0059 A[SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r2v10 */
+    /* JADX WARN: Type inference failed for: r2v7 */
     /* JADX WARN: Type inference failed for: r2v8 */
-    /* JADX WARN: Type inference failed for: r2v9 */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:216:0x05b6 -> B:217:0x05b7). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:251:0x065d -> B:252:0x065e). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:271:0x06b1 -> B:272:0x06b3). Please submit an issue!!! */
+    /* JADX WARN: Type inference failed for: r2v9, types: [java.lang.Object] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:213:0x05ce -> B:214:0x05cf). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:248:0x0671 -> B:249:0x0672). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:268:0x06c5 -> B:269:0x06c7). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final int zzh(Object obj, byte[] bArr, int i, int i2, int i3, zzkw zzkwVar) throws IOException {
         int i4;
-        Unsafe unsafe;
+        Object obj2;
         int i5;
         String str;
-        Object obj2;
+        Unsafe unsafe;
         int zzN;
-        byte[] bArr2;
         int i6;
         int i7;
         int i8;
+        byte[] bArr2;
         zzkw zzkwVar2;
         int i9;
         int i10;
+        Unsafe unsafe2;
+        Object obj3;
         byte[] bArr3;
         zzkw zzkwVar3;
-        Unsafe unsafe2;
         int i11;
         int i12;
-        Unsafe unsafe3;
-        Object obj3;
-        byte[] bArr4;
-        zzkw zzkwVar4;
-        Object obj4;
         int i13;
-        byte[] bArr5;
-        zzkw zzkwVar5;
-        int zzc;
-        zzkw zzkwVar6;
-        Unsafe unsafe4;
+        byte[] bArr4;
+        Unsafe unsafe3;
         int i14;
+        Object obj4;
         int i15;
         int i16;
-        byte[] bArr6;
-        String str2;
+        byte[] bArr5;
+        Unsafe unsafe4;
+        zzkw zzkwVar4;
         int i17;
         int i18;
-        int i19;
-        int i20;
-        byte[] bArr7;
-        zzkw zzkwVar7;
-        int zzg;
-        int i21;
         int zza2;
-        Unsafe unsafe5;
-        Object obj5;
-        zzkw zzkwVar8;
-        long j;
+        int i19;
+        zzkw zzkwVar5;
+        int i20;
+        int i21;
         int i22;
+        Object obj5;
         int i23;
-        Unsafe unsafe6;
-        byte[] bArr8;
-        zzkw zzkwVar9;
+        byte[] bArr6;
         int i24;
+        zzkw zzkwVar6;
         int zzl;
+        zzmo zzmoVar;
         int i25;
         int i26;
-        int zza3;
         int i27;
-        Object obj6;
         int i28;
-        byte[] bArr9;
+        int zza3;
         int i29;
-        int zzl2;
-        zzmo zzmoVar;
+        byte[] bArr7;
         int i30;
         int i31;
         int i32;
         int i33;
+        byte[] bArr8;
+        zzkw zzkwVar7;
+        int i34;
+        int zzg;
+        int i35;
+        int zza4;
+        zzkw zzkwVar8;
+        Object obj6;
+        int i36;
+        Object obj7;
+        zzkw zzkwVar9;
         zznp<T> zznpVar = this;
-        Object obj7 = obj;
-        byte[] bArr10 = bArr;
-        int i34 = i2;
+        Object obj8 = obj;
+        byte[] bArr9 = bArr;
+        int i37 = i2;
         zzkw zzkwVar10 = zzkwVar;
-        zzB(obj7);
-        Unsafe unsafe7 = zzb;
-        int i35 = 0;
-        int i36 = i;
-        int i37 = 0;
+        zzB(obj8);
+        Unsafe unsafe5 = zzb;
         int i38 = 0;
-        int i39 = 0;
-        int i40 = -1;
-        int i41 = 1048575;
+        int i39 = i;
+        int i40 = 0;
+        int i41 = 0;
+        int i42 = 0;
+        int i43 = -1;
+        int i44 = 1048575;
         while (true) {
-            int i42 = 1048575;
+            int i45 = 1048575;
             while (true) {
-                if (i36 < i34) {
-                    int i43 = i36 + 1;
-                    int i44 = bArr10[i36];
-                    if (i44 < 0) {
-                        i43 = zzkx.zzb(i44, bArr10, i43, zzkwVar10);
-                        i44 = zzkwVar10.zza;
+                if (i39 < i37) {
+                    int i46 = i39 + 1;
+                    int i47 = bArr9[i39];
+                    if (i47 < 0) {
+                        i46 = zzkx.zzb(i47, bArr9, i46, zzkwVar10);
+                        i47 = zzkwVar10.zza;
                     }
-                    int i45 = i43;
-                    int i46 = i44;
-                    i36 = i45;
-                    int i47 = i46 >>> 3;
-                    if (i47 <= i40) {
-                        if (i47 >= zznpVar.zze && i47 <= zznpVar.zzf) {
-                            zzN = zznpVar.zzN(i47, i35);
+                    int i48 = i46;
+                    int i49 = i47;
+                    i39 = i48;
+                    int i50 = i49 >>> 3;
+                    if (i50 <= i43) {
+                        if (i50 >= zznpVar.zze && i50 <= zznpVar.zzf) {
+                            zzN = zznpVar.zzN(i50, i38);
                             if (zzN != -1) {
                             }
-                            i9 = i47;
-                            if (i6 == i4) {
+                            if (i8 == i4) {
                             }
                             if (zznpVar.zzh) {
                             }
                             i10 = i2;
-                            i36 = zzkx.zzo(i6, bArr, i36, i10, zzg(obj2), zzkwVar);
+                            i39 = zzkx.zzo(i8, bArr, i39, i10, zzg(obj2), zzkwVar);
+                            bArr9 = bArr;
+                            unsafe5 = unsafe;
+                            obj8 = obj2;
+                            i40 = i38;
+                            i41 = i8;
+                            i44 = i6;
+                            i38 = 0;
+                            i45 = 1048575;
                             zzkwVar10 = zzkwVar;
-                            i38 = i6;
-                            i34 = i10;
-                            i37 = i35;
-                            obj7 = obj2;
-                            i40 = i9;
-                            i41 = i7;
-                            i39 = i8;
-                            i35 = 0;
-                            i42 = 1048575;
-                            unsafe7 = unsafe;
-                            bArr10 = bArr;
+                            i37 = i10;
+                            i43 = i9;
+                            i42 = i7;
                         }
                         zzN = -1;
                         if (zzN != -1) {
                         }
-                        i9 = i47;
-                        if (i6 == i4) {
+                        if (i8 == i4) {
                         }
                         if (zznpVar.zzh) {
                         }
                         i10 = i2;
-                        i36 = zzkx.zzo(i6, bArr, i36, i10, zzg(obj2), zzkwVar);
+                        i39 = zzkx.zzo(i8, bArr, i39, i10, zzg(obj2), zzkwVar);
+                        bArr9 = bArr;
+                        unsafe5 = unsafe;
+                        obj8 = obj2;
+                        i40 = i38;
+                        i41 = i8;
+                        i44 = i6;
+                        i38 = 0;
+                        i45 = 1048575;
                         zzkwVar10 = zzkwVar;
-                        i38 = i6;
-                        i34 = i10;
-                        i37 = i35;
-                        obj7 = obj2;
-                        i40 = i9;
-                        i41 = i7;
-                        i39 = i8;
-                        i35 = 0;
-                        i42 = 1048575;
-                        unsafe7 = unsafe;
-                        bArr10 = bArr;
+                        i37 = i10;
+                        i43 = i9;
+                        i42 = i7;
                     } else {
-                        int i48 = i37 / 3;
-                        if (i47 >= zznpVar.zze && i47 <= zznpVar.zzf) {
-                            zzN = zznpVar.zzN(i47, i48);
+                        int i51 = i40 / 3;
+                        if (i50 >= zznpVar.zze && i50 <= zznpVar.zzf) {
+                            zzN = zznpVar.zzN(i50, i51);
                             if (zzN != -1) {
-                                bArr2 = bArr10;
-                                unsafe = unsafe7;
-                                i6 = i46;
                                 i4 = i3;
+                                unsafe = unsafe5;
                                 str = "Failed to parse the message.";
-                                i7 = i41;
-                                i8 = i39;
-                                obj2 = obj7;
+                                i6 = i44;
+                                i7 = i42;
+                                i8 = i49;
+                                bArr2 = bArr9;
                                 zzkwVar2 = zzkwVar10;
+                                i9 = i50;
+                                obj2 = obj8;
                             } else {
-                                int i49 = i46 & 7;
+                                int i52 = i49 & 7;
                                 int[] iArr = zznpVar.zzc;
-                                int i50 = zzN;
-                                int i51 = iArr[zzN + 1];
-                                int zzz = zzz(i51);
-                                long j2 = i51 & i42;
+                                int i53 = zzN;
+                                int i54 = iArr[zzN + 1];
+                                int zzz = zzz(i54);
+                                long j = i54 & i45;
                                 if (zzz <= 17) {
-                                    int i52 = iArr[i50 + 2];
-                                    int i53 = 1 << (i52 >>> 20);
-                                    int i54 = i52 & i42;
+                                    int i55 = iArr[i53 + 2];
+                                    int i56 = 1 << (i55 >>> 20);
+                                    int i57 = i55 & i45;
                                     str = "Failed to parse the message.";
-                                    if (i54 != i41) {
-                                        int i55 = i42;
-                                        if (i41 != i55) {
-                                            unsafe7.putInt(obj7, i41, i39);
-                                            i55 = 1048575;
+                                    if (i57 != i44) {
+                                        int i58 = i45;
+                                        if (i44 != i58) {
+                                            unsafe5.putInt(obj8, i44, i42);
+                                            i58 = 1048575;
                                         }
-                                        i39 = i54 == i55 ? 0 : unsafe7.getInt(obj7, i54);
-                                        i41 = i54;
+                                        i42 = i57 == i58 ? 0 : unsafe5.getInt(obj8, i57);
+                                        i44 = i57;
                                     }
                                     switch (zzz) {
                                         case 0:
                                             zzkw zzkwVar11 = zzkwVar10;
-                                            bArr3 = bArr10;
+                                            bArr3 = bArr9;
                                             zzkwVar3 = zzkwVar11;
-                                            unsafe2 = unsafe7;
-                                            obj2 = obj7;
-                                            i35 = i50;
-                                            i11 = i46;
-                                            i7 = i41;
-                                            if (i49 == 1) {
-                                                i12 = i36 + 8;
-                                                i39 |= i53;
-                                                zzop.zzm(obj2, j2, Double.longBitsToDouble(zzkx.zze(bArr3, i36)));
+                                            i8 = i49;
+                                            i38 = i53;
+                                            i6 = i44;
+                                            i7 = i42;
+                                            unsafe2 = unsafe5;
+                                            obj3 = obj8;
+                                            if (i52 != 1) {
+                                                bArr2 = bArr;
+                                                i4 = i3;
+                                                obj2 = obj3;
+                                                unsafe = unsafe2;
+                                                zzkwVar2 = zzkwVar;
+                                                i9 = i50;
+                                                break;
+                                            } else {
+                                                i11 = i39 + 8;
+                                                i12 = i7 | i56;
+                                                zzop.zzm(obj3, j, Double.longBitsToDouble(zzkx.zze(bArr3, i39)));
+                                                byte[] bArr10 = bArr3;
+                                                zzkwVar10 = zzkwVar3;
+                                                bArr9 = bArr10;
+                                                i37 = i2;
+                                                i39 = i11;
+                                                i43 = i50;
+                                                i41 = i8;
+                                                obj8 = obj3;
+                                                unsafe5 = unsafe2;
+                                                i44 = i6;
+                                                i45 = 1048575;
+                                                i42 = i12;
+                                                i40 = i38;
+                                                i38 = 0;
                                                 break;
                                             }
-                                            bArr2 = bArr;
-                                            zzkwVar2 = zzkwVar;
-                                            unsafe = unsafe2;
-                                            i6 = i11;
-                                            i4 = i3;
-                                            i8 = i39;
-                                            break;
                                         case 1:
                                             zzkw zzkwVar12 = zzkwVar10;
-                                            bArr3 = bArr10;
+                                            bArr3 = bArr9;
                                             zzkwVar3 = zzkwVar12;
-                                            unsafe2 = unsafe7;
-                                            obj2 = obj7;
-                                            i35 = i50;
-                                            i11 = i46;
-                                            i7 = i41;
-                                            if (i49 == 5) {
-                                                i12 = i36 + 4;
-                                                i39 |= i53;
-                                                zzop.zzk(obj2, j2, Float.intBitsToFloat(zzkx.zzd(bArr3, i36)));
+                                            i8 = i49;
+                                            i38 = i53;
+                                            i6 = i44;
+                                            i7 = i42;
+                                            unsafe2 = unsafe5;
+                                            obj3 = obj8;
+                                            if (i52 != 5) {
+                                                bArr2 = bArr;
+                                                i4 = i3;
+                                                obj2 = obj3;
+                                                unsafe = unsafe2;
+                                                zzkwVar2 = zzkwVar;
+                                                i9 = i50;
+                                                break;
+                                            } else {
+                                                i11 = i39 + 4;
+                                                i12 = i7 | i56;
+                                                zzop.zzk(obj3, j, Float.intBitsToFloat(zzkx.zzd(bArr3, i39)));
+                                                byte[] bArr102 = bArr3;
+                                                zzkwVar10 = zzkwVar3;
+                                                bArr9 = bArr102;
+                                                i37 = i2;
+                                                i39 = i11;
+                                                i43 = i50;
+                                                i41 = i8;
+                                                obj8 = obj3;
+                                                unsafe5 = unsafe2;
+                                                i44 = i6;
+                                                i45 = 1048575;
+                                                i42 = i12;
+                                                i40 = i38;
+                                                i38 = 0;
                                                 break;
                                             }
-                                            bArr2 = bArr;
-                                            zzkwVar2 = zzkwVar;
-                                            unsafe = unsafe2;
-                                            i6 = i11;
-                                            i4 = i3;
-                                            i8 = i39;
-                                            break;
                                         case 2:
                                         case 3:
                                             zzkw zzkwVar13 = zzkwVar10;
-                                            bArr5 = bArr10;
-                                            zzkwVar5 = zzkwVar13;
-                                            i35 = i50;
-                                            i11 = i46;
-                                            i7 = i41;
-                                            if (i49 != 0) {
-                                                unsafe2 = unsafe7;
-                                                obj2 = obj7;
+                                            byte[] bArr11 = bArr9;
+                                            i8 = i49;
+                                            i38 = i53;
+                                            i6 = i44;
+                                            i7 = i42;
+                                            if (i52 != 0) {
+                                                unsafe2 = unsafe5;
+                                                obj3 = obj8;
                                                 bArr2 = bArr;
-                                                zzkwVar2 = zzkwVar;
-                                                unsafe = unsafe2;
-                                                i6 = i11;
                                                 i4 = i3;
-                                                i8 = i39;
+                                                obj2 = obj3;
+                                                unsafe = unsafe2;
+                                                zzkwVar2 = zzkwVar;
+                                                i9 = i50;
                                                 break;
                                             } else {
-                                                i39 |= i53;
-                                                zzc = zzkx.zzc(bArr5, i36, zzkwVar5);
-                                                unsafe7.putLong(obj7, j2, zzkwVar5.zzb);
-                                                byte[] bArr11 = bArr5;
-                                                zzkwVar10 = zzkwVar5;
-                                                bArr10 = bArr11;
-                                                i36 = zzc;
-                                                i37 = i35;
-                                                i40 = i47;
-                                                i41 = i7;
-                                                i38 = i11;
-                                                i35 = 0;
-                                                i42 = 1048575;
-                                                i34 = i2;
+                                                int zzc = zzkx.zzc(bArr11, i39, zzkwVar13);
+                                                unsafe5.putLong(obj8, j, zzkwVar13.zzb);
+                                                zzkwVar10 = zzkwVar13;
+                                                bArr9 = bArr11;
+                                                i42 = i7 | i56;
+                                                i39 = zzc;
+                                                i40 = i38;
+                                                i43 = i50;
+                                                i41 = i8;
+                                                i44 = i6;
+                                                i38 = 0;
+                                                i45 = 1048575;
+                                                i37 = i2;
+                                                break;
                                             }
                                         case 4:
                                         case 11:
                                             zzkw zzkwVar14 = zzkwVar10;
-                                            byte[] bArr12 = bArr10;
-                                            i35 = i50;
-                                            i11 = i46;
-                                            i7 = i41;
-                                            if (i49 == 0) {
-                                                i39 |= i53;
-                                                i36 = zzkx.zza(bArr12, i36, zzkwVar14);
-                                                unsafe7.putInt(obj7, j2, zzkwVar14.zza);
+                                            byte[] bArr12 = bArr9;
+                                            i8 = i49;
+                                            i38 = i53;
+                                            i6 = i44;
+                                            i7 = i42;
+                                            if (i52 == 0) {
+                                                i13 = i7 | i56;
+                                                i39 = zzkx.zza(bArr12, i39, zzkwVar14);
+                                                unsafe5.putInt(obj8, j, zzkwVar14.zza);
+                                                bArr4 = bArr12;
                                                 zzkwVar10 = zzkwVar14;
-                                                bArr10 = bArr12;
-                                                i34 = i2;
                                                 break;
                                             }
-                                            unsafe2 = unsafe7;
-                                            obj2 = obj7;
+                                            unsafe2 = unsafe5;
+                                            obj3 = obj8;
                                             bArr2 = bArr;
-                                            zzkwVar2 = zzkwVar;
-                                            unsafe = unsafe2;
-                                            i6 = i11;
                                             i4 = i3;
-                                            i8 = i39;
+                                            obj2 = obj3;
+                                            unsafe = unsafe2;
+                                            zzkwVar2 = zzkwVar;
+                                            i9 = i50;
                                             break;
                                         case 5:
                                         case 14:
+                                            byte[] bArr13 = bArr9;
+                                            Unsafe unsafe6 = unsafe5;
                                             zzkw zzkwVar15 = zzkwVar10;
-                                            bArr5 = bArr10;
-                                            Unsafe unsafe8 = unsafe7;
-                                            obj3 = obj7;
-                                            i35 = i50;
-                                            i11 = i46;
-                                            i7 = i41;
-                                            if (i49 != 1) {
-                                                unsafe2 = unsafe8;
-                                                obj2 = obj3;
+                                            i8 = i49;
+                                            i38 = i53;
+                                            i6 = i44;
+                                            i7 = i42;
+                                            if (i52 != 1) {
+                                                unsafe5 = unsafe6;
+                                                unsafe2 = unsafe5;
+                                                obj3 = obj8;
                                                 bArr2 = bArr;
-                                                zzkwVar2 = zzkwVar;
-                                                unsafe = unsafe2;
-                                                i6 = i11;
                                                 i4 = i3;
-                                                i8 = i39;
+                                                obj2 = obj3;
+                                                unsafe = unsafe2;
+                                                zzkwVar2 = zzkwVar;
+                                                i9 = i50;
                                                 break;
                                             } else {
-                                                zzc = i36 + 8;
-                                                i39 |= i53;
-                                                unsafe7 = unsafe8;
-                                                zzkwVar5 = zzkwVar15;
-                                                obj7 = obj;
-                                                unsafe7.putLong(obj7, j2, zzkx.zze(bArr5, i36));
-                                                byte[] bArr112 = bArr5;
-                                                zzkwVar10 = zzkwVar5;
-                                                bArr10 = bArr112;
-                                                i36 = zzc;
-                                                i37 = i35;
-                                                i40 = i47;
-                                                i41 = i7;
-                                                i38 = i11;
-                                                i35 = 0;
-                                                i42 = 1048575;
-                                                i34 = i2;
+                                                unsafe5 = unsafe6;
+                                                unsafe5.putLong(obj8, j, zzkx.zze(bArr13, i39));
+                                                zzkwVar10 = zzkwVar15;
+                                                bArr9 = bArr13;
+                                                i39 += 8;
+                                                i42 = i7 | i56;
+                                                i40 = i38;
+                                                i43 = i50;
+                                                i41 = i8;
+                                                i44 = i6;
+                                                i38 = 0;
+                                                i45 = 1048575;
+                                                i37 = i2;
+                                                break;
                                             }
                                         case 6:
                                         case 13:
+                                            byte[] bArr14 = bArr9;
+                                            unsafe3 = unsafe5;
                                             zzkw zzkwVar16 = zzkwVar10;
-                                            byte[] bArr13 = bArr10;
-                                            unsafe3 = unsafe7;
-                                            obj3 = obj7;
-                                            i35 = i50;
-                                            i11 = i46;
-                                            i7 = i41;
-                                            if (i49 == 5) {
-                                                i39 |= i53;
-                                                unsafe3.putInt(obj3, j2, zzkx.zzd(bArr13, i36));
-                                                unsafe7 = unsafe3;
-                                                bArr10 = bArr13;
+                                            i8 = i49;
+                                            i38 = i53;
+                                            i6 = i44;
+                                            i7 = i42;
+                                            if (i52 == 5) {
+                                                i14 = i7 | i56;
+                                                unsafe3.putInt(obj8, j, zzkx.zzd(bArr14, i39));
                                                 zzkwVar10 = zzkwVar16;
-                                                i34 = i2;
-                                                i36 += 4;
+                                                unsafe5 = unsafe3;
+                                                bArr9 = bArr14;
+                                                i37 = i2;
+                                                i39 += 4;
                                                 break;
                                             }
+                                            obj3 = obj8;
                                             unsafe2 = unsafe3;
-                                            obj2 = obj3;
                                             bArr2 = bArr;
-                                            zzkwVar2 = zzkwVar;
-                                            unsafe = unsafe2;
-                                            i6 = i11;
                                             i4 = i3;
-                                            i8 = i39;
+                                            obj2 = obj3;
+                                            unsafe = unsafe2;
+                                            zzkwVar2 = zzkwVar;
+                                            i9 = i50;
                                             break;
                                         case 7:
+                                            byte[] bArr15 = bArr9;
+                                            unsafe3 = unsafe5;
                                             zzkw zzkwVar17 = zzkwVar10;
-                                            bArr4 = bArr10;
-                                            unsafe3 = unsafe7;
-                                            zzkwVar4 = zzkwVar17;
-                                            obj3 = obj7;
-                                            i35 = i50;
-                                            i11 = i46;
-                                            i7 = i41;
-                                            if (i49 == 0) {
-                                                i39 |= i53;
-                                                i36 = zzkx.zzc(bArr4, i36, zzkwVar4);
-                                                zzop.zzi(obj3, j2, zzkwVar4.zzb != 0);
+                                            i8 = i49;
+                                            i38 = i53;
+                                            i6 = i44;
+                                            i7 = i42;
+                                            if (i52 == 0) {
+                                                i13 = i7 | i56;
+                                                i39 = zzkx.zzc(bArr15, i39, zzkwVar17);
+                                                zzop.zzi(obj8, j, zzkwVar17.zzb != 0);
+                                                bArr4 = bArr15;
+                                                zzkwVar10 = zzkwVar17;
+                                                unsafe5 = unsafe3;
                                                 break;
                                             }
+                                            obj3 = obj8;
                                             unsafe2 = unsafe3;
-                                            obj2 = obj3;
                                             bArr2 = bArr;
-                                            zzkwVar2 = zzkwVar;
-                                            unsafe = unsafe2;
-                                            i6 = i11;
                                             i4 = i3;
-                                            i8 = i39;
+                                            obj2 = obj3;
+                                            unsafe = unsafe2;
+                                            zzkwVar2 = zzkwVar;
+                                            i9 = i50;
                                             break;
                                         case 8:
+                                            byte[] bArr16 = bArr9;
+                                            unsafe3 = unsafe5;
                                             zzkw zzkwVar18 = zzkwVar10;
-                                            bArr4 = bArr10;
-                                            unsafe3 = unsafe7;
-                                            zzkwVar4 = zzkwVar18;
-                                            obj3 = obj7;
-                                            i35 = i50;
-                                            i11 = i46;
-                                            i7 = i41;
-                                            if (i49 == 2) {
-                                                if ((i51 & C.BUFFER_FLAG_LAST_SAMPLE) == 0) {
-                                                    int zza4 = zzkx.zza(bArr4, i36, zzkwVar4);
-                                                    int i56 = zzkwVar4.zza;
-                                                    if (i56 < 0) {
+                                            i8 = i49;
+                                            i38 = i53;
+                                            i6 = i44;
+                                            i7 = i42;
+                                            if (i52 == 2) {
+                                                if ((i54 & C.BUFFER_FLAG_LAST_SAMPLE) == 0) {
+                                                    i39 = zzkx.zza(bArr16, i39, zzkwVar18);
+                                                    int i59 = zzkwVar18.zza;
+                                                    if (i59 < 0) {
                                                         throw new zzmr("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
                                                     }
-                                                    int i57 = i39 | i53;
-                                                    if (i56 != 0) {
-                                                        zzkwVar4.zzc = new String(bArr4, zza4, i56, zzmp.zza);
-                                                        zza4 += i56;
+                                                    i14 = i7 | i56;
+                                                    if (i59 != 0) {
+                                                        zzkwVar18.zzc = new String(bArr16, i39, i59, zzmp.zza);
+                                                        i39 += i59;
                                                     } else {
-                                                        zzkwVar4.zzc = "";
+                                                        zzkwVar18.zzc = "";
                                                     }
-                                                    i36 = zza4;
-                                                    i39 = i57;
                                                 } else {
-                                                    i36 = zzkx.zzf(bArr4, i36, zzkwVar4);
-                                                    i39 |= i53;
+                                                    i39 = zzkx.zzf(bArr16, i39, zzkwVar18);
+                                                    i14 = i7 | i56;
                                                 }
-                                                unsafe3.putObject(obj3, j2, zzkwVar4.zzc);
+                                                unsafe3.putObject(obj8, j, zzkwVar18.zzc);
+                                                zzkwVar10 = zzkwVar18;
+                                                unsafe5 = unsafe3;
+                                                bArr9 = bArr16;
+                                                i37 = i2;
                                                 break;
                                             }
+                                            obj3 = obj8;
                                             unsafe2 = unsafe3;
-                                            obj2 = obj3;
                                             bArr2 = bArr;
-                                            zzkwVar2 = zzkwVar;
-                                            unsafe = unsafe2;
-                                            i6 = i11;
                                             i4 = i3;
-                                            i8 = i39;
+                                            obj2 = obj3;
+                                            unsafe = unsafe2;
+                                            zzkwVar2 = zzkwVar;
+                                            i9 = i50;
                                             break;
                                         case 9:
-                                            obj4 = obj7;
-                                            i13 = i46;
-                                            i35 = i50;
-                                            if (i49 != 2) {
-                                                i11 = i13;
-                                                i7 = i41;
-                                                obj2 = obj4;
-                                                unsafe2 = unsafe7;
+                                            obj4 = obj8;
+                                            int i60 = i42;
+                                            i8 = i49;
+                                            i38 = i53;
+                                            i6 = i44;
+                                            if (i52 != 2) {
+                                                i7 = i60;
+                                                unsafe2 = unsafe5;
+                                                obj3 = obj4;
                                                 bArr2 = bArr;
-                                                zzkwVar2 = zzkwVar;
-                                                unsafe = unsafe2;
-                                                i6 = i11;
                                                 i4 = i3;
-                                                i8 = i39;
+                                                obj2 = obj3;
+                                                unsafe = unsafe2;
+                                                zzkwVar2 = zzkwVar;
+                                                i9 = i50;
                                                 break;
                                             } else {
-                                                i39 |= i53;
-                                                Unsafe unsafe9 = unsafe7;
-                                                Object zzs = zznpVar.zzs(obj4, i35);
-                                                byte[] bArr14 = bArr10;
+                                                i42 = i60 | i56;
+                                                Unsafe unsafe7 = unsafe5;
+                                                Object zzs = zznpVar.zzs(obj4, i38);
+                                                byte[] bArr17 = bArr9;
                                                 zzkw zzkwVar19 = zzkwVar10;
-                                                int zzj = zzkx.zzj(zzs, zznpVar.zzp(i35), bArr14, i36, i2, zzkwVar19);
-                                                zznpVar.zzt(obj4, i35, zzs);
-                                                unsafe7 = unsafe9;
-                                                bArr10 = bArr14;
+                                                int zzj = zzkx.zzj(zzs, zznpVar.zzp(i38), bArr17, i39, i2, zzkwVar19);
+                                                zznpVar.zzt(obj4, i38, zzs);
                                                 zzkwVar10 = zzkwVar19;
-                                                i34 = i2;
-                                                i36 = zzj;
+                                                unsafe5 = unsafe7;
+                                                bArr9 = bArr17;
+                                                i37 = i2;
+                                                i39 = zzj;
                                                 break;
                                             }
                                         case 10:
-                                            obj4 = obj7;
-                                            i13 = i46;
-                                            i35 = i50;
-                                            if (i49 == 2) {
-                                                i39 |= i53;
-                                                i36 = zzkx.zzg(bArr10, i36, zzkwVar10);
-                                                unsafe7.putObject(obj4, j2, zzkwVar10.zzc);
+                                            obj4 = obj8;
+                                            i15 = i42;
+                                            i8 = i49;
+                                            i38 = i53;
+                                            i6 = i44;
+                                            if (i52 == 2) {
+                                                i15 |= i56;
+                                                i39 = zzkx.zzg(bArr9, i39, zzkwVar10);
+                                                unsafe5.putObject(obj4, j, zzkwVar10.zzc);
                                                 break;
                                             }
-                                            i11 = i13;
-                                            i7 = i41;
-                                            obj2 = obj4;
-                                            unsafe2 = unsafe7;
+                                            unsafe2 = unsafe5;
+                                            i7 = i15;
+                                            obj3 = obj4;
                                             bArr2 = bArr;
-                                            zzkwVar2 = zzkwVar;
-                                            unsafe = unsafe2;
-                                            i6 = i11;
                                             i4 = i3;
-                                            i8 = i39;
+                                            obj2 = obj3;
+                                            unsafe = unsafe2;
+                                            zzkwVar2 = zzkwVar;
+                                            i9 = i50;
                                             break;
                                         case 12:
-                                            obj4 = obj7;
-                                            i13 = i46;
-                                            i35 = i50;
-                                            if (i49 == 0) {
-                                                i36 = zzkx.zza(bArr10, i36, zzkwVar10);
-                                                int i58 = zzkwVar10.zza;
-                                                zzmk zzr = zznpVar.zzr(i35);
-                                                if ((i51 & Integer.MIN_VALUE) == 0 || zzr == null || zzr.zza(i58)) {
-                                                    i39 |= i53;
-                                                    unsafe7.putInt(obj4, j2, i58);
+                                            obj4 = obj8;
+                                            i15 = i42;
+                                            i8 = i49;
+                                            i38 = i53;
+                                            i6 = i44;
+                                            if (i52 == 0) {
+                                                i39 = zzkx.zza(bArr9, i39, zzkwVar10);
+                                                int i61 = zzkwVar10.zza;
+                                                zzmk zzr = zznpVar.zzr(i38);
+                                                if ((i54 & Integer.MIN_VALUE) == 0 || zzr == null || zzr.zza(i61)) {
+                                                    i15 |= i56;
+                                                    unsafe5.putInt(obj4, j, i61);
                                                     break;
                                                 } else {
-                                                    zzg(obj4).zzk(i13, Long.valueOf(i58));
+                                                    zzg(obj4).zzk(i8, Long.valueOf(i61));
                                                     break;
                                                 }
                                             }
-                                            i11 = i13;
-                                            i7 = i41;
-                                            obj2 = obj4;
-                                            unsafe2 = unsafe7;
+                                            unsafe2 = unsafe5;
+                                            i7 = i15;
+                                            obj3 = obj4;
                                             bArr2 = bArr;
-                                            zzkwVar2 = zzkwVar;
-                                            unsafe = unsafe2;
-                                            i6 = i11;
                                             i4 = i3;
-                                            i8 = i39;
+                                            obj2 = obj3;
+                                            unsafe = unsafe2;
+                                            zzkwVar2 = zzkwVar;
+                                            i9 = i50;
                                             break;
                                         case 15:
-                                            obj4 = obj7;
-                                            i13 = i46;
-                                            i35 = i50;
-                                            if (i49 == 0) {
-                                                i39 |= i53;
-                                                i36 = zzkx.zza(bArr10, i36, zzkwVar10);
-                                                unsafe7.putInt(obj4, j2, zzlj.zzb(zzkwVar10.zza));
+                                            obj4 = obj8;
+                                            i15 = i42;
+                                            i8 = i49;
+                                            i38 = i53;
+                                            i6 = i44;
+                                            if (i52 == 0) {
+                                                i15 |= i56;
+                                                i39 = zzkx.zza(bArr9, i39, zzkwVar10);
+                                                unsafe5.putInt(obj4, j, zzlj.zzb(zzkwVar10.zza));
                                                 break;
                                             }
-                                            i11 = i13;
-                                            i7 = i41;
-                                            obj2 = obj4;
-                                            unsafe2 = unsafe7;
+                                            unsafe2 = unsafe5;
+                                            i7 = i15;
+                                            obj3 = obj4;
                                             bArr2 = bArr;
-                                            zzkwVar2 = zzkwVar;
-                                            unsafe = unsafe2;
-                                            i6 = i11;
                                             i4 = i3;
-                                            i8 = i39;
+                                            obj2 = obj3;
+                                            unsafe = unsafe2;
+                                            zzkwVar2 = zzkwVar;
+                                            i9 = i50;
                                             break;
                                         case 16:
-                                            if (i49 != 0) {
-                                                i35 = i50;
-                                                unsafe2 = unsafe7;
-                                                obj2 = obj7;
-                                                i11 = i46;
-                                                i7 = i41;
+                                            if (i52 != 0) {
+                                                i8 = i49;
+                                                i38 = i53;
+                                                i6 = i44;
+                                                i7 = i42;
+                                                unsafe2 = unsafe5;
+                                                obj3 = obj8;
                                                 bArr2 = bArr;
-                                                zzkwVar2 = zzkwVar;
-                                                unsafe = unsafe2;
-                                                i6 = i11;
                                                 i4 = i3;
-                                                i8 = i39;
+                                                obj2 = obj3;
+                                                unsafe = unsafe2;
+                                                zzkwVar2 = zzkwVar;
+                                                i9 = i50;
                                                 break;
                                             } else {
-                                                i39 |= i53;
-                                                int zzc2 = zzkx.zzc(bArr10, i36, zzkwVar10);
-                                                unsafe7.putLong(obj7, j2, zzlj.zzc(zzkwVar10.zzb));
-                                                i36 = zzc2;
-                                                i37 = i50;
-                                                i40 = i47;
-                                                i38 = i46;
-                                                i35 = 0;
-                                                i42 = 1048575;
-                                                i34 = i2;
+                                                i42 |= i56;
+                                                int zzc2 = zzkx.zzc(bArr9, i39, zzkwVar10);
+                                                unsafe5.putLong(obj8, j, zzlj.zzc(zzkwVar10.zzb));
+                                                i39 = zzc2;
+                                                i40 = i53;
+                                                i43 = i50;
+                                                i41 = i49;
+                                                i38 = 0;
+                                                i45 = 1048575;
+                                                i37 = i2;
+                                                break;
                                             }
                                         default:
                                             zzkw zzkwVar20 = zzkwVar10;
-                                            byte[] bArr15 = bArr10;
-                                            unsafe2 = unsafe7;
-                                            obj2 = obj7;
-                                            i35 = i50;
-                                            i11 = i46;
-                                            i7 = i41;
-                                            if (i49 == 3) {
-                                                i39 |= i53;
-                                                Object zzs2 = zznpVar.zzs(obj2, i35);
-                                                int zzk = zzkx.zzk(zzs2, zznpVar.zzp(i35), bArr15, i36, i2, (i47 << 3) | 4, zzkwVar20);
-                                                zznpVar.zzt(obj2, i35, zzs2);
-                                                i34 = i2;
+                                            byte[] bArr18 = bArr9;
+                                            i8 = i49;
+                                            i38 = i53;
+                                            i6 = i44;
+                                            i7 = i42;
+                                            unsafe2 = unsafe5;
+                                            obj3 = obj8;
+                                            if (i52 != 3) {
+                                                bArr2 = bArr;
+                                                i4 = i3;
+                                                obj2 = obj3;
+                                                unsafe = unsafe2;
+                                                zzkwVar2 = zzkwVar;
+                                                i9 = i50;
+                                                break;
+                                            } else {
+                                                Object zzs2 = zznpVar.zzs(obj3, i38);
+                                                int zzk = zzkx.zzk(zzs2, zznpVar.zzp(i38), bArr18, i39, i2, (i50 << 3) | 4, zzkwVar20);
+                                                zznpVar.zzt(obj3, i38, zzs2);
+                                                bArr9 = bArr;
                                                 zzkwVar10 = zzkwVar;
-                                                i36 = zzk;
-                                                unsafe7 = unsafe2;
-                                                i37 = i35;
-                                                i40 = i47;
-                                                obj7 = obj2;
-                                                i41 = i7;
-                                                i38 = i11;
-                                                i35 = 0;
-                                                i42 = 1048575;
-                                                bArr10 = bArr;
+                                                i39 = zzk;
+                                                i40 = i38;
+                                                i43 = i50;
+                                                i41 = i8;
+                                                obj8 = obj3;
+                                                unsafe5 = unsafe2;
+                                                i44 = i6;
+                                                i38 = 0;
+                                                i45 = 1048575;
+                                                i42 = i7 | i56;
+                                                i37 = i2;
+                                                break;
                                             }
-                                            bArr2 = bArr;
-                                            zzkwVar2 = zzkwVar;
-                                            unsafe = unsafe2;
-                                            i6 = i11;
-                                            i4 = i3;
-                                            i8 = i39;
-                                            break;
                                     }
                                 } else {
-                                    Unsafe unsafe10 = unsafe7;
+                                    Unsafe unsafe8 = unsafe5;
+                                    obj2 = obj8;
                                     str = "Failed to parse the message.";
-                                    i35 = i50;
-                                    obj2 = obj7;
+                                    i38 = i53;
                                     if (zzz != 27) {
-                                        i7 = i41;
-                                        int i59 = i36;
-                                        int i60 = i46;
-                                        i8 = i39;
-                                        i14 = i47;
+                                        i7 = i42;
+                                        zzkw zzkwVar21 = zzkwVar;
+                                        Unsafe unsafe9 = unsafe8;
+                                        i6 = i44;
+                                        i16 = i50;
                                         if (zzz <= 49) {
-                                            long j3 = i51;
-                                            zzmo zzmoVar2 = (zzmo) unsafe10.getObject(obj2, j2);
-                                            if (zzmoVar2.zza()) {
-                                                j = j3;
-                                            } else {
+                                            long j2 = i54;
+                                            zzmo zzmoVar2 = (zzmo) unsafe9.getObject(obj2, j);
+                                            if (!zzmoVar2.zza()) {
                                                 int size = zzmoVar2.size();
-                                                j = j3;
                                                 zzmoVar2 = zzmoVar2.zzg(size + size);
-                                                unsafe10.putObject(obj2, j2, zzmoVar2);
+                                                unsafe9.putObject(obj2, j, zzmoVar2);
                                             }
-                                            zzmo zzmoVar3 = zzmoVar2;
                                             switch (zzz) {
                                                 case 18:
                                                 case 35:
-                                                    i22 = i60;
-                                                    i23 = i59;
-                                                    unsafe6 = unsafe10;
-                                                    bArr8 = bArr;
-                                                    zzkwVar9 = zzkwVar;
-                                                    if (i49 != 2) {
-                                                        if (i49 == 1) {
-                                                            i24 = i23 + 8;
-                                                            int i61 = zzkx.zza;
+                                                    bArr5 = bArr;
+                                                    unsafe4 = unsafe9;
+                                                    zzkwVar4 = zzkwVar21;
+                                                    i8 = i49;
+                                                    zzmo zzmoVar3 = zzmoVar2;
+                                                    i17 = i39;
+                                                    if (i52 != 2) {
+                                                        if (i52 == 1) {
+                                                            i18 = i17 + 8;
+                                                            int i62 = zzkx.zza;
                                                             zzlo zzloVar = (zzlo) zzmoVar3;
-                                                            zzloVar.zzf(Double.longBitsToDouble(zzkx.zze(bArr8, i23)));
-                                                            while (i24 < i2) {
-                                                                int zza5 = zzkx.zza(bArr8, i24, zzkwVar9);
-                                                                if (i22 == zzkwVar9.zza) {
-                                                                    zzloVar.zzf(Double.longBitsToDouble(zzkx.zze(bArr8, zza5)));
-                                                                    i24 = zza5 + 8;
+                                                            zzloVar.zzf(Double.longBitsToDouble(zzkx.zze(bArr5, i17)));
+                                                            while (i18 < i2) {
+                                                                int zza5 = zzkx.zza(bArr5, i18, zzkwVar4);
+                                                                if (i8 == zzkwVar4.zza) {
+                                                                    zzloVar.zzf(Double.longBitsToDouble(zzkx.zze(bArr5, zza5)));
+                                                                    i18 = zza5 + 8;
+                                                                } else {
+                                                                    zza2 = i18;
+                                                                    i19 = i17;
+                                                                    zzkwVar21 = zzkwVar4;
+                                                                    bArr6 = bArr5;
                                                                 }
                                                             }
+                                                            zza2 = i18;
+                                                            i19 = i17;
+                                                            zzkwVar21 = zzkwVar4;
+                                                            bArr6 = bArr5;
                                                         }
-                                                        i25 = i23;
-                                                        bArr9 = bArr8;
-                                                        i24 = i25;
+                                                        i19 = i17;
+                                                        zzkwVar21 = zzkwVar4;
+                                                        bArr6 = bArr5;
+                                                        zza2 = i19;
                                                         break;
                                                     } else {
-                                                        int i62 = zzkx.zza;
+                                                        int i63 = zzkx.zza;
                                                         zzlo zzloVar2 = (zzlo) zzmoVar3;
-                                                        i24 = zzkx.zza(bArr8, i23, zzkwVar9);
-                                                        int i63 = zzkwVar9.zza;
-                                                        int i64 = i24 + i63;
-                                                        if (i64 <= bArr8.length) {
-                                                            zzloVar2.zzh(zzloVar2.size() + (i63 / 8));
-                                                            while (i24 < i64) {
-                                                                zzloVar2.zzf(Double.longBitsToDouble(zzkx.zze(bArr8, i24)));
-                                                                i24 += 8;
+                                                        zza2 = zzkx.zza(bArr5, i17, zzkwVar4);
+                                                        int i64 = zzkwVar4.zza;
+                                                        int i65 = zza2 + i64;
+                                                        if (i65 <= bArr5.length) {
+                                                            zzloVar2.zzh(zzloVar2.size() + (i64 / 8));
+                                                            while (zza2 < i65) {
+                                                                zzloVar2.zzf(Double.longBitsToDouble(zzkx.zze(bArr5, zza2)));
+                                                                zza2 += 8;
                                                             }
-                                                            if (i24 != i64) {
+                                                            if (zza2 != i65) {
                                                                 throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                             }
+                                                            i19 = i17;
+                                                            zzkwVar21 = zzkwVar4;
+                                                            bArr6 = bArr5;
+                                                            break;
                                                         } else {
                                                             throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                         }
                                                     }
-                                                    i25 = i23;
-                                                    bArr9 = bArr8;
-                                                    break;
                                                 case 19:
                                                 case 36:
-                                                    i22 = i60;
-                                                    i23 = i59;
-                                                    unsafe6 = unsafe10;
-                                                    bArr8 = bArr;
-                                                    zzkwVar9 = zzkwVar;
-                                                    if (i49 != 2) {
-                                                        if (i49 == 5) {
-                                                            i24 = i23 + 4;
-                                                            int i65 = zzkx.zza;
-                                                            zzly zzlyVar = (zzly) zzmoVar3;
-                                                            zzlyVar.zzf(Float.intBitsToFloat(zzkx.zzd(bArr8, i23)));
-                                                            while (i24 < i2) {
-                                                                int zza6 = zzkx.zza(bArr8, i24, zzkwVar9);
-                                                                if (i22 == zzkwVar9.zza) {
-                                                                    zzlyVar.zzf(Float.intBitsToFloat(zzkx.zzd(bArr8, zza6)));
-                                                                    i24 = zza6 + 4;
+                                                    bArr5 = bArr;
+                                                    unsafe4 = unsafe9;
+                                                    zzkwVar4 = zzkwVar21;
+                                                    i8 = i49;
+                                                    zzmo zzmoVar4 = zzmoVar2;
+                                                    i17 = i39;
+                                                    if (i52 != 2) {
+                                                        if (i52 == 5) {
+                                                            i18 = i17 + 4;
+                                                            int i66 = zzkx.zza;
+                                                            zzly zzlyVar = (zzly) zzmoVar4;
+                                                            zzlyVar.zzf(Float.intBitsToFloat(zzkx.zzd(bArr5, i17)));
+                                                            while (i18 < i2) {
+                                                                int zza6 = zzkx.zza(bArr5, i18, zzkwVar4);
+                                                                if (i8 == zzkwVar4.zza) {
+                                                                    zzlyVar.zzf(Float.intBitsToFloat(zzkx.zzd(bArr5, zza6)));
+                                                                    i18 = zza6 + 4;
+                                                                } else {
+                                                                    zza2 = i18;
+                                                                    i19 = i17;
+                                                                    zzkwVar21 = zzkwVar4;
+                                                                    bArr6 = bArr5;
                                                                 }
                                                             }
+                                                            zza2 = i18;
+                                                            i19 = i17;
+                                                            zzkwVar21 = zzkwVar4;
+                                                            bArr6 = bArr5;
                                                         }
-                                                        i25 = i23;
-                                                        bArr9 = bArr8;
-                                                        i24 = i25;
+                                                        i19 = i17;
+                                                        zzkwVar21 = zzkwVar4;
+                                                        bArr6 = bArr5;
+                                                        zza2 = i19;
                                                         break;
                                                     } else {
-                                                        int i66 = zzkx.zza;
-                                                        zzly zzlyVar2 = (zzly) zzmoVar3;
-                                                        i24 = zzkx.zza(bArr8, i23, zzkwVar9);
-                                                        int i67 = zzkwVar9.zza;
-                                                        int i68 = i24 + i67;
-                                                        if (i68 <= bArr8.length) {
-                                                            zzlyVar2.zzh(zzlyVar2.size() + (i67 / 4));
-                                                            while (i24 < i68) {
-                                                                zzlyVar2.zzf(Float.intBitsToFloat(zzkx.zzd(bArr8, i24)));
-                                                                i24 += 4;
+                                                        int i67 = zzkx.zza;
+                                                        zzly zzlyVar2 = (zzly) zzmoVar4;
+                                                        zza2 = zzkx.zza(bArr5, i17, zzkwVar4);
+                                                        int i68 = zzkwVar4.zza;
+                                                        int i69 = zza2 + i68;
+                                                        if (i69 <= bArr5.length) {
+                                                            zzlyVar2.zzh(zzlyVar2.size() + (i68 / 4));
+                                                            while (zza2 < i69) {
+                                                                zzlyVar2.zzf(Float.intBitsToFloat(zzkx.zzd(bArr5, zza2)));
+                                                                zza2 += 4;
                                                             }
-                                                            if (i24 != i68) {
+                                                            if (zza2 != i69) {
                                                                 throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                             }
+                                                            i19 = i17;
+                                                            zzkwVar21 = zzkwVar4;
+                                                            bArr6 = bArr5;
+                                                            break;
                                                         } else {
                                                             throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                         }
                                                     }
-                                                    i25 = i23;
-                                                    bArr9 = bArr8;
-                                                    break;
                                                 case 20:
                                                 case 21:
                                                 case 37:
                                                 case 38:
-                                                    i22 = i60;
-                                                    i23 = i59;
-                                                    unsafe6 = unsafe10;
-                                                    bArr8 = bArr;
-                                                    zzkwVar9 = zzkwVar;
-                                                    if (i49 != 2) {
-                                                        if (i49 == 0) {
-                                                            int i69 = zzkx.zza;
-                                                            zzna zznaVar = (zzna) zzmoVar3;
-                                                            i24 = zzkx.zzc(bArr8, i23, zzkwVar9);
-                                                            zznaVar.zzf(zzkwVar9.zzb);
-                                                            while (i24 < i2) {
-                                                                int zza7 = zzkx.zza(bArr8, i24, zzkwVar9);
-                                                                if (i22 == zzkwVar9.zza) {
-                                                                    i24 = zzkx.zzc(bArr8, zza7, zzkwVar9);
-                                                                    zznaVar.zzf(zzkwVar9.zzb);
+                                                    bArr5 = bArr;
+                                                    unsafe4 = unsafe9;
+                                                    zzkwVar4 = zzkwVar21;
+                                                    i8 = i49;
+                                                    zzmo zzmoVar5 = zzmoVar2;
+                                                    i17 = i39;
+                                                    if (i52 != 2) {
+                                                        if (i52 == 0) {
+                                                            int i70 = zzkx.zza;
+                                                            zzna zznaVar = (zzna) zzmoVar5;
+                                                            zza2 = zzkx.zzc(bArr5, i17, zzkwVar4);
+                                                            zznaVar.zzf(zzkwVar4.zzb);
+                                                            while (zza2 < i2) {
+                                                                int zza7 = zzkx.zza(bArr5, zza2, zzkwVar4);
+                                                                if (i8 == zzkwVar4.zza) {
+                                                                    zza2 = zzkx.zzc(bArr5, zza7, zzkwVar4);
+                                                                    zznaVar.zzf(zzkwVar4.zzb);
                                                                 }
                                                             }
                                                         }
-                                                        i25 = i23;
-                                                        bArr9 = bArr8;
-                                                        i24 = i25;
+                                                        i19 = i17;
+                                                        zzkwVar21 = zzkwVar4;
+                                                        bArr6 = bArr5;
+                                                        zza2 = i19;
                                                         break;
                                                     } else {
-                                                        int i70 = zzkx.zza;
-                                                        zzna zznaVar2 = (zzna) zzmoVar3;
-                                                        i24 = zzkx.zza(bArr8, i23, zzkwVar9);
-                                                        int i71 = zzkwVar9.zza + i24;
-                                                        while (i24 < i71) {
-                                                            i24 = zzkx.zzc(bArr8, i24, zzkwVar9);
-                                                            zznaVar2.zzf(zzkwVar9.zzb);
+                                                        int i71 = zzkx.zza;
+                                                        zzna zznaVar2 = (zzna) zzmoVar5;
+                                                        zza2 = zzkx.zza(bArr5, i17, zzkwVar4);
+                                                        int i72 = zzkwVar4.zza + zza2;
+                                                        while (zza2 < i72) {
+                                                            zza2 = zzkx.zzc(bArr5, zza2, zzkwVar4);
+                                                            zznaVar2.zzf(zzkwVar4.zzb);
                                                         }
-                                                        if (i24 != i71) {
+                                                        if (zza2 != i72) {
                                                             throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                         }
                                                     }
-                                                    i25 = i23;
-                                                    bArr9 = bArr8;
+                                                    i19 = i17;
+                                                    zzkwVar21 = zzkwVar4;
+                                                    bArr6 = bArr5;
                                                     break;
                                                 case 22:
                                                 case 29:
                                                 case 39:
                                                 case 43:
-                                                    unsafe6 = unsafe10;
-                                                    bArr8 = bArr;
-                                                    zzkwVar9 = zzkwVar;
-                                                    if (i49 != 2) {
-                                                        if (i49 != 0) {
-                                                            i22 = i60;
-                                                            i23 = i59;
-                                                            i25 = i23;
-                                                            bArr9 = bArr8;
-                                                            i24 = i25;
-                                                            break;
-                                                        } else {
-                                                            i23 = i59;
-                                                            zzl = zzkx.zzl(i60, bArr8, i23, i2, zzmoVar3, zzkwVar9);
-                                                            i22 = i60;
-                                                            i24 = zzl;
-                                                            i25 = i23;
-                                                            bArr9 = bArr8;
+                                                    bArr5 = bArr;
+                                                    unsafe4 = unsafe9;
+                                                    zzkwVar4 = zzkwVar21;
+                                                    i8 = i49;
+                                                    zzmo zzmoVar6 = zzmoVar2;
+                                                    i17 = i39;
+                                                    if (i52 != 2) {
+                                                        if (i52 == 0) {
+                                                            zza2 = zzkx.zzl(i8, bArr5, i17, i2, zzmoVar6, zzkwVar4);
+                                                            i19 = i17;
+                                                            zzkwVar21 = zzkwVar4;
+                                                            bArr6 = bArr5;
                                                         }
+                                                        i19 = i17;
+                                                        zzkwVar21 = zzkwVar4;
+                                                        bArr6 = bArr5;
+                                                        zza2 = i19;
+                                                        break;
                                                     } else {
-                                                        i24 = zzkx.zzm(bArr8, i59, zzmoVar3, zzkwVar9);
-                                                        i25 = i59;
-                                                        i22 = i60;
-                                                        bArr9 = bArr8;
+                                                        i18 = zzkx.zzm(bArr5, i17, zzmoVar6, zzkwVar4);
+                                                        zza2 = i18;
+                                                        i19 = i17;
+                                                        zzkwVar21 = zzkwVar4;
+                                                        bArr6 = bArr5;
                                                         break;
                                                     }
                                                 case 23:
                                                 case 32:
                                                 case 40:
                                                 case 46:
-                                                    unsafe6 = unsafe10;
-                                                    bArr8 = bArr;
-                                                    zzkwVar9 = zzkwVar;
-                                                    if (i49 != 2) {
-                                                        if (i49 == 1) {
-                                                            i24 = i59 + 8;
-                                                            int i72 = zzkx.zza;
-                                                            zzna zznaVar3 = (zzna) zzmoVar3;
-                                                            zznaVar3.zzf(zzkx.zze(bArr8, i59));
-                                                            while (i24 < i2) {
-                                                                int zza8 = zzkx.zza(bArr8, i24, zzkwVar9);
-                                                                if (i60 == zzkwVar9.zza) {
-                                                                    zznaVar3.zzf(zzkx.zze(bArr8, zza8));
-                                                                    i24 = zza8 + 8;
+                                                    bArr5 = bArr;
+                                                    unsafe4 = unsafe9;
+                                                    zzkwVar4 = zzkwVar21;
+                                                    int i73 = i16;
+                                                    i8 = i49;
+                                                    zzmo zzmoVar7 = zzmoVar2;
+                                                    i17 = i39;
+                                                    if (i52 != 2) {
+                                                        i16 = i73;
+                                                        if (i52 == 1) {
+                                                            i18 = i17 + 8;
+                                                            int i74 = zzkx.zza;
+                                                            zzna zznaVar3 = (zzna) zzmoVar7;
+                                                            zznaVar3.zzf(zzkx.zze(bArr5, i17));
+                                                            while (i18 < i2) {
+                                                                int zza8 = zzkx.zza(bArr5, i18, zzkwVar4);
+                                                                if (i8 == zzkwVar4.zza) {
+                                                                    zznaVar3.zzf(zzkx.zze(bArr5, zza8));
+                                                                    i18 = zza8 + 8;
+                                                                } else {
+                                                                    zza2 = i18;
+                                                                    i19 = i17;
+                                                                    zzkwVar21 = zzkwVar4;
+                                                                    bArr6 = bArr5;
                                                                 }
                                                             }
+                                                            zza2 = i18;
+                                                            i19 = i17;
+                                                            zzkwVar21 = zzkwVar4;
+                                                            bArr6 = bArr5;
                                                         }
-                                                        i25 = i59;
-                                                        i22 = i60;
-                                                        bArr9 = bArr8;
-                                                        i24 = i25;
+                                                        i19 = i17;
+                                                        zzkwVar21 = zzkwVar4;
+                                                        bArr6 = bArr5;
+                                                        zza2 = i19;
                                                         break;
                                                     } else {
-                                                        int i73 = zzkx.zza;
-                                                        zzna zznaVar4 = (zzna) zzmoVar3;
-                                                        i24 = zzkx.zza(bArr8, i59, zzkwVar9);
-                                                        int i74 = zzkwVar9.zza;
-                                                        int i75 = i24 + i74;
-                                                        if (i75 <= bArr8.length) {
-                                                            zznaVar4.zzh(zznaVar4.size() + (i74 / 8));
-                                                            while (i24 < i75) {
-                                                                zznaVar4.zzf(zzkx.zze(bArr8, i24));
-                                                                i24 += 8;
+                                                        int i75 = zzkx.zza;
+                                                        zzna zznaVar4 = (zzna) zzmoVar7;
+                                                        zza2 = zzkx.zza(bArr5, i17, zzkwVar4);
+                                                        int i76 = zzkwVar4.zza;
+                                                        int i77 = zza2 + i76;
+                                                        if (i77 <= bArr5.length) {
+                                                            zznaVar4.zzh(zznaVar4.size() + (i76 / 8));
+                                                            while (zza2 < i77) {
+                                                                zznaVar4.zzf(zzkx.zze(bArr5, zza2));
+                                                                zza2 += 8;
+                                                                i73 = i73;
                                                             }
-                                                            if (i24 != i75) {
+                                                            i16 = i73;
+                                                            if (zza2 != i77) {
                                                                 throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                             }
+                                                            i19 = i17;
+                                                            zzkwVar21 = zzkwVar4;
+                                                            bArr6 = bArr5;
+                                                            break;
                                                         } else {
                                                             throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                         }
                                                     }
-                                                    i25 = i59;
-                                                    i22 = i60;
-                                                    bArr9 = bArr8;
-                                                    break;
                                                 case 24:
                                                 case 31:
                                                 case 41:
                                                 case 45:
-                                                    unsafe6 = unsafe10;
-                                                    bArr8 = bArr;
-                                                    zzkwVar9 = zzkwVar;
-                                                    if (i49 != 2) {
-                                                        if (i49 == 5) {
-                                                            i24 = i59 + 4;
-                                                            int i76 = zzkx.zza;
-                                                            zzmg zzmgVar = (zzmg) zzmoVar3;
-                                                            zzmgVar.zzh(zzkx.zzd(bArr8, i59));
-                                                            while (i24 < i2) {
-                                                                int zza9 = zzkx.zza(bArr8, i24, zzkwVar9);
-                                                                if (i60 == zzkwVar9.zza) {
-                                                                    zzmgVar.zzh(zzkx.zzd(bArr8, zza9));
-                                                                    i24 = zza9 + 4;
+                                                    bArr5 = bArr;
+                                                    unsafe4 = unsafe9;
+                                                    zzkwVar5 = zzkwVar21;
+                                                    i20 = i16;
+                                                    i8 = i49;
+                                                    zzmo zzmoVar8 = zzmoVar2;
+                                                    i21 = i39;
+                                                    if (i52 != 2) {
+                                                        if (i52 == 5) {
+                                                            int i78 = i21 + 4;
+                                                            int i79 = zzkx.zza;
+                                                            zzmg zzmgVar = (zzmg) zzmoVar8;
+                                                            zzmgVar.zzh(zzkx.zzd(bArr5, i21));
+                                                            while (i78 < i2) {
+                                                                int zza9 = zzkx.zza(bArr5, i78, zzkwVar5);
+                                                                if (i8 == zzkwVar5.zza) {
+                                                                    zzmgVar.zzh(zzkx.zzd(bArr5, zza9));
+                                                                    i78 = zza9 + 4;
+                                                                } else {
+                                                                    zza2 = i78;
                                                                 }
                                                             }
+                                                            zza2 = i78;
                                                         }
-                                                        i25 = i59;
-                                                        i22 = i60;
-                                                        bArr9 = bArr8;
-                                                        i24 = i25;
+                                                        zzkwVar21 = zzkwVar5;
+                                                        i16 = i20;
+                                                        i19 = i21;
+                                                        bArr6 = bArr5;
+                                                        zza2 = i19;
                                                         break;
                                                     } else {
-                                                        int i77 = zzkx.zza;
-                                                        zzmg zzmgVar2 = (zzmg) zzmoVar3;
-                                                        i24 = zzkx.zza(bArr8, i59, zzkwVar9);
-                                                        int i78 = zzkwVar9.zza;
-                                                        int i79 = i24 + i78;
-                                                        if (i79 <= bArr8.length) {
-                                                            zzmgVar2.zzi(zzmgVar2.size() + (i78 / 4));
-                                                            while (i24 < i79) {
-                                                                zzmgVar2.zzh(zzkx.zzd(bArr8, i24));
-                                                                i24 += 4;
+                                                        int i80 = zzkx.zza;
+                                                        zzmg zzmgVar2 = (zzmg) zzmoVar8;
+                                                        zza2 = zzkx.zza(bArr5, i21, zzkwVar5);
+                                                        int i81 = zzkwVar5.zza;
+                                                        int i82 = zza2 + i81;
+                                                        if (i82 <= bArr5.length) {
+                                                            zzmgVar2.zzi(zzmgVar2.size() + (i81 / 4));
+                                                            while (zza2 < i82) {
+                                                                zzmgVar2.zzh(zzkx.zzd(bArr5, zza2));
+                                                                zza2 += 4;
                                                             }
-                                                            if (i24 != i79) {
+                                                            if (zza2 != i82) {
                                                                 throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                             }
                                                         } else {
                                                             throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                         }
                                                     }
-                                                    i25 = i59;
-                                                    i22 = i60;
-                                                    bArr9 = bArr8;
+                                                    zzkwVar21 = zzkwVar5;
+                                                    i16 = i20;
+                                                    i19 = i21;
+                                                    bArr6 = bArr5;
                                                     break;
                                                 case 25:
                                                 case 42:
-                                                    unsafe6 = unsafe10;
-                                                    bArr8 = bArr;
-                                                    zzkwVar9 = zzkwVar;
-                                                    int i80 = i14;
-                                                    if (i49 != 2) {
-                                                        i14 = i80;
-                                                        if (i49 == 0) {
-                                                            int i81 = zzkx.zza;
-                                                            zzky zzkyVar = (zzky) zzmoVar3;
-                                                            i24 = zzkx.zzc(bArr8, i59, zzkwVar9);
-                                                            zzkyVar.zzf(zzkwVar9.zzb != 0);
-                                                            while (i24 < i2) {
-                                                                int zza10 = zzkx.zza(bArr8, i24, zzkwVar9);
-                                                                if (i60 == zzkwVar9.zza) {
-                                                                    i24 = zzkx.zzc(bArr8, zza10, zzkwVar9);
-                                                                    zzkyVar.zzf(zzkwVar9.zzb != 0);
+                                                    bArr5 = bArr;
+                                                    unsafe4 = unsafe9;
+                                                    zzkwVar5 = zzkwVar21;
+                                                    i20 = i16;
+                                                    i8 = i49;
+                                                    zzmo zzmoVar9 = zzmoVar2;
+                                                    i21 = i39;
+                                                    if (i52 != 2) {
+                                                        if (i52 == 0) {
+                                                            int i83 = zzkx.zza;
+                                                            zzky zzkyVar = (zzky) zzmoVar9;
+                                                            zza2 = zzkx.zzc(bArr5, i21, zzkwVar5);
+                                                            zzkyVar.zzf(zzkwVar5.zzb != 0);
+                                                            while (zza2 < i2) {
+                                                                int zza10 = zzkx.zza(bArr5, zza2, zzkwVar5);
+                                                                if (i8 == zzkwVar5.zza) {
+                                                                    zza2 = zzkx.zzc(bArr5, zza10, zzkwVar5);
+                                                                    zzkyVar.zzf(zzkwVar5.zzb != 0);
                                                                 }
                                                             }
                                                         }
-                                                        i25 = i59;
-                                                        i22 = i60;
-                                                        bArr9 = bArr8;
-                                                        i24 = i25;
+                                                        zzkwVar21 = zzkwVar5;
+                                                        i16 = i20;
+                                                        i19 = i21;
+                                                        bArr6 = bArr5;
+                                                        zza2 = i19;
                                                         break;
                                                     } else {
-                                                        int i82 = zzkx.zza;
-                                                        zzky zzkyVar2 = (zzky) zzmoVar3;
-                                                        i24 = zzkx.zza(bArr8, i59, zzkwVar9);
-                                                        int i83 = zzkwVar9.zza + i24;
-                                                        while (i24 < i83) {
-                                                            i24 = zzkx.zzc(bArr8, i24, zzkwVar9);
-                                                            int i84 = i80;
-                                                            zzkyVar2.zzf(zzkwVar9.zzb != 0);
-                                                            i80 = i84;
+                                                        int i84 = zzkx.zza;
+                                                        zzky zzkyVar2 = (zzky) zzmoVar9;
+                                                        zza2 = zzkx.zza(bArr5, i21, zzkwVar5);
+                                                        int i85 = zzkwVar5.zza + zza2;
+                                                        while (zza2 < i85) {
+                                                            zza2 = zzkx.zzc(bArr5, zza2, zzkwVar5);
+                                                            zzkyVar2.zzf(zzkwVar5.zzb != 0);
                                                         }
-                                                        i14 = i80;
-                                                        if (i24 != i83) {
+                                                        if (zza2 != i85) {
                                                             throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                         }
                                                     }
-                                                    i25 = i59;
-                                                    i22 = i60;
-                                                    bArr9 = bArr8;
+                                                    zzkwVar21 = zzkwVar5;
+                                                    i16 = i20;
+                                                    i19 = i21;
+                                                    bArr6 = bArr5;
                                                     break;
                                                 case 26:
-                                                    unsafe6 = unsafe10;
-                                                    bArr8 = bArr;
-                                                    zzkwVar9 = zzkwVar;
-                                                    i26 = i14;
-                                                    if (i49 != 2) {
-                                                        i14 = i26;
-                                                        i25 = i59;
-                                                        i22 = i60;
-                                                        bArr9 = bArr8;
-                                                        i24 = i25;
-                                                        break;
-                                                    } else {
-                                                        if ((j & 536870912) == 0) {
-                                                            zza3 = zzkx.zza(bArr8, i59, zzkwVar9);
-                                                            int i85 = zzkwVar9.zza;
-                                                            if (i85 < 0) {
+                                                    bArr5 = bArr;
+                                                    unsafe4 = unsafe9;
+                                                    zzkwVar5 = zzkwVar21;
+                                                    i20 = i16;
+                                                    i8 = i49;
+                                                    zzmo zzmoVar10 = zzmoVar2;
+                                                    i21 = i39;
+                                                    if (i52 == 2) {
+                                                        if ((j2 & 536870912) == 0) {
+                                                            zza2 = zzkx.zza(bArr5, i21, zzkwVar5);
+                                                            int i86 = zzkwVar5.zza;
+                                                            if (i86 < 0) {
                                                                 throw new zzmr("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
                                                             }
-                                                            if (i85 == 0) {
-                                                                obj6 = "";
-                                                                zzmoVar3.add(obj6);
-                                                                while (zza3 < i2) {
-                                                                    int zza11 = zzkx.zza(bArr8, zza3, zzkwVar9);
-                                                                    if (i60 == zzkwVar9.zza) {
-                                                                        zza3 = zzkx.zza(bArr8, zza11, zzkwVar9);
-                                                                        i85 = zzkwVar9.zza;
-                                                                        if (i85 < 0) {
+                                                            if (i86 == 0) {
+                                                                obj5 = "";
+                                                                zzmoVar10.add(obj5);
+                                                                while (zza2 < i2) {
+                                                                    int zza11 = zzkx.zza(bArr5, zza2, zzkwVar5);
+                                                                    if (i8 == zzkwVar5.zza) {
+                                                                        zza2 = zzkx.zza(bArr5, zza11, zzkwVar5);
+                                                                        i86 = zzkwVar5.zza;
+                                                                        if (i86 < 0) {
                                                                             throw new zzmr("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
                                                                         }
-                                                                        if (i85 == 0) {
-                                                                            zzmoVar3.add(obj6);
+                                                                        if (i86 == 0) {
+                                                                            zzmoVar10.add(obj5);
                                                                         } else {
-                                                                            zzmoVar3.add(new String(bArr8, zza3, i85, zzmp.zza));
-                                                                            zza3 += i85;
-                                                                            while (zza3 < i2) {
+                                                                            zzmoVar10.add(new String(bArr5, zza2, i86, zzmp.zza));
+                                                                            zza2 += i86;
+                                                                            while (zza2 < i2) {
                                                                             }
                                                                         }
                                                                     }
                                                                 }
                                                             } else {
-                                                                obj6 = "";
-                                                                zzmoVar3.add(new String(bArr8, zza3, i85, zzmp.zza));
-                                                                zza3 += i85;
-                                                                while (zza3 < i2) {
+                                                                obj5 = "";
+                                                                zzmoVar10.add(new String(bArr5, zza2, i86, zzmp.zza));
+                                                                zza2 += i86;
+                                                                while (zza2 < i2) {
                                                                 }
                                                             }
                                                         } else {
-                                                            zza3 = zzkx.zza(bArr8, i59, zzkwVar9);
-                                                            int i86 = zzkwVar9.zza;
-                                                            if (i86 < 0) {
+                                                            zza2 = zzkx.zza(bArr5, i21, zzkwVar5);
+                                                            int i87 = zzkwVar5.zza;
+                                                            if (i87 < 0) {
                                                                 throw new zzmr("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
                                                             }
-                                                            if (i86 == 0) {
-                                                                zzmoVar3.add("");
-                                                                while (zza3 < i2) {
-                                                                    int zza12 = zzkx.zza(bArr8, zza3, zzkwVar9);
-                                                                    if (i60 == zzkwVar9.zza) {
-                                                                        zza3 = zzkx.zza(bArr8, zza12, zzkwVar9);
-                                                                        int i87 = zzkwVar9.zza;
-                                                                        if (i87 < 0) {
+                                                            if (i87 == 0) {
+                                                                zzmoVar10.add("");
+                                                                while (zza2 < i2) {
+                                                                    int zza12 = zzkx.zza(bArr5, zza2, zzkwVar5);
+                                                                    if (i8 == zzkwVar5.zza) {
+                                                                        zza2 = zzkx.zza(bArr5, zza12, zzkwVar5);
+                                                                        int i88 = zzkwVar5.zza;
+                                                                        if (i88 < 0) {
                                                                             throw new zzmr("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
                                                                         }
-                                                                        if (i87 == 0) {
-                                                                            zzmoVar3.add("");
+                                                                        if (i88 == 0) {
+                                                                            zzmoVar10.add("");
                                                                         } else {
-                                                                            int i88 = zza3 + i87;
-                                                                            if (zzos.zza(bArr8, zza3, i88)) {
-                                                                                i27 = i88;
-                                                                                zzmoVar3.add(new String(bArr8, zza3, i87, zzmp.zza));
-                                                                                zza3 = i27;
-                                                                                while (zza3 < i2) {
+                                                                            int i89 = zza2 + i88;
+                                                                            if (zzos.zza(bArr5, zza2, i89)) {
+                                                                                i22 = i89;
+                                                                                zzmoVar10.add(new String(bArr5, zza2, i88, zzmp.zza));
+                                                                                zza2 = i22;
+                                                                                while (zza2 < i2) {
                                                                                 }
                                                                             } else {
                                                                                 throw new zzmr("Protocol message had invalid UTF-8.");
@@ -4311,89 +4378,96 @@ public final class zznp<T> implements zznx<T> {
                                                                     }
                                                                 }
                                                             } else {
-                                                                int i89 = zza3 + i86;
-                                                                if (zzos.zza(bArr8, zza3, i89)) {
-                                                                    i27 = i89;
-                                                                    zzmoVar3.add(new String(bArr8, zza3, i86, zzmp.zza));
-                                                                    zza3 = i27;
-                                                                    while (zza3 < i2) {
+                                                                int i90 = zza2 + i87;
+                                                                if (zzos.zza(bArr5, zza2, i90)) {
+                                                                    i22 = i90;
+                                                                    zzmoVar10.add(new String(bArr5, zza2, i87, zzmp.zza));
+                                                                    zza2 = i22;
+                                                                    while (zza2 < i2) {
                                                                     }
                                                                 } else {
                                                                     throw new zzmr("Protocol message had invalid UTF-8.");
                                                                 }
                                                             }
                                                         }
-                                                        i24 = zza3;
-                                                        i14 = i26;
-                                                        i25 = i59;
-                                                        i22 = i60;
-                                                        bArr9 = bArr8;
+                                                        zzkwVar21 = zzkwVar5;
+                                                        i16 = i20;
+                                                        i19 = i21;
+                                                        bArr6 = bArr5;
                                                         break;
                                                     }
+                                                    zzkwVar21 = zzkwVar5;
+                                                    i16 = i20;
+                                                    i19 = i21;
+                                                    bArr6 = bArr5;
+                                                    zza2 = i19;
+                                                    break;
                                                 case 27:
-                                                    unsafe6 = unsafe10;
-                                                    i28 = i60;
-                                                    i23 = i59;
-                                                    bArr8 = bArr;
-                                                    i26 = i14;
-                                                    zzkwVar9 = zzkwVar;
-                                                    if (i49 == 2) {
-                                                        int zzn = zzkx.zzn(zznpVar.zzp(i35), i28, bArr, i23, i2, zzmoVar3, zzkwVar9);
-                                                        i60 = i28;
-                                                        bArr8 = bArr;
-                                                        i59 = i23;
-                                                        i24 = zzn;
-                                                        zzkwVar9 = zzkwVar9;
-                                                        i14 = i26;
-                                                        i25 = i59;
-                                                        i22 = i60;
-                                                        bArr9 = bArr8;
+                                                    bArr5 = bArr;
+                                                    i23 = i49;
+                                                    unsafe4 = unsafe9;
+                                                    zzkwVar5 = zzkwVar21;
+                                                    i20 = i16;
+                                                    zzmo zzmoVar11 = zzmoVar2;
+                                                    i21 = i39;
+                                                    if (i52 == 2) {
+                                                        i8 = i23;
+                                                        int zzn = zzkx.zzn(zznpVar.zzp(i38), i8, bArr5, i21, i2, zzmoVar11, zzkwVar5);
+                                                        bArr5 = bArr5;
+                                                        i21 = i21;
+                                                        zza2 = zzn;
+                                                        zzkwVar21 = zzkwVar5;
+                                                        i16 = i20;
+                                                        i19 = i21;
+                                                        bArr6 = bArr5;
                                                         break;
                                                     }
-                                                    i22 = i28;
-                                                    i14 = i26;
-                                                    i25 = i23;
-                                                    bArr9 = bArr8;
-                                                    i24 = i25;
+                                                    i8 = i23;
+                                                    zzkwVar21 = zzkwVar5;
+                                                    i16 = i20;
+                                                    i19 = i21;
+                                                    bArr6 = bArr5;
+                                                    zza2 = i19;
                                                     break;
                                                 case 28:
-                                                    unsafe6 = unsafe10;
-                                                    i28 = i60;
-                                                    i23 = i59;
-                                                    bArr8 = bArr;
-                                                    i26 = i14;
-                                                    zzkwVar9 = zzkwVar;
-                                                    if (i49 == 2) {
-                                                        zzl = zzkx.zza(bArr8, i23, zzkwVar9);
-                                                        int i90 = zzkwVar9.zza;
-                                                        if (i90 >= 0) {
-                                                            if (i90 > bArr8.length - zzl) {
+                                                    bArr5 = bArr;
+                                                    i23 = i49;
+                                                    unsafe4 = unsafe9;
+                                                    zzkwVar5 = zzkwVar21;
+                                                    i20 = i16;
+                                                    zzmo zzmoVar12 = zzmoVar2;
+                                                    i21 = i39;
+                                                    if (i52 == 2) {
+                                                        zza2 = zzkx.zza(bArr5, i21, zzkwVar5);
+                                                        int i91 = zzkwVar5.zza;
+                                                        if (i91 >= 0) {
+                                                            if (i91 > bArr5.length - zza2) {
                                                                 throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                             }
-                                                            if (i90 == 0) {
-                                                                zzmoVar3.add(zzlh.zzb);
-                                                                while (zzl < i2) {
-                                                                    int zza13 = zzkx.zza(bArr8, zzl, zzkwVar9);
-                                                                    if (i28 != zzkwVar9.zza) {
-                                                                        i22 = i28;
-                                                                        i14 = i26;
-                                                                        i24 = zzl;
-                                                                        i25 = i23;
-                                                                        bArr9 = bArr8;
+                                                            if (i91 == 0) {
+                                                                zzmoVar12.add(zzlh.zzb);
+                                                                while (zza2 < i2) {
+                                                                    int zza13 = zzkx.zza(bArr5, zza2, zzkwVar5);
+                                                                    if (i23 != zzkwVar5.zza) {
+                                                                        i8 = i23;
+                                                                        zzkwVar21 = zzkwVar5;
+                                                                        i16 = i20;
+                                                                        i19 = i21;
+                                                                        bArr6 = bArr5;
                                                                         break;
                                                                     } else {
-                                                                        zzl = zzkx.zza(bArr8, zza13, zzkwVar9);
-                                                                        i90 = zzkwVar9.zza;
-                                                                        if (i90 >= 0) {
-                                                                            if (i90 > bArr8.length - zzl) {
+                                                                        zza2 = zzkx.zza(bArr5, zza13, zzkwVar5);
+                                                                        i91 = zzkwVar5.zza;
+                                                                        if (i91 >= 0) {
+                                                                            if (i91 > bArr5.length - zza2) {
                                                                                 throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                                             }
-                                                                            if (i90 == 0) {
-                                                                                zzmoVar3.add(zzlh.zzb);
+                                                                            if (i91 == 0) {
+                                                                                zzmoVar12.add(zzlh.zzb);
                                                                             } else {
-                                                                                zzmoVar3.add(zzlh.zzh(bArr8, zzl, i90));
-                                                                                zzl += i90;
-                                                                                while (zzl < i2) {
+                                                                                zzmoVar12.add(zzlh.zzh(bArr5, zza2, i91));
+                                                                                zza2 += i91;
+                                                                                while (zza2 < i2) {
                                                                                 }
                                                                             }
                                                                         } else {
@@ -4401,875 +4475,856 @@ public final class zznp<T> implements zznx<T> {
                                                                         }
                                                                     }
                                                                 }
-                                                                i22 = i28;
-                                                                i14 = i26;
-                                                                i24 = zzl;
-                                                                i25 = i23;
-                                                                bArr9 = bArr8;
+                                                                i8 = i23;
+                                                                zzkwVar21 = zzkwVar5;
+                                                                i16 = i20;
+                                                                i19 = i21;
+                                                                bArr6 = bArr5;
                                                             } else {
-                                                                zzmoVar3.add(zzlh.zzh(bArr8, zzl, i90));
-                                                                zzl += i90;
-                                                                while (zzl < i2) {
+                                                                zzmoVar12.add(zzlh.zzh(bArr5, zza2, i91));
+                                                                zza2 += i91;
+                                                                while (zza2 < i2) {
                                                                 }
-                                                                i22 = i28;
-                                                                i14 = i26;
-                                                                i24 = zzl;
-                                                                i25 = i23;
-                                                                bArr9 = bArr8;
+                                                                i8 = i23;
+                                                                zzkwVar21 = zzkwVar5;
+                                                                i16 = i20;
+                                                                i19 = i21;
+                                                                bArr6 = bArr5;
                                                             }
                                                         } else {
                                                             throw new zzmr("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
                                                         }
                                                     }
-                                                    i22 = i28;
-                                                    i14 = i26;
-                                                    i25 = i23;
-                                                    bArr9 = bArr8;
-                                                    i24 = i25;
+                                                    i8 = i23;
+                                                    zzkwVar21 = zzkwVar5;
+                                                    i16 = i20;
+                                                    i19 = i21;
+                                                    bArr6 = bArr5;
+                                                    zza2 = i19;
                                                     break;
                                                 case 30:
                                                 case 44:
-                                                    if (i49 != 2) {
-                                                        if (i49 != 0) {
-                                                            unsafe6 = unsafe10;
-                                                            i25 = i59;
-                                                            bArr9 = bArr;
-                                                            zzkwVar9 = zzkwVar;
-                                                            i22 = i60;
-                                                            i24 = i25;
+                                                    if (i52 != 2) {
+                                                        if (i52 != 0) {
+                                                            unsafe4 = unsafe9;
+                                                            bArr6 = bArr;
+                                                            i8 = i49;
+                                                            i19 = i39;
+                                                            zza2 = i19;
                                                             break;
                                                         } else {
-                                                            i29 = i60;
-                                                            i23 = i59;
-                                                            bArr8 = bArr;
-                                                            zzkwVar9 = zzkwVar;
-                                                            zzl2 = zzkx.zzl(i29, bArr8, i23, i2, zzmoVar3, zzkwVar9);
-                                                            zzmoVar = zzmoVar3;
+                                                            zzmo zzmoVar13 = zzmoVar2;
+                                                            bArr5 = bArr;
+                                                            i24 = i49;
+                                                            i21 = i39;
+                                                            zzkwVar6 = zzkwVar21;
+                                                            zzl = zzkx.zzl(i24, bArr5, i21, i2, zzmoVar13, zzkwVar6);
+                                                            zzmoVar = zzmoVar13;
                                                         }
                                                     } else {
-                                                        zzl2 = zzkx.zzm(bArr, i59, zzmoVar3, zzkwVar);
-                                                        i29 = i60;
-                                                        i23 = i59;
-                                                        bArr8 = bArr;
-                                                        zzmoVar = zzmoVar3;
-                                                        zzkwVar9 = zzkwVar;
+                                                        bArr5 = bArr;
+                                                        zzkwVar6 = zzkwVar21;
+                                                        zzl = zzkx.zzm(bArr, i39, zzmoVar2, zzkwVar21);
+                                                        i24 = i49;
+                                                        zzmoVar = zzmoVar2;
+                                                        i21 = i39;
                                                     }
-                                                    zzmk zzr2 = zznpVar.zzr(i35);
+                                                    zzmk zzr2 = zznpVar.zzr(i38);
                                                     zzoi zzoiVar = zznpVar.zzl;
-                                                    int i91 = zznz.zza;
+                                                    int i92 = zznz.zza;
                                                     if (zzr2 == null) {
-                                                        unsafe6 = unsafe10;
-                                                        i30 = zzl2;
-                                                        i31 = i14;
+                                                        i25 = zzl;
+                                                        unsafe4 = unsafe9;
+                                                        i26 = i16;
                                                     } else if (zzmoVar instanceof RandomAccess) {
                                                         int size2 = zzmoVar.size();
-                                                        i30 = zzl2;
-                                                        Object obj8 = null;
-                                                        int i92 = 0;
+                                                        i25 = zzl;
+                                                        Object obj9 = null;
                                                         int i93 = 0;
-                                                        while (i92 < size2) {
-                                                            Unsafe unsafe11 = unsafe10;
-                                                            int intValue = ((Integer) zzmoVar.get(i92)).intValue();
+                                                        int i94 = 0;
+                                                        while (i93 < size2) {
+                                                            Unsafe unsafe10 = unsafe9;
+                                                            int intValue = ((Integer) zzmoVar.get(i93)).intValue();
                                                             if (zzr2.zza(intValue)) {
-                                                                if (i92 != i93) {
-                                                                    zzmoVar.set(i93, Integer.valueOf(intValue));
+                                                                if (i93 != i94) {
+                                                                    zzmoVar.set(i94, Integer.valueOf(intValue));
                                                                 }
-                                                                i93++;
-                                                                i32 = i92;
-                                                                i33 = i14;
+                                                                i94++;
+                                                                i27 = i93;
+                                                                i28 = i16;
                                                             } else {
-                                                                i32 = i92;
-                                                                i33 = i14;
-                                                                obj8 = zznz.zzE(obj2, i33, intValue, obj8, zzoiVar);
+                                                                i27 = i93;
+                                                                i28 = i16;
+                                                                obj9 = zznz.zzE(obj2, i28, intValue, obj9, zzoiVar);
                                                             }
-                                                            i14 = i33;
-                                                            i92 = i32 + 1;
-                                                            unsafe10 = unsafe11;
+                                                            i16 = i28;
+                                                            i93 = i27 + 1;
+                                                            unsafe9 = unsafe10;
                                                         }
-                                                        unsafe6 = unsafe10;
-                                                        i31 = i14;
-                                                        if (i93 != size2) {
-                                                            zzmoVar.subList(i93, size2).clear();
+                                                        unsafe4 = unsafe9;
+                                                        i26 = i16;
+                                                        if (i94 != size2) {
+                                                            zzmoVar.subList(i94, size2).clear();
                                                         }
                                                     } else {
-                                                        unsafe6 = unsafe10;
-                                                        i30 = zzl2;
-                                                        i31 = i14;
+                                                        i25 = zzl;
+                                                        unsafe4 = unsafe9;
+                                                        i26 = i16;
                                                         Iterator it = zzmoVar.iterator();
-                                                        Object obj9 = null;
+                                                        Object obj10 = null;
                                                         while (it.hasNext()) {
                                                             int intValue2 = ((Integer) it.next()).intValue();
                                                             if (!zzr2.zza(intValue2)) {
-                                                                obj9 = zznz.zzE(obj2, i31, intValue2, obj9, zzoiVar);
+                                                                obj10 = zznz.zzE(obj2, i26, intValue2, obj10, zzoiVar);
                                                                 it.remove();
                                                             }
                                                         }
                                                     }
-                                                    i22 = i29;
-                                                    i14 = i31;
-                                                    i24 = i30;
-                                                    i25 = i23;
-                                                    bArr9 = bArr8;
+                                                    i8 = i24;
+                                                    zzkwVar21 = zzkwVar6;
+                                                    i16 = i26;
+                                                    zza2 = i25;
+                                                    i19 = i21;
+                                                    bArr6 = bArr5;
                                                     break;
                                                 case 33:
                                                 case 47:
-                                                    if (i49 != 2) {
-                                                        if (i49 == 0) {
-                                                            int i94 = zzkx.zza;
-                                                            zzmg zzmgVar3 = (zzmg) zzmoVar3;
-                                                            i24 = zzkx.zza(bArr, i59, zzkwVar);
-                                                            zzmgVar3.zzh(zzlj.zzb(zzkwVar.zza));
-                                                            while (i24 < i2) {
-                                                                int zza14 = zzkx.zza(bArr, i24, zzkwVar);
-                                                                if (i60 == zzkwVar.zza) {
-                                                                    i24 = zzkx.zza(bArr, zza14, zzkwVar);
-                                                                    zzmgVar3.zzh(zzlj.zzb(zzkwVar.zza));
+                                                    if (i52 != 2) {
+                                                        if (i52 == 0) {
+                                                            int i95 = zzkx.zza;
+                                                            zzmg zzmgVar3 = (zzmg) zzmoVar2;
+                                                            zza3 = zzkx.zza(bArr, i39, zzkwVar21);
+                                                            zzmgVar3.zzh(zzlj.zzb(zzkwVar21.zza));
+                                                            while (zza3 < i2) {
+                                                                int zza14 = zzkx.zza(bArr, zza3, zzkwVar21);
+                                                                if (i49 == zzkwVar21.zza) {
+                                                                    zza3 = zzkx.zza(bArr, zza14, zzkwVar21);
+                                                                    zzmgVar3.zzh(zzlj.zzb(zzkwVar21.zza));
                                                                 }
                                                             }
                                                         }
-                                                        unsafe6 = unsafe10;
-                                                        i25 = i59;
-                                                        zzkwVar9 = zzkwVar;
-                                                        i22 = i60;
-                                                        bArr9 = bArr;
-                                                        i24 = i25;
+                                                        bArr6 = bArr;
+                                                        i19 = i39;
+                                                        unsafe4 = unsafe9;
+                                                        i8 = i49;
+                                                        zza2 = i19;
                                                         break;
                                                     } else {
-                                                        int i95 = zzkx.zza;
-                                                        zzmg zzmgVar4 = (zzmg) zzmoVar3;
-                                                        i24 = zzkx.zza(bArr, i59, zzkwVar);
-                                                        int i96 = zzkwVar.zza + i24;
-                                                        while (i24 < i96) {
-                                                            i24 = zzkx.zza(bArr, i24, zzkwVar);
-                                                            zzmgVar4.zzh(zzlj.zzb(zzkwVar.zza));
+                                                        int i96 = zzkx.zza;
+                                                        zzmg zzmgVar4 = (zzmg) zzmoVar2;
+                                                        zza3 = zzkx.zza(bArr, i39, zzkwVar21);
+                                                        int i97 = zzkwVar21.zza + zza3;
+                                                        while (zza3 < i97) {
+                                                            zza3 = zzkx.zza(bArr, zza3, zzkwVar21);
+                                                            zzmgVar4.zzh(zzlj.zzb(zzkwVar21.zza));
                                                         }
-                                                        if (i24 != i96) {
+                                                        if (zza3 != i97) {
                                                             throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                         }
                                                     }
-                                                    unsafe6 = unsafe10;
-                                                    i25 = i59;
-                                                    zzkwVar9 = zzkwVar;
-                                                    i22 = i60;
-                                                    bArr9 = bArr;
+                                                    zza2 = zza3;
+                                                    bArr6 = bArr;
+                                                    i19 = i39;
+                                                    unsafe4 = unsafe9;
+                                                    i8 = i49;
                                                     break;
                                                 case 34:
                                                 case 48:
-                                                    if (i49 != 2) {
-                                                        if (i49 == 0) {
-                                                            int i97 = zzkx.zza;
-                                                            zzna zznaVar5 = (zzna) zzmoVar3;
-                                                            i24 = zzkx.zzc(bArr, i59, zzkwVar);
-                                                            zznaVar5.zzf(zzlj.zzc(zzkwVar.zzb));
-                                                            while (i24 < i2) {
-                                                                int zza15 = zzkx.zza(bArr, i24, zzkwVar);
-                                                                if (i60 == zzkwVar.zza) {
-                                                                    i24 = zzkx.zzc(bArr, zza15, zzkwVar);
-                                                                    zznaVar5.zzf(zzlj.zzc(zzkwVar.zzb));
+                                                    if (i52 != 2) {
+                                                        if (i52 == 0) {
+                                                            int i98 = zzkx.zza;
+                                                            zzna zznaVar5 = (zzna) zzmoVar2;
+                                                            zza3 = zzkx.zzc(bArr, i39, zzkwVar21);
+                                                            zznaVar5.zzf(zzlj.zzc(zzkwVar21.zzb));
+                                                            while (zza3 < i2) {
+                                                                int zza15 = zzkx.zza(bArr, zza3, zzkwVar21);
+                                                                if (i49 == zzkwVar21.zza) {
+                                                                    zza3 = zzkx.zzc(bArr, zza15, zzkwVar21);
+                                                                    zznaVar5.zzf(zzlj.zzc(zzkwVar21.zzb));
                                                                 }
                                                             }
                                                         }
-                                                        unsafe6 = unsafe10;
-                                                        i25 = i59;
-                                                        zzkwVar9 = zzkwVar;
-                                                        i22 = i60;
-                                                        bArr9 = bArr;
-                                                        i24 = i25;
+                                                        bArr6 = bArr;
+                                                        i19 = i39;
+                                                        unsafe4 = unsafe9;
+                                                        i8 = i49;
+                                                        zza2 = i19;
                                                         break;
                                                     } else {
-                                                        int i98 = zzkx.zza;
-                                                        zzna zznaVar6 = (zzna) zzmoVar3;
-                                                        i24 = zzkx.zza(bArr, i59, zzkwVar);
-                                                        int i99 = zzkwVar.zza + i24;
-                                                        while (i24 < i99) {
-                                                            i24 = zzkx.zzc(bArr, i24, zzkwVar);
-                                                            zznaVar6.zzf(zzlj.zzc(zzkwVar.zzb));
+                                                        int i99 = zzkx.zza;
+                                                        zzna zznaVar6 = (zzna) zzmoVar2;
+                                                        zza3 = zzkx.zza(bArr, i39, zzkwVar21);
+                                                        int i100 = zzkwVar21.zza + zza3;
+                                                        while (zza3 < i100) {
+                                                            zza3 = zzkx.zzc(bArr, zza3, zzkwVar21);
+                                                            zznaVar6.zzf(zzlj.zzc(zzkwVar21.zzb));
                                                         }
-                                                        if (i24 != i99) {
+                                                        if (zza3 != i100) {
                                                             throw new zzmr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                                                         }
                                                     }
-                                                    unsafe6 = unsafe10;
-                                                    i25 = i59;
-                                                    zzkwVar9 = zzkwVar;
-                                                    i22 = i60;
-                                                    bArr9 = bArr;
+                                                    zza2 = zza3;
+                                                    bArr6 = bArr;
+                                                    i19 = i39;
+                                                    unsafe4 = unsafe9;
+                                                    i8 = i49;
                                                     break;
                                                 default:
-                                                    i22 = i60;
-                                                    i23 = i59;
-                                                    unsafe6 = unsafe10;
-                                                    bArr8 = bArr;
-                                                    int i100 = i2;
-                                                    zzkwVar9 = zzkwVar;
-                                                    if (i49 == 3) {
-                                                        int i101 = (i22 & (-8)) | 4;
-                                                        zznx zzp = zznpVar.zzp(i35);
-                                                        int zzi = zzkx.zzi(zzp, bArr8, i23, i100, i101, zzkwVar9);
-                                                        i25 = i23;
-                                                        zzmoVar3.add(zzkwVar9.zzc);
-                                                        while (zzi < i100) {
-                                                            int zza16 = zzkx.zza(bArr8, zzi, zzkwVar9);
-                                                            if (i22 != zzkwVar9.zza) {
-                                                                bArr9 = bArr8;
-                                                                i24 = zzi;
+                                                    bArr5 = bArr;
+                                                    unsafe4 = unsafe9;
+                                                    int i101 = i2;
+                                                    zzkwVar4 = zzkwVar21;
+                                                    i8 = i49;
+                                                    zzmo zzmoVar14 = zzmoVar2;
+                                                    i17 = i39;
+                                                    if (i52 == 3) {
+                                                        int i102 = (i8 & (-8)) | 4;
+                                                        zznx zzp = zznpVar.zzp(i38);
+                                                        int zzi = zzkx.zzi(zzp, bArr5, i17, i101, i102, zzkwVar4);
+                                                        i19 = i17;
+                                                        zzmoVar14.add(zzkwVar4.zzc);
+                                                        while (zzi < i101) {
+                                                            int zza16 = zzkx.zza(bArr5, zzi, zzkwVar4);
+                                                            if (i8 != zzkwVar4.zza) {
+                                                                bArr6 = bArr5;
+                                                                zzkwVar21 = zzkwVar4;
+                                                                zza2 = zzi;
                                                                 break;
                                                             } else {
-                                                                zzi = zzkx.zzi(zzp, bArr8, zza16, i100, i101, zzkwVar9);
-                                                                zzmoVar3.add(zzkwVar9.zzc);
-                                                                i100 = i2;
-                                                                bArr8 = bArr8;
+                                                                zzi = zzkx.zzi(zzp, bArr5, zza16, i101, i102, zzkwVar4);
+                                                                zzmoVar14.add(zzkwVar4.zzc);
+                                                                i101 = i2;
+                                                                bArr5 = bArr5;
                                                             }
                                                         }
-                                                        bArr9 = bArr8;
-                                                        i24 = zzi;
+                                                        bArr6 = bArr5;
+                                                        zzkwVar21 = zzkwVar4;
+                                                        zza2 = zzi;
                                                     }
-                                                    i25 = i23;
-                                                    bArr9 = bArr8;
-                                                    i24 = i25;
+                                                    i19 = i17;
+                                                    zzkwVar21 = zzkwVar4;
+                                                    bArr6 = bArr5;
+                                                    zza2 = i19;
                                                     break;
                                             }
-                                            if (i24 != i25) {
-                                                i34 = i2;
-                                                bArr10 = bArr9;
-                                                zzkwVar10 = zzkwVar9;
-                                                i38 = i22;
-                                                i37 = i35;
-                                                obj7 = obj2;
-                                                i41 = i7;
-                                                i39 = i8;
-                                                i40 = i14;
-                                                i35 = 0;
-                                                i42 = 1048575;
-                                                i36 = i24;
-                                                unsafe7 = unsafe6;
+                                            if (zza2 != i19) {
+                                                i37 = i2;
+                                                bArr9 = bArr6;
+                                                i39 = zza2;
+                                                obj8 = obj2;
+                                                i40 = i38;
+                                                i41 = i8;
+                                                zzkwVar10 = zzkwVar21;
+                                                i44 = i6;
+                                                i42 = i7;
+                                                i43 = i16;
+                                                unsafe5 = unsafe4;
                                             } else {
-                                                zzkwVar2 = zzkwVar9;
-                                                i9 = i14;
-                                                unsafe = unsafe6;
-                                                bArr2 = bArr9;
-                                                i36 = i24;
-                                                i6 = i22;
+                                                i4 = i3;
+                                                bArr2 = bArr6;
+                                                i39 = zza2;
+                                                zzkwVar2 = zzkwVar21;
+                                                i9 = i16;
+                                                unsafe = unsafe4;
                                             }
                                         } else {
-                                            unsafe4 = unsafe10;
-                                            i16 = i59;
-                                            zzkw zzkwVar21 = zzkwVar;
-                                            i15 = i60;
-                                            bArr6 = bArr;
+                                            i29 = i39;
+                                            i8 = i49;
+                                            bArr7 = bArr;
                                             if (zzz != 50) {
-                                                unsafe = unsafe4;
-                                                long j4 = iArr[i35 + 2] & 1048575;
+                                                unsafe = unsafe9;
+                                                long j3 = iArr[i38 + 2] & 1048575;
                                                 switch (zzz) {
                                                     case ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_TAG /* 51 */:
                                                         bArr2 = bArr;
-                                                        i17 = i15;
-                                                        i18 = i35;
+                                                        i30 = i38;
                                                         str = str;
-                                                        i19 = i16;
-                                                        i9 = i14;
+                                                        i31 = i8;
+                                                        i32 = i29;
+                                                        i9 = i16;
                                                         zzkwVar2 = zzkwVar;
-                                                        if (i49 == 1) {
-                                                            i20 = i19 + 8;
-                                                            unsafe.putObject(obj2, j2, Double.valueOf(Double.longBitsToDouble(zzkx.zze(bArr2, i19))));
-                                                            unsafe.putInt(obj2, j4, i9);
-                                                            i36 = i20;
+                                                        if (i52 == 1) {
+                                                            i33 = i32 + 8;
+                                                            unsafe.putObject(obj2, j, Double.valueOf(Double.longBitsToDouble(zzkx.zze(bArr2, i32))));
+                                                            unsafe.putInt(obj2, j3, i9);
+                                                            i39 = i33;
                                                             break;
                                                         }
-                                                        i36 = i19;
+                                                        i39 = i32;
                                                         break;
                                                     case ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_TOP_OF /* 52 */:
                                                         bArr2 = bArr;
-                                                        i17 = i15;
-                                                        i18 = i35;
+                                                        i30 = i38;
                                                         str = str;
-                                                        i19 = i16;
-                                                        i9 = i14;
+                                                        i31 = i8;
+                                                        i32 = i29;
+                                                        i9 = i16;
                                                         zzkwVar2 = zzkwVar;
-                                                        if (i49 == 5) {
-                                                            i20 = i19 + 4;
-                                                            unsafe.putObject(obj2, j2, Float.valueOf(Float.intBitsToFloat(zzkx.zzd(bArr2, i19))));
-                                                            unsafe.putInt(obj2, j4, i9);
-                                                            i36 = i20;
+                                                        if (i52 == 5) {
+                                                            i33 = i32 + 4;
+                                                            unsafe.putObject(obj2, j, Float.valueOf(Float.intBitsToFloat(zzkx.zzd(bArr2, i32))));
+                                                            unsafe.putInt(obj2, j3, i9);
+                                                            i39 = i33;
                                                             break;
                                                         }
-                                                        i36 = i19;
+                                                        i39 = i32;
                                                         break;
                                                     case ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_BOTTOM_OF /* 53 */:
                                                     case ConstraintLayout.LayoutParams.Table.LAYOUT_MARGIN_BASELINE /* 54 */:
                                                         bArr2 = bArr;
-                                                        i17 = i15;
-                                                        i18 = i35;
+                                                        i30 = i38;
                                                         str = str;
-                                                        i19 = i16;
-                                                        i9 = i14;
+                                                        i31 = i8;
+                                                        i32 = i29;
+                                                        i9 = i16;
                                                         zzkwVar2 = zzkwVar;
-                                                        if (i49 == 0) {
-                                                            i20 = zzkx.zzc(bArr2, i19, zzkwVar2);
-                                                            unsafe.putObject(obj2, j2, Long.valueOf(zzkwVar2.zzb));
-                                                            unsafe.putInt(obj2, j4, i9);
-                                                            i36 = i20;
+                                                        if (i52 == 0) {
+                                                            i33 = zzkx.zzc(bArr2, i32, zzkwVar2);
+                                                            unsafe.putObject(obj2, j, Long.valueOf(zzkwVar2.zzb));
+                                                            unsafe.putInt(obj2, j3, i9);
+                                                            i39 = i33;
                                                             break;
                                                         }
-                                                        i36 = i19;
+                                                        i39 = i32;
                                                         break;
                                                     case ConstraintLayout.LayoutParams.Table.LAYOUT_GONE_MARGIN_BASELINE /* 55 */:
                                                     case RectListKt.BitOffsetForGesturable /* 62 */:
                                                         bArr2 = bArr;
-                                                        i17 = i15;
-                                                        i18 = i35;
+                                                        i30 = i38;
                                                         str = str;
-                                                        i19 = i16;
-                                                        i9 = i14;
+                                                        i31 = i8;
+                                                        i32 = i29;
+                                                        i9 = i16;
                                                         zzkwVar2 = zzkwVar;
-                                                        if (i49 == 0) {
-                                                            i20 = zzkx.zza(bArr2, i19, zzkwVar2);
-                                                            unsafe.putObject(obj2, j2, Integer.valueOf(zzkwVar2.zza));
-                                                            unsafe.putInt(obj2, j4, i9);
-                                                            i36 = i20;
+                                                        if (i52 == 0) {
+                                                            i33 = zzkx.zza(bArr2, i32, zzkwVar2);
+                                                            unsafe.putObject(obj2, j, Integer.valueOf(zzkwVar2.zza));
+                                                            unsafe.putInt(obj2, j3, i9);
+                                                            i39 = i33;
                                                             break;
                                                         }
-                                                        i36 = i19;
+                                                        i39 = i32;
                                                         break;
                                                     case 56:
                                                     case ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_HEIGHT /* 65 */:
                                                         bArr2 = bArr;
-                                                        i17 = i15;
-                                                        i18 = i35;
+                                                        i30 = i38;
                                                         str = str;
-                                                        i19 = i16;
-                                                        i9 = i14;
+                                                        i31 = i8;
+                                                        i32 = i29;
+                                                        i9 = i16;
                                                         zzkwVar2 = zzkwVar;
-                                                        if (i49 == 1) {
-                                                            i20 = i19 + 8;
-                                                            unsafe.putObject(obj2, j2, Long.valueOf(zzkx.zze(bArr2, i19)));
-                                                            unsafe.putInt(obj2, j4, i9);
-                                                            i36 = i20;
+                                                        if (i52 == 1) {
+                                                            i33 = i32 + 8;
+                                                            unsafe.putObject(obj2, j, Long.valueOf(zzkx.zze(bArr2, i32)));
+                                                            unsafe.putInt(obj2, j3, i9);
+                                                            i39 = i33;
                                                             break;
                                                         }
-                                                        i36 = i19;
+                                                        i39 = i32;
                                                         break;
                                                     case 57:
                                                     case 64:
                                                         bArr2 = bArr;
-                                                        i17 = i15;
-                                                        i18 = i35;
+                                                        i30 = i38;
                                                         str = str;
-                                                        i19 = i16;
-                                                        i9 = i14;
+                                                        i31 = i8;
+                                                        i32 = i29;
+                                                        i9 = i16;
                                                         zzkwVar2 = zzkwVar;
-                                                        if (i49 == 5) {
-                                                            i20 = i19 + 4;
-                                                            unsafe.putObject(obj2, j2, Integer.valueOf(zzkx.zzd(bArr2, i19)));
-                                                            unsafe.putInt(obj2, j4, i9);
-                                                            i36 = i20;
+                                                        if (i52 == 5) {
+                                                            i33 = i32 + 4;
+                                                            unsafe.putObject(obj2, j, Integer.valueOf(zzkx.zzd(bArr2, i32)));
+                                                            unsafe.putInt(obj2, j3, i9);
+                                                            i39 = i33;
                                                             break;
                                                         }
-                                                        i36 = i19;
+                                                        i39 = i32;
                                                         break;
                                                     case 58:
                                                         bArr2 = bArr;
-                                                        i18 = i35;
+                                                        i30 = i38;
                                                         str = str;
-                                                        i19 = i16;
-                                                        i9 = i14;
+                                                        i32 = i29;
+                                                        i9 = i16;
                                                         zzkwVar2 = zzkwVar;
-                                                        if (i49 == 0) {
-                                                            i20 = zzkx.zzc(bArr2, i19, zzkwVar2);
-                                                            i17 = i15;
-                                                            unsafe.putObject(obj2, j2, Boolean.valueOf(zzkwVar2.zzb != 0));
-                                                            unsafe.putInt(obj2, j4, i9);
-                                                            i36 = i20;
+                                                        if (i52 == 0) {
+                                                            i33 = zzkx.zzc(bArr2, i32, zzkwVar2);
+                                                            i31 = i8;
+                                                            unsafe.putObject(obj2, j, Boolean.valueOf(zzkwVar2.zzb != 0));
+                                                            unsafe.putInt(obj2, j3, i9);
+                                                            i39 = i33;
                                                             break;
                                                         }
-                                                        i17 = i15;
-                                                        i36 = i19;
+                                                        i31 = i8;
+                                                        i39 = i32;
                                                         break;
                                                     case 59:
                                                         bArr2 = bArr;
-                                                        i18 = i35;
+                                                        i30 = i38;
                                                         str = str;
-                                                        i19 = i16;
-                                                        i9 = i14;
+                                                        i32 = i29;
+                                                        i9 = i16;
                                                         zzkwVar2 = zzkwVar;
-                                                        if (i49 == 2) {
-                                                            int zza17 = zzkx.zza(bArr2, i19, zzkwVar2);
-                                                            int i102 = zzkwVar2.zza;
-                                                            if (i102 == 0) {
-                                                                unsafe.putObject(obj2, j2, "");
+                                                        if (i52 == 2) {
+                                                            int zza17 = zzkx.zza(bArr2, i32, zzkwVar2);
+                                                            int i103 = zzkwVar2.zza;
+                                                            if (i103 == 0) {
+                                                                unsafe.putObject(obj2, j, "");
                                                             } else {
-                                                                int i103 = zza17 + i102;
-                                                                if ((i51 & C.BUFFER_FLAG_LAST_SAMPLE) == 0 || zzos.zza(bArr2, zza17, i103)) {
-                                                                    unsafe.putObject(obj2, j2, new String(bArr2, zza17, i102, zzmp.zza));
-                                                                    zza17 = i103;
+                                                                int i104 = zza17 + i103;
+                                                                if ((i54 & C.BUFFER_FLAG_LAST_SAMPLE) == 0 || zzos.zza(bArr2, zza17, i104)) {
+                                                                    unsafe.putObject(obj2, j, new String(bArr2, zza17, i103, zzmp.zza));
+                                                                    zza17 = i104;
                                                                 } else {
                                                                     throw new zzmr("Protocol message had invalid UTF-8.");
                                                                 }
                                                             }
-                                                            unsafe.putInt(obj2, j4, i9);
-                                                            i36 = zza17;
-                                                            i17 = i15;
+                                                            unsafe.putInt(obj2, j3, i9);
+                                                            i39 = zza17;
+                                                            i31 = i8;
                                                             break;
                                                         }
-                                                        i17 = i15;
-                                                        i36 = i19;
+                                                        i31 = i8;
+                                                        i39 = i32;
                                                         break;
                                                     case 60:
-                                                        i9 = i14;
-                                                        if (i49 != 2) {
-                                                            zzkwVar2 = zzkwVar;
-                                                            bArr2 = bArr;
-                                                            i17 = i15;
-                                                            i18 = i35;
-                                                            str = str;
-                                                            i19 = i16;
-                                                            i36 = i19;
-                                                            break;
-                                                        } else {
-                                                            Object zzu = zznpVar.zzu(obj2, i9, i35);
-                                                            int zzj2 = zzkx.zzj(zzu, zznpVar.zzp(i35), bArr, i16, i2, zzkwVar);
-                                                            zzkwVar2 = zzkwVar;
-                                                            bArr2 = bArr;
-                                                            zznpVar.zzv(obj2, i9, i35, zzu);
-                                                            i17 = i15;
-                                                            i18 = i35;
-                                                            str = str;
-                                                            i19 = i16;
-                                                            i36 = zzj2;
-                                                            break;
-                                                        }
-                                                    case 61:
-                                                        bArr7 = bArr;
+                                                        bArr8 = bArr;
                                                         zzkwVar7 = zzkwVar;
-                                                        i9 = i14;
-                                                        if (i49 == 2) {
-                                                            zzg = zzkx.zzg(bArr7, i16, zzkwVar7);
-                                                            unsafe.putObject(obj2, j2, zzkwVar7.zzc);
-                                                            unsafe.putInt(obj2, j4, i9);
-                                                            i36 = zzg;
-                                                            i18 = i35;
-                                                            str = str;
-                                                            i19 = i16;
+                                                        str = str;
+                                                        i34 = i29;
+                                                        i9 = i16;
+                                                        if (i52 == 2) {
+                                                            Object zzu = zznpVar.zzu(obj2, i9, i38);
+                                                            int zzj2 = zzkx.zzj(zzu, zznpVar.zzp(i38), bArr8, i34, i2, zzkwVar7);
                                                             zzkwVar2 = zzkwVar7;
-                                                            bArr2 = bArr7;
-                                                            i17 = i15;
+                                                            bArr2 = bArr8;
+                                                            zznpVar.zzv(obj2, i9, i38, zzu);
+                                                            i30 = i38;
+                                                            i31 = i8;
+                                                            i32 = i34;
+                                                            i39 = zzj2;
                                                             break;
                                                         }
-                                                        i18 = i35;
-                                                        str = str;
-                                                        i19 = i16;
                                                         zzkwVar2 = zzkwVar7;
-                                                        bArr2 = bArr7;
-                                                        i17 = i15;
-                                                        i36 = i19;
+                                                        bArr2 = bArr8;
+                                                        i30 = i38;
+                                                        i31 = i8;
+                                                        i32 = i34;
+                                                        i39 = i32;
+                                                        break;
+                                                    case 61:
+                                                        bArr8 = bArr;
+                                                        zzkwVar7 = zzkwVar;
+                                                        str = str;
+                                                        i34 = i29;
+                                                        i9 = i16;
+                                                        if (i52 == 2) {
+                                                            zzg = zzkx.zzg(bArr8, i34, zzkwVar7);
+                                                            unsafe.putObject(obj2, j, zzkwVar7.zzc);
+                                                            unsafe.putInt(obj2, j3, i9);
+                                                            i39 = zzg;
+                                                            zzkwVar2 = zzkwVar7;
+                                                            bArr2 = bArr8;
+                                                            i30 = i38;
+                                                            i31 = i8;
+                                                            i32 = i34;
+                                                            break;
+                                                        }
+                                                        zzkwVar2 = zzkwVar7;
+                                                        bArr2 = bArr8;
+                                                        i30 = i38;
+                                                        i31 = i8;
+                                                        i32 = i34;
+                                                        i39 = i32;
                                                         break;
                                                     case 63:
-                                                        bArr7 = bArr;
+                                                        bArr8 = bArr;
                                                         zzkwVar7 = zzkwVar;
-                                                        i21 = i15;
-                                                        i9 = i14;
-                                                        if (i49 == 0) {
-                                                            zzg = zzkx.zza(bArr7, i16, zzkwVar7);
-                                                            int i104 = zzkwVar7.zza;
-                                                            zzmk zzr3 = zznpVar.zzr(i35);
-                                                            if (zzr3 == null || zzr3.zza(i104)) {
-                                                                i15 = i21;
-                                                                unsafe.putObject(obj2, j2, Integer.valueOf(i104));
-                                                                unsafe.putInt(obj2, j4, i9);
+                                                        str = str;
+                                                        i34 = i29;
+                                                        i9 = i16;
+                                                        i35 = i8;
+                                                        if (i52 == 0) {
+                                                            zzg = zzkx.zza(bArr8, i34, zzkwVar7);
+                                                            int i105 = zzkwVar7.zza;
+                                                            zzmk zzr3 = zznpVar.zzr(i38);
+                                                            if (zzr3 == null || zzr3.zza(i105)) {
+                                                                i8 = i35;
+                                                                unsafe.putObject(obj2, j, Integer.valueOf(i105));
+                                                                unsafe.putInt(obj2, j3, i9);
                                                             } else {
-                                                                i15 = i21;
-                                                                zzg(obj2).zzk(i15, Long.valueOf(i104));
+                                                                i8 = i35;
+                                                                zzg(obj2).zzk(i8, Long.valueOf(i105));
                                                             }
-                                                            i36 = zzg;
-                                                            i18 = i35;
-                                                            str = str;
-                                                            i19 = i16;
+                                                            i39 = zzg;
                                                             zzkwVar2 = zzkwVar7;
-                                                            bArr2 = bArr7;
-                                                            i17 = i15;
+                                                            bArr2 = bArr8;
+                                                            i30 = i38;
+                                                            i31 = i8;
+                                                            i32 = i34;
                                                             break;
                                                         }
+                                                        int i106 = i35;
                                                         zzkwVar2 = zzkwVar7;
-                                                        bArr2 = bArr7;
-                                                        i17 = i21;
-                                                        i18 = i35;
-                                                        i19 = i16;
-                                                        str = str;
-                                                        i36 = i19;
+                                                        bArr2 = bArr8;
+                                                        i31 = i106;
+                                                        i30 = i38;
+                                                        i32 = i34;
+                                                        i39 = i32;
                                                         break;
                                                     case ConstraintLayout.LayoutParams.Table.LAYOUT_WRAP_BEHAVIOR_IN_PARENT /* 66 */:
-                                                        bArr7 = bArr;
+                                                        bArr8 = bArr;
                                                         zzkwVar7 = zzkwVar;
-                                                        i21 = i15;
-                                                        i9 = i14;
-                                                        if (i49 == 0) {
-                                                            zza2 = zzkx.zza(bArr7, i16, zzkwVar7);
-                                                            unsafe.putObject(obj2, j2, Integer.valueOf(zzlj.zzb(zzkwVar7.zza)));
-                                                            unsafe.putInt(obj2, j4, i9);
+                                                        str = str;
+                                                        i34 = i29;
+                                                        i9 = i16;
+                                                        i35 = i8;
+                                                        if (i52 == 0) {
+                                                            zza4 = zzkx.zza(bArr8, i34, zzkwVar7);
+                                                            unsafe.putObject(obj2, j, Integer.valueOf(zzlj.zzb(zzkwVar7.zza)));
+                                                            unsafe.putInt(obj2, j3, i9);
+                                                            int i107 = i35;
                                                             zzkwVar2 = zzkwVar7;
-                                                            bArr2 = bArr7;
-                                                            i17 = i21;
-                                                            i18 = i35;
-                                                            i19 = i16;
-                                                            i36 = zza2;
-                                                            str = str;
+                                                            bArr2 = bArr8;
+                                                            i31 = i107;
+                                                            i39 = zza4;
+                                                            i30 = i38;
+                                                            i32 = i34;
                                                             break;
                                                         }
+                                                        int i1062 = i35;
                                                         zzkwVar2 = zzkwVar7;
-                                                        bArr2 = bArr7;
-                                                        i17 = i21;
-                                                        i18 = i35;
-                                                        i19 = i16;
-                                                        str = str;
-                                                        i36 = i19;
+                                                        bArr2 = bArr8;
+                                                        i31 = i1062;
+                                                        i30 = i38;
+                                                        i32 = i34;
+                                                        i39 = i32;
                                                         break;
                                                     case 67:
-                                                        bArr7 = bArr;
+                                                        bArr8 = bArr;
                                                         zzkwVar7 = zzkwVar;
-                                                        i9 = i14;
-                                                        if (i49 == 0) {
-                                                            zza2 = zzkx.zzc(bArr7, i16, zzkwVar7);
-                                                            i21 = i15;
-                                                            unsafe.putObject(obj2, j2, Long.valueOf(zzlj.zzc(zzkwVar7.zzb)));
-                                                            unsafe.putInt(obj2, j4, i9);
+                                                        i34 = i29;
+                                                        i9 = i16;
+                                                        if (i52 != 0) {
+                                                            str = str;
                                                             zzkwVar2 = zzkwVar7;
-                                                            bArr2 = bArr7;
-                                                            i17 = i21;
-                                                            i18 = i35;
-                                                            i19 = i16;
-                                                            i36 = zza2;
-                                                            str = str;
-                                                            break;
-                                                        }
-                                                        i18 = i35;
-                                                        str = str;
-                                                        i19 = i16;
-                                                        zzkwVar2 = zzkwVar7;
-                                                        bArr2 = bArr7;
-                                                        i17 = i15;
-                                                        i36 = i19;
-                                                        break;
-                                                    case 68:
-                                                        if (i49 != 3) {
-                                                            i9 = i14;
-                                                            bArr2 = bArr;
-                                                            i17 = i15;
-                                                            i18 = i35;
-                                                            str = str;
-                                                            i19 = i16;
-                                                            zzkwVar2 = zzkwVar;
-                                                            i36 = i19;
+                                                            bArr2 = bArr8;
+                                                            i30 = i38;
+                                                            i31 = i8;
+                                                            i32 = i34;
+                                                            i39 = i32;
                                                             break;
                                                         } else {
-                                                            i9 = i14;
-                                                            Object zzu2 = zznpVar.zzu(obj2, i9, i35);
-                                                            int zzk2 = zzkx.zzk(zzu2, zznpVar.zzp(i35), bArr, i16, i2, (i15 & (-8)) | 4, zzkwVar);
-                                                            bArr7 = bArr;
-                                                            zzkwVar7 = zzkwVar;
-                                                            zznpVar.zzv(obj2, i9, i35, zzu2);
-                                                            i36 = zzk2;
-                                                            i18 = i35;
+                                                            zza4 = zzkx.zzc(bArr8, i34, zzkwVar7);
                                                             str = str;
-                                                            i19 = i16;
+                                                            i35 = i8;
+                                                            unsafe.putObject(obj2, j, Long.valueOf(zzlj.zzc(zzkwVar7.zzb)));
+                                                            unsafe.putInt(obj2, j3, i9);
+                                                            int i1072 = i35;
                                                             zzkwVar2 = zzkwVar7;
-                                                            bArr2 = bArr7;
-                                                            i17 = i15;
+                                                            bArr2 = bArr8;
+                                                            i31 = i1072;
+                                                            i39 = zza4;
+                                                            i30 = i38;
+                                                            i32 = i34;
+                                                            break;
+                                                        }
+                                                    case 68:
+                                                        if (i52 != 3) {
+                                                            i9 = i16;
+                                                            bArr2 = bArr;
+                                                            i30 = i38;
+                                                            str = str;
+                                                            i31 = i8;
+                                                            i32 = i29;
+                                                            zzkwVar2 = zzkwVar;
+                                                            i39 = i32;
+                                                            break;
+                                                        } else {
+                                                            i9 = i16;
+                                                            Object zzu2 = zznpVar.zzu(obj2, i9, i38);
+                                                            int zzk2 = zzkx.zzk(zzu2, zznpVar.zzp(i38), bArr, i29, i2, (i8 & (-8)) | 4, zzkwVar);
+                                                            i34 = i29;
+                                                            zznpVar.zzv(obj2, i9, i38, zzu2);
+                                                            i39 = zzk2;
+                                                            zzkwVar2 = zzkwVar;
+                                                            bArr2 = bArr;
+                                                            i30 = i38;
+                                                            str = str;
+                                                            i31 = i8;
+                                                            i32 = i34;
                                                             break;
                                                         }
                                                     default:
                                                         bArr2 = bArr;
-                                                        i17 = i15;
-                                                        i18 = i35;
+                                                        i30 = i38;
                                                         str = str;
-                                                        i19 = i16;
-                                                        i9 = i14;
+                                                        i31 = i8;
+                                                        i32 = i29;
+                                                        i9 = i16;
                                                         zzkwVar2 = zzkwVar;
-                                                        i36 = i19;
+                                                        i39 = i32;
                                                         break;
                                                 }
-                                                if (i36 != i19) {
-                                                    i34 = i2;
-                                                    unsafe7 = unsafe;
-                                                    bArr10 = bArr2;
-                                                    i38 = i17;
-                                                    obj7 = obj2;
+                                                if (i39 != i32) {
+                                                    int i108 = i31;
+                                                    bArr9 = bArr2;
+                                                    i41 = i108;
+                                                    unsafe5 = unsafe;
+                                                    obj8 = obj2;
                                                     zzkwVar10 = zzkwVar2;
-                                                    i40 = i9;
-                                                    i41 = i7;
-                                                    i39 = i8;
-                                                    i37 = i18;
+                                                    i43 = i9;
+                                                    i44 = i6;
+                                                    i42 = i7;
+                                                    i40 = i30;
+                                                    i38 = 0;
+                                                    i45 = 1048575;
+                                                    i37 = i2;
                                                 } else {
                                                     i4 = i3;
-                                                    i6 = i17;
-                                                    i35 = i18;
+                                                    i8 = i31;
+                                                    i38 = i30;
                                                 }
-                                            } else if (i49 == 2) {
-                                                Object zzq = zznpVar.zzq(i35);
-                                                Unsafe unsafe12 = unsafe4;
-                                                Object object = unsafe12.getObject(obj2, j2);
+                                            } else if (i52 == 2) {
+                                                Object zzq = zznpVar.zzq(i38);
+                                                unsafe = unsafe9;
+                                                Object object = unsafe.getObject(obj2, j);
                                                 if (!((zzng) object).zze()) {
                                                     zzng zzc3 = zzng.zza().zzc();
                                                     zznh.zza(zzc3, object);
-                                                    unsafe12.putObject(obj2, j2, zzc3);
+                                                    unsafe.putObject(obj2, j, zzc3);
                                                     object = zzc3;
                                                 }
                                                 zzne zze = ((zznf) zzq).zze();
                                                 zzng zzngVar = (zzng) object;
-                                                int zza18 = zzkx.zza(bArr6, i16, zzkwVar21);
-                                                int i105 = zzkwVar21.zza;
-                                                if (i105 >= 0 && i105 <= i2 - zza18) {
-                                                    int i106 = zza18 + i105;
-                                                    Object obj10 = zze.zzb;
-                                                    Object obj11 = zze.zzd;
-                                                    Object obj12 = obj11;
-                                                    while (zza18 < i106) {
-                                                        int i107 = zza18 + 1;
-                                                        int i108 = bArr6[zza18];
-                                                        if (i108 < 0) {
-                                                            i107 = zzkx.zzb(i108, bArr6, i107, zzkwVar21);
-                                                            i108 = zzkwVar21.zza;
+                                                int zza18 = zzkx.zza(bArr7, i29, zzkwVar21);
+                                                int i109 = zzkwVar21.zza;
+                                                if (i109 >= 0 && i109 <= i2 - zza18) {
+                                                    int i110 = zza18 + i109;
+                                                    Object obj11 = zze.zzb;
+                                                    Object obj12 = zze.zzd;
+                                                    Object obj13 = obj12;
+                                                    while (zza18 < i110) {
+                                                        int i111 = zza18 + 1;
+                                                        int i112 = bArr7[zza18];
+                                                        if (i112 < 0) {
+                                                            i111 = zzkx.zzb(i112, bArr7, i111, zzkwVar21);
+                                                            i112 = zzkwVar21.zza;
                                                         }
-                                                        Object obj13 = obj10;
-                                                        int i109 = i108 >>> 3;
-                                                        int i110 = i108 & 7;
-                                                        Object obj14 = obj12;
-                                                        if (i109 == 1) {
-                                                            int i111 = i107;
-                                                            unsafe5 = unsafe12;
-                                                            obj5 = obj13;
+                                                        Object obj14 = obj11;
+                                                        int i113 = i112 >>> 3;
+                                                        int i114 = i112 & 7;
+                                                        Object obj15 = obj12;
+                                                        if (i113 == 1) {
+                                                            int i115 = i111;
+                                                            zzkw zzkwVar22 = zzkwVar21;
+                                                            obj6 = obj14;
                                                             zzot zzotVar = zze.zza;
-                                                            if (i110 == zzotVar.zzb()) {
-                                                                int zzO = zzO(bArr, i111, i2, zzotVar, null, zzkwVar21);
-                                                                zzkw zzkwVar22 = zzkwVar21;
-                                                                bArr6 = bArr;
-                                                                obj10 = zzkwVar22.zzc;
+                                                            if (i114 == zzotVar.zzb()) {
+                                                                int zzO = zzO(bArr, i115, i2, zzotVar, null, zzkwVar22);
+                                                                bArr7 = bArr;
+                                                                obj11 = zzkwVar22.zzc;
                                                                 zza18 = zzO;
                                                                 zzkwVar21 = zzkwVar22;
-                                                                obj12 = obj14;
-                                                                unsafe12 = unsafe5;
+                                                                obj13 = obj13;
+                                                                obj12 = obj15;
                                                             } else {
-                                                                bArr6 = bArr;
-                                                                i107 = i111;
+                                                                bArr7 = bArr;
+                                                                i36 = i2;
+                                                                obj7 = obj13;
+                                                                zzkwVar9 = zzkwVar22;
+                                                                i111 = i115;
                                                             }
-                                                        } else if (i109 != 2) {
-                                                            bArr6 = bArr;
-                                                            zzkwVar8 = zzkwVar21;
-                                                            unsafe5 = unsafe12;
-                                                            obj5 = obj13;
-                                                            zza18 = zzkx.zzp(i108, bArr6, i107, i2, zzkwVar8);
-                                                            zzkwVar21 = zzkwVar8;
-                                                            obj12 = obj14;
-                                                            obj10 = obj5;
-                                                            unsafe12 = unsafe5;
+                                                        } else if (i113 != 2) {
+                                                            bArr7 = bArr;
+                                                            i36 = i2;
+                                                            obj7 = obj13;
+                                                            zzkwVar9 = zzkwVar21;
+                                                            obj6 = obj14;
                                                         } else {
                                                             zzot zzotVar2 = zze.zzc;
-                                                            if (i110 == zzotVar2.zzb()) {
-                                                                unsafe5 = unsafe12;
-                                                                obj5 = obj13;
-                                                                int zzO2 = zzO(bArr, i107, i2, zzotVar2, obj11.getClass(), zzkwVar21);
-                                                                obj12 = zzkwVar21.zzc;
-                                                                bArr6 = bArr;
+                                                            if (i114 == zzotVar2.zzb()) {
+                                                                int i116 = i111;
+                                                                zzkw zzkwVar23 = zzkwVar21;
+                                                                int zzO2 = zzO(bArr, i116, i2, zzotVar2, obj15.getClass(), zzkwVar23);
+                                                                obj13 = zzkwVar23.zzc;
+                                                                bArr7 = bArr;
                                                                 zza18 = zzO2;
-                                                                obj10 = obj5;
-                                                                unsafe12 = unsafe5;
+                                                                obj11 = obj14;
+                                                                obj12 = obj15;
+                                                                zzkwVar21 = zzkwVar23;
                                                             } else {
-                                                                unsafe5 = unsafe12;
-                                                                obj5 = obj13;
-                                                                bArr6 = bArr;
+                                                                int i117 = i111;
+                                                                zzkw zzkwVar24 = zzkwVar21;
+                                                                obj6 = obj14;
+                                                                i111 = i117;
+                                                                obj7 = obj13;
+                                                                zzkwVar9 = zzkwVar24;
+                                                                bArr7 = bArr;
+                                                                i36 = i2;
                                                             }
                                                         }
-                                                        zzkwVar8 = zzkwVar21;
-                                                        zza18 = zzkx.zzp(i108, bArr6, i107, i2, zzkwVar8);
-                                                        zzkwVar21 = zzkwVar8;
-                                                        obj12 = obj14;
-                                                        obj10 = obj5;
-                                                        unsafe12 = unsafe5;
+                                                        zza18 = zzkx.zzp(i112, bArr7, i111, i36, zzkwVar9);
+                                                        zzkw zzkwVar25 = zzkwVar9;
+                                                        obj13 = obj7;
+                                                        obj11 = obj6;
+                                                        zzkwVar21 = zzkwVar25;
+                                                        obj12 = obj15;
                                                     }
-                                                    Unsafe unsafe13 = unsafe12;
-                                                    Object obj15 = obj10;
-                                                    Object obj16 = obj12;
-                                                    zzkw zzkwVar23 = zzkwVar21;
-                                                    if (zza18 == i106) {
-                                                        zzngVar.put(obj15, obj16);
-                                                        if (i106 != i16) {
-                                                            bArr10 = bArr6;
-                                                            zzkwVar10 = zzkwVar23;
-                                                            i34 = i2;
-                                                            i38 = i15;
-                                                            i37 = i35;
-                                                            i36 = i106;
-                                                            obj7 = obj2;
-                                                            i41 = i7;
-                                                            i39 = i8;
-                                                            i40 = i14;
-                                                            unsafe7 = unsafe13;
+                                                    zzkw zzkwVar26 = zzkwVar21;
+                                                    Object obj16 = obj11;
+                                                    Object obj17 = obj13;
+                                                    if (zza18 == i110) {
+                                                        zzngVar.put(obj16, obj17);
+                                                        if (i110 != i29) {
+                                                            bArr9 = bArr7;
+                                                            unsafe5 = unsafe;
+                                                            obj8 = obj2;
+                                                            i39 = i110;
+                                                            i41 = i8;
+                                                            i44 = i6;
+                                                            i42 = i7;
+                                                            i45 = 1048575;
+                                                            i37 = i2;
+                                                            zzkwVar10 = zzkwVar26;
+                                                            i40 = i38;
+                                                            i43 = i16;
+                                                            i38 = 0;
                                                         } else {
-                                                            bArr2 = bArr6;
-                                                            zzkwVar2 = zzkwVar23;
-                                                            i6 = i15;
-                                                            i36 = i106;
-                                                            i9 = i14;
-                                                            unsafe = unsafe13;
+                                                            i4 = i3;
+                                                            bArr2 = bArr7;
+                                                            zzkwVar2 = zzkwVar26;
+                                                            i39 = i110;
+                                                            i9 = i16;
                                                         }
                                                     } else {
                                                         throw new zzmr(str);
                                                     }
                                                 }
                                             } else {
-                                                zzkwVar6 = zzkwVar21;
-                                                str2 = str;
-                                                bArr2 = bArr6;
-                                                i6 = i15;
-                                                str = str2;
-                                                i36 = i16;
-                                                i9 = i14;
-                                                unsafe = unsafe4;
-                                                i4 = i3;
-                                                zzkwVar2 = zzkwVar6;
+                                                zzkwVar8 = zzkwVar21;
+                                                unsafe = unsafe9;
                                             }
                                         }
-                                        i4 = i3;
-                                    } else if (i49 == 2) {
-                                        zzmo zzmoVar4 = (zzmo) unsafe10.getObject(obj2, j2);
-                                        if (!zzmoVar4.zza()) {
-                                            int size3 = zzmoVar4.size();
-                                            zzmoVar4 = zzmoVar4.zzg(size3 == 0 ? 10 : size3 + size3);
-                                            unsafe10.putObject(obj2, j2, zzmoVar4);
+                                    } else if (i52 == 2) {
+                                        zzmo zzmoVar15 = (zzmo) unsafe8.getObject(obj2, j);
+                                        if (!zzmoVar15.zza()) {
+                                            int size3 = zzmoVar15.size();
+                                            zzmoVar15 = zzmoVar15.zzg(size3 == 0 ? 10 : size3 + size3);
+                                            unsafe8.putObject(obj2, j, zzmoVar15);
                                         }
-                                        int zzn2 = zzkx.zzn(zznpVar.zzp(i35), i46, bArr, i36, i2, zzmoVar4, zzkwVar);
-                                        i34 = i2;
-                                        i38 = i46;
-                                        i37 = i35;
-                                        i40 = i47;
-                                        obj7 = obj2;
-                                        i35 = 0;
-                                        i42 = 1048575;
-                                        i36 = zzn2;
-                                        unsafe7 = unsafe10;
-                                        bArr10 = bArr;
+                                        int zzn2 = zzkx.zzn(zznpVar.zzp(i38), i49, bArr, i39, i2, zzmoVar15, zzkwVar);
+                                        bArr9 = bArr;
+                                        i37 = i2;
+                                        i41 = i49;
+                                        obj8 = obj2;
+                                        i40 = i38;
+                                        i43 = i50;
+                                        i38 = 0;
+                                        i45 = 1048575;
                                         zzkwVar10 = zzkwVar;
+                                        i39 = zzn2;
+                                        unsafe5 = unsafe8;
                                     } else {
-                                        zzkwVar6 = zzkwVar;
-                                        unsafe4 = unsafe10;
-                                        i14 = i47;
-                                        i7 = i41;
-                                        i15 = i46;
-                                        i16 = i36;
-                                        i8 = i39;
-                                        bArr6 = bArr;
-                                        str2 = str;
-                                        bArr2 = bArr6;
-                                        i6 = i15;
-                                        str = str2;
-                                        i36 = i16;
-                                        i9 = i14;
-                                        unsafe = unsafe4;
-                                        i4 = i3;
-                                        zzkwVar2 = zzkwVar6;
+                                        i6 = i44;
+                                        i29 = i39;
+                                        zzkwVar8 = zzkwVar;
+                                        i16 = i50;
+                                        unsafe = unsafe8;
+                                        i7 = i42;
+                                        i8 = i49;
+                                        bArr7 = bArr;
                                     }
-                                    if (i6 == i4 || i4 == 0) {
-                                        if (zznpVar.zzh) {
-                                            zzlr zzlrVar = zzkwVar2.zzd;
-                                            int i112 = zzlr.zzb;
-                                            int i113 = zznu.zza;
-                                            if (zzlrVar != zzlr.zza) {
-                                                zznm zznmVar = zznpVar.zzg;
-                                                int i114 = zzkx.zza;
-                                                if (zzlrVar.zzb(zznmVar, i9) == null) {
-                                                    i10 = i2;
-                                                    i36 = zzkx.zzo(i6, bArr2, i36, i10, zzg(obj2), zzkwVar2);
-                                                    zzkwVar10 = zzkwVar;
-                                                    i38 = i6;
-                                                    i34 = i10;
-                                                    i37 = i35;
-                                                    obj7 = obj2;
-                                                    i40 = i9;
-                                                    i41 = i7;
-                                                    i39 = i8;
-                                                    i35 = 0;
-                                                    i42 = 1048575;
-                                                    unsafe7 = unsafe;
-                                                    bArr10 = bArr;
-                                                } else {
-                                                    zzmc zzmcVar = (zzmc) obj2;
-                                                    throw null;
-                                                }
-                                            }
-                                        }
-                                        i10 = i2;
-                                        i36 = zzkx.zzo(i6, bArr, i36, i10, zzg(obj2), zzkwVar);
-                                        zzkwVar10 = zzkwVar;
-                                        i38 = i6;
-                                        i34 = i10;
-                                        i37 = i35;
-                                        obj7 = obj2;
-                                        i40 = i9;
-                                        i41 = i7;
-                                        i39 = i8;
-                                        i35 = 0;
-                                        i42 = 1048575;
-                                        unsafe7 = unsafe;
-                                        bArr10 = bArr;
-                                    } else {
-                                        i5 = i2;
-                                        i38 = i6;
-                                        i41 = i7;
-                                        i39 = i8;
-                                    }
+                                    i4 = i3;
+                                    bArr2 = bArr7;
+                                    str = str;
+                                    i39 = i29;
+                                    i9 = i16;
+                                    zzkwVar2 = zzkwVar8;
                                 }
                             }
-                            i9 = i47;
-                            if (i6 == i4) {
+                            if (i8 == i4 || i4 == 0) {
+                                if (zznpVar.zzh) {
+                                    zzlr zzlrVar = zzkwVar2.zzd;
+                                    int i118 = zzlr.zzb;
+                                    int i119 = zznu.zza;
+                                    if (zzlrVar != zzlr.zza) {
+                                        zznm zznmVar = zznpVar.zzg;
+                                        int i120 = zzkx.zza;
+                                        if (zzlrVar.zzb(zznmVar, i9) == null) {
+                                            i10 = i2;
+                                            i39 = zzkx.zzo(i8, bArr2, i39, i10, zzg(obj2), zzkwVar2);
+                                            bArr9 = bArr;
+                                            unsafe5 = unsafe;
+                                            obj8 = obj2;
+                                            i40 = i38;
+                                            i41 = i8;
+                                            i44 = i6;
+                                            i38 = 0;
+                                            i45 = 1048575;
+                                            zzkwVar10 = zzkwVar;
+                                            i37 = i10;
+                                            i43 = i9;
+                                            i42 = i7;
+                                        } else {
+                                            zzmc zzmcVar = (zzmc) obj2;
+                                            throw null;
+                                        }
+                                    }
+                                }
+                                i10 = i2;
+                                i39 = zzkx.zzo(i8, bArr, i39, i10, zzg(obj2), zzkwVar);
+                                bArr9 = bArr;
+                                unsafe5 = unsafe;
+                                obj8 = obj2;
+                                i40 = i38;
+                                i41 = i8;
+                                i44 = i6;
+                                i38 = 0;
+                                i45 = 1048575;
+                                zzkwVar10 = zzkwVar;
+                                i37 = i10;
+                                i43 = i9;
+                                i42 = i7;
+                            } else {
+                                i5 = i2;
+                                i41 = i8;
+                                i44 = i6;
+                                i42 = i7;
                             }
-                            if (zznpVar.zzh) {
-                            }
-                            i10 = i2;
-                            i36 = zzkx.zzo(i6, bArr, i36, i10, zzg(obj2), zzkwVar);
-                            zzkwVar10 = zzkwVar;
-                            i38 = i6;
-                            i34 = i10;
-                            i37 = i35;
-                            obj7 = obj2;
-                            i40 = i9;
-                            i41 = i7;
-                            i39 = i8;
-                            i35 = 0;
-                            i42 = 1048575;
-                            unsafe7 = unsafe;
-                            bArr10 = bArr;
                         }
                         zzN = -1;
                         if (zzN != -1) {
                         }
-                        i9 = i47;
-                        if (i6 == i4) {
+                        if (i8 == i4) {
                         }
                         if (zznpVar.zzh) {
                         }
                         i10 = i2;
-                        i36 = zzkx.zzo(i6, bArr, i36, i10, zzg(obj2), zzkwVar);
+                        i39 = zzkx.zzo(i8, bArr, i39, i10, zzg(obj2), zzkwVar);
+                        bArr9 = bArr;
+                        unsafe5 = unsafe;
+                        obj8 = obj2;
+                        i40 = i38;
+                        i41 = i8;
+                        i44 = i6;
+                        i38 = 0;
+                        i45 = 1048575;
                         zzkwVar10 = zzkwVar;
-                        i38 = i6;
-                        i34 = i10;
-                        i37 = i35;
-                        obj7 = obj2;
-                        i40 = i9;
-                        i41 = i7;
-                        i39 = i8;
-                        i35 = 0;
-                        i42 = 1048575;
-                        unsafe7 = unsafe;
-                        bArr10 = bArr;
+                        i37 = i10;
+                        i43 = i9;
+                        i42 = i7;
                     }
                 } else {
                     i4 = i3;
-                    unsafe = unsafe7;
-                    i5 = i34;
+                    obj2 = obj8;
+                    i5 = i37;
                     str = "Failed to parse the message.";
-                    obj2 = obj7;
+                    unsafe = unsafe5;
                 }
             }
-            i35 = 0;
+            i38 = 0;
         }
     }
 

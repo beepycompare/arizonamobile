@@ -13,7 +13,7 @@ import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
 public final class NetworkClientBuilder extends NetworkClient.Builder {
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v13, types: [io.appmetrica.analytics.networkapi.NetworkClient$Builder] */
+    /* JADX WARN: Type inference failed for: r1v13, types: [io.appmetrica.analytics.networkapi.NetworkClient$Builder] */
     @Override // io.appmetrica.analytics.networkapi.NetworkClient.Builder
     public NetworkClient build() {
         NetworkClientSettings settings = getSettings();
@@ -28,9 +28,9 @@ public final class NetworkClientBuilder extends NetworkClient.Builder {
             if (!it.hasNext()) {
                 break;
             }
-            ?? r2 = (NetworkClient.Builder) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor((String) it.next(), NetworkClient.Builder.class);
-            if (r2 != 0) {
-                cVar = r2;
+            ?? r1 = (NetworkClient.Builder) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor((String) it.next(), NetworkClient.Builder.class);
+            if (r1 != 0) {
+                cVar = r1;
                 break;
             }
         }

@@ -207,8 +207,8 @@ public abstract class ScatterSet<E> {
                     int i7 = 0;
                     while (i7 < i6) {
                         if ((j & 255) < 128) {
-                            i2 = i5;
                             Object obj = objArr[(i3 << 3) + i7];
+                            i2 = i5;
                             if (i4 == i) {
                                 sb.append(truncated);
                                 break loop0;
@@ -380,7 +380,7 @@ public abstract class ScatterSet<E> {
         throw new KotlinNothingValueException();
     }
 
-    /* JADX WARN: Type inference failed for: r10v5, types: [E, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r9v5, types: [E, java.lang.Object] */
     public final E first(Function1<? super E, Boolean> predicate) {
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         Object[] objArr = this.elements;
@@ -394,9 +394,9 @@ public abstract class ScatterSet<E> {
                     int i2 = 8 - ((~(i - length)) >>> 31);
                     for (int i3 = 0; i3 < i2; i3++) {
                         if ((255 & j) < 128) {
-                            ?? r10 = (Object) objArr[(i << 3) + i3];
-                            if (predicate.invoke(r10).booleanValue()) {
-                                return r10;
+                            ?? r9 = (Object) objArr[(i << 3) + i3];
+                            if (predicate.invoke(r9).booleanValue()) {
+                                return r9;
                             }
                         }
                         j >>= 8;
@@ -415,7 +415,7 @@ public abstract class ScatterSet<E> {
         throw new KotlinNothingValueException();
     }
 
-    /* JADX WARN: Type inference failed for: r10v5, types: [E, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r9v5, types: [E, java.lang.Object] */
     public final E firstOrNull(Function1<? super E, Boolean> predicate) {
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         Object[] objArr = this.elements;
@@ -431,9 +431,9 @@ public abstract class ScatterSet<E> {
                 int i2 = 8 - ((~(i - length)) >>> 31);
                 for (int i3 = 0; i3 < i2; i3++) {
                     if ((255 & j) < 128) {
-                        ?? r10 = (Object) objArr[(i << 3) + i3];
-                        if (predicate.invoke(r10).booleanValue()) {
-                            return r10;
+                        ?? r9 = (Object) objArr[(i << 3) + i3];
+                        if (predicate.invoke(r9).booleanValue()) {
+                            return r9;
                         }
                     }
                     j >>= 8;

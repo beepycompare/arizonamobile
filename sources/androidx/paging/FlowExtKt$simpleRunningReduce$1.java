@@ -92,12 +92,12 @@ public final class FlowExtKt$simpleRunningReduce$1<T> extends SuspendLambda impl
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:25:0x0073, code lost:
-            if (r8.emit(r9, r0) == r1) goto L20;
+            if (r8.emit(r7, r0) == r1) goto L20;
          */
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
         /* JADX WARN: Removed duplicated region for block: B:16:0x003d  */
-        /* JADX WARN: Type inference failed for: r9v7 */
+        /* JADX WARN: Type inference failed for: r9v6 */
         @Override // kotlinx.coroutines.flow.FlowCollector
         /*
             Code decompiled incorrectly, please refer to instructions dump.

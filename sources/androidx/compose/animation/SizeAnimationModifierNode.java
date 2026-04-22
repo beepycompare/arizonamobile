@@ -7,6 +7,7 @@ import androidx.compose.animation.core.VectorConvertersKt;
 import androidx.compose.runtime.MutableState;
 import androidx.compose.runtime.SnapshotStateKt__SnapshotStateKt;
 import androidx.compose.ui.Alignment;
+import androidx.compose.ui.geometry.InlineClassHelperKt;
 import androidx.compose.ui.layout.Measurable;
 import androidx.compose.ui.layout.MeasureResult;
 import androidx.compose.ui.layout.MeasureScope;
@@ -226,16 +227,14 @@ public final class SizeAnimationModifierNode extends LayoutModifierNodeWithPassT
     /* renamed from: animateTo-mzRDjE0  reason: not valid java name */
     public final long m137animateTomzRDjE0(long j) {
         AnimData animData = getAnimData();
-        boolean z = true;
         if (animData != null) {
-            z = (IntSize.m7724equalsimpl0(j, animData.getAnim().getValue().m7730unboximpl()) || animData.getAnim().isRunning()) ? false : false;
+            boolean z = (IntSize.m7724equalsimpl0(j, animData.getAnim().getValue().m7730unboximpl()) || animData.getAnim().isRunning()) ? false : true;
             if (!IntSize.m7724equalsimpl0(j, animData.getAnim().getTargetValue().m7730unboximpl()) || z) {
                 animData.m142setStartSizeozmzZPI(animData.getAnim().getValue().m7730unboximpl());
                 BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new SizeAnimationModifierNode$animateTo$data$1$1(animData, j, this, null), 3, null);
             }
         } else {
-            long j2 = 1;
-            animData = new AnimData(new Animatable(IntSize.m7718boximpl(j), VectorConvertersKt.getVectorConverter(IntSize.Companion), IntSize.m7718boximpl(IntSize.m7721constructorimpl((j2 & 4294967295L) | (j2 << 32))), null, 8, null), j, null);
+            animData = new AnimData(new Animatable(IntSize.m7718boximpl(j), VectorConvertersKt.getVectorConverter(IntSize.Companion), IntSize.m7718boximpl(IntSize.m7721constructorimpl(InlineClassHelperKt.Uint64Low32)), null, 8, null), j, null);
         }
         setAnimData(animData);
         return animData.getAnim().getValue().m7730unboximpl();

@@ -58,11 +58,11 @@ public final class TrieNode<E> {
     }
 
     private final boolean hasNoCellAt(int i) {
-        return (i & this.bitmap) == 0;
+        return (this.bitmap & i) == 0;
     }
 
     public final int indexOfCellAt$runtime(int i) {
-        return Integer.bitCount((i - 1) & this.bitmap);
+        return Integer.bitCount(this.bitmap & (i - 1));
     }
 
     private final E elementAtIndex(int i) {
@@ -78,7 +78,7 @@ public final class TrieNode<E> {
     private final TrieNode<E> addElementAt(int i, E e) {
         Object[] addElementAtIndex;
         addElementAtIndex = TrieNodeKt.addElementAtIndex(this.buffer, indexOfCellAt$runtime(i), e);
-        return new TrieNode<>(i | this.bitmap, addElementAtIndex);
+        return new TrieNode<>(this.bitmap | i, addElementAtIndex);
     }
 
     private final TrieNode<E> mutableAddElementAt(int i, E e, MutabilityOwnership mutabilityOwnership) {
@@ -94,7 +94,7 @@ public final class TrieNode<E> {
             return this;
         }
         addElementAtIndex = TrieNodeKt.addElementAtIndex(objArr, indexOfCellAt$runtime, e);
-        return new TrieNode<>(i | this.bitmap, addElementAtIndex, mutabilityOwnership);
+        return new TrieNode<>(this.bitmap | i, addElementAtIndex, mutabilityOwnership);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -187,7 +187,7 @@ public final class TrieNode<E> {
     private final TrieNode<E> removeCellAtIndex(int i, int i2) {
         Object[] removeCellAtIndex;
         removeCellAtIndex = TrieNodeKt.removeCellAtIndex(this.buffer, i);
-        return new TrieNode<>(i2 ^ this.bitmap, removeCellAtIndex);
+        return new TrieNode<>(this.bitmap ^ i2, removeCellAtIndex);
     }
 
     private final TrieNode<E> mutableRemoveCellAtIndex(int i, int i2, MutabilityOwnership mutabilityOwnership) {
@@ -202,7 +202,7 @@ public final class TrieNode<E> {
             return this;
         }
         removeCellAtIndex = TrieNodeKt.removeCellAtIndex(objArr, i);
-        return new TrieNode<>(i2 ^ this.bitmap, removeCellAtIndex, mutabilityOwnership);
+        return new TrieNode<>(this.bitmap ^ i2, removeCellAtIndex, mutabilityOwnership);
     }
 
     private final TrieNode<E> collisionRemoveElementAtIndex(int i) {
@@ -805,48 +805,45 @@ public final class TrieNode<E> {
     public final TrieNode<E> remove(int i, E e, int i2) {
         TrieNode<E> remove;
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
-        if (!hasNoCellAt(indexSegment)) {
-            int indexOfCellAt$runtime = indexOfCellAt$runtime(indexSegment);
-            Object obj = this.buffer[indexOfCellAt$runtime];
-            if (obj instanceof TrieNode) {
-                TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime);
-                if (i2 == 30) {
-                    remove = nodeAtIndex.collisionRemove(e);
-                } else {
-                    remove = nodeAtIndex.remove(i, e, i2 + 5);
-                }
-                if (nodeAtIndex != remove) {
-                    return updateNodeAtIndex(indexOfCellAt$runtime, remove);
-                }
-            } else if (Intrinsics.areEqual(e, obj)) {
-                return removeCellAtIndex(indexOfCellAt$runtime, indexSegment);
-            }
+        if (hasNoCellAt(indexSegment)) {
+            return this;
         }
-        return this;
+        int indexOfCellAt$runtime = indexOfCellAt$runtime(indexSegment);
+        Object obj = this.buffer[indexOfCellAt$runtime];
+        if (!(obj instanceof TrieNode)) {
+            return Intrinsics.areEqual(e, obj) ? removeCellAtIndex(indexOfCellAt$runtime, indexSegment) : this;
+        }
+        TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime);
+        if (i2 == 30) {
+            remove = nodeAtIndex.collisionRemove(e);
+        } else {
+            remove = nodeAtIndex.remove(i, e, i2 + 5);
+        }
+        return nodeAtIndex == remove ? this : updateNodeAtIndex(indexOfCellAt$runtime, remove);
     }
 
     public final TrieNode<E> mutableRemove(int i, E e, int i2, PersistentHashSetBuilder<?> persistentHashSetBuilder) {
         TrieNode<E> mutableRemove;
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
-        if (!hasNoCellAt(indexSegment)) {
-            int indexOfCellAt$runtime = indexOfCellAt$runtime(indexSegment);
-            Object obj = this.buffer[indexOfCellAt$runtime];
-            if (obj instanceof TrieNode) {
-                TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime);
-                if (i2 == 30) {
-                    mutableRemove = nodeAtIndex.mutableCollisionRemove(e, persistentHashSetBuilder);
-                } else {
-                    mutableRemove = nodeAtIndex.mutableRemove(i, e, i2 + 5, persistentHashSetBuilder);
-                }
-                if (this.ownedBy == persistentHashSetBuilder.getOwnership$runtime() || nodeAtIndex != mutableRemove) {
-                    return mutableUpdateNodeAtIndex(indexOfCellAt$runtime, mutableRemove, persistentHashSetBuilder.getOwnership$runtime());
-                }
-            } else if (Intrinsics.areEqual(e, obj)) {
-                persistentHashSetBuilder.setSize(persistentHashSetBuilder.size() - 1);
-                return mutableRemoveCellAtIndex(indexOfCellAt$runtime, indexSegment, persistentHashSetBuilder.getOwnership$runtime());
-            }
+        if (hasNoCellAt(indexSegment)) {
+            return this;
         }
-        return this;
+        int indexOfCellAt$runtime = indexOfCellAt$runtime(indexSegment);
+        Object obj = this.buffer[indexOfCellAt$runtime];
+        if (obj instanceof TrieNode) {
+            TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime);
+            if (i2 == 30) {
+                mutableRemove = nodeAtIndex.mutableCollisionRemove(e, persistentHashSetBuilder);
+            } else {
+                mutableRemove = nodeAtIndex.mutableRemove(i, e, i2 + 5, persistentHashSetBuilder);
+            }
+            return (this.ownedBy == persistentHashSetBuilder.getOwnership$runtime() || nodeAtIndex != mutableRemove) ? mutableUpdateNodeAtIndex(indexOfCellAt$runtime, mutableRemove, persistentHashSetBuilder.getOwnership$runtime()) : this;
+        } else if (Intrinsics.areEqual(e, obj)) {
+            persistentHashSetBuilder.setSize(persistentHashSetBuilder.size() - 1);
+            return mutableRemoveCellAtIndex(indexOfCellAt$runtime, indexSegment, persistentHashSetBuilder.getOwnership$runtime());
+        } else {
+            return this;
+        }
     }
 
     /* compiled from: TrieNode.kt */

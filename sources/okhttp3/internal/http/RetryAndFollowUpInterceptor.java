@@ -78,7 +78,7 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
         return r7;
      */
     /* JADX WARN: Code restructure failed: missing block: B:21:0x0061, code lost:
-        r13 = th;
+        r12 = th;
      */
     /* JADX WARN: Code restructure failed: missing block: B:23:0x0064, code lost:
         r0 = r6.body();
@@ -118,7 +118,7 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
         r1.exitNetworkInterceptorExchange$okhttp(r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:48:0x00f1, code lost:
-        throw r13;
+        throw r12;
      */
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0026, code lost:
         r0 = r13.proceed(r0).newBuilder().request(r0);

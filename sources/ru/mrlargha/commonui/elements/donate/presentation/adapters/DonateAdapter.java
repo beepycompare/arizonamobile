@@ -381,7 +381,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:19:0x0119, code lost:
-            if (r10.getTextGradientColor().size() > 1) goto L21;
+            if (r9.getTextGradientColor().size() > 1) goto L21;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.

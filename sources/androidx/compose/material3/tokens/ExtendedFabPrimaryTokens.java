@@ -10,7 +10,7 @@ public final class ExtendedFabPrimaryTokens {
     public static final ExtendedFabPrimaryTokens INSTANCE = new ExtendedFabPrimaryTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final float ContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 56.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(56.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerLarge;
     private static final float FocusContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
     private static final ColorSchemeKeyTokens FocusIconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
@@ -19,7 +19,7 @@ public final class ExtendedFabPrimaryTokens {
     private static final ColorSchemeKeyTokens HoverIconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens HoverLabelTextColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
-    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
+    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
     private static final ColorSchemeKeyTokens LabelTextColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelLarge;
     private static final float LoweredContainerElevation = ElevationTokens.INSTANCE.m3360getLevel1D9Ej5fM();

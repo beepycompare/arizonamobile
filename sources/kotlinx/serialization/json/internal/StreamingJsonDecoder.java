@@ -204,7 +204,10 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
         if (i == 1 || i == 2 || i == 3) {
             return new StreamingJsonDecoder(this.json, switchMode, this.lexer, descriptor, this.discriminatorHolder);
         }
-        return (this.mode == switchMode && this.json.getConfiguration().getExplicitNulls()) ? this : new StreamingJsonDecoder(this.json, switchMode, this.lexer, descriptor, this.discriminatorHolder);
+        if (this.mode != switchMode || !this.json.getConfiguration().getExplicitNulls()) {
+            this = new StreamingJsonDecoder(this.json, switchMode, this.lexer, descriptor, this.discriminatorHolder);
+        }
+        return this;
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.CompositeDecoder

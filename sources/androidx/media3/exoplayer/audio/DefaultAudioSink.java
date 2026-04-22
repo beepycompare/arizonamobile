@@ -674,16 +674,16 @@ public final class DefaultAudioSink implements AudioSink {
             if (this.configuration.outputConfig.bufferSize > 1000000) {
                 AudioOutputProvider.OutputConfig build = this.configuration.outputConfig.buildUpon().setBufferSize(1000000).build();
                 try {
-                    AudioOutput buildAudioOutput = buildAudioOutput(build);
+                    AudioOutput buildAudioOutput = this.buildAudioOutput(build);
                     this.configuration = this.configuration.copyWithOutputConfig(build);
                     return buildAudioOutput;
                 } catch (AudioSink.InitializationException e2) {
                     e.addSuppressed(e2);
-                    maybeDisableOffload();
+                    this.maybeDisableOffload();
                     throw e;
                 }
             }
-            maybeDisableOffload();
+            this.maybeDisableOffload();
             throw e;
         }
     }

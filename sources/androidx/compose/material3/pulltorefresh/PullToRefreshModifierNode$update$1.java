@@ -36,10 +36,10 @@ public final class PullToRefreshModifierNode$update$1 extends SuspendLambda impl
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0031, code lost:
-        if (r5 == r0) goto L15;
+        if (r4 == r0) goto L15;
      */
     /* JADX WARN: Code restructure failed: missing block: B:16:0x003d, code lost:
-        if (r5 == r0) goto L15;
+        if (r4 == r0) goto L15;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x003f, code lost:
         return r0;

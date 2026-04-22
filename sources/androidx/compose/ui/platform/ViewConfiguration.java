@@ -64,7 +64,6 @@ public interface ViewConfiguration {
 
     /* renamed from: getMinimumTouchTargetSize-MYxV2XQ */
     default long mo6451getMinimumTouchTargetSizeMYxV2XQ() {
-        float f = 48;
-        return DpKt.m7577DpSizeYgX7TsA(Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f));
+        return DpKt.m7577DpSizeYgX7TsA(Dp.m7555constructorimpl(48.0f), Dp.m7555constructorimpl(48.0f));
     }
 }

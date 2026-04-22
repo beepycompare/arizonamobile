@@ -338,7 +338,7 @@ public final class AndroidCursorHandle_androidKt {
     }
 
     static {
-        float m7555constructorimpl = Dp.m7555constructorimpl(25);
+        float m7555constructorimpl = Dp.m7555constructorimpl(25.0f);
         CursorHandleHeight = m7555constructorimpl;
         CursorHandleWidth = Dp.m7555constructorimpl(Dp.m7555constructorimpl(m7555constructorimpl * 2.0f) / 2.4142137f);
     }

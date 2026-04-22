@@ -1,6 +1,7 @@
 package com.miami.game.core.files.updater.domain;
 
 import android.net.Uri;
+import androidx.media3.common.C;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import com.miami.game.core.domain.model.GameInfoFile;
@@ -40,7 +41,6 @@ import kotlinx.coroutines.flow.FlowKt;
 import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.coroutines.flow.StateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
-import kotlinx.datetime.internal.DateCalculationsKt;
 import timber.log.Timber;
 /* compiled from: FilesUpdaterInteractor.kt */
 @Singleton
@@ -90,12 +90,12 @@ public final class FilesUpdaterInteractor {
         filesUpdaterInteractor.calculatePercentage(j, j2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00f4  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0118  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0172  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x019d  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0242 A[LOOP:3: B:60:0x021a->B:63:0x0242, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0241 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00f3  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0117  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x016a  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0195  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x023a A[LOOP:3: B:60:0x0212->B:63:0x023a, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0239 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -140,27 +140,22 @@ public final class FilesUpdaterInteractor {
                 j3 = this.stateStore.getValue().getTimeRemainingSeconds();
             } else {
                 j4 = 0;
-                long j9 = (long) DateCalculationsKt.SECONDS_PER_HOUR;
-                j5 = j4 / j9;
-                long j10 = 60;
-                long j11 = (j4 % j9) / j10;
-                long j12 = j4 % j10;
-                long j13 = allDownloadSize;
+                j5 = j4 / 3600;
+                long j9 = (j4 % 3600) / 60;
+                long j10 = j4 % 60;
+                long j11 = allDownloadSize;
                 if (j5 <= 0) {
-                    str = j5 + " ч, " + j11 + " мин, " + j12 + " сек";
+                    str = j5 + " ч, " + j9 + " мин, " + j10 + " сек";
                 } else {
-                    str = j11 > 0 ? j11 + " мин, " + j12 + " сек" : j12 + " сек";
+                    str = j9 > 0 ? j9 + " мин, " + j10 + " сек" : j10 + " сек";
                 }
-                long j14 = 1000000000;
+                long j12 = j7 / C.NANOS_PER_SECOND;
+                long j13 = (j7 % C.NANOS_PER_SECOND) / 1000000;
                 str2 = str;
-                long j15 = j7 / j14;
-                long j16 = j7 % j14;
-                long j17 = 1000000;
-                long j18 = j16 / j17;
-                long j19 = j13 / j14;
-                long j20 = (j13 % j14) / j17;
-                str3 = j15 <= 0 ? j15 + " gb, " + j18 + " mb / " + j19 + " gb, " + j20 + " mb" : j19 > 0 ? j18 + " mb / " + j19 + " gb, " + j20 + " mb" : j18 + " mb / " + j20 + " mb";
-                Timber.Forest.d("percentage = " + d + ", time = " + j4 + ", minutes = " + j11 + ", seconds = " + j12, new Object[0]);
+                long j14 = j11 / C.NANOS_PER_SECOND;
+                long j15 = (j11 % C.NANOS_PER_SECOND) / 1000000;
+                str3 = j12 <= 0 ? j12 + " gb, " + j13 + " mb / " + j14 + " gb, " + j15 + " mb" : j14 > 0 ? j13 + " mb / " + j14 + " gb, " + j15 + " mb" : j13 + " mb / " + j15 + " mb";
+                Timber.Forest.d("percentage = " + d + ", time = " + j4 + ", minutes = " + j9 + ", seconds = " + j10, new Object[0]);
                 mutableStateFlow = this.stateStore;
                 while (true) {
                     value = mutableStateFlow.getValue();
@@ -175,24 +170,19 @@ public final class FilesUpdaterInteractor {
             j3 = j8 / j2;
         }
         j4 = j3;
-        long j92 = (long) DateCalculationsKt.SECONDS_PER_HOUR;
-        j5 = j4 / j92;
-        long j102 = 60;
-        long j112 = (j4 % j92) / j102;
-        long j122 = j4 % j102;
-        long j132 = allDownloadSize;
+        j5 = j4 / 3600;
+        long j92 = (j4 % 3600) / 60;
+        long j102 = j4 % 60;
+        long j112 = allDownloadSize;
         if (j5 <= 0) {
         }
-        long j142 = 1000000000;
+        long j122 = j7 / C.NANOS_PER_SECOND;
+        long j132 = (j7 % C.NANOS_PER_SECOND) / 1000000;
         str2 = str;
-        long j152 = j7 / j142;
-        long j162 = j7 % j142;
-        long j172 = 1000000;
-        long j182 = j162 / j172;
-        long j192 = j132 / j142;
-        long j202 = (j132 % j142) / j172;
-        str3 = j152 <= 0 ? j152 + " gb, " + j182 + " mb / " + j192 + " gb, " + j202 + " mb" : j192 > 0 ? j182 + " mb / " + j192 + " gb, " + j202 + " mb" : j182 + " mb / " + j202 + " mb";
-        Timber.Forest.d("percentage = " + d + ", time = " + j4 + ", minutes = " + j112 + ", seconds = " + j122, new Object[0]);
+        long j142 = j112 / C.NANOS_PER_SECOND;
+        long j152 = (j112 % C.NANOS_PER_SECOND) / 1000000;
+        str3 = j122 <= 0 ? j122 + " gb, " + j132 + " mb / " + j142 + " gb, " + j152 + " mb" : j142 > 0 ? j132 + " mb / " + j142 + " gb, " + j152 + " mb" : j132 + " mb / " + j152 + " mb";
+        Timber.Forest.d("percentage = " + d + ", time = " + j4 + ", minutes = " + j92 + ", seconds = " + j102, new Object[0]);
         mutableStateFlow = this.stateStore;
         while (true) {
             value = mutableStateFlow.getValue();
@@ -444,11 +434,11 @@ public final class FilesUpdaterInteractor {
                             filesUpdaterInteractor$finalValidationFiles$1.label = 5;
                         }
                         ArrayList arrayList22 = new ArrayList();
-                        while (r1.hasNext()) {
+                        while (r0.hasNext()) {
                         }
                         ArrayList<CheckedFile> arrayList32 = arrayList22;
                         ArrayList arrayList42 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList32, 10));
-                        while (r2.hasNext()) {
+                        while (r1.hasNext()) {
                         }
                         return arrayList42;
                     }

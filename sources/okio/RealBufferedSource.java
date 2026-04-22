@@ -1,6 +1,7 @@
 package okio;
 
 import android.support.v4.media.session.PlaybackStateCompat;
+import androidx.collection.SieveCacheKt;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.exifinterface.media.ExifInterface;
 import java.io.EOFException;
@@ -139,7 +140,7 @@ public final class RealBufferedSource implements BufferedSource {
                 if (RealBufferedSource.this.closed) {
                     throw new IOException("closed");
                 }
-                return (int) Math.min(RealBufferedSource.this.bufferField.size(), Integer.MAX_VALUE);
+                return (int) Math.min(RealBufferedSource.this.bufferField.size(), (long) SieveCacheKt.NodeLinkMask);
             }
 
             @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
@@ -403,7 +404,7 @@ public final class RealBufferedSource implements BufferedSource {
             }
             Buffer buffer = new Buffer();
             Buffer buffer2 = this.bufferField;
-            buffer2.copyTo(buffer, 0L, Math.min(32, buffer2.size()));
+            buffer2.copyTo(buffer, 0L, Math.min(32L, buffer2.size()));
             throw new EOFException("\\n not found: limit=" + Math.min(this.bufferField.size(), j) + " content=" + buffer.readByteString().hex() + Typography.ellipsis);
         }
         throw new IllegalArgumentException(("limit < 0: " + j).toString());
@@ -463,12 +464,12 @@ public final class RealBufferedSource implements BufferedSource {
         if (r4 == 0) goto L16;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x002c, code lost:
-        r1 = new java.lang.StringBuilder("Expected a digit or '-' but was 0x");
-        r2 = java.lang.Integer.toString(r8, kotlin.text.CharsKt.checkRadix(16));
-        kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r2, "toString(...)");
+        r0 = new java.lang.StringBuilder("Expected a digit or '-' but was 0x");
+        r1 = java.lang.Integer.toString(r8, kotlin.text.CharsKt.checkRadix(16));
+        kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, "toString(...)");
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x004f, code lost:
-        throw new java.lang.NumberFormatException(r1.append(r2).toString());
+        throw new java.lang.NumberFormatException(r0.append(r1).toString());
      */
     @Override // okio.BufferedSource
     /*
@@ -495,12 +496,12 @@ public final class RealBufferedSource implements BufferedSource {
         if (r0 == 0) goto L21;
      */
     /* JADX WARN: Code restructure failed: missing block: B:21:0x0034, code lost:
-        r1 = new java.lang.StringBuilder("Expected leading [0-9a-fA-F] character but was 0x");
-        r2 = java.lang.Integer.toString(r2, kotlin.text.CharsKt.checkRadix(16));
-        kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r2, "toString(...)");
+        r0 = new java.lang.StringBuilder("Expected leading [0-9a-fA-F] character but was 0x");
+        r1 = java.lang.Integer.toString(r2, kotlin.text.CharsKt.checkRadix(16));
+        kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, "toString(...)");
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x0057, code lost:
-        throw new java.lang.NumberFormatException(r1.append(r2).toString());
+        throw new java.lang.NumberFormatException(r0.append(r1).toString());
      */
     @Override // okio.BufferedSource
     /*

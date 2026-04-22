@@ -83,8 +83,9 @@ public final class Arrangement {
         }
 
         private final float calculateLargeSize(float f, int i, float f2, int i2, int i3) {
-            float f3 = i2 / 2.0f;
-            return (f - ((i + f3) * f2)) / (i3 + f3);
+            float f3 = i;
+            float f4 = i2 / 2.0f;
+            return (f - ((f3 + f4) * f2)) / (i3 + f4);
         }
 
         private Companion() {
@@ -137,75 +138,60 @@ public final class Arrangement {
             return arrangement;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:13:0x0037  */
-        /* JADX WARN: Removed duplicated region for block: B:14:0x003c  */
-        /* JADX WARN: Removed duplicated region for block: B:22:0x0064  */
-        /* JADX WARN: Removed duplicated region for block: B:23:0x006a  */
+        /* JADX WARN: Removed duplicated region for block: B:13:0x003e  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
+        /* JADX WARN: Removed duplicated region for block: B:22:0x0068  */
+        /* JADX WARN: Removed duplicated region for block: B:23:0x006e  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         private final Arrangement fit(int i, float f, float f2, int i2, float f3, float f4, float f5, int i3, float f6, int i4, float f7) {
             float max;
-            float f8;
-            Companion companion;
-            int i5;
-            int i6;
             float calculateLargeSize;
+            float f8;
             float f9;
-            float f10;
-            float f11 = f - ((((i4 + i3) + i2) - 1) * f2);
+            float f10 = f - ((((i4 + i3) + i2) - 1) * f2);
             float coerceIn = RangesKt.coerceIn(f3, f4, f5);
-            float f12 = i4;
-            float f13 = i3;
-            float f14 = (f7 * f12) + (f6 * f13);
-            float f15 = i2;
-            float f16 = f11 - (f14 + (coerceIn * f15));
-            if (i2 > 0 && f16 > 0.0f) {
-                max = Math.min(f16 / f15, f5 - coerceIn);
+            float f11 = i4;
+            float f12 = i3;
+            float f13 = i2;
+            float f14 = f10 - (((f7 * f11) + (f6 * f12)) + (coerceIn * f13));
+            if (i2 > 0 && f14 > 0.0f) {
+                max = Math.min(f14 / f13, f5 - coerceIn);
             } else {
-                if (i2 > 0 && f16 < 0.0f) {
-                    max = Math.max(f16 / f15, f4 - coerceIn);
+                if (i2 > 0 && f14 < 0.0f) {
+                    max = Math.max(f14 / f13, f4 - coerceIn);
                 }
-                if (i2 <= 0) {
-                    f8 = coerceIn;
-                    i5 = i3;
-                    i6 = i4;
-                    companion = this;
-                } else {
-                    f8 = 0.0f;
-                    companion = this;
-                    i5 = i3;
-                    i6 = i4;
-                }
-                calculateLargeSize = companion.calculateLargeSize(f11, i2, f8, i5, i6);
-                float f17 = f8;
-                f9 = (calculateLargeSize + f17) / 2.0f;
-                if (i5 > 0 && calculateLargeSize != f7) {
-                    f10 = (f7 - calculateLargeSize) * f12;
-                    float min = Math.min(Math.abs(f10), 0.1f * f9 * f13);
-                    if (f10 <= 0.0f) {
-                        f9 -= min / f13;
-                        calculateLargeSize += min / f12;
+                float f15 = i2 <= 0 ? coerceIn : 0.0f;
+                calculateLargeSize = calculateLargeSize(f10, i2, f15, i3, i4);
+                float f16 = f15;
+                f8 = (calculateLargeSize + f16) / 2.0f;
+                if (i3 > 0 && calculateLargeSize != f7) {
+                    f9 = (f7 - calculateLargeSize) * f11;
+                    float min = Math.min(Math.abs(f9), 0.1f * f8 * f12);
+                    if (f9 <= 0.0f) {
+                        f8 -= min / f12;
+                        calculateLargeSize += min / f11;
                     } else {
-                        f9 += min / f13;
-                        calculateLargeSize -= min / f12;
+                        f8 += min / f12;
+                        calculateLargeSize -= min / f11;
                     }
                 }
-                return new Arrangement(i, f17, i2, f9, i5, calculateLargeSize, i6);
+                return new Arrangement(i, f16, i2, f8, i3, calculateLargeSize, i4);
             }
             coerceIn += max;
             if (i2 <= 0) {
             }
-            calculateLargeSize = companion.calculateLargeSize(f11, i2, f8, i5, i6);
-            float f172 = f8;
-            f9 = (calculateLargeSize + f172) / 2.0f;
-            if (i5 > 0) {
-                f10 = (f7 - calculateLargeSize) * f12;
-                float min2 = Math.min(Math.abs(f10), 0.1f * f9 * f13);
-                if (f10 <= 0.0f) {
+            calculateLargeSize = calculateLargeSize(f10, i2, f15, i3, i4);
+            float f162 = f15;
+            f8 = (calculateLargeSize + f162) / 2.0f;
+            if (i3 > 0) {
+                f9 = (f7 - calculateLargeSize) * f11;
+                float min2 = Math.min(Math.abs(f9), 0.1f * f8 * f12);
+                if (f9 <= 0.0f) {
                 }
             }
-            return new Arrangement(i, f172, i2, f9, i5, calculateLargeSize, i6);
+            return new Arrangement(i, f162, i2, f8, i3, calculateLargeSize, i4);
         }
     }
 }

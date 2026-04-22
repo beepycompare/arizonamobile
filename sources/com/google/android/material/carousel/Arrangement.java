@@ -17,8 +17,9 @@ public final class Arrangement {
         if (i <= 0) {
             f2 = 0.0f;
         }
-        float f3 = i2 / 2.0f;
-        return (f - ((i + f3) * f2)) / (i3 + f3);
+        float f3 = i;
+        float f4 = i2 / 2.0f;
+        return (f - ((f3 + f4) * f2)) / (i3 + f4);
     }
 
     public Arrangement(int i, float f, float f2, float f3, int i2, float f4, int i3, float f5, int i4, float f6) {

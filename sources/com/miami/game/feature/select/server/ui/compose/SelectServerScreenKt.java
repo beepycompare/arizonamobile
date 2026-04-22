@@ -21,7 +21,6 @@ import androidx.compose.material3.TextKt;
 import androidx.compose.runtime.Applier;
 import androidx.compose.runtime.ComposablesKt;
 import androidx.compose.runtime.Composer;
-import androidx.compose.runtime.ComposerImplKt;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.CompositionLocalMap;
 import androidx.compose.runtime.EffectsKt;
@@ -186,6 +185,8 @@ public final class SelectServerScreenKt {
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r13v18 */
     public static final void SelectServerScreen(final SelectServerUiState uiState, final Function0<Unit> navigateHome, Function1<? super ServerModel, Unit> onSelect, final Function1<? super ServerModel, Unit> onFavorite, final Function0<Unit> onFavoriteList, final Function0<Unit> onMobileList, final Function0<Unit> onDesktopList, Composer composer, final int i) {
         int i2;
         final Function1<? super ServerModel, Unit> function1;
@@ -364,11 +365,10 @@ public final class SelectServerScreenKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -851043448, "C127@5201L498,121@4829L870:SelectServerScreen.kt#2ojkxh");
-                float f = (float) ComposerImplKt.nodeKey;
-                Modifier m851heightInVpY3zN4 = SizeKt.m851heightInVpY3zN4(Modifier.Companion, Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(300));
-                GridCells.FixedSize fixedSize = new GridCells.FixedSize(Dp.m7555constructorimpl(f), null);
+                Modifier m851heightInVpY3zN4 = SizeKt.m851heightInVpY3zN4(Modifier.Companion, Dp.m7555constructorimpl(125.0f), Dp.m7555constructorimpl(300.0f));
+                GridCells.FixedSize fixedSize = new GridCells.FixedSize(Dp.m7555constructorimpl(125.0f), null);
                 Arrangement.HorizontalOrVertical spaceEvenly = Arrangement.INSTANCE.getSpaceEvenly();
-                PaddingValues m815PaddingValuesa9UjIt4$default = PaddingKt.m815PaddingValuesa9UjIt4$default(Dp.m7555constructorimpl(40), 0.0f, Dp.m7555constructorimpl(140), 0.0f, 10, null);
+                PaddingValues m815PaddingValuesa9UjIt4$default = PaddingKt.m815PaddingValuesa9UjIt4$default(Dp.m7555constructorimpl(40.0f), 0.0f, Dp.m7555constructorimpl(140.0f), 0.0f, 10, null);
                 GridCells.FixedSize fixedSize2 = fixedSize;
                 Arrangement.HorizontalOrVertical horizontalOrVertical = spaceEvenly;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1635126503, str);
@@ -392,7 +392,7 @@ public final class SelectServerScreenKt {
                     mutableState = mutableState2;
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                LazyGridDslKt.LazyHorizontalGrid(fixedSize2, m851heightInVpY3zN4, rememberLazyGridState, m815PaddingValuesa9UjIt4$default, false, null, horizontalOrVertical, null, false, null, (Function1) rememberedValue4, startRestartGroup, 1575984, 0, 944);
+                LazyGridDslKt.LazyHorizontalGrid(fixedSize2, m851heightInVpY3zN4, rememberLazyGridState, m815PaddingValuesa9UjIt4$default, false, null, horizontalOrVertical, null, false, null, rememberedValue4, startRestartGroup, 1575984, 0, 944);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -434,10 +434,9 @@ public final class SelectServerScreenKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1451227624, "C110@4417L10,111@4475L13,112@4527L13,113@4583L12,107@4268L349:SelectServerScreen.kt#2ojkxh");
                 long m4771copywmQWz5c$default = Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null);
                 TextStyle bodyMedium = MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodyMedium();
-                float f2 = 32;
-                long m9135dpToSp8Feqmps = TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6);
-                long m9135dpToSp8Feqmps2 = TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6);
-                long m9135dpToSp8Feqmps3 = TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(1), startRestartGroup, 6);
+                long m9135dpToSp8Feqmps = TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(32.0f), startRestartGroup, 6);
+                long m9135dpToSp8Feqmps2 = TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(32.0f), startRestartGroup, 6);
+                long m9135dpToSp8Feqmps3 = TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(1.0f), startRestartGroup, 6);
                 TextUnitKt.m7762checkArithmeticR2X_6o(m9135dpToSp8Feqmps3);
                 long pack = TextUnitKt.pack(TextUnit.m7747getRawTypeimpl(m9135dpToSp8Feqmps3), -TextUnit.m7749getValueimpl(m9135dpToSp8Feqmps3));
                 z2 = false;

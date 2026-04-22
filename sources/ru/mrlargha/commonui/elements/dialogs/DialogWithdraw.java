@@ -611,8 +611,8 @@ public final class DialogWithdraw extends AbstractDialog {
         return charSequence2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x00c9, code lost:
-        if (r5 != null) goto L27;
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x00c6, code lost:
+        if (r3 != null) goto L27;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -908,7 +908,7 @@ public final class DialogWithdraw extends AbstractDialog {
         Integer intOrNull2 = StringsKt.toIntOrNull(dialogWithdrawBinding.etKk.getText().toString());
         int intValue2 = intOrNull2 != null ? intOrNull2.intValue() : 0;
         Double doubleOrNull = StringsKt.toDoubleOrNull(dialogWithdrawBinding.etK.getText().toString());
-        return MoneyElementKt.toLong(new MoneyParts(intValue, intValue2, (int) ((doubleOrNull != null ? doubleOrNull.doubleValue() : FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) * 1000)));
+        return MoneyElementKt.toLong(new MoneyParts(intValue, intValue2, (int) ((doubleOrNull != null ? doubleOrNull.doubleValue() : FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) * 1000.0d)));
     }
 
     public final void checkActiveButton(boolean z) {

@@ -139,7 +139,7 @@ public final class DotsIndicator extends BaseDotsIndicator {
         });
         Intrinsics.checkNotNull(inflate);
         ExtensionsKt.setPaddingHorizontal(inflate, (int) (this.dotsElevation * 0.8f));
-        ExtensionsKt.setPaddingVertical(inflate, (int) (this.dotsElevation * 2));
+        ExtensionsKt.setPaddingVertical(inflate, (int) (this.dotsElevation * 2.0f));
         imageView.setElevation(this.dotsElevation);
         this.dots.add(imageView);
         LinearLayout linearLayout = this.linearLayout;
@@ -197,8 +197,7 @@ public final class DotsIndicator extends BaseDotsIndicator {
                 float dotsSize = DotsIndicator.this.getDotsSize();
                 float dotsSize2 = DotsIndicator.this.getDotsSize();
                 f2 = DotsIndicator.this.dotsWidthFactor;
-                float f4 = 1;
-                ExtensionsKt.setWidth(imageView2, (int) (dotsSize + (dotsSize2 * (f2 - f4) * (f4 - f))));
+                ExtensionsKt.setWidth(imageView2, (int) (dotsSize + (dotsSize2 * (f2 - 1.0f) * (1.0f - f))));
                 if (ExtensionsKt.isInBounds(DotsIndicator.this.dots, i2)) {
                     ImageView imageView3 = DotsIndicator.this.dots.get(i2);
                     Intrinsics.checkNotNullExpressionValue(imageView3, "get(...)");
@@ -206,7 +205,7 @@ public final class DotsIndicator extends BaseDotsIndicator {
                     float dotsSize3 = DotsIndicator.this.getDotsSize();
                     float dotsSize4 = DotsIndicator.this.getDotsSize();
                     f3 = DotsIndicator.this.dotsWidthFactor;
-                    ExtensionsKt.setWidth(imageView4, (int) (dotsSize3 + (dotsSize4 * (f3 - f4) * f)));
+                    ExtensionsKt.setWidth(imageView4, (int) (dotsSize3 + (dotsSize4 * (f3 - 1.0f) * f)));
                     Drawable background = imageView2.getBackground();
                     Intrinsics.checkNotNull(background, "null cannot be cast to non-null type com.tbuonomo.viewpagerdotsindicator.DotsGradientDrawable");
                     DotsGradientDrawable dotsGradientDrawable = (DotsGradientDrawable) background;

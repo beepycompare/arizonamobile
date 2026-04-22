@@ -169,7 +169,7 @@ public final class AndroidPredictiveBackAnimatableV1 implements PredictiveBackAn
                     if (z || rememberedValue == Composer.Companion.getEmpty()) {
                         rememberedValue = 
                         /*  JADX ERROR: Method code generation error
-                            jadx.core.utils.exceptions.CodegenException: Error generate insn: 0x0049: CONSTRUCTOR  (r2v2 'rememberedValue' java.lang.Object) = (r5v0 'corners' com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners A[DONT_INLINE]) call: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$exitModifier$1$1$$ExternalSyntheticLambda0.<init>(com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners):void type: CONSTRUCTOR in method: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$exitModifier$1.1.invoke(androidx.compose.ui.Modifier, com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners, androidx.compose.runtime.Composer, int):androidx.compose.ui.Modifier, file: classes3.dex
+                            jadx.core.utils.exceptions.CodegenException: Error generate insn: 0x0049: CONSTRUCTOR  (r1v3 'rememberedValue' java.lang.Object) = (r5v0 'corners' com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners A[DONT_INLINE]) call: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$exitModifier$1$1$$ExternalSyntheticLambda0.<init>(com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners):void type: CONSTRUCTOR in method: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$exitModifier$1.1.invoke(androidx.compose.ui.Modifier, com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners, androidx.compose.runtime.Composer, int):androidx.compose.ui.Modifier, file: classes3.dex
                             	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:309)
                             	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:272)
                             	at jadx.core.codegen.RegionGen.makeSimpleBlock(RegionGen.java:91)
@@ -214,51 +214,51 @@ public final class AndroidPredictiveBackAnimatableV1 implements PredictiveBackAn
                             java.lang.String r2 = "com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1.<get-exitModifier>.<anonymous>.<anonymous> (AndroidPredictiveBackAnimatableV1.kt:45)"
                             androidx.compose.runtime.ComposerKt.traceEventStart(r0, r7, r1, r2)
                         L1c:
-                            com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1 r0 = r3.this$0
-                            r1 = 224505919(0xd61b03f, float:6.9545627E-31)
-                            r6.startReplaceGroup(r1)
-                            r1 = r7 & 112(0x70, float:1.57E-43)
-                            r1 = r1 ^ 48
-                            r2 = 32
-                            if (r1 <= r2) goto L32
-                            boolean r1 = r6.changed(r5)
-                            if (r1 != 0) goto L36
+                            com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1 r3 = r3.this$0
+                            r0 = 224505919(0xd61b03f, float:6.9545627E-31)
+                            r6.startReplaceGroup(r0)
+                            r0 = r7 & 112(0x70, float:1.57E-43)
+                            r0 = r0 ^ 48
+                            r1 = 32
+                            if (r0 <= r1) goto L32
+                            boolean r0 = r6.changed(r5)
+                            if (r0 != 0) goto L36
                         L32:
-                            r1 = r7 & 48
-                            if (r1 != r2) goto L38
+                            r0 = r7 & 48
+                            if (r0 != r1) goto L38
                         L36:
-                            r1 = 1
+                            r0 = 1
                             goto L39
                         L38:
-                            r1 = 0
+                            r0 = 0
                         L39:
-                            java.lang.Object r2 = r6.rememberedValue()
-                            if (r1 != 0) goto L47
-                            androidx.compose.runtime.Composer$Companion r1 = androidx.compose.runtime.Composer.Companion
-                            java.lang.Object r1 = r1.getEmpty()
-                            if (r2 != r1) goto L4f
+                            java.lang.Object r1 = r6.rememberedValue()
+                            if (r0 != 0) goto L47
+                            androidx.compose.runtime.Composer$Companion r0 = androidx.compose.runtime.Composer.Companion
+                            java.lang.Object r0 = r0.getEmpty()
+                            if (r1 != r0) goto L4f
                         L47:
-                            com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$exitModifier$1$1$$ExternalSyntheticLambda0 r2 = new com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$exitModifier$1$1$$ExternalSyntheticLambda0
-                            r2.<init>(r5)
-                            r6.updateRememberedValue(r2)
+                            com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$exitModifier$1$1$$ExternalSyntheticLambda0 r1 = new com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$exitModifier$1$1$$ExternalSyntheticLambda0
+                            r1.<init>(r5)
+                            r6.updateRememberedValue(r1)
                         L4f:
-                            kotlin.jvm.functions.Function2 r2 = (kotlin.jvm.functions.Function2) r2
+                            kotlin.jvm.functions.Function2 r1 = (kotlin.jvm.functions.Function2) r1
                             r6.endReplaceGroup()
                             r5 = r7 & 14
                             int r7 = androidx.compose.animation.core.Animatable.$stable
-                            int r1 = androidx.compose.animation.core.Animatable.$stable
-                            r7 = r7 | r1
-                            int r1 = androidx.compose.animation.core.Animatable.$stable
-                            r7 = r7 | r1
+                            int r0 = androidx.compose.animation.core.Animatable.$stable
+                            r7 = r7 | r0
+                            int r0 = androidx.compose.animation.core.Animatable.$stable
+                            r7 = r7 | r0
                             int r7 = r7 << 6
                             r5 = r5 | r7
-                            androidx.compose.ui.Modifier r4 = com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1.access$exitModifier(r0, r4, r2, r6, r5)
-                            boolean r5 = androidx.compose.runtime.ComposerKt.isTraceInProgress()
-                            if (r5 == 0) goto L6e
+                            androidx.compose.ui.Modifier r3 = com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1.access$exitModifier(r3, r4, r1, r6, r5)
+                            boolean r4 = androidx.compose.runtime.ComposerKt.isTraceInProgress()
+                            if (r4 == 0) goto L6e
                             androidx.compose.runtime.ComposerKt.traceEventEnd()
                         L6e:
                             r6.endReplaceGroup()
-                            return r4
+                            return r3
                         */
                         throw new UnsupportedOperationException("Method not decompiled: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$exitModifier$1.AnonymousClass1.invoke(androidx.compose.ui.Modifier, com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners, androidx.compose.runtime.Composer, int):androidx.compose.ui.Modifier");
                     }
@@ -340,7 +340,7 @@ public final class AndroidPredictiveBackAnimatableV1 implements PredictiveBackAn
                         if (z || rememberedValue == Composer.Companion.getEmpty()) {
                             rememberedValue = 
                             /*  JADX ERROR: Method code generation error
-                                jadx.core.utils.exceptions.CodegenException: Error generate insn: 0x0049: CONSTRUCTOR  (r2v2 'rememberedValue' java.lang.Object) = (r5v0 'corners' com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners A[DONT_INLINE]) call: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$enterModifier$1$1$$ExternalSyntheticLambda0.<init>(com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners):void type: CONSTRUCTOR in method: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$enterModifier$1.1.invoke(androidx.compose.ui.Modifier, com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners, androidx.compose.runtime.Composer, int):androidx.compose.ui.Modifier, file: classes3.dex
+                                jadx.core.utils.exceptions.CodegenException: Error generate insn: 0x0049: CONSTRUCTOR  (r1v3 'rememberedValue' java.lang.Object) = (r5v0 'corners' com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners A[DONT_INLINE]) call: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$enterModifier$1$1$$ExternalSyntheticLambda0.<init>(com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners):void type: CONSTRUCTOR in method: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$enterModifier$1.1.invoke(androidx.compose.ui.Modifier, com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners, androidx.compose.runtime.Composer, int):androidx.compose.ui.Modifier, file: classes3.dex
                                 	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:309)
                                 	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:272)
                                 	at jadx.core.codegen.RegionGen.makeSimpleBlock(RegionGen.java:91)
@@ -385,51 +385,51 @@ public final class AndroidPredictiveBackAnimatableV1 implements PredictiveBackAn
                                 java.lang.String r2 = "com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1.<get-enterModifier>.<anonymous>.<anonymous> (AndroidPredictiveBackAnimatableV1.kt:57)"
                                 androidx.compose.runtime.ComposerKt.traceEventStart(r0, r7, r1, r2)
                             L1c:
-                                com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1 r0 = r3.this$0
-                                r1 = 1524532429(0x5ade84cd, float:3.13167304E16)
-                                r6.startReplaceGroup(r1)
-                                r1 = r7 & 112(0x70, float:1.57E-43)
-                                r1 = r1 ^ 48
-                                r2 = 32
-                                if (r1 <= r2) goto L32
-                                boolean r1 = r6.changed(r5)
-                                if (r1 != 0) goto L36
+                                com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1 r3 = r3.this$0
+                                r0 = 1524532429(0x5ade84cd, float:3.13167304E16)
+                                r6.startReplaceGroup(r0)
+                                r0 = r7 & 112(0x70, float:1.57E-43)
+                                r0 = r0 ^ 48
+                                r1 = 32
+                                if (r0 <= r1) goto L32
+                                boolean r0 = r6.changed(r5)
+                                if (r0 != 0) goto L36
                             L32:
-                                r1 = r7 & 48
-                                if (r1 != r2) goto L38
+                                r0 = r7 & 48
+                                if (r0 != r1) goto L38
                             L36:
-                                r1 = 1
+                                r0 = 1
                                 goto L39
                             L38:
-                                r1 = 0
+                                r0 = 0
                             L39:
-                                java.lang.Object r2 = r6.rememberedValue()
-                                if (r1 != 0) goto L47
-                                androidx.compose.runtime.Composer$Companion r1 = androidx.compose.runtime.Composer.Companion
-                                java.lang.Object r1 = r1.getEmpty()
-                                if (r2 != r1) goto L4f
+                                java.lang.Object r1 = r6.rememberedValue()
+                                if (r0 != 0) goto L47
+                                androidx.compose.runtime.Composer$Companion r0 = androidx.compose.runtime.Composer.Companion
+                                java.lang.Object r0 = r0.getEmpty()
+                                if (r1 != r0) goto L4f
                             L47:
-                                com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$enterModifier$1$1$$ExternalSyntheticLambda0 r2 = new com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$enterModifier$1$1$$ExternalSyntheticLambda0
-                                r2.<init>(r5)
-                                r6.updateRememberedValue(r2)
+                                com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$enterModifier$1$1$$ExternalSyntheticLambda0 r1 = new com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$enterModifier$1$1$$ExternalSyntheticLambda0
+                                r1.<init>(r5)
+                                r6.updateRememberedValue(r1)
                             L4f:
-                                kotlin.jvm.functions.Function2 r2 = (kotlin.jvm.functions.Function2) r2
+                                kotlin.jvm.functions.Function2 r1 = (kotlin.jvm.functions.Function2) r1
                                 r6.endReplaceGroup()
                                 r5 = r7 & 14
                                 int r7 = androidx.compose.animation.core.Animatable.$stable
-                                int r1 = androidx.compose.animation.core.Animatable.$stable
-                                r7 = r7 | r1
-                                int r1 = androidx.compose.animation.core.Animatable.$stable
-                                r7 = r7 | r1
+                                int r0 = androidx.compose.animation.core.Animatable.$stable
+                                r7 = r7 | r0
+                                int r0 = androidx.compose.animation.core.Animatable.$stable
+                                r7 = r7 | r0
                                 int r7 = r7 << 6
                                 r5 = r5 | r7
-                                androidx.compose.ui.Modifier r4 = com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1.access$enterModifier(r0, r4, r2, r6, r5)
-                                boolean r5 = androidx.compose.runtime.ComposerKt.isTraceInProgress()
-                                if (r5 == 0) goto L6e
+                                androidx.compose.ui.Modifier r3 = com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1.access$enterModifier(r3, r4, r1, r6, r5)
+                                boolean r4 = androidx.compose.runtime.ComposerKt.isTraceInProgress()
+                                if (r4 == 0) goto L6e
                                 androidx.compose.runtime.ComposerKt.traceEventEnd()
                             L6e:
                                 r6.endReplaceGroup()
-                                return r4
+                                return r3
                             */
                             throw new UnsupportedOperationException("Method not decompiled: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$enterModifier$1.AnonymousClass1.invoke(androidx.compose.ui.Modifier, com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.LayoutCorners, androidx.compose.runtime.Composer, int):androidx.compose.ui.Modifier");
                         }

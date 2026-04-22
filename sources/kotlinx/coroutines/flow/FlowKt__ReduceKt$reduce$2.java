@@ -25,8 +25,7 @@ public final class FlowKt__ReduceKt$reduce$2<T> implements FlowCollector {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
-    /* JADX WARN: Type inference failed for: r8v5 */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0037  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -47,7 +46,7 @@ public final class FlowKt__ReduceKt$reduce$2<T> implements FlowCollector {
                     ResultKt.throwOnFailure(obj);
                     objectRef = this.$accumulator;
                     if (objectRef.element != NullSurrogateKt.NULL) {
-                        Function3 function3 = this.$operation;
+                        Function3<S, T, Continuation<? super S>, Object> function3 = this.$operation;
                         Object obj2 = this.$accumulator.element;
                         flowKt__ReduceKt$reduce$2$emit$1.L$0 = objectRef;
                         flowKt__ReduceKt$reduce$2$emit$1.label = 1;
@@ -55,7 +54,7 @@ public final class FlowKt__ReduceKt$reduce$2<T> implements FlowCollector {
                         if (invoke == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        obj = invoke;
+                        t = invoke;
                         objectRef2 = objectRef;
                     }
                     objectRef.element = t;
@@ -65,10 +64,9 @@ public final class FlowKt__ReduceKt$reduce$2<T> implements FlowCollector {
                 } else {
                     objectRef2 = (Ref.ObjectRef) flowKt__ReduceKt$reduce$2$emit$1.L$0;
                     ResultKt.throwOnFailure(obj);
+                    t = obj;
                 }
-                T t2 = obj;
                 objectRef = objectRef2;
-                t = t2;
                 objectRef.element = t;
                 return Unit.INSTANCE;
             }
@@ -79,9 +77,7 @@ public final class FlowKt__ReduceKt$reduce$2<T> implements FlowCollector {
         i = flowKt__ReduceKt$reduce$2$emit$1.label;
         if (i != 0) {
         }
-        T t22 = obj3;
         objectRef = objectRef2;
-        t = t22;
         objectRef.element = t;
         return Unit.INSTANCE;
     }

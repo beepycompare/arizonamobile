@@ -84,8 +84,8 @@ public final class BlockGraphicsLayerModifier extends Modifier.Node implements L
 
     @Override // androidx.compose.ui.node.SemanticsModifierNode
     public void applySemantics(SemanticsPropertyReceiver semanticsPropertyReceiver) {
+        Shape lastShape$ui;
         boolean lastClip$ui;
-        Shape shape;
         ReusableGraphicsLayerScope reusableGraphicsLayerScope;
         ReusableGraphicsLayerScope reusableGraphicsLayerScope2;
         ReusableGraphicsLayerScope reusableGraphicsLayerScope3;
@@ -112,19 +112,18 @@ public final class BlockGraphicsLayerModifier extends Modifier.Node implements L
                     this.layerBlock.invoke(reusableGraphicsLayerScope3);
                     Unit unit = Unit.INSTANCE;
                     companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                    shape = reusableGraphicsLayerScope3.getShape();
+                    lastShape$ui = reusableGraphicsLayerScope3.getShape();
                     lastClip$ui = reusableGraphicsLayerScope3.getClip();
                 } catch (Throwable th) {
                     companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
                     throw th;
                 }
             } else {
-                Shape lastShape$ui = m6387requireCoordinator64DMado.getLastShape$ui();
+                lastShape$ui = m6387requireCoordinator64DMado.getLastShape$ui();
                 lastClip$ui = m6387requireCoordinator64DMado.getLastClip$ui();
-                shape = lastShape$ui;
             }
             if (lastClip$ui) {
-                SemanticsPropertiesKt.setShape(semanticsPropertyReceiver, shape);
+                SemanticsPropertiesKt.setShape(semanticsPropertyReceiver, lastShape$ui);
             }
         }
     }

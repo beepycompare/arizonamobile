@@ -122,6 +122,7 @@ public class CrashlyticsController {
     }
 
     synchronized void handleUncaughtException(final SettingsProvider settingsProvider, final Thread thread, final Throwable th, final boolean z) {
+        CrashlyticsController crashlyticsController;
         Throwable th2;
         try {
             try {
@@ -131,10 +132,12 @@ public class CrashlyticsController {
                         CrashEventReceiver.notifyCrashOccurred();
                     } catch (Throwable th3) {
                         th2 = th3;
+                        crashlyticsController = this;
                         throw th2;
                     }
                 }
                 final long currentTimeMillis = System.currentTimeMillis();
+                crashlyticsController = this;
                 Task submitTask = this.crashlyticsWorkers.common.submitTask(new Callable<Task<Void>>() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.2
                     /* JADX WARN: Can't rename method to resolve collision */
                     @Override // java.util.concurrent.Callable
@@ -179,6 +182,7 @@ public class CrashlyticsController {
                 }
             } catch (Throwable th4) {
                 th = th4;
+                crashlyticsController = this;
                 th2 = th;
                 throw th2;
             }

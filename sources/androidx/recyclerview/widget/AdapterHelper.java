@@ -371,7 +371,7 @@ public final class AdapterHelper implements OpReorderer.Callback {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean hasAnyUpdateTypes(int i) {
-        return (i & this.mExistingUpdateTypes) != 0;
+        return (this.mExistingUpdateTypes & i) != 0;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

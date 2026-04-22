@@ -103,11 +103,10 @@ public class KeyPath {
                 return false;
             }
             KeyPathElement keyPathElement = this.resolvedElement;
-            KeyPathElement keyPathElement2 = keyPath.resolvedElement;
             if (keyPathElement != null) {
-                return keyPathElement.equals(keyPathElement2);
+                return keyPathElement.equals(keyPath.resolvedElement);
             }
-            if (keyPathElement2 == null) {
+            if (keyPath.resolvedElement == null) {
                 return true;
             }
         }

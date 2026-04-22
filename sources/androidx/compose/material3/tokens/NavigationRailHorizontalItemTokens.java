@@ -7,12 +7,12 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class NavigationRailHorizontalItemTokens {
     public static final int $stable = 0;
-    private static final float FullWidthLeadingSpace;
-    private static final float FullWidthTrailingSpace;
-    private static final float LeadingSpace;
     public static final NavigationRailHorizontalItemTokens INSTANCE = new NavigationRailHorizontalItemTokens();
-    private static final float ActiveIndicatorHeight = Dp.m7555constructorimpl((float) 56.0d);
-    private static final float IconLabelSpace = Dp.m7555constructorimpl((float) 8.0d);
+    private static final float ActiveIndicatorHeight = Dp.m7555constructorimpl(56.0f);
+    private static final float FullWidthLeadingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float FullWidthTrailingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float IconLabelSpace = Dp.m7555constructorimpl(8.0f);
+    private static final float LeadingSpace = Dp.m7555constructorimpl(16.0f);
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelLarge;
 
     private NavigationRailHorizontalItemTokens() {
@@ -45,12 +45,5 @@ public final class NavigationRailHorizontalItemTokens {
 
     public final TypographyKeyTokens getLabelTextFont() {
         return LabelTextFont;
-    }
-
-    static {
-        float f = (float) 16.0d;
-        FullWidthLeadingSpace = Dp.m7555constructorimpl(f);
-        FullWidthTrailingSpace = Dp.m7555constructorimpl(f);
-        LeadingSpace = Dp.m7555constructorimpl(f);
     }
 }

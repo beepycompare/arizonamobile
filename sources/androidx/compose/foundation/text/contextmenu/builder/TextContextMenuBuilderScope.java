@@ -27,7 +27,7 @@ public final class TextContextMenuBuilderScope {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v4, types: [java.lang.Object[]] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [java.lang.Object[]] */
     /* JADX WARN: Type inference failed for: r3v5 */
     public final TextContextMenuData build$foundation() {
         MutableObjectList mutableObjectList = new MutableObjectList(0, 1, null);

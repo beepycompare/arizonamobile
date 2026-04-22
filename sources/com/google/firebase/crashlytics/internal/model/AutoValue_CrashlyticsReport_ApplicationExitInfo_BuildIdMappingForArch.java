@@ -46,7 +46,7 @@ final class AutoValue_CrashlyticsReport_ApplicationExitInfo_BuildIdMappingForArc
     }
 
     public int hashCode() {
-        return ((((this.arch.hashCode() ^ 1000003) * 1000003) ^ this.libraryName.hashCode()) * 1000003) ^ this.buildId.hashCode();
+        return this.buildId.hashCode() ^ ((((this.arch.hashCode() ^ 1000003) * 1000003) ^ this.libraryName.hashCode()) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

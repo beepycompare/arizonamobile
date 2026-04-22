@@ -1311,21 +1311,24 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         }
 
         public void onNestedScroll(CoordinatorLayout coordinatorLayout, T t, View view, int i, int i2, int i3, int i4, int i5, int[] iArr) {
+            BaseBehavior<T> baseBehavior;
             CoordinatorLayout coordinatorLayout2;
             T t2;
             int i6;
             if (i4 < 0) {
+                baseBehavior = this;
                 coordinatorLayout2 = coordinatorLayout;
                 t2 = t;
                 i6 = i4;
-                iArr[1] = scroll(coordinatorLayout2, t2, i6, -t.getDownNestedScrollRange(), 0);
+                iArr[1] = baseBehavior.scroll(coordinatorLayout2, t2, i6, -t.getDownNestedScrollRange(), 0);
             } else {
+                baseBehavior = this;
                 coordinatorLayout2 = coordinatorLayout;
                 t2 = t;
                 i6 = i4;
             }
             if (i6 == 0) {
-                addAccessibilityDelegateIfNeeded(coordinatorLayout2, t2);
+                baseBehavior.addAccessibilityDelegateIfNeeded(coordinatorLayout2, t2);
             }
         }
 
@@ -1606,8 +1609,6 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         }
 
         int setHeaderTopBottomOffset(CoordinatorLayout coordinatorLayout, T t, int i, int i2, int i3) {
-            CoordinatorLayout coordinatorLayout2;
-            T t2;
             int topBottomOffsetForScrollingSibling = getTopBottomOffsetForScrollingSibling();
             int i4 = 0;
             if (i2 != 0 && topBottomOffsetForScrollingSibling >= i2 && topBottomOffsetForScrollingSibling <= i3) {
@@ -1631,20 +1632,13 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
                         coordinatorLayout.dispatchDependentViewsChanged(t);
                     }
                     t.onOffsetChanged(getTopAndBottomOffset());
-                    coordinatorLayout2 = coordinatorLayout;
-                    t2 = t;
-                    updateAppBarLayoutDrawableState(coordinatorLayout2, t2, clamp, clamp < topBottomOffsetForScrollingSibling ? -1 : 1, false);
+                    updateAppBarLayoutDrawableState(coordinatorLayout, t, clamp, clamp < topBottomOffsetForScrollingSibling ? -1 : 1, false);
                     i4 = i5;
-                } else {
-                    coordinatorLayout2 = coordinatorLayout;
-                    t2 = t;
                 }
             } else {
-                coordinatorLayout2 = coordinatorLayout;
-                t2 = t;
                 this.offsetDelta = 0;
             }
-            addAccessibilityDelegateIfNeeded(coordinatorLayout2, t2);
+            addAccessibilityDelegateIfNeeded(coordinatorLayout, t);
             return i4;
         }
 

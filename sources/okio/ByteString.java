@@ -697,14 +697,18 @@ public class ByteString implements Serializable, Comparable<ByteString> {
                 return "[hex=" + hex() + AbstractJsonLexerKt.END_LIST;
             }
             StringBuilder append = new StringBuilder("[size=").append(getData$okio().length).append(" hex=");
-            int resolveDefaultParameter = SegmentedByteString.resolveDefaultParameter(this, 64);
-            if (resolveDefaultParameter <= getData$okio().length) {
-                if (resolveDefaultParameter >= 0) {
-                    return append.append((resolveDefaultParameter == getData$okio().length ? this : new ByteString(ArraysKt.copyOfRange(getData$okio(), 0, resolveDefaultParameter))).hex()).append("…]").toString();
+            ByteString byteString = this;
+            int resolveDefaultParameter = SegmentedByteString.resolveDefaultParameter(byteString, 64);
+            if (resolveDefaultParameter <= byteString.getData$okio().length) {
+                if (resolveDefaultParameter < 0) {
+                    throw new IllegalArgumentException("endIndex < beginIndex".toString());
                 }
-                throw new IllegalArgumentException("endIndex < beginIndex".toString());
+                if (resolveDefaultParameter != byteString.getData$okio().length) {
+                    byteString = new ByteString(ArraysKt.copyOfRange(byteString.getData$okio(), 0, resolveDefaultParameter));
+                }
+                return append.append(byteString.hex()).append("…]").toString();
             }
-            throw new IllegalArgumentException(("endIndex > length(" + getData$okio().length + ')').toString());
+            throw new IllegalArgumentException(("endIndex > length(" + byteString.getData$okio().length + ')').toString());
         }
         String utf8 = utf8();
         String substring = utf8.substring(0, codePointIndexToCharIndex);

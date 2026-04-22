@@ -162,15 +162,24 @@ public final class CardDefaults {
 
     /* renamed from: cardColors-ro_MJ88  reason: not valid java name */
     public final CardColors m1783cardColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+        long j5;
+        long j6;
         ComposerKt.sourceInformationMarkerStart(composer, -1589582123, "C(cardColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color)486@22085L31,490@22291L11:Card.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m1902contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m4808getUnspecified0d7_KjU, composer, i & 14) : j2;
         long m4808getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4771copywmQWz5c$default = (i2 & 8) != 0 ? Color.m4771copywmQWz5c$default(m1902contentColorForek8zF_U, 0.38f, 0.0f, 0.0f, 0.0f, 14, null) : j4;
+        if ((i2 & 8) != 0) {
+            long j7 = m1902contentColorForek8zF_U;
+            j6 = Color.m4771copywmQWz5c$default(j7, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
+            j5 = j7;
+        } else {
+            j5 = m1902contentColorForek8zF_U;
+            j6 = j4;
+        }
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1589582123, i, -1, "androidx.compose.material3.CardDefaults.cardColors (Card.kt:490)");
         }
-        CardColors m1778copyjRlVdoo = getDefaultCardColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m1778copyjRlVdoo(m4808getUnspecified0d7_KjU, m1902contentColorForek8zF_U, m4808getUnspecified0d7_KjU2, m4771copywmQWz5c$default);
+        CardColors m1778copyjRlVdoo = getDefaultCardColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m1778copyjRlVdoo(m4808getUnspecified0d7_KjU, j5, m4808getUnspecified0d7_KjU2, j6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -203,15 +212,24 @@ public final class CardDefaults {
 
     /* renamed from: elevatedCardColors-ro_MJ88  reason: not valid java name */
     public final CardColors m1785elevatedCardColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+        long j5;
+        long j6;
         ComposerKt.sourceInformationMarkerStart(composer, 139558303, "C(elevatedCardColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color)532@24328L31,536@24534L11:Card.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m1902contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m4808getUnspecified0d7_KjU, composer, i & 14) : j2;
         long m4808getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4771copywmQWz5c$default = (i2 & 8) != 0 ? Color.m4771copywmQWz5c$default(m1902contentColorForek8zF_U, 0.38f, 0.0f, 0.0f, 0.0f, 14, null) : j4;
+        if ((i2 & 8) != 0) {
+            long j7 = m1902contentColorForek8zF_U;
+            j6 = Color.m4771copywmQWz5c$default(j7, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
+            j5 = j7;
+        } else {
+            j5 = m1902contentColorForek8zF_U;
+            j6 = j4;
+        }
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(139558303, i, -1, "androidx.compose.material3.CardDefaults.elevatedCardColors (Card.kt:536)");
         }
-        CardColors m1778copyjRlVdoo = getDefaultElevatedCardColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m1778copyjRlVdoo(m4808getUnspecified0d7_KjU, m1902contentColorForek8zF_U, m4808getUnspecified0d7_KjU2, m4771copywmQWz5c$default);
+        CardColors m1778copyjRlVdoo = getDefaultElevatedCardColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m1778copyjRlVdoo(m4808getUnspecified0d7_KjU, j5, m4808getUnspecified0d7_KjU2, j6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

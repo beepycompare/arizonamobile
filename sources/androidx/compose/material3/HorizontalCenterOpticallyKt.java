@@ -43,14 +43,11 @@ public final class HorizontalCenterOpticallyKt {
         MeasureScope measureScope2 = measureScope;
         float mo1117toPxTmRCtEA = cornerBasedShape.getTopStart().mo1117toPxTmRCtEA(m4587constructorimpl, measureScope2);
         float mo1117toPxTmRCtEA2 = cornerBasedShape.getTopEnd().mo1117toPxTmRCtEA(m4587constructorimpl, measureScope2);
-        float mo1117toPxTmRCtEA3 = cornerBasedShape.getBottomStart().mo1117toPxTmRCtEA(m4587constructorimpl, measureScope2);
-        float mo1117toPxTmRCtEA4 = cornerBasedShape.getBottomEnd().mo1117toPxTmRCtEA(m4587constructorimpl, measureScope2);
-        float f5 = 2;
-        final float f6 = (((mo1117toPxTmRCtEA + mo1117toPxTmRCtEA3) / f5) - ((mo1117toPxTmRCtEA2 + mo1117toPxTmRCtEA4) / f5)) * 0.11f;
+        final float mo1117toPxTmRCtEA3 = (((mo1117toPxTmRCtEA + cornerBasedShape.getBottomStart().mo1117toPxTmRCtEA(m4587constructorimpl, measureScope2)) / 2.0f) - ((mo1117toPxTmRCtEA2 + cornerBasedShape.getBottomEnd().mo1117toPxTmRCtEA(m4587constructorimpl, measureScope2)) / 2.0f)) * 0.11f;
         return MeasureScope.layout$default(measureScope, width, height, null, new Function1() { // from class: androidx.compose.material3.HorizontalCenterOpticallyKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return HorizontalCenterOpticallyKt.horizontalCenterOptically_4j6BHR0$lambda$1$lambda$0(f6, f3, f4, mo6216measureBRTryo0, (Placeable.PlacementScope) obj);
+                return HorizontalCenterOpticallyKt.horizontalCenterOptically_4j6BHR0$lambda$1$lambda$0(mo1117toPxTmRCtEA3, f3, f4, mo6216measureBRTryo0, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
@@ -95,10 +92,10 @@ public final class HorizontalCenterOpticallyKt {
     /* renamed from: horizontalCenterOptically-4j6BHR0$default  reason: not valid java name */
     public static /* synthetic */ Modifier m2120horizontalCenterOptically4j6BHR0$default(Modifier modifier, CornerBasedShape cornerBasedShape, float f, float f2, int i, Object obj) {
         if ((i & 2) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 4) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         return m2118horizontalCenterOptically4j6BHR0(modifier, cornerBasedShape, f, f2);
     }
@@ -106,10 +103,10 @@ public final class HorizontalCenterOpticallyKt {
     /* renamed from: horizontalCenterOptically-4j6BHR0$default  reason: not valid java name */
     public static /* synthetic */ Modifier m2121horizontalCenterOptically4j6BHR0$default(Modifier modifier, ShapeWithHorizontalCenterOptically shapeWithHorizontalCenterOptically, float f, float f2, int i, Object obj) {
         if ((i & 2) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 4) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         return m2119horizontalCenterOptically4j6BHR0(modifier, shapeWithHorizontalCenterOptically, f, f2);
     }

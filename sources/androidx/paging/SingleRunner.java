@@ -51,8 +51,10 @@ public final class SingleRunner {
     /* JADX WARN: Code restructure failed: missing block: B:25:0x0051, code lost:
         throw r5;
      */
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0034  */
+    /* JADX WARN: Type inference failed for: r4v7 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -69,13 +71,16 @@ public final class SingleRunner {
                 if (i2 != 0) {
                     ResultKt.throwOnFailure(obj);
                     singleRunner$runInIsolation$1.label = 1;
-                    if (CoroutineScopeKt.coroutineScope(new SingleRunner$runInIsolation$2(this, i, function1, null), singleRunner$runInIsolation$1) == coroutine_suspended) {
+                    Object coroutineScope = CoroutineScopeKt.coroutineScope(new SingleRunner$runInIsolation$2(this, i, function1, null), singleRunner$runInIsolation$1);
+                    this = coroutineScope;
+                    if (coroutineScope == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (i2 != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     ResultKt.throwOnFailure(obj);
+                    this = this;
                 }
                 return Unit.INSTANCE;
             }
@@ -135,8 +140,8 @@ public final class SingleRunner {
         /* JADX WARN: Removed duplicated region for block: B:38:0x008f A[Catch: all -> 0x0039, TryCatch #0 {all -> 0x0039, blocks: (B:13:0x0034, B:43:0x00a0, B:44:0x00a4, B:24:0x0068, B:26:0x006c, B:28:0x0072, B:31:0x0078, B:36:0x0081, B:38:0x008f), top: B:49:0x0024 }] */
         /* JADX WARN: Type inference failed for: r10v0, types: [kotlinx.coroutines.Job, java.lang.Object] */
         /* JADX WARN: Type inference failed for: r10v1, types: [kotlinx.coroutines.sync.Mutex] */
+        /* JADX WARN: Type inference failed for: r10v13 */
         /* JADX WARN: Type inference failed for: r10v14 */
-        /* JADX WARN: Type inference failed for: r10v15 */
         /* JADX WARN: Type inference failed for: r10v4, types: [kotlinx.coroutines.sync.Mutex] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.

@@ -606,14 +606,11 @@ public final class LongMath {
         private long powMod(long a2, long p, long m) {
             long j = a2;
             long j2 = 1;
-            while (p != 0) {
-                long j3 = m;
-                if ((p & 1) != 0) {
-                    j2 = mulMod(j2, j, j3);
+            for (long j3 = p; j3 != 0; j3 >>= 1) {
+                if ((j3 & 1) != 0) {
+                    j2 = mulMod(j2, j, m);
                 }
-                j = squareMod(j, j3);
-                p >>= 1;
-                m = j3;
+                j = squareMod(j, m);
             }
             return j2;
         }

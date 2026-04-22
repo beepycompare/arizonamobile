@@ -64,7 +64,7 @@ public final class C0753zg implements K {
             adTrackingInfoResult = null;
             while (jn.b()) {
                 try {
-                    return b(context);
+                    return this.b(context);
                 } catch (InvocationTargetException e) {
                     adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f1334a + " adv_id: " + (e.getTargetException() != null ? e.getTargetException().getMessage() : null));
                     adTrackingInfoResult = adTrackingInfoResult2;

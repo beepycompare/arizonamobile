@@ -31,18 +31,17 @@ public final class KeylinesKt {
         float min = Math.min(f2, f);
         float coerceIn = RangesKt.coerceIn(min / 3.0f, f4, f5);
         float f7 = (min + coerceIn) / 2.0f;
-        if (f < 2 * f4) {
+        if (f < 2.0f * f4) {
             iArr = new int[]{0};
         }
-        int[] iArr3 = iArr;
         int ceil = (int) Math.ceil(f / min);
-        int max = (ceil - Math.max(1, (int) Math.floor(((f - (ArraysKt.maxOrThrow(iArr2) * f7)) - (ArraysKt.maxOrThrow(iArr3) * f5)) / min))) + 1;
-        int[] iArr4 = new int[max];
+        int max = (ceil - Math.max(1, (int) Math.floor(((f - (ArraysKt.maxOrThrow(iArr2) * f7)) - (ArraysKt.maxOrThrow(iArr) * f5)) / min))) + 1;
+        int[] iArr3 = new int[max];
         for (int i2 = 0; i2 < max; i2++) {
-            iArr4[i2] = ceil - i2;
+            iArr3[i2] = ceil - i2;
         }
         float mo405toPx0680j_4 = density.mo405toPx0680j_4(CarouselDefaults.INSTANCE.m2967getAnchorSizeD9Ej5fM$material3());
-        Arrangement findLowestCostArrangement = Arrangement.Companion.findLowestCostArrangement(f, f3, coerceIn, f4, f5, iArr3, f7, iArr2, min, iArr4);
+        Arrangement findLowestCostArrangement = Arrangement.Companion.findLowestCostArrangement(f, f3, coerceIn, f4, f5, iArr, f7, iArr2, min, iArr3);
         if (findLowestCostArrangement == null || findLowestCostArrangement.itemCount() <= i) {
             f6 = f;
         } else {
@@ -56,7 +55,7 @@ public final class KeylinesKt {
                 }
             }
             f6 = f;
-            findLowestCostArrangement = Arrangement.Companion.findLowestCostArrangement(f6, f3, coerceIn, f4, f5, new int[]{smallCount}, f7, new int[]{mediumCount}, min, iArr4);
+            findLowestCostArrangement = Arrangement.Companion.findLowestCostArrangement(f6, f3, coerceIn, f4, f5, new int[]{smallCount}, f7, new int[]{mediumCount}, min, iArr3);
         }
         if (findLowestCostArrangement == null) {
             return KeylineListKt.emptyKeylineList();

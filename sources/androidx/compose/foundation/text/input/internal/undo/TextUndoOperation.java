@@ -35,6 +35,7 @@ public final class TextUndoOperation {
             Intrinsics.checkNotNull(obj3, "null cannot be cast to non-null type kotlin.String");
             Object obj4 = list.get(2);
             Intrinsics.checkNotNull(obj4, "null cannot be cast to non-null type kotlin.String");
+            String str = (String) obj4;
             Object obj5 = list.get(3);
             Intrinsics.checkNotNull(obj5, "null cannot be cast to non-null type kotlin.Int");
             int intValue2 = ((Integer) obj5).intValue();
@@ -49,7 +50,7 @@ public final class TextUndoOperation {
             long TextRange2 = TextRangeKt.TextRange(intValue3, ((Integer) obj8).intValue());
             Object obj9 = list.get(7);
             Intrinsics.checkNotNull(obj9, "null cannot be cast to non-null type kotlin.Long");
-            return new TextUndoOperation(intValue, (String) obj3, (String) obj4, TextRange, TextRange2, ((Long) obj9).longValue(), false, 64, null);
+            return new TextUndoOperation(intValue, (String) obj3, str, TextRange, TextRange2, ((Long) obj9).longValue(), false, 64, null);
         }
     };
     private final boolean canMerge;

@@ -27,11 +27,10 @@ public final class Z3 {
                 return false;
             }
             String str = this.c;
-            String str2 = z3.c;
             if (str != null) {
-                return str.equals(str2);
+                return str.equals(z3.c);
             }
-            if (str2 == null) {
+            if (z3.c == null) {
                 return true;
             }
         }

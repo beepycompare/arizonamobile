@@ -164,6 +164,7 @@ public final class SliderDefaults {
 
     /* renamed from: colors-q0g_0yA  reason: not valid java name */
     public final SliderColors m2523colorsq0g_0yA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, Composer composer, int i, int i2, int i3) {
+        long j11;
         ComposerKt.sourceInformationMarkerStart(composer, 885588574, "C(colors)N(thumbColor:c#ui.graphics.Color,activeTrackColor:c#ui.graphics.Color,activeTickColor:c#ui.graphics.Color,inactiveTrackColor:c#ui.graphics.Color,inactiveTickColor:c#ui.graphics.Color,disabledThumbColor:c#ui.graphics.Color,disabledActiveTrackColor:c#ui.graphics.Color,disabledActiveTickColor:c#ui.graphics.Color,disabledInactiveTrackColor:c#ui.graphics.Color,disabledInactiveTickColor:c#ui.graphics.Color)1149@50999L11:Slider.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i3 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m4808getUnspecified0d7_KjU2 = (i3 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
@@ -176,9 +177,12 @@ public final class SliderDefaults {
         long m4808getUnspecified0d7_KjU9 = (i3 & 256) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j9;
         long m4808getUnspecified0d7_KjU10 = (i3 & 512) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j10;
         if (ComposerKt.isTraceInProgress()) {
+            j11 = m4808getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(885588574, i, i2, "androidx.compose.material3.SliderDefaults.colors (Slider.kt:1149)");
+        } else {
+            j11 = m4808getUnspecified0d7_KjU;
         }
-        SliderColors m2497copyK518z4 = getDefaultSliderColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2497copyK518z4(m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m4808getUnspecified0d7_KjU6, m4808getUnspecified0d7_KjU7, m4808getUnspecified0d7_KjU8, m4808getUnspecified0d7_KjU9, m4808getUnspecified0d7_KjU10);
+        SliderColors m2497copyK518z4 = getDefaultSliderColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2497copyK518z4(j11, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m4808getUnspecified0d7_KjU6, m4808getUnspecified0d7_KjU7, m4808getUnspecified0d7_KjU8, m4808getUnspecified0d7_KjU9, m4808getUnspecified0d7_KjU10);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -233,12 +237,9 @@ public final class SliderDefaults {
         long j4;
         long j5;
         Object rememberedValue;
-        SnapshotStateList snapshotStateList;
         boolean z3;
         SliderDefaults$Thumb$1$1 rememberedValue2;
         int i6;
-        long j6;
-        int i7;
         Composer startRestartGroup = composer.startRestartGroup(-290277409);
         ComposerKt.sourceInformation(startRestartGroup, "C(Thumb)N(interactionSource,modifier,colors,enabled,thumbSize:c#ui.unit.DpSize)1213@54450L46,1214@54539L658,1214@54505L692,1237@55596L5,1233@55392L220:Slider.kt#uh7d8r");
         if ((i2 & 1) != 0) {
@@ -248,8 +249,8 @@ public final class SliderDefaults {
         } else {
             i3 = i;
         }
-        int i8 = i2 & 2;
-        if (i8 != 0) {
+        int i7 = i2 & 2;
+        if (i7 != 0) {
             i3 |= 48;
         } else if ((i & 48) == 0) {
             companion = modifier;
@@ -258,14 +259,14 @@ public final class SliderDefaults {
                 if ((i2 & 4) == 0) {
                     sliderColors2 = sliderColors;
                     if (startRestartGroup.changed(sliderColors2)) {
-                        i7 = 256;
-                        i3 |= i7;
+                        i6 = 256;
+                        i3 |= i6;
                     }
                 } else {
                     sliderColors2 = sliderColors;
                 }
-                i7 = 128;
-                i3 |= i7;
+                i6 = 128;
+                i3 |= i6;
             } else {
                 sliderColors2 = sliderColors;
             }
@@ -290,7 +291,7 @@ public final class SliderDefaults {
                         startRestartGroup.startDefaults();
                         ComposerKt.sourceInformation(startRestartGroup, "1209@54333L8");
                         if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
-                            if (i8 != 0) {
+                            if (i7 != 0) {
                                 companion = Modifier.Companion;
                             }
                             if ((i2 & 4) != 0) {
@@ -313,26 +314,19 @@ public final class SliderDefaults {
                                     rememberedValue = SnapshotStateKt.mutableStateListOf();
                                     startRestartGroup.updateRememberedValue(rememberedValue);
                                 }
-                                snapshotStateList = (SnapshotStateList) rememberedValue;
+                                SnapshotStateList snapshotStateList = (SnapshotStateList) rememberedValue;
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 216296241, "CC(remember):Slider.kt#9igjgp");
-                                int i9 = i3 & 14;
-                                z3 = i9 == 4;
+                                int i8 = i3 & 14;
+                                z3 = i8 == 4;
                                 rememberedValue2 = startRestartGroup.rememberedValue();
                                 if (!z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
                                     rememberedValue2 = new SliderDefaults$Thumb$1$1(mutableInteractionSource, snapshotStateList, null);
                                     startRestartGroup.updateRememberedValue(rememberedValue2);
                                 }
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                EffectsKt.LaunchedEffect(mutableInteractionSource, (Function2) rememberedValue2, startRestartGroup, i9);
-                                if (snapshotStateList.isEmpty()) {
-                                    i6 = 2;
-                                    j6 = DpSize.m7646copyDwJknco$default(j5, Dp.m7555constructorimpl(DpSize.m7653getWidthD9Ej5fM(j5) / 2), 0.0f, 2, null);
-                                } else {
-                                    i6 = 2;
-                                    j6 = j5;
-                                }
-                                SpacerKt.Spacer(BackgroundKt.m263backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m865size6HolHcs(companion, j6), mutableInteractionSource, false, i6, null), sliderColors2.m2508thumbColorvNxB06k$material3(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
+                                EffectsKt.LaunchedEffect(mutableInteractionSource, (Function2) rememberedValue2, startRestartGroup, i8);
+                                SpacerKt.Spacer(BackgroundKt.m263backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m865size6HolHcs(companion, snapshotStateList.isEmpty() ? DpSize.m7646copyDwJknco$default(j5, Dp.m7555constructorimpl(DpSize.m7653getWidthD9Ej5fM(j5) / 2.0f), 0.0f, 2, null) : j5), mutableInteractionSource, false, 2, null), sliderColors2.m2508thumbColorvNxB06k$material3(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -352,22 +346,20 @@ public final class SliderDefaults {
                         rememberedValue = startRestartGroup.rememberedValue();
                         if (rememberedValue == Composer.Companion.getEmpty()) {
                         }
-                        snapshotStateList = (SnapshotStateList) rememberedValue;
+                        SnapshotStateList snapshotStateList2 = (SnapshotStateList) rememberedValue;
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 216296241, "CC(remember):Slider.kt#9igjgp");
-                        int i92 = i3 & 14;
-                        if (i92 == 4) {
+                        int i82 = i3 & 14;
+                        if (i82 == 4) {
                         }
                         rememberedValue2 = startRestartGroup.rememberedValue();
                         if (!z3) {
                         }
-                        rememberedValue2 = new SliderDefaults$Thumb$1$1(mutableInteractionSource, snapshotStateList, null);
+                        rememberedValue2 = new SliderDefaults$Thumb$1$1(mutableInteractionSource, snapshotStateList2, null);
                         startRestartGroup.updateRememberedValue(rememberedValue2);
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        EffectsKt.LaunchedEffect(mutableInteractionSource, (Function2) rememberedValue2, startRestartGroup, i92);
-                        if (snapshotStateList.isEmpty()) {
-                        }
-                        SpacerKt.Spacer(BackgroundKt.m263backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m865size6HolHcs(companion, j6), mutableInteractionSource, false, i6, null), sliderColors2.m2508thumbColorvNxB06k$material3(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
+                        EffectsKt.LaunchedEffect(mutableInteractionSource, (Function2) rememberedValue2, startRestartGroup, i82);
+                        SpacerKt.Spacer(BackgroundKt.m263backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m865size6HolHcs(companion, snapshotStateList2.isEmpty() ? DpSize.m7646copyDwJknco$default(j5, Dp.m7555constructorimpl(DpSize.m7653getWidthD9Ej5fM(j5) / 2.0f), 0.0f, 2, null) : j5), mutableInteractionSource, false, 2, null), sliderColors2.m2508thumbColorvNxB06k$material3(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         j3 = j5;
@@ -438,8 +430,8 @@ public final class SliderDefaults {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:130:0x01f7  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x0204  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x01f5  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0202  */
     /* JADX WARN: Removed duplicated region for block: B:135:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x004e  */
@@ -474,9 +466,8 @@ public final class SliderDefaults {
         Modifier.Companion companion;
         SliderColors sliderColors3;
         long j4;
-        int i7;
         long j5;
-        int i8;
+        int i7;
         Composer startRestartGroup = composer.startRestartGroup(-889714565);
         ComposerKt.sourceInformation(startRestartGroup, "C(Thumb)N(interactionSource,sliderState,modifier,colors,enabled,thumbSize:c#ui.unit.DpSize)1266@56862L46,1267@56951L658,1267@56917L692,1294@58180L5,1290@57976L220:Slider.kt#uh7d8r");
         if ((i2 & 1) != 0) {
@@ -500,14 +491,14 @@ public final class SliderDefaults {
                     if ((i2 & 8) == 0) {
                         obj2 = sliderColors;
                         if (startRestartGroup.changed(obj2)) {
-                            i8 = 2048;
-                            i3 |= i8;
+                            i7 = 2048;
+                            i3 |= i7;
                         }
                     } else {
                         obj2 = sliderColors;
                     }
-                    i8 = 1024;
-                    i3 |= i8;
+                    i7 = 1024;
+                    i3 |= i7;
                 } else {
                     obj2 = sliderColors;
                 }
@@ -572,26 +563,23 @@ public final class SliderDefaults {
                         SnapshotStateList snapshotStateList = (SnapshotStateList) rememberedValue;
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -317190227, "CC(remember):Slider.kt#9igjgp");
-                        int i9 = i3 & 14;
-                        boolean z3 = i9 == 4;
+                        int i8 = i3 & 14;
+                        boolean z3 = i8 == 4;
                         SliderDefaults$Thumb$3$1 rememberedValue2 = startRestartGroup.rememberedValue();
                         if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
                             rememberedValue2 = new SliderDefaults$Thumb$3$1(mutableInteractionSource, snapshotStateList, null);
                             startRestartGroup.updateRememberedValue(rememberedValue2);
                         }
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        EffectsKt.LaunchedEffect(mutableInteractionSource, (Function2) rememberedValue2, startRestartGroup, i9);
+                        EffectsKt.LaunchedEffect(mutableInteractionSource, (Function2) rememberedValue2, startRestartGroup, i8);
                         if (snapshotStateList.isEmpty()) {
-                            i7 = 2;
                             j5 = j4;
                         } else if (sliderState.getOrientation$material3() == Orientation.Vertical) {
-                            i7 = 2;
-                            j5 = DpSize.m7646copyDwJknco$default(j4, 0.0f, Dp.m7555constructorimpl(DpSize.m7651getHeightD9Ej5fM(j4) / 2), 1, null);
+                            j5 = DpSize.m7646copyDwJknco$default(j4, 0.0f, Dp.m7555constructorimpl(DpSize.m7651getHeightD9Ej5fM(j4) / 2.0f), 1, null);
                         } else {
-                            i7 = 2;
-                            j5 = DpSize.m7646copyDwJknco$default(j4, Dp.m7555constructorimpl(DpSize.m7653getWidthD9Ej5fM(j4) / 2), 0.0f, 2, null);
+                            j5 = DpSize.m7646copyDwJknco$default(j4, Dp.m7555constructorimpl(DpSize.m7653getWidthD9Ej5fM(j4) / 2.0f), 0.0f, 2, null);
                         }
-                        SpacerKt.Spacer(BackgroundKt.m263backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m865size6HolHcs(companion, j5), mutableInteractionSource, false, i7, null), sliderColors3.m2508thumbColorvNxB06k$material3(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
+                        SpacerKt.Spacer(BackgroundKt.m263backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m865size6HolHcs(companion, j5), mutableInteractionSource, false, 2, null), sliderColors3.m2508thumbColorvNxB06k$material3(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -2306,7 +2294,7 @@ public final class SliderDefaults {
             } else {
                 intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L));
             }
-            f4 = intBitsToFloat / 2;
+            f4 = intBitsToFloat / 2.0f;
         } else {
             f4 = drawScope.mo405toPx0680j_4(f);
         }
@@ -3298,7 +3286,7 @@ public final class SliderDefaults {
         if (!Dp.m7560equalsimpl0(f, Dp.Companion.m7575getUnspecifiedD9Ej5fM())) {
             f4 = drawScope.mo405toPx0680j_4(f);
         } else {
-            f4 = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L)) / 2;
+            f4 = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L)) / 2.0f;
         }
         m2514drawTrackGVD57ws$default(INSTANCE, drawScope, rangeSliderState.getTickFractions$material3(), rangeSliderState.getCoercedActiveRangeStartAsFraction$material3(), rangeSliderState.getCoercedActiveRangeEndAsFraction$material3(), j, j2, j3, j4, drawScope.mo401toDpu2uoSUM(rangeSliderState.getStartThumbWidth$material3()), drawScope.mo401toDpu2uoSUM(rangeSliderState.getStartThumbHeight$material3()), drawScope.mo401toDpu2uoSUM(rangeSliderState.getEndThumbWidth$material3()), drawScope.mo401toDpu2uoSUM(rangeSliderState.getEndThumbHeight$material3()), f2, f3, drawScope.mo401toDpu2uoSUM(f4), function2, function3, true, false, null, false, 917504, null);
         return Unit.INSTANCE;
@@ -3309,15 +3297,15 @@ public final class SliderDefaults {
         sliderDefaults.m2513drawTrackGVD57ws(drawScope, fArr, f, f2, j, j2, j3, j4, f3, f4, f5, f6, f7, f8, f9, function2, function3, z, (i & 131072) != 0 ? false : z2, (i & 262144) != 0 ? Orientation.Horizontal : orientation, (i & 524288) != 0 ? false : z3);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x025f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x025a, code lost:
         if ((r35.length == 0 ? r29 : false) == false) goto L187;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x011f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x011a, code lost:
         if ((r35.length == 0) == false) goto L213;
      */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x0405  */
-    /* JADX WARN: Removed duplicated region for block: B:195:0x04c8  */
-    /* JADX WARN: Removed duplicated region for block: B:198:0x04f3  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0400  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x04c3  */
+    /* JADX WARN: Removed duplicated region for block: B:198:0x04ee  */
     /* renamed from: drawTrack-GVD57ws  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3358,19 +3346,17 @@ public final class SliderDefaults {
         long mo5346getSizeNHjbRc = drawScope.mo5346getSizeNHjbRc();
         float intBitsToFloat = Float.intBitsToFloat((int) (z5 ? mo5346getSizeNHjbRc & 4294967295L : mo5346getSizeNHjbRc >> 32));
         boolean z8 = Intrinsics.areEqual(f, ArraysKt.firstOrNull(fArr)) || Intrinsics.areEqual(f, ArraysKt.lastOrNull(fArr));
-        float f25 = ((fArr.length == 0) || (Intrinsics.areEqual(f2, ArraysKt.firstOrNull(fArr)) || Intrinsics.areEqual(f2, ArraysKt.lastOrNull(fArr)))) ? 0.0f + ((intBitsToFloat - 0.0f) * f2) : (((intBitsToFloat - 0.0f) - (2 * f24)) * f2) + 0.0f + f24;
-        float f26 = ((fArr.length == 0) || z8) ? 0.0f + ((intBitsToFloat - 0.0f) * f) : (((intBitsToFloat - 0.0f) - (2 * f24)) * f) + 0.0f + f24;
+        float f25 = ((fArr.length == 0) || (Intrinsics.areEqual(f2, ArraysKt.firstOrNull(fArr)) || Intrinsics.areEqual(f2, ArraysKt.lastOrNull(fArr)))) ? 0.0f + ((intBitsToFloat - 0.0f) * f2) : (((intBitsToFloat - 0.0f) - (f24 * 2.0f)) * f2) + 0.0f + f24;
+        float f26 = ((fArr.length == 0) || z8) ? 0.0f + ((intBitsToFloat - 0.0f) * f) : (((intBitsToFloat - 0.0f) - (f24 * 2.0f)) * f) + 0.0f + f24;
         float f27 = drawScope.mo405toPx0680j_4(f8);
-        if (Dp.m7554compareTo0680j_4(f7, Dp.m7555constructorimpl(0)) > 0) {
+        if (Dp.m7554compareTo0680j_4(f7, Dp.m7555constructorimpl(0.0f)) > 0) {
             if (z5) {
-                float f28 = 2;
-                f21 = (drawScope.mo405toPx0680j_4(f4) / f28) + drawScope.mo405toPx0680j_4(f7);
-                f22 = drawScope.mo405toPx0680j_4(f6) / f28;
+                f21 = (drawScope.mo405toPx0680j_4(f4) / 2.0f) + drawScope.mo405toPx0680j_4(f7);
+                f22 = drawScope.mo405toPx0680j_4(f6) / 2.0f;
                 f23 = drawScope.mo405toPx0680j_4(f7);
             } else {
-                float f29 = 2;
-                f21 = (drawScope.mo405toPx0680j_4(f3) / f29) + drawScope.mo405toPx0680j_4(f7);
-                f22 = drawScope.mo405toPx0680j_4(f5) / f29;
+                f21 = (drawScope.mo405toPx0680j_4(f3) / 2.0f) + drawScope.mo405toPx0680j_4(f7);
+                f22 = drawScope.mo405toPx0680j_4(f5) / 2.0f;
                 f23 = drawScope.mo405toPx0680j_4(f7);
             }
             f10 = f21;
@@ -3381,30 +3367,30 @@ public final class SliderDefaults {
         }
         long mo5345getCenterF1C5BW0 = drawScope.mo5345getCenterF1C5BW0();
         float intBitsToFloat2 = Float.intBitsToFloat((int) (z5 ? mo5345getCenterF1C5BW0 & 4294967295L : mo5345getCenterF1C5BW0 >> 32));
-        float f30 = f10 + 0.0f;
+        float f28 = f10 + 0.0f;
         if (z2) {
         }
-        f30 += f24;
+        f28 += f24;
         float min = z3 ? Math.min(f25, intBitsToFloat2) : f26;
-        if ((z3 || z) && min > f30) {
-            float f31 = z7 ? f27 : f24;
-            float f32 = z7 ? f24 : f27;
-            float f33 = min - f10;
+        if ((z3 || z) && min > f28) {
+            float f29 = z7 ? f27 : f24;
+            float f30 = z7 ? f24 : f27;
+            float f31 = min - f10;
             if (z7) {
                 z4 = true;
-                m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32)) - f33) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+                m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32)) - f31) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
             } else {
                 z4 = true;
                 m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
             }
             if (z5) {
-                m4587constructorimpl = Size.m4587constructorimpl((Float.floatToRawIntBits(f33 - 0.0f) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) << 32));
+                m4587constructorimpl = Size.m4587constructorimpl((Float.floatToRawIntBits(f31 - 0.0f) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) << 32));
             } else {
-                m4587constructorimpl = Size.m4587constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(f33 - 0.0f) << 32));
+                m4587constructorimpl = Size.m4587constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(f31 - 0.0f) << 32));
             }
             f12 = intBitsToFloat2;
             f13 = f25;
-            m2515drawTrackPathzXTsYAs(drawScope, orientation, m4519constructorimpl, m4587constructorimpl, j, f31, f32);
+            m2515drawTrackPathzXTsYAs(drawScope, orientation, m4519constructorimpl, m4587constructorimpl, j, f29, f30);
             if (z5) {
                 m4519constructorimpl2 = Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5345getCenterF1C5BW0() >> 32))) << 32) | (Float.floatToRawIntBits(f24 + 0.0f) & 4294967295L));
             } else if (z6) {
@@ -3421,15 +3407,15 @@ public final class SliderDefaults {
             f13 = f25;
             z4 = true;
         }
-        float f34 = intBitsToFloat - f11;
+        float f32 = intBitsToFloat - f11;
         if (z2) {
         }
-        f34 -= f24;
+        f32 -= f24;
         float max = z3 ? Math.max(f13, f12) : f13;
-        if (max < f34) {
-            float f35 = z7 ? f24 : f27;
-            float f36 = z7 ? f27 : f24;
-            float f37 = intBitsToFloat - (max + f11);
+        if (max < f32) {
+            float f33 = z7 ? f24 : f27;
+            float f34 = z7 ? f27 : f24;
+            float f35 = intBitsToFloat - (max + f11);
             if (z5) {
                 m4519constructorimpl5 = Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f20) & 4294967295L));
             } else if (z6) {
@@ -3438,13 +3424,13 @@ public final class SliderDefaults {
                 m4519constructorimpl5 = Offset.m4519constructorimpl((Float.floatToRawIntBits(f20) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
             }
             if (z5) {
-                m4587constructorimpl3 = Size.m4587constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) << 32) | (Float.floatToRawIntBits(f37) & 4294967295L));
+                m4587constructorimpl3 = Size.m4587constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) << 32) | (Float.floatToRawIntBits(f35) & 4294967295L));
             } else if (z6 && !z) {
                 m4587constructorimpl3 = Size.m4587constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32)) - f20) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L))) & 4294967295L));
             } else {
-                m4587constructorimpl3 = Size.m4587constructorimpl((Float.floatToRawIntBits(f37) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L))) & 4294967295L));
+                m4587constructorimpl3 = Size.m4587constructorimpl((Float.floatToRawIntBits(f35) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L))) & 4294967295L));
             }
-            m2515drawTrackPathzXTsYAs(drawScope, orientation, m4519constructorimpl5, m4587constructorimpl3, j, f35, f36);
+            m2515drawTrackPathzXTsYAs(drawScope, orientation, m4519constructorimpl5, m4587constructorimpl3, j, f33, f34);
             if (z5) {
                 m4519constructorimpl6 = Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5345getCenterF1C5BW0() >> 32))) << 32) | (Float.floatToRawIntBits(intBitsToFloat - f24) & 4294967295L));
             } else if (z6) {
@@ -3467,13 +3453,13 @@ public final class SliderDefaults {
         } else {
             f15 = f13 - f11;
         }
-        float f38 = (z7 || z3 || z) ? f27 : f24;
-        float f39 = (!z7 || z3 || z) ? f27 : f24;
-        float f40 = (!z7 || z3 || z) ? f15 - f14 : f15;
+        float f36 = (z7 || z3 || z) ? f27 : f24;
+        float f37 = (!z7 || z3 || z) ? f27 : f24;
+        float f38 = (!z7 || z3 || z) ? f15 - f14 : f15;
         if (z2) {
             if (fArr.length == 0 ? z4 : false) {
                 f16 = 0.0f;
-                if (f40 <= f16) {
+                if (f38 <= f16) {
                     if (z5) {
                         m4519constructorimpl4 = Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f14) & 4294967295L));
                     } else if (z6) {
@@ -3483,23 +3469,23 @@ public final class SliderDefaults {
                     }
                     long j5 = m4519constructorimpl4;
                     if (z5) {
-                        m4587constructorimpl2 = Size.m4587constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) << 32) | (Float.floatToRawIntBits(f40) & 4294967295L));
+                        m4587constructorimpl2 = Size.m4587constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) << 32) | (Float.floatToRawIntBits(f38) & 4294967295L));
                     } else if (z6 && !z3 && !z) {
                         m4587constructorimpl2 = Size.m4587constructorimpl((Float.floatToRawIntBits(f15) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L))) & 4294967295L));
                     } else {
-                        m4587constructorimpl2 = Size.m4587constructorimpl((Float.floatToRawIntBits(f40) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L))) & 4294967295L));
+                        m4587constructorimpl2 = Size.m4587constructorimpl((Float.floatToRawIntBits(f38) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L))) & 4294967295L));
                     }
                     f17 = f13;
                     f18 = f14;
                     f19 = f15;
-                    m2515drawTrackPathzXTsYAs(drawScope, orientation, j5, m4587constructorimpl2, j2, f38, f39);
+                    m2515drawTrackPathzXTsYAs(drawScope, orientation, j5, m4587constructorimpl2, j2, f36, f37);
                 } else {
                     f17 = f13;
                     f18 = f14;
                     f19 = f15;
                 }
-                float f41 = 0.0f + f24;
-                float f42 = intBitsToFloat - f24;
+                float f39 = 0.0f + f24;
+                float f40 = intBitsToFloat - f24;
                 ClosedFloatingPointRange<Float> rangeTo = RangesKt.rangeTo(f18, f19);
                 ClosedFloatingPointRange<Float> rangeTo2 = RangesKt.rangeTo(f12 - f11, f12 + f11);
                 ClosedFloatingPointRange<Float> rangeTo3 = RangesKt.rangeTo(f26 - f10, f26 + f10);
@@ -3508,22 +3494,22 @@ public final class SliderDefaults {
                 int i2 = 0;
                 i = 0;
                 while (i < length) {
-                    float f43 = fArr[i];
+                    float f41 = fArr[i];
                     int i3 = i2 + 1;
                     if (function2 == null || (((!z3 && !z) || i2 != 0) && i2 != fArr.length - 1)) {
-                        float lerp = MathHelpersKt.lerp(f41, f42, f43);
+                        float lerp = MathHelpersKt.lerp(f39, f40, f41);
                         if ((!z3 || !rangeTo2.contains(Float.valueOf(lerp))) && ((!z || !rangeTo3.contains(Float.valueOf(lerp))) && !rangeTo4.contains(Float.valueOf(lerp)))) {
                             if (z5) {
                                 closedFloatingPointRange = rangeTo2;
                                 closedFloatingPointRange2 = rangeTo3;
-                                m4519constructorimpl3 = Offset.m4519constructorimpl((Float.floatToRawIntBits(lerp) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5345getCenterF1C5BW0() >> 32))) << 32));
+                                m4519constructorimpl3 = Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5345getCenterF1C5BW0() >> 32))) << 32) | (Float.floatToRawIntBits(lerp) & 4294967295L));
                             } else {
                                 closedFloatingPointRange = rangeTo2;
                                 closedFloatingPointRange2 = rangeTo3;
                                 if (z6) {
-                                    m4519constructorimpl3 = Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5345getCenterF1C5BW0() & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32)) - lerp) << 32));
+                                    m4519constructorimpl3 = Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32)) - lerp) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5345getCenterF1C5BW0() & 4294967295L))) & 4294967295L));
                                 } else {
-                                    m4519constructorimpl3 = Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5345getCenterF1C5BW0() & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(lerp) << 32));
+                                    m4519constructorimpl3 = Offset.m4519constructorimpl((Float.floatToRawIntBits(lerp) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5345getCenterF1C5BW0() & 4294967295L))) & 4294967295L));
                                 }
                             }
                             function3.invoke(drawScope, Offset.m4516boximpl(m4519constructorimpl3), Color.m4762boximpl(rangeTo.contains(Float.valueOf(lerp)) ? j4 : j3));
@@ -3542,11 +3528,11 @@ public final class SliderDefaults {
                 }
             }
         }
-        f16 = f38;
-        if (f40 <= f16) {
+        f16 = f36;
+        if (f38 <= f16) {
         }
-        float f412 = 0.0f + f24;
-        float f422 = intBitsToFloat - f24;
+        float f392 = 0.0f + f24;
+        float f402 = intBitsToFloat - f24;
         ClosedFloatingPointRange<Float> rangeTo5 = RangesKt.rangeTo(f18, f19);
         ClosedFloatingPointRange<Float> rangeTo22 = RangesKt.rangeTo(f12 - f11, f12 + f11);
         ClosedFloatingPointRange<Float> rangeTo32 = RangesKt.rangeTo(f26 - f10, f26 + f10);

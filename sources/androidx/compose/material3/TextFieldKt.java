@@ -85,7 +85,7 @@ import kotlin.ranges.RangesKt;
 @Metadata(d1 = {"\u0000Ê\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a£\u0003\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2 \b\u0002\u0010\r\u001a\u001a\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000e¢\u0006\u0002\b\u0010¢\u0006\u0002\b\u00112\u0015\b\u0002\u0010\u0012\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0014\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0015\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0018\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\b\b\u0002\u0010\u0019\u001a\u00020\u00072\n\b\u0002\u0010\u001a\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\n\b\u0002\u0010 \u001a\u0004\u0018\u00010!2\b\b\u0002\u0010\"\u001a\u00020#28\b\u0002\u0010$\u001a2\u0012\u0004\u0012\u00020&\u0012\u001b\u0012\u0019\u0012\u0006\u0012\u0004\u0018\u00010'0\u0013¢\u0006\f\b(\u0012\b\b)\u0012\u0004\b\b(*\u0012\u0004\u0012\u00020\u0001\u0018\u00010%¢\u0006\u0002\b\u00112\b\b\u0002\u0010+\u001a\u00020,2\b\b\u0002\u0010-\u001a\u00020.2\b\b\u0002\u0010/\u001a\u0002002\b\b\u0002\u00101\u001a\u0002022\n\b\u0002\u00103\u001a\u0004\u0018\u000104H\u0007¢\u0006\u0002\u00105\u001aØ\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u00106\u001a\u0002072\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020\u00010\u000e2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\u0015\b\u0002\u0010\r\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0012\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0014\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0015\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0018\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\b\b\u0002\u0010\u0019\u001a\u00020\u00072\b\b\u0002\u00109\u001a\u00020:2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\b\b\u0002\u0010;\u001a\u00020<2\b\b\u0002\u0010=\u001a\u00020\u00072\b\b\u0002\u0010>\u001a\u00020?2\b\b\u0002\u0010@\u001a\u00020?2\n\b\u0002\u00103\u001a\u0004\u0018\u0001042\b\b\u0002\u0010-\u001a\u00020.2\b\b\u0002\u0010/\u001a\u000200H\u0007¢\u0006\u0002\u0010A\u001aØ\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u00106\u001a\u00020B2\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u00020B\u0012\u0004\u0012\u00020\u00010\u000e2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\u0015\b\u0002\u0010\r\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0012\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0014\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0015\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0018\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\b\b\u0002\u0010\u0019\u001a\u00020\u00072\b\b\u0002\u00109\u001a\u00020:2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\b\b\u0002\u0010;\u001a\u00020<2\b\b\u0002\u0010=\u001a\u00020\u00072\b\b\u0002\u0010>\u001a\u00020?2\b\b\u0002\u0010@\u001a\u00020?2\n\b\u0002\u00103\u001a\u0004\u0018\u0001042\b\b\u0002\u0010-\u001a\u00020.2\b\b\u0002\u0010/\u001a\u000200H\u0007¢\u0006\u0002\u0010C\u001aô\u0001\u0010D\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00052\u0011\u0010E\u001a\r\u0012\u0004\u0012\u00020\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010\r\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0019\u0010\u0012\u001a\u0015\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000e¢\u0006\u0002\b\u00102\u0013\u0010F\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010G\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0006\u0010=\u001a\u00020\u00072\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010H\u001a\u00020I2\u0011\u0010J\u001a\r\u0012\u0004\u0012\u00020\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010K\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0006\u0010L\u001a\u000202H\u0001¢\u0006\u0002\u0010M\"\u0016\u0010N\u001a\u00020OX\u0080\u0004¢\u0006\n\n\u0002\u0010R\u001a\u0004\bP\u0010Q¨\u0006S"}, d2 = {TextFieldImplKt.TextFieldId, "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/text/input/TextFieldState;", "modifier", "Landroidx/compose/ui/Modifier;", "enabled", "", "readOnly", "textStyle", "Landroidx/compose/ui/text/TextStyle;", "labelPosition", "Landroidx/compose/material3/TextFieldLabelPosition;", Constants.ScionAnalytics.PARAM_LABEL, "Lkotlin/Function1;", "Landroidx/compose/material3/TextFieldLabelScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "placeholder", "Lkotlin/Function0;", "leadingIcon", "trailingIcon", "prefix", "suffix", "supportingText", "isError", "inputTransformation", "Landroidx/compose/foundation/text/input/InputTransformation;", "outputTransformation", "Landroidx/compose/foundation/text/input/OutputTransformation;", "keyboardOptions", "Landroidx/compose/foundation/text/KeyboardOptions;", "onKeyboardAction", "Landroidx/compose/foundation/text/input/KeyboardActionHandler;", "lineLimits", "Landroidx/compose/foundation/text/input/TextFieldLineLimits;", "onTextLayout", "Lkotlin/Function2;", "Landroidx/compose/ui/unit/Density;", "Landroidx/compose/ui/text/TextLayoutResult;", "Lkotlin/ParameterName;", "name", "getResult", "scrollState", "Landroidx/compose/foundation/ScrollState;", "shape", "Landroidx/compose/ui/graphics/Shape;", "colors", "Landroidx/compose/material3/TextFieldColors;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "(Landroidx/compose/foundation/text/input/TextFieldState;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/ui/text/TextStyle;Landroidx/compose/material3/TextFieldLabelPosition;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/foundation/text/input/InputTransformation;Landroidx/compose/foundation/text/input/OutputTransformation;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/input/KeyboardActionHandler;Landroidx/compose/foundation/text/input/TextFieldLineLimits;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/ScrollState;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/TextFieldColors;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/runtime/Composer;IIII)V", "value", "", "onValueChange", "visualTransformation", "Landroidx/compose/ui/text/input/VisualTransformation;", "keyboardActions", "Landroidx/compose/foundation/text/KeyboardActions;", "singleLine", "maxLines", "", "minLines", "(Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/ui/text/input/VisualTransformation;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/KeyboardActions;ZIILandroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/TextFieldColors;Landroidx/compose/runtime/Composer;IIII)V", "Landroidx/compose/ui/text/input/TextFieldValue;", "(Landroidx/compose/ui/text/input/TextFieldValue;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/ui/text/input/VisualTransformation;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/KeyboardActions;ZIILandroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/TextFieldColors;Landroidx/compose/runtime/Composer;IIII)V", "TextFieldLayout", "textField", "leading", "trailing", "labelProgress", "Landroidx/compose/material3/internal/FloatProducer;", TtmlNode.RUBY_CONTAINER, "supporting", "paddingValues", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/material3/TextFieldLabelPosition;Landroidx/compose/material3/internal/FloatProducer;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/runtime/Composer;II)V", "TextFieldWithLabelVerticalPadding", "Landroidx/compose/ui/unit/Dp;", "getTextFieldWithLabelVerticalPadding", "()F", "F", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextFieldKt {
-    private static final float TextFieldWithLabelVerticalPadding = Dp.m7555constructorimpl(8);
+    private static final float TextFieldWithLabelVerticalPadding = Dp.m7555constructorimpl(8.0f);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TextField$lambda$2(TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, TextStyle textStyle, TextFieldLabelPosition textFieldLabelPosition, Function3 function3, Function2 function2, Function2 function22, Function2 function23, Function2 function24, Function2 function25, Function2 function26, boolean z3, InputTransformation inputTransformation, OutputTransformation outputTransformation, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, TextFieldLineLimits textFieldLineLimits, Function2 function27, ScrollState scrollState, Shape shape, TextFieldColors textFieldColors, PaddingValues paddingValues, MutableInteractionSource mutableInteractionSource, int i, int i2, int i3, int i4, Composer composer, int i5) {
@@ -1604,25 +1604,12 @@ public final class TextFieldKt {
                                                 Strings.Companion companion2 = Strings.Companion;
                                                 Modifier m848defaultMinSizeVpY3zN4 = SizeKt.m848defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(modifier4, z17, Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(androidx.compose.ui.R.string.default_error_message), composer3, 0)), TextFieldDefaults.INSTANCE.m2698getMinWidthD9Ej5fM(), TextFieldDefaults.INSTANCE.m2697getMinHeightD9Ej5fM());
                                                 SolidColor solidColor = new SolidColor(textFieldColors3.m2629cursorColorvNxB06k$material3(z14), null);
-                                                String str3 = str2;
-                                                Function1<String, Unit> function13 = function12;
-                                                boolean z18 = z12;
-                                                boolean z19 = z13;
-                                                TextStyle textStyle4 = merge;
-                                                KeyboardOptions keyboardOptions5 = keyboardOptions3;
-                                                KeyboardActions keyboardActions5 = keyboardActions3;
-                                                boolean z20 = z11;
-                                                int i49 = i40;
-                                                int i50 = i39;
-                                                VisualTransformation visualTransformation4 = visualTransformation3;
-                                                MutableInteractionSource mutableInteractionSource6 = mutableInteractionSource4;
-                                                SolidColor solidColor2 = solidColor;
-                                                final String str4 = str2;
-                                                final boolean z21 = z12;
-                                                final boolean z22 = z11;
-                                                final VisualTransformation visualTransformation5 = visualTransformation3;
-                                                final MutableInteractionSource mutableInteractionSource7 = mutableInteractionSource4;
-                                                final boolean z23 = z14;
+                                                final String str3 = str2;
+                                                final boolean z18 = z12;
+                                                final boolean z19 = z11;
+                                                final VisualTransformation visualTransformation4 = visualTransformation3;
+                                                final MutableInteractionSource mutableInteractionSource6 = mutableInteractionSource4;
+                                                final boolean z20 = z14;
                                                 final Function2<Composer, Integer, Unit> function227 = function221;
                                                 final Function2<Composer, Integer, Unit> function228 = function218;
                                                 final Function2<Composer, Integer, Unit> function229 = function215;
@@ -1632,29 +1619,32 @@ public final class TextFieldKt {
                                                 final Function2<Composer, Integer, Unit> function233 = function220;
                                                 final Shape shape5 = shape3;
                                                 final TextFieldColors textFieldColors4 = textFieldColors3;
-                                                BasicTextFieldKt.BasicTextField(str3, function13, m848defaultMinSizeVpY3zN4, z18, z19, textStyle4, keyboardOptions5, keyboardActions5, z20, i49, i50, visualTransformation4, (Function1<? super TextLayoutResult, Unit>) null, mutableInteractionSource6, solidColor2, ComposableLambdaKt.rememberComposableLambda(1451491557, true, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextFieldKt$TextField$3.1
+                                                BasicTextFieldKt.BasicTextField(str2, function12, m848defaultMinSizeVpY3zN4, z12, z13, merge, keyboardOptions3, keyboardActions3, z11, i40, i39, visualTransformation3, (Function1<? super TextLayoutResult, Unit>) null, mutableInteractionSource4, solidColor, ComposableLambdaKt.rememberComposableLambda(1451491557, true, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextFieldKt$TextField$3.1
                                                     @Override // kotlin.jvm.functions.Function3
                                                     public /* bridge */ /* synthetic */ Unit invoke(Function2<? super Composer, ? super Integer, ? extends Unit> function234, Composer composer4, Integer num) {
                                                         invoke((Function2<? super Composer, ? super Integer, Unit>) function234, composer4, num.intValue());
                                                         return Unit.INSTANCE;
                                                     }
 
-                                                    public final void invoke(Function2<? super Composer, ? super Integer, Unit> function234, Composer composer4, int i51) {
-                                                        int i52;
+                                                    public final void invoke(Function2<? super Composer, ? super Integer, Unit> function234, Composer composer4, int i49) {
+                                                        Function2<? super Composer, ? super Integer, Unit> function235;
+                                                        int i50;
                                                         ComposerKt.sourceInformation(composer4, "CN(innerTextField)478@25969L812:TextField.kt#uh7d8r");
-                                                        if ((i51 & 6) == 0) {
-                                                            i52 = i51 | (composer4.changedInstance(function234) ? 4 : 2);
+                                                        if ((i49 & 6) == 0) {
+                                                            function235 = function234;
+                                                            i50 = i49 | (composer4.changedInstance(function235) ? 4 : 2);
                                                         } else {
-                                                            i52 = i51;
+                                                            function235 = function234;
+                                                            i50 = i49;
                                                         }
-                                                        if (!composer4.shouldExecute((i52 & 19) != 18, i52 & 1)) {
+                                                        if (!composer4.shouldExecute((i50 & 19) != 18, i50 & 1)) {
                                                             composer4.skipToGroupEnd();
                                                             return;
                                                         }
                                                         if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventStart(1451491557, i52, -1, "androidx.compose.material3.TextField.<anonymous>.<anonymous> (TextField.kt:478)");
+                                                            ComposerKt.traceEventStart(1451491557, i50, -1, "androidx.compose.material3.TextField.<anonymous>.<anonymous> (TextField.kt:478)");
                                                         }
-                                                        TextFieldDefaults.INSTANCE.DecorationBox(str4, function234, z21, z22, visualTransformation5, mutableInteractionSource7, z23, function227, function228, function229, function230, function231, function232, function233, shape5, textFieldColors4, null, null, composer4, (i52 << 3) & 112, 100663296, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                                                        TextFieldDefaults.INSTANCE.DecorationBox(str3, function235, z18, z19, visualTransformation4, mutableInteractionSource6, z20, function227, function228, function229, function230, function231, function232, function233, shape5, textFieldColors4, null, null, composer4, (i50 << 3) & 112, 100663296, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                                                         if (ComposerKt.isTraceInProgress()) {
                                                             ComposerKt.traceEventEnd();
                                                         }
@@ -2528,25 +2518,12 @@ public final class TextFieldKt {
                                                 Strings.Companion companion2 = Strings.Companion;
                                                 Modifier m848defaultMinSizeVpY3zN4 = SizeKt.m848defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(modifier4, z17, Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(androidx.compose.ui.R.string.default_error_message), composer3, 0)), TextFieldDefaults.INSTANCE.m2698getMinWidthD9Ej5fM(), TextFieldDefaults.INSTANCE.m2697getMinHeightD9Ej5fM());
                                                 SolidColor solidColor = new SolidColor(textFieldColors3.m2629cursorColorvNxB06k$material3(z14), null);
-                                                TextFieldValue textFieldValue3 = textFieldValue2;
-                                                Function1<TextFieldValue, Unit> function13 = function12;
-                                                boolean z18 = z12;
-                                                boolean z19 = z13;
-                                                TextStyle textStyle4 = merge;
-                                                KeyboardOptions keyboardOptions5 = keyboardOptions3;
-                                                KeyboardActions keyboardActions5 = keyboardActions3;
-                                                boolean z20 = z11;
-                                                int i49 = i40;
-                                                int i50 = i39;
-                                                VisualTransformation visualTransformation4 = visualTransformation3;
-                                                MutableInteractionSource mutableInteractionSource6 = mutableInteractionSource4;
-                                                SolidColor solidColor2 = solidColor;
-                                                final TextFieldValue textFieldValue4 = textFieldValue2;
-                                                final boolean z21 = z12;
-                                                final boolean z22 = z11;
-                                                final VisualTransformation visualTransformation5 = visualTransformation3;
-                                                final MutableInteractionSource mutableInteractionSource7 = mutableInteractionSource4;
-                                                final boolean z23 = z14;
+                                                final TextFieldValue textFieldValue3 = textFieldValue2;
+                                                final boolean z18 = z12;
+                                                final boolean z19 = z11;
+                                                final VisualTransformation visualTransformation4 = visualTransformation3;
+                                                final MutableInteractionSource mutableInteractionSource6 = mutableInteractionSource4;
+                                                final boolean z20 = z14;
                                                 final Function2<Composer, Integer, Unit> function227 = function221;
                                                 final Function2<Composer, Integer, Unit> function228 = function218;
                                                 final Function2<Composer, Integer, Unit> function229 = function215;
@@ -2556,29 +2533,32 @@ public final class TextFieldKt {
                                                 final Function2<Composer, Integer, Unit> function233 = function220;
                                                 final Shape shape5 = shape3;
                                                 final TextFieldColors textFieldColors4 = textFieldColors3;
-                                                BasicTextFieldKt.BasicTextField(textFieldValue3, function13, m848defaultMinSizeVpY3zN4, z18, z19, textStyle4, keyboardOptions5, keyboardActions5, z20, i49, i50, visualTransformation4, (Function1<? super TextLayoutResult, Unit>) null, mutableInteractionSource6, solidColor2, ComposableLambdaKt.rememberComposableLambda(-609710734, true, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextFieldKt$TextField$5.1
+                                                BasicTextFieldKt.BasicTextField(textFieldValue2, function12, m848defaultMinSizeVpY3zN4, z12, z13, merge, keyboardOptions3, keyboardActions3, z11, i40, i39, visualTransformation3, (Function1<? super TextLayoutResult, Unit>) null, mutableInteractionSource4, solidColor, ComposableLambdaKt.rememberComposableLambda(-609710734, true, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextFieldKt$TextField$5.1
                                                     @Override // kotlin.jvm.functions.Function3
                                                     public /* bridge */ /* synthetic */ Unit invoke(Function2<? super Composer, ? super Integer, ? extends Unit> function234, Composer composer4, Integer num) {
                                                         invoke((Function2<? super Composer, ? super Integer, Unit>) function234, composer4, num.intValue());
                                                         return Unit.INSTANCE;
                                                     }
 
-                                                    public final void invoke(Function2<? super Composer, ? super Integer, Unit> function234, Composer composer4, int i51) {
-                                                        int i52;
+                                                    public final void invoke(Function2<? super Composer, ? super Integer, Unit> function234, Composer composer4, int i49) {
+                                                        Function2<? super Composer, ? super Integer, Unit> function235;
+                                                        int i50;
                                                         ComposerKt.sourceInformation(composer4, "CN(innerTextField)628@34328L817:TextField.kt#uh7d8r");
-                                                        if ((i51 & 6) == 0) {
-                                                            i52 = i51 | (composer4.changedInstance(function234) ? 4 : 2);
+                                                        if ((i49 & 6) == 0) {
+                                                            function235 = function234;
+                                                            i50 = i49 | (composer4.changedInstance(function235) ? 4 : 2);
                                                         } else {
-                                                            i52 = i51;
+                                                            function235 = function234;
+                                                            i50 = i49;
                                                         }
-                                                        if (!composer4.shouldExecute((i52 & 19) != 18, i52 & 1)) {
+                                                        if (!composer4.shouldExecute((i50 & 19) != 18, i50 & 1)) {
                                                             composer4.skipToGroupEnd();
                                                             return;
                                                         }
                                                         if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventStart(-609710734, i52, -1, "androidx.compose.material3.TextField.<anonymous>.<anonymous> (TextField.kt:628)");
+                                                            ComposerKt.traceEventStart(-609710734, i50, -1, "androidx.compose.material3.TextField.<anonymous>.<anonymous> (TextField.kt:628)");
                                                         }
-                                                        TextFieldDefaults.INSTANCE.DecorationBox(TextFieldValue.this.getText(), function234, z21, z22, visualTransformation5, mutableInteractionSource7, z23, function227, function228, function229, function230, function231, function232, function233, shape5, textFieldColors4, null, null, composer4, (i52 << 3) & 112, 100663296, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                                                        TextFieldDefaults.INSTANCE.DecorationBox(TextFieldValue.this.getText(), function235, z18, z19, visualTransformation4, mutableInteractionSource6, z20, function227, function228, function229, function230, function231, function232, function233, shape5, textFieldColors4, null, null, composer4, (i50 << 3) & 112, 100663296, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                                                         if (ComposerKt.isTraceInProgress()) {
                                                             ComposerKt.traceEventEnd();
                                                         }
@@ -2969,9 +2949,9 @@ public final class TextFieldKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:249:0x0787  */
-    /* JADX WARN: Removed duplicated region for block: B:252:0x0793  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x0797  */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x0785  */
+    /* JADX WARN: Removed duplicated region for block: B:252:0x0791  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x0795  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -3203,11 +3183,11 @@ public final class TextFieldKt {
             float calculateEndPadding = PaddingKt.calculateEndPadding(paddingValues2, layoutDirection);
             float textFieldHorizontalIconPadding = TextFieldImplKt.textFieldHorizontalIconPadding(composer2, 0);
             if (function23 != null) {
-                calculateStartPadding = Dp.m7555constructorimpl(RangesKt.coerceAtLeast(Dp.m7555constructorimpl(calculateStartPadding - textFieldHorizontalIconPadding), Dp.m7555constructorimpl(0)));
+                calculateStartPadding = Dp.m7555constructorimpl(RangesKt.coerceAtLeast(Dp.m7555constructorimpl(calculateStartPadding - textFieldHorizontalIconPadding), Dp.m7555constructorimpl(0.0f)));
             }
             float f2 = calculateStartPadding;
             if (function24 != null) {
-                calculateEndPadding = Dp.m7555constructorimpl(RangesKt.coerceAtLeast(Dp.m7555constructorimpl(calculateEndPadding - textFieldHorizontalIconPadding), Dp.m7555constructorimpl(0)));
+                calculateEndPadding = Dp.m7555constructorimpl(RangesKt.coerceAtLeast(Dp.m7555constructorimpl(calculateEndPadding - textFieldHorizontalIconPadding), Dp.m7555constructorimpl(0.0f)));
             }
             if (function25 != null) {
                 composer2.startReplaceGroup(-1443868027);
@@ -3428,9 +3408,9 @@ public final class TextFieldKt {
             }
             Modifier wrapContentHeight$default = SizeKt.wrapContentHeight$default(SizeKt.m852heightInVpY3zN4$default(Modifier.Companion, TextFieldImplKt.getMinTextLineHeight(), 0.0f, 2, null), null, false, 3, null);
             if (function25 != null) {
-                f2 = Dp.m7555constructorimpl(0);
+                f2 = Dp.m7555constructorimpl(0.0f);
             }
-            Modifier m822paddingqDBjuR0$default4 = PaddingKt.m822paddingqDBjuR0$default(wrapContentHeight$default, f2, 0.0f, function26 == null ? f : Dp.m7555constructorimpl(0), 0.0f, 10, null);
+            Modifier m822paddingqDBjuR0$default4 = PaddingKt.m822paddingqDBjuR0$default(wrapContentHeight$default, f2, 0.0f, function26 == null ? f : Dp.m7555constructorimpl(0.0f), 0.0f, 10, null);
             if (function3 != null) {
                 composer2.startReplaceGroup(-1441906533);
                 ComposerKt.sourceInformation(composer2, "785@40212L63");

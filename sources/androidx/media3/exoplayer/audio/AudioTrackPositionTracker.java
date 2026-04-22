@@ -187,9 +187,9 @@ final class AudioTrackPositionTracker {
         if (j2 == C.TIME_UNSET || j < j2) {
             return;
         }
-        long currentTimeMillis = this.clock.currentTimeMillis() - Util.usToMs(Util.getPlayoutDurationForMediaDuration(j - j2, this.audioTrackPlaybackSpeed));
+        long playoutDurationForMediaDuration = Util.getPlayoutDurationForMediaDuration(j - j2, this.audioTrackPlaybackSpeed);
         this.onPositionAdvancingFromPositionUs = C.TIME_UNSET;
-        this.listener.onPositionAdvancing(currentTimeMillis);
+        this.listener.onPositionAdvancing(this.clock.currentTimeMillis() - Util.usToMs(playoutDurationForMediaDuration));
     }
 
     private void maybeSampleSyncParams() {

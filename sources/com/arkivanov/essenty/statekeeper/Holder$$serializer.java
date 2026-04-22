@@ -62,7 +62,7 @@ public /* synthetic */ class Holder$$serializer<T> implements GeneratedSerialize
         } else {
             boolean z = true;
             int i2 = 0;
-            obj = null;
+            Object obj2 = null;
             while (z) {
                 int decodeElementIndex = beginStructure.decodeElementIndex(serialDescriptor);
                 if (decodeElementIndex == -1) {
@@ -70,10 +70,11 @@ public /* synthetic */ class Holder$$serializer<T> implements GeneratedSerialize
                 } else if (decodeElementIndex != 0) {
                     throw new UnknownFieldException(decodeElementIndex);
                 } else {
-                    obj = beginStructure.decodeSerializableElement(serialDescriptor, 0, this.typeSerial0, obj);
+                    obj2 = beginStructure.decodeSerializableElement(serialDescriptor, 0, this.typeSerial0, obj2);
                     i2 = 1;
                 }
             }
+            obj = obj2;
             i = i2;
         }
         beginStructure.endStructure(serialDescriptor);

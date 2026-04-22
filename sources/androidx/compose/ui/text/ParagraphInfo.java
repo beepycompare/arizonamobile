@@ -218,6 +218,7 @@ public final class ParagraphInfo {
     /* renamed from: toLocal-MK-Hz9U  reason: not valid java name */
     public final long m6879toLocalMKHz9U(long j) {
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - this.top) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L)) - this.top;
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
     }
 }

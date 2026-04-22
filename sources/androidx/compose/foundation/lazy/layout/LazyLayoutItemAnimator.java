@@ -45,699 +45,699 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
     private final List<LazyLayoutItemAnimation> disappearingItems = new ArrayList();
     private final Modifier modifier = new DisplayingDisappearingItemsElement(this);
 
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x0208, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x01fb, code lost:
         r1 = kotlin.Unit.INSTANCE;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x020b, code lost:
-        r35 = r1;
-        r36 = r2;
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x01fe, code lost:
+        r34 = r1;
+        r35 = r2;
         removeInfoForKey(r14.getKey());
         r1 = kotlin.Unit.INSTANCE;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:102:0x0218, code lost:
-        r2 = r36 + 1;
-        r1 = r35;
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x020b, code lost:
+        r2 = r35 + 1;
+        r1 = r34;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x021e, code lost:
-        r6 = new int[r51];
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x0211, code lost:
+        r6 = new int[r50];
      */
-    /* JADX WARN: Code restructure failed: missing block: B:104:0x0220, code lost:
-        if (r24 == false) goto L133;
+    /* JADX WARN: Code restructure failed: missing block: B:104:0x0213, code lost:
+        if (r23 == false) goto L133;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:105:0x0222, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x0215, code lost:
         if (r11 == null) goto L133;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:107:0x022c, code lost:
-        if (r42.movingInFromStartBound.isEmpty() != false) goto L123;
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x021f, code lost:
+        if (r41.movingInFromStartBound.isEmpty() != false) goto L123;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:108:0x022e, code lost:
-        r1 = r42.movingInFromStartBound;
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x0221, code lost:
+        r1 = r41.movingInFromStartBound;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x0235, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:109:0x0228, code lost:
         if (r1.size() <= 1) goto L118;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:110:0x0237, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:110:0x022a, code lost:
         kotlin.collections.CollectionsKt.sortWith(r1, new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator$onMeasured$$inlined$sortByDescending$1(r11));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:111:0x0241, code lost:
-        r7 = r42.movingInFromStartBound;
+    /* JADX WARN: Code restructure failed: missing block: B:111:0x0234, code lost:
+        r7 = r41.movingInFromStartBound;
         r12 = r7.size();
         r13 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:112:0x024b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:112:0x023e, code lost:
         if (r13 >= r12) goto L121;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x024d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x0240, code lost:
         r1 = r7.get(r13);
-        initializeAnimation$default(r42, r1, r53 - updateAndReturnOffsetFor(r6, r1), null, 4, null);
-        startPlacementAnimationsIfNeeded$default(r42, r1, false, 2, null);
+        initializeAnimation$default(r41, r1, r52 - updateAndReturnOffsetFor(r6, r1), null, 4, null);
+        startPlacementAnimationsIfNeeded$default(r41, r1, false, 2, null);
         r13 = r13 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:114:0x0268, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:114:0x025b, code lost:
         kotlin.collections.ArraysKt.fill$default(r6, 0, 0, 0, 6, (java.lang.Object) null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:116:0x027f, code lost:
-        if (r42.movingInFromEndBound.isEmpty() != false) goto L133;
+    /* JADX WARN: Code restructure failed: missing block: B:116:0x0272, code lost:
+        if (r41.movingInFromEndBound.isEmpty() != false) goto L133;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:117:0x0281, code lost:
-        r1 = r42.movingInFromEndBound;
+    /* JADX WARN: Code restructure failed: missing block: B:117:0x0274, code lost:
+        r1 = r41.movingInFromEndBound;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:118:0x0288, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:118:0x027b, code lost:
         if (r1.size() <= 1) goto L128;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:119:0x028a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:119:0x027d, code lost:
         kotlin.collections.CollectionsKt.sortWith(r1, new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator$onMeasured$$inlined$sortBy$1(r11));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:120:0x0294, code lost:
-        r7 = r42.movingInFromEndBound;
+    /* JADX WARN: Code restructure failed: missing block: B:120:0x0287, code lost:
+        r7 = r41.movingInFromEndBound;
         r12 = r7.size();
         r13 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:121:0x029e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:121:0x0291, code lost:
         if (r13 >= r12) goto L131;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:122:0x02a0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:122:0x0293, code lost:
         r1 = r7.get(r13);
-        initializeAnimation$default(r42, r1, (r54 + updateAndReturnOffsetFor(r6, r1)) - r1.getMainAxisSizeWithSpacings(), null, 4, null);
-        startPlacementAnimationsIfNeeded$default(r42, r1, false, 2, null);
+        initializeAnimation$default(r41, r1, (r53 + updateAndReturnOffsetFor(r6, r1)) - r1.getMainAxisSizeWithSpacings(), null, 4, null);
+        startPlacementAnimationsIfNeeded$default(r41, r1, false, 2, null);
         r13 = r13 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:123:0x02c0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:123:0x02b3, code lost:
         kotlin.collections.ArraysKt.fill$default(r6, 0, 0, 0, 6, (java.lang.Object) null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:124:0x02cf, code lost:
-        r1 = r42.movingAwayKeys;
+    /* JADX WARN: Code restructure failed: missing block: B:124:0x02c2, code lost:
+        r1 = r41.movingAwayKeys;
         r2 = r1.elements;
         r1 = r1.metadata;
         r3 = r1.length - 2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:125:0x02da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:125:0x02cd, code lost:
         if (r3 < 0) goto L214;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:126:0x02dc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:126:0x02cf, code lost:
         r4 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:127:0x02dd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:127:0x02d0, code lost:
         r12 = r1[r4];
      */
-    /* JADX WARN: Code restructure failed: missing block: B:128:0x02e7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:128:0x02da, code lost:
         if (((((~r12) << 7) & r12) & (-9187201950435737472L)) == (-9187201950435737472L)) goto L213;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:129:0x02e9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:129:0x02dc, code lost:
         r5 = 8 - ((~(r4 - r3)) >>> 31);
         r7 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0035, code lost:
-        r3 = r42.firstVisibleIndex;
-        r4 = (androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItem) kotlin.collections.CollectionsKt.firstOrNull((java.util.List<? extends java.lang.Object>) r46);
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0034, code lost:
+        r3 = r41.firstVisibleIndex;
+        r4 = (androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItem) kotlin.collections.CollectionsKt.firstOrNull((java.util.List<? extends java.lang.Object>) r45);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:130:0x02f3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:130:0x02e6, code lost:
         if (r7 >= r5) goto L206;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:132:0x02f9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:132:0x02ec, code lost:
         if ((r12 & 255) >= 128) goto L204;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:133:0x02fb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:133:0x02ee, code lost:
         r14 = r2[(r4 << 3) + r7];
-        r15 = r42.keyToItemInfoMap.get(r14);
+        r15 = r41.keyToItemInfoMap.get(r14);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:134:0x0308, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:134:0x02fb, code lost:
         if (r15 != null) goto L144;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:136:0x030c, code lost:
-        r31 = r1;
-        r1 = r47.getIndex(r14);
-        r32 = r2;
-        r15.setSpan(java.lang.Math.min(r51, r15.getSpan()));
-        r33 = r7;
-        r15.setLane(java.lang.Math.min(r51 - r15.getSpan(), r15.getLane()));
+    /* JADX WARN: Code restructure failed: missing block: B:136:0x02ff, code lost:
+        r30 = r1;
+        r1 = r46.getIndex(r14);
+        r31 = r2;
+        r15.setSpan(java.lang.Math.min(r50, r15.getSpan()));
+        r32 = r7;
+        r15.setLane(java.lang.Math.min(r50 - r15.getSpan(), r15.getLane()));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:137:0x0333, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:137:0x0326, code lost:
         if (r1 != (-1)) goto L181;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:138:0x0335, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:138:0x0328, code lost:
         r1 = r15.getAnimations();
         r7 = r1.length;
         r2 = 0;
-        r25 = false;
-        r26 = 0;
+        r24 = false;
+        r25 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:139:0x033f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:139:0x0332, code lost:
         if (r2 >= r7) goto L174;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x003d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x003c, code lost:
         if (r4 == null) goto L257;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:140:0x0341, code lost:
-        r49 = r1;
-        r1 = r49[r2];
-        r27 = r26 + 1;
+    /* JADX WARN: Code restructure failed: missing block: B:140:0x0334, code lost:
+        r48 = r1;
+        r1 = r48[r2];
+        r26 = r25 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:141:0x0347, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:141:0x033a, code lost:
         if (r1 == null) goto L173;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x034d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:143:0x0340, code lost:
         if (r1.isDisappearanceAnimationInProgress() == false) goto L156;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:144:0x034f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:144:0x0342, code lost:
         r1 = kotlin.Unit.INSTANCE;
-        r28 = r2;
-        r25 = true;
+        r27 = r2;
+        r24 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:146:0x035a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:146:0x034d, code lost:
         if (r1.isDisappearanceAnimationFinished() == false) goto L161;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:147:0x035c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:147:0x034f, code lost:
         r1.release();
-        r15.getAnimations()[r26] = null;
-        r28 = r2;
-        r42.disappearingItems.remove(r1);
-        r1 = r42.displayingNode;
+        r15.getAnimations()[r25] = null;
+        r27 = r2;
+        r41.disappearingItems.remove(r1);
+        r1 = r41.displayingNode;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:148:0x0370, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:148:0x0363, code lost:
         if (r1 == null) goto L153;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:149:0x0372, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x0365, code lost:
         androidx.compose.ui.node.DrawModifierNodeKt.invalidateDraw(r1);
         r1 = kotlin.Unit.INSTANCE;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x003f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x003e, code lost:
         r4 = r4.getIndex();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:150:0x0378, code lost:
-        r28 = r2;
+    /* JADX WARN: Code restructure failed: missing block: B:150:0x036b, code lost:
+        r27 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:151:0x037e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:151:0x0371, code lost:
         if (r1.getLayer() == null) goto L164;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:152:0x0380, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:152:0x0373, code lost:
         r1.animateDisappearance();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:154:0x0387, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:154:0x037a, code lost:
         if (r1.isDisappearanceAnimationInProgress() == false) goto L172;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:155:0x0389, code lost:
-        r42.disappearingItems.add(r1);
-        r1 = r42.displayingNode;
+    /* JADX WARN: Code restructure failed: missing block: B:155:0x037c, code lost:
+        r41.disappearingItems.add(r1);
+        r1 = r41.displayingNode;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:156:0x0390, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:156:0x0383, code lost:
         if (r1 == null) goto L169;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:157:0x0392, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:157:0x0385, code lost:
         androidx.compose.ui.node.DrawModifierNodeKt.invalidateDraw(r1);
         r1 = kotlin.Unit.INSTANCE;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:158:0x0397, code lost:
-        r25 = true;
+    /* JADX WARN: Code restructure failed: missing block: B:158:0x038a, code lost:
+        r24 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:159:0x039c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:159:0x038f, code lost:
         r1.release();
-        r15.getAnimations()[r26] = null;
+        r15.getAnimations()[r25] = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0044, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0043, code lost:
         r4 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:160:0x03a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:160:0x039a, code lost:
         r1 = kotlin.Unit.INSTANCE;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:161:0x03aa, code lost:
-        r28 = r2;
+    /* JADX WARN: Code restructure failed: missing block: B:161:0x039d, code lost:
+        r27 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:163:0x03ae, code lost:
-        r2 = r28 + 1;
-        r1 = r49;
-        r26 = r27;
+    /* JADX WARN: Code restructure failed: missing block: B:163:0x03a1, code lost:
+        r2 = r27 + 1;
+        r1 = r48;
+        r25 = r26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:165:0x03b7, code lost:
-        if (r25 != false) goto L178;
+    /* JADX WARN: Code restructure failed: missing block: B:165:0x03aa, code lost:
+        if (r24 != false) goto L178;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:166:0x03b9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:166:0x03ac, code lost:
         removeInfoForKey(r14);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:167:0x03bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:167:0x03af, code lost:
         r1 = kotlin.Unit.INSTANCE;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:168:0x03c0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:168:0x03b3, code lost:
         r2 = r15.m989getConstraintsDWUhwKw();
         kotlin.jvm.internal.Intrinsics.checkNotNull(r2);
-        r1 = r48.mo933getAndMeasurehBUhpc(r1, r15.getLane(), r15.getSpan(), r2.m7514unboximpl());
+        r1 = r47.mo933getAndMeasurehBUhpc(r1, r15.getLane(), r15.getSpan(), r2.m7514unboximpl());
         r1.setNonScrollableItem(true);
         r7 = r15.getAnimations();
         r1 = r7.length;
         r7 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:169:0x03ed, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:169:0x03e0, code lost:
         if (r7 >= r1) goto L198;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0045, code lost:
-        r42.firstVisibleIndex = r4;
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0044, code lost:
+        r41.firstVisibleIndex = r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:170:0x03ef, code lost:
-        r25 = r7[r7];
-        r26 = r1;
+    /* JADX WARN: Code restructure failed: missing block: B:170:0x03e2, code lost:
+        r24 = r7[r7];
+        r25 = r1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:171:0x03f3, code lost:
-        if (r25 == null) goto L196;
+    /* JADX WARN: Code restructure failed: missing block: B:171:0x03e6, code lost:
+        if (r24 == null) goto L196;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:172:0x03f5, code lost:
-        r1 = r25.isPlacementAnimationInProgress();
-        r25 = r7;
+    /* JADX WARN: Code restructure failed: missing block: B:172:0x03e8, code lost:
+        r1 = r24.isPlacementAnimationInProgress();
+        r24 = r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:173:0x03fc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:173:0x03ef, code lost:
         if (r1 != true) goto L194;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:175:0x03ff, code lost:
-        r25 = r7;
+    /* JADX WARN: Code restructure failed: missing block: B:175:0x03f2, code lost:
+        r24 = r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:176:0x0401, code lost:
-        r7 = r25 + 1;
-        r1 = r26;
+    /* JADX WARN: Code restructure failed: missing block: B:176:0x03f4, code lost:
+        r7 = r24 + 1;
+        r1 = r25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:177:0x0406, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:177:0x03f9, code lost:
         if (r11 == null) goto L188;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:179:0x040c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:179:0x03ff, code lost:
         if (r1 != r11.getIndex(r14)) goto L188;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0049, code lost:
-        if (r49 == false) goto L256;
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0046, code lost:
+        if (r48 == false) goto L256;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:180:0x040e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:180:0x0401, code lost:
         removeInfoForKey(r14);
         r1 = kotlin.Unit.INSTANCE;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:181:0x0414, code lost:
-        r15.updateAnimation(r1, r55, r56, r53, r54, r15.getCrossAxisOffset());
+    /* JADX WARN: Code restructure failed: missing block: B:181:0x0407, code lost:
+        r15.updateAnimation(r1, r54, r55, r52, r53, r15.getCrossAxisOffset());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:182:0x0429, code lost:
-        if (r1 >= r42.firstVisibleIndex) goto L193;
+    /* JADX WARN: Code restructure failed: missing block: B:182:0x041c, code lost:
+        if (r1 >= r41.firstVisibleIndex) goto L193;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:183:0x042b, code lost:
-        r1 = r42.movingAwayToStartBound.add(r1);
+    /* JADX WARN: Code restructure failed: missing block: B:183:0x041e, code lost:
+        r1 = r41.movingAwayToStartBound.add(r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:184:0x0432, code lost:
-        r1 = r42.movingAwayToEndBound.add(r1);
+    /* JADX WARN: Code restructure failed: missing block: B:184:0x0425, code lost:
+        r1 = r41.movingAwayToEndBound.add(r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:185:0x0438, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:185:0x042b, code lost:
         java.lang.Boolean.valueOf(r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:186:0x043c, code lost:
-        r31 = r1;
-        r32 = r2;
-        r33 = r7;
+    /* JADX WARN: Code restructure failed: missing block: B:186:0x042f, code lost:
+        r30 = r1;
+        r31 = r2;
+        r32 = r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:187:0x0444, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:187:0x0437, code lost:
         r12 = r12 >> 8;
-        r7 = r33 + 1;
-        r1 = r31;
-        r2 = r32;
+        r7 = r32 + 1;
+        r1 = r30;
+        r2 = r31;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:188:0x044f, code lost:
-        r31 = r1;
-        r32 = r2;
+    /* JADX WARN: Code restructure failed: missing block: B:188:0x0442, code lost:
+        r30 = r1;
+        r31 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:189:0x0457, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:189:0x044a, code lost:
         if (r5 != 8) goto L212;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x004b, code lost:
-        r4 = androidx.compose.ui.unit.IntOffset.m7677constructorimpl((r43 & 4294967295L) | (0 << 32));
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0048, code lost:
+        r4 = androidx.compose.ui.unit.IntOffset.m7677constructorimpl(r42 & 4294967295L);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:191:0x045a, code lost:
-        r31 = r1;
-        r32 = r2;
+    /* JADX WARN: Code restructure failed: missing block: B:191:0x044d, code lost:
+        r30 = r1;
+        r31 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:192:0x0462, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:192:0x0455, code lost:
         if (r4 == r3) goto L211;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:193:0x0464, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:193:0x0457, code lost:
         r4 = r4 + 1;
-        r1 = r31;
-        r2 = r32;
+        r1 = r30;
+        r2 = r31;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:195:0x0474, code lost:
-        if (r42.movingAwayToStartBound.isEmpty() != false) goto L250;
+    /* JADX WARN: Code restructure failed: missing block: B:195:0x0467, code lost:
+        if (r41.movingAwayToStartBound.isEmpty() != false) goto L250;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:196:0x0476, code lost:
-        r1 = r42.movingAwayToStartBound;
+    /* JADX WARN: Code restructure failed: missing block: B:196:0x0469, code lost:
+        r1 = r41.movingAwayToStartBound;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:197:0x047d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:197:0x0470, code lost:
         if (r1.size() <= 1) goto L219;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:198:0x047f, code lost:
-        kotlin.collections.CollectionsKt.sortWith(r1, new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator$onMeasured$$inlined$sortByDescending$2(r47));
+    /* JADX WARN: Code restructure failed: missing block: B:198:0x0472, code lost:
+        kotlin.collections.CollectionsKt.sortWith(r1, new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator$onMeasured$$inlined$sortByDescending$2(r46));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:199:0x0489, code lost:
-        r1 = r42.movingAwayToStartBound;
+    /* JADX WARN: Code restructure failed: missing block: B:199:0x047c, code lost:
+        r1 = r41.movingAwayToStartBound;
         r2 = r1.size();
         r3 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x005b, code lost:
-        r4 = androidx.compose.ui.unit.IntOffset.m7677constructorimpl((r43 << 32) | (0 & 4294967295L));
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0054, code lost:
+        r4 = androidx.compose.ui.unit.IntOffset.m7677constructorimpl(r42 << 32);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:200:0x0493, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:200:0x0486, code lost:
         if (r3 >= r2) goto L231;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:201:0x0495, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:201:0x0488, code lost:
         r4 = r1.get(r3);
-        r5 = r42.keyToItemInfoMap.get(r4.getKey());
+        r5 = r41.keyToItemInfoMap.get(r4.getKey());
         kotlin.jvm.internal.Intrinsics.checkNotNull(r5);
         r5 = r5;
         r7 = updateAndReturnOffsetFor(r6, r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:202:0x04ae, code lost:
-        if (r50 == false) goto L230;
+    /* JADX WARN: Code restructure failed: missing block: B:202:0x04a1, code lost:
+        if (r49 == false) goto L230;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:203:0x04b0, code lost:
-        r10 = getMainAxisOffset((androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItem) kotlin.collections.CollectionsKt.first((java.util.List<? extends java.lang.Object>) r46));
+    /* JADX WARN: Code restructure failed: missing block: B:203:0x04a3, code lost:
+        r10 = getMainAxisOffset((androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItem) kotlin.collections.CollectionsKt.first((java.util.List<? extends java.lang.Object>) r45));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:204:0x04bb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:204:0x04ae, code lost:
         r10 = r5.getLayoutMinOffset();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:205:0x04bf, code lost:
-        r4.position(r10 - r7, r5.getCrossAxisOffset(), r44, r45);
+    /* JADX WARN: Code restructure failed: missing block: B:205:0x04b2, code lost:
+        r4.position(r10 - r7, r5.getCrossAxisOffset(), r43, r44);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:206:0x04cb, code lost:
-        if (r24 == false) goto L229;
+    /* JADX WARN: Code restructure failed: missing block: B:206:0x04be, code lost:
+        if (r23 == false) goto L229;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:207:0x04cd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:207:0x04c0, code lost:
         startPlacementAnimationsIfNeeded(r4, true);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:208:0x04d1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:208:0x04c4, code lost:
         r3 = r3 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:209:0x04d4, code lost:
-        r7 = r44;
-        r11 = r45;
+    /* JADX WARN: Code restructure failed: missing block: B:209:0x04c7, code lost:
+        r7 = r43;
+        r11 = r44;
         kotlin.collections.ArraysKt.fill$default(r6, 0, 0, 0, 6, (java.lang.Object) null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0069, code lost:
-        if (r50 != false) goto L255;
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x005c, code lost:
+        if (r49 != false) goto L255;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:210:0x04e8, code lost:
-        r7 = r44;
-        r11 = r45;
+    /* JADX WARN: Code restructure failed: missing block: B:210:0x04db, code lost:
+        r7 = r43;
+        r11 = r44;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:212:0x04f4, code lost:
-        if (r42.movingAwayToEndBound.isEmpty() != false) goto L247;
+    /* JADX WARN: Code restructure failed: missing block: B:212:0x04e7, code lost:
+        if (r41.movingAwayToEndBound.isEmpty() != false) goto L247;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:213:0x04f6, code lost:
-        r1 = r42.movingAwayToEndBound;
+    /* JADX WARN: Code restructure failed: missing block: B:213:0x04e9, code lost:
+        r1 = r41.movingAwayToEndBound;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:214:0x04fd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:214:0x04f0, code lost:
         if (r1.size() <= 1) goto L238;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:215:0x04ff, code lost:
-        kotlin.collections.CollectionsKt.sortWith(r1, new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator$onMeasured$$inlined$sortBy$2(r47));
+    /* JADX WARN: Code restructure failed: missing block: B:215:0x04f2, code lost:
+        kotlin.collections.CollectionsKt.sortWith(r1, new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator$onMeasured$$inlined$sortBy$2(r46));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:216:0x0509, code lost:
-        r1 = r42.movingAwayToEndBound;
+    /* JADX WARN: Code restructure failed: missing block: B:216:0x04fc, code lost:
+        r1 = r41.movingAwayToEndBound;
         r2 = r1.size();
         r3 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:217:0x0513, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:217:0x0506, code lost:
         if (r3 >= r2) goto L246;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:218:0x0515, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:218:0x0508, code lost:
         r4 = r1.get(r3);
-        r5 = r42.keyToItemInfoMap.get(r4.getKey());
+        r5 = r41.keyToItemInfoMap.get(r4.getKey());
         kotlin.jvm.internal.Intrinsics.checkNotNull(r5);
         r5 = r5;
         r4.position((r5.getLayoutMaxOffset() - r4.getMainAxisSizeWithSpacings()) + updateAndReturnOffsetFor(r6, r4), r5.getCrossAxisOffset(), r7, r11);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:219:0x0540, code lost:
-        if (r24 == false) goto L245;
+    /* JADX WARN: Code restructure failed: missing block: B:219:0x0533, code lost:
+        if (r23 == false) goto L245;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x006b, code lost:
-        if (r52 != false) goto L15;
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x005e, code lost:
+        if (r51 != false) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:220:0x0542, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:220:0x0535, code lost:
         startPlacementAnimationsIfNeeded(r4, true);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:221:0x0545, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:221:0x0538, code lost:
         r3 = r3 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:222:0x0548, code lost:
-        r1 = r42.movingAwayToStartBound;
+    /* JADX WARN: Code restructure failed: missing block: B:222:0x053b, code lost:
+        r1 = r41.movingAwayToStartBound;
         kotlin.collections.CollectionsKt.reverse(r1);
         r2 = kotlin.Unit.INSTANCE;
-        r46.addAll(0, r1);
-        r46.addAll(r42.movingAwayToEndBound);
-        r42.movingInFromStartBound.clear();
-        r42.movingInFromEndBound.clear();
-        r42.movingAwayToStartBound.clear();
-        r42.movingAwayToEndBound.clear();
-        r42.movingAwayKeys.clear();
+        r45.addAll(0, r1);
+        r45.addAll(r41.movingAwayToEndBound);
+        r41.movingInFromStartBound.clear();
+        r41.movingInFromEndBound.clear();
+        r41.movingAwayToStartBound.clear();
+        r41.movingAwayToEndBound.clear();
+        r41.movingAwayKeys.clear();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:223:0x0575, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:223:0x0568, code lost:
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x006e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0061, code lost:
         r14 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0070, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0063, code lost:
         r14 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0071, code lost:
-        r1 = r42.keyToItemInfoMap;
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0064, code lost:
+        r1 = r41.keyToItemInfoMap;
         r15 = r1.keys;
         r1 = r1.metadata;
         r13 = r1.length - 2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0087, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x007a, code lost:
         if (r13 < 0) goto L254;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0089, code lost:
-        r24 = r14;
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x007c, code lost:
+        r23 = r14;
         r12 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x008e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0081, code lost:
         r14 = r1[r12];
-        r27 = r1;
-        r26 = r2;
+        r26 = r1;
+        r25 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x009e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0091, code lost:
         if (((((~r14) << 7) & r14) & (-9187201950435737472L)) == (-9187201950435737472L)) goto L251;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x00a0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0093, code lost:
         r1 = 8 - ((~(r12 - r13)) >>> 31);
         r2 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x00a8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x009b, code lost:
         if (r2 >= r1) goto L30;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x00ae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x00a1, code lost:
         if ((r14 & 255) >= 128) goto L28;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x00b0, code lost:
-        r29 = r2;
-        r30 = r14;
-        r42.movingAwayKeys.add(r15[(r12 << 3) + r2]);
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x00a3, code lost:
+        r28 = r2;
+        r29 = r14;
+        r41.movingAwayKeys.add(r15[(r12 << 3) + r2]);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x00c0, code lost:
-        r29 = r2;
-        r30 = r14;
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x00b3, code lost:
+        r28 = r2;
+        r29 = r14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x00c4, code lost:
-        r14 = r30 >> 8;
-        r2 = r29 + 1;
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x00b7, code lost:
+        r14 = r29 >> 8;
+        r2 = r28 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x00cb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x00be, code lost:
         if (r1 != 8) goto L33;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00cd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00c0, code lost:
         if (r12 == r13) goto L253;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x00cf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x00c2, code lost:
         r12 = r12 + 1;
-        r2 = r26;
-        r1 = r27;
+        r2 = r25;
+        r1 = r26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x00d6, code lost:
-        r26 = r2;
-        r24 = r14;
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x00c9, code lost:
+        r25 = r2;
+        r23 = r14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x00da, code lost:
-        r1 = r26.size();
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x00cd, code lost:
+        r1 = r25.size();
         r2 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x00e0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x00d3, code lost:
         if (r2 >= r1) goto L109;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x00e2, code lost:
-        r14 = r46.get(r2);
-        r42.movingAwayKeys.remove(r14.getKey());
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x00d5, code lost:
+        r14 = r45.get(r2);
+        r41.movingAwayKeys.remove(r14.getKey());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x00f5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x00e8, code lost:
         if (getHasAnimations(r14) == false) goto L107;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00f7, code lost:
-        r25 = r42.keyToItemInfoMap.get(r14.getKey());
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00ea, code lost:
+        r24 = r41.keyToItemInfoMap.get(r14.getKey());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x0105, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x00f8, code lost:
         if (r11 == null) goto L106;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x0107, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x00fa, code lost:
         r13 = r11.getIndex(r14.getKey());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x0110, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x0103, code lost:
         r13 = -1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x0111, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x0104, code lost:
         if (r13 != (-1)) goto L105;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x0113, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x0106, code lost:
         if (r11 == null) goto L105;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0115, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0108, code lost:
         r15 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x0117, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x010a, code lost:
         r15 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x0118, code lost:
-        if (r25 != null) goto L73;
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x010b, code lost:
+        if (r24 != null) goto L73;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x011a, code lost:
-        r12 = new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator.ItemInfo(r42);
-        androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator.ItemInfo.updateAnimation$default(r12, r14, r55, r56, r53, r54, 0, 32, null);
-        r35 = r1;
-        r36 = r2;
-        r42.keyToItemInfoMap.set(r14.getKey(), r12);
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x010d, code lost:
+        r12 = new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator.ItemInfo(r41);
+        androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator.ItemInfo.updateAnimation$default(r12, r14, r54, r55, r52, r53, 0, 32, null);
+        r34 = r1;
+        r35 = r2;
+        r41.keyToItemInfoMap.set(r14.getKey(), r12);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x0145, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x0138, code lost:
         if (r14.getIndex() == r13) goto L56;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x0148, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x013b, code lost:
         if (r13 == (-1)) goto L56;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x014a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x013d, code lost:
         if (r13 >= r3) goto L55;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x014c, code lost:
-        r1 = r42.movingInFromStartBound.add(r14);
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x013f, code lost:
+        r1 = r41.movingInFromStartBound.add(r14);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x0153, code lost:
-        r1 = r42.movingInFromEndBound.add(r14);
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x0146, code lost:
+        r1 = r41.movingInFromEndBound.add(r14);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x0159, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x014c, code lost:
         java.lang.Boolean.valueOf(r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x015e, code lost:
-        r25 = r14.mo931getOffsetBjo55l4(0);
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x0151, code lost:
+        r24 = r14.mo931getOffsetBjo55l4(0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x0167, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x015a, code lost:
         if (r14.isVertical() == false) goto L72;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x0169, code lost:
-        r1 = androidx.compose.ui.unit.IntOffset.m7684getYimpl(r25);
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x015c, code lost:
+        r1 = androidx.compose.ui.unit.IntOffset.m7684getYimpl(r24);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x016e, code lost:
-        r1 = androidx.compose.ui.unit.IntOffset.m7683getXimpl(r25);
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x0161, code lost:
+        r1 = androidx.compose.ui.unit.IntOffset.m7683getXimpl(r24);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x0172, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x0165, code lost:
         initializeAnimation(r14, r1, r12);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x0175, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x0168, code lost:
         if (r15 == false) goto L70;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x0177, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x016a, code lost:
         r1 = r12.getAnimations();
         r2 = r1.length;
         r12 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x017d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x0170, code lost:
         if (r12 >= r2) goto L69;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x017f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x0172, code lost:
         r13 = r1[r12];
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x0181, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x0174, code lost:
         if (r13 == null) goto L68;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x0183, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x0176, code lost:
         r13.animateAppearance();
         r13 = kotlin.Unit.INSTANCE;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x0188, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x017b, code lost:
         r12 = r12 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x018b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x017e, code lost:
         r1 = kotlin.Unit.INSTANCE;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:77:0x018f, code lost:
-        r35 = r1;
-        r36 = r2;
+    /* JADX WARN: Code restructure failed: missing block: B:77:0x0182, code lost:
+        r34 = r1;
+        r35 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x0193, code lost:
-        if (r24 == false) goto L103;
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x0186, code lost:
+        if (r23 == false) goto L103;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x0195, code lost:
-        androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator.ItemInfo.updateAnimation$default(r25, r14, r55, r56, r53, r54, 0, 32, null);
-        r1 = r25.getAnimations();
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x0188, code lost:
+        androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator.ItemInfo.updateAnimation$default(r24, r14, r54, r55, r52, r53, 0, 32, null);
+        r1 = r24.getAnimations();
         r2 = r1.length;
         r12 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x01ae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x01a1, code lost:
         if (r12 >= r2) goto L86;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:81:0x01b0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x01a3, code lost:
         r13 = r1[r12];
-        r26 = r1;
-        r27 = r2;
+        r25 = r1;
+        r26 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:82:0x01b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x01a9, code lost:
         if (r13 == null) goto L85;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x01c6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x01b9, code lost:
         if (androidx.compose.ui.unit.IntOffset.m7682equalsimpl0(r13.m982getRawOffsetnOccac(), androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation.Companion.m986getNotInitializednOccac()) != false) goto L84;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x01c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x01bb, code lost:
         r13.m985setRawOffsetgyyYBs(androidx.compose.ui.unit.IntOffset.m7687plusqkQi6aY(r13.m982getRawOffsetnOccac(), r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:86:0x01d3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x01c6, code lost:
         r12 = r12 + 1;
-        r1 = r26;
-        r2 = r27;
+        r1 = r25;
+        r2 = r26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:87:0x01da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:87:0x01cd, code lost:
         if (r15 == false) goto L102;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:88:0x01dc, code lost:
-        r1 = r25.getAnimations();
+    /* JADX WARN: Code restructure failed: missing block: B:88:0x01cf, code lost:
+        r1 = r24.getAnimations();
         r2 = r1.length;
         r6 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:89:0x01e2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x01d5, code lost:
         if (r6 >= r2) goto L101;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x01e4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x01d7, code lost:
         r7 = r1[r6];
      */
-    /* JADX WARN: Code restructure failed: missing block: B:91:0x01e6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:91:0x01d9, code lost:
         if (r7 == null) goto L100;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x01ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x01df, code lost:
         if (r7.isDisappearanceAnimationInProgress() == false) goto L97;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:94:0x01ee, code lost:
-        r42.disappearingItems.remove(r7);
-        r12 = r42.displayingNode;
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x01e1, code lost:
+        r41.disappearingItems.remove(r7);
+        r12 = r41.displayingNode;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x01f5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x01e8, code lost:
         if (r12 == null) goto L97;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:96:0x01f7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x01ea, code lost:
         androidx.compose.ui.node.DrawModifierNodeKt.invalidateDraw(r12);
         r12 = kotlin.Unit.INSTANCE;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x01fc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x01ef, code lost:
         r7.animateAppearance();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:98:0x01ff, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:98:0x01f2, code lost:
         r6 = r6 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x0202, code lost:
-        startPlacementAnimationsIfNeeded$default(r42, r14, false, 2, null);
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x01f5, code lost:
+        startPlacementAnimationsIfNeeded$default(r41, r14, false, 2, null);
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

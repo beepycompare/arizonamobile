@@ -109,7 +109,7 @@ public final class Matrix {
         float f9 = fArr[15];
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
-        float f10 = 1 / (((f3 * intBitsToFloat) + (f6 * intBitsToFloat2)) + f9);
+        float f10 = 1.0f / (((f3 * intBitsToFloat) + (f6 * intBitsToFloat2)) + f9);
         if ((Float.floatToRawIntBits(f10) & Integer.MAX_VALUE) >= 2139095040) {
             f10 = 0.0f;
         }

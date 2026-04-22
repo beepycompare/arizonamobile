@@ -7,13 +7,13 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class FloatingToolbarTokens {
     public static final int $stable = 0;
-    private static final float ContainerLeadingSpace;
-    private static final float ContainerTrailingSpace;
     public static final FloatingToolbarTokens INSTANCE = new FloatingToolbarTokens();
-    private static final float ContainerBetweenSpace = Dp.m7555constructorimpl((float) 4.0d);
-    private static final float ContainerExternalPadding = Dp.m7555constructorimpl((float) 16.0d);
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 64.0d);
+    private static final float ContainerBetweenSpace = Dp.m7555constructorimpl(4.0f);
+    private static final float ContainerExternalPadding = Dp.m7555constructorimpl(16.0f);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(64.0f);
+    private static final float ContainerLeadingSpace = Dp.m7555constructorimpl(8.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
+    private static final float ContainerTrailingSpace = Dp.m7555constructorimpl(8.0f);
     private static final ColorSchemeKeyTokens StandardContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
     private static final ColorSchemeKeyTokens VibrantButtonSelectedContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
     private static final ColorSchemeKeyTokens VibrantButtonSelectedIconColor = ColorSchemeKeyTokens.OnSurface;
@@ -80,11 +80,5 @@ public final class FloatingToolbarTokens {
 
     public final ColorSchemeKeyTokens getVibrantContainerColor() {
         return VibrantContainerColor;
-    }
-
-    static {
-        float f = (float) 8.0d;
-        ContainerLeadingSpace = Dp.m7555constructorimpl(f);
-        ContainerTrailingSpace = Dp.m7555constructorimpl(f);
     }
 }

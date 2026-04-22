@@ -158,7 +158,7 @@ public final class Monitor {
         } catch (Throwable th) {
             if (!isHeldByCurrentThread) {
                 try {
-                    signalNextWaiter();
+                    this.signalNextWaiter();
                 } finally {
                     reentrantLock.unlock();
                 }
@@ -407,7 +407,7 @@ public final class Monitor {
         while (true) {
             try {
                 try {
-                    boolean awaitNanos = awaitNanos(guard, j, z2);
+                    boolean awaitNanos = this.awaitNanos(guard, j, z2);
                     if (interrupted) {
                         Thread.currentThread().interrupt();
                     }
@@ -528,7 +528,7 @@ public final class Monitor {
         try {
             return guard.isSatisfied();
         } catch (Throwable th) {
-            signalAllWaiters();
+            this.signalAllWaiters();
             throw th;
         }
     }

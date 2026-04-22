@@ -41,28 +41,23 @@ public abstract class TimeCycleSplineSet {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public float calcWave(float f) {
-        float abs;
         switch (this.mWaveShape) {
             case 1:
                 return Math.signum(f * sVal2PI);
             case 2:
-                abs = Math.abs(f);
-                break;
+                return 1.0f - Math.abs(f);
             case 3:
                 return (((f * 2.0f) + 1.0f) % 2.0f) - 1.0f;
             case 4:
-                abs = ((f * 2.0f) + 1.0f) % 2.0f;
-                break;
+                return 1.0f - (((f * 2.0f) + 1.0f) % 2.0f);
             case 5:
                 return (float) Math.cos(f * sVal2PI);
             case 6:
-                float abs2 = 1.0f - Math.abs(((f * 4.0f) % 4.0f) - 2.0f);
-                abs = abs2 * abs2;
-                break;
+                float abs = 1.0f - Math.abs(((f * 4.0f) % 4.0f) - 2.0f);
+                return 1.0f - (abs * abs);
             default:
                 return (float) Math.sin(f * sVal2PI);
         }
-        return 1.0f - abs;
     }
 
     public CurveFit getCurveFit() {

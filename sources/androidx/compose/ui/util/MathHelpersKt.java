@@ -69,7 +69,7 @@ public final class MathHelpersKt {
     }
 
     public static final float lerp(float f, float f2, float f3) {
-        return ((1 - f3) * f) + (f3 * f2);
+        return ((1.0f - f3) * f) + (f3 * f2);
     }
 
     public static final long lerp(long j, long j2, float f) {

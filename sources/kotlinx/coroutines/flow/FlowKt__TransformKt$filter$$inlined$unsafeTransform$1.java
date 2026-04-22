@@ -51,13 +51,12 @@ public final class FlowKt__TransformKt$filter$$inlined$unsafeTransform$1<T> impl
             this.$predicate$inlined = function2;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:23:0x006d, code lost:
-            if (r7.emit(r2, r0) == r1) goto L21;
+        /* JADX WARN: Code restructure failed: missing block: B:23:0x006c, code lost:
+            if (r6.emit(r7, r0) == r1) goto L21;
          */
-        /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
         /* JADX WARN: Removed duplicated region for block: B:16:0x003f  */
-        /* JADX WARN: Removed duplicated region for block: B:22:0x0062  */
+        /* JADX WARN: Removed duplicated region for block: B:22:0x0061  */
         @Override // kotlinx.coroutines.flow.FlowCollector
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -66,7 +65,6 @@ public final class FlowKt__TransformKt$filter$$inlined$unsafeTransform$1<T> impl
             AnonymousClass1 anonymousClass1;
             Object obj;
             int i;
-            Object obj2;
             FlowCollector flowCollector;
             if (continuation instanceof AnonymousClass1) {
                 anonymousClass1 = (AnonymousClass1) continuation;
@@ -84,9 +82,8 @@ public final class FlowKt__TransformKt$filter$$inlined$unsafeTransform$1<T> impl
                         anonymousClass1.label = 1;
                         Object invoke = function2.invoke(t, anonymousClass1);
                         if (invoke != coroutine_suspended) {
-                            obj2 = t;
-                            flowCollector = flowCollector2;
                             obj = invoke;
+                            flowCollector = flowCollector2;
                         }
                         return coroutine_suspended;
                     } else if (i != 1) {
@@ -97,7 +94,7 @@ public final class FlowKt__TransformKt$filter$$inlined$unsafeTransform$1<T> impl
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
                         flowCollector = (FlowCollector) anonymousClass1.L$1;
-                        obj2 = anonymousClass1.L$0;
+                        t = (T) anonymousClass1.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
                     if (((Boolean) obj).booleanValue()) {

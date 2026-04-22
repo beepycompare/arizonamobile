@@ -7,11 +7,11 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class FabLargeTokens {
     public static final int $stable = 0;
-    private static final float ContainerHeight;
-    private static final float ContainerWidth;
     public static final FabLargeTokens INSTANCE = new FabLargeTokens();
+    private static final float ContainerHeight = Dp.m7555constructorimpl(96.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraLarge;
-    private static final float IconSize = Dp.m7555constructorimpl((float) 32.0d);
+    private static final float ContainerWidth = Dp.m7555constructorimpl(96.0f);
+    private static final float IconSize = Dp.m7555constructorimpl(32.0f);
 
     private FabLargeTokens() {
     }
@@ -33,11 +33,5 @@ public final class FabLargeTokens {
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
     public final float m3395getIconSizeD9Ej5fM() {
         return IconSize;
-    }
-
-    static {
-        float f = (float) 96.0d;
-        ContainerHeight = Dp.m7555constructorimpl(f);
-        ContainerWidth = Dp.m7555constructorimpl(f);
     }
 }

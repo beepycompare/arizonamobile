@@ -28,17 +28,15 @@ public final class AndroidFlingSpline {
         float f2 = 0.0f;
         float f3 = 1.0f;
         float coerceIn = RangesKt.coerceIn(f, 0.0f, 1.0f);
-        float f4 = 100;
-        int i = (int) (f4 * coerceIn);
+        int i = (int) (100.0f * coerceIn);
         if (i < 100) {
-            float f5 = i / f4;
+            float f4 = i / 100.0f;
             int i2 = i + 1;
-            float f6 = i2 / f4;
             float[] fArr = SplinePositions;
-            float f7 = fArr[i];
-            float f8 = (fArr[i2] - f7) / (f6 - f5);
-            f2 = f8;
-            f3 = ((coerceIn - f5) * f8) + f7;
+            float f5 = fArr[i];
+            float f6 = (fArr[i2] - f5) / ((i2 / 100.0f) - f4);
+            f3 = f5 + ((coerceIn - f4) * f6);
+            f2 = f6;
         }
         return new FlingResult(f3, f2);
     }

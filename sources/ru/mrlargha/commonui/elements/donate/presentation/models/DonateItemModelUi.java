@@ -426,23 +426,20 @@ public final class DonateItemModelUi {
     public final Pair<String, String> getButtonTitle() {
         String str;
         String str2;
+        int i;
         str = "";
         if (this.titleButton.length() == 0) {
-            int i = WhenMappings.$EnumSwitchMapping$0[getCurrencyType().ordinal()];
+            int i2 = WhenMappings.$EnumSwitchMapping$0[getCurrencyType().ordinal()];
             String str3 = " РУБ";
-            if (i != 1) {
-                if (i == 2) {
+            if (i2 != 1) {
+                if (i2 == 2) {
                     str3 = " AZ";
-                } else if (i != 3) {
+                } else if (i2 != 3) {
                     throw new NoWhenBranchMatchedException();
                 }
             }
             str = this.discount > 0 ? String.valueOf(this.price) : "";
-            int i2 = this.discountPrice;
-            if (i2 <= 0) {
-                i2 = this.price;
-            }
-            str2 = String.valueOf(i2) + str3;
+            str2 = (this.discountPrice <= 0 ? String.valueOf(this.price) : String.valueOf(i)) + str3;
         } else {
             str2 = this.titleButton;
         }

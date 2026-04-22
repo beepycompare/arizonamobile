@@ -20,7 +20,6 @@ import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
-import kotlinx.datetime.internal.DateCalculationsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.arizona.promo.R;
 import ru.mrlargha.feature.arizona.promo.databinding.PromoItemBinding;
@@ -188,28 +187,25 @@ public final class PromoAdapter extends RecyclerView.Adapter<PromoItemViewHolder
         if (j <= 0) {
             return "0";
         }
-        long j2 = 86400;
-        long j3 = j / j2;
-        long j4 = (long) DateCalculationsKt.SECONDS_PER_HOUR;
-        long j5 = (j % j2) / j4;
-        long j6 = 60;
-        long j7 = (j % j4) / j6;
-        long j8 = j % j6;
+        long j2 = j / 86400;
+        long j3 = (j % 86400) / 3600;
+        long j4 = (j % 3600) / 60;
+        long j5 = j % 60;
         StringBuilder sb = new StringBuilder();
-        int i = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
+        int i = (j2 > 0L ? 1 : (j2 == 0L ? 0 : -1));
         if (i > 0) {
-            sb.append(j3 + " дн.");
+            sb.append(j2 + " дн.");
         } else {
-            int i2 = (j5 > 0L ? 1 : (j5 == 0L ? 0 : -1));
+            int i2 = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
             if (i2 > 0 || i > 0) {
-                sb.append(" " + j5 + StringUtils.PROCESS_POSTFIX_DELIMITER + StringsKt.padStart(String.valueOf(j7), 2, '0'));
-            } else if (j7 > 0) {
-                sb.append(j7 + StringUtils.PROCESS_POSTFIX_DELIMITER + StringsKt.padStart(String.valueOf(j8), 2, '0'));
+                sb.append(" " + j3 + StringUtils.PROCESS_POSTFIX_DELIMITER + StringsKt.padStart(String.valueOf(j4), 2, '0'));
+            } else if (j4 > 0) {
+                sb.append(j4 + StringUtils.PROCESS_POSTFIX_DELIMITER + StringsKt.padStart(String.valueOf(j5), 2, '0'));
             } else {
-                sb.append(String.valueOf(j8));
+                sb.append(String.valueOf(j5));
             }
-            if (i2 > 0 && j8 != 0) {
-                sb.append(StringUtils.PROCESS_POSTFIX_DELIMITER + StringsKt.padStart(String.valueOf(j8), 2, '0'));
+            if (i2 > 0 && j5 != 0) {
+                sb.append(StringUtils.PROCESS_POSTFIX_DELIMITER + StringsKt.padStart(String.valueOf(j5), 2, '0'));
             }
         }
         return StringsKt.trim((CharSequence) sb.toString()).toString();

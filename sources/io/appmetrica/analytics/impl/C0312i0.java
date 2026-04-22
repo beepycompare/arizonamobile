@@ -22,8 +22,7 @@ public final class C0312i0 {
                 return false;
             }
             String str = this.f1035a;
-            String str2 = c0312i0.f1035a;
-            if (str == null ? str2 == null : str.equals(str2)) {
+            if (str == null ? c0312i0.f1035a == null : str.equals(c0312i0.f1035a)) {
                 return true;
             }
         }

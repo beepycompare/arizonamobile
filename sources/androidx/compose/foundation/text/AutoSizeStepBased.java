@@ -62,22 +62,21 @@ final class AutoSizeStepBased implements TextAutoSize {
         float f = textAutoSizeLayoutScope.mo404toPxR2X_6o(this.stepSize);
         float f2 = textAutoSizeLayoutScope.mo404toPxR2X_6o(this.minFontSize);
         float f3 = textAutoSizeLayoutScope.mo404toPxR2X_6o(this.maxFontSize);
-        float f4 = 2;
-        float f5 = (f2 + f3) / f4;
-        float f6 = f2;
-        float f7 = f3;
-        while (f7 - f6 >= f) {
-            if (didOverflow(textAutoSizeLayoutScope.mo1562performLayout5ZSfY2I(j, annotatedString, textAutoSizeLayoutScope.mo408toSpkPz2Gy4(f5)))) {
-                f7 = f5;
+        float f4 = (f2 + f3) / 2.0f;
+        float f5 = f2;
+        float f6 = f3;
+        while (f6 - f5 >= f) {
+            if (didOverflow(textAutoSizeLayoutScope.mo1562performLayout5ZSfY2I(j, annotatedString, textAutoSizeLayoutScope.mo408toSpkPz2Gy4(f4)))) {
+                f6 = f4;
             } else {
-                f6 = f5;
+                f5 = f4;
             }
-            f5 = (f6 + f7) / f4;
+            f4 = (f5 + f6) / 2.0f;
         }
-        float floor = f2 + (((float) Math.floor((f6 - f2) / f)) * f);
-        float f8 = f + floor;
-        if (f8 <= f3 && !didOverflow(textAutoSizeLayoutScope.mo1562performLayout5ZSfY2I(j, annotatedString, textAutoSizeLayoutScope.mo408toSpkPz2Gy4(f8)))) {
-            floor = f8;
+        float floor = (((float) Math.floor((f5 - f2) / f)) * f) + f2;
+        float f7 = f + floor;
+        if (f7 <= f3 && !didOverflow(textAutoSizeLayoutScope.mo1562performLayout5ZSfY2I(j, annotatedString, textAutoSizeLayoutScope.mo408toSpkPz2Gy4(f7)))) {
+            floor = f7;
         }
         return textAutoSizeLayoutScope.mo408toSpkPz2Gy4(floor);
     }

@@ -66,7 +66,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Thre
         String str = this.file;
         int hashCode2 = str == null ? 0 : str.hashCode();
         long j2 = this.offset;
-        return ((((hashCode ^ hashCode2) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.importance;
+        return this.importance ^ ((((hashCode ^ hashCode2) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

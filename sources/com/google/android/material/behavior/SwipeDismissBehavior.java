@@ -142,7 +142,7 @@ public class SwipeDismissBehavior<V extends View> extends CoordinatorLayout.Beha
                 }
             } else {
                 width = this.originalCapturedViewLeft - view.getWidth();
-                width2 = view.getWidth() + this.originalCapturedViewLeft;
+                width2 = this.originalCapturedViewLeft + view.getWidth();
             }
             return SwipeDismissBehavior.clamp(width, i, width2);
         }

@@ -50,7 +50,7 @@ public final class HudBodycam$startTimer$1 extends SuspendLambda implements Func
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x002c  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0083  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x0039 -> B:14:0x003c). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -74,9 +74,8 @@ public final class HudBodycam$startTimer$1 extends SuspendLambda implements Func
             ResultKt.throwOnFailure(obj);
             j += 1000;
             long hours = TimeUnit.MILLISECONDS.toHours(j);
-            long j2 = 60;
             StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-            String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Boxing.boxLong(hours), Boxing.boxLong(TimeUnit.MILLISECONDS.toMinutes(j) % j2), Boxing.boxLong(TimeUnit.MILLISECONDS.toSeconds(j) % j2)}, 3));
+            String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Boxing.boxLong(hours), Boxing.boxLong(TimeUnit.MILLISECONDS.toMinutes(j) % 60), Boxing.boxLong(TimeUnit.MILLISECONDS.toSeconds(j) % 60)}, 3));
             Intrinsics.checkNotNullExpressionValue(format, "format(...)");
             hudBodycamBinding = this.this$0.binding;
             hudBodycamBinding.tvTimer.setText(format);
@@ -89,9 +88,8 @@ public final class HudBodycam$startTimer$1 extends SuspendLambda implements Func
                 }
                 j += 1000;
                 long hours2 = TimeUnit.MILLISECONDS.toHours(j);
-                long j22 = 60;
                 StringCompanionObject stringCompanionObject2 = StringCompanionObject.INSTANCE;
-                String format2 = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Boxing.boxLong(hours2), Boxing.boxLong(TimeUnit.MILLISECONDS.toMinutes(j) % j22), Boxing.boxLong(TimeUnit.MILLISECONDS.toSeconds(j) % j22)}, 3));
+                String format2 = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Boxing.boxLong(hours2), Boxing.boxLong(TimeUnit.MILLISECONDS.toMinutes(j) % 60), Boxing.boxLong(TimeUnit.MILLISECONDS.toSeconds(j) % 60)}, 3));
                 Intrinsics.checkNotNullExpressionValue(format2, "format(...)");
                 hudBodycamBinding = this.this$0.binding;
                 hudBodycamBinding.tvTimer.setText(format2);

@@ -51,7 +51,7 @@ public final class Settings {
     }
 
     public final boolean isSet(int i) {
-        return ((1 << i) & this.set) != 0;
+        return (this.set & (1 << i)) != 0;
     }
 
     public final int get(int i) {

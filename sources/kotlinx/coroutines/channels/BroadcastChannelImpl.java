@@ -91,10 +91,10 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003c  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0096  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x007d -> B:28:0x0080). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0040  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x009c  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x0081 -> B:12:0x0036). Please submit an issue!!! */
     @Override // kotlinx.coroutines.channels.BufferedChannel, kotlinx.coroutines.channels.SendChannel
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -102,9 +102,9 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
     public Object send(E e, Continuation<? super Unit> continuation) {
         BroadcastChannelImpl$send$1 broadcastChannelImpl$send$1;
         int i;
-        E e2;
-        Iterator it;
         BroadcastChannelImpl<E> broadcastChannelImpl;
+        Iterator it;
+        E e2;
         if (continuation instanceof BroadcastChannelImpl$send$1) {
             broadcastChannelImpl$send$1 = (BroadcastChannelImpl$send$1) continuation;
             if ((broadcastChannelImpl$send$1.label & Integer.MIN_VALUE) != 0) {
@@ -125,9 +125,9 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
                         }
                         List<? extends BufferedChannel<E>> list = this.subscribers;
                         reentrantLock.unlock();
-                        e2 = e;
-                        it = list.iterator();
                         broadcastChannelImpl = this;
+                        it = list.iterator();
+                        e2 = e;
                         if (it.hasNext()) {
                         }
                     } catch (Throwable th) {
@@ -139,13 +139,16 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
                 } else {
                     it = (Iterator) broadcastChannelImpl$send$1.L$2;
                     Object obj2 = broadcastChannelImpl$send$1.L$1;
-                    broadcastChannelImpl = (BroadcastChannelImpl) broadcastChannelImpl$send$1.L$0;
                     ResultKt.throwOnFailure(obj);
+                    BroadcastChannelImpl$send$1 broadcastChannelImpl$send$12 = broadcastChannelImpl$send$1;
                     E e3 = obj2;
+                    broadcastChannelImpl = (BroadcastChannelImpl) broadcastChannelImpl$send$1.L$0;
+                    BroadcastChannelImpl$send$1 broadcastChannelImpl$send$13 = broadcastChannelImpl$send$12;
                     if (((Boolean) obj).booleanValue() && broadcastChannelImpl.isClosedForSend()) {
                         throw broadcastChannelImpl.getSendException();
                     }
                     e2 = e3;
+                    broadcastChannelImpl$send$1 = broadcastChannelImpl$send$13;
                     if (it.hasNext()) {
                         broadcastChannelImpl$send$1.L$0 = broadcastChannelImpl;
                         broadcastChannelImpl$send$1.L$1 = e2;
@@ -155,11 +158,14 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
                         if (sendBroadcast$kotlinx_coroutines_core == coroutine_suspended) {
                             return coroutine_suspended;
                         }
+                        broadcastChannelImpl$send$12 = broadcastChannelImpl$send$1;
                         e3 = e2;
                         obj = sendBroadcast$kotlinx_coroutines_core;
+                        BroadcastChannelImpl$send$1 broadcastChannelImpl$send$132 = broadcastChannelImpl$send$12;
                         if (((Boolean) obj).booleanValue()) {
                         }
                         e2 = e3;
+                        broadcastChannelImpl$send$1 = broadcastChannelImpl$send$132;
                         if (it.hasNext()) {
                             return Unit.INSTANCE;
                         }

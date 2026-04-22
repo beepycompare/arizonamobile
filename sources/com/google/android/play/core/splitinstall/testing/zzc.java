@@ -47,6 +47,6 @@ final class zzc extends zzv {
 
     public final int hashCode() {
         Integer num = this.zzb;
-        return (((num == null ? 0 : num.hashCode()) ^ 1000003) * 1000003) ^ this.zzc.hashCode();
+        return this.zzc.hashCode() ^ (((num == null ? 0 : num.hashCode()) ^ 1000003) * 1000003);
     }
 }

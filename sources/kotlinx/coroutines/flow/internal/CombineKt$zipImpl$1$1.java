@@ -79,6 +79,7 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
     public final Object invokeSuspend(Object obj) {
         final CompletableJob Job$default;
         ReceiveChannel receiveChannel;
+        CompletableJob completableJob;
         CoroutineContext coroutineContext;
         Object threadContextElements;
         CoroutineContext plus;
@@ -125,8 +126,9 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
                 } catch (AbortFlowException e2) {
                     e = e2;
                     Job$default = Job$default;
+                    completableJob = Job$default;
                     receiveChannel = produce$default;
-                    FlowExceptions_commonKt.checkOwnership(e, Job$default);
+                    FlowExceptions_commonKt.checkOwnership(e, completableJob);
                     ReceiveChannel.DefaultImpls.cancel$default(receiveChannel, (CancellationException) null, 1, (Object) null);
                     return Unit.INSTANCE;
                 }
@@ -139,14 +141,14 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
-            Job$default = (CompletableJob) this.L$1;
+            completableJob = (CompletableJob) this.L$1;
             receiveChannel = (ReceiveChannel) this.L$0;
             try {
                 try {
                     ResultKt.throwOnFailure(obj);
                 } catch (AbortFlowException e3) {
                     e = e3;
-                    FlowExceptions_commonKt.checkOwnership(e, Job$default);
+                    FlowExceptions_commonKt.checkOwnership(e, completableJob);
                     ReceiveChannel.DefaultImpls.cancel$default(receiveChannel, (CancellationException) null, 1, (Object) null);
                     return Unit.INSTANCE;
                 }

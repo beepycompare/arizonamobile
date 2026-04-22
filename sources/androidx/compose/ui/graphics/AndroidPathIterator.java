@@ -121,8 +121,10 @@ public final class AndroidPathIterator implements PathIterator {
 
     /* JADX WARN: Can't rename method to resolve collision */
     /* JADX WARN: Code restructure failed: missing block: B:6:0x000c, code lost:
-        r1 = androidx.compose.ui.graphics.AndroidPathIterator_androidKt.toPathSegmentType(r11.implementation.next(r0, 0));
+        r10 = androidx.compose.ui.graphics.AndroidPathIterator_androidKt.toPathSegmentType(r10.implementation.next(r0, 0));
      */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00c6  */
     @Override // java.util.Iterator
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -130,24 +132,29 @@ public final class AndroidPathIterator implements PathIterator {
     public PathSegment next() {
         PathSegment.Type pathSegmentType;
         float[] fArr;
-        float[] fArr2 = this.segmentPoints;
-        if (fArr2.length >= 8 && pathSegmentType != PathSegment.Type.Done) {
+        float[] fArr2;
+        float[] fArr3 = this.segmentPoints;
+        if (fArr3.length >= 8 && pathSegmentType != PathSegment.Type.Done) {
             if (pathSegmentType == PathSegment.Type.Close) {
                 return PathSegmentKt.getCloseSegment();
             }
             int i = WhenMappings.$EnumSwitchMapping$1[pathSegmentType.ordinal()];
             if (i == 1) {
-                fArr = new float[]{fArr2[0], fArr2[1]};
+                fArr = new float[]{fArr3[0], fArr3[1]};
             } else if (i == 2) {
-                fArr = new float[]{fArr2[0], fArr2[1], fArr2[2], fArr2[3]};
+                fArr = new float[]{fArr3[0], fArr3[1], fArr3[2], fArr3[3]};
             } else if (i == 3) {
-                fArr = new float[]{fArr2[0], fArr2[1], fArr2[2], fArr2[3], fArr2[4], fArr2[5]};
-            } else if (i != 4) {
-                fArr = i != 5 ? new float[0] : new float[]{fArr2[0], fArr2[1], fArr2[2], fArr2[3], fArr2[4], fArr2[5], fArr2[6], fArr2[7]};
+                fArr = new float[]{fArr3[0], fArr3[1], fArr3[2], fArr3[3], fArr3[4], fArr3[5]};
+            } else if (i == 4) {
+                fArr = new float[]{fArr3[0], fArr3[1], fArr3[2], fArr3[3], fArr3[4], fArr3[5]};
+            } else if (i != 5) {
+                fArr2 = new float[0];
+                return new PathSegment(pathSegmentType, fArr2, pathSegmentType != PathSegment.Type.Conic ? fArr3[6] : 0.0f);
             } else {
-                fArr = new float[]{fArr2[0], fArr2[1], fArr2[2], fArr2[3], fArr2[4], fArr2[5]};
+                fArr = new float[]{fArr3[0], fArr3[1], fArr3[2], fArr3[3], fArr3[4], fArr3[5], fArr3[6], fArr3[7]};
             }
-            return new PathSegment(pathSegmentType, fArr, pathSegmentType == PathSegment.Type.Conic ? fArr2[6] : 0.0f);
+            fArr2 = fArr;
+            return new PathSegment(pathSegmentType, fArr2, pathSegmentType != PathSegment.Type.Conic ? fArr3[6] : 0.0f);
         }
         return PathSegmentKt.getDoneSegment();
     }

@@ -106,7 +106,7 @@ public final class ContextualFlowRowOverflow extends FlowLayoutOverflow {
             ComposerKt.sourceInformationMarkerStart(composer, 1802465558, "C(expandOrCollapseIndicator)N(expandIndicator,collapseIndicator,minRowsToShowCollapse,minHeightToShowCollapse:c#ui.unit.Dp)407@19609L7,408@19677L1111:FlowLayoutOverflow.kt#2w3rfo");
             boolean z = true;
             int i4 = (i3 & 4) != 0 ? 1 : i;
-            float m7555constructorimpl = (i3 & 8) != 0 ? Dp.m7555constructorimpl(0) : f;
+            float m7555constructorimpl = (i3 & 8) != 0 ? Dp.m7555constructorimpl(0.0f) : f;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1802465558, i2, -1, "androidx.compose.foundation.layout.ContextualFlowRowOverflow.Companion.expandOrCollapseIndicator (FlowLayoutOverflow.kt:405)");
             }

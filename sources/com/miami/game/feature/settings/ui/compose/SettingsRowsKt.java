@@ -21,7 +21,6 @@ import androidx.compose.ui.layout.MeasurePolicy;
 import androidx.compose.ui.node.ComposeUiNode;
 import androidx.compose.ui.unit.Dp;
 import androidx.media3.exoplayer.RendererCapabilities;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -56,8 +55,8 @@ public final class SettingsRowsKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:116:0x03a8  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x03b2  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x03a5  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x03af  */
     /* JADX WARN: Removed duplicated region for block: B:121:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:30:0x005d  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x005f  */
@@ -123,7 +122,7 @@ public final class SettingsRowsKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -761271178, "C26@980L141,30@1130L410:SettingsRows.kt#1gr92h");
-                Modifier m869width3ABfNKs = SizeKt.m869width3ABfNKs(companion, Dp.m7555constructorimpl(180));
+                Modifier m869width3ABfNKs = SizeKt.m869width3ABfNKs(companion, Dp.m7555constructorimpl(180.0f));
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
                 MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -151,7 +150,7 @@ public final class SettingsRowsKt {
                 RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 987266641, "C27@1022L36,28@1071L40:SettingsRows.kt#1gr92h");
                 TextSettingsKt.TextSettings("РАЗМЕР ШРИФТА В ЧАТЕ", null, startRestartGroup, 6, 2);
-                SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(12)), startRestartGroup, 6);
+                SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(12.0f)), startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 startRestartGroup.endNode();
@@ -159,7 +158,7 @@ public final class SettingsRowsKt {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
-                MeasurePolicy rowMeasurePolicy3 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(-Dp.m7555constructorimpl(28))), Alignment.Companion.getTop(), startRestartGroup, 6);
+                MeasurePolicy rowMeasurePolicy3 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(-Dp.m7555constructorimpl(28.0f))), Alignment.Companion.getTop(), startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
                 int hashCode3 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
                 CompositionLocalMap currentCompositionLocalMap3 = startRestartGroup.getCurrentCompositionLocalMap();
@@ -318,8 +317,8 @@ public final class SettingsRowsKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:119:0x03a1  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x03ab  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x03a0  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x03aa  */
     /* JADX WARN: Removed duplicated region for block: B:124:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:30:0x005d  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x005f  */
@@ -385,7 +384,7 @@ public final class SettingsRowsKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 321523159, "C50@1798L148,55@1955L380:SettingsRows.kt#1gr92h");
-                Modifier m869width3ABfNKs = SizeKt.m869width3ABfNKs(companion, Dp.m7555constructorimpl(180));
+                Modifier m869width3ABfNKs = SizeKt.m869width3ABfNKs(companion, Dp.m7555constructorimpl(180.0f));
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
                 MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -413,7 +412,7 @@ public final class SettingsRowsKt {
                 RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1907357012, "C51@1840L43,53@1896L40:SettingsRows.kt#1gr92h");
                 TextSettingsKt.TextSettings("СТРОК ЧАТА", null, startRestartGroup, 6, 2);
-                SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(12)), startRestartGroup, 6);
+                SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(12.0f)), startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 startRestartGroup.endNode();
@@ -421,7 +420,7 @@ public final class SettingsRowsKt {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
-                MeasurePolicy rowMeasurePolicy3 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(-Dp.m7555constructorimpl(28))), Alignment.Companion.getTop(), startRestartGroup, 6);
+                MeasurePolicy rowMeasurePolicy3 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(-Dp.m7555constructorimpl(28.0f))), Alignment.Companion.getTop(), startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
                 int hashCode3 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
                 CompositionLocalMap currentCompositionLocalMap3 = startRestartGroup.getCurrentCompositionLocalMap();
@@ -583,8 +582,8 @@ public final class SettingsRowsKt {
     /* JADX WARN: Removed duplicated region for block: B:30:0x005d  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x005f  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0347  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0351  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0344  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x034e  */
     /* JADX WARN: Removed duplicated region for block: B:87:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -647,7 +646,7 @@ public final class SettingsRowsKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -589388231, "C75@2642L148,80@2799L274:SettingsRows.kt#1gr92h");
-                Modifier m869width3ABfNKs = SizeKt.m869width3ABfNKs(companion, Dp.m7555constructorimpl(180));
+                Modifier m869width3ABfNKs = SizeKt.m869width3ABfNKs(companion, Dp.m7555constructorimpl(180.0f));
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
                 MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -675,16 +674,15 @@ public final class SettingsRowsKt {
                 RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1178405236, "C76@2684L43,78@2740L40:SettingsRows.kt#1gr92h");
                 TextSettingsKt.TextSettings("КЛАВИАТУРА", null, startRestartGroup, 6, 2);
-                float f = 12;
-                SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(f)), startRestartGroup, 6);
+                SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(12.0f)), startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 startRestartGroup.endNode();
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                Arrangement.HorizontalOrVertical m688spacedBy0680j_4 = Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(-Dp.m7555constructorimpl(28)));
-                Modifier m778offsetVpY3zN4$default = OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(f)), 0.0f, 2, null);
+                Arrangement.HorizontalOrVertical m688spacedBy0680j_4 = Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(-Dp.m7555constructorimpl(28.0f)));
+                Modifier m778offsetVpY3zN4$default = OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(12.0f)), 0.0f, 2, null);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
                 MeasurePolicy rowMeasurePolicy3 = RowKt.rowMeasurePolicy(m688spacedBy0680j_4, Alignment.Companion.getTop(), startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -796,8 +794,8 @@ public final class SettingsRowsKt {
     /* JADX WARN: Removed duplicated region for block: B:30:0x005d  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x005f  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0345  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x034f  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0342  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x034c  */
     /* JADX WARN: Removed duplicated region for block: B:87:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -860,7 +858,7 @@ public final class SettingsRowsKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 723158684, "C96@3321L143,101@3473L270:SettingsRows.kt#1gr92h");
-                Modifier m869width3ABfNKs = SizeKt.m869width3ABfNKs(companion, Dp.m7555constructorimpl((float) DownloaderService.STATUS_PENDING));
+                Modifier m869width3ABfNKs = SizeKt.m869width3ABfNKs(companion, Dp.m7555constructorimpl(190.0f));
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
                 MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -888,16 +886,15 @@ public final class SettingsRowsKt {
                 RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 134141803, "C97@3363L38,99@3414L40:SettingsRows.kt#1gr92h");
                 TextSettingsKt.TextSettings("РЕЖИМ", null, startRestartGroup, 6, 2);
-                float f = 12;
-                SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(f)), startRestartGroup, 6);
+                SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(12.0f)), startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 startRestartGroup.endNode();
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                Arrangement.HorizontalOrVertical m688spacedBy0680j_4 = Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(-Dp.m7555constructorimpl(28)));
-                Modifier m778offsetVpY3zN4$default = OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(f)), 0.0f, 2, null);
+                Arrangement.HorizontalOrVertical m688spacedBy0680j_4 = Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(-Dp.m7555constructorimpl(28.0f)));
+                Modifier m778offsetVpY3zN4$default = OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(12.0f)), 0.0f, 2, null);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
                 MeasurePolicy rowMeasurePolicy3 = RowKt.rowMeasurePolicy(m688spacedBy0680j_4, Alignment.Companion.getTop(), startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");

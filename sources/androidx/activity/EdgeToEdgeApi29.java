@@ -23,6 +23,6 @@ class EdgeToEdgeApi29 extends EdgeToEdgeApi28 {
         window.setNavigationBarContrastEnforced(navigationBarStyle.getNightMode$activity() == 0);
         WindowInsetsControllerCompat windowInsetsControllerCompat = new WindowInsetsControllerCompat(window, view);
         windowInsetsControllerCompat.setAppearanceLightStatusBars(!z);
-        windowInsetsControllerCompat.setAppearanceLightNavigationBars(true ^ z2);
+        windowInsetsControllerCompat.setAppearanceLightNavigationBars(!z2);
     }
 }

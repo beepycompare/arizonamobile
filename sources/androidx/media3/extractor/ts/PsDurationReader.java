@@ -70,9 +70,8 @@ final class PsDurationReader {
 
     private int readFirstScrValue(ExtractorInput extractorInput, PositionHolder positionHolder) throws IOException {
         int min = (int) Math.min(20000L, extractorInput.getLength());
-        long j = 0;
-        if (extractorInput.getPosition() != j) {
-            positionHolder.position = j;
+        if (extractorInput.getPosition() != 0) {
+            positionHolder.position = 0L;
             return 1;
         }
         this.packetBuffer.reset(min);
@@ -128,7 +127,7 @@ final class PsDurationReader {
     }
 
     private int peekIntAtPosition(byte[] bArr, int i) {
-        return (bArr[i + 3] & 255) | ((bArr[i] & 255) << 24) | ((bArr[i + 1] & 255) << 16) | ((bArr[i + 2] & 255) << 8);
+        return ((bArr[i] & 255) << 24) | ((bArr[i + 1] & 255) << 16) | ((bArr[i + 2] & 255) << 8) | (bArr[i + 3] & 255);
     }
 
     private static boolean checkMarkerBits(byte[] bArr) {

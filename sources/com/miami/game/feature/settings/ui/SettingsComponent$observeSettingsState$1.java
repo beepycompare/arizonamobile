@@ -44,19 +44,17 @@ public final class SettingsComponent$observeSettingsState$1 extends SuspendLambd
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         MutableStateFlow mutableStateFlow;
+        Object value;
         SettingState settingState = (SettingState) this.L$0;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label == 0) {
             ResultKt.throwOnFailure(obj);
             mutableStateFlow = this.this$0.stateStore;
-            while (true) {
-                Object value = mutableStateFlow.getValue();
-                if (mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default((SettingsUiState) value, 0, settingState, null, null, false, new ConnectionData(settingState.getConnectionData().getIp(), settingState.getConnectionData().getPort(), settingState.getConnectionData().getPassword()), false, null, false, 0, null, null, 4061, null))) {
-                    return Unit.INSTANCE;
-                }
-            }
-        } else {
-            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            do {
+                value = mutableStateFlow.getValue();
+            } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default((SettingsUiState) value, 0, settingState, null, null, false, new ConnectionData(settingState.getConnectionData().getIp(), settingState.getConnectionData().getPort(), settingState.getConnectionData().getPassword()), false, null, false, 0, null, null, 4061, null)));
+            return Unit.INSTANCE;
         }
+        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }
 }

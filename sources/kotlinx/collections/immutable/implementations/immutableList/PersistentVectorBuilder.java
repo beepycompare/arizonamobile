@@ -376,15 +376,15 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
             Object[] objArr4 = persistentVectorBuilder.tail;
             if (tailSize2 > tailSize) {
                 int i4 = tailSize2 - tailSize;
-                Object[] makeMutableShiftingRight = makeMutableShiftingRight(objArr4, i4);
+                Object[] makeMutableShiftingRight = persistentVectorBuilder.makeMutableShiftingRight(objArr4, i4);
                 persistentVectorBuilder.insertIntoRoot(collection, i, i4, objArr3, size, makeMutableShiftingRight);
                 objArr = objArr3;
                 copyInto = makeMutableShiftingRight;
             } else {
                 int i5 = tailSize - tailSize2;
-                copyInto = ArraysKt.copyInto(objArr4, mutableBuffer(), 0, i5, tailSize);
+                copyInto = ArraysKt.copyInto(objArr4, persistentVectorBuilder.mutableBuffer(), 0, i5, tailSize);
                 int i6 = 32 - i5;
-                Object[] makeMutableShiftingRight2 = makeMutableShiftingRight(persistentVectorBuilder.tail, i6);
+                Object[] makeMutableShiftingRight2 = persistentVectorBuilder.makeMutableShiftingRight(persistentVectorBuilder.tail, i6);
                 int i7 = size - 1;
                 objArr3[i7] = makeMutableShiftingRight2;
                 persistentVectorBuilder.insertIntoRoot(collection, i, i6, objArr3, i7, makeMutableShiftingRight2);
@@ -393,9 +393,9 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
                 persistentVectorBuilder = persistentVectorBuilder;
             }
         }
-        setRoot(pushBuffersIncreasingHeightIfNeeded(persistentVectorBuilder.root, i2, objArr));
-        setTail(copyInto);
-        persistentVectorBuilder.size = size() + collection.size();
+        persistentVectorBuilder.setRoot(persistentVectorBuilder.pushBuffersIncreasingHeightIfNeeded(persistentVectorBuilder.root, i2, objArr));
+        persistentVectorBuilder.setTail(copyInto);
+        persistentVectorBuilder.size = persistentVectorBuilder.size() + collection.size();
         return true;
     }
 

@@ -73,9 +73,9 @@ public final class Lifecycling {
 
     private final Constructor<? extends GeneratedAdapter> generatedConstructor(Class<?> cls) {
         try {
-            Package r0 = cls.getPackage();
+            Package r3 = cls.getPackage();
             String canonicalName = cls.getCanonicalName();
-            String name = r0 != null ? r0.getName() : "";
+            String name = r3 != null ? r3.getName() : "";
             Intrinsics.checkNotNull(name);
             if (name.length() != 0) {
                 Intrinsics.checkNotNull(canonicalName);

@@ -71,12 +71,12 @@ public final class TopAppBarMeasurePolicy implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        Integer num;
+        Integer valueOf;
         int i2 = intrinsicMeasureScope.mo399roundToPx0680j_4(this.height);
         if (list.isEmpty()) {
-            num = null;
+            valueOf = null;
         } else {
-            Integer valueOf = Integer.valueOf(list.get(0).minIntrinsicHeight(i));
+            valueOf = Integer.valueOf(list.get(0).minIntrinsicHeight(i));
             int lastIndex = CollectionsKt.getLastIndex(list);
             int i3 = 1;
             if (1 <= lastIndex) {
@@ -91,20 +91,19 @@ public final class TopAppBarMeasurePolicy implements MeasurePolicy {
                     i3++;
                 }
             }
-            num = valueOf;
         }
-        Integer num2 = num;
-        return Math.max(i2, num2 != null ? num2.intValue() : 0);
+        Integer num = valueOf;
+        return Math.max(i2, num != null ? num.intValue() : 0);
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        Integer num;
+        Integer valueOf;
         int i2 = intrinsicMeasureScope.mo399roundToPx0680j_4(this.height);
         if (list.isEmpty()) {
-            num = null;
+            valueOf = null;
         } else {
-            Integer valueOf = Integer.valueOf(list.get(0).maxIntrinsicHeight(i));
+            valueOf = Integer.valueOf(list.get(0).maxIntrinsicHeight(i));
             int lastIndex = CollectionsKt.getLastIndex(list);
             int i3 = 1;
             if (1 <= lastIndex) {
@@ -119,10 +118,9 @@ public final class TopAppBarMeasurePolicy implements MeasurePolicy {
                     i3++;
                 }
             }
-            num = valueOf;
         }
-        Integer num2 = num;
-        return Math.max(i2, num2 != null ? num2.intValue() : 0);
+        Integer num = valueOf;
+        return Math.max(i2, num != null ? num.intValue() : 0);
     }
 
     /* renamed from: placeTopAppBar-mpW86Vk  reason: not valid java name */

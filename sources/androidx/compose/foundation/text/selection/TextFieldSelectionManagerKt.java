@@ -210,7 +210,7 @@ public final class TextFieldSelectionManagerKt {
             return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
         float lineTop = value.getLineTop(lineForOffset);
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(coerceIn2) << 32) | (Float.floatToRawIntBits(((value.getLineBottom(lineForOffset) - lineTop) / 2) + lineTop) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(coerceIn2) << 32) | (Float.floatToRawIntBits(((value.getLineBottom(lineForOffset) - lineTop) / 2.0f) + lineTop) & 4294967295L));
     }
 
     public static final Function1<ContextMenuScope, Unit> contextMenuBuilder(final TextFieldSelectionManager textFieldSelectionManager, final ContextMenuState contextMenuState, final State<MenuItemsAvailability> state) {

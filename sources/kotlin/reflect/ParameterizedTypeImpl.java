@@ -72,7 +72,7 @@ public final class ParameterizedTypeImpl implements ParameterizedType, TypeImpl 
     public int hashCode() {
         int hashCode = this.rawType.hashCode();
         Type type = this.ownerType;
-        return (hashCode ^ (type != null ? type.hashCode() : 0)) ^ Arrays.hashCode(getActualTypeArguments());
+        return Arrays.hashCode(getActualTypeArguments()) ^ (hashCode ^ (type != null ? type.hashCode() : 0));
     }
 
     public String toString() {

@@ -132,14 +132,17 @@ public final class TooltipDefaults {
     /* renamed from: richTooltipColors-ro_MJ88  reason: not valid java name */
     public final RichTooltipColors m2893richTooltipColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1498555081, "C(richTooltipColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,titleContentColor:c#ui.graphics.Color,actionContentColor:c#ui.graphics.Color)673@27513L11:Tooltip.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
-        long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
-        long m4808getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4808getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j4;
+        if ((i2 & 1) != 0) {
+            j = Color.Companion.m4808getUnspecified0d7_KjU();
+        }
+        long j5 = j;
+        long m4808getUnspecified0d7_KjU = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
+        long m4808getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
+        long m4808getUnspecified0d7_KjU3 = (i2 & 8) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j4;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1498555081, i, -1, "androidx.compose.material3.TooltipDefaults.richTooltipColors (Tooltip.kt:673)");
         }
-        RichTooltipColors m2395copyjRlVdoo = getDefaultRichTooltipColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2395copyjRlVdoo(m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4);
+        RichTooltipColors m2395copyjRlVdoo = getDefaultRichTooltipColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2395copyjRlVdoo(j5, m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -182,7 +185,7 @@ public final class TooltipDefaults {
                     int left = intRect.getLeft() + ((intRect.getWidth() - ((int) (j2 >> 32))) / 2);
                     int top = (intRect.getTop() - ((int) (j2 & 4294967295L))) - mo399roundToPx0680j_4;
                     if (top < 0) {
-                        top = mo399roundToPx0680j_4 + intRect.getBottom();
+                        top = intRect.getBottom() + mo399roundToPx0680j_4;
                     }
                     return IntOffset.m7677constructorimpl((left << 32) | (top & 4294967295L));
                 }
@@ -227,9 +230,9 @@ public final class TooltipDefaults {
                     }
                     int top = (intRect.getTop() - ((int) (j2 & 4294967295L))) - mo399roundToPx0680j_4;
                     if (top < 0) {
-                        top = mo399roundToPx0680j_4 + intRect.getBottom();
+                        top = intRect.getBottom() + mo399roundToPx0680j_4;
                     }
-                    return IntOffset.m7677constructorimpl((top & 4294967295L) | (left << 32));
+                    return IntOffset.m7677constructorimpl((left << 32) | (top & 4294967295L));
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -274,9 +277,9 @@ public final class TooltipDefaults {
                     }
                     int top = (intRect.getTop() - ((int) (j2 & 4294967295L))) - mo399roundToPx0680j_4;
                     if (top < 0) {
-                        top = mo399roundToPx0680j_4 + intRect.getBottom();
+                        top = intRect.getBottom() + mo399roundToPx0680j_4;
                     }
-                    return IntOffset.m7677constructorimpl((top & 4294967295L) | (left << 32));
+                    return IntOffset.m7677constructorimpl((left << 32) | (top & 4294967295L));
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -304,7 +307,7 @@ public final class TooltipDefaults {
         ComposerKt.sourceInformationMarkerEnd(composer);
         int mo399roundToPx0680j_4 = ((Density) consume).mo399roundToPx0680j_4(f);
         ComposerKt.sourceInformationMarkerStart(composer, -1669413528, "CC(remember):Tooltip.kt#9igjgp");
-        boolean changed = ((((i2 & 14) ^ 6) > 4 && composer.changed(i)) || (i2 & 6) == 4) | composer.changed(mo399roundToPx0680j_4);
+        boolean changed = composer.changed(mo399roundToPx0680j_4) | ((((i2 & 14) ^ 6) > 4 && composer.changed(i)) || (i2 & 6) == 4);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new TooltipPositionProviderImpl(i, mo399roundToPx0680j_4, null);
@@ -324,10 +327,10 @@ public final class TooltipDefaults {
     }
 
     static {
-        long m7577DpSizeYgX7TsA = DpKt.m7577DpSizeYgX7TsA(Dp.m7555constructorimpl(16), Dp.m7555constructorimpl(8));
+        long m7577DpSizeYgX7TsA = DpKt.m7577DpSizeYgX7TsA(Dp.m7555constructorimpl(16.0f), Dp.m7555constructorimpl(8.0f));
         caretSize = m7577DpSizeYgX7TsA;
-        plainTooltipMaxWidth = Dp.m7555constructorimpl(200);
-        richTooltipMaxWidth = Dp.m7555constructorimpl(320);
+        plainTooltipMaxWidth = Dp.m7555constructorimpl(200.0f);
+        richTooltipMaxWidth = Dp.m7555constructorimpl(320.0f);
         DefaultCaretShape = new DefaultTooltipCaretShape(m7577DpSizeYgX7TsA, null);
     }
 }

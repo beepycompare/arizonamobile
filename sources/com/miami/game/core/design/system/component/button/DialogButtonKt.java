@@ -39,7 +39,6 @@ import androidx.compose.ui.layout.MeasurePolicy;
 import androidx.compose.ui.node.ComposeUiNode;
 import androidx.compose.ui.unit.Dp;
 import androidx.media3.exoplayer.RendererCapabilities;
-import androidx.media3.extractor.ts.TsExtractor;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.miami.game.core.design.system.theme.RoundedParallelogramLeftShape;
 import com.miami.game.core.ui.utils.extensions.ClickIndicationType;
@@ -74,8 +73,8 @@ public final class DialogButtonKt {
     /* JADX WARN: Removed duplicated region for block: B:30:0x0064  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0067  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0070  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x02de  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x02e8  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x02dd  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x02e7  */
     /* JADX WARN: Removed duplicated region for block: B:87:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -125,7 +124,7 @@ public final class DialogButtonKt {
                 State<Float> animateFloatAsState = AnimateAsStateKt.animateFloatAsState(DialogButtonYes$lambda$1(mutableState) ? 0.9f : 1.0f, null, 0.0f, "", null, startRestartGroup, 3072, 22);
                 final long m4771copywmQWz5c$default = Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
                 int i5 = i3;
-                Modifier clip = ClipKt.clip(BackgroundKt.m263backgroundbw27NRU(SizeKt.m850height3ABfNKs(SizeKt.m869width3ABfNKs(ScaleKt.scale(Modifier.Companion, DialogButtonYes$lambda$3(animateFloatAsState)), Dp.m7555constructorimpl((float) TsExtractor.TS_STREAM_TYPE_AC4)), Dp.m7555constructorimpl(45)), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m1877getPrimary0d7_KjU(), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
+                Modifier clip = ClipKt.clip(BackgroundKt.m263backgroundbw27NRU(SizeKt.m850height3ABfNKs(SizeKt.m869width3ABfNKs(ScaleKt.scale(Modifier.Companion, DialogButtonYes$lambda$3(animateFloatAsState)), Dp.m7555constructorimpl(172.0f)), Dp.m7555constructorimpl(45.0f)), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m1877getPrimary0d7_KjU(), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1596201909, "CC(remember):DialogButton.kt#9igjgp");
                 int i6 = i5 & 112;
                 boolean z5 = i6 == 32;
@@ -142,7 +141,7 @@ public final class DialogButtonKt {
                     startRestartGroup.updateRememberedValue(rememberedValue2);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                Modifier m277borderziNgDLE = BorderKt.m277borderziNgDLE(DrawModifierKt.drawWithCache(clip, (Function1) rememberedValue2), Dp.m7555constructorimpl(2), Brush.Companion.m4727verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.35f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
+                Modifier m277borderziNgDLE = BorderKt.m277borderziNgDLE(DrawModifierKt.drawWithCache(clip, (Function1) rememberedValue2), Dp.m7555constructorimpl(2.0f), Brush.Companion.m4727verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.35f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
                 Unit unit = Unit.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1596229154, "CC(remember):DialogButton.kt#9igjgp");
                 DialogButtonKt$DialogButtonYes$2$1 rememberedValue3 = startRestartGroup.rememberedValue();
@@ -289,7 +288,7 @@ public final class DialogButtonKt {
             }
             MutableState mutableState = (MutableState) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier clip = ClipKt.clip(BackgroundKt.m263backgroundbw27NRU(SizeKt.m850height3ABfNKs(SizeKt.m869width3ABfNKs(ScaleKt.scale(Modifier.Companion, DialogButtonNo$lambda$3(AnimateAsStateKt.animateFloatAsState(DialogButtonNo$lambda$1(mutableState) ? 0.9f : 1.0f, null, 0.0f, "", null, startRestartGroup, 3072, 22))), Dp.m7555constructorimpl((float) TsExtractor.TS_STREAM_TYPE_AC4)), Dp.m7555constructorimpl(45)), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m1896getTertiary0d7_KjU(), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
+            Modifier clip = ClipKt.clip(BackgroundKt.m263backgroundbw27NRU(SizeKt.m850height3ABfNKs(SizeKt.m869width3ABfNKs(ScaleKt.scale(Modifier.Companion, DialogButtonNo$lambda$3(AnimateAsStateKt.animateFloatAsState(DialogButtonNo$lambda$1(mutableState) ? 0.9f : 1.0f, null, 0.0f, "", null, startRestartGroup, 3072, 22))), Dp.m7555constructorimpl(172.0f)), Dp.m7555constructorimpl(45.0f)), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m1896getTertiary0d7_KjU(), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 615040052, "CC(remember):DialogButton.kt#9igjgp");
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -304,7 +303,7 @@ public final class DialogButtonKt {
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier m277borderziNgDLE = BorderKt.m277borderziNgDLE(DrawModifierKt.drawWithCache(clip, (Function1) rememberedValue2), Dp.m7555constructorimpl(2), Brush.Companion.m4727verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.35f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
+            Modifier m277borderziNgDLE = BorderKt.m277borderziNgDLE(DrawModifierKt.drawWithCache(clip, (Function1) rememberedValue2), Dp.m7555constructorimpl(2.0f), Brush.Companion.m4727verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.35f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
             Unit unit = Unit.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 615063732, "CC(remember):DialogButton.kt#9igjgp");
             DialogButtonKt$DialogButtonNo$2$1 rememberedValue3 = startRestartGroup.rememberedValue();
@@ -411,7 +410,7 @@ public final class DialogButtonKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit DialogButtonYes$lambda$4$0$0(Brush brush, boolean z, long j, DrawScope onDrawBehind) {
         Intrinsics.checkNotNullParameter(onDrawBehind, "$this$onDrawBehind");
-        float f = onDrawBehind.mo405toPx0680j_4(Dp.m7555constructorimpl(10));
+        float f = onDrawBehind.mo405toPx0680j_4(Dp.m7555constructorimpl(10.0f));
         DrawScope.m5341drawRoundRectZuiqVtQ$default(onDrawBehind, brush, 0L, 0L, CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 246, null);
         if (!z) {
             DrawScope.m5342drawRoundRectuAw5IA$default(onDrawBehind, j, 0L, 0L, 0L, null, 0.0f, null, 0, 254, null);
@@ -426,7 +425,7 @@ public final class DialogButtonKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit DialogButtonNo$lambda$4$0$0(Brush brush, DrawScope onDrawBehind) {
         Intrinsics.checkNotNullParameter(onDrawBehind, "$this$onDrawBehind");
-        float f = onDrawBehind.mo405toPx0680j_4(Dp.m7555constructorimpl(10));
+        float f = onDrawBehind.mo405toPx0680j_4(Dp.m7555constructorimpl(10.0f));
         DrawScope.m5341drawRoundRectZuiqVtQ$default(onDrawBehind, brush, 0L, 0L, CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 246, null);
         return Unit.INSTANCE;
     }

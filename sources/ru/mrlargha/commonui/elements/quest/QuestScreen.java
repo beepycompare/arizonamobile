@@ -92,7 +92,7 @@ public final class QuestScreen extends SAMPUIElement {
                 rodinaQuestScreenBinding.textProgress.setText(questLine.getTextProgress());
                 rodinaQuestScreenBinding.rodinaQuestInfoDescription.setText(questLine.getDescription());
                 this.infoTextView.setMovementMethod(new ScrollingMovementMethod());
-                rodinaQuestScreenBinding.rodinaQuestStatText.setText(MathKt.roundToInt((questLine.getProgress() / questLine.getMaxProgress()) * 100) + "%");
+                rodinaQuestScreenBinding.rodinaQuestStatText.setText(MathKt.roundToInt((questLine.getProgress() / questLine.getMaxProgress()) * 100.0d) + "%");
                 rodinaQuestScreenBinding.rodinaQuestProgress.setMax(questLine.getMaxProgress());
                 rodinaQuestScreenBinding.rodinaQuestProgress.setProgress(questLine.getProgress());
                 CharSequence charSequence = "";

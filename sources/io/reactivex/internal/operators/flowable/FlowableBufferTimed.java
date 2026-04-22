@@ -90,16 +90,17 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
                 try {
                     this.buffer = (U) ObjectHelper.requireNonNull(this.bufferSupplier.call(), "The supplied buffer is null");
                     this.downstream.onSubscribe(this);
-                    if (!this.cancelled) {
-                        subscription.request(Long.MAX_VALUE);
-                        Scheduler scheduler = this.scheduler;
-                        long j = this.timespan;
-                        Disposable schedulePeriodicallyDirect = scheduler.schedulePeriodicallyDirect(this, j, j, this.unit);
-                        if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.timer, null, schedulePeriodicallyDirect)) {
-                            return;
-                        }
-                        schedulePeriodicallyDirect.dispose();
+                    if (this.cancelled) {
+                        return;
                     }
+                    subscription.request(Long.MAX_VALUE);
+                    Scheduler scheduler = this.scheduler;
+                    long j = this.timespan;
+                    Disposable schedulePeriodicallyDirect = scheduler.schedulePeriodicallyDirect(this, j, j, this.unit);
+                    if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.timer, null, schedulePeriodicallyDirect)) {
+                        return;
+                    }
+                    schedulePeriodicallyDirect.dispose();
                 } catch (Throwable th) {
                     Exceptions.throwIfFatal(th);
                     cancel();
@@ -388,9 +389,10 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
             }
         }
 
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:45:0x0078 -> B:42:0x0075). Please submit an issue!!! */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:43:0x0076 -> B:40:0x0073). Please submit an issue!!! */
         @Override // org.reactivestreams.Subscriber
         public void onNext(T t) {
+            BufferExactBoundedSubscriber<T, U> bufferExactBoundedSubscriber;
             Throwable th;
             U u;
             synchronized (this) {
@@ -398,6 +400,7 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
                     u = this.buffer;
                 } catch (Throwable th2) {
                     th = th2;
+                    bufferExactBoundedSubscriber = this;
                     try {
                     } catch (Throwable th3) {
                         th = th3;
@@ -449,6 +452,7 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
                     }
                 } catch (Throwable th6) {
                     Throwable th7 = th6;
+                    bufferExactBoundedSubscriber = this;
                     throw th7;
                 }
             }

@@ -424,7 +424,7 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
             try {
                 return JsonElementKt.parseLongImpl(jsonPrimitive);
             } catch (IllegalArgumentException unused) {
-                unparsedPrimitive(jsonPrimitive, Constants.LONG, tag);
+                this.unparsedPrimitive(jsonPrimitive, Constants.LONG, tag);
                 throw new KotlinNothingValueException();
             }
         }
@@ -483,7 +483,7 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
             try {
                 return StringsKt.single(jsonPrimitive.getContent());
             } catch (IllegalArgumentException unused) {
-                unparsedPrimitive(jsonPrimitive, "char", tag);
+                this.unparsedPrimitive(jsonPrimitive, "char", tag);
                 throw new KotlinNothingValueException();
             }
         }

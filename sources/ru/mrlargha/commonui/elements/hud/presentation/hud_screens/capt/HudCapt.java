@@ -114,6 +114,7 @@ public final class HudCapt {
                 j = hudCaptModel5.getTime();
             }
         }
+        long j2 = j;
         Boolean ordinalNumbers = hudCaptModel.getOrdinalNumbers();
         int i = 0;
         Boolean valueOf = Boolean.valueOf((ordinalNumbers == null && ((hudCaptModel2 = currentModel) == null || (ordinalNumbers = hudCaptModel2.getOrdinalNumbers()) == null)) ? false : ordinalNumbers.booleanValue());
@@ -130,7 +131,7 @@ public final class HudCapt {
                 i = hudCaptModel6.getScoreIcon();
             }
         }
-        HudCaptModel hudCaptModel7 = new HudCaptModel(str, j, valueOf, list, i, hudCaptModel.getTerritoryId());
+        HudCaptModel hudCaptModel7 = new HudCaptModel(str, j2, valueOf, list, i, hudCaptModel.getTerritoryId());
         currentModel = hudCaptModel7;
         return hudCaptModel7;
     }

@@ -61,6 +61,8 @@ public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInput
             return anonymousClass2.invokeSuspend(Unit.INSTANCE);
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r5v4, types: [kotlin.Unit, java.lang.Object] */
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             PressGestureScope pressGestureScope = (PressGestureScope) this.L$0;
@@ -81,7 +83,8 @@ public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInput
                     ResultKt.throwOnFailure(obj);
                 }
                 ScalingButtonKt.ScalingButtonLong$lambda$2(this.$selected$delegate, false);
-                return Unit.INSTANCE;
+                this = Unit.INSTANCE;
+                return this;
             } catch (Throwable th) {
                 ScalingButtonKt.ScalingButtonLong$lambda$2(this.$selected$delegate, false);
                 throw th;
@@ -92,15 +95,13 @@ public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInput
     @Override // androidx.compose.ui.input.pointer.PointerInputEventHandler
     public final Object invoke(PointerInputScope pointerInputScope, Continuation<? super Unit> continuation) {
         final Function0<Unit> function0 = this.$onLongClick;
-        Function1 function1 = new Function1() { // from class: com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$$ExternalSyntheticLambda0
+        final Function0<Unit> function02 = this.$onClick;
+        Object detectTapGestures$default = TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, new Function1() { // from class: com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return ScalingButtonKt$ScalingButtonLong$1$1.invoke$lambda$0(Function0.this, (Offset) obj);
             }
-        };
-        AnonymousClass2 anonymousClass2 = new AnonymousClass2(this.$selected$delegate, null);
-        final Function0<Unit> function02 = this.$onClick;
-        Object detectTapGestures$default = TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, function1, anonymousClass2, new Function1() { // from class: com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$$ExternalSyntheticLambda1
+        }, new AnonymousClass2(this.$selected$delegate, null), new Function1() { // from class: com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return ScalingButtonKt$ScalingButtonLong$1$1.invoke$lambda$1(Function0.this, (Offset) obj);

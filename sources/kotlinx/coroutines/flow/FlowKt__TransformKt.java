@@ -282,10 +282,9 @@ public final /* synthetic */ class FlowKt__TransformKt {
                     this.$action$inlined = function2;
                 }
 
-                /* JADX WARN: Code restructure failed: missing block: B:21:0x0063, code lost:
-                    if (r6.emit(r2, r0) != r1) goto L11;
+                /* JADX WARN: Code restructure failed: missing block: B:21:0x0062, code lost:
+                    if (r5.emit(r6, r0) != r1) goto L11;
                  */
-                /* JADX WARN: Multi-variable type inference failed */
                 /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
                 /* JADX WARN: Removed duplicated region for block: B:16:0x003f  */
                 @Override // kotlinx.coroutines.flow.FlowCollector
@@ -295,37 +294,35 @@ public final /* synthetic */ class FlowKt__TransformKt {
                 public final Object emit(T t, Continuation<? super Unit> continuation) {
                     AnonymousClass1 anonymousClass1;
                     int i;
-                    Object obj;
                     FlowCollector flowCollector;
                     if (continuation instanceof AnonymousClass1) {
                         anonymousClass1 = (AnonymousClass1) continuation;
                         if ((anonymousClass1.label & Integer.MIN_VALUE) != 0) {
                             anonymousClass1.label -= Integer.MIN_VALUE;
-                            Object obj2 = anonymousClass1.result;
+                            Object obj = anonymousClass1.result;
                             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                             i = anonymousClass1.label;
                             if (i != 0) {
-                                ResultKt.throwOnFailure(obj2);
+                                ResultKt.throwOnFailure(obj);
                                 FlowCollector flowCollector2 = this.$this_unsafeFlow;
                                 Function2 function2 = this.$action$inlined;
                                 anonymousClass1.L$0 = t;
                                 anonymousClass1.L$1 = flowCollector2;
                                 anonymousClass1.label = 1;
                                 if (function2.invoke(t, anonymousClass1) != coroutine_suspended) {
-                                    obj = t;
                                     flowCollector = flowCollector2;
                                 }
                                 return coroutine_suspended;
                             } else if (i != 1) {
                                 if (i == 2) {
-                                    ResultKt.throwOnFailure(obj2);
+                                    ResultKt.throwOnFailure(obj);
                                     return Unit.INSTANCE;
                                 }
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             } else {
                                 flowCollector = (FlowCollector) anonymousClass1.L$1;
-                                obj = anonymousClass1.L$0;
-                                ResultKt.throwOnFailure(obj2);
+                                t = (T) anonymousClass1.L$0;
+                                ResultKt.throwOnFailure(obj);
                             }
                             anonymousClass1.L$0 = null;
                             anonymousClass1.L$1 = null;
@@ -333,7 +330,7 @@ public final /* synthetic */ class FlowKt__TransformKt {
                         }
                     }
                     anonymousClass1 = new AnonymousClass1(continuation);
-                    Object obj22 = anonymousClass1.result;
+                    Object obj2 = anonymousClass1.result;
                     Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = anonymousClass1.label;
                     if (i != 0) {

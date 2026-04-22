@@ -128,20 +128,20 @@ public final class SnackbarKt$OneRowSnackbar$2$1 implements MeasurePolicy {
                     height = 0;
                 }
                 final int i12 = height;
-                final int i13 = i2;
-                int i14 = max;
-                final int height4 = mo6216measureBRTryo02 != null ? (i14 - mo6216measureBRTryo02.getHeight()) / 2 : 0;
+                int i13 = max;
+                final int i14 = i2;
+                final int height4 = mo6216measureBRTryo02 != null ? (i13 - mo6216measureBRTryo02.getHeight()) / 2 : 0;
                 final Placeable placeable = mo6216measureBRTryo0;
-                return MeasureScope.layout$default(measureScope2, min, i14, null, new Function1() { // from class: androidx.compose.material3.SnackbarKt$OneRowSnackbar$2$1$$ExternalSyntheticLambda0
+                return MeasureScope.layout$default(measureScope2, min, i13, null, new Function1() { // from class: androidx.compose.material3.SnackbarKt$OneRowSnackbar$2$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        return SnackbarKt$OneRowSnackbar$2$1.measure_3p2s80s$lambda$4(Placeable.this, i13, mo6216measureBRTryo02, i10, height4, placeable, i11, i12, (Placeable.PlacementScope) obj);
+                        return SnackbarKt$OneRowSnackbar$2$1.measure_3p2s80s$lambda$4(Placeable.this, i14, mo6216measureBRTryo02, i10, height4, placeable, i11, i12, (Placeable.PlacementScope) obj);
                     }
                 }, 4, null);
             }
             i6++;
-            measureScope2 = measureScope;
             height3 = height3;
+            measureScope2 = measureScope;
         }
         ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
         throw new KotlinNothingValueException();

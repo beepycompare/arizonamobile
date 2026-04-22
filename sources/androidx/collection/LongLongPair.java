@@ -38,7 +38,7 @@ public final class LongLongPair {
     }
 
     public int hashCode() {
-        return Long.hashCode(this.first) ^ Long.hashCode(this.second);
+        return Long.hashCode(this.second) ^ Long.hashCode(this.first);
     }
 
     public String toString() {

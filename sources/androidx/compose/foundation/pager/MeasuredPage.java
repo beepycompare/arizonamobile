@@ -169,7 +169,8 @@ public final class MeasuredPage implements PageInfo {
     private final long m1069getOffsetBjo55l4(int i) {
         int[] iArr = this.placeableOffsets;
         int i2 = i * 2;
-        return IntOffset.m7677constructorimpl((iArr[i2] << 32) | (iArr[i2 + 1] & 4294967295L));
+        int i3 = iArr[i2];
+        return IntOffset.m7677constructorimpl((iArr[i2 + 1] & 4294967295L) | (i3 << 32));
     }
 
     private final int getMainAxisSize(Placeable placeable) {
@@ -178,12 +179,6 @@ public final class MeasuredPage implements PageInfo {
 
     /* renamed from: copy-4Tuh3kE  reason: not valid java name */
     private final long m1068copy4Tuh3kE(long j, Function1<? super Integer, Integer> function1) {
-        int m7683getXimpl = this.isVertical ? IntOffset.m7683getXimpl(j) : function1.invoke(Integer.valueOf(IntOffset.m7683getXimpl(j))).intValue();
-        boolean z = this.isVertical;
-        int m7684getYimpl = IntOffset.m7684getYimpl(j);
-        if (z) {
-            m7684getYimpl = function1.invoke(Integer.valueOf(m7684getYimpl)).intValue();
-        }
-        return IntOffset.m7677constructorimpl((m7683getXimpl << 32) | (m7684getYimpl & 4294967295L));
+        return IntOffset.m7677constructorimpl(((this.isVertical ? IntOffset.m7683getXimpl(j) : function1.invoke(Integer.valueOf(IntOffset.m7683getXimpl(j))).intValue()) << 32) | ((this.isVertical ? function1.invoke(Integer.valueOf(IntOffset.m7684getYimpl(j))).intValue() : IntOffset.m7684getYimpl(j)) & 4294967295L));
     }
 }

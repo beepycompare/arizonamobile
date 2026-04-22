@@ -51,10 +51,10 @@ final class NavHostKt$NavHost$29$1 extends SuspendLambda implements Function2<Co
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0040, code lost:
         if (androidx.compose.animation.core.SeekableTransitionState.animateTo$default(r13.$transitionState, r13.$backStackEntry, null, r13, 2, null) == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x007d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x007c, code lost:
         if (androidx.compose.animation.core.SuspendAnimationKt.animate$default(r5, 0.0f, 0.0f, r8, new androidx.navigation.compose.NavHostKt$NavHost$29$1$$ExternalSyntheticLambda0(r14, r1, r3), r13, 4, null) == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x007f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x007e, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -68,9 +68,8 @@ final class NavHostKt$NavHost$29$1 extends SuspendLambda implements Function2<Co
             ResultKt.throwOnFailure(obj);
             final CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
             if (Intrinsics.areEqual(this.$transitionState.getCurrentState(), this.$backStackEntry)) {
-                long totalDurationNanos = this.$transition.getTotalDurationNanos() / 1000000;
                 float fraction = this.$transitionState.getFraction();
-                TweenSpec tween$default = AnimationSpecKt.tween$default((int) (this.$transitionState.getFraction() * ((float) totalDurationNanos)), 0, null, 6, null);
+                TweenSpec tween$default = AnimationSpecKt.tween$default((int) (this.$transitionState.getFraction() * ((float) (this.$transition.getTotalDurationNanos() / 1000000))), 0, null, 6, null);
                 final SeekableTransitionState<NavBackStackEntry> seekableTransitionState = this.$transitionState;
                 final NavBackStackEntry navBackStackEntry = this.$backStackEntry;
                 this.label = 2;

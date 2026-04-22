@@ -12,12 +12,12 @@ public final class RadioButtonTokens {
     public static final RadioButtonTokens INSTANCE = new RadioButtonTokens();
     private static final ColorSchemeKeyTokens DisabledSelectedIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens DisabledUnselectedIconColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float IconSize = Dp.m7555constructorimpl((float) 20.0d);
+    private static final float IconSize = Dp.m7555constructorimpl(20.0f);
     private static final ColorSchemeKeyTokens SelectedFocusIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedHoverIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedPressedIconColor = ColorSchemeKeyTokens.Primary;
-    private static final float StateLayerSize = Dp.m7555constructorimpl((float) 40.0d);
+    private static final float StateLayerSize = Dp.m7555constructorimpl(40.0f);
     private static final ColorSchemeKeyTokens UnselectedFocusIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens UnselectedHoverIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens UnselectedIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;

@@ -213,38 +213,39 @@ public final class IndirectPointerInputDragCycleDetector {
     private final void processInitialDownState(IndirectPointerEvent indirectPointerEvent, PointerEventPass pointerEventPass, DragDetectionState.AwaitDown awaitDown) {
         DragDetectionState.AwaitDown.AwaitTouchSlop awaitTouchSlop;
         boolean changedToDownIgnoreConsumed;
-        if (!indirectPointerEvent.getChanges().isEmpty()) {
-            List<IndirectPointerInputChange> changes = indirectPointerEvent.getChanges();
-            int size = changes.size();
-            for (int i = 0; i < size; i++) {
-                changedToDownIgnoreConsumed = IndirectPointerInputDragCycleDetectorKt.changedToDownIgnoreConsumed(changes.get(i));
-                if (!changedToDownIgnoreConsumed) {
-                    return;
-                }
+        if (indirectPointerEvent.getChanges().isEmpty()) {
+            return;
+        }
+        List<IndirectPointerInputChange> changes = indirectPointerEvent.getChanges();
+        int size = changes.size();
+        for (int i = 0; i < size; i++) {
+            changedToDownIgnoreConsumed = IndirectPointerInputDragCycleDetectorKt.changedToDownIgnoreConsumed(changes.get(i));
+            if (!changedToDownIgnoreConsumed) {
+                return;
             }
-            IndirectPointerInputChange indirectPointerInputChange = (IndirectPointerInputChange) CollectionsKt.first((List<? extends Object>) indirectPointerEvent.getChanges());
-            if (WhenMappings.$EnumSwitchMapping$0[awaitDown.getAwaitTouchSlop().ordinal()] == 1) {
-                if (!this.node.startDragImmediately()) {
-                    awaitTouchSlop = DragDetectionState.AwaitDown.AwaitTouchSlop.Yes;
-                } else {
-                    awaitTouchSlop = DragDetectionState.AwaitDown.AwaitTouchSlop.No;
-                }
+        }
+        IndirectPointerInputChange indirectPointerInputChange = (IndirectPointerInputChange) CollectionsKt.first((List<? extends Object>) indirectPointerEvent.getChanges());
+        if (WhenMappings.$EnumSwitchMapping$0[awaitDown.getAwaitTouchSlop().ordinal()] == 1) {
+            if (!this.node.startDragImmediately()) {
+                awaitTouchSlop = DragDetectionState.AwaitDown.AwaitTouchSlop.Yes;
             } else {
-                awaitTouchSlop = awaitDown.getAwaitTouchSlop();
+                awaitTouchSlop = DragDetectionState.AwaitDown.AwaitTouchSlop.No;
             }
-            awaitDown.setAwaitTouchSlop(awaitTouchSlop);
-            if (pointerEventPass == PointerEventPass.Initial && awaitTouchSlop == DragDetectionState.AwaitDown.AwaitTouchSlop.No) {
-                indirectPointerInputChange.consume();
-                awaitDown.setConsumedOnInitial(true);
-            }
-            if (pointerEventPass == PointerEventPass.Main) {
-                if (awaitTouchSlop == DragDetectionState.AwaitDown.AwaitTouchSlop.Yes) {
-                    m496moveToAwaitTouchSlopStateaWI9W7U$default(this, indirectPointerInputChange, indirectPointerInputChange.m5612getIdJ3iCeTQ(), 0L, false, 12, null);
-                } else if (awaitDown.getConsumedOnInitial()) {
-                    m499sendDragStart3f7A7Is(indirectPointerInputChange, indirectPointerInputChange, IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()), Offset.Companion.m4543getZeroF1C5BW0());
-                    m498sendDragEventEu1f8Dk(indirectPointerInputChange, IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()), Offset.Companion.m4543getZeroF1C5BW0());
-                    m497moveToDraggingState0FcD4WY(indirectPointerInputChange.m5612getIdJ3iCeTQ());
-                }
+        } else {
+            awaitTouchSlop = awaitDown.getAwaitTouchSlop();
+        }
+        awaitDown.setAwaitTouchSlop(awaitTouchSlop);
+        if (pointerEventPass == PointerEventPass.Initial && awaitTouchSlop == DragDetectionState.AwaitDown.AwaitTouchSlop.No) {
+            indirectPointerInputChange.consume();
+            awaitDown.setConsumedOnInitial(true);
+        }
+        if (pointerEventPass == PointerEventPass.Main) {
+            if (awaitTouchSlop == DragDetectionState.AwaitDown.AwaitTouchSlop.Yes) {
+                m496moveToAwaitTouchSlopStateaWI9W7U$default(this, indirectPointerInputChange, indirectPointerInputChange.m5612getIdJ3iCeTQ(), 0L, false, 12, null);
+            } else if (awaitDown.getConsumedOnInitial()) {
+                m499sendDragStart3f7A7Is(indirectPointerInputChange, indirectPointerInputChange, IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()), Offset.Companion.m4543getZeroF1C5BW0());
+                m498sendDragEventEu1f8Dk(indirectPointerInputChange, IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()), Offset.Companion.m4543getZeroF1C5BW0());
+                m497moveToDraggingState0FcD4WY(indirectPointerInputChange.m5612getIdJ3iCeTQ());
             }
         }
     }

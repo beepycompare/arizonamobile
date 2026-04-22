@@ -54,7 +54,7 @@ final class AutoValue_EventContext extends EventContext {
 
     public int hashCode() {
         String str = this.pseudonymousId;
-        return (((((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003) ^ Arrays.hashCode(this.experimentIdsClear)) * 1000003) ^ Arrays.hashCode(this.experimentIdsEncrypted);
+        return Arrays.hashCode(this.experimentIdsEncrypted) ^ (((((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003) ^ Arrays.hashCode(this.experimentIdsClear)) * 1000003);
     }
 
     /* loaded from: classes3.dex */

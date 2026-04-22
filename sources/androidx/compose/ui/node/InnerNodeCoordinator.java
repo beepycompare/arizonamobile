@@ -212,44 +212,29 @@ public final class InnerNodeCoordinator extends NodeCoordinator {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0036, code lost:
-        if ((java.lang.Float.floatToRawIntBits(m6517distanceInMinimumTouchTargettz77jQw(r12, m6520getMinimumTouchTargetSizeNHjbRc())) & Integer.MAX_VALUE) < 2139095040) goto L6;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x003f  */
-    /* JADX WARN: Removed duplicated region for block: B:35:? A[RETURN, SYNTHETIC] */
     @Override // androidx.compose.ui.node.NodeCoordinator
     /* renamed from: hitTestChild-qzLsGqo  reason: not valid java name */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public void mo6433hitTestChildqzLsGqo(NodeCoordinator.HitTestSource hitTestSource, long j, HitTestResult hitTestResult, int i, boolean z) {
-        int i2;
-        boolean z2;
-        boolean z3;
-        boolean z4 = false;
+        NodeCoordinator.HitTestSource hitTestSource2;
+        boolean z2 = false;
         if (hitTestSource.shouldHitTestChildren(getLayoutNode())) {
-            if (m6529withinLayerBoundsk4lQ0M(j)) {
-                i2 = i;
-                z4 = z;
-            } else {
-                i2 = i;
-                if (PointerType.m6156equalsimpl0(i, PointerType.Companion.m6163getTouchT8wyACA())) {
+            if (!m6529withinLayerBoundsk4lQ0M(j)) {
+                if (PointerType.m6156equalsimpl0(i, PointerType.Companion.m6163getTouchT8wyACA()) && (Float.floatToRawIntBits(m6517distanceInMinimumTouchTargettz77jQw(j, m6520getMinimumTouchTargetSizeNHjbRc())) & Integer.MAX_VALUE) < 2139095040) {
+                    z = false;
                 }
             }
             z2 = true;
-            if (z2) {
-                return;
-            }
-            int i3 = hitTestResult.hitDepth;
+        }
+        if (z2) {
+            int i2 = hitTestResult.hitDepth;
             MutableVector<LayoutNode> zSortedChildren = getLayoutNode().getZSortedChildren();
             LayoutNode[] layoutNodeArr = zSortedChildren.content;
             int size = zSortedChildren.getSize() - 1;
             while (size >= 0) {
                 LayoutNode layoutNode = layoutNodeArr[size];
                 if (layoutNode.isPlaced()) {
-                    int i4 = i2;
-                    z3 = z4;
-                    hitTestSource.mo6530childHitTestqzLsGqo(layoutNode, j, hitTestResult, i4, z3);
+                    hitTestSource2 = hitTestSource;
+                    hitTestSource2.mo6530childHitTestqzLsGqo(layoutNode, j, hitTestResult, i, z);
                     if (!hitTestResult.hasHit()) {
                         continue;
                     } else if (!layoutNode.getOuterCoordinator$ui().shouldSharePointerInputWithSiblings()) {
@@ -258,19 +243,12 @@ public final class InnerNodeCoordinator extends NodeCoordinator {
                         hitTestResult.acceptHits();
                     }
                 } else {
-                    z3 = z4;
+                    hitTestSource2 = hitTestSource;
                 }
                 size--;
-                z4 = z3;
-                i2 = i;
+                hitTestSource = hitTestSource2;
             }
-            hitTestResult.hitDepth = i3;
-            return;
-        }
-        i2 = i;
-        z2 = false;
-        z4 = z;
-        if (z2) {
+            hitTestResult.hitDepth = i2;
         }
     }
 

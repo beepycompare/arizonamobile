@@ -458,7 +458,7 @@ public final class Mp3Extractor implements Extractor {
         }
         if (xingFrame.dataSize != -1) {
             j3 = xingFrame.dataSize - xingFrame.header.frameSize;
-            j4 = j + xingFrame.dataSize;
+            j4 = xingFrame.dataSize + j;
         } else if (j2 == -1) {
             return null;
         } else {

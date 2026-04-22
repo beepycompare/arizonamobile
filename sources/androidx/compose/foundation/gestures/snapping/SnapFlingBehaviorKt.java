@@ -35,7 +35,7 @@ import kotlin.ranges.RangesKt;
 /* loaded from: classes.dex */
 public final class SnapFlingBehaviorKt {
     private static final boolean DEBUG = false;
-    private static final float MinFlingVelocityDp = Dp.m7555constructorimpl(400);
+    private static final float MinFlingVelocityDp = Dp.m7555constructorimpl(400.0f);
     public static final float NoDistance = 0.0f;
     public static final float NoVelocity = 0.0f;
 

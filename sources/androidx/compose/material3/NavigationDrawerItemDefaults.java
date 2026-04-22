@@ -14,7 +14,7 @@ import kotlin.Metadata;
 public final class NavigationDrawerItemDefaults {
     public static final int $stable = 0;
     public static final NavigationDrawerItemDefaults INSTANCE = new NavigationDrawerItemDefaults();
-    private static final PaddingValues ItemPadding = PaddingKt.m813PaddingValuesYgX7TsA$default(Dp.m7555constructorimpl(12), 0.0f, 2, null);
+    private static final PaddingValues ItemPadding = PaddingKt.m813PaddingValuesYgX7TsA$default(Dp.m7555constructorimpl(12.0f), 0.0f, 2, null);
 
     private NavigationDrawerItemDefaults() {
     }

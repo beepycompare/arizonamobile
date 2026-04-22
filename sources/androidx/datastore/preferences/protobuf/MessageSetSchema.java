@@ -173,15 +173,17 @@ final class MessageSetSchema<T> implements Schema<T> {
         FieldSet<ET> mutableExtensions = extensionSchema.getMutableExtensions(message);
         while (reader.getFieldNumber() != Integer.MAX_VALUE) {
             try {
+                MessageSetSchema<T> messageSetSchema = this;
                 unknownFieldSchema2 = unknownFieldSchema;
                 ExtensionSchema<ET> extensionSchema2 = extensionSchema;
                 Reader reader2 = reader;
                 ExtensionRegistryLite extensionRegistryLite = extensionRegistry;
                 try {
-                    if (!parseMessageSetItemOrUnknownField(reader2, extensionRegistryLite, extensionSchema2, mutableExtensions, unknownFieldSchema2, builderFromMessage)) {
+                    if (!messageSetSchema.parseMessageSetItemOrUnknownField(reader2, extensionRegistryLite, extensionSchema2, mutableExtensions, unknownFieldSchema2, builderFromMessage)) {
                         unknownFieldSchema2.setBuilderToMessage(message, builderFromMessage);
                         return;
                     }
+                    this = messageSetSchema;
                     reader = reader2;
                     extensionRegistry = extensionRegistryLite;
                     extensionSchema = extensionSchema2;

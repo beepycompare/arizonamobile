@@ -54,6 +54,7 @@ import androidx.lifecycle.ViewTreeLifecycleOwner;
 import androidx.lifecycle.ViewTreeViewModelStoreOwner;
 import androidx.lifecycle.viewmodel.CreationExtras;
 import androidx.lifecycle.viewmodel.MutableCreationExtras;
+import androidx.media3.exoplayer.Renderer;
 import androidx.navigationevent.DirectNavigationEventInput;
 import androidx.navigationevent.NavigationEventDispatcher;
 import androidx.navigationevent.NavigationEventDispatcherOwner;
@@ -917,7 +918,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     /* loaded from: classes.dex */
     public final class ReportFullyDrawnExecutorImpl implements ReportFullyDrawnExecutor, ViewTreeObserver.OnDrawListener, Runnable {
         private Runnable currentRunnable;
-        private final long endWatchTimeMillis = SystemClock.uptimeMillis() + 10000;
+        private final long endWatchTimeMillis = SystemClock.uptimeMillis() + Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
         private boolean onDrawScheduled;
 
         public ReportFullyDrawnExecutorImpl() {

@@ -45,7 +45,7 @@ public final class DotsIndicatorKt {
         if (i3 + 1 > f3 || i3 < 0) {
             return 0.0f;
         }
-        return i3 + (f2 % 1);
+        return i3 + (f2 % 1.0f);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x0067  */
@@ -55,13 +55,13 @@ public final class DotsIndicatorKt {
     /* JADX WARN: Removed duplicated region for block: B:61:0x00ad  */
     /* JADX WARN: Removed duplicated region for block: B:62:0x00b2  */
     /* JADX WARN: Removed duplicated region for block: B:64:0x00b5  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00bd  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0113  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0156  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0155  */
     /* JADX WARN: Removed duplicated region for block: B:89:? A[RETURN, SYNTHETIC] */
     /* renamed from: DotsIndicator-TN_CM5M  reason: not valid java name */
     /*
@@ -110,7 +110,7 @@ public final class DotsIndicatorKt {
             }
             if ((46811 & i4) == 9362 || !startRestartGroup.getSkipping()) {
                 Modifier.Companion companion = i5 == 0 ? Modifier.Companion : modifier;
-                float m7555constructorimpl = i6 == 0 ? Dp.m7555constructorimpl(12) : f2;
+                float m7555constructorimpl = i6 == 0 ? Dp.m7555constructorimpl(12.0f) : f2;
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(2032190952, i4, -1, "com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicator (DotsIndicator.kt:22)");
                 }
@@ -361,10 +361,10 @@ public final class DotsIndicatorKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0144  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x016f  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x01a9  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x01b4  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0143  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x016e  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x01a8  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x01b3  */
     /* JADX WARN: Removed duplicated region for block: B:117:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0054  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0057  */
@@ -379,13 +379,13 @@ public final class DotsIndicatorKt {
     /* JADX WARN: Removed duplicated region for block: B:77:0x00e5  */
     /* JADX WARN: Removed duplicated region for block: B:82:0x00f6  */
     /* JADX WARN: Removed duplicated region for block: B:84:0x00fd  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0111  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x012e  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0130  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0137  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0107  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0110  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0136  */
     /* renamed from: DotsIndicator-AFY4PWA  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -464,7 +464,7 @@ public final class DotsIndicatorKt {
                         if (i10 != 0) {
                             companion = Modifier.Companion;
                         }
-                        float m7555constructorimpl = i6 == 0 ? Dp.m7555constructorimpl(12) : f2;
+                        float m7555constructorimpl = i6 == 0 ? Dp.m7555constructorimpl(12.0f) : f2;
                         Function1<? super Integer, Unit> function13 = i8 == 0 ? null : obj;
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1298032090, i5, -1, "com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicator (DotsIndicator.kt:45)");
@@ -800,7 +800,7 @@ public final class DotsIndicatorKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2128547675, i, -1, "com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorPreview (DotsIndicator.kt:72)");
             }
-            m9150DotsIndicatorAFY4PWA(10, null, Dp.m7555constructorimpl(8), new BalloonIndicatorType(null, 0.0f, 3, null), 0, new Function0<Float>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicatorPreview$1
+            m9150DotsIndicatorAFY4PWA(10, null, Dp.m7555constructorimpl(8.0f), new BalloonIndicatorType(null, 0.0f, 3, null), 0, new Function0<Float>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicatorPreview$1
                 /* JADX WARN: Can't rename method to resolve collision */
                 @Override // kotlin.jvm.functions.Function0
                 public final Float invoke() {

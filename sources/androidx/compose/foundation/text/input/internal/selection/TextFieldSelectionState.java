@@ -452,11 +452,11 @@ public final class TextFieldSelectionState {
             Rect cursorRect = textLayoutResult.getCursorRect(TextRange.m7003getStartimpl(textFieldCharSequence.m1336getSelectiond9O1mEE()));
             float coerceAtLeast = RangesKt.coerceAtLeast((float) Math.floor(this.density.mo405toPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness())), 1.0f);
             if (textLayoutResult.getLayoutInput().getLayoutDirection() == LayoutDirection.Ltr) {
-                right = cursorRect.getLeft() + (coerceAtLeast / 2);
+                right = cursorRect.getLeft() + (coerceAtLeast / 2.0f);
             } else {
-                right = cursorRect.getRight() - (coerceAtLeast / 2);
+                right = cursorRect.getRight() - (coerceAtLeast / 2.0f);
             }
-            float f = coerceAtLeast / 2;
+            float f = coerceAtLeast / 2.0f;
             float coerceAtLeast2 = RangesKt.coerceAtLeast(RangesKt.coerceAtMost(right, ((int) (textLayoutResult.m6974getSizeYbymL2g() >> 32)) - f), f);
             if (((int) coerceAtLeast) % 2 == 1) {
                 rint = ((float) Math.floor(coerceAtLeast2)) + 0.5f;

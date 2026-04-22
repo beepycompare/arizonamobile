@@ -1,5 +1,6 @@
 package androidx.compose.animation.core;
 
+import androidx.compose.ui.geometry.InlineClassHelperKt;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.geometry.Rect;
 import androidx.compose.ui.geometry.Size;
@@ -52,8 +53,7 @@ public final class VisibilityThresholdsKt {
     }
 
     public static final long getVisibilityThreshold(IntOffset.Companion companion) {
-        long j = 1;
-        return IntOffset.m7677constructorimpl((j & 4294967295L) | (j << 32));
+        return IntOffset.m7677constructorimpl(InlineClassHelperKt.Uint64Low32);
     }
 
     public static final long getVisibilityThreshold(Offset.Companion companion) {
@@ -69,7 +69,6 @@ public final class VisibilityThresholdsKt {
     }
 
     public static final long getVisibilityThreshold(IntSize.Companion companion) {
-        long j = 1;
-        return IntSize.m7721constructorimpl((j & 4294967295L) | (j << 32));
+        return IntSize.m7721constructorimpl(InlineClassHelperKt.Uint64Low32);
     }
 }

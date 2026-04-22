@@ -755,9 +755,9 @@ public final class ColorSchemeKt {
 
     /* renamed from: surfaceColorAtElevation-3ABfNKs */
     public static final long m1915surfaceColorAtElevation3ABfNKs(ColorScheme colorScheme, float f) {
-        if (Dp.m7560equalsimpl0(f, Dp.m7555constructorimpl(0))) {
+        if (Dp.m7560equalsimpl0(f, Dp.m7555constructorimpl(0.0f))) {
             return colorScheme.m1886getSurface0d7_KjU();
         }
-        return ColorKt.m4817compositeOverOWjLjI(Color.m4771copywmQWz5c$default(colorScheme.m1894getSurfaceTint0d7_KjU(), ((((float) Math.log(f + 1)) * 4.5f) + 2.0f) / 100.0f, 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m1886getSurface0d7_KjU());
+        return ColorKt.m4817compositeOverOWjLjI(Color.m4771copywmQWz5c$default(colorScheme.m1894getSurfaceTint0d7_KjU(), ((((float) Math.log(f + 1.0f)) * 4.5f) + 2.0f) / 100.0f, 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m1886getSurface0d7_KjU());
     }
 }

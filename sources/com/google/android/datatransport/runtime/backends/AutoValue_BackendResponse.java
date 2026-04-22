@@ -44,6 +44,6 @@ final class AutoValue_BackendResponse extends BackendResponse {
 
     public int hashCode() {
         long j = this.nextRequestWaitMillis;
-        return ((this.status.hashCode() ^ 1000003) * 1000003) ^ ((int) (j ^ (j >>> 32)));
+        return ((int) (j ^ (j >>> 32))) ^ ((this.status.hashCode() ^ 1000003) * 1000003);
     }
 }

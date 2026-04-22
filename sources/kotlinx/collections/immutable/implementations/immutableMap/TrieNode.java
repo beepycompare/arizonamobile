@@ -93,19 +93,19 @@ public final class TrieNode<K, V> {
     }
 
     public final boolean hasEntryAt$kotlinx_collections_immutable(int i) {
-        return (i & this.dataMap) != 0;
+        return (this.dataMap & i) != 0;
     }
 
     private final boolean hasNodeAt(int i) {
-        return (i & this.nodeMap) != 0;
+        return (this.nodeMap & i) != 0;
     }
 
     public final int entryKeyIndex$kotlinx_collections_immutable(int i) {
-        return Integer.bitCount((i - 1) & this.dataMap) * 2;
+        return Integer.bitCount(this.dataMap & (i - 1)) * 2;
     }
 
     public final int nodeIndex$kotlinx_collections_immutable(int i) {
-        return (this.buffer.length - 1) - Integer.bitCount((i - 1) & this.nodeMap);
+        return (this.buffer.length - 1) - Integer.bitCount(this.nodeMap & (i - 1));
     }
 
     private final K keyAtIndex(int i) {
@@ -173,7 +173,7 @@ public final class TrieNode<K, V> {
                 trieNode.dataMap = this.nodeMap;
                 return trieNode;
             }
-            return new TrieNode<>(this.dataMap ^ i2, i2 ^ this.nodeMap, TrieNodeKt.access$replaceNodeWithEntry(this.buffer, i, entryKeyIndex$kotlinx_collections_immutable(i2), objArr[0], objArr[1]), mutabilityOwnership);
+            return new TrieNode<>(this.dataMap ^ i2, this.nodeMap ^ i2, TrieNodeKt.access$replaceNodeWithEntry(this.buffer, i, entryKeyIndex$kotlinx_collections_immutable(i2), objArr[0], objArr[1]), mutabilityOwnership);
         } else if (mutabilityOwnership != null && this.ownedBy == mutabilityOwnership) {
             this.buffer[i] = trieNode;
             return this;
@@ -191,7 +191,7 @@ public final class TrieNode<K, V> {
         if (objArr.length == 1) {
             return null;
         }
-        return new TrieNode<>(this.dataMap, i2 ^ this.nodeMap, TrieNodeKt.access$removeNodeAtIndex(objArr, i));
+        return new TrieNode<>(this.dataMap, this.nodeMap ^ i2, TrieNodeKt.access$removeNodeAtIndex(objArr, i));
     }
 
     private final TrieNode<K, V> mutableRemoveNodeAtIndex(int i, int i2, MutabilityOwnership mutabilityOwnership) {
@@ -204,7 +204,7 @@ public final class TrieNode<K, V> {
             this.nodeMap ^= i2;
             return this;
         }
-        return new TrieNode<>(this.dataMap, i2 ^ this.nodeMap, TrieNodeKt.access$removeNodeAtIndex(objArr, i), mutabilityOwnership);
+        return new TrieNode<>(this.dataMap, this.nodeMap ^ i2, TrieNodeKt.access$removeNodeAtIndex(objArr, i), mutabilityOwnership);
     }
 
     private final Object[] bufferMoveEntryToNode(int i, int i2, int i3, K k, V v, int i4, MutabilityOwnership mutabilityOwnership) {
@@ -223,7 +223,7 @@ public final class TrieNode<K, V> {
             this.nodeMap |= i2;
             return this;
         }
-        return new TrieNode<>(this.dataMap ^ i2, i2 | this.nodeMap, bufferMoveEntryToNode(i, i2, i3, k, v, i4, mutabilityOwnership), mutabilityOwnership);
+        return new TrieNode<>(this.dataMap ^ i2, this.nodeMap | i2, bufferMoveEntryToNode(i, i2, i3, k, v, i4, mutabilityOwnership), mutabilityOwnership);
     }
 
     private final TrieNode<K, V> makeNode(int i, K k, V v, int i2, K k2, V v2, int i3, MutabilityOwnership mutabilityOwnership) {
@@ -615,7 +615,6 @@ public final class TrieNode<K, V> {
     }
 
     public final TrieNode<K, V> mutablePut(int i, K k, V v, int i2, PersistentHashMapBuilder<K, V> mutator) {
-        PersistentHashMapBuilder<K, V> persistentHashMapBuilder;
         TrieNode<K, V> mutablePut;
         Intrinsics.checkNotNullParameter(mutator, "mutator");
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
@@ -632,12 +631,10 @@ public final class TrieNode<K, V> {
             TrieNode<K, V> nodeAtIndex$kotlinx_collections_immutable = nodeAtIndex$kotlinx_collections_immutable(nodeIndex$kotlinx_collections_immutable);
             if (i2 == 30) {
                 mutablePut = nodeAtIndex$kotlinx_collections_immutable.mutableCollisionPut(k, v, mutator);
-                persistentHashMapBuilder = mutator;
             } else {
-                persistentHashMapBuilder = mutator;
-                mutablePut = nodeAtIndex$kotlinx_collections_immutable.mutablePut(i, k, v, i2 + 5, persistentHashMapBuilder);
+                mutablePut = nodeAtIndex$kotlinx_collections_immutable.mutablePut(i, k, v, i2 + 5, mutator);
             }
-            return nodeAtIndex$kotlinx_collections_immutable == mutablePut ? this : updateNodeAtIndex(nodeIndex$kotlinx_collections_immutable, indexSegment, mutablePut, persistentHashMapBuilder.getOwnership$kotlinx_collections_immutable());
+            return nodeAtIndex$kotlinx_collections_immutable == mutablePut ? this : updateNodeAtIndex(nodeIndex$kotlinx_collections_immutable, indexSegment, mutablePut, mutator.getOwnership$kotlinx_collections_immutable());
         } else {
             mutator.setSize(mutator.size() + 1);
             return mutableInsertEntryAt(indexSegment, k, v, mutator.getOwnership$kotlinx_collections_immutable());
@@ -649,9 +646,7 @@ public final class TrieNode<K, V> {
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
         if (hasEntryAt$kotlinx_collections_immutable(indexSegment)) {
             int entryKeyIndex$kotlinx_collections_immutable = entryKeyIndex$kotlinx_collections_immutable(indexSegment);
-            if (Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$kotlinx_collections_immutable))) {
-                return removeEntryAtIndex(entryKeyIndex$kotlinx_collections_immutable, indexSegment);
-            }
+            return Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$kotlinx_collections_immutable)) ? removeEntryAtIndex(entryKeyIndex$kotlinx_collections_immutable, indexSegment) : this;
         } else if (hasNodeAt(indexSegment)) {
             int nodeIndex$kotlinx_collections_immutable = nodeIndex$kotlinx_collections_immutable(indexSegment);
             TrieNode<K, V> nodeAtIndex$kotlinx_collections_immutable = nodeAtIndex$kotlinx_collections_immutable(nodeIndex$kotlinx_collections_immutable);
@@ -661,8 +656,9 @@ public final class TrieNode<K, V> {
                 remove = nodeAtIndex$kotlinx_collections_immutable.remove(i, k, i2 + 5);
             }
             return replaceNode(nodeAtIndex$kotlinx_collections_immutable, remove, nodeIndex$kotlinx_collections_immutable, indexSegment);
+        } else {
+            return this;
         }
-        return this;
     }
 
     private final TrieNode<K, V> replaceNode(TrieNode<K, V> trieNode, TrieNode<K, V> trieNode2, int i, int i2) {
@@ -678,9 +674,7 @@ public final class TrieNode<K, V> {
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
         if (hasEntryAt$kotlinx_collections_immutable(indexSegment)) {
             int entryKeyIndex$kotlinx_collections_immutable = entryKeyIndex$kotlinx_collections_immutable(indexSegment);
-            if (Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$kotlinx_collections_immutable))) {
-                return mutableRemoveEntryAtIndex(entryKeyIndex$kotlinx_collections_immutable, indexSegment, mutator);
-            }
+            return Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$kotlinx_collections_immutable)) ? mutableRemoveEntryAtIndex(entryKeyIndex$kotlinx_collections_immutable, indexSegment, mutator) : this;
         } else if (hasNodeAt(indexSegment)) {
             int nodeIndex$kotlinx_collections_immutable = nodeIndex$kotlinx_collections_immutable(indexSegment);
             TrieNode<K, V> nodeAtIndex$kotlinx_collections_immutable = nodeAtIndex$kotlinx_collections_immutable(nodeIndex$kotlinx_collections_immutable);
@@ -690,8 +684,9 @@ public final class TrieNode<K, V> {
                 mutableRemove = nodeAtIndex$kotlinx_collections_immutable.mutableRemove(i, k, i2 + 5, mutator);
             }
             return mutableReplaceNode(mutableRemove, nodeIndex$kotlinx_collections_immutable, indexSegment, mutator.getOwnership$kotlinx_collections_immutable());
+        } else {
+            return this;
         }
-        return this;
     }
 
     private final TrieNode<K, V> mutableReplaceNode(TrieNode<K, V> trieNode, int i, int i2, MutabilityOwnership mutabilityOwnership) {
@@ -706,9 +701,7 @@ public final class TrieNode<K, V> {
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
         if (hasEntryAt$kotlinx_collections_immutable(indexSegment)) {
             int entryKeyIndex$kotlinx_collections_immutable = entryKeyIndex$kotlinx_collections_immutable(indexSegment);
-            if (Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$kotlinx_collections_immutable)) && Intrinsics.areEqual(v, valueAtKeyIndex(entryKeyIndex$kotlinx_collections_immutable))) {
-                return removeEntryAtIndex(entryKeyIndex$kotlinx_collections_immutable, indexSegment);
-            }
+            return (Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$kotlinx_collections_immutable)) && Intrinsics.areEqual(v, valueAtKeyIndex(entryKeyIndex$kotlinx_collections_immutable))) ? removeEntryAtIndex(entryKeyIndex$kotlinx_collections_immutable, indexSegment) : this;
         } else if (hasNodeAt(indexSegment)) {
             int nodeIndex$kotlinx_collections_immutable = nodeIndex$kotlinx_collections_immutable(indexSegment);
             TrieNode<K, V> nodeAtIndex$kotlinx_collections_immutable = nodeAtIndex$kotlinx_collections_immutable(nodeIndex$kotlinx_collections_immutable);
@@ -718,8 +711,9 @@ public final class TrieNode<K, V> {
                 remove = nodeAtIndex$kotlinx_collections_immutable.remove(i, k, v, i2 + 5);
             }
             return replaceNode(nodeAtIndex$kotlinx_collections_immutable, remove, nodeIndex$kotlinx_collections_immutable, indexSegment);
+        } else {
+            return this;
         }
-        return this;
     }
 
     public final TrieNode<K, V> mutableRemove(int i, K k, V v, int i2, PersistentHashMapBuilder<K, V> mutator) {
@@ -729,9 +723,7 @@ public final class TrieNode<K, V> {
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
         if (hasEntryAt$kotlinx_collections_immutable(indexSegment)) {
             int entryKeyIndex$kotlinx_collections_immutable = entryKeyIndex$kotlinx_collections_immutable(indexSegment);
-            if (Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$kotlinx_collections_immutable)) && Intrinsics.areEqual(v, valueAtKeyIndex(entryKeyIndex$kotlinx_collections_immutable))) {
-                return mutableRemoveEntryAtIndex(entryKeyIndex$kotlinx_collections_immutable, indexSegment, mutator);
-            }
+            return (Intrinsics.areEqual(k, keyAtIndex(entryKeyIndex$kotlinx_collections_immutable)) && Intrinsics.areEqual(v, valueAtKeyIndex(entryKeyIndex$kotlinx_collections_immutable))) ? mutableRemoveEntryAtIndex(entryKeyIndex$kotlinx_collections_immutable, indexSegment, mutator) : this;
         } else if (hasNodeAt(indexSegment)) {
             int nodeIndex$kotlinx_collections_immutable = nodeIndex$kotlinx_collections_immutable(indexSegment);
             TrieNode<K, V> nodeAtIndex$kotlinx_collections_immutable = nodeAtIndex$kotlinx_collections_immutable(nodeIndex$kotlinx_collections_immutable);
@@ -743,8 +735,9 @@ public final class TrieNode<K, V> {
                 mutableRemove = nodeAtIndex$kotlinx_collections_immutable.mutableRemove(i, k, v, i2 + 5, persistentHashMapBuilder);
             }
             return mutableReplaceNode(mutableRemove, nodeIndex$kotlinx_collections_immutable, indexSegment, persistentHashMapBuilder.getOwnership$kotlinx_collections_immutable());
+        } else {
+            return this;
         }
-        return this;
     }
 
     public final <K1, V1> boolean equalsWith$kotlinx_collections_immutable(TrieNode<K1, V1> that, Function2<? super V, ? super V1, Boolean> equalityComparator) {

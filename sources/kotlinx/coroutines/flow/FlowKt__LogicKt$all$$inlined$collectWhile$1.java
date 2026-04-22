@@ -46,9 +46,9 @@ public final class FlowKt__LogicKt$all$$inlined$collectWhile$1<T> implements Flo
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0058  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0051  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x005a  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -56,7 +56,6 @@ public final class FlowKt__LogicKt$all$$inlined$collectWhile$1<T> implements Flo
     public Object emit(T t, Continuation<? super Unit> continuation) {
         AnonymousClass1 anonymousClass1;
         int i;
-        FlowKt__LogicKt$all$$inlined$collectWhile$1<T> flowKt__LogicKt$all$$inlined$collectWhile$1;
         boolean booleanValue;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
@@ -74,19 +73,18 @@ public final class FlowKt__LogicKt$all$$inlined$collectWhile$1<T> implements Flo
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    flowKt__LogicKt$all$$inlined$collectWhile$1 = this;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    flowKt__LogicKt$all$$inlined$collectWhile$1 = (FlowKt__LogicKt$all$$inlined$collectWhile$1) anonymousClass1.L$0;
+                    this = (FlowKt__LogicKt$all$$inlined$collectWhile$1) anonymousClass1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 booleanValue = ((Boolean) obj).booleanValue();
                 if (!booleanValue) {
-                    flowKt__LogicKt$all$$inlined$collectWhile$1.$foundCounterExample$inlined.element = true;
+                    this.$foundCounterExample$inlined.element = true;
                 }
                 if (booleanValue) {
-                    throw new AbortFlowException(flowKt__LogicKt$all$$inlined$collectWhile$1);
+                    throw new AbortFlowException(this);
                 }
                 return Unit.INSTANCE;
             }

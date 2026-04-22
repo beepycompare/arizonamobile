@@ -124,11 +124,10 @@ public final class AnimatedMeasurePolicy implements MeasurePolicy {
                     Measurable measurable2 = list.get(i2);
                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable2), Constants.ScionAnalytics.PARAM_LABEL)) {
                         Placeable mo6216measureBRTryo02 = measurable2.mo6216measureBRTryo0(m7498copyZbe2FdA$default);
-                        float f = 2;
-                        int width = mo6216measureBRTryo0.getWidth() + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.topIconIndicatorHorizontalPadding * f));
-                        int height = mo6216measureBRTryo0.getHeight() + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.topIconIndicatorVerticalPadding * f));
-                        int width2 = mo6216measureBRTryo0.getWidth() + mo6216measureBRTryo02.getWidth() + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.startIconToLabelHorizontalPadding + Dp.m7555constructorimpl(this.startIconIndicatorHorizontalPadding * f)));
-                        int max = Math.max(mo6216measureBRTryo0.getHeight(), mo6216measureBRTryo02.getHeight()) + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.startIconIndicatorVerticalPadding * f));
+                        int width = mo6216measureBRTryo0.getWidth() + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.topIconIndicatorHorizontalPadding * 2.0f));
+                        int height = mo6216measureBRTryo0.getHeight() + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.topIconIndicatorVerticalPadding * 2.0f));
+                        int width2 = mo6216measureBRTryo0.getWidth() + mo6216measureBRTryo02.getWidth() + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.startIconToLabelHorizontalPadding + Dp.m7555constructorimpl(this.startIconIndicatorHorizontalPadding * 2.0f)));
+                        int max = Math.max(mo6216measureBRTryo0.getHeight(), mo6216measureBRTryo02.getHeight()) + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.startIconIndicatorVerticalPadding * 2.0f));
                         int lerp = MathHelpersKt.lerp(width, width2, floatValue2);
                         int roundToInt = MathKt.roundToInt(lerp * floatValue);
                         int lerp2 = MathHelpersKt.lerp(height, max, floatValue2);
@@ -136,37 +135,41 @@ public final class AnimatedMeasurePolicy implements MeasurePolicy {
                         int i3 = 0;
                         while (i3 < size3) {
                             Measurable measurable3 = list.get(i3);
-                            int i4 = size3;
+                            List<? extends Measurable> list3 = list2;
                             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable3), "indicatorRipple")) {
                                 Placeable mo6216measureBRTryo03 = measurable3.mo6216measureBRTryo0(ConstraintsKt.m7523constrainN9IONVI(m7498copyZbe2FdA$default, Constraints.Companion.m7518fixedJhjzzOo(lerp, lerp2)));
-                                int size4 = list2.size();
-                                int i5 = 0;
-                                while (i5 < size4) {
-                                    Measurable measurable4 = list.get(i5);
+                                int size4 = list3.size();
+                                int i4 = 0;
+                                while (i4 < size4) {
+                                    Measurable measurable4 = list.get(i4);
                                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable4), "indicator")) {
                                         Placeable mo6216measureBRTryo04 = measurable4.mo6216measureBRTryo0(ConstraintsKt.m7523constrainN9IONVI(m7498copyZbe2FdA$default, Constraints.Companion.m7518fixedJhjzzOo(roundToInt, lerp2)));
-                                        m2320placeAnimatedLabelAndIcon2QYhCQ8 = NavigationItemKt.m2320placeAnimatedLabelAndIcon2QYhCQ8(measureScope, this.iconPosition, this.iconPositionProgress, mo6216measureBRTryo02, mo6216measureBRTryo0, mo6216measureBRTryo03, mo6216measureBRTryo04, width, m7498copyZbe2FdA$default, this.topIconIndicatorToLabelVerticalPadding, this.topIconIndicatorVerticalPadding, this.topIconIndicatorHorizontalPadding, this.startIconIndicatorHorizontalPadding, this.startIconIndicatorVerticalPadding, this.startIconToLabelHorizontalPadding, this.itemHorizontalPadding);
+                                        Placeable placeable = mo6216measureBRTryo0;
+                                        Placeable placeable2 = mo6216measureBRTryo03;
+                                        m2320placeAnimatedLabelAndIcon2QYhCQ8 = NavigationItemKt.m2320placeAnimatedLabelAndIcon2QYhCQ8(measureScope, this.iconPosition, this.iconPositionProgress, mo6216measureBRTryo02, placeable, placeable2, mo6216measureBRTryo04, width, m7498copyZbe2FdA$default, this.topIconIndicatorToLabelVerticalPadding, this.topIconIndicatorVerticalPadding, this.topIconIndicatorHorizontalPadding, this.startIconIndicatorHorizontalPadding, this.startIconIndicatorVerticalPadding, this.startIconToLabelHorizontalPadding, this.itemHorizontalPadding);
                                         return m2320placeAnimatedLabelAndIcon2QYhCQ8;
                                     }
-                                    i5++;
-                                    mo6216measureBRTryo02 = mo6216measureBRTryo02;
-                                    mo6216measureBRTryo03 = mo6216measureBRTryo03;
+                                    int i5 = width;
+                                    Placeable placeable3 = mo6216measureBRTryo03;
+                                    i4++;
                                     mo6216measureBRTryo0 = mo6216measureBRTryo0;
+                                    mo6216measureBRTryo03 = placeable3;
+                                    width = i5;
+                                    mo6216measureBRTryo02 = mo6216measureBRTryo02;
                                 }
                                 ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
                                 throw new KotlinNothingValueException();
                             }
                             i3++;
-                            size3 = i4;
-                            list2 = list2;
+                            list2 = list3;
                             mo6216measureBRTryo02 = mo6216measureBRTryo02;
+                            mo6216measureBRTryo0 = mo6216measureBRTryo0;
                         }
                         ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
                         throw new KotlinNothingValueException();
                     }
                     i2++;
                     measureScope2 = measureScope;
-                    list2 = list2;
                 }
                 ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
                 throw new KotlinNothingValueException();
@@ -192,10 +195,9 @@ public final class AnimatedMeasurePolicy implements MeasurePolicy {
                     if (Intrinsics.areEqual(LayoutUtilKt.getLayoutId(intrinsicMeasurable2), Constants.ScionAnalytics.PARAM_LABEL)) {
                         int maxIntrinsicWidth2 = intrinsicMeasurable2.maxIntrinsicWidth(i);
                         if (NavigationItemIconPosition.m2305equalsimpl0(this.iconPosition, NavigationItemIconPosition.Companion.m2310getTopxw1Ddg())) {
-                            float f = 2;
-                            return Math.max(maxIntrinsicWidth2, maxIntrinsicWidth + intrinsicMeasureScope.mo399roundToPx0680j_4(Dp.m7555constructorimpl(Dp.m7555constructorimpl(this.topIconIndicatorHorizontalPadding * f) + Dp.m7555constructorimpl(this.itemHorizontalPadding * f))));
+                            return Math.max(maxIntrinsicWidth2, maxIntrinsicWidth + intrinsicMeasureScope.mo399roundToPx0680j_4(Dp.m7555constructorimpl(Dp.m7555constructorimpl(this.topIconIndicatorHorizontalPadding * 2.0f) + Dp.m7555constructorimpl(this.itemHorizontalPadding * 2.0f))));
                         }
-                        return maxIntrinsicWidth + maxIntrinsicWidth2 + intrinsicMeasureScope.mo399roundToPx0680j_4(Dp.m7555constructorimpl(Dp.m7555constructorimpl(Dp.m7555constructorimpl(this.startIconIndicatorHorizontalPadding * 2) + this.startIconToLabelHorizontalPadding) + this.itemHorizontalPadding));
+                        return maxIntrinsicWidth + maxIntrinsicWidth2 + intrinsicMeasureScope.mo399roundToPx0680j_4(Dp.m7555constructorimpl(Dp.m7555constructorimpl(Dp.m7555constructorimpl(this.startIconIndicatorHorizontalPadding * 2.0f) + this.startIconToLabelHorizontalPadding) + this.itemHorizontalPadding));
                     }
                 }
                 ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");

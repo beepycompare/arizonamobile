@@ -83,7 +83,7 @@ public final class Listener implements AccessibilityManager.AccessibilityStateCh
         if (r0.getSwitchAccessEnabled() == true) goto L7;
      */
     /* JADX WARN: Code restructure failed: missing block: B:21:0x002d, code lost:
-        if (r0.getVoiceAccessEnabled() == true) goto L7;
+        if (r2.getVoiceAccessEnabled() == true) goto L7;
      */
     /* JADX WARN: Code restructure failed: missing block: B:7:0x000f, code lost:
         if (r0.getEnabled() == true) goto L7;

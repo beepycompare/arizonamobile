@@ -75,9 +75,9 @@ public final class PredictiveBackAnimation<C, T> implements StackAnimation<C, T>
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r17v0, types: [androidx.compose.runtime.Composer] */
-    /* JADX WARN: Type inference failed for: r5v16 */
-    /* JADX WARN: Type inference failed for: r8v10 */
+    /* JADX WARN: Type inference failed for: r18v0, types: [androidx.compose.runtime.Composer] */
+    /* JADX WARN: Type inference failed for: r6v16 */
+    /* JADX WARN: Type inference failed for: r9v10 */
     @Override // com.arkivanov.decompose.extensions.compose.stack.animation.StackAnimation
     public void invoke(ChildStack<? extends C, ? extends T> stack, Modifier modifier, Function3<? super Child.Created<? extends C, ? extends T>, ? super Composer, ? super Integer, Unit> content, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(stack, "stack");

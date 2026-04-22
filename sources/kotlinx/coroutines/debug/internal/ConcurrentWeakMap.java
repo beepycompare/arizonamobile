@@ -294,10 +294,10 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
             if ((r6 instanceof kotlinx.coroutines.debug.internal.Marked) == false) goto L20;
          */
         /* JADX WARN: Code restructure failed: missing block: B:28:0x006c, code lost:
-            r6 = kotlinx.coroutines.debug.internal.ConcurrentWeakMapKt.REHASH;
+            r5 = kotlinx.coroutines.debug.internal.ConcurrentWeakMapKt.REHASH;
          */
         /* JADX WARN: Code restructure failed: missing block: B:29:0x0070, code lost:
-            return r6;
+            return r5;
          */
         /* JADX WARN: Code restructure failed: missing block: B:31:0x0079, code lost:
             if (com.google.common.util.concurrent.Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0.m(getValues(), r0, r6, r7) == false) goto L18;

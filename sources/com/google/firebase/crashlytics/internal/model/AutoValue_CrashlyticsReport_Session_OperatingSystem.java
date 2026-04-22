@@ -53,7 +53,7 @@ final class AutoValue_CrashlyticsReport_Session_OperatingSystem extends Crashlyt
     }
 
     public int hashCode() {
-        return ((((((this.platform ^ 1000003) * 1000003) ^ this.version.hashCode()) * 1000003) ^ this.buildVersion.hashCode()) * 1000003) ^ (this.jailbroken ? 1231 : 1237);
+        return (this.jailbroken ? 1231 : 1237) ^ ((((((this.platform ^ 1000003) * 1000003) ^ this.version.hashCode()) * 1000003) ^ this.buildVersion.hashCode()) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

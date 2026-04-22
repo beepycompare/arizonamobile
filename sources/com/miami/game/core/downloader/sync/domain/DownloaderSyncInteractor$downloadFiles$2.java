@@ -73,8 +73,8 @@ public final class DownloaderSyncInteractor$downloadFiles$2 extends SuspendLambd
             if (downloadFiles == coroutine_suspended) {
                 return coroutine_suspended;
             }
-            downloaderSyncInteractor = downloaderSyncInteractor3;
             obj = downloadFiles;
+            downloaderSyncInteractor = downloaderSyncInteractor3;
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {

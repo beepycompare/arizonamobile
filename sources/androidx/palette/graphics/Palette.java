@@ -496,7 +496,7 @@ public final class Palette {
             return palette;
         }
 
-        /* JADX WARN: Type inference failed for: r0v1, types: [androidx.palette.graphics.Palette$Builder$1] */
+        /* JADX WARN: Type inference failed for: r0v0, types: [androidx.palette.graphics.Palette$Builder$1] */
         public AsyncTask<Bitmap, Void, Palette> generate(final PaletteAsyncListener paletteAsyncListener) {
             if (paletteAsyncListener == null) {
                 throw new IllegalArgumentException("listener can not be null");

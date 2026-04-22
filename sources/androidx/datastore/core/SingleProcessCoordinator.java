@@ -37,97 +37,87 @@ public final class SingleProcessCoordinator implements InterProcessCoordinator {
         return this.updateNotifications;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0059, code lost:
-        if (r9.lock(null, r0) == r1) goto L26;
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0057, code lost:
+        if (r8 == r1) goto L22;
      */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0064, code lost:
+        if (r8 != r1) goto L13;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0066, code lost:
+        return r1;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x004a  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0048  */
+    /* JADX WARN: Type inference failed for: r6v0, types: [androidx.datastore.core.SingleProcessCoordinator] */
+    /* JADX WARN: Type inference failed for: r6v1, types: [kotlinx.coroutines.sync.Mutex] */
+    /* JADX WARN: Type inference failed for: r6v10 */
+    /* JADX WARN: Type inference failed for: r6v11 */
+    /* JADX WARN: Type inference failed for: r6v4, types: [kotlinx.coroutines.sync.Mutex] */
     @Override // androidx.datastore.core.InterProcessCoordinator
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public <T> Object lock(Function1<? super Continuation<? super T>, ? extends Object> function1, Continuation<? super T> continuation) {
         SingleProcessCoordinator$lock$1 singleProcessCoordinator$lock$1;
-        Object coroutine_suspended;
         int i;
         Mutex mutex;
-        Throwable th;
-        Mutex mutex2;
-        Object invoke;
         try {
             if (continuation instanceof SingleProcessCoordinator$lock$1) {
                 singleProcessCoordinator$lock$1 = (SingleProcessCoordinator$lock$1) continuation;
                 if ((singleProcessCoordinator$lock$1.label & Integer.MIN_VALUE) != 0) {
                     singleProcessCoordinator$lock$1.label -= Integer.MIN_VALUE;
                     Object obj = singleProcessCoordinator$lock$1.result;
-                    coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = singleProcessCoordinator$lock$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        mutex = this.mutex;
+                        Mutex mutex2 = this.mutex;
                         singleProcessCoordinator$lock$1.L$0 = function1;
-                        singleProcessCoordinator$lock$1.L$1 = mutex;
+                        singleProcessCoordinator$lock$1.L$1 = mutex2;
                         singleProcessCoordinator$lock$1.label = 1;
+                        Object lock = mutex2.lock(null, singleProcessCoordinator$lock$1);
+                        mutex = mutex2;
                     } else if (i != 1) {
                         if (i == 2) {
-                            mutex2 = (Mutex) singleProcessCoordinator$lock$1.L$0;
-                            try {
-                                ResultKt.throwOnFailure(obj);
-                                mutex2.unlock(null);
-                                return obj;
-                            } catch (Throwable th2) {
-                                th = th2;
-                                mutex2.unlock(null);
-                                throw th;
-                            }
+                            Mutex mutex3 = (Mutex) singleProcessCoordinator$lock$1.L$0;
+                            ResultKt.throwOnFailure(obj);
+                            this = mutex3;
+                            return obj;
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
+                        function1 = (Function1) singleProcessCoordinator$lock$1.L$0;
                         ResultKt.throwOnFailure(obj);
                         mutex = (Mutex) singleProcessCoordinator$lock$1.L$1;
-                        function1 = (Function1) singleProcessCoordinator$lock$1.L$0;
                     }
                     singleProcessCoordinator$lock$1.L$0 = mutex;
                     singleProcessCoordinator$lock$1.L$1 = null;
                     singleProcessCoordinator$lock$1.label = 2;
-                    invoke = function1.invoke(singleProcessCoordinator$lock$1);
-                    if (invoke != coroutine_suspended) {
-                        Mutex mutex3 = mutex;
-                        obj = invoke;
-                        mutex2 = mutex3;
-                        mutex2.unlock(null);
-                        return obj;
-                    }
-                    return coroutine_suspended;
+                    obj = function1.invoke(singleProcessCoordinator$lock$1);
+                    this = mutex;
                 }
+            }
+            if (i != 0) {
             }
             singleProcessCoordinator$lock$1.L$0 = mutex;
             singleProcessCoordinator$lock$1.L$1 = null;
             singleProcessCoordinator$lock$1.label = 2;
-            invoke = function1.invoke(singleProcessCoordinator$lock$1);
-            if (invoke != coroutine_suspended) {
-            }
-            return coroutine_suspended;
-        } catch (Throwable th3) {
-            Mutex mutex4 = mutex;
-            th = th3;
-            mutex2 = mutex4;
-            mutex2.unlock(null);
-            throw th;
+            obj = function1.invoke(singleProcessCoordinator$lock$1);
+            this = mutex;
+        } finally {
+            this.unlock(null);
         }
         singleProcessCoordinator$lock$1 = new SingleProcessCoordinator$lock$1(this, continuation);
         Object obj2 = singleProcessCoordinator$lock$1.result;
-        coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = singleProcessCoordinator$lock$1.label;
-        if (i != 0) {
-        }
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x003b  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x005a  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0064  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0066  */
     @Override // androidx.datastore.core.InterProcessCoordinator
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -136,8 +126,8 @@ public final class SingleProcessCoordinator implements InterProcessCoordinator {
         SingleProcessCoordinator$tryLock$1 singleProcessCoordinator$tryLock$1;
         int i;
         Mutex mutex;
-        Throwable th;
         boolean z;
+        Throwable th;
         if (continuation instanceof SingleProcessCoordinator$tryLock$1) {
             singleProcessCoordinator$tryLock$1 = (SingleProcessCoordinator$tryLock$1) continuation;
             if ((singleProcessCoordinator$tryLock$1.label & Integer.MIN_VALUE) != 0) {
@@ -159,12 +149,12 @@ public final class SingleProcessCoordinator implements InterProcessCoordinator {
                             return coroutine_suspended;
                         }
                         mutex = mutex2;
-                        obj = invoke;
                         z = tryLock;
+                        obj = invoke;
                     } catch (Throwable th2) {
                         mutex = mutex2;
-                        th = th2;
                         z = tryLock;
+                        th = th2;
                         if (z) {
                         }
                         throw th;

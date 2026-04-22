@@ -93,10 +93,10 @@ public final class TapGestureDetectorKt$waitForLongPress$2 extends RestrictedSus
     /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0053  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x00dd A[SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r0v2, types: [T, androidx.compose.foundation.gestures.LongPressResult$Canceled] */
-    /* JADX WARN: Type inference failed for: r0v3, types: [androidx.compose.foundation.gestures.LongPressResult$Success, T] */
-    /* JADX WARN: Type inference failed for: r0v4, types: [T, androidx.compose.foundation.gestures.LongPressResult$Canceled] */
-    /* JADX WARN: Type inference failed for: r1v2, types: [T, androidx.compose.foundation.gestures.LongPressResult$Released] */
+    /* JADX WARN: Type inference failed for: r0v1, types: [T, androidx.compose.foundation.gestures.LongPressResult$Released] */
+    /* JADX WARN: Type inference failed for: r14v11, types: [T, androidx.compose.foundation.gestures.LongPressResult$Canceled] */
+    /* JADX WARN: Type inference failed for: r14v12, types: [androidx.compose.foundation.gestures.LongPressResult$Success, T] */
+    /* JADX WARN: Type inference failed for: r14v19, types: [T, androidx.compose.foundation.gestures.LongPressResult$Canceled] */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:32:0x00ad -> B:34:0x00b0). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*

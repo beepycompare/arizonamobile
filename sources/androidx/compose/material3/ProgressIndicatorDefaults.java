@@ -181,7 +181,7 @@ public final class ProgressIndicatorDefaults {
     public final void m2359drawStopIndicatorEgI2THU(DrawScope drawScope, float f, long j, int i) {
         float min = Math.min(drawScope.mo405toPx0680j_4(f), Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L)));
         float f2 = drawScope.mo405toPx0680j_4(ProgressIndicatorKt.getStopIndicatorTrailingSpace());
-        float intBitsToFloat = (Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L)) - min) / 2;
+        float intBitsToFloat = (Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L)) - min) / 2.0f;
         float f3 = intBitsToFloat > f2 ? f2 : intBitsToFloat;
         if (drawScope.getLayoutDirection() != LayoutDirection.Rtl) {
             drawStopIndicator_EgI2THU$drawIndicator(drawScope, i, j, min, f3);

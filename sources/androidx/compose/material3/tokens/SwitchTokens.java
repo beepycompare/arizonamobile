@@ -7,16 +7,6 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class SwitchTokens {
     public static final int $stable = 0;
-    private static final float IconHandleHeight;
-    private static final float IconHandleWidth;
-    private static final float PressedHandleHeight;
-    private static final float PressedHandleWidth;
-    private static final float SelectedHandleHeight;
-    private static final float SelectedHandleWidth;
-    private static final float SelectedIconSize;
-    private static final float UnselectedHandleHeight;
-    private static final float UnselectedHandleWidth;
-    private static final float UnselectedIconSize;
     public static final SwitchTokens INSTANCE = new SwitchTokens();
     private static final ColorSchemeKeyTokens DisabledSelectedHandleColor = ColorSchemeKeyTokens.Surface;
     private static final float DisabledSelectedHandleOpacity = 1.0f;
@@ -32,58 +22,52 @@ public final class SwitchTokens {
     private static final ColorSchemeKeyTokens DisabledUnselectedTrackOutlineColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ShapeKeyTokens HandleShape = ShapeKeyTokens.CornerFull;
+    private static final float PressedHandleHeight = Dp.m7555constructorimpl(28.0f);
+    private static final float PressedHandleWidth = Dp.m7555constructorimpl(28.0f);
     private static final ColorSchemeKeyTokens SelectedFocusHandleColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final ColorSchemeKeyTokens SelectedFocusIconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens SelectedFocusTrackColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedHandleColor = ColorSchemeKeyTokens.OnPrimary;
+    private static final float SelectedHandleHeight = Dp.m7555constructorimpl(24.0f);
+    private static final float SelectedHandleWidth = Dp.m7555constructorimpl(24.0f);
     private static final ColorSchemeKeyTokens SelectedHoverHandleColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final ColorSchemeKeyTokens SelectedHoverIconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens SelectedHoverTrackColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedIconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
+    private static final float SelectedIconSize = Dp.m7555constructorimpl(16.0f);
     private static final ColorSchemeKeyTokens SelectedPressedHandleColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final ColorSchemeKeyTokens SelectedPressedIconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens SelectedPressedTrackColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedTrackColor = ColorSchemeKeyTokens.Primary;
     private static final ShapeKeyTokens StateLayerShape = ShapeKeyTokens.CornerFull;
-    private static final float StateLayerSize = Dp.m7555constructorimpl((float) 40.0d);
-    private static final float TrackHeight = Dp.m7555constructorimpl((float) 32.0d);
-    private static final float TrackOutlineWidth = Dp.m7555constructorimpl((float) 2.0d);
+    private static final float StateLayerSize = Dp.m7555constructorimpl(40.0f);
+    private static final float TrackHeight = Dp.m7555constructorimpl(32.0f);
+    private static final float TrackOutlineWidth = Dp.m7555constructorimpl(2.0f);
     private static final ShapeKeyTokens TrackShape = ShapeKeyTokens.CornerFull;
-    private static final float TrackWidth = Dp.m7555constructorimpl((float) 52.0d);
+    private static final float TrackWidth = Dp.m7555constructorimpl(52.0f);
     private static final ColorSchemeKeyTokens UnselectedFocusHandleColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedFocusIconColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedFocusTrackColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedFocusTrackOutlineColor = ColorSchemeKeyTokens.Outline;
     private static final ColorSchemeKeyTokens UnselectedHandleColor = ColorSchemeKeyTokens.Outline;
+    private static final float UnselectedHandleHeight = Dp.m7555constructorimpl(16.0f);
+    private static final float UnselectedHandleWidth = Dp.m7555constructorimpl(16.0f);
     private static final ColorSchemeKeyTokens UnselectedHoverHandleColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedHoverIconColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedHoverTrackColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedHoverTrackOutlineColor = ColorSchemeKeyTokens.Outline;
     private static final ColorSchemeKeyTokens UnselectedIconColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
+    private static final float UnselectedIconSize = Dp.m7555constructorimpl(16.0f);
     private static final ColorSchemeKeyTokens UnselectedPressedHandleColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedPressedIconColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedPressedTrackColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedPressedTrackOutlineColor = ColorSchemeKeyTokens.Outline;
     private static final ColorSchemeKeyTokens UnselectedTrackColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedTrackOutlineColor = ColorSchemeKeyTokens.Outline;
+    private static final float IconHandleHeight = Dp.m7555constructorimpl(24.0f);
+    private static final float IconHandleWidth = Dp.m7555constructorimpl(24.0f);
 
     private SwitchTokens() {
-    }
-
-    static {
-        float f = (float) 28.0d;
-        PressedHandleHeight = Dp.m7555constructorimpl(f);
-        PressedHandleWidth = Dp.m7555constructorimpl(f);
-        float f2 = (float) 24.0d;
-        SelectedHandleHeight = Dp.m7555constructorimpl(f2);
-        SelectedHandleWidth = Dp.m7555constructorimpl(f2);
-        float f3 = (float) 16.0d;
-        SelectedIconSize = Dp.m7555constructorimpl(f3);
-        UnselectedHandleHeight = Dp.m7555constructorimpl(f3);
-        UnselectedHandleWidth = Dp.m7555constructorimpl(f3);
-        UnselectedIconSize = Dp.m7555constructorimpl(f3);
-        IconHandleHeight = Dp.m7555constructorimpl(f2);
-        IconHandleWidth = Dp.m7555constructorimpl(f2);
     }
 
     public final ColorSchemeKeyTokens getDisabledSelectedHandleColor() {

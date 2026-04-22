@@ -8,7 +8,7 @@ import kotlin.Metadata;
 public final class AssistChipTokens {
     public static final int $stable = 0;
     public static final AssistChipTokens INSTANCE = new AssistChipTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 32.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(32.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerSmall;
     private static final ColorSchemeKeyTokens DisabledLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledLabelTextOpacity = 0.38f;
@@ -27,7 +27,7 @@ public final class AssistChipTokens {
     private static final float FlatDisabledOutlineOpacity = 0.12f;
     private static final ColorSchemeKeyTokens FlatFocusOutlineColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FlatOutlineColor = ColorSchemeKeyTokens.OutlineVariant;
-    private static final float FlatOutlineWidth = Dp.m7555constructorimpl((float) 1.0d);
+    private static final float FlatOutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ColorSchemeKeyTokens FocusLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens HoverLabelTextColor = ColorSchemeKeyTokens.OnSurface;
@@ -40,7 +40,7 @@ public final class AssistChipTokens {
     private static final ColorSchemeKeyTokens FocusIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens HoverIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.Primary;
-    private static final float IconSize = Dp.m7555constructorimpl((float) 18.0d);
+    private static final float IconSize = Dp.m7555constructorimpl(18.0f);
     private static final ColorSchemeKeyTokens PressedIconColor = ColorSchemeKeyTokens.Primary;
 
     private AssistChipTokens() {

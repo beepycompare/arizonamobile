@@ -4537,7 +4537,7 @@ public final class ChipKt {
             composer2 = startRestartGroup;
             int i6 = i3;
             final Function2<? super Composer, ? super Integer, Unit> function24 = obj;
-            SurfaceKt.m2572Surfaceo_FOJdg(function0, semantics$default, z, shape, m1808containerColorvNxB06k$material3, 0L, 0.0f, state != null ? state.getValue().m7569unboximpl() : Dp.m7555constructorimpl(0), borderStroke, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-70915349, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ChipKt$Chip$2
+            SurfaceKt.m2572Surfaceo_FOJdg(function0, semantics$default, z, shape, m1808containerColorvNxB06k$material3, 0L, 0.0f, state != null ? state.getValue().m7569unboximpl() : Dp.m7555constructorimpl(0.0f), borderStroke, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-70915349, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ChipKt$Chip$2
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                     invoke(composer3, num.intValue());
@@ -4693,7 +4693,7 @@ public final class ChipKt {
                 startRestartGroup.endReplaceGroup();
             }
             composer2 = startRestartGroup;
-            SurfaceKt.m2570Surfaced85dljk(z, function0, semantics$default, z2, shape, m2465containerColorWaAFU9c$material3, 0L, 0.0f, shadowElevation$material3 != null ? shadowElevation$material3.getValue().m7569unboximpl() : Dp.m7555constructorimpl(0), borderStroke, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-990050154, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ChipKt$SelectableChip$2
+            SurfaceKt.m2570Surfaced85dljk(z, function0, semantics$default, z2, shape, m2465containerColorWaAFU9c$material3, 0L, 0.0f, shadowElevation$material3 != null ? shadowElevation$material3.getValue().m7569unboximpl() : Dp.m7555constructorimpl(0.0f), borderStroke, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-990050154, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ChipKt$SelectableChip$2
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                     invoke(composer3, num.intValue());
@@ -4816,8 +4816,8 @@ public final class ChipKt {
                 }
 
                 public final void invoke(Composer composer2, int i4) {
-                    int i5;
                     String str;
+                    int i5;
                     Function2 m1835leadingContentXOJAsU;
                     float f2;
                     Function2 m1836trailingContentRPmYEkk;
@@ -4872,7 +4872,7 @@ public final class ChipKt {
                     if (function28 == null && function29 == null) {
                         composer2.startReplaceGroup(-410471693);
                         composer2.endReplaceGroup();
-                        str = "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo";
+                        str = "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh";
                         i5 = -692256719;
                     } else {
                         composer2.startReplaceGroup(-410987750);
@@ -4908,8 +4908,8 @@ public final class ChipKt {
                         ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer2, -1737582560, "C2066@100955L53:Chip.kt#uh7d8r");
+                        str = "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh";
                         i5 = -692256719;
-                        str = "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo";
                         m1835leadingContentXOJAsU = ChipKt.m1835leadingContentXOJAsU(function28, function29, j7, composer2, 0);
                         if (m1835leadingContentXOJAsU != null) {
                             composer2.startReplaceGroup(-1737425918);
@@ -4930,12 +4930,12 @@ public final class ChipKt {
                     }
                     Modifier layoutId2 = LayoutIdKt.layoutId(Modifier.Companion, Constants.ScionAnalytics.PARAM_LABEL);
                     f2 = ChipKt.HorizontalElementsPadding;
-                    Modifier m819paddingVpY3zN4 = PaddingKt.m819paddingVpY3zN4(layoutId2, f2, Dp.m7555constructorimpl(0));
+                    Modifier m819paddingVpY3zN4 = PaddingKt.m819paddingVpY3zN4(layoutId2, f2, Dp.m7555constructorimpl(0.0f));
                     Arrangement.Horizontal start = Arrangement.INSTANCE.getStart();
                     Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                     ComposerKt.sourceInformationMarkerStart(composer2, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
                     MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(start, centerVertically, composer2, 54);
-                    ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
+                    ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, str);
                     int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                     CompositionLocalMap currentCompositionLocalMap3 = composer2.getCurrentCompositionLocalMap();
                     Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer2, m819paddingVpY3zN4);
@@ -4974,9 +4974,9 @@ public final class ChipKt {
                         ComposerKt.sourceInformation(composer2, "2081@101620L464");
                         Modifier layoutId3 = LayoutIdKt.layoutId(Modifier.Companion, "trailingIcon");
                         Alignment center2 = Alignment.Companion.getCenter();
-                        ComposerKt.sourceInformationMarkerStart(composer2, 733328855, str);
+                        ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                         MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(center2, false);
-                        ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
+                        ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, str);
                         int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                         CompositionLocalMap currentCompositionLocalMap4 = composer2.getCurrentCompositionLocalMap();
                         Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer2, layoutId3);
@@ -5524,11 +5524,11 @@ public final class ChipKt {
     }
 
     private static final PaddingValues inputChipPadding(boolean z, boolean z2, boolean z3) {
-        return PaddingKt.m815PaddingValuesa9UjIt4$default(Dp.m7555constructorimpl((z || !z2) ? 4 : 8), 0.0f, Dp.m7555constructorimpl(z3 ? 8 : 4), 0.0f, 10, null);
+        return PaddingKt.m815PaddingValuesa9UjIt4$default((z || !z2) ? Dp.m7555constructorimpl(4.0f) : Dp.m7555constructorimpl(8.0f), 0.0f, z3 ? Dp.m7555constructorimpl(8.0f) : Dp.m7555constructorimpl(4.0f), 0.0f, 10, null);
     }
 
     static {
-        float m7555constructorimpl = Dp.m7555constructorimpl(8);
+        float m7555constructorimpl = Dp.m7555constructorimpl(8.0f);
         HorizontalElementsPadding = m7555constructorimpl;
         AssistChipPadding = PaddingKt.m813PaddingValuesYgX7TsA$default(m7555constructorimpl, 0.0f, 2, null);
         FilterChipPadding = PaddingKt.m813PaddingValuesYgX7TsA$default(m7555constructorimpl, 0.0f, 2, null);

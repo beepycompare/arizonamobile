@@ -57,7 +57,7 @@ public class FileLoader<Data> implements ModelLoader<File, Data> {
             this.opener = fileOpener;
         }
 
-        /* JADX WARN: Type inference failed for: r3v3, types: [java.lang.Object, Data] */
+        /* JADX WARN: Type inference failed for: r2v5, types: [java.lang.Object, Data] */
         @Override // com.bumptech.glide.load.data.DataFetcher
         public void loadData(Priority priority, DataFetcher.DataCallback<? super Data> dataCallback) {
             try {

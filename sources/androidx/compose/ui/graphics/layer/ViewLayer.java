@@ -36,7 +36,7 @@ public final class ViewLayer extends View {
     public static final int $stable = 8;
     private static final ViewOutlineProvider LayerOutlineProvider = new ViewOutlineProvider() { // from class: androidx.compose.ui.graphics.layer.ViewLayer$Companion$LayerOutlineProvider$1
         /* JADX WARN: Code restructure failed: missing block: B:4:0x0004, code lost:
-            r2 = ((androidx.compose.ui.graphics.layer.ViewLayer) r2).layerOutline;
+            r0 = ((androidx.compose.ui.graphics.layer.ViewLayer) r1).layerOutline;
          */
         @Override // android.view.ViewOutlineProvider
         /*

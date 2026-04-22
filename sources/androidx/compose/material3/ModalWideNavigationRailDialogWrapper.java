@@ -74,7 +74,7 @@ public final class ModalWideNavigationRailDialogWrapper extends ComponentDialog 
         this.onDismissRequest = function0;
         this.properties = modalWideNavigationRailProperties;
         this.composeView = view;
-        float m7555constructorimpl = Dp.m7555constructorimpl(8);
+        float m7555constructorimpl = Dp.m7555constructorimpl(8.0f);
         this.maxSupportedElevation = m7555constructorimpl;
         Window window = getWindow();
         if (window == null) {

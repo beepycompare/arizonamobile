@@ -60,7 +60,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Bina
         long j2 = this.size;
         int hashCode = (((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.name.hashCode()) * 1000003;
         String str = this.uuid;
-        return hashCode ^ (str == null ? 0 : str.hashCode());
+        return (str == null ? 0 : str.hashCode()) ^ hashCode;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

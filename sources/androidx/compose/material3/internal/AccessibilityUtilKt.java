@@ -88,10 +88,9 @@ public final class AccessibilityUtilKt {
     }
 
     static {
-        float f = 10;
-        float m7555constructorimpl = Dp.m7555constructorimpl(f);
+        float m7555constructorimpl = Dp.m7555constructorimpl(10.0f);
         HorizontalSemanticsBoundsPadding = m7555constructorimpl;
-        float m7555constructorimpl2 = Dp.m7555constructorimpl(f);
+        float m7555constructorimpl2 = Dp.m7555constructorimpl(10.0f);
         VerticalSemanticsBoundsPadding = m7555constructorimpl2;
         IncreaseHorizontalSemanticsBounds = PaddingKt.m820paddingVpY3zN4$default(SemanticsModifierKt.semantics(LayoutModifierKt.layout(Modifier.Companion, new Function3() { // from class: androidx.compose.material3.internal.AccessibilityUtilKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3

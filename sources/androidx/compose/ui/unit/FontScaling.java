@@ -47,7 +47,6 @@ public interface FontScaling {
             return Dp.m7555constructorimpl(TextUnit.m7749getValueimpl(j) * getFontScale());
         }
         FontScaleConverter forScale = FontScaleConverterFactory.INSTANCE.forScale(getFontScale());
-        float m7749getValueimpl = TextUnit.m7749getValueimpl(j);
-        return forScale == null ? Dp.m7555constructorimpl(m7749getValueimpl * getFontScale()) : Dp.m7555constructorimpl(forScale.convertSpToDp(m7749getValueimpl));
+        return forScale == null ? Dp.m7555constructorimpl(TextUnit.m7749getValueimpl(j) * getFontScale()) : Dp.m7555constructorimpl(forScale.convertSpToDp(TextUnit.m7749getValueimpl(j)));
     }
 }

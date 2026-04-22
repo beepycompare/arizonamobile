@@ -40,9 +40,9 @@ public final class StylusHandwritingKt {
     }
 
     static {
-        float m7555constructorimpl = Dp.m7555constructorimpl(40);
+        float m7555constructorimpl = Dp.m7555constructorimpl(40.0f);
         HandwritingBoundsVerticalOffset = m7555constructorimpl;
-        float m7555constructorimpl2 = Dp.m7555constructorimpl(10);
+        float m7555constructorimpl2 = Dp.m7555constructorimpl(10.0f);
         HandwritingBoundsHorizontalOffset = m7555constructorimpl2;
         HandwritingBoundsExpansion = TouchBoundsExpansionKt.m6637DpTouchBoundsExpansiona9UjIt4(m7555constructorimpl2, m7555constructorimpl, m7555constructorimpl2, m7555constructorimpl);
     }

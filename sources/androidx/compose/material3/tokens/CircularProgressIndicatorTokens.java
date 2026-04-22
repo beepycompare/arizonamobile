@@ -7,14 +7,14 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class CircularProgressIndicatorTokens {
     public static final int $stable = 0;
-    private static final float ActiveThickness;
-    private static final float TrackActiveSpace;
-    private static final float TrackThickness;
     public static final CircularProgressIndicatorTokens INSTANCE = new CircularProgressIndicatorTokens();
-    private static final float ActiveWaveAmplitude = Dp.m7555constructorimpl((float) 1.6d);
-    private static final float ActiveWaveWavelength = Dp.m7555constructorimpl((float) 15.0d);
-    private static final float Size = Dp.m7555constructorimpl((float) 40.0d);
-    private static final float WaveSize = Dp.m7555constructorimpl((float) 48.0d);
+    private static final float ActiveThickness = Dp.m7555constructorimpl(4.0f);
+    private static final float ActiveWaveAmplitude = Dp.m7555constructorimpl(1.6f);
+    private static final float ActiveWaveWavelength = Dp.m7555constructorimpl(15.0f);
+    private static final float Size = Dp.m7555constructorimpl(40.0f);
+    private static final float TrackActiveSpace = Dp.m7555constructorimpl(4.0f);
+    private static final float TrackThickness = Dp.m7555constructorimpl(4.0f);
+    private static final float WaveSize = Dp.m7555constructorimpl(48.0f);
 
     private CircularProgressIndicatorTokens() {
     }
@@ -52,12 +52,5 @@ public final class CircularProgressIndicatorTokens {
     /* renamed from: getWaveSize-D9Ej5fM  reason: not valid java name */
     public final float m3208getWaveSizeD9Ej5fM() {
         return WaveSize;
-    }
-
-    static {
-        float f = (float) 4.0d;
-        ActiveThickness = Dp.m7555constructorimpl(f);
-        TrackActiveSpace = Dp.m7555constructorimpl(f);
-        TrackThickness = Dp.m7555constructorimpl(f);
     }
 }

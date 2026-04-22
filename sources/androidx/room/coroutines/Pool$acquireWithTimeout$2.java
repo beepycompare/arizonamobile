@@ -42,8 +42,8 @@ public final class Pool$acquireWithTimeout$2 extends SuspendLambda implements Fu
     /* JADX WARN: Multi-variable type inference failed */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Ref.ObjectRef<ConnectionWithLock> objectRef;
         T t;
+        Ref.ObjectRef<ConnectionWithLock> objectRef;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -55,8 +55,8 @@ public final class Pool$acquireWithTimeout$2 extends SuspendLambda implements Fu
             if (acquire == coroutine_suspended) {
                 return coroutine_suspended;
             }
-            objectRef = objectRef2;
             t = acquire;
+            objectRef = objectRef2;
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {

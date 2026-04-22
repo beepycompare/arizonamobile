@@ -101,16 +101,16 @@ public final class SeekableTransitionState$animateTo$2 extends SuspendLambda imp
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:27:0x00b1, code lost:
-            if (r2 == r0) goto L18;
+            if (r2 == r1) goto L18;
          */
         /* JADX WARN: Code restructure failed: missing block: B:30:0x00c0, code lost:
-            if (r2 == r0) goto L18;
+            if (r2 == r1) goto L18;
          */
         /* JADX WARN: Code restructure failed: missing block: B:71:0x01f4, code lost:
-            if (r2 == r0) goto L18;
+            if (r2 == r1) goto L18;
          */
         /* JADX WARN: Code restructure failed: missing block: B:74:0x0209, code lost:
-            if (r2 == r0) goto L18;
+            if (r2 == r1) goto L18;
          */
         /* JADX WARN: Removed duplicated region for block: B:34:0x00d2  */
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

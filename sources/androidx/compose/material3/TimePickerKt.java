@@ -129,8 +129,6 @@ import okhttp3.internal.ws.WebSocketProtocol;
 public final class TimePickerKt {
     private static final float ClockDialMidContainerSize;
     private static final float ClockDialMinContainerSize;
-    private static final float ClockFaceBottomMargin;
-    private static final float DisplaySeparatorWidth;
     private static final IntList ExtraHours;
     private static final float FullCircle = 6.2831855f;
     private static final float HalfCircle = 3.1415927f;
@@ -140,15 +138,17 @@ public final class TimePickerKt {
     private static final float RadiansPerHour = 0.5235988f;
     private static final float RadiansPerMinute = 0.10471976f;
     private static final float SeparatorZIndex = 2.0f;
-    private static final float TimeInputBottomPadding;
     private static final float TimePickerMaxHeight;
     private static final float TimePickerMidHeight;
-    private static final float OuterCircleToSizeRatio = Dp.m7555constructorimpl(101) / TimePickerTokens.INSTANCE.m3812getClockDialContainerSizeD9Ej5fM();
-    private static final float InnerCircleToSizeRatio = Dp.m7555constructorimpl(69) / TimePickerTokens.INSTANCE.m3812getClockDialContainerSizeD9Ej5fM();
-    private static final float ClockDisplayBottomMargin = Dp.m7555constructorimpl(36);
-    private static final float SupportLabelTop = Dp.m7555constructorimpl(7);
-    private static final float MaxDistance = Dp.m7555constructorimpl(74);
-    private static final float MinimumInteractiveSize = Dp.m7555constructorimpl(48);
+    private static final float OuterCircleToSizeRatio = Dp.m7555constructorimpl(101.0f) / TimePickerTokens.INSTANCE.m3812getClockDialContainerSizeD9Ej5fM();
+    private static final float InnerCircleToSizeRatio = Dp.m7555constructorimpl(69.0f) / TimePickerTokens.INSTANCE.m3812getClockDialContainerSizeD9Ej5fM();
+    private static final float ClockDisplayBottomMargin = Dp.m7555constructorimpl(36.0f);
+    private static final float ClockFaceBottomMargin = Dp.m7555constructorimpl(24.0f);
+    private static final float DisplaySeparatorWidth = Dp.m7555constructorimpl(24.0f);
+    private static final float SupportLabelTop = Dp.m7555constructorimpl(7.0f);
+    private static final float TimeInputBottomPadding = Dp.m7555constructorimpl(24.0f);
+    private static final float MaxDistance = Dp.m7555constructorimpl(74.0f);
+    private static final float MinimumInteractiveSize = Dp.m7555constructorimpl(48.0f);
     private static final IntList Minutes = IntListKt.intListOf(0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55);
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -762,9 +762,8 @@ public final class TimePickerKt {
         } else {
             m7555constructorimpl = Dp.m7555constructorimpl(analogTimePickerState.m1701getCurrentDiameterD9Ej5fM() * OuterCircleToSizeRatio);
         }
-        float m7555constructorimpl3 = Dp.m7555constructorimpl(((Dp) RangesKt.coerceAtLeast(Dp.m7553boximpl(Dp.m7555constructorimpl(m7555constructorimpl - m7555constructorimpl2)), Dp.m7553boximpl(Dp.m7555constructorimpl(0)))).m7569unboximpl() + m7555constructorimpl2);
-        float f = 2;
-        return DpOffset.m7611constructorimpl((Float.floatToRawIntBits(Dp.m7555constructorimpl(Dp.m7555constructorimpl(((float) Math.cos(analogTimePickerState.getCurrentAngle())) * m7555constructorimpl3) + Dp.m7555constructorimpl(analogTimePickerState.m1701getCurrentDiameterD9Ej5fM() / f))) << 32) | (Float.floatToRawIntBits(Dp.m7555constructorimpl(Dp.m7555constructorimpl(m7555constructorimpl3 * ((float) Math.sin(analogTimePickerState.getCurrentAngle()))) + Dp.m7555constructorimpl(analogTimePickerState.m1701getCurrentDiameterD9Ej5fM() / f))) & 4294967295L));
+        float m7555constructorimpl3 = Dp.m7555constructorimpl(((Dp) RangesKt.coerceAtLeast(Dp.m7553boximpl(Dp.m7555constructorimpl(m7555constructorimpl - m7555constructorimpl2)), Dp.m7553boximpl(Dp.m7555constructorimpl(0.0f)))).m7569unboximpl() + m7555constructorimpl2);
+        return DpOffset.m7611constructorimpl((Float.floatToRawIntBits(Dp.m7555constructorimpl(Dp.m7555constructorimpl(((float) Math.cos(analogTimePickerState.getCurrentAngle())) * m7555constructorimpl3) + Dp.m7555constructorimpl(analogTimePickerState.m1701getCurrentDiameterD9Ej5fM() / 2.0f))) << 32) | (Float.floatToRawIntBits(Dp.m7555constructorimpl(Dp.m7555constructorimpl(m7555constructorimpl3 * ((float) Math.sin(analogTimePickerState.getCurrentAngle()))) + Dp.m7555constructorimpl(analogTimePickerState.m1701getCurrentDiameterD9Ej5fM() / 2.0f))) & 4294967295L));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:26:0x0049  */
@@ -2011,7 +2010,7 @@ public final class TimePickerKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ButtonKt.TextButton(function0, SemanticsModifierKt.semantics$default(fillMaxSize$default, false, (Function1) rememberedValue, 1, null), false, shape, ButtonDefaults.INSTANCE.m1774textButtonColorsro_MJ88(m2732periodSelectorContainerColorvNxB06k$material3, m2733periodSelectorContentColorvNxB06k$material3, 0L, 0L, startRestartGroup, 24576, 12), null, null, PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)), null, function3, startRestartGroup, ((i2 >> 6) & 14) | 12582912 | ((i2 << 6) & 7168) | ((i2 << 15) & 1879048192), 356);
+            ButtonKt.TextButton(function0, SemanticsModifierKt.semantics$default(fillMaxSize$default, false, (Function1) rememberedValue, 1, null), false, shape, ButtonDefaults.INSTANCE.m1774textButtonColorsro_MJ88(m2732periodSelectorContainerColorvNxB06k$material3, m2733periodSelectorContentColorvNxB06k$material3, 0L, 0L, startRestartGroup, 24576, 12), null, null, PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)), null, function3, startRestartGroup, ((i2 >> 6) & 14) | 12582912 | ((i2 << 6) & 7168) | ((i2 << 15) & 1879048192), 356);
             composer2 = startRestartGroup;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -2293,7 +2292,7 @@ public final class TimePickerKt {
         contentDrawScope.drawContent();
         DrawScope.m5327drawCircleVaOC9Bg$default(contentDrawScope2, m2727getSelectorColor0d7_KjU, f3, m4519constructorimpl, 0.0f, null, null, BlendMode.Companion.m4713getXor0nO6VwU(), 56, null);
         DrawScope.m5332drawLineNGM6Ib0$default(contentDrawScope2, m2727getSelectorColor0d7_KjU, androidx.compose.ui.geometry.SizeKt.m4606getCenteruvyYCjk(contentDrawScope.mo5346getSizeNHjbRc()), Offset.m4531minusMKHz9U(m4519constructorimpl, Offset.m4519constructorimpl((Float.floatToRawIntBits(((float) Math.sin(analogTimePickerState.getCurrentAngle())) * f3) & 4294967295L) | (Float.floatToRawIntBits(((float) Math.cos(analogTimePickerState.getCurrentAngle())) * f3) << 32))), contentDrawScope.mo405toPx0680j_4(TimePickerTokens.INSTANCE.m3815getClockDialSelectorTrackContainerWidthD9Ej5fM()), 0, null, 0.0f, null, BlendMode.Companion.m4712getSrcOver0nO6VwU(), 240, null);
-        DrawScope.m5327drawCircleVaOC9Bg$default(contentDrawScope2, m2727getSelectorColor0d7_KjU, contentDrawScope.mo405toPx0680j_4(TimePickerTokens.INSTANCE.m3813getClockDialSelectorCenterContainerSizeD9Ej5fM()) / 2, androidx.compose.ui.geometry.SizeKt.m4606getCenteruvyYCjk(contentDrawScope.mo5346getSizeNHjbRc()), 0.0f, null, null, 0, 120, null);
+        DrawScope.m5327drawCircleVaOC9Bg$default(contentDrawScope2, m2727getSelectorColor0d7_KjU, contentDrawScope.mo405toPx0680j_4(TimePickerTokens.INSTANCE.m3813getClockDialSelectorCenterContainerSizeD9Ej5fM()) / 2.0f, androidx.compose.ui.geometry.SizeKt.m4606getCenteruvyYCjk(contentDrawScope.mo5346getSizeNHjbRc()), 0.0f, null, null, 0, 120, null);
         DrawScope.m5327drawCircleVaOC9Bg$default(contentDrawScope2, timePickerColors.m2716clockDialContentColorvNxB06k$material3(true), f3, m4519constructorimpl, 0.0f, null, null, BlendMode.Companion.m4695getDstOver0nO6VwU(), 56, null);
         return Unit.INSTANCE;
     }
@@ -2848,11 +2847,14 @@ public final class TimePickerKt {
                         }
 
                         public final void invoke(Function2<? super Composer, ? super Integer, Unit> function2, Composer composer4, int i16) {
+                            Function2<? super Composer, ? super Integer, Unit> function22;
                             int i17;
                             ComposerKt.sourceInformation(composer4, "CN(it)1934@75201L403,1925@74765L858:TimePicker.kt#uh7d8r");
                             if ((i16 & 6) == 0) {
-                                i17 = i16 | (composer4.changedInstance(function2) ? 4 : 2);
+                                function22 = function2;
+                                i17 = i16 | (composer4.changedInstance(function22) ? 4 : 2);
                             } else {
+                                function22 = function2;
                                 i17 = i16;
                             }
                             if (!composer4.shouldExecute((i17 & 19) != 18, i17 & 1)) {
@@ -2865,11 +2867,11 @@ public final class TimePickerKt {
                             OutlinedTextFieldDefaults outlinedTextFieldDefaults = OutlinedTextFieldDefaults.INSTANCE;
                             String text = TextFieldValue.this.getText();
                             VisualTransformation none = VisualTransformation.Companion.getNone();
-                            PaddingValues m811PaddingValues0680j_4 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0));
+                            PaddingValues m811PaddingValues0680j_4 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f));
                             TextFieldColors textFieldColors = m2348colors0hiis_0;
                             final MutableInteractionSource mutableInteractionSource3 = mutableInteractionSource;
                             final TextFieldColors textFieldColors2 = m2348colors0hiis_0;
-                            outlinedTextFieldDefaults.DecorationBox(text, function2, true, true, none, mutableInteractionSource, false, null, null, null, null, null, null, null, textFieldColors, m811PaddingValues0680j_4, ComposableLambdaKt.rememberComposableLambda(769667466, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TimePickerKt$TimePickerTextField$1$1$2.1
+                            outlinedTextFieldDefaults.DecorationBox(text, function22, true, true, none, mutableInteractionSource, false, null, null, null, null, null, null, null, textFieldColors, m811PaddingValues0680j_4, ComposableLambdaKt.rememberComposableLambda(769667466, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TimePickerKt$TimePickerTextField$1$1$2.1
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer5, Integer num) {
                                     invoke(composer5, num.intValue());
@@ -3193,10 +3195,6 @@ public final class TimePickerKt {
     }
 
     static {
-        float f = 24;
-        ClockFaceBottomMargin = Dp.m7555constructorimpl(f);
-        DisplaySeparatorWidth = Dp.m7555constructorimpl(f);
-        TimeInputBottomPadding = Dp.m7555constructorimpl(f);
         IntList intListOf = IntListKt.intListOf(12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
         Hours = intListOf;
         MutableIntList mutableIntList = new MutableIntList(intListOf._size);
@@ -3206,10 +3204,10 @@ public final class TimePickerKt {
             mutableIntList.add((iArr[i2] % 12) + 12);
         }
         ExtraHours = mutableIntList;
-        PeriodToggleMargin = Dp.m7555constructorimpl(12);
-        TimePickerMaxHeight = Dp.m7555constructorimpl((float) RendererCapabilities.DECODER_SUPPORT_MASK);
-        TimePickerMidHeight = Dp.m7555constructorimpl(330);
-        ClockDialMidContainerSize = Dp.m7555constructorimpl(238);
-        ClockDialMinContainerSize = Dp.m7555constructorimpl(200);
+        PeriodToggleMargin = Dp.m7555constructorimpl(12.0f);
+        TimePickerMaxHeight = Dp.m7555constructorimpl(384.0f);
+        TimePickerMidHeight = Dp.m7555constructorimpl(330.0f);
+        ClockDialMidContainerSize = Dp.m7555constructorimpl(238.0f);
+        ClockDialMinContainerSize = Dp.m7555constructorimpl(200.0f);
     }
 }

@@ -38,14 +38,14 @@ public final class RangeKt {
             }
 
             /* JADX WARN: Incorrect return type in method signature: ()TT; */
-            /* JADX WARN: Type inference failed for: r0v1, types: [java.lang.Comparable] */
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Comparable] */
             @Override // kotlin.ranges.ClosedRange
             public Comparable getEndInclusive() {
                 return range.getUpper();
             }
 
             /* JADX WARN: Incorrect return type in method signature: ()TT; */
-            /* JADX WARN: Type inference failed for: r0v1, types: [java.lang.Comparable] */
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Comparable] */
             @Override // kotlin.ranges.ClosedRange
             public Comparable getStart() {
                 return range.getLower();

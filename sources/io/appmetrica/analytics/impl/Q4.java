@@ -44,11 +44,10 @@ public class Q4 {
                 return false;
             }
             String str2 = this.b;
-            String str3 = q4.b;
             if (str2 != null) {
-                return str2.equals(str3);
+                return str2.equals(q4.b);
             }
-            if (str3 == null) {
+            if (q4.b == null) {
                 return true;
             }
         }

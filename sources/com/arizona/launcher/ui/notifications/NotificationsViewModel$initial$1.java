@@ -39,6 +39,8 @@ public final class NotificationsViewModel$initial$1 extends SuspendLambda implem
         return ((NotificationsViewModel$initial$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r6v8 */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object loadNotifications;
@@ -49,6 +51,7 @@ public final class NotificationsViewModel$initial$1 extends SuspendLambda implem
                 ResultKt.throwOnFailure(obj);
                 this.label = 1;
                 loadNotifications = this.this$0.loadNotifications(this);
+                this = loadNotifications;
                 if (loadNotifications == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -56,6 +59,7 @@ public final class NotificationsViewModel$initial$1 extends SuspendLambda implem
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             } else {
                 ResultKt.throwOnFailure(obj);
+                this = this;
             }
         } catch (Exception unused) {
             BuildersKt__Builders_commonKt.launch$default(this.this$0.getScope(), null, null, new AnonymousClass1(this.this$0, null), 3, null);

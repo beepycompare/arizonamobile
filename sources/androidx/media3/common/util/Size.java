@@ -48,7 +48,7 @@ public final class Size {
     public int hashCode() {
         int i = this.height;
         int i2 = this.width;
-        return i ^ ((i2 >>> 16) | (i2 << 16));
+        return ((i2 >>> 16) | (i2 << 16)) ^ i;
     }
 
     public Bundle toBundle() {

@@ -90,7 +90,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application extends Crashl
         CrashlyticsReport.Session.Event.Application.ProcessDetails processDetails = this.currentProcessDetails;
         int hashCode5 = (hashCode4 ^ (processDetails == null ? 0 : processDetails.hashCode())) * 1000003;
         List<CrashlyticsReport.Session.Event.Application.ProcessDetails> list3 = this.appProcessDetails;
-        return ((hashCode5 ^ (list3 != null ? list3.hashCode() : 0)) * 1000003) ^ this.uiOrientation;
+        return this.uiOrientation ^ ((hashCode5 ^ (list3 != null ? list3.hashCode() : 0)) * 1000003);
     }
 
     @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application
@@ -178,7 +178,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application extends Crashl
                 if (this.execution == null) {
                     sb.append(" execution");
                 }
-                if ((1 & this.set$0) == 0) {
+                if ((this.set$0 & 1) == 0) {
                     sb.append(" uiOrientation");
                 }
                 throw new IllegalStateException("Missing required properties:" + ((Object) sb));

@@ -238,6 +238,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
     public synchronized void onTransferEnd(DataSource dataSource, DataSpec dataSpec, boolean z) {
         Throwable th;
         DefaultBandwidthMeter defaultBandwidthMeter;
+        DefaultBandwidthMeter defaultBandwidthMeter2;
         try {
             try {
                 if (isTransferAtFullNetworkSpeed(dataSpec, z)) {
@@ -254,21 +255,23 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                             try {
                             } catch (Throwable th2) {
                                 th = th2;
+                                defaultBandwidthMeter = this;
                                 throw th;
                             }
                         }
                         this.bitrateEstimate = this.slidingPercentile.getPercentile(0.5f);
-                        defaultBandwidthMeter = this;
-                        defaultBandwidthMeter.maybeNotifyBandwidthSample(i, this.sampleBytesTransferred, this.bitrateEstimate);
-                        defaultBandwidthMeter.sampleStartTimeMs = elapsedRealtime;
-                        defaultBandwidthMeter.sampleBytesTransferred = 0L;
+                        defaultBandwidthMeter2 = this;
+                        defaultBandwidthMeter2.maybeNotifyBandwidthSample(i, this.sampleBytesTransferred, this.bitrateEstimate);
+                        defaultBandwidthMeter2.sampleStartTimeMs = elapsedRealtime;
+                        defaultBandwidthMeter2.sampleBytesTransferred = 0L;
                     } else {
-                        defaultBandwidthMeter = this;
+                        defaultBandwidthMeter2 = this;
                     }
-                    defaultBandwidthMeter.streamCount--;
+                    defaultBandwidthMeter2.streamCount--;
                 }
             } catch (Throwable th3) {
                 th = th3;
+                defaultBandwidthMeter = this;
                 th = th;
                 throw th;
             }
@@ -280,6 +283,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
     /* JADX INFO: Access modifiers changed from: private */
     public synchronized void onNetworkTypeChanged(int i) {
         Throwable th;
+        DefaultBandwidthMeter defaultBandwidthMeter;
         try {
             try {
                 int i2 = this.networkType;
@@ -290,6 +294,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                         }
                     } catch (Throwable th2) {
                         th = th2;
+                        defaultBandwidthMeter = this;
                         throw th;
                     }
                 }
@@ -314,6 +319,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 }
             } catch (Throwable th3) {
                 th = th3;
+                defaultBandwidthMeter = this;
                 th = th;
                 throw th;
             }

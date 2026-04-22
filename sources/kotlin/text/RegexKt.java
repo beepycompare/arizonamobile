@@ -35,8 +35,8 @@ public final class RegexKt {
         CollectionsKt.retainAll(allOf, new Function1<T, Boolean>() { // from class: kotlin.text.RegexKt$fromInt$1$1
             /* JADX WARN: Incorrect types in method signature: (TT;)Ljava/lang/Boolean; */
             @Override // kotlin.jvm.functions.Function1
-            public final Boolean invoke(Enum r3) {
-                FlagEnum flagEnum = (FlagEnum) r3;
+            public final Boolean invoke(Enum r2) {
+                FlagEnum flagEnum = (FlagEnum) r2;
                 return Boolean.valueOf((i & flagEnum.getMask()) == flagEnum.getValue());
             }
         });

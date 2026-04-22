@@ -73,8 +73,9 @@ public final class ObservableDoOnComplete$subscribe$wrappedObserver$1<T> impleme
 
     @Override // ru.rustore.sdk.reactive.observable.ObservableObserver
     public void onNext(T t) {
+        ObservableDoOnComplete$subscribe$wrappedObserver$1<T> observableDoOnComplete$subscribe$wrappedObserver$1 = this;
         ObservableObserver<T> observableObserver = this.$downstream;
-        if (isDisposed()) {
+        if (observableDoOnComplete$subscribe$wrappedObserver$1.isDisposed()) {
             return;
         }
         observableObserver.onNext(t);

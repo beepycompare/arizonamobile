@@ -29,6 +29,7 @@ public final class Ti implements Ui {
     @Override // kotlin.jvm.functions.Function0
     /* renamed from: b */
     public final C0540r3 invoke() {
+        Throwable th;
         Cursor cursor;
         if (!PackageManagerUtils.hasContentProvider(this.f801a, "com.yandex.preinstallsatellite.appmetrica.provider")) {
             AbstractC0253fj.a("Satellite content provider with clids was not found.", new Object[0]);
@@ -37,8 +38,8 @@ public final class Ti implements Ui {
         try {
             cursor = this.f801a.getContentResolver().query(Uri.parse(this.b), null, null, null, null);
             try {
-            } catch (Throwable th) {
-                th = th;
+            } catch (Throwable th2) {
+                th = th2;
                 try {
                     ImportantLogger.INSTANCE.info("AppMetrica-Attribution", String.format("Error while getting satellite clids", new Object[0]) + "\n" + StringUtils.throwableToString(th), new Object[0]);
                     return null;
@@ -46,8 +47,8 @@ public final class Ti implements Ui {
                     lo.a(cursor);
                 }
             }
-        } catch (Throwable th2) {
-            th = th2;
+        } catch (Throwable th3) {
+            th = th3;
             cursor = null;
         }
         if (cursor != null) {

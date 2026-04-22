@@ -1608,7 +1608,8 @@ public final class AnimatedVisibilityKt {
                                         final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
                                         OnLookaheadMeasured onLookaheadMeasured2 = OnLookaheadMeasured.this;
                                         if (measureScope.isLookingAhead()) {
-                                            onLookaheadMeasured2.m113invokeozmzZPI(IntSize.m7721constructorimpl((mo6216measureBRTryo0.getWidth() << 32) | (mo6216measureBRTryo0.getHeight() & 4294967295L)));
+                                            int width = mo6216measureBRTryo0.getWidth();
+                                            onLookaheadMeasured2.m113invokeozmzZPI(IntSize.m7721constructorimpl((mo6216measureBRTryo0.getHeight() & 4294967295L) | (width << 32)));
                                         }
                                         return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedVisibilityKt$AnimatedEnterExitImpl$2$1$1$1
                                             /* JADX INFO: Access modifiers changed from: package-private */

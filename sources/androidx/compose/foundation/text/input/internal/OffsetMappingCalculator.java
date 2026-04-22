@@ -47,20 +47,16 @@ public final class OffsetMappingCalculator {
         int i4 = this.opsSize;
         if (i4 >= 0) {
             if (z) {
-                int i5 = 0;
                 i3 = i;
-                while (i5 < i4) {
+                for (int i5 = 0; i5 < i4; i5++) {
                     int i6 = i5 * 3;
                     int i7 = iArr[i6];
                     int i8 = iArr[i6 + 1];
                     int i9 = iArr[i6 + 2];
                     long m1408mapStepC6uMEY = m1408mapStepC6uMEY(i3, i7, i8, i9, z);
                     long m1408mapStepC6uMEY2 = m1408mapStepC6uMEY(i, i7, i8, i9, z);
-                    int min = Math.min(TextRange.m7003getStartimpl(m1408mapStepC6uMEY), TextRange.m7003getStartimpl(m1408mapStepC6uMEY2));
-                    int max = Math.max(TextRange.m6998getEndimpl(m1408mapStepC6uMEY), TextRange.m6998getEndimpl(m1408mapStepC6uMEY2));
-                    i5++;
-                    i3 = min;
-                    i = max;
+                    i3 = Math.min(TextRange.m7003getStartimpl(m1408mapStepC6uMEY), TextRange.m7003getStartimpl(m1408mapStepC6uMEY2));
+                    i = Math.max(TextRange.m6998getEndimpl(m1408mapStepC6uMEY), TextRange.m6998getEndimpl(m1408mapStepC6uMEY2));
                 }
             } else {
                 int i10 = i4 - 1;
@@ -70,12 +66,14 @@ public final class OffsetMappingCalculator {
                     int i12 = iArr[i11];
                     int i13 = iArr[i11 + 1];
                     int i14 = iArr[i11 + 2];
+                    OffsetMappingCalculator offsetMappingCalculator = this;
                     boolean z2 = z;
-                    long m1408mapStepC6uMEY3 = m1408mapStepC6uMEY(i3, i12, i13, i14, z2);
-                    long m1408mapStepC6uMEY4 = m1408mapStepC6uMEY(i, i12, i13, i14, z2);
+                    long m1408mapStepC6uMEY3 = offsetMappingCalculator.m1408mapStepC6uMEY(i3, i12, i13, i14, z2);
+                    long m1408mapStepC6uMEY4 = offsetMappingCalculator.m1408mapStepC6uMEY(i, i12, i13, i14, z2);
                     i3 = Math.min(TextRange.m7003getStartimpl(m1408mapStepC6uMEY3), TextRange.m7003getStartimpl(m1408mapStepC6uMEY4));
                     i = Math.max(TextRange.m6998getEndimpl(m1408mapStepC6uMEY3), TextRange.m6998getEndimpl(m1408mapStepC6uMEY4));
                     i10--;
+                    this = offsetMappingCalculator;
                     z = z2;
                 }
             }

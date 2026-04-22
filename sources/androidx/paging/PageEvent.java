@@ -44,8 +44,8 @@ public abstract class PageEvent<T> {
     public <R> java.lang.Object flatMap(kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super java.lang.Iterable<? extends R>>, ? extends java.lang.Object> r1, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>> r2) {
         /*
             r0 = this;
-            java.lang.Object r1 = flatMap$suspendImpl(r0, r1, r2)
-            return r1
+            java.lang.Object r0 = flatMap$suspendImpl(r0, r1, r2)
+            return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.paging.PageEvent.flatMap(kotlin.jvm.functions.Function2, kotlin.coroutines.Continuation):java.lang.Object");
     }
@@ -59,8 +59,8 @@ public abstract class PageEvent<T> {
     public <R> java.lang.Object map(kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super R>, ? extends java.lang.Object> r1, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>> r2) {
         /*
             r0 = this;
-            java.lang.Object r1 = map$suspendImpl(r0, r1, r2)
-            return r1
+            java.lang.Object r0 = map$suspendImpl(r0, r1, r2)
+            return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.paging.PageEvent.map(kotlin.jvm.functions.Function2, kotlin.coroutines.Continuation):java.lang.Object");
     }
@@ -556,16 +556,16 @@ public abstract class PageEvent<T> {
 
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
-        /* JADX WARN: Removed duplicated region for block: B:14:0x006e  */
-        /* JADX WARN: Removed duplicated region for block: B:17:0x0094  */
-        /* JADX WARN: Removed duplicated region for block: B:20:0x00bf  */
-        /* JADX WARN: Removed duplicated region for block: B:25:0x00f5  */
-        /* JADX WARN: Removed duplicated region for block: B:26:0x010d  */
-        /* JADX WARN: Type inference failed for: r13v9, types: [java.util.Collection] */
-        /* JADX WARN: Type inference failed for: r4v10, types: [java.util.Collection] */
-        /* JADX WARN: Type inference failed for: r7v10, types: [java.util.Collection] */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0094 -> B:18:0x00b9). Please submit an issue!!! */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x00e3 -> B:24:0x00eb). Please submit an issue!!! */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x0077  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x009c  */
+        /* JADX WARN: Removed duplicated region for block: B:20:0x00c7  */
+        /* JADX WARN: Removed duplicated region for block: B:25:0x00f4  */
+        /* JADX WARN: Removed duplicated region for block: B:26:0x010b  */
+        /* JADX WARN: Type inference failed for: r12v7, types: [java.util.Collection] */
+        /* JADX WARN: Type inference failed for: r2v8, types: [java.util.Collection] */
+        /* JADX WARN: Type inference failed for: r8v8, types: [java.util.Collection] */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x009c -> B:18:0x00c1). Please submit an issue!!! */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x00ea -> B:24:0x00ee). Please submit an issue!!! */
         @Override // androidx.paging.PageEvent
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -577,7 +577,6 @@ public abstract class PageEvent<T> {
             ArrayList arrayList;
             Iterator<T> it;
             LoadType loadType;
-            Insert<T> insert2;
             Function2<? super T, ? super Continuation<? super R>, ? extends Object> function22;
             if (continuation instanceof PageEvent$Insert$map$1) {
                 pageEvent$Insert$map$1 = (PageEvent$Insert$map$1) continuation;
@@ -594,85 +593,77 @@ public abstract class PageEvent<T> {
                         arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(pages, 10));
                         it = pages.iterator();
                         loadType = loadType2;
-                        insert2 = insert;
                         function22 = function2;
                         if (it.hasNext()) {
                         }
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        int[] originalPageOffsets = (int[]) pageEvent$Insert$map$1.L$6;
+                        Collection collection = (Collection) pageEvent$Insert$map$1.L$9;
+                        TransformablePage transformablePage = (TransformablePage) pageEvent$Insert$map$1.L$5;
                         Iterator<T> it2 = (Iterator) pageEvent$Insert$map$1.L$4;
+                        ?? r12 = (Collection) pageEvent$Insert$map$1.L$3;
+                        Insert<T> insert2 = (Insert) pageEvent$Insert$map$1.L$1;
                         Function2<? super T, ? super Continuation<? super R>, ? extends Object> function23 = (Function2) pageEvent$Insert$map$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                        TransformablePage transformablePage = (TransformablePage) pageEvent$Insert$map$1.L$5;
                         Iterator<T> it3 = (Iterator) pageEvent$Insert$map$1.L$8;
-                        LoadType loadType3 = (LoadType) pageEvent$Insert$map$1.L$2;
-                        Object obj2 = (Collection) pageEvent$Insert$map$1.L$7;
-                        Insert<T> insert3 = (Insert) pageEvent$Insert$map$1.L$1;
-                        ArrayList arrayList2 = (Collection) pageEvent$Insert$map$1.L$10;
-                        ArrayList arrayList3 = (Collection) pageEvent$Insert$map$1.L$9;
-                        ArrayList arrayList4 = (Collection) pageEvent$Insert$map$1.L$3;
-                        arrayList3.add(obj);
-                        function22 = function23;
                         Iterator<T> it4 = it2;
-                        ArrayList arrayList5 = arrayList4;
-                        Object obj3 = obj2;
+                        ArrayList arrayList2 = (Collection) pageEvent$Insert$map$1.L$7;
+                        ArrayList arrayList3 = r12;
+                        int[] originalPageOffsets = (int[]) pageEvent$Insert$map$1.L$6;
+                        LoadType loadType3 = (LoadType) pageEvent$Insert$map$1.L$2;
                         TransformablePage transformablePage2 = transformablePage;
-                        ArrayList arrayList6 = arrayList2;
+                        ArrayList arrayList4 = (Collection) pageEvent$Insert$map$1.L$10;
+                        collection.add(obj);
+                        Insert<T> insert3 = insert2;
+                        function22 = function23;
+                        ArrayList arrayList5 = arrayList4;
                         if (it3.hasNext()) {
                             pageEvent$Insert$map$1.L$0 = function22;
                             pageEvent$Insert$map$1.L$1 = insert3;
                             pageEvent$Insert$map$1.L$2 = loadType3;
-                            pageEvent$Insert$map$1.L$3 = arrayList5;
+                            pageEvent$Insert$map$1.L$3 = arrayList3;
                             pageEvent$Insert$map$1.L$4 = it4;
                             pageEvent$Insert$map$1.L$5 = transformablePage2;
                             pageEvent$Insert$map$1.L$6 = originalPageOffsets;
-                            pageEvent$Insert$map$1.L$7 = obj3;
+                            pageEvent$Insert$map$1.L$7 = arrayList2;
                             pageEvent$Insert$map$1.L$8 = it3;
-                            pageEvent$Insert$map$1.L$9 = obj3;
-                            pageEvent$Insert$map$1.L$10 = arrayList6;
+                            pageEvent$Insert$map$1.L$9 = arrayList2;
+                            pageEvent$Insert$map$1.L$10 = arrayList5;
                             pageEvent$Insert$map$1.label = 1;
                             Object invoke = function22.invoke((T) it3.next(), pageEvent$Insert$map$1);
                             if (invoke == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            transformablePage = transformablePage2;
-                            arrayList4 = arrayList5;
-                            Object obj4 = obj3;
-                            it2 = it4;
                             function23 = function22;
                             obj = invoke;
-                            obj2 = obj4;
-                            arrayList2 = arrayList6;
-                            arrayList3 = obj4;
-                            arrayList3.add(obj);
+                            insert2 = insert3;
+                            collection = arrayList2;
+                            arrayList4 = arrayList5;
+                            collection.add(obj);
+                            Insert<T> insert32 = insert2;
                             function22 = function23;
-                            Iterator<T> it42 = it2;
                             ArrayList arrayList52 = arrayList4;
-                            Object obj32 = obj2;
-                            TransformablePage transformablePage22 = transformablePage;
-                            ArrayList arrayList62 = arrayList2;
                             if (it3.hasNext()) {
-                                arrayList62.add(new TransformablePage(originalPageOffsets, (List) obj32, transformablePage22.getHintOriginalPageOffset(), transformablePage22.getHintOriginalIndices()));
-                                it = it42;
-                                arrayList = arrayList52;
+                                arrayList52.add(new TransformablePage(originalPageOffsets, arrayList2, transformablePage2.getHintOriginalPageOffset(), transformablePage2.getHintOriginalIndices()));
+                                insert = insert32;
+                                it = it4;
+                                arrayList = arrayList3;
                                 loadType = loadType3;
-                                insert2 = insert3;
                                 if (it.hasNext()) {
-                                    return new Insert(loadType, arrayList, insert2.getPlaceholdersBefore(), insert2.getPlaceholdersAfter(), insert2.getSourceLoadStates(), insert2.getMediatorLoadStates(), null);
+                                    return new Insert(loadType, arrayList, insert.getPlaceholdersBefore(), insert.getPlaceholdersAfter(), insert.getSourceLoadStates(), insert.getMediatorLoadStates(), null);
                                 }
                                 TransformablePage transformablePage3 = (TransformablePage) it.next();
                                 originalPageOffsets = transformablePage3.getOriginalPageOffsets();
                                 List<T> data = transformablePage3.getData();
-                                obj32 = (Collection) new ArrayList(CollectionsKt.collectionSizeOrDefault(data, 10));
+                                arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(data, 10));
                                 it3 = data.iterator();
-                                transformablePage22 = transformablePage3;
-                                insert3 = insert2;
+                                transformablePage2 = transformablePage3;
                                 loadType3 = loadType;
-                                arrayList52 = arrayList;
-                                it42 = it;
-                                arrayList62 = arrayList52;
+                                arrayList3 = arrayList;
+                                it4 = it;
+                                insert32 = insert;
+                                arrayList52 = arrayList3;
                                 if (it3.hasNext()) {
                                 }
                             }
@@ -682,7 +673,7 @@ public abstract class PageEvent<T> {
             }
             insert = this;
             pageEvent$Insert$map$1 = new PageEvent$Insert$map$1(insert, continuation);
-            Object obj5 = pageEvent$Insert$map$1.result;
+            Object obj2 = pageEvent$Insert$map$1.result;
             Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             i = pageEvent$Insert$map$1.label;
             if (i != 0) {
@@ -691,19 +682,17 @@ public abstract class PageEvent<T> {
 
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:10:0x002a  */
-        /* JADX WARN: Removed duplicated region for block: B:14:0x007c  */
-        /* JADX WARN: Removed duplicated region for block: B:17:0x00a7  */
-        /* JADX WARN: Removed duplicated region for block: B:20:0x00d2  */
-        /* JADX WARN: Removed duplicated region for block: B:29:0x011d  */
-        /* JADX WARN: Removed duplicated region for block: B:32:0x0131 A[LOOP:0: B:30:0x0127->B:32:0x0131, LOOP_END] */
-        /* JADX WARN: Removed duplicated region for block: B:34:0x0146  */
-        /* JADX WARN: Removed duplicated region for block: B:35:0x015c  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x0072  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x009a  */
+        /* JADX WARN: Removed duplicated region for block: B:20:0x00c4  */
+        /* JADX WARN: Removed duplicated region for block: B:29:0x010d  */
+        /* JADX WARN: Removed duplicated region for block: B:32:0x0121 A[LOOP:0: B:30:0x0117->B:32:0x0121, LOOP_END] */
+        /* JADX WARN: Removed duplicated region for block: B:34:0x0131  */
+        /* JADX WARN: Removed duplicated region for block: B:35:0x0149  */
         /* JADX WARN: Type inference failed for: r10v8, types: [java.util.List] */
-        /* JADX WARN: Type inference failed for: r11v10, types: [java.util.List] */
-        /* JADX WARN: Type inference failed for: r14v6, types: [java.util.Collection] */
-        /* JADX WARN: Type inference failed for: r7v8, types: [java.util.Collection] */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x00a7 -> B:18:0x00cc). Please submit an issue!!! */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x0106 -> B:27:0x0112). Please submit an issue!!! */
+        /* JADX WARN: Type inference failed for: r6v9, types: [java.util.Collection] */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x009a -> B:18:0x00be). Please submit an issue!!! */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x00f8 -> B:27:0x0102). Please submit an issue!!! */
         @Override // androidx.paging.PageEvent
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -713,8 +702,7 @@ public abstract class PageEvent<T> {
             Insert<T> insert;
             int i;
             Iterator<T> it;
-            Insert<T> insert2;
-            ArrayList arrayList;
+            Object obj;
             LoadType loadType;
             Function2<? super T, ? super Continuation<? super Iterable<? extends R>>, ? extends Object> function22;
             if (continuation instanceof PageEvent$Insert$flatMap$1) {
@@ -722,16 +710,15 @@ public abstract class PageEvent<T> {
                 if ((pageEvent$Insert$flatMap$1.label & Integer.MIN_VALUE) != 0) {
                     pageEvent$Insert$flatMap$1.label -= Integer.MIN_VALUE;
                     insert = this;
-                    Object obj = pageEvent$Insert$flatMap$1.result;
+                    Object obj2 = pageEvent$Insert$flatMap$1.result;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = pageEvent$Insert$flatMap$1.label;
                     if (i != 0) {
-                        ResultKt.throwOnFailure(obj);
+                        ResultKt.throwOnFailure(obj2);
                         LoadType loadType2 = insert.getLoadType();
                         List<TransformablePage<T>> pages = insert.getPages();
                         it = pages.iterator();
-                        insert2 = insert;
-                        arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(pages, 10));
+                        obj = (Collection) new ArrayList(CollectionsKt.collectionSizeOrDefault(pages, 10));
                         loadType = loadType2;
                         function22 = function2;
                         if (it.hasNext()) {
@@ -743,109 +730,103 @@ public abstract class PageEvent<T> {
                         int i3 = pageEvent$Insert$flatMap$1.I$0;
                         Collection collection = (Collection) pageEvent$Insert$flatMap$1.L$9;
                         Iterator<T> it2 = (Iterator) pageEvent$Insert$flatMap$1.L$8;
+                        ArrayList arrayList = (List) pageEvent$Insert$flatMap$1.L$7;
                         Iterator<T> it3 = (Iterator) pageEvent$Insert$flatMap$1.L$4;
-                        ResultKt.throwOnFailure(obj);
-                        PageEvent$Insert$flatMap$1 pageEvent$Insert$flatMap$12 = pageEvent$Insert$flatMap$1;
+                        LoadType loadType3 = (LoadType) pageEvent$Insert$flatMap$1.L$2;
+                        Insert<T> insert2 = (Insert) pageEvent$Insert$flatMap$1.L$1;
                         Function2<? super T, ? super Continuation<? super Iterable<? extends R>>, ? extends Object> function23 = (Function2) pageEvent$Insert$flatMap$1.L$0;
-                        Object obj2 = obj;
+                        ResultKt.throwOnFailure(obj2);
+                        int i4 = i3;
+                        it = it3;
                         TransformablePage transformablePage = (TransformablePage) pageEvent$Insert$flatMap$1.L$5;
-                        int i4 = i2;
-                        PageEvent$Insert$flatMap$1 pageEvent$Insert$flatMap$13 = pageEvent$Insert$flatMap$12;
-                        Insert<T> insert3 = (Insert) pageEvent$Insert$flatMap$1.L$1;
-                        loadType = (LoadType) pageEvent$Insert$flatMap$1.L$2;
-                        int i5 = i3;
-                        arrayList = (Collection) pageEvent$Insert$flatMap$1.L$3;
-                        ArrayList arrayList2 = (List) pageEvent$Insert$flatMap$1.L$6;
-                        ArrayList arrayList3 = (List) pageEvent$Insert$flatMap$1.L$7;
-                        Iterator<T> it4 = it2;
-                        ArrayList arrayList4 = (Collection) pageEvent$Insert$flatMap$1.L$10;
+                        int i5 = i2;
+                        ArrayList arrayList2 = (Collection) pageEvent$Insert$flatMap$1.L$10;
+                        ArrayList arrayList3 = (List) pageEvent$Insert$flatMap$1.L$6;
+                        Object obj3 = (Collection) pageEvent$Insert$flatMap$1.L$3;
                         CollectionsKt.addAll(collection, (Iterable) obj2);
                         List<Integer> hintOriginalIndices = transformablePage.getHintOriginalIndices();
                         if (hintOriginalIndices != null) {
-                            i4 = hintOriginalIndices.get(i4).intValue();
+                            i5 = hintOriginalIndices.get(i5).intValue();
                         }
-                        while (arrayList3.size() < arrayList2.size()) {
-                            arrayList3.add(Boxing.boxInt(i4));
+                        while (arrayList.size() < arrayList3.size()) {
+                            arrayList.add(Boxing.boxInt(i5));
                         }
                         function22 = function23;
-                        pageEvent$Insert$flatMap$1 = pageEvent$Insert$flatMap$13;
-                        Insert<T> insert4 = insert3;
-                        Iterator<T> it5 = it4;
-                        ArrayList arrayList5 = arrayList3;
-                        it = it3;
-                        ArrayList arrayList6 = arrayList2;
-                        i4 = i5;
+                        i5 = i4;
+                        Object obj4 = obj3;
+                        loadType = loadType3;
+                        insert = insert2;
                         TransformablePage transformablePage2 = transformablePage;
-                        ArrayList arrayList7 = arrayList4;
-                        if (it5.hasNext()) {
-                            Object obj3 = (T) it5.next();
-                            i5 = i4 + 1;
-                            if (i4 < 0) {
+                        ArrayList arrayList4 = arrayList2;
+                        ArrayList arrayList5 = arrayList3;
+                        if (it2.hasNext()) {
+                            Object obj5 = (T) it2.next();
+                            int i6 = i5 + 1;
+                            if (i5 < 0) {
                                 CollectionsKt.throwIndexOverflow();
                             }
-                            ArrayList arrayList8 = arrayList6;
+                            ArrayList arrayList6 = arrayList5;
                             pageEvent$Insert$flatMap$1.L$0 = function22;
-                            pageEvent$Insert$flatMap$1.L$1 = insert4;
+                            pageEvent$Insert$flatMap$1.L$1 = insert;
                             pageEvent$Insert$flatMap$1.L$2 = loadType;
-                            pageEvent$Insert$flatMap$1.L$3 = arrayList;
+                            pageEvent$Insert$flatMap$1.L$3 = obj4;
                             pageEvent$Insert$flatMap$1.L$4 = it;
                             pageEvent$Insert$flatMap$1.L$5 = transformablePage2;
-                            pageEvent$Insert$flatMap$1.L$6 = arrayList6;
-                            pageEvent$Insert$flatMap$1.L$7 = arrayList5;
-                            pageEvent$Insert$flatMap$1.L$8 = it5;
-                            pageEvent$Insert$flatMap$1.L$9 = arrayList8;
-                            pageEvent$Insert$flatMap$1.L$10 = arrayList7;
-                            pageEvent$Insert$flatMap$1.I$0 = i5;
-                            pageEvent$Insert$flatMap$1.I$1 = i4;
+                            pageEvent$Insert$flatMap$1.L$6 = arrayList5;
+                            pageEvent$Insert$flatMap$1.L$7 = arrayList;
+                            pageEvent$Insert$flatMap$1.L$8 = it2;
+                            pageEvent$Insert$flatMap$1.L$9 = arrayList6;
+                            pageEvent$Insert$flatMap$1.L$10 = arrayList4;
+                            pageEvent$Insert$flatMap$1.I$0 = i6;
+                            pageEvent$Insert$flatMap$1.I$1 = i5;
+                            Insert<T> insert3 = insert;
                             pageEvent$Insert$flatMap$1.label = 1;
-                            Object invoke = function22.invoke(obj3, pageEvent$Insert$flatMap$1);
+                            Object invoke = function22.invoke(obj5, pageEvent$Insert$flatMap$1);
                             if (invoke == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                             transformablePage = transformablePage2;
-                            it3 = it;
-                            pageEvent$Insert$flatMap$13 = pageEvent$Insert$flatMap$1;
+                            i4 = i6;
+                            loadType3 = loadType;
                             function23 = function22;
                             obj2 = invoke;
-                            arrayList2 = arrayList6;
+                            obj3 = obj4;
+                            collection = arrayList6;
+                            insert2 = insert3;
+                            arrayList2 = arrayList4;
                             arrayList3 = arrayList5;
-                            it4 = it5;
-                            insert3 = insert4;
-                            collection = arrayList8;
-                            arrayList4 = arrayList7;
                             CollectionsKt.addAll(collection, (Iterable) obj2);
                             List<Integer> hintOriginalIndices2 = transformablePage.getHintOriginalIndices();
                             if (hintOriginalIndices2 != null) {
                             }
-                            while (arrayList3.size() < arrayList2.size()) {
+                            while (arrayList.size() < arrayList3.size()) {
                             }
                             function22 = function23;
-                            pageEvent$Insert$flatMap$1 = pageEvent$Insert$flatMap$13;
-                            Insert<T> insert42 = insert3;
-                            Iterator<T> it52 = it4;
-                            ArrayList arrayList52 = arrayList3;
-                            it = it3;
-                            ArrayList arrayList62 = arrayList2;
-                            i4 = i5;
+                            i5 = i4;
+                            Object obj42 = obj3;
+                            loadType = loadType3;
+                            insert = insert2;
                             TransformablePage transformablePage22 = transformablePage;
-                            ArrayList arrayList72 = arrayList4;
-                            if (it52.hasNext()) {
-                                arrayList72.add(new TransformablePage(transformablePage22.getOriginalPageOffsets(), arrayList62, transformablePage22.getHintOriginalPageOffset(), arrayList52));
-                                insert2 = insert42;
+                            ArrayList arrayList42 = arrayList2;
+                            ArrayList arrayList52 = arrayList3;
+                            if (it2.hasNext()) {
+                                arrayList42.add(new TransformablePage(transformablePage22.getOriginalPageOffsets(), arrayList52, transformablePage22.getHintOriginalPageOffset(), arrayList));
+                                insert = insert;
+                                obj = obj42;
                                 if (it.hasNext()) {
-                                    Insert<T> insert5 = insert2;
-                                    return new Insert(loadType, arrayList, insert5.getPlaceholdersBefore(), insert5.getPlaceholdersAfter(), insert5.getSourceLoadStates(), insert5.getMediatorLoadStates(), null);
+                                    Insert<T> insert4 = insert;
+                                    return new Insert(loadType, (List) obj, insert4.getPlaceholdersBefore(), insert4.getPlaceholdersAfter(), insert4.getSourceLoadStates(), insert4.getMediatorLoadStates(), null);
                                 }
                                 TransformablePage transformablePage3 = (TransformablePage) it.next();
+                                arrayList = new ArrayList();
+                                Iterator<T> it4 = transformablePage3.getData().iterator();
+                                i5 = 0;
                                 arrayList52 = new ArrayList();
-                                Iterator<T> it6 = transformablePage3.getData().iterator();
-                                i4 = 0;
-                                arrayList62 = new ArrayList();
-                                it52 = it6;
+                                it2 = it4;
                                 transformablePage22 = transformablePage3;
-                                insert42 = insert2;
-                                arrayList72 = arrayList;
-                                if (it52.hasNext()) {
+                                obj42 = obj;
+                                arrayList42 = obj;
+                                if (it2.hasNext()) {
                                 }
                             }
                         }
@@ -854,7 +835,7 @@ public abstract class PageEvent<T> {
             }
             insert = this;
             pageEvent$Insert$flatMap$1 = new PageEvent$Insert$flatMap$1(insert, continuation);
-            Object obj4 = pageEvent$Insert$flatMap$1.result;
+            Object obj22 = pageEvent$Insert$flatMap$1.result;
             Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             i = pageEvent$Insert$flatMap$1.label;
             if (i != 0) {
@@ -863,18 +844,16 @@ public abstract class PageEvent<T> {
 
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:10:0x002a  */
-        /* JADX WARN: Removed duplicated region for block: B:14:0x0076  */
-        /* JADX WARN: Removed duplicated region for block: B:17:0x00a1  */
-        /* JADX WARN: Removed duplicated region for block: B:20:0x00cc  */
-        /* JADX WARN: Removed duplicated region for block: B:29:0x0114  */
-        /* JADX WARN: Removed duplicated region for block: B:34:0x013a  */
-        /* JADX WARN: Removed duplicated region for block: B:35:0x014f  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x006d  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x0095  */
+        /* JADX WARN: Removed duplicated region for block: B:20:0x00bf  */
+        /* JADX WARN: Removed duplicated region for block: B:29:0x0104  */
+        /* JADX WARN: Removed duplicated region for block: B:34:0x0123  */
+        /* JADX WARN: Removed duplicated region for block: B:35:0x0136  */
         /* JADX WARN: Type inference failed for: r10v8, types: [java.util.List] */
-        /* JADX WARN: Type inference failed for: r11v10, types: [java.util.List] */
-        /* JADX WARN: Type inference failed for: r14v5, types: [java.util.Collection] */
-        /* JADX WARN: Type inference failed for: r7v8, types: [java.util.Collection] */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x00a1 -> B:18:0x00c6). Please submit an issue!!! */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x00fb -> B:27:0x010c). Please submit an issue!!! */
+        /* JADX WARN: Type inference failed for: r6v9, types: [java.util.Collection] */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0095 -> B:18:0x00b9). Please submit an issue!!! */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x00ee -> B:27:0x00fc). Please submit an issue!!! */
         @Override // androidx.paging.PageEvent
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -884,8 +863,7 @@ public abstract class PageEvent<T> {
             Insert<T> insert;
             int i;
             Iterator<T> it;
-            Insert<T> insert2;
-            ArrayList arrayList;
+            Object obj;
             LoadType loadType;
             Function2<? super T, ? super Continuation<? super Boolean>, ? extends Object> function22;
             if (continuation instanceof PageEvent$Insert$filter$1) {
@@ -893,16 +871,15 @@ public abstract class PageEvent<T> {
                 if ((pageEvent$Insert$filter$1.label & Integer.MIN_VALUE) != 0) {
                     pageEvent$Insert$filter$1.label -= Integer.MIN_VALUE;
                     insert = this;
-                    Object obj = pageEvent$Insert$filter$1.result;
+                    Object obj2 = pageEvent$Insert$filter$1.result;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = pageEvent$Insert$filter$1.label;
                     if (i != 0) {
-                        ResultKt.throwOnFailure(obj);
+                        ResultKt.throwOnFailure(obj2);
                         LoadType loadType2 = insert.getLoadType();
                         List<TransformablePage<T>> pages = insert.getPages();
                         it = pages.iterator();
-                        insert2 = insert;
-                        arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(pages, 10));
+                        obj = (Collection) new ArrayList(CollectionsKt.collectionSizeOrDefault(pages, 10));
                         loadType = loadType2;
                         function22 = function2;
                         if (it.hasNext()) {
@@ -912,107 +889,93 @@ public abstract class PageEvent<T> {
                     } else {
                         int i2 = pageEvent$Insert$filter$1.I$1;
                         int i3 = pageEvent$Insert$filter$1.I$0;
-                        Object obj2 = pageEvent$Insert$filter$1.L$9;
+                        Object obj3 = pageEvent$Insert$filter$1.L$9;
                         Iterator<T> it2 = (Iterator) pageEvent$Insert$filter$1.L$8;
-                        Iterator<T> it3 = (Iterator) pageEvent$Insert$filter$1.L$4;
-                        ResultKt.throwOnFailure(obj);
-                        Insert<T> insert3 = (Insert) pageEvent$Insert$filter$1.L$1;
-                        loadType = (LoadType) pageEvent$Insert$filter$1.L$2;
-                        int i4 = i3;
-                        arrayList = (Collection) pageEvent$Insert$filter$1.L$3;
+                        ArrayList arrayList = (List) pageEvent$Insert$filter$1.L$7;
                         TransformablePage transformablePage = (TransformablePage) pageEvent$Insert$filter$1.L$5;
-                        ArrayList arrayList2 = (List) pageEvent$Insert$filter$1.L$6;
-                        ArrayList arrayList3 = (List) pageEvent$Insert$filter$1.L$7;
-                        Iterator<T> it4 = it2;
-                        PageEvent$Insert$filter$1 pageEvent$Insert$filter$12 = pageEvent$Insert$filter$1;
+                        LoadType loadType3 = (LoadType) pageEvent$Insert$filter$1.L$2;
+                        Insert<T> insert2 = (Insert) pageEvent$Insert$filter$1.L$1;
                         Function2<? super T, ? super Continuation<? super Boolean>, ? extends Object> function23 = (Function2) pageEvent$Insert$filter$1.L$0;
-                        Object obj3 = obj;
-                        ArrayList arrayList4 = (Collection) pageEvent$Insert$filter$1.L$10;
-                        if (((Boolean) obj3).booleanValue()) {
-                            arrayList2.add(obj2);
-                            List<Integer> hintOriginalIndices = transformablePage.getHintOriginalIndices();
+                        ResultKt.throwOnFailure(obj2);
+                        int i4 = i3;
+                        it = (Iterator) pageEvent$Insert$filter$1.L$4;
+                        TransformablePage transformablePage2 = transformablePage;
+                        ArrayList arrayList2 = (Collection) pageEvent$Insert$filter$1.L$10;
+                        ArrayList arrayList3 = (List) pageEvent$Insert$filter$1.L$6;
+                        Object obj4 = (Collection) pageEvent$Insert$filter$1.L$3;
+                        if (((Boolean) obj2).booleanValue()) {
+                            arrayList3.add(obj3);
+                            List<Integer> hintOriginalIndices = transformablePage2.getHintOriginalIndices();
                             if (hintOriginalIndices != null) {
                                 i2 = hintOriginalIndices.get(i2).intValue();
                             }
-                            arrayList3.add(Boxing.boxInt(i2));
+                            arrayList.add(Boxing.boxInt(i2));
                         }
                         function22 = function23;
-                        pageEvent$Insert$filter$1 = pageEvent$Insert$filter$12;
-                        Insert<T> insert4 = insert3;
-                        Iterator<T> it5 = it4;
+                        Object obj5 = obj4;
+                        loadType = loadType3;
+                        insert = insert2;
+                        ArrayList arrayList4 = arrayList2;
                         ArrayList arrayList5 = arrayList3;
-                        ArrayList arrayList6 = arrayList2;
-                        it = it3;
-                        TransformablePage transformablePage2 = transformablePage;
-                        int i5 = i4;
-                        ArrayList arrayList7 = arrayList4;
-                        if (it5.hasNext()) {
-                            Object next = it5.next();
-                            i4 = i5 + 1;
-                            if (i5 < 0) {
+                        if (it2.hasNext()) {
+                            Object next = it2.next();
+                            int i5 = i4 + 1;
+                            if (i4 < 0) {
                                 CollectionsKt.throwIndexOverflow();
                             }
                             pageEvent$Insert$filter$1.L$0 = function22;
-                            pageEvent$Insert$filter$1.L$1 = insert4;
+                            pageEvent$Insert$filter$1.L$1 = insert;
                             pageEvent$Insert$filter$1.L$2 = loadType;
-                            pageEvent$Insert$filter$1.L$3 = arrayList;
+                            pageEvent$Insert$filter$1.L$3 = obj5;
                             pageEvent$Insert$filter$1.L$4 = it;
                             pageEvent$Insert$filter$1.L$5 = transformablePage2;
-                            pageEvent$Insert$filter$1.L$6 = arrayList6;
-                            pageEvent$Insert$filter$1.L$7 = arrayList5;
-                            pageEvent$Insert$filter$1.L$8 = it5;
+                            pageEvent$Insert$filter$1.L$6 = arrayList5;
+                            pageEvent$Insert$filter$1.L$7 = arrayList;
+                            pageEvent$Insert$filter$1.L$8 = it2;
                             pageEvent$Insert$filter$1.L$9 = next;
-                            pageEvent$Insert$filter$1.L$10 = arrayList7;
-                            pageEvent$Insert$filter$1.I$0 = i4;
-                            pageEvent$Insert$filter$1.I$1 = i5;
+                            pageEvent$Insert$filter$1.L$10 = arrayList4;
+                            pageEvent$Insert$filter$1.I$0 = i5;
+                            pageEvent$Insert$filter$1.I$1 = i4;
                             pageEvent$Insert$filter$1.label = 1;
                             Object invoke = function22.invoke(next, pageEvent$Insert$filter$1);
                             if (invoke == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            PageEvent$Insert$filter$1 pageEvent$Insert$filter$13 = pageEvent$Insert$filter$1;
+                            LoadType loadType4 = loadType;
                             function23 = function22;
-                            obj3 = invoke;
-                            pageEvent$Insert$filter$12 = pageEvent$Insert$filter$13;
-                            TransformablePage transformablePage3 = transformablePage2;
-                            it3 = it;
-                            i2 = i5;
-                            arrayList2 = arrayList6;
+                            obj2 = invoke;
+                            insert2 = insert;
+                            i2 = i4;
+                            i4 = i5;
+                            loadType3 = loadType4;
+                            obj4 = obj5;
+                            obj3 = next;
+                            arrayList2 = arrayList4;
                             arrayList3 = arrayList5;
-                            it4 = it5;
-                            insert3 = insert4;
-                            obj2 = next;
-                            transformablePage = transformablePage3;
-                            arrayList4 = arrayList7;
-                            if (((Boolean) obj3).booleanValue()) {
+                            if (((Boolean) obj2).booleanValue()) {
                             }
                             function22 = function23;
-                            pageEvent$Insert$filter$1 = pageEvent$Insert$filter$12;
-                            Insert<T> insert42 = insert3;
-                            Iterator<T> it52 = it4;
+                            Object obj52 = obj4;
+                            loadType = loadType3;
+                            insert = insert2;
+                            ArrayList arrayList42 = arrayList2;
                             ArrayList arrayList52 = arrayList3;
-                            ArrayList arrayList62 = arrayList2;
-                            it = it3;
-                            TransformablePage transformablePage22 = transformablePage;
-                            int i52 = i4;
-                            ArrayList arrayList72 = arrayList4;
-                            if (it52.hasNext()) {
-                                arrayList72.add(new TransformablePage(transformablePage22.getOriginalPageOffsets(), arrayList62, transformablePage22.getHintOriginalPageOffset(), arrayList52));
-                                insert2 = insert42;
+                            if (it2.hasNext()) {
+                                arrayList42.add(new TransformablePage(transformablePage2.getOriginalPageOffsets(), arrayList52, transformablePage2.getHintOriginalPageOffset(), arrayList));
+                                obj = obj52;
                                 if (it.hasNext()) {
-                                    Insert<T> insert5 = insert2;
-                                    return new Insert(loadType, arrayList, insert5.getPlaceholdersBefore(), insert5.getPlaceholdersAfter(), insert5.getSourceLoadStates(), insert5.getMediatorLoadStates(), null);
+                                    return new Insert(loadType, (List) obj, insert.getPlaceholdersBefore(), insert.getPlaceholdersAfter(), insert.getSourceLoadStates(), insert.getMediatorLoadStates(), null);
                                 }
-                                TransformablePage transformablePage4 = (TransformablePage) it.next();
+                                TransformablePage transformablePage3 = (TransformablePage) it.next();
+                                arrayList = new ArrayList();
+                                Iterator<T> it3 = transformablePage3.getData().iterator();
+                                i4 = 0;
                                 arrayList52 = new ArrayList();
-                                Iterator<T> it6 = transformablePage4.getData().iterator();
-                                i52 = 0;
-                                arrayList62 = new ArrayList();
-                                it52 = it6;
-                                transformablePage22 = transformablePage4;
-                                insert42 = insert2;
-                                arrayList72 = arrayList;
-                                if (it52.hasNext()) {
+                                it2 = it3;
+                                transformablePage2 = transformablePage3;
+                                obj52 = obj;
+                                arrayList42 = obj;
+                                if (it2.hasNext()) {
                                 }
                             }
                         }
@@ -1021,7 +984,7 @@ public abstract class PageEvent<T> {
             }
             insert = this;
             pageEvent$Insert$filter$1 = new PageEvent$Insert$filter$1(insert, continuation);
-            Object obj4 = pageEvent$Insert$filter$1.result;
+            Object obj22 = pageEvent$Insert$filter$1.result;
             Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             i = pageEvent$Insert$filter$1.label;
             if (i != 0) {

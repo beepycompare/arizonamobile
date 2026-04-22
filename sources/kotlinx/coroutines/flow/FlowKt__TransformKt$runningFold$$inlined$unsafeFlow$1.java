@@ -47,12 +47,17 @@ public final class FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1<R> impl
         this.$operation$inlined = function3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0080, code lost:
-        if (r4.$this_runningFold$inlined.collect(new kotlinx.coroutines.flow.FlowKt__TransformKt$runningFold$1$1(r7, r4.$operation$inlined, r2), r0) != r1) goto L11;
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0064, code lost:
+        if (r6.emit((java.lang.Object) r7.element, r0) == r1) goto L19;
      */
-    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x007f, code lost:
+        if (r5.$this_runningFold$inlined.collect(new kotlinx.coroutines.flow.FlowKt__TransformKt$runningFold$1$1(r7, r5.$operation$inlined, r6), r0) != r1) goto L11;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0081, code lost:
+        return r1;
+     */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0047  */
     /* JADX WARN: Type inference failed for: r2v1, types: [T, java.lang.Object] */
     @Override // kotlinx.coroutines.flow.Flow
     /*
@@ -61,8 +66,6 @@ public final class FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1<R> impl
     public Object collect(FlowCollector<? super R> flowCollector, Continuation<? super Unit> continuation) {
         AnonymousClass1 anonymousClass1;
         int i;
-        FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1<R> flowKt__TransformKt$runningFold$$inlined$unsafeFlow$1;
-        FlowCollector<? super R> flowCollector2;
         Ref.ObjectRef objectRef;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
@@ -73,19 +76,12 @@ public final class FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1<R> impl
                 i = anonymousClass1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
-                    objectRef2.element = this.$initial$inlined;
-                    T t = objectRef2.element;
+                    objectRef = new Ref.ObjectRef();
+                    objectRef.element = this.$initial$inlined;
                     anonymousClass1.L$0 = this;
                     anonymousClass1.L$1 = flowCollector;
-                    anonymousClass1.L$2 = objectRef2;
+                    anonymousClass1.L$2 = objectRef;
                     anonymousClass1.label = 1;
-                    if (flowCollector.emit(t, anonymousClass1) != coroutine_suspended) {
-                        flowKt__TransformKt$runningFold$$inlined$unsafeFlow$1 = this;
-                        flowCollector2 = flowCollector;
-                        objectRef = objectRef2;
-                    }
-                    return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
                         ResultKt.throwOnFailure(obj);
@@ -93,10 +89,10 @@ public final class FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1<R> impl
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    objectRef = (Ref.ObjectRef) anonymousClass1.L$2;
-                    flowCollector2 = (FlowCollector) anonymousClass1.L$1;
-                    flowKt__TransformKt$runningFold$$inlined$unsafeFlow$1 = (FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1) anonymousClass1.L$0;
+                    flowCollector = (FlowCollector) anonymousClass1.L$1;
                     ResultKt.throwOnFailure(obj);
+                    objectRef = (Ref.ObjectRef) anonymousClass1.L$2;
+                    this = (FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1) anonymousClass1.L$0;
                 }
                 anonymousClass1.L$0 = null;
                 anonymousClass1.L$1 = null;

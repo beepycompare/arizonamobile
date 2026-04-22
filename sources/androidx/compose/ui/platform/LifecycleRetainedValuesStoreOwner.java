@@ -26,8 +26,8 @@ public final class LifecycleRetainedValuesStoreOwner extends ViewModel {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v1, types: [java.lang.Object[]] */
-    /* JADX WARN: Type inference failed for: r4v5 */
+    /* JADX WARN: Type inference failed for: r3v5 */
+    /* JADX WARN: Type inference failed for: r6v1, types: [java.lang.Object[]] */
     public final RetainedValuesStoreEntry getOrCreateRetainedValuesStoreEntry(int i) {
         RetainedValuesStoreEntry retainedValuesStoreEntry;
         MutableIntObjectMap<MutableObjectList<RetainedValuesStoreEntry>> mutableIntObjectMap = this.scopes;
@@ -38,7 +38,7 @@ public final class LifecycleRetainedValuesStoreOwner extends ViewModel {
         }
         MutableObjectList<RetainedValuesStoreEntry> mutableObjectList2 = mutableObjectList;
         MutableObjectList<RetainedValuesStoreEntry> mutableObjectList3 = mutableObjectList2;
-        ?? r0 = mutableObjectList3.content;
+        ?? r6 = mutableObjectList3.content;
         int i2 = mutableObjectList3._size;
         int i3 = 0;
         while (true) {
@@ -46,7 +46,7 @@ public final class LifecycleRetainedValuesStoreOwner extends ViewModel {
                 retainedValuesStoreEntry = null;
                 break;
             }
-            retainedValuesStoreEntry = r0[i3];
+            retainedValuesStoreEntry = r6[i3];
             if (!((RetainedValuesStoreEntry) retainedValuesStoreEntry).isInUse()) {
                 break;
             }

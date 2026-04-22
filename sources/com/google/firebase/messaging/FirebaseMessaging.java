@@ -262,7 +262,7 @@ public class FirebaseMessaging {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setNotificationDelegationEnabled$6$com-google-firebase-messaging-FirebaseMessaging  reason: not valid java name */
-    public /* synthetic */ void m9043x6495830d(Void r3) {
+    public /* synthetic */ void m9043x6495830d(Void r2) {
         ProxyNotificationPreferences.setProxyRetention(this.context, this.gmsRpc, shouldRetainProxyNotifications());
     }
 

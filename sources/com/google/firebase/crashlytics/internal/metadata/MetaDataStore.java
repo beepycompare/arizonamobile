@@ -106,33 +106,35 @@ public class MetaDataStore {
     }
 
     public void writeKeyData(String str, Map<String, String> map, boolean z) {
-        String keysDataToJson;
         BufferedWriter bufferedWriter;
+        Exception e;
         File internalKeysFileForSession = z ? getInternalKeysFileForSession(str) : getKeysFileForSession(str);
         BufferedWriter bufferedWriter2 = null;
         try {
+            String keysDataToJson = keysDataToJson(map);
+            bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(internalKeysFileForSession), UTF_8));
             try {
-                keysDataToJson = keysDataToJson(map);
-                bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(internalKeysFileForSession), UTF_8));
+                try {
+                    bufferedWriter.write(keysDataToJson);
+                    bufferedWriter.flush();
+                    CommonUtils.closeOrLog(bufferedWriter, "Failed to close key/value metadata file.");
+                } catch (Exception e2) {
+                    e = e2;
+                    Logger.getLogger().w("Error serializing key/value metadata.", e);
+                    safeDeleteCorruptFile(internalKeysFileForSession);
+                    CommonUtils.closeOrLog(bufferedWriter, "Failed to close key/value metadata file.");
+                }
             } catch (Throwable th) {
                 th = th;
+                bufferedWriter2 = bufferedWriter;
+                CommonUtils.closeOrLog(bufferedWriter2, "Failed to close key/value metadata file.");
+                throw th;
             }
-        } catch (Exception e) {
-            e = e;
-        }
-        try {
-            bufferedWriter.write(keysDataToJson);
-            bufferedWriter.flush();
-            CommonUtils.closeOrLog(bufferedWriter, "Failed to close key/value metadata file.");
-        } catch (Exception e2) {
-            e = e2;
-            bufferedWriter2 = bufferedWriter;
-            Logger.getLogger().w("Error serializing key/value metadata.", e);
-            safeDeleteCorruptFile(internalKeysFileForSession);
-            CommonUtils.closeOrLog(bufferedWriter2, "Failed to close key/value metadata file.");
+        } catch (Exception e3) {
+            bufferedWriter = null;
+            e = e3;
         } catch (Throwable th2) {
             th = th2;
-            bufferedWriter2 = bufferedWriter;
             CommonUtils.closeOrLog(bufferedWriter2, "Failed to close key/value metadata file.");
             throw th;
         }
@@ -145,13 +147,13 @@ public class MetaDataStore {
     /* JADX INFO: Access modifiers changed from: package-private */
     public Map<String, String> readKeyData(String str, boolean z) {
         FileInputStream fileInputStream;
-        Throwable th;
         Exception e;
         File internalKeysFileForSession = z ? getInternalKeysFileForSession(str) : getKeysFileForSession(str);
         if (!internalKeysFileForSession.exists() || internalKeysFileForSession.length() == 0) {
             safeDeleteCorruptFile(internalKeysFileForSession, "The file has a length of zero for session: " + str);
             return Collections.emptyMap();
         }
+        FileInputStream fileInputStream2 = null;
         try {
             fileInputStream = new FileInputStream(internalKeysFileForSession);
             try {
@@ -166,18 +168,18 @@ public class MetaDataStore {
                     CommonUtils.closeOrLog(fileInputStream, "Failed to close user metadata file.");
                     return Collections.emptyMap();
                 }
-            } catch (Throwable th2) {
-                th = th2;
-                CommonUtils.closeOrLog(fileInputStream, "Failed to close user metadata file.");
+            } catch (Throwable th) {
+                th = th;
+                fileInputStream2 = fileInputStream;
+                CommonUtils.closeOrLog(fileInputStream2, "Failed to close user metadata file.");
                 throw th;
             }
         } catch (Exception e3) {
             fileInputStream = null;
             e = e3;
-        } catch (Throwable th3) {
-            fileInputStream = null;
-            th = th3;
-            CommonUtils.closeOrLog(fileInputStream, "Failed to close user metadata file.");
+        } catch (Throwable th2) {
+            th = th2;
+            CommonUtils.closeOrLog(fileInputStream2, "Failed to close user metadata file.");
             throw th;
         }
     }
@@ -221,13 +223,13 @@ public class MetaDataStore {
 
     public void writeRolloutState(String str, List<RolloutAssignment> list) {
         BufferedWriter bufferedWriter;
-        Throwable th;
         Exception e;
         File rolloutsStateForSession = getRolloutsStateForSession(str);
         if (list.isEmpty()) {
             safeDeleteCorruptFile(rolloutsStateForSession, "Rollout state is empty for session: " + str);
             return;
         }
+        BufferedWriter bufferedWriter2 = null;
         try {
             String rolloutsStateToJson = rolloutsStateToJson(list);
             bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(rolloutsStateForSession), UTF_8));
@@ -242,18 +244,18 @@ public class MetaDataStore {
                     safeDeleteCorruptFile(rolloutsStateForSession);
                     CommonUtils.closeOrLog(bufferedWriter, "Failed to close rollouts state file.");
                 }
-            } catch (Throwable th2) {
-                th = th2;
-                CommonUtils.closeOrLog(bufferedWriter, "Failed to close rollouts state file.");
+            } catch (Throwable th) {
+                th = th;
+                bufferedWriter2 = bufferedWriter;
+                CommonUtils.closeOrLog(bufferedWriter2, "Failed to close rollouts state file.");
                 throw th;
             }
         } catch (Exception e3) {
             bufferedWriter = null;
             e = e3;
-        } catch (Throwable th3) {
-            bufferedWriter = null;
-            th = th3;
-            CommonUtils.closeOrLog(bufferedWriter, "Failed to close rollouts state file.");
+        } catch (Throwable th2) {
+            th = th2;
+            CommonUtils.closeOrLog(bufferedWriter2, "Failed to close rollouts state file.");
             throw th;
         }
     }

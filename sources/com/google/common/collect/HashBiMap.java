@@ -127,7 +127,7 @@ public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K,
     }
 
     private int bucket(int hash) {
-        return hash & (this.hashTableKToV.length - 1);
+        return (this.hashTableKToV.length - 1) & hash;
     }
 
     int findEntryByKey(@CheckForNull Object key) {

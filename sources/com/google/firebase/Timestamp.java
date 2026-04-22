@@ -143,9 +143,8 @@ public final class Timestamp implements Comparable<Timestamp>, Parcelable {
 
         /* JADX INFO: Access modifiers changed from: private */
         public final Pair<Long, Integer> toPreciseTime(Date date) {
-            long j = 1000;
-            long time = date.getTime() / j;
-            int time2 = (int) ((date.getTime() % j) * 1000000);
+            long time = date.getTime() / 1000;
+            int time2 = (int) ((date.getTime() % 1000) * 1000000);
             if (time2 < 0) {
                 return TuplesKt.to(Long.valueOf(time - 1), Integer.valueOf(time2 + 1000000000));
             }

@@ -2967,37 +2967,37 @@ public final class MessageSchema<T> implements Schema<T> {
     /* JADX WARN: Code restructure failed: missing block: B:326:?, code lost:
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x00a8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00a6, code lost:
         r0 = r10.checkInitializedCount;
         r4 = r11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x00ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x00ab, code lost:
         if (r0 >= r10.repeatedFieldOffsetStart) goto L271;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x00af, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x00ad, code lost:
         r1 = r10;
         r4 = (UB) r1.filterMapUnknownEnumValues(r2, r10.intArray[r0], r4, r5, r20);
         r0 = r0 + 1;
         r5 = r5;
         r10 = r1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x00c1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x00bf, code lost:
         r10 = r5;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x00c4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x00c1, code lost:
         if (r4 == null) goto L276;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x00c6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x00c3, code lost:
         r10.setBuilderToMessage(r2, r4);
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x06b7 A[Catch: all -> 0x06fe, TRY_LEAVE, TryCatch #12 {all -> 0x06fe, blocks: (B:213:0x068e, B:223:0x06b1, B:225:0x06b7, B:234:0x06d7, B:235:0x06dc), top: B:268:0x068e }] */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x06d5  */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x0712 A[LOOP:2: B:253:0x070e->B:255:0x0712, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:258:0x0725  */
-    /* JADX WARN: Type inference failed for: r10v17, types: [androidx.datastore.preferences.protobuf.UnknownFieldSchema] */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x06b4 A[Catch: all -> 0x06fb, TRY_LEAVE, TryCatch #10 {all -> 0x06fb, blocks: (B:212:0x068b, B:222:0x06ae, B:224:0x06b4, B:233:0x06d4, B:234:0x06d9), top: B:267:0x068b }] */
+    /* JADX WARN: Removed duplicated region for block: B:232:0x06d2  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x070f A[LOOP:2: B:252:0x070b->B:254:0x070f, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:257:0x0722  */
+    /* JADX WARN: Type inference failed for: r10v16, types: [androidx.datastore.preferences.protobuf.UnknownFieldSchema] */
+    /* JADX WARN: Type inference failed for: r1v23 */
     /* JADX WARN: Type inference failed for: r1v25 */
-    /* JADX WARN: Type inference failed for: r1v27 */
     /* JADX WARN: Type inference failed for: r2v94, types: [java.lang.Object] */
     /* JADX WARN: Type inference failed for: r3v11, types: [java.lang.Object] */
     /* JADX WARN: Type inference failed for: r5v75, types: [java.lang.Object] */
@@ -3018,8 +3018,8 @@ public final class MessageSchema<T> implements Schema<T> {
         MessageSchema<T> messageSchema;
         T t3;
         Reader reader2;
-        UB ub3;
         List<Integer> mutableListAt;
+        UB ub3;
         MessageSchema<T> messageSchema2 = this;
         ExtensionRegistryLite extensionRegistryLite = extensionRegistry;
         FieldSet<ET> fieldSet = null;
@@ -3278,46 +3278,46 @@ public final class MessageSchema<T> implements Schema<T> {
                                     UB ub5 = ub2;
                                     ub4 = ub5;
                                     try {
-                                        List<Integer> mutableListAt2 = messageSchema.listFieldSchema.mutableListAt(t, offset(typeAndOffsetAt));
-                                        reader2.readEnumList(mutableListAt2);
-                                        try {
-                                            ub3 = SchemaUtil.filterUnknownEnumList(t, fieldNumber, mutableListAt2, messageSchema.getEnumFieldVerifier(positionForFieldNumber), ub4, unknownFieldSchema);
-                                            extensionRegistryLite2 = extensionRegistry;
-                                            messageSchema2 = messageSchema;
-                                            ub4 = ub3;
-                                            break;
-                                        } catch (InvalidProtocolBufferException.InvalidWireTypeException unused3) {
-                                            t = t;
-                                            unknownFieldSchema2 = unknownFieldSchema;
-                                            messageSchema2 = messageSchema;
-                                            reader3 = reader2;
-                                            extensionRegistryLite2 = extensionRegistry;
-                                            if (unknownFieldSchema2.shouldDiscardUnknownFields(reader3)) {
-                                            }
-                                        } catch (Throwable th3) {
-                                            th = th3;
-                                            t = t;
-                                            unknownFieldSchema2 = unknownFieldSchema;
-                                            messageSchema2 = messageSchema;
-                                            i = messageSchema2.checkInitializedCount;
-                                            ub = ub4;
-                                            while (i < messageSchema2.repeatedFieldOffsetStart) {
-                                            }
-                                            UnknownFieldSchema<UT, UB> unknownFieldSchema422 = unknownFieldSchema2;
-                                            if (ub != null) {
-                                            }
-                                            throw th;
-                                        }
-                                    } catch (InvalidProtocolBufferException.InvalidWireTypeException unused4) {
+                                        mutableListAt = messageSchema.listFieldSchema.mutableListAt(t, offset(typeAndOffsetAt));
+                                        reader2.readEnumList(mutableListAt);
+                                    } catch (InvalidProtocolBufferException.InvalidWireTypeException unused3) {
                                         unknownFieldSchema2 = unknownFieldSchema;
                                         extensionRegistryLite2 = extensionRegistry;
                                         messageSchema2 = messageSchema;
                                         reader3 = reader2;
                                         if (unknownFieldSchema2.shouldDiscardUnknownFields(reader3)) {
                                         }
+                                    } catch (Throwable th3) {
+                                        th = th3;
+                                        unknownFieldSchema2 = unknownFieldSchema;
+                                    }
+                                    try {
+                                        ub3 = SchemaUtil.filterUnknownEnumList(t, fieldNumber, mutableListAt, messageSchema.getEnumFieldVerifier(positionForFieldNumber), ub4, unknownFieldSchema);
+                                        extensionRegistryLite2 = extensionRegistry;
+                                        messageSchema2 = messageSchema;
+                                        ub4 = ub3;
+                                        break;
+                                    } catch (InvalidProtocolBufferException.InvalidWireTypeException unused4) {
+                                        t = t;
+                                        unknownFieldSchema2 = unknownFieldSchema;
+                                        messageSchema2 = messageSchema;
+                                        reader3 = reader2;
+                                        extensionRegistryLite2 = extensionRegistry;
+                                        if (unknownFieldSchema2.shouldDiscardUnknownFields(reader3)) {
+                                        }
                                     } catch (Throwable th4) {
                                         th = th4;
+                                        t = t;
                                         unknownFieldSchema2 = unknownFieldSchema;
+                                        messageSchema2 = messageSchema;
+                                        i = messageSchema2.checkInitializedCount;
+                                        ub = ub4;
+                                        while (i < messageSchema2.repeatedFieldOffsetStart) {
+                                        }
+                                        UnknownFieldSchema<UT, UB> unknownFieldSchema422 = unknownFieldSchema2;
+                                        if (ub != null) {
+                                        }
+                                        throw th;
                                     }
                                     break;
                                 case 31:
@@ -3490,44 +3490,44 @@ public final class MessageSchema<T> implements Schema<T> {
                                     messageSchema = messageSchema2;
                                     reader2 = reader3;
                                     try {
-                                        mutableListAt = messageSchema.listFieldSchema.mutableListAt(t2, offset(typeAndOffsetAt));
-                                        reader2.readEnumList(mutableListAt);
+                                        List<Integer> mutableListAt2 = messageSchema.listFieldSchema.mutableListAt(t2, offset(typeAndOffsetAt));
+                                        reader2.readEnumList(mutableListAt2);
                                         UB ub6 = ub2;
                                         ub4 = ub6;
-                                    } catch (InvalidProtocolBufferException.InvalidWireTypeException unused6) {
-                                        ub4 = ub2;
-                                    } catch (Throwable th6) {
-                                        th = th6;
-                                        t = t2;
-                                        ub4 = ub2;
-                                    }
-                                    try {
-                                        ub3 = (UB) SchemaUtil.filterUnknownEnumList(t2, fieldNumber, mutableListAt, messageSchema.getEnumFieldVerifier(positionForFieldNumber), ub4, unknownFieldSchema2);
-                                        extensionRegistryLite2 = extensionRegistry;
-                                        messageSchema2 = messageSchema;
-                                        ub4 = ub3;
-                                        break;
-                                    } catch (InvalidProtocolBufferException.InvalidWireTypeException unused7) {
-                                        unknownFieldSchema2 = unknownFieldSchema;
-                                        extensionRegistryLite2 = extensionRegistry;
-                                        t = t2;
-                                        messageSchema2 = messageSchema;
-                                        reader3 = reader2;
-                                        if (unknownFieldSchema2.shouldDiscardUnknownFields(reader3)) {
+                                        try {
+                                            ub3 = (UB) SchemaUtil.filterUnknownEnumList(t2, fieldNumber, mutableListAt2, messageSchema.getEnumFieldVerifier(positionForFieldNumber), ub4, unknownFieldSchema2);
+                                            extensionRegistryLite2 = extensionRegistry;
+                                            messageSchema2 = messageSchema;
+                                            ub4 = ub3;
+                                            break;
+                                        } catch (InvalidProtocolBufferException.InvalidWireTypeException unused6) {
+                                            unknownFieldSchema2 = unknownFieldSchema;
+                                            extensionRegistryLite2 = extensionRegistry;
+                                            t = t2;
+                                            messageSchema2 = messageSchema;
+                                            reader3 = reader2;
+                                            if (unknownFieldSchema2.shouldDiscardUnknownFields(reader3)) {
+                                            }
+                                        } catch (Throwable th6) {
+                                            th = th6;
+                                            t = t2;
+                                            unknownFieldSchema2 = unknownFieldSchema;
+                                            messageSchema2 = messageSchema;
+                                            i = messageSchema2.checkInitializedCount;
+                                            ub = ub4;
+                                            while (i < messageSchema2.repeatedFieldOffsetStart) {
+                                            }
+                                            UnknownFieldSchema<UT, UB> unknownFieldSchema42222 = unknownFieldSchema2;
+                                            if (ub != null) {
+                                            }
+                                            throw th;
                                         }
+                                    } catch (InvalidProtocolBufferException.InvalidWireTypeException unused7) {
+                                        ub4 = ub2;
                                     } catch (Throwable th7) {
                                         th = th7;
                                         t = t2;
-                                        unknownFieldSchema2 = unknownFieldSchema;
-                                        messageSchema2 = messageSchema;
-                                        i = messageSchema2.checkInitializedCount;
-                                        ub = ub4;
-                                        while (i < messageSchema2.repeatedFieldOffsetStart) {
-                                        }
-                                        UnknownFieldSchema<UT, UB> unknownFieldSchema42222 = unknownFieldSchema2;
-                                        if (ub != null) {
-                                        }
-                                        throw th;
+                                        ub4 = ub2;
                                     }
                                     break;
                                 case 45:
@@ -3907,6 +3907,7 @@ public final class MessageSchema<T> implements Schema<T> {
                     }
                     if (ub7 != null) {
                         unknownFieldSchema.setBuilderToMessage(message, ub7);
+                        return;
                     }
                     return;
                 } else {
@@ -5835,8 +5836,8 @@ public final class MessageSchema<T> implements Schema<T> {
         int i5 = 0;
         while (i4 < this.checkInitializedCount) {
             int i6 = this.intArray[i4];
-            int numberAt = numberAt(i6);
-            int typeAndOffsetAt = typeAndOffsetAt(i6);
+            int numberAt = this.numberAt(i6);
+            int typeAndOffsetAt = this.typeAndOffsetAt(i6);
             int i7 = this.buffer[i6 + 2];
             int i8 = i7 & 1048575;
             int i9 = 1 << (i7 >>> 20);
@@ -5850,37 +5851,40 @@ public final class MessageSchema<T> implements Schema<T> {
                 i = i3;
                 i2 = i5;
             }
+            MessageSchema<T> messageSchema = this;
             T t = message;
-            if (isRequired(typeAndOffsetAt) && !isFieldPresent(t, i6, i, i2, i9)) {
+            if (isRequired(typeAndOffsetAt) && !messageSchema.isFieldPresent(t, i6, i, i2, i9)) {
                 return false;
             }
             int type = type(typeAndOffsetAt);
             if (type == 9 || type == 17) {
-                if (isFieldPresent(t, i6, i, i2, i9) && !isInitialized(t, typeAndOffsetAt, getMessageFieldSchema(i6))) {
+                if (messageSchema.isFieldPresent(t, i6, i, i2, i9) && !isInitialized(t, typeAndOffsetAt, messageSchema.getMessageFieldSchema(i6))) {
                     return false;
                 }
             } else {
                 if (type != 27) {
                     if (type == 60 || type == 68) {
-                        if (isOneofPresent(t, numberAt, i6) && !isInitialized(t, typeAndOffsetAt, getMessageFieldSchema(i6))) {
+                        if (messageSchema.isOneofPresent(t, numberAt, i6) && !isInitialized(t, typeAndOffsetAt, messageSchema.getMessageFieldSchema(i6))) {
                             return false;
                         }
                     } else if (type != 49) {
-                        if (type == 50 && !isMapInitialized(t, typeAndOffsetAt, i6)) {
+                        if (type == 50 && !messageSchema.isMapInitialized(t, typeAndOffsetAt, i6)) {
                             return false;
                         }
                     }
                 }
-                if (!isListInitialized(t, typeAndOffsetAt, i6)) {
+                if (!messageSchema.isListInitialized(t, typeAndOffsetAt, i6)) {
                     return false;
                 }
             }
             i4++;
+            this = messageSchema;
             message = t;
             i3 = i;
             i5 = i2;
         }
-        return !this.hasExtensions || this.extensionSchema.getExtensions(message).isInitialized();
+        MessageSchema<T> messageSchema2 = this;
+        return !messageSchema2.hasExtensions || messageSchema2.extensionSchema.getExtensions(message).isInitialized();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -5904,9 +5908,9 @@ public final class MessageSchema<T> implements Schema<T> {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v11 */
-    /* JADX WARN: Type inference failed for: r5v6 */
-    /* JADX WARN: Type inference failed for: r5v8, types: [androidx.datastore.preferences.protobuf.Schema] */
+    /* JADX WARN: Type inference failed for: r4v3 */
+    /* JADX WARN: Type inference failed for: r4v5, types: [androidx.datastore.preferences.protobuf.Schema] */
+    /* JADX WARN: Type inference failed for: r4v8 */
     private boolean isMapInitialized(T message, int typeAndOffset, int pos) {
         Map<?, ?> forMapData = this.mapFieldSchema.forMapData(UnsafeUtil.getObject(message, offset(typeAndOffset)));
         if (forMapData.isEmpty()) {
@@ -6049,7 +6053,7 @@ public final class MessageSchema<T> implements Schema<T> {
         int presenceMaskAndOffsetAt = presenceMaskAndOffsetAt(pos);
         long j = 1048575 & presenceMaskAndOffsetAt;
         if (j != 1048575) {
-            return (UnsafeUtil.getInt(message, j) & (1 << (presenceMaskAndOffsetAt >>> 20))) != 0;
+            return ((1 << (presenceMaskAndOffsetAt >>> 20)) & UnsafeUtil.getInt(message, j)) != 0;
         }
         int typeAndOffsetAt = typeAndOffsetAt(pos);
         long offset = offset(typeAndOffsetAt);

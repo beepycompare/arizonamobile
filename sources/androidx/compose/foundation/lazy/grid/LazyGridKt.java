@@ -51,19 +51,10 @@ public final class LazyGridKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x0121  */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x013d  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x01a7  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x01df  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x0221  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x0228  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x0259  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x025c  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0261  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0280  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x02f8  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0300  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x030e  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x0151  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x030d  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x031b  */
     /* JADX WARN: Removed duplicated region for block: B:163:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:43:0x0082  */
     /* JADX WARN: Removed duplicated region for block: B:44:0x0085  */
@@ -96,9 +87,9 @@ public final class LazyGridKt {
         Modifier.Companion companion;
         boolean z6;
         PaddingValues paddingValues4;
-        FlingBehavior flingBehavior3;
         int i8;
-        Object rememberedValue;
+        FlingBehavior flingBehavior3;
+        boolean z7;
         Modifier.Companion companion2;
         Composer startRestartGroup = composer.startRestartGroup(708740370);
         ComposerKt.sourceInformation(startRestartGroup, "C(LazyGrid)N(modifier,state,slots,contentPadding,reverseLayout,isVertical,flingBehavior,userScrollEnabled,overscrollEffect,verticalArrangement,horizontalArrangement,content)84@4015L50,86@4091L51,88@4169L24,89@4241L7,90@4310L7,93@4351L404,126@5421L302,121@5252L1117:LazyGrid.kt#7791vq");
@@ -166,119 +157,85 @@ public final class LazyGridKt {
                         if ((i3 & 64) != 0) {
                             i4 &= -3670017;
                         }
+                        boolean z8 = z4;
+                        z6 = true;
+                        z7 = z8;
                         paddingValues4 = paddingValues2;
-                        z6 = z4;
                         companion = obj;
+                        i8 = i4;
+                        flingBehavior3 = obj2;
                     } else {
                         companion = i9 != 0 ? Modifier.Companion : obj;
                         if (i10 != 0) {
-                            paddingValues2 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0));
+                            paddingValues2 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f));
                         }
-                        z6 = i5 == 0 ? z4 : false;
+                        boolean z9 = i5 == 0 ? z4 : false;
                         if ((i3 & 64) != 0) {
                             paddingValues4 = paddingValues2;
                             flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
                             i8 = i4 & (-3670017);
-                            startRestartGroup.endDefaults();
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(708740370, i8, i7, "androidx.compose.foundation.lazy.grid.LazyGrid (LazyGrid.kt:83)");
-                            }
-                            int i11 = (i8 >> 3) & 14;
-                            Function0<LazyGridItemProvider> rememberLazyGridItemProviderLambda = LazyGridItemProviderKt.rememberLazyGridItemProviderLambda(lazyGridState, function1, startRestartGroup, (i7 & 112) | i11);
-                            int i12 = i8 >> 9;
-                            LazyLayoutSemanticState rememberLazyGridSemanticState = LazySemanticsKt.rememberLazyGridSemanticState(lazyGridState, z6, startRestartGroup, (i12 & 112) | i11);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)600@27430L68:Effects.kt#9igjgp");
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 683736516, "CC(remember):Effects.kt#9igjgp");
-                            rememberedValue = startRestartGroup.rememberedValue();
-                            if (rememberedValue == Composer.Companion.getEmpty()) {
-                                rememberedValue = EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, startRestartGroup);
-                                startRestartGroup.updateRememberedValue(rememberedValue);
-                            }
-                            CoroutineScope coroutineScope = (CoroutineScope) rememberedValue;
-                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                            Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalGraphicsContext());
-                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            GraphicsContext graphicsContext = (GraphicsContext) consume;
-                            CompositionLocal<Boolean> localScrollCaptureInProgress = CompositionLocalsKt.getLocalScrollCaptureInProgress();
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                            Object consume2 = startRestartGroup.consume(localScrollCaptureInProgress);
-                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            Modifier modifier3 = companion;
-                            int i13 = i8;
-                            LazyLayoutMeasurePolicy rememberLazyGridMeasurePolicy = rememberLazyGridMeasurePolicy(rememberLazyGridItemProviderLambda, lazyGridState, lazyGridSlotsProvider, paddingValues4, z6, z2, horizontal, vertical, coroutineScope, graphicsContext, ((Boolean) consume2).booleanValue() ? StickyItemsPlacement.Companion.getStickToTopPlacement() : null, startRestartGroup, ((i8 >> 6) & 29360128) | (524272 & i8) | ((i7 << 18) & 3670016), 0);
-                            PaddingValues paddingValues5 = paddingValues4;
-                            boolean z7 = z6;
-                            lazyGridState2 = lazyGridState;
-                            Orientation orientation = !z2 ? Orientation.Vertical : Orientation.Horizontal;
-                            if (!z3) {
-                                startRestartGroup.startReplaceGroup(27281635);
-                                ComposerKt.sourceInformation(startRestartGroup, "112@4986L48");
-                                companion2 = LazyLayoutBeyondBoundsModifierLocalKt.lazyLayoutBeyondBoundsModifier(Modifier.Companion, LazyGridBeyondBoundsModifierKt.rememberLazyGridBeyondBoundsState(lazyGridState2, startRestartGroup, i11), lazyGridState2.getBeyondBoundsInfo$foundation(), z7, orientation);
-                                startRestartGroup.endReplaceGroup();
-                            } else {
-                                startRestartGroup.startReplaceGroup(27577840);
-                                startRestartGroup.endReplaceGroup();
-                                companion2 = Modifier.Companion;
-                            }
-                            FlingBehavior flingBehavior4 = flingBehavior3;
-                            LazyLayoutKt.LazyLayout(rememberLazyGridItemProviderLambda, ScrollableAreaKt.scrollableArea$default(LazyLayoutSemanticsKt.lazyLayoutSemantics(modifier3.then(lazyGridState2.getRemeasurementModifier$foundation()).then(lazyGridState2.getAwaitLayoutModifier$foundation()), rememberLazyGridItemProviderLambda, rememberLazyGridSemanticState, orientation, z3, z7, startRestartGroup, (i12 & 57344) | (458752 & (i13 << 3))).then(companion2).then(lazyGridState2.getItemAnimator$foundation().getModifier()), lazyGridState2, orientation, overscrollEffect, z3, z7, flingBehavior4, lazyGridState2.getInternalInteractionSource$foundation(), null, 128, null), lazyGridState2.getPrefetchState$foundation(), rememberLazyGridMeasurePolicy, startRestartGroup, 0, 0);
-                            startRestartGroup = startRestartGroup;
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventEnd();
-                            }
-                            z5 = z7;
-                            flingBehavior2 = flingBehavior4;
-                            paddingValues3 = paddingValues5;
-                            modifier2 = modifier3;
+                            z6 = true;
                         } else {
+                            z6 = true;
                             paddingValues4 = paddingValues2;
+                            i8 = i4;
+                            flingBehavior3 = obj2;
                         }
+                        z7 = z9;
                     }
-                    i8 = i4;
-                    flingBehavior3 = obj2;
                     startRestartGroup.endDefaults();
                     if (ComposerKt.isTraceInProgress()) {
+                        ComposerKt.traceEventStart(708740370, i8, i7, "androidx.compose.foundation.lazy.grid.LazyGrid (LazyGrid.kt:83)");
                     }
-                    int i112 = (i8 >> 3) & 14;
-                    Function0<LazyGridItemProvider> rememberLazyGridItemProviderLambda2 = LazyGridItemProviderKt.rememberLazyGridItemProviderLambda(lazyGridState, function1, startRestartGroup, (i7 & 112) | i112);
-                    int i122 = i8 >> 9;
-                    LazyLayoutSemanticState rememberLazyGridSemanticState2 = LazySemanticsKt.rememberLazyGridSemanticState(lazyGridState, z6, startRestartGroup, (i122 & 112) | i112);
+                    int i11 = (i8 >> 3) & 14;
+                    Function0<LazyGridItemProvider> rememberLazyGridItemProviderLambda = LazyGridItemProviderKt.rememberLazyGridItemProviderLambda(lazyGridState, function1, startRestartGroup, (i7 & 112) | i11);
+                    int i12 = i8 >> 9;
+                    LazyLayoutSemanticState rememberLazyGridSemanticState = LazySemanticsKt.rememberLazyGridSemanticState(lazyGridState, z7, startRestartGroup, (i12 & 112) | i11);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)600@27430L68:Effects.kt#9igjgp");
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 683736516, "CC(remember):Effects.kt#9igjgp");
-                    rememberedValue = startRestartGroup.rememberedValue();
+                    Object rememberedValue = startRestartGroup.rememberedValue();
                     if (rememberedValue == Composer.Companion.getEmpty()) {
+                        rememberedValue = EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, startRestartGroup);
+                        startRestartGroup.updateRememberedValue(rememberedValue);
                     }
-                    CoroutineScope coroutineScope2 = (CoroutineScope) rememberedValue;
+                    CoroutineScope coroutineScope = (CoroutineScope) rememberedValue;
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                    Object consume3 = startRestartGroup.consume(CompositionLocalsKt.getLocalGraphicsContext());
+                    Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalGraphicsContext());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    GraphicsContext graphicsContext2 = (GraphicsContext) consume3;
-                    CompositionLocal<Boolean> localScrollCaptureInProgress2 = CompositionLocalsKt.getLocalScrollCaptureInProgress();
+                    GraphicsContext graphicsContext = (GraphicsContext) consume;
+                    CompositionLocal<Boolean> localScrollCaptureInProgress = CompositionLocalsKt.getLocalScrollCaptureInProgress();
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                    Object consume22 = startRestartGroup.consume(localScrollCaptureInProgress2);
+                    Object consume2 = startRestartGroup.consume(localScrollCaptureInProgress);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    Modifier modifier32 = companion;
-                    int i132 = i8;
-                    LazyLayoutMeasurePolicy rememberLazyGridMeasurePolicy2 = rememberLazyGridMeasurePolicy(rememberLazyGridItemProviderLambda2, lazyGridState, lazyGridSlotsProvider, paddingValues4, z6, z2, horizontal, vertical, coroutineScope2, graphicsContext2, ((Boolean) consume22).booleanValue() ? StickyItemsPlacement.Companion.getStickToTopPlacement() : null, startRestartGroup, ((i8 >> 6) & 29360128) | (524272 & i8) | ((i7 << 18) & 3670016), 0);
-                    PaddingValues paddingValues52 = paddingValues4;
-                    boolean z72 = z6;
+                    Modifier modifier3 = companion;
+                    int i13 = i8;
+                    LazyLayoutMeasurePolicy rememberLazyGridMeasurePolicy = rememberLazyGridMeasurePolicy(rememberLazyGridItemProviderLambda, lazyGridState, lazyGridSlotsProvider, paddingValues4, z7, z2, horizontal, vertical, coroutineScope, graphicsContext, !((Boolean) consume2).booleanValue() ? StickyItemsPlacement.Companion.getStickToTopPlacement() : null, startRestartGroup, (524272 & i8) | ((i7 << 18) & 3670016) | ((i8 >> 6) & 29360128), 0);
+                    PaddingValues paddingValues5 = paddingValues4;
+                    boolean z10 = z7;
                     lazyGridState2 = lazyGridState;
-                    Orientation orientation2 = !z2 ? Orientation.Vertical : Orientation.Horizontal;
-                    if (!z3) {
+                    Orientation orientation = z2 ? Orientation.Vertical : Orientation.Horizontal;
+                    if (z3) {
+                        startRestartGroup.startReplaceGroup(27281635);
+                        ComposerKt.sourceInformation(startRestartGroup, "112@4986L48");
+                        companion2 = LazyLayoutBeyondBoundsModifierLocalKt.lazyLayoutBeyondBoundsModifier(Modifier.Companion, LazyGridBeyondBoundsModifierKt.rememberLazyGridBeyondBoundsState(lazyGridState2, startRestartGroup, i11), lazyGridState2.getBeyondBoundsInfo$foundation(), z10, orientation);
+                        startRestartGroup.endReplaceGroup();
+                    } else {
+                        startRestartGroup.startReplaceGroup(27577840);
+                        startRestartGroup.endReplaceGroup();
+                        companion2 = Modifier.Companion;
                     }
-                    FlingBehavior flingBehavior42 = flingBehavior3;
-                    LazyLayoutKt.LazyLayout(rememberLazyGridItemProviderLambda2, ScrollableAreaKt.scrollableArea$default(LazyLayoutSemanticsKt.lazyLayoutSemantics(modifier32.then(lazyGridState2.getRemeasurementModifier$foundation()).then(lazyGridState2.getAwaitLayoutModifier$foundation()), rememberLazyGridItemProviderLambda2, rememberLazyGridSemanticState2, orientation2, z3, z72, startRestartGroup, (i122 & 57344) | (458752 & (i132 << 3))).then(companion2).then(lazyGridState2.getItemAnimator$foundation().getModifier()), lazyGridState2, orientation2, overscrollEffect, z3, z72, flingBehavior42, lazyGridState2.getInternalInteractionSource$foundation(), null, 128, null), lazyGridState2.getPrefetchState$foundation(), rememberLazyGridMeasurePolicy2, startRestartGroup, 0, 0);
+                    FlingBehavior flingBehavior4 = flingBehavior3;
+                    LazyLayoutKt.LazyLayout(rememberLazyGridItemProviderLambda, ScrollableAreaKt.scrollableArea$default(LazyLayoutSemanticsKt.lazyLayoutSemantics(modifier3.then(lazyGridState2.getRemeasurementModifier$foundation()).then(lazyGridState2.getAwaitLayoutModifier$foundation()), rememberLazyGridItemProviderLambda, rememberLazyGridSemanticState, orientation, z3, z10, startRestartGroup, (i12 & 57344) | (458752 & (i13 << 3))).then(companion2).then(lazyGridState2.getItemAnimator$foundation().getModifier()), lazyGridState2, orientation, overscrollEffect, z3, z10, flingBehavior4, lazyGridState2.getInternalInteractionSource$foundation(), null, 128, null), lazyGridState2.getPrefetchState$foundation(), rememberLazyGridMeasurePolicy, startRestartGroup, 0, 0);
                     startRestartGroup = startRestartGroup;
                     if (ComposerKt.isTraceInProgress()) {
+                        ComposerKt.traceEventEnd();
                     }
-                    z5 = z72;
-                    flingBehavior2 = flingBehavior42;
-                    paddingValues3 = paddingValues52;
-                    modifier2 = modifier32;
+                    z5 = z10;
+                    flingBehavior2 = flingBehavior4;
+                    paddingValues3 = paddingValues5;
+                    modifier2 = modifier3;
                 } else {
                     lazyGridState2 = lazyGridState;
                     startRestartGroup.skipToGroupEnd();

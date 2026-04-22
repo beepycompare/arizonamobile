@@ -365,7 +365,7 @@ public class ConstraintWidgetContainer extends WidgetContainer {
             Iterator<ConstraintWidget> it3 = hashSet.iterator();
             while (it3.hasNext()) {
                 ConstraintWidget next = it3.next();
-                Optimizer.checkMatchParent(this, linearSystem2, next);
+                Optimizer.checkMatchParent(constraintWidgetContainer, linearSystem2, next);
                 next.addToSolver(linearSystem2, optimizeFor);
             }
         } else {
@@ -390,7 +390,7 @@ public class ConstraintWidgetContainer extends WidgetContainer {
                         constraintWidget5.setVerticalDimensionBehaviour(dimensionBehaviour2);
                     }
                 } else {
-                    Optimizer.checkMatchParent(this, linearSystem2, constraintWidget5);
+                    Optimizer.checkMatchParent(constraintWidgetContainer, linearSystem2, constraintWidget5);
                     if (!constraintWidget5.addFirst()) {
                         constraintWidget5.addToSolver(linearSystem2, optimizeFor);
                     }
@@ -398,10 +398,10 @@ public class ConstraintWidgetContainer extends WidgetContainer {
             }
         }
         if (constraintWidgetContainer.mHorizontalChainsSize > 0) {
-            Chain.applyChainConstraints(this, linearSystem2, null, 0);
+            Chain.applyChainConstraints(constraintWidgetContainer, linearSystem2, null, 0);
         }
         if (constraintWidgetContainer.mVerticalChainsSize > 0) {
-            Chain.applyChainConstraints(this, linearSystem2, null, 1);
+            Chain.applyChainConstraints(constraintWidgetContainer, linearSystem2, null, 1);
         }
         return true;
     }

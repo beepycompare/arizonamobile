@@ -90,9 +90,9 @@ public final class MoneyFormatter {
             String str3 = j < 0 ? Constants.FILENAME_SEQUENCE_SEPARATOR : "";
             if (intValue >= 1) {
                 if (i <= 0 && i2 <= 0) {
-                    r4 = false;
+                    r3 = false;
                 }
-                str = ":m:" + intValue + StringUtils.COMMA + StringsKt.padStart(String.valueOf(intValue2), 3, '0') + (r4 ? "..." : "");
+                str = ":m:" + intValue + StringUtils.COMMA + StringsKt.padStart(String.valueOf(intValue2), 3, '0') + (r3 ? "..." : "");
             } else if (intValue2 >= 1) {
                 str = ":kk:" + intValue2 + StringUtils.COMMA + StringsKt.padStart(String.valueOf(i), 3, '0') + (i2 > 0 ? "..." : "");
             } else {

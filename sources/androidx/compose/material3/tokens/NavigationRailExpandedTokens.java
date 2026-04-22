@@ -10,11 +10,11 @@ public final class NavigationRailExpandedTokens {
     public static final NavigationRailExpandedTokens INSTANCE = new NavigationRailExpandedTokens();
     private static final float ContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
-    private static final float ContainerWidthMaximum = Dp.m7555constructorimpl((float) 360.0d);
-    private static final float ContainerWidthMinimum = Dp.m7555constructorimpl((float) 220.0d);
+    private static final float ContainerWidthMaximum = Dp.m7555constructorimpl(360.0f);
+    private static final float ContainerWidthMinimum = Dp.m7555constructorimpl(220.0f);
     private static final float ModalContainerElevation = ElevationTokens.INSTANCE.m3361getLevel2D9Ej5fM();
     private static final ShapeKeyTokens ModalContainerShape = ShapeKeyTokens.CornerLarge;
-    private static final float TopSpace = Dp.m7555constructorimpl((float) 44.0d);
+    private static final float TopSpace = Dp.m7555constructorimpl(44.0f);
     private static final ColorSchemeKeyTokens ModalContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
 
     private NavigationRailExpandedTokens() {

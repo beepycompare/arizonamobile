@@ -154,7 +154,7 @@ public enum CaseFormat {
         }
 
         public int hashCode() {
-            return this.sourceFormat.hashCode() ^ this.targetFormat.hashCode();
+            return this.targetFormat.hashCode() ^ this.sourceFormat.hashCode();
         }
 
         public String toString() {

@@ -591,7 +591,7 @@ public class VectorDrawableCompat extends VectorDrawableCommon {
         if (this.mDelegateDrawable != null) {
             return this.mDelegateDrawable.getChangingConfigurations();
         }
-        return super.getChangingConfigurations() | this.mVectorState.getChangingConfigurations();
+        return this.mVectorState.getChangingConfigurations() | super.getChangingConfigurations();
     }
 
     @Override // android.graphics.drawable.Drawable

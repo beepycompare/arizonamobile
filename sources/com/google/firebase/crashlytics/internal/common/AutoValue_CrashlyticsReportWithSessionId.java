@@ -57,6 +57,6 @@ final class AutoValue_CrashlyticsReportWithSessionId extends CrashlyticsReportWi
     }
 
     public int hashCode() {
-        return ((((this.report.hashCode() ^ 1000003) * 1000003) ^ this.sessionId.hashCode()) * 1000003) ^ this.reportFile.hashCode();
+        return this.reportFile.hashCode() ^ ((((this.report.hashCode() ^ 1000003) * 1000003) ^ this.sessionId.hashCode()) * 1000003);
     }
 }

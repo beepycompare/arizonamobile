@@ -46,7 +46,7 @@ public final class ScrollingLogic2D$onScrollStopped$performFling$1 extends Suspe
         return ((ScrollingLogic2D$onScrollStopped$performFling$1) create(Velocity.m7784boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x006f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x006e, code lost:
         if (r2 == r1) goto L15;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -59,32 +59,31 @@ public final class ScrollingLogic2D$onScrollStopped$performFling$1 extends Suspe
         long j;
         long m7796minusAH228Gc;
         Object mo561doFlingAnimationQWom1Mo;
-        long m7802unboximpl;
         NestedScrollDispatcher nestedScrollDispatcher2;
         Object m5946dispatchPostFlingRZ2iAVY;
         long j2;
+        long j3;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            long j3 = this.J$0;
+            long j4 = this.J$0;
             nestedScrollDispatcher = this.this$0.nestedScrollDispatcher;
-            this.J$0 = j3;
+            this.J$0 = j4;
             this.label = 1;
-            m5948dispatchPreFlingQWom1Mo = nestedScrollDispatcher.m5948dispatchPreFlingQWom1Mo(j3, this);
+            m5948dispatchPreFlingQWom1Mo = nestedScrollDispatcher.m5948dispatchPreFlingQWom1Mo(j4, this);
             if (m5948dispatchPreFlingQWom1Mo != coroutine_suspended) {
-                j = j3;
+                j = j4;
             }
             return coroutine_suspended;
         } else if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
-                    long j4 = this.J$1;
+                    j3 = this.J$1;
                     j2 = this.J$0;
                     ResultKt.throwOnFailure(obj);
-                    m7802unboximpl = j4;
                     m5946dispatchPostFlingRZ2iAVY = obj;
-                    return Velocity.m7784boximpl(Velocity.m7796minusAH228Gc(j2, Velocity.m7796minusAH228Gc(m7802unboximpl, ((Velocity) m5946dispatchPostFlingRZ2iAVY).m7802unboximpl())));
+                    return Velocity.m7784boximpl(Velocity.m7796minusAH228Gc(j2, Velocity.m7796minusAH228Gc(j3, ((Velocity) m5946dispatchPostFlingRZ2iAVY).m7802unboximpl())));
                 }
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
@@ -94,7 +93,7 @@ public final class ScrollingLogic2D$onScrollStopped$performFling$1 extends Suspe
             m7796minusAH228Gc = j5;
             j = j6;
             mo561doFlingAnimationQWom1Mo = obj;
-            m7802unboximpl = ((Velocity) mo561doFlingAnimationQWom1Mo).m7802unboximpl();
+            long m7802unboximpl = ((Velocity) mo561doFlingAnimationQWom1Mo).m7802unboximpl();
             nestedScrollDispatcher2 = this.this$0.nestedScrollDispatcher;
             this.J$0 = j;
             this.J$1 = m7802unboximpl;
@@ -102,7 +101,8 @@ public final class ScrollingLogic2D$onScrollStopped$performFling$1 extends Suspe
             m5946dispatchPostFlingRZ2iAVY = nestedScrollDispatcher2.m5946dispatchPostFlingRZ2iAVY(Velocity.m7796minusAH228Gc(m7796minusAH228Gc, m7802unboximpl), m7802unboximpl, this);
             if (m5946dispatchPostFlingRZ2iAVY != coroutine_suspended) {
                 j2 = j;
-                return Velocity.m7784boximpl(Velocity.m7796minusAH228Gc(j2, Velocity.m7796minusAH228Gc(m7802unboximpl, ((Velocity) m5946dispatchPostFlingRZ2iAVY).m7802unboximpl())));
+                j3 = m7802unboximpl;
+                return Velocity.m7784boximpl(Velocity.m7796minusAH228Gc(j2, Velocity.m7796minusAH228Gc(j3, ((Velocity) m5946dispatchPostFlingRZ2iAVY).m7802unboximpl())));
             }
             return coroutine_suspended;
         } else {

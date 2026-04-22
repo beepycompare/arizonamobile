@@ -491,7 +491,7 @@ public final class Hpack {
         public final void writeInt(int i, int i2, int i3) {
             Buffer buffer = this.out;
             if (i < i2) {
-                buffer.writeByte(i | i3);
+                buffer.writeByte(i3 | i);
                 return;
             }
             buffer.writeByte(i3 | i2);

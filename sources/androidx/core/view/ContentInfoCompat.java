@@ -136,7 +136,11 @@ public final class ContentInfoCompat {
         ClipData clip = this.mCompat.getClip();
         if (clip.getItemCount() == 1) {
             boolean test = predicate.test(clip.getItemAt(0));
-            return Pair.create(test ? this : null, test ? null : this);
+            ContentInfoCompat contentInfoCompat = test ? this : null;
+            if (test) {
+                this = null;
+            }
+            return Pair.create(contentInfoCompat, this);
         }
         Pair<ClipData, ClipData> partition = partition(clip, predicate);
         if (partition.first == null) {

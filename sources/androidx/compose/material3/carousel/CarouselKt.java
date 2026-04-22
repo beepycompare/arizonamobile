@@ -96,19 +96,19 @@ public final class CarouselKt {
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x011e  */
     /* JADX WARN: Removed duplicated region for block: B:101:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x0146  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0149  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0152  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x01f8  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x022e  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0231  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x023f  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0242  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x024c  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x02b5  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x02bd  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x02ce  */
-    /* JADX WARN: Removed duplicated region for block: B:176:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0147  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x0154  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x01f2  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x0228  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x022b  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x023d  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x0240  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x024d  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x02b9  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x02c2  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x02d2  */
+    /* JADX WARN: Removed duplicated region for block: B:175:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:36:0x0066  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x0082  */
@@ -138,26 +138,25 @@ public final class CarouselKt {
         int i7;
         int i8;
         int i9;
+        Object obj2;
         int i10;
-        final TargetedFlingBehavior targetedFlingBehavior3;
         float f7;
         float f8;
+        final TargetedFlingBehavior targetedFlingBehavior3;
         boolean z3;
         final PaddingValues paddingValues2;
         ScopeUpdateScope endRestartGroup;
         CarouselState carouselState2;
-        int i11;
-        TargetedFlingBehavior targetedFlingBehavior4;
-        float m2969getMinSmallItemSizeD9Ej5fM;
-        TargetedFlingBehavior targetedFlingBehavior5;
         float f9;
-        Object obj2;
-        int i12;
-        PaddingValues m811PaddingValues0680j_4;
+        float f10;
+        TargetedFlingBehavior targetedFlingBehavior4;
+        Modifier modifier2;
+        int i11;
+        PaddingValues paddingValues3;
         boolean changed;
         Object rememberedValue;
-        float f10;
-        int i13;
+        float f11;
+        int i12;
         Composer startRestartGroup = composer.startRestartGroup(-221490402);
         ComposerKt.sourceInformation(startRestartGroup, "C(HorizontalMultiBrowseCarousel)N(state,preferredItemWidth:c#ui.unit.Dp,modifier,itemSpacing:c#ui.unit.Dp,flingBehavior,userScrollEnabled,minSmallItemWidth:c#ui.unit.Dp,maxSmallItemWidth:c#ui.unit.Dp,contentPadding,content)121@6176L7,125@6289L565,122@6188L1107:Carousel.kt#dcf9yb");
         if ((i2 & 1) != 0) {
@@ -172,8 +171,8 @@ public final class CarouselKt {
         } else if ((i & 48) == 0) {
             i3 |= startRestartGroup.changed(f) ? 32 : 16;
         }
-        int i14 = i2 & 4;
-        if (i14 != 0) {
+        int i13 = i2 & 4;
+        if (i13 != 0) {
             i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
         } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             obj = modifier;
@@ -188,14 +187,14 @@ public final class CarouselKt {
                     if ((i2 & 16) == 0) {
                         targetedFlingBehavior2 = targetedFlingBehavior;
                         if (startRestartGroup.changed(targetedFlingBehavior2)) {
-                            i13 = 16384;
-                            i3 |= i13;
+                            i12 = 16384;
+                            i3 |= i12;
                         }
                     } else {
                         targetedFlingBehavior2 = targetedFlingBehavior;
                     }
-                    i13 = 8192;
-                    i3 |= i13;
+                    i12 = 8192;
+                    i3 |= i12;
                 } else {
                     targetedFlingBehavior2 = targetedFlingBehavior;
                 }
@@ -226,7 +225,8 @@ public final class CarouselKt {
                         i3 |= 100663296;
                     } else if ((i & 100663296) == 0) {
                         i9 = i8;
-                        i3 |= startRestartGroup.changed(paddingValues) ? 67108864 : 33554432;
+                        obj2 = paddingValues;
+                        i3 |= startRestartGroup.changed(obj2) ? 67108864 : 33554432;
                         i10 = i3;
                         if ((i2 & 512) != 0) {
                             i10 |= 805306368;
@@ -241,47 +241,44 @@ public final class CarouselKt {
                                         i10 &= -57345;
                                     }
                                     carouselState2 = carouselState;
-                                    obj2 = obj;
-                                    m2969getMinSmallItemSizeD9Ej5fM = f6;
+                                    modifier2 = obj;
                                     f8 = f5;
-                                    targetedFlingBehavior5 = targetedFlingBehavior2;
                                     z3 = z2;
-                                    i12 = i10;
                                     f9 = f4;
+                                    paddingValues3 = obj2;
                                 } else {
-                                    Modifier.Companion companion = i14 != 0 ? Modifier.Companion : obj;
+                                    Modifier.Companion companion = i13 != 0 ? Modifier.Companion : obj;
                                     if (i4 != 0) {
-                                        f5 = Dp.m7555constructorimpl(0);
+                                        f5 = Dp.m7555constructorimpl(0.0f);
                                     }
                                     if ((i2 & 16) != 0) {
                                         CarouselDefaults carouselDefaults = CarouselDefaults.INSTANCE;
-                                        int i15 = (i10 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK;
+                                        int i14 = (i10 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK;
                                         carouselState2 = carouselState;
                                         i10 &= -57345;
-                                        targetedFlingBehavior4 = carouselDefaults.singleAdvanceFlingBehavior(carouselState2, null, startRestartGroup, i15, 2);
-                                        i11 = 0;
+                                        targetedFlingBehavior2 = carouselDefaults.singleAdvanceFlingBehavior(carouselState2, null, startRestartGroup, i14, 2);
                                     } else {
                                         carouselState2 = carouselState;
-                                        i11 = 0;
-                                        targetedFlingBehavior4 = targetedFlingBehavior;
                                     }
                                     if (i5 != 0) {
                                         z2 = true;
                                     }
-                                    m2969getMinSmallItemSizeD9Ej5fM = i6 != 0 ? CarouselDefaults.INSTANCE.m2969getMinSmallItemSizeD9Ej5fM() : f6;
+                                    if (i6 != 0) {
+                                        f6 = CarouselDefaults.INSTANCE.m2969getMinSmallItemSizeD9Ej5fM();
+                                    }
                                     float m2968getMaxSmallItemSizeD9Ej5fM = i7 != 0 ? CarouselDefaults.INSTANCE.m2968getMaxSmallItemSizeD9Ej5fM() : f4;
-                                    if (i9 != 0) {
-                                        float f11 = f5;
-                                        m811PaddingValues0680j_4 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(i11));
-                                        f8 = f11;
-                                        targetedFlingBehavior5 = targetedFlingBehavior4;
+                                    if (i9 == 0) {
                                         f9 = m2968getMaxSmallItemSizeD9Ej5fM;
+                                        f10 = f6;
+                                        f8 = f5;
+                                        targetedFlingBehavior4 = targetedFlingBehavior2;
                                         z3 = z2;
-                                        obj2 = companion;
-                                        i12 = i10;
+                                        modifier2 = companion;
+                                        i11 = i10;
+                                        paddingValues3 = paddingValues;
                                         startRestartGroup.endDefaults();
                                         if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(-221490402, i12, -1, "androidx.compose.material3.carousel.HorizontalMultiBrowseCarousel (Carousel.kt:120)");
+                                            ComposerKt.traceEventStart(-221490402, i11, -1, "androidx.compose.material3.carousel.HorizontalMultiBrowseCarousel (Carousel.kt:120)");
                                         }
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                                         Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
@@ -289,49 +286,50 @@ public final class CarouselKt {
                                         final Density density = (Density) consume;
                                         Orientation orientation = Orientation.Horizontal;
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1896112723, "CC(remember):Carousel.kt#9igjgp");
-                                        changed = ((i12 & 112) != 32) | startRestartGroup.changed(density) | startRestartGroup.changedInstance(carouselState2) | ((3670016 & i12) != 1048576) | ((29360128 & i12) == 8388608);
+                                        changed = startRestartGroup.changed(density) | ((i11 & 112) != 32) | startRestartGroup.changedInstance(carouselState2) | ((3670016 & i11) != 1048576) | ((29360128 & i11) == 8388608);
                                         rememberedValue = startRestartGroup.rememberedValue();
                                         if (!changed || rememberedValue == Composer.Companion.getEmpty()) {
                                             final CarouselState carouselState3 = carouselState2;
-                                            final float f12 = f9;
-                                            final float f13 = m2969getMinSmallItemSizeD9Ej5fM;
+                                            final float f12 = f10;
+                                            final float f13 = f9;
                                             rememberedValue = new Function2() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda15
                                                 @Override // kotlin.jvm.functions.Function2
                                                 public final Object invoke(Object obj3, Object obj4) {
                                                     KeylineList multiBrowseKeylineList;
-                                                    multiBrowseKeylineList = KeylinesKt.multiBrowseKeylineList(r0, ((Float) obj3).floatValue(), r0.mo405toPx0680j_4(f), ((Float) obj4).floatValue(), carouselState3.getPagerState$material3().getPageCountState().getValue().invoke().intValue(), r0.mo405toPx0680j_4(f13), Density.this.mo405toPx0680j_4(f12));
+                                                    multiBrowseKeylineList = KeylinesKt.multiBrowseKeylineList(r0, ((Float) obj3).floatValue(), r0.mo405toPx0680j_4(f), ((Float) obj4).floatValue(), carouselState3.getPagerState$material3().getPageCountState().getValue().invoke().intValue(), r0.mo405toPx0680j_4(f12), Density.this.mo405toPx0680j_4(f13));
                                                     return multiBrowseKeylineList;
                                                 }
                                             };
-                                            f10 = f13;
-                                            f7 = f12;
+                                            f11 = f12;
+                                            f7 = f13;
                                             startRestartGroup.updateRememberedValue(rememberedValue);
                                         } else {
+                                            f11 = f10;
                                             f7 = f9;
-                                            f10 = m2969getMinSmallItemSizeD9Ej5fM;
                                         }
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        int i16 = i12 << 9;
-                                        PaddingValues paddingValues3 = m811PaddingValues0680j_4;
-                                        m2970CarouselcJHQLPU(carouselState, orientation, (Function2) rememberedValue, paddingValues3, 2, obj2, f8, targetedFlingBehavior5, z3, function4, startRestartGroup, (i12 & 14) | 24624 | ((i12 >> 15) & 7168) | (458752 & i16) | (3670016 & i16) | (29360128 & i16) | (i16 & 234881024) | (1879048192 & i12), 0);
+                                        int i15 = i11 << 9;
+                                        PaddingValues paddingValues4 = paddingValues3;
+                                        m2970CarouselcJHQLPU(carouselState, orientation, (Function2) rememberedValue, paddingValues4, 2, modifier2, f8, targetedFlingBehavior4, z3, function4, startRestartGroup, (i11 & 14) | 24624 | ((i11 >> 15) & 7168) | (458752 & i15) | (3670016 & i15) | (29360128 & i15) | (i15 & 234881024) | (1879048192 & i11), 0);
                                         startRestartGroup = startRestartGroup;
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
-                                        paddingValues2 = paddingValues3;
-                                        obj = obj2;
-                                        targetedFlingBehavior3 = targetedFlingBehavior5;
-                                        f6 = f10;
+                                        paddingValues2 = paddingValues4;
+                                        obj = modifier2;
+                                        targetedFlingBehavior3 = targetedFlingBehavior4;
+                                        f6 = f11;
                                     } else {
-                                        targetedFlingBehavior5 = targetedFlingBehavior4;
-                                        f9 = m2968getMaxSmallItemSizeD9Ej5fM;
                                         f8 = f5;
                                         z3 = z2;
-                                        obj2 = companion;
-                                        i12 = i10;
+                                        modifier2 = companion;
+                                        paddingValues3 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f));
+                                        f9 = m2968getMaxSmallItemSizeD9Ej5fM;
                                     }
                                 }
-                                m811PaddingValues0680j_4 = paddingValues;
+                                f10 = f6;
+                                targetedFlingBehavior4 = targetedFlingBehavior2;
+                                i11 = i10;
                                 startRestartGroup.endDefaults();
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
@@ -341,53 +339,53 @@ public final class CarouselKt {
                                 final Density density2 = (Density) consume2;
                                 Orientation orientation2 = Orientation.Horizontal;
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1896112723, "CC(remember):Carousel.kt#9igjgp");
-                                changed = ((i12 & 112) != 32) | startRestartGroup.changed(density2) | startRestartGroup.changedInstance(carouselState2) | ((3670016 & i12) != 1048576) | ((29360128 & i12) == 8388608);
+                                changed = startRestartGroup.changed(density2) | ((i11 & 112) != 32) | startRestartGroup.changedInstance(carouselState2) | ((3670016 & i11) != 1048576) | ((29360128 & i11) == 8388608);
                                 rememberedValue = startRestartGroup.rememberedValue();
                                 if (changed) {
                                 }
                                 final CarouselState carouselState32 = carouselState2;
-                                final float f122 = f9;
-                                final float f132 = m2969getMinSmallItemSizeD9Ej5fM;
+                                final float f122 = f10;
+                                final float f132 = f9;
                                 rememberedValue = new Function2() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda15
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj3, Object obj4) {
                                         KeylineList multiBrowseKeylineList;
-                                        multiBrowseKeylineList = KeylinesKt.multiBrowseKeylineList(r0, ((Float) obj3).floatValue(), r0.mo405toPx0680j_4(f), ((Float) obj4).floatValue(), carouselState32.getPagerState$material3().getPageCountState().getValue().invoke().intValue(), r0.mo405toPx0680j_4(f132), Density.this.mo405toPx0680j_4(f122));
+                                        multiBrowseKeylineList = KeylinesKt.multiBrowseKeylineList(r0, ((Float) obj3).floatValue(), r0.mo405toPx0680j_4(f), ((Float) obj4).floatValue(), carouselState32.getPagerState$material3().getPageCountState().getValue().invoke().intValue(), r0.mo405toPx0680j_4(f122), Density.this.mo405toPx0680j_4(f132));
                                         return multiBrowseKeylineList;
                                     }
                                 };
-                                f10 = f132;
-                                f7 = f122;
+                                f11 = f122;
+                                f7 = f132;
                                 startRestartGroup.updateRememberedValue(rememberedValue);
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                int i162 = i12 << 9;
-                                PaddingValues paddingValues32 = m811PaddingValues0680j_4;
-                                m2970CarouselcJHQLPU(carouselState, orientation2, (Function2) rememberedValue, paddingValues32, 2, obj2, f8, targetedFlingBehavior5, z3, function4, startRestartGroup, (i12 & 14) | 24624 | ((i12 >> 15) & 7168) | (458752 & i162) | (3670016 & i162) | (29360128 & i162) | (i162 & 234881024) | (1879048192 & i12), 0);
+                                int i152 = i11 << 9;
+                                PaddingValues paddingValues42 = paddingValues3;
+                                m2970CarouselcJHQLPU(carouselState, orientation2, (Function2) rememberedValue, paddingValues42, 2, modifier2, f8, targetedFlingBehavior4, z3, function4, startRestartGroup, (i11 & 14) | 24624 | ((i11 >> 15) & 7168) | (458752 & i152) | (3670016 & i152) | (29360128 & i152) | (i152 & 234881024) | (1879048192 & i11), 0);
                                 startRestartGroup = startRestartGroup;
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
-                                paddingValues2 = paddingValues32;
-                                obj = obj2;
-                                targetedFlingBehavior3 = targetedFlingBehavior5;
-                                f6 = f10;
+                                paddingValues2 = paddingValues42;
+                                obj = modifier2;
+                                targetedFlingBehavior3 = targetedFlingBehavior4;
+                                f6 = f11;
                             } else {
                                 startRestartGroup.skipToGroupEnd();
-                                targetedFlingBehavior3 = targetedFlingBehavior;
                                 f7 = f4;
                                 f8 = f5;
+                                targetedFlingBehavior3 = targetedFlingBehavior2;
                                 z3 = z2;
                                 paddingValues2 = paddingValues;
                             }
                             endRestartGroup = startRestartGroup.endRestartGroup();
                             if (endRestartGroup == null) {
-                                final Modifier modifier2 = obj;
+                                final Modifier modifier3 = obj;
                                 final float f14 = f8;
                                 final boolean z4 = z3;
                                 final float f15 = f7;
                                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda1
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj3, Object obj4) {
-                                        return CarouselKt.HorizontalMultiBrowseCarousel_3tcCNu0$lambda$3(CarouselState.this, f, modifier2, f14, targetedFlingBehavior3, z4, f6, f15, paddingValues2, function4, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
+                                        return CarouselKt.HorizontalMultiBrowseCarousel_3tcCNu0$lambda$3(CarouselState.this, f, modifier3, f14, targetedFlingBehavior3, z4, f6, f15, paddingValues2, function4, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                                     }
                                 });
                                 return;
@@ -401,6 +399,7 @@ public final class CarouselKt {
                         }
                     }
                     i9 = i8;
+                    obj2 = paddingValues;
                     i10 = i3;
                     if ((i2 & 512) != 0) {
                     }
@@ -421,6 +420,7 @@ public final class CarouselKt {
                 if (i8 == 0) {
                 }
                 i9 = i8;
+                obj2 = paddingValues;
                 i10 = i3;
                 if ((i2 & 512) != 0) {
                 }
@@ -447,6 +447,7 @@ public final class CarouselKt {
             if (i8 == 0) {
             }
             i9 = i8;
+            obj2 = paddingValues;
             i10 = i3;
             if ((i2 & 512) != 0) {
             }
@@ -477,6 +478,7 @@ public final class CarouselKt {
         if (i8 == 0) {
         }
         i9 = i8;
+        obj2 = paddingValues;
         i10 = i3;
         if ((i2 & 512) != 0) {
         }
@@ -487,12 +489,12 @@ public final class CarouselKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0128  */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x0229  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x023c  */
-    /* JADX WARN: Removed duplicated region for block: B:142:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0130  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0218  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x022b  */
+    /* JADX WARN: Removed duplicated region for block: B:143:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:36:0x0068  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x006b  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x0084  */
@@ -523,6 +525,7 @@ public final class CarouselKt {
         int i7;
         float f8;
         int i8;
+        Object obj3;
         int i9;
         final Modifier modifier2;
         final PaddingValues paddingValues2;
@@ -532,16 +535,15 @@ public final class CarouselKt {
         final float f10;
         final float f11;
         ScopeUpdateScope endRestartGroup;
-        int i10;
         Modifier modifier3;
-        int i11;
+        int i10;
         float f12;
+        PaddingValues paddingValues3;
         TargetedFlingBehavior targetedFlingBehavior3;
         float f13;
         float f14;
+        int i11;
         int i12;
-        PaddingValues paddingValues3;
-        int i13;
         Composer startRestartGroup = composer.startRestartGroup(-118598974);
         ComposerKt.sourceInformation(startRestartGroup, "C(HorizontalMultiBrowseCarousel)N(state,preferredItemWidth:c#ui.unit.Dp,modifier,itemSpacing:c#ui.unit.Dp,flingBehavior,minSmallItemWidth:c#ui.unit.Dp,maxSmallItemWidth:c#ui.unit.Dp,contentPadding,content)165@7948L407:Carousel.kt#dcf9yb");
         if ((i2 & 1) != 0) {
@@ -564,8 +566,8 @@ public final class CarouselKt {
                 i3 |= startRestartGroup.changed(f5) ? 32 : 16;
             }
         }
-        int i14 = i2 & 4;
-        if (i14 != 0) {
+        int i13 = i2 & 4;
+        if (i13 != 0) {
             i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
         } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i3 |= startRestartGroup.changed(modifier) ? 256 : 128;
@@ -579,14 +581,14 @@ public final class CarouselKt {
                     if ((i2 & 16) == 0) {
                         obj2 = targetedFlingBehavior;
                         if (startRestartGroup.changed(obj2)) {
-                            i13 = 16384;
-                            i3 |= i13;
+                            i12 = 16384;
+                            i3 |= i12;
                         }
                     } else {
                         obj2 = targetedFlingBehavior;
                     }
-                    i13 = 8192;
-                    i3 |= i13;
+                    i12 = 8192;
+                    i3 |= i12;
                 } else {
                     obj2 = targetedFlingBehavior;
                 }
@@ -611,8 +613,12 @@ public final class CarouselKt {
                     i8 = i2 & 128;
                     if (i8 == 0) {
                         i3 |= 12582912;
-                    } else if ((i & 12582912) == 0) {
-                        i3 |= startRestartGroup.changed(paddingValues) ? 8388608 : 4194304;
+                        obj3 = paddingValues;
+                    } else {
+                        obj3 = paddingValues;
+                        if ((i & 12582912) == 0) {
+                            i3 |= startRestartGroup.changed(obj3) ? 8388608 : 4194304;
+                        }
                     }
                     if ((i2 & 256) == 0) {
                         i3 |= 100663296;
@@ -627,24 +633,22 @@ public final class CarouselKt {
                                 if ((i2 & 16) != 0) {
                                     i9 &= -57345;
                                 }
-                                paddingValues3 = paddingValues;
+                                paddingValues3 = obj3;
                                 f14 = f6;
                                 targetedFlingBehavior3 = obj2;
                                 f13 = f8;
-                                i11 = i9;
-                                i12 = -118598974;
+                                i10 = i9;
+                                i11 = -118598974;
                                 f12 = f7;
                                 modifier3 = modifier;
                             } else {
-                                Modifier.Companion companion = i14 != 0 ? Modifier.Companion : modifier;
-                                float m7555constructorimpl = i4 != 0 ? Dp.m7555constructorimpl(0) : f6;
+                                Modifier.Companion companion = i13 != 0 ? Modifier.Companion : modifier;
+                                float m7555constructorimpl = i4 != 0 ? Dp.m7555constructorimpl(0.0f) : f6;
                                 if ((i2 & 16) != 0) {
-                                    CarouselState carouselState2 = obj;
-                                    i10 = 0;
+                                    CarouselDefaults carouselDefaults = CarouselDefaults.INSTANCE;
+                                    int i14 = (i9 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK;
                                     i9 &= -57345;
-                                    obj2 = CarouselDefaults.INSTANCE.singleAdvanceFlingBehavior(carouselState2, null, startRestartGroup, (i9 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
-                                } else {
-                                    i10 = 0;
+                                    obj2 = carouselDefaults.singleAdvanceFlingBehavior(obj, null, startRestartGroup, i14, 2);
                                 }
                                 if (i5 != 0) {
                                     f7 = CarouselDefaults.INSTANCE.m2969getMinSmallItemSizeD9Ej5fM();
@@ -655,31 +659,27 @@ public final class CarouselKt {
                                 if (i8 != 0) {
                                     float f15 = f7;
                                     modifier3 = companion;
-                                    i11 = i9;
+                                    i10 = i9;
                                     f12 = f15;
-                                    targetedFlingBehavior3 = obj2;
-                                    f13 = f8;
-                                    f14 = m7555constructorimpl;
-                                    paddingValues3 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(i10));
-                                    i12 = -118598974;
+                                    paddingValues3 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f));
                                 } else {
                                     float f16 = f7;
                                     modifier3 = companion;
-                                    i11 = i9;
+                                    i10 = i9;
                                     f12 = f16;
-                                    targetedFlingBehavior3 = obj2;
-                                    f13 = f8;
-                                    f14 = m7555constructorimpl;
-                                    i12 = -118598974;
                                     paddingValues3 = paddingValues;
                                 }
+                                targetedFlingBehavior3 = obj2;
+                                f13 = f8;
+                                f14 = m7555constructorimpl;
+                                i11 = -118598974;
                             }
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(i12, i11, -1, "androidx.compose.material3.carousel.HorizontalMultiBrowseCarousel (Carousel.kt:165)");
+                                ComposerKt.traceEventStart(i11, i10, -1, "androidx.compose.material3.carousel.HorizontalMultiBrowseCarousel (Carousel.kt:165)");
                             }
-                            int i15 = i11 << 3;
-                            m2972HorizontalMultiBrowseCarousel3tcCNu0(carouselState, f5, modifier3, f14, targetedFlingBehavior3, true, f12, f13, paddingValues3, function4, startRestartGroup, (i11 & 14) | i7 | (i11 & 112) | (i11 & 896) | (i11 & 7168) | (57344 & i11) | (3670016 & i15) | (29360128 & i15) | (234881024 & i15) | (i15 & 1879048192), 0);
+                            int i15 = i10 << 3;
+                            m2972HorizontalMultiBrowseCarousel3tcCNu0(carouselState, f5, modifier3, f14, targetedFlingBehavior3, true, f12, f13, paddingValues3, function4, startRestartGroup, (i10 & 14) | i7 | (i10 & 112) | (i10 & 896) | (i10 & 7168) | (57344 & i10) | (3670016 & i15) | (29360128 & i15) | (234881024 & i15) | (i15 & 1879048192), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -704,8 +704,8 @@ public final class CarouselKt {
                         if (endRestartGroup != null) {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda6
                                 @Override // kotlin.jvm.functions.Function2
-                                public final Object invoke(Object obj3, Object obj4) {
-                                    return CarouselKt.HorizontalMultiBrowseCarousel_zCIJ0Nk$lambda$4(CarouselState.this, f, modifier2, f9, targetedFlingBehavior2, f11, f10, paddingValues2, function4, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
+                                public final Object invoke(Object obj4, Object obj5) {
+                                    return CarouselKt.HorizontalMultiBrowseCarousel_zCIJ0Nk$lambda$4(CarouselState.this, f, modifier2, f9, targetedFlingBehavior2, f11, f10, paddingValues2, function4, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
                                 }
                             });
                             return;
@@ -784,13 +784,13 @@ public final class CarouselKt {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x0185  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x01b9  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x01c2  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x020c  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0219  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0229  */
-    /* JADX WARN: Removed duplicated region for block: B:137:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0186  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x01ba  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x01c2  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x020c  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0219  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0229  */
+    /* JADX WARN: Removed duplicated region for block: B:138:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:36:0x0066  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x0082  */
@@ -801,10 +801,10 @@ public final class CarouselKt {
     /* JADX WARN: Removed duplicated region for block: B:70:0x00c0  */
     /* JADX WARN: Removed duplicated region for block: B:79:0x00d9  */
     /* JADX WARN: Removed duplicated region for block: B:80:0x00dc  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0102  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0105  */
     /* JADX WARN: Removed duplicated region for block: B:94:0x010f  */
-    /* JADX WARN: Type inference failed for: r4v13 */
+    /* JADX WARN: Type inference failed for: r4v17 */
     /* renamed from: HorizontalUncontainedCarousel-VUP9l70  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -829,12 +829,13 @@ public final class CarouselKt {
         final boolean z3;
         ScopeUpdateScope endRestartGroup;
         int i8;
-        PaddingValues m811PaddingValues0680j_4;
+        float f5;
         boolean z4;
         boolean z5;
-        float f5;
+        PaddingValues m811PaddingValues0680j_4;
+        boolean z6;
         TargetedFlingBehavior targetedFlingBehavior4;
-        boolean changed;
+        boolean z7;
         Object rememberedValue;
         int i9;
         Composer startRestartGroup = composer.startRestartGroup(534621863);
@@ -913,7 +914,7 @@ public final class CarouselKt {
                                     companion = Modifier.Companion;
                                 }
                                 if (i4 != 0) {
-                                    f3 = Dp.m7555constructorimpl(0);
+                                    f3 = Dp.m7555constructorimpl(0.0f);
                                 }
                                 if ((i2 & 16) != 0) {
                                     i8 = i7 & (-57345);
@@ -925,11 +926,11 @@ public final class CarouselKt {
                                     z2 = true;
                                 }
                                 if (i6 != 0) {
-                                    boolean z6 = z2;
-                                    m811PaddingValues0680j_4 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0));
-                                    z4 = true;
-                                    z5 = z6;
                                     f5 = f3;
+                                    z4 = true;
+                                    z5 = z2;
+                                    m811PaddingValues0680j_4 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f));
+                                    z6 = false;
                                     targetedFlingBehavior4 = targetedFlingBehavior2;
                                     startRestartGroup.endDefaults();
                                     if (ComposerKt.isTraceInProgress()) {
@@ -941,9 +942,13 @@ public final class CarouselKt {
                                     final Density density = (Density) consume;
                                     Orientation orientation = Orientation.Horizontal;
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1624446376, "CC(remember):Carousel.kt#9igjgp");
-                                    changed = startRestartGroup.changed(density) | ((i8 & 112) == 32 ? z4 : false);
+                                    boolean changed = startRestartGroup.changed(density);
+                                    if ((i8 & 112) == 32) {
+                                        z6 = z4;
+                                    }
+                                    z7 = z6 | changed;
                                     rememberedValue = startRestartGroup.rememberedValue();
-                                    if (!changed || rememberedValue == Composer.Companion.getEmpty()) {
+                                    if (!z7 || rememberedValue == Composer.Companion.getEmpty()) {
                                         rememberedValue = new Function2() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda8
                                             @Override // kotlin.jvm.functions.Function2
                                             public final Object invoke(Object obj3, Object obj4) {
@@ -973,10 +978,11 @@ public final class CarouselKt {
                                 if ((i2 & 16) != 0) {
                                     i8 = i7 & (-57345);
                                 } else {
-                                    targetedFlingBehavior4 = targetedFlingBehavior2;
                                     i8 = i7;
+                                    z6 = false;
                                     z4 = true;
                                     f5 = f3;
+                                    targetedFlingBehavior4 = targetedFlingBehavior2;
                                     z5 = z2;
                                     m811PaddingValues0680j_4 = obj;
                                     startRestartGroup.endDefaults();
@@ -988,9 +994,12 @@ public final class CarouselKt {
                                     final Density density2 = (Density) consume2;
                                     Orientation orientation2 = Orientation.Horizontal;
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1624446376, "CC(remember):Carousel.kt#9igjgp");
-                                    changed = startRestartGroup.changed(density2) | ((i8 & 112) == 32 ? z4 : false);
+                                    boolean changed2 = startRestartGroup.changed(density2);
+                                    if ((i8 & 112) == 32) {
+                                    }
+                                    z7 = z6 | changed2;
                                     rememberedValue = startRestartGroup.rememberedValue();
-                                    if (!changed) {
+                                    if (!z7) {
                                     }
                                     rememberedValue = new Function2() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda8
                                         @Override // kotlin.jvm.functions.Function2
@@ -1016,8 +1025,9 @@ public final class CarouselKt {
                                 }
                             }
                             f5 = f3;
-                            targetedFlingBehavior4 = targetedFlingBehavior2;
+                            z6 = false;
                             z4 = true;
+                            targetedFlingBehavior4 = targetedFlingBehavior2;
                             z5 = z2;
                             m811PaddingValues0680j_4 = obj;
                             startRestartGroup.endDefaults();
@@ -1029,9 +1039,12 @@ public final class CarouselKt {
                             final Density density22 = (Density) consume22;
                             Orientation orientation22 = Orientation.Horizontal;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1624446376, "CC(remember):Carousel.kt#9igjgp");
-                            changed = startRestartGroup.changed(density22) | ((i8 & 112) == 32 ? z4 : false);
+                            boolean changed22 = startRestartGroup.changed(density22);
+                            if ((i8 & 112) == 32) {
+                            }
+                            z7 = z6 | changed22;
                             rememberedValue = startRestartGroup.rememberedValue();
-                            if (!changed) {
+                            if (!z7) {
                             }
                             rememberedValue = new Function2() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda8
                                 @Override // kotlin.jvm.functions.Function2
@@ -1138,11 +1151,11 @@ public final class CarouselKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0144  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x017a  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0182  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0191  */
-    /* JADX WARN: Removed duplicated region for block: B:118:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0175  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x018c  */
+    /* JADX WARN: Removed duplicated region for block: B:119:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:36:0x0066  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x0082  */
@@ -1151,9 +1164,9 @@ public final class CarouselKt {
     /* JADX WARN: Removed duplicated region for block: B:59:0x00a1  */
     /* JADX WARN: Removed duplicated region for block: B:69:0x00bc  */
     /* JADX WARN: Removed duplicated region for block: B:70:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00df  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00de  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00e0  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x00e9  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Kept for binary compatibility")
     /* renamed from: HorizontalUncontainedCarousel-9QcgTRs  reason: not valid java name */
     /*
@@ -1250,15 +1263,15 @@ public final class CarouselKt {
                             } else {
                                 Modifier.Companion companion = i7 != 0 ? Modifier.Companion : obj;
                                 if (i4 != 0) {
-                                    f4 = Dp.m7555constructorimpl(0);
+                                    f4 = Dp.m7555constructorimpl(0.0f);
                                 }
                                 if ((i2 & 16) != 0) {
                                     i3 &= -57345;
                                     obj2 = CarouselDefaults.INSTANCE.noSnapFlingBehavior(startRestartGroup, 6);
                                 }
                                 if (i5 != 0) {
-                                    m811PaddingValues0680j_4 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0));
                                     modifier3 = companion;
+                                    m811PaddingValues0680j_4 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f));
                                     f6 = f4;
                                     TargetedFlingBehavior targetedFlingBehavior3 = obj2;
                                     startRestartGroup.endDefaults();
@@ -1366,20 +1379,12 @@ public final class CarouselKt {
 
     /* JADX WARN: Removed duplicated region for block: B:101:0x0120  */
     /* JADX WARN: Removed duplicated region for block: B:102:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0148  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0154  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x0200  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0238  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x023b  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0249  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x024c  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x0255  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x0258  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x02c5  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x02d5  */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x02e8  */
-    /* JADX WARN: Removed duplicated region for block: B:178:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x014c  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0156  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x02da  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x02ed  */
+    /* JADX WARN: Removed duplicated region for block: B:177:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x004e  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0067  */
@@ -1413,6 +1418,7 @@ public final class CarouselKt {
         int i8;
         int i9;
         int i10;
+        Object obj2;
         int i11;
         final PaddingValues paddingValues2;
         final Modifier modifier2;
@@ -1424,21 +1430,17 @@ public final class CarouselKt {
         final float f10;
         ScopeUpdateScope endRestartGroup;
         CarouselState carouselState2;
-        int i12;
+        Object obj3;
         float f11;
         float f12;
         float f13;
         TargetedFlingBehavior targetedFlingBehavior4;
         Modifier modifier3;
-        int i13;
-        PaddingValues m811PaddingValues0680j_4;
-        final float f14;
-        boolean changed;
-        Object rememberedValue;
+        int i12;
+        float f14;
         float f15;
         float f16;
-        float f17;
-        int i14;
+        int i13;
         Composer startRestartGroup = composer.startRestartGroup(1493031269);
         ComposerKt.sourceInformation(startRestartGroup, "C(HorizontalCenteredHeroCarousel)N(state,modifier,maxItemWidth:c#ui.unit.Dp,itemSpacing:c#ui.unit.Dp,flingBehavior,userScrollEnabled,minSmallItemWidth:c#ui.unit.Dp,maxSmallItemWidth:c#ui.unit.Dp,contentPadding,content)305@14133L7,309@14246L625,306@14145L1168:Carousel.kt#dcf9yb");
         if ((i2 & 1) != 0) {
@@ -1448,8 +1450,8 @@ public final class CarouselKt {
         } else {
             i3 = i;
         }
-        int i15 = i2 & 2;
-        if (i15 != 0) {
+        int i14 = i2 & 2;
+        if (i14 != 0) {
             i3 |= 48;
         } else if ((i & 48) == 0) {
             obj = modifier;
@@ -1470,14 +1472,14 @@ public final class CarouselKt {
                         if ((i2 & 16) == 0) {
                             targetedFlingBehavior2 = targetedFlingBehavior;
                             if (startRestartGroup.changed(targetedFlingBehavior2)) {
-                                i14 = 16384;
-                                i3 |= i14;
+                                i13 = 16384;
+                                i3 |= i13;
                             }
                         } else {
                             targetedFlingBehavior2 = targetedFlingBehavior;
                         }
-                        i14 = 8192;
-                        i3 |= i14;
+                        i13 = 8192;
+                        i3 |= i13;
                     } else {
                         targetedFlingBehavior2 = targetedFlingBehavior;
                     }
@@ -1508,7 +1510,8 @@ public final class CarouselKt {
                             i3 |= 100663296;
                         } else if ((i & 100663296) == 0) {
                             i10 = i9;
-                            i3 |= startRestartGroup.changed(paddingValues) ? 67108864 : 33554432;
+                            obj2 = paddingValues;
+                            i3 |= startRestartGroup.changed(obj2) ? 67108864 : 33554432;
                             i11 = i3;
                             if ((i2 & 512) == 0) {
                                 i11 |= 805306368;
@@ -1527,26 +1530,25 @@ public final class CarouselKt {
                                         f12 = f7;
                                         f13 = f6;
                                         targetedFlingBehavior4 = targetedFlingBehavior2;
-                                        i13 = i11;
+                                        i12 = i11;
+                                        obj3 = obj2;
                                         f11 = f4;
                                     } else {
-                                        Modifier.Companion companion = i15 != 0 ? Modifier.Companion : obj;
+                                        Modifier.Companion companion = i14 != 0 ? Modifier.Companion : obj;
                                         if (i4 != 0) {
                                             f5 = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
                                         }
                                         if (i5 != 0) {
-                                            f6 = Dp.m7555constructorimpl(0);
+                                            f6 = Dp.m7555constructorimpl(0.0f);
                                         }
                                         if ((i2 & 16) != 0) {
                                             CarouselDefaults carouselDefaults = CarouselDefaults.INSTANCE;
-                                            int i16 = (i11 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK;
-                                            i12 = 0;
+                                            int i15 = (i11 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK;
                                             carouselState2 = carouselState;
                                             i11 &= -57345;
-                                            targetedFlingBehavior2 = carouselDefaults.singleAdvanceFlingBehavior(carouselState2, null, startRestartGroup, i16, 2);
+                                            targetedFlingBehavior2 = carouselDefaults.singleAdvanceFlingBehavior(carouselState2, null, startRestartGroup, i15, 2);
                                         } else {
                                             carouselState2 = carouselState;
-                                            i12 = 0;
                                         }
                                         if (i6 != 0) {
                                             z2 = true;
@@ -1556,119 +1558,74 @@ public final class CarouselKt {
                                         }
                                         float m2968getMaxSmallItemSizeD9Ej5fM = i8 != 0 ? CarouselDefaults.INSTANCE.m2968getMaxSmallItemSizeD9Ej5fM() : f4;
                                         if (i10 != 0) {
+                                            obj3 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f));
                                             f13 = f6;
                                             modifier3 = companion;
-                                            m811PaddingValues0680j_4 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(i12));
+                                            i12 = i11;
                                             f11 = m2968getMaxSmallItemSizeD9Ej5fM;
                                             f12 = f7;
                                             targetedFlingBehavior4 = targetedFlingBehavior2;
-                                            i13 = i11;
-                                            startRestartGroup.endDefaults();
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventStart(1493031269, i13, -1, "androidx.compose.material3.carousel.HorizontalCenteredHeroCarousel (Carousel.kt:304)");
-                                            }
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                            Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
-                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            final Density density = (Density) consume;
-                                            Orientation orientation = Orientation.Horizontal;
-                                            f14 = f12;
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 283997334, "CC(remember):Carousel.kt#9igjgp");
-                                            changed = ((i13 & 896) != 256) | startRestartGroup.changed(density) | startRestartGroup.changedInstance(carouselState2) | ((3670016 & i13) != 1048576) | ((29360128 & i13) != 8388608);
-                                            rememberedValue = startRestartGroup.rememberedValue();
-                                            if (!changed || rememberedValue == Composer.Companion.getEmpty()) {
-                                                final CarouselState carouselState3 = carouselState2;
-                                                final float f18 = f11;
-                                                final float f19 = f5;
-                                                rememberedValue = new Function2() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda11
-                                                    @Override // kotlin.jvm.functions.Function2
-                                                    public final Object invoke(Object obj2, Object obj3) {
-                                                        KeylineList heroKeylineList;
-                                                        heroKeylineList = KeylinesKt.heroKeylineList(r0, ((Float) obj2).floatValue(), !Float.isNaN(r9) ? Float.valueOf(r0.mo405toPx0680j_4(f19)) : null, ((Float) obj3).floatValue(), carouselState3.getPagerState$material3().getPageCountState().getValue().invoke().intValue(), true, r0.mo405toPx0680j_4(f14), Density.this.mo405toPx0680j_4(f18));
-                                                        return heroKeylineList;
-                                                    }
-                                                };
-                                                f15 = f19;
-                                                f16 = f14;
-                                                f17 = f18;
-                                                startRestartGroup.updateRememberedValue(rememberedValue);
-                                            } else {
-                                                f16 = f14;
-                                                f17 = f11;
-                                                f15 = f5;
-                                            }
-                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            int i17 = i13 << 9;
-                                            PaddingValues paddingValues3 = m811PaddingValues0680j_4;
-                                            boolean z4 = z2;
-                                            m2970CarouselcJHQLPU(carouselState, orientation, (Function2) rememberedValue, paddingValues3, 2, modifier3, f13, targetedFlingBehavior4, z4, function4, startRestartGroup, (i13 & 14) | 24624 | ((i13 >> 15) & 7168) | ((i13 << 12) & 458752) | (3670016 & i17) | (29360128 & i17) | (i17 & 234881024) | (1879048192 & i13), 0);
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventEnd();
-                                            }
-                                            composer2 = startRestartGroup;
-                                            paddingValues2 = paddingValues3;
-                                            modifier2 = modifier3;
-                                            f8 = f13;
-                                            targetedFlingBehavior3 = targetedFlingBehavior4;
-                                            z3 = z4;
-                                            f9 = f15;
-                                            f7 = f16;
-                                            f10 = f17;
                                         } else {
+                                            obj3 = paddingValues;
                                             f11 = m2968getMaxSmallItemSizeD9Ej5fM;
                                             f12 = f7;
                                             f13 = f6;
                                             targetedFlingBehavior4 = targetedFlingBehavior2;
                                             modifier3 = companion;
-                                            i13 = i11;
+                                            i12 = i11;
                                         }
                                     }
-                                    m811PaddingValues0680j_4 = paddingValues;
                                     startRestartGroup.endDefaults();
                                     if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventStart(1493031269, i12, -1, "androidx.compose.material3.carousel.HorizontalCenteredHeroCarousel (Carousel.kt:304)");
                                     }
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                    Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
+                                    Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    final Density density2 = (Density) consume2;
-                                    Orientation orientation2 = Orientation.Horizontal;
-                                    f14 = f12;
+                                    final Density density = (Density) consume;
+                                    Orientation orientation = Orientation.Horizontal;
+                                    final float f17 = f12;
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 283997334, "CC(remember):Carousel.kt#9igjgp");
-                                    changed = ((i13 & 896) != 256) | startRestartGroup.changed(density2) | startRestartGroup.changedInstance(carouselState2) | ((3670016 & i13) != 1048576) | ((29360128 & i13) != 8388608);
-                                    rememberedValue = startRestartGroup.rememberedValue();
-                                    if (changed) {
+                                    boolean changed = startRestartGroup.changed(density) | ((i12 & 896) == 256) | startRestartGroup.changedInstance(carouselState2) | ((3670016 & i12) == 1048576) | ((29360128 & i12) == 8388608);
+                                    Object rememberedValue = startRestartGroup.rememberedValue();
+                                    if (changed || rememberedValue == Composer.Companion.getEmpty()) {
+                                        final CarouselState carouselState3 = carouselState2;
+                                        final float f18 = f11;
+                                        final float f19 = f5;
+                                        rememberedValue = new Function2() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda11
+                                            @Override // kotlin.jvm.functions.Function2
+                                            public final Object invoke(Object obj4, Object obj5) {
+                                                KeylineList heroKeylineList;
+                                                heroKeylineList = KeylinesKt.heroKeylineList(r0, ((Float) obj4).floatValue(), !Float.isNaN(r9) ? Float.valueOf(r0.mo405toPx0680j_4(f19)) : null, ((Float) obj5).floatValue(), carouselState3.getPagerState$material3().getPageCountState().getValue().invoke().intValue(), true, r0.mo405toPx0680j_4(f17), Density.this.mo405toPx0680j_4(f18));
+                                                return heroKeylineList;
+                                            }
+                                        };
+                                        f14 = f19;
+                                        f15 = f17;
+                                        f16 = f18;
+                                        startRestartGroup.updateRememberedValue(rememberedValue);
+                                    } else {
+                                        f15 = f17;
+                                        f16 = f11;
+                                        f14 = f5;
                                     }
-                                    final CarouselState carouselState32 = carouselState2;
-                                    final float f182 = f11;
-                                    final float f192 = f5;
-                                    rememberedValue = new Function2() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda11
-                                        @Override // kotlin.jvm.functions.Function2
-                                        public final Object invoke(Object obj2, Object obj3) {
-                                            KeylineList heroKeylineList;
-                                            heroKeylineList = KeylinesKt.heroKeylineList(r0, ((Float) obj2).floatValue(), !Float.isNaN(r9) ? Float.valueOf(r0.mo405toPx0680j_4(f192)) : null, ((Float) obj3).floatValue(), carouselState32.getPagerState$material3().getPageCountState().getValue().invoke().intValue(), true, r0.mo405toPx0680j_4(f14), Density.this.mo405toPx0680j_4(f182));
-                                            return heroKeylineList;
-                                        }
-                                    };
-                                    f15 = f192;
-                                    f16 = f14;
-                                    f17 = f182;
-                                    startRestartGroup.updateRememberedValue(rememberedValue);
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    int i172 = i13 << 9;
-                                    PaddingValues paddingValues32 = m811PaddingValues0680j_4;
-                                    boolean z42 = z2;
-                                    m2970CarouselcJHQLPU(carouselState, orientation2, (Function2) rememberedValue, paddingValues32, 2, modifier3, f13, targetedFlingBehavior4, z42, function4, startRestartGroup, (i13 & 14) | 24624 | ((i13 >> 15) & 7168) | ((i13 << 12) & 458752) | (3670016 & i172) | (29360128 & i172) | (i172 & 234881024) | (1879048192 & i13), 0);
+                                    int i16 = i12 << 9;
+                                    PaddingValues paddingValues3 = obj3;
+                                    boolean z4 = z2;
+                                    m2970CarouselcJHQLPU(carouselState, orientation, (Function2) rememberedValue, paddingValues3, 2, modifier3, f13, targetedFlingBehavior4, z4, function4, startRestartGroup, (i12 & 14) | 24624 | ((i12 >> 15) & 7168) | ((i12 << 12) & 458752) | (3670016 & i16) | (29360128 & i16) | (i16 & 234881024) | (1879048192 & i12), 0);
                                     if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventEnd();
                                     }
+                                    paddingValues2 = paddingValues3;
                                     composer2 = startRestartGroup;
-                                    paddingValues2 = paddingValues32;
                                     modifier2 = modifier3;
                                     f8 = f13;
                                     targetedFlingBehavior3 = targetedFlingBehavior4;
-                                    z3 = z42;
-                                    f9 = f15;
-                                    f7 = f16;
-                                    f10 = f17;
+                                    z3 = z4;
+                                    f9 = f14;
+                                    f7 = f15;
+                                    f10 = f16;
                                 } else {
                                     startRestartGroup.skipToGroupEnd();
                                     paddingValues2 = paddingValues;
@@ -1684,8 +1641,8 @@ public final class CarouselKt {
                                 if (endRestartGroup != null) {
                                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda12
                                         @Override // kotlin.jvm.functions.Function2
-                                        public final Object invoke(Object obj2, Object obj3) {
-                                            return CarouselKt.HorizontalCenteredHeroCarousel_p2lB3Bg$lambda$13(CarouselState.this, modifier2, f9, f8, targetedFlingBehavior3, z3, f7, f10, paddingValues2, function4, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                                        public final Object invoke(Object obj4, Object obj5) {
+                                            return CarouselKt.HorizontalCenteredHeroCarousel_p2lB3Bg$lambda$13(CarouselState.this, modifier2, f9, f8, targetedFlingBehavior3, z3, f7, f10, paddingValues2, function4, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
                                         }
                                     });
                                     return;
@@ -1699,6 +1656,7 @@ public final class CarouselKt {
                             }
                         }
                         i10 = i9;
+                        obj2 = paddingValues;
                         i11 = i3;
                         if ((i2 & 512) == 0) {
                         }
@@ -1719,6 +1677,7 @@ public final class CarouselKt {
                     if (i9 != 0) {
                     }
                     i10 = i9;
+                    obj2 = paddingValues;
                     i11 = i3;
                     if ((i2 & 512) == 0) {
                     }
@@ -1745,6 +1704,7 @@ public final class CarouselKt {
                 if (i9 != 0) {
                 }
                 i10 = i9;
+                obj2 = paddingValues;
                 i11 = i3;
                 if ((i2 & 512) == 0) {
                 }
@@ -1775,6 +1735,7 @@ public final class CarouselKt {
             if (i9 != 0) {
             }
             i10 = i9;
+            obj2 = paddingValues;
             i11 = i3;
             if ((i2 & 512) == 0) {
             }
@@ -1809,6 +1770,7 @@ public final class CarouselKt {
         if (i9 != 0) {
         }
         i10 = i9;
+        obj2 = paddingValues;
         i11 = i3;
         if ((i2 & 512) == 0) {
         }
@@ -1820,11 +1782,11 @@ public final class CarouselKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:101:0x0121  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0141  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x0143  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x014c  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x0389  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0399  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x013e  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x0381  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0390  */
     /* JADX WARN: Removed duplicated region for block: B:171:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:66:0x00bc  */
     /* JADX WARN: Removed duplicated region for block: B:67:0x00be  */
@@ -1849,16 +1811,13 @@ public final class CarouselKt {
         int i9;
         int i10;
         final CarouselState carouselState2;
-        final TargetedFlingBehavior targetedFlingBehavior2;
         final boolean z2;
+        final TargetedFlingBehavior targetedFlingBehavior2;
         final float f3;
         ScopeUpdateScope endRestartGroup;
         boolean z3;
         TargetedFlingBehavior targetedFlingBehavior3;
-        boolean z4;
-        TargetedFlingBehavior targetedFlingBehavior4;
         int i11;
-        int i12;
         Composer startRestartGroup = composer.startRestartGroup(-2077912500);
         ComposerKt.sourceInformation(startRestartGroup, "C(Carousel)N(state,orientation,keylineList,contentPadding,maxNonFocalVisibleItemCount,modifier,itemSpacing:c#ui.unit.Dp,flingBehavior,userScrollEnabled,content)375@17497L42,376@17585L41,378@17654L118:Carousel.kt#dcf9yb");
         if ((i3 & 1) != 0) {
@@ -1892,8 +1851,8 @@ public final class CarouselKt {
                 i4 |= startRestartGroup.changed(i5) ? 16384 : 8192;
             }
         }
-        int i13 = i3 & 32;
-        if (i13 != 0) {
+        int i12 = i3 & 32;
+        if (i12 != 0) {
             i4 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
         } else if ((196608 & i2) == 0) {
             obj = modifier;
@@ -1908,14 +1867,14 @@ public final class CarouselKt {
                     if ((i3 & 128) == 0) {
                         obj2 = targetedFlingBehavior;
                         if (startRestartGroup.changed(obj2)) {
-                            i12 = 8388608;
-                            i4 |= i12;
+                            i11 = 8388608;
+                            i4 |= i11;
                         }
                     } else {
                         obj2 = targetedFlingBehavior;
                     }
-                    i12 = 4194304;
-                    i4 |= i12;
+                    i11 = 4194304;
+                    i4 |= i11;
                 } else {
                     obj2 = targetedFlingBehavior;
                 }
@@ -1923,13 +1882,14 @@ public final class CarouselKt {
                 if (i7 != 0) {
                     i4 |= 100663296;
                 } else if ((i2 & 100663296) == 0) {
-                    i8 = i13;
+                    i8 = i12;
                     i4 |= startRestartGroup.changed(z) ? 67108864 : 33554432;
                     i9 = i4;
                     if ((i3 & 512) != 0) {
                         if ((i2 & 805306368) == 0) {
                             i10 = i9 | (startRestartGroup.changedInstance(function4) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456);
                         }
+                        boolean z4 = true;
                         if (startRestartGroup.shouldExecute((i9 & 306783379) != 306783378, i9 & 1)) {
                             startRestartGroup.startDefaults();
                             ComposerKt.sourceInformation(startRestartGroup, "371@17296L41");
@@ -1939,46 +1899,38 @@ public final class CarouselKt {
                                     i9 &= -29360129;
                                 }
                                 carouselState2 = carouselState;
-                                z4 = z;
-                                targetedFlingBehavior4 = obj2;
-                                i11 = i9;
+                                z3 = z;
+                                targetedFlingBehavior3 = obj2;
                             } else {
                                 Modifier.Companion companion = i8 != 0 ? Modifier.Companion : obj;
                                 if (i6 != 0) {
-                                    f2 = Dp.m7555constructorimpl(0);
+                                    f2 = Dp.m7555constructorimpl(0.0f);
                                 }
                                 if ((i3 & 128) != 0) {
                                     CarouselDefaults carouselDefaults = CarouselDefaults.INSTANCE;
-                                    int i14 = (i9 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK;
-                                    z3 = true;
+                                    int i13 = (i9 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK;
                                     carouselState2 = carouselState;
                                     i9 &= -29360129;
-                                    targetedFlingBehavior3 = carouselDefaults.singleAdvanceFlingBehavior(carouselState2, null, startRestartGroup, i14, 2);
+                                    z4 = true;
+                                    obj2 = carouselDefaults.singleAdvanceFlingBehavior(carouselState2, null, startRestartGroup, i13, 2);
                                 } else {
                                     carouselState2 = carouselState;
-                                    z3 = true;
-                                    targetedFlingBehavior3 = targetedFlingBehavior;
                                 }
-                                if (i7 != 0) {
-                                    targetedFlingBehavior4 = targetedFlingBehavior3;
-                                    z4 = z3;
-                                } else {
-                                    z4 = z;
-                                    targetedFlingBehavior4 = targetedFlingBehavior3;
-                                }
+                                z3 = i7 != 0 ? z4 : z;
+                                targetedFlingBehavior3 = obj2;
                                 obj = companion;
-                                i11 = i9;
                             }
+                            int i14 = i9;
                             float f4 = f2;
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(-2077912500, i11, -1, "androidx.compose.material3.carousel.Carousel (Carousel.kt:374)");
+                                ComposerKt.traceEventStart(-2077912500, i14, -1, "androidx.compose.material3.carousel.Carousel (Carousel.kt:374)");
                             }
-                            int i15 = ((i11 >> 9) & 14) | (i11 & 112);
+                            int i15 = ((i14 >> 9) & 14) | (i14 & 112);
                             float calculateBeforeContentPadding = calculateBeforeContentPadding(paddingValues, orientation, startRestartGroup, i15);
                             float calculateAfterContentPadding = calculateAfterContentPadding(paddingValues, orientation, startRestartGroup, i15);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 285904898, "CC(remember):Carousel.kt#9igjgp");
-                            boolean z5 = (i11 & 896) == 256;
+                            boolean z5 = (i14 & 896) == 256;
                             Object rememberedValue = startRestartGroup.rememberedValue();
                             if (z5 || rememberedValue == Composer.Companion.getEmpty()) {
                                 rememberedValue = new CarouselPageSize(function2, calculateBeforeContentPadding, calculateAfterContentPadding);
@@ -2004,53 +1956,49 @@ public final class CarouselKt {
                                     startRestartGroup.updateRememberedValue(rememberedValue2);
                                 }
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                int i16 = i11;
-                                PagerKt.m1072HorizontalPager8jOkeI(pagerState$material3, SemanticsModifierKt.semantics$default(obj, false, (Function1) rememberedValue2, 1, null), m815PaddingValuesa9UjIt4$default, carouselPageSize, i5, f4, null, targetedFlingBehavior4, z4, false, null, null, KeylineSnapPosition, null, ComposableLambdaKt.rememberComposableLambda(-1817116752, true, new CarouselKt$Carousel$2(carouselState2, carouselPageSize, function4), startRestartGroup, 54), startRestartGroup, (i16 & 57344) | ((i16 >> 3) & 458752) | (i16 & 29360128) | (i16 & 234881024), 24576, 11840);
+                                PagerKt.m1072HorizontalPager8jOkeI(pagerState$material3, SemanticsModifierKt.semantics$default(obj, false, (Function1) rememberedValue2, 1, null), m815PaddingValuesa9UjIt4$default, carouselPageSize, i5, f4, null, targetedFlingBehavior3, z3, false, null, null, KeylineSnapPosition, null, ComposableLambdaKt.rememberComposableLambda(-1817116752, true, new CarouselKt$Carousel$2(carouselState2, carouselPageSize, function4), startRestartGroup, 54), startRestartGroup, (i14 & 57344) | ((i14 >> 3) & 458752) | (i14 & 29360128) | (i14 & 234881024), 24576, 11840);
+                                startRestartGroup.endReplaceGroup();
+                            } else if (orientation == Orientation.Vertical) {
+                                startRestartGroup.startReplaceGroup(275178469);
+                                ComposerKt.sourceInformation(startRestartGroup, "434@19985L7,435@20077L7,443@20422L24,444@20458L1024,429@19689L1793");
+                                CarouselPagerState pagerState$material32 = carouselState2.getPagerState$material3();
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                float calculateStartPadding = PaddingKt.calculateStartPadding(paddingValues, (LayoutDirection) consume);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                PaddingValues m815PaddingValuesa9UjIt4$default2 = PaddingKt.m815PaddingValuesa9UjIt4$default(calculateStartPadding, 0.0f, PaddingKt.calculateEndPadding(paddingValues, (LayoutDirection) consume2), 0.0f, 10, null);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 285993380, "CC(remember):Carousel.kt#9igjgp");
+                                Object rememberedValue3 = startRestartGroup.rememberedValue();
+                                if (rememberedValue3 == Composer.Companion.getEmpty()) {
+                                    rememberedValue3 = new Function1() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda4
+                                        @Override // kotlin.jvm.functions.Function1
+                                        public final Object invoke(Object obj3) {
+                                            return CarouselKt.Carousel_cJHQLPU$lambda$18$lambda$17((SemanticsPropertyReceiver) obj3);
+                                        }
+                                    };
+                                    startRestartGroup.updateRememberedValue(rememberedValue3);
+                                }
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                PagerKt.m1074VerticalPager8jOkeI(pagerState$material32, SemanticsModifierKt.semantics$default(obj, false, (Function1) rememberedValue3, 1, null), m815PaddingValuesa9UjIt4$default2, carouselPageSize, i, f4, null, targetedFlingBehavior3, z3, false, null, null, KeylineSnapPosition, null, ComposableLambdaKt.rememberComposableLambda(-1042567175, true, new CarouselKt$Carousel$4(carouselState2, carouselPageSize, function4), startRestartGroup, 54), startRestartGroup, (i14 & 57344) | ((i14 >> 3) & 458752) | (i14 & 29360128) | (i14 & 234881024), 24576, 11840);
                                 startRestartGroup.endReplaceGroup();
                             } else {
-                                int i17 = i11;
-                                if (orientation == Orientation.Vertical) {
-                                    startRestartGroup.startReplaceGroup(275178469);
-                                    ComposerKt.sourceInformation(startRestartGroup, "434@19985L7,435@20077L7,443@20422L24,444@20458L1024,429@19689L1793");
-                                    CarouselPagerState pagerState$material32 = carouselState2.getPagerState$material3();
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                    Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
-                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    float calculateStartPadding = PaddingKt.calculateStartPadding(paddingValues, (LayoutDirection) consume);
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                    Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
-                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    PaddingValues m815PaddingValuesa9UjIt4$default2 = PaddingKt.m815PaddingValuesa9UjIt4$default(calculateStartPadding, 0.0f, PaddingKt.calculateEndPadding(paddingValues, (LayoutDirection) consume2), 0.0f, 10, null);
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 285993380, "CC(remember):Carousel.kt#9igjgp");
-                                    Object rememberedValue3 = startRestartGroup.rememberedValue();
-                                    if (rememberedValue3 == Composer.Companion.getEmpty()) {
-                                        rememberedValue3 = new Function1() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda4
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public final Object invoke(Object obj3) {
-                                                return CarouselKt.Carousel_cJHQLPU$lambda$18$lambda$17((SemanticsPropertyReceiver) obj3);
-                                            }
-                                        };
-                                        startRestartGroup.updateRememberedValue(rememberedValue3);
-                                    }
-                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    PagerKt.m1074VerticalPager8jOkeI(pagerState$material32, SemanticsModifierKt.semantics$default(obj, false, (Function1) rememberedValue3, 1, null), m815PaddingValuesa9UjIt4$default2, carouselPageSize, i, f4, null, targetedFlingBehavior4, z4, false, null, null, KeylineSnapPosition, null, ComposableLambdaKt.rememberComposableLambda(-1042567175, true, new CarouselKt$Carousel$4(carouselState2, carouselPageSize, function4), startRestartGroup, 54), startRestartGroup, (i17 & 57344) | ((i17 >> 3) & 458752) | (i17 & 29360128) | (i17 & 234881024), 24576, 11840);
-                                    startRestartGroup.endReplaceGroup();
-                                } else {
-                                    startRestartGroup.startReplaceGroup(276916918);
-                                    startRestartGroup.endReplaceGroup();
-                                }
+                                startRestartGroup.startReplaceGroup(276916918);
+                                startRestartGroup.endReplaceGroup();
                             }
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
                             f3 = f4;
-                            targetedFlingBehavior2 = targetedFlingBehavior4;
-                            z2 = z4;
+                            targetedFlingBehavior2 = targetedFlingBehavior3;
+                            z2 = z3;
                         } else {
                             carouselState2 = carouselState;
                             startRestartGroup.skipToGroupEnd();
-                            targetedFlingBehavior2 = targetedFlingBehavior;
                             z2 = z;
+                            targetedFlingBehavior2 = obj2;
                             f3 = f2;
                         }
                         endRestartGroup = startRestartGroup.endRestartGroup();
@@ -2068,17 +2016,19 @@ public final class CarouselKt {
                     }
                     i10 = i9 | 805306368;
                     i9 = i10;
+                    boolean z42 = true;
                     if (startRestartGroup.shouldExecute((i9 & 306783379) != 306783378, i9 & 1)) {
                     }
                     endRestartGroup = startRestartGroup.endRestartGroup();
                     if (endRestartGroup != null) {
                     }
                 }
-                i8 = i13;
+                i8 = i12;
                 i9 = i4;
                 if ((i3 & 512) != 0) {
                 }
                 i9 = i10;
+                boolean z422 = true;
                 if (startRestartGroup.shouldExecute((i9 & 306783379) != 306783378, i9 & 1)) {
                 }
                 endRestartGroup = startRestartGroup.endRestartGroup();
@@ -2091,11 +2041,12 @@ public final class CarouselKt {
             i7 = i3 & 256;
             if (i7 != 0) {
             }
-            i8 = i13;
+            i8 = i12;
             i9 = i4;
             if ((i3 & 512) != 0) {
             }
             i9 = i10;
+            boolean z4222 = true;
             if (startRestartGroup.shouldExecute((i9 & 306783379) != 306783378, i9 & 1)) {
             }
             endRestartGroup = startRestartGroup.endRestartGroup();
@@ -2112,11 +2063,12 @@ public final class CarouselKt {
         i7 = i3 & 256;
         if (i7 != 0) {
         }
-        i8 = i13;
+        i8 = i12;
         i9 = i4;
         if ((i3 & 512) != 0) {
         }
         i9 = i10;
+        boolean z42222 = true;
         if (startRestartGroup.shouldExecute((i9 & 306783379) != 306783378, i9 & 1)) {
         }
         endRestartGroup = startRestartGroup.endRestartGroup();
@@ -2312,7 +2264,7 @@ public final class CarouselKt {
         }
         long j2 = j;
         if ((i & 8) != 0) {
-            f = Dp.m7555constructorimpl(4);
+            f = Dp.m7555constructorimpl(4.0f);
         }
         return m2976drawDebugLines1Yeveo(modifier, carouselState, carouselPageSize, j2, f);
     }
@@ -2346,7 +2298,7 @@ public final class CarouselKt {
 
     public static final float calculateMaxScrollOffset(CarouselState carouselState, Strategy strategy) {
         float pageCount = carouselState.getPagerState$material3().getPageCount();
-        return RangesKt.coerceAtLeast(((strategy.getItemMainAxisSize() * pageCount) + (strategy.getItemSpacing() * (pageCount - 1))) - strategy.getAvailableSpace(), 0.0f);
+        return RangesKt.coerceAtLeast(((strategy.getItemMainAxisSize() * pageCount) + (strategy.getItemSpacing() * (pageCount - 1.0f))) - strategy.getAvailableSpace(), 0.0f);
     }
 
     private static final float getProgress(Keyline keyline, Keyline keyline2, float f) {

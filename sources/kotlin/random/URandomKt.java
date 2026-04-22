@@ -74,14 +74,10 @@ public final class URandomKt {
         }
         compare = Long.compare(range.m10436getLastsVKNKU() ^ Long.MIN_VALUE, (-1) ^ Long.MIN_VALUE);
         if (compare < 0) {
-            return m10425nextULongjmpaWc(random, range.m10435getFirstsVKNKU(), ULong.m9362constructorimpl(range.m10436getLastsVKNKU() + ULong.m9362constructorimpl(1 & 4294967295L)));
+            return m10425nextULongjmpaWc(random, range.m10435getFirstsVKNKU(), ULong.m9362constructorimpl(range.m10436getLastsVKNKU() + ULong.m9362constructorimpl(1L)));
         }
         compare2 = Long.compare(range.m10435getFirstsVKNKU() ^ Long.MIN_VALUE, 0 ^ Long.MIN_VALUE);
-        if (compare2 > 0) {
-            long j = 1 & 4294967295L;
-            return ULong.m9362constructorimpl(m10425nextULongjmpaWc(random, ULong.m9362constructorimpl(range.m10435getFirstsVKNKU() - ULong.m9362constructorimpl(j)), range.m10436getLastsVKNKU()) + ULong.m9362constructorimpl(j));
-        }
-        return nextULong(random);
+        return compare2 > 0 ? ULong.m9362constructorimpl(m10425nextULongjmpaWc(random, ULong.m9362constructorimpl(range.m10435getFirstsVKNKU() - ULong.m9362constructorimpl(1L)), range.m10436getLastsVKNKU()) + ULong.m9362constructorimpl(1L)) : nextULong(random);
     }
 
     @IgnorableReturnValue

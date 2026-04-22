@@ -60,7 +60,9 @@ public final class WorkQueue {
     }
 
     public final int getSize$kotlinx_coroutines_core() {
-        return lastScheduledTask$volatile$FU.get(this) != null ? getBufferSize() + 1 : getBufferSize();
+        Object obj = lastScheduledTask$volatile$FU.get(this);
+        int bufferSize = getBufferSize();
+        return obj != null ? bufferSize + 1 : bufferSize;
     }
 
     public final Task poll() {

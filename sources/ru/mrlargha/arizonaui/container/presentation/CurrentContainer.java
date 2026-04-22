@@ -280,11 +280,10 @@ public final class CurrentContainer extends SAMPUIElement {
         CountDownTimer countDownTimer = new CountDownTimer(j) { // from class: ru.mrlargha.arizonaui.container.presentation.CurrentContainer$addContainer$1$1
             @Override // android.os.CountDownTimer
             public void onTick(long j2) {
-                long j3;
-                long j4;
                 AuctionCurrentContainerBinding auctionCurrentContainerBinding;
+                long j3 = j2 / 1000;
                 auctionCurrentContainerBinding = currentContainer.auctionCurrentContainerBinding;
-                auctionCurrentContainerBinding.ccItemTimeLeftTimer.setText(((j2 / 1000) / 60) + StringUtils.PROCESS_POSTFIX_DELIMITER + (j3 % j4));
+                auctionCurrentContainerBinding.ccItemTimeLeftTimer.setText((j3 / 60) + StringUtils.PROCESS_POSTFIX_DELIMITER + (j3 % 60));
             }
 
             @Override // android.os.CountDownTimer

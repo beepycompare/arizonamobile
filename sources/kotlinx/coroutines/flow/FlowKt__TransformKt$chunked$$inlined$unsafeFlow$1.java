@@ -45,14 +45,12 @@ public final class FlowKt__TransformKt$chunked$$inlined$unsafeFlow$1<T> implemen
         this.$size$inlined = i;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0077, code lost:
-        if (r2.emit(r8, r0) == r1) goto L21;
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0076, code lost:
+        if (r7.emit(r6, r0) == r1) goto L21;
      */
-    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x006c  */
-    /* JADX WARN: Type inference failed for: r2v4, types: [kotlinx.coroutines.flow.FlowCollector] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x006b  */
     @Override // kotlinx.coroutines.flow.Flow
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -60,7 +58,6 @@ public final class FlowKt__TransformKt$chunked$$inlined$unsafeFlow$1<T> implemen
     public Object collect(FlowCollector<? super List<? extends T>> flowCollector, Continuation<? super Unit> continuation) {
         AnonymousClass1 anonymousClass1;
         int i;
-        FlowCollector<? super List<? extends T>> flowCollector2;
         Ref.ObjectRef objectRef;
         ArrayList arrayList;
         if (continuation instanceof AnonymousClass1) {
@@ -77,7 +74,6 @@ public final class FlowKt__TransformKt$chunked$$inlined$unsafeFlow$1<T> implemen
                     anonymousClass1.L$1 = objectRef2;
                     anonymousClass1.label = 1;
                     if (this.$this_chunked$inlined.collect(new FlowKt__TransformKt$chunked$2$1(objectRef2, this.$size$inlined, flowCollector), anonymousClass1) != coroutine_suspended) {
-                        flowCollector2 = flowCollector;
                         objectRef = objectRef2;
                     }
                     return coroutine_suspended;
@@ -89,7 +85,7 @@ public final class FlowKt__TransformKt$chunked$$inlined$unsafeFlow$1<T> implemen
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     objectRef = (Ref.ObjectRef) anonymousClass1.L$1;
-                    flowCollector2 = (FlowCollector) anonymousClass1.L$0;
+                    flowCollector = (FlowCollector) anonymousClass1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 arrayList = (ArrayList) objectRef.element;

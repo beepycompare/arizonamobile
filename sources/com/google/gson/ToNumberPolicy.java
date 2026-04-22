@@ -30,7 +30,7 @@ public enum ToNumberPolicy implements ToNumberStrategy {
             try {
                 return Long.valueOf(Long.parseLong(nextString));
             } catch (NumberFormatException unused) {
-                return parseAsDouble(nextString, jsonReader);
+                return this.parseAsDouble(nextString, jsonReader);
             }
         }
 

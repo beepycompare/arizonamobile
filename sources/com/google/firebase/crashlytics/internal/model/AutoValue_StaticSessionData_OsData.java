@@ -53,6 +53,6 @@ final class AutoValue_StaticSessionData_OsData extends StaticSessionData.OsData 
     }
 
     public int hashCode() {
-        return ((((this.osRelease.hashCode() ^ 1000003) * 1000003) ^ this.osCodeName.hashCode()) * 1000003) ^ (this.isRooted ? 1231 : 1237);
+        return (this.isRooted ? 1231 : 1237) ^ ((((this.osRelease.hashCode() ^ 1000003) * 1000003) ^ this.osCodeName.hashCode()) * 1000003);
     }
 }

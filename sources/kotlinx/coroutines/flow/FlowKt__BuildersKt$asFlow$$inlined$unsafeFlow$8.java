@@ -54,10 +54,10 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$8 implements Fl
     public Object collect(FlowCollector<? super Long> flowCollector, Continuation<? super Unit> continuation) {
         AnonymousClass1 anonymousClass1;
         int i;
+        long[] jArr;
+        int length;
         FlowCollector<? super Long> flowCollector2;
         int i2;
-        int i3;
-        long[] jArr;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
             if ((anonymousClass1.label & Integer.MIN_VALUE) != 0) {
@@ -68,38 +68,37 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$8 implements Fl
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     long[] jArr2 = this.$this_asFlow$inlined;
-                    int length = jArr2.length;
-                    flowCollector2 = flowCollector;
-                    i2 = length;
-                    i3 = 0;
                     jArr = jArr2;
-                    if (i3 < i2) {
+                    length = jArr2.length;
+                    flowCollector2 = flowCollector;
+                    i2 = 0;
+                    if (i2 < length) {
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    i2 = anonymousClass1.I$1;
-                    i3 = anonymousClass1.I$0;
+                    length = anonymousClass1.I$1;
+                    i2 = anonymousClass1.I$0;
                     jArr = (long[]) anonymousClass1.L$1;
                     ResultKt.throwOnFailure(obj);
                     FlowCollector<? super Long> flowCollector3 = (FlowCollector) anonymousClass1.L$0;
-                    i3++;
+                    i2++;
                     flowCollector2 = flowCollector3;
-                    if (i3 < i2) {
-                        Long boxLong = Boxing.boxLong(jArr[i3]);
+                    if (i2 < length) {
+                        Long boxLong = Boxing.boxLong(jArr[i2]);
                         anonymousClass1.L$0 = flowCollector2;
                         anonymousClass1.L$1 = jArr;
-                        anonymousClass1.I$0 = i3;
-                        anonymousClass1.I$1 = i2;
+                        anonymousClass1.I$0 = i2;
+                        anonymousClass1.I$1 = length;
                         anonymousClass1.label = 1;
                         Object emit = flowCollector2.emit(boxLong, anonymousClass1);
                         flowCollector3 = flowCollector2;
                         if (emit == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        i3++;
+                        i2++;
                         flowCollector2 = flowCollector3;
-                        if (i3 < i2) {
+                        if (i2 < length) {
                             return Unit.INSTANCE;
                         }
                     }

@@ -162,7 +162,7 @@ public final class Exchange {
             e = e2;
             IOException iOException = e;
             exchange.eventListener.responseFailed(exchange.call, iOException);
-            trackFailure(iOException);
+            exchange.trackFailure(iOException);
             throw iOException;
         }
     }
@@ -229,6 +229,9 @@ public final class Exchange {
     }
 
     public final IOException bodyComplete(long j, boolean z, boolean z2, boolean z3, IOException iOException) {
+        boolean z4;
+        boolean z5;
+        boolean z6;
         if (iOException != null) {
             trackFailure(iOException);
         }
@@ -248,7 +251,22 @@ public final class Exchange {
                 eventListener2.responseBodyEnd(this.call, j);
             }
         }
-        return this.call.messageDone$okhttp(this, z3 && !z, z2 && !z, z2 && z, z3 && z, iOException);
+        RealCall realCall = this.call;
+        boolean z7 = true;
+        if (!z3 || z) {
+            z4 = true;
+            z7 = false;
+        } else {
+            z4 = true;
+        }
+        if (!z2 || z) {
+            z5 = z;
+            z6 = false;
+        } else {
+            z5 = z;
+            z6 = z4;
+        }
+        return realCall.messageDone$okhttp(this, z7, z6, (z2 && z5) ? z4 : false, (z3 && z5) ? z4 : false, iOException);
     }
 
     public final void noRequestBody() {

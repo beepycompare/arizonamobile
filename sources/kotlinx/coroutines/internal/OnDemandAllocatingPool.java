@@ -32,7 +32,7 @@ public final class OnDemandAllocatingPool<T> {
     }
 
     private final boolean isClosed(int i) {
-        return (i & Integer.MIN_VALUE) != 0;
+        return (Integer.MIN_VALUE & i) != 0;
     }
 
     private final /* synthetic */ void loop$atomicfu$ATOMIC_FIELD_UPDATER$Int(AtomicIntegerFieldUpdater atomicIntegerFieldUpdater, Object obj, Function1<? super Integer, Unit> function1) {

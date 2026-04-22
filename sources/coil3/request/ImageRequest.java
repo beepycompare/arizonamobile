@@ -1080,27 +1080,24 @@ public final class ImageRequest {
             if (obj == null) {
                 obj = NullRequestData.INSTANCE;
             }
-            Object obj2 = obj;
             Target target = this.target;
             Listener listener = this.listener;
             String str = this.memoryCacheKey;
-            Object obj3 = this.lazyMemoryCacheKeyExtras;
-            if (Intrinsics.areEqual(obj3, Boolean.valueOf(this.memoryCacheKeyExtrasAreMutable))) {
-                Intrinsics.checkNotNull(obj3, "null cannot be cast to non-null type kotlin.collections.MutableMap<*, *>");
-                map = Collections_jvmCommonKt.toImmutableMap(TypeIntrinsics.asMutableMap(obj3));
-            } else if (!(obj3 instanceof Map)) {
+            Object obj2 = this.lazyMemoryCacheKeyExtras;
+            if (Intrinsics.areEqual(obj2, Boolean.valueOf(this.memoryCacheKeyExtrasAreMutable))) {
+                Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type kotlin.collections.MutableMap<*, *>");
+                map = Collections_jvmCommonKt.toImmutableMap(TypeIntrinsics.asMutableMap(obj2));
+            } else if (!(obj2 instanceof Map)) {
                 throw new AssertionError();
             } else {
-                map = (Map) obj3;
+                map = (Map) obj2;
             }
-            Map map2 = map;
-            Intrinsics.checkNotNull(map2, "null cannot be cast to non-null type kotlin.collections.Map<kotlin.String, kotlin.String>");
+            Intrinsics.checkNotNull(map, "null cannot be cast to non-null type kotlin.collections.Map<kotlin.String, kotlin.String>");
             String str2 = this.diskCacheKey;
             FileSystem fileSystem = this.fileSystem;
             if (fileSystem == null) {
                 fileSystem = this.defaults.getFileSystem();
             }
-            FileSystem fileSystem2 = fileSystem;
             Pair<? extends Fetcher.Factory<?>, ? extends KClass<?>> pair = this.fetcherFactory;
             Decoder.Factory factory = this.decoderFactory;
             CachePolicy cachePolicy = this.memoryCachePolicy;
@@ -1122,17 +1119,14 @@ public final class ImageRequest {
             if (coroutineContext == null) {
                 coroutineContext = this.defaults.getInterceptorCoroutineContext();
             }
-            CoroutineContext coroutineContext2 = coroutineContext;
-            CoroutineContext coroutineContext3 = this.fetcherCoroutineContext;
+            CoroutineContext coroutineContext2 = this.fetcherCoroutineContext;
+            if (coroutineContext2 == null) {
+                coroutineContext2 = this.defaults.getFetcherCoroutineContext();
+            }
+            CoroutineContext coroutineContext3 = this.decoderCoroutineContext;
             if (coroutineContext3 == null) {
-                coroutineContext3 = this.defaults.getFetcherCoroutineContext();
+                coroutineContext3 = this.defaults.getDecoderCoroutineContext();
             }
-            CoroutineContext coroutineContext4 = coroutineContext3;
-            CoroutineContext coroutineContext5 = this.decoderCoroutineContext;
-            if (coroutineContext5 == null) {
-                coroutineContext5 = this.defaults.getDecoderCoroutineContext();
-            }
-            CoroutineContext coroutineContext6 = coroutineContext5;
             MemoryCache.Key key = this.placeholderMemoryCacheKey;
             Function1 function1 = this.placeholderFactory;
             if (function1 == null) {
@@ -1164,15 +1158,16 @@ public final class ImageRequest {
                 precision = this.defaults.getPrecision();
             }
             Precision precision2 = precision;
-            Object obj4 = this.lazyExtras;
-            if (obj4 instanceof Extras.Builder) {
-                extras = ((Extras.Builder) obj4).build();
-            } else if (!(obj4 instanceof Extras)) {
+            Object obj3 = this.lazyExtras;
+            Object obj4 = obj;
+            if (obj3 instanceof Extras.Builder) {
+                extras = ((Extras.Builder) obj3).build();
+            } else if (!(obj3 instanceof Extras)) {
                 throw new AssertionError();
             } else {
-                extras = (Extras) obj4;
+                extras = (Extras) obj3;
             }
-            return new ImageRequest(context, obj2, target, listener, str, map2, str2, fileSystem2, pair, factory, coroutineContext2, coroutineContext4, coroutineContext6, cachePolicy2, cachePolicy4, cachePolicy6, key, function12, function14, function16, sizeResolver2, scale2, precision2, extras, new Defined(this.fileSystem, this.interceptorCoroutineContext, this.fetcherCoroutineContext, this.decoderCoroutineContext, this.memoryCachePolicy, this.diskCachePolicy, this.networkCachePolicy, this.placeholderFactory, this.errorFactory, this.fallbackFactory, this.sizeResolver, this.scale, this.precision), this.defaults, null);
+            return new ImageRequest(context, obj4, target, listener, str, map, str2, fileSystem, pair, factory, coroutineContext, coroutineContext2, coroutineContext3, cachePolicy2, cachePolicy4, cachePolicy6, key, function12, function14, function16, sizeResolver2, scale2, precision2, extras, new Defined(this.fileSystem, this.interceptorCoroutineContext, this.fetcherCoroutineContext, this.decoderCoroutineContext, this.memoryCachePolicy, this.diskCachePolicy, this.networkCachePolicy, this.placeholderFactory, this.errorFactory, this.fallbackFactory, this.sizeResolver, this.scale, this.precision), this.defaults, null);
         }
     }
 }

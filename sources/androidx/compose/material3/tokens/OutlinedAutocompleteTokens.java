@@ -7,11 +7,6 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class OutlinedAutocompleteTokens {
     public static final int $stable = 0;
-    private static final float TextFieldDisabledOutlineWidth;
-    private static final float TextFieldHoverOutlineWidth;
-    private static final float TextFieldLeadingIconSize;
-    private static final float TextFieldOutlineWidth;
-    private static final float TextFieldTrailingIconSize;
     public static final OutlinedAutocompleteTokens INSTANCE = new OutlinedAutocompleteTokens();
     private static final ColorSchemeKeyTokens MenuContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
     private static final float MenuContainerElevation = ElevationTokens.INSTANCE.m3361getLevel2D9Ej5fM();
@@ -27,6 +22,7 @@ public final class OutlinedAutocompleteTokens {
     private static final float TextFieldDisabledLeadingIconOpacity = 0.38f;
     private static final ColorSchemeKeyTokens TextFieldDisabledOutlineColor = ColorSchemeKeyTokens.OnSurface;
     private static final float TextFieldDisabledOutlineOpacity = 0.12f;
+    private static final float TextFieldDisabledOutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens FieldDisabledSupportingTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final float FieldDisabledSupportingTextOpacity = 0.38f;
     private static final ColorSchemeKeyTokens TextFieldDisabledTrailingIconColor = ColorSchemeKeyTokens.OnSurface;
@@ -54,13 +50,14 @@ public final class OutlinedAutocompleteTokens {
     private static final ColorSchemeKeyTokens FieldFocusLabelTextColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens TextFieldFocusLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TextFieldFocusOutlineColor = ColorSchemeKeyTokens.Primary;
-    private static final float TextFieldFocusOutlineWidth = Dp.m7555constructorimpl((float) 2.0d);
+    private static final float TextFieldFocusOutlineWidth = Dp.m7555constructorimpl(2.0f);
     private static final ColorSchemeKeyTokens FieldFocusSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TextFieldFocusTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens FieldHoverInputTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FieldHoverLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TextFieldHoverLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TextFieldHoverOutlineColor = ColorSchemeKeyTokens.OnSurface;
+    private static final float TextFieldHoverOutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens FieldHoverSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TextFieldHoverTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens FieldInputTextColor = ColorSchemeKeyTokens.OnSurface;
@@ -68,22 +65,15 @@ public final class OutlinedAutocompleteTokens {
     private static final ColorSchemeKeyTokens FieldLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens FieldLabelTextFont = TypographyKeyTokens.BodyLarge;
     private static final ColorSchemeKeyTokens TextFieldLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final float TextFieldLeadingIconSize = Dp.m7555constructorimpl(24.0f);
     private static final ColorSchemeKeyTokens TextFieldOutlineColor = ColorSchemeKeyTokens.Outline;
+    private static final float TextFieldOutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens FieldSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens FieldSupportingTextFont = TypographyKeyTokens.BodySmall;
     private static final ColorSchemeKeyTokens TextFieldTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final float TextFieldTrailingIconSize = Dp.m7555constructorimpl(24.0f);
 
     private OutlinedAutocompleteTokens() {
-    }
-
-    static {
-        float f = (float) 1.0d;
-        TextFieldDisabledOutlineWidth = Dp.m7555constructorimpl(f);
-        TextFieldHoverOutlineWidth = Dp.m7555constructorimpl(f);
-        float f2 = (float) 24.0d;
-        TextFieldLeadingIconSize = Dp.m7555constructorimpl(f2);
-        TextFieldOutlineWidth = Dp.m7555constructorimpl(f);
-        TextFieldTrailingIconSize = Dp.m7555constructorimpl(f2);
     }
 
     public final ColorSchemeKeyTokens getMenuContainerColor() {

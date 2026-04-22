@@ -74,7 +74,7 @@ public final class SelectedRangeInfo {
             } else {
                 daysFromStartOfWeekToFirstOfMonth2 = (calendarMonth.getDaysFromStartOfWeekToFirstOfMonth() + calendarMonth.getNumberOfDays()) - 1;
             }
-            return new SelectedRangeInfo(IntOffset.m7677constructorimpl(((daysFromStartOfWeekToFirstOfMonth % 7) << 32) | ((daysFromStartOfWeekToFirstOfMonth / 7) & 4294967295L)), IntOffset.m7677constructorimpl(((daysFromStartOfWeekToFirstOfMonth2 % 7) << 32) | ((daysFromStartOfWeekToFirstOfMonth2 / 7) & 4294967295L)), z, z2, null);
+            return new SelectedRangeInfo(IntOffset.m7677constructorimpl(((daysFromStartOfWeekToFirstOfMonth % 7) << 32) | ((daysFromStartOfWeekToFirstOfMonth / 7) & 4294967295L)), IntOffset.m7677constructorimpl(((daysFromStartOfWeekToFirstOfMonth2 / 7) & 4294967295L) | ((daysFromStartOfWeekToFirstOfMonth2 % 7) << 32)), z, z2, null);
         }
     }
 }

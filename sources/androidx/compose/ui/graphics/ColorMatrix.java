@@ -216,7 +216,7 @@ public final class ColorMatrix {
         fArr[17] = 0.0f;
         fArr[18] = 1.0f;
         fArr[19] = 0.0f;
-        float f2 = 1 - f;
+        float f2 = 1.0f - f;
         float f3 = 0.213f * f2;
         float f4 = 0.715f * f2;
         float f5 = f2 * 0.072f;

@@ -261,8 +261,8 @@ final class CollectCollectors {
                     r0 = this;
                     com.google.common.collect.Multiset r1 = (com.google.common.collect.Multiset) r1
                     com.google.common.collect.Multiset r2 = (com.google.common.collect.Multiset) r2
-                    com.google.common.collect.Multiset r1 = com.google.common.collect.CollectCollectors.lambda$toImmutableMultiset$3(r1, r2)
-                    return r1
+                    com.google.common.collect.Multiset r0 = com.google.common.collect.CollectCollectors.lambda$toImmutableMultiset$3(r1, r2)
+                    return r0
                 */
                 throw new UnsupportedOperationException("Method not decompiled: com.google.common.collect.CollectCollectors$$ExternalSyntheticLambda30.apply(java.lang.Object, java.lang.Object):java.lang.Object");
             }
@@ -317,8 +317,8 @@ final class CollectCollectors {
                     r0 = this;
                     com.google.common.collect.Multiset r1 = (com.google.common.collect.Multiset) r1
                     com.google.common.collect.Multiset r2 = (com.google.common.collect.Multiset) r2
-                    com.google.common.collect.Multiset r1 = com.google.common.collect.CollectCollectors.lambda$toMultiset$6(r1, r2)
-                    return r1
+                    com.google.common.collect.Multiset r0 = com.google.common.collect.CollectCollectors.lambda$toMultiset$6(r1, r2)
+                    return r0
                 */
                 throw new UnsupportedOperationException("Method not decompiled: com.google.common.collect.CollectCollectors$$ExternalSyntheticLambda67.apply(java.lang.Object, java.lang.Object):java.lang.Object");
             }
@@ -747,8 +747,8 @@ final class CollectCollectors {
                     r0 = this;
                     com.google.common.collect.Multimap r1 = (com.google.common.collect.Multimap) r1
                     com.google.common.collect.Multimap r2 = (com.google.common.collect.Multimap) r2
-                    com.google.common.collect.Multimap r1 = com.google.common.collect.CollectCollectors.lambda$toMultimap$25(r1, r2)
-                    return r1
+                    com.google.common.collect.Multimap r0 = com.google.common.collect.CollectCollectors.lambda$toMultimap$25(r1, r2)
+                    return r0
                 */
                 throw new UnsupportedOperationException("Method not decompiled: com.google.common.collect.CollectCollectors$$ExternalSyntheticLambda71.apply(java.lang.Object, java.lang.Object):java.lang.Object");
             }
@@ -796,8 +796,8 @@ final class CollectCollectors {
                     r0 = this;
                     com.google.common.collect.Multimap r1 = (com.google.common.collect.Multimap) r1
                     com.google.common.collect.Multimap r2 = (com.google.common.collect.Multimap) r2
-                    com.google.common.collect.Multimap r1 = com.google.common.collect.CollectCollectors.lambda$flatteningToMultimap$27(r1, r2)
-                    return r1
+                    com.google.common.collect.Multimap r0 = com.google.common.collect.CollectCollectors.lambda$flatteningToMultimap$27(r1, r2)
+                    return r0
                 */
                 throw new UnsupportedOperationException("Method not decompiled: com.google.common.collect.CollectCollectors$$ExternalSyntheticLambda23.apply(java.lang.Object, java.lang.Object):java.lang.Object");
             }

@@ -7,21 +7,21 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class FabMenuBaselineTokens {
     public static final int $stable = 0;
-    private static final float CloseButtonBetweenSpace;
-    private static final float CloseButtonContainerHeight;
-    private static final float CloseButtonContainerWidth;
-    private static final float ListItemContainerHeight;
-    private static final float ListItemIconLabelSpace;
-    private static final float ListItemIconSize;
-    private static final float ListItemLeadingSpace;
-    private static final float ListItemTrailingSpace;
     public static final FabMenuBaselineTokens INSTANCE = new FabMenuBaselineTokens();
+    private static final float CloseButtonBetweenSpace = Dp.m7555constructorimpl(8.0f);
     private static final float CloseButtonContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
+    private static final float CloseButtonContainerHeight = Dp.m7555constructorimpl(56.0f);
     private static final ShapeKeyTokens CloseButtonContainerShape = ShapeKeyTokens.CornerFull;
-    private static final float CloseButtonIconSize = Dp.m7555constructorimpl((float) 20.0d);
-    private static final float ListItemBetweenSpace = Dp.m7555constructorimpl((float) 4.0d);
+    private static final float CloseButtonContainerWidth = Dp.m7555constructorimpl(56.0f);
+    private static final float CloseButtonIconSize = Dp.m7555constructorimpl(20.0f);
+    private static final float ListItemBetweenSpace = Dp.m7555constructorimpl(4.0f);
     private static final float ListItemContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
+    private static final float ListItemContainerHeight = Dp.m7555constructorimpl(56.0f);
     private static final ShapeKeyTokens ListItemContainerShape = ShapeKeyTokens.CornerFull;
+    private static final float ListItemIconLabelSpace = Dp.m7555constructorimpl(8.0f);
+    private static final float ListItemIconSize = Dp.m7555constructorimpl(24.0f);
+    private static final float ListItemLeadingSpace = Dp.m7555constructorimpl(24.0f);
+    private static final float ListItemTrailingSpace = Dp.m7555constructorimpl(24.0f);
 
     private FabMenuBaselineTokens() {
     }
@@ -92,19 +92,5 @@ public final class FabMenuBaselineTokens {
     /* renamed from: getListItemTrailingSpace-D9Ej5fM  reason: not valid java name */
     public final float m3410getListItemTrailingSpaceD9Ej5fM() {
         return ListItemTrailingSpace;
-    }
-
-    static {
-        float f = (float) 8.0d;
-        CloseButtonBetweenSpace = Dp.m7555constructorimpl(f);
-        float f2 = (float) 56.0d;
-        CloseButtonContainerHeight = Dp.m7555constructorimpl(f2);
-        CloseButtonContainerWidth = Dp.m7555constructorimpl(f2);
-        ListItemContainerHeight = Dp.m7555constructorimpl(f2);
-        ListItemIconLabelSpace = Dp.m7555constructorimpl(f);
-        float f3 = (float) 24.0d;
-        ListItemIconSize = Dp.m7555constructorimpl(f3);
-        ListItemLeadingSpace = Dp.m7555constructorimpl(f3);
-        ListItemTrailingSpace = Dp.m7555constructorimpl(f3);
     }
 }

@@ -1552,8 +1552,8 @@ public class MediaSessionCompat {
                 goto L8
             L18:
                 r1.finishBroadcast()
-                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mControllerCallbacks
-                r0.kill()
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r2 = r2.mControllerCallbacks
+                r2.kill()
                 return
             */
             throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.sendSessionDestroyed():void");
@@ -1934,29 +1934,26 @@ public class MediaSessionCompat {
             public ParcelableVolumeInfo getVolumeAttributes() {
                 int i;
                 int i2;
-                int streamMaxVolume;
                 int streamVolume;
                 int i3;
                 int i4;
-                int i5;
                 synchronized (MediaSessionImplBase.this.mLock) {
                     i = MediaSessionImplBase.this.mVolumeType;
                     i2 = MediaSessionImplBase.this.mLocalStream;
                     VolumeProviderCompat volumeProviderCompat = MediaSessionImplBase.this.mVolumeProvider;
-                    int i6 = 2;
+                    int i5 = 2;
                     if (i == 2) {
-                        i6 = volumeProviderCompat.getVolumeControl();
-                        streamMaxVolume = volumeProviderCompat.getMaxVolume();
+                        i5 = volumeProviderCompat.getVolumeControl();
+                        i3 = volumeProviderCompat.getMaxVolume();
                         streamVolume = volumeProviderCompat.getCurrentVolume();
                     } else {
-                        streamMaxVolume = MediaSessionImplBase.this.mAudioManager.getStreamMaxVolume(i2);
+                        int streamMaxVolume = MediaSessionImplBase.this.mAudioManager.getStreamMaxVolume(i2);
                         streamVolume = MediaSessionImplBase.this.mAudioManager.getStreamVolume(i2);
+                        i3 = streamMaxVolume;
                     }
-                    i3 = streamVolume;
-                    i4 = streamMaxVolume;
-                    i5 = i6;
+                    i4 = i5;
                 }
-                return new ParcelableVolumeInfo(i, i2, i5, i4, i3);
+                return new ParcelableVolumeInfo(i, i2, i4, i3, streamVolume);
             }
 
             @Override // android.support.v4.media.session.IMediaSession
@@ -2367,13 +2364,13 @@ public class MediaSessionCompat {
                 int keyCode = keyEvent.getKeyCode();
                 if (keyCode != 79) {
                     if (keyCode == 126) {
-                        if ((actions & 4) != 0) {
+                        if ((4 & actions) != 0) {
                             callback.onPlay();
                             return;
                         }
                         return;
                     } else if (keyCode == 127) {
-                        if ((actions & 2) != 0) {
+                        if ((2 & actions) != 0) {
                             callback.onPause();
                             return;
                         }
@@ -2383,31 +2380,31 @@ public class MediaSessionCompat {
                             case 85:
                                 break;
                             case 86:
-                                if ((actions & 1) != 0) {
+                                if ((1 & actions) != 0) {
                                     callback.onStop();
                                     return;
                                 }
                                 return;
                             case 87:
-                                if ((actions & 32) != 0) {
+                                if ((32 & actions) != 0) {
                                     callback.onSkipToNext();
                                     return;
                                 }
                                 return;
                             case 88:
-                                if ((actions & 16) != 0) {
+                                if ((16 & actions) != 0) {
                                     callback.onSkipToPrevious();
                                     return;
                                 }
                                 return;
                             case TsExtractor.TS_STREAM_TYPE_DVBSUBS /* 89 */:
-                                if ((actions & 8) != 0) {
+                                if ((8 & actions) != 0) {
                                     callback.onRewind();
                                     return;
                                 }
                                 return;
                             case 90:
-                                if ((actions & 64) != 0) {
+                                if ((64 & actions) != 0) {
                                     callback.onFastForward();
                                     return;
                                 }
@@ -2667,14 +2664,14 @@ public class MediaSessionCompat {
                 goto La
             L1a:
                 r1.finishBroadcast()
-                java.lang.Object r0 = r2.mSessionObj
+                java.lang.Object r2 = r2.mSessionObj
                 if (r3 != 0) goto L23
                 r3 = 0
                 goto L27
             L23:
                 java.lang.Object r3 = r3.getPlaybackState()
             L27:
-                android.support.v4.media.session.MediaSessionCompatApi21.setPlaybackState(r0, r3)
+                android.support.v4.media.session.MediaSessionCompatApi21.setPlaybackState(r2, r3)
                 return
             */
             throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplApi21.setPlaybackState(android.support.v4.media.session.PlaybackStateCompat):void");

@@ -78,7 +78,7 @@ public final class TopAppBarState {
         if (f == 0.0f) {
             return 0.0f;
         }
-        return 1 - (RangesKt.coerceIn(f - getContentOffset(), this.heightOffsetLimit, 0.0f) / this.heightOffsetLimit);
+        return 1.0f - (RangesKt.coerceIn(f - getContentOffset(), this.heightOffsetLimit, 0.0f) / this.heightOffsetLimit);
     }
 
     /* compiled from: AppBar.kt */

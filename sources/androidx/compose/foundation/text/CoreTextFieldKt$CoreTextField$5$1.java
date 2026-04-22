@@ -51,6 +51,8 @@ public final class CoreTextFieldKt$CoreTextField$5$1 extends SuspendLambda imple
         return ((CoreTextFieldKt$CoreTextField$5$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r7v4, types: [kotlin.Unit, java.lang.Object] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -95,7 +97,8 @@ public final class CoreTextFieldKt$CoreTextField$5$1 extends SuspendLambda imple
                 ResultKt.throwOnFailure(obj);
             }
             CoreTextFieldKt.endInputSession(this.$state);
-            return Unit.INSTANCE;
+            this = Unit.INSTANCE;
+            return this;
         } catch (Throwable th) {
             CoreTextFieldKt.endInputSession(this.$state);
             throw th;

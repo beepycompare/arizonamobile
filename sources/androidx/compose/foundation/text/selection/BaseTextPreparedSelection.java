@@ -260,7 +260,7 @@ public abstract class BaseTextPreparedSelection<T extends BaseTextPreparedSelect
         if (lineForOffset >= textLayoutResult.getLineCount()) {
             return getText$foundation().length();
         }
-        float lineBottom = textLayoutResult.getLineBottom(lineForOffset) - 1;
+        float lineBottom = textLayoutResult.getLineBottom(lineForOffset) - 1.0f;
         Float cachedX = this.state.getCachedX();
         Intrinsics.checkNotNull(cachedX);
         Float f = cachedX;

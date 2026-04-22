@@ -42,7 +42,7 @@ public final class CommonContextMenuAreaKt$CommonContextMenuArea$2$1$1 extends S
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v2, types: [androidx.compose.runtime.MutableState] */
+    /* JADX WARN: Type inference failed for: r5v3, types: [androidx.compose.runtime.MutableState] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         MutableState<MenuItemsAvailability> mutableState;
@@ -57,8 +57,8 @@ public final class CommonContextMenuAreaKt$CommonContextMenuArea$2$1$1 extends S
             if (contextMenuItemsAvailability == coroutine_suspended) {
                 return coroutine_suspended;
             }
-            mutableState = mutableState2;
             obj = contextMenuItemsAvailability;
+            mutableState = mutableState2;
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {

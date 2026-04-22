@@ -520,7 +520,7 @@ public abstract class DownloaderService extends CustomIntentService implements I
                 file.delete();
             }
         }
-        return true ^ Helpers.doesFileExist(this, str, j, true);
+        return !Helpers.doesFileExist(this, str, j, true);
     }
 
     public boolean isWiFi() {

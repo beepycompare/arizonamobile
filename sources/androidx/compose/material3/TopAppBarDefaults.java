@@ -78,6 +78,7 @@ public final class TopAppBarDefaults {
 
     /* renamed from: topAppBarColors-5tl4gsc  reason: not valid java name */
     public final TopAppBarColors m2927topAppBarColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
+        long j7;
         ComposerKt.sourceInformationMarkerStart(composer, -1325733438, "C(topAppBarColors)N(containerColor:c#ui.graphics.Color,scrolledContainerColor:c#ui.graphics.Color,navigationIconContentColor:c#ui.graphics.Color,titleContentColor:c#ui.graphics.Color,actionIconContentColor:c#ui.graphics.Color,subtitleContentColor:c#ui.graphics.Color)1467@73186L11:AppBar.kt#uh7d8r");
         long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
         long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
@@ -86,9 +87,12 @@ public final class TopAppBarDefaults {
         long m4808getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
         long m4808getUnspecified0d7_KjU6 = (i2 & 32) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j6;
         if (ComposerKt.isTraceInProgress()) {
+            j7 = m4808getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(-1325733438, i, -1, "androidx.compose.material3.TopAppBarDefaults.topAppBarColors (AppBar.kt:1467)");
+        } else {
+            j7 = m4808getUnspecified0d7_KjU;
         }
-        TopAppBarColors m2908copytNS2XkQ = getDefaultTopAppBarColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2908copytNS2XkQ(m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m4808getUnspecified0d7_KjU6);
+        TopAppBarColors m2908copytNS2XkQ = getDefaultTopAppBarColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2908copytNS2XkQ(j7, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m4808getUnspecified0d7_KjU6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -321,15 +325,17 @@ public final class TopAppBarDefaults {
     }
 
     public final TopAppBarScrollBehavior enterAlwaysScrollBehavior(TopAppBarState topAppBarState, Function0<Boolean> function0, AnimationSpec<Float> animationSpec, DecayAnimationSpec<Float> decayAnimationSpec, boolean z, Composer composer, int i, int i2) {
-        Function0<Boolean> function02;
+        Composer composer2;
         ComposerKt.sourceInformationMarkerStart(composer, 53729710, "C(enterAlwaysScrollBehavior)N(state,canScroll,snapAnimationSpec,flingAnimationSpec,reverseLayout)1755@86491L24,1756@86552L8,1758@86726L7,1759@86792L26,1762@86901L374:AppBar.kt#uh7d8r");
         if ((i2 & 1) != 0) {
-            topAppBarState = AppBarKt.rememberTopAppBarState(0.0f, 0.0f, 0.0f, composer, 0, 7);
+            composer2 = composer;
+            topAppBarState = AppBarKt.rememberTopAppBarState(0.0f, 0.0f, 0.0f, composer2, 0, 7);
+        } else {
+            composer2 = composer;
         }
-        TopAppBarState topAppBarState2 = topAppBarState;
         if ((i2 & 2) != 0) {
-            ComposerKt.sourceInformationMarkerStart(composer, 94649206, "CC(remember):AppBar.kt#9igjgp");
-            Object rememberedValue = composer.rememberedValue();
+            ComposerKt.sourceInformationMarkerStart(composer2, 94649206, "CC(remember):AppBar.kt#9igjgp");
+            Object rememberedValue = composer2.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function0() { // from class: androidx.compose.material3.TopAppBarDefaults$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
@@ -337,33 +343,38 @@ public final class TopAppBarDefaults {
                         return Boolean.valueOf(TopAppBarDefaults.enterAlwaysScrollBehavior$lambda$7$lambda$6());
                     }
                 };
-                composer.updateRememberedValue(rememberedValue);
+                composer2.updateRememberedValue(rememberedValue);
             }
-            ComposerKt.sourceInformationMarkerEnd(composer);
-            function02 = (Function0) rememberedValue;
-        } else {
-            function02 = function0;
+            function0 = (Function0) rememberedValue;
+            ComposerKt.sourceInformationMarkerEnd(composer2);
         }
-        FiniteAnimationSpec value = (i2 & 4) != 0 ? MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, composer, 6) : animationSpec;
-        DecayAnimationSpec<Float> rememberSplineBasedDecay = (i2 & 8) != 0 ? SplineBasedFloatDecayAnimationSpec_androidKt.rememberSplineBasedDecay(composer, 0) : decayAnimationSpec;
-        boolean z2 = (i2 & 16) != 0 ? false : z;
+        if ((i2 & 4) != 0) {
+            animationSpec = MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, composer2, 6);
+        }
+        if ((i2 & 8) != 0) {
+            decayAnimationSpec = SplineBasedFloatDecayAnimationSpec_androidKt.rememberSplineBasedDecay(composer2, 0);
+        }
+        if ((i2 & 16) != 0) {
+            z = false;
+        }
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(53729710, i, -1, "androidx.compose.material3.TopAppBarDefaults.enterAlwaysScrollBehavior (AppBar.kt:1762)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 94660740, "CC(remember):AppBar.kt#9igjgp");
-        boolean changed = ((((i & 14) ^ 6) > 4 && composer.changed(topAppBarState2)) || (i & 6) == 4) | ((((i & 112) ^ 48) > 32 && composer.changed(function02)) || (i & 48) == 32) | composer.changed(value) | composer.changed(rememberSplineBasedDecay) | ((((57344 & i) ^ 24576) > 16384 && composer.changed(z2)) || (i & 24576) == 16384);
-        Object rememberedValue2 = composer.rememberedValue();
+        ComposerKt.sourceInformationMarkerStart(composer2, 94660740, "CC(remember):AppBar.kt#9igjgp");
+        boolean changed = ((((i & 14) ^ 6) > 4 && composer2.changed(topAppBarState)) || (i & 6) == 4) | ((((i & 112) ^ 48) > 32 && composer2.changed(function0)) || (i & 48) == 32) | composer2.changed(animationSpec) | composer2.changed(decayAnimationSpec) | ((((57344 & i) ^ 24576) > 16384 && composer2.changed(z)) || (i & 24576) == 16384);
+        Object rememberedValue2 = composer2.rememberedValue();
         if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
-            EnterAlwaysScrollBehavior enterAlwaysScrollBehavior = new EnterAlwaysScrollBehavior(topAppBarState2, value, rememberSplineBasedDecay, function02, z2);
-            composer.updateRememberedValue(enterAlwaysScrollBehavior);
+            boolean z2 = z;
+            EnterAlwaysScrollBehavior enterAlwaysScrollBehavior = new EnterAlwaysScrollBehavior(topAppBarState, animationSpec, decayAnimationSpec, function0, z2);
+            composer2.updateRememberedValue(enterAlwaysScrollBehavior);
             rememberedValue2 = enterAlwaysScrollBehavior;
         }
         EnterAlwaysScrollBehavior enterAlwaysScrollBehavior2 = (EnterAlwaysScrollBehavior) rememberedValue2;
-        ComposerKt.sourceInformationMarkerEnd(composer);
+        ComposerKt.sourceInformationMarkerEnd(composer2);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
-        ComposerKt.sourceInformationMarkerEnd(composer);
+        ComposerKt.sourceInformationMarkerEnd(composer2);
         return enterAlwaysScrollBehavior2;
     }
 

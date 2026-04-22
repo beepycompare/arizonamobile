@@ -7,12 +7,10 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class BaselineButtonTokens {
     public static final int $stable = 0;
-    private static final float LeadingSpace;
-    private static final float TrailingSpace;
     public static final BaselineButtonTokens INSTANCE = new BaselineButtonTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Primary;
     private static final float ContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 40.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(40.0f);
     private static final ShapeKeyTokens ContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens ContainerShapeSquare = ShapeKeyTokens.CornerMedium;
     private static final ColorSchemeKeyTokens DisabledContainerColor = ColorSchemeKeyTokens.OnSurface;
@@ -29,11 +27,12 @@ public final class BaselineButtonTokens {
     private static final ColorSchemeKeyTokens HoveredIconColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens HoveredLabelTextColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.OnPrimary;
-    private static final float IconLabelSpace = Dp.m7555constructorimpl((float) 8.0d);
-    private static final float IconSize = Dp.m7555constructorimpl((float) 20.0d);
+    private static final float IconLabelSpace = Dp.m7555constructorimpl(8.0f);
+    private static final float IconSize = Dp.m7555constructorimpl(20.0f);
     private static final ColorSchemeKeyTokens LabelTextColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens LabelTextSelectedColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens LabelTextUnselectedColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final float LeadingSpace = Dp.m7555constructorimpl(24.0f);
     private static final float PressedContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
     private static final ShapeKeyTokens PressedContainerShape = ShapeKeyTokens.CornerSmall;
     private static final ColorSchemeKeyTokens PressedIconColor = ColorSchemeKeyTokens.OnPrimary;
@@ -48,6 +47,7 @@ public final class BaselineButtonTokens {
     private static final ColorSchemeKeyTokens SelectedIconColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens SelectedPressedIconColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens SelectedPressedLabelTextColor = ColorSchemeKeyTokens.OnPrimary;
+    private static final float TrailingSpace = Dp.m7555constructorimpl(24.0f);
     private static final ColorSchemeKeyTokens UnselectedContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
     private static final ColorSchemeKeyTokens UnselectedFocusedIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedFocusedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -58,12 +58,6 @@ public final class BaselineButtonTokens {
     private static final ColorSchemeKeyTokens UnselectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
 
     private BaselineButtonTokens() {
-    }
-
-    static {
-        float f = (float) 24.0d;
-        LeadingSpace = Dp.m7555constructorimpl(f);
-        TrailingSpace = Dp.m7555constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {

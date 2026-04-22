@@ -39,10 +39,9 @@ public final class KeyCycleScope extends BaseKeyFrameScope {
         this.rotationX$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, valueOf2, null, 2, null);
         this.rotationY$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, valueOf2, null, 2, null);
         this.rotationZ$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, valueOf2, null, 2, null);
-        float f = 0;
-        this.translationX$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, Dp.m7553boximpl(Dp.m7555constructorimpl(f)), null, 2, null);
-        this.translationY$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, Dp.m7553boximpl(Dp.m7555constructorimpl(f)), null, 2, null);
-        this.translationZ$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, Dp.m7553boximpl(Dp.m7555constructorimpl(f)), null, 2, null);
+        this.translationX$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, Dp.m7553boximpl(Dp.m7555constructorimpl(0.0f)), null, 2, null);
+        this.translationY$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, Dp.m7553boximpl(Dp.m7555constructorimpl(0.0f)), null, 2, null);
+        this.translationZ$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, Dp.m7553boximpl(Dp.m7555constructorimpl(0.0f)), null, 2, null);
         this.period$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, valueOf2, null, 2, null);
         this.offset$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, valueOf2, null, 2, null);
         this.phase$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, valueOf2, null, 2, null);

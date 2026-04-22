@@ -85,7 +85,7 @@ public final class TextDecoration {
     }
 
     public final TextDecoration plus(TextDecoration textDecoration) {
-        return new TextDecoration(textDecoration.mask | this.mask);
+        return new TextDecoration(this.mask | textDecoration.mask);
     }
 
     public final boolean contains(TextDecoration textDecoration) {

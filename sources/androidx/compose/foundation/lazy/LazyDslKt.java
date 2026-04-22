@@ -328,7 +328,7 @@ public final class LazyDslKt {
                                     lazyListState2 = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
                                     i3 &= -113;
                                 }
-                                PaddingValues m811PaddingValues0680j_4 = i14 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj;
+                                PaddingValues m811PaddingValues0680j_4 = i14 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj;
                                 if (i4 != 0) {
                                     z3 = false;
                                 }
@@ -671,7 +671,7 @@ public final class LazyDslKt {
                                     lazyListState2 = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
                                     i3 &= -113;
                                 }
-                                PaddingValues m811PaddingValues0680j_4 = i14 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj;
+                                PaddingValues m811PaddingValues0680j_4 = i14 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj;
                                 if (i4 != 0) {
                                     z3 = false;
                                 }
@@ -998,7 +998,7 @@ public final class LazyDslKt {
                                     lazyListState2 = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
                                     i3 &= -113;
                                 }
-                                PaddingValues m811PaddingValues0680j_4 = i13 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj;
+                                PaddingValues m811PaddingValues0680j_4 = i13 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj;
                                 if (i4 != 0) {
                                     z3 = false;
                                 }
@@ -1299,7 +1299,7 @@ public final class LazyDslKt {
                                 lazyListState2 = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
                                 i3 &= -113;
                             }
-                            PaddingValues m811PaddingValues0680j_4 = i10 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj;
+                            PaddingValues m811PaddingValues0680j_4 = i10 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj;
                             if (i4 != 0) {
                                 z2 = false;
                             }
@@ -1601,7 +1601,7 @@ public final class LazyDslKt {
                                     lazyListState2 = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
                                     i3 &= -113;
                                 }
-                                PaddingValues m811PaddingValues0680j_4 = i13 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj;
+                                PaddingValues m811PaddingValues0680j_4 = i13 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj;
                                 if (i4 != 0) {
                                     z3 = false;
                                 }
@@ -1902,7 +1902,7 @@ public final class LazyDslKt {
                                 lazyListState2 = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
                                 i3 &= -113;
                             }
-                            PaddingValues m811PaddingValues0680j_4 = i10 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj;
+                            PaddingValues m811PaddingValues0680j_4 = i10 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj;
                             if (i4 != 0) {
                                 z2 = false;
                             }

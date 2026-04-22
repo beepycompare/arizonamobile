@@ -259,7 +259,6 @@ public class ActivityPackageSender implements IActivityPackageSender {
         ActivityPackageSender activityPackageSender2;
         String generateUrlStringForPOST;
         DataOutputStream configConnectionForPOST;
-        String str = "Flushing and closing connection output stream";
         DataOutputStream dataOutputStream = null;
         try {
             try {
@@ -273,7 +272,7 @@ public class ActivityPackageSender implements IActivityPackageSender {
                         dataOutputStream.flush();
                         dataOutputStream.close();
                     } catch (IOException e) {
-                        activityPackageSender.logger.error(errorMessage(e, str, responseData.activityPackage), new Object[0]);
+                        activityPackageSender.logger.error(activityPackageSender.errorMessage(e, "Flushing and closing connection output stream", responseData.activityPackage), new Object[0]);
                     }
                 }
                 throw th;
@@ -306,7 +305,7 @@ public class ActivityPackageSender implements IActivityPackageSender {
                 generateUrlStringForPOST = activityPackageSender2.generateUrlStringForGET(responseData.activityPackage.getActivityKind(), responseData.activityPackage.getPath(), responseData.activityPackage.getParameters(), responseData.sendingParameters, responseData.signedParameters);
             } else {
                 activityPackageSender2 = this;
-                generateUrlStringForPOST = generateUrlStringForPOST(responseData.activityPackage.getActivityKind(), responseData.activityPackage.getPath(), responseData.signedParameters);
+                generateUrlStringForPOST = activityPackageSender2.generateUrlStringForPOST(responseData.activityPackage.getActivityKind(), responseData.activityPackage.getPath(), responseData.signedParameters);
             }
             HttpsURLConnection generateHttpsURLConnection = activityPackageSender2.httpsURLConnectionProvider.generateHttpsURLConnection(new URL(generateUrlStringForPOST));
             activityPackageSender2.connectionOptions.applyConnectionOptions(generateHttpsURLConnection, activityPackageSender2.clientSdk, activityPackageSender2.connectionTimeout);
@@ -314,12 +313,12 @@ public class ActivityPackageSender implements IActivityPackageSender {
                 generateHttpsURLConnection.setRequestProperty(HttpHeaders.AUTHORIZATION, extractAuthorizationHeader);
             }
             if (z2) {
-                configConnectionForPOST = configConnectionForGET(generateHttpsURLConnection);
+                configConnectionForPOST = activityPackageSender2.configConnectionForGET(generateHttpsURLConnection);
             } else {
-                configConnectionForPOST = configConnectionForPOST(generateHttpsURLConnection, responseData.activityPackage.getParameters(), responseData.sendingParameters, responseData.signedParameters);
+                configConnectionForPOST = activityPackageSender2.configConnectionForPOST(generateHttpsURLConnection, responseData.activityPackage.getParameters(), responseData.sendingParameters, responseData.signedParameters);
             }
             DataOutputStream dataOutputStream2 = configConnectionForPOST;
-            Integer readConnectionResponse = readConnectionResponse(generateHttpsURLConnection, responseData);
+            Integer readConnectionResponse = activityPackageSender2.readConnectionResponse(generateHttpsURLConnection, responseData);
             responseData.success = responseData.jsonResponse != null && responseData.retryIn == null && readConnectionResponse != null && readConnectionResponse.intValue() == 200;
             JSONObject jSONObject = responseData.jsonResponse;
             if (jSONObject != null && responseData.retryIn == null) {
@@ -336,140 +335,119 @@ public class ActivityPackageSender implements IActivityPackageSender {
                     dataOutputStream2.flush();
                     dataOutputStream2.close();
                 } catch (IOException e8) {
-                    activityPackageSender2.logger.error(errorMessage(e8, "Flushing and closing connection output stream", responseData.activityPackage), new Object[0]);
+                    activityPackageSender2.logger.error(activityPackageSender2.errorMessage(e8, "Flushing and closing connection output stream", responseData.activityPackage), new Object[0]);
                 }
             }
         } catch (UnsupportedEncodingException e9) {
             e = e9;
-            localError(e, "Failed to encode parameters", responseData, 1002);
-            str = "Flushing and closing connection output stream";
+            activityPackageSender.localError(e, "Failed to encode parameters", responseData, 1002);
             responseData = responseData;
             if (0 != 0) {
                 try {
                     dataOutputStream.flush();
                     dataOutputStream.close();
-                    str = "Flushing and closing connection output stream";
                     responseData = responseData;
                 } catch (IOException e10) {
-                    String errorMessage = errorMessage(e10, "Flushing and closing connection output stream", responseData.activityPackage);
-                    Object[] objArr = new Object[0];
-                    activityPackageSender.logger.error(errorMessage, objArr);
-                    str = objArr;
-                    responseData = errorMessage;
+                    String errorMessage = activityPackageSender.errorMessage(e10, "Flushing and closing connection output stream", responseData.activityPackage);
+                    ILogger iLogger = activityPackageSender.logger;
+                    iLogger.error(errorMessage, new Object[0]);
+                    responseData = iLogger;
                 }
             }
         } catch (MalformedURLException e11) {
             e = e11;
-            localError(e, "Malformed URL", responseData, 1003);
-            str = "Flushing and closing connection output stream";
+            activityPackageSender.localError(e, "Malformed URL", responseData, 1003);
             responseData = responseData;
             if (0 != 0) {
                 try {
                     dataOutputStream.flush();
                     dataOutputStream.close();
-                    str = "Flushing and closing connection output stream";
                     responseData = responseData;
                 } catch (IOException e12) {
-                    String errorMessage2 = errorMessage(e12, "Flushing and closing connection output stream", responseData.activityPackage);
-                    Object[] objArr2 = new Object[0];
-                    activityPackageSender.logger.error(errorMessage2, objArr2);
-                    str = objArr2;
-                    responseData = errorMessage2;
+                    String errorMessage2 = activityPackageSender.errorMessage(e12, "Flushing and closing connection output stream", responseData.activityPackage);
+                    ILogger iLogger2 = activityPackageSender.logger;
+                    iLogger2.error(errorMessage2, new Object[0]);
+                    responseData = iLogger2;
                 }
             }
         } catch (ProtocolException e13) {
             e = e13;
-            localError(e, "Protocol Error", responseData, 1004);
-            str = "Flushing and closing connection output stream";
+            activityPackageSender.localError(e, "Protocol Error", responseData, 1004);
             responseData = responseData;
             if (0 != 0) {
                 try {
                     dataOutputStream.flush();
                     dataOutputStream.close();
-                    str = "Flushing and closing connection output stream";
                     responseData = responseData;
                 } catch (IOException e14) {
-                    String errorMessage3 = errorMessage(e14, "Flushing and closing connection output stream", responseData.activityPackage);
-                    Object[] objArr3 = new Object[0];
-                    activityPackageSender.logger.error(errorMessage3, objArr3);
-                    str = objArr3;
-                    responseData = errorMessage3;
+                    String errorMessage3 = activityPackageSender.errorMessage(e14, "Flushing and closing connection output stream", responseData.activityPackage);
+                    ILogger iLogger3 = activityPackageSender.logger;
+                    iLogger3.error(errorMessage3, new Object[0]);
+                    responseData = iLogger3;
                 }
             }
         } catch (SocketTimeoutException e15) {
             e = e15;
-            remoteError(e, "Request timed out", responseData, 1005);
-            str = "Flushing and closing connection output stream";
+            activityPackageSender.remoteError(e, "Request timed out", responseData, 1005);
             responseData = responseData;
             if (0 != 0) {
                 try {
                     dataOutputStream.flush();
                     dataOutputStream.close();
-                    str = "Flushing and closing connection output stream";
                     responseData = responseData;
                 } catch (IOException e16) {
-                    String errorMessage4 = errorMessage(e16, "Flushing and closing connection output stream", responseData.activityPackage);
-                    Object[] objArr4 = new Object[0];
-                    activityPackageSender.logger.error(errorMessage4, objArr4);
-                    str = objArr4;
-                    responseData = errorMessage4;
+                    String errorMessage4 = activityPackageSender.errorMessage(e16, "Flushing and closing connection output stream", responseData.activityPackage);
+                    ILogger iLogger4 = activityPackageSender.logger;
+                    iLogger4.error(errorMessage4, new Object[0]);
+                    responseData = iLogger4;
                 }
             }
         } catch (SSLHandshakeException e17) {
             e = e17;
-            remoteError(e, "Certificate failed", responseData, 1006);
-            str = "Flushing and closing connection output stream";
+            activityPackageSender.remoteError(e, "Certificate failed", responseData, 1006);
             responseData = responseData;
             if (0 != 0) {
                 try {
                     dataOutputStream.flush();
                     dataOutputStream.close();
-                    str = "Flushing and closing connection output stream";
                     responseData = responseData;
                 } catch (IOException e18) {
-                    String errorMessage5 = errorMessage(e18, "Flushing and closing connection output stream", responseData.activityPackage);
-                    Object[] objArr5 = new Object[0];
-                    activityPackageSender.logger.error(errorMessage5, objArr5);
-                    str = objArr5;
-                    responseData = errorMessage5;
+                    String errorMessage5 = activityPackageSender.errorMessage(e18, "Flushing and closing connection output stream", responseData.activityPackage);
+                    ILogger iLogger5 = activityPackageSender.logger;
+                    iLogger5.error(errorMessage5, new Object[0]);
+                    responseData = iLogger5;
                 }
             }
         } catch (IOException e19) {
             e = e19;
-            remoteError(e, "Request failed", responseData, 1007);
-            str = "Flushing and closing connection output stream";
+            activityPackageSender.remoteError(e, "Request failed", responseData, 1007);
             responseData = responseData;
             if (0 != 0) {
                 try {
                     dataOutputStream.flush();
                     dataOutputStream.close();
-                    str = "Flushing and closing connection output stream";
                     responseData = responseData;
                 } catch (IOException e20) {
-                    String errorMessage6 = errorMessage(e20, "Flushing and closing connection output stream", responseData.activityPackage);
-                    Object[] objArr6 = new Object[0];
-                    activityPackageSender.logger.error(errorMessage6, objArr6);
-                    str = objArr6;
-                    responseData = errorMessage6;
+                    String errorMessage6 = activityPackageSender.errorMessage(e20, "Flushing and closing connection output stream", responseData.activityPackage);
+                    ILogger iLogger6 = activityPackageSender.logger;
+                    iLogger6.error(errorMessage6, new Object[0]);
+                    responseData = iLogger6;
                 }
             }
         } catch (Throwable th3) {
             th = th3;
-            localError(th, "Sending SDK package", responseData, ErrorCodes.THROWABLE);
-            str = "Flushing and closing connection output stream";
+            activityPackageSender.localError(th, "Sending SDK package", responseData, ErrorCodes.THROWABLE);
             responseData = responseData;
             if (0 != 0) {
                 try {
                     dataOutputStream.flush();
                     dataOutputStream.close();
-                    str = "Flushing and closing connection output stream";
                     responseData = responseData;
                 } catch (IOException e21) {
-                    String errorMessage7 = errorMessage(e21, "Flushing and closing connection output stream", responseData.activityPackage);
-                    Object[] objArr7 = new Object[0];
-                    activityPackageSender.logger.error(errorMessage7, objArr7);
-                    str = objArr7;
-                    responseData = errorMessage7;
+                    String errorMessage7 = activityPackageSender.errorMessage(e21, "Flushing and closing connection output stream", responseData.activityPackage);
+                    ILogger iLogger7 = activityPackageSender.logger;
+                    iLogger7.error(errorMessage7, new Object[0]);
+                    responseData = iLogger7;
                 }
             }
         }

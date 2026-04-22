@@ -394,7 +394,7 @@ public abstract class OrderedScatterSet<E> {
         return (E) objArr[i];
     }
 
-    /* JADX WARN: Type inference failed for: r2v2, types: [E, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r6v5, types: [E, java.lang.Object] */
     public final E first(Function1<? super E, Boolean> predicate) {
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         Object[] objArr = this.elements;
@@ -402,9 +402,9 @@ public abstract class OrderedScatterSet<E> {
         int i = this.tail;
         while (i != Integer.MAX_VALUE) {
             int i2 = (int) ((jArr[i] >> 31) & SieveCacheKt.NodeLinkMask);
-            ?? r2 = (Object) objArr[i];
-            if (predicate.invoke(r2).booleanValue()) {
-                return r2;
+            ?? r6 = (Object) objArr[i];
+            if (predicate.invoke(r6).booleanValue()) {
+                return r6;
             }
             i = i2;
         }
@@ -412,7 +412,7 @@ public abstract class OrderedScatterSet<E> {
         throw new KotlinNothingValueException();
     }
 
-    /* JADX WARN: Type inference failed for: r2v2, types: [E, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r6v4, types: [E, java.lang.Object] */
     public final E firstOrNull(Function1<? super E, Boolean> predicate) {
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         Object[] objArr = this.elements;
@@ -420,9 +420,9 @@ public abstract class OrderedScatterSet<E> {
         int i = this.tail;
         while (i != Integer.MAX_VALUE) {
             int i2 = (int) ((jArr[i] >> 31) & SieveCacheKt.NodeLinkMask);
-            ?? r2 = (Object) objArr[i];
-            if (predicate.invoke(r2).booleanValue()) {
-                return r2;
+            ?? r6 = (Object) objArr[i];
+            if (predicate.invoke(r6).booleanValue()) {
+                return r6;
             }
             i = i2;
         }
@@ -441,7 +441,7 @@ public abstract class OrderedScatterSet<E> {
         return (E) objArr[i];
     }
 
-    /* JADX WARN: Type inference failed for: r2v2, types: [E, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r6v5, types: [E, java.lang.Object] */
     public final E last(Function1<? super E, Boolean> predicate) {
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         Object[] objArr = this.elements;
@@ -449,9 +449,9 @@ public abstract class OrderedScatterSet<E> {
         int i = this.head;
         while (i != Integer.MAX_VALUE) {
             int i2 = (int) (jArr[i] & SieveCacheKt.NodeLinkMask);
-            ?? r2 = (Object) objArr[i];
-            if (predicate.invoke(r2).booleanValue()) {
-                return r2;
+            ?? r6 = (Object) objArr[i];
+            if (predicate.invoke(r6).booleanValue()) {
+                return r6;
             }
             i = i2;
         }
@@ -459,7 +459,7 @@ public abstract class OrderedScatterSet<E> {
         throw new KotlinNothingValueException();
     }
 
-    /* JADX WARN: Type inference failed for: r2v2, types: [E, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r6v4, types: [E, java.lang.Object] */
     public final E lastOrNull(Function1<? super E, Boolean> predicate) {
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         Object[] objArr = this.elements;
@@ -467,9 +467,9 @@ public abstract class OrderedScatterSet<E> {
         int i = this.head;
         while (i != Integer.MAX_VALUE) {
             int i2 = (int) (jArr[i] & SieveCacheKt.NodeLinkMask);
-            ?? r2 = (Object) objArr[i];
-            if (predicate.invoke(r2).booleanValue()) {
-                return r2;
+            ?? r6 = (Object) objArr[i];
+            if (predicate.invoke(r6).booleanValue()) {
+                return r6;
             }
             i = i2;
         }

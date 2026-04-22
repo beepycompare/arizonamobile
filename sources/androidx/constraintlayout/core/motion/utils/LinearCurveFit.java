@@ -74,8 +74,11 @@ public class LinearCurveFit extends CurveFit {
                 double[] dArr5 = dArr4[i2];
                 double d10 = dArr5[0];
                 double[] dArr6 = dArr4[i3];
-                double d11 = 1.0d - d9;
-                return d2 + Math.hypot(d6 - ((dArr5[1] * d11) + (dArr6[1] * d9)), d5 - ((d10 * d11) + (dArr6[0] * d9)));
+                double d11 = dArr6[0];
+                double d12 = dArr5[1];
+                double d13 = dArr6[1];
+                double d14 = 1.0d - d9;
+                return d2 + Math.hypot(d6 - ((d12 * d14) + (d13 * d9)), d5 - ((d10 * d14) + (d11 * d9)));
             }
             i2 = i3;
             d3 = d5;

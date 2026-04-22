@@ -49,8 +49,8 @@ public class RoundedCornersContent implements ShapeModifierContent, BaseKeyframe
         this.roundedCorners.addUpdateListener(animationListener);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x009e, code lost:
-        if (r7 != (r0.size() - 1)) goto L37;
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x009b, code lost:
+        if (r6 != (r0.size() - 1)) goto L34;
      */
     @Override // com.airbnb.lottie.animation.content.ShapeModifierContent
     /*
@@ -59,14 +59,15 @@ public class RoundedCornersContent implements ShapeModifierContent, BaseKeyframe
     public ShapeData modifyShape(ShapeData shapeData) {
         boolean z;
         List<CubicCurveData> list;
+        ShapeData shapeData2;
         boolean z2;
         List<CubicCurveData> curves = shapeData.getCurves();
         if (curves.size() > 2) {
             float floatValue = this.roundedCorners.getValue().floatValue();
             if (floatValue != 0.0f) {
-                ShapeData shapeData2 = getShapeData(shapeData);
-                shapeData2.setInitialPoint(shapeData.getInitialPoint().x, shapeData.getInitialPoint().y);
-                List<CubicCurveData> curves2 = shapeData2.getCurves();
+                ShapeData shapeData3 = getShapeData(shapeData);
+                shapeData3.setInitialPoint(shapeData.getInitialPoint().x, shapeData.getInitialPoint().y);
+                List<CubicCurveData> curves2 = shapeData3.getCurves();
                 boolean isClosed = shapeData.isClosed();
                 int i = 0;
                 int i2 = 0;
@@ -88,8 +89,9 @@ public class RoundedCornersContent implements ShapeModifierContent, BaseKeyframe
                             float f2 = vertex.y - vertex2.y;
                             float f3 = vertex3.x - vertex.x;
                             float f4 = vertex3.y - vertex.y;
-                            list = curves;
                             z2 = isClosed;
+                            list = curves;
+                            ShapeData shapeData4 = shapeData3;
                             float min = Math.min(floatValue / ((float) Math.hypot(f, f2)), 0.5f);
                             float min2 = Math.min(floatValue / ((float) Math.hypot(f3, f4)), 0.5f);
                             float f5 = vertex.x + ((vertex2.x - vertex.x) * min);
@@ -104,6 +106,7 @@ public class RoundedCornersContent implements ShapeModifierContent, BaseKeyframe
                             CubicCurveData cubicCurveData5 = curves2.get(i2);
                             cubicCurveData4.setControlPoint2(f5, f6);
                             cubicCurveData4.setVertex(f5, f6);
+                            shapeData2 = shapeData4;
                             if (i == 0) {
                                 shapeData2.setInitialPoint(f5, f6);
                             }
@@ -114,6 +117,7 @@ public class RoundedCornersContent implements ShapeModifierContent, BaseKeyframe
                             i2 += 2;
                         } else {
                             list = curves;
+                            shapeData2 = shapeData3;
                             z2 = isClosed;
                             CubicCurveData cubicCurveData6 = curves2.get(floorMod(i2 - 1, curves2.size()));
                             cubicCurveData6.setControlPoint2(cubicCurveData2.getControlPoint2().x, cubicCurveData2.getControlPoint2().y);
@@ -122,13 +126,15 @@ public class RoundedCornersContent implements ShapeModifierContent, BaseKeyframe
                             i2++;
                         }
                         i++;
-                        curves = list;
+                        shapeData3 = shapeData2;
                         isClosed = z2;
+                        curves = list;
                     }
                     z = false;
                     if (!controlPoint2.equals(vertex)) {
                     }
                     list = curves;
+                    shapeData2 = shapeData3;
                     z2 = isClosed;
                     CubicCurveData cubicCurveData62 = curves2.get(floorMod(i2 - 1, curves2.size()));
                     cubicCurveData62.setControlPoint2(cubicCurveData2.getControlPoint2().x, cubicCurveData2.getControlPoint2().y);
@@ -136,10 +142,11 @@ public class RoundedCornersContent implements ShapeModifierContent, BaseKeyframe
                     curves2.get(i2).setControlPoint1(cubicCurveData.getControlPoint1().x, cubicCurveData.getControlPoint1().y);
                     i2++;
                     i++;
-                    curves = list;
+                    shapeData3 = shapeData2;
                     isClosed = z2;
+                    curves = list;
                 }
-                return shapeData2;
+                return shapeData3;
             }
         }
         return shapeData;

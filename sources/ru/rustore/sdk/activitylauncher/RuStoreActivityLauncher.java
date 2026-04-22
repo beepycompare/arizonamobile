@@ -76,7 +76,7 @@ public final class RuStoreActivityLauncher extends Activity {
                     activityLauncherAnalytics = null;
                 }
                 activityLauncherAnalytics.sendExceptionActivityStart(activityNotFoundException);
-                sendResult(ActivityLauncherResult.ActivityNotFound.INSTANCE.getCode(), null);
+                ruStoreActivityLauncher.sendResult(ActivityLauncherResult.ActivityNotFound.INSTANCE.getCode(), null);
             } catch (IntentSender.SendIntentException e2) {
                 e = e2;
                 IntentSender.SendIntentException sendIntentException = e;
@@ -86,7 +86,7 @@ public final class RuStoreActivityLauncher extends Activity {
                     activityLauncherAnalytics2 = null;
                 }
                 activityLauncherAnalytics2.sendExceptionActivityStart(sendIntentException);
-                sendResult(ActivityLauncherResult.ActivitySendIntentError.INSTANCE.getCode(), null);
+                ruStoreActivityLauncher.sendResult(ActivityLauncherResult.ActivitySendIntentError.INSTANCE.getCode(), null);
             } catch (Exception e3) {
                 e = e3;
                 Exception exc = e;
@@ -96,7 +96,7 @@ public final class RuStoreActivityLauncher extends Activity {
                     activityLauncherAnalytics3 = null;
                 }
                 activityLauncherAnalytics3.sendExceptionActivityStart(exc);
-                sendResult(ActivityLauncherResult.ActivityUnknownError.INSTANCE.getCode(), null);
+                ruStoreActivityLauncher.sendResult(ActivityLauncherResult.ActivityUnknownError.INSTANCE.getCode(), null);
             }
         } catch (ActivityNotFoundException e4) {
             e = e4;

@@ -69,16 +69,16 @@ public class SidePropagation extends VisibilityPropagation {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x001d, code lost:
-        if (r6.getLayoutDirection() == 1) goto L22;
+        if (r5.getLayoutDirection() == 1) goto L22;
      */
     /* JADX WARN: Code restructure failed: missing block: B:5:0x000e, code lost:
-        if (r6.getLayoutDirection() == 1) goto L5;
+        if (r5.getLayoutDirection() == 1) goto L5;
      */
     /* JADX WARN: Code restructure failed: missing block: B:6:0x0010, code lost:
-        r0 = 5;
+        r4 = 5;
      */
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0012, code lost:
-        r0 = 3;
+        r4 = 3;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

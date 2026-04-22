@@ -82,15 +82,15 @@ public class MathKt__MathJVMKt extends MathKt__MathHKt {
 
     public static final double asinh(double d) {
         if (d < Constants.taylor_n_bound) {
-            return d <= (-Constants.taylor_n_bound) ? -MathKt.asinh(-d) : Math.abs(d) >= Constants.taylor_2_bound ? d - (((d * d) * d) / 6) : d;
+            return d <= (-Constants.taylor_n_bound) ? -MathKt.asinh(-d) : Math.abs(d) >= Constants.taylor_2_bound ? d - (((d * d) * d) / 6.0d) : d;
         } else if (d > Constants.upper_taylor_n_bound) {
             if (d > Constants.upper_taylor_2_bound) {
                 return Math.log(d) + Constants.LN2;
             }
-            double d2 = d * 2;
-            return Math.log(d2 + (1 / d2));
+            double d2 = d * 2.0d;
+            return Math.log(d2 + (1.0d / d2));
         } else {
-            return Math.log(d + Math.sqrt((d * d) + 1));
+            return Math.log(d + Math.sqrt((d * d) + 1.0d));
         }
     }
 
@@ -101,24 +101,22 @@ public class MathKt__MathJVMKt extends MathKt__MathHKt {
         if (d > Constants.upper_taylor_2_bound) {
             return Math.log(d) + Constants.LN2;
         }
-        double d2 = 1;
-        double d3 = d - d2;
-        if (d3 >= Constants.taylor_n_bound) {
-            return Math.log(d + Math.sqrt((d * d) - d2));
+        double d2 = d - 1.0d;
+        if (d2 >= Constants.taylor_n_bound) {
+            return Math.log(d + Math.sqrt((d * d) - 1.0d));
         }
-        double sqrt = Math.sqrt(d3);
+        double sqrt = Math.sqrt(d2);
         if (sqrt >= Constants.taylor_2_bound) {
-            sqrt -= ((sqrt * sqrt) * sqrt) / 12;
+            sqrt -= ((sqrt * sqrt) * sqrt) / 12.0d;
         }
         return Math.sqrt(2.0d) * sqrt;
     }
 
     public static final double atanh(double d) {
         if (Math.abs(d) < Constants.taylor_n_bound) {
-            return Math.abs(d) > Constants.taylor_2_bound ? d + (((d * d) * d) / 3) : d;
+            return Math.abs(d) > Constants.taylor_2_bound ? d + (((d * d) * d) / 3.0d) : d;
         }
-        double d2 = 1;
-        return Math.log((d2 + d) / (d2 - d)) / 2;
+        return Math.log((1.0d + d) / (1.0d - d)) / 2.0d;
     }
 
     private static final double hypot(double d, double d2) {

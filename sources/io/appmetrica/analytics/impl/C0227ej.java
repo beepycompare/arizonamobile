@@ -52,14 +52,14 @@ public final class C0227ej implements SdkEnvironmentProvider {
                         if (N7.a(context)) {
                             str = "tv";
                         } else {
-                            float f2 = 160 * f;
+                            float f2 = 160.0f * f;
                             float f3 = i;
                             float f4 = f3 / f2;
                             float f5 = i2;
                             float f6 = f5 / f2;
                             double sqrt = Math.sqrt((f6 * f6) + (f4 * f4));
                             float coerceAtMost = RangesKt.coerceAtMost(f3 / f, f5 / f);
-                            if (sqrt < 7 && coerceAtMost < 600) {
+                            if (sqrt < 7.0d && coerceAtMost < 600.0f) {
                                 str = "phone";
                             }
                             str = "tablet";

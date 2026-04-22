@@ -43,19 +43,18 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
 /* compiled from: AlertDialog.kt */
 @Metadata(d1 = {"\u0000L\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aB\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0011\u0010\b\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\tH\u0007¢\u0006\u0002\u0010\n\u001aB\u0010\u000b\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0011\u0010\b\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\tH\u0007¢\u0006\u0002\u0010\n\u001aÄ\u0001\u0010\f\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\u0011\u0010\r\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\t2\u0006\u0010\u0004\u001a\u00020\u00052\u0013\u0010\u000e\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\t2\u0013\u0010\u000f\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\t2\u0013\u0010\u0010\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\t2\u0013\u0010\u0011\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\t2\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00152\u0006\u0010\u0017\u001a\u00020\u00152\u0006\u0010\u0018\u001a\u00020\u00152\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u0006\u001a\u00020\u0007H\u0001¢\u0006\u0004\b\u001b\u0010\u001c\u001a£\u0001\u0010\u001d\u001a\u00020\u00012\u0011\u0010\u001e\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\t2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u0013\u0010\u000f\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\t2\u0013\u0010\u0010\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\t2\u0013\u0010\u0011\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\t2\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001f\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00152\u0006\u0010\u0017\u001a\u00020\u00152\u0006\u0010\u0018\u001a\u00020\u0015H\u0001¢\u0006\u0004\b \u0010!\u001a2\u0010\"\u001a\u00020\u00012\u0006\u0010#\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u001a2\u0011\u0010\b\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\tH\u0001¢\u0006\u0004\b%\u0010&\"\u0016\u0010'\u001a\u00020\u001aX\u0080\u0004¢\u0006\n\n\u0002\u0010*\u001a\u0004\b(\u0010)\"\u0016\u0010+\u001a\u00020\u001aX\u0080\u0004¢\u0006\n\n\u0002\u0010*\u001a\u0004\b,\u0010)\"\u0010\u0010-\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0004\n\u0002\u0010*\"\u0010\u0010.\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0004\n\u0002\u0010*\"\u000e\u0010/\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u00101\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u00102\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u00103\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001a\u00104\u001a\b\u0012\u0004\u0012\u00020605X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b7\u00108¨\u00069"}, d2 = {"BasicAlertDialog", "", "onDismissRequest", "Lkotlin/Function0;", "modifier", "Landroidx/compose/ui/Modifier;", "properties", "Landroidx/compose/ui/window/DialogProperties;", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/runtime/Composable;", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/window/DialogProperties;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "AlertDialog", "AlertDialogImpl", "confirmButton", "dismissButton", "icon", "title", "text", "shape", "Landroidx/compose/ui/graphics/Shape;", "containerColor", "Landroidx/compose/ui/graphics/Color;", "iconContentColor", "titleContentColor", "textContentColor", "tonalElevation", "Landroidx/compose/ui/unit/Dp;", "AlertDialogImpl-wrnwzgE", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/graphics/Shape;JJJJFLandroidx/compose/ui/window/DialogProperties;Landroidx/compose/runtime/Composer;II)V", "AlertDialogContent", "buttons", "buttonContentColor", "AlertDialogContent-4hvqGtA", "(Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/graphics/Shape;JFJJJJLandroidx/compose/runtime/Composer;III)V", "AlertDialogFlowRow", "mainAxisSpacing", "crossAxisSpacing", "AlertDialogFlowRow-ixp7dh8", "(FFLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "DialogMinWidth", "getDialogMinWidth", "()F", "F", "DialogMaxWidth", "getDialogMaxWidth", "ButtonsMainAxisSpacing", "ButtonsCrossAxisSpacing", "DialogPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "IconPadding", "TitlePadding", "TextPadding", "LocalBasicAlertDialogOverride", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "Landroidx/compose/material3/BasicAlertDialogOverride;", "getLocalBasicAlertDialogOverride", "()Landroidx/compose/runtime/ProvidableCompositionLocal;", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class AlertDialogKt {
-    private static final PaddingValues DialogPadding;
-    private static final PaddingValues IconPadding;
-    private static final PaddingValues TextPadding;
-    private static final PaddingValues TitlePadding;
-    private static final float DialogMinWidth = Dp.m7555constructorimpl((float) RouletteView.DEFAULT_ROULETTE_WIDTH);
-    private static final float DialogMaxWidth = Dp.m7555constructorimpl(560);
-    private static final float ButtonsMainAxisSpacing = Dp.m7555constructorimpl(8);
-    private static final float ButtonsCrossAxisSpacing = Dp.m7555constructorimpl(12);
+    private static final float DialogMinWidth = Dp.m7555constructorimpl(280.0f);
+    private static final float DialogMaxWidth = Dp.m7555constructorimpl(560.0f);
+    private static final float ButtonsMainAxisSpacing = Dp.m7555constructorimpl(8.0f);
+    private static final float ButtonsCrossAxisSpacing = Dp.m7555constructorimpl(12.0f);
+    private static final PaddingValues DialogPadding = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(24.0f));
+    private static final PaddingValues IconPadding = PaddingKt.m815PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, Dp.m7555constructorimpl(16.0f), 7, null);
+    private static final PaddingValues TitlePadding = PaddingKt.m815PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, Dp.m7555constructorimpl(16.0f), 7, null);
+    private static final PaddingValues TextPadding = PaddingKt.m815PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, Dp.m7555constructorimpl(24.0f), 7, null);
     private static final ProvidableCompositionLocal<BasicAlertDialogOverride> LocalBasicAlertDialogOverride = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.material3.AlertDialogKt$$ExternalSyntheticLambda5
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
@@ -611,9 +610,10 @@ public final class AlertDialogKt {
 
                                         public final void invoke(Composer composer2, int i8) {
                                             PaddingValues paddingValues;
-                                            Function2<Composer, Integer, Unit> function28;
-                                            String str;
                                             int i9;
+                                            String str;
+                                            Function2<Composer, Integer, Unit> function28;
+                                            int i10;
                                             ComposerKt.sourceInformation(composer2, "C315@13002L2049:AlertDialog.kt#uh7d8r");
                                             if (composer2.shouldExecute((i8 & 3) != 2, i8 & 1)) {
                                                 if (ComposerKt.isTraceInProgress()) {
@@ -660,9 +660,12 @@ public final class AlertDialogKt {
                                                 ComposerKt.sourceInformationMarkerStart(composer2, 346139169, "C358@14708L333:AlertDialog.kt#uh7d8r");
                                                 if (function29 == null) {
                                                     composer2.startReplaceGroup(346092326);
+                                                    composer2.endReplaceGroup();
+                                                    i9 = -1323940314;
                                                 } else {
                                                     composer2.startReplaceGroup(346092327);
                                                     ComposerKt.sourceInformation(composer2, "*317@13165L165,317@13095L235");
+                                                    i9 = -1323940314;
                                                     CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4762boximpl(j7)), ComposableLambdaKt.rememberComposableLambda(-1128150638, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt$AlertDialogContent$1$1$1$1
                                                         @Override // kotlin.jvm.functions.Function2
                                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
@@ -670,15 +673,15 @@ public final class AlertDialogKt {
                                                             return Unit.INSTANCE;
                                                         }
 
-                                                        public final void invoke(Composer composer3, int i10) {
+                                                        public final void invoke(Composer composer3, int i11) {
                                                             PaddingValues paddingValues2;
                                                             ComposerKt.sourceInformation(composer3, "C318@13187L125:AlertDialog.kt#uh7d8r");
-                                                            if (!composer3.shouldExecute((i10 & 3) != 2, i10 & 1)) {
+                                                            if (!composer3.shouldExecute((i11 & 3) != 2, i11 & 1)) {
                                                                 composer3.skipToGroupEnd();
                                                                 return;
                                                             }
                                                             if (ComposerKt.isTraceInProgress()) {
-                                                                ComposerKt.traceEventStart(-1128150638, i10, -1, "androidx.compose.material3.AlertDialogContent.<anonymous>.<anonymous>.<anonymous>.<anonymous> (AlertDialog.kt:318)");
+                                                                ComposerKt.traceEventStart(-1128150638, i11, -1, "androidx.compose.material3.AlertDialogContent.<anonymous>.<anonymous>.<anonymous>.<anonymous> (AlertDialog.kt:318)");
                                                             }
                                                             ColumnScope columnScope = ColumnScope.this;
                                                             paddingValues2 = AlertDialogKt.IconPadding;
@@ -725,20 +728,20 @@ public final class AlertDialogKt {
                                                             }
                                                         }
                                                     }, composer2, 54), composer2, ProvidedValue.$stable | 48);
+                                                    composer2.endReplaceGroup();
                                                 }
-                                                composer2.endReplaceGroup();
                                                 if (function210 == null) {
                                                     composer2.startReplaceGroup(346396529);
                                                     composer2.endReplaceGroup();
                                                     function28 = function212;
+                                                    i10 = 54;
                                                     str = "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh";
-                                                    i9 = -692256719;
                                                 } else {
                                                     composer2.startReplaceGroup(346396530);
                                                     ComposerKt.sourceInformation(composer2, "*326@13528L5,327@13553L569,324@13386L736");
-                                                    function28 = function212;
                                                     str = "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh";
-                                                    i9 = -692256719;
+                                                    function28 = function212;
+                                                    i10 = 54;
                                                     ProvideContentColorTextStyleKt.m3007ProvideContentColorTextStyle3JVO9M(j8, TypographyKt.getValue(DialogTokens.INSTANCE.getHeadlineFont(), composer2, 6), ComposableLambdaKt.rememberComposableLambda(71284337, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt$AlertDialogContent$1$1$2$1
                                                         @Override // kotlin.jvm.functions.Function2
                                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
@@ -746,16 +749,16 @@ public final class AlertDialogKt {
                                                             return Unit.INSTANCE;
                                                         }
 
-                                                        public final void invoke(Composer composer3, int i10) {
+                                                        public final void invoke(Composer composer3, int i11) {
                                                             PaddingValues paddingValues2;
                                                             Alignment.Horizontal centerHorizontally;
                                                             ComposerKt.sourceInformation(composer3, "C328@13575L529:AlertDialog.kt#uh7d8r");
-                                                            if (!composer3.shouldExecute((i10 & 3) != 2, i10 & 1)) {
+                                                            if (!composer3.shouldExecute((i11 & 3) != 2, i11 & 1)) {
                                                                 composer3.skipToGroupEnd();
                                                                 return;
                                                             }
                                                             if (ComposerKt.isTraceInProgress()) {
-                                                                ComposerKt.traceEventStart(71284337, i10, -1, "androidx.compose.material3.AlertDialogContent.<anonymous>.<anonymous>.<anonymous>.<anonymous> (AlertDialog.kt:328)");
+                                                                ComposerKt.traceEventStart(71284337, i11, -1, "androidx.compose.material3.AlertDialogContent.<anonymous>.<anonymous>.<anonymous>.<anonymous> (AlertDialog.kt:328)");
                                                             }
                                                             ColumnScope columnScope = ColumnScope.this;
                                                             paddingValues2 = AlertDialogKt.TitlePadding;
@@ -822,15 +825,15 @@ public final class AlertDialogKt {
                                                             return Unit.INSTANCE;
                                                         }
 
-                                                        public final void invoke(Composer composer3, int i10) {
+                                                        public final void invoke(Composer composer3, int i11) {
                                                             PaddingValues paddingValues2;
                                                             ComposerKt.sourceInformation(composer3, "C349@14413L250:AlertDialog.kt#uh7d8r");
-                                                            if (!composer3.shouldExecute((i10 & 3) != 2, i10 & 1)) {
+                                                            if (!composer3.shouldExecute((i11 & 3) != 2, i11 & 1)) {
                                                                 composer3.skipToGroupEnd();
                                                                 return;
                                                             }
                                                             if (ComposerKt.isTraceInProgress()) {
-                                                                ComposerKt.traceEventStart(705583346, i10, -1, "androidx.compose.material3.AlertDialogContent.<anonymous>.<anonymous>.<anonymous>.<anonymous> (AlertDialog.kt:349)");
+                                                                ComposerKt.traceEventStart(705583346, i11, -1, "androidx.compose.material3.AlertDialogContent.<anonymous>.<anonymous>.<anonymous>.<anonymous> (AlertDialog.kt:349)");
                                                             }
                                                             ColumnScope columnScope = ColumnScope.this;
                                                             Modifier weight = columnScope.weight(Modifier.Companion, 1.0f, false);
@@ -877,18 +880,18 @@ public final class AlertDialogKt {
                                                                 ComposerKt.traceEventEnd();
                                                             }
                                                         }
-                                                    }, composer2, 54), composer2, RendererCapabilities.DECODER_SUPPORT_MASK);
+                                                    }, composer2, i10), composer2, RendererCapabilities.DECODER_SUPPORT_MASK);
                                                 }
                                                 composer2.endReplaceGroup();
                                                 Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getEnd());
                                                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                                                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                                ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, str);
+                                                ComposerKt.sourceInformationMarkerStart(composer2, i9, str);
                                                 int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                                                 CompositionLocalMap currentCompositionLocalMap2 = composer2.getCurrentCompositionLocalMap();
                                                 Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer2, align);
                                                 Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                                                ComposerKt.sourceInformationMarkerStart(composer2, i9, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+                                                ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                                 if (!(composer2.getApplier() instanceof Applier)) {
                                                     ComposablesKt.invalidApplier();
                                                 }
@@ -1147,14 +1150,5 @@ public final class AlertDialogKt {
 
     public static final ProvidableCompositionLocal<BasicAlertDialogOverride> getLocalBasicAlertDialogOverride() {
         return LocalBasicAlertDialogOverride;
-    }
-
-    static {
-        float f = 24;
-        DialogPadding = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(f));
-        float f2 = 16;
-        IconPadding = PaddingKt.m815PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, Dp.m7555constructorimpl(f2), 7, null);
-        TitlePadding = PaddingKt.m815PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, Dp.m7555constructorimpl(f2), 7, null);
-        TextPadding = PaddingKt.m815PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, Dp.m7555constructorimpl(f), 7, null);
     }
 }

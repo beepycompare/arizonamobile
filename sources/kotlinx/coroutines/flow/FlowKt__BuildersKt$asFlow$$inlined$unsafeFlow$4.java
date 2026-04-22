@@ -42,8 +42,8 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$4<T> implements
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003b  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003a  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0048  */
     @Override // kotlinx.coroutines.flow.Flow
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -51,7 +51,6 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$4<T> implements
     public Object collect(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
         AnonymousClass1 anonymousClass1;
         int i;
-        FlowCollector<? super T> flowCollector2;
         Iterator it;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
@@ -62,20 +61,20 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$4<T> implements
                 i = anonymousClass1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    flowCollector2 = flowCollector;
                     it = this.$this_asFlow$inlined;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     it = (Iterator) anonymousClass1.L$1;
+                    flowCollector = (FlowCollector) anonymousClass1.L$0;
                     ResultKt.throwOnFailure(obj);
-                    flowCollector2 = (FlowCollector) anonymousClass1.L$0;
                 }
                 while (it.hasNext()) {
-                    anonymousClass1.L$0 = flowCollector2;
+                    Object next = it.next();
+                    anonymousClass1.L$0 = flowCollector;
                     anonymousClass1.L$1 = it;
                     anonymousClass1.label = 1;
-                    if (flowCollector2.emit((Object) it.next(), anonymousClass1) == coroutine_suspended) {
+                    if (flowCollector.emit(next, anonymousClass1) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 }

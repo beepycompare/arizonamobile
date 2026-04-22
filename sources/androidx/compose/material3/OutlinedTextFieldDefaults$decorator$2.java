@@ -78,7 +78,7 @@ public final class OutlinedTextFieldDefaults$decorator$2 implements TextFieldDec
         Composer startRestartGroup = composer.startRestartGroup(794272399);
         ComposerKt.sourceInformation(startRestartGroup, "C(Decoration)N(innerTextField)1006@52904L720:TextFieldDefaults.kt#uh7d8r");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(function2) ? 4 : 2) | i;
+            i2 = i | (startRestartGroup.changedInstance(function2) ? 4 : 2);
         } else {
             i2 = i;
         }

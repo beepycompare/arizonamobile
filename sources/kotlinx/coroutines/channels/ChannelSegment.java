@@ -87,13 +87,13 @@ public final class ChannelSegment<E> extends Segment<ChannelSegment<E>> {
         if (r5 == false) goto L61;
      */
     /* JADX WARN: Code restructure failed: missing block: B:36:0x0067, code lost:
-        r4 = getChannel().onUndeliveredElement;
+        r3 = getChannel().onUndeliveredElement;
      */
     /* JADX WARN: Code restructure failed: missing block: B:37:0x006d, code lost:
-        if (r4 == null) goto L60;
+        if (r3 == null) goto L60;
      */
     /* JADX WARN: Code restructure failed: missing block: B:38:0x006f, code lost:
-        kotlinx.coroutines.internal.OnUndeliveredElementKt.callUndeliveredElement(r4, r0, r6);
+        kotlinx.coroutines.internal.OnUndeliveredElementKt.callUndeliveredElement(r3, r0, r6);
      */
     /* JADX WARN: Code restructure failed: missing block: B:39:0x0072, code lost:
         return;

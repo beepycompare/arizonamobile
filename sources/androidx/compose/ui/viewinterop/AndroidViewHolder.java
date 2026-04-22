@@ -956,7 +956,7 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
                     m7683getXimpl2 = 0;
                 }
                 int m7684getYimpl2 = i - IntOffset.m7684getYimpl(m7700roundk4lQ0M2);
-                int i2 = m7684getYimpl2 < 0 ? 0 : m7684getYimpl2;
+                int i2 = m7684getYimpl2 >= 0 ? m7684getYimpl2 : 0;
                 if (m7683getXimpl != 0 || m7684getYimpl != 0 || m7683getXimpl2 != 0 || i2 != 0) {
                     return windowInsetsCompat.inset(m7683getXimpl, m7684getYimpl, m7683getXimpl2, i2);
                 }

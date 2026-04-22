@@ -301,13 +301,13 @@ public final class FlowableFlatMapMaybe<T, R> extends AbstractFlowableWithUpstre
             if (r13 == false) goto L66;
          */
         /* JADX WARN: Code restructure failed: missing block: B:60:0x00b8, code lost:
-            r2 = r17.errors.terminate();
+            r0 = r17.errors.terminate();
          */
         /* JADX WARN: Code restructure failed: missing block: B:61:0x00be, code lost:
-            if (r2 == null) goto L59;
+            if (r0 == null) goto L59;
          */
         /* JADX WARN: Code restructure failed: missing block: B:62:0x00c0, code lost:
-            r1.onError(r2);
+            r1.onError(r0);
          */
         /* JADX WARN: Code restructure failed: missing block: B:63:0x00c3, code lost:
             return;

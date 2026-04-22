@@ -387,7 +387,10 @@ public final class TextFieldBuffer implements Appendable {
     private final void requireValidIndex(int i, boolean z, boolean z2) {
         boolean z3 = false;
         int i2 = z ? 0 : -1;
-        int length = z2 ? getLength() : getLength() + 1;
+        int length = getLength();
+        if (!z2) {
+            length++;
+        }
         if (i2 <= i && i < length) {
             z3 = true;
         }

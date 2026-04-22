@@ -7,7 +7,6 @@ import androidx.compose.animation.core.SuspendAnimationKt;
 import androidx.compose.foundation.internal.InlineClassHelperKt;
 import androidx.compose.ui.unit.Density;
 import androidx.compose.ui.unit.Dp;
-import com.android.volley.DefaultRetryPolicy;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -24,9 +23,9 @@ import kotlin.ranges.RangesKt;
 /* loaded from: classes.dex */
 public final class LazyLayoutScrollScopeKt {
     private static final boolean DEBUG = false;
-    private static final float TargetDistance = Dp.m7555constructorimpl((float) DefaultRetryPolicy.DEFAULT_TIMEOUT_MS);
-    private static final float BoundDistance = Dp.m7555constructorimpl(1500);
-    private static final float MinimumDistance = Dp.m7555constructorimpl(50);
+    private static final float TargetDistance = Dp.m7555constructorimpl(2500.0f);
+    private static final float BoundDistance = Dp.m7555constructorimpl(1500.0f);
+    private static final float MinimumDistance = Dp.m7555constructorimpl(50.0f);
 
     private static final void debugLog(Function0<String> function0) {
     }

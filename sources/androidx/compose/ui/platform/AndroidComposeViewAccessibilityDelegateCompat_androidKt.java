@@ -186,7 +186,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
                         current = 1.0f;
                     }
                     if (!(current == 0.0f)) {
-                        r4 = (current == 1.0f ? 1 : 0) != 0 ? 100 : RangesKt.coerceIn(Math.round(current * 100), 1, 99);
+                        r4 = (current == 1.0f ? 1 : 0) != 0 ? 100 : RangesKt.coerceIn(Math.round(current * 100.0f), 1, 99);
                     }
                     orNull = resources.getString(R.string.template_percent, Integer.valueOf(r4));
                 }
@@ -258,7 +258,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
         if (!semanticsNode.getUnmergedConfig$ui().contains(SemanticsProperties.INSTANCE.getEditableText()) || Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getFocused()), (Object) true)) {
             LayoutNode findClosestParentNode = findClosestParentNode(semanticsNode.getLayoutNode$ui(), new Function1<LayoutNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat_androidKt$excludeLineAndPageGranularities$ancestor$1
                 /* JADX WARN: Code restructure failed: missing block: B:7:0x0017, code lost:
-                    if (r3.contains(androidx.compose.ui.semantics.SemanticsProperties.INSTANCE.getEditableText()) != false) goto L7;
+                    if (r1.contains(androidx.compose.ui.semantics.SemanticsProperties.INSTANCE.getEditableText()) != false) goto L7;
                  */
                 @Override // kotlin.jvm.functions.Function1
                 /*

@@ -36,8 +36,8 @@ public final class FlowKt__TransformKt$runningFold$1$1<T> implements FlowCollect
     public final Object emit(T t, Continuation<? super Unit> continuation) {
         FlowKt__TransformKt$runningFold$1$1$emit$1 flowKt__TransformKt$runningFold$1$1$emit$1;
         int i;
-        Ref.ObjectRef objectRef;
         FlowKt__TransformKt$runningFold$1$1<T> flowKt__TransformKt$runningFold$1$1;
+        Ref.ObjectRef objectRef;
         if (continuation instanceof FlowKt__TransformKt$runningFold$1$1$emit$1) {
             flowKt__TransformKt$runningFold$1$1$emit$1 = (FlowKt__TransformKt$runningFold$1$1$emit$1) continuation;
             if ((flowKt__TransformKt$runningFold$1$1$emit$1.label & Integer.MIN_VALUE) != 0) {
@@ -55,9 +55,9 @@ public final class FlowKt__TransformKt$runningFold$1$1<T> implements FlowCollect
                     flowKt__TransformKt$runningFold$1$1$emit$1.label = 1;
                     Object invoke = function3.invoke(t3, t, flowKt__TransformKt$runningFold$1$1$emit$1);
                     if (invoke != coroutine_suspended) {
-                        t2 = (T) invoke;
-                        objectRef = objectRef2;
                         flowKt__TransformKt$runningFold$1$1 = this;
+                        objectRef = objectRef2;
+                        t2 = (T) invoke;
                     }
                     return coroutine_suspended;
                 } else if (i != 1) {

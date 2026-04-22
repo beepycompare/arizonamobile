@@ -39,9 +39,11 @@ final class ParametrizedCacheEntry<T> {
                 Result.Companion companion2 = Result.Companion;
                 m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
             }
-            Result m9182boximpl = Result.m9182boximpl(m9183constructorimpl);
-            Object putIfAbsent = concurrentHashMap.putIfAbsent(arrayList2, m9182boximpl);
-            obj = putIfAbsent == null ? m9182boximpl : putIfAbsent;
+            obj = Result.m9182boximpl(m9183constructorimpl);
+            Object putIfAbsent = concurrentHashMap.putIfAbsent(arrayList2, obj);
+            if (putIfAbsent != null) {
+                obj = putIfAbsent;
+            }
         }
         Intrinsics.checkNotNullExpressionValue(obj, "getOrPut(...)");
         return ((Result) obj).m9192unboximpl();

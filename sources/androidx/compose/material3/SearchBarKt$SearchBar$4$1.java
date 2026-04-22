@@ -133,7 +133,7 @@ public final class SearchBarKt$SearchBar$4$1 extends SuspendLambda implements Fu
                                 mutableState.setValue(backEventCompat);
                             }
                             mutableState2.setValue(backEventCompat);
-                            Object snapTo = animatable.snapTo(Boxing.boxFloat(1 - PredictiveBack.INSTANCE.transform$material3(backEventCompat.getProgress())), continuation);
+                            Object snapTo = animatable.snapTo(Boxing.boxFloat(1.0f - PredictiveBack.INSTANCE.transform$material3(backEventCompat.getProgress())), continuation);
                             return snapTo == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? snapTo : Unit.INSTANCE;
                         }
                     }, this) == coroutine_suspended) {

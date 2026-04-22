@@ -22,7 +22,8 @@ public final class FlowKt__ErrorsKt$catchImpl$2<T> implements FlowCollector {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0036  */
+    /* JADX WARN: Type inference failed for: r5v1, types: [java.lang.Throwable, T] */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -30,50 +31,44 @@ public final class FlowKt__ErrorsKt$catchImpl$2<T> implements FlowCollector {
     public final Object emit(T t, Continuation<? super Unit> continuation) {
         FlowKt__ErrorsKt$catchImpl$2$emit$1 flowKt__ErrorsKt$catchImpl$2$emit$1;
         int i;
-        FlowKt__ErrorsKt$catchImpl$2<T> flowKt__ErrorsKt$catchImpl$2;
-        if (continuation instanceof FlowKt__ErrorsKt$catchImpl$2$emit$1) {
-            flowKt__ErrorsKt$catchImpl$2$emit$1 = (FlowKt__ErrorsKt$catchImpl$2$emit$1) continuation;
-            if ((flowKt__ErrorsKt$catchImpl$2$emit$1.label & Integer.MIN_VALUE) != 0) {
-                flowKt__ErrorsKt$catchImpl$2$emit$1.label -= Integer.MIN_VALUE;
-                Object obj = flowKt__ErrorsKt$catchImpl$2$emit$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = flowKt__ErrorsKt$catchImpl$2$emit$1.label;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    try {
+        try {
+            if (continuation instanceof FlowKt__ErrorsKt$catchImpl$2$emit$1) {
+                flowKt__ErrorsKt$catchImpl$2$emit$1 = (FlowKt__ErrorsKt$catchImpl$2$emit$1) continuation;
+                if ((flowKt__ErrorsKt$catchImpl$2$emit$1.label & Integer.MIN_VALUE) != 0) {
+                    flowKt__ErrorsKt$catchImpl$2$emit$1.label -= Integer.MIN_VALUE;
+                    Object obj = flowKt__ErrorsKt$catchImpl$2$emit$1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = flowKt__ErrorsKt$catchImpl$2$emit$1.label;
+                    if (i != 0) {
+                        ResultKt.throwOnFailure(obj);
                         FlowCollector<T> flowCollector = this.$collector;
                         flowKt__ErrorsKt$catchImpl$2$emit$1.L$0 = this;
                         flowKt__ErrorsKt$catchImpl$2$emit$1.label = 1;
                         if (flowCollector.emit(t, flowKt__ErrorsKt$catchImpl$2$emit$1) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                    } catch (Throwable t2) {
-                        t2 = th;
-                        flowKt__ErrorsKt$catchImpl$2 = this;
-                        flowKt__ErrorsKt$catchImpl$2.$fromDownstream.element = t2;
-                        throw ((Throwable) t2);
-                    }
-                } else if (i != 1) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    flowKt__ErrorsKt$catchImpl$2 = (FlowKt__ErrorsKt$catchImpl$2) flowKt__ErrorsKt$catchImpl$2$emit$1.L$0;
-                    try {
+                    } else if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        FlowKt__ErrorsKt$catchImpl$2 flowKt__ErrorsKt$catchImpl$2 = (FlowKt__ErrorsKt$catchImpl$2) flowKt__ErrorsKt$catchImpl$2$emit$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                    } catch (Throwable t22) {
-                        t22 = th;
-                        flowKt__ErrorsKt$catchImpl$2.$fromDownstream.element = t22;
-                        throw ((Throwable) t22);
                     }
+                    this = (FlowKt__ErrorsKt$catchImpl$2<T>) Unit.INSTANCE;
+                    return this;
                 }
-                return Unit.INSTANCE;
             }
+            if (i != 0) {
+            }
+            this = (FlowKt__ErrorsKt$catchImpl$2<T>) Unit.INSTANCE;
+            return this;
+        } catch (Throwable r5) {
+            r5 = (T) th;
+            this.$fromDownstream.element = r5;
+            throw r5;
         }
         flowKt__ErrorsKt$catchImpl$2$emit$1 = new FlowKt__ErrorsKt$catchImpl$2$emit$1(this, continuation);
         Object obj2 = flowKt__ErrorsKt$catchImpl$2$emit$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = flowKt__ErrorsKt$catchImpl$2$emit$1.label;
-        if (i != 0) {
-        }
-        return Unit.INSTANCE;
     }
 }

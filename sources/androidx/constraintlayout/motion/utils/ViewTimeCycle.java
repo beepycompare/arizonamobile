@@ -403,25 +403,21 @@ public abstract class ViewTimeCycle extends TimeCycleSplineSet {
 
         @Override // androidx.constraintlayout.motion.utils.ViewTimeCycle
         public boolean setProperty(View view, float f, long j, KeyCache keyCache) {
-            ProgressSet progressSet;
             Method method;
             if (view instanceof MotionLayout) {
-                progressSet = this;
                 ((MotionLayout) view).setProgress(get(f, j, view, keyCache));
+            } else if (this.mNoMethod) {
+                return false;
             } else {
-                progressSet = this;
-                if (progressSet.mNoMethod) {
-                    return false;
-                }
                 try {
                     method = view.getClass().getMethod("setProgress", Float.TYPE);
                 } catch (NoSuchMethodException unused) {
-                    progressSet.mNoMethod = true;
+                    this.mNoMethod = true;
                     method = null;
                 }
                 if (method != null) {
                     try {
-                        method.invoke(view, Float.valueOf(progressSet.get(f, j, view, keyCache)));
+                        method.invoke(view, Float.valueOf(get(f, j, view, keyCache)));
                     } catch (IllegalAccessException e) {
                         Log.e(ViewTimeCycle.TAG, "unable to setProgress", e);
                     } catch (InvocationTargetException e2) {
@@ -429,7 +425,7 @@ public abstract class ViewTimeCycle extends TimeCycleSplineSet {
                     }
                 }
             }
-            return progressSet.mContinue;
+            return this.mContinue;
         }
     }
 }

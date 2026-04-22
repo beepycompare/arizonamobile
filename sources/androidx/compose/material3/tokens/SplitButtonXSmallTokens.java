@@ -8,20 +8,20 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class SplitButtonXSmallTokens {
     public static final int $stable = 0;
-    private static final float TrailingButtonLeadingSpace;
-    private static final float TrailingButtonTrailingSpace;
     public static final SplitButtonXSmallTokens INSTANCE = new SplitButtonXSmallTokens();
-    private static final float BetweenSpace = Dp.m7555constructorimpl((float) 2.0d);
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 32.0d);
+    private static final float BetweenSpace = Dp.m7555constructorimpl(2.0f);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(32.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
     private static final CornerSize InnerCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueExtraSmall();
     private static final CornerSize InnerHoveredCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueSmall();
     private static final CornerSize InnerPressedCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueSmall();
-    private static final float LeadingButtonLeadingSpace = Dp.m7555constructorimpl((float) 12.0d);
-    private static final float LeadingButtonTrailingSpace = Dp.m7555constructorimpl((float) 10.0d);
+    private static final float LeadingButtonLeadingSpace = Dp.m7555constructorimpl(12.0f);
+    private static final float LeadingButtonTrailingSpace = Dp.m7555constructorimpl(10.0f);
     private static final float OuterCornerCornerSizePercent = 50.0f;
-    private static final float TrailingIconSize = Dp.m7555constructorimpl((float) 22.0d);
+    private static final float TrailingIconSize = Dp.m7555constructorimpl(22.0f);
     private static final float TrailingInnerSelectedCornerCornerSizePercent = 50.0f;
+    private static final float TrailingButtonLeadingSpace = Dp.m7555constructorimpl(13.0f);
+    private static final float TrailingButtonTrailingSpace = Dp.m7555constructorimpl(13.0f);
 
     private SplitButtonXSmallTokens() {
     }
@@ -83,11 +83,5 @@ public final class SplitButtonXSmallTokens {
     /* renamed from: getTrailingButtonTrailingSpace-D9Ej5fM  reason: not valid java name */
     public final float m3779getTrailingButtonTrailingSpaceD9Ej5fM() {
         return TrailingButtonTrailingSpace;
-    }
-
-    static {
-        float f = (float) 13.0d;
-        TrailingButtonLeadingSpace = Dp.m7555constructorimpl(f);
-        TrailingButtonTrailingSpace = Dp.m7555constructorimpl(f);
     }
 }

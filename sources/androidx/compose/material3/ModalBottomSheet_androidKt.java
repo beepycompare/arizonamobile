@@ -69,9 +69,9 @@ public final class ModalBottomSheet_androidKt {
     /* JADX WARN: Removed duplicated region for block: B:133:0x0183  */
     /* JADX WARN: Removed duplicated region for block: B:143:0x01a4  */
     /* JADX WARN: Removed duplicated region for block: B:150:0x01b6  */
-    /* JADX WARN: Removed duplicated region for block: B:217:0x031b  */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x0337  */
-    /* JADX WARN: Removed duplicated region for block: B:222:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x031a  */
+    /* JADX WARN: Removed duplicated region for block: B:221:0x0336  */
+    /* JADX WARN: Removed duplicated region for block: B:223:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0068  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
@@ -97,7 +97,7 @@ public final class ModalBottomSheet_androidKt {
         Modifier.Companion companion;
         Object obj;
         int i5;
-        Shape shape2;
+        Object obj2;
         long j4;
         long j5;
         int i6;
@@ -109,7 +109,7 @@ public final class ModalBottomSheet_androidKt {
         int i12;
         Composer composer2;
         final float f3;
-        final Shape shape3;
+        final Shape shape2;
         final long j6;
         final Modifier modifier2;
         final SheetState sheetState2;
@@ -120,19 +120,19 @@ public final class ModalBottomSheet_androidKt {
         final WindowInsets windowInsets2;
         final ModalBottomSheetProperties modalBottomSheetProperties2;
         ScopeUpdateScope endRestartGroup;
+        Shape shape3;
         long j9;
         long j10;
         final WindowInsets windowInsets3;
         ModalBottomSheetProperties properties;
         Shape shape4;
-        float f5;
-        boolean z;
-        float f6;
         Modifier modifier3;
-        long j11;
-        Function2 function23;
+        float f5;
         SheetState sheetState3;
+        long j11;
         long j12;
+        float f6;
+        Function2 function23;
         int i13;
         int i14;
         int i15;
@@ -173,18 +173,18 @@ public final class ModalBottomSheet_androidKt {
                 i4 |= startRestartGroup.changed(f) ? 2048 : 1024;
                 if ((i & 24576) == 0) {
                     if ((i3 & 16) == 0) {
-                        shape2 = shape;
-                        if (startRestartGroup.changed(shape2)) {
+                        obj2 = shape;
+                        if (startRestartGroup.changed(obj2)) {
                             i14 = 16384;
                             i4 |= i14;
                         }
                     } else {
-                        shape2 = shape;
+                        obj2 = shape;
                     }
                     i14 = 8192;
                     i4 |= i14;
                 } else {
-                    shape2 = shape;
+                    obj2 = shape;
                 }
                 if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
                     j4 = j;
@@ -263,14 +263,13 @@ public final class ModalBottomSheet_androidKt {
                                 }
                                 function23 = function2;
                                 properties = modalBottomSheetProperties;
-                                z = true;
-                                shape4 = shape2;
+                                shape4 = obj2;
                                 modifier3 = companion;
                                 sheetState3 = obj;
-                                j12 = j5;
+                                j11 = j5;
                                 f5 = f;
                                 f6 = f2;
-                                j11 = j3;
+                                j12 = j3;
                                 windowInsets3 = windowInsets;
                             } else {
                                 if (i16 != 0) {
@@ -282,8 +281,10 @@ public final class ModalBottomSheet_androidKt {
                                 }
                                 float m1749getSheetMaxWidthD9Ej5fM = i5 != 0 ? BottomSheetDefaults.INSTANCE.m1749getSheetMaxWidthD9Ej5fM() : f;
                                 if ((i3 & 16) != 0) {
-                                    shape2 = BottomSheetDefaults.INSTANCE.getExpandedShape(startRestartGroup, 6);
+                                    shape3 = BottomSheetDefaults.INSTANCE.getExpandedShape(startRestartGroup, 6);
                                     i4 &= -57345;
+                                } else {
+                                    shape3 = obj2;
                                 }
                                 if ((i3 & 32) != 0) {
                                     j9 = BottomSheetDefaults.INSTANCE.getContainerColor(startRestartGroup, 6);
@@ -292,13 +293,13 @@ public final class ModalBottomSheet_androidKt {
                                     j9 = j4;
                                 }
                                 if ((i3 & 64) != 0) {
-                                    j5 = ColorSchemeKt.m1902contentColorForek8zF_U(j9, startRestartGroup, (i4 >> 15) & 14);
                                     i4 &= -3670017;
+                                    j5 = ColorSchemeKt.m1902contentColorForek8zF_U(j9, startRestartGroup, (i4 >> 15) & 14);
                                 }
-                                float m7555constructorimpl = i6 != 0 ? Dp.m7555constructorimpl(0) : f2;
+                                float m7555constructorimpl = i6 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
                                 if ((i3 & 256) != 0) {
                                     j10 = BottomSheetDefaults.INSTANCE.getScrimColor(startRestartGroup, 6);
-                                    i4 = (-234881025) & i4;
+                                    i4 &= -234881025;
                                 } else {
                                     j10 = j3;
                                 }
@@ -310,17 +311,16 @@ public final class ModalBottomSheet_androidKt {
                                     windowInsets3 = windowInsets;
                                 }
                                 properties = i11 != 0 ? ModalBottomSheetDefaults.INSTANCE.getProperties() : modalBottomSheetProperties;
-                                j4 = j9;
-                                shape4 = shape2;
-                                f5 = m1749getSheetMaxWidthD9Ej5fM;
-                                z = true;
-                                long j13 = j5;
-                                f6 = m7555constructorimpl;
+                                shape4 = shape3;
                                 modifier3 = companion;
-                                j11 = j10;
-                                function23 = m1940getLambda$1294623166$material3;
+                                long j13 = j9;
+                                f5 = m1749getSheetMaxWidthD9Ej5fM;
                                 sheetState3 = obj;
-                                j12 = j13;
+                                j11 = j5;
+                                j12 = j10;
+                                f6 = m7555constructorimpl;
+                                function23 = m1940getLambda$1294623166$material3;
+                                j4 = j13;
                             }
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
@@ -329,7 +329,7 @@ public final class ModalBottomSheet_androidKt {
                             int i17 = i4 << 3;
                             int i18 = i12 << 3;
                             composer2 = startRestartGroup;
-                            ModalBottomSheetKt.m2250ModalBottomSheetYbuCTN8(function0, modifier3, sheetState3, f5, false, shape4, j4, j12, f6, j11, function23, new Function2<Composer, Integer, WindowInsets>() { // from class: androidx.compose.material3.ModalBottomSheet_androidKt$ModalBottomSheet$1
+                            ModalBottomSheetKt.m2250ModalBottomSheetYbuCTN8(function0, modifier3, sheetState3, f5, false, shape4, j4, j11, f6, j12, function23, new Function2<Composer, Integer, WindowInsets>() { // from class: androidx.compose.material3.ModalBottomSheet_androidKt$ModalBottomSheet$1
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ WindowInsets invoke(Composer composer3, Integer num) {
                                     return invoke(composer3, num.intValue());
@@ -353,21 +353,21 @@ public final class ModalBottomSheet_androidKt {
                             }
                             modifier2 = modifier3;
                             f3 = f5;
-                            shape3 = shape4;
-                            j7 = j12;
+                            shape2 = shape4;
+                            j7 = j11;
                             function22 = function23;
                             float f7 = f6;
                             windowInsets2 = windowInsets3;
                             sheetState2 = sheetState3;
                             j6 = j4;
                             f4 = f7;
-                            j8 = j11;
+                            j8 = j12;
                             modalBottomSheetProperties2 = properties;
                         } else {
                             composer2 = startRestartGroup;
                             composer2.skipToGroupEnd();
                             f3 = f;
-                            shape3 = shape2;
+                            shape2 = obj2;
                             j6 = j4;
                             modifier2 = companion;
                             sheetState2 = obj;
@@ -382,8 +382,8 @@ public final class ModalBottomSheet_androidKt {
                         if (endRestartGroup != null) {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ModalBottomSheet_androidKt$$ExternalSyntheticLambda4
                                 @Override // kotlin.jvm.functions.Function2
-                                public final Object invoke(Object obj2, Object obj3) {
-                                    return ModalBottomSheet_androidKt.ModalBottomSheet_dYc4hso$lambda$0(Function0.this, modifier2, sheetState2, f3, shape3, j6, j7, f4, j8, function22, windowInsets2, modalBottomSheetProperties2, function3, i, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
+                                public final Object invoke(Object obj3, Object obj4) {
+                                    return ModalBottomSheet_androidKt.ModalBottomSheet_dYc4hso$lambda$0(Function0.this, modifier2, sheetState2, f3, shape2, j6, j7, f4, j8, function22, windowInsets2, modalBottomSheetProperties2, function3, i, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
                                 }
                             });
                             return;

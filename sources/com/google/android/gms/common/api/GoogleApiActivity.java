@@ -49,27 +49,29 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
                     googleApiActivity.zaa = 1;
                 } catch (ActivityNotFoundException e) {
                     e = e;
+                    ActivityNotFoundException activityNotFoundException = e;
                     if (!extras.getBoolean("notify_manager", true)) {
                         String str = "Activity not found while launching " + pendingIntent.toString() + ".";
                         if (Build.FINGERPRINT.contains("generic")) {
                             str = str.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
                         }
-                        Log.e("GoogleApiActivity", str, e);
+                        Log.e("GoogleApiActivity", str, activityNotFoundException);
                     } else {
-                        GoogleApiManager.zak(this).zax(new ConnectionResult(22, null), getIntent().getIntExtra("failing_client_id", -1));
+                        GoogleApiManager.zak(googleApiActivity).zax(new ConnectionResult(22, null), googleApiActivity.getIntent().getIntExtra("failing_client_id", -1));
                     }
                     googleApiActivity.zaa = 1;
-                    finish();
+                    googleApiActivity.finish();
                 } catch (IntentSender.SendIntentException e2) {
                     e = e2;
                     Log.e("GoogleApiActivity", "Failed to launch pendingIntent", e);
-                    finish();
+                    googleApiActivity.finish();
                 }
             } catch (ActivityNotFoundException e3) {
                 e = e3;
                 googleApiActivity = this;
             } catch (IntentSender.SendIntentException e4) {
                 e = e4;
+                googleApiActivity = this;
             }
         } else {
             GoogleApiAvailability.getInstance().showErrorDialogFragment(this, ((Integer) Preconditions.checkNotNull(num)).intValue(), 2, this);

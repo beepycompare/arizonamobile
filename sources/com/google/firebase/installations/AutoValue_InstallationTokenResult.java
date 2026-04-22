@@ -48,7 +48,7 @@ final class AutoValue_InstallationTokenResult extends InstallationTokenResult {
     public int hashCode() {
         long j = this.tokenExpirationTimestamp;
         long j2 = this.tokenCreationTimestamp;
-        return ((((this.token.hashCode() ^ 1000003) * 1000003) ^ ((int) (j ^ (j >>> 32)))) * 1000003) ^ ((int) (j2 ^ (j2 >>> 32)));
+        return ((int) (j2 ^ (j2 >>> 32))) ^ ((((this.token.hashCode() ^ 1000003) * 1000003) ^ ((int) (j ^ (j >>> 32)))) * 1000003);
     }
 
     @Override // com.google.firebase.installations.InstallationTokenResult

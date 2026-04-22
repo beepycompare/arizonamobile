@@ -86,7 +86,7 @@ final class WrapContentElement extends ModifierNodeElement<WrapContentNode> {
                     Alignment.Horizontal horizontal2 = Alignment.Horizontal.this;
                     IntSize intSize = (IntSize) obj;
                     LayoutDirection layoutDirection = (LayoutDirection) obj2;
-                    m7674boximpl = IntOffset.m7674boximpl(IntOffset.m7677constructorimpl((horizontal2.align(0, (int) (intSize.m7730unboximpl() >> 32), layoutDirection) << 32) | (0 & 4294967295L)));
+                    m7674boximpl = IntOffset.m7674boximpl(IntOffset.m7677constructorimpl(horizontal2.align(0, (int) (intSize.m7730unboximpl() >> 32), layoutDirection) << 32));
                     return m7674boximpl;
                 }
             }, horizontal, "wrapContentWidth");
@@ -100,7 +100,7 @@ final class WrapContentElement extends ModifierNodeElement<WrapContentNode> {
                     Alignment.Vertical vertical2 = Alignment.Vertical.this;
                     IntSize intSize = (IntSize) obj;
                     LayoutDirection layoutDirection = (LayoutDirection) obj2;
-                    m7674boximpl = IntOffset.m7674boximpl(IntOffset.m7677constructorimpl((0 << 32) | (4294967295L & vertical2.align(0, (int) (intSize.m7730unboximpl() & 4294967295L)))));
+                    m7674boximpl = IntOffset.m7674boximpl(IntOffset.m7677constructorimpl(vertical2.align(0, (int) (intSize.m7730unboximpl() & 4294967295L)) & 4294967295L));
                     return m7674boximpl;
                 }
             }, vertical, "wrapContentHeight");

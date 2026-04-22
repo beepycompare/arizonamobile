@@ -19,7 +19,7 @@ public final class FilledCardTokens {
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final float HoverContainerElevation = ElevationTokens.INSTANCE.m3360getLevel1D9Ej5fM();
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.Primary;
-    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
+    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
     private static final float PressedContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
 
     private FilledCardTokens() {

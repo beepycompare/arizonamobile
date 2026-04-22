@@ -132,8 +132,8 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0051  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0054  */
     @Override // kotlinx.coroutines.channels.SendChannel
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -141,7 +141,6 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
     public Object send(T t, Continuation<? super Unit> continuation) {
         RxObservableCoroutine$send$1 rxObservableCoroutine$send$1;
         int i;
-        RxObservableCoroutine<T> rxObservableCoroutine;
         Throwable doLockedNext;
         if (continuation instanceof RxObservableCoroutine$send$1) {
             rxObservableCoroutine$send$1 = (RxObservableCoroutine$send$1) continuation;
@@ -159,15 +158,14 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
                     if (Mutex.DefaultImpls.lock$default(mutex, null, rxObservableCoroutine$send$1, 1, null) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    rxObservableCoroutine = this;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     t = (T) rxObservableCoroutine$send$1.L$1;
-                    rxObservableCoroutine = (RxObservableCoroutine) rxObservableCoroutine$send$1.L$0;
+                    this = (RxObservableCoroutine) rxObservableCoroutine$send$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                doLockedNext = rxObservableCoroutine.doLockedNext(t);
+                doLockedNext = this.doLockedNext(t);
                 if (doLockedNext == null) {
                     throw doLockedNext;
                 }
@@ -180,7 +178,7 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
         i = rxObservableCoroutine$send$1.label;
         if (i != 0) {
         }
-        doLockedNext = rxObservableCoroutine.doLockedNext(t);
+        doLockedNext = this.doLockedNext(t);
         if (doLockedNext == null) {
         }
     }

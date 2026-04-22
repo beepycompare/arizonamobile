@@ -96,7 +96,7 @@ public final class ImmutableTypeToInstanceMap<B> extends ForwardingMap<TypeToken
         return this.delegate;
     }
 
-    /* JADX WARN: Type inference failed for: r2v1, types: [T extends B, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [T extends B, java.lang.Object] */
     @CheckForNull
     private <T extends B> T trustedGet(TypeToken<T> type) {
         return this.delegate.get(type);

@@ -39,7 +39,7 @@ public final class FieldAttributes {
     }
 
     public boolean hasModifier(int i) {
-        return (i & this.field.getModifiers()) != 0;
+        return (this.field.getModifiers() & i) != 0;
     }
 
     public String toString() {

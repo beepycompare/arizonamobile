@@ -22,7 +22,7 @@ public final class FavoriteButtonShape implements Shape {
         Intrinsics.checkNotNullParameter(density, "density");
         Path path$default = PathParser.toPath$default(new PathParser().parsePathString("M 5.9772 60.959 L 0.2926 22.959 C -1.516 10.8693 7.8483 0 20.0725 0 H 84.958 C 94.861 0 103.273 7.247 104.738 17.0408 L 110.423 55.041 C 112.232 67.131 102.868 78 90.643 78 H 25.7571 C 15.8541 78 7.4423 70.753 5.9772 60.959 Z"), null, 1, null);
         float[] m5016constructorimpl$default = Matrix.m5016constructorimpl$default(null, 1, null);
-        Matrix.m5032scaleimpl$default(m5016constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 120, Float.intBitsToFloat((int) (j & 4294967295L)) / 78, 0.0f, 4, null);
+        Matrix.m5032scaleimpl$default(m5016constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 120.0f, Float.intBitsToFloat((int) (j & 4294967295L)) / 78.0f, 0.0f, 4, null);
         path$default.mo4663transform58bKbWc(m5016constructorimpl$default);
         return new Outline.Generic(path$default);
     }

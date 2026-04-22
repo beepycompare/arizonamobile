@@ -1,7 +1,7 @@
 package com.androidplot.ui;
 /* loaded from: classes3.dex */
 public class SizeMetric extends LayoutMetric<SizeMode> {
-    /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Enum, com.androidplot.ui.SizeMode] */
+    /* JADX WARN: Type inference failed for: r0v1, types: [java.lang.Enum, com.androidplot.ui.SizeMode] */
     @Override // com.androidplot.ui.LayoutMetric
     public /* bridge */ /* synthetic */ SizeMode getLayoutType() {
         return super.getLayoutType();

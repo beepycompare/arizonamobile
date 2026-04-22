@@ -54,7 +54,7 @@ public final class DataUrlLoader<Model, Data> implements ModelLoader<Model, Data
             this.reader = dataDecoder;
         }
 
-        /* JADX WARN: Type inference failed for: r2v3, types: [java.lang.Object, Data] */
+        /* JADX WARN: Type inference failed for: r2v2, types: [java.lang.Object, Data] */
         @Override // com.bumptech.glide.load.data.DataFetcher
         public void loadData(Priority priority, DataFetcher.DataCallback<? super Data> dataCallback) {
             try {

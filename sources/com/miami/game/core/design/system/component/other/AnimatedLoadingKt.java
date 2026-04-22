@@ -43,8 +43,8 @@ public final class AnimatedLoadingKt {
     /* JADX WARN: Removed duplicated region for block: B:34:0x0063  */
     /* JADX WARN: Removed duplicated region for block: B:35:0x0065  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x012b  */
     /* JADX WARN: Removed duplicated region for block: B:60:? A[RETURN, SYNTHETIC] */
     /* renamed from: AnimatedLoading-uFdPcIQ  reason: not valid java name */
     /*
@@ -83,7 +83,7 @@ public final class AnimatedLoadingKt {
                     f3 = f2;
                     modifier2 = obj;
                 } else {
-                    float m7555constructorimpl = i5 != 0 ? Dp.m7555constructorimpl(60) : f2;
+                    float m7555constructorimpl = i5 != 0 ? Dp.m7555constructorimpl(60.0f) : f2;
                     Modifier.Companion companion = i4 != 0 ? Modifier.Companion : obj;
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-113788150, i3, -1, "com.miami.game.core.design.system.component.other.AnimatedLoading (AnimatedLoading.kt:21)");
@@ -99,7 +99,7 @@ public final class AnimatedLoadingKt {
                         modifier3 = companion;
                         startRestartGroup.startReplaceGroup(-1132659373);
                         ComposerKt.sourceInformation(startRestartGroup, "47@1788L53");
-                        SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(60)), startRestartGroup, 6);
+                        SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(60.0f)), startRestartGroup, 6);
                         startRestartGroup.endReplaceGroup();
                     }
                     if (ComposerKt.isTraceInProgress()) {

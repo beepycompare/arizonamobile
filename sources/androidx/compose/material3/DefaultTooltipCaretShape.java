@@ -40,10 +40,9 @@ public final class DefaultTooltipCaretShape implements Shape {
         float mo405toPx0680j_4 = density.mo405toPx0680j_4(DpSize.m7653getWidthD9Ej5fM(this.caretSize));
         float mo405toPx0680j_42 = density.mo405toPx0680j_4(DpSize.m7651getHeightD9Ej5fM(this.caretSize));
         Path.moveTo(0.0f, 0.0f);
-        float f = 2;
-        Path.lineTo(mo405toPx0680j_4 / f, 0.0f);
+        Path.lineTo(mo405toPx0680j_4 / 2.0f, 0.0f);
         Path.lineTo(0.0f, mo405toPx0680j_42);
-        Path.lineTo((-mo405toPx0680j_4) / f, 0.0f);
+        Path.lineTo((-mo405toPx0680j_4) / 2.0f, 0.0f);
         Path.close();
         return new Outline.Generic(Path);
     }

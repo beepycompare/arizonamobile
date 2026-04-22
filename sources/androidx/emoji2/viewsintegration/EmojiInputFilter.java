@@ -19,26 +19,29 @@ final class EmojiInputFilter implements InputFilter {
         this.mTextView = textView;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0017, code lost:
+        if (r0 != 3) goto L26;
+     */
     @Override // android.text.InputFilter
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
-        if (this.mTextView.isInEditMode()) {
+        if (!this.mTextView.isInEditMode()) {
+            int loadState = EmojiCompat.get().getLoadState();
+            if (loadState != 0) {
+                if (loadState == 1) {
+                    if ((i4 != 0 || i3 != 0 || spanned.length() != 0 || charSequence != this.mTextView.getText()) && charSequence != null) {
+                        if (i != 0 || i2 != charSequence.length()) {
+                            charSequence = charSequence.subSequence(i, i2);
+                        }
+                        return EmojiCompat.get().process(charSequence, 0, charSequence.length());
+                    }
+                }
+            }
+            EmojiCompat.get().registerInitCallback(getInitCallback());
             return charSequence;
         }
-        int loadState = EmojiCompat.get().getLoadState();
-        if (loadState != 0) {
-            if (loadState == 1) {
-                if ((i4 == 0 && i3 == 0 && spanned.length() == 0 && charSequence == this.mTextView.getText()) || charSequence == null) {
-                    return charSequence;
-                }
-                if (i != 0 || i2 != charSequence.length()) {
-                    charSequence = charSequence.subSequence(i, i2);
-                }
-                return EmojiCompat.get().process(charSequence, 0, charSequence.length());
-            } else if (loadState != 3) {
-                return charSequence;
-            }
-        }
-        EmojiCompat.get().registerInitCallback(getInitCallback());
         return charSequence;
     }
 

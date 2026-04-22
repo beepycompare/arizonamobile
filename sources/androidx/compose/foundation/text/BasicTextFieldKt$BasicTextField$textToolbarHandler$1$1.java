@@ -30,12 +30,12 @@ public final class BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1 implem
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x007d  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x008c  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x008e  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0068  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x008d  */
     /* JADX WARN: Removed duplicated region for block: B:32:0x009d  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x009f  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x00b0  */
@@ -46,9 +46,9 @@ public final class BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1 implem
     public Object showTextToolbar(final TextFieldSelectionState textFieldSelectionState, Rect rect, Continuation<? super Unit> continuation) {
         BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1 basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1;
         int i;
+        final CoroutineScope coroutineScope;
         Rect rect2;
         TextToolbar textToolbar;
-        final CoroutineScope coroutineScope;
         if (continuation instanceof BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1) {
             basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1 = (BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1) continuation;
             if ((basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.label & Integer.MIN_VALUE) != 0) {
@@ -59,10 +59,10 @@ public final class BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1 implem
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     TextToolbar textToolbar2 = this.$currentTextToolbar;
-                    CoroutineScope coroutineScope2 = this.$coroutineScope;
+                    coroutineScope = this.$coroutineScope;
                     basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.L$0 = rect;
                     basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.L$1 = textToolbar2;
-                    basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.L$2 = coroutineScope2;
+                    basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.L$2 = coroutineScope;
                     basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.L$3 = textFieldSelectionState;
                     basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.label = 1;
                     if (textFieldSelectionState.updateClipboardEntry(basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1) == coroutine_suspended) {
@@ -70,16 +70,14 @@ public final class BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1 implem
                     }
                     rect2 = rect;
                     textToolbar = textToolbar2;
-                    coroutineScope = coroutineScope2;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     textFieldSelectionState = (TextFieldSelectionState) basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.L$3;
                     coroutineScope = (CoroutineScope) basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.L$2;
-                    TextToolbar textToolbar3 = (TextToolbar) basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.L$1;
                     ResultKt.throwOnFailure(obj);
                     rect2 = (Rect) basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.L$0;
-                    textToolbar = textToolbar3;
+                    textToolbar = (TextToolbar) basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.L$1;
                 }
                 boolean canShowCopyMenuItem = textFieldSelectionState.canShowCopyMenuItem();
                 final TextToolbarState textToolbarState = TextToolbarState.None;

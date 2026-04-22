@@ -132,10 +132,10 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
             setupListeners(model);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:39:0x0130  */
-        /* JADX WARN: Removed duplicated region for block: B:40:0x0132  */
-        /* JADX WARN: Removed duplicated region for block: B:44:0x016e  */
-        /* JADX WARN: Removed duplicated region for block: B:46:0x0171  */
+        /* JADX WARN: Removed duplicated region for block: B:39:0x0132  */
+        /* JADX WARN: Removed duplicated region for block: B:40:0x0134  */
+        /* JADX WARN: Removed duplicated region for block: B:44:0x0170  */
+        /* JADX WARN: Removed duplicated region for block: B:46:0x0173  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -173,7 +173,7 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
                         str = str2;
                     }
                 }
-                String format = String.format("%.1f", Arrays.copyOf(new Object[]{Double.valueOf(mobileRentAccessoryModel.calculateDistanceToEnter(userPosition) / 1000.0f)}, 1));
+                String format = String.format("%.1f", Arrays.copyOf(new Object[]{Double.valueOf(mobileRentAccessoryModel.calculateDistanceToEnter(userPosition) / 1000.0d)}, 1));
                 Intrinsics.checkNotNullExpressionValue(format, "format(...)");
                 mobileRentAccessoryItemBinding.tvLocation.setText(this.context.getString(R.string.i_km, str, format));
             }

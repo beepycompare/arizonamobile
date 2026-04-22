@@ -20,7 +20,6 @@ import androidx.compose.material3.TextKt;
 import androidx.compose.runtime.Applier;
 import androidx.compose.runtime.ComposablesKt;
 import androidx.compose.runtime.Composer;
-import androidx.compose.runtime.ComposerImplKt;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.CompositionLocalMap;
 import androidx.compose.runtime.RecomposeScopeImplKt;
@@ -168,7 +167,7 @@ public final class ServerItemKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1759199162, i, -1, "com.miami.game.feature.select.server.ui.compose.ServerItem.<anonymous> (ServerItem.kt:43)");
             }
-            Modifier m275borderxT4_qwU = BorderKt.m275borderxT4_qwU(SizeKt.m866sizeVpY3zN4(BackgroundKt.m263backgroundbw27NRU(Modifier.Companion, j, new ServerShape()), Dp.m7555constructorimpl(200), Dp.m7555constructorimpl((float) ComposerImplKt.nodeKey)), Dp.m7555constructorimpl(3), j2, new ServerShape());
+            Modifier m275borderxT4_qwU = BorderKt.m275borderxT4_qwU(SizeKt.m866sizeVpY3zN4(BackgroundKt.m263backgroundbw27NRU(Modifier.Companion, j, new ServerShape()), Dp.m7555constructorimpl(200.0f), Dp.m7555constructorimpl(125.0f)), Dp.m7555constructorimpl(3.0f), j2, new ServerShape());
             ComposerKt.sourceInformationMarkerStart(composer, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
             ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -195,8 +194,7 @@ public final class ServerItemKt {
             ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, 1740471911, "C50@2163L984,80@3350L27,76@3160L259:ServerItem.kt#2ojkxh");
-            float f = 12;
-            Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(PaddingKt.m819paddingVpY3zN4(Modifier.Companion, Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(8)), 0.0f, 1, null);
+            Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(PaddingKt.m819paddingVpY3zN4(Modifier.Companion, Dp.m7555constructorimpl(12.0f), Dp.m7555constructorimpl(8.0f)), 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getSpaceAround(), Alignment.Companion.getStart(), composer, 6);
             ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -223,12 +221,12 @@ public final class ServerItemKt {
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, 89016130, "C56@2394L204,62@2615L152,66@2784L349:ServerItem.kt#2ojkxh");
-            ServerName(String.valueOf(serverModel.getName()), serverModel.getIcon(), SizeKt.m869width3ABfNKs(OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, 0.0f, 0.0f, 3, null), Dp.m7555constructorimpl(140)), composer, RendererCapabilities.DECODER_SUPPORT_MASK);
+            ServerName(String.valueOf(serverModel.getName()), serverModel.getIcon(), SizeKt.m869width3ABfNKs(OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, 0.0f, 0.0f, 3, null), Dp.m7555constructorimpl(140.0f)), composer, RendererCapabilities.DECODER_SUPPORT_MASK);
             Integer online = serverModel.getOnline();
             int intValue = online != null ? online.intValue() : 0;
             Integer maxplayers = serverModel.getMaxplayers();
-            ServerOnline(intValue, maxplayers != null ? maxplayers.intValue() : 0, OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, Dp.m7555constructorimpl(f), 0.0f, 2, null), composer, RendererCapabilities.DECODER_SUPPORT_MASK);
-            ServerPromotionLabelKt.ServerPromotion(serverModel.getXdonate(), serverModel.getXpayday(), serverModel.isTop(), serverModel.isNew(), serverModel.isMobile(), serverModel.isArizona(), OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, Dp.m7555constructorimpl(f), 0.0f, 2, null), composer, 1572864);
+            ServerOnline(intValue, maxplayers != null ? maxplayers.intValue() : 0, OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, Dp.m7555constructorimpl(12.0f), 0.0f, 2, null), composer, RendererCapabilities.DECODER_SUPPORT_MASK);
+            ServerPromotionLabelKt.ServerPromotion(serverModel.getXdonate(), serverModel.getXpayday(), serverModel.isTop(), serverModel.isNew(), serverModel.isMobile(), serverModel.isArizona(), OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, Dp.m7555constructorimpl(12.0f), 0.0f, 2, null), composer, 1572864);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();
@@ -328,23 +326,23 @@ public final class ServerItemKt {
                 ComposerKt.sourceInformation(startRestartGroup, "91@3657L200");
                 i3 = i2;
                 i4 = 6;
-                SingletonAsyncImageKt.m8558AsyncImage10Xjiaw(str2, null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(24)), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, ((i2 >> 3) & 14) | 1573296, 0, 1976);
+                SingletonAsyncImageKt.m8558AsyncImage10Xjiaw(str2, null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(24.0f)), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, ((i2 >> 3) & 14) | 1573296, 0, 1976);
                 startRestartGroup.endReplaceGroup();
             } else {
                 i3 = i2;
                 i4 = 6;
                 startRestartGroup.startReplaceGroup(-1129052588);
                 ComposerKt.sourceInformation(startRestartGroup, "98@3887L56");
-                SpacerKt.Spacer(SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(24)), startRestartGroup, 6);
+                SpacerKt.Spacer(SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(24.0f)), startRestartGroup, 6);
                 startRestartGroup.endReplaceGroup();
             }
-            SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(8)), startRestartGroup, i4);
+            SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(8.0f)), startRestartGroup, i4);
             long m4809getWhite0d7_KjU = Color.Companion.m4809getWhite0d7_KjU();
             TextStyle labelMedium = MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getLabelMedium();
             long sp = TextUnitKt.getSp(0.6d);
             TextUnitKt.m7762checkArithmeticR2X_6o(sp);
             str3 = str;
-            TextKt.m2712TextNvy7gAk(str3, null, m4809getWhite0d7_KjU, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(21), startRestartGroup, i4), null, null, null, TextUnitKt.pack(TextUnit.m7747getRawTypeimpl(sp), -TextUnit.m7749getValueimpl(sp)), null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(22), startRestartGroup, i4), 0, false, 0, 0, null, labelMedium, startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 128746);
+            TextKt.m2712TextNvy7gAk(str3, null, m4809getWhite0d7_KjU, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(21.0f), startRestartGroup, i4), null, null, null, TextUnitKt.pack(TextUnit.m7747getRawTypeimpl(sp), -TextUnit.m7749getValueimpl(sp)), null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(22.0f), startRestartGroup, i4), 0, false, 0, 0, null, labelMedium, startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 128746);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -417,10 +415,9 @@ public final class ServerItemKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 129289880, "C118@4492L10,119@4537L13,120@4577L13,116@4401L190,123@4702L10,124@4747L13,121@4600L212:ServerItem.kt#2ojkxh");
-            float f = 21;
             composer2 = startRestartGroup;
-            TextKt.m2712TextNvy7gAk(String.valueOf(i), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
-            TextKt.m2712TextNvy7gAk(" / " + i2, OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(1)), 1, null), Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(15), composer2, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, 432, 0, 131048);
+            TextKt.m2712TextNvy7gAk(String.valueOf(i), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(21.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(21.0f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
+            TextKt.m2712TextNvy7gAk(" / " + i2, OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(1.0f)), 1, null), Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(15.0f), composer2, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, 432, 0, 131048);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();

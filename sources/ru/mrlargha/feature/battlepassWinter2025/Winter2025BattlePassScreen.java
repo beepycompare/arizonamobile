@@ -15,7 +15,6 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
-import com.adjust.sdk.Constants;
 import com.arizona.game.BuildConfig;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -45,6 +44,7 @@ import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.text.StringsKt;
+import kotlin.time.DurationKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
@@ -415,7 +415,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         } else {
             Log.d("name", "not null");
             findViewWithTag.setVisibility(0);
-            findViewWithTag.setX(f - 50);
+            findViewWithTag.setX(f - 50.0f);
             findViewWithTag.setY(f2);
             ((TextView) findViewWithTag.findViewById(R.id.tv_prise_name)).setText(name);
         }
@@ -1468,8 +1468,8 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
             list2 = list;
             z = false;
         } else {
-            z = true;
             list2 = list;
+            z = true;
         }
         levelItemsAdapter.setData(list2, level, i, isArizonaType, z);
     }
@@ -1963,8 +1963,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final String setLeftTime(long j) {
-        long j2 = 60;
-        return ((j / ((long) Constants.ONE_HOUR)) % 24) + StringUtils.PROCESS_POSTFIX_DELIMITER + ((j / 60000) % j2) + StringUtils.PROCESS_POSTFIX_DELIMITER + ((j / 1000) % j2);
+        return ((j / DurationKt.MILLIS_IN_HOUR) % 24) + StringUtils.PROCESS_POSTFIX_DELIMITER + ((j / 60000) % 60) + StringUtils.PROCESS_POSTFIX_DELIMITER + ((j / 1000) % 60);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

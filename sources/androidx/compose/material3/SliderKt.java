@@ -3790,7 +3790,7 @@ public final class SliderKt {
     }
 
     private static final String formatForSemantics(float f) {
-        return String.valueOf(MathKt.roundToInt(f * 100) / 100.0f);
+        return String.valueOf(MathKt.roundToInt(f * 100.0f) / 100.0f);
     }
 
     private static final Modifier sliderTapModifier(Modifier modifier, SliderState sliderState, MutableInteractionSource mutableInteractionSource, boolean z) {
@@ -3967,7 +3967,7 @@ public final class SliderKt {
                                           (r4v6 'm6083getIdJ3iCeTQ' long)
                                           (wrap: kotlin.jvm.functions.Function1 : 0x0171: CONSTRUCTOR  (r10v4 kotlin.jvm.functions.Function1 A[REMOVE]) = 
                                           (r8v1 'rangeSliderState2' androidx.compose.material3.RangeSliderState A[DONT_INLINE])
-                                          (r2v7 'booleanRef' kotlin.jvm.internal.Ref$BooleanRef A[DONT_INLINE])
+                                          (r2v6 'booleanRef' kotlin.jvm.internal.Ref$BooleanRef A[DONT_INLINE])
                                          call: androidx.compose.material3.SliderKt$rangeSliderPressDragModifier$1$1$1$$ExternalSyntheticLambda0.<init>(androidx.compose.material3.RangeSliderState, kotlin.jvm.internal.Ref$BooleanRef):void type: CONSTRUCTOR)
                                           (r17v0 'this' androidx.compose.material3.SliderKt$rangeSliderPressDragModifier$1$1$1 A[IMMUTABLE_TYPE, THIS])
                                          type: STATIC call: androidx.compose.foundation.gestures.DragGestureDetectorKt.horizontalDrag-jO51t88(androidx.compose.ui.input.pointer.AwaitPointerEventScope, long, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object in method: androidx.compose.material3.SliderKt.rangeSliderPressDragModifier.1.1.1.invokeSuspend(java.lang.Object):java.lang.Object, file: classes.dex
@@ -4131,7 +4131,7 @@ public final class SliderKt {
                     ThumbSize = DpKt.m7577DpSizeYgX7TsA(m3726getHandleWidthD9Ej5fM, m3725getHandleHeightD9Ej5fM);
                     VerticalThumbSize = DpKt.m7577DpSizeYgX7TsA(m3725getHandleHeightD9Ej5fM, m3726getHandleWidthD9Ej5fM);
                     ThumbTrackGapSize = SliderTokens.INSTANCE.m3718getActiveHandleLeadingSpaceD9Ej5fM();
-                    TrackInsideCornerSize = Dp.m7555constructorimpl(2);
+                    TrackInsideCornerSize = Dp.m7555constructorimpl(2.0f);
                     CornerSizeAlignmentLine = new VerticalAlignmentLine(SliderKt$CornerSizeAlignmentLine$1.INSTANCE);
                 }
 

@@ -225,33 +225,36 @@ public abstract class AbstractContentPainterNode extends Modifier.Node implement
         float m8572constrainHeightK40F9xA;
         boolean m7506getHasFixedWidthimpl = Constraints.m7506getHasFixedWidthimpl(j);
         boolean m7505getHasFixedHeightimpl = Constraints.m7505getHasFixedHeightimpl(j);
-        if (m7506getHasFixedWidthimpl && m7505getHasFixedHeightimpl) {
-            return j;
-        }
-        Painter painter = getPainter();
-        boolean z = Constraints.m7504getHasBoundedWidthimpl(j) && Constraints.m7503getHasBoundedHeightimpl(j);
-        long mo5466getIntrinsicSizeNHjbRc = painter.mo5466getIntrinsicSizeNHjbRc();
-        if (mo5466getIntrinsicSizeNHjbRc == InlineClassHelperKt.UnspecifiedPackedFloats) {
-            return z ? ((painter instanceof AsyncImagePainter) && ((AsyncImagePainter) painter).getState().getValue().getPainter() == null) ? j : Constraints.m7498copyZbe2FdA$default(j, Constraints.m7508getMaxWidthimpl(j), 0, Constraints.m7507getMaxHeightimpl(j), 0, 10, null) : j;
-        }
-        if (z && (m7506getHasFixedWidthimpl || m7505getHasFixedHeightimpl)) {
-            m8573constrainWidthK40F9xA = Constraints.m7508getMaxWidthimpl(j);
-            m7509getMinHeightimpl = Constraints.m7507getMaxHeightimpl(j);
-        } else {
-            float intBitsToFloat = Float.intBitsToFloat((int) (mo5466getIntrinsicSizeNHjbRc >> 32));
-            float intBitsToFloat2 = Float.intBitsToFloat((int) (mo5466getIntrinsicSizeNHjbRc & 4294967295L));
-            m8573constrainWidthK40F9xA = Math.abs(intBitsToFloat) <= Float.MAX_VALUE ? UtilsKt.m8573constrainWidthK40F9xA(j, intBitsToFloat) : Constraints.m7510getMinWidthimpl(j);
-            if (Math.abs(intBitsToFloat2) > Float.MAX_VALUE) {
-                m7509getMinHeightimpl = Constraints.m7509getMinHeightimpl(j);
+        if (!m7506getHasFixedWidthimpl || !m7505getHasFixedHeightimpl) {
+            Painter painter = getPainter();
+            boolean z = Constraints.m7504getHasBoundedWidthimpl(j) && Constraints.m7503getHasBoundedHeightimpl(j);
+            long mo5466getIntrinsicSizeNHjbRc = painter.mo5466getIntrinsicSizeNHjbRc();
+            if (mo5466getIntrinsicSizeNHjbRc == InlineClassHelperKt.UnspecifiedPackedFloats) {
+                if (z && (!(painter instanceof AsyncImagePainter) || ((AsyncImagePainter) painter).getState().getValue().getPainter() != null)) {
+                    return Constraints.m7498copyZbe2FdA$default(j, Constraints.m7508getMaxWidthimpl(j), 0, Constraints.m7507getMaxHeightimpl(j), 0, 10, null);
+                }
             } else {
-                m8572constrainHeightK40F9xA = UtilsKt.m8572constrainHeightK40F9xA(j, intBitsToFloat2);
-                long m8567calculateScaledSizeE7KxVPU = m8567calculateScaledSizeE7KxVPU(Size.m4587constructorimpl((Float.floatToRawIntBits(m8572constrainHeightK40F9xA) & 4294967295L) | (Float.floatToRawIntBits(m8573constrainWidthK40F9xA) << 32)));
-                return Constraints.m7498copyZbe2FdA$default(j, ConstraintsKt.m7525constrainWidthK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m8567calculateScaledSizeE7KxVPU >> 32)))), 0, ConstraintsKt.m7524constrainHeightK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m8567calculateScaledSizeE7KxVPU & 4294967295L)))), 0, 10, null);
+                if (z && (m7506getHasFixedWidthimpl || m7505getHasFixedHeightimpl)) {
+                    m8573constrainWidthK40F9xA = Constraints.m7508getMaxWidthimpl(j);
+                    m7509getMinHeightimpl = Constraints.m7507getMaxHeightimpl(j);
+                } else {
+                    float intBitsToFloat = Float.intBitsToFloat((int) (mo5466getIntrinsicSizeNHjbRc >> 32));
+                    float intBitsToFloat2 = Float.intBitsToFloat((int) (mo5466getIntrinsicSizeNHjbRc & 4294967295L));
+                    m8573constrainWidthK40F9xA = Math.abs(intBitsToFloat) <= Float.MAX_VALUE ? UtilsKt.m8573constrainWidthK40F9xA(j, intBitsToFloat) : Constraints.m7510getMinWidthimpl(j);
+                    if (Math.abs(intBitsToFloat2) > Float.MAX_VALUE) {
+                        m7509getMinHeightimpl = Constraints.m7509getMinHeightimpl(j);
+                    } else {
+                        m8572constrainHeightK40F9xA = UtilsKt.m8572constrainHeightK40F9xA(j, intBitsToFloat2);
+                        long m8567calculateScaledSizeE7KxVPU = m8567calculateScaledSizeE7KxVPU(Size.m4587constructorimpl((Float.floatToRawIntBits(m8572constrainHeightK40F9xA) & 4294967295L) | (Float.floatToRawIntBits(m8573constrainWidthK40F9xA) << 32)));
+                        return Constraints.m7498copyZbe2FdA$default(j, ConstraintsKt.m7525constrainWidthK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m8567calculateScaledSizeE7KxVPU >> 32)))), 0, ConstraintsKt.m7524constrainHeightK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m8567calculateScaledSizeE7KxVPU & 4294967295L)))), 0, 10, null);
+                    }
+                }
+                m8572constrainHeightK40F9xA = m7509getMinHeightimpl;
+                long m8567calculateScaledSizeE7KxVPU2 = m8567calculateScaledSizeE7KxVPU(Size.m4587constructorimpl((Float.floatToRawIntBits(m8572constrainHeightK40F9xA) & 4294967295L) | (Float.floatToRawIntBits(m8573constrainWidthK40F9xA) << 32)));
+                return Constraints.m7498copyZbe2FdA$default(j, ConstraintsKt.m7525constrainWidthK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m8567calculateScaledSizeE7KxVPU2 >> 32)))), 0, ConstraintsKt.m7524constrainHeightK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m8567calculateScaledSizeE7KxVPU2 & 4294967295L)))), 0, 10, null);
             }
         }
-        m8572constrainHeightK40F9xA = m7509getMinHeightimpl;
-        long m8567calculateScaledSizeE7KxVPU2 = m8567calculateScaledSizeE7KxVPU(Size.m4587constructorimpl((Float.floatToRawIntBits(m8572constrainHeightK40F9xA) & 4294967295L) | (Float.floatToRawIntBits(m8573constrainWidthK40F9xA) << 32)));
-        return Constraints.m7498copyZbe2FdA$default(j, ConstraintsKt.m7525constrainWidthK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m8567calculateScaledSizeE7KxVPU2 >> 32)))), 0, ConstraintsKt.m7524constrainHeightK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m8567calculateScaledSizeE7KxVPU2 & 4294967295L)))), 0, 10, null);
+        return j;
     }
 
     @Override // androidx.compose.ui.node.DrawModifierNode

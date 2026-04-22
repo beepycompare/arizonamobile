@@ -77,16 +77,16 @@ import kotlin.ranges.RangesKt;
 /* loaded from: classes.dex */
 public final class NavigationBarKt {
     private static final String IconLayoutIdTag = "icon";
-    private static final float IndicatorHorizontalPadding;
     private static final String IndicatorLayoutIdTag = "indicator";
     private static final String IndicatorRippleLayoutIdTag = "indicatorRipple";
-    private static final float IndicatorVerticalPadding;
     private static final String LabelLayoutIdTag = "label";
     private static final float NavigationBarHeight = NavigationBarTokens.INSTANCE.m3541getTallContainerHeightD9Ej5fM();
-    private static final float NavigationBarItemHorizontalPadding = Dp.m7555constructorimpl(8);
-    private static final float NavigationBarIndicatorToLabelPadding = Dp.m7555constructorimpl(4);
-    private static final float IndicatorVerticalOffset = Dp.m7555constructorimpl(12);
-    private static final float NavigationBarItemToIconMinimumPadding = Dp.m7555constructorimpl(44);
+    private static final float NavigationBarItemHorizontalPadding = Dp.m7555constructorimpl(8.0f);
+    private static final float NavigationBarIndicatorToLabelPadding = Dp.m7555constructorimpl(4.0f);
+    private static final float IndicatorHorizontalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationBarVerticalItemTokens.INSTANCE.m3543getActiveIndicatorWidthD9Ej5fM() - NavigationBarVerticalItemTokens.INSTANCE.m3545getIconSizeD9Ej5fM()) / 2.0f);
+    private static final float IndicatorVerticalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationBarVerticalItemTokens.INSTANCE.m3542getActiveIndicatorHeightD9Ej5fM() - NavigationBarVerticalItemTokens.INSTANCE.m3545getIconSizeD9Ej5fM()) / 2.0f);
+    private static final float IndicatorVerticalOffset = Dp.m7555constructorimpl(12.0f);
+    private static final float NavigationBarItemToIconMinimumPadding = Dp.m7555constructorimpl(44.0f);
     private static final ProvidableCompositionLocal<NavigationBarOverride> LocalNavigationBarOverride = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
@@ -334,63 +334,61 @@ public final class NavigationBarKt {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:264:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x00bb  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:286:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:303:0x0112  */
-    /* JADX WARN: Removed duplicated region for block: B:306:0x011a  */
-    /* JADX WARN: Removed duplicated region for block: B:307:0x011d  */
-    /* JADX WARN: Removed duplicated region for block: B:317:0x0145  */
-    /* JADX WARN: Removed duplicated region for block: B:318:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:321:0x0151  */
-    /* JADX WARN: Removed duplicated region for block: B:408:0x050c  */
-    /* JADX WARN: Removed duplicated region for block: B:411:0x051f  */
-    /* JADX WARN: Removed duplicated region for block: B:413:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r4v45 */
+    /* JADX WARN: Removed duplicated region for block: B:261:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:262:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:283:0x00d8  */
+    /* JADX WARN: Removed duplicated region for block: B:284:0x00dd  */
+    /* JADX WARN: Removed duplicated region for block: B:294:0x00fb  */
+    /* JADX WARN: Removed duplicated region for block: B:302:0x0111  */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:306:0x011c  */
+    /* JADX WARN: Removed duplicated region for block: B:316:0x0144  */
+    /* JADX WARN: Removed duplicated region for block: B:317:0x0146  */
+    /* JADX WARN: Removed duplicated region for block: B:320:0x0150  */
+    /* JADX WARN: Removed duplicated region for block: B:404:0x04ff  */
+    /* JADX WARN: Removed duplicated region for block: B:407:0x0511  */
+    /* JADX WARN: Removed duplicated region for block: B:409:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r4v43 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final void NavigationBarItem(final RowScope rowScope, final boolean z, final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, boolean z2, Function2<? super Composer, ? super Integer, Unit> function22, boolean z3, NavigationBarItemColors navigationBarItemColors, MutableInteractionSource mutableInteractionSource, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
-        Object obj2;
         final Modifier.Companion companion;
         int i4;
         boolean z4;
         int i5;
-        char c;
-        Object obj3;
+        Object obj2;
         int i6;
+        boolean z5;
+        char c;
         int i7;
         int i8;
         int i9;
-        final boolean z5;
         final NavigationBarItemColors navigationBarItemColors2;
-        final MutableInteractionSource mutableInteractionSource2;
         Composer composer2;
         final boolean z6;
+        final boolean z7;
         final Function2<? super Composer, ? super Integer, Unit> function23;
+        final MutableInteractionSource mutableInteractionSource2;
         ScopeUpdateScope endRestartGroup;
         NavigationBarItemColors navigationBarItemColors3;
         int i10;
-        boolean z7;
-        int i11;
         NavigationBarItemColors navigationBarItemColors4;
+        MutableInteractionSource mutableInteractionSource3;
         boolean z8;
         Modifier modifier2;
         Function2<? super Composer, ? super Integer, Unit> function24;
-        MutableInteractionSource mutableInteractionSource3;
-        NavigationBarItemColors navigationBarItemColors5;
+        int i11;
+        boolean z9;
         MutableInteractionSource mutableInteractionSource4;
-        NavigationBarItemColors navigationBarItemColors6;
+        NavigationBarItemColors navigationBarItemColors5;
         Function2<? super Composer, ? super Integer, Unit> function25;
         ComposableLambda rememberComposableLambda;
         int i12;
-        Object obj4;
         Composer startRestartGroup = composer.startRestartGroup(974293026);
         ComposerKt.sourceInformation(startRestartGroup, "C(NavigationBarItem)N(selected,onClick,icon,modifier,enabled,label,alwaysShowLabel,colors,interactionSource)209@9556L14,211@9612L618,241@10880L33,255@11322L24,243@10919L3178:NavigationBar.kt#uh7d8r");
         if ((Integer.MIN_VALUE & i2) != 0) {
@@ -409,31 +407,25 @@ public final class NavigationBarKt {
             i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
             obj = function0;
         } else {
-            Object obj5 = function0;
-            obj = obj5;
+            Object obj3 = function0;
+            obj = obj3;
             if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                i3 |= startRestartGroup.changedInstance(obj5) ? 256 : 128;
-                obj = obj5;
+                i3 |= startRestartGroup.changedInstance(obj3) ? 256 : 128;
+                obj = obj3;
             }
         }
         if ((i2 & 4) != 0) {
             i3 |= 3072;
-            obj2 = function2;
-        } else {
-            Object obj6 = function2;
-            obj2 = obj6;
-            if ((i & 3072) == 0) {
-                i3 |= startRestartGroup.changedInstance(obj6) ? 2048 : 1024;
-                obj2 = obj6;
-            }
+        } else if ((i & 3072) == 0) {
+            i3 |= startRestartGroup.changedInstance(function2) ? 2048 : 1024;
         }
         int i13 = i2 & 8;
         if (i13 != 0) {
             i3 |= 24576;
         } else if ((i & 24576) == 0) {
-            Object obj7 = modifier;
-            i3 |= startRestartGroup.changed(obj7) ? 16384 : 8192;
-            companion = obj7;
+            Object obj4 = modifier;
+            i3 |= startRestartGroup.changed(obj4) ? 16384 : 8192;
+            companion = obj4;
             i4 = i2 & 16;
             if (i4 == 0) {
                 i3 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
@@ -443,376 +435,381 @@ public final class NavigationBarKt {
                 i5 = i2 & 32;
                 if (i5 != 0) {
                     i3 |= 1572864;
-                    obj4 = function22;
-                } else {
-                    Object obj8 = function22;
-                    obj4 = obj8;
-                    if ((i & 1572864) == 0) {
-                        c = ' ';
-                        i3 |= startRestartGroup.changedInstance(obj8) ? 1048576 : 524288;
-                        obj3 = obj8;
-                        i6 = i2 & 64;
-                        if (i6 == 0) {
-                            i3 |= 12582912;
-                        } else if ((i & 12582912) == 0) {
-                            i3 |= startRestartGroup.changed(z3) ? 8388608 : 4194304;
-                        }
-                        if ((i & 100663296) == 0) {
-                            if ((i2 & 128) == 0 && startRestartGroup.changed(navigationBarItemColors)) {
-                                i12 = 67108864;
+                } else if ((1572864 & i) == 0) {
+                    obj2 = function22;
+                    i3 |= startRestartGroup.changedInstance(obj2) ? 1048576 : 524288;
+                    i6 = i2 & 64;
+                    if (i6 == 0) {
+                        i3 |= 12582912;
+                        z5 = z3;
+                    } else {
+                        z5 = z3;
+                        if ((i & 12582912) == 0) {
+                            c = ' ';
+                            i3 |= startRestartGroup.changed(z5) ? 8388608 : 4194304;
+                            if ((i & 100663296) == 0) {
+                                if ((i2 & 128) == 0 && startRestartGroup.changed(navigationBarItemColors)) {
+                                    i12 = 67108864;
+                                    i3 |= i12;
+                                }
+                                i12 = 33554432;
                                 i3 |= i12;
                             }
-                            i12 = 33554432;
-                            i3 |= i12;
-                        }
-                        i7 = i2 & 256;
-                        if (i7 == 0) {
-                            i3 |= 805306368;
-                        } else if ((i & 805306368) == 0) {
-                            i8 = i7;
-                            i3 |= startRestartGroup.changed(mutableInteractionSource) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
-                            i9 = i3;
-                            if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i9 & 1)) {
-                                startRestartGroup.startDefaults();
-                                ComposerKt.sourceInformation(startRestartGroup, "203@9226L8");
-                                if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
-                                    if (i13 != 0) {
-                                        companion = Modifier.Companion;
-                                    }
-                                    if (i4 != 0) {
-                                        z4 = true;
-                                    }
-                                    if (i5 != 0) {
-                                        obj3 = null;
-                                    }
-                                    boolean z9 = i6 != 0 ? true : z3;
-                                    if ((i2 & 128) != 0) {
-                                        navigationBarItemColors3 = NavigationBarItemDefaults.INSTANCE.colors(startRestartGroup, 6);
-                                        i10 = i9 & (-234881025);
+                            i7 = i2 & 256;
+                            if (i7 != 0) {
+                                i3 |= 805306368;
+                            } else if ((i & 805306368) == 0) {
+                                i8 = i7;
+                                i3 |= startRestartGroup.changed(mutableInteractionSource) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                                i9 = i3;
+                                if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i9 & 1)) {
+                                    startRestartGroup.startDefaults();
+                                    ComposerKt.sourceInformation(startRestartGroup, "203@9226L8");
+                                    if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
+                                        if (i13 != 0) {
+                                            companion = Modifier.Companion;
+                                        }
+                                        if (i4 != 0) {
+                                            z4 = true;
+                                        }
+                                        if (i5 != 0) {
+                                            obj2 = null;
+                                        }
+                                        if (i6 != 0) {
+                                            z5 = true;
+                                        }
+                                        if ((i2 & 128) != 0) {
+                                            navigationBarItemColors3 = NavigationBarItemDefaults.INSTANCE.colors(startRestartGroup, 6);
+                                            i10 = i9 & (-234881025);
+                                        } else {
+                                            navigationBarItemColors3 = navigationBarItemColors;
+                                            i10 = i9;
+                                        }
+                                        if (i8 != 0) {
+                                            mutableInteractionSource3 = null;
+                                            z8 = z5;
+                                            navigationBarItemColors4 = navigationBarItemColors3;
+                                        } else {
+                                            navigationBarItemColors4 = navigationBarItemColors3;
+                                            mutableInteractionSource3 = mutableInteractionSource;
+                                            z8 = z5;
+                                        }
+                                        modifier2 = companion;
+                                        function24 = obj2;
+                                        i11 = i10;
+                                        z9 = z4;
                                     } else {
-                                        navigationBarItemColors3 = navigationBarItemColors;
-                                        i10 = i9;
+                                        startRestartGroup.skipToGroupEnd();
+                                        if ((i2 & 128) != 0) {
+                                            mutableInteractionSource3 = mutableInteractionSource;
+                                            z9 = z4;
+                                            z8 = z5;
+                                            modifier2 = companion;
+                                            function24 = obj2;
+                                            i11 = i9 & (-234881025);
+                                            navigationBarItemColors4 = navigationBarItemColors;
+                                        } else {
+                                            mutableInteractionSource3 = mutableInteractionSource;
+                                            z9 = z4;
+                                            z8 = z5;
+                                            navigationBarItemColors4 = navigationBarItemColors;
+                                            modifier2 = companion;
+                                            function24 = obj2;
+                                            i11 = i9;
+                                        }
                                     }
-                                    int i14 = i10;
-                                    z7 = z9;
-                                    i11 = i14;
-                                    if (i8 != 0) {
-                                        Function2<? super Composer, ? super Integer, Unit> function26 = obj3;
-                                        modifier2 = companion;
-                                        function24 = function26;
-                                        mutableInteractionSource3 = null;
-                                        navigationBarItemColors4 = navigationBarItemColors3;
-                                        z8 = z4;
+                                    startRestartGroup.endDefaults();
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventStart(974293026, i11, -1, "androidx.compose.material3.NavigationBarItem (NavigationBar.kt:205)");
+                                    }
+                                    if (mutableInteractionSource3 == null) {
+                                        startRestartGroup.startReplaceGroup(-224963495);
+                                        ComposerKt.sourceInformation(startRestartGroup, "207@9378L39");
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -7256887, "CC(remember):NavigationBar.kt#9igjgp");
+                                        Object rememberedValue = startRestartGroup.rememberedValue();
+                                        if (rememberedValue == Composer.Companion.getEmpty()) {
+                                            rememberedValue = InteractionSourceKt.MutableInteractionSource();
+                                            startRestartGroup.updateRememberedValue(rememberedValue);
+                                        }
+                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                        startRestartGroup.endReplaceGroup();
+                                        mutableInteractionSource4 = (MutableInteractionSource) rememberedValue;
                                     } else {
-                                        navigationBarItemColors4 = navigationBarItemColors3;
-                                        z8 = z4;
-                                        Function2<? super Composer, ? super Integer, Unit> function27 = obj3;
-                                        modifier2 = companion;
-                                        function24 = function27;
-                                        mutableInteractionSource3 = mutableInteractionSource;
+                                        startRestartGroup.startReplaceGroup(-7257538);
+                                        startRestartGroup.endReplaceGroup();
+                                        mutableInteractionSource4 = mutableInteractionSource3;
                                     }
-                                } else {
-                                    startRestartGroup.skipToGroupEnd();
-                                    if ((i2 & 128) != 0) {
-                                        i11 = i9 & (-234881025);
-                                        Function2<? super Composer, ? super Integer, Unit> function28 = obj3;
-                                        modifier2 = companion;
-                                        function24 = function28;
-                                        z7 = z3;
-                                        mutableInteractionSource3 = mutableInteractionSource;
+                                    final FiniteAnimationSpec value = MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, startRestartGroup, 6);
+                                    Modifier modifier3 = modifier2;
+                                    boolean z10 = z8;
+                                    ComposableLambda rememberComposableLambda2 = ComposableLambdaKt.rememberComposableLambda(-876637252, true, new NavigationBarKt$NavigationBarItem$styledIcon$1(navigationBarItemColors4, z, z9, value, function24, z8, function2), startRestartGroup, 54);
+                                    if (function24 == null) {
+                                        startRestartGroup.startReplaceGroup(-224036658);
+                                        startRestartGroup.endReplaceGroup();
+                                        navigationBarItemColors5 = navigationBarItemColors4;
+                                        function25 = function24;
+                                        rememberComposableLambda = null;
                                     } else {
-                                        Function2<? super Composer, ? super Integer, Unit> function29 = obj3;
-                                        modifier2 = companion;
-                                        function24 = function29;
-                                        z7 = z3;
-                                        mutableInteractionSource3 = mutableInteractionSource;
-                                        i11 = i9;
+                                        startRestartGroup.startReplaceGroup(-224036657);
+                                        ComposerKt.sourceInformation(startRestartGroup, "*226@10326L521");
+                                        final NavigationBarItemColors navigationBarItemColors6 = navigationBarItemColors4;
+                                        final boolean z11 = z9;
+                                        final Function2<? super Composer, ? super Integer, Unit> function26 = function24;
+                                        navigationBarItemColors5 = navigationBarItemColors6;
+                                        function25 = function26;
+                                        startRestartGroup.endReplaceGroup();
+                                        rememberComposableLambda = ComposableLambdaKt.rememberComposableLambda(802208206, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.NavigationBarKt$NavigationBarItem$styledLabel$1$1
+                                            @Override // kotlin.jvm.functions.Function2
+                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
+                                                invoke(composer3, num.intValue());
+                                                return Unit.INSTANCE;
+                                            }
+
+                                            public final void invoke(Composer composer3, int i14) {
+                                                ComposerKt.sourceInformation(composer3, "C227@10390L5,229@10449L198,233@10664L169:NavigationBar.kt#uh7d8r");
+                                                if (!composer3.shouldExecute((i14 & 3) != 2, i14 & 1)) {
+                                                    composer3.skipToGroupEnd();
+                                                    return;
+                                                }
+                                                if (ComposerKt.isTraceInProgress()) {
+                                                    ComposerKt.traceEventStart(802208206, i14, -1, "androidx.compose.material3.NavigationBarItem.<anonymous>.<anonymous> (NavigationBar.kt:227)");
+                                                }
+                                                ProvideContentColorTextStyleKt.m3007ProvideContentColorTextStyle3JVO9M(invoke$lambda$0(SingleValueAnimationKt.m134animateColorAsStateeuL9pac(NavigationBarItemColors.this.m2271textColorWaAFU9c$material3(z, z11), value, null, null, composer3, 0, 12)), TypographyKt.getValue(NavigationBarTokens.INSTANCE.getLabelTextFont(), composer3, 6), function26, composer3, 0);
+                                                if (ComposerKt.isTraceInProgress()) {
+                                                    ComposerKt.traceEventEnd();
+                                                }
+                                            }
+
+                                            private static final long invoke$lambda$0(State<Color> state) {
+                                                return state.getValue().m4782unboximpl();
+                                            }
+                                        }, startRestartGroup, 54);
                                     }
-                                    z8 = z4;
-                                    navigationBarItemColors4 = navigationBarItemColors;
-                                }
-                                startRestartGroup.endDefaults();
-                                if (ComposerKt.isTraceInProgress()) {
-                                    navigationBarItemColors5 = navigationBarItemColors4;
-                                    ComposerKt.traceEventStart(974293026, i11, -1, "androidx.compose.material3.NavigationBarItem (NavigationBar.kt:205)");
-                                } else {
-                                    navigationBarItemColors5 = navigationBarItemColors4;
-                                }
-                                if (mutableInteractionSource3 == null) {
-                                    startRestartGroup.startReplaceGroup(-224963495);
-                                    ComposerKt.sourceInformation(startRestartGroup, "207@9378L39");
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -7256887, "CC(remember):NavigationBar.kt#9igjgp");
-                                    Object rememberedValue = startRestartGroup.rememberedValue();
-                                    if (rememberedValue == Composer.Companion.getEmpty()) {
-                                        rememberedValue = InteractionSourceKt.MutableInteractionSource();
-                                        startRestartGroup.updateRememberedValue(rememberedValue);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -7208829, "CC(remember):NavigationBar.kt#9igjgp");
+                                    Object rememberedValue2 = startRestartGroup.rememberedValue();
+                                    if (rememberedValue2 == Composer.Companion.getEmpty()) {
+                                        rememberedValue2 = SnapshotIntStateKt.mutableIntStateOf(0);
+                                        startRestartGroup.updateRememberedValue(rememberedValue2);
+                                    }
+                                    final MutableIntState mutableIntState = (MutableIntState) rememberedValue2;
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    boolean z12 = z9;
+                                    MutableInteractionSource mutableInteractionSource5 = mutableInteractionSource4;
+                                    Modifier weight$default = RowScope.weight$default(rowScope, SizeKt.m849defaultMinSizeVpY3zN4$default(SelectableKt.m1088selectableO2vRcR0(modifier3, z, mutableInteractionSource5, null, z12, Role.m6767boximpl(Role.Companion.m6781getTabo7Vup1c()), obj), 0.0f, NavigationBarHeight, 1, null), 1.0f, false, 2, null);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -7194694, "CC(remember):NavigationBar.kt#9igjgp");
+                                    Object rememberedValue3 = startRestartGroup.rememberedValue();
+                                    if (rememberedValue3 == Composer.Companion.getEmpty()) {
+                                        rememberedValue3 = new Function1() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda3
+                                            @Override // kotlin.jvm.functions.Function1
+                                            public final Object invoke(Object obj5) {
+                                                return NavigationBarKt.NavigationBarItem$lambda$8$lambda$7(MutableIntState.this, (IntSize) obj5);
+                                            }
+                                        };
+                                        startRestartGroup.updateRememberedValue(rememberedValue3);
                                     }
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    startRestartGroup.endReplaceGroup();
-                                    mutableInteractionSource4 = (MutableInteractionSource) rememberedValue;
-                                } else {
-                                    startRestartGroup.startReplaceGroup(-7257538);
-                                    startRestartGroup.endReplaceGroup();
-                                    mutableInteractionSource4 = mutableInteractionSource3;
-                                }
-                                final FiniteAnimationSpec value = MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, startRestartGroup, 6);
-                                int i15 = i11;
-                                final NavigationBarItemColors navigationBarItemColors7 = navigationBarItemColors5;
-                                boolean z10 = z7;
-                                ComposableLambda rememberComposableLambda2 = ComposableLambdaKt.rememberComposableLambda(-876637252, true, new NavigationBarKt$NavigationBarItem$styledIcon$1(navigationBarItemColors7, z, z8, value, function24, z7, obj2), startRestartGroup, 54);
-                                if (function24 == null) {
-                                    startRestartGroup.startReplaceGroup(-224036658);
-                                    startRestartGroup.endReplaceGroup();
-                                    navigationBarItemColors6 = navigationBarItemColors7;
-                                    function25 = function24;
-                                    rememberComposableLambda = null;
-                                } else {
-                                    startRestartGroup.startReplaceGroup(-224036657);
-                                    ComposerKt.sourceInformation(startRestartGroup, "*226@10326L521");
-                                    final boolean z11 = z8;
-                                    final Function2<? super Composer, ? super Integer, Unit> function210 = function24;
-                                    navigationBarItemColors6 = navigationBarItemColors7;
-                                    function25 = function210;
-                                    startRestartGroup.endReplaceGroup();
-                                    rememberComposableLambda = ComposableLambdaKt.rememberComposableLambda(802208206, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.NavigationBarKt$NavigationBarItem$styledLabel$1$1
+                                    Modifier onSizeChanged = OnRemeasuredModifierKt.onSizeChanged(weight$default, (Function1) rememberedValue3);
+                                    Alignment center = Alignment.Companion.getCenter();
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
+                                    MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(center, true);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
+                                    int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
+                                    CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
+                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, onSizeChanged);
+                                    Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+                                    if (!(startRestartGroup.getApplier() instanceof Applier)) {
+                                        ComposablesKt.invalidApplier();
+                                    }
+                                    startRestartGroup.startReusableNode();
+                                    if (startRestartGroup.getInserting()) {
+                                        startRestartGroup.createNode(constructor);
+                                    } else {
+                                        startRestartGroup.useNode();
+                                    }
+                                    Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                                    Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
+                                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    }
+                                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
+                                    BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1565191211, "C263@11734L7,260@11504L252,269@12046L7,266@11819L249,275@12351L7,281@12645L128,288@12988L273,296@13310L404,313@13979L32,314@14049L31,307@13724L367:NavigationBar.kt#uh7d8r");
+                                    NavigationBarItemColors navigationBarItemColors7 = navigationBarItemColors5;
+                                    final State<Float> animateFloatAsState = AnimateAsStateKt.animateFloatAsState(z ? 1.0f : 0.0f, MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, startRestartGroup, 6), 0.0f, null, null, startRestartGroup, 0, 28);
+                                    final State<Float> animateFloatAsState2 = AnimateAsStateKt.animateFloatAsState(z ? 1.0f : 0.0f, MotionSchemeKt.value(MotionSchemeKeyTokens.FastSpatial, startRestartGroup, 6), 0.0f, null, null, startRestartGroup, 0, 28);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                    Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    Density density = (Density) consume;
+                                    long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits((NavigationBarItem$lambda$5(mutableIntState) - density.mo399roundToPx0680j_4(NavigationBarVerticalItemTokens.INSTANCE.m3543getActiveIndicatorWidthD9Ej5fM())) / 2.0f) << c) | (4294967295L & Float.floatToRawIntBits(density.mo405toPx0680j_4(IndicatorVerticalOffset))));
+                                    Unit unit = Unit.INSTANCE;
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1196471708, "CC(remember):NavigationBar.kt#9igjgp");
+                                    boolean changed = startRestartGroup.changed(mutableInteractionSource5) | startRestartGroup.changed(m4519constructorimpl);
+                                    Object rememberedValue4 = startRestartGroup.rememberedValue();
+                                    if (changed || rememberedValue4 == Composer.Companion.getEmpty()) {
+                                        rememberedValue4 = new MappedInteractionSource(mutableInteractionSource5, m4519constructorimpl, null);
+                                        startRestartGroup.updateRememberedValue(rememberedValue4);
+                                    }
+                                    final MappedInteractionSource mappedInteractionSource = (MappedInteractionSource) rememberedValue4;
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    ComposableLambda rememberComposableLambda3 = ComposableLambdaKt.rememberComposableLambda(-2082182507, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.NavigationBarKt$NavigationBarItem$2$indicatorRipple$1
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                             invoke(composer3, num.intValue());
                                             return Unit.INSTANCE;
                                         }
 
-                                        public final void invoke(Composer composer3, int i16) {
-                                            ComposerKt.sourceInformation(composer3, "C227@10390L5,229@10449L198,233@10664L169:NavigationBar.kt#uh7d8r");
-                                            if (!composer3.shouldExecute((i16 & 3) != 2, i16 & 1)) {
+                                        public final void invoke(Composer composer3, int i14) {
+                                            ComposerKt.sourceInformation(composer3, "C291@13152L5,289@13006L241:NavigationBar.kt#uh7d8r");
+                                            if (!composer3.shouldExecute((i14 & 3) != 2, i14 & 1)) {
                                                 composer3.skipToGroupEnd();
                                                 return;
                                             }
                                             if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventStart(802208206, i16, -1, "androidx.compose.material3.NavigationBarItem.<anonymous>.<anonymous> (NavigationBar.kt:227)");
+                                                ComposerKt.traceEventStart(-2082182507, i14, -1, "androidx.compose.material3.NavigationBarItem.<anonymous>.<anonymous> (NavigationBar.kt:289)");
                                             }
-                                            ProvideContentColorTextStyleKt.m3007ProvideContentColorTextStyle3JVO9M(invoke$lambda$0(SingleValueAnimationKt.m134animateColorAsStateeuL9pac(NavigationBarItemColors.this.m2271textColorWaAFU9c$material3(z, z11), value, null, null, composer3, 0, 12)), TypographyKt.getValue(NavigationBarTokens.INSTANCE.getLabelTextFont(), composer3, 6), function210, composer3, 0);
+                                            BoxKt.Box(IndicationKt.indication(ClipKt.clip(LayoutIdKt.layoutId(Modifier.Companion, "indicatorRipple"), ShapesKt.getValue(NavigationBarTokens.INSTANCE.getItemActiveIndicatorShape(), composer3, 6)), MappedInteractionSource.this, RippleKt.m2402rippleH2RKhps$default(false, 0.0f, 0L, 7, null)), composer3, 0);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                             }
                                         }
-
-                                        private static final long invoke$lambda$0(State<Color> state) {
-                                            return state.getValue().m4782unboximpl();
-                                        }
                                     }, startRestartGroup, 54);
-                                }
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -7208829, "CC(remember):NavigationBar.kt#9igjgp");
-                                Object rememberedValue2 = startRestartGroup.rememberedValue();
-                                if (rememberedValue2 == Composer.Companion.getEmpty()) {
-                                    rememberedValue2 = SnapshotIntStateKt.mutableIntStateOf(0);
-                                    startRestartGroup.updateRememberedValue(rememberedValue2);
-                                }
-                                final MutableIntState mutableIntState = (MutableIntState) rememberedValue2;
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                boolean z12 = z8;
-                                Modifier modifier3 = modifier2;
-                                MutableInteractionSource mutableInteractionSource5 = mutableInteractionSource4;
-                                Modifier weight$default = RowScope.weight$default(rowScope, SizeKt.m849defaultMinSizeVpY3zN4$default(SelectableKt.m1088selectableO2vRcR0(modifier3, z, mutableInteractionSource5, null, z12, Role.m6767boximpl(Role.Companion.m6781getTabo7Vup1c()), obj), 0.0f, NavigationBarHeight, 1, null), 1.0f, false, 2, null);
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -7194694, "CC(remember):NavigationBar.kt#9igjgp");
-                                Object rememberedValue3 = startRestartGroup.rememberedValue();
-                                if (rememberedValue3 == Composer.Companion.getEmpty()) {
-                                    rememberedValue3 = new Function1() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda3
-                                        @Override // kotlin.jvm.functions.Function1
-                                        public final Object invoke(Object obj9) {
-                                            return NavigationBarKt.NavigationBarItem$lambda$8$lambda$7(MutableIntState.this, (IntSize) obj9);
-                                        }
-                                    };
-                                    startRestartGroup.updateRememberedValue(rememberedValue3);
-                                }
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                Modifier onSizeChanged = OnRemeasuredModifierKt.onSizeChanged(weight$default, (Function1) rememberedValue3);
-                                Alignment center = Alignment.Companion.getCenter();
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
-                                MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(center, true);
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
-                                int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-                                CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, onSizeChanged);
-                                Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
-                                if (!(startRestartGroup.getApplier() instanceof Applier)) {
-                                    ComposablesKt.invalidApplier();
-                                }
-                                startRestartGroup.startReusableNode();
-                                if (startRestartGroup.getInserting()) {
-                                    startRestartGroup.createNode(constructor);
+                                    ComposableLambda rememberComposableLambda4 = ComposableLambdaKt.rememberComposableLambda(-799524251, true, new NavigationBarKt$NavigationBarItem$2$indicator$1(animateFloatAsState, navigationBarItemColors7), startRestartGroup, 54);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1196514300, "CC(remember):NavigationBar.kt#9igjgp");
+                                    boolean changed2 = startRestartGroup.changed(animateFloatAsState);
+                                    Object rememberedValue5 = startRestartGroup.rememberedValue();
+                                    if (changed2 || rememberedValue5 == Composer.Companion.getEmpty()) {
+                                        rememberedValue5 = new Function0() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda4
+                                            @Override // kotlin.jvm.functions.Function0
+                                            public final Object invoke() {
+                                                float floatValue;
+                                                floatValue = ((Number) State.this.getValue()).floatValue();
+                                                return Float.valueOf(floatValue);
+                                            }
+                                        };
+                                        startRestartGroup.updateRememberedValue(rememberedValue5);
+                                    }
+                                    Function0 function02 = (Function0) rememberedValue5;
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1196516539, "CC(remember):NavigationBar.kt#9igjgp");
+                                    boolean changed3 = startRestartGroup.changed(animateFloatAsState2);
+                                    Object rememberedValue6 = startRestartGroup.rememberedValue();
+                                    if (changed3 || rememberedValue6 == Composer.Companion.getEmpty()) {
+                                        rememberedValue6 = new Function0() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda5
+                                            @Override // kotlin.jvm.functions.Function0
+                                            public final Object invoke() {
+                                                float floatValue;
+                                                floatValue = ((Number) State.this.getValue()).floatValue();
+                                                return Float.valueOf(floatValue);
+                                            }
+                                        };
+                                        startRestartGroup.updateRememberedValue(rememberedValue6);
+                                    }
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    NavigationBarItemLayout(rememberComposableLambda3, rememberComposableLambda4, rememberComposableLambda2, rememberComposableLambda, z10, function02, rememberedValue6, startRestartGroup, ((i11 >> 9) & 57344) | 438);
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    startRestartGroup.endNode();
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventEnd();
+                                    }
+                                    composer2 = startRestartGroup;
+                                    navigationBarItemColors2 = navigationBarItemColors7;
+                                    mutableInteractionSource2 = mutableInteractionSource3;
+                                    z6 = z12;
+                                    z7 = z10;
+                                    function23 = function25;
+                                    companion = modifier3;
                                 } else {
-                                    startRestartGroup.useNode();
+                                    startRestartGroup.skipToGroupEnd();
+                                    navigationBarItemColors2 = navigationBarItemColors;
+                                    composer2 = startRestartGroup;
+                                    z6 = z4;
+                                    z7 = z5;
+                                    function23 = obj2;
+                                    mutableInteractionSource2 = mutableInteractionSource;
                                 }
-                                Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-                                Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                                }
-                                Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
-                                BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1565191211, "C263@11734L7,260@11504L252,269@12046L7,266@11819L249,275@12351L7,281@12645L128,288@12988L273,296@13310L404,313@13979L32,314@14049L31,307@13724L367:NavigationBar.kt#uh7d8r");
-                                NavigationBarItemColors navigationBarItemColors8 = navigationBarItemColors6;
-                                final State<Float> animateFloatAsState = AnimateAsStateKt.animateFloatAsState(z ? 1.0f : 0.0f, MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, startRestartGroup, 6), 0.0f, null, null, startRestartGroup, 0, 28);
-                                final State<Float> animateFloatAsState2 = AnimateAsStateKt.animateFloatAsState(z ? 1.0f : 0.0f, MotionSchemeKt.value(MotionSchemeKeyTokens.FastSpatial, startRestartGroup, 6), 0.0f, null, null, startRestartGroup, 0, 28);
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                Density density = (Density) consume;
-                                long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits((NavigationBarItem$lambda$5(mutableIntState) - density.mo399roundToPx0680j_4(NavigationBarVerticalItemTokens.INSTANCE.m3543getActiveIndicatorWidthD9Ej5fM())) / 2) << c) | (4294967295L & Float.floatToRawIntBits(density.mo405toPx0680j_4(IndicatorVerticalOffset))));
-                                Unit unit = Unit.INSTANCE;
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1196471708, "CC(remember):NavigationBar.kt#9igjgp");
-                                boolean changed = startRestartGroup.changed(mutableInteractionSource5) | startRestartGroup.changed(m4519constructorimpl);
-                                Object rememberedValue4 = startRestartGroup.rememberedValue();
-                                if (changed || rememberedValue4 == Composer.Companion.getEmpty()) {
-                                    rememberedValue4 = new MappedInteractionSource(mutableInteractionSource5, m4519constructorimpl, null);
-                                    startRestartGroup.updateRememberedValue(rememberedValue4);
-                                }
-                                final MappedInteractionSource mappedInteractionSource = (MappedInteractionSource) rememberedValue4;
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                ComposableLambda rememberComposableLambda3 = ComposableLambdaKt.rememberComposableLambda(-2082182507, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.NavigationBarKt$NavigationBarItem$2$indicatorRipple$1
-                                    @Override // kotlin.jvm.functions.Function2
-                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                        invoke(composer3, num.intValue());
-                                        return Unit.INSTANCE;
-                                    }
-
-                                    public final void invoke(Composer composer3, int i16) {
-                                        ComposerKt.sourceInformation(composer3, "C291@13152L5,289@13006L241:NavigationBar.kt#uh7d8r");
-                                        if (!composer3.shouldExecute((i16 & 3) != 2, i16 & 1)) {
-                                            composer3.skipToGroupEnd();
-                                            return;
+                                endRestartGroup = composer2.endRestartGroup();
+                                if (endRestartGroup == null) {
+                                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda6
+                                        @Override // kotlin.jvm.functions.Function2
+                                        public final Object invoke(Object obj5, Object obj6) {
+                                            return NavigationBarKt.NavigationBarItem$lambda$16(RowScope.this, z, function0, function2, companion, z6, function23, z7, navigationBarItemColors2, mutableInteractionSource2, i, i2, (Composer) obj5, ((Integer) obj6).intValue());
                                         }
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(-2082182507, i16, -1, "androidx.compose.material3.NavigationBarItem.<anonymous>.<anonymous> (NavigationBar.kt:289)");
-                                        }
-                                        BoxKt.Box(IndicationKt.indication(ClipKt.clip(LayoutIdKt.layoutId(Modifier.Companion, "indicatorRipple"), ShapesKt.getValue(NavigationBarTokens.INSTANCE.getItemActiveIndicatorShape(), composer3, 6)), MappedInteractionSource.this, RippleKt.m2402rippleH2RKhps$default(false, 0.0f, 0L, 7, null)), composer3, 0);
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventEnd();
-                                        }
-                                    }
-                                }, startRestartGroup, 54);
-                                ComposableLambda rememberComposableLambda4 = ComposableLambdaKt.rememberComposableLambda(-799524251, true, new NavigationBarKt$NavigationBarItem$2$indicator$1(animateFloatAsState, navigationBarItemColors8), startRestartGroup, 54);
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1196514300, "CC(remember):NavigationBar.kt#9igjgp");
-                                boolean changed2 = startRestartGroup.changed(animateFloatAsState);
-                                Object rememberedValue5 = startRestartGroup.rememberedValue();
-                                if (changed2 || rememberedValue5 == Composer.Companion.getEmpty()) {
-                                    rememberedValue5 = new Function0() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda4
-                                        @Override // kotlin.jvm.functions.Function0
-                                        public final Object invoke() {
-                                            float floatValue;
-                                            floatValue = ((Number) State.this.getValue()).floatValue();
-                                            return Float.valueOf(floatValue);
-                                        }
-                                    };
-                                    startRestartGroup.updateRememberedValue(rememberedValue5);
+                                    });
+                                    return;
                                 }
-                                Function0 function02 = (Function0) rememberedValue5;
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1196516539, "CC(remember):NavigationBar.kt#9igjgp");
-                                boolean changed3 = startRestartGroup.changed(animateFloatAsState2);
-                                Object rememberedValue6 = startRestartGroup.rememberedValue();
-                                if (changed3 || rememberedValue6 == Composer.Companion.getEmpty()) {
-                                    rememberedValue6 = new Function0() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda5
-                                        @Override // kotlin.jvm.functions.Function0
-                                        public final Object invoke() {
-                                            float floatValue;
-                                            floatValue = ((Number) State.this.getValue()).floatValue();
-                                            return Float.valueOf(floatValue);
-                                        }
-                                    };
-                                    startRestartGroup.updateRememberedValue(rememberedValue6);
-                                }
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                NavigationBarItemLayout(rememberComposableLambda3, rememberComposableLambda4, rememberComposableLambda2, rememberComposableLambda, z10, function02, rememberedValue6, startRestartGroup, ((i15 >> 9) & 57344) | 438);
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                startRestartGroup.endNode();
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventEnd();
-                                }
-                                z5 = z10;
-                                composer2 = startRestartGroup;
-                                navigationBarItemColors2 = navigationBarItemColors8;
-                                z6 = z12;
-                                mutableInteractionSource2 = mutableInteractionSource3;
-                                companion = modifier3;
-                                function23 = function25;
-                            } else {
-                                startRestartGroup.skipToGroupEnd();
-                                z5 = z3;
-                                navigationBarItemColors2 = navigationBarItemColors;
-                                mutableInteractionSource2 = mutableInteractionSource;
-                                composer2 = startRestartGroup;
-                                z6 = z4;
-                                function23 = obj3;
-                            }
-                            endRestartGroup = composer2.endRestartGroup();
-                            if (endRestartGroup != null) {
-                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda6
-                                    @Override // kotlin.jvm.functions.Function2
-                                    public final Object invoke(Object obj9, Object obj10) {
-                                        return NavigationBarKt.NavigationBarItem$lambda$16(RowScope.this, z, function0, function2, companion, z6, function23, z5, navigationBarItemColors2, mutableInteractionSource2, i, i2, (Composer) obj9, ((Integer) obj10).intValue());
-                                    }
-                                });
                                 return;
                             }
-                            return;
-                        }
-                        i8 = i7;
-                        i9 = i3;
-                        if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i9 & 1)) {
-                        }
-                        endRestartGroup = composer2.endRestartGroup();
-                        if (endRestartGroup != null) {
+                            i8 = i7;
+                            i9 = i3;
+                            if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i9 & 1)) {
+                            }
+                            endRestartGroup = composer2.endRestartGroup();
+                            if (endRestartGroup == null) {
+                            }
                         }
                     }
+                    c = ' ';
+                    if ((i & 100663296) == 0) {
+                    }
+                    i7 = i2 & 256;
+                    if (i7 != 0) {
+                    }
+                    i8 = i7;
+                    i9 = i3;
+                    if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i9 & 1)) {
+                    }
+                    endRestartGroup = composer2.endRestartGroup();
+                    if (endRestartGroup == null) {
+                    }
                 }
-                c = ' ';
-                obj3 = obj4;
+                obj2 = function22;
                 i6 = i2 & 64;
                 if (i6 == 0) {
                 }
+                c = ' ';
                 if ((i & 100663296) == 0) {
                 }
                 i7 = i2 & 256;
-                if (i7 == 0) {
+                if (i7 != 0) {
                 }
                 i8 = i7;
                 i9 = i3;
-                if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i9 & 1)) {
+                if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i9 & 1)) {
                 }
                 endRestartGroup = composer2.endRestartGroup();
-                if (endRestartGroup != null) {
+                if (endRestartGroup == null) {
                 }
             }
             z4 = z2;
             i5 = i2 & 32;
             if (i5 != 0) {
             }
-            c = ' ';
-            obj3 = obj4;
+            obj2 = function22;
             i6 = i2 & 64;
             if (i6 == 0) {
             }
+            c = ' ';
             if ((i & 100663296) == 0) {
             }
             i7 = i2 & 256;
-            if (i7 == 0) {
+            if (i7 != 0) {
             }
             i8 = i7;
             i9 = i3;
-            if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i9 & 1)) {
+            if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i9 & 1)) {
             }
             endRestartGroup = composer2.endRestartGroup();
-            if (endRestartGroup != null) {
+            if (endRestartGroup == null) {
             }
         }
         companion = modifier;
@@ -823,22 +820,22 @@ public final class NavigationBarKt {
         i5 = i2 & 32;
         if (i5 != 0) {
         }
-        c = ' ';
-        obj3 = obj4;
+        obj2 = function22;
         i6 = i2 & 64;
         if (i6 == 0) {
         }
+        c = ' ';
         if ((i & 100663296) == 0) {
         }
         i7 = i2 & 256;
-        if (i7 == 0) {
+        if (i7 != 0) {
         }
         i8 = i7;
         i9 = i3;
-        if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i9 & 1)) {
+        if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i9 & 1)) {
         }
         endRestartGroup = composer2.endRestartGroup();
-        if (endRestartGroup != null) {
+        if (endRestartGroup == null) {
         }
     }
 
@@ -895,8 +892,8 @@ public final class NavigationBarKt {
                     /* renamed from: measure-3p2s80s */
                     public final MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
                         float f;
-                        Measurable measurable;
                         Placeable placeable;
+                        Measurable measurable;
                         MeasureResult m2278placeLabelAndIconzUg2_y0;
                         MeasureResult m2277placeIconX9ElhV4;
                         MeasureScope measureScope2 = measureScope;
@@ -911,10 +908,9 @@ public final class NavigationBarKt {
                                 Placeable mo6216measureBRTryo0 = measurable2.mo6216measureBRTryo0(m7498copyZbe2FdA$default);
                                 int width = mo6216measureBRTryo0.getWidth();
                                 f = NavigationBarKt.IndicatorHorizontalPadding;
-                                float f2 = 2;
-                                int i5 = width + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(f * f2));
+                                int i5 = width + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(f * 2.0f));
                                 int roundToInt = MathKt.roundToInt(i5 * coerceAtLeast);
-                                int height = mo6216measureBRTryo0.getHeight() + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(NavigationBarKt.getIndicatorVerticalPadding() * f2));
+                                int height = mo6216measureBRTryo0.getHeight() + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(NavigationBarKt.getIndicatorVerticalPadding() * 2.0f));
                                 int size2 = list2.size();
                                 for (int i6 = 0; i6 < size2; i6++) {
                                     Measurable measurable3 = list.get(i6);
@@ -923,6 +919,7 @@ public final class NavigationBarKt {
                                         int size3 = list2.size();
                                         int i7 = 0;
                                         while (true) {
+                                            placeable = null;
                                             if (i7 >= size3) {
                                                 measurable = null;
                                                 break;
@@ -946,7 +943,6 @@ public final class NavigationBarKt {
                                             ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
                                             throw new KotlinNothingValueException();
                                         }
-                                        placeable = null;
                                         if (function24 == null) {
                                             m2277placeIconX9ElhV4 = NavigationBarKt.m2277placeIconX9ElhV4(measureScope, mo6216measureBRTryo0, mo6216measureBRTryo02, mo6216measureBRTryo03, j);
                                             return m2277placeIconX9ElhV4;
@@ -1156,10 +1152,9 @@ public final class NavigationBarKt {
         float height = placeable2.getHeight() + measureScope.mo405toPx0680j_4(f2);
         float f3 = NavigationBarIndicatorToLabelPadding;
         float f4 = height + measureScope.mo405toPx0680j_4(f3) + placeable.getHeight();
-        float f5 = 2;
-        final float coerceAtLeast = RangesKt.coerceAtLeast((Constraints.m7509getMinHeightimpl(j) - f4) / f5, measureScope.mo405toPx0680j_4(f2));
-        float f6 = f4 + (coerceAtLeast * f5);
-        final float height2 = ((z ? coerceAtLeast : (f6 - placeable2.getHeight()) / f5) - coerceAtLeast) * (1 - f);
+        final float coerceAtLeast = RangesKt.coerceAtLeast((Constraints.m7509getMinHeightimpl(j) - f4) / 2.0f, measureScope.mo405toPx0680j_4(f2));
+        float f5 = f4 + (coerceAtLeast * 2.0f);
+        final float height2 = ((z ? coerceAtLeast : (f5 - placeable2.getHeight()) / 2.0f) - coerceAtLeast) * (1.0f - f);
         final float height3 = placeable2.getHeight() + coerceAtLeast + measureScope.mo405toPx0680j_4(f2) + measureScope.mo405toPx0680j_4(f3);
         if (Constraints.m7508getMaxWidthimpl(j) == Integer.MAX_VALUE) {
             m7508getMaxWidthimpl = placeable2.getWidth() + (measureScope.mo399roundToPx0680j_4(NavigationBarItemToIconMinimumPadding) * 2);
@@ -1170,11 +1165,11 @@ public final class NavigationBarKt {
         final int width = (i - placeable.getWidth()) / 2;
         final int width2 = (i - placeable2.getWidth()) / 2;
         final int width3 = (i - placeable3.getWidth()) / 2;
-        final float f7 = coerceAtLeast - measureScope.mo405toPx0680j_4(f2);
-        return MeasureScope.layout$default(measureScope, i, MathKt.roundToInt(f6), null, new Function1() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda1
+        final float f6 = coerceAtLeast - measureScope.mo405toPx0680j_4(f2);
+        return MeasureScope.layout$default(measureScope, i, MathKt.roundToInt(f5), null, new Function1() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return NavigationBarKt.placeLabelAndIcon_zUg2_y0$lambda$27(Placeable.this, z, f, placeable, width, height3, height2, placeable2, width2, coerceAtLeast, placeable3, width3, f7, i, measureScope, (Placeable.PlacementScope) obj);
+                return NavigationBarKt.placeLabelAndIcon_zUg2_y0$lambda$27(Placeable.this, z, f, placeable, width, height3, height2, placeable2, width2, coerceAtLeast, placeable3, width3, f6, i, measureScope, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
@@ -1189,12 +1184,6 @@ public final class NavigationBarKt {
         Placeable.PlacementScope.placeRelative$default(placementScope, placeable3, i2, MathKt.roundToInt(f4 + f3), 0.0f, 4, null);
         Placeable.PlacementScope.placeRelative$default(placementScope, placeable4, i3, MathKt.roundToInt(f5 + f3), 0.0f, 4, null);
         return Unit.INSTANCE;
-    }
-
-    static {
-        float f = 2;
-        IndicatorHorizontalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationBarVerticalItemTokens.INSTANCE.m3543getActiveIndicatorWidthD9Ej5fM() - NavigationBarVerticalItemTokens.INSTANCE.m3545getIconSizeD9Ej5fM()) / f);
-        IndicatorVerticalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationBarVerticalItemTokens.INSTANCE.m3542getActiveIndicatorHeightD9Ej5fM() - NavigationBarVerticalItemTokens.INSTANCE.m3545getIconSizeD9Ej5fM()) / f);
     }
 
     public static final float getNavigationBarItemHorizontalPadding() {

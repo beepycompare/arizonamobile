@@ -12,7 +12,7 @@ import kotlin.Metadata;
 public final class AlertDialogDefaults {
     public static final int $stable = 0;
     public static final AlertDialogDefaults INSTANCE = new AlertDialogDefaults();
-    private static final float TonalElevation = Dp.m7555constructorimpl(0);
+    private static final float TonalElevation = Dp.m7555constructorimpl(0.0f);
 
     private AlertDialogDefaults() {
     }

@@ -364,7 +364,7 @@ public class FilteredEntryMultimap<K, V> extends AbstractMultimap<K, V> implemen
                     @Override // com.google.common.base.Predicate
                     public final boolean apply(Object obj) {
                         boolean apply;
-                        apply = Predicate.this.apply(Multisets.immutableEntry(r2.getKey(), ((Collection) ((Map.Entry) obj).getValue()).size()));
+                        apply = Predicate.this.apply(Multisets.immutableEntry(r1.getKey(), ((Collection) ((Map.Entry) obj).getValue()).size()));
                         return apply;
                     }
                 });

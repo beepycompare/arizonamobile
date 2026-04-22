@@ -77,6 +77,7 @@ public final class DataStoreImpl$InitDataStore$doRun$initData$1<T> extends Suspe
         Ref.ObjectRef objectRef3;
         DataStoreImpl$InitDataStore$doRun$initData$1$api$1 dataStoreImpl$InitDataStore$doRun$initData$1$api$1;
         Ref.ObjectRef objectRef4;
+        Object version;
         Object obj2;
         int i;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -115,16 +116,18 @@ public final class DataStoreImpl$InitDataStore$doRun$initData$1<T> extends Suspe
                     booleanRef2.element = true;
                     Unit unit = Unit.INSTANCE;
                     mutex.unlock(null);
-                    obj2 = objectRef4.element;
                     T t = objectRef4.element;
-                    int hashCode = t != null ? t.hashCode() : 0;
-                    this.L$0 = obj2;
+                    T t2 = objectRef4.element;
+                    int hashCode = t2 != null ? t2.hashCode() : 0;
+                    this.L$0 = t;
                     this.L$1 = null;
                     this.L$2 = null;
                     this.I$0 = hashCode;
                     this.label = 4;
-                    obj = this.this$0.getCoordinator().getVersion(this);
-                    if (obj != coroutine_suspended) {
+                    version = this.this$0.getCoordinator().getVersion(this);
+                    if (version != coroutine_suspended) {
+                        obj = version;
+                        obj2 = t;
                         i = hashCode;
                         return new Data(obj2, i, ((Number) obj).intValue());
                     }
@@ -166,17 +169,17 @@ public final class DataStoreImpl$InitDataStore$doRun$initData$1<T> extends Suspe
                 booleanRef2.element = true;
                 Unit unit2 = Unit.INSTANCE;
                 mutex.unlock(null);
-                obj2 = objectRef4.element;
-                T t2 = objectRef4.element;
-                if (t2 != null) {
+                T t3 = objectRef4.element;
+                T t22 = objectRef4.element;
+                if (t22 != null) {
                 }
-                this.L$0 = obj2;
+                this.L$0 = t3;
                 this.L$1 = null;
                 this.L$2 = null;
                 this.I$0 = hashCode;
                 this.label = 4;
-                obj = this.this$0.getCoordinator().getVersion(this);
-                if (obj != coroutine_suspended) {
+                version = this.this$0.getCoordinator().getVersion(this);
+                if (version != coroutine_suspended) {
                 }
             }
             return coroutine_suspended;

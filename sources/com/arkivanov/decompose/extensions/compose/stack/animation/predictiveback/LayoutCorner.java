@@ -74,6 +74,6 @@ public final class LayoutCorner {
     }
 
     public /* synthetic */ LayoutCorner(float f, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m7555constructorimpl(16) : f, (i & 2) != 0 ? false : z, null);
+        this((i & 1) != 0 ? Dp.m7555constructorimpl(16.0f) : f, (i & 2) != 0 ? false : z, null);
     }
 }

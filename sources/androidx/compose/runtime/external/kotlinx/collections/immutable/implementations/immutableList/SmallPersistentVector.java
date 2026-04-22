@@ -107,9 +107,9 @@ public final class SmallPersistentVector<E> extends AbstractPersistentList<E> im
         ListImplementation.checkPositionIndex$runtime(i, size());
         if (size() + collection.size() <= 32) {
             Object[] bufferOfSize = bufferOfSize(size() + collection.size());
+            ArraysKt.copyInto$default(this.buffer, bufferOfSize, 0, 0, i, 6, (Object) null);
+            ArraysKt.copyInto(this.buffer, bufferOfSize, collection.size() + i, i, size());
             int i2 = i;
-            ArraysKt.copyInto$default(this.buffer, bufferOfSize, 0, 0, i2, 6, (Object) null);
-            ArraysKt.copyInto(this.buffer, bufferOfSize, collection.size() + i2, i2, size());
             for (E e : collection) {
                 bufferOfSize[i2] = e;
                 i2++;

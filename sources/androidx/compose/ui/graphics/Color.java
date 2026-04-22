@@ -433,7 +433,7 @@ public final class Color {
 
         private final float hsvToRgbComponent(int i, float f, float f2, float f3) {
             float f4 = (i + (f / 60.0f)) % 6.0f;
-            return f3 - ((f2 * f3) * Math.max(0.0f, Math.min(f4, Math.min(4 - f4, 1.0f))));
+            return f3 - ((f2 * f3) * Math.max(0.0f, Math.min(f4, Math.min(4.0f - f4, 1.0f))));
         }
 
         /* renamed from: hsl-JlNiLsg$default */
@@ -458,7 +458,7 @@ public final class Color {
 
         private final float hslToRgbComponent(int i, float f, float f2, float f3) {
             float f4 = (i + (f / 30.0f)) % 12.0f;
-            return f3 - ((f2 * Math.min(f3, 1.0f - f3)) * Math.max(-1.0f, Math.min(f4 - 3, Math.min(9 - f4, 1.0f))));
+            return f3 - ((f2 * Math.min(f3, 1.0f - f3)) * Math.max(-1.0f, Math.min(f4 - 3.0f, Math.min(9.0f - f4, 1.0f))));
         }
     }
 }

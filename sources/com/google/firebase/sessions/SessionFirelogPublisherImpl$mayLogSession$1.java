@@ -61,13 +61,12 @@ final class SessionFirelogPublisherImpl$mayLogSession$1 extends SuspendLambda im
     */
     public final Object invokeSuspend(Object obj) {
         FirebaseInstallationsApi firebaseInstallationsApi;
-        InstallationId installationId;
         SessionFirelogPublisherImpl sessionFirelogPublisherImpl;
         FirebaseApp firebaseApp;
         SessionsSettings sessionsSettings;
-        FirebaseApp firebaseApp2;
-        SessionDetails sessionDetails;
+        InstallationId installationId;
         SessionEvents sessionEvents;
+        SessionDetails sessionDetails;
         SessionsSettings sessionsSettings2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
@@ -78,7 +77,7 @@ final class SessionFirelogPublisherImpl$mayLogSession$1 extends SuspendLambda im
         } else if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
-                    FirebaseApp firebaseApp3 = (FirebaseApp) this.L$3;
+                    FirebaseApp firebaseApp2 = (FirebaseApp) this.L$3;
                     SessionEvents sessionEvents2 = (SessionEvents) this.L$2;
                     sessionFirelogPublisherImpl = (SessionFirelogPublisherImpl) this.L$1;
                     installationId = (InstallationId) this.L$0;
@@ -86,21 +85,20 @@ final class SessionFirelogPublisherImpl$mayLogSession$1 extends SuspendLambda im
                     sessionsSettings2 = (SessionsSettings) this.L$5;
                     sessionEvents = sessionEvents2;
                     sessionDetails = (SessionDetails) this.L$4;
-                    firebaseApp2 = firebaseApp3;
-                    InstallationId installationId2 = installationId;
-                    sessionFirelogPublisherImpl.attemptLoggingSessionEvent(sessionEvents.buildSession(firebaseApp2, sessionDetails, sessionsSettings2, (Map) obj, installationId2.getFid(), installationId2.getAuthToken()));
+                    firebaseApp = firebaseApp2;
+                    sessionFirelogPublisherImpl.attemptLoggingSessionEvent(sessionEvents.buildSession(firebaseApp, sessionDetails, sessionsSettings2, (Map) obj, installationId.getFid(), installationId.getAuthToken()));
                     return Unit.INSTANCE;
                 }
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             ResultKt.throwOnFailure(obj);
-            installationId = (InstallationId) obj;
+            InstallationId installationId2 = (InstallationId) obj;
             sessionFirelogPublisherImpl = this.this$0;
             SessionEvents sessionEvents3 = SessionEvents.INSTANCE;
             firebaseApp = this.this$0.firebaseApp;
             SessionDetails sessionDetails2 = this.$sessionDetails;
             sessionsSettings = this.this$0.sessionSettings;
-            this.L$0 = installationId;
+            this.L$0 = installationId2;
             this.L$1 = sessionFirelogPublisherImpl;
             this.L$2 = sessionEvents3;
             this.L$3 = firebaseApp;
@@ -109,13 +107,12 @@ final class SessionFirelogPublisherImpl$mayLogSession$1 extends SuspendLambda im
             this.label = 3;
             Object registeredSubscribers$com_google_firebase_firebase_sessions = FirebaseSessionsDependencies.INSTANCE.getRegisteredSubscribers$com_google_firebase_firebase_sessions(this);
             if (registeredSubscribers$com_google_firebase_firebase_sessions != coroutine_suspended) {
-                firebaseApp2 = firebaseApp;
                 obj = registeredSubscribers$com_google_firebase_firebase_sessions;
-                sessionDetails = sessionDetails2;
+                installationId = installationId2;
                 sessionEvents = sessionEvents3;
+                sessionDetails = sessionDetails2;
                 sessionsSettings2 = sessionsSettings;
-                InstallationId installationId22 = installationId;
-                sessionFirelogPublisherImpl.attemptLoggingSessionEvent(sessionEvents.buildSession(firebaseApp2, sessionDetails, sessionsSettings2, (Map) obj, installationId22.getFid(), installationId22.getAuthToken()));
+                sessionFirelogPublisherImpl.attemptLoggingSessionEvent(sessionEvents.buildSession(firebaseApp, sessionDetails, sessionsSettings2, (Map) obj, installationId.getFid(), installationId.getAuthToken()));
                 return Unit.INSTANCE;
             }
             return coroutine_suspended;

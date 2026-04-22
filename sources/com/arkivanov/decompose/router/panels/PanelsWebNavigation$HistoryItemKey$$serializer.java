@@ -81,10 +81,10 @@ public /* synthetic */ class PanelsWebNavigation$HistoryItemKey$$serializer<MC, 
         if (beginStructure.decodeSequentially()) {
             Object decodeSerializableElement = beginStructure.decodeSerializableElement(serialDescriptor, 0, this.typeSerial0, null);
             Object decodeNullableSerializableElement = beginStructure.decodeNullableSerializableElement(serialDescriptor, 1, this.typeSerial1, null);
-            obj = decodeSerializableElement;
             obj3 = beginStructure.decodeNullableSerializableElement(serialDescriptor, 2, this.typeSerial2, null);
-            obj2 = decodeNullableSerializableElement;
+            obj = decodeSerializableElement;
             i = 7;
+            obj2 = decodeNullableSerializableElement;
         } else {
             boolean z = true;
             int i2 = 0;

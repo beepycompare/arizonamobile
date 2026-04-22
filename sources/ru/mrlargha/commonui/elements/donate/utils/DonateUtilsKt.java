@@ -434,11 +434,8 @@ public final class DonateUtilsKt {
         long currentTimeMillis = (j * 1000) - System.currentTimeMillis();
         if (currentTimeMillis > 0) {
             long hours = TimeUnit.MILLISECONDS.toHours(currentTimeMillis);
-            long j2 = 60;
-            long minutes = TimeUnit.MILLISECONDS.toMinutes(currentTimeMillis) % j2;
-            long seconds = TimeUnit.MILLISECONDS.toSeconds(currentTimeMillis) % j2;
             StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-            String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(hours), Long.valueOf(minutes), Long.valueOf(seconds)}, 3));
+            String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(hours), Long.valueOf(TimeUnit.MILLISECONDS.toMinutes(currentTimeMillis) % 60), Long.valueOf(TimeUnit.MILLISECONDS.toSeconds(currentTimeMillis) % 60)}, 3));
             Intrinsics.checkNotNullExpressionValue(format, "format(...)");
             return format;
         }

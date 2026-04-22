@@ -26,80 +26,85 @@ public final class SubscribedFlowCollector<T> implements FlowCollector<T> {
         this.action = function2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0075, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0078, code lost:
         if (((kotlinx.coroutines.flow.SubscribedFlowCollector) r7).onSubscription(r0) == r1) goto L23;
      */
-    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007b  */
-    /* JADX WARN: Type inference failed for: r2v0, types: [int] */
-    /* JADX WARN: Type inference failed for: r2v1, types: [kotlinx.coroutines.flow.internal.SafeCollector] */
-    /* JADX WARN: Type inference failed for: r2v4, types: [boolean] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0043  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x006b  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x007e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object onSubscription(Continuation<? super Unit> continuation) {
         SubscribedFlowCollector$onSubscription$1 subscribedFlowCollector$onSubscription$1;
-        ?? r2;
+        int i;
+        Throwable th;
         SafeCollector safeCollector;
         SubscribedFlowCollector<T> subscribedFlowCollector;
-        try {
-            if (continuation instanceof SubscribedFlowCollector$onSubscription$1) {
-                subscribedFlowCollector$onSubscription$1 = (SubscribedFlowCollector$onSubscription$1) continuation;
-                if ((subscribedFlowCollector$onSubscription$1.label & Integer.MIN_VALUE) != 0) {
-                    subscribedFlowCollector$onSubscription$1.label -= Integer.MIN_VALUE;
-                    Object obj = subscribedFlowCollector$onSubscription$1.result;
-                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    r2 = subscribedFlowCollector$onSubscription$1.label;
-                    if (r2 != 0) {
-                        ResultKt.throwOnFailure(obj);
-                        safeCollector = new SafeCollector(this.collector, subscribedFlowCollector$onSubscription$1.getContext());
+        FlowCollector<T> flowCollector;
+        if (continuation instanceof SubscribedFlowCollector$onSubscription$1) {
+            subscribedFlowCollector$onSubscription$1 = (SubscribedFlowCollector$onSubscription$1) continuation;
+            if ((subscribedFlowCollector$onSubscription$1.label & Integer.MIN_VALUE) != 0) {
+                subscribedFlowCollector$onSubscription$1.label -= Integer.MIN_VALUE;
+                Object obj = subscribedFlowCollector$onSubscription$1.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = subscribedFlowCollector$onSubscription$1.label;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    SafeCollector safeCollector2 = new SafeCollector(this.collector, subscribedFlowCollector$onSubscription$1.getContext());
+                    try {
                         Function2<FlowCollector<? super T>, Continuation<? super Unit>, Object> function2 = this.action;
                         subscribedFlowCollector$onSubscription$1.L$0 = this;
-                        subscribedFlowCollector$onSubscription$1.L$1 = safeCollector;
+                        subscribedFlowCollector$onSubscription$1.L$1 = safeCollector2;
                         subscribedFlowCollector$onSubscription$1.label = 1;
-                        if (function2.invoke(safeCollector, subscribedFlowCollector$onSubscription$1) != coroutine_suspended) {
+                        if (function2.invoke(safeCollector2, subscribedFlowCollector$onSubscription$1) != coroutine_suspended) {
                             subscribedFlowCollector = this;
+                            safeCollector = safeCollector2;
                         }
                         return coroutine_suspended;
-                    } else if (r2 != 1) {
-                        if (r2 == 2) {
-                            ResultKt.throwOnFailure(obj);
-                            return Unit.INSTANCE;
-                        }
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    } else {
-                        safeCollector = (SafeCollector) subscribedFlowCollector$onSubscription$1.L$1;
-                        subscribedFlowCollector = (SubscribedFlowCollector) subscribedFlowCollector$onSubscription$1.L$0;
-                        ResultKt.throwOnFailure(obj);
+                    } catch (Throwable th2) {
+                        th = th2;
+                        safeCollector = safeCollector2;
+                        safeCollector.releaseIntercepted();
+                        throw th;
                     }
-                    safeCollector.releaseIntercepted();
-                    FlowCollector<T> flowCollector = subscribedFlowCollector.collector;
-                    r2 = flowCollector instanceof SubscribedFlowCollector;
-                    if (r2 != 0) {
+                } else if (i != 1) {
+                    if (i == 2) {
+                        ResultKt.throwOnFailure(obj);
                         return Unit.INSTANCE;
                     }
-                    subscribedFlowCollector$onSubscription$1.L$0 = null;
-                    subscribedFlowCollector$onSubscription$1.L$1 = null;
-                    subscribedFlowCollector$onSubscription$1.label = 2;
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                } else {
+                    safeCollector = (SafeCollector) subscribedFlowCollector$onSubscription$1.L$1;
+                    subscribedFlowCollector = (SubscribedFlowCollector) subscribedFlowCollector$onSubscription$1.L$0;
+                    try {
+                        ResultKt.throwOnFailure(obj);
+                    } catch (Throwable th3) {
+                        th = th3;
+                        safeCollector.releaseIntercepted();
+                        throw th;
+                    }
                 }
+                safeCollector.releaseIntercepted();
+                flowCollector = subscribedFlowCollector.collector;
+                if (flowCollector instanceof SubscribedFlowCollector) {
+                    return Unit.INSTANCE;
+                }
+                subscribedFlowCollector$onSubscription$1.L$0 = null;
+                subscribedFlowCollector$onSubscription$1.L$1 = null;
+                subscribedFlowCollector$onSubscription$1.label = 2;
             }
-            if (r2 != 0) {
-            }
-            safeCollector.releaseIntercepted();
-            FlowCollector<T> flowCollector2 = subscribedFlowCollector.collector;
-            r2 = flowCollector2 instanceof SubscribedFlowCollector;
-            if (r2 != 0) {
-            }
-        } catch (Throwable th) {
-            r2.releaseIntercepted();
-            throw th;
         }
         subscribedFlowCollector$onSubscription$1 = new SubscribedFlowCollector$onSubscription$1(this, continuation);
         Object obj2 = subscribedFlowCollector$onSubscription$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        r2 = subscribedFlowCollector$onSubscription$1.label;
+        i = subscribedFlowCollector$onSubscription$1.label;
+        if (i != 0) {
+        }
+        safeCollector.releaseIntercepted();
+        flowCollector = subscribedFlowCollector.collector;
+        if (flowCollector instanceof SubscribedFlowCollector) {
+        }
     }
 }

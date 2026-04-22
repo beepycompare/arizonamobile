@@ -15,8 +15,8 @@ public abstract class VisibilityPropagation extends TransitionPropagation {
             num = Integer.valueOf(view.getVisibility());
         }
         transitionValues.values.put(PROPNAME_VISIBILITY, num);
-        view.getLocationOnScreen(r2);
-        int round = r2[0] + Math.round(view.getTranslationX());
+        view.getLocationOnScreen(r1);
+        int round = r1[0] + Math.round(view.getTranslationX());
         int[] iArr = {round};
         iArr[0] = round + (view.getWidth() / 2);
         int round2 = iArr[1] + Math.round(view.getTranslationY());

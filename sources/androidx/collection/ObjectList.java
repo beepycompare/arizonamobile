@@ -408,29 +408,29 @@ public abstract class ObjectList<E> {
         return i2;
     }
 
-    /* JADX WARN: Type inference failed for: r3v0, types: [E, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r2v0, types: [E, java.lang.Object] */
     public final E first(Function1<? super E, Boolean> predicate) {
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         Object[] objArr = this.content;
         int i = this._size;
         for (int i2 = 0; i2 < i; i2++) {
-            ?? r3 = (Object) objArr[i2];
-            if (predicate.invoke(r3).booleanValue()) {
-                return r3;
+            ?? r2 = (Object) objArr[i2];
+            if (predicate.invoke(r2).booleanValue()) {
+                return r2;
             }
         }
         throw new NoSuchElementException("ObjectList contains no element matching the predicate.");
     }
 
-    /* JADX WARN: Type inference failed for: r3v0, types: [E, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r2v0, types: [E, java.lang.Object] */
     public final E firstOrNull(Function1<? super E, Boolean> predicate) {
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         Object[] objArr = this.content;
         int i = this._size;
         for (int i2 = 0; i2 < i; i2++) {
-            ?? r3 = (Object) objArr[i2];
-            if (predicate.invoke(r3).booleanValue()) {
-                return r3;
+            ?? r2 = (Object) objArr[i2];
+            if (predicate.invoke(r2).booleanValue()) {
+                return r2;
             }
         }
         return null;
@@ -532,7 +532,7 @@ public abstract class ObjectList<E> {
         }
     }
 
-    /* JADX WARN: Type inference failed for: r2v1, types: [E, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r1v1, types: [E, java.lang.Object] */
     public final E last(Function1<? super E, Boolean> predicate) {
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         Object[] objArr = this.content;
@@ -542,14 +542,14 @@ public abstract class ObjectList<E> {
             if (-1 >= i) {
                 throw new NoSuchElementException("ObjectList contains no element matching the predicate.");
             }
-            ?? r2 = (Object) objArr[i];
-            if (predicate.invoke(r2).booleanValue()) {
-                return r2;
+            ?? r1 = (Object) objArr[i];
+            if (predicate.invoke(r1).booleanValue()) {
+                return r1;
             }
         }
     }
 
-    /* JADX WARN: Type inference failed for: r2v1, types: [E, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r1v1, types: [E, java.lang.Object] */
     public final E lastOrNull(Function1<? super E, Boolean> predicate) {
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         Object[] objArr = this.content;
@@ -559,9 +559,9 @@ public abstract class ObjectList<E> {
             if (-1 >= i) {
                 return null;
             }
-            ?? r2 = (Object) objArr[i];
-            if (predicate.invoke(r2).booleanValue()) {
-                return r2;
+            ?? r1 = (Object) objArr[i];
+            if (predicate.invoke(r1).booleanValue()) {
+                return r1;
             }
         }
     }

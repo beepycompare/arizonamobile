@@ -37,7 +37,7 @@ public final class AnalyticsEventProvider {
         postAnalyticsEvent(context, applicationId, analyticsEvent.getEventName(), analyticsEvent.getEventData());
     }
 
-    /* JADX WARN: Type inference failed for: r2v2, types: [T, ru.rustore.sdk.analytics.AnalyticsProviderServiceConnection] */
+    /* JADX WARN: Type inference failed for: r1v2, types: [T, ru.rustore.sdk.analytics.AnalyticsProviderServiceConnection] */
     public final void postAnalyticsEvent(final Context context, String applicationId, String eventName, Map<String, String> eventData) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(applicationId, "applicationId");

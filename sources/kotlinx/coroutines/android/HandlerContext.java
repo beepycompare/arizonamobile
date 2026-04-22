@@ -110,11 +110,13 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
     public String toString() {
         String stringInternalImpl = toStringInternalImpl();
         if (stringInternalImpl == null) {
-            String str = this.name;
-            if (str == null) {
-                str = this.handler.toString();
+            stringInternalImpl = this.name;
+            if (stringInternalImpl == null) {
+                stringInternalImpl = this.handler.toString();
             }
-            return this.invokeImmediately ? str + ".immediate" : str;
+            if (this.invokeImmediately) {
+                return stringInternalImpl + ".immediate";
+            }
         }
         return stringInternalImpl;
     }
@@ -128,6 +130,6 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
     }
 
     public int hashCode() {
-        return System.identityHashCode(this.handler) ^ (this.invokeImmediately ? 1231 : 1237);
+        return (this.invokeImmediately ? 1231 : 1237) ^ System.identityHashCode(this.handler);
     }
 }

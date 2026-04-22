@@ -232,7 +232,7 @@ public interface Modifier {
 
         /* renamed from: isKind-H91voCI$ui  reason: not valid java name */
         public final boolean m4258isKindH91voCI$ui(int i) {
-            return (i & getKindSet$ui()) != 0;
+            return (getKindSet$ui() & i) != 0;
         }
 
         public void markAsAttached$ui() {

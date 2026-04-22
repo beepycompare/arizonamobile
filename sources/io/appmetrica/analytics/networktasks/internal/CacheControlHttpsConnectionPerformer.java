@@ -42,7 +42,7 @@ public class CacheControlHttpsConnectionPerformer {
         }
         if (code == 200) {
             List list = (List) CollectionUtils.getFromMapIgnoreCase(a2.getHeaders(), HttpHeaders.ETAG);
-            client.onResponse((list == null || list.size() <= 0 || (r0 = (String) list.get(0)) == null) ? "" : "", a2.getResponseData());
+            client.onResponse((list == null || list.size() <= 0 || (r3 = (String) list.get(0)) == null) ? "" : "", a2.getResponseData());
         } else if (code == 304) {
             client.onNotModified();
         } else {

@@ -243,7 +243,7 @@ public final class SharedPreferencesMigration<T> implements DataMigration<T> {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0063, code lost:
-        if (r5.isEmpty() == false) goto L20;
+        if (r4.isEmpty() == false) goto L20;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */

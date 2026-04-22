@@ -56,6 +56,6 @@ final class AutoValue_StaticSessionData extends StaticSessionData {
     }
 
     public int hashCode() {
-        return ((((this.appData.hashCode() ^ 1000003) * 1000003) ^ this.osData.hashCode()) * 1000003) ^ this.deviceData.hashCode();
+        return this.deviceData.hashCode() ^ ((((this.appData.hashCode() ^ 1000003) * 1000003) ^ this.osData.hashCode()) * 1000003);
     }
 }

@@ -959,14 +959,18 @@ public final class Cea708Decoder extends CeaDecoder {
             return new SpannableString(spannableStringBuilder);
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:23:0x0064  */
         /* JADX WARN: Removed duplicated region for block: B:24:0x006d  */
         /* JADX WARN: Removed duplicated region for block: B:27:0x0088  */
-        /* JADX WARN: Removed duplicated region for block: B:28:0x008c  */
-        /* JADX WARN: Removed duplicated region for block: B:34:0x009b  */
-        /* JADX WARN: Removed duplicated region for block: B:35:0x009d  */
-        /* JADX WARN: Removed duplicated region for block: B:40:0x00a8  */
-        /* JADX WARN: Removed duplicated region for block: B:41:0x00aa  */
+        /* JADX WARN: Removed duplicated region for block: B:28:0x008b  */
+        /* JADX WARN: Removed duplicated region for block: B:34:0x0097  */
+        /* JADX WARN: Removed duplicated region for block: B:35:0x0099  */
+        /* JADX WARN: Removed duplicated region for block: B:42:0x00a6  */
+        /* JADX WARN: Type inference failed for: r7v10 */
+        /* JADX WARN: Type inference failed for: r7v7 */
+        /* JADX WARN: Type inference failed for: r7v8 */
+        /* JADX WARN: Type inference failed for: r7v9, types: [int] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -976,73 +980,73 @@ public final class Cea708Decoder extends CeaDecoder {
             float f;
             float f2;
             int i;
-            int i2;
-            float f3;
-            int i3;
+            boolean z2;
+            ?? r7;
             if (isEmpty()) {
                 return null;
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            for (int i4 = 0; i4 < this.rolledUpCaptions.size(); i4++) {
-                spannableStringBuilder.append((CharSequence) this.rolledUpCaptions.get(i4));
+            for (int i2 = 0; i2 < this.rolledUpCaptions.size(); i2++) {
+                spannableStringBuilder.append((CharSequence) this.rolledUpCaptions.get(i2));
                 spannableStringBuilder.append('\n');
             }
             spannableStringBuilder.append((CharSequence) buildSpannableString());
-            int i5 = this.justification;
-            int i6 = 2;
-            if (i5 != 0) {
-                if (i5 == 1) {
+            int i3 = this.justification;
+            int i4 = 1;
+            if (i3 != 0) {
+                if (i3 == 1) {
                     alignment = Layout.Alignment.ALIGN_OPPOSITE;
-                } else if (i5 == 2) {
+                } else if (i3 == 2) {
                     alignment = Layout.Alignment.ALIGN_CENTER;
-                } else if (i5 != 3) {
+                } else if (i3 != 3) {
                     throw new IllegalArgumentException("Unexpected justification value: " + this.justification);
                 }
                 z = this.relativePositioning;
-                int i7 = this.horizontalAnchor;
+                int i5 = this.horizontalAnchor;
                 if (!z) {
-                    f = i7 / 99.0f;
+                    f = i5 / 99.0f;
                     f2 = this.verticalAnchor / 99.0f;
                 } else {
-                    f = i7 / 209.0f;
+                    f = i5 / 209.0f;
                     f2 = this.verticalAnchor / 74.0f;
                 }
-                float f4 = (f * 0.9f) + 0.05f;
-                float f5 = (f2 * 0.9f) + 0.05f;
+                float f3 = (f * 0.9f) + 0.05f;
+                float f4 = (f2 * 0.9f) + 0.05f;
                 i = this.anchorId;
                 if (i / 3 != 0) {
-                    i2 = i;
-                    f3 = f4;
-                    i3 = 0;
+                    z2 = true;
+                    i4 = 0;
                 } else if (i / 3 == 1) {
-                    i2 = i;
-                    f3 = f4;
-                    i3 = 1;
+                    z2 = true;
                 } else {
-                    i2 = i;
-                    f3 = f4;
-                    i3 = 2;
+                    z2 = true;
+                    i4 = 2;
                 }
-                if (i2 % 3 != 0) {
-                    i6 = 0;
-                } else if (i2 % 3 == 1) {
-                    i6 = 1;
+                if (i % 3 != 0) {
+                    r7 = 0;
+                } else {
+                    r7 = i % 3 == z2 ? z2 : 2;
                 }
-                return new Cea708CueInfo(spannableStringBuilder, alignment, f5, 0, i3, f3, i6, -3.4028235E38f, this.windowFillColor == COLOR_SOLID_BLACK, this.windowFillColor, this.priority);
+                if (this.windowFillColor == COLOR_SOLID_BLACK) {
+                    z2 = false;
+                }
+                return new Cea708CueInfo(spannableStringBuilder, alignment, f4, 0, i4, f3, r7, -3.4028235E38f, z2, this.windowFillColor, this.priority);
             }
             alignment = Layout.Alignment.ALIGN_NORMAL;
             z = this.relativePositioning;
-            int i72 = this.horizontalAnchor;
+            int i52 = this.horizontalAnchor;
             if (!z) {
             }
-            float f42 = (f * 0.9f) + 0.05f;
-            float f52 = (f2 * 0.9f) + 0.05f;
+            float f32 = (f * 0.9f) + 0.05f;
+            float f42 = (f2 * 0.9f) + 0.05f;
             i = this.anchorId;
             if (i / 3 != 0) {
             }
-            if (i2 % 3 != 0) {
+            if (i % 3 != 0) {
             }
-            return new Cea708CueInfo(spannableStringBuilder, alignment, f52, 0, i3, f3, i6, -3.4028235E38f, this.windowFillColor == COLOR_SOLID_BLACK, this.windowFillColor, this.priority);
+            if (this.windowFillColor == COLOR_SOLID_BLACK) {
+            }
+            return new Cea708CueInfo(spannableStringBuilder, alignment, f42, 0, i4, f32, r7, -3.4028235E38f, z2, this.windowFillColor, this.priority);
         }
 
         public static int getArgbColorFromCeaColor(int i, int i2, int i3) {

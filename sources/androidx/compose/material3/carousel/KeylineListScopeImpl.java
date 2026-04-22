@@ -19,12 +19,12 @@ final class KeylineListScopeImpl implements KeylineListScope {
     private final List<TmpKeyline> tmpKeylines = new ArrayList();
 
     private final boolean isCutoffLeft(float f, float f2) {
-        float f3 = f / 2;
+        float f3 = f / 2.0f;
         return f2 - f3 < 0.0f && f2 + f3 > 0.0f;
     }
 
     private final boolean isCutoffRight(float f, float f2, float f3) {
-        float f4 = f / 2;
+        float f4 = f / 2.0f;
         return f2 - f4 < f3 && f2 + f4 > f3;
     }
 
@@ -119,15 +119,15 @@ final class KeylineListScopeImpl implements KeylineListScope {
                     f4 = f2 / 2.0f;
                 }
             }
-            float f5 = 2;
-            f3 = ((f / f5) - ((this.focalItemSize / f5) * i3)) - f4;
+            f3 = ((f / 2.0f) - ((this.focalItemSize / 2.0f) * i3)) - f4;
         } else {
             boolean m2960equalsimpl0 = CarouselAlignment.m2960equalsimpl0(i, CarouselAlignment.Companion.m2965getEndNUL3oTo());
-            float f6 = this.focalItemSize;
-            f3 = m2960equalsimpl0 ? f - (f6 / 2) : f6 / 2;
+            float f5 = this.focalItemSize;
+            f3 = m2960equalsimpl0 ? f - (f5 / 2.0f) : f5 / 2.0f;
         }
-        this.pivotOffset = f3;
-        return new KeylineList(createKeylinesWithPivot(this.pivotIndex, f3, this.firstFocalIndex, findLastFocalIndex, this.focalItemSize, f, f2, this.tmpKeylines));
+        float f6 = f3;
+        this.pivotOffset = f6;
+        return new KeylineList(createKeylinesWithPivot(this.pivotIndex, f6, this.firstFocalIndex, findLastFocalIndex, this.focalItemSize, f, f2, this.tmpKeylines));
     }
 
     private final int findLastFocalIndex() {
@@ -142,8 +142,9 @@ final class KeylineListScopeImpl implements KeylineListScope {
         return i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0101  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0086  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00fd  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -151,75 +152,73 @@ final class KeylineListScopeImpl implements KeylineListScope {
         TmpKeyline tmpKeyline;
         float f5;
         float size;
-        TmpKeyline tmpKeyline2;
-        TmpKeyline tmpKeyline3;
-        boolean z;
+        int i4;
         Iterator<Integer> it;
         Iterator<Integer> it2;
-        TmpKeyline tmpKeyline4 = list.get(i);
+        TmpKeyline tmpKeyline2 = list.get(i);
         ArrayList arrayList = new ArrayList();
-        if (isCutoffLeft(tmpKeyline4.getSize(), f)) {
-            size = f - (tmpKeyline4.getSize() / 2);
-        } else if (isCutoffRight(tmpKeyline4.getSize(), f, f3)) {
-            size = ((tmpKeyline4.getSize() / 2) + f) - f3;
+        if (isCutoffLeft(tmpKeyline2.getSize(), f)) {
+            size = f - (tmpKeyline2.getSize() / 2.0f);
+        } else if (isCutoffRight(tmpKeyline2.getSize(), f, f3)) {
+            size = ((tmpKeyline2.getSize() / 2.0f) + f) - f3;
         } else {
-            tmpKeyline = tmpKeyline4;
+            tmpKeyline = tmpKeyline2;
             f5 = 0.0f;
-            tmpKeyline2 = tmpKeyline;
-            float size2 = tmpKeyline2.getSize();
+            TmpKeyline tmpKeyline3 = tmpKeyline;
+            float size2 = tmpKeyline3.getSize();
+            boolean z = false;
             if (i2 <= i || i > i3) {
-                tmpKeyline3 = tmpKeyline2;
-                z = false;
+                i4 = 0;
             } else {
-                tmpKeyline3 = tmpKeyline2;
+                i4 = 0;
                 z = true;
             }
+            int i5 = i4;
             arrayList.add(new Keyline(size2, f, f, z, tmpKeyline3.isAnchor(), true, f5));
-            float f6 = 2;
-            float f7 = f2 / f6;
-            float f8 = (f - f7) - f4;
-            it = RangesKt.downTo(i - 1, 0).iterator();
-            float f9 = f8;
+            float f6 = f2 / 2.0f;
+            float f7 = (f - f6) - f4;
+            it = RangesKt.downTo(i - 1, i5).iterator();
+            float f8 = f7;
             while (it.hasNext()) {
                 int nextInt = ((IntIterator) it).nextInt();
-                TmpKeyline tmpKeyline5 = list.get(nextInt);
-                float size3 = f8 - (tmpKeyline5.getSize() / f6);
-                arrayList.add(0, new Keyline(tmpKeyline5.getSize(), size3, f9 - f7, i2 <= nextInt && nextInt <= i3, tmpKeyline5.isAnchor(), false, isCutoffLeft(tmpKeyline5.getSize(), size3) ? Math.abs(size3 - (tmpKeyline5.getSize() / f6)) : 0.0f));
-                f8 -= tmpKeyline5.getSize() + f4;
-                f9 -= f2 + f4;
+                TmpKeyline tmpKeyline4 = list.get(nextInt);
+                float size3 = f7 - (tmpKeyline4.getSize() / 2.0f);
+                arrayList.add(i5, new Keyline(tmpKeyline4.getSize(), size3, f8 - f6, (i2 > nextInt || nextInt > i3) ? i5 : 1, tmpKeyline4.isAnchor(), false, isCutoffLeft(tmpKeyline4.getSize(), size3) ? Math.abs(size3 - (tmpKeyline4.getSize() / 2.0f)) : 0.0f));
+                f7 -= tmpKeyline4.getSize() + f4;
+                f8 -= f2 + f4;
             }
-            float f10 = f + f7 + f4;
+            float f9 = f + f6 + f4;
             it2 = RangesKt.until(i + 1, list.size()).iterator();
-            float f11 = f10;
+            float f10 = f9;
             while (it2.hasNext()) {
                 int nextInt2 = ((IntIterator) it2).nextInt();
-                TmpKeyline tmpKeyline6 = list.get(nextInt2);
-                float size4 = (tmpKeyline6.getSize() / f6) + f10;
-                arrayList.add(new Keyline(tmpKeyline6.getSize(), size4, f11 + f7, i2 <= nextInt2 && nextInt2 <= i3, tmpKeyline6.isAnchor(), false, isCutoffRight(tmpKeyline6.getSize(), size4, f3) ? ((tmpKeyline6.getSize() / f6) + size4) - f3 : 0.0f));
-                f10 += tmpKeyline6.getSize() + f4;
-                f11 += f2 + f4;
+                TmpKeyline tmpKeyline5 = list.get(nextInt2);
+                float size4 = (tmpKeyline5.getSize() / 2.0f) + f9;
+                arrayList.add(new Keyline(tmpKeyline5.getSize(), size4, f10 + f6, (i2 > nextInt2 || nextInt2 > i3) ? i5 : 1, tmpKeyline5.isAnchor(), false, isCutoffRight(tmpKeyline5.getSize(), size4, f3) ? ((tmpKeyline5.getSize() / 2.0f) + size4) - f3 : 0.0f));
+                f9 += tmpKeyline5.getSize() + f4;
+                f10 += f2 + f4;
             }
             return arrayList;
         }
         f5 = size;
-        tmpKeyline = tmpKeyline4;
-        tmpKeyline2 = tmpKeyline;
-        float size22 = tmpKeyline2.getSize();
+        tmpKeyline = tmpKeyline2;
+        TmpKeyline tmpKeyline32 = tmpKeyline;
+        float size22 = tmpKeyline32.getSize();
+        boolean z2 = false;
         if (i2 <= i) {
         }
-        tmpKeyline3 = tmpKeyline2;
-        z = false;
-        arrayList.add(new Keyline(size22, f, f, z, tmpKeyline3.isAnchor(), true, f5));
-        float f62 = 2;
-        float f72 = f2 / f62;
-        float f82 = (f - f72) - f4;
-        it = RangesKt.downTo(i - 1, 0).iterator();
-        float f92 = f82;
+        i4 = 0;
+        int i52 = i4;
+        arrayList.add(new Keyline(size22, f, f, z2, tmpKeyline32.isAnchor(), true, f5));
+        float f62 = f2 / 2.0f;
+        float f72 = (f - f62) - f4;
+        it = RangesKt.downTo(i - 1, i52).iterator();
+        float f82 = f72;
         while (it.hasNext()) {
         }
-        float f102 = f + f72 + f4;
+        float f92 = f + f62 + f4;
         it2 = RangesKt.until(i + 1, list.size()).iterator();
-        float f112 = f102;
+        float f102 = f92;
         while (it2.hasNext()) {
         }
         return arrayList;

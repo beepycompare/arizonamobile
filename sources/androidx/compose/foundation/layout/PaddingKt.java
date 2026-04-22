@@ -130,16 +130,16 @@ public final class PaddingKt {
     /* renamed from: padding-qDBjuR0$default */
     public static /* synthetic */ Modifier m822paddingqDBjuR0$default(Modifier modifier, float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m7555constructorimpl(0);
+            f3 = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m7555constructorimpl(0);
+            f4 = Dp.m7555constructorimpl(0.0f);
         }
         return m821paddingqDBjuR0(modifier, f, f2, f3, f4);
     }
@@ -147,10 +147,10 @@ public final class PaddingKt {
     /* renamed from: padding-VpY3zN4$default */
     public static /* synthetic */ Modifier m820paddingVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         return m819paddingVpY3zN4(modifier, f, f2);
     }
@@ -158,16 +158,16 @@ public final class PaddingKt {
     /* renamed from: absolutePadding-qDBjuR0$default */
     public static /* synthetic */ Modifier m817absolutePaddingqDBjuR0$default(Modifier modifier, float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m7555constructorimpl(0);
+            f3 = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m7555constructorimpl(0);
+            f4 = Dp.m7555constructorimpl(0.0f);
         }
         return m816absolutePaddingqDBjuR0(modifier, f, f2, f3, f4);
     }
@@ -175,10 +175,10 @@ public final class PaddingKt {
     /* renamed from: PaddingValues-YgX7TsA$default */
     public static /* synthetic */ PaddingValues m813PaddingValuesYgX7TsA$default(float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         return m812PaddingValuesYgX7TsA(f, f2);
     }
@@ -186,16 +186,16 @@ public final class PaddingKt {
     /* renamed from: PaddingValues-a9UjIt4$default */
     public static /* synthetic */ PaddingValues m815PaddingValuesa9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m7555constructorimpl(0);
+            f3 = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m7555constructorimpl(0);
+            f4 = Dp.m7555constructorimpl(0.0f);
         }
         return m814PaddingValuesa9UjIt4(f, f2, f3, f4);
     }

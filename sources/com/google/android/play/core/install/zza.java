@@ -41,8 +41,9 @@ public final class zza extends InstallState {
 
     public final int hashCode() {
         long j = this.zzb;
-        long j2 = this.zzc;
-        return ((((((((this.zza ^ 1000003) * 1000003) ^ ((int) (j ^ (j >>> 32)))) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.zzd) * 1000003) ^ this.zze.hashCode();
+        long j2 = j ^ (j >>> 32);
+        long j3 = this.zzc;
+        return this.zze.hashCode() ^ ((((((((this.zza ^ 1000003) * 1000003) ^ ((int) j2)) * 1000003) ^ ((int) ((j3 >>> 32) ^ j3))) * 1000003) ^ this.zzd) * 1000003);
     }
 
     @Override // com.google.android.play.core.install.InstallState

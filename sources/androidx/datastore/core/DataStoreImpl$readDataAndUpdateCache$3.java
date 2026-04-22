@@ -57,8 +57,8 @@ public final class DataStoreImpl$readDataAndUpdateCache$3<T> extends SuspendLamb
             this.label = 2;
             Object version = this.this$0.getCoordinator().getVersion(this);
             if (version != coroutine_suspended) {
-                th = th2;
                 obj = version;
+                th = th2;
             }
         }
         if (i == 0) {

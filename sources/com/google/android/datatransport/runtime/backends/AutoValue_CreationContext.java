@@ -67,6 +67,6 @@ final class AutoValue_CreationContext extends CreationContext {
     }
 
     public int hashCode() {
-        return ((((((this.applicationContext.hashCode() ^ 1000003) * 1000003) ^ this.wallClock.hashCode()) * 1000003) ^ this.monotonicClock.hashCode()) * 1000003) ^ this.backendName.hashCode();
+        return this.backendName.hashCode() ^ ((((((this.applicationContext.hashCode() ^ 1000003) * 1000003) ^ this.wallClock.hashCode()) * 1000003) ^ this.monotonicClock.hashCode()) * 1000003);
     }
 }

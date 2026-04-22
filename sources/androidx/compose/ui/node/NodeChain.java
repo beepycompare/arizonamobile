@@ -667,11 +667,11 @@ public final class NodeChain {
 
     /* renamed from: has-H91voCI$ui */
     public final boolean m6496hasH91voCI$ui(int i) {
-        return (i & getAggregateChildKindSet()) != 0;
+        return (getAggregateChildKindSet() & i) != 0;
     }
 
     public final boolean has$ui(int i) {
-        return (i & getAggregateChildKindSet()) != 0;
+        return (getAggregateChildKindSet() & i) != 0;
     }
 
     public String toString() {
@@ -891,9 +891,9 @@ public final class NodeChain {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v20 */
-    /* JADX WARN: Type inference failed for: r2v23 */
-    /* JADX WARN: Type inference failed for: r2v25 */
+    /* JADX WARN: Type inference failed for: r0v22 */
+    /* JADX WARN: Type inference failed for: r0v25 */
+    /* JADX WARN: Type inference failed for: r0v27 */
     /* renamed from: tail-H91voCI$ui */
     public final /* synthetic */ <T> T m6499tailH91voCI$ui(int i) {
         if ((getAggregateChildKindSet() & i) != 0) {
@@ -944,9 +944,9 @@ public final class NodeChain {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v22 */
-    /* JADX WARN: Type inference failed for: r2v25 */
-    /* JADX WARN: Type inference failed for: r2v27 */
+    /* JADX WARN: Type inference failed for: r0v24 */
+    /* JADX WARN: Type inference failed for: r0v27 */
+    /* JADX WARN: Type inference failed for: r0v29 */
     /* renamed from: head-H91voCI$ui */
     public final /* synthetic */ <T> T m6497headH91voCI$ui(int i) {
         if ((getAggregateChildKindSet() & i) != 0) {

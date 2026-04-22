@@ -380,11 +380,11 @@ public class LoginButton extends Button {
     public void handleError(Exception exc) {
         if (this.properties.onErrorListener != null) {
             boolean z = exc instanceof FacebookException;
-            LoginButtonProperties loginButtonProperties = this.properties;
+            OnErrorListener onErrorListener = this.properties.onErrorListener;
             if (z) {
-                loginButtonProperties.onErrorListener.onError((FacebookException) exc);
+                onErrorListener.onError((FacebookException) exc);
             } else {
-                loginButtonProperties.onErrorListener.onError(new FacebookException(exc));
+                onErrorListener.onError(new FacebookException(exc));
             }
         }
     }

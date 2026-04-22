@@ -52,9 +52,9 @@ final class FlowLiveDataConversions$asFlow$1<T> extends SuspendLambda implements
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v0, types: [int] */
     /* JADX WARN: Type inference failed for: r1v1, types: [androidx.lifecycle.Observer] */
+    /* JADX WARN: Type inference failed for: r1v11 */
     /* JADX WARN: Type inference failed for: r1v12 */
-    /* JADX WARN: Type inference failed for: r1v13 */
-    /* JADX WARN: Type inference failed for: r1v7 */
+    /* JADX WARN: Type inference failed for: r1v6 */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Observer observer;

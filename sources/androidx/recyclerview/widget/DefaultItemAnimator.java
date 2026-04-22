@@ -153,9 +153,9 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         };
         if (!isEmpty || !isEmpty2 || !isEmpty3) {
             ViewCompat.postOnAnimationDelayed(arrayList3.get(0).itemView, runnable3, (!isEmpty ? getRemoveDuration() : 0L) + Math.max(!isEmpty2 ? getMoveDuration() : 0L, isEmpty3 ? 0L : getChangeDuration()));
-        } else {
-            runnable3.run();
+            return;
         }
+        runnable3.run();
     }
 
     @Override // androidx.recyclerview.widget.SimpleItemAnimator

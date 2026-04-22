@@ -109,16 +109,13 @@ public final class FloatingActionButtonElevationAnimatable {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0036  */
-    /* JADX WARN: Type inference failed for: r6v0, types: [androidx.compose.foundation.interaction.Interaction, java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r6v1, types: [androidx.compose.foundation.interaction.Interaction] */
-    /* JADX WARN: Type inference failed for: r6v3, types: [kotlin.Unit, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r5v2, types: [kotlin.Unit, java.lang.Object] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object animateElevation(Interaction interaction, Continuation<? super Unit> continuation) {
         FloatingActionButtonElevationAnimatable$animateElevation$1 floatingActionButtonElevationAnimatable$animateElevation$1;
         int i;
-        Interaction interaction2;
         try {
             if (continuation instanceof FloatingActionButtonElevationAnimatable$animateElevation$1) {
                 floatingActionButtonElevationAnimatable$animateElevation$1 = (FloatingActionButtonElevationAnimatable$animateElevation$1) continuation;
@@ -131,35 +128,31 @@ public final class FloatingActionButtonElevationAnimatable {
                         ResultKt.throwOnFailure(obj);
                         float m2109calculateTargetu2uoSUM = m2109calculateTargetu2uoSUM(interaction);
                         this.targetInteraction = interaction;
-                        interaction2 = interaction;
                         if (!Dp.m7560equalsimpl0(this.animatable.getTargetValue().m7569unboximpl(), m2109calculateTargetu2uoSUM)) {
                             Animatable<Dp, AnimationVector1D> animatable = this.animatable;
-                            Interaction interaction3 = this.lastTargetInteraction;
+                            Interaction interaction2 = this.lastTargetInteraction;
                             floatingActionButtonElevationAnimatable$animateElevation$1.L$0 = interaction;
                             floatingActionButtonElevationAnimatable$animateElevation$1.label = 1;
-                            Object m3003animateElevationrAjV9yQ = ElevationKt.m3003animateElevationrAjV9yQ(animatable, m2109calculateTargetu2uoSUM, interaction3, interaction, floatingActionButtonElevationAnimatable$animateElevation$1);
-                            interaction2 = interaction;
-                            if (m3003animateElevationrAjV9yQ == coroutine_suspended) {
+                            if (ElevationKt.m3003animateElevationrAjV9yQ(animatable, m2109calculateTargetu2uoSUM, interaction2, interaction, floatingActionButtonElevationAnimatable$animateElevation$1) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         }
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        Interaction interaction4 = (Interaction) floatingActionButtonElevationAnimatable$animateElevation$1.L$0;
+                        interaction = (Interaction) floatingActionButtonElevationAnimatable$animateElevation$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                        interaction2 = interaction4;
                     }
-                    this.lastTargetInteraction = interaction2;
-                    interaction = Unit.INSTANCE;
-                    return interaction;
+                    this.lastTargetInteraction = interaction;
+                    this = Unit.INSTANCE;
+                    return this;
                 }
             }
             if (i != 0) {
             }
-            this.lastTargetInteraction = interaction2;
-            interaction = Unit.INSTANCE;
-            return interaction;
+            this.lastTargetInteraction = interaction;
+            this = Unit.INSTANCE;
+            return this;
         } catch (Throwable th) {
             this.lastTargetInteraction = interaction;
             throw th;

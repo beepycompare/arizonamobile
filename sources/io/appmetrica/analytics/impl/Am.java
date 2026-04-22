@@ -41,32 +41,34 @@ public final class Am {
     public final synchronized NetworkTask c() {
         NetworkTask networkTask;
         try {
-            try {
-                if (g()) {
-                    networkTask = this.b;
-                    if (networkTask != null && !networkTask.isRemoved()) {
-                    }
+            if (g()) {
+                networkTask = this.b;
+                if (networkTask == null || networkTask.isRemoved()) {
                     C0153bm d = d();
                     Vd vd = Vd.f827a;
                     Xl xl = new Xl(new C0274ge(), C0448na.I.p());
                     FinalConfigProvider finalConfigProvider = new FinalConfigProvider(d);
+                    SynchronizedBlockingExecutor synchronizedBlockingExecutor = new SynchronizedBlockingExecutor();
+                    C0493p5 c0493p5 = new C0493p5(this.f503a.f525a);
+                    AllHostsExponentialBackoffPolicy allHostsExponentialBackoffPolicy = new AllHostsExponentialBackoffPolicy(Vd.f827a.a(Td.STARTUP));
                     try {
-                        NetworkTask networkTask2 = new NetworkTask(new SynchronizedBlockingExecutor(), new C0493p5(this.f503a.f525a), new AllHostsExponentialBackoffPolicy(Vd.f827a.a(Td.STARTUP)), new C0734ym(this, new Rl(), new FullUrlFormer(xl, finalConfigProvider), new RequestDataHolder(), new ResponseDataHolder(new DefaultResponseValidityChecker()), finalConfigProvider), CollectionsKt.emptyList(), Vd.c);
+                        C0734ym c0734ym = new C0734ym(this, new Rl(), new FullUrlFormer(xl, finalConfigProvider), new RequestDataHolder(), new ResponseDataHolder(new DefaultResponseValidityChecker()), finalConfigProvider);
+                        this = this;
+                        NetworkTask networkTask2 = new NetworkTask(synchronizedBlockingExecutor, c0493p5, allHostsExponentialBackoffPolicy, c0734ym, CollectionsKt.emptyList(), Vd.c);
                         this.b = networkTask2;
                         networkTask = networkTask2;
                     } catch (Throwable th) {
                         th = th;
+                        this = this;
                         throw th;
                     }
-                } else {
-                    networkTask = null;
                 }
-                return networkTask;
-            } catch (Throwable th2) {
-                th = th2;
+            } else {
+                networkTask = null;
             }
-        } catch (Throwable th3) {
-            th = th3;
+            return networkTask;
+        } catch (Throwable th2) {
+            th = th2;
         }
     }
 

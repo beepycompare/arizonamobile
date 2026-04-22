@@ -18,6 +18,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.SystemClock;
+import android.support.v4.media.session.PlaybackStateCompat;
 import android.util.Log;
 import android.widget.Toast;
 import androidx.activity.ComponentActivity;
@@ -371,7 +372,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v17.1.1 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v17.1.2 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -596,7 +597,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            AndroidView_androidKt.AndroidView(rememberedValue3, SizeKt.m850height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7555constructorimpl(1)), null, startRestartGroup, 48, 4);
+            AndroidView_androidKt.AndroidView(rememberedValue3, SizeKt.m850height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7555constructorimpl(1.0f)), null, startRestartGroup, 48, 4);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -647,17 +648,17 @@ public final class MainEntrench extends Hilt_MainEntrench {
     public final String convertBytesToHumanReadable(long j) {
         if (j >= 1073741824) {
             StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-            String format = String.format("%.2f Gb.", Arrays.copyOf(new Object[]{Double.valueOf(j / 1073741824)}, 1));
+            String format = String.format("%.2f Gb.", Arrays.copyOf(new Object[]{Double.valueOf(j / 1.073741824E9d)}, 1));
             Intrinsics.checkNotNullExpressionValue(format, "format(...)");
             return format;
-        } else if (j >= 1048576) {
+        } else if (j >= PlaybackStateCompat.ACTION_SET_CAPTIONING_ENABLED) {
             StringCompanionObject stringCompanionObject2 = StringCompanionObject.INSTANCE;
-            String format2 = String.format("%.2f Mb.", Arrays.copyOf(new Object[]{Double.valueOf(j / 1048576)}, 1));
+            String format2 = String.format("%.2f Mb.", Arrays.copyOf(new Object[]{Double.valueOf(j / 1048576.0d)}, 1));
             Intrinsics.checkNotNullExpressionValue(format2, "format(...)");
             return format2;
         } else if (j >= 1024) {
             StringCompanionObject stringCompanionObject3 = StringCompanionObject.INSTANCE;
-            String format3 = String.format("%.2f Kb.", Arrays.copyOf(new Object[]{Double.valueOf(j / 1024)}, 1));
+            String format3 = String.format("%.2f Kb.", Arrays.copyOf(new Object[]{Double.valueOf(j / 1024.0d)}, 1));
             Intrinsics.checkNotNullExpressionValue(format3, "format(...)");
             return format3;
         } else {

@@ -355,7 +355,6 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
     public final Object handleUpdate(Message.Update<T> update, Continuation<? super Unit> continuation) {
         DataStoreImpl$handleUpdate$1 dataStoreImpl$handleUpdate$1;
         int i;
-        Throwable th;
         CompletableDeferred<T> completableDeferred;
         Object m9183constructorimpl;
         if (continuation instanceof DataStoreImpl$handleUpdate$1) {
@@ -379,8 +378,8 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
                         }
                         obj = withContext;
                         completableDeferred = ack;
-                    } catch (Throwable th2) {
-                        th = th2;
+                    } catch (Throwable th) {
+                        th = th;
                         completableDeferred = ack;
                         Result.Companion companion2 = Result.Companion;
                         m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
@@ -393,8 +392,8 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
                     completableDeferred = (CompletableDeferred) dataStoreImpl$handleUpdate$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th3) {
-                        th = th3;
+                    } catch (Throwable th2) {
+                        th = th2;
                         Result.Companion companion22 = Result.Companion;
                         m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
                         CompletableDeferredKt.completeWith(completableDeferred, m9183constructorimpl);

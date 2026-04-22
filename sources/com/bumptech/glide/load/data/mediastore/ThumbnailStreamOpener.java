@@ -92,15 +92,17 @@ class ThumbnailStreamOpener {
         return null;
     }
 
-    /* JADX WARN: Not initialized variable reg: 3, insn: 0x0048: MOVE  (r2 I:??[OBJECT, ARRAY]) = (r3 I:??[OBJECT, ARRAY]), block:B:28:0x0048 */
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:30:0x004b  */
+    /* JADX WARN: Type inference failed for: r2v0 */
+    /* JADX WARN: Type inference failed for: r2v1, types: [android.database.Cursor] */
+    /* JADX WARN: Type inference failed for: r2v2 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private String getPath(Uri uri) {
         Cursor cursor;
-        Cursor cursor2;
-        Cursor cursor3 = null;
+        ?? r2 = 0;
         try {
             try {
                 cursor = this.query.query(uri);
@@ -130,9 +132,9 @@ class ThumbnailStreamOpener {
                 return null;
             } catch (Throwable th) {
                 th = th;
-                cursor3 = cursor2;
-                if (cursor3 != null) {
-                    cursor3.close();
+                r2 = this;
+                if (r2 != 0) {
+                    r2.close();
                 }
                 throw th;
             }
@@ -141,7 +143,7 @@ class ThumbnailStreamOpener {
             cursor = null;
         } catch (Throwable th2) {
             th = th2;
-            if (cursor3 != null) {
+            if (r2 != 0) {
             }
             throw th;
         }

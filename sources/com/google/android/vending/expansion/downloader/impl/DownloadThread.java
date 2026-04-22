@@ -320,8 +320,8 @@ public class DownloadThread {
         try {
             return httpResponse.getEntity().getContent();
         } catch (IOException e) {
-            logNetworkState();
-            throw new StopRequest(getFinalStatusForHttpError(state), "while getting entity: " + e.toString(), e);
+            this.logNetworkState();
+            throw new StopRequest(this.getFinalStatusForHttpError(state), "while getting entity: " + e.toString(), e);
         }
     }
 
@@ -354,13 +354,13 @@ public class DownloadThread {
         try {
             return inputStream.read(bArr);
         } catch (IOException e) {
-            logNetworkState();
+            this.logNetworkState();
             this.mInfo.mCurrentBytes = innerState.mBytesSoFar;
             this.mDB.updateDownload(this.mInfo);
-            if (cannotResume(innerState)) {
+            if (this.cannotResume(innerState)) {
                 throw new StopRequest(489, "while reading response: " + e.toString() + ", can't resume interrupted download with no ETag", e);
             }
-            throw new StopRequest(getFinalStatusForHttpError(state), "while reading response: " + e.toString(), e);
+            throw new StopRequest(this.getFinalStatusForHttpError(state), "while reading response: " + e.toString(), e);
         }
     }
 
@@ -414,8 +414,8 @@ public class DownloadThread {
         try {
             return androidHttpClient.execute(httpGet);
         } catch (IOException e) {
-            logNetworkState();
-            throw new StopRequest(getFinalStatusForHttpError(state), "while trying to execute request: " + e.toString(), e);
+            this.logNetworkState();
+            throw new StopRequest(this.getFinalStatusForHttpError(state), "while trying to execute request: " + e.toString(), e);
         } catch (IllegalArgumentException e2) {
             throw new StopRequest(495, "while trying to execute request: " + e2.toString(), e2);
         }

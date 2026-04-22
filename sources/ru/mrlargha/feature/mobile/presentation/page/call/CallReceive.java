@@ -126,8 +126,7 @@ public final class CallReceive implements MobileController {
             public void onTick(long j) {
                 MobilePhoneReceiveCallPageBinding mobilePhoneReceiveCallPageBinding;
                 StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-                long j2 = 60;
-                String format = String.format(Locale.getDefault(), "%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(TimeUnit.MILLISECONDS.toMinutes(this.$day - j) % j2), Long.valueOf(TimeUnit.MILLISECONDS.toSeconds(this.$day - j) % j2)}, 2));
+                String format = String.format(Locale.getDefault(), "%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(TimeUnit.MILLISECONDS.toMinutes(this.$day - j) % 60), Long.valueOf(TimeUnit.MILLISECONDS.toSeconds(this.$day - j) % 60)}, 2));
                 Intrinsics.checkNotNullExpressionValue(format, "format(...)");
                 System.out.println("Time : " + format);
                 mobilePhoneReceiveCallPageBinding = this.this$0.mpReceiveCallBinding;

@@ -36,7 +36,7 @@ public final class XorWowRandom extends Random implements Serializable {
     }
 
     private final void checkInvariants() {
-        if ((this.x | this.y | this.z | this.w | this.v) == 0) {
+        if ((this.v | this.x | this.y | this.z | this.w) == 0) {
             throw new IllegalArgumentException("Initial state must have at least one non-zero element.".toString());
         }
     }

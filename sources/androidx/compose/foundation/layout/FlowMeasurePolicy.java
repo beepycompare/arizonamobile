@@ -339,19 +339,18 @@ public final class FlowMeasurePolicy implements MultiContentMeasurePolicy, FlowL
     }
 
     public final int minIntrinsicMainAxisSize(List<? extends IntrinsicMeasurable> list, int i, int i2, int i3, int i4, int i5, FlowLayoutOverflowState flowLayoutOverflowState) {
-        List<? extends IntrinsicMeasurable> list2 = list;
         int i6 = i4;
         int i7 = i5;
-        if (list2.isEmpty()) {
+        if (list.isEmpty()) {
             return 0;
         }
-        int size = list2.size();
+        int size = list.size();
         int[] iArr = new int[size];
-        int size2 = list2.size();
+        int size2 = list.size();
         int[] iArr2 = new int[size2];
-        int size3 = list2.size();
+        int size3 = list.size();
         for (int i8 = 0; i8 < size3; i8++) {
-            IntrinsicMeasurable intrinsicMeasurable = list2.get(i8);
+            IntrinsicMeasurable intrinsicMeasurable = list.get(i8);
             int minMainAxisIntrinsicItemSize = minMainAxisIntrinsicItemSize(intrinsicMeasurable, i);
             iArr[i8] = minMainAxisIntrinsicItemSize;
             iArr2[i8] = minCrossAxisIntrinsicItemSize(intrinsicMeasurable, minMainAxisIntrinsicItemSize);
@@ -361,8 +360,8 @@ public final class FlowMeasurePolicy implements MultiContentMeasurePolicy, FlowL
             i9 = i6 * i7;
         }
         int i10 = 1;
-        int min = Math.min(i9 - (((i9 >= list2.size() || !(flowLayoutOverflowState.getType$foundation_layout() == FlowLayoutOverflow.OverflowType.ExpandIndicator || flowLayoutOverflowState.getType$foundation_layout() == FlowLayoutOverflow.OverflowType.ExpandOrCollapseIndicator)) && (i9 < list2.size() || i7 < flowLayoutOverflowState.getMinLinesToShowCollapse$foundation_layout() || flowLayoutOverflowState.getType$foundation_layout() != FlowLayoutOverflow.OverflowType.ExpandOrCollapseIndicator)) ? 0 : 1), list2.size());
-        int sum = ArraysKt.sum(iArr) + ((list2.size() - 1) * i2);
+        int min = Math.min(i9 - (((i9 >= list.size() || !(flowLayoutOverflowState.getType$foundation_layout() == FlowLayoutOverflow.OverflowType.ExpandIndicator || flowLayoutOverflowState.getType$foundation_layout() == FlowLayoutOverflow.OverflowType.ExpandOrCollapseIndicator)) && (i9 < list.size() || i7 < flowLayoutOverflowState.getMinLinesToShowCollapse$foundation_layout() || flowLayoutOverflowState.getType$foundation_layout() != FlowLayoutOverflow.OverflowType.ExpandOrCollapseIndicator)) ? 0 : 1), list.size());
+        int sum = ArraysKt.sum(iArr) + ((list.size() - 1) * i2);
         if (size2 != 0) {
             int i11 = iArr2[0];
             int lastIndex = ArraysKt.getLastIndex(iArr2);
@@ -398,7 +397,7 @@ public final class FlowMeasurePolicy implements MultiContentMeasurePolicy, FlowL
                 int i17 = sum;
                 while (i16 <= i17 && i11 != i) {
                     int i18 = (i16 + i17) / 2;
-                    long intrinsicCrossAxisSize = FlowLayoutKt.intrinsicCrossAxisSize(list2, iArr, iArr2, i18, i2, i3, i6, i7, flowLayoutOverflowState);
+                    long intrinsicCrossAxisSize = FlowLayoutKt.intrinsicCrossAxisSize(list, iArr, iArr2, i18, i2, i3, i6, i7, flowLayoutOverflowState);
                     i11 = IntIntPair.m28getFirstimpl(intrinsicCrossAxisSize);
                     int m29getSecondimpl = IntIntPair.m29getSecondimpl(intrinsicCrossAxisSize);
                     if (i11 > i || m29getSecondimpl < min) {
@@ -411,7 +410,6 @@ public final class FlowMeasurePolicy implements MultiContentMeasurePolicy, FlowL
                     } else {
                         i17 = i18 - 1;
                     }
-                    list2 = list;
                     i6 = i4;
                     i7 = i5;
                     sum = i18;

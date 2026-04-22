@@ -37,7 +37,7 @@ public final class HctSolver {
 
     private final double trueDelinearized(double d) {
         double d2 = d / 100.0d;
-        return (d2 <= 0.0031308d ? d2 * 12.92d : (Math.pow(d2, 0.4166666666666667d) * 1.055d) - 0.055d) * 255;
+        return (d2 <= 0.0031308d ? d2 * 12.92d : (Math.pow(d2, 0.4166666666666667d) * 1.055d) - 0.055d) * 255.0d;
     }
 
     private final double chromaticAdaptation(double d) {
@@ -203,15 +203,15 @@ public final class HctSolver {
                     double hueOf2 = hctSolver.hueOf(coordinate);
                     double d6 = d5;
                     if (hctSolver.areInCyclicOrder(d6, d2, hueOf2)) {
-                        d5 = d6;
                         i5 = floor;
                         dArr3 = coordinate;
+                        d5 = d6;
                         dArr4 = dArr5;
                     } else {
-                        d5 = hueOf2;
                         i3 = floor;
                         dArr4 = coordinate;
                         dArr3 = dArr6;
+                        d5 = hueOf2;
                     }
                     i4++;
                     hctSolver = this;
@@ -225,8 +225,7 @@ public final class HctSolver {
             i2 = i + 1;
             hctSolver = this;
         }
-        double d7 = 2;
-        return CamUtils.INSTANCE.argbFromLinrgbComponents((dArr[0] + dArr2[0]) / d7, (dArr[1] + dArr2[1]) / d7, (dArr[2] + dArr2[2]) / d7);
+        return CamUtils.INSTANCE.argbFromLinrgbComponents((dArr[0] + dArr2[0]) / 2.0d, (dArr[1] + dArr2[1]) / 2.0d, (dArr[2] + dArr2[2]) / 2.0d);
     }
 
     private final double inverseChromaticAdaptation(double d) {
@@ -235,60 +234,59 @@ public final class HctSolver {
     }
 
     private final int findResultByJ(double d, double d2, double d3) {
-        HctSolver hctSolver = this;
         double sqrt = Math.sqrt(d3) * 11.0d;
         Frame frame = Frame.Companion.getDefault();
-        char c = 1;
-        double pow = 1 / Math.pow(1.64d - Math.pow(0.29d, frame.getN()), 0.73d);
+        double d4 = 1.0d;
+        double pow = 1.0d / Math.pow(1.64d - Math.pow(0.29d, frame.getN()), 0.73d);
+        double d5 = 2.0d;
         double cos = (Math.cos(d + 2.0d) + 3.8d) * 0.25d * 3846.153846153846d * frame.getNc() * frame.getNcb();
         double sin = Math.sin(d);
         double cos2 = Math.cos(d);
         int i = 0;
         while (i < 5) {
-            char c2 = c;
-            double d4 = pow;
-            double d5 = sqrt / 100.0d;
-            int i2 = i;
-            double d6 = sqrt;
-            double pow2 = Math.pow(((d2 == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE || sqrt == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) ? 0.0d : d2 / Math.sqrt(d5)) * d4, 1.1111111111111112d);
-            double aw = (frame.getAw() * Math.pow(d5, (1.0d / frame.getC()) / frame.getZ())) / frame.getNbb();
-            double d7 = (((0.305d + aw) * 23.0d) * pow2) / (((23.0d * cos) + ((11 * pow2) * cos2)) + ((108.0d * pow2) * sin));
-            double d8 = d7 * cos2;
-            double d9 = d7 * sin;
-            double d10 = 460.0d * aw;
+            double d6 = d4;
+            double d7 = sqrt / 100.0d;
+            double d8 = d5;
+            double d9 = sqrt;
+            double pow2 = Math.pow(((d2 == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE || sqrt == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) ? 0.0d : d2 / Math.sqrt(d7)) * pow, 1.1111111111111112d);
+            double aw = (frame.getAw() * Math.pow(d7, (d6 / frame.getC()) / frame.getZ())) / frame.getNbb();
+            double d10 = (((0.305d + aw) * 23.0d) * pow2) / (((23.0d * cos) + ((11.0d * pow2) * cos2)) + ((pow2 * 108.0d) * sin));
+            double d11 = d10 * cos2;
+            double d12 = d10 * sin;
+            double d13 = aw * 460.0d;
+            double d14 = (d13 - (891.0d * d11)) - (261.0d * d12);
             Frame frame2 = frame;
-            double inverseChromaticAdaptation = hctSolver.inverseChromaticAdaptation((((451.0d * d8) + d10) + (288.0d * d9)) / 1403.0d);
-            double inverseChromaticAdaptation2 = hctSolver.inverseChromaticAdaptation(((d10 - (891.0d * d8)) - (261.0d * d9)) / 1403.0d);
-            double inverseChromaticAdaptation3 = hctSolver.inverseChromaticAdaptation(((d10 - (220.0d * d8)) - (6300.0d * d9)) / 1403.0d);
+            double inverseChromaticAdaptation = inverseChromaticAdaptation(((d13 + (451.0d * d11)) + (288.0d * d12)) / 1403.0d);
+            double inverseChromaticAdaptation2 = inverseChromaticAdaptation(d14 / 1403.0d);
+            double inverseChromaticAdaptation3 = inverseChromaticAdaptation(((d13 - (d11 * 220.0d)) - (d12 * 6300.0d)) / 1403.0d);
             double[][] dArr = LINRGB_FROM_SCALED_DISCOUNT;
             double[] dArr2 = dArr[0];
-            double d11 = (dArr2[0] * inverseChromaticAdaptation) + (dArr2[c2] * inverseChromaticAdaptation2) + (dArr2[2] * inverseChromaticAdaptation3);
-            double[] dArr3 = dArr[c2];
-            double d12 = (dArr3[0] * inverseChromaticAdaptation) + (dArr3[c2] * inverseChromaticAdaptation2) + (dArr3[2] * inverseChromaticAdaptation3);
+            double d15 = (dArr2[0] * inverseChromaticAdaptation) + (dArr2[1] * inverseChromaticAdaptation2) + (dArr2[2] * inverseChromaticAdaptation3);
+            double[] dArr3 = dArr[1];
+            double d16 = (dArr3[0] * inverseChromaticAdaptation) + (dArr3[1] * inverseChromaticAdaptation2) + (dArr3[2] * inverseChromaticAdaptation3);
             double[] dArr4 = dArr[2];
-            double d13 = (inverseChromaticAdaptation * dArr4[0]) + (inverseChromaticAdaptation2 * dArr4[c2]) + (inverseChromaticAdaptation3 * dArr4[2]);
-            if (d11 >= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE && d12 >= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE && d13 >= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
-                double[] dArr5 = Y_FROM_LINRGB;
-                double d14 = (dArr5[0] * d11) + (dArr5[c2] * d12) + (dArr5[2] * d13);
-                if (d14 <= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
-                    return 0;
-                }
-                if (i2 != 4) {
-                    double d15 = d14 - d3;
-                    if (Math.abs(d15) >= 0.002d) {
-                        sqrt = d6 - ((d15 * d6) / (2 * d14));
-                        i = i2 + 1;
-                        hctSolver = this;
-                        c = c2;
-                        pow = d4;
-                        frame = frame2;
-                    }
-                }
-                if (d11 <= 100.01d && d12 <= 100.01d && d13 <= 100.01d) {
-                    return CamUtils.INSTANCE.argbFromLinrgbComponents(d11, d12, d13);
+            double d17 = (inverseChromaticAdaptation * dArr4[0]) + (inverseChromaticAdaptation2 * dArr4[1]) + (inverseChromaticAdaptation3 * dArr4[2]);
+            if (d15 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE || d16 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE || d17 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
+                break;
+            }
+            double[] dArr5 = Y_FROM_LINRGB;
+            double d18 = (dArr5[0] * d15) + (dArr5[1] * d16) + (dArr5[2] * d17);
+            if (d18 <= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
+                return 0;
+            }
+            if (i != 4) {
+                double d19 = d18 - d3;
+                if (Math.abs(d19) >= 0.002d) {
+                    sqrt = d9 - ((d19 * d9) / (d8 * d18));
+                    i++;
+                    d4 = d6;
+                    d5 = d8;
+                    frame = frame2;
                 }
             }
-            return 0;
+            if (d15 <= 100.01d && d16 <= 100.01d && d17 <= 100.01d) {
+                return CamUtils.INSTANCE.argbFromLinrgbComponents(d15, d16, d17);
+            }
         }
         return 0;
     }

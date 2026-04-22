@@ -28,7 +28,7 @@ final class ArcConverter {
         public final List<Cubic> arcToCubics(float f, float f2, float f3, float f4, float f5, float f6, float f7, boolean z, boolean z2) {
             double d;
             double d2;
-            double d3 = (f7 / 180) * 3.141592653589793d;
+            double d3 = (f7 / 180.0d) * 3.141592653589793d;
             double cos = Math.cos(d3);
             double sin = Math.sin(d3);
             double d4 = f2;
@@ -42,27 +42,26 @@ final class ArcConverter {
             double d12 = (((-f3) * sin) + (d10 * cos)) / d8;
             double d13 = d6 - d11;
             double d14 = d9 - d12;
-            double d15 = 2;
-            double d16 = (d6 + d11) / d15;
-            double d17 = (d9 + d12) / d15;
-            double d18 = (d13 * d13) + (d14 * d14);
-            if (d18 == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
+            double d15 = (d6 + d11) / 2.0d;
+            double d16 = (d9 + d12) / 2.0d;
+            double d17 = (d13 * d13) + (d14 * d14);
+            if (d17 == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
                 return CollectionsKt.emptyList();
             }
-            double d19 = (1.0d / d18) - 0.25d;
-            if (d19 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
-                float sqrt = (float) (Math.sqrt(d18) / 1.99999d);
+            double d18 = (1.0d / d17) - 0.25d;
+            if (d18 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
+                float sqrt = (float) (Math.sqrt(d17) / 1.99999d);
                 return arcToCubics(f, f2, f3, f4, f5 * sqrt, f6 * sqrt, f7, z, z2);
             }
-            double sqrt2 = Math.sqrt(d19);
-            double d20 = d13 * sqrt2;
-            double d21 = sqrt2 * d14;
+            double sqrt2 = Math.sqrt(d18);
+            double d19 = d13 * sqrt2;
+            double d20 = sqrt2 * d14;
             if (z == z2) {
-                d = d16 - d21;
-                d2 = d17 + d20;
+                d = d15 - d20;
+                d2 = d16 + d19;
             } else {
-                d = d16 + d21;
-                d2 = d17 - d20;
+                d = d15 + d20;
+                d2 = d16 - d19;
             }
             double atan2 = Math.atan2(d9 - d2, d6 - d);
             double atan22 = Math.atan2(d12 - d2, d11 - d) - atan2;
@@ -70,16 +69,16 @@ final class ArcConverter {
             if (z2 != (i >= 0)) {
                 atan22 = i > 0 ? atan22 - 6.283185307179586d : atan22 + 6.283185307179586d;
             }
-            double d22 = d * d5;
-            double d23 = d2 * d8;
-            return arcToBezier((float) ((d22 * cos) - (d23 * sin)), (float) ((d22 * sin) + (d23 * cos)), f5, f6, f, f2, (float) d3, (float) atan2, (float) atan22);
+            double d21 = d * d5;
+            double d22 = d2 * d8;
+            return arcToBezier((float) ((d21 * cos) - (d22 * sin)), (float) ((d21 * sin) + (d22 * cos)), f5, f6, f, f2, (float) d3, (float) atan2, (float) atan22);
         }
 
         private final List<Cubic> arcToBezier(float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9) {
             float f10;
             ArrayList arrayList = new ArrayList();
-            float f11 = 4;
-            int ceil = (int) Math.ceil(Math.abs((f9 * f11) / 3.141592653589793d));
+            float f11 = 4.0f;
+            int ceil = (int) Math.ceil(Math.abs((f9 * 4.0f) / 3.141592653589793d));
             double d = f7;
             float cos = (float) Math.cos(d);
             float sin = (float) Math.sin(d);
@@ -99,27 +98,28 @@ final class ArcConverter {
             float f21 = f5;
             float f22 = f6;
             while (i < ceil) {
-                float f23 = f12 + f20;
-                float f24 = f11;
+                float f23 = f11;
+                float f24 = f12 + f20;
                 int i2 = ceil;
-                double d3 = f23;
+                float f25 = sin;
+                double d3 = f24;
                 float sin3 = (float) Math.sin(d3);
                 float cos3 = (float) Math.cos(d3);
-                float f25 = (f + ((f3 * cos) * cos3)) - (f15 * sin3);
-                float f26 = f2 + (f3 * sin * cos3) + (f18 * sin3);
-                float f27 = (f14 * sin3) - (f15 * cos3);
-                float f28 = (f17 * sin3) + (cos3 * f18);
-                float f29 = f23 - f12;
-                float tan = (float) Math.tan(f29 / 2);
-                float sin4 = (((float) Math.sin(f29)) * (((float) Math.sqrt(f24 + ((f10 * tan) * tan))) - 1)) / 3;
-                arrayList.add(CubicKt.Cubic(f21, f22, f21 + (f16 * sin4), f22 + (f19 * sin4), f25 - (sin4 * f27), f26 - (sin4 * f28), f25, f26));
+                float f26 = (f + ((f3 * cos) * cos3)) - (f15 * sin3);
+                float f27 = f2 + (f3 * f25 * cos3) + (f18 * sin3);
+                float f28 = (f14 * sin3) - (f15 * cos3);
+                float f29 = (sin3 * f17) + (cos3 * f18);
+                float tan = (float) Math.tan(f10 / 2.0f);
+                float sin4 = (((float) Math.sin(f24 - f12)) * (((float) Math.sqrt(f23 + ((3.0f * tan) * tan))) - 1.0f)) / 3.0f;
+                arrayList.add(CubicKt.Cubic(f21, f22, f21 + (f16 * sin4), f22 + (f19 * sin4), f26 - (sin4 * f28), f27 - (sin4 * f29), f26, f27));
                 i++;
-                f12 = f23;
-                f16 = f27;
-                f19 = f28;
-                f21 = f25;
-                f22 = f26;
-                f11 = f24;
+                f11 = f23;
+                f12 = f24;
+                f16 = f28;
+                f19 = f29;
+                sin = f25;
+                f21 = f26;
+                f22 = f27;
                 ceil = i2;
             }
             return arrayList;

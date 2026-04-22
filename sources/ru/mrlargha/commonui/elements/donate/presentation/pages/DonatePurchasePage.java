@@ -69,14 +69,16 @@ public final class DonatePurchasePage extends DonatePage {
         if (donateItemModelUi != null) {
             this.canPressItem = donateItemModelUi;
         }
-        int i = UtilsKt.getArizonaType(getTargetActivity()) ? 10 : 13;
-        ArrayList arrayList = new ArrayList();
-        for (Object obj : list) {
-            if (((DonateItemModelUi) obj).getCategoryId() == i) {
-                arrayList.add(obj);
+        if (UtilsKt.isArizonaType()) {
+            ArrayList arrayList = new ArrayList();
+            for (Object obj : list) {
+                if (((DonateItemModelUi) obj).getCategoryId() == 10) {
+                    arrayList.add(obj);
+                }
             }
+            list = arrayList;
         }
-        this.purchaseAdapter.submitList(arrayList, new Runnable() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonatePurchasePage$$ExternalSyntheticLambda0
+        this.purchaseAdapter.submitList(list, new Runnable() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonatePurchasePage$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 DonatePurchasePage.this.getOnItemCompleteListeners().itemReadyToShow();

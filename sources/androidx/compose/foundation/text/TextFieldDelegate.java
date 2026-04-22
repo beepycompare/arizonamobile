@@ -160,7 +160,7 @@ public final class TextFieldDelegate {
             function1.invoke(TextFieldValue.m7248copy3r_uNRQ$default(editProcessor.toTextFieldValue(), (AnnotatedString) null, TextRangeKt.TextRange(offsetMapping.transformedToOriginal(TextLayoutResultProxy.m1290getOffsetForPosition3MmeM6k$default(textLayoutResultProxy, j, false, 2, null))), (TextRange) null, 5, (Object) null));
         }
 
-        /* JADX WARN: Type inference failed for: r3v1, types: [T, androidx.compose.ui.text.input.TextInputSession] */
+        /* JADX WARN: Type inference failed for: r2v1, types: [T, androidx.compose.ui.text.input.TextInputSession] */
         @JvmStatic
         public final TextInputSession restartInput$foundation(TextInputService textInputService, TextFieldValue textFieldValue, final EditProcessor editProcessor, ImeOptions imeOptions, final Function1<? super TextFieldValue, Unit> function1, Function1<? super ImeAction, Unit> function12) {
             final Ref.ObjectRef objectRef = new Ref.ObjectRef();

@@ -135,7 +135,7 @@ public final class LookaheadLayoutCoordinates implements LayoutCoordinates {
             long m7687plusqkQi6aY = IntOffset.m7687plusqkQi6aY(IntOffset.m7687plusqkQi6aY(lookaheadDelegate.m6475positionIniSbpLlY$ui(rootLookaheadDelegate, !z), rootLookaheadDelegate.mo6464getPositionnOccac()), IntOffsetKt.m7700roundk4lQ0M(j));
             LookaheadDelegate rootLookaheadDelegate2 = LookaheadLayoutCoordinatesKt.getRootLookaheadDelegate(this.lookaheadDelegate);
             long m7686minusqkQi6aY2 = IntOffset.m7686minusqkQi6aY(m7687plusqkQi6aY, IntOffset.m7687plusqkQi6aY(this.lookaheadDelegate.m6475positionIniSbpLlY$ui(rootLookaheadDelegate2, !z), rootLookaheadDelegate2.mo6464getPositionnOccac()));
-            long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(IntOffset.m7684getYimpl(m7686minusqkQi6aY2)) & 4294967295L) | (Float.floatToRawIntBits(IntOffset.m7683getXimpl(m7686minusqkQi6aY2)) << 32));
+            long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(IntOffset.m7683getXimpl(m7686minusqkQi6aY2)) << 32) | (4294967295L & Float.floatToRawIntBits(IntOffset.m7684getYimpl(m7686minusqkQi6aY2))));
             NodeCoordinator wrappedBy$ui = rootLookaheadDelegate2.getCoordinator().getWrappedBy$ui();
             Intrinsics.checkNotNull(wrappedBy$ui);
             NodeCoordinator wrappedBy$ui2 = rootLookaheadDelegate.getCoordinator().getWrappedBy$ui();

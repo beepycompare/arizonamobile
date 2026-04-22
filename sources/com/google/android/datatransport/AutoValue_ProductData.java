@@ -22,9 +22,9 @@ final class AutoValue_ProductData extends ProductData {
             return true;
         }
         if (obj instanceof ProductData) {
+            ProductData productData = (ProductData) obj;
             Integer num = this.productId;
-            Integer productId = ((ProductData) obj).getProductId();
-            return num == null ? productId == null : num.equals(productId);
+            return num == null ? productData.getProductId() == null : num.equals(productData.getProductId());
         }
         return false;
     }

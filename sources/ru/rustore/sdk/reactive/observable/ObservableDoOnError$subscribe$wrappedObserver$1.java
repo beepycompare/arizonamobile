@@ -45,8 +45,9 @@ public final class ObservableDoOnError$subscribe$wrappedObserver$1<T> implements
 
     @Override // ru.rustore.sdk.reactive.observable.ObservableObserver
     public void onNext(T t) {
+        ObservableDoOnError$subscribe$wrappedObserver$1<T> observableDoOnError$subscribe$wrappedObserver$1 = this;
         ObservableObserver<T> observableObserver = this.$downstream;
-        if (isDisposed()) {
+        if (observableDoOnError$subscribe$wrappedObserver$1.isDisposed()) {
             return;
         }
         observableObserver.onNext(t);

@@ -18,6 +18,7 @@ import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -121,16 +122,18 @@ public final class DefaultDateTypeAdapter<T extends Date> extends TypeAdapter<T>
     private Date deserializeToDate(JsonReader jsonReader) throws IOException {
         String nextString = jsonReader.nextString();
         synchronized (this.dateFormats) {
-            for (DateFormat dateFormat : this.dateFormats) {
-                TimeZone timeZone = dateFormat.getTimeZone();
+            Iterator<DateFormat> it = this.dateFormats.iterator();
+            while (it.hasNext()) {
+                DateFormat next = it.next();
+                TimeZone timeZone = next.getTimeZone();
                 try {
-                    Date parse = dateFormat.parse(nextString);
-                    dateFormat.setTimeZone(timeZone);
+                    Date parse = next.parse(nextString);
+                    next.setTimeZone(timeZone);
                     return parse;
                 } catch (ParseException unused) {
-                    dateFormat.setTimeZone(timeZone);
+                    next.setTimeZone(timeZone);
                 } catch (Throwable th) {
-                    dateFormat.setTimeZone(timeZone);
+                    next.setTimeZone(timeZone);
                     throw th;
                 }
             }

@@ -281,25 +281,21 @@ final class CloudyBackgroundModifierNode extends Modifier.Node implements DrawMo
                 try {
                     drawContext.getCanvas().restore();
                     drawContext.mo5268setSizeuvyYCjk(j);
-                    try {
-                        this.onStateChanged.invoke(CloudyState.Success.Applied.INSTANCE);
-                        graphicsContext2.releaseGraphicsLayer(createGraphicsLayer);
-                    } catch (Throwable th4) {
-                        th = th4;
-                        graphicsContext = graphicsContext2;
-                        graphicsContext.releaseGraphicsLayer(createGraphicsLayer);
-                        throw th;
-                    }
-                } catch (Throwable th5) {
-                    th = th5;
+                    this.onStateChanged.invoke(CloudyState.Success.Applied.INSTANCE);
+                    graphicsContext2.releaseGraphicsLayer(createGraphicsLayer);
+                } catch (Throwable th4) {
+                    th = th4;
+                    graphicsContext = graphicsContext2;
+                    graphicsContext.releaseGraphicsLayer(createGraphicsLayer);
+                    throw th;
                 }
-            } catch (Throwable th6) {
-                th = th6;
+            } catch (Throwable th5) {
+                th = th5;
                 graphicsContext = requireGraphicsContext;
                 j = mo5267getSizeNHjbRc;
             }
-        } catch (Throwable th7) {
-            th = th7;
+        } catch (Throwable th6) {
+            th = th6;
             graphicsContext = requireGraphicsContext;
         }
     }

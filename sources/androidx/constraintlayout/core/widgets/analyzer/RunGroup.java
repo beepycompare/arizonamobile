@@ -82,6 +82,8 @@ public class RunGroup {
     }
 
     public long computeWrapSize(ConstraintWidgetContainer constraintWidgetContainer, int i) {
+        long wrapDimension;
+        int i2;
         WidgetRun widgetRun = this.mFirstRun;
         if (widgetRun instanceof ChainRun) {
             if (((ChainRun) widgetRun).orientation != i) {
@@ -98,30 +100,33 @@ public class RunGroup {
         DependencyNode dependencyNode2 = i == 0 ? constraintWidgetContainer.mHorizontalRun.end : constraintWidgetContainer.mVerticalRun.end;
         boolean contains = this.mFirstRun.start.mTargets.contains(dependencyNode);
         boolean contains2 = this.mFirstRun.end.mTargets.contains(dependencyNode2);
-        long wrapDimension = this.mFirstRun.getWrapDimension();
-        if (!contains || !contains2) {
-            if (contains) {
-                return Math.max(traverseStart(this.mFirstRun.start, this.mFirstRun.start.mMargin), this.mFirstRun.start.mMargin + wrapDimension);
+        long wrapDimension2 = this.mFirstRun.getWrapDimension();
+        if (contains && contains2) {
+            long traverseStart = traverseStart(this.mFirstRun.start, 0L);
+            long traverseEnd = traverseEnd(this.mFirstRun.end, 0L);
+            long j = traverseStart - wrapDimension2;
+            if (j >= (-this.mFirstRun.end.mMargin)) {
+                j += this.mFirstRun.end.mMargin;
             }
+            long j2 = ((-traverseEnd) - wrapDimension2) - this.mFirstRun.start.mMargin;
+            if (j2 >= this.mFirstRun.start.mMargin) {
+                j2 -= this.mFirstRun.start.mMargin;
+            }
+            float biasPercent = this.mFirstRun.mWidget.getBiasPercent(i);
+            float f = (float) (biasPercent > 0.0f ? (((float) j2) / biasPercent) + (((float) j) / (1.0f - biasPercent)) : 0L);
+            wrapDimension = this.mFirstRun.start.mMargin + (f * biasPercent) + 0.5f + wrapDimension2 + (f * (1.0f - biasPercent)) + 0.5f;
+            i2 = this.mFirstRun.end.mMargin;
+        } else if (contains) {
+            return Math.max(traverseStart(this.mFirstRun.start, this.mFirstRun.start.mMargin), this.mFirstRun.start.mMargin + wrapDimension2);
+        } else {
             WidgetRun widgetRun2 = this.mFirstRun;
             if (contains2) {
-                return Math.max(-traverseEnd(widgetRun2.end, this.mFirstRun.end.mMargin), (-this.mFirstRun.end.mMargin) + wrapDimension);
+                return Math.max(-traverseEnd(widgetRun2.end, this.mFirstRun.end.mMargin), (-this.mFirstRun.end.mMargin) + wrapDimension2);
             }
-            return (widgetRun2.start.mMargin + this.mFirstRun.getWrapDimension()) - this.mFirstRun.end.mMargin;
+            wrapDimension = widgetRun2.start.mMargin + this.mFirstRun.getWrapDimension();
+            i2 = this.mFirstRun.end.mMargin;
         }
-        long traverseStart = traverseStart(this.mFirstRun.start, 0L);
-        long traverseEnd = traverseEnd(this.mFirstRun.end, 0L);
-        long j = traverseStart - wrapDimension;
-        if (j >= (-this.mFirstRun.end.mMargin)) {
-            j += this.mFirstRun.end.mMargin;
-        }
-        long j2 = ((-traverseEnd) - wrapDimension) - this.mFirstRun.start.mMargin;
-        if (j2 >= this.mFirstRun.start.mMargin) {
-            j2 -= this.mFirstRun.start.mMargin;
-        }
-        float biasPercent = this.mFirstRun.mWidget.getBiasPercent(i);
-        float f = (float) (biasPercent > 0.0f ? (((float) j2) / biasPercent) + (((float) j) / (1.0f - biasPercent)) : 0L);
-        return (this.mFirstRun.start.mMargin + ((((f * biasPercent) + 0.5f) + wrapDimension) + ((f * (1.0f - biasPercent)) + 0.5f))) - this.mFirstRun.end.mMargin;
+        return wrapDimension - i2;
     }
 
     private boolean defineTerminalWidget(WidgetRun widgetRun, int i) {

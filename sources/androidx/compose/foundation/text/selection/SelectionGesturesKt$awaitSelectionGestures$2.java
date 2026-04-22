@@ -57,7 +57,7 @@ public final class SelectionGesturesKt$awaitSelectionGestures$2 extends Restrict
         if (androidx.compose.foundation.text.selection.SelectionGesturesKt.touchSelectionFirstPress(r1, r6, r13, r12) == r0) goto L27;
      */
     /* JADX WARN: Code restructure failed: missing block: B:36:0x00b4, code lost:
-        if (r13 == r0) goto L27;
+        if (r12 == r0) goto L27;
      */
     /* JADX WARN: Code restructure failed: missing block: B:37:0x00b6, code lost:
         return r0;

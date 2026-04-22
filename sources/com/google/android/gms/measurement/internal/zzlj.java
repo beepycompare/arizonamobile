@@ -224,8 +224,8 @@ public final class zzlj extends zzg {
             zzljVar = this;
             zzljVar.zzN("app", "_npa", null, zzicVar.zzaZ().currentTimeMillis());
         } else {
-            zzN("app", "_npa", Long.valueOf(true != "true".equals(zza) ? 0L : 1L), zzicVar.zzaZ().currentTimeMillis());
             zzljVar = this;
+            zzljVar.zzN("app", "_npa", Long.valueOf(true != "true".equals(zza) ? 0L : 1L), zzicVar.zzaZ().currentTimeMillis());
         }
         if (!zzljVar.zzu.zzB() || !zzljVar.zzc) {
             zzicVar.zzaV().zzj().zza("Updating Scion state (FE)");
@@ -233,9 +233,9 @@ public final class zzlj extends zzg {
             return;
         }
         zzicVar.zzaV().zzj().zza("Recording app launch after enabling measurement for the first time (FE)");
-        zzU();
+        zzljVar.zzU();
         zzljVar.zzu.zzh().zza.zza();
-        zzicVar.zzaW().zzj(new zzjz(this));
+        zzicVar.zzaW().zzj(new zzjz(zzljVar));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1331,11 +1331,11 @@ public final class zzlj extends zzg {
         zzktVar.run();
     }
 
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x00ce -> B:53:0x00cb). Please submit an issue!!! */
     public final void zzs(zzjl zzjlVar, boolean z) {
-        Throwable th;
-        boolean zzr;
         boolean z2;
+        boolean z3;
+        boolean z4;
+        zzjl zzjlVar2;
         zzb();
         int zzb = zzjlVar.zzb();
         if (zzb != -10) {
@@ -1347,64 +1347,47 @@ public final class zzlj extends zzg {
             }
         }
         synchronized (this.zzh) {
-            try {
-                boolean z3 = false;
-                if (zzjl.zzu(zzb, this.zzo.zzb())) {
-                    try {
-                        zzr = zzjlVar.zzr(this.zzo);
-                        zzjk zzjkVar = zzjk.ANALYTICS_STORAGE;
-                        if (zzjlVar.zzo(zzjkVar) && !this.zzo.zzo(zzjkVar)) {
-                            z3 = true;
-                        }
-                        zzjlVar = zzjlVar.zzt(this.zzo);
-                        this.zzo = zzjlVar;
-                        z2 = z3;
-                        z3 = true;
-                    } catch (Throwable th2) {
-                        th = th2;
-                        try {
-                        } catch (Throwable th3) {
-                            th = th3;
-                            th = th;
-                            throw th;
-                        }
-                        throw th;
-                    }
-                } else {
-                    zzr = false;
-                    z2 = false;
+            z2 = false;
+            if (zzjl.zzu(zzb, this.zzo.zzb())) {
+                z3 = zzjlVar.zzr(this.zzo);
+                zzjk zzjkVar = zzjk.ANALYTICS_STORAGE;
+                if (zzjlVar.zzo(zzjkVar) && !this.zzo.zzo(zzjkVar)) {
+                    z2 = true;
                 }
-                zzjl zzjlVar2 = zzjlVar;
-                if (!z3) {
-                    this.zzu.zzaV().zzi().zzb("Ignoring lower-priority consent settings, proposed settings", zzjlVar2);
-                    return;
-                }
-                long andIncrement = this.zzp.getAndIncrement();
-                if (zzr) {
-                    this.zzg.set(null);
-                    zzku zzkuVar = new zzku(this, zzjlVar2, andIncrement, z2);
-                    if (!z) {
-                        this.zzu.zzaW().zzl(zzkuVar);
-                        return;
-                    }
-                    zzg();
-                    zzkuVar.run();
-                    return;
-                }
-                zzkv zzkvVar = new zzkv(this, zzjlVar2, andIncrement, z2);
-                if (z) {
-                    zzg();
-                    zzkvVar.run();
-                } else if (zzb == 30 || zzb == -10) {
-                    this.zzu.zzaW().zzl(zzkvVar);
-                } else {
-                    this.zzu.zzaW().zzj(zzkvVar);
-                }
-            } catch (Throwable th4) {
-                th = th4;
-                th = th;
-                throw th;
+                zzjlVar = zzjlVar.zzt(this.zzo);
+                this.zzo = zzjlVar;
+                z4 = z2;
+                z2 = true;
+            } else {
+                z3 = false;
+                z4 = false;
             }
+            zzjlVar2 = zzjlVar;
+        }
+        if (!z2) {
+            this.zzu.zzaV().zzi().zzb("Ignoring lower-priority consent settings, proposed settings", zzjlVar2);
+            return;
+        }
+        long andIncrement = this.zzp.getAndIncrement();
+        if (z3) {
+            this.zzg.set(null);
+            zzku zzkuVar = new zzku(this, zzjlVar2, andIncrement, z4);
+            if (!z) {
+                this.zzu.zzaW().zzl(zzkuVar);
+                return;
+            }
+            zzg();
+            zzkuVar.run();
+            return;
+        }
+        zzkv zzkvVar = new zzkv(this, zzjlVar2, andIncrement, z4);
+        if (z) {
+            zzg();
+            zzkvVar.run();
+        } else if (zzb == 30 || zzb == -10) {
+            this.zzu.zzaW().zzl(zzkvVar);
+        } else {
+            this.zzu.zzaW().zzj(zzkvVar);
         }
     }
 
@@ -1576,14 +1559,8 @@ public final class zzlj extends zzg {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0044  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0067  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void zzL(String str, String str2, Object obj, boolean z, long j) {
         int i;
-        int i2;
         if (!z) {
             zzpp zzk = this.zzu.zzk();
             if (zzk.zzj("user property", str2)) {
@@ -1591,49 +1568,43 @@ public final class zzlj extends zzg {
                     zzk.zzu.zzc();
                     if (zzk.zzm("user property", 24, str2)) {
                         i = 0;
-                        if (i != 0) {
-                            zzic zzicVar = this.zzu;
-                            zzpp zzk2 = zzicVar.zzk();
-                            zzicVar.zzc();
-                            this.zzu.zzk().zzN(this.zzv, null, i, "_ev", zzk2.zzC(str2, 24, true), str2 != null ? str2.length() : 0);
-                            return;
-                        }
-                        String str3 = str == null ? "app" : str;
-                        if (obj != null) {
-                            zzic zzicVar2 = this.zzu;
-                            int zzK = zzicVar2.zzk().zzK(str2, obj);
-                            if (zzK == 0) {
-                                Object zzL = zzicVar2.zzk().zzL(str2, obj);
-                                if (zzL != null) {
-                                    zzM(str3, str2, j, zzL);
-                                    return;
-                                }
-                                return;
-                            }
-                            zzpp zzk3 = zzicVar2.zzk();
-                            zzicVar2.zzc();
-                            String zzC = zzk3.zzC(str2, 24, true);
-                            if ((obj instanceof String) || (obj instanceof CharSequence)) {
-                                r3 = obj.toString().length();
-                            }
-                            this.zzu.zzk().zzN(this.zzv, null, zzK, "_ev", zzC, r3);
-                            return;
-                        }
-                        zzM(str3, str2, j, null);
-                        return;
                     }
                 } else {
-                    i2 = 15;
+                    i = 15;
                 }
             }
             i = 6;
-            if (i != 0) {
-            }
         } else {
-            i2 = this.zzu.zzk().zzp(str2);
+            i = this.zzu.zzk().zzp(str2);
         }
-        i = i2;
         if (i != 0) {
+            zzic zzicVar = this.zzu;
+            zzpp zzk2 = zzicVar.zzk();
+            zzicVar.zzc();
+            this.zzu.zzk().zzN(this.zzv, null, i, "_ev", zzk2.zzC(str2, 24, true), str2 != null ? str2.length() : 0);
+            return;
         }
+        String str3 = str == null ? "app" : str;
+        if (obj != null) {
+            zzic zzicVar2 = this.zzu;
+            int zzK = zzicVar2.zzk().zzK(str2, obj);
+            if (zzK == 0) {
+                Object zzL = zzicVar2.zzk().zzL(str2, obj);
+                if (zzL != null) {
+                    zzM(str3, str2, j, zzL);
+                    return;
+                }
+                return;
+            }
+            zzpp zzk3 = zzicVar2.zzk();
+            zzicVar2.zzc();
+            String zzC = zzk3.zzC(str2, 24, true);
+            if ((obj instanceof String) || (obj instanceof CharSequence)) {
+                r3 = obj.toString().length();
+            }
+            this.zzu.zzk().zzN(this.zzv, null, zzK, "_ev", zzC, r3);
+            return;
+        }
+        zzM(str3, str2, j, null);
     }
 }

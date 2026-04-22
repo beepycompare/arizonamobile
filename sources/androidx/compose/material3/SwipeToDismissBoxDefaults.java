@@ -38,7 +38,7 @@ public final class SwipeToDismissBoxDefaults {
                     float mo405toPx0680j_4;
                     Density density2 = Density.this;
                     ((Float) obj).floatValue();
-                    mo405toPx0680j_4 = density2.mo405toPx0680j_4(Dp.m7555constructorimpl(56));
+                    mo405toPx0680j_4 = density2.mo405toPx0680j_4(Dp.m7555constructorimpl(56.0f));
                     return Float.valueOf(mo405toPx0680j_4);
                 }
             };

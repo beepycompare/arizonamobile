@@ -57,6 +57,7 @@ public final class c implements ModuleAdRevenueProcessor {
                     moduleAdType = ModuleAdType.INTERSTITIAL;
                 }
             }
+            ModuleAdType moduleAdType2 = moduleAdType;
             String demandSource = impressionData.getDemandSource();
             String creativeId = impressionData.getCreativeId();
             String obj = impressionData.getPriceAccuracy().toString();
@@ -64,7 +65,7 @@ public final class c implements ModuleAdRevenueProcessor {
             hashMap.put("source", "fyber");
             hashMap.put(AdRevenueConstants.ORIGINAL_SOURCE_KEY, "ad-revenue-fyber-v3");
             hashMap.put(AdRevenueConstants.ORIGINAL_AD_TYPE_KEY, placementType == null ? AbstractJsonLexerKt.NULL : placementType.name());
-            internalClientModuleFacade.reportAdRevenue(new ModuleAdRevenue(valueOf, currency, moduleAdType, demandSource, creativeId, null, null, null, obj, hashMap, false));
+            internalClientModuleFacade.reportAdRevenue(new ModuleAdRevenue(valueOf, currency, moduleAdType2, demandSource, creativeId, null, null, null, obj, hashMap, false));
             LoggerStorage.getMainPublicOrAnonymousLogger().info("Ad Revenue from Fyber was reported", new Object[0]);
             return true;
         }

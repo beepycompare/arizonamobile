@@ -153,7 +153,7 @@ public final class Rect {
     }
 
     public final boolean isFinite() {
-        return ((Float.floatToRawIntBits(this.left) & Integer.MAX_VALUE) < 2139095040) & ((Float.floatToRawIntBits(this.top) & Integer.MAX_VALUE) < 2139095040) & ((Float.floatToRawIntBits(this.right) & Integer.MAX_VALUE) < 2139095040) & ((Integer.MAX_VALUE & Float.floatToRawIntBits(this.bottom)) < 2139095040);
+        return ((Float.floatToRawIntBits(this.left) & Integer.MAX_VALUE) < 2139095040) & ((Float.floatToRawIntBits(this.top) & Integer.MAX_VALUE) < 2139095040) & ((Float.floatToRawIntBits(this.right) & Integer.MAX_VALUE) < 2139095040) & ((Float.floatToRawIntBits(this.bottom) & Integer.MAX_VALUE) < 2139095040);
     }
 
     public final boolean isEmpty() {
@@ -193,23 +193,17 @@ public final class Rect {
 
     /* renamed from: getTopLeft-F1C5BW0  reason: not valid java name */
     public final long m4562getTopLeftF1C5BW0() {
-        float f = this.left;
-        float f2 = this.top;
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(this.left) << 32) | (Float.floatToRawIntBits(this.top) & 4294967295L));
     }
 
     /* renamed from: getTopCenter-F1C5BW0  reason: not valid java name */
     public final long m4561getTopCenterF1C5BW0() {
-        float right = this.left + ((getRight() - getLeft()) / 2.0f);
-        float f = this.top;
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(right) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(this.left + ((getRight() - getLeft()) / 2.0f)) << 32) | (Float.floatToRawIntBits(this.top) & 4294967295L));
     }
 
     /* renamed from: getTopRight-F1C5BW0  reason: not valid java name */
     public final long m4563getTopRightF1C5BW0() {
-        float f = this.right;
-        float f2 = this.top;
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(this.right) << 32) | (Float.floatToRawIntBits(this.top) & 4294967295L));
     }
 
     /* renamed from: getCenterLeft-F1C5BW0  reason: not valid java name */
@@ -233,23 +227,17 @@ public final class Rect {
 
     /* renamed from: getBottomLeft-F1C5BW0  reason: not valid java name */
     public final long m4555getBottomLeftF1C5BW0() {
-        float f = this.left;
-        float f2 = this.bottom;
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(this.left) << 32) | (Float.floatToRawIntBits(this.bottom) & 4294967295L));
     }
 
     /* renamed from: getBottomCenter-F1C5BW0  reason: not valid java name */
     public final long m4554getBottomCenterF1C5BW0() {
-        float right = this.left + ((getRight() - getLeft()) / 2.0f);
-        float f = this.bottom;
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(right) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(this.left + ((getRight() - getLeft()) / 2.0f)) << 32) | (Float.floatToRawIntBits(this.bottom) & 4294967295L));
     }
 
     /* renamed from: getBottomRight-F1C5BW0  reason: not valid java name */
     public final long m4556getBottomRightF1C5BW0() {
-        float f = this.right;
-        float f2 = this.bottom;
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(this.right) << 32) | (Float.floatToRawIntBits(this.bottom) & 4294967295L));
     }
 
     public String toString() {

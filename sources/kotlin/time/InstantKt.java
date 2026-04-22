@@ -254,7 +254,6 @@ public final class InstantKt {
                     iArr = iArr2;
                 }
                 int parseIso$twoDigitNumber6 = parseIso$twoDigitNumber(charSequence, i11 + 1);
-                i3 = 3;
                 int parseIso$twoDigitNumber7 = length > 3 ? parseIso$twoDigitNumber(charSequence, i11 + 4) : 0;
                 int parseIso$twoDigitNumber8 = length > 6 ? parseIso$twoDigitNumber(charSequence, i11 + 7) : 0;
                 if (parseIso$twoDigitNumber7 > 59) {
@@ -266,21 +265,22 @@ public final class InstantKt {
                 if (parseIso$twoDigitNumber6 > 17 && (parseIso$twoDigitNumber6 != 18 || parseIso$twoDigitNumber7 != 0 || parseIso$twoDigitNumber8 != 0)) {
                     return parseIso$parseFailure(charSequence, "Expected an offset in -18:00..+18:00, got " + charSequence.subSequence(i11, charSequence.length()).toString());
                 }
-                i4 = (charAt4 == '-' ? -1 : 1) * ((parseIso$twoDigitNumber6 * 3600) + (parseIso$twoDigitNumber7 * 60) + parseIso$twoDigitNumber8);
+                i3 = (charAt4 == '-' ? -1 : 1) * ((parseIso$twoDigitNumber6 * 3600) + (parseIso$twoDigitNumber7 * 60) + parseIso$twoDigitNumber8);
+                i4 = 1;
             } else if (charAt4 == 'Z' || charAt4 == 'z') {
                 int i18 = i11 + 1;
                 if (charSequence.length() != i18) {
                     return parseIso$parseFailure(charSequence, "Extra text after the instant at position " + i18);
                 }
-                i4 = 0;
-                i3 = 3;
+                i4 = 1;
+                i3 = 0;
             } else {
                 return parseIso$parseFailure(charSequence, "Expected the UTC offset at position " + i11 + ", got '" + charAt4 + '\'');
             }
-            if (1 > parseIso$twoDigitNumber || parseIso$twoDigitNumber >= 13) {
+            if (i4 > parseIso$twoDigitNumber || parseIso$twoDigitNumber >= 13) {
                 return parseIso$parseFailure(charSequence, "Expected a month number in 1..12, got " + parseIso$twoDigitNumber);
             }
-            if (1 > parseIso$twoDigitNumber2 || parseIso$twoDigitNumber2 > monthLength(parseIso$twoDigitNumber, isLeapYear(i8))) {
+            if (i4 > parseIso$twoDigitNumber2 || parseIso$twoDigitNumber2 > monthLength(parseIso$twoDigitNumber, isLeapYear(i8))) {
                 return parseIso$parseFailure(charSequence, "Expected a valid day-of-month for month " + parseIso$twoDigitNumber + " of year " + i8 + ", got " + parseIso$twoDigitNumber2);
             }
             if (parseIso$twoDigitNumber3 > 23) {
@@ -296,7 +296,7 @@ public final class InstantKt {
             long year = unboundLocalDateTime.getYear();
             long j2 = 365 * year;
             if (year >= 0) {
-                j = j2 + (((i3 + year) / 4) - ((99 + year) / 100)) + ((year + 399) / 400);
+                j = j2 + (((3 + year) / 4) - ((99 + year) / 100)) + ((year + 399) / 400);
             } else {
                 j = j2 - (((year / (-4)) - (year / (-100))) + (year / (-400)));
             }
@@ -304,7 +304,7 @@ public final class InstantKt {
             if (unboundLocalDateTime.getMonth() > 2) {
                 month = !isLeapYear(unboundLocalDateTime.getYear()) ? month - 2 : (-1) + month;
             }
-            return new InstantParseResult.Success((((month - ((long) DAYS_0000_TO_1970)) * 86400) + (((unboundLocalDateTime.getHour() * 3600) + (unboundLocalDateTime.getMinute() * 60)) + unboundLocalDateTime.getSecond())) - i4, unboundLocalDateTime.getNanosecond());
+            return new InstantParseResult.Success((((month - 719528) * 86400) + (((unboundLocalDateTime.getHour() * 3600) + (unboundLocalDateTime.getMinute() * 60)) + unboundLocalDateTime.getSecond())) - i3, unboundLocalDateTime.getNanosecond());
         }
         return parseIso$parseFailure(charSequence, "Expected at most 9 digits for the year number or year 1000000000, got " + i7 + " digits");
     }

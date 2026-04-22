@@ -1,6 +1,7 @@
 package coil3.map;
 
 import android.content.Context;
+import android.content.res.Resources;
 import coil3.Uri;
 import coil3.UriKt;
 import coil3.request.Options;
@@ -22,6 +23,10 @@ public final class ResourceIntMapper implements Mapper<Integer, Uri> {
     }
 
     private final boolean isApplicable(int i, Context context) {
-        return context.getResources().getResourceEntryName(i) != null;
+        try {
+            return context.getResources().getResourceEntryName(i) != null;
+        } catch (Resources.NotFoundException unused) {
+            return false;
+        }
     }
 }

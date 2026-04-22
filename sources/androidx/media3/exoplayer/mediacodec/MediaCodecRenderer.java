@@ -317,7 +317,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         try {
             return supportsFormat(this.mediaCodecSelector, format);
         } catch (MediaCodecUtil.DecoderQueryException e) {
-            throw createRendererException(e, format, 4002);
+            throw this.createRendererException(e, format, 4002);
         }
     }
 

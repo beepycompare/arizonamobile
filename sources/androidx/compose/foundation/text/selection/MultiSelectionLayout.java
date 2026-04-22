@@ -203,8 +203,7 @@ public final class MultiSelectionLayout implements SelectionLayout {
 
     public String toString() {
         boolean z = true;
-        float f = 2;
-        StringBuilder append = new StringBuilder("MultiSelectionLayout(isStartHandle=").append(isStartHandle()).append(", startPosition=").append((getStartSlot() + 1) / f).append(", endPosition=").append((getEndSlot() + 1) / f).append(", crossed=").append(getCrossStatus()).append(", infos=");
+        StringBuilder append = new StringBuilder("MultiSelectionLayout(isStartHandle=").append(isStartHandle()).append(", startPosition=").append((getStartSlot() + 1) / 2.0f).append(", endPosition=").append((getEndSlot() + 1) / 2.0f).append(", crossed=").append(getCrossStatus()).append(", infos=");
         StringBuilder sb = new StringBuilder("[\n\t");
         List<SelectableInfo> list = this.infoList;
         int size = list.size();

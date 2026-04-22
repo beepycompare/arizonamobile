@@ -136,7 +136,7 @@ final class TabRowKt$ScrollableTabRowWithSubcomposeImpl$1 implements Function2<C
         for (int i6 = 0; i6 < size2; i6++) {
             Measurable measurable = subcompose.get(i6);
             Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(m7498copyZbe2FdA$default);
-            float m7555constructorimpl = Dp.m7555constructorimpl(subcomposeMeasureScope.mo402toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo6216measureBRTryo0.getHeight()), mo6216measureBRTryo0.getWidth())) - Dp.m7555constructorimpl(TabKt.getHorizontalTextPadding() * 2));
+            float m7555constructorimpl = Dp.m7555constructorimpl(subcomposeMeasureScope.mo402toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo6216measureBRTryo0.getHeight()), mo6216measureBRTryo0.getWidth())) - Dp.m7555constructorimpl(TabKt.getHorizontalTextPadding() * 2.0f));
             arrayList.add(mo6216measureBRTryo0);
             arrayList2.add(Dp.m7553boximpl(m7555constructorimpl));
         }

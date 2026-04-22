@@ -17,7 +17,7 @@ public final class PathParserKt {
     private static final float[] EmptyArray = new float[0];
 
     private static final double toRadians(double d) {
-        return (d / 180) * 3.141592653589793d;
+        return (d / 180.0d) * 3.141592653589793d;
     }
 
     public static final float[] getEmptyArray() {
@@ -164,9 +164,8 @@ public final class PathParserKt {
                                     } else {
                                         if (pathNode3 instanceof PathNode.ReflectiveCurveTo) {
                                             if (pathNode2.isCurve()) {
-                                                float f15 = 2;
-                                                f10 = (f10 * f15) - f8;
-                                                f11 = (f15 * f11) - f9;
+                                                f10 = (f10 * 2.0f) - f8;
+                                                f11 = (2.0f * f11) - f9;
                                             }
                                             PathNode.ReflectiveCurveTo reflectiveCurveTo = (PathNode.ReflectiveCurveTo) pathNode3;
                                             path.cubicTo(f10, f11, reflectiveCurveTo.getX1(), reflectiveCurveTo.getY1(), reflectiveCurveTo.getX2(), reflectiveCurveTo.getY2());
@@ -206,25 +205,24 @@ public final class PathParserKt {
                                             PathNode.RelativeReflectiveQuadTo relativeReflectiveQuadTo = (PathNode.RelativeReflectiveQuadTo) pathNode3;
                                             path.relativeQuadraticTo(f2, f3, relativeReflectiveQuadTo.getDx(), relativeReflectiveQuadTo.getDy());
                                             f4 = f2 + f10;
-                                            float f16 = f3 + f11;
+                                            float f15 = f3 + f11;
                                             f10 += relativeReflectiveQuadTo.getDx();
                                             f11 += relativeReflectiveQuadTo.getDy();
-                                            f9 = f16;
+                                            f9 = f15;
                                             i = size;
                                             f = f7;
                                             i2 = i3;
                                             pathNode = pathNode3;
                                         } else if (pathNode3 instanceof PathNode.ReflectiveQuadTo) {
                                             if (pathNode2.isQuad()) {
-                                                float f17 = 2;
-                                                f10 = (f10 * f17) - f8;
-                                                f11 = (f17 * f11) - f9;
+                                                f10 = (f10 * 2.0f) - f8;
+                                                f11 = (2.0f * f11) - f9;
                                             }
                                             PathNode.ReflectiveQuadTo reflectiveQuadTo = (PathNode.ReflectiveQuadTo) pathNode3;
                                             path.quadraticTo(f10, f11, reflectiveQuadTo.getX(), reflectiveQuadTo.getY());
-                                            float f18 = f10;
+                                            float f16 = f10;
                                             f10 = reflectiveQuadTo.getX();
-                                            f8 = f18;
+                                            f8 = f16;
                                             i = size;
                                             f = f7;
                                             i2 = i3;
@@ -301,7 +299,7 @@ public final class PathParserKt {
     private static final void drawArc(Path path, double d, double d2, double d3, double d4, double d5, double d6, double d7, boolean z, boolean z2) {
         double d8;
         double d9;
-        double d10 = (d7 / 180) * 3.141592653589793d;
+        double d10 = (d7 / 180.0d) * 3.141592653589793d;
         double cos = Math.cos(d10);
         double sin = Math.sin(d10);
         double d11 = ((d * cos) + (d2 * sin)) / d5;
@@ -310,28 +308,27 @@ public final class PathParserKt {
         double d14 = (((-d3) * sin) + (d4 * cos)) / d6;
         double d15 = d11 - d13;
         double d16 = d12 - d14;
-        double d17 = 2;
-        double d18 = (d11 + d13) / d17;
-        double d19 = (d12 + d14) / d17;
-        double d20 = (d15 * d15) + (d16 * d16);
-        if (d20 == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
+        double d17 = (d11 + d13) / 2.0d;
+        double d18 = (d12 + d14) / 2.0d;
+        double d19 = (d15 * d15) + (d16 * d16);
+        if (d19 == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
             return;
         }
-        double d21 = (1.0d / d20) - 0.25d;
-        if (d21 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
-            double sqrt = (float) (Math.sqrt(d20) / 1.99999d);
+        double d20 = (1.0d / d19) - 0.25d;
+        if (d20 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
+            double sqrt = (float) (Math.sqrt(d19) / 1.99999d);
             drawArc(path, d, d2, d3, d4, d5 * sqrt, d6 * sqrt, d7, z, z2);
             return;
         }
-        double sqrt2 = Math.sqrt(d21);
-        double d22 = d15 * sqrt2;
-        double d23 = sqrt2 * d16;
+        double sqrt2 = Math.sqrt(d20);
+        double d21 = d15 * sqrt2;
+        double d22 = sqrt2 * d16;
         if (z == z2) {
-            d8 = d18 - d23;
-            d9 = d19 + d22;
+            d8 = d17 - d22;
+            d9 = d18 + d21;
         } else {
-            d8 = d18 + d23;
-            d9 = d19 - d22;
+            d8 = d17 + d22;
+            d9 = d18 - d21;
         }
         double atan2 = Math.atan2(d12 - d9, d11 - d8);
         double atan22 = Math.atan2(d14 - d9, d13 - d8) - atan2;
@@ -339,19 +336,19 @@ public final class PathParserKt {
         if (z2 != (i >= 0)) {
             atan22 = i > 0 ? atan22 - 6.283185307179586d : atan22 + 6.283185307179586d;
         }
-        double d24 = d8 * d5;
-        double d25 = d9 * d6;
-        arcToBezier(path, (d24 * cos) - (d25 * sin), (d24 * sin) + (d25 * cos), d5, d6, d, d2, d10, atan2, atan22);
+        double d23 = d8 * d5;
+        double d24 = d9 * d6;
+        arcToBezier(path, (d23 * cos) - (d24 * sin), (d23 * sin) + (d24 * cos), d5, d6, d, d2, d10, atan2, atan22);
     }
 
     private static final void arcToBezier(Path path, double d, double d2, double d3, double d4, double d5, double d6, double d7, double d8, double d9) {
-        double d10 = 4;
-        int ceil = (int) Math.ceil(Math.abs((d9 * d10) / 3.141592653589793d));
+        double d10 = d3;
+        int ceil = (int) Math.ceil(Math.abs((d9 * 4.0d) / 3.141592653589793d));
         double cos = Math.cos(d7);
         double sin = Math.sin(d7);
         double cos2 = Math.cos(d8);
         double sin2 = Math.sin(d8);
-        double d11 = -d3;
+        double d11 = -d10;
         double d12 = d11 * cos;
         double d13 = d4 * sin;
         double d14 = (d12 * sin2) - (d13 * cos2);
@@ -369,28 +366,27 @@ public final class PathParserKt {
             double d24 = d23 + d18;
             double sin3 = Math.sin(d24);
             double cos3 = Math.cos(d24);
+            double d25 = (d + ((d10 * cos) * cos3)) - (d13 * sin3);
             int i2 = i;
-            double d25 = (d + ((d3 * cos) * cos3)) - (d13 * sin3);
-            double d26 = d10;
-            double d27 = d2 + (d3 * sin * cos3) + (d16 * sin3);
-            double d28 = (d12 * sin3) - (d13 * cos3);
-            double d29 = (sin3 * d15) + (cos3 * d16);
-            double d30 = d24 - d23;
-            int i3 = ceil;
-            double tan = Math.tan(d30 / 2);
-            double sin4 = (Math.sin(d30) * (Math.sqrt(d26 + ((3.0d * tan) * tan)) - 1)) / 3;
-            path.cubicTo((float) (d21 + (d20 * sin4)), (float) (d22 + (d19 * sin4)), (float) (d25 - (sin4 * d28)), (float) (d27 - (sin4 * d29)), (float) d25, (float) d27);
+            double d26 = d2 + (d3 * sin * cos3) + (d16 * sin3);
+            double d27 = (d12 * sin3) - (d13 * cos3);
+            double d28 = (sin3 * d15) + (cos3 * d16);
+            double d29 = d24 - d23;
+            double tan = Math.tan(d29 / 2.0d);
+            double sin4 = (Math.sin(d29) * (Math.sqrt(4.0d + ((tan * 3.0d) * tan)) - 1.0d)) / 3.0d;
+            double d30 = d21 + (d20 * sin4);
+            path.cubicTo((float) d30, (float) (d22 + (d19 * sin4)), (float) (d25 - (sin4 * d27)), (float) (d26 - (sin4 * d28)), (float) d25, (float) d26);
             sin = sin;
             d18 = d18;
             d21 = d25;
-            d22 = d27;
+            d22 = d26;
             i = i2 + 1;
+            ceil = ceil;
             d23 = d24;
-            d19 = d29;
-            ceil = i3;
-            d20 = d28;
+            d19 = d28;
             cos = cos;
-            d10 = d26;
+            d20 = d27;
+            d10 = d3;
         }
     }
 }

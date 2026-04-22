@@ -384,9 +384,9 @@ public final class RegistrationAccount implements InterfaceController {
                     RegistrationAccountBinding registrationAccountBinding2 = registrationAccountBinding;
                     if (i2 > i) {
                         registrationAccountBinding2.registrationAccountBackground.setTranslationY(-(i2 - i));
-                        return;
+                    } else {
+                        registrationAccountBinding2.registrationAccountBackground.setTranslationY(0.0f);
                     }
-                    registrationAccountBinding2.registrationAccountBackground.setTranslationY(0.0f);
                 }
             }
         });

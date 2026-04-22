@@ -147,7 +147,7 @@ public final class IconKt {
     }
 
     private static final Modifier defaultSizeFor(Modifier modifier, Painter painter) {
-        return (Size.m4592equalsimpl0(painter.mo5466getIntrinsicSizeNHjbRc(), Size.Companion.m4604getUnspecifiedNHjbRc()) || m8809isInfiniteuvyYCjk(painter.mo5466getIntrinsicSizeNHjbRc())) ? modifier.then(SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(24))) : modifier;
+        return (Size.m4592equalsimpl0(painter.mo5466getIntrinsicSizeNHjbRc(), Size.Companion.m4604getUnspecifiedNHjbRc()) || m8809isInfiniteuvyYCjk(painter.mo5466getIntrinsicSizeNHjbRc())) ? modifier.then(SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(24.0f))) : modifier;
     }
 
     /* renamed from: isInfinite-uvyYCjk  reason: not valid java name */

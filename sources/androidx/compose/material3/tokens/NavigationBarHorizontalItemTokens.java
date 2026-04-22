@@ -7,11 +7,11 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class NavigationBarHorizontalItemTokens {
     public static final int $stable = 0;
-    private static final float ActiveIndicatorLeadingSpace;
-    private static final float ActiveIndicatorTrailingSpace;
     public static final NavigationBarHorizontalItemTokens INSTANCE = new NavigationBarHorizontalItemTokens();
-    private static final float ActiveIndicatorHeight = Dp.m7555constructorimpl((float) 40.0d);
-    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
+    private static final float ActiveIndicatorHeight = Dp.m7555constructorimpl(40.0f);
+    private static final float ActiveIndicatorLeadingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float ActiveIndicatorTrailingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
 
     private NavigationBarHorizontalItemTokens() {
     }
@@ -34,11 +34,5 @@ public final class NavigationBarHorizontalItemTokens {
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
     public final float m3536getIconSizeD9Ej5fM() {
         return IconSize;
-    }
-
-    static {
-        float f = (float) 16.0d;
-        ActiveIndicatorLeadingSpace = Dp.m7555constructorimpl(f);
-        ActiveIndicatorTrailingSpace = Dp.m7555constructorimpl(f);
     }
 }

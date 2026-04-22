@@ -98,7 +98,7 @@ public final class PlayContentKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             EffectsKt.LaunchedEffect(valueOf, (Function2) rememberedValue2, startRestartGroup, 0);
             boolean isCheckingFiles = uiState.isCheckingFiles();
-            Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(Modifier.Companion, 0.0f, 0.0f, Dp.m7555constructorimpl(12), 0.0f, 11, null);
+            Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(Modifier.Companion, 0.0f, 0.0f, Dp.m7555constructorimpl(12.0f), 0.0f, 11, null);
             Alignment.Horizontal end = Alignment.Companion.getEnd();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), end, startRestartGroup, 48);
@@ -130,7 +130,7 @@ public final class PlayContentKt {
             OnlineContentKt.OnlineContent(uiState, startRestartGroup, i3);
             int i4 = i2 >> 3;
             ServerButtonKt.ServerButton(uiState, onClickServer, startRestartGroup, i3 | (i4 & 112));
-            Modifier m778offsetVpY3zN4$default = OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(0)), 0.0f, 2, null);
+            Modifier m778offsetVpY3zN4$default = OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(0.0f)), 0.0f, 2, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -175,15 +175,14 @@ public final class PlayContentKt {
             if (isCheckingFiles) {
                 startRestartGroup.startReplaceGroup(-676623729);
                 ComposerKt.sourceInformation(startRestartGroup, "80@3103L10,81@3156L13,82@3200L13,79@3034L392");
-                float f = 13;
-                TextKt.m2712TextNvy7gAk((String) mutableState.getValue(), SizeKt.m850height3ABfNKs(OffsetKt.m778offsetVpY3zN4$default(columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getStart()), Dp.m7555constructorimpl(62), 0.0f, 2, null), Dp.m7555constructorimpl(24)), ColorKt.Color(4294046193L), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getHeadlineSmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129000);
+                TextKt.m2712TextNvy7gAk((String) mutableState.getValue(), SizeKt.m850height3ABfNKs(OffsetKt.m778offsetVpY3zN4$default(columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getStart()), Dp.m7555constructorimpl(62.0f), 0.0f, 2, null), Dp.m7555constructorimpl(24.0f)), ColorKt.Color(4294046193L), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(13.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(13.0f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getHeadlineSmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129000);
                 startRestartGroup = startRestartGroup;
                 startRestartGroup.endReplaceGroup();
             } else {
                 startRestartGroup = startRestartGroup;
                 startRestartGroup.startReplaceGroup(-676229471);
                 ComposerKt.sourceInformation(startRestartGroup, "90@3456L30");
-                SpacerKt.Spacer(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(24)), startRestartGroup, 6);
+                SpacerKt.Spacer(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(24.0f)), startRestartGroup, 6);
                 startRestartGroup.endReplaceGroup();
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

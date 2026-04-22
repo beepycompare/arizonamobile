@@ -67,7 +67,7 @@ public final class UnprojectedRipple extends RippleDrawable {
     /* renamed from: calculateRippleColor-5vOe2sY  reason: not valid java name */
     private final long m1695calculateRippleColor5vOe2sY(long j, float f) {
         if (Build.VERSION.SDK_INT < 28) {
-            f *= 2;
+            f *= 2.0f;
         }
         return Color.m4771copywmQWz5c$default(j, RangesKt.coerceAtMost(f, 1.0f), 0.0f, 0.0f, 0.0f, 14, null);
     }

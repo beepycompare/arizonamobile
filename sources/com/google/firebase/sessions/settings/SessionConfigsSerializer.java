@@ -34,10 +34,10 @@ public final class SessionConfigsSerializer implements Serializer<SessionConfigs
     @Override // androidx.datastore.core.Serializer
     public Object readFrom(InputStream inputStream, Continuation<? super SessionConfigs> continuation) {
         try {
-            Json.Default r3 = Json.Default;
+            Json.Default r0 = Json.Default;
             String decodeToString = StringsKt.decodeToString(ByteStreamsKt.readBytes(inputStream));
-            r3.getSerializersModule();
-            return (SessionConfigs) r3.decodeFromString(SessionConfigs.Companion.serializer(), decodeToString);
+            r0.getSerializersModule();
+            return (SessionConfigs) r0.decodeFromString(SessionConfigs.Companion.serializer(), decodeToString);
         } catch (Exception e) {
             throw new CorruptionException("Cannot parse session configs", e);
         }

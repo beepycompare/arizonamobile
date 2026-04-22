@@ -111,7 +111,7 @@ final class FlowExtKt$simpleScan$1<R> extends SuspendLambda implements Function2
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:21:0x0065, code lost:
-            if (r7.$$this$flow.emit(r9, r0) != r1) goto L11;
+            if (r7.$$this$flow.emit(r7, r0) != r1) goto L11;
          */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
         /* JADX WARN: Removed duplicated region for block: B:16:0x003d  */

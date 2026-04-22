@@ -209,10 +209,10 @@ public final class DefaultExtractorsFactory implements ExtractorsFactory {
                 list.add(new Ac4Extractor());
                 return;
             case 2:
-                list.add(new AdtsExtractor((this.constantBitrateSeekingAlwaysEnabled ? 2 : 0) | this.adtsFlags | (this.constantBitrateSeekingEnabled ? 1 : 0)));
+                list.add(new AdtsExtractor(this.adtsFlags | (this.constantBitrateSeekingEnabled ? 1 : 0) | (this.constantBitrateSeekingAlwaysEnabled ? 2 : 0)));
                 return;
             case 3:
-                list.add(new AmrExtractor((this.constantBitrateSeekingAlwaysEnabled ? 2 : 0) | this.amrFlags | (this.constantBitrateSeekingEnabled ? 1 : 0)));
+                list.add(new AmrExtractor(this.amrFlags | (this.constantBitrateSeekingEnabled ? 1 : 0) | (this.constantBitrateSeekingAlwaysEnabled ? 2 : 0)));
                 return;
             case 4:
                 Extractor extractor = FLAC_EXTENSION_LOADER.getExtractor(Integer.valueOf(this.flacFlags));
@@ -227,14 +227,14 @@ public final class DefaultExtractorsFactory implements ExtractorsFactory {
                 list.add(new FlvExtractor());
                 return;
             case 6:
-                list.add(new MatroskaExtractor(this.subtitleParserFactory, (this.textTrackTranscodingEnabled ? 0 : 2) | this.matroskaFlags));
+                list.add(new MatroskaExtractor(this.subtitleParserFactory, this.matroskaFlags | (this.textTrackTranscodingEnabled ? 0 : 2)));
                 return;
             case 7:
-                list.add(new Mp3Extractor((this.constantBitrateSeekingAlwaysEnabled ? 2 : 0) | this.mp3Flags | (this.constantBitrateSeekingEnabled ? 1 : 0)));
+                list.add(new Mp3Extractor(this.mp3Flags | (this.constantBitrateSeekingEnabled ? 1 : 0) | (this.constantBitrateSeekingAlwaysEnabled ? 2 : 0)));
                 return;
             case 8:
                 list.add(new FragmentedMp4Extractor(this.subtitleParserFactory, this.fragmentedMp4Flags | FragmentedMp4Extractor.codecsToParseWithinGopSampleDependenciesAsFlags(this.codecsToParseWithinGopSampleDependencies) | (this.textTrackTranscodingEnabled ? 0 : 32)));
-                list.add(new Mp4Extractor(this.subtitleParserFactory, (this.textTrackTranscodingEnabled ? 0 : 16) | this.mp4Flags | Mp4Extractor.codecsToParseWithinGopSampleDependenciesAsFlags(this.codecsToParseWithinGopSampleDependencies)));
+                list.add(new Mp4Extractor(this.subtitleParserFactory, this.mp4Flags | Mp4Extractor.codecsToParseWithinGopSampleDependenciesAsFlags(this.codecsToParseWithinGopSampleDependencies) | (this.textTrackTranscodingEnabled ? 0 : 16)));
                 return;
             case 9:
                 list.add(new OggExtractor());

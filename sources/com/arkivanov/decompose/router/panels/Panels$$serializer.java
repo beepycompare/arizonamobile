@@ -88,10 +88,9 @@ public /* synthetic */ class Panels$$serializer<MC, DC, EC> implements Generated
         if (beginStructure.decodeSequentially()) {
             Object decodeSerializableElement = beginStructure.decodeSerializableElement(serialDescriptor, 0, this.typeSerial0, null);
             Object decodeNullableSerializableElement = beginStructure.decodeNullableSerializableElement(serialDescriptor, 1, this.typeSerial1, null);
-            Object decodeNullableSerializableElement2 = beginStructure.decodeNullableSerializableElement(serialDescriptor, 2, this.typeSerial2, null);
+            obj3 = beginStructure.decodeNullableSerializableElement(serialDescriptor, 2, this.typeSerial2, null);
             childPanelsMode = (ChildPanelsMode) beginStructure.decodeSerializableElement(serialDescriptor, 3, kSerializerArr[3], null);
             obj = decodeSerializableElement;
-            obj3 = decodeNullableSerializableElement2;
             i = 15;
             obj2 = decodeNullableSerializableElement;
         } else {

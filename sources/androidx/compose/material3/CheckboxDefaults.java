@@ -12,7 +12,7 @@ import kotlin.Metadata;
 public final class CheckboxDefaults {
     public static final int $stable = 0;
     public static final CheckboxDefaults INSTANCE = new CheckboxDefaults();
-    private static final float StrokeWidth = Dp.m7555constructorimpl(2);
+    private static final float StrokeWidth = Dp.m7555constructorimpl(2.0f);
 
     private CheckboxDefaults() {
     }

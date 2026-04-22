@@ -951,7 +951,7 @@ public class MapMakerInternalMap<K, V, E extends InternalEntry<K, V, E>, S exten
     }
 
     Segment<K, V, E, S> segmentFor(int hash) {
-        return this.segments[(hash >>> this.segmentShift) & this.segmentMask];
+        return this.segments[this.segmentMask & (hash >>> this.segmentShift)];
     }
 
     Segment<K, V, E, S> createSegment(int initialCapacity) {
@@ -2246,7 +2246,7 @@ public class MapMakerInternalMap<K, V, E extends InternalEntry<K, V, E>, S exten
 
         @Override // com.google.common.collect.AbstractMapEntry, java.util.Map.Entry
         public int hashCode() {
-            return this.key.hashCode() ^ this.value.hashCode();
+            return this.value.hashCode() ^ this.key.hashCode();
         }
 
         @Override // com.google.common.collect.AbstractMapEntry, java.util.Map.Entry

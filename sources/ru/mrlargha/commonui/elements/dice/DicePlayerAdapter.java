@@ -80,7 +80,7 @@ public final class DicePlayerAdapter extends RecyclerView.Adapter<DiceGamerViewH
         List sortedWith = CollectionsKt.sortedWith(this.gamers, new Comparator() { // from class: ru.mrlargha.commonui.elements.dice.DicePlayerAdapter$sortGamers$$inlined$sortedBy$1
             /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
             /* JADX WARN: Code restructure failed: missing block: B:26:0x0050, code lost:
-                if (r10.equals("4") == false) goto L23;
+                if (r9.equals("4") == false) goto L23;
              */
             /* JADX WARN: Removed duplicated region for block: B:22:0x0044  */
             @Override // java.util.Comparator

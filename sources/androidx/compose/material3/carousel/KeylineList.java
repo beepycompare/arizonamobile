@@ -358,11 +358,11 @@ public final class KeylineList implements List<Keyline>, KMappedMarker {
     }
 
     public final boolean isFirstFocalItemAtStartOfContainer() {
-        return getFirstFocal().getOffset() - (getFirstFocal().getSize() / ((float) 2)) >= 0.0f && Intrinsics.areEqual(getFirstFocal(), getFirstNonAnchor());
+        return getFirstFocal().getOffset() - (getFirstFocal().getSize() / 2.0f) >= 0.0f && Intrinsics.areEqual(getFirstFocal(), getFirstNonAnchor());
     }
 
     public final boolean isLastFocalItemAtEndOfContainer(float f) {
-        return getLastFocal().getOffset() + (getLastFocal().getSize() / ((float) 2)) <= f && Intrinsics.areEqual(getLastFocal(), getLastNonAnchor());
+        return getLastFocal().getOffset() + (getLastFocal().getSize() / 2.0f) <= f && Intrinsics.areEqual(getLastFocal(), getLastNonAnchor());
     }
 
     public final int firstIndexAfterFocalRangeWithSize(float f) {

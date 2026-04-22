@@ -81,7 +81,7 @@ public final class TouchSlopDetector {
         float m606mainAxisk4lQ0M = m606mainAxisk4lQ0M(j) - (Math.signum(m606mainAxisk4lQ0M(this.totalPositionChange)) * f);
         float m605crossAxisk4lQ0M = m605crossAxisk4lQ0M(this.totalPositionChange);
         if (this.orientation == Orientation.Horizontal) {
-            return Offset.m4519constructorimpl((Float.floatToRawIntBits(m606mainAxisk4lQ0M) << 32) | (Float.floatToRawIntBits(m605crossAxisk4lQ0M) & 4294967295L));
+            return Offset.m4519constructorimpl((Float.floatToRawIntBits(m605crossAxisk4lQ0M) & 4294967295L) | (Float.floatToRawIntBits(m606mainAxisk4lQ0M) << 32));
         }
         return Offset.m4519constructorimpl((Float.floatToRawIntBits(m605crossAxisk4lQ0M) << 32) | (Float.floatToRawIntBits(m606mainAxisk4lQ0M) & 4294967295L));
     }

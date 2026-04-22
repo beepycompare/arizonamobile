@@ -65,7 +65,7 @@ public final class Arrangement {
         }
     };
     private static final HorizontalOrVertical Center = new HorizontalOrVertical() { // from class: androidx.compose.foundation.layout.Arrangement$Center$1
-        private final float spacing = Dp.m7555constructorimpl(0);
+        private final float spacing = Dp.m7555constructorimpl(0.0f);
 
         @Override // androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical, androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM  reason: not valid java name */
@@ -92,7 +92,7 @@ public final class Arrangement {
         }
     };
     private static final HorizontalOrVertical SpaceEvenly = new HorizontalOrVertical() { // from class: androidx.compose.foundation.layout.Arrangement$SpaceEvenly$1
-        private final float spacing = Dp.m7555constructorimpl(0);
+        private final float spacing = Dp.m7555constructorimpl(0.0f);
 
         @Override // androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical, androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM */
@@ -119,7 +119,7 @@ public final class Arrangement {
         }
     };
     private static final HorizontalOrVertical SpaceBetween = new HorizontalOrVertical() { // from class: androidx.compose.foundation.layout.Arrangement$SpaceBetween$1
-        private final float spacing = Dp.m7555constructorimpl(0);
+        private final float spacing = Dp.m7555constructorimpl(0.0f);
 
         @Override // androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical, androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM */
@@ -146,7 +146,7 @@ public final class Arrangement {
         }
     };
     private static final HorizontalOrVertical SpaceAround = new HorizontalOrVertical() { // from class: androidx.compose.foundation.layout.Arrangement$SpaceAround$1
-        private final float spacing = Dp.m7555constructorimpl(0);
+        private final float spacing = Dp.m7555constructorimpl(0.0f);
 
         @Override // androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical, androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM */
@@ -219,7 +219,7 @@ public final class Arrangement {
 
         /* renamed from: getSpacing-D9Ej5fM */
         default float mo694getSpacingD9Ej5fM() {
-            return Dp.m7555constructorimpl(0);
+            return Dp.m7555constructorimpl(0.0f);
         }
     }
 
@@ -242,7 +242,7 @@ public final class Arrangement {
 
         /* renamed from: getSpacing-D9Ej5fM */
         default float mo694getSpacingD9Ej5fM() {
-            return Dp.m7555constructorimpl(0);
+            return Dp.m7555constructorimpl(0.0f);
         }
     }
 
@@ -265,7 +265,7 @@ public final class Arrangement {
         @Override // androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM */
         default float mo694getSpacingD9Ej5fM() {
-            return Dp.m7555constructorimpl(0);
+            return Dp.m7555constructorimpl(0.0f);
         }
     }
 
@@ -339,7 +339,7 @@ public final class Arrangement {
     }
 
     public final Horizontal aligned(final Alignment.Horizontal horizontal) {
-        return new SpacedAligned(Dp.m7555constructorimpl(0), true, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda2
+        return new SpacedAligned(Dp.m7555constructorimpl(0.0f), true, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 int align;
@@ -350,7 +350,7 @@ public final class Arrangement {
     }
 
     public final Vertical aligned(final Alignment.Vertical vertical) {
-        return new SpacedAligned(Dp.m7555constructorimpl(0), false, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda3
+        return new SpacedAligned(Dp.m7555constructorimpl(0.0f), false, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 int align;
@@ -504,7 +504,7 @@ public final class Arrangement {
         }
 
         public final Horizontal aligned(final Alignment.Horizontal horizontal) {
-            return new SpacedAligned(Dp.m7555constructorimpl(0), false, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$Absolute$$ExternalSyntheticLambda1
+            return new SpacedAligned(Dp.m7555constructorimpl(0.0f), false, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$Absolute$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     int align;
@@ -759,7 +759,7 @@ public final class Arrangement {
         for (int i4 : iArr) {
             i3 += i4;
         }
-        float f = (i - i3) / 2;
+        float f = (i - i3) / 2.0f;
         if (!z) {
             int length = iArr.length;
             int i5 = 0;
@@ -819,7 +819,7 @@ public final class Arrangement {
             i3 += i4;
         }
         float length = !(iArr.length == 0) ? (i - i3) / iArr.length : 0.0f;
-        float f = length / 2;
+        float f = length / 2.0f;
         if (!z) {
             int length2 = iArr.length;
             int i5 = 0;

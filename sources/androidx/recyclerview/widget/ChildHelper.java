@@ -337,7 +337,7 @@ public class ChildHelper {
 
         boolean get(int i) {
             if (i < 64) {
-                return (this.mData & (1 << i)) != 0;
+                return ((1 << i) & this.mData) != 0;
             }
             ensureNext();
             return this.mNext.get(i - 64);
@@ -396,17 +396,17 @@ public class ChildHelper {
 
         int countOnesBefore(int i) {
             Bucket bucket = this.mNext;
-            if (bucket != null) {
-                if (i < 64) {
-                    return Long.bitCount(this.mData & ((1 << i) - 1));
+            if (bucket == null) {
+                long j = this.mData;
+                if (i >= 64) {
+                    return Long.bitCount(j);
                 }
+                return Long.bitCount(((1 << i) - 1) & j);
+            } else if (i < 64) {
+                return Long.bitCount(((1 << i) - 1) & this.mData);
+            } else {
                 return bucket.countOnesBefore(i - 64) + Long.bitCount(this.mData);
             }
-            long j = this.mData;
-            if (i >= 64) {
-                return Long.bitCount(j);
-            }
-            return Long.bitCount(((1 << i) - 1) & j);
         }
 
         public String toString() {

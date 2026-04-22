@@ -22,7 +22,7 @@ final class ListFieldSchemaLite implements ListFieldSchema {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v2, types: [androidx.datastore.preferences.protobuf.Internal$ProtobufList] */
+    /* JADX WARN: Type inference failed for: r3v3, types: [androidx.datastore.preferences.protobuf.Internal$ProtobufList] */
     @Override // androidx.datastore.preferences.protobuf.ListFieldSchema
     public <E> void mergeListsAt(Object msg, Object otherMsg, long offset) {
         Internal.ProtobufList<E> protobufList = getProtobufList(msg, offset);

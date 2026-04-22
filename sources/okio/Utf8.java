@@ -50,39 +50,39 @@ public final class Utf8 {
     }
 
     public static final long size(String str, int i, int i2) {
-        int i3;
+        long j;
         Intrinsics.checkNotNullParameter(str, "<this>");
         if (i >= 0) {
             if (i2 < i) {
                 throw new IllegalArgumentException(("endIndex < beginIndex: " + i2 + " < " + i).toString());
             }
             if (i2 <= str.length()) {
-                long j = 0;
+                long j2 = 0;
                 while (i < i2) {
                     char charAt = str.charAt(i);
                     if (charAt < 128) {
-                        j++;
+                        j2++;
                     } else {
                         if (charAt < 2048) {
-                            i3 = 2;
+                            j = 2;
                         } else if (charAt < 55296 || charAt > 57343) {
-                            i3 = 3;
+                            j = 3;
                         } else {
-                            int i4 = i + 1;
-                            char charAt2 = i4 < i2 ? str.charAt(i4) : (char) 0;
+                            int i3 = i + 1;
+                            char charAt2 = i3 < i2 ? str.charAt(i3) : (char) 0;
                             if (charAt > 56319 || charAt2 < 56320 || charAt2 > 57343) {
-                                j++;
-                                i = i4;
+                                j2++;
+                                i = i3;
                             } else {
-                                j += 4;
+                                j2 += 4;
                                 i += 2;
                             }
                         }
-                        j += i3;
+                        j2 += j;
                     }
                     i++;
                 }
-                return j;
+                return j2;
             }
             throw new IllegalArgumentException(("endIndex > string.length: " + i2 + " > " + str.length()).toString());
         }
@@ -249,10 +249,10 @@ public final class Utf8 {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0083, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0084, code lost:
         if ((r11[r0] & 192) == 128) goto L22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x00f0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x00f2, code lost:
         if ((r11[r0] & 192) == 128) goto L30;
      */
     /*
@@ -281,19 +281,19 @@ public final class Utf8 {
                         byte b3 = bArr[i4];
                         if ((b3 & 192) == 128) {
                             int i5 = (b << 6) ^ (b3 ^ 3968);
-                            yield.invoke(Character.valueOf(i5 < 128 ? (char) REPLACEMENT_CODE_POINT : (char) i5));
+                            yield.invoke(i5 < 128 ? Character.valueOf(REPLACEMENT_CHARACTER) : Character.valueOf((char) i5));
                             Unit unit = Unit.INSTANCE;
                             i += i3;
                         }
                     }
-                    yield.invoke(Character.valueOf((char) REPLACEMENT_CODE_POINT));
+                    yield.invoke(Character.valueOf(REPLACEMENT_CHARACTER));
                     Unit unit2 = Unit.INSTANCE;
                     i3 = 1;
                     i += i3;
                 } else if ((b >> 4) == -2) {
                     int i6 = i + 2;
                     if (i2 <= i6) {
-                        yield.invoke(Character.valueOf((char) REPLACEMENT_CODE_POINT));
+                        yield.invoke(Character.valueOf(REPLACEMENT_CHARACTER));
                         Unit unit3 = Unit.INSTANCE;
                         int i7 = i + 1;
                         if (i2 > i7) {
@@ -306,17 +306,17 @@ public final class Utf8 {
                             byte b5 = bArr[i6];
                             if ((b5 & 192) == 128) {
                                 int i8 = (b << Ascii.FF) ^ ((b5 ^ (-123008)) ^ (b4 << 6));
-                                yield.invoke(Character.valueOf((i8 >= 2048 && (55296 > i8 || i8 >= 57344)) ? (char) i8 : (char) REPLACEMENT_CODE_POINT));
+                                yield.invoke((i8 >= 2048 && (55296 > i8 || i8 >= 57344)) ? Character.valueOf((char) i8) : Character.valueOf(REPLACEMENT_CHARACTER));
                                 Unit unit4 = Unit.INSTANCE;
                                 i3 = 3;
                                 i += i3;
                             } else {
-                                yield.invoke(Character.valueOf((char) REPLACEMENT_CODE_POINT));
+                                yield.invoke(Character.valueOf(REPLACEMENT_CHARACTER));
                                 Unit unit5 = Unit.INSTANCE;
                                 i += i3;
                             }
                         } else {
-                            yield.invoke(Character.valueOf((char) REPLACEMENT_CODE_POINT));
+                            yield.invoke(Character.valueOf(REPLACEMENT_CHARACTER));
                             Unit unit6 = Unit.INSTANCE;
                             i3 = 1;
                             i += i3;

@@ -52,7 +52,8 @@ public final class AsyncSubject<T> extends Subject<T> {
         }
         this.value = null;
         this.error = th;
-        for (AsyncDisposable<T> asyncDisposable : this.subscribers.getAndSet(asyncDisposableArr2)) {
+        AsyncDisposable<T>[] andSet = this.subscribers.getAndSet(asyncDisposableArr2);
+        for (AsyncDisposable<T> asyncDisposable : andSet) {
             asyncDisposable.onError(th);
         }
     }

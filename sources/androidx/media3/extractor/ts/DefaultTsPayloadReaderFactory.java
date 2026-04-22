@@ -188,6 +188,6 @@ public final class DefaultTsPayloadReaderFactory implements TsPayloadReader.Fact
     }
 
     private boolean isSet(int i) {
-        return (i & this.flags) != 0;
+        return (this.flags & i) != 0;
     }
 }

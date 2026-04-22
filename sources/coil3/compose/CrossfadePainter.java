@@ -185,16 +185,15 @@ public final class CrossfadePainter extends Painter {
             painter.m5472drawx_KDEd0(drawScope, m8553computeDrawSizex8L_9b0, f, this.colorFilter);
             return;
         }
-        float f2 = 2;
-        float intBitsToFloat = (Float.intBitsToFloat((int) (mo5346getSizeNHjbRc >> 32)) - Float.intBitsToFloat((int) (m8553computeDrawSizex8L_9b0 >> 32))) / f2;
-        float intBitsToFloat2 = (Float.intBitsToFloat((int) (mo5346getSizeNHjbRc & 4294967295L)) - Float.intBitsToFloat((int) (m8553computeDrawSizex8L_9b0 & 4294967295L))) / f2;
+        float intBitsToFloat = (Float.intBitsToFloat((int) (mo5346getSizeNHjbRc >> 32)) - Float.intBitsToFloat((int) (m8553computeDrawSizex8L_9b0 >> 32))) / 2.0f;
+        float intBitsToFloat2 = (Float.intBitsToFloat((int) (mo5346getSizeNHjbRc & 4294967295L)) - Float.intBitsToFloat((int) (m8553computeDrawSizex8L_9b0 & 4294967295L))) / 2.0f;
         drawScope.getDrawContext().getTransform().inset(intBitsToFloat, intBitsToFloat2, intBitsToFloat, intBitsToFloat2);
         try {
             painter.m5472drawx_KDEd0(drawScope, m8553computeDrawSizex8L_9b0, f, this.colorFilter);
         } finally {
-            float f3 = -intBitsToFloat;
-            float f4 = -intBitsToFloat2;
-            drawScope.getDrawContext().getTransform().inset(f3, f4, f3, f4);
+            float f2 = -intBitsToFloat;
+            float f3 = -intBitsToFloat2;
+            drawScope.getDrawContext().getTransform().inset(f2, f3, f2, f3);
         }
     }
 

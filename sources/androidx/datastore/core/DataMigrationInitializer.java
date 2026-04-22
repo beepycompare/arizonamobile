@@ -40,12 +40,12 @@ public final class DataMigrationInitializer<T> {
         /* JADX INFO: Access modifiers changed from: private */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
         /* JADX WARN: Removed duplicated region for block: B:20:0x0047  */
-        /* JADX WARN: Removed duplicated region for block: B:27:0x0076  */
-        /* JADX WARN: Removed duplicated region for block: B:37:0x00a1  */
-        /* JADX WARN: Removed duplicated region for block: B:39:0x00a4  */
-        /* JADX WARN: Type inference failed for: r9v4, types: [java.lang.Throwable, T] */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x008d -> B:25:0x0070). Please submit an issue!!! */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x0090 -> B:25:0x0070). Please submit an issue!!! */
+        /* JADX WARN: Removed duplicated region for block: B:27:0x0077  */
+        /* JADX WARN: Removed duplicated region for block: B:37:0x00a2  */
+        /* JADX WARN: Removed duplicated region for block: B:39:0x00a5  */
+        /* JADX WARN: Type inference failed for: r5v5, types: [java.lang.Throwable, T] */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x008e -> B:25:0x0071). Please submit an issue!!! */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x0091 -> B:25:0x0071). Please submit an issue!!! */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -53,8 +53,8 @@ public final class DataMigrationInitializer<T> {
             DataMigrationInitializer$Companion$runMigrations$1 dataMigrationInitializer$Companion$runMigrations$1;
             int i;
             List list2;
-            Ref.ObjectRef objectRef;
             Iterator<T> it;
+            Ref.ObjectRef objectRef;
             Throwable th;
             if (continuation instanceof DataMigrationInitializer$Companion$runMigrations$1) {
                 dataMigrationInitializer$Companion$runMigrations$1 = (DataMigrationInitializer$Companion$runMigrations$1) continuation;
@@ -78,14 +78,14 @@ public final class DataMigrationInitializer<T> {
                             objectRef = (Ref.ObjectRef) dataMigrationInitializer$Companion$runMigrations$1.L$0;
                             try {
                                 ResultKt.throwOnFailure(obj);
-                            } catch (Throwable r9) {
-                                r9 = (T) th;
+                            } catch (Throwable r5) {
+                                r5 = (T) th;
                                 if (objectRef.element == null) {
-                                    objectRef.element = r9;
+                                    objectRef.element = r5;
                                 } else {
                                     T t = objectRef.element;
                                     Intrinsics.checkNotNull(t);
-                                    ExceptionsKt.addSuppressed((Throwable) t, r9);
+                                    ExceptionsKt.addSuppressed((Throwable) t, r5);
                                 }
                             }
                             while (it.hasNext()) {
@@ -108,8 +108,9 @@ public final class DataMigrationInitializer<T> {
                         list2 = (List) dataMigrationInitializer$Companion$runMigrations$1.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
-                    objectRef = new Ref.ObjectRef();
+                    Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
                     it = list2.iterator();
+                    objectRef = objectRef2;
                     while (it.hasNext()) {
                     }
                     th = (Throwable) objectRef.element;
@@ -123,8 +124,9 @@ public final class DataMigrationInitializer<T> {
             i = dataMigrationInitializer$Companion$runMigrations$1.label;
             if (i != 0) {
             }
-            objectRef = new Ref.ObjectRef();
+            Ref.ObjectRef objectRef22 = new Ref.ObjectRef();
             it = list2.iterator();
+            objectRef = objectRef22;
             while (it.hasNext()) {
             }
             th = (Throwable) objectRef.element;

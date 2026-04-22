@@ -101,10 +101,10 @@ public class ComponentActivity extends Activity implements LifecycleOwner, KeyEv
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:25:0x003a, code lost:
-        if (r4.equals("--list-dumpables") == false) goto L33;
+        if (r3.equals("--list-dumpables") == false) goto L33;
      */
     /* JADX WARN: Code restructure failed: missing block: B:28:0x0043, code lost:
-        if (r4.equals("--dump-dumpable") == false) goto L33;
+        if (r3.equals("--dump-dumpable") == false) goto L33;
      */
     /* JADX WARN: Code restructure failed: missing block: B:31:0x004a, code lost:
         if (android.os.Build.VERSION.SDK_INT < 33) goto L25;

@@ -7,18 +7,17 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class FilledAutocompleteTokens {
     public static final int $stable = 0;
-    private static final float TextFieldActiveIndicatorHeight;
-    private static final float TextFieldDisabledActiveIndicatorHeight;
-    private static final float TextFieldHoverActiveIndicatorHeight;
     public static final FilledAutocompleteTokens INSTANCE = new FilledAutocompleteTokens();
     private static final ColorSchemeKeyTokens MenuContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
     private static final float MenuContainerElevation = ElevationTokens.INSTANCE.m3361getLevel2D9Ej5fM();
     private static final ShapeKeyTokens MenuContainerShape = ShapeKeyTokens.CornerExtraSmall;
     private static final ColorSchemeKeyTokens TextFieldActiveIndicatorColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final float TextFieldActiveIndicatorHeight = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens TextFieldCaretColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens TextFieldContainerColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ShapeKeyTokens TextFieldContainerShape = ShapeKeyTokens.CornerExtraSmallTop;
     private static final ColorSchemeKeyTokens TextFieldDisabledActiveIndicatorColor = ColorSchemeKeyTokens.OnSurface;
+    private static final float TextFieldDisabledActiveIndicatorHeight = Dp.m7555constructorimpl(1.0f);
     private static final float TextFieldDisabledActiveIndicatorOpacity = 0.38f;
     private static final ColorSchemeKeyTokens TextFieldDisabledContainerColor = ColorSchemeKeyTokens.OnSurface;
     private static final float TextFieldDisabledContainerOpacity = 0.04f;
@@ -52,13 +51,14 @@ public final class FilledAutocompleteTokens {
     private static final ColorSchemeKeyTokens FieldErrorSupportingTextColor = ColorSchemeKeyTokens.Error;
     private static final ColorSchemeKeyTokens TextFieldErrorTrailingIconColor = ColorSchemeKeyTokens.Error;
     private static final ColorSchemeKeyTokens TextFieldFocusActiveIndicatorColor = ColorSchemeKeyTokens.Primary;
-    private static final float TextFieldFocusActiveIndicatorHeight = Dp.m7555constructorimpl((float) 2.0d);
+    private static final float TextFieldFocusActiveIndicatorHeight = Dp.m7555constructorimpl(2.0f);
     private static final ColorSchemeKeyTokens FieldFocusInputTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FieldFocusLabelTextColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens TextFieldFocusLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens FieldFocusSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TextFieldFocusTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TextFieldHoverActiveIndicatorColor = ColorSchemeKeyTokens.OnSurface;
+    private static final float TextFieldHoverActiveIndicatorHeight = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens FieldHoverInputTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FieldHoverLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TextFieldHoverLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -69,20 +69,13 @@ public final class FilledAutocompleteTokens {
     private static final ColorSchemeKeyTokens FieldLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens FieldLabelTextFont = TypographyKeyTokens.BodyLarge;
     private static final ColorSchemeKeyTokens TextFieldLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float TextFieldLeadingIconSize = Dp.m7555constructorimpl((float) 20.0d);
+    private static final float TextFieldLeadingIconSize = Dp.m7555constructorimpl(20.0f);
     private static final ColorSchemeKeyTokens FieldSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens FieldSupportingTextFont = TypographyKeyTokens.BodySmall;
     private static final ColorSchemeKeyTokens TextFieldTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float TextFieldTrailingIconSize = Dp.m7555constructorimpl((float) 24.0d);
+    private static final float TextFieldTrailingIconSize = Dp.m7555constructorimpl(24.0f);
 
     private FilledAutocompleteTokens() {
-    }
-
-    static {
-        float f = (float) 1.0d;
-        TextFieldActiveIndicatorHeight = Dp.m7555constructorimpl(f);
-        TextFieldDisabledActiveIndicatorHeight = Dp.m7555constructorimpl(f);
-        TextFieldHoverActiveIndicatorHeight = Dp.m7555constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getMenuContainerColor() {

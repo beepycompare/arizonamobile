@@ -406,7 +406,7 @@ public final class ParsableByteArray {
     }
 
     public int readSynchSafeInt() {
-        return (readUnsignedByte() << 21) | (readUnsignedByte() << 14) | (readUnsignedByte() << 7) | readUnsignedByte();
+        return readUnsignedByte() | (readUnsignedByte() << 21) | (readUnsignedByte() << 14) | (readUnsignedByte() << 7);
     }
 
     public int readUnsignedIntToInt() {
@@ -655,7 +655,6 @@ public final class ParsableByteArray {
 
     private int peekCodePointAndSize(Charset charset) {
         int i;
-        int i2;
         Preconditions.checkArgument(SUPPORTED_CHARSETS_FOR_READLINE.contains(charset), "Unsupported charset: %s", charset);
         if (bytesLeft() < getSmallestCodeUnitSize(charset)) {
             throw new IndexOutOfBoundsException("position=" + this.position + ", limit=" + this.limit);
@@ -670,24 +669,23 @@ public final class ParsableByteArray {
         } else if (charset.equals(StandardCharsets.UTF_8)) {
             byte peekUtf8CodeUnitSize = peekUtf8CodeUnitSize();
             if (peekUtf8CodeUnitSize == 1) {
-                i2 = UnsignedBytes.toInt(this.data[this.position]);
+                i = UnsignedBytes.toInt(this.data[this.position]);
             } else if (peekUtf8CodeUnitSize == 2) {
                 byte[] bArr = this.data;
-                int i3 = this.position;
-                i2 = decodeUtf8CodeUnit(0, 0, bArr[i3], bArr[i3 + 1]);
+                int i2 = this.position;
+                i = decodeUtf8CodeUnit(0, 0, bArr[i2], bArr[i2 + 1]);
             } else if (peekUtf8CodeUnitSize == 3) {
                 byte[] bArr2 = this.data;
-                int i4 = this.position;
-                i2 = decodeUtf8CodeUnit(0, bArr2[i4] & Ascii.SI, bArr2[i4 + 1], bArr2[i4 + 2]);
+                int i3 = this.position;
+                i = decodeUtf8CodeUnit(0, bArr2[i3] & Ascii.SI, bArr2[i3 + 1], bArr2[i3 + 2]);
             } else if (peekUtf8CodeUnitSize != 4) {
                 return 0;
             } else {
                 byte[] bArr3 = this.data;
-                int i5 = this.position;
-                i2 = decodeUtf8CodeUnit(bArr3[i5], bArr3[i5 + 1], bArr3[i5 + 2], bArr3[i5 + 3]);
+                int i4 = this.position;
+                i = decodeUtf8CodeUnit(bArr3[i4], bArr3[i4 + 1], bArr3[i4 + 2], bArr3[i4 + 3]);
             }
             b = peekUtf8CodeUnitSize;
-            i = i2;
         } else {
             ByteOrder byteOrder = charset.equals(StandardCharsets.UTF_16LE) ? ByteOrder.LITTLE_ENDIAN : ByteOrder.BIG_ENDIAN;
             char peekChar = peekChar(byteOrder, 0);

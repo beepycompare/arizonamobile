@@ -2922,6 +2922,7 @@ public class ConstraintSet {
     }
 
     public void removeFromVerticalChain(int i) {
+        ConstraintSet constraintSet;
         if (this.mConstraints.containsKey(Integer.valueOf(i))) {
             Constraint constraint = this.mConstraints.get(Integer.valueOf(i));
             if (constraint == null) {
@@ -2931,23 +2932,29 @@ public class ConstraintSet {
             int i3 = constraint.layout.bottomToTop;
             if (i2 != -1 || i3 != -1) {
                 if (i2 != -1 && i3 != -1) {
-                    connect(i2, 4, i3, 3, 0);
-                    connect(i3, 3, i2, 4, 0);
-                } else if (constraint.layout.bottomToBottom != -1) {
-                    connect(i2, 4, constraint.layout.bottomToBottom, 4, 0);
-                } else if (constraint.layout.topToTop != -1) {
-                    connect(i3, 3, constraint.layout.topToTop, 3, 0);
+                    constraintSet = this;
+                    constraintSet.connect(i2, 4, i3, 3, 0);
+                    constraintSet.connect(i3, 3, i2, 4, 0);
+                } else {
+                    constraintSet = this;
+                    if (constraint.layout.bottomToBottom != -1) {
+                        constraintSet.connect(i2, 4, constraint.layout.bottomToBottom, 4, 0);
+                    } else if (constraint.layout.topToTop != -1) {
+                        constraintSet.connect(i3, 3, constraint.layout.topToTop, 3, 0);
+                    }
                 }
-                clear(i, 3);
-                clear(i, 4);
+                constraintSet.clear(i, 3);
+                constraintSet.clear(i, 4);
             }
         }
-        clear(i, 3);
-        clear(i, 4);
+        constraintSet = this;
+        constraintSet.clear(i, 3);
+        constraintSet.clear(i, 4);
     }
 
     public void removeFromHorizontalChain(int i) {
         Constraint constraint;
+        ConstraintSet constraintSet;
         if (!this.mConstraints.containsKey(Integer.valueOf(i)) || (constraint = this.mConstraints.get(Integer.valueOf(i))) == null) {
             return;
         }
@@ -2968,22 +2975,24 @@ public class ConstraintSet {
         }
         int i4 = constraint.layout.startToEnd;
         int i5 = constraint.layout.endToStart;
-        if (i4 != -1 || i5 != -1) {
-            if (i4 != -1 && i5 != -1) {
-                connect(i4, 7, i5, 6, 0);
-                connect(i5, 6, i2, 7, 0);
-            } else if (i5 != -1) {
+        if (i4 == -1 && i5 == -1) {
+            constraintSet = this;
+        } else if (i4 == -1 || i5 == -1) {
+            constraintSet = this;
+            if (i5 != -1) {
                 if (constraint.layout.rightToRight != -1) {
-                    connect(i2, 7, constraint.layout.rightToRight, 7, 0);
+                    constraintSet.connect(i2, 7, constraint.layout.rightToRight, 7, 0);
                 } else if (constraint.layout.leftToLeft != -1) {
-                    connect(i5, 6, constraint.layout.leftToLeft, 6, 0);
+                    constraintSet.connect(i5, 6, constraint.layout.leftToLeft, 6, 0);
                 }
             }
-            clear(i, 6);
-            clear(i, 7);
+        } else {
+            connect(i4, 7, i5, 6, 0);
+            constraintSet = this;
+            constraintSet.connect(i5, 6, i2, 7, 0);
         }
-        clear(i, 6);
-        clear(i, 7);
+        constraintSet.clear(i, 6);
+        constraintSet.clear(i, 7);
     }
 
     public void create(int i, int i2) {

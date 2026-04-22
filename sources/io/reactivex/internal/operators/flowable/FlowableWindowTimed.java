@@ -88,19 +88,21 @@ public final class FlowableWindowTimed<T> extends AbstractFlowableWithUpstream<T
                     if (requested != Long.MAX_VALUE) {
                         produced(1L);
                     }
-                    if (!this.cancelled) {
-                        SequentialDisposable sequentialDisposable = this.timer;
-                        Scheduler scheduler = this.scheduler;
-                        long j = this.timespan;
-                        if (sequentialDisposable.replace(scheduler.schedulePeriodicallyDirect(this, j, j, this.unit))) {
-                            subscription.request(Long.MAX_VALUE);
-                        }
+                    if (this.cancelled) {
+                        return;
                     }
-                } else {
-                    this.cancelled = true;
-                    subscription.cancel();
-                    subscriber.onError(new MissingBackpressureException("Could not deliver first window due to lack of requests."));
+                    SequentialDisposable sequentialDisposable = this.timer;
+                    Scheduler scheduler = this.scheduler;
+                    long j = this.timespan;
+                    if (sequentialDisposable.replace(scheduler.schedulePeriodicallyDirect(this, j, j, this.unit))) {
+                        subscription.request(Long.MAX_VALUE);
+                        return;
+                    }
+                    return;
                 }
+                this.cancelled = true;
+                subscription.cancel();
+                subscriber.onError(new MissingBackpressureException("Could not deliver first window due to lack of requests."));
             }
         }
 
@@ -537,25 +539,26 @@ public final class FlowableWindowTimed<T> extends AbstractFlowableWithUpstream<T
             if (SubscriptionHelper.validate(this.upstream, subscription)) {
                 this.upstream = subscription;
                 this.downstream.onSubscribe(this);
-                if (!this.cancelled) {
-                    long requested = requested();
-                    if (requested != 0) {
-                        UnicastProcessor<T> create = UnicastProcessor.create(this.bufferSize);
-                        this.windows.add(create);
-                        this.downstream.onNext(create);
-                        if (requested != Long.MAX_VALUE) {
-                            produced(1L);
-                        }
-                        this.worker.schedule(new Completion(create), this.timespan, this.unit);
-                        Scheduler.Worker worker = this.worker;
-                        long j = this.timeskip;
-                        worker.schedulePeriodically(this, j, j, this.unit);
-                        subscription.request(Long.MAX_VALUE);
-                        return;
-                    }
-                    subscription.cancel();
-                    this.downstream.onError(new MissingBackpressureException("Could not emit the first window due to lack of requests"));
+                if (this.cancelled) {
+                    return;
                 }
+                long requested = requested();
+                if (requested != 0) {
+                    UnicastProcessor<T> create = UnicastProcessor.create(this.bufferSize);
+                    this.windows.add(create);
+                    this.downstream.onNext(create);
+                    if (requested != Long.MAX_VALUE) {
+                        produced(1L);
+                    }
+                    this.worker.schedule(new Completion(create), this.timespan, this.unit);
+                    Scheduler.Worker worker = this.worker;
+                    long j = this.timeskip;
+                    worker.schedulePeriodically(this, j, j, this.unit);
+                    subscription.request(Long.MAX_VALUE);
+                    return;
+                }
+                subscription.cancel();
+                this.downstream.onError(new MissingBackpressureException("Could not emit the first window due to lack of requests"));
             }
         }
 

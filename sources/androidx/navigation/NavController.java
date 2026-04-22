@@ -969,8 +969,8 @@ public class NavController {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0163  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x01ca  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0160  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x01c7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

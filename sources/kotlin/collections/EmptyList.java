@@ -33,7 +33,7 @@ public final class EmptyList implements List, Serializable, RandomAccess, KMappe
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    public boolean add(Void r2) {
+    public boolean add(Void r1) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 

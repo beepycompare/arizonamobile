@@ -187,7 +187,7 @@ public final class DirectResourceLoader<DataT> implements ModelLoader<Integer, D
             this.resourceId = i;
         }
 
-        /* JADX WARN: Type inference failed for: r4v3, types: [DataT, java.lang.Object] */
+        /* JADX WARN: Type inference failed for: r4v2, types: [DataT, java.lang.Object] */
         @Override // com.bumptech.glide.load.data.DataFetcher
         public void loadData(Priority priority, DataFetcher.DataCallback<? super DataT> dataCallback) {
             try {

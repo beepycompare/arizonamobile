@@ -382,7 +382,8 @@ public abstract class FileHandle implements Closeable {
             Segment segment = buffer.head;
             Intrinsics.checkNotNull(segment);
             int min = (int) Math.min(j3 - j4, segment.limit - segment.pos);
-            protectedWrite(j4, segment.data, segment.pos, min);
+            FileHandle fileHandle = this;
+            fileHandle.protectedWrite(j4, segment.data, segment.pos, min);
             segment.pos += min;
             long j5 = min;
             j4 += j5;
@@ -391,6 +392,7 @@ public abstract class FileHandle implements Closeable {
                 buffer.head = segment.pop();
                 SegmentPool.recycle(segment);
             }
+            this = fileHandle;
         }
     }
 

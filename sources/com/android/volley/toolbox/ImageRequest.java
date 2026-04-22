@@ -75,7 +75,7 @@ public class ImageRequest extends Request<Bitmap> {
                 try {
                     doParse = doParse(networkResponse);
                 } catch (OutOfMemoryError e) {
-                    VolleyLog.e("Caught OOM for %d byte image, url=%s", Integer.valueOf(networkResponse.data.length), getUrl());
+                    VolleyLog.e("Caught OOM for %d byte image, url=%s", Integer.valueOf(networkResponse.data.length), this.getUrl());
                     return Response.error(new ParseError(e));
                 }
             } catch (Throwable th) {
@@ -86,12 +86,12 @@ public class ImageRequest extends Request<Bitmap> {
     }
 
     private Response<Bitmap> doParse(NetworkResponse networkResponse) {
-        Bitmap decodeByteArray;
+        Bitmap bitmap;
         byte[] bArr = networkResponse.data;
         BitmapFactory.Options options = new BitmapFactory.Options();
         if (this.mMaxWidth == 0 && this.mMaxHeight == 0) {
             options.inPreferredConfig = this.mDecodeConfig;
-            decodeByteArray = BitmapFactory.decodeByteArray(bArr, 0, bArr.length, options);
+            bitmap = BitmapFactory.decodeByteArray(bArr, 0, bArr.length, options);
         } else {
             options.inJustDecodeBounds = true;
             BitmapFactory.decodeByteArray(bArr, 0, bArr.length, options);
@@ -101,17 +101,18 @@ public class ImageRequest extends Request<Bitmap> {
             int resizedDimension2 = getResizedDimension(this.mMaxHeight, this.mMaxWidth, i2, i, this.mScaleType);
             options.inJustDecodeBounds = false;
             options.inSampleSize = findBestSampleSize(i, i2, resizedDimension, resizedDimension2);
-            decodeByteArray = BitmapFactory.decodeByteArray(bArr, 0, bArr.length, options);
-            if (decodeByteArray != null && (decodeByteArray.getWidth() > resizedDimension || decodeByteArray.getHeight() > resizedDimension2)) {
-                Bitmap createScaledBitmap = Bitmap.createScaledBitmap(decodeByteArray, resizedDimension, resizedDimension2, true);
+            Bitmap decodeByteArray = BitmapFactory.decodeByteArray(bArr, 0, bArr.length, options);
+            if (decodeByteArray == null || (decodeByteArray.getWidth() <= resizedDimension && decodeByteArray.getHeight() <= resizedDimension2)) {
+                bitmap = decodeByteArray;
+            } else {
+                bitmap = Bitmap.createScaledBitmap(decodeByteArray, resizedDimension, resizedDimension2, true);
                 decodeByteArray.recycle();
-                decodeByteArray = createScaledBitmap;
             }
         }
-        if (decodeByteArray == null) {
+        if (bitmap == null) {
             return Response.error(new ParseError(networkResponse));
         }
-        return Response.success(decodeByteArray, HttpHeaderParser.parseCacheHeaders(networkResponse));
+        return Response.success(bitmap, HttpHeaderParser.parseCacheHeaders(networkResponse));
     }
 
     @Override // com.android.volley.Request

@@ -131,6 +131,6 @@ public final class DotGraphic {
     }
 
     public /* synthetic */ DotGraphic(float f, long j, Shape shape, Dp dp, long j2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m7555constructorimpl(16) : f, (i & 2) != 0 ? Color.Companion.m4809getWhite0d7_KjU() : j, (i & 4) != 0 ? RoundedCornerShapeKt.getCircleShape() : shape, (i & 8) != 0 ? null : dp, (i & 16) != 0 ? Color.Companion.m4809getWhite0d7_KjU() : j2, null);
+        this((i & 1) != 0 ? Dp.m7555constructorimpl(16.0f) : f, (i & 2) != 0 ? Color.Companion.m4809getWhite0d7_KjU() : j, (i & 4) != 0 ? RoundedCornerShapeKt.getCircleShape() : shape, (i & 8) != 0 ? null : dp, (i & 16) != 0 ? Color.Companion.m4809getWhite0d7_KjU() : j2, null);
     }
 }

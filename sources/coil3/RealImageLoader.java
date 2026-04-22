@@ -438,13 +438,13 @@ public final class RealImageLoader implements ImageLoader {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x005b, code lost:
-        r8.onSuccess(r7.getImage());
+        r7.onSuccess(r6.getImage());
      */
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0076, code lost:
-        if (r8 != null) goto L9;
+        if (r7 != null) goto L9;
      */
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0059, code lost:
-        if (r8 != null) goto L9;
+        if (r7 != null) goto L9;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -476,13 +476,13 @@ public final class RealImageLoader implements ImageLoader {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0042, code lost:
-        r8.onError(r7.getImage());
+        r7.onError(r6.getImage());
      */
     /* JADX WARN: Code restructure failed: missing block: B:13:0x005d, code lost:
-        if (r8 != null) goto L9;
+        if (r7 != null) goto L9;
      */
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0040, code lost:
-        if (r8 != null) goto L9;
+        if (r7 != null) goto L9;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

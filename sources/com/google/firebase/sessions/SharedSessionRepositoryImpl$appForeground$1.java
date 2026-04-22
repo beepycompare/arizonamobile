@@ -41,7 +41,7 @@ public final class SharedSessionRepositoryImpl$appForeground$1 extends SuspendLa
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x003f, code lost:
-        if (r9.this$0.sessionDataStore.updateData(new com.google.firebase.sessions.SharedSessionRepositoryImpl$appForeground$1.AnonymousClass1(r9.this$0, null), r9) == r1) goto L18;
+        if (r9 == r1) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x009d, code lost:
         if (r9.this$0.notifySubscribers(r4.getSessionId(), com.google.firebase.sessions.SharedSessionRepositoryImpl.NotificationType.FALLBACK, r9) == r1) goto L18;
@@ -49,6 +49,8 @@ public final class SharedSessionRepositoryImpl$appForeground$1 extends SuspendLa
     /* JADX WARN: Code restructure failed: missing block: B:21:0x009f, code lost:
         return r1;
      */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r9v8 */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -73,6 +75,8 @@ public final class SharedSessionRepositoryImpl$appForeground$1 extends SuspendLa
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
+            Object updateData = this.this$0.sessionDataStore.updateData(new AnonymousClass1(this.this$0, null), this);
+            this = updateData;
         } else if (i != 1) {
             if (i == 2) {
                 ResultKt.throwOnFailure(obj);
@@ -81,6 +85,7 @@ public final class SharedSessionRepositoryImpl$appForeground$1 extends SuspendLa
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.throwOnFailure(obj);
+            this = this;
         }
         return Unit.INSTANCE;
     }

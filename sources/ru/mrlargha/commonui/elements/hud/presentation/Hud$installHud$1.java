@@ -53,7 +53,7 @@ public final class Hud$installHud$1 extends SuspendLambda implements Function2<C
         return ((Hud$installHud$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x00f9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x00f6, code lost:
         if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new ru.mrlargha.commonui.elements.hud.presentation.Hud$installHud$1.AnonymousClass1(r4, r7.this$0, null), r7) == r0) goto L34;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

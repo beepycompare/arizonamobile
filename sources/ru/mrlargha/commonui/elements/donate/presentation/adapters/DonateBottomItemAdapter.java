@@ -185,7 +185,7 @@ public final class DonateBottomItemAdapter extends ListAdapter<DonateItemModelUi
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:13:0x00f9, code lost:
-            if (r10.getTextGradientColor().size() > 1) goto L14;
+            if (r9.getTextGradientColor().size() > 1) goto L14;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.

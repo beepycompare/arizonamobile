@@ -15,7 +15,7 @@ public final class EmptyIterator implements ListIterator, KMappedMarker {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    public void add(Void r2) {
+    public void add(Void r1) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -49,7 +49,7 @@ public final class EmptyIterator implements ListIterator, KMappedMarker {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    public void set(Void r2) {
+    public void set(Void r1) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 

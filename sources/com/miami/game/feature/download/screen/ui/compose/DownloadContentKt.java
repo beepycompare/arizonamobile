@@ -53,21 +53,14 @@ public final class DownloadContentKt {
     }
 
     /* JADX WARN: Type inference failed for: r2v10, types: [int, boolean] */
-    /* JADX WARN: Type inference failed for: r2v39 */
+    /* JADX WARN: Type inference failed for: r2v38 */
     /* JADX WARN: Type inference failed for: r2v9 */
-    /* JADX WARN: Type inference failed for: r6v0 */
-    /* JADX WARN: Type inference failed for: r6v1, types: [int, boolean] */
-    /* JADX WARN: Type inference failed for: r6v13 */
     public static final void DownloadContent(final DownloadScreenUiState uiState, final Function0<Unit> onSoundClick, Composer composer, final int i) {
         int i2;
-        float f;
-        ?? r6;
         ?? r2;
+        boolean z;
         int i3;
         int i4;
-        int i5;
-        int i6;
-        int i7;
         Intrinsics.checkNotNullParameter(uiState, "uiState");
         Intrinsics.checkNotNullParameter(onSoundClick, "onSoundClick");
         Composer startRestartGroup = composer.startRestartGroup(-321713629);
@@ -89,8 +82,6 @@ public final class DownloadContentKt {
             if (uiState.getVideoUri() == null || uiState.isLauncherUpdate()) {
                 startRestartGroup.startReplaceGroup(-2098483994);
                 ComposerKt.sourceInformation(startRestartGroup, "29@1234L42,29@1228L169");
-                f = 0.0f;
-                r6 = 0;
                 r2 = 1;
                 ImageKt.Image(PainterResources_androidKt.painterResource(uiState.getLauncherUpdateRes(), startRestartGroup, 0), (String) null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getCrop(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
                 startRestartGroup.endReplaceGroup();
@@ -99,15 +90,13 @@ public final class DownloadContentKt {
                 ComposerKt.sourceInformation(startRestartGroup, "28@1164L48");
                 VideoPlayerKt.ExoPlayerView(uiState.getVideoUri(), uiState.getSoundOn(), startRestartGroup, 0);
                 startRestartGroup.endReplaceGroup();
-                f = 0.0f;
                 r2 = 1;
-                r6 = 0;
             }
-            Modifier fillMaxSize$default = SizeKt.fillMaxSize$default(Modifier.Companion, f, r2, null);
+            Modifier fillMaxSize$default = SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, r2, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
-            MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), r6);
+            MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
-            int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, r6));
+            int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
             Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, fillMaxSize$default);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
@@ -133,11 +122,9 @@ public final class DownloadContentKt {
             if (!uiState.isLauncherUpdate()) {
                 startRestartGroup.startReplaceGroup(246919258);
                 ComposerKt.sourceInformation(startRestartGroup, "47@1921L509,43@1771L659");
-                i3 = r2;
-                i4 = i2;
-                i5 = 4;
-                i6 = 0;
-                i7 = 32;
+                z = r2;
+                i3 = i2;
+                i4 = 4;
                 ScalingButtonKt.ScalingButton(onSoundClick, boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getTopEnd()), ComposableLambdaKt.rememberComposableLambda(-2005235955, r2, new Function3() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadContentKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function3
                     public final Object invoke(Object obj, Object obj2, Object obj3) {
@@ -148,11 +135,9 @@ public final class DownloadContentKt {
                 }, startRestartGroup, 54), startRestartGroup, ((i2 >> 3) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
                 startRestartGroup.endReplaceGroup();
             } else {
-                i3 = r2;
-                i4 = i2;
-                i5 = 4;
-                i6 = 0;
-                i7 = 32;
+                z = r2;
+                i3 = i2;
+                i4 = 4;
                 startRestartGroup.startReplaceGroup(247575621);
                 startRestartGroup.endReplaceGroup();
             }
@@ -161,7 +146,7 @@ public final class DownloadContentKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), centerHorizontally, startRestartGroup, 48);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
-            int hashCode2 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, i6));
+            int hashCode2 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
             Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, align);
             Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
@@ -184,16 +169,15 @@ public final class DownloadContentKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2040831088, "C68@2652L10,68@2625L169,71@2834L10,71@2807L205,77@3159L40,75@3025L188:DownloadContent.kt#k3v2wi");
-            int i8 = i6;
-            int i9 = i5;
+            int i5 = i4;
             TextKt.m2712TextNvy7gAk(uiState.getTextDownload() + " " + uiState.getDownloadingStringState(), null, Color.Companion.m4809getWhite0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131066);
             TextKt.m2712TextNvy7gAk("Осталось времени: " + uiState.getTimeRemainingString(), null, Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, TextUnitKt.getSp(10), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, 24960, 0, 131050);
             startRestartGroup = startRestartGroup;
-            Modifier m819paddingVpY3zN4 = PaddingKt.m819paddingVpY3zN4(Modifier.Companion, Dp.m7555constructorimpl(i7), Dp.m7555constructorimpl(28));
+            Modifier m819paddingVpY3zN4 = PaddingKt.m819paddingVpY3zN4(Modifier.Companion, Dp.m7555constructorimpl(32.0f), Dp.m7555constructorimpl(28.0f));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1873812849, "CC(remember):DownloadContent.kt#9igjgp");
-            int i10 = (i4 & 14) == i9 ? i3 : i8;
+            boolean z2 = (i3 & 14) == i5 ? z : false;
             Object rememberedValue = startRestartGroup.rememberedValue();
-            if (i10 != 0 || rememberedValue == Composer.Companion.getEmpty()) {
+            if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadContentKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
@@ -205,7 +189,7 @@ public final class DownloadContentKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ProgressBarKt.CustomLinerProgressBar((Function0) rememberedValue, m819paddingVpY3zN4, startRestartGroup, 48, i8);
+            ProgressBarKt.CustomLinerProgressBar((Function0) rememberedValue, m819paddingVpY3zN4, startRestartGroup, 48, 0);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -249,7 +233,7 @@ public final class DownloadContentKt {
             } else {
                 i2 = R.drawable.download_screen_sound_btn_off;
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(i2, composer, 0), (String) null, PaddingKt.m822paddingqDBjuR0$default(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(80)), 0.0f, Dp.m7555constructorimpl(24), 0.0f, 0.0f, 13, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, Painter.$stable | 25008, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(i2, composer, 0), (String) null, PaddingKt.m822paddingqDBjuR0$default(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(80.0f)), 0.0f, Dp.m7555constructorimpl(24.0f), 0.0f, 0.0f, 13, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

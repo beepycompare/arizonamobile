@@ -140,7 +140,7 @@ class ViewUtilsApi19 {
         Field field = sViewFlagsField;
         if (field != null) {
             try {
-                sViewFlagsField.setInt(view, i | (field.getInt(view) & (-13)));
+                sViewFlagsField.setInt(view, (field.getInt(view) & (-13)) | i);
             } catch (IllegalAccessException unused2) {
             }
         }

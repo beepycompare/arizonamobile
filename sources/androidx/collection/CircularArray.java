@@ -182,7 +182,7 @@ public final class CircularArray<E> {
             CollectionPlatformUtils collectionPlatformUtils = CollectionPlatformUtils.INSTANCE;
             throw new ArrayIndexOutOfBoundsException();
         }
-        E e = this.elements[(i2 - 1) & this.capacityBitmask];
+        E e = this.elements[this.capacityBitmask & (i2 - 1)];
         Intrinsics.checkNotNull(e);
         return e;
     }
@@ -198,7 +198,7 @@ public final class CircularArray<E> {
     }
 
     public final int size() {
-        return (this.tail - this.head) & this.capacityBitmask;
+        return this.capacityBitmask & (this.tail - this.head);
     }
 
     public final boolean isEmpty() {

@@ -243,13 +243,15 @@ public final class ContactModel {
         Integer num2 = this.avatarColor;
         AvatarBackground fromIndex = companion.fromIndex(Integer.valueOf(num2 != null ? num2.intValue() : AvatarBackground.RED.ordinal() + 1));
         String str2 = this.title;
-        String str3 = str2 == null ? "unknown" : str2;
-        String str4 = this.avatarUrl;
+        if (str2 == null) {
+            str2 = "unknown";
+        }
+        String str3 = this.avatarUrl;
         Integer num3 = this.phone;
         String formatPhoneNumber = num3 != null ? NumberKt.formatPhoneNumber(num3.intValue()) : null;
         MessageStatus messageStatus = this.online ? MessageStatus.ONLINE : MessageStatus.OFFLINE;
         boolean z = this.isNotificationsAllowed;
         Long l = this.timestamp;
-        return new ContactInfo(i, num, str, str4, fromIndex, str3, formatPhoneNumber, messageStatus, false, this.isContact, false, z, this.hasRead, this.isSendAvailable, this.isBlocked, l == null ? "" : DateConverter.Companion.formatTimestamp$default(DateConverter.Companion, this.timestamp.longValue(), false, 2, null), null, l, null, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_NO_PROFILE_EMBEDDED, null);
+        return new ContactInfo(i, num, str, str3, fromIndex, str2, formatPhoneNumber, messageStatus, false, this.isContact, false, z, this.hasRead, this.isSendAvailable, this.isBlocked, l == null ? "" : DateConverter.Companion.formatTimestamp$default(DateConverter.Companion, this.timestamp.longValue(), false, 2, null), null, l, null, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_NO_PROFILE_EMBEDDED, null);
     }
 }

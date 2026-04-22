@@ -336,7 +336,8 @@ public final class GridOverlayView extends View {
         ArrayList arrayList2 = new ArrayList();
         Set<Number> mutableSet = CollectionsKt.toMutableSet(new IntRange(1, 156));
         for (final GangZoneItem gangZoneItem : this._mapData) {
-            arrayList.add(calculateCell$default(this, gangZoneItem.getId(), gangZoneItem.getFamily_color(), false, 4, null));
+            GridOverlayView gridOverlayView = this;
+            arrayList.add(calculateCell$default(gridOverlayView, gangZoneItem.getId(), gangZoneItem.getFamily_color(), false, 4, null));
             final Function1 function1 = new Function1() { // from class: com.arizonagames.feature.arizona.family.GridOverlayView$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
@@ -353,15 +354,17 @@ public final class GridOverlayView extends View {
                     return calculateCells$lambda$0$1;
                 }
             });
+            this = gridOverlayView;
         }
+        GridOverlayView gridOverlayView2 = this;
         for (Number number : mutableSet) {
-            arrayList.add(calculateCell$default(this, number.intValue(), -1, false, 4, null));
+            arrayList.add(calculateCell$default(gridOverlayView2, number.intValue(), -1, false, 4, null));
         }
-        setCellData(arrayList);
-        for (UniqCellItem uniqCellItem : this._uniqueData) {
-            arrayList2.add(new UniqueCell(calculateCell(uniqCellItem.getId(), -10, true), 1, 1));
+        gridOverlayView2.setCellData(arrayList);
+        for (UniqCellItem uniqCellItem : gridOverlayView2._uniqueData) {
+            arrayList2.add(new UniqueCell(gridOverlayView2.calculateCell(uniqCellItem.getId(), -10, true), 1, 1));
         }
-        setUniqueData(arrayList2);
+        gridOverlayView2.setUniqueData(arrayList2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -496,7 +499,7 @@ public final class GridOverlayView extends View {
             if (center == null) {
                 center = new PointF();
             }
-            float f = 2 * scale;
+            float f = 2.0f * scale;
             float f2 = width / f;
             float f3 = height / f;
             RectF rectF = new RectF(center.x - f2, center.y - f3, center.x + f2, center.y + f3);
@@ -507,15 +510,13 @@ public final class GridOverlayView extends View {
                 float row = (uniqueCell.getCell().getRow() * this.cellHeight) + this.yMargin;
                 drawCell(canvas, uniqueCell.getCell(), col, row, col + (this.cellWidth * uniqueCell.getWight()), row + (this.cellHeight * uniqueCell.getHeight()), rectF, subsamplingScaleImageView, f5, f4, true);
             }
-            GridOverlayView gridOverlayView = this;
-            for (Cell cell : gridOverlayView.cellData) {
+            for (Cell cell : this.cellData) {
                 if (cell.isNotEmpty() && !cell.isUnique()) {
-                    float col2 = gridOverlayView.xMargin + (cell.getCol() * gridOverlayView.cellWidth);
-                    float f6 = gridOverlayView.cellHeight;
-                    float row2 = (cell.getRow() * f6) + gridOverlayView.yMargin;
-                    gridOverlayView.drawCell(canvas, cell, col2, row2, gridOverlayView.cellWidth + col2, row2 + f6, rectF, subsamplingScaleImageView, f5, f4, false);
+                    float col2 = (cell.getCol() * this.cellWidth) + this.xMargin;
+                    float f6 = this.cellHeight;
+                    float row2 = this.yMargin + (cell.getRow() * f6);
+                    drawCell(canvas, cell, col2, row2, col2 + this.cellWidth, row2 + f6, rectF, subsamplingScaleImageView, f5, f4, false);
                 }
-                gridOverlayView = this;
             }
         }
     }

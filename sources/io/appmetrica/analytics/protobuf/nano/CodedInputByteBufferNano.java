@@ -246,7 +246,10 @@ public final class CodedInputByteBufferNano {
     }
 
     public int readRawLittleEndian32() throws IOException {
-        return (readRawByte() & 255) | ((readRawByte() & 255) << 8) | ((readRawByte() & 255) << 16) | ((readRawByte() & 255) << 24);
+        byte readRawByte = readRawByte();
+        byte readRawByte2 = readRawByte();
+        byte readRawByte3 = readRawByte();
+        return ((readRawByte() & 255) << 24) | (readRawByte & 255) | ((readRawByte2 & 255) << 8) | ((readRawByte3 & 255) << 16);
     }
 
     public long readRawLittleEndian64() throws IOException {
@@ -289,7 +292,7 @@ public final class CodedInputByteBufferNano {
                 i = readRawByte4 << Ascii.NAK;
             }
         }
-        return i2 | i;
+        return i | i2;
     }
 
     public long readRawVarint64() throws IOException {

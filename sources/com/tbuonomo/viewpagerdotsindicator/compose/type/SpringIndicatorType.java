@@ -365,7 +365,7 @@ public final class SpringIndicatorType extends IndicatorType {
                             dotGraphic3 = SpringIndicatorType.this.dotsGraphic;
                             float m9161getSizeD9Ej5fM = dotGraphic3.m9161getSizeD9Ej5fM();
                             dotGraphic4 = SpringIndicatorType.this.selectorDotGraphic;
-                            return Dp.m7555constructorimpl(Dp.m7555constructorimpl(m9161getSizeD9Ej5fM - dotGraphic4.m9161getSizeD9Ej5fM()) / 2);
+                            return Dp.m7555constructorimpl(Dp.m7555constructorimpl(m9161getSizeD9Ej5fM - dotGraphic4.m9161getSizeD9Ej5fM()) / 2.0f);
                         }
                     });
                     composer2.updateRememberedValue(rememberedValue4);

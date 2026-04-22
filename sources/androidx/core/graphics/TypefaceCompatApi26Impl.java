@@ -147,16 +147,24 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
         int i2 = 0;
         while (i2 < length) {
             FontResourcesParserCompat.FontFileResourceEntry fontFileResourceEntry = entries[i2];
+            String fileName = fontFileResourceEntry.getFileName();
+            int ttcIndex = fontFileResourceEntry.getTtcIndex();
+            int weight = fontFileResourceEntry.getWeight();
+            boolean isItalic = fontFileResourceEntry.isItalic();
+            FontVariationAxis[] fromFontVariationSettings = FontVariationAxis.fromFontVariationSettings(fontFileResourceEntry.getVariationSettings());
+            TypefaceCompatApi26Impl typefaceCompatApi26Impl = this;
             Context context2 = context;
-            if (!addFontFromAssetManager(context2, newFamily, fontFileResourceEntry.getFileName(), fontFileResourceEntry.getTtcIndex(), fontFileResourceEntry.getWeight(), fontFileResourceEntry.isItalic() ? 1 : 0, FontVariationAxis.fromFontVariationSettings(fontFileResourceEntry.getVariationSettings()))) {
-                abortCreation(newFamily);
+            if (!typefaceCompatApi26Impl.addFontFromAssetManager(context2, newFamily, fileName, ttcIndex, weight, isItalic ? 1 : 0, fromFontVariationSettings)) {
+                typefaceCompatApi26Impl.abortCreation(newFamily);
                 return null;
             }
             i2++;
+            this = typefaceCompatApi26Impl;
             context = context2;
         }
-        if (freeze(newFamily)) {
-            return createFromFamiliesWithDefault(newFamily);
+        TypefaceCompatApi26Impl typefaceCompatApi26Impl2 = this;
+        if (typefaceCompatApi26Impl2.freeze(newFamily)) {
+            return typefaceCompatApi26Impl2.createFromFamiliesWithDefault(newFamily);
         }
         return null;
     }
@@ -165,6 +173,7 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
     public Typeface createFromFontInfo(Context context, CancellationSignal cancellationSignal, FontsContractCompat.FontInfo[] fontInfoArr, int i) {
         Typeface createFromFamiliesWithDefault;
         Object obj;
+        TypefaceCompatApi26Impl typefaceCompatApi26Impl;
         if (fontInfoArr.length < 1) {
             return null;
         }
@@ -200,24 +209,29 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
             ByteBuffer byteBuffer = readFontInfoIntoByteBuffer.get(fontInfo.getUri());
             if (byteBuffer == null) {
                 obj = newFamily;
+                typefaceCompatApi26Impl = this;
             } else {
-                boolean addFontFromBuffer = addFontFromBuffer(newFamily, byteBuffer, fontInfo.getTtcIndex(), fontInfo.getWeight(), fontInfo.isItalic() ? 1 : 0);
+                TypefaceCompatApi26Impl typefaceCompatApi26Impl2 = this;
+                boolean addFontFromBuffer = typefaceCompatApi26Impl2.addFontFromBuffer(newFamily, byteBuffer, fontInfo.getTtcIndex(), fontInfo.getWeight(), fontInfo.isItalic() ? 1 : 0);
                 obj = newFamily;
+                typefaceCompatApi26Impl = typefaceCompatApi26Impl2;
                 if (!addFontFromBuffer) {
-                    abortCreation(obj);
+                    typefaceCompatApi26Impl.abortCreation(obj);
                     return null;
                 }
                 z = true;
             }
             i2++;
+            this = typefaceCompatApi26Impl;
             newFamily = obj;
             z = z;
         }
         Object obj2 = newFamily;
+        TypefaceCompatApi26Impl typefaceCompatApi26Impl3 = this;
         if (!z) {
-            abortCreation(obj2);
+            typefaceCompatApi26Impl3.abortCreation(obj2);
             return null;
-        } else if (freeze(obj2) && (createFromFamiliesWithDefault = createFromFamiliesWithDefault(obj2)) != null) {
+        } else if (typefaceCompatApi26Impl3.freeze(obj2) && (createFromFamiliesWithDefault = typefaceCompatApi26Impl3.createFromFamiliesWithDefault(obj2)) != null) {
             return Typeface.create(createFromFamiliesWithDefault, i);
         } else {
             return null;

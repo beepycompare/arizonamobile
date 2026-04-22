@@ -81,7 +81,7 @@ public final class Funnels {
         }
 
         public int hashCode() {
-            return StringCharsetFunnel.class.hashCode() ^ this.charset.hashCode();
+            return this.charset.hashCode() ^ StringCharsetFunnel.class.hashCode();
         }
 
         Object writeReplace() {
@@ -161,7 +161,7 @@ public final class Funnels {
         }
 
         public int hashCode() {
-            return SequentialFunnel.class.hashCode() ^ this.elementFunnel.hashCode();
+            return this.elementFunnel.hashCode() ^ SequentialFunnel.class.hashCode();
         }
     }
 

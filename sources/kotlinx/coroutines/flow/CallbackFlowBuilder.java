@@ -32,9 +32,9 @@ public final class CallbackFlowBuilder<T> extends ChannelFlowBuilder<T> {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x004a  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x004e  */
     @Override // kotlinx.coroutines.flow.ChannelFlowBuilder, kotlinx.coroutines.flow.internal.ChannelFlow
     /*
         Code decompiled incorrectly, please refer to instructions dump.

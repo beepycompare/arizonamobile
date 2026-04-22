@@ -91,11 +91,11 @@ final class PausableExecutorServiceImpl implements PausableExecutorService {
             @Override // java.util.concurrent.Callable
             public final java.lang.Object call() {
                 /*
-                    r2 = this;
+                    r1 = this;
                     java.lang.Runnable r0 = r1
                     java.lang.Object r1 = r2
-                    java.lang.Object r0 = com.google.firebase.concurrent.PausableExecutorServiceImpl.lambda$submit$0(r0, r1)
-                    return r0
+                    java.lang.Object r1 = com.google.firebase.concurrent.PausableExecutorServiceImpl.lambda$submit$0(r0, r1)
+                    return r1
                 */
                 throw new UnsupportedOperationException("Method not decompiled: com.google.firebase.concurrent.PausableExecutorServiceImpl$$ExternalSyntheticLambda1.call():java.lang.Object");
             }

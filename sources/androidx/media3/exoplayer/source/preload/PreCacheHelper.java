@@ -427,19 +427,7 @@ public final class PreCacheHelper {
         public void cancel(boolean z) {
             Preconditions.checkState(Looper.myLooper() == PreCacheHelper.this.preCacheHandler.getLooper());
             synchronized (this.lock) {
-                try {
-                    this.isCanceled = true;
-                } catch (Throwable th) {
-                    th = th;
-                    while (true) {
-                        try {
-                            break;
-                        } catch (Throwable th2) {
-                            th = th2;
-                        }
-                    }
-                    throw th;
-                }
+                this.isCanceled = true;
             }
             this.pendingDownloadRequest = null;
             this.downloadHelper.release();
@@ -449,11 +437,12 @@ public final class PreCacheHelper {
                 if (task2 != null) {
                     task2.cancel();
                 }
-                if (z && this.downloader != null) {
-                    Task task3 = new Task(this.downloader, true, 5, this);
-                    this.downloaderTask = task3;
-                    task3.start();
+                if (!z || this.downloader == null) {
+                    return;
                 }
+                Task task3 = new Task(this.downloader, true, 5, this);
+                this.downloaderTask = task3;
+                task3.start();
             }
         }
 

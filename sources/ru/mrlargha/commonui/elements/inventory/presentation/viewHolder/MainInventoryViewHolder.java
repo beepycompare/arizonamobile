@@ -12,12 +12,12 @@ import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.adjust.sdk.Constants;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.Iterator;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.time.DurationKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
@@ -188,11 +188,9 @@ public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
                 public void onTick(long j) {
                     String formatHMS;
                     CountDownTimer countDownTimer2;
-                    long j2 = (long) Constants.ONE_HOUR;
-                    int i = (int) (j / j2);
-                    long j3 = 60000;
-                    int i2 = (int) ((j % j2) / j3);
-                    int i3 = (int) ((j % j3) / 1000);
+                    int i = (int) (j / DurationKt.MILLIS_IN_HOUR);
+                    int i2 = (int) ((j % DurationKt.MILLIS_IN_HOUR) / 60000);
+                    int i3 = (int) ((j % 60000) / 1000);
                     ItemInventoryBinding itemInventoryBinding2 = itemInventoryBinding;
                     if (i > 24) {
                         itemInventoryBinding2.tvTitleText.setText(inventoryItem.getText());

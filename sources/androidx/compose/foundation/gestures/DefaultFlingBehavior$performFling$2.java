@@ -52,7 +52,7 @@ final class DefaultFlingBehavior$performFling$2 extends SuspendLambda implements
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         float f;
-        final Ref.FloatRef floatRef;
+        Ref.FloatRef floatRef;
         AnimationState animationState;
         DecayAnimationSpec decayAnimationSpec;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -60,26 +60,28 @@ final class DefaultFlingBehavior$performFling$2 extends SuspendLambda implements
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             if (Math.abs(this.$initialVelocity) > 1.0f) {
-                floatRef = new Ref.FloatRef();
-                floatRef.element = this.$initialVelocity;
                 final Ref.FloatRef floatRef2 = new Ref.FloatRef();
+                floatRef2.element = this.$initialVelocity;
+                final Ref.FloatRef floatRef3 = new Ref.FloatRef();
                 AnimationState AnimationState$default = AnimationStateKt.AnimationState$default(0.0f, this.$initialVelocity, 0L, 0L, false, 28, null);
                 try {
                     decayAnimationSpec = this.this$0.flingDecay;
                     final ScrollScope scrollScope = this.$this_performFling;
                     final DefaultFlingBehavior defaultFlingBehavior = this.this$0;
-                    this.L$0 = floatRef;
+                    this.L$0 = floatRef2;
                     this.L$1 = AnimationState$default;
                     this.label = 1;
                     if (SuspendAnimationKt.animateDecay$default(AnimationState$default, decayAnimationSpec, false, new Function1() { // from class: androidx.compose.foundation.gestures.DefaultFlingBehavior$performFling$2$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            return DefaultFlingBehavior$performFling$2.invokeSuspend$lambda$0(Ref.FloatRef.this, scrollScope, floatRef, defaultFlingBehavior, (AnimationScope) obj2);
+                            return DefaultFlingBehavior$performFling$2.invokeSuspend$lambda$0(Ref.FloatRef.this, scrollScope, floatRef2, defaultFlingBehavior, (AnimationScope) obj2);
                         }
                     }, this, 2, null) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
+                    floatRef = floatRef2;
                 } catch (CancellationException unused) {
+                    floatRef = floatRef2;
                     animationState = AnimationState$default;
                     floatRef.element = ((Number) animationState.getVelocity()).floatValue();
                     f = floatRef.element;

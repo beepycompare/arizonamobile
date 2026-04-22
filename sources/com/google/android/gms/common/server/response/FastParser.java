@@ -248,7 +248,6 @@ public class FastParser<T extends FastJsonResponse> {
             char c = cArr[0];
             long j2 = c == '-' ? Long.MIN_VALUE : C.TIME_UNSET;
             int i2 = c == '-' ? 1 : 0;
-            int i3 = 10;
             if (i2 < zam2) {
                 i = i2 + 1;
                 int digit = Character.digit(cArr[i2], 10);
@@ -261,8 +260,8 @@ public class FastParser<T extends FastJsonResponse> {
                 i = i2;
             }
             while (i < zam2) {
-                int i4 = i + 1;
-                int digit2 = Character.digit(cArr[i], i3);
+                int i3 = i + 1;
+                int digit2 = Character.digit(cArr[i], 10);
                 if (digit2 < 0) {
                     throw new ParseException("Unexpected non-digit character");
                 }
@@ -270,15 +269,12 @@ public class FastParser<T extends FastJsonResponse> {
                     throw new ParseException("Number too large");
                 }
                 long j3 = j * 10;
-                long j4 = j2;
-                long j5 = digit2;
-                if (j3 < j4 + j5) {
+                long j4 = digit2;
+                if (j3 < j2 + j4) {
                     throw new ParseException("Number too large");
                 }
-                j = j3 - j5;
-                i = i4;
-                j2 = j4;
-                i3 = 10;
+                j = j3 - j4;
+                i = i3;
             }
             if (i2 != 0) {
                 if (i > 1) {

@@ -98,12 +98,13 @@ public final class NavInflater {
             } else if (next == 2 && depth <= depth2) {
                 String name2 = xmlResourceParser.getName();
                 if (Intrinsics.areEqual(TAG_ARGUMENT, name2)) {
-                    inflateArgumentForDestination(resources, createDestination, attributeSet, i);
+                    this.inflateArgumentForDestination(resources, createDestination, attributeSet, i);
                 } else if (Intrinsics.areEqual(TAG_DEEP_LINK, name2)) {
-                    inflateDeepLink(resources, createDestination, attributeSet);
+                    this.inflateDeepLink(resources, createDestination, attributeSet);
                 } else if (Intrinsics.areEqual(TAG_ACTION, name2)) {
-                    inflateAction(resources, createDestination, attributeSet, xmlResourceParser, i);
+                    this.inflateAction(resources, createDestination, attributeSet, xmlResourceParser, i);
                 } else {
+                    NavInflater navInflater = this;
                     Resources resources2 = resources;
                     XmlResourceParser xmlResourceParser2 = xmlResourceParser;
                     AttributeSet attributeSet2 = attributeSet;
@@ -111,12 +112,13 @@ public final class NavInflater {
                     if (Intrinsics.areEqual(TAG_INCLUDE, name2) && (createDestination instanceof NavGraph)) {
                         TypedArray obtainAttributes = resources2.obtainAttributes(attributeSet2, R.styleable.NavInclude);
                         Intrinsics.checkNotNullExpressionValue(obtainAttributes, "obtainAttributes(...)");
-                        ((NavGraph) createDestination).addDestination(inflate(obtainAttributes.getResourceId(R.styleable.NavInclude_graph, 0)));
+                        ((NavGraph) createDestination).addDestination(navInflater.inflate(obtainAttributes.getResourceId(R.styleable.NavInclude_graph, 0)));
                         Unit unit = Unit.INSTANCE;
                         obtainAttributes.recycle();
                     } else if (createDestination instanceof NavGraph) {
-                        ((NavGraph) createDestination).addDestination(inflate(resources2, xmlResourceParser2, attributeSet2, i2));
+                        ((NavGraph) createDestination).addDestination(navInflater.inflate(resources2, xmlResourceParser2, attributeSet2, i2));
                     }
+                    this = navInflater;
                     resources = resources2;
                     attributeSet = attributeSet2;
                     xmlResourceParser = xmlResourceParser2;

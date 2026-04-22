@@ -71,7 +71,6 @@ public final class TtmlParser implements SubtitleParser {
 
     @Override // androidx.media3.extractor.text.SubtitleParser
     public Subtitle parseToLegacySubtitle(byte[] bArr, int i, int i2) {
-        char c;
         try {
             XmlPullParser newPullParser = this.xmlParserFactory.newPullParser();
             HashMap hashMap = new HashMap();
@@ -92,11 +91,8 @@ public final class TtmlParser implements SubtitleParser {
                     if (eventType == 2) {
                         if (TtmlNode.TAG_TT.equals(name)) {
                             frameAndTickRate = parseFrameAndTickRates(newPullParser);
-                            c = 15;
                             i4 = parseCellRows(newPullParser, 15);
                             ttsExtent = parseTtsExtent(newPullParser);
-                        } else {
-                            c = 15;
                         }
                         FrameAndTickRate frameAndTickRate2 = frameAndTickRate;
                         TtsExtent ttsExtent2 = ttsExtent;
@@ -125,16 +121,13 @@ public final class TtmlParser implements SubtitleParser {
                         i4 = i5;
                         ttsExtent = ttsExtent2;
                         frameAndTickRate = frameAndTickRate2;
-                    } else {
-                        c = 15;
-                        if (eventType == 4) {
-                            ((TtmlNode) Preconditions.checkNotNull(ttmlNode)).addChild(TtmlNode.buildTextNode(newPullParser.getText()));
-                        } else if (eventType == 3) {
-                            if (newPullParser.getName().equals(TtmlNode.TAG_TT)) {
-                                ttmlSubtitle = new TtmlSubtitle((TtmlNode) Preconditions.checkNotNull((TtmlNode) arrayDeque.peek()), hashMap, hashMap2, hashMap3);
-                            }
-                            arrayDeque.pop();
+                    } else if (eventType == 4) {
+                        ((TtmlNode) Preconditions.checkNotNull(ttmlNode)).addChild(TtmlNode.buildTextNode(newPullParser.getText()));
+                    } else if (eventType == 3) {
+                        if (newPullParser.getName().equals(TtmlNode.TAG_TT)) {
+                            ttmlSubtitle = new TtmlSubtitle((TtmlNode) Preconditions.checkNotNull((TtmlNode) arrayDeque.peek()), hashMap, hashMap2, hashMap3);
                         }
+                        arrayDeque.pop();
                     }
                 } else if (eventType == 2) {
                     i3++;

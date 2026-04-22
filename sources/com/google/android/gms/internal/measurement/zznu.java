@@ -23,12 +23,10 @@ public final class zznu {
         ConcurrentMap concurrentMap = this.zzd;
         zznx zznxVar = (zznx) concurrentMap.get(cls);
         if (zznxVar == null) {
-            zznxVar = this.zzc.zza(cls);
+            zznx zza2 = this.zzc.zza(cls);
             zzmp.zza(cls, "messageType");
-            zznx zznxVar2 = (zznx) concurrentMap.putIfAbsent(cls, zznxVar);
-            if (zznxVar2 != null) {
-                return zznxVar2;
-            }
+            zznx zznxVar2 = (zznx) concurrentMap.putIfAbsent(cls, zza2);
+            return zznxVar2 != null ? zznxVar2 : zza2;
         }
         return zznxVar;
     }

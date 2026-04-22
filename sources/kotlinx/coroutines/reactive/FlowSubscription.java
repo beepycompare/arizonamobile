@@ -104,82 +104,66 @@ public final class FlowSubscription<T> extends AbstractCoroutine<Unit> implement
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Can't wrap try/catch for region: R(10:1|(2:3|(7:5|6|(1:(3:9|10|11)(2:39|40))(4:41|42|43|(1:45)(1:46))|12|13|14|15))|50|6|(0)(0)|12|13|14|15|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x004d, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(11:1|(2:3|(8:5|6|7|(1:(2:10|11)(2:20|21))(3:22|23|(1:25))|12|13|14|15))|44|6|7|(0)(0)|12|13|14|15|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x004a, code lost:
         r5 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x004e, code lost:
-        kotlinx.coroutines.CoroutineExceptionHandlerKt.handleCoroutineException(r0.getCoroutineContext(), r5);
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x004b, code lost:
+        kotlinx.coroutines.CoroutineExceptionHandlerKt.handleCoroutineException(r4.getCoroutineContext(), r5);
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0036  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object flowProcessing(Continuation<? super Unit> continuation) {
         FlowSubscription$flowProcessing$1 flowSubscription$flowProcessing$1;
         int i;
-        FlowSubscription<T> flowSubscription;
-        if (continuation instanceof FlowSubscription$flowProcessing$1) {
-            flowSubscription$flowProcessing$1 = (FlowSubscription$flowProcessing$1) continuation;
-            if ((flowSubscription$flowProcessing$1.label & Integer.MIN_VALUE) != 0) {
-                flowSubscription$flowProcessing$1.label -= Integer.MIN_VALUE;
-                Object obj = flowSubscription$flowProcessing$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = flowSubscription$flowProcessing$1.label;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    try {
+        try {
+            if (continuation instanceof FlowSubscription$flowProcessing$1) {
+                flowSubscription$flowProcessing$1 = (FlowSubscription$flowProcessing$1) continuation;
+                if ((flowSubscription$flowProcessing$1.label & Integer.MIN_VALUE) != 0) {
+                    flowSubscription$flowProcessing$1.label -= Integer.MIN_VALUE;
+                    Object obj = flowSubscription$flowProcessing$1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = flowSubscription$flowProcessing$1.label;
+                    if (i != 0) {
+                        ResultKt.throwOnFailure(obj);
                         flowSubscription$flowProcessing$1.L$0 = this;
                         flowSubscription$flowProcessing$1.label = 1;
                         if (consumeFlow(flowSubscription$flowProcessing$1) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        flowSubscription = this;
-                    } catch (Throwable th) {
-                        th = th;
-                        flowSubscription = this;
-                        Throwable unwrapImpl = DebugKt.getRECOVER_STACK_TRACES() ? th : StackTraceRecoveryKt.unwrapImpl(th);
-                        if (flowSubscription.cancellationRequested || flowSubscription.isActive() || unwrapImpl != flowSubscription.getCancellationException()) {
-                            flowSubscription.subscriber.onError(th);
-                        }
-                        return Unit.INSTANCE;
-                    }
-                } else if (i != 1) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    flowSubscription = (FlowSubscription) flowSubscription$flowProcessing$1.L$0;
-                    try {
+                    } else if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        this = (FlowSubscription) flowSubscription$flowProcessing$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th2) {
-                        th = th2;
-                        if (DebugKt.getRECOVER_STACK_TRACES()) {
-                        }
-                        if (flowSubscription.cancellationRequested) {
-                        }
-                        try {
-                            flowSubscription.subscriber.onError(th);
-                        } catch (Throwable th3) {
-                            ExceptionsKt.addSuppressed(th, th3);
-                            CoroutineExceptionHandlerKt.handleCoroutineException(flowSubscription.getCoroutineContext(), th);
-                        }
-                        return Unit.INSTANCE;
                     }
+                    this.subscriber.onComplete();
+                    return Unit.INSTANCE;
                 }
-                flowSubscription.subscriber.onComplete();
-                return Unit.INSTANCE;
             }
+            if (i != 0) {
+            }
+            this.subscriber.onComplete();
+            return Unit.INSTANCE;
+        } catch (Throwable th) {
+            Throwable unwrapImpl = !DebugKt.getRECOVER_STACK_TRACES() ? th : StackTraceRecoveryKt.unwrapImpl(th);
+            if (!this.cancellationRequested || this.isActive() || unwrapImpl != this.getCancellationException()) {
+                try {
+                    this.subscriber.onError(th);
+                } catch (Throwable th2) {
+                    ExceptionsKt.addSuppressed(th, th2);
+                    CoroutineExceptionHandlerKt.handleCoroutineException(this.getCoroutineContext(), th);
+                }
+            }
+            return Unit.INSTANCE;
         }
         flowSubscription$flowProcessing$1 = new FlowSubscription$flowProcessing$1(this, continuation);
         Object obj2 = flowSubscription$flowProcessing$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = flowSubscription$flowProcessing$1.label;
-        if (i != 0) {
-        }
-        flowSubscription.subscriber.onComplete();
-        return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -228,22 +212,27 @@ public final class FlowSubscription<T> extends AbstractCoroutine<Unit> implement
     @Override // org.reactivestreams.Subscription
     public void request(long j) {
         long j2;
-        long j3;
+        FlowSubscription<T> flowSubscription;
         Continuation continuation;
         if (j <= 0) {
             return;
         }
         AtomicLongFieldUpdater atomicLongFieldUpdater = requested$volatile$FU;
-        do {
+        while (true) {
             j2 = atomicLongFieldUpdater.get(this);
-            j3 = j2 + j;
+            long j3 = j2 + j;
             if (j3 <= 0) {
                 j3 = Long.MAX_VALUE;
             }
-        } while (!atomicLongFieldUpdater.compareAndSet(this, j2, j3));
+            flowSubscription = this;
+            if (atomicLongFieldUpdater.compareAndSet(flowSubscription, j2, j3)) {
+                break;
+            }
+            this = flowSubscription;
+        }
         if (j2 <= 0) {
             do {
-                continuation = (Continuation) producer$volatile$FU.getAndSet(this, null);
+                continuation = (Continuation) producer$volatile$FU.getAndSet(flowSubscription, null);
             } while (continuation == null);
             Result.Companion companion = Result.Companion;
             continuation.resumeWith(Result.m9183constructorimpl(Unit.INSTANCE));

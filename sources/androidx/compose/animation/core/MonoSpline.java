@@ -42,7 +42,7 @@ public final class MonoSpline {
         if (!Float.isNaN(f)) {
             for (int i7 = 0; i7 < length2; i7++) {
                 float[] fArr4 = makeFloatArray[length - 2];
-                float f4 = fArr4[i7] * (1 - f);
+                float f4 = fArr4[i7] * (1.0f - f);
                 float[] fArr5 = makeFloatArray[0];
                 float f5 = f4 + (fArr5[i7] * f);
                 fArr5[i7] = f5;

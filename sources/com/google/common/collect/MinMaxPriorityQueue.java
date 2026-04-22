@@ -323,15 +323,12 @@ public final class MinMaxPriorityQueue<E> extends AbstractQueue<E> {
         }
 
         void bubbleUp(int index, E x) {
-            Heap heap;
             int crossOverUp = crossOverUp(index, x);
-            if (crossOverUp == index) {
-                crossOverUp = index;
-                heap = this;
-            } else {
-                heap = this.otherHeap;
+            if (crossOverUp != index) {
+                this = this.otherHeap;
+                index = crossOverUp;
             }
-            heap.bubbleUpAlternatingLevels(crossOverUp, x);
+            this.bubbleUpAlternatingLevels(index, x);
         }
 
         int bubbleUpAlternatingLevels(int index, E x) {

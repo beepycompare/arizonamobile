@@ -150,7 +150,7 @@ public final class ChickenChargeElement {
         StageUserInfo stageUserInfo3 = (StageUserInfo) CollectionsKt.getOrNull(stageState.getInfoUser(), 0);
         if (stageUserInfo3 != null) {
             this.animator1.setCurrentPercent(stageUserInfo3.getCurrentPosition());
-            hudElementChickenChargeBinding.player1target.setTranslationX((this.binding.player1progressbar.getWidth() * stageUserInfo3.getCurrentPosition()) / 100);
+            hudElementChickenChargeBinding.player1target.setTranslationX((this.binding.player1progressbar.getWidth() * stageUserInfo3.getCurrentPosition()) / 100.0f);
             hudElementChickenChargeBinding.chance1.setText(stageUserInfo3.getChance() + "%");
             hudElementChickenChargeBinding.name1.setText(stageUserInfo3.getName());
             if (stageUserInfo3.getMoving() == 1) {
@@ -164,7 +164,7 @@ public final class ChickenChargeElement {
         StageUserInfo stageUserInfo4 = (StageUserInfo) CollectionsKt.getOrNull(stageState.getInfoUser(), 1);
         if (stageUserInfo4 != null) {
             this.animator2.setCurrentPercent(stageUserInfo4.getCurrentPosition());
-            hudElementChickenChargeBinding.player2target.setTranslationX((this.binding.player1progressbar.getWidth() * stageUserInfo4.getCurrentPosition()) / 100);
+            hudElementChickenChargeBinding.player2target.setTranslationX((this.binding.player1progressbar.getWidth() * stageUserInfo4.getCurrentPosition()) / 100.0f);
             hudElementChickenChargeBinding.chance2.setText(stageUserInfo4.getChance() + "%");
             hudElementChickenChargeBinding.name2.setText(stageUserInfo4.getName());
             if (stageUserInfo4.getMoving() == 1) {
@@ -219,10 +219,9 @@ public final class ChickenChargeElement {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setData$lambda$0$0(ChickenChargeElement chickenChargeElement, StageState stageState, View view) {
         float stop = chickenChargeElement.animator1.stop();
-        float start = ((stop - stageState.getStart()) / stageState.getWidth()) * 100;
         SAMPUIElement sAMPUIElement = chickenChargeElement.notifier;
         int roundToInt = MathKt.roundToInt(stop);
-        sAMPUIElement.notifyClick(91, 91, roundToInt + ", " + MathKt.roundToInt(start));
+        sAMPUIElement.notifyClick(91, 91, roundToInt + ", " + MathKt.roundToInt(((stop - stageState.getStart()) / stageState.getWidth()) * 100.0f));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -233,11 +232,10 @@ public final class ChickenChargeElement {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setData$lambda$0$5(ChickenChargeElement chickenChargeElement, StageState stageState, HudElementChickenChargeBinding hudElementChickenChargeBinding) {
         float width = chickenChargeElement.binding.player1progressbar.getWidth();
-        float f = 100;
-        float start = (stageState.getStart() * width) / f;
+        float start = (stageState.getStart() * width) / 100.0f;
         hudElementChickenChargeBinding.zone.setTranslationX(start);
         hudElementChickenChargeBinding.zone2.setTranslationX(start);
-        float width2 = (width * stageState.getWidth()) / f;
+        float width2 = (width * stageState.getWidth()) / 100.0f;
         FrameLayout zone = hudElementChickenChargeBinding.zone;
         Intrinsics.checkNotNullExpressionValue(zone, "zone");
         FrameLayout frameLayout = zone;

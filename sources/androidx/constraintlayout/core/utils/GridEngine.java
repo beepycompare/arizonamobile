@@ -214,16 +214,23 @@ public class GridEngine {
     }
 
     private void addAllConstraintPositions() {
-        for (int i = 0; i < this.mNumWidgets; i++) {
-            if (leftOfWidget(i) == -1) {
-                int nextPosition = getNextPosition();
-                int rowByIndex = getRowByIndex(nextPosition);
-                int colByIndex = getColByIndex(nextPosition);
+        GridEngine gridEngine;
+        int i = 0;
+        while (i < this.mNumWidgets) {
+            if (this.leftOfWidget(i) != -1) {
+                gridEngine = this;
+            } else {
+                int nextPosition = this.getNextPosition();
+                int rowByIndex = this.getRowByIndex(nextPosition);
+                int colByIndex = this.getColByIndex(nextPosition);
                 if (nextPosition == -1) {
                     return;
                 }
-                addConstraintPosition(i, rowByIndex, colByIndex, 1, 1);
+                gridEngine = this;
+                gridEngine.addConstraintPosition(i, rowByIndex, colByIndex, 1, 1);
             }
+            i++;
+            this = gridEngine;
         }
     }
 

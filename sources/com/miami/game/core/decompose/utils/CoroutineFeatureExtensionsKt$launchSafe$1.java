@@ -42,7 +42,7 @@ public final class CoroutineFeatureExtensionsKt$launchSafe$1 extends SuspendLamb
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0039, code lost:
-        if (r6.invoke(r0, r5) == r1) goto L18;
+        if (r5 == r1) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0050, code lost:
         if (r2.invoke(r6, r5) != r1) goto L7;
@@ -50,6 +50,8 @@ public final class CoroutineFeatureExtensionsKt$launchSafe$1 extends SuspendLamb
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0052, code lost:
         return r1;
      */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v10 */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -70,6 +72,8 @@ public final class CoroutineFeatureExtensionsKt$launchSafe$1 extends SuspendLamb
             Function2<CoroutineScope, Continuation<? super Unit>, Object> function22 = this.$block;
             this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
             this.label = 1;
+            Object invoke = function22.invoke(coroutineScope, this);
+            this = invoke;
         } else if (i != 1) {
             if (i == 2) {
                 Exception exc = (Exception) this.L$1;
@@ -79,6 +83,7 @@ public final class CoroutineFeatureExtensionsKt$launchSafe$1 extends SuspendLamb
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.throwOnFailure(obj);
+            this = this;
         }
         return Unit.INSTANCE;
     }

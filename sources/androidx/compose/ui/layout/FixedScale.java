@@ -50,6 +50,6 @@ public final class FixedScale implements ContentScale {
     /* renamed from: computeScaleFactor-H7hwNQA */
     public long mo6209computeScaleFactorH7hwNQA(long j, long j2) {
         float f = this.value;
-        return ScaleFactor.m6326constructorimpl((Float.floatToRawIntBits(f) << 32) | (4294967295L & Float.floatToRawIntBits(f)));
+        return ScaleFactor.m6326constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
     }
 }

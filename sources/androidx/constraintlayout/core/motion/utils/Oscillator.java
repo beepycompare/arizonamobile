@@ -124,31 +124,26 @@ public class Oscillator {
     }
 
     public double getValue(double d, double d2) {
-        double abs;
         double p = getP(d) + d2;
         switch (this.mType) {
             case 1:
                 return Math.signum(0.5d - (p % 1.0d));
             case 2:
-                abs = Math.abs((((p * 4.0d) + 1.0d) % 4.0d) - 2.0d);
-                break;
+                return 1.0d - Math.abs((((p * 4.0d) + 1.0d) % 4.0d) - 2.0d);
             case 3:
                 return (((p * 2.0d) + 1.0d) % 2.0d) - 1.0d;
             case 4:
-                abs = ((p * 2.0d) + 1.0d) % 2.0d;
-                break;
+                return 1.0d - (((p * 2.0d) + 1.0d) % 2.0d);
             case 5:
                 return Math.cos(this.mPI2 * (d2 + p));
             case 6:
-                double abs2 = 1.0d - Math.abs(((p * 4.0d) % 4.0d) - 2.0d);
-                abs = abs2 * abs2;
-                break;
+                double abs = 1.0d - Math.abs(((p * 4.0d) % 4.0d) - 2.0d);
+                return 1.0d - (abs * abs);
             case 7:
                 return this.mCustomCurve.getPos(p % 1.0d, 0);
             default:
                 return Math.sin(this.mPI2 * p);
         }
-        return 1.0d - abs;
     }
 
     double getDP(double d) {
@@ -175,27 +170,36 @@ public class Oscillator {
     }
 
     public double getSlope(double d, double d2, double d3) {
+        double d4;
+        double signum;
         double p = d2 + getP(d);
         double dp = getDP(d) + d3;
         switch (this.mType) {
             case 1:
                 return FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
             case 2:
-                return dp * 4.0d * Math.signum((((p * 4.0d) + 3.0d) % 4.0d) - 2.0d);
+                d4 = dp * 4.0d;
+                signum = Math.signum((((p * 4.0d) + 3.0d) % 4.0d) - 2.0d);
+                break;
             case 3:
                 return dp * 2.0d;
             case 4:
                 return (-dp) * 2.0d;
             case 5:
-                double d4 = this.mPI2;
-                return (-d4) * dp * Math.sin(d4 * p);
+                double d5 = this.mPI2;
+                return (-d5) * dp * Math.sin(d5 * p);
             case 6:
-                return dp * 4.0d * ((((p * 4.0d) + 2.0d) % 4.0d) - 2.0d);
+                d4 = dp * 4.0d;
+                signum = (((p * 4.0d) + 2.0d) % 4.0d) - 2.0d;
+                break;
             case 7:
                 return this.mCustomCurve.getSlope(p % 1.0d, 0);
             default:
-                double d5 = this.mPI2;
-                return dp * d5 * Math.cos(d5 * p);
+                double d6 = this.mPI2;
+                d4 = dp * d6;
+                signum = Math.cos(d6 * p);
+                break;
         }
+        return d4 * signum;
     }
 }

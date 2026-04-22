@@ -311,7 +311,7 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
             }
 
             /* JADX WARN: Code restructure failed: missing block: B:17:0x004b, code lost:
-                if (r8.send(r2, r0) == r1) goto L19;
+                if (r7.send(r2, r0) == r1) goto L19;
              */
             /* JADX WARN: Code restructure failed: missing block: B:20:0x0054, code lost:
                 if (kotlinx.coroutines.YieldKt.yield(r0) != r1) goto L11;

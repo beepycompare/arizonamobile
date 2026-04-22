@@ -790,14 +790,15 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         if (shouldAnimateContextView()) {
             DecorToolbar decorToolbar = this.mDecorToolbar;
             if (z) {
-                viewPropertyAnimatorCompat2 = decorToolbar.setupAnimatorToVisibility(4, FADE_OUT_DURATION_MS);
-                viewPropertyAnimatorCompat = this.mContextView.setupAnimatorToVisibility(0, 200L);
+                viewPropertyAnimatorCompat = decorToolbar.setupAnimatorToVisibility(4, FADE_OUT_DURATION_MS);
+                viewPropertyAnimatorCompat2 = this.mContextView.setupAnimatorToVisibility(0, 200L);
             } else {
-                viewPropertyAnimatorCompat = decorToolbar.setupAnimatorToVisibility(0, 200L);
-                viewPropertyAnimatorCompat2 = this.mContextView.setupAnimatorToVisibility(8, FADE_OUT_DURATION_MS);
+                ViewPropertyAnimatorCompat viewPropertyAnimatorCompat3 = decorToolbar.setupAnimatorToVisibility(0, 200L);
+                viewPropertyAnimatorCompat = this.mContextView.setupAnimatorToVisibility(8, FADE_OUT_DURATION_MS);
+                viewPropertyAnimatorCompat2 = viewPropertyAnimatorCompat3;
             }
             ViewPropertyAnimatorCompatSet viewPropertyAnimatorCompatSet = new ViewPropertyAnimatorCompatSet();
-            viewPropertyAnimatorCompatSet.playSequentially(viewPropertyAnimatorCompat2, viewPropertyAnimatorCompat);
+            viewPropertyAnimatorCompatSet.playSequentially(viewPropertyAnimatorCompat, viewPropertyAnimatorCompat2);
             viewPropertyAnimatorCompatSet.start();
             return;
         }

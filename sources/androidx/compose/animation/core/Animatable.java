@@ -231,19 +231,21 @@ public final class Animatable<T, V extends AnimationVector> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final T clampToBounds(T t) {
-        if (Intrinsics.areEqual(this.lowerBoundVector, this.negativeInfinityBounds) && Intrinsics.areEqual(this.upperBoundVector, this.positiveInfinityBounds)) {
-            return t;
-        }
-        V invoke = this.typeConverter.getConvertToVector().invoke(t);
-        int size$animation_core = invoke.getSize$animation_core();
-        boolean z = false;
-        for (int i = 0; i < size$animation_core; i++) {
-            if (invoke.get$animation_core(i) < this.lowerBoundVector.get$animation_core(i) || invoke.get$animation_core(i) > this.upperBoundVector.get$animation_core(i)) {
-                invoke.set$animation_core(i, RangesKt.coerceIn(invoke.get$animation_core(i), this.lowerBoundVector.get$animation_core(i), this.upperBoundVector.get$animation_core(i)));
-                z = true;
+        if (!Intrinsics.areEqual(this.lowerBoundVector, this.negativeInfinityBounds) || !Intrinsics.areEqual(this.upperBoundVector, this.positiveInfinityBounds)) {
+            V invoke = this.typeConverter.getConvertToVector().invoke(t);
+            int size$animation_core = invoke.getSize$animation_core();
+            boolean z = false;
+            for (int i = 0; i < size$animation_core; i++) {
+                if (invoke.get$animation_core(i) < this.lowerBoundVector.get$animation_core(i) || invoke.get$animation_core(i) > this.upperBoundVector.get$animation_core(i)) {
+                    invoke.set$animation_core(i, RangesKt.coerceIn(invoke.get$animation_core(i), this.lowerBoundVector.get$animation_core(i), this.upperBoundVector.get$animation_core(i)));
+                    z = true;
+                }
+            }
+            if (z) {
+                return this.typeConverter.getConvertFromVector().invoke(invoke);
             }
         }
-        return z ? this.typeConverter.getConvertFromVector().invoke(invoke) : t;
+        return t;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

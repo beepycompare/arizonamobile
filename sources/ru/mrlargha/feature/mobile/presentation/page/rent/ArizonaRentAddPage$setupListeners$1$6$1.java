@@ -92,7 +92,7 @@ public final class ArizonaRentAddPage$setupListeners$1$6$1 extends SuspendLambda
                 ResultKt.throwOnFailure(obj);
                 Integer intOrNull = StringsKt.toIntOrNull(String.valueOf(this.$this_with.etCostK.getText()));
                 Integer intOrNull2 = StringsKt.toIntOrNull(String.valueOf(this.$it));
-                long j = MoneyElementKt.toLong(new MoneyParts(0, intOrNull2 != null ? intOrNull2.intValue() : 0, intOrNull != null ? intOrNull.intValue() : 0));
+                long j = MoneyElementKt.toLong(new MoneyParts(0, intOrNull2 != null ? intOrNull2.intValue() : 0, (intOrNull != null ? intOrNull.intValue() : 0) * 1000));
                 mutableStateFlow = this.this$0.adState;
                 mutableStateFlow2 = this.this$0.adState;
                 this.L$0 = SpillingKt.nullOutSpilledVariable(intOrNull);

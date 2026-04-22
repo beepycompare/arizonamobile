@@ -1,6 +1,7 @@
 package kotlinx.datetime;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
+import androidx.media3.common.C;
 import androidx.window.core.layout.WindowSizeClass;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -87,25 +88,16 @@ public abstract class DateTimeUnit {
             } else if (j % DateCalculationsKt.NANOS_PER_MINUTE == 0) {
                 this.unitName = "MINUTE";
                 this.unitScale = j / DateCalculationsKt.NANOS_PER_MINUTE;
+            } else if (j % C.NANOS_PER_SECOND == 0) {
+                this.unitName = "SECOND";
+                this.unitScale = j / C.NANOS_PER_SECOND;
+            } else if (j % 1000000 == 0) {
+                this.unitName = "MILLISECOND";
+                this.unitScale = j / 1000000;
+            } else if (j % 1000 == 0) {
+                this.unitName = "MICROSECOND";
+                this.unitScale = j / 1000;
             } else {
-                long j2 = 1000000000;
-                if (j % j2 == 0) {
-                    this.unitName = "SECOND";
-                    this.unitScale = j / j2;
-                    return;
-                }
-                long j3 = 1000000;
-                if (j % j3 == 0) {
-                    this.unitName = "MILLISECOND";
-                    this.unitScale = j / j3;
-                    return;
-                }
-                long j4 = 1000;
-                if (j % j4 == 0) {
-                    this.unitName = "MICROSECOND";
-                    this.unitScale = j / j4;
-                    return;
-                }
                 this.unitName = "NANOSECOND";
                 this.unitScale = j;
             }
@@ -131,7 +123,7 @@ public abstract class DateTimeUnit {
 
         public int hashCode() {
             long j = this.nanoseconds;
-            return ((int) (j >> 32)) ^ ((int) j);
+            return ((int) j) ^ ((int) (j >> 32));
         }
 
         public String toString() {

@@ -130,7 +130,7 @@ public final class Recomposer extends CompositionContext {
 
     @Override // androidx.compose.runtime.CompositionContext
     public long getCompositeKeyHashCode$runtime() {
-        return 1000;
+        return 1000L;
     }
 
     @Override // androidx.compose.runtime.CompositionContext
@@ -919,8 +919,8 @@ public final class Recomposer extends CompositionContext {
     /* JADX WARN: Removed duplicated region for block: B:21:0x0081  */
     /* JADX WARN: Type inference failed for: r7v10, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r7v7, types: [java.util.List] */
-    /* JADX WARN: Type inference failed for: r8v10, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r8v7, types: [java.util.List] */
+    /* JADX WARN: Type inference failed for: r8v9, types: [java.util.List] */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x0098 -> B:13:0x003c). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1159,109 +1159,68 @@ public final class Recomposer extends CompositionContext {
 
     @Override // androidx.compose.runtime.CompositionContext
     public void composeInitial$runtime(ControlledComposition controlledComposition, Function2<? super Composer, ? super Integer, Unit> function2) {
-        Throwable th;
         boolean z;
-        Recomposer recomposer;
-        Throwable th2;
         boolean isComposing = controlledComposition.isComposing();
         synchronized (this.stateLock) {
+            if (this._state.getValue().compareTo(State.ShuttingDown) > 0) {
+                boolean contains = knownCompositionsLocked().contains(controlledComposition);
+                z = !contains;
+                if (!contains) {
+                    registerCompositionLocked(controlledComposition);
+                }
+            } else {
+                z = true;
+            }
+        }
+        try {
+            MutableSnapshot takeMutableSnapshot = Snapshot.Companion.takeMutableSnapshot(readObserverOf(controlledComposition), writeObserverOf(controlledComposition, null));
+            MutableSnapshot mutableSnapshot = takeMutableSnapshot;
+            Snapshot makeCurrent = mutableSnapshot.makeCurrent();
             try {
-                if (this._state.getValue().compareTo(State.ShuttingDown) > 0) {
-                    try {
-                        boolean contains = knownCompositionsLocked().contains(controlledComposition);
-                        z = !contains;
-                        if (!contains) {
-                            registerCompositionLocked(controlledComposition);
+                controlledComposition.composeContent(function2);
+                Unit unit = Unit.INSTANCE;
+                mutableSnapshot.restoreCurrent(makeCurrent);
+                applyAndCheck(takeMutableSnapshot);
+                synchronized (this.stateLock) {
+                    if (this._state.getValue().compareTo(State.ShuttingDown) > 0) {
+                        if (!knownCompositionsLocked().contains(controlledComposition)) {
+                            addKnownCompositionLocked(controlledComposition);
                         }
-                    } catch (Throwable th3) {
-                        th = th3;
-                        throw th;
+                    } else {
+                        unregisterCompositionLocked(controlledComposition);
                     }
-                } else {
-                    z = true;
+                    Unit unit2 = Unit.INSTANCE;
+                }
+                if (!isComposing) {
+                    Snapshot.Companion.notifyObjectsInitialized();
                 }
                 try {
-                    MutableSnapshot takeMutableSnapshot = Snapshot.Companion.takeMutableSnapshot(readObserverOf(controlledComposition), writeObserverOf(controlledComposition, null));
+                    performInitialMovableContentInserts(controlledComposition);
                     try {
-                        MutableSnapshot mutableSnapshot = takeMutableSnapshot;
-                        Snapshot makeCurrent = mutableSnapshot.makeCurrent();
-                        try {
-                            controlledComposition.composeContent(function2);
-                            Unit unit = Unit.INSTANCE;
-                            mutableSnapshot.restoreCurrent(makeCurrent);
-                            applyAndCheck(takeMutableSnapshot);
-                            synchronized (this.stateLock) {
-                                try {
-                                    if (this._state.getValue().compareTo(State.ShuttingDown) > 0) {
-                                        try {
-                                            if (!knownCompositionsLocked().contains(controlledComposition)) {
-                                                addKnownCompositionLocked(controlledComposition);
-                                            }
-                                        } catch (Throwable th4) {
-                                            th2 = th4;
-                                            throw th2;
-                                        }
-                                    } else {
-                                        unregisterCompositionLocked(controlledComposition);
-                                    }
-                                    Unit unit2 = Unit.INSTANCE;
-                                    if (!isComposing) {
-                                        Snapshot.Companion.notifyObjectsInitialized();
-                                    }
-                                    try {
-                                        performInitialMovableContentInserts(controlledComposition);
-                                        try {
-                                            controlledComposition.applyChanges();
-                                            controlledComposition.applyLateChanges();
-                                            if (isComposing) {
-                                                return;
-                                            }
-                                            Snapshot.Companion.notifyObjectsInitialized();
-                                        } catch (Throwable th5) {
-                                            processCompositionError$default(this, th5, null, false, 6, null);
-                                        }
-                                    } catch (Throwable th6) {
-                                        processCompositionError(th6, controlledComposition, true);
-                                    }
-                                } catch (Throwable th7) {
-                                    th2 = th7;
-                                }
-                            }
-                        } catch (Throwable th8) {
-                            recomposer = this;
-                            try {
-                                mutableSnapshot.restoreCurrent(makeCurrent);
-                                throw th8;
-                            } catch (Throwable th9) {
-                                th = th9;
-                                Throwable th10 = th;
-                                try {
-                                    applyAndCheck(takeMutableSnapshot);
-                                    throw th10;
-                                } catch (Throwable th11) {
-                                    th = th11;
-                                    Throwable th12 = th;
-                                    if (z) {
-                                        synchronized (recomposer.stateLock) {
-                                            unregisterCompositionLocked(controlledComposition);
-                                            Unit unit3 = Unit.INSTANCE;
-                                        }
-                                    }
-                                    processCompositionError(th12, controlledComposition, true);
-                                }
-                            }
+                        controlledComposition.applyChanges();
+                        controlledComposition.applyLateChanges();
+                        if (isComposing) {
+                            return;
                         }
-                    } catch (Throwable th13) {
-                        th = th13;
-                        recomposer = this;
+                        Snapshot.Companion.notifyObjectsInitialized();
+                    } catch (Throwable th) {
+                        processCompositionError$default(this, th, null, false, 6, null);
                     }
-                } catch (Throwable th14) {
-                    th = th14;
-                    recomposer = this;
+                } catch (Throwable th2) {
+                    processCompositionError(th2, controlledComposition, true);
                 }
-            } catch (Throwable th15) {
-                th = th15;
+            } catch (Throwable th3) {
+                mutableSnapshot.restoreCurrent(makeCurrent);
+                throw th3;
             }
+        } catch (Throwable th4) {
+            if (z) {
+                synchronized (this.stateLock) {
+                    unregisterCompositionLocked(controlledComposition);
+                    Unit unit3 = Unit.INSTANCE;
+                }
+            }
+            processCompositionError(th4, controlledComposition, true);
         }
     }
 

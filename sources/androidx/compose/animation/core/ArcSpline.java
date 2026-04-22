@@ -252,7 +252,7 @@ public final class ArcSpline {
             boolean z2 = i == 1 || (i == 4 ? f8 > 0.0f : !(i != 5 || f8 >= 0.0f));
             float f9 = z2 ? -1.0f : 1.0f;
             this.vertical = f9;
-            float f10 = 1 / (f2 - f);
+            float f10 = 1.0f / (f2 - f);
             this.oneOverDeltaTime = f10;
             this.lut = new float[101];
             boolean z3 = i == 3;
@@ -306,7 +306,8 @@ public final class ArcSpline {
 
         public final float calcDX() {
             float f = this.ellipseA * this.tmpCosAngle;
-            return f * this.vertical * (this.arcVelocity / ((float) Math.hypot(f, (-this.ellipseB) * this.tmpSinAngle)));
+            float f2 = (-this.ellipseB) * this.tmpSinAngle;
+            return f * this.vertical * (this.arcVelocity / ((float) Math.hypot(f, f2)));
         }
 
         public final float calcDY() {
@@ -334,7 +335,7 @@ public final class ArcSpline {
             if (f >= 1.0f) {
                 return 1.0f;
             }
-            float f2 = f * 100;
+            float f2 = f * 100.0f;
             int i = (int) f2;
             float f3 = f2 - i;
             float[] fArr = this.lut;

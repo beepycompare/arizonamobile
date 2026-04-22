@@ -924,8 +924,9 @@ public final class MessengerChat implements MobileController {
                     Intrinsics.checkNotNull(timestamp);
                     formatTimestamp$default = DateConverter.Companion.formatTimestamp$default(companion, timestamp.longValue(), false, 2, null);
                 }
+                String str = formatTimestamp$default;
                 Long timestamp2 = model.getTimestamp();
-                mobilePhoneMessengerChatAdapter.addMessage(new MessageInfo(nextInt, text, formatTimestamp$default, timestamp2 != null ? timestamp2.longValue() : System.currentTimeMillis(), model.isMe(), false));
+                mobilePhoneMessengerChatAdapter.addMessage(new MessageInfo(nextInt, text, str, timestamp2 != null ? timestamp2.longValue() : System.currentTimeMillis(), model.isMe(), false));
                 RecyclerView recyclerView = messengerChat.pageBinding.chatLayout.messages;
                 mobilePhoneMessengerChatAdapter2 = messengerChat.chatAdapter;
                 recyclerView.scrollToPosition(mobilePhoneMessengerChatAdapter2.getItemCount() - 1);

@@ -195,28 +195,28 @@ public final class TransformableKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x020d, code lost:
-        if (r13.invoke(androidx.compose.ui.geometry.Offset.m4516boximpl(r9)).booleanValue() != false) goto L63;
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x020c, code lost:
+        if (r13.invoke(androidx.compose.ui.geometry.Offset.m4516boximpl(r8)).booleanValue() != false) goto L62;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:87:0x02c3, code lost:
-        if (r6 != 0) goto L96;
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x02c8, code lost:
+        if (r6 != 0) goto L95;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:88:0x02c5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:87:0x02ca, code lost:
         r0 = true;
      */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x02ca A[EDGE_INSN: B:102:0x02ca->B:90:0x02ca ?: BREAK  , SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x0152 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x02cf A[EDGE_INSN: B:101:0x02cf->B:89:0x02cf ?: BREAK  , SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x014a A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0029  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0141  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0155  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0233  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0251  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0297  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x02b7  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x02dd  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:82:0x0297 -> B:83:0x02a4). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0139  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x014d  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0236  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0258  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x029a  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x02bc  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x02e2  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:81:0x029a -> B:82:0x02a9). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -237,61 +237,59 @@ public final class TransformableKt {
         AwaitPointerEventScope awaitPointerEventScope2;
         Function1<? super Offset, Boolean> function13;
         AwaitPointerEventScope awaitPointerEventScope3;
-        float f4;
-        float f5;
-        Channel<TransformEvent> channel3;
         int size;
         int i4;
         int i5;
-        TransformableKt$detectZoom$1 transformableKt$detectZoom$12;
-        float f6;
-        long j2;
         int i6;
+        float f4;
+        long j2;
         int i7;
-        TransformableKt$detectZoom$1 transformableKt$detectZoom$13;
+        float f5;
         Object awaitPointerEvent;
-        float f7;
+        float f6;
         int i8;
-        int i9;
-        Channel<TransformEvent> channel4;
+        float f7;
         AwaitPointerEventScope awaitPointerEventScope4;
         PointerEvent pointerEvent;
         float f8;
-        float f9;
         long j3;
-        int size2;
+        int i9;
+        float f9;
         int i10;
-        int size3;
+        float f10;
+        int size2;
         int i11;
-        int size4;
+        int size3;
         int i12;
+        int size4;
+        int i13;
         if (continuation instanceof TransformableKt$detectZoom$1) {
             transformableKt$detectZoom$1 = (TransformableKt$detectZoom$1) continuation;
             if ((transformableKt$detectZoom$1.label & Integer.MIN_VALUE) != 0) {
                 transformableKt$detectZoom$1.label -= Integer.MIN_VALUE;
-                TransformableKt$detectZoom$1 transformableKt$detectZoom$14 = transformableKt$detectZoom$1;
-                obj = transformableKt$detectZoom$14.result;
+                TransformableKt$detectZoom$1 transformableKt$detectZoom$12 = transformableKt$detectZoom$1;
+                obj = transformableKt$detectZoom$12.result;
                 coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = transformableKt$detectZoom$14.label;
+                i = transformableKt$detectZoom$12.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     long m4543getZeroF1C5BW0 = Offset.Companion.m4543getZeroF1C5BW0();
                     float touchSlop = awaitPointerEventScope.getViewConfiguration().getTouchSlop();
-                    transformableKt$detectZoom$14.L$0 = awaitPointerEventScope;
+                    transformableKt$detectZoom$12.L$0 = awaitPointerEventScope;
                     channel2 = channel;
-                    transformableKt$detectZoom$14.L$1 = channel2;
+                    transformableKt$detectZoom$12.L$1 = channel2;
                     function12 = function1;
-                    transformableKt$detectZoom$14.L$2 = function12;
+                    transformableKt$detectZoom$12.L$2 = function12;
                     z2 = z;
-                    transformableKt$detectZoom$14.Z$0 = z2;
-                    transformableKt$detectZoom$14.F$0 = 0.0f;
-                    transformableKt$detectZoom$14.F$1 = 1.0f;
-                    transformableKt$detectZoom$14.J$0 = m4543getZeroF1C5BW0;
-                    transformableKt$detectZoom$14.I$0 = 0;
-                    transformableKt$detectZoom$14.F$2 = touchSlop;
-                    transformableKt$detectZoom$14.I$1 = 0;
-                    transformableKt$detectZoom$14.label = 1;
-                    if (TapGestureDetectorKt.awaitFirstDown$default(awaitPointerEventScope, false, null, transformableKt$detectZoom$14, 2, null) != coroutine_suspended) {
+                    transformableKt$detectZoom$12.Z$0 = z2;
+                    transformableKt$detectZoom$12.F$0 = 0.0f;
+                    transformableKt$detectZoom$12.F$1 = 1.0f;
+                    transformableKt$detectZoom$12.J$0 = m4543getZeroF1C5BW0;
+                    transformableKt$detectZoom$12.I$0 = 0;
+                    transformableKt$detectZoom$12.F$2 = touchSlop;
+                    transformableKt$detectZoom$12.I$1 = 0;
+                    transformableKt$detectZoom$12.label = 1;
+                    if (TapGestureDetectorKt.awaitFirstDown$default(awaitPointerEventScope, false, null, transformableKt$detectZoom$12, 2, null) != coroutine_suspended) {
                         f = touchSlop;
                         j = m4543getZeroF1C5BW0;
                         i2 = 0;
@@ -304,51 +302,49 @@ public final class TransformableKt {
                 } else if (i != 1) {
                     if (i != 2) {
                         if (i == 3) {
-                            i5 = transformableKt$detectZoom$14.I$2;
-                            i8 = transformableKt$detectZoom$14.I$1;
-                            f7 = transformableKt$detectZoom$14.F$2;
-                            i9 = transformableKt$detectZoom$14.I$0;
-                            j2 = transformableKt$detectZoom$14.J$0;
-                            float f10 = transformableKt$detectZoom$14.F$1;
-                            f3 = transformableKt$detectZoom$14.F$0;
-                            boolean z3 = transformableKt$detectZoom$14.Z$0;
-                            pointerEvent = (PointerEvent) transformableKt$detectZoom$14.L$3;
-                            Channel<TransformEvent> channel5 = (Channel) transformableKt$detectZoom$14.L$1;
+                            i5 = transformableKt$detectZoom$12.I$2;
+                            i8 = transformableKt$detectZoom$12.I$1;
+                            f6 = transformableKt$detectZoom$12.F$2;
+                            i7 = transformableKt$detectZoom$12.I$0;
+                            j2 = transformableKt$detectZoom$12.J$0;
+                            float f11 = transformableKt$detectZoom$12.F$1;
+                            float f12 = transformableKt$detectZoom$12.F$0;
+                            boolean z3 = transformableKt$detectZoom$12.Z$0;
+                            pointerEvent = (PointerEvent) transformableKt$detectZoom$12.L$3;
+                            channel2 = (Channel) transformableKt$detectZoom$12.L$1;
                             ResultKt.throwOnFailure(obj);
-                            f2 = f10;
-                            channel4 = channel5;
-                            awaitPointerEventScope4 = (AwaitPointerEventScope) transformableKt$detectZoom$14.L$0;
-                            function12 = (Function1) transformableKt$detectZoom$14.L$2;
+                            f2 = f11;
+                            f7 = f12;
+                            awaitPointerEventScope4 = (AwaitPointerEventScope) transformableKt$detectZoom$12.L$0;
+                            function12 = (Function1) transformableKt$detectZoom$12.L$2;
                             z2 = z3;
-                            transformableKt$detectZoom$13 = transformableKt$detectZoom$14;
                             awaitPointerEvent = obj;
                             List<PointerInputChange> changes = ((PointerEvent) awaitPointerEvent).getChanges();
                             size3 = changes.size();
                             Object obj2 = coroutine_suspended;
-                            i11 = 0;
+                            i12 = 0;
                             while (true) {
-                                if (i11 >= size3) {
+                                if (i12 >= size3) {
                                     break;
                                 }
-                                if (changes.get(i11).isConsumed()) {
+                                if (changes.get(i12).isConsumed()) {
                                     break;
                                 }
-                                i11++;
+                                i12++;
                             }
                             boolean z4 = false;
                             if (i5 == 0 && !z4) {
                                 List<PointerInputChange> changes2 = pointerEvent.getChanges();
                                 size4 = changes2.size();
-                                for (i12 = 0; i12 < size4; i12++) {
-                                    if (changes2.get(i12).getPressed()) {
+                                for (i13 = 0; i13 < size4; i13++) {
+                                    if (changes2.get(i13).getPressed()) {
                                         i2 = i8;
-                                        f = f7;
-                                        i3 = i9;
-                                        transformableKt$detectZoom$14 = transformableKt$detectZoom$13;
+                                        f = f6;
+                                        i3 = i7;
+                                        f3 = f7;
+                                        j = j2;
                                         awaitPointerEventScope2 = awaitPointerEventScope4;
                                         coroutine_suspended = obj2;
-                                        channel2 = channel4;
-                                        j = j2;
                                     }
                                 }
                             }
@@ -356,25 +352,24 @@ public final class TransformableKt {
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    i2 = transformableKt$detectZoom$14.I$1;
-                    f = transformableKt$detectZoom$14.F$2;
-                    i3 = transformableKt$detectZoom$14.I$0;
-                    j = transformableKt$detectZoom$14.J$0;
-                    float f11 = transformableKt$detectZoom$14.F$1;
-                    float f12 = transformableKt$detectZoom$14.F$0;
-                    boolean z5 = transformableKt$detectZoom$14.Z$0;
-                    AwaitPointerEventScope awaitPointerEventScope5 = (AwaitPointerEventScope) transformableKt$detectZoom$14.L$0;
+                    i2 = transformableKt$detectZoom$12.I$1;
+                    f = transformableKt$detectZoom$12.F$2;
+                    i3 = transformableKt$detectZoom$12.I$0;
+                    j = transformableKt$detectZoom$12.J$0;
+                    f2 = transformableKt$detectZoom$12.F$1;
+                    f3 = transformableKt$detectZoom$12.F$0;
+                    boolean z5 = transformableKt$detectZoom$12.Z$0;
+                    Channel<TransformEvent> channel3 = (Channel) transformableKt$detectZoom$12.L$1;
+                    AwaitPointerEventScope awaitPointerEventScope5 = (AwaitPointerEventScope) transformableKt$detectZoom$12.L$0;
                     ResultKt.throwOnFailure(obj);
-                    f5 = f11;
-                    channel3 = (Channel) transformableKt$detectZoom$14.L$1;
                     z2 = z5;
-                    f4 = f12;
-                    function13 = (Function1) transformableKt$detectZoom$14.L$2;
+                    channel2 = channel3;
+                    function13 = (Function1) transformableKt$detectZoom$12.L$2;
                     awaitPointerEventScope3 = awaitPointerEventScope5;
                     PointerEvent pointerEvent2 = (PointerEvent) obj;
                     List<PointerInputChange> changes3 = pointerEvent2.getChanges();
                     size = changes3.size();
-                    int i13 = i2;
+                    int i14 = i2;
                     i4 = 0;
                     while (true) {
                         if (i4 >= size) {
@@ -390,162 +385,164 @@ public final class TransformableKt {
                     if (i5 != 0) {
                         float calculateZoom = TransformGestureDetectorKt.calculateZoom(pointerEvent2);
                         float calculateRotation = TransformGestureDetectorKt.calculateRotation(pointerEvent2);
-                        float f13 = f5;
-                        float f14 = f4;
+                        float f13 = f2;
+                        float f14 = f3;
                         long calculatePan = TransformGestureDetectorKt.calculatePan(pointerEvent2);
                         if (i3 == 0) {
-                            float f15 = f13 * calculateZoom;
-                            float f16 = f14 + calculateRotation;
+                            f8 = f13 * calculateZoom;
+                            float f15 = f14 + calculateRotation;
                             long m4532plusMKHz9U = Offset.m4532plusMKHz9U(j, calculatePan);
-                            int i14 = i3;
+                            int i15 = i3;
                             float calculateCentroidSize = TransformGestureDetectorKt.calculateCentroidSize(pointerEvent2, false);
-                            float abs = Math.abs(((3.1415927f * f16) * calculateCentroidSize) / 180.0f);
+                            float abs = Math.abs(1.0f - f8) * calculateCentroidSize;
+                            float abs2 = Math.abs(((3.1415927f * f15) * calculateCentroidSize) / 180.0f);
                             float m4525getDistanceimpl = Offset.m4525getDistanceimpl(m4532plusMKHz9U);
-                            if (Math.abs(1 - f15) * calculateCentroidSize > f || abs > f || (m4525getDistanceimpl > f && function13.invoke(Offset.m4516boximpl(calculatePan)).booleanValue())) {
-                                i7 = (!z2 || abs >= f) ? 0 : 1;
-                                channel3.mo8396trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
-                                i6 = 1;
-                                f8 = f15;
-                                f9 = f16;
+                            if (abs > f || abs2 > f || (m4525getDistanceimpl > f && function13.invoke(Offset.m4516boximpl(calculatePan)).booleanValue())) {
+                                int i16 = (!z2 || abs2 >= f) ? 0 : 1;
+                                channel2.mo8396trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
+                                f9 = f15;
+                                j3 = m4532plusMKHz9U;
+                                i6 = i16;
+                                i9 = 1;
                             } else {
-                                i7 = i13;
-                                f8 = f15;
-                                f9 = f16;
+                                f9 = f15;
+                                j3 = m4532plusMKHz9U;
                                 i6 = i14;
+                                i9 = i15;
                             }
-                            j3 = m4532plusMKHz9U;
                         } else {
+                            int i17 = i3;
+                            i6 = i14;
                             f8 = f13;
-                            f9 = f14;
                             j3 = j;
-                            i6 = i3;
-                            i7 = i13;
+                            i9 = i17;
+                            f9 = f14;
                         }
-                        if (i6 == 0) {
-                            transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
+                        if (i9 == 0) {
+                            i10 = i9;
+                            f10 = f9;
                         } else {
-                            float f17 = i7 != 0 ? 0.0f : calculateRotation;
-                            if (f17 != 0.0f) {
-                                transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
+                            float f16 = i6 != 0 ? 0.0f : calculateRotation;
+                            if (f16 != 0.0f) {
+                                i10 = i9;
+                                f10 = f9;
                             } else if (calculateZoom == 1.0f) {
-                                transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
+                                i10 = i9;
+                                f10 = f9;
                                 if (!Offset.m4524equalsimpl0(calculatePan, Offset.Companion.m4543getZeroF1C5BW0())) {
                                 }
                                 List<PointerInputChange> changes4 = pointerEvent2.getChanges();
                                 size2 = changes4.size();
-                                for (i10 = 0; i10 < size2; i10++) {
-                                    PointerInputChange pointerInputChange = changes4.get(i10);
+                                for (i11 = 0; i11 < size2; i11++) {
+                                    PointerInputChange pointerInputChange = changes4.get(i11);
                                     if (PointerEventKt.positionChanged(pointerInputChange)) {
                                         pointerInputChange.consume();
                                     }
                                 }
                             } else {
-                                transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
+                                i10 = i9;
+                                f10 = f9;
                             }
-                            channel3.mo8396trySendJP2dKIU(new TransformEvent.TransformDelta(calculateZoom, calculatePan, f17, null));
+                            channel2.mo8396trySendJP2dKIU(new TransformEvent.TransformDelta(calculateZoom, calculatePan, f16, null));
                             List<PointerInputChange> changes42 = pointerEvent2.getChanges();
                             size2 = changes42.size();
-                            while (i10 < size2) {
+                            while (i11 < size2) {
                             }
                         }
+                        i7 = i10;
+                        f4 = f10;
+                        f5 = f8;
                         j2 = j3;
-                        f6 = f8;
-                        f3 = f9;
                     } else {
-                        int i15 = i3;
-                        transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
-                        ChannelResult.m10710boximpl(channel3.mo8396trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE));
-                        f6 = f5;
-                        f3 = f4;
+                        int i18 = i3;
+                        float f17 = f2;
+                        ChannelResult.m10710boximpl(channel2.mo8396trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE));
+                        i6 = i14;
+                        f4 = f3;
                         j2 = j;
-                        i6 = i15;
-                        i7 = i13;
+                        i7 = i18;
+                        f5 = f17;
                     }
                     PointerEventPass pointerEventPass = PointerEventPass.Final;
-                    transformableKt$detectZoom$13 = transformableKt$detectZoom$12;
-                    transformableKt$detectZoom$13.L$0 = awaitPointerEventScope3;
-                    transformableKt$detectZoom$13.L$1 = channel3;
-                    transformableKt$detectZoom$13.L$2 = function13;
-                    transformableKt$detectZoom$13.L$3 = pointerEvent2;
-                    transformableKt$detectZoom$13.Z$0 = z2;
-                    transformableKt$detectZoom$13.F$0 = f3;
-                    transformableKt$detectZoom$13.F$1 = f6;
-                    transformableKt$detectZoom$13.J$0 = j2;
-                    transformableKt$detectZoom$13.I$0 = i6;
-                    transformableKt$detectZoom$13.F$2 = f;
-                    transformableKt$detectZoom$13.I$1 = i7;
-                    transformableKt$detectZoom$13.I$2 = i5;
-                    transformableKt$detectZoom$13.label = 3;
-                    awaitPointerEvent = awaitPointerEventScope3.awaitPointerEvent(pointerEventPass, transformableKt$detectZoom$13);
+                    transformableKt$detectZoom$12.L$0 = awaitPointerEventScope3;
+                    transformableKt$detectZoom$12.L$1 = channel2;
+                    transformableKt$detectZoom$12.L$2 = function13;
+                    transformableKt$detectZoom$12.L$3 = pointerEvent2;
+                    transformableKt$detectZoom$12.Z$0 = z2;
+                    transformableKt$detectZoom$12.F$0 = f4;
+                    transformableKt$detectZoom$12.F$1 = f5;
+                    transformableKt$detectZoom$12.J$0 = j2;
+                    transformableKt$detectZoom$12.I$0 = i7;
+                    transformableKt$detectZoom$12.F$2 = f;
+                    transformableKt$detectZoom$12.I$1 = i6;
+                    transformableKt$detectZoom$12.I$2 = i5;
+                    transformableKt$detectZoom$12.label = 3;
+                    awaitPointerEvent = awaitPointerEventScope3.awaitPointerEvent(pointerEventPass, transformableKt$detectZoom$12);
                     if (awaitPointerEvent != coroutine_suspended) {
-                        float f18 = f6;
-                        f7 = f;
-                        i8 = i7;
-                        i9 = i6;
-                        channel4 = channel3;
-                        f2 = f18;
+                        int i19 = i6;
+                        f6 = f;
+                        i8 = i19;
+                        float f18 = f4;
+                        f2 = f5;
+                        f7 = f18;
                         awaitPointerEventScope4 = awaitPointerEventScope3;
                         function12 = function13;
                         pointerEvent = pointerEvent2;
                         List<PointerInputChange> changes5 = ((PointerEvent) awaitPointerEvent).getChanges();
                         size3 = changes5.size();
                         Object obj22 = coroutine_suspended;
-                        i11 = 0;
+                        i12 = 0;
                         while (true) {
-                            if (i11 >= size3) {
+                            if (i12 >= size3) {
                             }
-                            i11++;
+                            i12++;
                         }
                         boolean z42 = false;
                         if (i5 == 0) {
                             List<PointerInputChange> changes22 = pointerEvent.getChanges();
                             size4 = changes22.size();
-                            while (i12 < size4) {
+                            while (i13 < size4) {
                             }
                         }
                         return Unit.INSTANCE;
                     }
                     return coroutine_suspended;
                 } else {
-                    i2 = transformableKt$detectZoom$14.I$1;
-                    f = transformableKt$detectZoom$14.F$2;
-                    i3 = transformableKt$detectZoom$14.I$0;
-                    j = transformableKt$detectZoom$14.J$0;
-                    f2 = transformableKt$detectZoom$14.F$1;
-                    f3 = transformableKt$detectZoom$14.F$0;
-                    boolean z6 = transformableKt$detectZoom$14.Z$0;
-                    function12 = (Function1) transformableKt$detectZoom$14.L$2;
-                    Channel<TransformEvent> channel6 = (Channel) transformableKt$detectZoom$14.L$1;
-                    awaitPointerEventScope2 = (AwaitPointerEventScope) transformableKt$detectZoom$14.L$0;
+                    i2 = transformableKt$detectZoom$12.I$1;
+                    f = transformableKt$detectZoom$12.F$2;
+                    i3 = transformableKt$detectZoom$12.I$0;
+                    j = transformableKt$detectZoom$12.J$0;
+                    f2 = transformableKt$detectZoom$12.F$1;
+                    f3 = transformableKt$detectZoom$12.F$0;
+                    boolean z6 = transformableKt$detectZoom$12.Z$0;
+                    function12 = (Function1) transformableKt$detectZoom$12.L$2;
+                    Channel<TransformEvent> channel4 = (Channel) transformableKt$detectZoom$12.L$1;
+                    awaitPointerEventScope2 = (AwaitPointerEventScope) transformableKt$detectZoom$12.L$0;
                     ResultKt.throwOnFailure(obj);
                     z2 = z6;
-                    channel2 = channel6;
+                    channel2 = channel4;
                 }
-                transformableKt$detectZoom$14.L$0 = awaitPointerEventScope2;
-                transformableKt$detectZoom$14.L$1 = channel2;
-                transformableKt$detectZoom$14.L$2 = function12;
-                transformableKt$detectZoom$14.L$3 = null;
-                transformableKt$detectZoom$14.Z$0 = z2;
-                transformableKt$detectZoom$14.F$0 = f3;
-                transformableKt$detectZoom$14.F$1 = f2;
-                transformableKt$detectZoom$14.J$0 = j;
-                transformableKt$detectZoom$14.I$0 = i3;
-                transformableKt$detectZoom$14.F$2 = f;
-                transformableKt$detectZoom$14.I$1 = i2;
-                transformableKt$detectZoom$14.label = 2;
-                obj = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, transformableKt$detectZoom$14, 1, null);
+                transformableKt$detectZoom$12.L$0 = awaitPointerEventScope2;
+                transformableKt$detectZoom$12.L$1 = channel2;
+                transformableKt$detectZoom$12.L$2 = function12;
+                transformableKt$detectZoom$12.L$3 = null;
+                transformableKt$detectZoom$12.Z$0 = z2;
+                transformableKt$detectZoom$12.F$0 = f3;
+                transformableKt$detectZoom$12.F$1 = f2;
+                transformableKt$detectZoom$12.J$0 = j;
+                transformableKt$detectZoom$12.I$0 = i3;
+                transformableKt$detectZoom$12.F$2 = f;
+                transformableKt$detectZoom$12.I$1 = i2;
+                transformableKt$detectZoom$12.label = 2;
+                obj = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, transformableKt$detectZoom$12, 1, null);
                 if (obj != coroutine_suspended) {
-                    float f19 = f3;
-                    f5 = f2;
-                    channel3 = channel2;
-                    f4 = f19;
                     AwaitPointerEventScope awaitPointerEventScope6 = awaitPointerEventScope2;
                     function13 = function12;
                     awaitPointerEventScope3 = awaitPointerEventScope6;
                     PointerEvent pointerEvent22 = (PointerEvent) obj;
                     List<PointerInputChange> changes32 = pointerEvent22.getChanges();
                     size = changes32.size();
-                    int i132 = i2;
+                    int i142 = i2;
                     i4 = 0;
                     while (true) {
                         if (i4 >= size) {
@@ -555,21 +552,20 @@ public final class TransformableKt {
                     if (i5 != 0) {
                     }
                     PointerEventPass pointerEventPass2 = PointerEventPass.Final;
-                    transformableKt$detectZoom$13 = transformableKt$detectZoom$12;
-                    transformableKt$detectZoom$13.L$0 = awaitPointerEventScope3;
-                    transformableKt$detectZoom$13.L$1 = channel3;
-                    transformableKt$detectZoom$13.L$2 = function13;
-                    transformableKt$detectZoom$13.L$3 = pointerEvent22;
-                    transformableKt$detectZoom$13.Z$0 = z2;
-                    transformableKt$detectZoom$13.F$0 = f3;
-                    transformableKt$detectZoom$13.F$1 = f6;
-                    transformableKt$detectZoom$13.J$0 = j2;
-                    transformableKt$detectZoom$13.I$0 = i6;
-                    transformableKt$detectZoom$13.F$2 = f;
-                    transformableKt$detectZoom$13.I$1 = i7;
-                    transformableKt$detectZoom$13.I$2 = i5;
-                    transformableKt$detectZoom$13.label = 3;
-                    awaitPointerEvent = awaitPointerEventScope3.awaitPointerEvent(pointerEventPass2, transformableKt$detectZoom$13);
+                    transformableKt$detectZoom$12.L$0 = awaitPointerEventScope3;
+                    transformableKt$detectZoom$12.L$1 = channel2;
+                    transformableKt$detectZoom$12.L$2 = function13;
+                    transformableKt$detectZoom$12.L$3 = pointerEvent22;
+                    transformableKt$detectZoom$12.Z$0 = z2;
+                    transformableKt$detectZoom$12.F$0 = f4;
+                    transformableKt$detectZoom$12.F$1 = f5;
+                    transformableKt$detectZoom$12.J$0 = j2;
+                    transformableKt$detectZoom$12.I$0 = i7;
+                    transformableKt$detectZoom$12.F$2 = f;
+                    transformableKt$detectZoom$12.I$1 = i6;
+                    transformableKt$detectZoom$12.I$2 = i5;
+                    transformableKt$detectZoom$12.label = 3;
+                    awaitPointerEvent = awaitPointerEventScope3.awaitPointerEvent(pointerEventPass2, transformableKt$detectZoom$12);
                     if (awaitPointerEvent != coroutine_suspended) {
                     }
                 }
@@ -577,25 +573,25 @@ public final class TransformableKt {
             }
         }
         transformableKt$detectZoom$1 = new TransformableKt$detectZoom$1(continuation);
-        TransformableKt$detectZoom$1 transformableKt$detectZoom$142 = transformableKt$detectZoom$1;
-        obj = transformableKt$detectZoom$142.result;
+        TransformableKt$detectZoom$1 transformableKt$detectZoom$122 = transformableKt$detectZoom$1;
+        obj = transformableKt$detectZoom$122.result;
         coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = transformableKt$detectZoom$142.label;
+        i = transformableKt$detectZoom$122.label;
         if (i != 0) {
         }
-        transformableKt$detectZoom$142.L$0 = awaitPointerEventScope2;
-        transformableKt$detectZoom$142.L$1 = channel2;
-        transformableKt$detectZoom$142.L$2 = function12;
-        transformableKt$detectZoom$142.L$3 = null;
-        transformableKt$detectZoom$142.Z$0 = z2;
-        transformableKt$detectZoom$142.F$0 = f3;
-        transformableKt$detectZoom$142.F$1 = f2;
-        transformableKt$detectZoom$142.J$0 = j;
-        transformableKt$detectZoom$142.I$0 = i3;
-        transformableKt$detectZoom$142.F$2 = f;
-        transformableKt$detectZoom$142.I$1 = i2;
-        transformableKt$detectZoom$142.label = 2;
-        obj = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, transformableKt$detectZoom$142, 1, null);
+        transformableKt$detectZoom$122.L$0 = awaitPointerEventScope2;
+        transformableKt$detectZoom$122.L$1 = channel2;
+        transformableKt$detectZoom$122.L$2 = function12;
+        transformableKt$detectZoom$122.L$3 = null;
+        transformableKt$detectZoom$122.Z$0 = z2;
+        transformableKt$detectZoom$122.F$0 = f3;
+        transformableKt$detectZoom$122.F$1 = f2;
+        transformableKt$detectZoom$122.J$0 = j;
+        transformableKt$detectZoom$122.I$0 = i3;
+        transformableKt$detectZoom$122.F$2 = f;
+        transformableKt$detectZoom$122.I$1 = i2;
+        transformableKt$detectZoom$122.label = 2;
+        obj = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, transformableKt$detectZoom$122, 1, null);
         if (obj != coroutine_suspended) {
         }
         return coroutine_suspended;

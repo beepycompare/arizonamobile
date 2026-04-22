@@ -186,7 +186,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
 
             @Override // java.io.InputStream
             public int available() {
-                return (int) Math.min(Buffer.this.size(), Integer.MAX_VALUE);
+                return (int) Math.min(Buffer.this.size(), (long) SieveCacheKt.NodeLinkMask);
             }
 
             public String toString() {
@@ -956,7 +956,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
         int i = segment.pos;
         int i2 = segment.limit;
         if (i2 - i < 2) {
-            return (short) (((readByte() & 255) << 8) | (readByte() & 255));
+            return (short) ((readByte() & 255) | ((readByte() & 255) << 8));
         }
         byte[] bArr = segment.data;
         int i3 = i + 1;
@@ -982,7 +982,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
         int i = segment.pos;
         int i2 = segment.limit;
         if (i2 - i < 4) {
-            return ((readByte() & 255) << 24) | ((readByte() & 255) << 16) | ((readByte() & 255) << 8) | (readByte() & 255);
+            return (readByte() & 255) | ((readByte() & 255) << 24) | ((readByte() & 255) << 16) | ((readByte() & 255) << 8);
         }
         byte[] bArr = segment.data;
         int i3 = ((bArr[i + 1] & 255) << 16) | ((bArr[i] & 255) << 24);
@@ -1272,7 +1272,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
                 return okio.internal.Buffer.readUtf8Line(this, j2);
             }
             Buffer buffer = new Buffer();
-            copyTo(buffer, 0L, Math.min(32, size()));
+            copyTo(buffer, 0L, Math.min(32L, size()));
             throw new EOFException("\\n not found: limit=" + Math.min(size(), j) + " content=" + buffer.readByteString().hex() + Typography.ellipsis);
         }
         throw new IllegalArgumentException(("limit < 0: " + j).toString());
@@ -1654,10 +1654,9 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
         byte[] bArr = writableSegment$okio.data;
         int i2 = writableSegment$okio.limit + access$countDigitsIn;
         while (j != 0) {
-            long j2 = 10;
             i2--;
-            bArr[i2] = okio.internal.Buffer.getHEX_DIGIT_BYTES()[(int) (j % j2)];
-            j /= j2;
+            bArr[i2] = okio.internal.Buffer.getHEX_DIGIT_BYTES()[(int) (j % 10)];
+            j /= 10;
         }
         if (z) {
             bArr[i2 - 1] = 45;

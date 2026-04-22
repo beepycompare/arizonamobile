@@ -68,9 +68,9 @@ public final class LazyStaggeredGridDslKt {
     /* JADX WARN: Removed duplicated region for block: B:114:0x0144  */
     /* JADX WARN: Removed duplicated region for block: B:117:0x0155  */
     /* JADX WARN: Removed duplicated region for block: B:124:0x0167  */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x0291  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x02aa  */
-    /* JADX WARN: Removed duplicated region for block: B:181:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x028f  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x02a8  */
+    /* JADX WARN: Removed duplicated region for block: B:182:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0059  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x005f  */
@@ -238,12 +238,12 @@ public final class LazyStaggeredGridDslKt {
                                 } else {
                                     lazyStaggeredGridState3 = obj2;
                                 }
-                                m811PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj3;
+                                m811PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj3;
                                 if (i6 != 0) {
                                     z3 = false;
                                 }
-                                float m7555constructorimpl = i7 != 0 ? Dp.m7555constructorimpl(0) : f;
-                                m688spacedBy0680j_4 = i8 != 0 ? Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(0)) : horizontal;
+                                float m7555constructorimpl = i7 != 0 ? Dp.m7555constructorimpl(0.0f) : f;
+                                m688spacedBy0680j_4 = i8 != 0 ? Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(0.0f)) : horizontal;
                                 if ((i3 & 128) != 0) {
                                     flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
                                     i4 &= -29360129;
@@ -409,9 +409,9 @@ public final class LazyStaggeredGridDslKt {
     /* JADX WARN: Removed duplicated region for block: B:106:0x0132  */
     /* JADX WARN: Removed duplicated region for block: B:107:0x0135  */
     /* JADX WARN: Removed duplicated region for block: B:110:0x013e  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0226  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x023d  */
-    /* JADX WARN: Removed duplicated region for block: B:158:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x0225  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x023c  */
+    /* JADX WARN: Removed duplicated region for block: B:159:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0059  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x005f  */
@@ -560,12 +560,12 @@ public final class LazyStaggeredGridDslKt {
                                         lazyStaggeredGridState2 = LazyStaggeredGridStateKt.rememberLazyStaggeredGridState(0, 0, startRestartGroup, 0, 3);
                                         i3 &= -897;
                                     }
-                                    PaddingValues m811PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj;
+                                    PaddingValues m811PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj;
                                     if (i5 != 0) {
                                         z3 = false;
                                     }
-                                    float m7555constructorimpl = i6 != 0 ? Dp.m7555constructorimpl(0) : f2;
-                                    Arrangement.HorizontalOrVertical m688spacedBy0680j_4 = i7 != 0 ? Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(0)) : horizontal;
+                                    float m7555constructorimpl = i6 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
+                                    Arrangement.HorizontalOrVertical m688spacedBy0680j_4 = i7 != 0 ? Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(0.0f)) : horizontal;
                                     if ((i2 & 128) != 0) {
                                         flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
                                         i3 &= -29360129;
@@ -787,8 +787,8 @@ public final class LazyStaggeredGridDslKt {
     /* JADX WARN: Removed duplicated region for block: B:114:0x0144  */
     /* JADX WARN: Removed duplicated region for block: B:117:0x0155  */
     /* JADX WARN: Removed duplicated region for block: B:124:0x0167  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x0290  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x02a9  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x028f  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x02a8  */
     /* JADX WARN: Removed duplicated region for block: B:182:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0059  */
@@ -843,6 +843,7 @@ public final class LazyStaggeredGridDslKt {
         float f3;
         FlingBehavior flingBehavior4;
         boolean z6;
+        boolean z7;
         int i12;
         int i13;
         int i14;
@@ -939,7 +940,6 @@ public final class LazyStaggeredGridDslKt {
                                 if ((i3 & 512) != 0) {
                                     i4 &= -1879048193;
                                 }
-                                m688spacedBy0680j_4 = vertical;
                                 f3 = f;
                                 flingBehavior4 = flingBehavior;
                                 z6 = z2;
@@ -947,6 +947,8 @@ public final class LazyStaggeredGridDslKt {
                                 modifier3 = obj;
                                 lazyStaggeredGridState4 = obj2;
                                 m811PaddingValues0680j_4 = obj3;
+                                z7 = z3;
+                                m688spacedBy0680j_4 = vertical;
                             } else {
                                 Modifier.Companion companion = i15 != 0 ? Modifier.Companion : obj;
                                 if ((i3 & 4) != 0) {
@@ -955,19 +957,19 @@ public final class LazyStaggeredGridDslKt {
                                 } else {
                                     lazyStaggeredGridState3 = obj2;
                                 }
-                                m811PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj3;
+                                m811PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj3;
                                 if (i6 != 0) {
                                     z3 = false;
                                 }
-                                m688spacedBy0680j_4 = i7 != 0 ? Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(0)) : vertical;
-                                float m7555constructorimpl = i8 != 0 ? Dp.m7555constructorimpl(0) : f;
+                                m688spacedBy0680j_4 = i7 != 0 ? Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(0.0f)) : vertical;
+                                float m7555constructorimpl = i8 != 0 ? Dp.m7555constructorimpl(0.0f) : f;
                                 if ((i3 & 128) != 0) {
                                     flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
                                     i4 &= -29360129;
                                 } else {
                                     flingBehavior3 = flingBehavior;
                                 }
-                                boolean z7 = i10 == 0 ? z2 : true;
+                                boolean z8 = i10 == 0 ? z2 : true;
                                 if ((i3 & 512) != 0) {
                                     i4 &= -1879048193;
                                     modifier3 = companion;
@@ -979,9 +981,9 @@ public final class LazyStaggeredGridDslKt {
                                 lazyStaggeredGridState4 = lazyStaggeredGridState3;
                                 f3 = m7555constructorimpl;
                                 flingBehavior4 = flingBehavior3;
-                                z6 = z7;
+                                z6 = z8;
+                                z7 = z3;
                             }
-                            boolean z8 = z3;
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-670735644, i4, i11, "androidx.compose.foundation.lazy.staggeredgrid.LazyHorizontalStaggeredGrid (LazyStaggeredGridDsl.kt:202)");
@@ -990,7 +992,7 @@ public final class LazyStaggeredGridDslKt {
                             int i17 = i4 << 3;
                             composer2 = startRestartGroup;
                             PaddingValues paddingValues3 = m811PaddingValues0680j_4;
-                            LazyStaggeredGridKt.m1033LazyStaggeredGridw41Enmo(lazyStaggeredGridState4, Orientation.Horizontal, rememberRowSlots(staggeredGridCells, m688spacedBy0680j_4, m811PaddingValues0680j_4, startRestartGroup, (i4 & 14) | ((i4 >> 12) & 112) | (i16 & 896)), modifier3, paddingValues3, z8, flingBehavior4, z6, overscrollEffect3, f3, m688spacedBy0680j_4.mo694getSpacingD9Ej5fM(), function1, composer2, ((i4 >> 6) & 14) | 48 | ((i4 << 6) & 7168) | (57344 & i17) | (i17 & 458752) | (3670016 & i16) | (29360128 & i16) | (i16 & 234881024) | ((i4 << 9) & 1879048192), (i11 << 3) & 112, 0);
+                            LazyStaggeredGridKt.m1033LazyStaggeredGridw41Enmo(lazyStaggeredGridState4, Orientation.Horizontal, rememberRowSlots(staggeredGridCells, m688spacedBy0680j_4, m811PaddingValues0680j_4, startRestartGroup, (i4 & 14) | ((i4 >> 12) & 112) | (i16 & 896)), modifier3, paddingValues3, z7, flingBehavior4, z6, overscrollEffect3, f3, m688spacedBy0680j_4.mo694getSpacingD9Ej5fM(), function1, composer2, ((i4 >> 6) & 14) | 48 | ((i4 << 6) & 7168) | (57344 & i17) | (i17 & 458752) | (3670016 & i16) | (29360128 & i16) | (i16 & 234881024) | ((i4 << 9) & 1879048192), (i11 << 3) & 112, 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -998,7 +1000,7 @@ public final class LazyStaggeredGridDslKt {
                             lazyStaggeredGridState2 = lazyStaggeredGridState4;
                             modifier2 = modifier3;
                             paddingValues2 = paddingValues3;
-                            z5 = z8;
+                            z5 = z7;
                             flingBehavior2 = flingBehavior4;
                             z4 = z6;
                             overscrollEffect2 = overscrollEffect3;
@@ -1126,9 +1128,9 @@ public final class LazyStaggeredGridDslKt {
     /* JADX WARN: Removed duplicated region for block: B:106:0x0132  */
     /* JADX WARN: Removed duplicated region for block: B:107:0x0135  */
     /* JADX WARN: Removed duplicated region for block: B:110:0x013e  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0226  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x023d  */
-    /* JADX WARN: Removed duplicated region for block: B:158:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x0225  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x023c  */
+    /* JADX WARN: Removed duplicated region for block: B:159:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0059  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x005f  */
@@ -1277,12 +1279,12 @@ public final class LazyStaggeredGridDslKt {
                                         lazyStaggeredGridState2 = LazyStaggeredGridStateKt.rememberLazyStaggeredGridState(0, 0, startRestartGroup, 0, 3);
                                         i3 &= -897;
                                     }
-                                    PaddingValues m811PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj;
+                                    PaddingValues m811PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : obj;
                                     if (i5 != 0) {
                                         z3 = false;
                                     }
-                                    Arrangement.HorizontalOrVertical m688spacedBy0680j_4 = i6 != 0 ? Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(0)) : obj2;
-                                    float m7555constructorimpl = i7 != 0 ? Dp.m7555constructorimpl(0) : f;
+                                    Arrangement.HorizontalOrVertical m688spacedBy0680j_4 = i6 != 0 ? Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(0.0f)) : obj2;
+                                    float m7555constructorimpl = i7 != 0 ? Dp.m7555constructorimpl(0.0f) : f;
                                     if ((i2 & 128) != 0) {
                                         flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
                                         i3 &= -29360129;

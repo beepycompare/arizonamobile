@@ -83,7 +83,6 @@ public class BreakpointInterceptor implements Interceptor.Connect, Interceptor.F
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0020  */
-    /* JADX WARN: Removed duplicated region for block: B:14:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -94,16 +93,19 @@ public class BreakpointInterceptor implements Interceptor.Connect, Interceptor.F
             long rangeRightFromContentRange = getRangeRightFromContentRange(responseHeaderField);
             if (rangeRightFromContentRange > 0) {
                 j = rangeRightFromContentRange + 1;
-                if (j >= 0) {
+                if (j < 0) {
                     String responseHeaderField2 = connected.getResponseHeaderField("Content-Length");
-                    return !Util.isEmpty(responseHeaderField2) ? Long.parseLong(responseHeaderField2) : j;
+                    if (!Util.isEmpty(responseHeaderField2)) {
+                        return Long.parseLong(responseHeaderField2);
+                    }
                 }
                 return j;
             }
         }
         j = -1;
-        if (j >= 0) {
+        if (j < 0) {
         }
+        return j;
     }
 
     static long getRangeRightFromContentRange(String str) {

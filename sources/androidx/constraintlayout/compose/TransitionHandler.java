@@ -75,7 +75,6 @@ public final class TransitionHandler {
     public final Object updateProgressWhileTouchUp(Continuation<? super Unit> continuation) {
         TransitionHandler$updateProgressWhileTouchUp$1 transitionHandler$updateProgressWhileTouchUp$1;
         int i;
-        TransitionHandler transitionHandler;
         if (continuation instanceof TransitionHandler$updateProgressWhileTouchUp$1) {
             transitionHandler$updateProgressWhileTouchUp$1 = (TransitionHandler$updateProgressWhileTouchUp$1) continuation;
             if ((transitionHandler$updateProgressWhileTouchUp$1.label & Integer.MIN_VALUE) != 0) {
@@ -107,14 +106,13 @@ public final class TransitionHandler {
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    transitionHandler = this;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    transitionHandler = (TransitionHandler) transitionHandler$updateProgressWhileTouchUp$1.L$0;
+                    this = (TransitionHandler) transitionHandler$updateProgressWhileTouchUp$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                transitionHandler.motionProgress.setFloatValue(((Number) obj).floatValue());
+                this.motionProgress.setFloatValue(((Number) obj).floatValue());
                 return Unit.INSTANCE;
             }
         }
@@ -124,7 +122,7 @@ public final class TransitionHandler {
         i = transitionHandler$updateProgressWhileTouchUp$1.label;
         if (i != 0) {
         }
-        transitionHandler.motionProgress.setFloatValue(((Number) obj2).floatValue());
+        this.motionProgress.setFloatValue(((Number) obj2).floatValue());
         return Unit.INSTANCE;
     }
 

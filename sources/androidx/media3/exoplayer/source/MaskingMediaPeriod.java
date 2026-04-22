@@ -113,9 +113,11 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
     @Override // androidx.media3.exoplayer.source.MediaPeriod
     public long selectTracks(ExoTrackSelection[] exoTrackSelectionArr, boolean[] zArr, SampleStream[] sampleStreamArr, boolean[] zArr2, long j) {
         long j2 = this.preparePositionOverrideUs;
-        long j3 = (j2 == C.TIME_UNSET || j != this.preparePositionUs) ? j : j2;
+        if (j2 != C.TIME_UNSET && j == this.preparePositionUs) {
+            j = j2;
+        }
         this.preparePositionOverrideUs = C.TIME_UNSET;
-        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).selectTracks(exoTrackSelectionArr, zArr, sampleStreamArr, zArr2, j3);
+        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).selectTracks(exoTrackSelectionArr, zArr, sampleStreamArr, zArr2, j);
     }
 
     @Override // androidx.media3.exoplayer.source.MediaPeriod

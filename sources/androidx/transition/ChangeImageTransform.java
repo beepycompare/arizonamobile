@@ -85,40 +85,39 @@ public class ChangeImageTransform extends Transition {
 
     @Override // androidx.transition.Transition
     public Animator createAnimator(ViewGroup viewGroup, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        if (transitionValues == null || transitionValues2 == null) {
-            return null;
+        if (transitionValues != null && transitionValues2 != null) {
+            Rect rect = (Rect) transitionValues.values.get(PROPNAME_BOUNDS);
+            Rect rect2 = (Rect) transitionValues2.values.get(PROPNAME_BOUNDS);
+            if (rect != null && rect2 != null) {
+                Matrix matrix = (Matrix) transitionValues.values.get(PROPNAME_MATRIX);
+                Matrix matrix2 = (Matrix) transitionValues2.values.get(PROPNAME_MATRIX);
+                boolean z = (matrix == null && matrix2 == null) || (matrix != null && matrix.equals(matrix2));
+                if (rect.equals(rect2) && z) {
+                    return null;
+                }
+                ImageView imageView = (ImageView) transitionValues2.view;
+                Drawable drawable = imageView.getDrawable();
+                int intrinsicWidth = drawable.getIntrinsicWidth();
+                int intrinsicHeight = drawable.getIntrinsicHeight();
+                if (intrinsicWidth <= 0 || intrinsicHeight <= 0) {
+                    return createNullAnimator(imageView);
+                }
+                if (matrix == null) {
+                    matrix = MatrixUtils.IDENTITY_MATRIX;
+                }
+                if (matrix2 == null) {
+                    matrix2 = MatrixUtils.IDENTITY_MATRIX;
+                }
+                ANIMATED_TRANSFORM_PROPERTY.set(imageView, matrix);
+                ObjectAnimator createMatrixAnimator = createMatrixAnimator(imageView, matrix, matrix2);
+                Listener listener = new Listener(imageView, matrix, matrix2);
+                createMatrixAnimator.addListener(listener);
+                createMatrixAnimator.addPauseListener(listener);
+                addListener(listener);
+                return createMatrixAnimator;
+            }
         }
-        Rect rect = (Rect) transitionValues.values.get(PROPNAME_BOUNDS);
-        Rect rect2 = (Rect) transitionValues2.values.get(PROPNAME_BOUNDS);
-        if (rect == null || rect2 == null) {
-            return null;
-        }
-        Matrix matrix = (Matrix) transitionValues.values.get(PROPNAME_MATRIX);
-        Matrix matrix2 = (Matrix) transitionValues2.values.get(PROPNAME_MATRIX);
-        boolean z = (matrix == null && matrix2 == null) || (matrix != null && matrix.equals(matrix2));
-        if (rect.equals(rect2) && z) {
-            return null;
-        }
-        ImageView imageView = (ImageView) transitionValues2.view;
-        Drawable drawable = imageView.getDrawable();
-        int intrinsicWidth = drawable.getIntrinsicWidth();
-        int intrinsicHeight = drawable.getIntrinsicHeight();
-        if (intrinsicWidth <= 0 || intrinsicHeight <= 0) {
-            return createNullAnimator(imageView);
-        }
-        if (matrix == null) {
-            matrix = MatrixUtils.IDENTITY_MATRIX;
-        }
-        if (matrix2 == null) {
-            matrix2 = MatrixUtils.IDENTITY_MATRIX;
-        }
-        ANIMATED_TRANSFORM_PROPERTY.set(imageView, matrix);
-        ObjectAnimator createMatrixAnimator = createMatrixAnimator(imageView, matrix, matrix2);
-        Listener listener = new Listener(imageView, matrix, matrix2);
-        createMatrixAnimator.addListener(listener);
-        createMatrixAnimator.addPauseListener(listener);
-        addListener(listener);
-        return createMatrixAnimator;
+        return null;
     }
 
     private ObjectAnimator createNullAnimator(ImageView imageView) {

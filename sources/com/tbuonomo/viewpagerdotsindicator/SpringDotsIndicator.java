@@ -212,7 +212,7 @@ public final class SpringDotsIndicator extends BaseDotsIndicator {
             @Override // com.tbuonomo.viewpagerdotsindicator.OnPageChangeListenerHelper
             public void onPageScrolled$viewpagerdotsindicator_release(int i, int i2, float f) {
                 SpringAnimation springAnimation;
-                float dotsSize = SpringDotsIndicator.this.getDotsSize() + (SpringDotsIndicator.this.getDotsSpacing() * 2);
+                float dotsSize = SpringDotsIndicator.this.getDotsSize() + (SpringDotsIndicator.this.getDotsSpacing() * 2.0f);
                 ViewParent parent = SpringDotsIndicator.this.dots.get(i).getParent();
                 Intrinsics.checkNotNull(parent, "null cannot be cast to non-null type android.view.ViewGroup");
                 float left = ((ViewGroup) parent).getLeft() + (dotsSize * f);

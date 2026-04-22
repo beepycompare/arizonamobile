@@ -45,14 +45,14 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\t\u001a\u0096\u0001\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u0015\b\u0002\u0010\u0004\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0005¢\u0006\u0002\b\u00062\u0015\b\u0002\u0010\u0007\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0005¢\u0006\u0002\b\u00062\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\r2\b\b\u0002\u0010\u000f\u001a\u00020\r2\b\b\u0002\u0010\u0010\u001a\u00020\r2\u0011\u0010\u0011\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0004\b\u0012\u0010\u0013\u001ag\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0014\u001a\u00020\u00152\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\r2\b\b\u0002\u0010\u0016\u001a\u00020\r2\b\b\u0002\u0010\u000f\u001a\u00020\r2\b\b\u0002\u0010\u0010\u001a\u00020\rH\u0007¢\u0006\u0004\b\u0017\u0010\u0018\u001ab\u0010\u0019\u001a\u00020\u00012\u0011\u0010\u001a\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0013\u0010\u0007\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0005¢\u0006\u0002\b\u00062\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u000f\u001a\u00020\r2\u0006\u0010\u0010\u001a\u00020\rH\u0003¢\u0006\u0004\b\u001d\u0010\u001e\u001ad\u0010\u001f\u001a\u00020\u00012\u0011\u0010\u001a\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0013\u0010\u0004\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0005¢\u0006\u0002\b\u00062\u0013\u0010\u0007\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0005¢\u0006\u0002\b\u00062\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010 \u001a\u00020\r2\u0006\u0010!\u001a\u00020\rH\u0003¢\u0006\u0004\b\"\u0010\u001e\"\u0010\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010%\"\u0010\u0010&\u001a\u00020$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010%\"\u0010\u0010'\u001a\u00020$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010%\"\u0010\u0010(\u001a\u00020$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010%\"\u0010\u0010)\u001a\u00020$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010%\"\u0010\u0010*\u001a\u00020$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010%\"\u0010\u0010+\u001a\u00020$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010%\"\u0010\u0010,\u001a\u00020$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010%¨\u0006-"}, d2 = {"Snackbar", "", "modifier", "Landroidx/compose/ui/Modifier;", "action", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "dismissAction", "actionOnNewLine", "", "shape", "Landroidx/compose/ui/graphics/Shape;", "containerColor", "Landroidx/compose/ui/graphics/Color;", "contentColor", "actionContentColor", "dismissActionContentColor", FirebaseAnalytics.Param.CONTENT, "Snackbar-eQBnUkQ", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/ui/graphics/Shape;JJJJLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "snackbarData", "Landroidx/compose/material3/SnackbarData;", "actionColor", "Snackbar-sDKtq54", "(Landroidx/compose/material3/SnackbarData;Landroidx/compose/ui/Modifier;ZLandroidx/compose/ui/graphics/Shape;JJJJJLandroidx/compose/runtime/Composer;II)V", "NewLineButtonSnackbar", "text", "actionTextStyle", "Landroidx/compose/ui/text/TextStyle;", "NewLineButtonSnackbar-kKq0p4A", "(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/text/TextStyle;JJLandroidx/compose/runtime/Composer;I)V", "OneRowSnackbar", "actionTextColor", "dismissActionColor", "OneRowSnackbar-kKq0p4A", "ContainerMaxWidth", "Landroidx/compose/ui/unit/Dp;", "F", "HeightToFirstLine", "HorizontalSpacing", "HorizontalSpacingButtonSide", "SeparateButtonExtraY", "SnackbarVerticalPadding", "TextEndExtraSpacing", "LongButtonVerticalOffset", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SnackbarKt {
-    private static final float HorizontalSpacingButtonSide;
-    private static final float TextEndExtraSpacing;
-    private static final float ContainerMaxWidth = Dp.m7555constructorimpl(600);
-    private static final float HeightToFirstLine = Dp.m7555constructorimpl(30);
-    private static final float HorizontalSpacing = Dp.m7555constructorimpl(16);
-    private static final float SeparateButtonExtraY = Dp.m7555constructorimpl(2);
-    private static final float SnackbarVerticalPadding = Dp.m7555constructorimpl(6);
-    private static final float LongButtonVerticalOffset = Dp.m7555constructorimpl(12);
+    private static final float ContainerMaxWidth = Dp.m7555constructorimpl(600.0f);
+    private static final float HeightToFirstLine = Dp.m7555constructorimpl(30.0f);
+    private static final float HorizontalSpacing = Dp.m7555constructorimpl(16.0f);
+    private static final float HorizontalSpacingButtonSide = Dp.m7555constructorimpl(8.0f);
+    private static final float SeparateButtonExtraY = Dp.m7555constructorimpl(2.0f);
+    private static final float SnackbarVerticalPadding = Dp.m7555constructorimpl(6.0f);
+    private static final float TextEndExtraSpacing = Dp.m7555constructorimpl(8.0f);
+    private static final float LongButtonVerticalOffset = Dp.m7555constructorimpl(12.0f);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NewLineButtonSnackbar_kKq0p4A$lambda$6(Function2 function2, Function2 function22, Function2 function23, TextStyle textStyle, long j, long j2, int i, Composer composer, int i2) {
@@ -465,8 +465,8 @@ public final class SnackbarKt {
     /* JADX WARN: Removed duplicated region for block: B:101:0x011a  */
     /* JADX WARN: Removed duplicated region for block: B:102:0x011c  */
     /* JADX WARN: Removed duplicated region for block: B:105:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x02ce  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x02e4  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x02cd  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x02e3  */
     /* JADX WARN: Removed duplicated region for block: B:180:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x004e  */
@@ -720,7 +720,7 @@ public final class SnackbarKt {
                     }
                     int i13 = i5 << 3;
                     composer2 = startRestartGroup;
-                    m2554SnackbareQBnUkQ(PaddingKt.m818padding3ABfNKs(companion, Dp.m7555constructorimpl(12)), composableLambda, composableLambda2, z4, shape4, j18, j19, j20, j17, ComposableLambdaKt.rememberComposableLambda(-1266389126, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SnackbarKt$Snackbar$3
+                    m2554SnackbareQBnUkQ(PaddingKt.m818padding3ABfNKs(companion, Dp.m7555constructorimpl(12.0f)), composableLambda, composableLambda2, z4, shape4, j18, j19, j20, j17, ComposableLambdaKt.rememberComposableLambda(-1266389126, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SnackbarKt$Snackbar$3
                         @Override // kotlin.jvm.functions.Function2
                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                             invoke(composer3, num.intValue());
@@ -923,7 +923,7 @@ public final class SnackbarKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getEnd());
             if (function23 != null) {
-                f = Dp.m7555constructorimpl(0);
+                f = Dp.m7555constructorimpl(0.0f);
             }
             Modifier m822paddingqDBjuR0$default3 = PaddingKt.m822paddingqDBjuR0$default(align, 0.0f, 0.0f, f, 0.0f, 11, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
@@ -1065,7 +1065,7 @@ public final class SnackbarKt {
             if (function23 == null) {
                 m7555constructorimpl = HorizontalSpacingButtonSide;
             } else {
-                m7555constructorimpl = Dp.m7555constructorimpl(0);
+                m7555constructorimpl = Dp.m7555constructorimpl(0.0f);
             }
             Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(companion, f, 0.0f, m7555constructorimpl, 0.0f, 10, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1650453040, "CC(remember):Snackbar.kt#9igjgp");
@@ -1246,11 +1246,5 @@ public final class SnackbarKt {
                 }
             });
         }
-    }
-
-    static {
-        float f = 8;
-        HorizontalSpacingButtonSide = Dp.m7555constructorimpl(f);
-        TextEndExtraSpacing = Dp.m7555constructorimpl(f);
     }
 }

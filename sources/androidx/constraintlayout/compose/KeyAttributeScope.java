@@ -34,10 +34,9 @@ public final class KeyAttributeScope extends BaseKeyFrameScope {
         this.rotationX$delegate = addOnPropertyChange(valueOf2, "rotationX");
         this.rotationY$delegate = addOnPropertyChange(valueOf2, "rotationY");
         this.rotationZ$delegate = addOnPropertyChange(valueOf2, "rotationZ");
-        float f = 0;
-        this.translationX$delegate = addOnPropertyChange(Dp.m7553boximpl(Dp.m7555constructorimpl(f)), "translationX");
-        this.translationY$delegate = addOnPropertyChange(Dp.m7553boximpl(Dp.m7555constructorimpl(f)), "translationY");
-        this.translationZ$delegate = addOnPropertyChange(Dp.m7553boximpl(Dp.m7555constructorimpl(f)), "translationZ");
+        this.translationX$delegate = addOnPropertyChange(Dp.m7553boximpl(Dp.m7555constructorimpl(0.0f)), "translationX");
+        this.translationY$delegate = addOnPropertyChange(Dp.m7553boximpl(Dp.m7555constructorimpl(0.0f)), "translationY");
+        this.translationZ$delegate = addOnPropertyChange(Dp.m7553boximpl(Dp.m7555constructorimpl(0.0f)), "translationZ");
     }
 
     public final float getAlpha() {

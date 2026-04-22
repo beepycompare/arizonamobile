@@ -95,7 +95,9 @@ public final class TimeoutFuture<V> extends FluentFuture.TrustedFuture<V> {
             String str = "inputFuture=[" + listenableFuture + "]";
             if (scheduledFuture != null) {
                 long delay = scheduledFuture.getDelay(TimeUnit.MILLISECONDS);
-                return delay > 0 ? str + ", remaining delay=[" + delay + " ms]" : str;
+                if (delay > 0) {
+                    return str + ", remaining delay=[" + delay + " ms]";
+                }
             }
             return str;
         }

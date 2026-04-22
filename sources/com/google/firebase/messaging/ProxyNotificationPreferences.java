@@ -34,7 +34,7 @@ public final class ProxyNotificationPreferences {
             gmsRpc.setRetainProxiedNotifications(z).addOnSuccessListener(new DefaultDownloaderFactory$$ExternalSyntheticLambda0(), new OnSuccessListener() { // from class: com.google.firebase.messaging.ProxyNotificationPreferences$$ExternalSyntheticLambda0
                 @Override // com.google.android.gms.tasks.OnSuccessListener
                 public final void onSuccess(Object obj) {
-                    Void r3 = (Void) obj;
+                    Void r2 = (Void) obj;
                     ProxyNotificationPreferences.setProxyRetentionPreferences(context, z);
                 }
             });

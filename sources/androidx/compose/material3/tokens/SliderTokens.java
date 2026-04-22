@@ -7,83 +7,60 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class SliderTokens {
     public static final int $stable = 0;
-    private static final float ActiveHandleHeight;
-    private static final float ActiveHandleLeadingSpace;
-    private static final float ActiveHandlePadding;
-    private static final float ActiveHandleTrailingSpace;
-    private static final float ActiveHandleWidth;
-    private static final float ActiveTrackHeight;
-    private static final float DisabledHandleWidth;
-    private static final float FocusHandleWidth;
-    private static final float HandleHeight;
-    private static final float HandleWidth;
-    private static final float HoverHandleWidth;
-    private static final float InactiveTrackHeight;
-    private static final float PressedHandleWidth;
-    private static final float StopIndicatorSize;
-    private static final float StopIndicatorTrailingSpace;
     public static final SliderTokens INSTANCE = new SliderTokens();
     private static final float ActiveContainerOpacity = 1.0f;
+    private static final float ActiveHandleHeight = Dp.m7555constructorimpl(44.0f);
+    private static final float ActiveHandleLeadingSpace = Dp.m7555constructorimpl(6.0f);
+    private static final float ActiveHandlePadding = Dp.m7555constructorimpl(6.0f);
     private static final ShapeKeyTokens ActiveHandleShape = ShapeKeyTokens.CornerFull;
+    private static final float ActiveHandleTrailingSpace = Dp.m7555constructorimpl(6.0f);
+    private static final float ActiveHandleWidth = Dp.m7555constructorimpl(4.0f);
     private static final ColorSchemeKeyTokens ActiveTrackColor = ColorSchemeKeyTokens.Primary;
+    private static final float ActiveTrackHeight = Dp.m7555constructorimpl(16.0f);
     private static final ShapeKeyTokens ActiveTrackShape = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens ActiveTrackShapeLeading = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens DisabledActiveTrackColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledActiveTrackOpacity = 0.38f;
     private static final ColorSchemeKeyTokens DisabledHandleColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledHandleOpacity = 0.38f;
+    private static final float DisabledHandleWidth = Dp.m7555constructorimpl(4.0f);
     private static final ColorSchemeKeyTokens DisabledInactiveTrackColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledInactiveTrackOpacity = 0.12f;
     private static final ColorSchemeKeyTokens DisabledStopColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FocusActiveTrackColor = ColorSchemeKeyTokens.Primary;
+    private static final float FocusHandleWidth = Dp.m7555constructorimpl(2.0f);
     private static final ColorSchemeKeyTokens FocusInactiveTrackColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ColorSchemeKeyTokens FocusStopColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens HandleColor = ColorSchemeKeyTokens.Primary;
+    private static final float HandleHeight = Dp.m7555constructorimpl(44.0f);
     private static final ShapeKeyTokens HandleShape = ShapeKeyTokens.CornerFull;
+    private static final float HandleWidth = Dp.m7555constructorimpl(4.0f);
     private static final ColorSchemeKeyTokens HoverHandleColor = ColorSchemeKeyTokens.Primary;
+    private static final float HoverHandleWidth = Dp.m7555constructorimpl(4.0f);
     private static final ColorSchemeKeyTokens HoverStopColor = ColorSchemeKeyTokens.Primary;
     private static final float InactiveContainerOpacity = 1.0f;
     private static final ColorSchemeKeyTokens InactiveTrackColor = ColorSchemeKeyTokens.SecondaryContainer;
+    private static final float InactiveTrackHeight = Dp.m7555constructorimpl(16.0f);
     private static final ShapeKeyTokens InactiveTrackShape = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens LabelContainerColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens LabelTextColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final ColorSchemeKeyTokens PressedActiveTrackColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens PressedHandleColor = ColorSchemeKeyTokens.Primary;
+    private static final float PressedHandleWidth = Dp.m7555constructorimpl(2.0f);
     private static final ColorSchemeKeyTokens PressedInactiveTrackColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ColorSchemeKeyTokens PressedStopColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SliderActiveHandleColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens StopIndicatorColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ColorSchemeKeyTokens StopIndicatorColorSelected = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ShapeKeyTokens StopIndicatorShape = ShapeKeyTokens.CornerFull;
-    private static final float ValueIndicatorActiveBottomSpace = Dp.m7555constructorimpl((float) 12.0d);
+    private static final float StopIndicatorSize = Dp.m7555constructorimpl(4.0f);
+    private static final float StopIndicatorTrailingSpace = Dp.m7555constructorimpl(6.0f);
+    private static final float ValueIndicatorActiveBottomSpace = Dp.m7555constructorimpl(12.0f);
     private static final ColorSchemeKeyTokens ValueIndicatorContainerColor = ColorSchemeKeyTokens.InverseSurface;
     private static final ColorSchemeKeyTokens ValueIndicatorLabelTextColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final TypographyKeyTokens ValueIndicatorLabelTextFont = TypographyKeyTokens.LabelLarge;
 
     private SliderTokens() {
-    }
-
-    static {
-        float f = (float) 44.0d;
-        ActiveHandleHeight = Dp.m7555constructorimpl(f);
-        float f2 = (float) 6.0d;
-        ActiveHandleLeadingSpace = Dp.m7555constructorimpl(f2);
-        ActiveHandlePadding = Dp.m7555constructorimpl(f2);
-        ActiveHandleTrailingSpace = Dp.m7555constructorimpl(f2);
-        float f3 = (float) 4.0d;
-        ActiveHandleWidth = Dp.m7555constructorimpl(f3);
-        float f4 = (float) 16.0d;
-        ActiveTrackHeight = Dp.m7555constructorimpl(f4);
-        DisabledHandleWidth = Dp.m7555constructorimpl(f3);
-        float f5 = (float) 2.0d;
-        FocusHandleWidth = Dp.m7555constructorimpl(f5);
-        HandleHeight = Dp.m7555constructorimpl(f);
-        HandleWidth = Dp.m7555constructorimpl(f3);
-        HoverHandleWidth = Dp.m7555constructorimpl(f3);
-        InactiveTrackHeight = Dp.m7555constructorimpl(f4);
-        PressedHandleWidth = Dp.m7555constructorimpl(f5);
-        StopIndicatorSize = Dp.m7555constructorimpl(f3);
-        StopIndicatorTrailingSpace = Dp.m7555constructorimpl(f2);
     }
 
     public final float getActiveContainerOpacity() {

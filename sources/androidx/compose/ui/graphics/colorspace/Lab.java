@@ -71,6 +71,7 @@ public final class Lab extends ColorSpace {
 
     @Override // androidx.compose.ui.graphics.colorspace.ColorSpace
     public long toXy$ui_graphics(float f, float f2, float f3) {
+        float f4;
         if (f < 0.0f) {
             f = 0.0f;
         }
@@ -83,12 +84,8 @@ public final class Lab extends ColorSpace {
         if (f2 > 128.0f) {
             f2 = 128.0f;
         }
-        float f4 = (f + 16.0f) / 116.0f;
-        float f5 = (f2 * 0.002f) + f4;
-        float f6 = f5 > D ? f5 * f5 * f5 : (f5 - C) * 0.12841855f;
-        float f7 = f4 > D ? f4 * f4 * f4 : (f4 - C) * 0.12841855f;
-        float f8 = f6 * Illuminant.INSTANCE.getD50Xyz$ui_graphics()[0];
-        return (Float.floatToRawIntBits(f7 * Illuminant.INSTANCE.getD50Xyz$ui_graphics()[1]) & 4294967295L) | (Float.floatToRawIntBits(f8) << 32);
+        float f5 = (f + 16.0f) / 116.0f;
+        return (Float.floatToRawIntBits(((f2 * 0.002f) + f5 > D ? (f4 * f4) * f4 : (f4 - C) * 0.12841855f) * Illuminant.INSTANCE.getD50Xyz$ui_graphics()[0]) << 32) | (4294967295L & Float.floatToRawIntBits((f5 > D ? f5 * f5 * f5 : (f5 - C) * 0.12841855f) * Illuminant.INSTANCE.getD50Xyz$ui_graphics()[1]));
     }
 
     @Override // androidx.compose.ui.graphics.colorspace.ColorSpace
@@ -117,9 +114,10 @@ public final class Lab extends ColorSpace {
         float f7 = f3 / Illuminant.INSTANCE.getD50Xyz$ui_graphics()[2];
         float cbrt = f5 > A ? (float) Math.cbrt(f5) : (f5 * B) + C;
         float cbrt2 = f6 > A ? (float) Math.cbrt(f6) : (f6 * B) + C;
+        float cbrt3 = f7 > A ? (float) Math.cbrt(f7) : (f7 * B) + C;
         float f8 = (116.0f * cbrt2) - 16.0f;
         float f9 = (cbrt - cbrt2) * 500.0f;
-        float cbrt3 = (cbrt2 - (f7 > A ? (float) Math.cbrt(f7) : (f7 * B) + C)) * 200.0f;
+        float f10 = (cbrt2 - cbrt3) * 200.0f;
         if (f8 < 0.0f) {
             f8 = 0.0f;
         }
@@ -132,10 +130,10 @@ public final class Lab extends ColorSpace {
         if (f9 > 128.0f) {
             f9 = 128.0f;
         }
-        if (cbrt3 < -128.0f) {
-            cbrt3 = -128.0f;
+        if (f10 < -128.0f) {
+            f10 = -128.0f;
         }
-        return ColorKt.Color(f8, f9, cbrt3 <= 128.0f ? cbrt3 : 128.0f, f4, colorSpace);
+        return ColorKt.Color(f8, f9, f10 <= 128.0f ? f10 : 128.0f, f4, colorSpace);
     }
 
     @Override // androidx.compose.ui.graphics.colorspace.ColorSpace

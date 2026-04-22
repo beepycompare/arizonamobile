@@ -114,7 +114,7 @@ public final class VectorizedKeyframesSpec<V extends AnimationVector> implements
             int i = this.timestamps._size;
             float[] fArr2 = new float[i];
             for (int i2 = 0; i2 < i; i2++) {
-                fArr2[i2] = this.timestamps.get(i2) / ((float) 1000);
+                fArr2[i2] = this.timestamps.get(i2) / 1000.0f;
             }
             this.times = fArr2;
             int i3 = this.timestamps._size;
@@ -214,7 +214,7 @@ public final class VectorizedKeyframesSpec<V extends AnimationVector> implements
             }
             int size$animation_core = v4.getSize$animation_core();
             while (i < size$animation_core) {
-                v4.set$animation_core(i, (v.get$animation_core(i) * (1 - easedTimeFromIndex)) + (v2.get$animation_core(i) * easedTimeFromIndex));
+                v4.set$animation_core(i, (v.get$animation_core(i) * (1.0f - easedTimeFromIndex)) + (v2.get$animation_core(i) * easedTimeFromIndex));
                 i++;
             }
         }
@@ -268,9 +268,7 @@ public final class VectorizedKeyframesSpec<V extends AnimationVector> implements
         } else {
             int i3 = this.timestamps.get(i);
             int i4 = this.timestamps.get(i + 1);
-            if (i2 == i3) {
-                f = i3;
-            } else {
+            if (i2 != i3) {
                 int i5 = i4 - i3;
                 VectorizedKeyframeSpecElementInfo<V> vectorizedKeyframeSpecElementInfo = this.keyframes.get(i3);
                 if (vectorizedKeyframeSpecElementInfo == null || (easing = vectorizedKeyframeSpecElementInfo.getEasing()) == null) {
@@ -278,13 +276,11 @@ public final class VectorizedKeyframesSpec<V extends AnimationVector> implements
                 }
                 float f2 = i5;
                 float transform = easing.transform((i2 - i3) / f2);
-                if (z) {
-                    return transform;
-                }
-                f = (f2 * transform) + i3;
+                return z ? transform : ((f2 * transform) + i3) / 1000.0f;
             }
+            f = i3;
         }
-        return f / ((float) 1000);
+        return f / 1000.0f;
     }
 
     private final int findEntryForTimeMillis(int i) {

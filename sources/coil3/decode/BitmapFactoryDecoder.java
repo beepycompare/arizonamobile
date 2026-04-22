@@ -68,8 +68,8 @@ public final class BitmapFactoryDecoder implements Decoder {
         int i;
         Semaphore semaphore;
         int i2;
-        Semaphore semaphore2;
         Throwable th;
+        Semaphore semaphore2;
         Object runInterruptible$default;
         try {
             if (continuation instanceof BitmapFactoryDecoder$decode$1) {
@@ -125,8 +125,9 @@ public final class BitmapFactoryDecoder implements Decoder {
                     bitmapFactoryDecoder$decode$1.label = 2;
                     runInterruptible$default = InterruptibleKt.runInterruptible$default(null, function0, bitmapFactoryDecoder$decode$1, 1, null);
                     if (runInterruptible$default != coroutine_suspended) {
-                        semaphore2 = semaphore;
+                        Semaphore semaphore3 = semaphore;
                         obj = runInterruptible$default;
+                        semaphore2 = semaphore3;
                         DecodeResult decodeResult2 = (DecodeResult) obj;
                         semaphore2.release();
                         return decodeResult2;
@@ -151,8 +152,9 @@ public final class BitmapFactoryDecoder implements Decoder {
             }
             return coroutine_suspended;
         } catch (Throwable th3) {
-            semaphore2 = semaphore;
+            Semaphore semaphore4 = semaphore;
             th = th3;
+            semaphore2 = semaphore4;
             semaphore2.release();
             throw th;
         }
@@ -242,12 +244,12 @@ public final class BitmapFactoryDecoder implements Decoder {
         options.inScaled = !(computeSizeMultiplier == 1.0d);
         if (options.inScaled) {
             if (computeSizeMultiplier > 1.0d) {
-                options.inDensity = MathKt.roundToInt(Integer.MAX_VALUE / computeSizeMultiplier);
+                options.inDensity = MathKt.roundToInt(2.147483647E9d / computeSizeMultiplier);
                 options.inTargetDensity = Integer.MAX_VALUE;
                 return;
             }
             options.inDensity = Integer.MAX_VALUE;
-            options.inTargetDensity = MathKt.roundToInt(Integer.MAX_VALUE * computeSizeMultiplier);
+            options.inTargetDensity = MathKt.roundToInt(2.147483647E9d * computeSizeMultiplier);
         }
     }
 

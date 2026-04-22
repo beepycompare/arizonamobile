@@ -28,18 +28,17 @@ public abstract class BaseContinuationImpl implements Continuation<Object>, Coro
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v2, types: [kotlin.coroutines.Continuation, java.lang.Object, kotlin.coroutines.Continuation<java.lang.Object>] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [kotlin.coroutines.Continuation, java.lang.Object, kotlin.coroutines.Continuation<java.lang.Object>] */
     @Override // kotlin.coroutines.Continuation
     public final void resumeWith(Object obj) {
         Object invokeSuspend;
-        BaseContinuationImpl baseContinuationImpl = this;
         while (true) {
-            DebugProbesKt.probeCoroutineResumed(baseContinuationImpl);
-            BaseContinuationImpl baseContinuationImpl2 = baseContinuationImpl;
-            ?? r1 = baseContinuationImpl2.completion;
-            Intrinsics.checkNotNull(r1);
+            DebugProbesKt.probeCoroutineResumed(this);
+            BaseContinuationImpl baseContinuationImpl = this;
+            ?? r0 = baseContinuationImpl.completion;
+            Intrinsics.checkNotNull(r0);
             try {
-                invokeSuspend = baseContinuationImpl2.invokeSuspend(obj);
+                invokeSuspend = baseContinuationImpl.invokeSuspend(obj);
             } catch (Throwable th) {
                 Result.Companion companion = Result.Companion;
                 obj = Result.m9183constructorimpl(ResultKt.createFailure(th));
@@ -49,12 +48,12 @@ public abstract class BaseContinuationImpl implements Continuation<Object>, Coro
             }
             Result.Companion companion2 = Result.Companion;
             obj = Result.m9183constructorimpl(invokeSuspend);
-            baseContinuationImpl2.releaseIntercepted();
-            if (!(r1 instanceof BaseContinuationImpl)) {
-                r1.resumeWith(obj);
+            baseContinuationImpl.releaseIntercepted();
+            if (!(r0 instanceof BaseContinuationImpl)) {
+                r0.resumeWith(obj);
                 return;
             }
-            baseContinuationImpl = r1;
+            this = r0;
         }
     }
 

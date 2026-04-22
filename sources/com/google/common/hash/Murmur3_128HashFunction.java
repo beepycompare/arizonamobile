@@ -40,7 +40,7 @@ public final class Murmur3_128HashFunction extends AbstractHashFunction implemen
     }
 
     public int hashCode() {
-        return getClass().hashCode() ^ this.seed;
+        return this.seed ^ getClass().hashCode();
     }
 
     /* loaded from: classes4.dex */

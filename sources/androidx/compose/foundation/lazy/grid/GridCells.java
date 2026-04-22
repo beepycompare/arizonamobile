@@ -57,7 +57,7 @@ public interface GridCells {
 
         private Adaptive(float f) {
             this.minSize = f;
-            if (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl((float) 0)) > 0) {
+            if (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0.0f)) > 0) {
                 return;
             }
             InlineClassHelperKt.throwIllegalArgumentException("Provided min size should be larger than zero.");
@@ -92,7 +92,7 @@ public interface GridCells {
 
         private FixedSize(float f) {
             this.size = f;
-            if (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl((float) 0)) > 0) {
+            if (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0.0f)) > 0) {
                 return;
             }
             InlineClassHelperKt.throwIllegalArgumentException("Provided size should be larger than zero.");

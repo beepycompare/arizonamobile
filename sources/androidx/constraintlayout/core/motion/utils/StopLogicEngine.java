@@ -52,31 +52,35 @@ public class StopLogicEngine implements StopEngine {
 
     @Override // androidx.constraintlayout.core.motion.utils.StopEngine
     public float getVelocity(float f) {
-        float f2 = this.mStage1Duration;
-        if (f <= f2) {
-            float f3 = this.mStage1Velocity;
-            return f3 + (((this.mStage2Velocity - f3) * f) / f2);
-        }
-        int i = this.mNumberOfStages;
-        if (i == 1) {
-            return 0.0f;
-        }
-        float f4 = f - f2;
-        float f5 = this.mStage2Duration;
-        if (f4 < f5) {
-            float f6 = this.mStage2Velocity;
-            return f6 + (((this.mStage3Velocity - f6) * f4) / f5);
-        } else if (i == 2) {
-            return 0.0f;
+        float f2;
+        float f3;
+        float f4 = this.mStage1Duration;
+        if (f <= f4) {
+            f2 = this.mStage1Velocity;
+            f3 = this.mStage2Velocity;
         } else {
-            float f7 = f4 - f5;
-            float f8 = this.mStage3Duration;
-            if (f7 < f8) {
-                float f9 = this.mStage3Velocity;
-                return f9 - ((f7 * f9) / f8);
+            int i = this.mNumberOfStages;
+            if (i == 1) {
+                return 0.0f;
             }
-            return 0.0f;
+            f -= f4;
+            f4 = this.mStage2Duration;
+            if (f >= f4) {
+                if (i == 2) {
+                    return 0.0f;
+                }
+                float f5 = f - f4;
+                float f6 = this.mStage3Duration;
+                if (f5 < f6) {
+                    float f7 = this.mStage3Velocity;
+                    return f7 - ((f5 * f7) / f6);
+                }
+                return 0.0f;
+            }
+            f2 = this.mStage2Velocity;
+            f3 = this.mStage3Velocity;
         }
+        return f2 + (((f3 - f2) * f) / f4);
     }
 
     private float calcY(float f) {
@@ -136,8 +140,8 @@ public class StopLogicEngine implements StopEngine {
     @Override // androidx.constraintlayout.core.motion.utils.StopEngine
     public float getVelocity() {
         boolean z = this.mBackwards;
-        float f = this.mLastTime;
-        return z ? -getVelocity(f) : getVelocity(f);
+        float velocity = getVelocity(this.mLastTime);
+        return z ? -velocity : velocity;
     }
 
     @Override // androidx.constraintlayout.core.motion.utils.StopEngine

@@ -45,8 +45,7 @@ public final class PlatformMagnifierFactoryApi28Impl implements PlatformMagnifie
         @Override // androidx.compose.foundation.PlatformMagnifier
         /* renamed from: getSize-YbymL2g */
         public long mo352getSizeYbymL2g() {
-            int width = this.magnifier.getWidth();
-            return IntSize.m7721constructorimpl((this.magnifier.getHeight() & 4294967295L) | (width << 32));
+            return IntSize.m7721constructorimpl((this.magnifier.getWidth() << 32) | (this.magnifier.getHeight() & 4294967295L));
         }
 
         @Override // androidx.compose.foundation.PlatformMagnifier

@@ -276,8 +276,8 @@ public abstract class IntFloatMap {
     }
 
     public final String joinToString(CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated) {
-        int[] iArr;
-        int[] iArr2;
+        long[] jArr;
+        long[] jArr2;
         int i2;
         Intrinsics.checkNotNullParameter(separator, "separator");
         Intrinsics.checkNotNullParameter(prefix, "prefix");
@@ -285,15 +285,15 @@ public abstract class IntFloatMap {
         Intrinsics.checkNotNullParameter(truncated, "truncated");
         StringBuilder sb = new StringBuilder();
         sb.append(prefix);
-        int[] iArr3 = this.keys;
+        int[] iArr = this.keys;
         float[] fArr = this.values;
-        long[] jArr = this.metadata;
-        int length = jArr.length - 2;
+        long[] jArr3 = this.metadata;
+        int length = jArr3.length - 2;
         if (length >= 0) {
             int i3 = 0;
             int i4 = 0;
             loop0: while (true) {
-                long j = jArr[i3];
+                long j = jArr3[i3];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
                     int i5 = 8;
                     int i6 = 8 - ((~(i3 - length)) >>> 31);
@@ -301,10 +301,10 @@ public abstract class IntFloatMap {
                     while (i7 < i6) {
                         if ((j & 255) < 128) {
                             int i8 = (i3 << 3) + i7;
+                            int i9 = iArr[i8];
                             i2 = i5;
-                            int i9 = iArr3[i8];
                             float f = fArr[i8];
-                            iArr2 = iArr3;
+                            jArr2 = jArr3;
                             if (i4 == i) {
                                 sb.append(truncated);
                                 break loop0;
@@ -317,26 +317,26 @@ public abstract class IntFloatMap {
                             sb.append(f);
                             i4++;
                         } else {
-                            iArr2 = iArr3;
+                            jArr2 = jArr3;
                             i2 = i5;
                         }
                         j >>= i2;
                         i7++;
-                        iArr3 = iArr2;
                         i5 = i2;
+                        jArr3 = jArr2;
                     }
-                    iArr = iArr3;
+                    jArr = jArr3;
                     if (i6 != i5) {
                         break;
                     }
                 } else {
-                    iArr = iArr3;
+                    jArr = jArr3;
                 }
                 if (i3 == length) {
                     break;
                 }
                 i3++;
-                iArr3 = iArr;
+                jArr3 = jArr;
             }
         }
         sb.append(postfix);
@@ -428,6 +428,9 @@ public abstract class IntFloatMap {
     }
 
     public final String joinToString(CharSequence charSequence, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function2<? super Integer, ? super Float, ? extends CharSequence> transform) {
+        long[] jArr;
+        long[] jArr2;
+        int i2;
         CharSequence separator = charSequence;
         Intrinsics.checkNotNullParameter(separator, "separator");
         Intrinsics.checkNotNullParameter(prefix, "prefix");
@@ -438,57 +441,68 @@ public abstract class IntFloatMap {
         sb.append(prefix);
         int[] iArr = this.keys;
         float[] fArr = this.values;
-        long[] jArr = this.metadata;
-        int length = jArr.length - 2;
+        long[] jArr3 = this.metadata;
+        int length = jArr3.length - 2;
         if (length >= 0) {
-            int i2 = 0;
             int i3 = 0;
+            int i4 = 0;
             loop0: while (true) {
-                long j = jArr[i2];
-                int i4 = i2;
+                long j = jArr3[i3];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i5 = 8 - ((~(i4 - length)) >>> 31);
-                    int i6 = 0;
-                    while (i6 < i5) {
+                    int i5 = 8;
+                    int i6 = 8 - ((~(i3 - length)) >>> 31);
+                    int i7 = 0;
+                    while (i7 < i6) {
                         if ((j & 255) < 128) {
-                            int i7 = (i4 << 3) + i6;
-                            int i8 = iArr[i7];
-                            float f = fArr[i7];
-                            if (i3 == i) {
+                            int i8 = (i3 << 3) + i7;
+                            int i9 = iArr[i8];
+                            float f = fArr[i8];
+                            i2 = i5;
+                            if (i4 == i) {
                                 sb.append(truncated);
                                 break loop0;
                             }
-                            if (i3 != 0) {
+                            if (i4 != 0) {
                                 sb.append(separator);
                             }
-                            sb.append(transform.invoke(Integer.valueOf(i8), Float.valueOf(f)));
-                            i3++;
+                            jArr2 = jArr3;
+                            sb.append(transform.invoke(Integer.valueOf(i9), Float.valueOf(f)));
+                            i4++;
+                        } else {
+                            jArr2 = jArr3;
+                            i2 = i5;
                         }
-                        j >>= 8;
-                        i6++;
+                        j >>= i2;
+                        i7++;
                         separator = charSequence;
+                        i5 = i2;
+                        jArr3 = jArr2;
                     }
-                    if (i5 != 8) {
+                    jArr = jArr3;
+                    if (i6 != i5) {
                         break;
                     }
+                } else {
+                    jArr = jArr3;
                 }
-                if (i4 == length) {
+                if (i3 == length) {
                     break;
                 }
-                i2 = i4 + 1;
+                i3++;
                 separator = charSequence;
+                jArr3 = jArr;
             }
+            String sb2 = sb.toString();
+            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+            return sb2;
         }
         sb.append(postfix);
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-        return sb2;
+        String sb22 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
+        return sb22;
     }
 
     public boolean equals(Object obj) {
-        boolean z;
-        boolean z2;
-        boolean z3 = true;
         if (obj == this) {
             return true;
         }
@@ -507,39 +521,26 @@ public abstract class IntFloatMap {
                     long j = jArr[i];
                     if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
                         int i2 = 8 - ((~(i - length)) >>> 31);
-                        int i3 = 0;
-                        while (i3 < i2) {
+                        for (int i3 = 0; i3 < i2; i3++) {
                             if ((255 & j) < 128) {
                                 int i4 = (i << 3) + i3;
                                 int i5 = iArr[i4];
                                 float f = fArr[i4];
                                 int findKeyIndex = intFloatMap.findKeyIndex(i5);
-                                if (findKeyIndex < 0) {
+                                if (findKeyIndex < 0 || f != intFloatMap.values[findKeyIndex]) {
                                     break loop0;
                                 }
-                                z2 = z3;
-                                if (f != intFloatMap.values[findKeyIndex]) {
-                                    break loop0;
-                                }
-                            } else {
-                                z2 = z3;
                             }
                             j >>= 8;
-                            i3++;
-                            z3 = z2;
                         }
-                        z = z3;
                         if (i2 != 8) {
-                            return z;
+                            break;
                         }
-                    } else {
-                        z = z3;
                     }
                     if (i == length) {
-                        return z;
+                        break;
                     }
                     i++;
-                    z3 = z;
                 }
                 return false;
             }
@@ -787,6 +788,9 @@ public abstract class IntFloatMap {
     }
 
     public final String joinToString(CharSequence charSequence, CharSequence prefix, CharSequence postfix, int i, Function2<? super Integer, ? super Float, ? extends CharSequence> transform) {
+        long[] jArr;
+        long[] jArr2;
+        int i2;
         CharSequence separator = charSequence;
         Intrinsics.checkNotNullParameter(separator, "separator");
         Intrinsics.checkNotNullParameter(prefix, "prefix");
@@ -796,112 +800,143 @@ public abstract class IntFloatMap {
         sb.append(prefix);
         int[] iArr = this.keys;
         float[] fArr = this.values;
-        long[] jArr = this.metadata;
-        int length = jArr.length - 2;
+        long[] jArr3 = this.metadata;
+        int length = jArr3.length - 2;
+        if (length >= 0) {
+            int i3 = 0;
+            int i4 = 0;
+            loop0: while (true) {
+                long j = jArr3[i3];
+                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i5 = 8;
+                    int i6 = 8 - ((~(i3 - length)) >>> 31);
+                    int i7 = 0;
+                    while (i7 < i6) {
+                        if ((j & 255) < 128) {
+                            int i8 = (i3 << 3) + i7;
+                            int i9 = iArr[i8];
+                            float f = fArr[i8];
+                            i2 = i5;
+                            if (i4 == i) {
+                                sb.append((CharSequence) r5);
+                                break loop0;
+                            }
+                            if (i4 != 0) {
+                                sb.append(separator);
+                            }
+                            jArr2 = jArr3;
+                            sb.append(transform.invoke(Integer.valueOf(i9), Float.valueOf(f)));
+                            i4++;
+                        } else {
+                            jArr2 = jArr3;
+                            i2 = i5;
+                        }
+                        j >>= i2;
+                        i7++;
+                        separator = charSequence;
+                        i5 = i2;
+                        jArr3 = jArr2;
+                    }
+                    jArr = jArr3;
+                    if (i6 != i5) {
+                        break;
+                    }
+                } else {
+                    jArr = jArr3;
+                }
+                if (i3 == length) {
+                    break;
+                }
+                i3++;
+                separator = charSequence;
+                jArr3 = jArr;
+            }
+            String sb2 = sb.toString();
+            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+            return sb2;
+        }
+        sb.append(postfix);
+        String sb22 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
+        return sb22;
+    }
+
+    public final String joinToString(CharSequence separator, CharSequence prefix, CharSequence postfix, Function2<? super Integer, ? super Float, ? extends CharSequence> transform) {
+        long[] jArr;
+        long[] jArr2;
+        int i;
+        Intrinsics.checkNotNullParameter(separator, "separator");
+        Intrinsics.checkNotNullParameter(prefix, "prefix");
+        Intrinsics.checkNotNullParameter(postfix, "postfix");
+        Intrinsics.checkNotNullParameter(transform, "transform");
+        StringBuilder sb = new StringBuilder();
+        sb.append(prefix);
+        int[] iArr = this.keys;
+        float[] fArr = this.values;
+        long[] jArr3 = this.metadata;
+        int length = jArr3.length - 2;
         if (length >= 0) {
             int i2 = 0;
             int i3 = 0;
             loop0: while (true) {
-                long j = jArr[i2];
-                int i4 = i2;
+                long j = jArr3[i2];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i5 = 8 - ((~(i4 - length)) >>> 31);
+                    int i4 = 8;
+                    int i5 = 8 - ((~(i2 - length)) >>> 31);
                     int i6 = 0;
                     while (i6 < i5) {
                         if ((j & 255) < 128) {
-                            int i7 = (i4 << 3) + i6;
+                            int i7 = (i2 << 3) + i6;
                             int i8 = iArr[i7];
                             float f = fArr[i7];
-                            if (i3 == i) {
+                            i = i4;
+                            if (i3 == -1) {
                                 sb.append((CharSequence) r5);
                                 break loop0;
                             }
                             if (i3 != 0) {
                                 sb.append(separator);
                             }
-                            sb.append(transform.invoke(Integer.valueOf(i8), Float.valueOf(f)));
+                            Integer valueOf = Integer.valueOf(i8);
+                            jArr2 = jArr3;
+                            sb.append(transform.invoke(valueOf, Float.valueOf(f)));
                             i3++;
+                        } else {
+                            jArr2 = jArr3;
+                            i = i4;
                         }
-                        j >>= 8;
+                        j >>= i;
                         i6++;
-                        separator = charSequence;
+                        i4 = i;
+                        jArr3 = jArr2;
                     }
-                    if (i5 != 8) {
+                    jArr = jArr3;
+                    if (i5 != i4) {
                         break;
                     }
+                } else {
+                    jArr = jArr3;
                 }
-                if (i4 == length) {
+                if (i2 == length) {
                     break;
                 }
-                i2 = i4 + 1;
-                separator = charSequence;
+                i2++;
+                jArr3 = jArr;
             }
+            String sb2 = sb.toString();
+            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+            return sb2;
         }
         sb.append(postfix);
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-        return sb2;
+        String sb22 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
+        return sb22;
     }
 
-    public final String joinToString(CharSequence charSequence, CharSequence prefix, CharSequence postfix, Function2<? super Integer, ? super Float, ? extends CharSequence> transform) {
-        CharSequence separator = charSequence;
-        Intrinsics.checkNotNullParameter(separator, "separator");
-        Intrinsics.checkNotNullParameter(prefix, "prefix");
-        Intrinsics.checkNotNullParameter(postfix, "postfix");
-        Intrinsics.checkNotNullParameter(transform, "transform");
-        StringBuilder sb = new StringBuilder();
-        sb.append(prefix);
-        int[] iArr = this.keys;
-        float[] fArr = this.values;
-        long[] jArr = this.metadata;
-        int length = jArr.length - 2;
-        if (length >= 0) {
-            int i = 0;
-            int i2 = 0;
-            loop0: while (true) {
-                long j = jArr[i];
-                int i3 = i;
-                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i4 = 8 - ((~(i3 - length)) >>> 31);
-                    int i5 = 0;
-                    while (i5 < i4) {
-                        if ((j & 255) < 128) {
-                            int i6 = (i3 << 3) + i5;
-                            int i7 = iArr[i6];
-                            float f = fArr[i6];
-                            if (i2 == -1) {
-                                sb.append((CharSequence) r5);
-                                break loop0;
-                            }
-                            if (i2 != 0) {
-                                sb.append(separator);
-                            }
-                            sb.append(transform.invoke(Integer.valueOf(i7), Float.valueOf(f)));
-                            i2++;
-                        }
-                        j >>= 8;
-                        i5++;
-                        separator = charSequence;
-                    }
-                    if (i4 != 8) {
-                        break;
-                    }
-                }
-                if (i3 == length) {
-                    break;
-                }
-                i = i3 + 1;
-                separator = charSequence;
-            }
-        }
-        sb.append(postfix);
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-        return sb2;
-    }
-
-    public final String joinToString(CharSequence charSequence, CharSequence prefix, Function2<? super Integer, ? super Float, ? extends CharSequence> transform) {
-        CharSequence separator = charSequence;
+    public final String joinToString(CharSequence separator, CharSequence prefix, Function2<? super Integer, ? super Float, ? extends CharSequence> transform) {
+        long[] jArr;
+        long[] jArr2;
+        int i;
         Intrinsics.checkNotNullParameter(separator, "separator");
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(transform, "transform");
@@ -909,45 +944,55 @@ public abstract class IntFloatMap {
         sb.append(prefix);
         int[] iArr = this.keys;
         float[] fArr = this.values;
-        long[] jArr = this.metadata;
-        int length = jArr.length - 2;
+        long[] jArr3 = this.metadata;
+        int length = jArr3.length - 2;
         if (length >= 0) {
-            int i = 0;
             int i2 = 0;
+            int i3 = 0;
             loop0: while (true) {
-                long j = jArr[i];
-                int i3 = i;
+                long j = jArr3[i2];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i4 = 8 - ((~(i3 - length)) >>> 31);
-                    int i5 = 0;
-                    while (i5 < i4) {
+                    int i4 = 8;
+                    int i5 = 8 - ((~(i2 - length)) >>> 31);
+                    int i6 = 0;
+                    while (i6 < i5) {
                         if ((j & 255) < 128) {
-                            int i6 = (i3 << 3) + i5;
-                            int i7 = iArr[i6];
-                            float f = fArr[i6];
-                            if (i2 == -1) {
+                            int i7 = (i2 << 3) + i6;
+                            int i8 = iArr[i7];
+                            float f = fArr[i7];
+                            i = i4;
+                            if (i3 == -1) {
                                 sb.append((CharSequence) r5);
                                 break loop0;
                             }
-                            if (i2 != 0) {
+                            if (i3 != 0) {
                                 sb.append(separator);
                             }
-                            sb.append(transform.invoke(Integer.valueOf(i7), Float.valueOf(f)));
-                            i2++;
+                            Integer valueOf = Integer.valueOf(i8);
+                            jArr2 = jArr3;
+                            sb.append(transform.invoke(valueOf, Float.valueOf(f)));
+                            i3++;
+                        } else {
+                            jArr2 = jArr3;
+                            i = i4;
                         }
-                        j >>= 8;
-                        i5++;
-                        separator = charSequence;
+                        j >>= i;
+                        i6++;
+                        i4 = i;
+                        jArr3 = jArr2;
                     }
-                    if (i4 != 8) {
+                    jArr = jArr3;
+                    if (i5 != i4) {
                         break;
                     }
+                } else {
+                    jArr = jArr3;
                 }
-                if (i3 == length) {
+                if (i2 == length) {
                     break;
                 }
-                i = i3 + 1;
-                separator = charSequence;
+                i2++;
+                jArr3 = jArr;
             }
         }
         sb.append((CharSequence) r4);
@@ -957,6 +1002,8 @@ public abstract class IntFloatMap {
     }
 
     public final String joinToString(CharSequence separator, Function2<? super Integer, ? super Float, ? extends CharSequence> transform) {
+        long[] jArr;
+        long[] jArr2;
         int i;
         Intrinsics.checkNotNullParameter(separator, "separator");
         Intrinsics.checkNotNullParameter(transform, "transform");
@@ -964,24 +1011,23 @@ public abstract class IntFloatMap {
         sb.append((CharSequence) "");
         int[] iArr = this.keys;
         float[] fArr = this.values;
-        long[] jArr = this.metadata;
-        int length = jArr.length - 2;
+        long[] jArr3 = this.metadata;
+        int length = jArr3.length - 2;
         if (length >= 0) {
             int i2 = 0;
             int i3 = 0;
             loop0: while (true) {
-                long j = jArr[i2];
-                int i4 = i2;
+                long j = jArr3[i2];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i5 = 8;
-                    int i6 = 8 - ((~(i4 - length)) >>> 31);
-                    int i7 = 0;
-                    while (i7 < i6) {
+                    int i4 = 8;
+                    int i5 = 8 - ((~(i2 - length)) >>> 31);
+                    int i6 = 0;
+                    while (i6 < i5) {
                         if ((j & 255) < 128) {
-                            int i8 = (i4 << 3) + i7;
-                            int i9 = iArr[i8];
-                            float f = fArr[i8];
-                            i = i5;
+                            int i7 = (i2 << 3) + i6;
+                            int i8 = iArr[i7];
+                            float f = fArr[i7];
+                            i = i4;
                             if (i3 == -1) {
                                 sb.append((CharSequence) r5);
                                 break loop0;
@@ -989,23 +1035,31 @@ public abstract class IntFloatMap {
                             if (i3 != 0) {
                                 sb.append(separator);
                             }
-                            sb.append(transform.invoke(Integer.valueOf(i9), Float.valueOf(f)));
+                            Integer valueOf = Integer.valueOf(i8);
+                            jArr2 = jArr3;
+                            sb.append(transform.invoke(valueOf, Float.valueOf(f)));
                             i3++;
                         } else {
-                            i = i5;
+                            jArr2 = jArr3;
+                            i = i4;
                         }
                         j >>= i;
-                        i7++;
-                        i5 = i;
+                        i6++;
+                        jArr3 = jArr2;
+                        i4 = i;
                     }
-                    if (i6 != i5) {
+                    jArr = jArr3;
+                    if (i5 != i4) {
                         break;
                     }
+                } else {
+                    jArr = jArr3;
                 }
-                if (i4 == length) {
+                if (i2 == length) {
                     break;
                 }
-                i2 = i4 + 1;
+                i2++;
+                jArr3 = jArr;
             }
         }
         sb.append((CharSequence) r3);
@@ -1015,30 +1069,31 @@ public abstract class IntFloatMap {
     }
 
     public final String joinToString(Function2<? super Integer, ? super Float, ? extends CharSequence> transform) {
+        long[] jArr;
+        long[] jArr2;
         int i;
         Intrinsics.checkNotNullParameter(transform, "transform");
         StringBuilder sb = new StringBuilder();
         sb.append((CharSequence) "");
         int[] iArr = this.keys;
         float[] fArr = this.values;
-        long[] jArr = this.metadata;
-        int length = jArr.length - 2;
+        long[] jArr3 = this.metadata;
+        int length = jArr3.length - 2;
         if (length >= 0) {
             int i2 = 0;
             int i3 = 0;
             loop0: while (true) {
-                long j = jArr[i2];
-                int i4 = i2;
+                long j = jArr3[i2];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i5 = 8;
-                    int i6 = 8 - ((~(i4 - length)) >>> 31);
-                    int i7 = 0;
-                    while (i7 < i6) {
+                    int i4 = 8;
+                    int i5 = 8 - ((~(i2 - length)) >>> 31);
+                    int i6 = 0;
+                    while (i6 < i5) {
                         if ((j & 255) < 128) {
-                            int i8 = (i4 << 3) + i7;
-                            int i9 = iArr[i8];
-                            float f = fArr[i8];
-                            i = i5;
+                            int i7 = (i2 << 3) + i6;
+                            int i8 = iArr[i7];
+                            float f = fArr[i7];
+                            i = i4;
                             if (i3 == -1) {
                                 sb.append((CharSequence) r5);
                                 break loop0;
@@ -1046,23 +1101,31 @@ public abstract class IntFloatMap {
                             if (i3 != 0) {
                                 sb.append((CharSequence) r2);
                             }
-                            sb.append(transform.invoke(Integer.valueOf(i9), Float.valueOf(f)));
+                            Integer valueOf = Integer.valueOf(i8);
+                            jArr2 = jArr3;
+                            sb.append(transform.invoke(valueOf, Float.valueOf(f)));
                             i3++;
                         } else {
-                            i = i5;
+                            jArr2 = jArr3;
+                            i = i4;
                         }
                         j >>= i;
-                        i7++;
-                        i5 = i;
+                        i6++;
+                        jArr3 = jArr2;
+                        i4 = i;
                     }
-                    if (i6 != i5) {
+                    jArr = jArr3;
+                    if (i5 != i4) {
                         break;
                     }
+                } else {
+                    jArr = jArr3;
                 }
-                if (i4 == length) {
+                if (i2 == length) {
                     break;
                 }
-                i2 = i4 + 1;
+                i2++;
+                jArr3 = jArr;
             }
         }
         sb.append((CharSequence) r3);

@@ -220,20 +220,20 @@ public final class Relay implements Lockable {
             r0.commit(r0.getUpstreamPos());
          */
         /* JADX WARN: Code restructure failed: missing block: B:29:0x0098, code lost:
-            r2 = r20.this$0;
+            r1 = r20.this$0;
          */
         /* JADX WARN: Code restructure failed: missing block: B:30:0x009a, code lost:
-            monitor-enter(r2);
+            monitor-enter(r1);
          */
         /* JADX WARN: Code restructure failed: missing block: B:31:0x009b, code lost:
-            r2.setUpstreamReader(null);
-            r0 = r2;
+            r1.setUpstreamReader(null);
+            r0 = r1;
             kotlin.jvm.internal.Intrinsics.checkNotNull(r0, "null cannot be cast to non-null type java.lang.Object");
             r0.notifyAll();
             r0 = kotlin.Unit.INSTANCE;
          */
         /* JADX WARN: Code restructure failed: missing block: B:32:0x00ad, code lost:
-            monitor-exit(r2);
+            monitor-exit(r1);
          */
         /* JADX WARN: Code restructure failed: missing block: B:33:0x00ae, code lost:
             return -1;
@@ -267,20 +267,20 @@ public final class Relay implements Lockable {
             monitor-exit(r4);
          */
         /* JADX WARN: Code restructure failed: missing block: B:44:0x0123, code lost:
-            r2 = r20.this$0;
+            r1 = r20.this$0;
          */
         /* JADX WARN: Code restructure failed: missing block: B:45:0x0125, code lost:
-            monitor-enter(r2);
+            monitor-enter(r1);
          */
         /* JADX WARN: Code restructure failed: missing block: B:46:0x0126, code lost:
-            r2.setUpstreamReader(null);
-            r0 = r2;
+            r1.setUpstreamReader(null);
+            r0 = r1;
             kotlin.jvm.internal.Intrinsics.checkNotNull(r0, "null cannot be cast to non-null type java.lang.Object");
             r0.notifyAll();
             r0 = kotlin.Unit.INSTANCE;
          */
         /* JADX WARN: Code restructure failed: missing block: B:47:0x0138, code lost:
-            monitor-exit(r2);
+            monitor-exit(r1);
          */
         /* JADX WARN: Code restructure failed: missing block: B:48:0x0139, code lost:
             return r6;
@@ -289,17 +289,17 @@ public final class Relay implements Lockable {
             r0 = move-exception;
          */
         /* JADX WARN: Code restructure failed: missing block: B:56:0x0141, code lost:
-            r2 = r20.this$0;
+            r1 = r20.this$0;
          */
         /* JADX WARN: Code restructure failed: missing block: B:57:0x0143, code lost:
-            monitor-enter(r2);
+            monitor-enter(r1);
          */
         /* JADX WARN: Code restructure failed: missing block: B:58:0x0144, code lost:
-            r2.setUpstreamReader(null);
-            r3 = r2;
-            kotlin.jvm.internal.Intrinsics.checkNotNull(r3, "null cannot be cast to non-null type java.lang.Object");
-            r3.notifyAll();
-            r3 = kotlin.Unit.INSTANCE;
+            r1.setUpstreamReader(null);
+            r2 = r1;
+            kotlin.jvm.internal.Intrinsics.checkNotNull(r2, "null cannot be cast to non-null type java.lang.Object");
+            r2.notifyAll();
+            r2 = kotlin.Unit.INSTANCE;
          */
         /* JADX WARN: Code restructure failed: missing block: B:60:0x0157, code lost:
             throw r0;

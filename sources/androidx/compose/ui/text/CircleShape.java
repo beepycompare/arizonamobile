@@ -22,7 +22,7 @@ final class CircleShape implements Shape {
     /* renamed from: createOutline-Pq9zytI */
     public Outline mo320createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
         float m4595getMinDimensionimpl = Size.m4595getMinDimensionimpl(j) / 2.0f;
-        long m4481constructorimpl = CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(m4595getMinDimensionimpl) & 4294967295L) | (Float.floatToRawIntBits(m4595getMinDimensionimpl) << 32));
+        long m4481constructorimpl = CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(m4595getMinDimensionimpl) << 32) | (Float.floatToRawIntBits(m4595getMinDimensionimpl) & 4294967295L));
         return new Outline.Rounded(RoundRectKt.m4579RoundRectZAM2FJo(SizeKt.m4617toRectuvyYCjk(j), m4481constructorimpl, m4481constructorimpl, m4481constructorimpl, m4481constructorimpl));
     }
 }

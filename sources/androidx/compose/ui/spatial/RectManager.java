@@ -324,7 +324,7 @@ public final class RectManager {
         if (topLeft == Long.MAX_VALUE) {
             return IntOffset.Companion.m7693getMaxnOccac();
         }
-        return IntOffset.m7677constructorimpl((((int) (topLeft >> 32)) << 32) | (((int) topLeft) & 4294967295L));
+        return IntOffset.m7677constructorimpl((((int) topLeft) & 4294967295L) | (((int) (topLeft >> 32)) << 32));
     }
 
     private final void resetHasPositionalLayerTransformationsForSubtreeIfNeeded(LayoutNode layoutNode) {
@@ -457,22 +457,22 @@ public final class RectManager {
             if (layoutNode2 == layoutNode) {
                 return false;
             }
-            LayoutNode layoutNode3 = layoutNode;
+            LayoutNode layoutNode3 = layoutNode2;
             LayoutNode layoutNode4 = layoutNode3;
-            LayoutNode layoutNode5 = layoutNode2;
-            while (layoutNode2 != layoutNode3) {
-                LayoutNode parent$ui2 = layoutNode2.getParent$ui();
-                if (parent$ui2 == null || (parent$ui = layoutNode3.getParent$ui()) == null) {
+            LayoutNode layoutNode5 = layoutNode;
+            while (layoutNode3 != layoutNode) {
+                LayoutNode parent$ui2 = layoutNode3.getParent$ui();
+                if (parent$ui2 == null || (parent$ui = layoutNode.getParent$ui()) == null) {
                     return false;
                 }
-                layoutNode5 = layoutNode2;
-                layoutNode2 = parent$ui2;
+                layoutNode5 = layoutNode;
+                layoutNode = parent$ui;
                 layoutNode4 = layoutNode3;
-                layoutNode3 = parent$ui;
+                layoutNode3 = parent$ui2;
             }
-            if (layoutNode5.getMeasurePassDelegate$ui().getZIndex$ui() == layoutNode4.getMeasurePassDelegate$ui().getZIndex$ui()) {
-                return layoutNode5.getPlaceOrder$ui() < layoutNode4.getPlaceOrder$ui();
-            } else if (layoutNode5.getMeasurePassDelegate$ui().getZIndex$ui() < layoutNode4.getMeasurePassDelegate$ui().getZIndex$ui()) {
+            if (layoutNode4.getMeasurePassDelegate$ui().getZIndex$ui() == layoutNode5.getMeasurePassDelegate$ui().getZIndex$ui()) {
+                return layoutNode4.getPlaceOrder$ui() < layoutNode5.getPlaceOrder$ui();
+            } else if (layoutNode4.getMeasurePassDelegate$ui().getZIndex$ui() < layoutNode5.getMeasurePassDelegate$ui().getZIndex$ui()) {
                 return true;
             }
         }

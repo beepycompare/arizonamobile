@@ -50,7 +50,7 @@ public final class ComposableSingletons$DialogCloseButtonKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1894286437, i, -1, "com.miami.game.core.design.system.component.button.ComposableSingletons$DialogCloseButtonKt.lambda$-1894286437.<anonymous> (DialogCloseButton.kt:42)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.icon_close, composer, 0), (String) null, ScalingButton.align(SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(16)), Alignment.Companion.getCenter()), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, Painter.$stable | 48, 120);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.icon_close, composer, 0), (String) null, ScalingButton.align(SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(16.0f)), Alignment.Companion.getCenter()), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, Painter.$stable | 48, 120);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

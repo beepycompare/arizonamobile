@@ -370,7 +370,7 @@ public final class WormIndicatorType extends IndicatorType {
                             dotGraphic = WormIndicatorType.this.dotsGraphic;
                             float m9161getSizeD9Ej5fM = dotGraphic.m9161getSizeD9Ej5fM();
                             dotGraphic2 = WormIndicatorType.this.wormDotGraphic;
-                            return Dp.m7555constructorimpl(Dp.m7555constructorimpl(m9161getSizeD9Ej5fM - dotGraphic2.m9161getSizeD9Ej5fM()) / 2);
+                            return Dp.m7555constructorimpl(Dp.m7555constructorimpl(m9161getSizeD9Ej5fM - dotGraphic2.m9161getSizeD9Ej5fM()) / 2.0f);
                         }
                     });
                     composer2.updateRememberedValue(rememberedValue4);

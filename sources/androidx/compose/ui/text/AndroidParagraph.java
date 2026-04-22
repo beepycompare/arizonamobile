@@ -111,8 +111,8 @@ public final class AndroidParagraph implements Paragraph {
     /* JADX WARN: Type inference failed for: r15v3 */
     /* JADX WARN: Type inference failed for: r2v1 */
     /* JADX WARN: Type inference failed for: r2v11, types: [android.text.Spanned] */
-    /* JADX WARN: Type inference failed for: r2v16 */
-    /* JADX WARN: Type inference failed for: r2v19 */
+    /* JADX WARN: Type inference failed for: r2v15 */
+    /* JADX WARN: Type inference failed for: r2v18 */
     /* JADX WARN: Type inference failed for: r2v2 */
     /* JADX WARN: Type inference failed for: r2v3 */
     /* JADX WARN: Type inference failed for: r2v4 */
@@ -256,7 +256,7 @@ public final class AndroidParagraph implements Paragraph {
                                 lineTop = lineBaseline - heightPx;
                                 break;
                             case 3:
-                                lineTop = ((textLayout.getLineTop(lineForOffset) + textLayout.getLineBottom(lineForOffset)) - placeholderSpan.getHeightPx()) / i7;
+                                lineTop = ((textLayout.getLineTop(lineForOffset) + textLayout.getLineBottom(lineForOffset)) - placeholderSpan.getHeightPx()) / 2.0f;
                                 break;
                             case 4:
                                 f = placeholderSpan.getFontMetrics().ascent;

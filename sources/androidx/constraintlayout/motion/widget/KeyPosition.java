@@ -73,9 +73,8 @@ public class KeyPosition extends KeyPositionBase {
 
     private void calcScreenPosition(int i, int i2) {
         float f = this.mPercentX;
-        float f2 = 0;
-        this.mCalculatedPositionX = (i * f) + f2;
-        this.mCalculatedPositionY = (i2 * f) + f2;
+        this.mCalculatedPositionX = (i * f) + 0.0f;
+        this.mCalculatedPositionY = (i2 * f) + 0.0f;
     }
 
     private void calcPathPosition(float f, float f2, float f3, float f4) {

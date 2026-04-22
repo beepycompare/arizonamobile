@@ -38,8 +38,7 @@ public final class PaddingValuesModifier extends Modifier.Node implements Layout
         float mo770calculateTopPaddingD9Ej5fM = this.paddingValues.mo770calculateTopPaddingD9Ej5fM();
         float mo769calculateRightPaddingu2uoSUM = this.paddingValues.mo769calculateRightPaddingu2uoSUM(measureScope.getLayoutDirection());
         float mo767calculateBottomPaddingD9Ej5fM = this.paddingValues.mo767calculateBottomPaddingD9Ej5fM();
-        float f = 0;
-        if (!((Dp.m7554compareTo0680j_4(mo767calculateBottomPaddingD9Ej5fM, Dp.m7555constructorimpl(f)) >= 0) & (Dp.m7554compareTo0680j_4(mo768calculateLeftPaddingu2uoSUM, Dp.m7555constructorimpl(f)) >= 0) & (Dp.m7554compareTo0680j_4(mo770calculateTopPaddingD9Ej5fM, Dp.m7555constructorimpl(f)) >= 0) & (Dp.m7554compareTo0680j_4(mo769calculateRightPaddingu2uoSUM, Dp.m7555constructorimpl(f)) >= 0))) {
+        if (!((Dp.m7554compareTo0680j_4(mo768calculateLeftPaddingu2uoSUM, Dp.m7555constructorimpl(0.0f)) >= 0) & (Dp.m7554compareTo0680j_4(mo770calculateTopPaddingD9Ej5fM, Dp.m7555constructorimpl(0.0f)) >= 0) & (Dp.m7554compareTo0680j_4(mo769calculateRightPaddingu2uoSUM, Dp.m7555constructorimpl(0.0f)) >= 0) & (Dp.m7554compareTo0680j_4(mo767calculateBottomPaddingD9Ej5fM, Dp.m7555constructorimpl(0.0f)) >= 0))) {
             InlineClassHelperKt.throwIllegalArgumentException("Padding must be non-negative");
         }
         final int i = measureScope.mo399roundToPx0680j_4(mo768calculateLeftPaddingu2uoSUM);

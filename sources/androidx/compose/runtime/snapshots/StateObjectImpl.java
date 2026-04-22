@@ -22,6 +22,6 @@ public abstract class StateObjectImpl implements StateObject {
 
     /* renamed from: isReadIn-h_f27i8$runtime  reason: not valid java name */
     public final boolean m4233isReadInh_f27i8$runtime(int i) {
-        return (i & ReaderKind.m4221constructorimpl(this.readerKind.get())) != 0;
+        return (ReaderKind.m4221constructorimpl(this.readerKind.get()) & i) != 0;
     }
 }

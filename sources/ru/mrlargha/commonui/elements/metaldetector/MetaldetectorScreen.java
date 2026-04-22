@@ -48,9 +48,10 @@ public final class MetaldetectorScreen extends SAMPUIElement {
         this.sharedPref = sharedPreferences;
         this.isArizonaType = sharedPreferences.getBoolean("isArizonaType", false);
         addViewToConstraintLayout(constraintLayout, -1, -1);
+        MetaldetectorScreen metaldetectorScreen = this;
         MaterialButton digButton = bind.digButton;
         Intrinsics.checkNotNullExpressionValue(digButton, "digButton");
-        SAMPUIElement.bindBackendClick$default(this, digButton, 0, 0, (String) null, 6, (Object) null);
+        SAMPUIElement.bindBackendClick$default(metaldetectorScreen, digButton, 0, 0, (String) null, 6, (Object) null);
     }
 
     /* compiled from: MetaldetectorScreen.kt */

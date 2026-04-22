@@ -34,7 +34,7 @@ public final class RoundedBackgroundSpan extends ReplacementSpan {
     public int getSize(Paint paint, CharSequence text, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
         Intrinsics.checkNotNullParameter(paint, "paint");
         Intrinsics.checkNotNullParameter(text, "text");
-        return (int) (paint.measureText(text, i, i2) + (this.padH * 2));
+        return (int) (paint.measureText(text, i, i2) + (this.padH * 2.0f));
     }
 
     @Override // android.text.style.ReplacementSpan
@@ -45,7 +45,7 @@ public final class RoundedBackgroundSpan extends ReplacementSpan {
         String obj = text.subSequence(i, i2).toString();
         float measureText = paint.measureText(obj);
         int color = paint.getColor();
-        RectF rectF = new RectF(f, (paint.getFontMetricsInt().ascent + i4) - this.padV, measureText + f + (this.padH * 2), paint.getFontMetricsInt().descent + i4 + this.padV);
+        RectF rectF = new RectF(f, (paint.getFontMetricsInt().ascent + i4) - this.padV, measureText + f + (this.padH * 2.0f), paint.getFontMetricsInt().descent + i4 + this.padV);
         paint.setColor(this.bg);
         float f2 = this.corner;
         canvas.drawRoundRect(rectF, f2, f2, paint);

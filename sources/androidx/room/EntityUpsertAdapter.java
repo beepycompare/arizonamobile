@@ -43,7 +43,7 @@ public final class EntityUpsertAdapter<T> {
         try {
             return this.entityInsertAdapter.insertAndReturnId(connection, t);
         } catch (SQLException e) {
-            checkUniquenessException(e);
+            this.checkUniquenessException(e);
             this.updateAdapter.handle(connection, t);
             return -1L;
         }

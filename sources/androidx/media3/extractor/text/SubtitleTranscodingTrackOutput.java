@@ -89,31 +89,50 @@ public final class SubtitleTranscodingTrackOutput implements TrackOutput {
         this.sampleDataEnd += i;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
     @Override // androidx.media3.extractor.TrackOutput
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void sampleMetadata(final long j, final int i, int i2, int i3, TrackOutput.CryptoData cryptoData) {
+        int i4;
+        int i5;
         if (this.currentSubtitleParser == null) {
             this.delegate.sampleMetadata(j, i, i2, i3, cryptoData);
             return;
         }
         Preconditions.checkArgument(cryptoData == null, "DRM on subtitles is not supported");
-        int i4 = (this.sampleDataEnd - i3) - i2;
+        int i6 = (this.sampleDataEnd - i3) - i2;
         try {
-            this.currentSubtitleParser.parse(this.sampleData, i4, i2, SubtitleParser.OutputOptions.allCues(), new Consumer() { // from class: androidx.media3.extractor.text.SubtitleTranscodingTrackOutput$$ExternalSyntheticLambda0
-                @Override // androidx.media3.common.util.Consumer
-                public final void accept(Object obj) {
-                    SubtitleTranscodingTrackOutput.this.m8359xa18018cd(j, i, (CuesWithTiming) obj);
+            i4 = i6;
+            try {
+                this.currentSubtitleParser.parse(this.sampleData, i4, i2, SubtitleParser.OutputOptions.allCues(), new Consumer() { // from class: androidx.media3.extractor.text.SubtitleTranscodingTrackOutput$$ExternalSyntheticLambda0
+                    @Override // androidx.media3.common.util.Consumer
+                    public final void accept(Object obj) {
+                        SubtitleTranscodingTrackOutput.this.m8359xa18018cd(j, i, (CuesWithTiming) obj);
+                    }
+                });
+            } catch (RuntimeException e) {
+                e = e;
+                RuntimeException runtimeException = e;
+                if (this.shouldSuppressParsingErrors) {
+                    Log.w(TAG, "Parsing subtitles failed, ignoring sample.", runtimeException);
+                    i5 = i4 + i2;
+                    this.sampleDataStart = i5;
+                    if (i5 != this.sampleDataEnd) {
+                    }
+                } else {
+                    throw runtimeException;
                 }
-            });
-        } catch (RuntimeException e) {
-            if (this.shouldSuppressParsingErrors) {
-                Log.w(TAG, "Parsing subtitles failed, ignoring sample.", e);
-            } else {
-                throw e;
             }
+        } catch (RuntimeException e2) {
+            e = e2;
+            i4 = i6;
         }
-        int i5 = i4 + i2;
+        i5 = i4 + i2;
         this.sampleDataStart = i5;
-        if (i5 == this.sampleDataEnd) {
+        if (i5 != this.sampleDataEnd) {
             this.sampleDataStart = 0;
             this.sampleDataEnd = 0;
         }

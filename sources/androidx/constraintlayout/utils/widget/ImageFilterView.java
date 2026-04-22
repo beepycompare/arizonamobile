@@ -101,8 +101,7 @@ public class ImageFilterView extends AppCompatImageView {
             float min2 = Math.min(255.0f, Math.max(log, 0.0f));
             float min3 = Math.min(255.0f, Math.max(f3, 0.0f));
             float min4 = Math.min(255.0f, Math.max(255.0f, 0.0f));
-            float min5 = Math.min(255.0f, Math.max((((float) Math.log(50.0f)) * 99.4708f) - 161.11957f, 0.0f));
-            float min6 = min3 / Math.min(255.0f, Math.max((((float) Math.log(40.0f)) * 138.51773f) - 305.0448f, 0.0f));
+            float min5 = Math.min(255.0f, Math.max((((float) Math.log(50.0d)) * 99.4708f) - 161.11957f, 0.0f));
             float[] fArr = this.mMatrix;
             fArr[0] = min / min4;
             fArr[1] = 0.0f;
@@ -116,7 +115,7 @@ public class ImageFilterView extends AppCompatImageView {
             fArr[9] = 0.0f;
             fArr[10] = 0.0f;
             fArr[11] = 0.0f;
-            fArr[12] = min6;
+            fArr[12] = min3 / Math.min(255.0f, Math.max((((float) Math.log(40.0d)) * 138.51773f) - 305.0448f, 0.0f));
             fArr[13] = 0.0f;
             fArr[14] = 0.0f;
             fArr[15] = 0.0f;

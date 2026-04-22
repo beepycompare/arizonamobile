@@ -293,9 +293,9 @@ public abstract class FileSystem implements Closeable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v1, types: [java.lang.Throwable] */
-    /* JADX WARN: Type inference failed for: r5v2, types: [java.lang.Throwable] */
-    /* JADX WARN: Type inference failed for: r5v4 */
+    /* JADX WARN: Type inference failed for: r4v1, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r4v2, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r4v4 */
     /* renamed from: -read  reason: not valid java name */
     public final <T> T m11052read(Path file, Function1<? super BufferedSource, ? extends T> readerAction) throws IOException {
         Intrinsics.checkNotNullParameter(file, "file");
@@ -311,9 +311,8 @@ public abstract class FileSystem implements Closeable {
                     th = th2;
                 }
             }
-            T t = th;
+            th = th;
             th = invoke;
-            th = t;
         } catch (Throwable th3) {
             th = th3;
             if (buffer != null) {
@@ -331,9 +330,9 @@ public abstract class FileSystem implements Closeable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v1, types: [java.lang.Throwable] */
-    /* JADX WARN: Type inference failed for: r5v2, types: [java.lang.Throwable] */
-    /* JADX WARN: Type inference failed for: r5v4 */
+    /* JADX WARN: Type inference failed for: r4v1, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r4v2, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r4v6 */
     /* renamed from: -write  reason: not valid java name */
     public final <T> T m11053write(Path file, boolean z, Function1<? super BufferedSink, ? extends T> writerAction) throws IOException {
         Intrinsics.checkNotNullParameter(file, "file");

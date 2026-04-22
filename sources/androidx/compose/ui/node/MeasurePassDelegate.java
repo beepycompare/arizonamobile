@@ -878,13 +878,13 @@ public final class MeasurePassDelegate extends Placeable implements Measurable, 
             measurePassDelegate = this;
             try {
                 measurePassDelegate.m6486placeOuterCoordinatorMLgxB_4(this.lastPosition, this.lastZIndex, this.lastLayerBlock, this.lastExplicitLayer);
-                if (z && !measurePassDelegate.onNodePlacedCalled && (parent$ui = getLayoutNode().getParent$ui()) != null) {
+                if (z && !measurePassDelegate.onNodePlacedCalled && (parent$ui = measurePassDelegate.getLayoutNode().getParent$ui()) != null) {
                     LayoutNode.requestRelayout$ui$default(parent$ui, false, 1, null);
                 }
             } catch (Throwable th) {
                 th = th;
                 try {
-                    getLayoutNode().rethrowWithComposeStackTrace(th);
+                    measurePassDelegate.getLayoutNode().rethrowWithComposeStackTrace(th);
                     throw new KotlinNothingValueException();
                 } finally {
                     measurePassDelegate.relayoutWithoutParentInProgress = false;

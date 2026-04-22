@@ -1,11 +1,11 @@
 package androidx.compose.foundation;
 
-import android.graphics.Canvas;
 import android.graphics.RecordingCanvas;
 import android.graphics.RenderNode;
 import android.widget.EdgeEffect;
 import androidx.compose.ui.geometry.Size;
 import androidx.compose.ui.graphics.AndroidCanvas_androidKt;
+import androidx.compose.ui.graphics.Canvas;
 import androidx.compose.ui.graphics.drawscope.ContentDrawScope;
 import androidx.compose.ui.graphics.drawscope.DrawContext;
 import androidx.compose.ui.graphics.layer.GraphicsLayer;
@@ -41,12 +41,31 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
         return renderNode;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:45:0x014e  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0161  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x019b  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x01ae  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x01eb  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x01f3  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x01f5  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x01f8  */
     @Override // androidx.compose.ui.node.DrawModifierNode
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void draw(ContentDrawScope contentDrawScope) {
-        long j;
+        float f;
         boolean z;
+        char c;
+        ContentDrawScope contentDrawScope2;
+        Canvas Canvas;
+        Density density;
+        LayoutDirection layoutDirection;
+        Canvas canvas;
+        long mo5267getSizeNHjbRc;
+        GraphicsLayer graphicsLayer;
         this.overscrollEffect.m244updateSizeuvyYCjk$foundation(contentDrawScope.mo5346getSizeNHjbRc());
-        Canvas nativeCanvas = AndroidCanvas_androidKt.getNativeCanvas(contentDrawScope.getDrawContext().getCanvas());
+        android.graphics.Canvas nativeCanvas = AndroidCanvas_androidKt.getNativeCanvas(contentDrawScope.getDrawContext().getCanvas());
         this.overscrollEffect.getRedrawSignal$foundation().getValue();
         if (Size.m4598isEmptyimpl(contentDrawScope.mo5346getSizeNHjbRc())) {
             contentDrawScope.drawContent();
@@ -54,16 +73,16 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
             this.edgeEffectWrapper.finishAll();
             contentDrawScope.drawContent();
         } else {
-            float f = contentDrawScope.mo405toPx0680j_4(ClipScrollableContainerKt.getMaxSupportedElevation());
+            float f2 = contentDrawScope.mo405toPx0680j_4(ClipScrollableContainerKt.getMaxSupportedElevation());
             EdgeEffectWrapper edgeEffectWrapper = this.edgeEffectWrapper;
             boolean shouldDrawVerticalStretch = shouldDrawVerticalStretch();
             boolean shouldDrawHorizontalStretch = shouldDrawHorizontalStretch();
             if (shouldDrawVerticalStretch && shouldDrawHorizontalStretch) {
                 getRenderNode().setPosition(0, 0, nativeCanvas.getWidth(), nativeCanvas.getHeight());
             } else if (shouldDrawVerticalStretch) {
-                getRenderNode().setPosition(0, 0, nativeCanvas.getWidth() + (MathKt.roundToInt(f) * 2), nativeCanvas.getHeight());
+                getRenderNode().setPosition(0, 0, nativeCanvas.getWidth() + (MathKt.roundToInt(f2) * 2), nativeCanvas.getHeight());
             } else if (shouldDrawHorizontalStretch) {
-                getRenderNode().setPosition(0, 0, nativeCanvas.getWidth(), nativeCanvas.getHeight() + (MathKt.roundToInt(f) * 2));
+                getRenderNode().setPosition(0, 0, nativeCanvas.getWidth(), nativeCanvas.getHeight() + (MathKt.roundToInt(f2) * 2));
             } else {
                 contentDrawScope.drawContent();
                 return;
@@ -78,13 +97,13 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                 EdgeEffect orCreateLeftEffect = edgeEffectWrapper.getOrCreateLeftEffect();
                 z = drawLeftStretch(orCreateLeftEffect, beginRecording);
                 if (edgeEffectWrapper.isLeftStretched()) {
-                    j = 4294967295L;
-                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateLeftEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateLeftEffect), 1 - Float.intBitsToFloat((int) (this.overscrollEffect.m243displacementF1C5BW0$foundation() & 4294967295L)));
+                    f = 1.0f;
+                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateLeftEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateLeftEffect), 1.0f - Float.intBitsToFloat((int) (this.overscrollEffect.m243displacementF1C5BW0$foundation() & 4294967295L)));
                 } else {
-                    j = 4294967295L;
+                    f = 1.0f;
                 }
             } else {
-                j = 4294967295L;
+                f = 1.0f;
                 z = false;
             }
             if (edgeEffectWrapper.isTopNegationStretched()) {
@@ -92,89 +111,140 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                 drawBottomStretch(orCreateTopEffectNegation, beginRecording);
                 orCreateTopEffectNegation.finish();
             }
-            if (edgeEffectWrapper.isTopAnimating()) {
-                EdgeEffect orCreateTopEffect = edgeEffectWrapper.getOrCreateTopEffect();
-                z = drawTopStretch(orCreateTopEffect, beginRecording) || z;
-                if (edgeEffectWrapper.isTopStretched()) {
-                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateTopEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateTopEffect), Float.intBitsToFloat((int) (this.overscrollEffect.m243displacementF1C5BW0$foundation() >> 32)));
-                }
-            }
-            if (edgeEffectWrapper.isRightNegationStretched()) {
-                EdgeEffect orCreateRightEffectNegation = edgeEffectWrapper.getOrCreateRightEffectNegation();
-                drawLeftStretch(orCreateRightEffectNegation, beginRecording);
-                orCreateRightEffectNegation.finish();
-            }
-            if (edgeEffectWrapper.isRightAnimating()) {
-                EdgeEffect orCreateRightEffect = edgeEffectWrapper.getOrCreateRightEffect();
-                z = drawRightStretch(orCreateRightEffect, beginRecording) || z;
-                if (edgeEffectWrapper.isRightStretched()) {
-                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateRightEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateRightEffect), Float.intBitsToFloat((int) (this.overscrollEffect.m243displacementF1C5BW0$foundation() & j)));
-                }
-            }
-            if (edgeEffectWrapper.isBottomNegationStretched()) {
-                EdgeEffect orCreateBottomEffectNegation = edgeEffectWrapper.getOrCreateBottomEffectNegation();
-                drawTopStretch(orCreateBottomEffectNegation, beginRecording);
-                orCreateBottomEffectNegation.finish();
-            }
-            if (edgeEffectWrapper.isBottomAnimating()) {
-                EdgeEffect orCreateBottomEffect = edgeEffectWrapper.getOrCreateBottomEffect();
-                boolean z2 = drawBottomStretch(orCreateBottomEffect, beginRecording) || z;
-                if (edgeEffectWrapper.isBottomStretched()) {
-                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateBottomEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateBottomEffect), 1 - Float.intBitsToFloat((int) (this.overscrollEffect.m243displacementF1C5BW0$foundation() >> 32)));
-                }
-                z = z2;
-            }
-            if (z) {
-                this.overscrollEffect.invalidateOverscroll$foundation();
-            }
-            float f2 = shouldDrawHorizontalStretch ? 0.0f : f;
-            if (shouldDrawVerticalStretch) {
-                f = 0.0f;
-            }
-            ContentDrawScope contentDrawScope2 = contentDrawScope;
-            LayoutDirection layoutDirection = contentDrawScope.getLayoutDirection();
-            androidx.compose.ui.graphics.Canvas Canvas = AndroidCanvas_androidKt.Canvas(beginRecording);
-            long j2 = contentDrawScope.mo5346getSizeNHjbRc();
-            Density density = contentDrawScope2.getDrawContext().getDensity();
-            LayoutDirection layoutDirection2 = contentDrawScope2.getDrawContext().getLayoutDirection();
-            androidx.compose.ui.graphics.Canvas canvas = contentDrawScope2.getDrawContext().getCanvas();
-            long mo5267getSizeNHjbRc = contentDrawScope2.getDrawContext().mo5267getSizeNHjbRc();
-            GraphicsLayer graphicsLayer = contentDrawScope2.getDrawContext().getGraphicsLayer();
-            DrawContext drawContext = contentDrawScope2.getDrawContext();
-            drawContext.setDensity(contentDrawScope);
-            drawContext.setLayoutDirection(layoutDirection);
-            drawContext.setCanvas(Canvas);
-            drawContext.mo5268setSizeuvyYCjk(j2);
-            drawContext.setGraphicsLayer(null);
-            Canvas.save();
             try {
-                contentDrawScope2.getDrawContext().getTransform().translate(f2, f);
+                if (edgeEffectWrapper.isTopAnimating()) {
+                    EdgeEffect orCreateTopEffect = edgeEffectWrapper.getOrCreateTopEffect();
+                    z = drawTopStretch(orCreateTopEffect, beginRecording) || z;
+                    if (edgeEffectWrapper.isTopStretched()) {
+                        c = ' ';
+                        EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateTopEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateTopEffect), Float.intBitsToFloat((int) (this.overscrollEffect.m243displacementF1C5BW0$foundation() >> 32)));
+                        if (edgeEffectWrapper.isRightNegationStretched()) {
+                            EdgeEffect orCreateRightEffectNegation = edgeEffectWrapper.getOrCreateRightEffectNegation();
+                            drawLeftStretch(orCreateRightEffectNegation, beginRecording);
+                            orCreateRightEffectNegation.finish();
+                        }
+                        if (edgeEffectWrapper.isRightAnimating()) {
+                            EdgeEffect orCreateRightEffect = edgeEffectWrapper.getOrCreateRightEffect();
+                            z = drawRightStretch(orCreateRightEffect, beginRecording) || z;
+                            if (edgeEffectWrapper.isRightStretched()) {
+                                EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateRightEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateRightEffect), Float.intBitsToFloat((int) (this.overscrollEffect.m243displacementF1C5BW0$foundation() & 4294967295L)));
+                            }
+                        }
+                        if (edgeEffectWrapper.isBottomNegationStretched()) {
+                            EdgeEffect orCreateBottomEffectNegation = edgeEffectWrapper.getOrCreateBottomEffectNegation();
+                            drawTopStretch(orCreateBottomEffectNegation, beginRecording);
+                            orCreateBottomEffectNegation.finish();
+                        }
+                        if (edgeEffectWrapper.isBottomAnimating()) {
+                            EdgeEffect orCreateBottomEffect = edgeEffectWrapper.getOrCreateBottomEffect();
+                            boolean z2 = drawBottomStretch(orCreateBottomEffect, beginRecording) || z;
+                            if (edgeEffectWrapper.isBottomStretched()) {
+                                EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateBottomEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateBottomEffect), f - Float.intBitsToFloat((int) (this.overscrollEffect.m243displacementF1C5BW0$foundation() >> c)));
+                            }
+                            z = z2;
+                        }
+                        if (z) {
+                            this.overscrollEffect.invalidateOverscroll$foundation();
+                        }
+                        float f3 = !shouldDrawHorizontalStretch ? 0.0f : f2;
+                        if (shouldDrawVerticalStretch) {
+                            f2 = 0.0f;
+                        }
+                        contentDrawScope2 = contentDrawScope;
+                        LayoutDirection layoutDirection2 = contentDrawScope.getLayoutDirection();
+                        Canvas = AndroidCanvas_androidKt.Canvas(beginRecording);
+                        long j = contentDrawScope.mo5346getSizeNHjbRc();
+                        density = contentDrawScope2.getDrawContext().getDensity();
+                        layoutDirection = contentDrawScope2.getDrawContext().getLayoutDirection();
+                        canvas = contentDrawScope2.getDrawContext().getCanvas();
+                        mo5267getSizeNHjbRc = contentDrawScope2.getDrawContext().mo5267getSizeNHjbRc();
+                        graphicsLayer = contentDrawScope2.getDrawContext().getGraphicsLayer();
+                        DrawContext drawContext = contentDrawScope2.getDrawContext();
+                        drawContext.setDensity(contentDrawScope);
+                        drawContext.setLayoutDirection(layoutDirection2);
+                        drawContext.setCanvas(Canvas);
+                        drawContext.mo5268setSizeuvyYCjk(j);
+                        drawContext.setGraphicsLayer(null);
+                        Canvas.save();
+                        contentDrawScope2.getDrawContext().getTransform().translate(f3, f2);
+                        contentDrawScope.drawContent();
+                        float f4 = -f3;
+                        float f5 = -f2;
+                        contentDrawScope2.getDrawContext().getTransform().translate(f4, f5);
+                        Canvas.restore();
+                        DrawContext drawContext2 = contentDrawScope2.getDrawContext();
+                        drawContext2.setDensity(density);
+                        drawContext2.setLayoutDirection(layoutDirection);
+                        drawContext2.setCanvas(canvas);
+                        drawContext2.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
+                        drawContext2.setGraphicsLayer(graphicsLayer);
+                        getRenderNode().endRecording();
+                        int save = nativeCanvas.save();
+                        nativeCanvas.translate(f4, f5);
+                        nativeCanvas.drawRenderNode(getRenderNode());
+                        nativeCanvas.restoreToCount(save);
+                        return;
+                    }
+                }
+                contentDrawScope2.getDrawContext().getTransform().translate(f3, f2);
                 contentDrawScope.drawContent();
-                float f3 = -f2;
-                float f4 = -f;
-                contentDrawScope2.getDrawContext().getTransform().translate(f3, f4);
+                float f42 = -f3;
+                float f52 = -f2;
+                contentDrawScope2.getDrawContext().getTransform().translate(f42, f52);
                 Canvas.restore();
-                DrawContext drawContext2 = contentDrawScope2.getDrawContext();
-                drawContext2.setDensity(density);
-                drawContext2.setLayoutDirection(layoutDirection2);
-                drawContext2.setCanvas(canvas);
-                drawContext2.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
-                drawContext2.setGraphicsLayer(graphicsLayer);
+                DrawContext drawContext22 = contentDrawScope2.getDrawContext();
+                drawContext22.setDensity(density);
+                drawContext22.setLayoutDirection(layoutDirection);
+                drawContext22.setCanvas(canvas);
+                drawContext22.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
+                drawContext22.setGraphicsLayer(graphicsLayer);
                 getRenderNode().endRecording();
-                int save = nativeCanvas.save();
-                nativeCanvas.translate(f3, f4);
+                int save2 = nativeCanvas.save();
+                nativeCanvas.translate(f42, f52);
                 nativeCanvas.drawRenderNode(getRenderNode());
-                nativeCanvas.restoreToCount(save);
+                nativeCanvas.restoreToCount(save2);
+                return;
             } catch (Throwable th) {
                 Canvas.restore();
                 DrawContext drawContext3 = contentDrawScope2.getDrawContext();
                 drawContext3.setDensity(density);
-                drawContext3.setLayoutDirection(layoutDirection2);
+                drawContext3.setLayoutDirection(layoutDirection);
                 drawContext3.setCanvas(canvas);
                 drawContext3.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
                 drawContext3.setGraphicsLayer(graphicsLayer);
                 throw th;
             }
+            c = ' ';
+            if (edgeEffectWrapper.isRightNegationStretched()) {
+            }
+            if (edgeEffectWrapper.isRightAnimating()) {
+            }
+            if (edgeEffectWrapper.isBottomNegationStretched()) {
+            }
+            if (edgeEffectWrapper.isBottomAnimating()) {
+            }
+            if (z) {
+            }
+            if (!shouldDrawHorizontalStretch) {
+            }
+            if (shouldDrawVerticalStretch) {
+            }
+            contentDrawScope2 = contentDrawScope;
+            LayoutDirection layoutDirection22 = contentDrawScope.getLayoutDirection();
+            Canvas = AndroidCanvas_androidKt.Canvas(beginRecording);
+            long j2 = contentDrawScope.mo5346getSizeNHjbRc();
+            density = contentDrawScope2.getDrawContext().getDensity();
+            layoutDirection = contentDrawScope2.getDrawContext().getLayoutDirection();
+            canvas = contentDrawScope2.getDrawContext().getCanvas();
+            mo5267getSizeNHjbRc = contentDrawScope2.getDrawContext().mo5267getSizeNHjbRc();
+            graphicsLayer = contentDrawScope2.getDrawContext().getGraphicsLayer();
+            DrawContext drawContext4 = contentDrawScope2.getDrawContext();
+            drawContext4.setDensity(contentDrawScope);
+            drawContext4.setLayoutDirection(layoutDirection22);
+            drawContext4.setCanvas(Canvas);
+            drawContext4.mo5268setSizeuvyYCjk(j2);
+            drawContext4.setGraphicsLayer(null);
+            Canvas.save();
         }
     }
 
@@ -188,23 +258,23 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
         return edgeEffectWrapper.isLeftAnimating() || edgeEffectWrapper.isLeftNegationStretched() || edgeEffectWrapper.isRightAnimating() || edgeEffectWrapper.isRightNegationStretched();
     }
 
-    private final boolean drawLeftStretch(EdgeEffect edgeEffect, Canvas canvas) {
+    private final boolean drawLeftStretch(EdgeEffect edgeEffect, android.graphics.Canvas canvas) {
         return drawWithRotation(270.0f, edgeEffect, canvas);
     }
 
-    private final boolean drawTopStretch(EdgeEffect edgeEffect, Canvas canvas) {
+    private final boolean drawTopStretch(EdgeEffect edgeEffect, android.graphics.Canvas canvas) {
         return drawWithRotation(0.0f, edgeEffect, canvas);
     }
 
-    private final boolean drawRightStretch(EdgeEffect edgeEffect, Canvas canvas) {
+    private final boolean drawRightStretch(EdgeEffect edgeEffect, android.graphics.Canvas canvas) {
         return drawWithRotation(90.0f, edgeEffect, canvas);
     }
 
-    private final boolean drawBottomStretch(EdgeEffect edgeEffect, Canvas canvas) {
+    private final boolean drawBottomStretch(EdgeEffect edgeEffect, android.graphics.Canvas canvas) {
         return drawWithRotation(180.0f, edgeEffect, canvas);
     }
 
-    private final boolean drawWithRotation(float f, EdgeEffect edgeEffect, Canvas canvas) {
+    private final boolean drawWithRotation(float f, EdgeEffect edgeEffect, android.graphics.Canvas canvas) {
         if (f == 0.0f) {
             return edgeEffect.draw(canvas);
         }

@@ -68,9 +68,8 @@ public final class SliderKt$sliderTapModifier$1 implements PointerInputEventHand
 
     @Override // androidx.compose.ui.input.pointer.PointerInputEventHandler
     public final Object invoke(PointerInputScope pointerInputScope, Continuation<? super Unit> continuation) {
-        AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.$state, null);
         final SliderState sliderState = this.$state;
-        Object detectTapGestures$default = TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, null, anonymousClass1, new Function1() { // from class: androidx.compose.material3.SliderKt$sliderTapModifier$1$$ExternalSyntheticLambda0
+        Object detectTapGestures$default = TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, null, new AnonymousClass1(this.$state, null), new Function1() { // from class: androidx.compose.material3.SliderKt$sliderTapModifier$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return SliderKt$sliderTapModifier$1.invoke$lambda$0(SliderState.this, (Offset) obj);

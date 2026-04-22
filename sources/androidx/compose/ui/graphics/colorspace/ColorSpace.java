@@ -79,7 +79,7 @@ public abstract class ColorSpace {
 
     public long toXy$ui_graphics(float f, float f2, float f3) {
         float[] xyz = toXyz(f, f2, f3);
-        return (Float.floatToRawIntBits(xyz[0]) << 32) | (Float.floatToRawIntBits(xyz[1]) & 4294967295L);
+        return (Float.floatToRawIntBits(xyz[0]) << 32) | (4294967295L & Float.floatToRawIntBits(xyz[1]));
     }
 
     public float toZ$ui_graphics(float f, float f2, float f3) {

@@ -103,10 +103,9 @@ public final class TransportAdapter extends RecyclerView.Adapter<TransportViewHo
             gradientDrawable3.setShape(1);
             gradientDrawable3.setColor(parseColor);
             float f2 = this.shapeRadius;
-            float f3 = 2;
-            gradientDrawable3.setSize((int) (f2 / f3), (int) (f2 / f3));
+            gradientDrawable3.setSize((int) (f2 / 2.0f), (int) (f2 / 2.0f));
             LayerDrawable layerDrawable = new LayerDrawable(new GradientDrawable[]{gradientDrawable2, gradientDrawable3});
-            int i2 = (int) (this.shapeRadius / 4);
+            int i2 = (int) (this.shapeRadius / 4.0f);
             layerDrawable.setLayerInset(1, i2, i2, i2, i2);
             binding.statusImage.setImageDrawable(layerDrawable);
         }

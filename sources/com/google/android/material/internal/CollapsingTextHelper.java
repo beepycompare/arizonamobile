@@ -251,24 +251,56 @@ public final class CollapsingTextHelper {
     }
 
     private float getCollapsedTextLeftBound(int i, int i2) {
+        float f;
+        float f2;
+        int i3;
         if (i2 == 17 || (i2 & 7) == 1) {
-            return (i / 2.0f) - (this.collapsedTextWidth / 2.0f);
-        }
-        if ((i2 & GravityCompat.END) == 8388613 || (i2 & 5) == 5) {
+            f = i / 2.0f;
+            f2 = this.collapsedTextWidth / 2.0f;
+        } else if ((i2 & GravityCompat.END) == 8388613 || (i2 & 5) == 5) {
             boolean z = this.isRtl;
             Rect rect = this.collapsedBounds;
-            return z ? rect.left : rect.right - this.collapsedTextWidth;
+            if (z) {
+                i3 = rect.left;
+                return i3;
+            }
+            f = rect.right;
+            f2 = this.collapsedTextWidth;
+        } else {
+            boolean z2 = this.isRtl;
+            Rect rect2 = this.collapsedBounds;
+            if (!z2) {
+                i3 = rect2.left;
+                return i3;
+            }
+            f = rect2.right;
+            f2 = this.collapsedTextWidth;
         }
-        boolean z2 = this.isRtl;
-        Rect rect2 = this.collapsedBounds;
-        return z2 ? rect2.right - this.collapsedTextWidth : rect2.left;
+        return f - f2;
     }
 
     private float getCollapsedTextRightBound(RectF rectF, int i, int i2) {
+        float f;
+        float f2;
+        int i3;
         if (i2 == 17 || (i2 & 7) == 1) {
-            return (i / 2.0f) + (this.collapsedTextWidth / 2.0f);
+            f = i / 2.0f;
+            f2 = this.collapsedTextWidth / 2.0f;
+        } else if ((i2 & GravityCompat.END) == 8388613 || (i2 & 5) == 5) {
+            if (!this.isRtl) {
+                i3 = this.collapsedBounds.right;
+                return i3;
+            }
+            f = rectF.left;
+            f2 = this.collapsedTextWidth;
+        } else if (this.isRtl) {
+            i3 = this.collapsedBounds.right;
+            return i3;
+        } else {
+            f = rectF.left;
+            f2 = this.collapsedTextWidth;
         }
-        return ((i2 & GravityCompat.END) == 8388613 || (i2 & 5) == 5) ? this.isRtl ? rectF.left + this.collapsedTextWidth : this.collapsedBounds.right : this.isRtl ? this.collapsedBounds.right : rectF.left + this.collapsedTextWidth;
+        return f + f2;
     }
 
     public float getExpandedTextSingleLineHeight() {

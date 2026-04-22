@@ -59,10 +59,10 @@ public final class FirebaseSessionsDependencies {
     /* JADX WARN: Removed duplicated region for block: B:14:0x0049  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0074  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x00b8 A[RETURN] */
-    /* JADX WARN: Type inference failed for: r5v7, types: [java.util.Map] */
-    /* JADX WARN: Type inference failed for: r9v0 */
-    /* JADX WARN: Type inference failed for: r9v1 */
-    /* JADX WARN: Type inference failed for: r9v3, types: [java.util.Map] */
+    /* JADX WARN: Type inference failed for: r4v7, types: [java.util.Map] */
+    /* JADX WARN: Type inference failed for: r8v0 */
+    /* JADX WARN: Type inference failed for: r8v1 */
+    /* JADX WARN: Type inference failed for: r8v3, types: [java.util.Map] */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:20:0x00a4 -> B:27:0x00a5). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -94,14 +94,14 @@ public final class FirebaseSessionsDependencies {
                     Mutex mutex = (Mutex) firebaseSessionsDependencies$getRegisteredSubscribers$1.L$3;
                     SessionSubscriber.Name name = (SessionSubscriber.Name) firebaseSessionsDependencies$getRegisteredSubscribers$1.L$2;
                     it = (Iterator) firebaseSessionsDependencies$getRegisteredSubscribers$1.L$1;
-                    ?? r9 = (Map) firebaseSessionsDependencies$getRegisteredSubscribers$1.L$0;
+                    ?? r8 = (Map) firebaseSessionsDependencies$getRegisteredSubscribers$1.L$0;
                     ResultKt.throwOnFailure(obj);
                     LinkedHashMap linkedHashMap2 = (Map) firebaseSessionsDependencies$getRegisteredSubscribers$1.L$4;
                     try {
                         SessionSubscriber subscriber$com_google_firebase_firebase_sessions = INSTANCE.getSubscriber$com_google_firebase_firebase_sessions(name);
                         mutex.unlock(null);
                         linkedHashMap2.put(key, subscriber$com_google_firebase_firebase_sessions);
-                        linkedHashMap = r9;
+                        linkedHashMap = r8;
                         if (it.hasNext()) {
                             Map.Entry entry = (Map.Entry) it.next();
                             key = entry.getKey();
@@ -117,12 +117,12 @@ public final class FirebaseSessionsDependencies {
                             if (mutex.lock(null, firebaseSessionsDependencies$getRegisteredSubscribers$1) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            r9 = linkedHashMap;
+                            r8 = linkedHashMap;
                             linkedHashMap2 = linkedHashMap;
                             SessionSubscriber subscriber$com_google_firebase_firebase_sessions2 = INSTANCE.getSubscriber$com_google_firebase_firebase_sessions(name);
                             mutex.unlock(null);
                             linkedHashMap2.put(key, subscriber$com_google_firebase_firebase_sessions2);
-                            linkedHashMap = r9;
+                            linkedHashMap = r8;
                             if (it.hasNext()) {
                                 return linkedHashMap;
                             }

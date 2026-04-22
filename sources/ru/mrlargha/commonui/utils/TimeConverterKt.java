@@ -82,20 +82,14 @@ public final class TimeConverterKt {
         long abs = Math.abs((j * 1000) - System.currentTimeMillis());
         TimeUnit.MILLISECONDS.toDays(abs);
         long hours = TimeUnit.MILLISECONDS.toHours(abs) % 24;
-        long j2 = 60;
-        long minutes = TimeUnit.MILLISECONDS.toMinutes(abs) % j2;
-        long seconds = TimeUnit.MILLISECONDS.toSeconds(abs) % j2;
+        long minutes = TimeUnit.MILLISECONDS.toMinutes(abs) % 60;
+        long seconds = TimeUnit.MILLISECONDS.toSeconds(abs) % 60;
     }
 
     public static final String formatMillisToTime(long j) {
         long j2 = j / 1000;
-        long j3 = (long) DateCalculationsKt.SECONDS_PER_HOUR;
-        long j4 = j2 / j3;
-        long j5 = 60;
-        long j6 = (j2 % j3) / j5;
-        long j7 = j2 % j5;
         StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-        String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(j4), Long.valueOf(j6), Long.valueOf(j7)}, 3));
+        String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(j2 / 3600), Long.valueOf((j2 % 3600) / 60), Long.valueOf(j2 % 60)}, 3));
         Intrinsics.checkNotNullExpressionValue(format, "format(...)");
         return format;
     }

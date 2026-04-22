@@ -122,15 +122,16 @@ public final class FileUtils {
     }
 
     public final boolean moveByCopy(File file, File file2) {
-        if (file != null && file2 != null && file.exists()) {
-            try {
-                FilesKt.copyTo$default(file, file2, false, 0, 6, null);
-                file.delete();
-                return true;
-            } catch (Throwable unused) {
-            }
+        if (file == null || file2 == null || !file.exists()) {
+            return false;
         }
-        return false;
+        try {
+            FilesKt.copyTo$default(file, file2, false, 0, 6, null);
+            file.delete();
+            return true;
+        } catch (Throwable unused) {
+            return false;
+        }
     }
 
     public final boolean moveByRename(File file, File file2) {

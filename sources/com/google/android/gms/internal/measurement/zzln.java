@@ -108,12 +108,14 @@ final class zzln implements zzov {
 
     @Override // com.google.android.gms.internal.measurement.zzov
     public final void zzp(int i, int i2) throws IOException {
-        this.zza.zzc(i, (i2 >> 31) ^ (i2 + i2));
+        zzlm zzlmVar = this.zza;
+        zzlmVar.zzc(i, (i2 >> 31) ^ (i2 + i2));
     }
 
     @Override // com.google.android.gms.internal.measurement.zzov
     public final void zzq(int i, long j) throws IOException {
-        this.zza.zze(i, (j >> 63) ^ (j + j));
+        zzlm zzlmVar = this.zza;
+        zzlmVar.zze(i, (j >> 63) ^ (j + j));
     }
 
     @Override // com.google.android.gms.internal.measurement.zzov

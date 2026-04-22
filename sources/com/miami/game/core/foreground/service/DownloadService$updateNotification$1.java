@@ -51,7 +51,7 @@ public final class DownloadService$updateNotification$1 extends SuspendLambda im
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        int percentageProgress = (int) (filesUpdaterState.getPercentageProgress() * 100);
+        int percentageProgress = (int) (filesUpdaterState.getPercentageProgress() * 100.0d);
         if (filesUpdaterState.isComplete()) {
             this.this$0.stopSelf();
         }

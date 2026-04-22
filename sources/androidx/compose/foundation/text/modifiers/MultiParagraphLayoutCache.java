@@ -204,7 +204,9 @@ public final class MultiParagraphLayoutCache {
         int i2 = this.overflow;
         Density density = this.density;
         Intrinsics.checkNotNull(density);
-        return new TextLayoutResult(new TextLayoutInput(annotatedString, textStyle, list, i, z, i2, density, layoutDirection, this.fontFamilyResolver, j, (DefaultConstructorMarker) null), multiParagraph, ConstraintsKt.m7522constrain4WqzIAM(j, IntSize.m7721constructorimpl((TextDelegateKt.ceilToIntPx(min) << 32) | (TextDelegateKt.ceilToIntPx(multiParagraph.getHeight()) & 4294967295L))), null);
+        TextLayoutInput textLayoutInput = new TextLayoutInput(annotatedString, textStyle, list, i, z, i2, density, layoutDirection, this.fontFamilyResolver, j, (DefaultConstructorMarker) null);
+        int ceilToIntPx = TextDelegateKt.ceilToIntPx(min);
+        return new TextLayoutResult(textLayoutInput, multiParagraph, ConstraintsKt.m7522constrain4WqzIAM(j, IntSize.m7721constructorimpl((TextDelegateKt.ceilToIntPx(multiParagraph.getHeight()) & 4294967295L) | (ceilToIntPx << 32))), null);
     }
 
     public final int intrinsicHeight(int i, LayoutDirection layoutDirection) {

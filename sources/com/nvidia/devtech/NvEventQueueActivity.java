@@ -716,20 +716,26 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
 
     @Override // android.app.Activity, android.view.KeyEvent.Callback
     public boolean onKeyUp(int i, KeyEvent keyEvent) {
+        NvEventQueueActivity nvEventQueueActivity;
         KeyEvent keyEvent2;
         if (i == 115) {
             boolean isCapsLockOn = keyEvent.isCapsLockOn();
             this.capsLockOn = isCapsLockOn;
+            nvEventQueueActivity = this;
             keyEvent2 = keyEvent;
-            keyEvent(isCapsLockOn ? 3 : 4, 115, 0, 0, keyEvent2);
+            nvEventQueueActivity.keyEvent(isCapsLockOn ? 3 : 4, 115, 0, 0, keyEvent2);
         } else {
+            nvEventQueueActivity = this;
             keyEvent2 = keyEvent;
         }
         if (i == 89 || i == 85 || i == 90) {
             return false;
         }
         boolean onKeyUp = super.onKeyUp(i, keyEvent2);
-        return !onKeyUp ? keyEvent(keyEvent2.getAction(), i, keyEvent2.getUnicodeChar(), keyEvent2.getMetaState(), keyEvent2) : onKeyUp;
+        if (onKeyUp) {
+            return onKeyUp;
+        }
+        return nvEventQueueActivity.keyEvent(keyEvent2.getAction(), i, keyEvent2.getUnicodeChar(), keyEvent2.getMetaState(), keyEvent2);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -877,23 +883,20 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
     }
 
     public boolean swapBuffers() {
-        PrintStream printStream;
-        String str;
         int i = this.SwapBufferSkip;
-        if (i <= 0) {
+        if (i > 0) {
+            this.SwapBufferSkip = i - 1;
+            System.out.println("swapBuffer wait");
+        } else {
             EGLSurface eGLSurface = this.eglSurface;
             if (eGLSurface == null) {
-                printStream = System.out;
-                str = "eglSurface is NULL";
+                System.out.println("eglSurface is NULL");
+                return false;
             } else if (!this.egl.eglSwapBuffers(this.eglDisplay, eGLSurface)) {
-                printStream = System.out;
-                str = "eglSwapBufferrr: " + this.egl.eglGetError();
+                System.out.println("eglSwapBufferrr: " + this.egl.eglGetError());
+                return false;
             }
-            printStream.println(str);
-            return false;
         }
-        this.SwapBufferSkip = i - 1;
-        System.out.println("swapBuffer wait");
         return true;
     }
 

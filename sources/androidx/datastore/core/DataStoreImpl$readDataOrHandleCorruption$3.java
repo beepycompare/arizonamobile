@@ -44,8 +44,8 @@ public final class DataStoreImpl$readDataOrHandleCorruption$3 extends SuspendLam
     /* JADX WARN: Multi-variable type inference failed */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Ref.IntRef intRef;
         Object obj2;
+        Ref.IntRef intRef;
         Ref.ObjectRef objectRef;
         Object readDataFromFileOrDefault;
         T t;
@@ -60,8 +60,8 @@ public final class DataStoreImpl$readDataOrHandleCorruption$3 extends SuspendLam
             this.label = 3;
             Object writeData$datastore_core = this.this$0.writeData$datastore_core(this.$newData.element, true, this);
             if (writeData$datastore_core != coroutine_suspended) {
-                intRef = intRef3;
                 obj2 = writeData$datastore_core;
+                intRef = intRef3;
             }
         }
         if (i == 0) {

@@ -511,7 +511,7 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
                 return Unit.INSTANCE;
             }
 
-            /* JADX WARN: Type inference failed for: r1v1, types: [androidx.compose.ui.focus.FocusProperties, T] */
+            /* JADX WARN: Type inference failed for: r1v2, types: [androidx.compose.ui.focus.FocusProperties, T] */
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2() {
                 objectRef.element = this.fetchFocusProperties$ui();

@@ -163,7 +163,7 @@ public final class VersionRequirement {
             }
             int i3 = this.major;
             if (i3 > 7 || (i = this.minor) > 15 || (i2 = this.patch) > 127) {
-                writeVersionFull.invoke(Integer.valueOf((this.minor << 8) | i3 | (this.patch << 16)));
+                writeVersionFull.invoke(Integer.valueOf((this.patch << 16) | (this.minor << 8) | i3));
             } else {
                 writeVersion.invoke(Integer.valueOf((i << 3) | i3 | (i2 << 7)));
             }

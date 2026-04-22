@@ -43,7 +43,7 @@ public class DrawableContainerCompat extends Drawable implements Drawable.Callba
 
     @Override // android.graphics.drawable.Drawable
     public int getChangingConfigurations() {
-        return super.getChangingConfigurations() | this.mDrawableContainerState.getChangingConfigurations();
+        return this.mDrawableContainerState.getChangingConfigurations() | super.getChangingConfigurations();
     }
 
     private boolean needsMirroring() {
@@ -727,7 +727,7 @@ public class DrawableContainerCompat extends Drawable implements Drawable.Callba
 
         @Override // android.graphics.drawable.Drawable.ConstantState
         public int getChangingConfigurations() {
-            return this.mChangingConfigurations | this.mChildrenChangingConfigurations;
+            return this.mChildrenChangingConfigurations | this.mChangingConfigurations;
         }
 
         public final int addChild(Drawable drawable) {

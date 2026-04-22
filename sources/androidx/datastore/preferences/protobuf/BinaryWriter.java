@@ -36,8 +36,8 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
             return (byte) 10;
         }
         if (((-34359738368L) & value) != 0) {
-            b = (byte) 6;
             value >>>= 28;
+            b = 6;
         } else {
             b = 2;
         }

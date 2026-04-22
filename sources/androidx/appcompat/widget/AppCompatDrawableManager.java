@@ -202,55 +202,46 @@ public final class AppCompatDrawableManager {
                         return null;
                     }
 
-                    /* JADX WARN: Removed duplicated region for block: B:23:0x0050  */
-                    /* JADX WARN: Removed duplicated region for block: B:27:0x0065 A[RETURN] */
+                    /* JADX WARN: Removed duplicated region for block: B:22:0x004b  */
+                    /* JADX WARN: Removed duplicated region for block: B:26:0x0060 A[RETURN] */
                     @Override // androidx.appcompat.widget.ResourceManagerInternal.ResourceManagerHooks
                     /*
                         Code decompiled incorrectly, please refer to instructions dump.
                     */
                     public boolean tintDrawableUsingColorFilter(Context context, int i, Drawable drawable) {
-                        PorterDuff.Mode mode;
                         int i2;
                         boolean z;
                         int round;
-                        PorterDuff.Mode mode2 = AppCompatDrawableManager.DEFAULT_MODE;
+                        PorterDuff.Mode mode = AppCompatDrawableManager.DEFAULT_MODE;
                         if (arrayContains(this.COLORFILTER_TINT_COLOR_CONTROL_NORMAL, i)) {
                             i2 = R.attr.colorControlNormal;
                         } else if (arrayContains(this.COLORFILTER_COLOR_CONTROL_ACTIVATED, i)) {
                             i2 = R.attr.colorControlActivated;
                         } else {
                             if (arrayContains(this.COLORFILTER_COLOR_BACKGROUND_MULTIPLY, i)) {
-                                mode2 = PorterDuff.Mode.MULTIPLY;
+                                mode = PorterDuff.Mode.MULTIPLY;
                             } else if (i == R.drawable.abc_list_divider_mtrl_alpha) {
                                 round = Math.round(40.8f);
                                 i2 = 16842800;
-                                mode = mode2;
                                 z = true;
                                 if (z) {
-                                    return false;
+                                    Drawable mutate = drawable.mutate();
+                                    mutate.setColorFilter(AppCompatDrawableManager.getPorterDuffColorFilter(ThemeUtils.getThemeAttrColor(context, i2), mode));
+                                    if (round != -1) {
+                                        mutate.setAlpha(round);
+                                    }
+                                    return true;
                                 }
-                                Drawable mutate = drawable.mutate();
-                                mutate.setColorFilter(AppCompatDrawableManager.getPorterDuffColorFilter(ThemeUtils.getThemeAttrColor(context, i2), mode));
-                                if (round != -1) {
-                                    mutate.setAlpha(round);
-                                }
-                                return true;
+                                return false;
                             } else if (i != R.drawable.abc_dialog_material_background) {
-                                mode = mode2;
                                 i2 = 0;
                                 z = false;
                                 round = -1;
                                 if (z) {
                                 }
                             }
-                            mode = mode2;
-                            round = -1;
                             i2 = 16842801;
-                            z = true;
-                            if (z) {
-                            }
                         }
-                        mode = mode2;
                         z = true;
                         round = -1;
                         if (z) {

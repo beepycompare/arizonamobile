@@ -85,7 +85,7 @@ public /* synthetic */ class JvmMetadataUtil$annotationImpl$kotlin_Metadata$0 im
 
     @Override // java.lang.annotation.Annotation
     public final int hashCode() {
-        return (("bytecodeVersion".hashCode() * 127) ^ Arrays.hashCode(this.bytecodeVersion)) + (("data1".hashCode() * 127) ^ Arrays.hashCode(this.data1)) + (("data2".hashCode() * 127) ^ Arrays.hashCode(this.data2)) + (("extraInt".hashCode() * 127) ^ Integer.hashCode(this.extraInt)) + (("extraString".hashCode() * 127) ^ this.extraString.hashCode()) + (("kind".hashCode() * 127) ^ Integer.hashCode(this.kind)) + (("metadataVersion".hashCode() * 127) ^ Arrays.hashCode(this.metadataVersion)) + ((RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME.hashCode() * 127) ^ this.packageName.hashCode());
+        return (("bytecodeVersion".hashCode() * 127) ^ Arrays.hashCode(this.bytecodeVersion)) + (("data1".hashCode() * 127) ^ Arrays.hashCode(this.data1)) + (("data2".hashCode() * 127) ^ Arrays.hashCode(this.data2)) + (("extraInt".hashCode() * 127) ^ Integer.hashCode(this.extraInt)) + (("extraString".hashCode() * 127) ^ this.extraString.hashCode()) + (("kind".hashCode() * 127) ^ Integer.hashCode(this.kind)) + (("metadataVersion".hashCode() * 127) ^ Arrays.hashCode(this.metadataVersion)) + (this.packageName.hashCode() ^ (RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME.hashCode() * 127));
     }
 
     @Override // kotlin.Metadata

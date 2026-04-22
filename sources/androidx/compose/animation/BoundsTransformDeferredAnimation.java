@@ -167,7 +167,6 @@ public final class BoundsTransformDeferredAnimation {
     }
 
     private final Rect animate(CoroutineScope coroutineScope, BoundsTransform boundsTransform) {
-        BoundsTransformDeferredAnimation boundsTransformDeferredAnimation;
         Rect value;
         long j = this.targetOffset;
         if ((9223372034707292159L & j) != InlineClassHelperKt.UnspecifiedPackedFloats) {
@@ -181,18 +180,11 @@ public final class BoundsTransformDeferredAnimation {
                 this.animatable = animatable;
                 if (this.isPending) {
                     this.isPending = false;
-                    CoroutineStart coroutineStart = CoroutineStart.UNDISPATCHED;
-                    BoundsTransformDeferredAnimation$animate$1 boundsTransformDeferredAnimation$animate$1 = new BoundsTransformDeferredAnimation$animate$1(animatable, m4567Recttz77jQw, boundsTransform, this, null);
-                    boundsTransformDeferredAnimation = this;
-                    BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, coroutineStart, boundsTransformDeferredAnimation$animate$1, 1, null);
-                    Animatable<Rect, AnimationVector4D> animatable2 = boundsTransformDeferredAnimation.animatable;
-                    return (animatable2 != null || (value = animatable2.getValue()) == null) ? Rect.Companion.getZero() : value;
+                    BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, CoroutineStart.UNDISPATCHED, new BoundsTransformDeferredAnimation$animate$1(animatable, m4567Recttz77jQw, boundsTransform, this, null), 1, null);
                 }
             }
         }
-        boundsTransformDeferredAnimation = this;
-        Animatable<Rect, AnimationVector4D> animatable22 = boundsTransformDeferredAnimation.animatable;
-        if (animatable22 != null) {
-        }
+        Animatable<Rect, AnimationVector4D> animatable2 = this.animatable;
+        return (animatable2 == null || (value = animatable2.getValue()) == null) ? Rect.Companion.getZero() : value;
     }
 }

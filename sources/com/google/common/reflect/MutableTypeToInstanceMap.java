@@ -72,13 +72,13 @@ public final class MutableTypeToInstanceMap<B> extends ForwardingMap<TypeToken<?
         return this.backingMap;
     }
 
-    /* JADX WARN: Type inference failed for: r2v1, types: [T extends B, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [T extends B, java.lang.Object] */
     @CheckForNull
     private <T extends B> T trustedPut(TypeToken<T> type, @ParametricNullness T value) {
         return this.backingMap.put(type, value);
     }
 
-    /* JADX WARN: Type inference failed for: r2v1, types: [T extends B, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [T extends B, java.lang.Object] */
     @CheckForNull
     private <T extends B> T trustedGet(TypeToken<T> type) {
         return this.backingMap.get(type);

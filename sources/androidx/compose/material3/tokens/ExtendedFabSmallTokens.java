@@ -7,13 +7,13 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class ExtendedFabSmallTokens {
     public static final int $stable = 0;
-    private static final float LeadingSpace;
-    private static final float TrailingSpace;
     public static final ExtendedFabSmallTokens INSTANCE = new ExtendedFabSmallTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 56.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(56.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerLarge;
-    private static final float IconLabelSpace = Dp.m7555constructorimpl((float) 8.0d);
-    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
+    private static final float IconLabelSpace = Dp.m7555constructorimpl(8.0f);
+    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
+    private static final float LeadingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float TrailingSpace = Dp.m7555constructorimpl(16.0f);
 
     private ExtendedFabSmallTokens() {
     }
@@ -45,11 +45,5 @@ public final class ExtendedFabSmallTokens {
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
     public final float m3389getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
-    }
-
-    static {
-        float f = (float) 16.0d;
-        LeadingSpace = Dp.m7555constructorimpl(f);
-        TrailingSpace = Dp.m7555constructorimpl(f);
     }
 }

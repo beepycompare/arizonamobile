@@ -2,6 +2,7 @@ package kotlinx.datetime;
 
 import androidx.collection.SieveCacheKt;
 import androidx.exifinterface.media.ExifInterface;
+import androidx.media3.common.C;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -51,11 +52,11 @@ public abstract class DateTimePeriod {
     }
 
     public int getSeconds() {
-        return (int) ((getTotalNanoseconds$kotlinx_datetime() % DateCalculationsKt.NANOS_PER_MINUTE) / 1000000000);
+        return (int) ((getTotalNanoseconds$kotlinx_datetime() % DateCalculationsKt.NANOS_PER_MINUTE) / C.NANOS_PER_SECOND);
     }
 
     public int getNanoseconds() {
-        return (int) (getTotalNanoseconds$kotlinx_datetime() % 1000000000);
+        return (int) (getTotalNanoseconds$kotlinx_datetime() % C.NANOS_PER_SECOND);
     }
 
     private final boolean allNonpositive() {
@@ -204,12 +205,12 @@ public abstract class DateTimePeriod {
                         i5 = i20;
                         i6 = i21;
                     }
+                    c4 = 1;
                     i9 = i19;
                     i10 = i18;
                     i12 = i17;
                     i13 = i16;
                     i14 = i15;
-                    c4 = 1;
                 } else {
                     int i23 = i6;
                     char charAt4 = text.charAt(i5);

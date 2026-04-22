@@ -52,7 +52,7 @@ public final class VectorizedMonoSplineKeyframesSpec<V extends AnimationVector> 
             int i = this.timestamps._size;
             float[] fArr2 = new float[i];
             for (int i2 = 0; i2 < i; i2++) {
-                fArr2[i2] = this.timestamps.get(i2) / ((float) 1000);
+                fArr2[i2] = this.timestamps.get(i2) / 1000.0f;
             }
             this.times = fArr2;
         }
@@ -169,12 +169,14 @@ public final class VectorizedMonoSplineKeyframesSpec<V extends AnimationVector> 
             int i3 = this.timestamps.get(i);
             int i4 = this.timestamps.get(i + 1);
             if (i2 != i3) {
-                float f2 = i4 - i3;
-                return ((f2 * getEasing(i).transform((i2 - i3) / f2)) + i3) / ((float) 1000);
+                Easing easing = getEasing(i);
+                float f2 = i2 - i3;
+                float f3 = i4 - i3;
+                return ((f3 * easing.transform(f2 / f3)) + i3) / 1000.0f;
             }
             f = i3;
         }
-        return f / ((float) 1000);
+        return f / 1000.0f;
     }
 
     private final int findEntryForTimeMillis(int i) {

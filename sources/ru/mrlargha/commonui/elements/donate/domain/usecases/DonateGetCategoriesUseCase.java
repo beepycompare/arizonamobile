@@ -28,7 +28,7 @@ public final class DonateGetCategoriesUseCase {
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0046  */
-    /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x007a A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

@@ -94,11 +94,10 @@ public class MutableSnapshot extends Snapshot {
         Map<SnapshotObserver, SnapshotInstanceObservers> map;
         long j;
         long j2;
-        long j3;
         SnapshotIdSet snapshotIdSet;
         NestedMutableSnapshot nestedMutableSnapshot;
+        long j3;
         long j4;
-        long j5;
         SnapshotIdSet snapshotIdSet2;
         validateNotDisposed$runtime();
         validateNotAppliedOrPinned();
@@ -120,26 +119,25 @@ public class MutableSnapshot extends Snapshot {
         synchronized (SnapshotKt.getLock()) {
             j = SnapshotKt.nextSnapshotId;
             j2 = SnapshotKt.nextSnapshotId;
-            j3 = 1;
-            SnapshotKt.nextSnapshotId = j2 + j3;
+            SnapshotKt.nextSnapshotId = j2 + 1;
             snapshotIdSet = SnapshotKt.openSnapshots;
             SnapshotKt.openSnapshots = snapshotIdSet.set(j);
             SnapshotIdSet invalid$runtime = getInvalid$runtime();
             setInvalid$runtime(invalid$runtime.set(j));
-            nestedMutableSnapshot = new NestedMutableSnapshot(j, SnapshotKt.addRange(invalid$runtime, getSnapshotId() + j3, j), SnapshotKt.mergedReadObserver$default(function13, getReadObserver(), false, 4, null), SnapshotKt.mergedWriteObserver(function14, getWriteObserver$runtime()), this);
+            nestedMutableSnapshot = new NestedMutableSnapshot(j, SnapshotKt.addRange(invalid$runtime, getSnapshotId() + 1, j), SnapshotKt.mergedReadObserver$default(function13, getReadObserver(), false, 4, null), SnapshotKt.mergedWriteObserver(function14, getWriteObserver$runtime()), this);
         }
         if (!getApplied$runtime() && !getDisposed$runtime()) {
             long snapshotId = getSnapshotId();
             synchronized (SnapshotKt.getLock()) {
+                j3 = SnapshotKt.nextSnapshotId;
                 j4 = SnapshotKt.nextSnapshotId;
-                j5 = SnapshotKt.nextSnapshotId;
-                SnapshotKt.nextSnapshotId = j5 + j3;
-                setSnapshotId$runtime(j4);
+                SnapshotKt.nextSnapshotId = j4 + 1;
+                setSnapshotId$runtime(j3);
                 snapshotIdSet2 = SnapshotKt.openSnapshots;
                 SnapshotKt.openSnapshots = snapshotIdSet2.set(getSnapshotId());
                 Unit unit = Unit.INSTANCE;
             }
-            setInvalid$runtime(SnapshotKt.addRange(getInvalid$runtime(), snapshotId + j3, getSnapshotId()));
+            setInvalid$runtime(SnapshotKt.addRange(getInvalid$runtime(), snapshotId + 1, getSnapshotId()));
         }
         NestedMutableSnapshot nestedMutableSnapshot2 = nestedMutableSnapshot;
         if (access$getObservers$p != null) {
@@ -351,53 +349,52 @@ public class MutableSnapshot extends Snapshot {
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     public Snapshot takeNestedSnapshot(Function1<Object, Unit> function1) {
+        Function1<Object, Unit> function12;
         Map<SnapshotObserver, SnapshotInstanceObservers> map;
         long j;
         long j2;
-        long j3;
         SnapshotIdSet snapshotIdSet;
         NestedReadonlySnapshot nestedReadonlySnapshot;
+        long j3;
         long j4;
-        long j5;
         SnapshotIdSet snapshotIdSet2;
         validateNotDisposed$runtime();
         validateNotAppliedOrPinned();
         long snapshotId = getSnapshotId();
         MutableSnapshot mutableSnapshot = this instanceof GlobalSnapshot ? null : this;
         PersistentList access$getObservers$p = SnapshotObserverKt.access$getObservers$p();
-        Function1<Object, Unit> function12 = function1;
         if (access$getObservers$p != null) {
-            Pair<SnapshotInstanceObservers, Map<SnapshotObserver, SnapshotInstanceObservers>> mergeObservers = SnapshotObserverKt.mergeObservers(access$getObservers$p, mutableSnapshot, true, function12, null);
+            Pair<SnapshotInstanceObservers, Map<SnapshotObserver, SnapshotInstanceObservers>> mergeObservers = SnapshotObserverKt.mergeObservers(access$getObservers$p, mutableSnapshot, true, function1, null);
             SnapshotInstanceObservers first = mergeObservers.getFirst();
             Function1<Object, Unit> readObserver = first.getReadObserver();
             first.getWriteObserver();
             map = mergeObservers.getSecond();
             function12 = readObserver;
         } else {
+            function12 = function1;
             map = null;
         }
         recordPrevious$runtime(getSnapshotId());
         synchronized (SnapshotKt.getLock()) {
             j = SnapshotKt.nextSnapshotId;
             j2 = SnapshotKt.nextSnapshotId;
-            j3 = 1;
-            SnapshotKt.nextSnapshotId = j2 + j3;
+            SnapshotKt.nextSnapshotId = j2 + 1;
             snapshotIdSet = SnapshotKt.openSnapshots;
             SnapshotKt.openSnapshots = snapshotIdSet.set(j);
-            nestedReadonlySnapshot = new NestedReadonlySnapshot(j, SnapshotKt.addRange(getInvalid$runtime(), snapshotId + j3, j), SnapshotKt.mergedReadObserver$default(function12, getReadObserver(), false, 4, null), this);
+            nestedReadonlySnapshot = new NestedReadonlySnapshot(j, SnapshotKt.addRange(getInvalid$runtime(), snapshotId + 1, j), SnapshotKt.mergedReadObserver$default(function12, getReadObserver(), false, 4, null), this);
         }
         if (!getApplied$runtime() && !getDisposed$runtime()) {
             long snapshotId2 = getSnapshotId();
             synchronized (SnapshotKt.getLock()) {
+                j3 = SnapshotKt.nextSnapshotId;
                 j4 = SnapshotKt.nextSnapshotId;
-                j5 = SnapshotKt.nextSnapshotId;
-                SnapshotKt.nextSnapshotId = j5 + j3;
-                setSnapshotId$runtime(j4);
+                SnapshotKt.nextSnapshotId = j4 + 1;
+                setSnapshotId$runtime(j3);
                 snapshotIdSet2 = SnapshotKt.openSnapshots;
                 SnapshotKt.openSnapshots = snapshotIdSet2.set(getSnapshotId());
                 Unit unit = Unit.INSTANCE;
             }
-            setInvalid$runtime(SnapshotKt.addRange(getInvalid$runtime(), snapshotId2 + j3, getSnapshotId()));
+            setInvalid$runtime(SnapshotKt.addRange(getInvalid$runtime(), snapshotId2 + 1, getSnapshotId()));
         }
         NestedReadonlySnapshot nestedReadonlySnapshot2 = nestedReadonlySnapshot;
         if (access$getObservers$p != null) {
@@ -654,7 +651,6 @@ public class MutableSnapshot extends Snapshot {
     public final <T> T advance$runtime(Function0<? extends T> function0) {
         long j;
         long j2;
-        long j3;
         SnapshotIdSet snapshotIdSet;
         recordPrevious$runtime(getSnapshotId());
         T invoke = function0.invoke();
@@ -665,14 +661,13 @@ public class MutableSnapshot extends Snapshot {
         synchronized (SnapshotKt.getLock()) {
             j = SnapshotKt.nextSnapshotId;
             j2 = SnapshotKt.nextSnapshotId;
-            j3 = 1;
-            SnapshotKt.nextSnapshotId = j2 + j3;
+            SnapshotKt.nextSnapshotId = j2 + 1;
             setSnapshotId$runtime(j);
             snapshotIdSet = SnapshotKt.openSnapshots;
             SnapshotKt.openSnapshots = snapshotIdSet.set(getSnapshotId());
             Unit unit = Unit.INSTANCE;
         }
-        setInvalid$runtime(SnapshotKt.addRange(getInvalid$runtime(), snapshotId + j3, getSnapshotId()));
+        setInvalid$runtime(SnapshotKt.addRange(getInvalid$runtime(), snapshotId + 1, getSnapshotId()));
         return invoke;
     }
 
@@ -777,7 +772,6 @@ public class MutableSnapshot extends Snapshot {
     public final void advance$runtime() {
         long j;
         long j2;
-        long j3;
         SnapshotIdSet snapshotIdSet;
         recordPrevious$runtime(getSnapshotId());
         Unit unit = Unit.INSTANCE;
@@ -788,14 +782,13 @@ public class MutableSnapshot extends Snapshot {
         synchronized (SnapshotKt.getLock()) {
             j = SnapshotKt.nextSnapshotId;
             j2 = SnapshotKt.nextSnapshotId;
-            j3 = 1;
-            SnapshotKt.nextSnapshotId = j2 + j3;
+            SnapshotKt.nextSnapshotId = j2 + 1;
             setSnapshotId$runtime(j);
             snapshotIdSet = SnapshotKt.openSnapshots;
             SnapshotKt.openSnapshots = snapshotIdSet.set(getSnapshotId());
             Unit unit2 = Unit.INSTANCE;
         }
-        setInvalid$runtime(SnapshotKt.addRange(getInvalid$runtime(), snapshotId + j3, getSnapshotId()));
+        setInvalid$runtime(SnapshotKt.addRange(getInvalid$runtime(), snapshotId + 1, getSnapshotId()));
     }
 
     public final void recordPrevious$runtime(long j) {

@@ -180,8 +180,6 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
                 int next = CompactHashing.getNext(i6, hashTableMask);
                 i4++;
                 if (next != 0) {
-                    key = key;
-                    value = value;
                     tableGet = next;
                 } else if (i4 >= 9) {
                     return convertToHashFloodingResistantImplementation().put(key, value);

@@ -214,7 +214,7 @@ public final class TypeResolver {
             });
         }
 
-        /* JADX WARN: Type inference failed for: r0v4, types: [java.lang.reflect.GenericDeclaration] */
+        /* JADX WARN: Type inference failed for: r2v6, types: [java.lang.reflect.GenericDeclaration] */
         Type resolveInternal(TypeVariable<?> var, TypeTable forDependants) {
             Type type = this.map.get(new TypeVariableKey(var));
             if (type == null) {
@@ -307,27 +307,29 @@ public final class TypeResolver {
 
         final Type capture(Type type) {
             Preconditions.checkNotNull(type);
-            if ((type instanceof Class) || (type instanceof TypeVariable)) {
-                return type;
-            }
-            if (type instanceof GenericArrayType) {
-                return Types.newArrayType(notForTypeVariable().capture(((GenericArrayType) type).getGenericComponentType()));
-            }
-            if (type instanceof ParameterizedType) {
-                ParameterizedType parameterizedType = (ParameterizedType) type;
-                Class cls = (Class) parameterizedType.getRawType();
-                TypeVariable<?>[] typeParameters = cls.getTypeParameters();
-                Type[] actualTypeArguments = parameterizedType.getActualTypeArguments();
-                for (int i = 0; i < actualTypeArguments.length; i++) {
-                    actualTypeArguments[i] = forTypeVariable(typeParameters[i]).capture(actualTypeArguments[i]);
+            if (!(type instanceof Class) && !(type instanceof TypeVariable)) {
+                if (type instanceof GenericArrayType) {
+                    return Types.newArrayType(notForTypeVariable().capture(((GenericArrayType) type).getGenericComponentType()));
                 }
-                return Types.newParameterizedTypeWithOwner(notForTypeVariable().captureNullable(parameterizedType.getOwnerType()), cls, actualTypeArguments);
-            } else if (type instanceof WildcardType) {
-                WildcardType wildcardType = (WildcardType) type;
-                return wildcardType.getLowerBounds().length == 0 ? captureAsTypeVariable(wildcardType.getUpperBounds()) : type;
-            } else {
-                throw new AssertionError("must have been one of the known types");
+                if (type instanceof ParameterizedType) {
+                    ParameterizedType parameterizedType = (ParameterizedType) type;
+                    Class cls = (Class) parameterizedType.getRawType();
+                    TypeVariable<?>[] typeParameters = cls.getTypeParameters();
+                    Type[] actualTypeArguments = parameterizedType.getActualTypeArguments();
+                    for (int i = 0; i < actualTypeArguments.length; i++) {
+                        actualTypeArguments[i] = forTypeVariable(typeParameters[i]).capture(actualTypeArguments[i]);
+                    }
+                    return Types.newParameterizedTypeWithOwner(notForTypeVariable().captureNullable(parameterizedType.getOwnerType()), cls, actualTypeArguments);
+                } else if (type instanceof WildcardType) {
+                    WildcardType wildcardType = (WildcardType) type;
+                    if (wildcardType.getLowerBounds().length == 0) {
+                        return captureAsTypeVariable(wildcardType.getUpperBounds());
+                    }
+                } else {
+                    throw new AssertionError("must have been one of the known types");
+                }
             }
+            return type;
         }
 
         TypeVariable<?> captureAsTypeVariable(Type[] upperBounds) {

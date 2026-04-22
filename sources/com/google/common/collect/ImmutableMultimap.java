@@ -167,7 +167,7 @@ public abstract class ImmutableMultimap<K, V> extends BaseImmutableMultimap<K, V
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r1v5, types: [com.google.common.collect.ImmutableCollection$Builder] */
+        /* JADX WARN: Type inference failed for: r1v4, types: [com.google.common.collect.ImmutableCollection$Builder] */
         public Builder<K, V> putAll(K key, Iterable<? extends V> values) {
             if (key == null) {
                 throw new NullPointerException("null key in entry: null=" + Iterables.toString(values));

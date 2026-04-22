@@ -31,10 +31,9 @@ public final class SafeWindowAreaComponentProvider {
             if (windowExtensions != null && isWindowAreaProviderValid(windowExtensions) && Build.VERSION.SDK_INT >= 29 && WindowAreaComponentValidator.INSTANCE.isWindowAreaComponentValid$window_release(getWindowAreaComponentClass(), ExtensionsUtil.INSTANCE.getSafeVendorApiLevel()) && WindowAreaComponentValidator.INSTANCE.isExtensionWindowAreaStatusValid$window_release(getExtensionWindowAreaStatusClass(), ExtensionsUtil.INSTANCE.getSafeVendorApiLevel()) && WindowAreaComponentValidator.INSTANCE.isExtensionWindowAreaPresentationValid$window_release(getExtensionWindowAreaPresentationClass(), ExtensionsUtil.INSTANCE.getSafeVendorApiLevel())) {
                 return this.windowExtensions.getWindowAreaComponent();
             }
-            return null;
         } catch (Throwable unused) {
-            return null;
         }
+        return null;
     }
 
     private final boolean isWindowAreaProviderValid(final Object obj) {

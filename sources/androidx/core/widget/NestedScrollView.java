@@ -611,16 +611,16 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         obtain.offsetLocation(0.0f, this.mNestedYOffset);
         if (actionMasked == 0) {
             nestedScrollView = this;
-            if (getChildCount() == 0) {
+            if (nestedScrollView.getChildCount() == 0) {
                 return false;
             }
-            if (nestedScrollView.mIsBeingDragged && (parent = getParent()) != null) {
+            if (nestedScrollView.mIsBeingDragged && (parent = nestedScrollView.getParent()) != null) {
                 parent.requestDisallowInterceptTouchEvent(true);
             }
             if (!nestedScrollView.mScroller.isFinished()) {
-                abortAnimatedScroll();
+                nestedScrollView.abortAnimatedScroll();
             }
-            initializeTouchDrag((int) motionEvent.getY(), motionEvent.getPointerId(0));
+            nestedScrollView.initializeTouchDrag((int) motionEvent.getY(), motionEvent.getPointerId(0));
         } else if (actionMasked != 1) {
             if (actionMasked == 2) {
                 int findPointerIndex = motionEvent.findPointerIndex(this.mActivePointerId);
@@ -667,18 +667,18 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
             velocityTracker.computeCurrentVelocity(1000, nestedScrollView.mMaximumVelocity);
             int yVelocity = (int) velocityTracker.getYVelocity(nestedScrollView.mActivePointerId);
             if (Math.abs(yVelocity) >= nestedScrollView.mMinimumVelocity) {
-                if (!edgeEffectFling(yVelocity)) {
+                if (!nestedScrollView.edgeEffectFling(yVelocity)) {
                     int i4 = -yVelocity;
                     float f = i4;
-                    if (!dispatchNestedPreFling(0.0f, f)) {
-                        dispatchNestedFling(0.0f, f, true);
-                        fling(i4);
+                    if (!nestedScrollView.dispatchNestedPreFling(0.0f, f)) {
+                        nestedScrollView.dispatchNestedFling(0.0f, f, true);
+                        nestedScrollView.fling(i4);
                     }
                 }
-            } else if (nestedScrollView.mScroller.springBack(getScrollX(), getScrollY(), 0, 0, 0, getScrollRange())) {
-                postInvalidateOnAnimation();
+            } else if (nestedScrollView.mScroller.springBack(nestedScrollView.getScrollX(), nestedScrollView.getScrollY(), 0, 0, 0, nestedScrollView.getScrollRange())) {
+                nestedScrollView.postInvalidateOnAnimation();
             }
-            endTouchDrag();
+            nestedScrollView.endTouchDrag();
         }
         VelocityTracker velocityTracker2 = nestedScrollView.mVelocityTracker;
         if (velocityTracker2 != null) {

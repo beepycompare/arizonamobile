@@ -45,7 +45,7 @@ final class SizeAnimationModifierNode$animateTo$data$1$1 extends SuspendLambda i
         return ((SizeAnimationModifierNode$animateTo$data$1$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Type inference failed for: r12v8, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r12v7, types: [java.lang.Object] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Function2<IntSize, IntSize, Unit> listener;

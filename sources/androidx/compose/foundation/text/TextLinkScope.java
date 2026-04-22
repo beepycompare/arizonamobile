@@ -258,22 +258,15 @@ public final class TextLinkScope {
     }
 
     private final Path pathForRangeInRangeCoordinates(AnnotatedString.Range<LinkAnnotation> range) {
-        Path path = null;
-        if (getShouldMeasureLinks().invoke().booleanValue()) {
-            TextLayoutResult textLayoutResult = getTextLayoutResult();
-            if (textLayoutResult != null) {
-                AnnotatedString.Range<LinkAnnotation> calculateVisibleLinkRange = calculateVisibleLinkRange(range, textLayoutResult);
-                if (calculateVisibleLinkRange == null) {
-                    return null;
-                }
-                path = textLayoutResult.getPathForRange(calculateVisibleLinkRange.getStart(), calculateVisibleLinkRange.getEnd());
-                Rect boundingBox = textLayoutResult.getBoundingBox(calculateVisibleLinkRange.getStart());
-                float min = textLayoutResult.getLineForOffset(calculateVisibleLinkRange.getStart()) == textLayoutResult.getLineForOffset(calculateVisibleLinkRange.getEnd() + (-1)) ? Math.min(textLayoutResult.getBoundingBox(calculateVisibleLinkRange.getEnd() - 1).getLeft(), boundingBox.getLeft()) : 0.0f;
-                path.mo4664translatek4lQ0M(Offset.m4519constructorimpl(Offset.m4519constructorimpl((Float.floatToRawIntBits(min) << 32) | (Float.floatToRawIntBits(boundingBox.getTop()) & 4294967295L)) ^ (-9223372034707292160L)));
-            }
-            return path;
+        TextLayoutResult textLayoutResult;
+        AnnotatedString.Range<LinkAnnotation> calculateVisibleLinkRange;
+        if (!getShouldMeasureLinks().invoke().booleanValue() || (textLayoutResult = getTextLayoutResult()) == null || (calculateVisibleLinkRange = calculateVisibleLinkRange(range, textLayoutResult)) == null) {
+            return null;
         }
-        return null;
+        Path pathForRange = textLayoutResult.getPathForRange(calculateVisibleLinkRange.getStart(), calculateVisibleLinkRange.getEnd());
+        Rect boundingBox = textLayoutResult.getBoundingBox(calculateVisibleLinkRange.getStart());
+        pathForRange.mo4664translatek4lQ0M(Offset.m4519constructorimpl(Offset.m4519constructorimpl((Float.floatToRawIntBits(textLayoutResult.getLineForOffset(calculateVisibleLinkRange.getStart()) == textLayoutResult.getLineForOffset(calculateVisibleLinkRange.getEnd() + (-1)) ? Math.min(textLayoutResult.getBoundingBox(calculateVisibleLinkRange.getEnd() - 1).getLeft(), boundingBox.getLeft()) : 0.0f) << 32) | (Float.floatToRawIntBits(boundingBox.getTop()) & 4294967295L)) ^ (-9223372034707292160L)));
+        return pathForRange;
     }
 
     private final AnnotatedString.Range<LinkAnnotation> calculateVisibleLinkRange(AnnotatedString.Range<LinkAnnotation> range, TextLayoutResult textLayoutResult) {

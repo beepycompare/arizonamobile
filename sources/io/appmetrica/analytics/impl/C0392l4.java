@@ -44,11 +44,10 @@ public final class C0392l4 {
                 return false;
             }
             Boolean bool = this.f;
-            Boolean bool2 = c0392l4.f;
             if (bool != null) {
-                return bool.equals(bool2);
+                return bool.equals(c0392l4.f);
             }
-            if (bool2 == null) {
+            if (c0392l4.f == null) {
                 return true;
             }
         }

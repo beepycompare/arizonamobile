@@ -41,7 +41,7 @@ public final class FocusRequester {
         return focusRequester.m4433requestFocus3ESFkO8(i);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x0073, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x006f, code lost:
         continue;
      */
     /* renamed from: requestFocus-3ESFkO8  reason: not valid java name */
@@ -314,6 +314,12 @@ public final class FocusRequester {
         }
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x006b, code lost:
+        continue;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final boolean findFocusTarget$ui(Function1<? super FocusTargetNode, Boolean> function1) {
         Companion companion = Companion;
         if (this == companion.getDefault()) {
@@ -388,6 +394,7 @@ public final class FocusRequester {
                                     }
                                     node = DelegatableNodeKt.pop(mutableVector2);
                                 }
+                                continue;
                             } else {
                                 node = node.getChild$ui();
                             }
@@ -399,7 +406,7 @@ public final class FocusRequester {
         return z;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x006f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x006b, code lost:
         continue;
      */
     /*

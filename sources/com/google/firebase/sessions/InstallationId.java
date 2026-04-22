@@ -35,31 +35,31 @@ public final class InstallationId {
 
         /* JADX WARN: Can't wrap try/catch for region: R(9:1|(2:3|(7:5|6|7|(1:(1:(6:11|12|13|(1:15)|16|17)(2:20|21))(2:22|23))(3:30|31|(2:33|28))|24|25|26))|38|6|7|(0)(0)|24|25|26) */
         /* JADX WARN: Code restructure failed: missing block: B:15:0x0035, code lost:
-            r10 = move-exception;
+            r7 = move-exception;
          */
         /* JADX WARN: Code restructure failed: missing block: B:28:0x0069, code lost:
-            r10 = move-exception;
+            r7 = move-exception;
          */
         /* JADX WARN: Code restructure failed: missing block: B:29:0x006a, code lost:
-            android.util.Log.w(com.google.firebase.sessions.FirebaseSessions.TAG, "Error getting authentication token.", r10);
-            r10 = r9;
-            r9 = "";
+            android.util.Log.w(com.google.firebase.sessions.FirebaseSessions.TAG, "Error getting authentication token.", r7);
+            r7 = r8;
+            r8 = "";
          */
         /* JADX WARN: Code restructure failed: missing block: B:31:0x0084, code lost:
-            if (r10 != r1) goto L13;
+            if (r7 != r9) goto L13;
          */
         /* JADX WARN: Code restructure failed: missing block: B:37:0x008e, code lost:
-            android.util.Log.w(com.google.firebase.sessions.FirebaseSessions.TAG, "Error getting Firebase installation id .", r10);
-            r9 = r9;
+            android.util.Log.w(com.google.firebase.sessions.FirebaseSessions.TAG, "Error getting Firebase installation id .", r7);
+            r8 = r8;
          */
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0029  */
         /* JADX WARN: Removed duplicated region for block: B:22:0x0047  */
-        /* JADX WARN: Type inference failed for: r9v13, types: [java.lang.String] */
-        /* JADX WARN: Type inference failed for: r9v16 */
-        /* JADX WARN: Type inference failed for: r9v17 */
-        /* JADX WARN: Type inference failed for: r9v18 */
-        /* JADX WARN: Type inference failed for: r9v5, types: [java.lang.String] */
+        /* JADX WARN: Type inference failed for: r8v13, types: [java.lang.String] */
+        /* JADX WARN: Type inference failed for: r8v16 */
+        /* JADX WARN: Type inference failed for: r8v17 */
+        /* JADX WARN: Type inference failed for: r8v18 */
+        /* JADX WARN: Type inference failed for: r8v5, types: [java.lang.String] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -86,26 +86,26 @@ public final class InstallationId {
                         }
                     } else if (i != 1) {
                         if (i == 2) {
-                            ?? r9 = (String) installationId$Companion$create$1.L$0;
+                            ?? r8 = (String) installationId$Companion$create$1.L$0;
                             ResultKt.throwOnFailure(obj);
-                            firebaseInstallationsApi = r9;
+                            firebaseInstallationsApi = r8;
                             String str2 = (String) obj;
-                            ?? r92 = firebaseInstallationsApi;
+                            ?? r82 = firebaseInstallationsApi;
                             if (str2 != null) {
                                 str = str2;
-                                r92 = firebaseInstallationsApi;
+                                r82 = firebaseInstallationsApi;
                             }
-                            return new InstallationId(str, r92, null);
+                            return new InstallationId(str, r82, null);
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
                         firebaseInstallationsApi = (FirebaseInstallationsApi) installationId$Companion$create$1.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
-                    String token2 = ((InstallationTokenResult) obj).getToken();
                     FirebaseInstallationsApi firebaseInstallationsApi2 = firebaseInstallationsApi;
-                    String str3 = token2;
-                    Task<String> id = firebaseInstallationsApi2.getId();
+                    String str3 = ((InstallationTokenResult) obj).getToken();
+                    FirebaseInstallationsApi firebaseInstallationsApi3 = firebaseInstallationsApi2;
+                    Task<String> id = firebaseInstallationsApi3.getId();
                     Intrinsics.checkNotNullExpressionValue(id, "getId(...)");
                     installationId$Companion$create$1.L$0 = str3;
                     installationId$Companion$create$1.label = 2;
@@ -120,10 +120,10 @@ public final class InstallationId {
             String str4 = "";
             if (i != 0) {
             }
-            String token22 = ((InstallationTokenResult) obj2).getToken();
             FirebaseInstallationsApi firebaseInstallationsApi22 = firebaseInstallationsApi;
-            String str32 = token22;
-            Task<String> id2 = firebaseInstallationsApi22.getId();
+            String str32 = ((InstallationTokenResult) obj2).getToken();
+            FirebaseInstallationsApi firebaseInstallationsApi32 = firebaseInstallationsApi22;
+            Task<String> id2 = firebaseInstallationsApi32.getId();
             Intrinsics.checkNotNullExpressionValue(id2, "getId(...)");
             installationId$Companion$create$1.L$0 = str32;
             installationId$Companion$create$1.label = 2;

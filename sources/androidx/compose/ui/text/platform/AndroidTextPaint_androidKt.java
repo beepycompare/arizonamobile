@@ -16,6 +16,6 @@ public final class AndroidTextPaint_androidKt {
         if (f > 1.0f) {
             f = 1.0f;
         }
-        textPaint.setAlpha(Math.round(f * 255));
+        textPaint.setAlpha(Math.round(f * 255.0f));
     }
 }

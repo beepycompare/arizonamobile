@@ -398,7 +398,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
         return this.value instanceof Cancellation;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0057, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0055, code lost:
         return true;
      */
     @Override // java.util.concurrent.Future
@@ -422,18 +422,17 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
             }
             requireNonNull = Objects.requireNonNull(cancellation);
         }
-        AbstractFuture<V> abstractFuture = this;
         boolean z = false;
         while (true) {
-            if (ATOMIC_HELPER.casValue(abstractFuture, obj, requireNonNull)) {
-                complete(abstractFuture, mayInterruptIfRunning);
+            if (ATOMIC_HELPER.casValue(this, obj, requireNonNull)) {
+                complete(this, mayInterruptIfRunning);
                 if (!(obj instanceof SetFuture)) {
                     break;
                 }
                 ListenableFuture<? extends V> listenableFuture = ((SetFuture) obj).future;
                 if (listenableFuture instanceof Trusted) {
-                    abstractFuture = (AbstractFuture) listenableFuture;
-                    obj = abstractFuture.value;
+                    this = (AbstractFuture) listenableFuture;
+                    obj = this.value;
                     if (!(obj == null) && !(obj instanceof SetFuture)) {
                         break;
                     }
@@ -443,7 +442,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
                     break;
                 }
             } else {
-                obj = abstractFuture.value;
+                obj = this.value;
                 if (!(obj instanceof SetFuture)) {
                     return z;
                 }
@@ -663,8 +662,8 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
 
     @CheckForNull
     private Listener clearListeners(@CheckForNull Listener onto) {
-        Listener listener = onto;
         Listener gasListeners = ATOMIC_HELPER.gasListeners(this, Listener.TOMBSTONE);
+        Listener listener = onto;
         while (gasListeners != null) {
             Listener listener2 = gasListeners.next;
             gasListeners.next = listener;

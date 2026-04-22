@@ -34,15 +34,14 @@ public final class zak extends Drawable implements Drawable.Callback {
         drawable2 = drawable2 == null ? zai.zaa : drawable2;
         this.zak = drawable2;
         drawable2.setCallback(this);
-        zaj zajVar2 = this.zai;
-        zajVar2.zab = drawable2.getChangingConfigurations() | zajVar2.zab;
+        this.zai.zab |= drawable2.getChangingConfigurations();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getChangingConfigurations() {
         int changingConfigurations = super.getChangingConfigurations();
         zaj zajVar = this.zai;
-        return changingConfigurations | zajVar.zaa | zajVar.zab;
+        return zajVar.zab | changingConfigurations | zajVar.zaa;
     }
 
     @Override // android.graphics.drawable.Drawable

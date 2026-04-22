@@ -27,7 +27,7 @@ public abstract class AbstractMessageLite<MessageType extends AbstractMessageLit
             writeTo(newCodedBuilder.getCodedOutput());
             return newCodedBuilder.build();
         } catch (IOException e) {
-            throw new RuntimeException(getSerializingExceptionMessage("ByteString"), e);
+            throw new RuntimeException(this.getSerializingExceptionMessage("ByteString"), e);
         }
     }
 

@@ -173,14 +173,14 @@ public final class SettingsCacheImpl implements SettingsCache {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(9:1|(2:3|(7:5|6|7|(1:(1:10)(2:16|17))(3:18|19|(1:21))|11|12|13))|24|6|7|(0)(0)|11|12|13) */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x002a, code lost:
-        r6 = move-exception;
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0048, code lost:
+        r4 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x004a, code lost:
-        android.util.Log.w(com.google.firebase.sessions.FirebaseSessions.TAG, "Failed to update config values: " + r6);
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0049, code lost:
+        android.util.Log.w(com.google.firebase.sessions.FirebaseSessions.TAG, "Failed to update config values: " + r4);
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0032  */
     @Override // com.google.firebase.sessions.settings.SettingsCache
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -219,7 +219,7 @@ public final class SettingsCacheImpl implements SettingsCache {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0032  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

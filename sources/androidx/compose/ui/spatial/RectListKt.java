@@ -19,8 +19,6 @@ public final class RectListKt {
     public static final int BitOffsetForLastChildOffset = 50;
     public static final int BitOffsetForParentId = 25;
     public static final int BitOffsetForUpdated = 60;
-    private static final long EverythingButLastChildOffset = ULong.m9362constructorimpl(ULong.m9362constructorimpl(ULong.m9362constructorimpl(1023) << 50) ^ (-1));
-    private static final long EverythingButParentId = ULong.m9362constructorimpl((-1) ^ ULong.m9362constructorimpl(ULong.m9362constructorimpl(33554431) << 25));
     public static final int InitialSize = 64;
     public static final int LongsPerItem = 3;
     public static final int Lower10Bits = 1023;
@@ -29,7 +27,9 @@ public final class RectListKt {
     public static final int MaxSupportedLastChildOffset = 1023;
     private static final long PackedIntsHighestBit = -9223372034707292160L;
     private static final long PackedIntsLowestBit = 4294967297L;
-    private static final long TombStone;
+    private static final long EverythingButLastChildOffset = ULong.m9362constructorimpl(ULong.m9362constructorimpl(ULong.m9362constructorimpl(1023) << 50) ^ (-1));
+    private static final long EverythingButParentId = ULong.m9362constructorimpl(ULong.m9362constructorimpl(ULong.m9362constructorimpl(33554431) << 25) ^ (-1));
+    private static final long TombStone = (Math.min(0, 1023) << 50) | 1125899906842623L;
 
     public static final long metaMarkFlags(long j, boolean z, boolean z2) {
         return (j & (-6917529027641081857L)) | ((z ? 1L : 0L) * LockFreeTaskQueueCore.CLOSED_MASK) | ((z2 ? 1L : 0L) * 4611686018427387904L);
@@ -101,11 +101,6 @@ public final class RectListKt {
 
     public static final long getEverythingButLastChildOffset() {
         return EverythingButLastChildOffset;
-    }
-
-    static {
-        long j = 33554431;
-        TombStone = j | (Math.min(0, 1023) << 50) | (j << 25);
     }
 
     public static final long getEverythingButParentId() {

@@ -35,15 +35,14 @@ public final class CombinedContext implements CoroutineContext, Serializable {
     @Override // kotlin.coroutines.CoroutineContext
     public <E extends CoroutineContext.Element> E get(CoroutineContext.Key<E> key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        CombinedContext combinedContext = this;
         while (true) {
-            E e = (E) combinedContext.element.get(key);
+            E e = (E) this.element.get(key);
             if (e != null) {
                 return e;
             }
-            CoroutineContext coroutineContext = combinedContext.left;
+            CoroutineContext coroutineContext = this.left;
             if (coroutineContext instanceof CombinedContext) {
-                combinedContext = (CombinedContext) coroutineContext;
+                this = (CombinedContext) coroutineContext;
             } else {
                 return (E) coroutineContext.get(key);
             }
@@ -70,11 +69,10 @@ public final class CombinedContext implements CoroutineContext, Serializable {
 
     private final int size() {
         int i = 2;
-        CombinedContext combinedContext = this;
         while (true) {
-            CoroutineContext coroutineContext = combinedContext.left;
-            combinedContext = coroutineContext instanceof CombinedContext ? (CombinedContext) coroutineContext : null;
-            if (combinedContext == null) {
+            CoroutineContext coroutineContext = this.left;
+            this = coroutineContext instanceof CombinedContext ? (CombinedContext) coroutineContext : null;
+            if (this == null) {
                 return i;
             }
             i++;

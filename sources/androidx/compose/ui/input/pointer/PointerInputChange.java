@@ -238,10 +238,11 @@ public final class PointerInputChange {
 
     /* renamed from: copy-JKmWfYY  reason: not valid java name */
     public final PointerInputChange m6079copyJKmWfYY(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, long j6) {
-        PointerInputChange m6082copywbzehF4 = m6082copywbzehF4(j, j2, j3, z, this.pressure, j4, j5, z2, i, getHistorical(), j6);
-        PointerInputChange pointerInputChange = this.consumedDelegate;
-        if (pointerInputChange == null) {
-            pointerInputChange = this;
+        PointerInputChange pointerInputChange = this;
+        PointerInputChange m6082copywbzehF4 = pointerInputChange.m6082copywbzehF4(j, j2, j3, z, pointerInputChange.pressure, j4, j5, z2, i, pointerInputChange.getHistorical(), j6);
+        PointerInputChange pointerInputChange2 = pointerInputChange.consumedDelegate;
+        if (pointerInputChange2 != null) {
+            pointerInputChange = pointerInputChange2;
         }
         m6082copywbzehF4.consumedDelegate = pointerInputChange;
         return m6082copywbzehF4;
@@ -301,13 +302,14 @@ public final class PointerInputChange {
 
     /* renamed from: copy-Tn9QgHE  reason: not valid java name */
     public final PointerInputChange m6081copyTn9QgHE(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, long j6) {
-        PointerInputChange pointerInputChange = new PointerInputChange(j, j2, j3, z, f, j4, j5, z2, false, i, getHistorical(), j6, this.originalEventPosition, null);
-        PointerInputChange pointerInputChange2 = this.consumedDelegate;
-        if (pointerInputChange2 == null) {
-            pointerInputChange2 = this;
+        PointerInputChange pointerInputChange = this;
+        PointerInputChange pointerInputChange2 = new PointerInputChange(j, j2, j3, z, f, j4, j5, z2, false, i, pointerInputChange.getHistorical(), j6, pointerInputChange.originalEventPosition, null);
+        PointerInputChange pointerInputChange3 = pointerInputChange.consumedDelegate;
+        if (pointerInputChange3 != null) {
+            pointerInputChange = pointerInputChange3;
         }
-        pointerInputChange.consumedDelegate = pointerInputChange2;
-        return pointerInputChange;
+        pointerInputChange2.consumedDelegate = pointerInputChange;
+        return pointerInputChange2;
     }
 
     /* renamed from: copy-OHpmEuE$default  reason: not valid java name */
@@ -332,10 +334,11 @@ public final class PointerInputChange {
 
     /* renamed from: copy-OHpmEuE  reason: not valid java name */
     public final PointerInputChange m6080copyOHpmEuE(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, List<HistoricalChange> list, long j6) {
-        PointerInputChange m6082copywbzehF4 = m6082copywbzehF4(j, j2, j3, z, this.pressure, j4, j5, z2, i, list, j6);
-        PointerInputChange pointerInputChange = this.consumedDelegate;
-        if (pointerInputChange == null) {
-            pointerInputChange = this;
+        PointerInputChange pointerInputChange = this;
+        PointerInputChange m6082copywbzehF4 = pointerInputChange.m6082copywbzehF4(j, j2, j3, z, pointerInputChange.pressure, j4, j5, z2, i, list, j6);
+        PointerInputChange pointerInputChange2 = pointerInputChange.consumedDelegate;
+        if (pointerInputChange2 != null) {
+            pointerInputChange = pointerInputChange2;
         }
         m6082copywbzehF4.consumedDelegate = pointerInputChange;
         return m6082copywbzehF4;
@@ -368,13 +371,14 @@ public final class PointerInputChange {
 
     /* renamed from: copy-wbzehF4  reason: not valid java name */
     public final PointerInputChange m6082copywbzehF4(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, List<HistoricalChange> list, long j6) {
-        PointerInputChange pointerInputChange = new PointerInputChange(j, j2, j3, z, f, j4, j5, z2, false, i, list, j6, this.originalEventPosition, null);
-        PointerInputChange pointerInputChange2 = this.consumedDelegate;
-        if (pointerInputChange2 == null) {
-            pointerInputChange2 = this;
+        PointerInputChange pointerInputChange = this;
+        PointerInputChange pointerInputChange2 = new PointerInputChange(j, j2, j3, z, f, j4, j5, z2, false, i, list, j6, pointerInputChange.originalEventPosition, null);
+        PointerInputChange pointerInputChange3 = pointerInputChange.consumedDelegate;
+        if (pointerInputChange3 != null) {
+            pointerInputChange = pointerInputChange3;
         }
-        pointerInputChange.consumedDelegate = pointerInputChange2;
-        return pointerInputChange;
+        pointerInputChange2.consumedDelegate = pointerInputChange;
+        return pointerInputChange2;
     }
 
     public String toString() {

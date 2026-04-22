@@ -63,7 +63,7 @@ public final class FloatTweenSpec implements FloatAnimationSpec {
             j2 = j3;
         }
         float transform = this.easing.transform(this.duration == 0 ? 1.0f : ((float) j2) / ((float) j3));
-        return (f * (1 - transform)) + (f2 * transform);
+        return (f * (1.0f - transform)) + (f2 * transform);
     }
 
     @Override // androidx.compose.animation.core.FloatAnimationSpec

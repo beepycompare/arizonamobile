@@ -171,7 +171,6 @@ public abstract class LongSet {
     public final String joinToString(CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated) {
         int i2;
         int i3;
-        int i4;
         Intrinsics.checkNotNullParameter(separator, "separator");
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(postfix, "postfix");
@@ -182,49 +181,45 @@ public abstract class LongSet {
         long[] jArr2 = this.metadata;
         int length = jArr2.length - 2;
         if (length >= 0) {
+            int i4 = 0;
             int i5 = 0;
-            int i6 = 0;
             loop0: while (true) {
-                long j = jArr2[i5];
+                long j = jArr2[i4];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i7 = 8;
-                    int i8 = 8 - ((~(i5 - length)) >>> 31);
-                    int i9 = 0;
-                    while (i9 < i8) {
-                        if ((j & 255) < 128) {
-                            i3 = i5;
-                            long j2 = jArr[(i5 << 3) + i9];
-                            i4 = i7;
-                            if (i6 == i) {
+                    int i6 = 8 - ((~(i4 - length)) >>> 31);
+                    int i7 = 0;
+                    while (i7 < i6) {
+                        if ((255 & j) < 128) {
+                            i3 = i4;
+                            long j2 = jArr[(i4 << 3) + i7];
+                            if (i5 == i) {
                                 sb.append(truncated);
                                 break loop0;
                             }
-                            if (i6 != 0) {
+                            if (i5 != 0) {
                                 sb.append(separator);
                             }
                             sb.append(j2);
-                            i6++;
+                            i5++;
                         } else {
-                            i3 = i5;
-                            i4 = i7;
+                            i3 = i4;
                         }
-                        j >>= i4;
-                        i9++;
-                        i7 = i4;
-                        i5 = i3;
+                        j >>= 8;
+                        i7++;
+                        i4 = i3;
                     }
-                    int i10 = i5;
-                    if (i8 != i7) {
+                    int i8 = i4;
+                    if (i6 != 8) {
                         break;
                     }
-                    i2 = i10;
+                    i2 = i8;
                 } else {
-                    i2 = i5;
+                    i2 = i4;
                 }
                 if (i2 == length) {
                     break;
                 }
-                i5 = i2 + 1;
+                i4 = i2 + 1;
             }
         }
         sb.append(postfix);
@@ -325,7 +320,6 @@ public abstract class LongSet {
                     while (i7 < i6) {
                         if ((j & 255) < 128) {
                             long j2 = jArr[(i3 << 3) + i7];
-                            i2 = i5;
                             if (i4 == i) {
                                 sb.append(truncated);
                                 break loop0;
@@ -333,6 +327,7 @@ public abstract class LongSet {
                             if (i4 != 0) {
                                 sb.append(separator);
                             }
+                            i2 = i5;
                             sb.append(transform.invoke(Long.valueOf(j2)));
                             i4++;
                         } else {
@@ -674,7 +669,6 @@ public abstract class LongSet {
                     while (i7 < i6) {
                         if ((j & 255) < 128) {
                             long j2 = jArr[(i3 << 3) + i7];
-                            i2 = i5;
                             if (i4 == i) {
                                 sb.append((CharSequence) r5);
                                 break loop0;
@@ -682,6 +676,7 @@ public abstract class LongSet {
                             if (i4 != 0) {
                                 sb.append(separator);
                             }
+                            i2 = i5;
                             sb.append(transform.invoke(Long.valueOf(j2)));
                             i4++;
                         } else {
@@ -708,7 +703,6 @@ public abstract class LongSet {
     }
 
     public final String joinToString(CharSequence separator, CharSequence prefix, CharSequence postfix, Function1<? super Long, ? extends CharSequence> transform) {
-        int i;
         Intrinsics.checkNotNullParameter(separator, "separator");
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(postfix, "postfix");
@@ -719,52 +713,47 @@ public abstract class LongSet {
         long[] jArr2 = this.metadata;
         int length = jArr2.length - 2;
         if (length >= 0) {
+            int i = 0;
             int i2 = 0;
-            int i3 = 0;
             loop0: while (true) {
-                long j = jArr2[i2];
+                long j = jArr2[i];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i4 = 8;
-                    int i5 = 8 - ((~(i2 - length)) >>> 31);
-                    int i6 = 0;
-                    while (i6 < i5) {
+                    int i3 = 8 - ((~(i - length)) >>> 31);
+                    for (int i4 = 0; i4 < i3; i4++) {
                         if ((j & 255) < 128) {
-                            long j2 = jArr[(i2 << 3) + i6];
-                            i = i4;
-                            if (i3 == -1) {
+                            long j2 = jArr[(i << 3) + i4];
+                            if (i2 == -1) {
                                 sb.append((CharSequence) r5);
                                 break loop0;
                             }
-                            if (i3 != 0) {
+                            if (i2 != 0) {
                                 sb.append(separator);
                             }
                             sb.append(transform.invoke(Long.valueOf(j2)));
-                            i3++;
-                        } else {
-                            i = i4;
+                            i2++;
                         }
-                        j >>= i;
-                        i6++;
-                        i4 = i;
+                        j >>= 8;
                     }
-                    if (i5 != i4) {
+                    if (i3 != 8) {
                         break;
                     }
                 }
-                if (i2 == length) {
+                if (i == length) {
                     break;
                 }
-                i2++;
+                i++;
             }
+            String sb2 = sb.toString();
+            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+            return sb2;
         }
         sb.append(postfix);
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-        return sb2;
+        String sb22 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
+        return sb22;
     }
 
     public final String joinToString(CharSequence separator, CharSequence prefix, Function1<? super Long, ? extends CharSequence> transform) {
-        int i;
         Intrinsics.checkNotNullParameter(separator, "separator");
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(transform, "transform");
@@ -774,52 +763,47 @@ public abstract class LongSet {
         long[] jArr2 = this.metadata;
         int length = jArr2.length - 2;
         if (length >= 0) {
+            int i = 0;
             int i2 = 0;
-            int i3 = 0;
             loop0: while (true) {
-                long j = jArr2[i2];
+                long j = jArr2[i];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i4 = 8;
-                    int i5 = 8 - ((~(i2 - length)) >>> 31);
-                    int i6 = 0;
-                    while (i6 < i5) {
+                    int i3 = 8 - ((~(i - length)) >>> 31);
+                    for (int i4 = 0; i4 < i3; i4++) {
                         if ((j & 255) < 128) {
-                            long j2 = jArr[(i2 << 3) + i6];
-                            i = i4;
-                            if (i3 == -1) {
+                            long j2 = jArr[(i << 3) + i4];
+                            if (i2 == -1) {
                                 sb.append((CharSequence) r5);
                                 break loop0;
                             }
-                            if (i3 != 0) {
+                            if (i2 != 0) {
                                 sb.append(separator);
                             }
                             sb.append(transform.invoke(Long.valueOf(j2)));
-                            i3++;
-                        } else {
-                            i = i4;
+                            i2++;
                         }
-                        j >>= i;
-                        i6++;
-                        i4 = i;
+                        j >>= 8;
                     }
-                    if (i5 != i4) {
+                    if (i3 != 8) {
                         break;
                     }
                 }
-                if (i2 == length) {
+                if (i == length) {
                     break;
                 }
-                i2++;
+                i++;
             }
+            String sb2 = sb.toString();
+            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+            return sb2;
         }
         sb.append((CharSequence) r4);
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-        return sb2;
+        String sb22 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
+        return sb22;
     }
 
     public final String joinToString(CharSequence separator, Function1<? super Long, ? extends CharSequence> transform) {
-        int i;
         Intrinsics.checkNotNullParameter(separator, "separator");
         Intrinsics.checkNotNullParameter(transform, "transform");
         StringBuilder sb = new StringBuilder();
@@ -828,52 +812,47 @@ public abstract class LongSet {
         long[] jArr2 = this.metadata;
         int length = jArr2.length - 2;
         if (length >= 0) {
+            int i = 0;
             int i2 = 0;
-            int i3 = 0;
             loop0: while (true) {
-                long j = jArr2[i2];
+                long j = jArr2[i];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i4 = 8;
-                    int i5 = 8 - ((~(i2 - length)) >>> 31);
-                    int i6 = 0;
-                    while (i6 < i5) {
+                    int i3 = 8 - ((~(i - length)) >>> 31);
+                    for (int i4 = 0; i4 < i3; i4++) {
                         if ((j & 255) < 128) {
-                            long j2 = jArr[(i2 << 3) + i6];
-                            i = i4;
-                            if (i3 == -1) {
+                            long j2 = jArr[(i << 3) + i4];
+                            if (i2 == -1) {
                                 sb.append((CharSequence) r5);
                                 break loop0;
                             }
-                            if (i3 != 0) {
+                            if (i2 != 0) {
                                 sb.append(separator);
                             }
                             sb.append(transform.invoke(Long.valueOf(j2)));
-                            i3++;
-                        } else {
-                            i = i4;
+                            i2++;
                         }
-                        j >>= i;
-                        i6++;
-                        i4 = i;
+                        j >>= 8;
                     }
-                    if (i5 != i4) {
+                    if (i3 != 8) {
                         break;
                     }
                 }
-                if (i2 == length) {
+                if (i == length) {
                     break;
                 }
-                i2++;
+                i++;
             }
+            String sb2 = sb.toString();
+            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+            return sb2;
         }
         sb.append((CharSequence) r3);
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-        return sb2;
+        String sb22 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
+        return sb22;
     }
 
     public final String joinToString(Function1<? super Long, ? extends CharSequence> transform) {
-        int i;
         Intrinsics.checkNotNullParameter(transform, "transform");
         StringBuilder sb = new StringBuilder();
         sb.append((CharSequence) "");
@@ -881,42 +860,35 @@ public abstract class LongSet {
         long[] jArr2 = this.metadata;
         int length = jArr2.length - 2;
         if (length >= 0) {
+            int i = 0;
             int i2 = 0;
-            int i3 = 0;
             loop0: while (true) {
-                long j = jArr2[i2];
+                long j = jArr2[i];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i4 = 8;
-                    int i5 = 8 - ((~(i2 - length)) >>> 31);
-                    int i6 = 0;
-                    while (i6 < i5) {
+                    int i3 = 8 - ((~(i - length)) >>> 31);
+                    for (int i4 = 0; i4 < i3; i4++) {
                         if ((j & 255) < 128) {
-                            long j2 = jArr[(i2 << 3) + i6];
-                            i = i4;
-                            if (i3 == -1) {
+                            long j2 = jArr[(i << 3) + i4];
+                            if (i2 == -1) {
                                 sb.append((CharSequence) r5);
                                 break loop0;
                             }
-                            if (i3 != 0) {
+                            if (i2 != 0) {
                                 sb.append((CharSequence) r2);
                             }
                             sb.append(transform.invoke(Long.valueOf(j2)));
-                            i3++;
-                        } else {
-                            i = i4;
+                            i2++;
                         }
-                        j >>= i;
-                        i6++;
-                        i4 = i;
+                        j >>= 8;
                     }
-                    if (i5 != i4) {
+                    if (i3 != 8) {
                         break;
                     }
                 }
-                if (i2 == length) {
+                if (i == length) {
                     break;
                 }
-                i2++;
+                i++;
             }
             String sb2 = sb.toString();
             Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");

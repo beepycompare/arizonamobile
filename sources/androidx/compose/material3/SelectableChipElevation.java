@@ -93,7 +93,6 @@ public final class SelectableChipElevation {
 
     private final State<Dp> animateElevation(boolean z, InteractionSource interactionSource, Composer composer, int i) {
         float f;
-        Animatable animatable;
         ComposerKt.sourceInformationMarkerStart(composer, 664514136, "C(animateElevation)N(enabled,interactionSource)2501@118047L46,2502@118125L47,2503@118215L1473,2503@118181L1507,2555@120243L51,2557@120327L515,2557@120304L538:Chip.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(664514136, i, -1, "androidx.compose.material3.SelectableChipElevation.animateElevation (Chip.kt:2500)");
@@ -139,30 +138,27 @@ public final class SelectableChipElevation {
         ComposerKt.sourceInformationMarkerStart(composer, -1351966837, "CC(remember):Chip.kt#9igjgp");
         Object rememberedValue4 = composer.rememberedValue();
         if (rememberedValue4 == Composer.Companion.getEmpty()) {
-            Object animatable2 = new Animatable(Dp.m7553boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
-            composer.updateRememberedValue(animatable2);
-            rememberedValue4 = animatable2;
+            Object animatable = new Animatable(Dp.m7553boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
+            composer.updateRememberedValue(animatable);
+            rememberedValue4 = animatable;
         }
-        Object obj = (Animatable) rememberedValue4;
+        Animatable animatable2 = (Animatable) rememberedValue4;
         ComposerKt.sourceInformationMarkerEnd(composer);
         Dp m7553boximpl = Dp.m7553boximpl(f);
         ComposerKt.sourceInformationMarkerStart(composer, -1351963685, "CC(remember):Chip.kt#9igjgp");
-        boolean changedInstance = composer.changedInstance(obj) | composer.changed(f);
+        boolean changedInstance = composer.changedInstance(animatable2) | composer.changed(f);
         if ((((i & 14) ^ 6) <= 4 || !composer.changed(z)) && (i & 6) != 4) {
             z2 = false;
         }
         boolean changedInstance2 = changedInstance | z2 | composer.changedInstance(interaction);
         Object rememberedValue5 = composer.rememberedValue();
         if (changedInstance2 || rememberedValue5 == Composer.Companion.getEmpty()) {
-            animatable = obj;
-            rememberedValue5 = (Function2) new SelectableChipElevation$animateElevation$2$1(animatable, f, z, interaction, mutableState, null);
+            rememberedValue5 = (Function2) new SelectableChipElevation$animateElevation$2$1(animatable2, f, z, interaction, mutableState, null);
             composer.updateRememberedValue(rememberedValue5);
-        } else {
-            animatable = obj;
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         EffectsKt.LaunchedEffect(m7553boximpl, (Function2) rememberedValue5, composer, 0);
-        State<Dp> asState = animatable.asState();
+        State<Dp> asState = animatable2.asState();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

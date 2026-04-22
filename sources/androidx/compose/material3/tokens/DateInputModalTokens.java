@@ -7,27 +7,21 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class DateInputModalTokens {
     public static final int $stable = 0;
-    private static final float ContainerWidth;
-    private static final float HeaderContainerWidth;
     public static final DateInputModalTokens INSTANCE = new DateInputModalTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Surface;
     private static final float ContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 512.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(512.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraLarge;
     private static final ColorSchemeKeyTokens ContainerSurfaceTintLayerColor = ColorSchemeKeyTokens.SurfaceTint;
-    private static final float HeaderContainerHeight = Dp.m7555constructorimpl((float) 120.0d);
+    private static final float ContainerWidth = Dp.m7555constructorimpl(328.0f);
+    private static final float HeaderContainerHeight = Dp.m7555constructorimpl(120.0f);
+    private static final float HeaderContainerWidth = Dp.m7555constructorimpl(328.0f);
     private static final ColorSchemeKeyTokens HeaderHeadlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeaderHeadlineFont = TypographyKeyTokens.HeadlineLarge;
     private static final ColorSchemeKeyTokens HeaderSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeaderSupportingTextFont = TypographyKeyTokens.LabelLarge;
 
     private DateInputModalTokens() {
-    }
-
-    static {
-        float f = (float) 328.0d;
-        ContainerWidth = Dp.m7555constructorimpl(f);
-        HeaderContainerWidth = Dp.m7555constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {

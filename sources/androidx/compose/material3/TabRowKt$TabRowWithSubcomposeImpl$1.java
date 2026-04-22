@@ -100,7 +100,7 @@ final class TabRowKt$TabRowWithSubcomposeImpl$1 implements Function2<Composer, I
         final ArrayList arrayList2 = arrayList;
         ArrayList arrayList3 = new ArrayList(size);
         for (int i4 = 0; i4 < size; i4++) {
-            arrayList3.add(new TabPosition(Dp.m7555constructorimpl(subcomposeMeasureScope.mo402toDpu2uoSUM(intRef.element) * i4), subcomposeMeasureScope.mo402toDpu2uoSUM(intRef.element), ((Dp) ComparisonsKt.maxOf(Dp.m7553boximpl(Dp.m7555constructorimpl(subcomposeMeasureScope.mo402toDpu2uoSUM(Math.min(subcompose.get(i4).maxIntrinsicWidth(intValue), intRef.element)) - Dp.m7555constructorimpl(TabKt.getHorizontalTextPadding() * 2))), Dp.m7553boximpl(Dp.m7555constructorimpl(24)))).m7569unboximpl(), null));
+            arrayList3.add(new TabPosition(Dp.m7555constructorimpl(subcomposeMeasureScope.mo402toDpu2uoSUM(intRef.element) * i4), subcomposeMeasureScope.mo402toDpu2uoSUM(intRef.element), ((Dp) ComparisonsKt.maxOf(Dp.m7553boximpl(Dp.m7555constructorimpl(subcomposeMeasureScope.mo402toDpu2uoSUM(Math.min(subcompose.get(i4).maxIntrinsicWidth(intValue), intRef.element)) - Dp.m7555constructorimpl(TabKt.getHorizontalTextPadding() * 2.0f))), Dp.m7553boximpl(Dp.m7555constructorimpl(24.0f)))).m7569unboximpl(), null));
         }
         final ArrayList arrayList4 = arrayList3;
         return MeasureScope.layout$default(subcomposeMeasureScope, m7508getMaxWidthimpl, intValue, null, new Function1() { // from class: androidx.compose.material3.TabRowKt$TabRowWithSubcomposeImpl$1$$ExternalSyntheticLambda0

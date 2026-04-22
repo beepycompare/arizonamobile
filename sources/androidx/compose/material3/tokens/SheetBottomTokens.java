@@ -11,8 +11,8 @@ public final class SheetBottomTokens {
     private static final ColorSchemeKeyTokens DockedContainerColor = ColorSchemeKeyTokens.SurfaceContainerLow;
     private static final ShapeKeyTokens DockedContainerShape = ShapeKeyTokens.CornerExtraLargeTop;
     private static final ColorSchemeKeyTokens DockedDragHandleColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float DockedDragHandleHeight = Dp.m7555constructorimpl((float) 4.0d);
-    private static final float DockedDragHandleWidth = Dp.m7555constructorimpl((float) 32.0d);
+    private static final float DockedDragHandleHeight = Dp.m7555constructorimpl(4.0f);
+    private static final float DockedDragHandleWidth = Dp.m7555constructorimpl(32.0f);
     private static final ShapeKeyTokens DockedMinimizedContainerShape = ShapeKeyTokens.CornerNone;
     private static final float DockedModalContainerElevation = ElevationTokens.INSTANCE.m3360getLevel1D9Ej5fM();
     private static final float DockedStandardContainerElevation = ElevationTokens.INSTANCE.m3360getLevel1D9Ej5fM();

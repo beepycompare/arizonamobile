@@ -64,7 +64,7 @@ public final class CachedPageEventFlow$job$1 extends SuspendLambda implements Fu
             if (r7.emit(r6, r0) == r1) goto L19;
          */
         /* JADX WARN: Code restructure failed: missing block: B:20:0x0060, code lost:
-            if (r7.record(r6, r0) != r1) goto L11;
+            if (r5.record(r6, r0) != r1) goto L11;
          */
         /* JADX WARN: Code restructure failed: missing block: B:21:0x0062, code lost:
             return r1;

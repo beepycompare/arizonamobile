@@ -145,16 +145,16 @@ public final class WindowWidthSizeClass implements Comparable<WindowWidthSizeCla
         public final float m3967breakpointfhkHA5s(int i) {
             if (!WindowWidthSizeClass.m3961equalsimpl0(i, m3970getExpandedY0FxcvE())) {
                 if (WindowWidthSizeClass.m3961equalsimpl0(i, m3971getMediumY0FxcvE())) {
-                    return Dp.m7555constructorimpl(600);
+                    return Dp.m7555constructorimpl(600.0f);
                 }
-                return Dp.m7555constructorimpl(0);
+                return Dp.m7555constructorimpl(0.0f);
             }
-            return Dp.m7555constructorimpl((float) androidx.window.core.layout.WindowSizeClass.WIDTH_DP_EXPANDED_LOWER_BOUND);
+            return Dp.m7555constructorimpl(840.0f);
         }
 
         /* renamed from: fromWidth-LJjiCC4$material3_window_size_class  reason: not valid java name */
         public final int m3968fromWidthLJjiCC4$material3_window_size_class(float f, Set<WindowWidthSizeClass> set) {
-            if (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0)) < 0) {
+            if (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0.0f)) < 0) {
                 throw new IllegalArgumentException("Width must not be negative".toString());
             }
             if (set.isEmpty()) {

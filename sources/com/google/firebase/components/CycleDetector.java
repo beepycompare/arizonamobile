@@ -30,7 +30,7 @@ class CycleDetector {
         }
 
         public int hashCode() {
-            return ((this.anInterface.hashCode() ^ 1000003) * 1000003) ^ Boolean.valueOf(this.set).hashCode();
+            return Boolean.valueOf(this.set).hashCode() ^ ((this.anInterface.hashCode() ^ 1000003) * 1000003);
         }
     }
 

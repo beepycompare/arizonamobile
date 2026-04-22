@@ -177,7 +177,7 @@ public final class IncompleteLocalTime implements TimeFieldContainer, Copyable<I
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0055, code lost:
-        if (r1 == null) goto L17;
+        if (r4 == null) goto L17;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

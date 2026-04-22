@@ -43,7 +43,7 @@ final class AutoValue_BackendRequest extends BackendRequest {
     }
 
     public int hashCode() {
-        return ((this.events.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.extras);
+        return Arrays.hashCode(this.extras) ^ ((this.events.hashCode() ^ 1000003) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

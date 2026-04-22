@@ -624,10 +624,13 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
     }
 
     private int getScrollOffsetForPosition(int i, KeylineState keylineState) {
+        float itemSize;
         if (isLayoutRtl()) {
-            return (int) (((getContainerSize() - keylineState.getLastFocalKeyline().loc) - (i * keylineState.getItemSize())) - (keylineState.getItemSize() / 2.0f));
+            itemSize = ((getContainerSize() - keylineState.getLastFocalKeyline().loc) - (i * keylineState.getItemSize())) - (keylineState.getItemSize() / 2.0f);
+        } else {
+            itemSize = ((i * keylineState.getItemSize()) - keylineState.getFirstFocalKeyline().loc) + (keylineState.getItemSize() / 2.0f);
         }
-        return (int) (((i * keylineState.getItemSize()) - keylineState.getFirstFocalKeyline().loc) + (keylineState.getItemSize() / 2.0f));
+        return (int) itemSize;
     }
 
     private int getSmallestScrollOffsetToFocalKeyline(int i, KeylineState keylineState) {

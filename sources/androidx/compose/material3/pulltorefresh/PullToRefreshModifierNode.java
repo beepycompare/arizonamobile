@@ -222,7 +222,7 @@ public final class PullToRefreshModifierNode extends DelegatingNode implements N
             setDistancePulled(coerceAtLeast);
             setVerticalOffset(calculateVerticalOffset());
         }
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(distancePulled) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(distancePulled) & 4294967295L));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -282,7 +282,8 @@ public final class PullToRefreshModifierNode extends DelegatingNode implements N
             return getAdjustedDistancePulled();
         }
         float coerceIn = RangesKt.coerceIn(Math.abs(getProgress()) - 1.0f, 0.0f, 2.0f);
-        return getThresholdPx() + (getThresholdPx() * (coerceIn - (((float) Math.pow(coerceIn, 2)) / 4)));
+        float pow = coerceIn - (((float) Math.pow(coerceIn, 2.0d)) / 4.0f);
+        return getThresholdPx() + (getThresholdPx() * pow);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -340,8 +341,10 @@ public final class PullToRefreshModifierNode extends DelegatingNode implements N
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0035  */
+    /* JADX WARN: Type inference failed for: r5v2, types: [kotlin.Unit, java.lang.Object] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -370,17 +373,19 @@ public final class PullToRefreshModifierNode extends DelegatingNode implements N
                     }
                     setDistancePulled(0.0f);
                     setVerticalOffset(0.0f);
-                    return Unit.INSTANCE;
+                    this = Unit.INSTANCE;
+                    return this;
                 }
             }
             if (i != 0) {
             }
             setDistancePulled(0.0f);
             setVerticalOffset(0.0f);
-            return Unit.INSTANCE;
+            this = Unit.INSTANCE;
+            return this;
         } catch (Throwable th) {
-            setDistancePulled(0.0f);
-            setVerticalOffset(0.0f);
+            this.setDistancePulled(0.0f);
+            this.setVerticalOffset(0.0f);
             throw th;
         }
         pullToRefreshModifierNode$animateToHidden$1 = new PullToRefreshModifierNode$animateToHidden$1(this, continuation);

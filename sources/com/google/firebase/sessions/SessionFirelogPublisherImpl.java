@@ -65,20 +65,25 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0051, code lost:
+        if (r8 == r1) goto L39;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x008a, code lost:
+        if (r8.updateSettings(r0) == r1) goto L39;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x008c, code lost:
+        return r1;
+     */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0028  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0044  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0097  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0074  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object shouldLogSession(Continuation<? super Boolean> continuation) {
         SessionFirelogPublisherImpl$shouldLogSession$1 sessionFirelogPublisherImpl$shouldLogSession$1;
         int i;
-        SessionFirelogPublisherImpl sessionFirelogPublisherImpl;
         Collection<SessionSubscriber> values;
-        SessionFirelogPublisherImpl sessionFirelogPublisherImpl2;
         if (continuation instanceof SessionFirelogPublisherImpl$shouldLogSession$1) {
             sessionFirelogPublisherImpl$shouldLogSession$1 = (SessionFirelogPublisherImpl$shouldLogSession$1) continuation;
             if ((sessionFirelogPublisherImpl$shouldLogSession$1.label & Integer.MIN_VALUE) != 0) {
@@ -92,18 +97,14 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
                     sessionFirelogPublisherImpl$shouldLogSession$1.L$0 = this;
                     sessionFirelogPublisherImpl$shouldLogSession$1.label = 1;
                     obj = firebaseSessionsDependencies.getRegisteredSubscribers$com_google_firebase_firebase_sessions(sessionFirelogPublisherImpl$shouldLogSession$1);
-                    if (obj != coroutine_suspended) {
-                        sessionFirelogPublisherImpl = this;
-                    }
-                    return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
-                        sessionFirelogPublisherImpl2 = (SessionFirelogPublisherImpl) sessionFirelogPublisherImpl$shouldLogSession$1.L$0;
+                        this = (SessionFirelogPublisherImpl) sessionFirelogPublisherImpl$shouldLogSession$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                        if (sessionFirelogPublisherImpl2.sessionSettings.getSessionsEnabled()) {
+                        if (!this.sessionSettings.getSessionsEnabled()) {
                             Log.d(FirebaseSessions.TAG, "Sessions SDK disabled through settings API. Events will not be sent.");
                             return Boxing.boxBoolean(false);
-                        } else if (!sessionFirelogPublisherImpl2.shouldCollectEvents()) {
+                        } else if (!this.shouldCollectEvents()) {
                             Log.d(FirebaseSessions.TAG, "Sessions SDK has dropped this session due to sampling.");
                             return Boxing.boxBoolean(false);
                         } else {
@@ -112,22 +113,16 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    sessionFirelogPublisherImpl = (SessionFirelogPublisherImpl) sessionFirelogPublisherImpl$shouldLogSession$1.L$0;
+                    this = (SessionFirelogPublisherImpl) sessionFirelogPublisherImpl$shouldLogSession$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 values = ((Map) obj).values();
                 if ((values instanceof Collection) || !values.isEmpty()) {
                     for (SessionSubscriber sessionSubscriber : values) {
                         if (sessionSubscriber.isDataCollectionEnabled()) {
-                            SessionsSettings sessionsSettings = sessionFirelogPublisherImpl.sessionSettings;
-                            sessionFirelogPublisherImpl$shouldLogSession$1.L$0 = sessionFirelogPublisherImpl;
+                            SessionsSettings sessionsSettings = this.sessionSettings;
+                            sessionFirelogPublisherImpl$shouldLogSession$1.L$0 = this;
                             sessionFirelogPublisherImpl$shouldLogSession$1.label = 2;
-                            if (sessionsSettings.updateSettings(sessionFirelogPublisherImpl$shouldLogSession$1) != coroutine_suspended) {
-                                sessionFirelogPublisherImpl2 = sessionFirelogPublisherImpl;
-                                if (sessionFirelogPublisherImpl2.sessionSettings.getSessionsEnabled()) {
-                                }
-                            }
-                            return coroutine_suspended;
                         }
                     }
                 }
@@ -144,7 +139,7 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
         values = ((Map) obj2).values();
         if (values instanceof Collection) {
         }
-        while (r9.hasNext()) {
+        while (r8.hasNext()) {
         }
         Log.d(FirebaseSessions.TAG, "Sessions SDK disabled through data collection. Events will not be sent.");
         return Boxing.boxBoolean(false);

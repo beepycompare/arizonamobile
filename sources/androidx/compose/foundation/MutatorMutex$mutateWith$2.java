@@ -64,14 +64,14 @@ public final class MutatorMutex$mutateWith$2<R> extends SuspendLambda implements
     /* JADX WARN: Type inference failed for: r1v0, types: [int, kotlinx.coroutines.sync.Mutex] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        MutatorMutex.Mutator mutator;
         Mutex mutex;
         Function2 function2;
-        MutatorMutex.Mutator mutator;
         MutatorMutex mutatorMutex;
         Object obj2;
         Throwable th;
-        MutatorMutex mutatorMutex2;
         MutatorMutex.Mutator mutator2;
+        MutatorMutex mutatorMutex2;
         Mutex mutex2;
         AtomicReference atomicReference;
         AtomicReference atomicReference2;
@@ -84,21 +84,19 @@ public final class MutatorMutex$mutateWith$2<R> extends SuspendLambda implements
                     MutatePriority mutatePriority = this.$priority;
                     CoroutineContext.Element element = ((CoroutineScope) this.L$0).getCoroutineContext().get(Job.Key);
                     Intrinsics.checkNotNull(element);
-                    MutatorMutex.Mutator mutator3 = new MutatorMutex.Mutator(mutatePriority, (Job) element);
-                    this.this$0.tryMutateOrCancel(mutator3);
+                    mutator = new MutatorMutex.Mutator(mutatePriority, (Job) element);
+                    this.this$0.tryMutateOrCancel(mutator);
                     mutex = this.this$0.mutex;
                     function2 = this.$block;
                     Object obj3 = this.$receiver;
-                    MutatorMutex mutatorMutex3 = this.this$0;
-                    this.L$0 = mutator3;
+                    mutatorMutex = this.this$0;
+                    this.L$0 = mutator;
                     this.L$1 = mutex;
                     this.L$2 = function2;
                     this.L$3 = obj3;
-                    this.L$4 = mutatorMutex3;
+                    this.L$4 = mutatorMutex;
                     this.label = 1;
                     if (mutex.lock(null, this) != coroutine_suspended) {
-                        mutator = mutator3;
-                        mutatorMutex = mutatorMutex3;
                         obj2 = obj3;
                     }
                     return coroutine_suspended;
@@ -122,11 +120,12 @@ public final class MutatorMutex$mutateWith$2<R> extends SuspendLambda implements
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    mutatorMutex = (MutatorMutex) this.L$4;
                     obj2 = this.L$3;
                     function2 = (Function2) this.L$2;
-                    mutator = (MutatorMutex.Mutator) this.L$0;
+                    MutatorMutex.Mutator mutator3 = (MutatorMutex.Mutator) this.L$0;
                     ResultKt.throwOnFailure(obj);
+                    mutatorMutex = (MutatorMutex) this.L$4;
+                    mutator = mutator3;
                     mutex = (Mutex) this.L$1;
                 }
                 this.L$0 = mutator;
@@ -137,10 +136,11 @@ public final class MutatorMutex$mutateWith$2<R> extends SuspendLambda implements
                 this.label = 2;
                 Object invoke = function2.invoke(obj2, this);
                 if (invoke != coroutine_suspended) {
-                    mutatorMutex2 = mutatorMutex;
-                    mutex2 = mutex;
+                    Mutex mutex3 = mutex;
                     obj = invoke;
                     mutator2 = mutator;
+                    mutex2 = mutex3;
+                    mutatorMutex2 = mutatorMutex;
                     atomicReference2 = mutatorMutex2.currentMutator;
                     MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(atomicReference2, mutator2, null);
                     mutex2.unlock(null);
@@ -149,8 +149,8 @@ public final class MutatorMutex$mutateWith$2<R> extends SuspendLambda implements
                 return coroutine_suspended;
             } catch (Throwable th3) {
                 th = th3;
-                mutatorMutex2 = mutatorMutex;
                 mutator2 = mutator;
+                mutatorMutex2 = mutatorMutex;
                 atomicReference = mutatorMutex2.currentMutator;
                 MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(atomicReference, mutator2, null);
                 throw th;

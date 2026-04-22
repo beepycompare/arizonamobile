@@ -66,8 +66,7 @@ public final class RadialGradient extends ShaderBrush implements Interpolatable 
     public long mo4718getIntrinsicSizeNHjbRc() {
         if ((Float.floatToRawIntBits(this.radius) & Integer.MAX_VALUE) < 2139095040) {
             float f = this.radius;
-            float f2 = 2;
-            return Size.m4587constructorimpl((Float.floatToRawIntBits(f * f2) << 32) | (Float.floatToRawIntBits(f * f2) & 4294967295L));
+            return Size.m4587constructorimpl((Float.floatToRawIntBits(f * 2.0f) << 32) | (Float.floatToRawIntBits(f * 2.0f) & 4294967295L));
         }
         return Size.Companion.m4604getUnspecifiedNHjbRc();
     }
@@ -91,7 +90,7 @@ public final class RadialGradient extends ShaderBrush implements Interpolatable 
         long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (4294967295L & Float.floatToRawIntBits(intBitsToFloat2)));
         float f = this.radius;
         if (f == Float.POSITIVE_INFINITY) {
-            f = Size.m4595getMinDimensionimpl(j) / 2;
+            f = Size.m4595getMinDimensionimpl(j) / 2.0f;
         }
         return ShaderKt.m5108RadialGradientShader8uybcMk(m4519constructorimpl, f, list, list2, this.tileMode);
     }

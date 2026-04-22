@@ -138,8 +138,7 @@ public final class TimeElement {
         long playedHour = timeData.getPlayedHour() + this.timesLeft;
         TextView textView3 = hudElementTimeBinding.tvHourTime;
         StringCompanionObject stringCompanionObject3 = StringCompanionObject.INSTANCE;
-        long j = 60;
-        String format3 = String.format("%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(playedHour / j), Long.valueOf(playedHour % j)}, 2));
+        String format3 = String.format("%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(playedHour / 60), Long.valueOf(playedHour % 60)}, 2));
         Intrinsics.checkNotNullExpressionValue(format3, "format(...)");
         textView3.setText(format3);
         setDateTime(timeData.getTimestamp() + this.timesLeft);
@@ -202,9 +201,7 @@ public final class TimeElement {
             } else if (intValue > 3600) {
                 TextView textView2 = hudElementTimeItemBinding.timer;
                 StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-                long j3 = (long) DateCalculationsKt.SECONDS_PER_HOUR;
-                long j4 = 60;
-                String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(intValue / j3), Long.valueOf((intValue % j3) / j4), Long.valueOf(intValue % j4)}, 3));
+                String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(intValue / 3600), Long.valueOf((intValue % 3600) / 60), Long.valueOf(intValue % 60)}, 3));
                 Intrinsics.checkNotNullExpressionValue(format, "format(...)");
                 textView2.setText(format);
             } else if (intValue <= 0) {
@@ -212,13 +209,13 @@ public final class TimeElement {
             } else {
                 TextView textView3 = hudElementTimeItemBinding.timer;
                 StringCompanionObject stringCompanionObject2 = StringCompanionObject.INSTANCE;
-                long j5 = 60;
-                String format2 = String.format("%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(intValue / j5), Long.valueOf(intValue % j5)}, 2));
+                String format2 = String.format("%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(intValue / 60), Long.valueOf(intValue % 60)}, 2));
                 Intrinsics.checkNotNullExpressionValue(format2, "format(...)");
                 textView3.setText(format2);
             }
         }
-        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/time/icons/" + component.getImage()).into(hudElementTimeItemBinding.image);
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        Picasso.get().load(resourceUrl$default + "projects/arizona-rp/systems/time/icons/" + component.getImage()).into(hudElementTimeItemBinding.image);
         String str2 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 0);
         String str3 = DonateUtilsKt.TRANSPARENT_COLOR;
         if (str2 == null) {

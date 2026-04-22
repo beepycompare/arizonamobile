@@ -71,7 +71,7 @@ public final class Murmur3_32HashFunction extends AbstractHashFunction implement
     }
 
     public int hashCode() {
-        return getClass().hashCode() ^ this.seed;
+        return this.seed ^ getClass().hashCode();
     }
 
     @Override // com.google.common.hash.AbstractHashFunction, com.google.common.hash.HashFunction
@@ -180,7 +180,7 @@ public final class Murmur3_32HashFunction extends AbstractHashFunction implement
             i5++;
             i6 += 8;
         }
-        return fmix(mixK1(i2) ^ i, len);
+        return fmix(i ^ mixK1(i2), len);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

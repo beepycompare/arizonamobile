@@ -111,7 +111,7 @@ public class LocalDateProgression implements Collection<LocalDate>, KMappedMarke
         return this.last;
     }
 
-    /* JADX WARN: Type inference failed for: r1v1, types: [kotlin.collections.LongIterator] */
+    /* JADX WARN: Type inference failed for: r1v2, types: [kotlin.collections.LongIterator] */
     @Override // java.util.Collection, java.lang.Iterable
     public Iterator<LocalDate> iterator() {
         return new LocalDateProgressionIterator(this.longProgression.iterator());

@@ -167,7 +167,7 @@ public final class VelocityTracker1D {
             } else {
                 calculateImpulseVelocity = calculateLeastSquaresVelocity(fArr, fArr2, i2);
             }
-            return calculateImpulseVelocity * 1000;
+            return calculateImpulseVelocity * 1000.0f;
         }
         return 0.0f;
     }

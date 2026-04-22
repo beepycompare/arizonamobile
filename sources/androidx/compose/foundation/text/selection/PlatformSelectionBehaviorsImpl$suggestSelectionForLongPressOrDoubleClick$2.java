@@ -61,10 +61,11 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
         Object m1595classifyTextM8tDOmk;
         long j;
         Mutex mutex;
-        CharSequence charSequence;
-        long j2;
-        TextSelection textSelection;
         PlatformSelectionBehaviorsImpl platformSelectionBehaviorsImpl;
+        CharSequence charSequence;
+        TextSelection textSelection;
+        Mutex mutex2;
+        long j2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -88,41 +89,42 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
                 }
             } else {
                 mutex = this.this$0.mutex;
-                PlatformSelectionBehaviorsImpl platformSelectionBehaviorsImpl2 = this.this$0;
-                CharSequence charSequence2 = this.$text;
+                platformSelectionBehaviorsImpl = this.this$0;
+                charSequence = this.$text;
                 this.L$0 = suggestSelection;
                 this.L$1 = mutex;
-                this.L$2 = platformSelectionBehaviorsImpl2;
-                this.L$3 = charSequence2;
+                this.L$2 = platformSelectionBehaviorsImpl;
+                this.L$3 = charSequence;
                 this.J$0 = TextRange;
                 this.label = 1;
                 if (mutex.lock(null, this) != coroutine_suspended) {
-                    charSequence = charSequence2;
-                    j2 = TextRange;
                     textSelection = suggestSelection;
-                    platformSelectionBehaviorsImpl = platformSelectionBehaviorsImpl2;
+                    mutex2 = mutex;
+                    j2 = TextRange;
+                    CharSequence charSequence2 = charSequence;
                     TextClassification textClassification = textSelection.getTextClassification();
                     Intrinsics.checkNotNull(textClassification);
-                    platformSelectionBehaviorsImpl.setTextClassificationResult(new TextClassificationResult(charSequence, j2, textClassification, null));
+                    platformSelectionBehaviorsImpl.setTextClassificationResult(new TextClassificationResult(charSequence2, j2, textClassification, null));
                     Unit unit = Unit.INSTANCE;
                 }
             }
             return coroutine_suspended;
         } else if (i == 1) {
             long j3 = this.J$0;
-            platformSelectionBehaviorsImpl = (PlatformSelectionBehaviorsImpl) this.L$2;
-            mutex = (Mutex) this.L$1;
+            charSequence = (CharSequence) this.L$3;
             textSelection = (TextSelection) this.L$0;
             ResultKt.throwOnFailure(obj);
-            charSequence = (CharSequence) this.L$3;
+            mutex2 = (Mutex) this.L$1;
             j2 = j3;
+            platformSelectionBehaviorsImpl = (PlatformSelectionBehaviorsImpl) this.L$2;
+            CharSequence charSequence22 = charSequence;
             try {
                 TextClassification textClassification2 = textSelection.getTextClassification();
                 Intrinsics.checkNotNull(textClassification2);
-                platformSelectionBehaviorsImpl.setTextClassificationResult(new TextClassificationResult(charSequence, j2, textClassification2, null));
+                platformSelectionBehaviorsImpl.setTextClassificationResult(new TextClassificationResult(charSequence22, j2, textClassification2, null));
                 Unit unit2 = Unit.INSTANCE;
             } finally {
-                mutex.unlock(null);
+                mutex2.unlock(null);
             }
         } else if (i != 2) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

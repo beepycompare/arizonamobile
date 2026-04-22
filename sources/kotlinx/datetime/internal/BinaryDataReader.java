@@ -38,10 +38,9 @@ public final class BinaryDataReader {
     public final int readInt() {
         byte[] bArr = this.bytes;
         int i = this.position;
-        int i2 = ((bArr[i] & 255) << 24) | ((bArr[i + 1] & 255) << 16) | ((bArr[i + 2] & 255) << 8);
         this.position = i + 4;
         Unit unit = Unit.INSTANCE;
-        return (bArr[i + 3] & 255) | i2;
+        return ((bArr[i] & 255) << 24) | ((bArr[i + 1] & 255) << 16) | ((bArr[i + 2] & 255) << 8) | (bArr[i + 3] & 255);
     }
 
     public final long readLong() {

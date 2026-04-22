@@ -44,10 +44,10 @@ public interface ViewCompositionStrategy {
         private DisposeOnDetachedFromWindowOrReleasedFromPool() {
         }
 
-        /* JADX WARN: Type inference failed for: r0v0, types: [androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnDetachedFromWindowOrReleasedFromPool$installFor$listener$1] */
+        /* JADX WARN: Type inference failed for: r2v1, types: [androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnDetachedFromWindowOrReleasedFromPool$installFor$listener$1] */
         @Override // androidx.compose.ui.platform.ViewCompositionStrategy
         public Function0<Unit> installFor(final AbstractComposeView abstractComposeView) {
-            final ?? r0 = new View.OnAttachStateChangeListener() { // from class: androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnDetachedFromWindowOrReleasedFromPool$installFor$listener$1
+            final ?? r2 = new View.OnAttachStateChangeListener() { // from class: androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnDetachedFromWindowOrReleasedFromPool$installFor$listener$1
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewAttachedToWindow(View view) {
                 }
@@ -60,7 +60,7 @@ public interface ViewCompositionStrategy {
                     AbstractComposeView.this.disposeComposition();
                 }
             };
-            abstractComposeView.addOnAttachStateChangeListener((View.OnAttachStateChangeListener) r0);
+            abstractComposeView.addOnAttachStateChangeListener((View.OnAttachStateChangeListener) r2);
             final PoolingContainerListener poolingContainerListener = new PoolingContainerListener() { // from class: androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnDetachedFromWindowOrReleasedFromPool$$ExternalSyntheticLambda0
                 @Override // androidx.customview.poolingcontainer.PoolingContainerListener
                 public final void onRelease() {
@@ -83,7 +83,7 @@ public interface ViewCompositionStrategy {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2() {
-                    AbstractComposeView.this.removeOnAttachStateChangeListener(r0);
+                    AbstractComposeView.this.removeOnAttachStateChangeListener(r2);
                     PoolingContainer.removePoolingContainerListener(AbstractComposeView.this, poolingContainerListener);
                 }
             };
@@ -100,10 +100,10 @@ public interface ViewCompositionStrategy {
         private DisposeOnDetachedFromWindow() {
         }
 
-        /* JADX WARN: Type inference failed for: r0v0, types: [androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnDetachedFromWindow$installFor$listener$1] */
+        /* JADX WARN: Type inference failed for: r1v1, types: [androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnDetachedFromWindow$installFor$listener$1] */
         @Override // androidx.compose.ui.platform.ViewCompositionStrategy
         public Function0<Unit> installFor(final AbstractComposeView abstractComposeView) {
-            final ?? r0 = new View.OnAttachStateChangeListener() { // from class: androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnDetachedFromWindow$installFor$listener$1
+            final ?? r1 = new View.OnAttachStateChangeListener() { // from class: androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnDetachedFromWindow$installFor$listener$1
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewAttachedToWindow(View view) {
                 }
@@ -113,7 +113,7 @@ public interface ViewCompositionStrategy {
                     AbstractComposeView.this.disposeComposition();
                 }
             };
-            abstractComposeView.addOnAttachStateChangeListener((View.OnAttachStateChangeListener) r0);
+            abstractComposeView.addOnAttachStateChangeListener((View.OnAttachStateChangeListener) r1);
             return new Function0<Unit>() { // from class: androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnDetachedFromWindow$installFor$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,7 +129,7 @@ public interface ViewCompositionStrategy {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2() {
-                    AbstractComposeView.this.removeOnAttachStateChangeListener(r0);
+                    AbstractComposeView.this.removeOnAttachStateChangeListener(r1);
                 }
             };
         }
@@ -166,8 +166,8 @@ public interface ViewCompositionStrategy {
         private DisposeOnViewTreeLifecycleDestroyed() {
         }
 
-        /* JADX WARN: Type inference failed for: r1v0, types: [androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnViewTreeLifecycleDestroyed$installFor$listener$1] */
-        /* JADX WARN: Type inference failed for: r2v2, types: [T, androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnViewTreeLifecycleDestroyed$installFor$1] */
+        /* JADX WARN: Type inference failed for: r0v0, types: [androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnViewTreeLifecycleDestroyed$installFor$listener$1] */
+        /* JADX WARN: Type inference failed for: r1v2, types: [T, androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnViewTreeLifecycleDestroyed$installFor$1] */
         @Override // androidx.compose.ui.platform.ViewCompositionStrategy
         public Function0<Unit> installFor(final AbstractComposeView abstractComposeView) {
             if (abstractComposeView.isAttachedToWindow()) {
@@ -179,12 +179,12 @@ public interface ViewCompositionStrategy {
                 throw new KotlinNothingValueException();
             }
             final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-            final ?? r1 = new View.OnAttachStateChangeListener() { // from class: androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnViewTreeLifecycleDestroyed$installFor$listener$1
+            final ?? r0 = new View.OnAttachStateChangeListener() { // from class: androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnViewTreeLifecycleDestroyed$installFor$listener$1
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewDetachedFromWindow(View view) {
                 }
 
-                /* JADX WARN: Type inference failed for: r3v10, types: [T, kotlin.jvm.functions.Function0] */
+                /* JADX WARN: Type inference failed for: r3v7, types: [T, kotlin.jvm.functions.Function0] */
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewAttachedToWindow(View view) {
                     ?? installForLifecycle;
@@ -201,7 +201,7 @@ public interface ViewCompositionStrategy {
                     throw new KotlinNothingValueException();
                 }
             };
-            abstractComposeView.addOnAttachStateChangeListener((View.OnAttachStateChangeListener) r1);
+            abstractComposeView.addOnAttachStateChangeListener((View.OnAttachStateChangeListener) r0);
             objectRef.element = new Function0<Unit>() { // from class: androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnViewTreeLifecycleDestroyed$installFor$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -217,7 +217,7 @@ public interface ViewCompositionStrategy {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2() {
-                    AbstractComposeView.this.removeOnAttachStateChangeListener(r1);
+                    AbstractComposeView.this.removeOnAttachStateChangeListener(r0);
                 }
             };
             return new Function0<Unit>() { // from class: androidx.compose.ui.platform.ViewCompositionStrategy$DisposeOnViewTreeLifecycleDestroyed$installFor$2

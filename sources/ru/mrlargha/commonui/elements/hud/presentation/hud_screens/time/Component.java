@@ -101,25 +101,8 @@ public final class Component {
         this.gradientColors = gradientColors;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public /* synthetic */ Component(String str, String str2, Integer num, String str3, List list, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, str2, r5, r6, r7);
-        List list2;
-        String str4;
-        Integer num2;
-        str2 = (i & 2) != 0 ? null : str2;
-        if ((i & 4) != 0) {
-            list2 = list;
-            str4 = str3;
-            num2 = null;
-        } else {
-            list2 = list;
-            str4 = str3;
-            num2 = num;
-        }
+        this(str, (i & 2) != 0 ? null : str2, (i & 4) != 0 ? null : num, str3, list);
     }
 
     public final String getTitle() {

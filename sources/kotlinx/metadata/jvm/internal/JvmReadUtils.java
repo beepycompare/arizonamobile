@@ -121,8 +121,8 @@ public final class JvmReadUtils {
         for (String str : data.getModuleData().getAnnotations()) {
             kmModule.getAnnotations().add(new KmAnnotation(str, MapsKt.emptyMap()));
         }
-        for (ProtoBuf.Class r3 : data.getModuleData().getOptionalAnnotations()) {
-            kmModule.getOptionalAnnotationClasses().add(ReadersKt.toKmClass$default(r3, data.getModuleData().getNameResolver(), false, null, 4, null));
+        for (ProtoBuf.Class r2 : data.getModuleData().getOptionalAnnotations()) {
+            kmModule.getOptionalAnnotationClasses().add(ReadersKt.toKmClass$default(r2, data.getModuleData().getNameResolver(), false, null, 4, null));
         }
         return kmModule;
     }

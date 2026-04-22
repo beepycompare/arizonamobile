@@ -74,10 +74,10 @@ final class MouseWheelScrollingLogic$untilNull$1<E> extends RestrictedSuspendLam
             kotlin.ResultKt.throwOnFailure(r5)
             goto L3b
         L15:
-            java.lang.IllegalStateException r5 = new java.lang.IllegalStateException
-            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
-            r5.<init>(r0)
-            throw r5
+            java.lang.IllegalStateException r4 = new java.lang.IllegalStateException
+            java.lang.String r5 = "call to 'resume' before 'invoke' with coroutine"
+            r4.<init>(r5)
+            throw r4
         L1d:
             kotlin.ResultKt.throwOnFailure(r5)
             java.lang.Object r5 = r4.L$0
@@ -97,8 +97,8 @@ final class MouseWheelScrollingLogic$untilNull$1<E> extends RestrictedSuspendLam
             r1 = 0
         L3b:
             if (r1 != 0) goto L25
-            kotlin.Unit r5 = kotlin.Unit.INSTANCE
-            return r5
+            kotlin.Unit r4 = kotlin.Unit.INSTANCE
+            return r4
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.compose.foundation.gestures.MouseWheelScrollingLogic$untilNull$1.invokeSuspend(java.lang.Object):java.lang.Object");
     }

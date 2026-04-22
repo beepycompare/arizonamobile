@@ -111,7 +111,7 @@ final class PointerMoveDetectorKt$detectMoves$2 extends SuspendLambda implements
         /* JADX WARN: Removed duplicated region for block: B:23:0x008f  */
         /* JADX WARN: Removed duplicated region for block: B:25:0x0092  */
         /* JADX WARN: Removed duplicated region for block: B:26:0x00a6  */
-        /* JADX WARN: Type inference failed for: r8v15, types: [T, androidx.compose.ui.geometry.Offset] */
+        /* JADX WARN: Type inference failed for: r8v14, types: [T, androidx.compose.ui.geometry.Offset] */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x0043 -> B:14:0x0046). Please submit an issue!!! */
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         /*

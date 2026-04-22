@@ -237,10 +237,10 @@ public final class Range<C extends Comparable> extends RangeGwtSerializationDepe
         }
         boolean z = this.lowerBound.compareTo((Cut) otherRange.lowerBound) < 0;
         Range<C> range = z ? this : otherRange;
-        if (!z) {
-            otherRange = this;
+        if (z) {
+            this = otherRange;
         }
-        return create(range.upperBound, otherRange.lowerBound);
+        return create(range.upperBound, this.lowerBound);
     }
 
     public Range<C> span(Range<C> other) {

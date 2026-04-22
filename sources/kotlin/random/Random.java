@@ -113,8 +113,7 @@ public abstract class Random {
         RandomKt.checkRangeBounds(d, d2);
         double d3 = d2 - d;
         if (Double.isInfinite(d3) && Math.abs(d) <= Double.MAX_VALUE && Math.abs(d2) <= Double.MAX_VALUE) {
-            double d4 = 2;
-            double nextDouble2 = nextDouble() * ((d2 / d4) - (d / d4));
+            double nextDouble2 = nextDouble() * ((d2 / 2.0d) - (d / 2.0d));
             nextDouble = d + nextDouble2 + nextDouble2;
         } else {
             nextDouble = d + (nextDouble() * d3);

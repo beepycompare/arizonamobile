@@ -307,7 +307,7 @@ public class ShortcutInfoCompat {
     }
 
     public boolean isExcludedFromSurfaces(int i) {
-        return (i & this.mExcludedSurfaces) != 0;
+        return (this.mExcludedSurfaces & i) != 0;
     }
 
     public int getExcludedFromSurfaces() {

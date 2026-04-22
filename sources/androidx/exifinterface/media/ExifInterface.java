@@ -797,16 +797,16 @@ public class ExifInterface {
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Not initialized variable reg: 4, insn: 0x015b: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY]), block:B:94:0x015a */
-        /* JADX WARN: Removed duplicated region for block: B:105:0x015e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Not initialized variable reg: 4, insn: 0x0164: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY]), block:B:99:0x0163 */
+        /* JADX WARN: Removed duplicated region for block: B:114:0x0167 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Type inference failed for: r13v16, types: [int[]] */
+        /* JADX WARN: Type inference failed for: r13v18, types: [long[]] */
+        /* JADX WARN: Type inference failed for: r13v20, types: [androidx.exifinterface.media.ExifInterface$Rational[]] */
         /* JADX WARN: Type inference failed for: r13v22, types: [int[]] */
-        /* JADX WARN: Type inference failed for: r13v24, types: [long[]] */
+        /* JADX WARN: Type inference failed for: r13v24, types: [int[]] */
         /* JADX WARN: Type inference failed for: r13v26, types: [androidx.exifinterface.media.ExifInterface$Rational[]] */
-        /* JADX WARN: Type inference failed for: r13v28, types: [int[]] */
-        /* JADX WARN: Type inference failed for: r13v30, types: [int[]] */
-        /* JADX WARN: Type inference failed for: r13v32, types: [androidx.exifinterface.media.ExifInterface$Rational[]] */
-        /* JADX WARN: Type inference failed for: r13v34, types: [double[]] */
-        /* JADX WARN: Type inference failed for: r13v37, types: [double[]] */
+        /* JADX WARN: Type inference failed for: r13v28, types: [double[]] */
+        /* JADX WARN: Type inference failed for: r13v31, types: [double[]] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -836,7 +836,6 @@ public class ExifInterface {
                                     str = new String(this.bytes, ExifInterface.ASCII);
                                     break;
                                 }
-                                break;
                             case 2:
                             case 7:
                                 if (this.numberOfComponents >= ExifInterface.EXIF_ASCII_PREFIX.length) {
@@ -858,8 +857,14 @@ public class ExifInterface {
                                     }
                                     i++;
                                 }
-                                str = sb.toString();
-                                break;
+                                String sb2 = sb.toString();
+                                try {
+                                    byteOrderedDataInputStream.close();
+                                    return sb2;
+                                } catch (IOException e) {
+                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e);
+                                    return sb2;
+                                }
                             case 3:
                                 ?? r13 = new int[this.numberOfComponents];
                                 while (true) {
@@ -944,26 +949,26 @@ public class ExifInterface {
                                 try {
                                     byteOrderedDataInputStream.close();
                                     return null;
-                                } catch (IOException e) {
-                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e);
+                                } catch (IOException e2) {
+                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e2);
                                     return null;
                                 }
                         }
                         try {
                             byteOrderedDataInputStream.close();
                             return str;
-                        } catch (IOException e2) {
-                            Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e2);
+                        } catch (IOException e3) {
+                            Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e3);
                             return str;
                         }
-                    } catch (IOException e3) {
-                        iOException = e3;
+                    } catch (IOException e4) {
+                        iOException = e4;
                         Log.w(ExifInterface.TAG, "IOException occurred during reading a value", iOException);
                         if (byteOrderedDataInputStream != null) {
                             try {
                                 byteOrderedDataInputStream.close();
-                            } catch (IOException e4) {
-                                Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e4);
+                            } catch (IOException e5) {
+                                Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e5);
                             }
                         }
                         return null;
@@ -974,14 +979,14 @@ public class ExifInterface {
                     if (byteOrderedDataInputStream3 != null) {
                         try {
                             byteOrderedDataInputStream3.close();
-                        } catch (IOException e5) {
-                            Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e5);
+                        } catch (IOException e6) {
+                            Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e6);
                         }
                     }
                     throw th;
                 }
-            } catch (IOException e6) {
-                iOException = e6;
+            } catch (IOException e7) {
+                iOException = e7;
                 byteOrderedDataInputStream = null;
             } catch (Throwable th3) {
                 th = th3;
@@ -1177,8 +1182,6 @@ public class ExifInterface {
 
     public ExifInterface(FileDescriptor fileDescriptor) throws IOException {
         boolean z;
-        FileInputStream fileInputStream;
-        Throwable th;
         ExifTag[][] exifTagArr = EXIF_TAGS;
         this.mAttributes = new HashMap[exifTagArr.length];
         this.mAttributesOffsets = new HashSet(exifTagArr.length);
@@ -1186,6 +1189,7 @@ public class ExifInterface {
         if (fileDescriptor == null) {
             throw new NullPointerException("fileDescriptor cannot be null");
         }
+        FileInputStream fileInputStream = null;
         this.mAssetInputStream = null;
         this.mFilename = null;
         if (isSeekableFD(fileDescriptor)) {
@@ -1201,24 +1205,24 @@ public class ExifInterface {
             z = false;
         }
         try {
-            fileInputStream = new FileInputStream(fileDescriptor);
+            FileInputStream fileInputStream2 = new FileInputStream(fileDescriptor);
             try {
-                loadAttributes(fileInputStream);
-                ExifInterfaceUtils.closeQuietly(fileInputStream);
+                loadAttributes(fileInputStream2);
+                ExifInterfaceUtils.closeQuietly(fileInputStream2);
                 if (z) {
                     ExifInterfaceUtils.closeFileDescriptor(fileDescriptor);
                 }
-            } catch (Throwable th2) {
-                th = th2;
+            } catch (Throwable th) {
+                th = th;
+                fileInputStream = fileInputStream2;
                 ExifInterfaceUtils.closeQuietly(fileInputStream);
                 if (z) {
                     ExifInterfaceUtils.closeFileDescriptor(fileDescriptor);
                 }
                 throw th;
             }
-        } catch (Throwable th3) {
-            fileInputStream = null;
-            th = th3;
+        } catch (Throwable th2) {
+            th = th2;
         }
     }
 
@@ -1875,9 +1879,9 @@ public class ExifInterface {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00e9 A[Catch: all -> 0x0112, Exception -> 0x0115, TryCatch #19 {Exception -> 0x0115, all -> 0x0112, blocks: (B:64:0x00e5, B:66:0x00e9, B:69:0x0101, B:68:0x00f2), top: B:131:0x00e5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00f2 A[Catch: all -> 0x0112, Exception -> 0x0115, TryCatch #19 {Exception -> 0x0115, all -> 0x0112, blocks: (B:64:0x00e5, B:66:0x00e9, B:69:0x0101, B:68:0x00f2), top: B:131:0x00e5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0148  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00e9 A[Catch: all -> 0x0112, Exception -> 0x0116, TryCatch #19 {Exception -> 0x0116, all -> 0x0112, blocks: (B:64:0x00e5, B:66:0x00e9, B:69:0x0101, B:68:0x00f2), top: B:129:0x00e5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00f2 A[Catch: all -> 0x0112, Exception -> 0x0116, TryCatch #19 {Exception -> 0x0116, all -> 0x0112, blocks: (B:64:0x00e5, B:66:0x00e9, B:69:0x0101, B:68:0x00f2), top: B:129:0x00e5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0147  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1888,10 +1892,9 @@ public class ExifInterface {
         BufferedInputStream bufferedInputStream;
         Exception exc;
         FileOutputStream fileOutputStream2;
-        InputStream inputStream;
-        Exception e;
-        FileOutputStream fileOutputStream3;
         FileInputStream fileInputStream2;
+        FileOutputStream fileOutputStream3;
+        FileInputStream fileInputStream3;
         if (!isSupportedFormatForSavingAttributes(this.mMimeType)) {
             throw new IOException("ExifInterface only supports saving attributes for JPEG, PNG, and WebP formats.");
         }
@@ -1904,7 +1907,7 @@ public class ExifInterface {
         boolean z = true;
         this.mModified = true;
         this.mThumbnailBytes = getThumbnail();
-        FileInputStream fileInputStream3 = null;
+        FileInputStream fileInputStream4 = null;
         try {
             File createTempFile = File.createTempFile("temp", "tmp");
             if (this.mFilename != null) {
@@ -1923,7 +1926,7 @@ public class ExifInterface {
                     try {
                         try {
                             try {
-                                fileInputStream2 = new FileInputStream(createTempFile);
+                                fileInputStream3 = new FileInputStream(createTempFile);
                                 try {
                                     if (this.mFilename != null) {
                                         fileOutputStream2 = new FileOutputStream(this.mFilename);
@@ -1932,22 +1935,22 @@ public class ExifInterface {
                                         fileOutputStream2 = new FileOutputStream(this.mSeekableFileDescriptor);
                                     }
                                     try {
-                                        bufferedInputStream = new BufferedInputStream(fileInputStream2);
-                                    } catch (Exception e2) {
+                                        bufferedInputStream = new BufferedInputStream(fileInputStream3);
+                                    } catch (Exception e) {
                                         bufferedOutputStream = null;
-                                        fileInputStream3 = fileInputStream2;
-                                        exc = e2;
+                                        fileInputStream4 = fileInputStream3;
+                                        exc = e;
                                         bufferedInputStream = null;
                                     }
-                                } catch (Exception e3) {
-                                    e = e3;
+                                } catch (Exception e2) {
+                                    e = e2;
                                     bufferedInputStream = null;
                                     bufferedOutputStream = null;
-                                    fileInputStream3 = fileInputStream2;
+                                    fileInputStream4 = fileInputStream3;
                                     exc = e;
                                     fileOutputStream2 = bufferedOutputStream;
                                     try {
-                                        inputStream = new FileInputStream(createTempFile);
+                                        fileInputStream2 = new FileInputStream(createTempFile);
                                         try {
                                             if (this.mFilename == null) {
                                                 fileOutputStream3 = new FileOutputStream(this.mFilename);
@@ -1956,26 +1959,26 @@ public class ExifInterface {
                                                 fileOutputStream3 = new FileOutputStream(this.mSeekableFileDescriptor);
                                             }
                                             fileOutputStream2 = fileOutputStream3;
-                                            ExifInterfaceUtils.copy(inputStream, fileOutputStream2);
-                                            ExifInterfaceUtils.closeQuietly(inputStream);
+                                            ExifInterfaceUtils.copy(fileInputStream2, fileOutputStream2);
+                                            ExifInterfaceUtils.closeQuietly(fileInputStream2);
                                             ExifInterfaceUtils.closeQuietly(fileOutputStream2);
                                             throw new IOException("Failed to save new file", exc);
-                                        } catch (Exception e4) {
-                                            e = e4;
+                                        } catch (Exception e3) {
+                                            e = e3;
+                                            fileInputStream4 = fileInputStream2;
                                             try {
                                                 throw new IOException("Failed to save new file. Original file is stored in " + createTempFile.getAbsolutePath(), e);
                                             } catch (Throwable th) {
                                                 th = th;
-                                                fileInputStream3 = inputStream;
                                                 try {
-                                                    ExifInterfaceUtils.closeQuietly(fileInputStream3);
+                                                    ExifInterfaceUtils.closeQuietly(fileInputStream4);
                                                     ExifInterfaceUtils.closeQuietly(fileOutputStream2);
                                                     throw th;
                                                 } catch (Throwable th2) {
                                                     th = th2;
                                                     z2 = z;
-                                                    fileInputStream3 = bufferedInputStream;
-                                                    ExifInterfaceUtils.closeQuietly(fileInputStream3);
+                                                    fileInputStream4 = bufferedInputStream;
+                                                    ExifInterfaceUtils.closeQuietly(fileInputStream4);
                                                     ExifInterfaceUtils.closeQuietly(bufferedOutputStream);
                                                     if (!z2) {
                                                     }
@@ -1985,31 +1988,27 @@ public class ExifInterface {
                                         } catch (Throwable th3) {
                                             th = th3;
                                             z = false;
-                                            fileInputStream3 = inputStream;
-                                            ExifInterfaceUtils.closeQuietly(fileInputStream3);
+                                            fileInputStream4 = fileInputStream2;
+                                            ExifInterfaceUtils.closeQuietly(fileInputStream4);
                                             ExifInterfaceUtils.closeQuietly(fileOutputStream2);
                                             throw th;
                                         }
-                                    } catch (Exception e5) {
-                                        inputStream = fileInputStream3;
-                                        e = e5;
+                                    } catch (Exception e4) {
+                                        e = e4;
                                     } catch (Throwable th4) {
                                         th = th4;
                                         z = false;
-                                        ExifInterfaceUtils.closeQuietly(fileInputStream3);
-                                        ExifInterfaceUtils.closeQuietly(fileOutputStream2);
-                                        throw th;
                                     }
                                 }
-                            } catch (Exception e6) {
-                                e = e6;
+                            } catch (Exception e5) {
+                                e = e5;
                                 bufferedInputStream = null;
                                 bufferedOutputStream = null;
                             }
                         } catch (Throwable th5) {
                             th = th5;
                             bufferedOutputStream = null;
-                            ExifInterfaceUtils.closeQuietly(fileInputStream3);
+                            ExifInterfaceUtils.closeQuietly(fileInputStream4);
                             ExifInterfaceUtils.closeQuietly(bufferedOutputStream);
                             if (!z2) {
                                 createTempFile.delete();
@@ -2034,59 +2033,59 @@ public class ExifInterface {
                             ExifInterfaceUtils.closeQuietly(bufferedOutputStream);
                             createTempFile.delete();
                             this.mThumbnailBytes = null;
-                        } catch (Exception e7) {
-                            exc = e7;
-                            fileInputStream3 = fileInputStream2;
-                            inputStream = new FileInputStream(createTempFile);
+                        } catch (Exception e6) {
+                            exc = e6;
+                            fileInputStream4 = fileInputStream3;
+                            fileInputStream2 = new FileInputStream(createTempFile);
                             if (this.mFilename == null) {
                             }
                             fileOutputStream2 = fileOutputStream3;
-                            ExifInterfaceUtils.copy(inputStream, fileOutputStream2);
-                            ExifInterfaceUtils.closeQuietly(inputStream);
+                            ExifInterfaceUtils.copy(fileInputStream2, fileOutputStream2);
+                            ExifInterfaceUtils.closeQuietly(fileInputStream2);
                             ExifInterfaceUtils.closeQuietly(fileOutputStream2);
                             throw new IOException("Failed to save new file", exc);
                         }
-                    } catch (Exception e8) {
+                    } catch (Exception e7) {
                         bufferedOutputStream = null;
-                        fileInputStream3 = fileInputStream2;
-                        exc = e8;
+                        fileInputStream4 = fileInputStream3;
+                        exc = e7;
                     } catch (Throwable th7) {
                         th = th7;
                         bufferedOutputStream = null;
-                        fileInputStream3 = bufferedInputStream;
-                        ExifInterfaceUtils.closeQuietly(fileInputStream3);
+                        fileInputStream4 = bufferedInputStream;
+                        ExifInterfaceUtils.closeQuietly(fileInputStream4);
                         ExifInterfaceUtils.closeQuietly(bufferedOutputStream);
                         if (!z2) {
                         }
                         throw th;
                     }
-                } catch (Exception e9) {
-                    e = e9;
-                    fileInputStream3 = fileInputStream;
+                } catch (Exception e8) {
+                    e = e8;
+                    fileInputStream4 = fileInputStream;
                     try {
                         throw new IOException("Failed to copy original file to temp file", e);
                     } catch (Throwable th8) {
                         th = th8;
-                        ExifInterfaceUtils.closeQuietly(fileInputStream3);
+                        ExifInterfaceUtils.closeQuietly(fileInputStream4);
                         ExifInterfaceUtils.closeQuietly(fileOutputStream);
                         throw th;
                     }
                 } catch (Throwable th9) {
                     th = th9;
-                    fileInputStream3 = fileInputStream;
-                    ExifInterfaceUtils.closeQuietly(fileInputStream3);
+                    fileInputStream4 = fileInputStream;
+                    ExifInterfaceUtils.closeQuietly(fileInputStream4);
                     ExifInterfaceUtils.closeQuietly(fileOutputStream);
                     throw th;
                 }
-            } catch (Exception e10) {
-                e = e10;
+            } catch (Exception e9) {
+                e = e9;
                 fileOutputStream = null;
             } catch (Throwable th10) {
                 th = th10;
                 fileOutputStream = null;
             }
-        } catch (Exception e11) {
-            e = e11;
+        } catch (Exception e10) {
+            e = e10;
             fileOutputStream = null;
         } catch (Throwable th11) {
             th = th11;
@@ -2111,10 +2110,10 @@ public class ExifInterface {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0050 A[Catch: Exception -> 0x006f, all -> 0x0094, TRY_ENTER, TRY_LEAVE, TryCatch #0 {Exception -> 0x006f, blocks: (B:28:0x0050, B:35:0x0071, B:36:0x0076), top: B:56:0x004e }] */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0071 A[Catch: Exception -> 0x006f, all -> 0x0094, TRY_ENTER, TryCatch #0 {Exception -> 0x006f, blocks: (B:28:0x0050, B:35:0x0071, B:36:0x0076), top: B:56:0x004e }] */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0090  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x009b  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x004f A[Catch: Exception -> 0x006e, all -> 0x0091, TRY_ENTER, TRY_LEAVE, TryCatch #1 {all -> 0x0091, blocks: (B:28:0x004f, B:35:0x0070, B:36:0x0075, B:45:0x0083), top: B:56:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0070 A[Catch: Exception -> 0x006e, all -> 0x0091, TRY_ENTER, TryCatch #1 {all -> 0x0091, blocks: (B:28:0x004f, B:35:0x0070, B:36:0x0075, B:45:0x0083), top: B:56:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0098  */
     /* JADX WARN: Type inference failed for: r1v1, types: [byte[]] */
     /* JADX WARN: Type inference failed for: r1v11 */
     /* JADX WARN: Type inference failed for: r1v12 */
@@ -2129,7 +2128,6 @@ public class ExifInterface {
     */
     public byte[] getThumbnailBytes() {
         FileDescriptor fileDescriptor;
-        Exception e;
         FileDescriptor fileDescriptor2;
         FileInputStream fileInputStream;
         Closeable closeable = null;
@@ -2153,8 +2151,8 @@ public class ExifInterface {
                             }
                             r1.reset();
                             fileInputStream = r1;
-                        } catch (Exception e2) {
-                            e = e2;
+                        } catch (Exception e) {
+                            e = e;
                             fileDescriptor2 = null;
                             Log.d(TAG, "Encountered exception while getting thumbnail", e);
                             ExifInterfaceUtils.closeQuietly(r1);
@@ -2190,8 +2188,8 @@ public class ExifInterface {
                                 return bArr;
                             }
                             throw new FileNotFoundException();
-                        } catch (Exception e3) {
-                            e = e3;
+                        } catch (Exception e2) {
+                            e = e2;
                             fileDescriptor2 = dup;
                             r1 = 0;
                             Log.d(TAG, "Encountered exception while getting thumbnail", e);
@@ -2212,8 +2210,8 @@ public class ExifInterface {
                     }
                     if (r1 == 0) {
                     }
-                } catch (Exception e4) {
-                    e = e4;
+                } catch (Exception e3) {
+                    e = e3;
                     Log.d(TAG, "Encountered exception while getting thumbnail", e);
                     ExifInterfaceUtils.closeQuietly(r1);
                     if (fileDescriptor2 != null) {
@@ -2223,9 +2221,9 @@ public class ExifInterface {
                 }
                 fileDescriptor2 = null;
                 r1 = fileInputStream;
-            } catch (Exception e5) {
+            } catch (Exception e4) {
+                e = e4;
                 r1 = 0;
-                e = e5;
                 fileDescriptor2 = null;
             } catch (Throwable th3) {
                 th = th3;
@@ -4713,6 +4711,7 @@ public class ExifInterface {
 
         @Override // java.io.DataInput
         public short readShort() throws IOException {
+            int i;
             this.mPosition += 2;
             int read = this.mDataInputStream.read();
             int read2 = this.mDataInputStream.read();
@@ -4720,12 +4719,13 @@ public class ExifInterface {
                 throw new EOFException();
             }
             if (this.mByteOrder == ByteOrder.LITTLE_ENDIAN) {
-                return (short) ((read2 << 8) + read);
+                i = (read2 << 8) + read;
+            } else if (this.mByteOrder != ByteOrder.BIG_ENDIAN) {
+                throw new IOException("Invalid byte order: " + this.mByteOrder);
+            } else {
+                i = (read << 8) + read2;
             }
-            if (this.mByteOrder == ByteOrder.BIG_ENDIAN) {
-                return (short) ((read << 8) + read2);
-            }
-            throw new IOException("Invalid byte order: " + this.mByteOrder);
+            return (short) i;
         }
 
         @Override // java.io.DataInput

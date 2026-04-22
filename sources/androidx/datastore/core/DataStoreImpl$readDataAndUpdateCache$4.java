@@ -51,65 +51,66 @@ public final class DataStoreImpl$readDataAndUpdateCache$4<T> extends SuspendLamb
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v0, types: [int] */
-    /* JADX WARN: Type inference failed for: r1v14 */
-    /* JADX WARN: Type inference failed for: r1v15 */
-    /* JADX WARN: Type inference failed for: r1v9 */
+    /* JADX WARN: Type inference failed for: r1v12 */
+    /* JADX WARN: Type inference failed for: r1v13 */
+    /* JADX WARN: Type inference failed for: r1v6 */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Throwable th;
         int i;
+        Throwable th;
         boolean z;
         ReadException readException;
         boolean z2;
+        boolean z3;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        boolean z3 = this.label;
+        boolean z4 = this.label;
         try {
         } catch (Throwable th2) {
-            if (z3 != 0) {
+            if (z4 != 0) {
                 this.L$0 = th2;
-                this.Z$0 = z3;
+                this.Z$0 = z4;
                 this.label = 2;
                 Object version = this.this$0.getCoordinator().getVersion(this);
                 if (version != coroutine_suspended) {
-                    z = z3;
-                    th = th2;
                     obj = version;
+                    th = th2;
+                    z = z4 ? 1 : 0;
                 }
             } else {
-                boolean z4 = z3;
-                th = th2;
                 i = this.$cachedVersion;
-                z = z4;
+                th = th2;
+                z3 = z4;
             }
         }
-        if (z3 == 0) {
+        if (z4 == 0) {
             ResultKt.throwOnFailure(obj);
             boolean z5 = this.Z$0;
             this.Z$0 = z5;
             this.label = 1;
             obj = this.this$0.readDataOrHandleCorruption(z5, this);
-            z3 = z5;
+            z4 = z5;
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
-        } else if (z3 != 1) {
-            if (z3 == 2) {
+        } else if (z4 != 1) {
+            if (z4 == 2) {
                 z = this.Z$0;
                 th = (Throwable) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 i = ((Number) obj).intValue();
+                z3 = z;
                 readException = new ReadException(th, i);
-                z2 = z;
+                z2 = z3;
                 return TuplesKt.to(readException, Boxing.boxBoolean(z2));
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             boolean z6 = this.Z$0;
             ResultKt.throwOnFailure(obj);
-            z3 = z6;
+            z4 = z6;
         }
         readException = (State) obj;
-        z2 = z3;
+        z2 = z4;
         return TuplesKt.to(readException, Boxing.boxBoolean(z2));
     }
 }

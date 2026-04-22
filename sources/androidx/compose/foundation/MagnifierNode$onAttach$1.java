@@ -59,10 +59,10 @@ final class MagnifierNode$onAttach$1 extends SuspendLambda implements Function2<
             kotlin.ResultKt.throwOnFailure(r5)
             goto L4e
         L12:
-            java.lang.IllegalStateException r5 = new java.lang.IllegalStateException
-            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
-            r5.<init>(r0)
-            throw r5
+            java.lang.IllegalStateException r4 = new java.lang.IllegalStateException
+            java.lang.String r5 = "call to 'resume' before 'invoke' with coroutine"
+            r4.<init>(r5)
+            throw r4
         L1a:
             kotlin.ResultKt.throwOnFailure(r5)
             goto L35

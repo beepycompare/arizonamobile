@@ -109,8 +109,8 @@ public interface EmbeddingBackend {
                 /*
                     r0 = this;
                     androidx.window.embedding.EmbeddingBackend r1 = (androidx.window.embedding.EmbeddingBackend) r1
-                    androidx.window.embedding.EmbeddingBackend r1 = androidx.window.embedding.EmbeddingBackend.Companion.decorator$lambda$0(r1)
-                    return r1
+                    androidx.window.embedding.EmbeddingBackend r0 = androidx.window.embedding.EmbeddingBackend.Companion.decorator$lambda$0(r1)
+                    return r0
                 */
                 throw new UnsupportedOperationException("Method not decompiled: androidx.window.embedding.EmbeddingBackend$Companion$$ExternalSyntheticLambda1.invoke(java.lang.Object):java.lang.Object");
             }
@@ -190,8 +190,8 @@ public interface EmbeddingBackend {
                     /*
                         r0 = this;
                         androidx.window.embedding.EmbeddingBackend r1 = (androidx.window.embedding.EmbeddingBackend) r1
-                        androidx.window.embedding.EmbeddingBackend r1 = androidx.window.embedding.EmbeddingBackend.Companion.reset$lambda$1(r1)
-                        return r1
+                        androidx.window.embedding.EmbeddingBackend r0 = androidx.window.embedding.EmbeddingBackend.Companion.reset$lambda$1(r1)
+                        return r0
                     */
                     throw new UnsupportedOperationException("Method not decompiled: androidx.window.embedding.EmbeddingBackend$Companion$$ExternalSyntheticLambda0.invoke(java.lang.Object):java.lang.Object");
                 }

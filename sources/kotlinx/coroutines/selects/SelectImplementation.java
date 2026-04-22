@@ -109,17 +109,19 @@ public class SelectImplementation<R> implements CancelHandler, SelectBuilder<R>,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0048, code lost:
+        if (waitUntilSelected(r0) == r1) goto L18;
+     */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0056 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0057 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0058 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object doSelectSuspend(Continuation<? super R> continuation) {
         SelectImplementation$doSelectSuspend$1 selectImplementation$doSelectSuspend$1;
         int i;
-        SelectImplementation<R> selectImplementation;
         if (continuation instanceof SelectImplementation$doSelectSuspend$1) {
             selectImplementation$doSelectSuspend$1 = (SelectImplementation$doSelectSuspend$1) continuation;
             if ((selectImplementation$doSelectSuspend$1.label & Integer.MIN_VALUE) != 0) {
@@ -131,9 +133,6 @@ public class SelectImplementation<R> implements CancelHandler, SelectBuilder<R>,
                     ResultKt.throwOnFailure(obj);
                     selectImplementation$doSelectSuspend$1.L$0 = this;
                     selectImplementation$doSelectSuspend$1.label = 1;
-                    if (waitUntilSelected(selectImplementation$doSelectSuspend$1) != coroutine_suspended) {
-                        selectImplementation = this;
-                    }
                 } else if (i != 1) {
                     if (i == 2) {
                         ResultKt.throwOnFailure(obj);
@@ -141,12 +140,12 @@ public class SelectImplementation<R> implements CancelHandler, SelectBuilder<R>,
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    selectImplementation = (SelectImplementation) selectImplementation$doSelectSuspend$1.L$0;
+                    this = (SelectImplementation) selectImplementation$doSelectSuspend$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 selectImplementation$doSelectSuspend$1.L$0 = null;
                 selectImplementation$doSelectSuspend$1.label = 2;
-                Object complete = selectImplementation.complete(selectImplementation$doSelectSuspend$1);
+                Object complete = this.complete(selectImplementation$doSelectSuspend$1);
                 return complete != coroutine_suspended ? coroutine_suspended : complete;
             }
         }
@@ -158,7 +157,7 @@ public class SelectImplementation<R> implements CancelHandler, SelectBuilder<R>,
         }
         selectImplementation$doSelectSuspend$1.L$0 = null;
         selectImplementation$doSelectSuspend$1.label = 2;
-        Object complete2 = selectImplementation.complete(selectImplementation$doSelectSuspend$1);
+        Object complete2 = this.complete(selectImplementation$doSelectSuspend$1);
         if (complete2 != coroutine_suspended2) {
         }
     }
@@ -500,22 +499,22 @@ public class SelectImplementation<R> implements CancelHandler, SelectBuilder<R>,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x006e, code lost:
-        r0 = r0.getResult();
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x006d, code lost:
+        r6 = r0.getResult();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0076, code lost:
-        if (r0 != kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()) goto L24;
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0075, code lost:
+        if (r6 != kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()) goto L24;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0078, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0077, code lost:
         kotlin.coroutines.jvm.internal.DebugProbesKt.probeCoroutineSuspended(r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x007f, code lost:
-        if (r0 != kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()) goto L28;
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x007e, code lost:
+        if (r6 != kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()) goto L28;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0081, code lost:
-        return r0;
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0080, code lost:
+        return r6;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0084, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0083, code lost:
         return kotlin.Unit.INSTANCE;
      */
     /*

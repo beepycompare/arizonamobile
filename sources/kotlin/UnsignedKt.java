@@ -9,7 +9,7 @@ import kotlin.text.CharsKt;
 /* loaded from: classes5.dex */
 public final class UnsignedKt {
     public static final double uintToDouble(int i) {
-        return (Integer.MAX_VALUE & i) + (((i >>> 31) << 30) * 2);
+        return (Integer.MAX_VALUE & i) + (((i >>> 31) << 30) * 2.0d);
     }
 
     private static final long uintToLong(int i) {
@@ -17,7 +17,7 @@ public final class UnsignedKt {
     }
 
     public static final double ulongToDouble(long j) {
-        return ((j >>> 11) * 2048) + (j & 2047);
+        return ((j >>> 11) * 2048.0d) + (j & 2047);
     }
 
     /* renamed from: uintRemainder-J1ME1BU  reason: not valid java name */
@@ -93,7 +93,7 @@ public final class UnsignedKt {
             if (d <= 2.147483647E9d) {
                 return UInt.m9283constructorimpl((int) d);
             }
-            return UInt.m9283constructorimpl(UInt.m9283constructorimpl((int) (d - Integer.MAX_VALUE)) + UInt.m9283constructorimpl(Integer.MAX_VALUE));
+            return UInt.m9283constructorimpl(UInt.m9283constructorimpl((int) (d - 2.147483647E9d)) + UInt.m9283constructorimpl(Integer.MAX_VALUE));
         }
         return 0;
     }

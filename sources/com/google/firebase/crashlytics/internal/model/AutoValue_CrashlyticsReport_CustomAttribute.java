@@ -39,7 +39,7 @@ final class AutoValue_CrashlyticsReport_CustomAttribute extends CrashlyticsRepor
     }
 
     public int hashCode() {
-        return ((this.key.hashCode() ^ 1000003) * 1000003) ^ this.value.hashCode();
+        return this.value.hashCode() ^ ((this.key.hashCode() ^ 1000003) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

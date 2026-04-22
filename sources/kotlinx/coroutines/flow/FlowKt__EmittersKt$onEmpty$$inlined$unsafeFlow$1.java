@@ -46,18 +46,18 @@ public final class FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1<T> implement
         this.$action$inlined = function2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x008f, code lost:
-        if (r8 == r1) goto L26;
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x008e, code lost:
+        if (r7 == r1) goto L26;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0077  */
-    /* JADX WARN: Type inference failed for: r7v0, types: [kotlinx.coroutines.flow.FlowCollector, java.lang.Object, kotlinx.coroutines.flow.FlowCollector<? super T>] */
-    /* JADX WARN: Type inference failed for: r7v1, types: [kotlinx.coroutines.flow.internal.SafeCollector] */
-    /* JADX WARN: Type inference failed for: r7v15 */
-    /* JADX WARN: Type inference failed for: r7v16 */
-    /* JADX WARN: Type inference failed for: r7v7, types: [kotlinx.coroutines.flow.internal.SafeCollector] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0076  */
+    /* JADX WARN: Type inference failed for: r6v0, types: [kotlinx.coroutines.flow.FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1, java.lang.Object, kotlinx.coroutines.flow.FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1<T>] */
+    /* JADX WARN: Type inference failed for: r6v1, types: [kotlinx.coroutines.flow.internal.SafeCollector] */
+    /* JADX WARN: Type inference failed for: r6v15 */
+    /* JADX WARN: Type inference failed for: r6v16 */
+    /* JADX WARN: Type inference failed for: r6v7, types: [kotlinx.coroutines.flow.internal.SafeCollector] */
     @Override // kotlinx.coroutines.flow.Flow
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -65,8 +65,7 @@ public final class FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1<T> implement
     public Object collect(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
         AnonymousClass1 anonymousClass1;
         int i;
-        FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1<T> flowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1;
-        FlowCollector flowCollector2;
+        FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1 flowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1;
         Ref.BooleanRef booleanRef;
         try {
             if (continuation instanceof AnonymousClass1) {
@@ -86,33 +85,32 @@ public final class FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1<T> implement
                         anonymousClass1.label = 1;
                         if (this.$this_onEmpty$inlined.collect(new FlowKt__EmittersKt$onEmpty$1$1(booleanRef2, flowCollector), anonymousClass1) != coroutine_suspended) {
                             flowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1 = this;
-                            flowCollector2 = flowCollector;
                             booleanRef = booleanRef2;
                         }
                         return coroutine_suspended;
                     } else if (i != 1) {
                         if (i == 2) {
-                            SafeCollector safeCollector = (SafeCollector) anonymousClass1.L$0;
+                            FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1<T> flowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$12 = (FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1<T>) ((SafeCollector) anonymousClass1.L$0);
                             ResultKt.throwOnFailure(obj);
-                            flowCollector = safeCollector;
+                            this = flowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$12;
                             return Unit.INSTANCE;
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
                         booleanRef = (Ref.BooleanRef) anonymousClass1.L$2;
-                        flowCollector2 = (FlowCollector) anonymousClass1.L$1;
+                        flowCollector = (FlowCollector) anonymousClass1.L$1;
                         flowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1 = (FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1) anonymousClass1.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
                     if (booleanRef.element) {
-                        SafeCollector safeCollector2 = new SafeCollector(flowCollector2, anonymousClass1.getContext());
+                        SafeCollector safeCollector = new SafeCollector(flowCollector, anonymousClass1.getContext());
                         Function2 function2 = flowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1.$action$inlined;
-                        anonymousClass1.L$0 = safeCollector2;
+                        anonymousClass1.L$0 = safeCollector;
                         anonymousClass1.L$1 = null;
                         anonymousClass1.L$2 = null;
                         anonymousClass1.label = 2;
-                        Object invoke = function2.invoke(safeCollector2, anonymousClass1);
-                        flowCollector = safeCollector2;
+                        Object invoke = function2.invoke(safeCollector, anonymousClass1);
+                        this = safeCollector;
                     }
                     return Unit.INSTANCE;
                 }
@@ -123,7 +121,7 @@ public final class FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1<T> implement
             }
             return Unit.INSTANCE;
         } finally {
-            flowCollector.releaseIntercepted();
+            this.releaseIntercepted();
         }
         anonymousClass1 = new AnonymousClass1(continuation);
         Object obj2 = anonymousClass1.result;

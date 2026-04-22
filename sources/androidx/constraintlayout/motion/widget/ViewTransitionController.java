@@ -119,6 +119,7 @@ public class ViewTransitionController {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void touchEvent(MotionEvent motionEvent) {
+        ViewTransitionController viewTransitionController;
         int currentState = this.mMotionLayout.getCurrentState();
         if (currentState == -1) {
             return;
@@ -161,11 +162,17 @@ public class ViewTransitionController {
                         if (next2.matchesView(next3)) {
                             next3.getHitRect(rect);
                             if (rect.contains((int) x, (int) y)) {
-                                next2.applyTransition(this, this.mMotionLayout, currentState, constraintSet, next3);
+                                View[] viewArr = {next3};
+                                viewTransitionController = this;
+                                next2.applyTransition(viewTransitionController, this.mMotionLayout, currentState, constraintSet, viewArr);
+                            } else {
+                                viewTransitionController = this;
                             }
+                            this = viewTransitionController;
                         }
                     }
                 }
+                this = this;
             }
         }
     }

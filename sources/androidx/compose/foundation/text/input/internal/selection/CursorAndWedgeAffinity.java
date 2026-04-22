@@ -89,7 +89,7 @@ public final class CursorAndWedgeAffinity {
 
     /* renamed from: constructor-impl  reason: not valid java name */
     public static long m1476constructorimpl(int i) {
-        return m1478constructorimpl((i << 32) | ((-1) & 4294967295L));
+        return m1478constructorimpl((i << 32) | 4294967295L);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */

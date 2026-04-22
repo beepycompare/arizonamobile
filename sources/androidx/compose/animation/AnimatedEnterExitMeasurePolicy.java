@@ -53,9 +53,9 @@ final class AnimatedEnterExitMeasurePolicy implements MeasurePolicy {
         final ArrayList arrayList2 = arrayList;
         if (measureScope.isLookingAhead()) {
             this.hasLookaheadOccurred = true;
-            this.scope.getTargetSize$animation().setValue(IntSize.m7718boximpl(IntSize.m7721constructorimpl((4294967295L & i2) | (i << 32))));
+            this.scope.getTargetSize$animation().setValue(IntSize.m7718boximpl(IntSize.m7721constructorimpl((i2 & 4294967295L) | (i << 32))));
         } else if (!this.hasLookaheadOccurred) {
-            this.scope.getTargetSize$animation().setValue(IntSize.m7718boximpl(IntSize.m7721constructorimpl((4294967295L & i2) | (i << 32))));
+            this.scope.getTargetSize$animation().setValue(IntSize.m7718boximpl(IntSize.m7721constructorimpl((i2 & 4294967295L) | (i << 32))));
         }
         return MeasureScope.layout$default(measureScope, i, i2, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedEnterExitMeasurePolicy$measure$1
             /* JADX INFO: Access modifiers changed from: package-private */

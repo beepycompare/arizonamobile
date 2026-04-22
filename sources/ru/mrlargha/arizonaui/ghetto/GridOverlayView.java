@@ -548,7 +548,7 @@ public final class GridOverlayView extends View {
             if (center == null) {
                 center = new PointF();
             }
-            float f = 2 * scale;
+            float f = 2.0f * scale;
             float f2 = width / f;
             float f3 = height / f;
             RectF rectF = new RectF(center.x - f2, center.y - f3, center.x + f2, center.y + f3);

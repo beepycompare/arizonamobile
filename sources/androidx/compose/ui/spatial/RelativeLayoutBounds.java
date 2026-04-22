@@ -164,7 +164,8 @@ public final class RelativeLayoutBounds {
         int i7 = (int) (this.bottomRight >> 32);
         int max = Math.max(Math.min(i7, i3), i);
         int i8 = (int) this.bottomRight;
-        return Math.max((max - min) * (Math.max(Math.min(i8, i4), i2) - min2), 0) / Math.min((i3 - i) * (i4 - i2), (i7 - i5) * (i8 - i6));
+        int i9 = (i7 - i5) * (i8 - i6);
+        return Math.max((max - min) * (Math.max(Math.min(i8, i4), i2) - min2), 0) / Math.min((i3 - i) * (i4 - i2), i9);
     }
 
     public final float fractionVisibleInWindow() {

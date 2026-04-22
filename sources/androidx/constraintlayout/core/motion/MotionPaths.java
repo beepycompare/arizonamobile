@@ -317,12 +317,10 @@ public class MotionPaths implements Comparable<MotionPaths> {
             float[] fArr2 = new float[2];
             motion.getCenter(d, fArr2, new float[2]);
             float f6 = fArr2[0];
-            float f7 = fArr2[1];
-            double d2 = f6;
-            double d3 = f;
-            double d4 = f2;
-            f = (float) ((d2 + (Math.sin(d4) * d3)) - (f3 / 2.0f));
-            f2 = (float) ((f7 - (d3 * Math.cos(d4))) - (f4 / 2.0f));
+            double d2 = f;
+            double d3 = f2;
+            f2 = (float) ((fArr2[1] - (d2 * Math.cos(d3))) - (f4 / 2.0f));
+            f = (float) ((f6 + (Math.sin(d3) * d2)) - (f3 / 2.0f));
         }
         fArr[i] = f + (f3 / 2.0f) + 0.0f;
         fArr[i + 1] = f2 + (f4 / 2.0f) + 0.0f;
@@ -368,15 +366,17 @@ public class MotionPaths implements Comparable<MotionPaths> {
             float f15 = fArr3[1];
             float f16 = fArr4[0];
             float f17 = fArr4[1];
+            double d2 = f14;
             f = 2.0f;
-            double d2 = f2;
-            double d3 = f3;
-            f2 = (float) ((f14 + (Math.sin(d3) * d2)) - (f4 / 2.0f));
-            f3 = (float) ((f15 - (Math.cos(d3) * d2)) - (f5 / 2.0f));
-            double d4 = f6;
-            double d5 = f8;
-            f13 = (float) ((f17 - (d4 * Math.cos(d3))) + (Math.sin(d3) * d5));
-            f12 = (float) (f16 + (Math.sin(d3) * d4) + (Math.cos(d3) * d5));
+            double d3 = f2;
+            double d4 = f3;
+            f2 = (float) ((d2 + (Math.sin(d4) * d3)) - (f4 / 2.0f));
+            f3 = (float) ((f15 - (Math.cos(d4) * d3)) - (f5 / 2.0f));
+            double d5 = f16;
+            double d6 = f6;
+            double d7 = f8;
+            f13 = (float) ((f17 - (d6 * Math.cos(d4))) + (Math.sin(d4) * d7));
+            f12 = (float) (d5 + (Math.sin(d4) * d6) + (Math.cos(d4) * d7));
         } else {
             f = 2.0f;
         }
@@ -409,12 +409,10 @@ public class MotionPaths implements Comparable<MotionPaths> {
             float[] fArr2 = new float[2];
             motion.getCenter(d, fArr2, new float[2]);
             float f6 = fArr2[0];
-            float f7 = fArr2[1];
-            double d2 = f6;
-            double d3 = f;
-            double d4 = f2;
-            f = (float) ((d2 + (Math.sin(d4) * d3)) - (f3 / 2.0f));
-            f2 = (float) ((f7 - (d3 * Math.cos(d4))) - (f4 / 2.0f));
+            double d2 = f;
+            double d3 = f2;
+            f2 = (float) ((fArr2[1] - (d2 * Math.cos(d3))) - (f4 / 2.0f));
+            f = (float) ((f6 + (Math.sin(d3) * d2)) - (f3 / 2.0f));
         }
         fArr[i] = f + (f3 / 2.0f) + 0.0f;
         fArr[i + 1] = f2 + (f4 / 2.0f) + 0.0f;
@@ -515,23 +513,23 @@ public class MotionPaths implements Comparable<MotionPaths> {
             float f16 = fArr[1];
             float f17 = fArr2[0];
             float f18 = fArr2[1];
-            double d2 = f15;
-            double d3 = f3;
-            double d4 = f4;
-            f3 = (float) ((d2 + (Math.sin(d4) * d3)) - (f5 / 2.0f));
-            f4 = (float) ((f16 - (Math.cos(d4) * d3)) - (f6 / 2.0f));
-            double d5 = f17;
-            double d6 = f8;
-            double d7 = f9;
-            float sin = (float) (d5 + (Math.sin(d4) * d6) + (Math.cos(d4) * d3 * d7));
-            float cos = (float) ((f18 - (d6 * Math.cos(d4))) + (Math.sin(d4) * d3 * d7));
+            double d2 = f3;
+            double d3 = f4;
+            float sin = (float) ((f15 + (Math.sin(d3) * d2)) - (f5 / 2.0f));
+            float cos = (float) ((f16 - (Math.cos(d3) * d2)) - (f6 / 2.0f));
+            double d4 = f8;
+            double d5 = f9;
+            float sin2 = (float) (f17 + (Math.sin(d3) * d4) + (Math.cos(d3) * d2 * d5));
+            float cos2 = (float) ((f18 - (d4 * Math.cos(d3))) + (Math.sin(d3) * d2 * d5));
             if (dArr2.length >= 2) {
-                dArr2[0] = sin;
-                dArr2[1] = cos;
+                dArr2[0] = sin2;
+                dArr2[1] = cos2;
             }
             if (!Float.isNaN(f14)) {
-                motionWidget.setRotationZ((float) (f14 + Math.toDegrees(Math.atan2(cos, sin))));
+                motionWidget.setRotationZ((float) (f14 + Math.toDegrees(Math.atan2(cos2, sin2))));
             }
+            f3 = sin;
+            f4 = cos;
         } else if (!Float.isNaN(f14)) {
             motionWidget.setRotationZ(((float) (f14 + Math.toDegrees(Math.atan2(f9 + (f11 / 2.0f), f8 + (f10 / 2.0f))))) + 0.0f);
         }

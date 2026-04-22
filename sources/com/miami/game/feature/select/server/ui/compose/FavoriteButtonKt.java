@@ -45,9 +45,9 @@ public final class FavoriteButtonKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x004a  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x004c  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0054  */
     /* JADX WARN: Removed duplicated region for block: B:50:0x021a  */
     /* JADX WARN: Removed duplicated region for block: B:53:0x0224  */
     /* JADX WARN: Removed duplicated region for block: B:55:? A[RETURN, SYNTHETIC] */
@@ -91,7 +91,7 @@ public final class FavoriteButtonKt {
                     startRestartGroup.endReplaceGroup();
                     m4771copywmQWz5c$default = Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
                 }
-                Modifier m277borderziNgDLE = BorderKt.m277borderziNgDLE(BackgroundKt.m263backgroundbw27NRU(SizeKt.m866sizeVpY3zN4(OffsetKt.m777offsetVpY3zN4(companion, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(14)), Dp.m7555constructorimpl(4)), Dp.m7555constructorimpl(40), Dp.m7555constructorimpl(26)), m4771copywmQWz5c$default, new FavoriteButtonShape()), Dp.m7555constructorimpl(2), Brush.Companion.m4727verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4804getLightGray0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new FavoriteButtonShape());
+                Modifier m277borderziNgDLE = BorderKt.m277borderziNgDLE(BackgroundKt.m263backgroundbw27NRU(SizeKt.m866sizeVpY3zN4(OffsetKt.m777offsetVpY3zN4(companion, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(14.0f)), Dp.m7555constructorimpl(4.0f)), Dp.m7555constructorimpl(40.0f), Dp.m7555constructorimpl(26.0f)), m4771copywmQWz5c$default, new FavoriteButtonShape()), Dp.m7555constructorimpl(2.0f), Brush.Companion.m4727verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4804getLightGray0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new FavoriteButtonShape());
                 Alignment center = Alignment.Companion.getCenter();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(center, false);
@@ -119,7 +119,7 @@ public final class FavoriteButtonKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1128560934, "C46@1899L19,46@1883L201:FavoriteButton.kt#2ojkxh");
-                ImageKt.Image(PainterResources_androidKt.painterResource(z ? R.drawable.select_server_favorite_true : R.drawable.select_server_favorite_false, startRestartGroup, 0), (String) null, OffsetKt.m778offsetVpY3zN4$default(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(18)), Dp.m7555constructorimpl(-Dp.m7555constructorimpl(1)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
+                ImageKt.Image(PainterResources_androidKt.painterResource(z ? R.drawable.select_server_favorite_true : R.drawable.select_server_favorite_false, startRestartGroup, 0), (String) null, OffsetKt.m778offsetVpY3zN4$default(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(18.0f)), Dp.m7555constructorimpl(-Dp.m7555constructorimpl(1.0f)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 startRestartGroup.endNode();

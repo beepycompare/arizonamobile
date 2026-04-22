@@ -6,6 +6,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
@@ -58,10 +59,10 @@ public final class CarInfoSecondScreenListAdapter extends ListAdapter<CarInfoSec
         return new ViewHolder(inflate);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x0188, code lost:
-        if (r9.intValue() != 4) goto L41;
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x0187, code lost:
+        if (r8.intValue() != 4) goto L41;
      */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x01b7  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x01b6  */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -69,16 +70,14 @@ public final class CarInfoSecondScreenListAdapter extends ListAdapter<CarInfoSec
     public void onBindViewHolder(ViewHolder holder, int i) {
         String str;
         CarsRarity rarity;
-        CarsRarity rarity2;
         Intrinsics.checkNotNullParameter(holder, "holder");
         CarsSecondScreenCarParamItemBinding binding = holder.getBinding();
         DisplayMetrics displayMetrics = new DisplayMetrics();
         this.activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int i2 = displayMetrics.widthPixels;
         int i3 = displayMetrics.heightPixels;
-        double d = 100;
-        binding.carsFirstScreenCarParamItem.getLayoutParams().width = (int) ((i2 * 11.56d) / d);
-        binding.carsFirstScreenCarParamItem.getLayoutParams().height = (int) ((i3 * 6.94d) / d);
+        binding.carsFirstScreenCarParamItem.getLayoutParams().width = (int) ((i2 * 11.56d) / 100.0d);
+        binding.carsFirstScreenCarParamItem.getLayoutParams().height = (int) ((i3 * 6.94d) / 100.0d);
         final CarInfoSecondScreen item = getItem(i);
         binding.itemValue.setText(item.getTitle());
         if (item.getRarity() != null) {
@@ -112,8 +111,8 @@ public final class CarInfoSecondScreenListAdapter extends ListAdapter<CarInfoSec
         String str2 = "#FFFFFF";
         String str3 = "#40000000";
         if (item.getRarity() != null) {
-            CarsRarity rarity3 = item.getRarity();
-            Integer valueOf = rarity3 != null ? Integer.valueOf(rarity3.getRarity()) : null;
+            CarsRarity rarity2 = item.getRarity();
+            Integer valueOf = rarity2 != null ? Integer.valueOf(rarity2.getRarity()) : null;
             if (valueOf != null && valueOf.intValue() == 0) {
                 str = "случайное";
             } else if (valueOf != null && valueOf.intValue() == 1) {
@@ -123,8 +122,8 @@ public final class CarInfoSecondScreenListAdapter extends ListAdapter<CarInfoSec
             } else {
                 str = (valueOf != null && valueOf.intValue() == 4) ? "идеальное" : "";
             }
-            CarsRarity rarity4 = item.getRarity();
-            Integer valueOf2 = rarity4 != null ? Integer.valueOf(rarity4.getRarity()) : null;
+            CarsRarity rarity3 = item.getRarity();
+            Integer valueOf2 = rarity3 != null ? Integer.valueOf(rarity3.getRarity()) : null;
             if (valueOf2 != null && valueOf2.intValue() == 1) {
                 str3 = "#408F8F8F";
             } else if (valueOf2 != null && valueOf2.intValue() == 2) {
@@ -132,8 +131,8 @@ public final class CarInfoSecondScreenListAdapter extends ListAdapter<CarInfoSec
             } else if (valueOf2 != null && valueOf2.intValue() == 4) {
                 str3 = "#40FFCC00";
             }
-            CarsRarity rarity5 = item.getRarity();
-            Integer valueOf3 = rarity5 != null ? Integer.valueOf(rarity5.getRarity()) : null;
+            CarsRarity rarity4 = item.getRarity();
+            Integer valueOf3 = rarity4 != null ? Integer.valueOf(rarity4.getRarity()) : null;
             if (valueOf3 == null || valueOf3.intValue() != 0) {
                 if (valueOf3 != null && valueOf3.intValue() == 1) {
                     str2 = "#8F8F8F";
@@ -147,7 +146,9 @@ public final class CarInfoSecondScreenListAdapter extends ListAdapter<CarInfoSec
                     binding.itemIc.setVisibility(0);
                     binding.itemIc.setImageResource(R.drawable.transport_random_ic);
                 } else {
-                    binding.itemValue.setText(str + " (" + (item.getRarity() != null ? Integer.valueOf(rarity2.getRarityLevel()) : null) + ")");
+                    TextView textView = binding.itemValue;
+                    CarsRarity rarity5 = item.getRarity();
+                    textView.setText(str + " (" + (rarity5 != null ? Integer.valueOf(rarity5.getRarityLevel()) : null) + ")");
                     binding.itemIc.setVisibility(8);
                 }
                 binding.bg.setBackground(Color.parseColor(str3));
@@ -158,7 +159,9 @@ public final class CarInfoSecondScreenListAdapter extends ListAdapter<CarInfoSec
             rarity = item.getRarity();
             if (rarity == null) {
             }
-            binding.itemValue.setText(str + " (" + (item.getRarity() != null ? Integer.valueOf(rarity2.getRarityLevel()) : null) + ")");
+            TextView textView2 = binding.itemValue;
+            CarsRarity rarity52 = item.getRarity();
+            textView2.setText(str + " (" + (rarity52 != null ? Integer.valueOf(rarity52.getRarityLevel()) : null) + ")");
             binding.itemIc.setVisibility(8);
             binding.bg.setBackground(Color.parseColor(str3));
             binding.itemValue.setTextColor(Color.parseColor(str2));

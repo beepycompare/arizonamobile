@@ -469,63 +469,78 @@ public final class GraphicsViewLayer implements GraphicsLayerImpl {
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
     public void record(Density density, LayoutDirection layoutDirection, GraphicsLayer graphicsLayer, Function1<? super DrawScope, Unit> function1) {
+        Picture picture;
         CanvasHolder canvasHolder;
         Canvas canvas;
         if (this.viewLayer.getParent() == null) {
             this.layerContainer.addView(this.viewLayer);
         }
         this.viewLayer.setDrawParams(density, layoutDirection, graphicsLayer, function1);
-        if (this.viewLayer.isAttachedToWindow()) {
-            this.viewLayer.setVisibility(4);
-            this.viewLayer.setVisibility(0);
-            recordDrawingOperations();
-            Picture picture = this.picture;
-            if (picture != null) {
-                long j = this.size;
-                Canvas beginRecording = picture.beginRecording((int) (j >> 32), (int) (j & 4294967295L));
-                try {
-                    CanvasHolder canvasHolder2 = this.pictureCanvasHolder;
-                    if (canvasHolder2 != null) {
-                        Canvas internalCanvas = canvasHolder2.getAndroidCanvas().getInternalCanvas();
-                        canvasHolder2.getAndroidCanvas().setInternalCanvas(beginRecording);
-                        AndroidCanvas androidCanvas = canvasHolder2.getAndroidCanvas();
-                        CanvasDrawScope canvasDrawScope = this.pictureDrawScope;
-                        if (canvasDrawScope != null) {
-                            CanvasDrawScope canvasDrawScope2 = canvasDrawScope;
-                            long m7738toSizeozmzZPI = IntSizeKt.m7738toSizeozmzZPI(this.size);
-                            Density density2 = canvasDrawScope2.getDrawContext().getDensity();
-                            LayoutDirection layoutDirection2 = canvasDrawScope2.getDrawContext().getLayoutDirection();
-                            androidx.compose.ui.graphics.Canvas canvas2 = canvasDrawScope2.getDrawContext().getCanvas();
-                            canvasHolder = canvasHolder2;
-                            canvas = internalCanvas;
-                            long mo5267getSizeNHjbRc = canvasDrawScope2.getDrawContext().mo5267getSizeNHjbRc();
-                            GraphicsLayer graphicsLayer2 = canvasDrawScope2.getDrawContext().getGraphicsLayer();
-                            DrawContext drawContext = canvasDrawScope2.getDrawContext();
-                            drawContext.setDensity(density);
-                            drawContext.setLayoutDirection(layoutDirection);
-                            drawContext.setCanvas(androidCanvas);
-                            drawContext.mo5268setSizeuvyYCjk(m7738toSizeozmzZPI);
-                            drawContext.setGraphicsLayer(graphicsLayer);
-                            androidCanvas.save();
-                            function1.invoke(canvasDrawScope2);
-                            androidCanvas.restore();
-                            DrawContext drawContext2 = canvasDrawScope2.getDrawContext();
-                            drawContext2.setDensity(density2);
-                            drawContext2.setLayoutDirection(layoutDirection2);
-                            drawContext2.setCanvas(canvas2);
-                            drawContext2.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
-                            drawContext2.setGraphicsLayer(graphicsLayer2);
-                        } else {
-                            canvasHolder = canvasHolder2;
-                            canvas = internalCanvas;
-                        }
-                        canvasHolder.getAndroidCanvas().setInternalCanvas(canvas);
-                        Unit unit = Unit.INSTANCE;
+        if (!this.viewLayer.isAttachedToWindow()) {
+            return;
+        }
+        this.viewLayer.setVisibility(4);
+        this.viewLayer.setVisibility(0);
+        recordDrawingOperations();
+        Picture picture2 = this.picture;
+        if (picture2 == null) {
+            return;
+        }
+        long j = this.size;
+        Canvas beginRecording = picture2.beginRecording((int) (j >> 32), (int) (j & 4294967295L));
+        try {
+            CanvasHolder canvasHolder2 = this.pictureCanvasHolder;
+            if (canvasHolder2 != null) {
+                Canvas internalCanvas = canvasHolder2.getAndroidCanvas().getInternalCanvas();
+                canvasHolder2.getAndroidCanvas().setInternalCanvas(beginRecording);
+                AndroidCanvas androidCanvas = canvasHolder2.getAndroidCanvas();
+                CanvasDrawScope canvasDrawScope = this.pictureDrawScope;
+                if (canvasDrawScope != null) {
+                    CanvasDrawScope canvasDrawScope2 = canvasDrawScope;
+                    long m7738toSizeozmzZPI = IntSizeKt.m7738toSizeozmzZPI(this.size);
+                    Density density2 = canvasDrawScope2.getDrawContext().getDensity();
+                    LayoutDirection layoutDirection2 = canvasDrawScope2.getDrawContext().getLayoutDirection();
+                    androidx.compose.ui.graphics.Canvas canvas2 = canvasDrawScope2.getDrawContext().getCanvas();
+                    canvasHolder = canvasHolder2;
+                    canvas = internalCanvas;
+                    long mo5267getSizeNHjbRc = canvasDrawScope2.getDrawContext().mo5267getSizeNHjbRc();
+                    picture = picture2;
+                    try {
+                        GraphicsLayer graphicsLayer2 = canvasDrawScope2.getDrawContext().getGraphicsLayer();
+                        DrawContext drawContext = canvasDrawScope2.getDrawContext();
+                        drawContext.setDensity(density);
+                        drawContext.setLayoutDirection(layoutDirection);
+                        drawContext.setCanvas(androidCanvas);
+                        drawContext.mo5268setSizeuvyYCjk(m7738toSizeozmzZPI);
+                        drawContext.setGraphicsLayer(graphicsLayer);
+                        androidCanvas.save();
+                        function1.invoke(canvasDrawScope2);
+                        androidCanvas.restore();
+                        DrawContext drawContext2 = canvasDrawScope2.getDrawContext();
+                        drawContext2.setDensity(density2);
+                        drawContext2.setLayoutDirection(layoutDirection2);
+                        drawContext2.setCanvas(canvas2);
+                        drawContext2.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
+                        drawContext2.setGraphicsLayer(graphicsLayer2);
+                    } catch (Throwable th) {
+                        th = th;
+                        picture.endRecording();
+                        throw th;
                     }
-                } finally {
-                    picture.endRecording();
+                } else {
+                    picture = picture2;
+                    canvasHolder = canvasHolder2;
+                    canvas = internalCanvas;
                 }
+                canvasHolder.getAndroidCanvas().setInternalCanvas(canvas);
+                Unit unit = Unit.INSTANCE;
+            } else {
+                picture = picture2;
             }
+            picture.endRecording();
+        } catch (Throwable th2) {
+            th = th2;
+            picture = picture2;
         }
     }
 

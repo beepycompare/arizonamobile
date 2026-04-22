@@ -69,8 +69,8 @@ public interface WindowMetricsCalculator {
                 /*
                     r0 = this;
                     androidx.window.layout.WindowMetricsCalculator r1 = (androidx.window.layout.WindowMetricsCalculator) r1
-                    androidx.window.layout.WindowMetricsCalculator r1 = androidx.window.layout.WindowMetricsCalculator.Companion.decorator$lambda$0(r1)
-                    return r1
+                    androidx.window.layout.WindowMetricsCalculator r0 = androidx.window.layout.WindowMetricsCalculator.Companion.decorator$lambda$0(r1)
+                    return r0
                 */
                 throw new UnsupportedOperationException("Method not decompiled: androidx.window.layout.WindowMetricsCalculator$Companion$$ExternalSyntheticLambda1.invoke(java.lang.Object):java.lang.Object");
             }
@@ -150,8 +150,8 @@ public interface WindowMetricsCalculator {
                     /*
                         r0 = this;
                         androidx.window.layout.WindowMetricsCalculator r1 = (androidx.window.layout.WindowMetricsCalculator) r1
-                        androidx.window.layout.WindowMetricsCalculator r1 = androidx.window.layout.WindowMetricsCalculator.Companion.reset$lambda$1(r1)
-                        return r1
+                        androidx.window.layout.WindowMetricsCalculator r0 = androidx.window.layout.WindowMetricsCalculator.Companion.reset$lambda$1(r1)
+                        return r0
                     */
                     throw new UnsupportedOperationException("Method not decompiled: androidx.window.layout.WindowMetricsCalculator$Companion$$ExternalSyntheticLambda0.invoke(java.lang.Object):java.lang.Object");
                 }

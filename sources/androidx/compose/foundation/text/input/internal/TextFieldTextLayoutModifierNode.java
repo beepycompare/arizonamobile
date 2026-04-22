@@ -80,7 +80,7 @@ public final class TextFieldTextLayoutModifierNode extends DelegatingNode implem
         if (this.singleLine) {
             m7555constructorimpl = measureScope.mo402toDpu2uoSUM(TextDelegateKt.ceilToIntPx(m1451layoutWithNewMeasureInputshBUhpc.getLineBottom(0)));
         } else {
-            m7555constructorimpl = Dp.m7555constructorimpl(0);
+            m7555constructorimpl = Dp.m7555constructorimpl(0.0f);
         }
         textLayoutState.m1452setMinHeightForSingleLineField0680j_4(m7555constructorimpl);
         LinkedHashMap linkedHashMap = this.baselineCache;
@@ -90,11 +90,9 @@ public final class TextFieldTextLayoutModifierNode extends DelegatingNode implem
         linkedHashMap.put(AlignmentLineKt.getFirstBaseline(), Integer.valueOf(Math.round(m1451layoutWithNewMeasureInputshBUhpc.getFirstBaseline())));
         linkedHashMap.put(AlignmentLineKt.getLastBaseline(), Integer.valueOf(Math.round(m1451layoutWithNewMeasureInputshBUhpc.getLastBaseline())));
         this.baselineCache = linkedHashMap;
-        int m6974getSizeYbymL2g = (int) (m1451layoutWithNewMeasureInputshBUhpc.m6974getSizeYbymL2g() >> 32);
-        int m6974getSizeYbymL2g2 = (int) (m1451layoutWithNewMeasureInputshBUhpc.m6974getSizeYbymL2g() & 4294967295L);
         Map<AlignmentLine, Integer> map = this.baselineCache;
         Intrinsics.checkNotNull(map);
-        return measureScope.layout(m6974getSizeYbymL2g, m6974getSizeYbymL2g2, map, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldTextLayoutModifierNode$$ExternalSyntheticLambda0
+        return measureScope.layout((int) (m1451layoutWithNewMeasureInputshBUhpc.m6974getSizeYbymL2g() >> 32), (int) (m1451layoutWithNewMeasureInputshBUhpc.m6974getSizeYbymL2g() & 4294967295L), map, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldTextLayoutModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return TextFieldTextLayoutModifierNode.measure_3p2s80s$lambda$0(Placeable.this, (Placeable.PlacementScope) obj);

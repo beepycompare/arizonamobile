@@ -9,7 +9,6 @@ import androidx.compose.foundation.OverscrollEffect;
 import androidx.compose.foundation.gestures.snapping.SnapFlingBehaviorKt;
 import androidx.compose.foundation.gestures.snapping.SnapLayoutInfoProvider;
 import androidx.compose.foundation.interaction.MutableInteractionSource;
-import androidx.compose.runtime.ComposerImplKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.input.pointer.PointerType;
 import androidx.compose.ui.unit.Density;
@@ -55,7 +54,7 @@ public final class AnchoredDraggableKt {
             return Float.valueOf(AnchoredDraggableKt.GetOrNan$lambda$0(((Integer) obj).intValue()));
         }
     };
-    private static final float AnchoredDraggableMinFlingVelocity = Dp.m7555constructorimpl((float) ComposerImplKt.nodeKey);
+    private static final float AnchoredDraggableMinFlingVelocity = Dp.m7555constructorimpl(125.0f);
     private static final DecayAnimationSpec<Float> NoOpDecayAnimationSpec = DecayAnimationSpecKt.generateDecayAnimationSpec(new FloatDecayAnimationSpec() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableKt$NoOpDecayAnimationSpec$1
         private final float absVelocityThreshold;
 
@@ -500,7 +499,7 @@ public final class AnchoredDraggableKt {
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 float mo405toPx0680j_4;
-                mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(Dp.m7555constructorimpl((float) ComposerImplKt.nodeKey));
+                mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(Dp.m7555constructorimpl(125.0f));
                 return Float.valueOf(mo405toPx0680j_4);
             }
         }), NoOpDecayAnimationSpec, animationSpec);

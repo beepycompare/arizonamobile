@@ -8,8 +8,8 @@ import kotlin.Metadata;
 public final class ButtonGroupSmallTokens {
     public static final int $stable = 0;
     public static final ButtonGroupSmallTokens INSTANCE = new ButtonGroupSmallTokens();
-    private static final float BetweenSpace = Dp.m7555constructorimpl((float) 12.0d);
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 40.0d);
+    private static final float BetweenSpace = Dp.m7555constructorimpl(12.0f);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(40.0f);
 
     private ButtonGroupSmallTokens() {
     }

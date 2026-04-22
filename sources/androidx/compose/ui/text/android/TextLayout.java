@@ -62,12 +62,12 @@ public final class TextLayout {
     }
 
     public TextLayout(CharSequence charSequence, float f, TextPaint textPaint, int i, TextUtils.TruncateAt truncateAt, int i2, float f2, float f3, boolean z, boolean z2, int i3, int i4, int i5, int i6, int i7, int i8, int[] iArr, int[] iArr2, LayoutIntrinsics layoutIntrinsics) {
-        boolean z3;
         int i9;
         int i10;
         TextDirectionHeuristic textDirectionHeuristic;
+        boolean z3;
         TextPaint textPaint2;
-        StaticLayout create;
+        Layout create;
         LineHeightStyleSpan[] lineHeightSpans;
         boolean z4;
         long verticalPaddings;
@@ -86,26 +86,27 @@ public final class TextLayout {
         Layout.Alignment alignment = TextAlignmentAdapter.INSTANCE.get(i);
         boolean z5 = (charSequence instanceof Spanned) && ((Spanned) charSequence).nextSpanTransition(-1, length, BaselineShiftSpan.class) < length;
         Trace.beginSection("TextLayout:initLayout");
+        boolean z6 = z5;
         try {
             BoringLayout.Metrics boringMetrics = layoutIntrinsics.getBoringMetrics();
             double d = f;
             int ceil = (int) Math.ceil(d);
-            if (boringMetrics != null && layoutIntrinsics.getMaxIntrinsicWidth() <= f && !z5) {
-                z3 = true;
+            if (boringMetrics != null && layoutIntrinsics.getMaxIntrinsicWidth() <= f && !z6) {
                 this.isBoringLayout = true;
-                create = BoringLayoutFactory.INSTANCE.create(charSequence, textPaint, ceil, boringMetrics, alignment, z, z2, truncateAt, ceil);
                 textPaint2 = textPaint;
                 i9 = i3;
+                create = BoringLayoutFactory.INSTANCE.create(charSequence, textPaint, ceil, boringMetrics, alignment, z, z2, truncateAt, ceil);
                 textDirectionHeuristic = textDirectionHeuristic2;
+                z3 = true;
                 i10 = false;
             } else {
-                z3 = true;
                 this.isBoringLayout = false;
                 i9 = i3;
                 i10 = false;
                 textDirectionHeuristic = textDirectionHeuristic2;
+                z3 = true;
                 textPaint2 = textPaint;
-                create = StaticLayoutFactory.INSTANCE.create(charSequence, textPaint2, ceil, 0, charSequence.length(), textDirectionHeuristic, alignment, i9, truncateAt, (int) Math.ceil(d), f2, f3, i8, z, z2, i4, i5, i6, i7, iArr, iArr2);
+                create = StaticLayoutFactory.INSTANCE.create(charSequence, textPaint, ceil, 0, charSequence.length(), textDirectionHeuristic, alignment, i9, truncateAt, (int) Math.ceil(d), f2, f3, i8, z, z2, i4, i5, i6, i7, iArr, iArr2);
             }
             this.layout = create;
             Trace.endSection();
@@ -120,10 +121,10 @@ public final class TextLayout {
             } else {
                 z4 = (lineHeightStyleSpan2.getTrimFirstLineTop() && LineHeightStyle.Mode.m7406equalsimpl0(lineHeightStyleSpan2.m7059getModelzQqcRY(), LineHeightStyle.Mode.Companion.m7412getTightlzQqcRY())) ? z3 : i10;
             }
-            boolean z6 = (lineHeightSpans == null || (lineHeightStyleSpan = (LineHeightStyleSpan) ArraysKt.firstOrNull(lineHeightSpans)) == null || !lineHeightStyleSpan.getTrimLastLineBottom() || !LineHeightStyle.Mode.m7406equalsimpl0(lineHeightStyleSpan.m7059getModelzQqcRY(), LineHeightStyle.Mode.Companion.m7412getTightlzQqcRY())) ? i10 : z3;
-            if (!z4 || !z6) {
+            boolean z7 = (lineHeightSpans == null || (lineHeightStyleSpan = (LineHeightStyleSpan) ArraysKt.firstOrNull(lineHeightSpans)) == null || !lineHeightStyleSpan.getTrimLastLineBottom() || !LineHeightStyle.Mode.m7406equalsimpl0(lineHeightStyleSpan.m7059getModelzQqcRY(), LineHeightStyle.Mode.Companion.m7412getTightlzQqcRY())) ? i10 : z3;
+            if (!z4 || !z7) {
                 verticalPaddings = TextLayout_androidKt.getVerticalPaddings(this);
-                VerticalPaddings = TextLayout_androidKt.VerticalPaddings(z4 ? i10 : VerticalPaddings.m7055getTopPaddingimpl(verticalPaddings), z6 ? i10 : VerticalPaddings.m7054getBottomPaddingimpl(verticalPaddings));
+                VerticalPaddings = TextLayout_androidKt.VerticalPaddings(z4 ? i10 : VerticalPaddings.m7055getTopPaddingimpl(verticalPaddings), z7 ? i10 : VerticalPaddings.m7054getBottomPaddingimpl(verticalPaddings));
             } else {
                 VerticalPaddings = TextLayout_androidKt.ZeroVerticalPadding;
             }
@@ -359,7 +360,7 @@ public final class TextLayout {
     }
 
     public final int getOffsetForHorizontal(int i, float f) {
-        return this.layout.getOffsetForHorizontal(i, f + ((-1) * getHorizontalPadding(i)));
+        return this.layout.getOffsetForHorizontal(i, f + ((-1.0f) * getHorizontalPadding(i)));
     }
 
     public static /* synthetic */ float getPrimaryHorizontal$default(TextLayout textLayout, int i, boolean z, int i2, Object obj) {
@@ -556,7 +557,7 @@ public final class TextLayout {
                 textAndroidCanvas2.set_nativeCanvas$ui_text(null);
                 int i2 = this.topPadding;
                 if (i2 != 0) {
-                    canvas.translate(0.0f, (-1) * i2);
+                    canvas.translate(0.0f, (-1.0f) * i2);
                 }
             } catch (Throwable th) {
                 textAndroidCanvas2.set_nativeCanvas$ui_text(null);

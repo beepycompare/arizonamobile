@@ -87,7 +87,7 @@ public final class ViewTargetRequestDelegate implements RequestDelegate, Default
         }
     }
 
-    /* JADX WARN: Type inference failed for: r1v2, types: [android.view.View] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [android.view.View] */
     @Override // androidx.lifecycle.DefaultLifecycleObserver
     public void onDestroy(LifecycleOwner lifecycleOwner) {
         ViewTargetRequestManagerKt.getRequestManager(this.target.getView()).dispose();

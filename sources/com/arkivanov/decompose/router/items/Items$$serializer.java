@@ -59,8 +59,8 @@ public /* synthetic */ class Items$$serializer<C> implements GeneratedSerializer
 
     @Override // kotlinx.serialization.DeserializationStrategy
     public final Items<C> deserialize(Decoder decoder) {
-        List list;
         Map map;
+        List list;
         int i;
         Intrinsics.checkNotNullParameter(decoder, "decoder");
         SerialDescriptor serialDescriptor = this.descriptor;
@@ -72,14 +72,14 @@ public /* synthetic */ class Items$$serializer<C> implements GeneratedSerializer
         } else {
             boolean z = true;
             int i2 = 0;
-            list = null;
             Map map2 = null;
+            List list2 = null;
             while (z) {
                 int decodeElementIndex = beginStructure.decodeElementIndex(serialDescriptor);
                 if (decodeElementIndex == -1) {
                     z = false;
                 } else if (decodeElementIndex == 0) {
-                    list = (List) beginStructure.decodeSerializableElement(serialDescriptor, 0, new ArrayListSerializer(this.typeSerial0), list);
+                    list2 = (List) beginStructure.decodeSerializableElement(serialDescriptor, 0, new ArrayListSerializer(this.typeSerial0), list2);
                     i2 |= 1;
                 } else if (decodeElementIndex != 1) {
                     throw new UnknownFieldException(decodeElementIndex);
@@ -89,6 +89,7 @@ public /* synthetic */ class Items$$serializer<C> implements GeneratedSerializer
                 }
             }
             map = map2;
+            list = list2;
             i = i2;
         }
         beginStructure.endStructure(serialDescriptor);

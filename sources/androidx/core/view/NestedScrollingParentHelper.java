@@ -23,7 +23,7 @@ public class NestedScrollingParentHelper {
     }
 
     public int getNestedScrollAxes() {
-        return this.mNestedScrollAxesTouch | this.mNestedScrollAxesNonTouch;
+        return this.mNestedScrollAxesNonTouch | this.mNestedScrollAxesTouch;
     }
 
     public void onStopNestedScroll(View view) {

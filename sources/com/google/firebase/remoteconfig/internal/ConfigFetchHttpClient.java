@@ -233,7 +233,7 @@ public class ConfigFetchHttpClient {
 
     private boolean backendHasUpdates(JSONObject jSONObject) {
         try {
-            return !jSONObject.get(RemoteConfigConstants.ResponseFieldKey.STATE).equals("NO_CHANGE");
+            return true ^ jSONObject.get(RemoteConfigConstants.ResponseFieldKey.STATE).equals("NO_CHANGE");
         } catch (JSONException unused) {
             return true;
         }

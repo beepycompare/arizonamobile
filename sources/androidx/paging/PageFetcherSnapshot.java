@@ -594,134 +594,132 @@ public final class PageFetcherSnapshot<Key, Value> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:181:0x05c6, code lost:
-        if (r2.lock(null, r3) != r4) goto L13;
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x01eb, code lost:
+        if (r2.lock(null, r3) == r4) goto L155;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x01f0, code lost:
-        if (r2.lock(null, r3) == r4) goto L161;
-     */
+    /* JADX WARN: Finally extract failed */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x002d  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x0430  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0444  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x042c  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0440  */
     /* JADX WARN: Removed duplicated region for block: B:12:0x0035  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x04cc A[Catch: all -> 0x05f9, TRY_LEAVE, TryCatch #6 {all -> 0x05f9, blocks: (B:142:0x04be, B:144:0x04cc), top: B:253:0x04be }] */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x0504  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0520 A[Catch: all -> 0x00b4, TryCatch #3 {all -> 0x00b4, blocks: (B:148:0x04fb, B:150:0x0507, B:152:0x0520, B:154:0x052c, B:156:0x0534, B:158:0x0541, B:157:0x053b, B:159:0x0546, B:163:0x0576, B:14:0x0081, B:17:0x00af), top: B:247:0x002a }] */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0534 A[Catch: all -> 0x00b4, TryCatch #3 {all -> 0x00b4, blocks: (B:148:0x04fb, B:150:0x0507, B:152:0x0520, B:154:0x052c, B:156:0x0534, B:158:0x0541, B:157:0x053b, B:159:0x0546, B:163:0x0576, B:14:0x0081, B:17:0x00af), top: B:247:0x002a }] */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x053b A[Catch: all -> 0x00b4, TryCatch #3 {all -> 0x00b4, blocks: (B:148:0x04fb, B:150:0x0507, B:152:0x0520, B:154:0x052c, B:156:0x0534, B:158:0x0541, B:157:0x053b, B:159:0x0546, B:163:0x0576, B:14:0x0081, B:17:0x00af), top: B:247:0x002a }] */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x056e  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x0570  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x0607  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x0661  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x00b8  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0120  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x014a  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x016d  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0190  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x01b1  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x01cb  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x02ee A[Catch: all -> 0x06a5, TRY_LEAVE, TryCatch #4 {all -> 0x06a5, blocks: (B:71:0x02d5, B:73:0x02ee), top: B:249:0x02d5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0310  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0320  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0388  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x04c9 A[Catch: all -> 0x008a, TRY_LEAVE, TryCatch #5 {all -> 0x008a, blocks: (B:145:0x04bb, B:147:0x04c9, B:154:0x0506, B:156:0x051f, B:158:0x052b, B:160:0x0533, B:162:0x0540, B:161:0x053a, B:163:0x0545, B:167:0x0573, B:14:0x0080), top: B:253:0x0080 }] */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x0504  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x051f A[Catch: all -> 0x008a, TryCatch #5 {all -> 0x008a, blocks: (B:145:0x04bb, B:147:0x04c9, B:154:0x0506, B:156:0x051f, B:158:0x052b, B:160:0x0533, B:162:0x0540, B:161:0x053a, B:163:0x0545, B:167:0x0573, B:14:0x0080), top: B:253:0x0080 }] */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x0533 A[Catch: all -> 0x008a, TryCatch #5 {all -> 0x008a, blocks: (B:145:0x04bb, B:147:0x04c9, B:154:0x0506, B:156:0x051f, B:158:0x052b, B:160:0x0533, B:162:0x0540, B:161:0x053a, B:163:0x0545, B:167:0x0573, B:14:0x0080), top: B:253:0x0080 }] */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x053a A[Catch: all -> 0x008a, TryCatch #5 {all -> 0x008a, blocks: (B:145:0x04bb, B:147:0x04c9, B:154:0x0506, B:156:0x051f, B:158:0x052b, B:160:0x0533, B:162:0x0540, B:161:0x053a, B:163:0x0545, B:167:0x0573, B:14:0x0080), top: B:253:0x0080 }] */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x056d  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x056f  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x05c7  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x05e1  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x05ea  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0606  */
+    /* JADX WARN: Removed duplicated region for block: B:215:0x0661  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00ba  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00e7  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x011c  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0145  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x01ac  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x01c6  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x02e9 A[Catch: all -> 0x06a0, TRY_LEAVE, TryCatch #0 {all -> 0x06a0, blocks: (B:74:0x02d0, B:76:0x02e9), top: B:243:0x02d0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x030b  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x031b  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0383  */
     /* JADX WARN: Type inference failed for: r17v0, types: [androidx.paging.PageFetcherSnapshot, androidx.paging.PageFetcherSnapshot<Key, Value>] */
-    /* JADX WARN: Type inference failed for: r2v11, types: [T] */
-    /* JADX WARN: Type inference failed for: r2v12 */
-    /* JADX WARN: Type inference failed for: r2v9 */
-    /* JADX WARN: Type inference failed for: r5v0, types: [int] */
-    /* JADX WARN: Type inference failed for: r5v1 */
-    /* JADX WARN: Type inference failed for: r5v2, types: [kotlinx.coroutines.sync.Mutex] */
-    /* JADX WARN: Type inference failed for: r5v41, types: [java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r5v47 */
-    /* JADX WARN: Type inference failed for: r5v75 */
-    /* JADX WARN: Type inference failed for: r9v44, types: [T, java.lang.Object] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:177:0x059d -> B:189:0x05ee). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:179:0x05a1 -> B:189:0x05ee). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:181:0x05c6 -> B:245:0x05ca). Please submit an issue!!! */
+    /* JADX WARN: Type inference failed for: r1v0, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r1v1, types: [kotlinx.coroutines.sync.Mutex] */
+    /* JADX WARN: Type inference failed for: r1v30, types: [kotlinx.coroutines.sync.Mutex] */
+    /* JADX WARN: Type inference failed for: r2v10, types: [T] */
+    /* JADX WARN: Type inference failed for: r2v11 */
+    /* JADX WARN: Type inference failed for: r2v8 */
+    /* JADX WARN: Type inference failed for: r8v28, types: [T, java.lang.Object] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:181:0x059a -> B:194:0x05f1). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:183:0x059e -> B:194:0x05f1). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:187:0x05c7 -> B:249:0x05cd). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object doLoad(LoadType loadType, GenerationalViewportHint generationalViewportHint, Continuation<? super Unit> continuation) {
         PageFetcherSnapshot$doLoad$1 pageFetcherSnapshot$doLoad$1;
-        Mutex mutex;
         Ref.IntRef intRef;
         PageFetcherSnapshotState.Holder<Key, Value> holder;
-        Mutex mutex2;
+        Mutex mutex;
         GenerationalViewportHint generationalViewportHint2;
-        PageFetcherSnapshotState.Holder<Key, Value> holder2;
-        Mutex mutex3;
-        Ref.IntRef intRef2;
         LoadType loadType2;
+        PageFetcherSnapshotState.Holder<Key, Value> holder2;
+        Mutex mutex2;
+        Ref.IntRef intRef2;
+        LoadType loadType3;
         Ref.ObjectRef objectRef;
         GenerationalViewportHint generationalViewportHint3;
         Ref.ObjectRef objectRef2;
-        Mutex mutex4;
+        Mutex mutex3;
         Object nextLoadKeyOrNull;
         ?? r2;
         Object obj;
         Ref.BooleanRef booleanRef;
         Ref.IntRef intRef3;
         GenerationalViewportHint generationalViewportHint4;
-        LoadType loadType3;
+        LoadType loadType4;
         PagingSource.LoadParams<Key> loadParams;
         Ref.BooleanRef booleanRef2;
         Ref.ObjectRef objectRef3;
+        Mutex mutex4;
         PageFetcherSnapshotState.Holder<Key, Value> holder3;
         PagingSource.LoadResult loadResult;
-        Mutex mutex5;
         PageFetcherSnapshotState.Holder<Key, Value> holder4;
         PagingSource.LoadResult loadResult2;
-        Mutex mutex6;
         PageFetcherSnapshot$doLoad$1 pageFetcherSnapshot$doLoad$12;
-        LoadType loadType4;
-        PageFetcherSnapshotState pageFetcherSnapshotState;
-        Mutex mutex7;
-        GenerationalViewportHint generationalViewportHint5;
-        PageFetcherSnapshotState.Holder<Key, Value> holder5;
         LoadType loadType5;
+        PageFetcherSnapshotState pageFetcherSnapshotState;
+        GenerationalViewportHint generationalViewportHint5;
+        Mutex mutex5;
+        PageFetcherSnapshotState.Holder<Key, Value> holder5;
+        LoadType loadType6;
         PagingSource.LoadResult loadResult3;
         PagingSource.LoadParams<Key> loadParams2;
         Ref.BooleanRef booleanRef3;
         Ref.ObjectRef objectRef4;
         Ref.IntRef intRef4;
-        LoadType loadType6;
-        Mutex mutex8;
         GenerationalViewportHint generationalViewportHint6;
+        LoadType loadType7;
         PageFetcherSnapshotState pageFetcherSnapshotState2;
+        Mutex mutex6;
         PagingSource.LoadResult loadResult4;
         PagingSource.LoadParams<Key> loadParams3;
         Ref.BooleanRef booleanRef4;
         Ref.ObjectRef objectRef5;
         Ref.IntRef intRef5;
         GenerationalViewportHint generationalViewportHint7;
-        LoadType loadType7;
+        LoadType loadType8;
         PagingSource.LoadResult loadResult5;
         PagingSource.LoadParams<Key> loadParams4;
-        LoadType loadType8;
-        Throwable th;
+        LoadType loadType9;
+        Mutex mutex7;
         PageFetcherSnapshotState pageFetcherSnapshotState3;
         LoadState.Error error;
-        Mutex mutex9;
         int i;
         int i2;
         PageFetcherSnapshotState.Holder<Key, Value> holder6;
-        Mutex mutex10;
+        Mutex mutex8;
+        int i3;
+        int i4;
+        Mutex mutex9;
         PageFetcherSnapshotState pageFetcherSnapshotState4;
         PageEvent<Value> pageEvent$paging_common;
         Channel<PageEvent<Value>> channel;
-        Mutex mutex11;
         PageEvent.Drop<Value> dropEventOrNull;
-        Throwable th2;
-        LoadType loadType9;
+        Throwable th;
+        LoadType loadType10;
         PagingSource.LoadResult loadResult6;
         Object prevKey;
         Object obj2;
-        LoadType loadType10 = loadType;
+        Mutex mutex10 = loadType;
         try {
             if (continuation instanceof PageFetcherSnapshot$doLoad$1) {
                 pageFetcherSnapshot$doLoad$1 = (PageFetcherSnapshot$doLoad$1) continuation;
@@ -729,56 +727,56 @@ public final class PageFetcherSnapshot<Key, Value> {
                     pageFetcherSnapshot$doLoad$1.label -= Integer.MIN_VALUE;
                     Object obj3 = pageFetcherSnapshot$doLoad$1.result;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    mutex = pageFetcherSnapshot$doLoad$1.label;
                     boolean z = true;
                     z = true;
                     z = true;
-                    switch (mutex) {
+                    switch (pageFetcherSnapshot$doLoad$1.label) {
                         case 0:
                             ResultKt.throwOnFailure(obj3);
-                            if (loadType10 == LoadType.REFRESH) {
+                            if (mutex10 == LoadType.REFRESH) {
                                 throw new IllegalArgumentException("Use doInitialLoad for LoadType == REFRESH".toString());
                             }
                             intRef = new Ref.IntRef();
                             holder = this.stateHolder;
-                            mutex2 = ((PageFetcherSnapshotState.Holder) holder).lock;
-                            pageFetcherSnapshot$doLoad$1.L$0 = loadType10;
+                            mutex = ((PageFetcherSnapshotState.Holder) holder).lock;
+                            pageFetcherSnapshot$doLoad$1.L$0 = mutex10;
                             generationalViewportHint2 = generationalViewportHint;
                             pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint2;
                             pageFetcherSnapshot$doLoad$1.L$2 = intRef;
                             pageFetcherSnapshot$doLoad$1.L$3 = holder;
-                            pageFetcherSnapshot$doLoad$1.L$4 = mutex2;
+                            pageFetcherSnapshot$doLoad$1.L$4 = mutex;
                             pageFetcherSnapshot$doLoad$1.label = 1;
+                            loadType2 = mutex10;
                             break;
                         case 1:
                             holder = (PageFetcherSnapshotState.Holder) pageFetcherSnapshot$doLoad$1.L$3;
                             intRef = (Ref.IntRef) pageFetcherSnapshot$doLoad$1.L$2;
                             generationalViewportHint2 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
                             ResultKt.throwOnFailure(obj3);
-                            mutex2 = (Mutex) pageFetcherSnapshot$doLoad$1.L$4;
-                            loadType10 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
+                            mutex = (Mutex) pageFetcherSnapshot$doLoad$1.L$4;
+                            loadType2 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
                             try {
                                 PageFetcherSnapshotState pageFetcherSnapshotState5 = ((PageFetcherSnapshotState.Holder) holder).state;
-                                int i3 = WhenMappings.$EnumSwitchMapping$0[loadType10.ordinal()];
-                                if (i3 == 1) {
+                                int i5 = WhenMappings.$EnumSwitchMapping$0[loadType2.ordinal()];
+                                if (i5 == 1) {
                                     throw new IllegalStateException("Use doInitialLoad for LoadType == REFRESH");
                                 }
-                                if (i3 == 2) {
+                                if (i5 == 2) {
                                     int initialPageIndex$paging_common = (pageFetcherSnapshotState5.getInitialPageIndex$paging_common() + generationalViewportHint2.getHint().getOriginalPageOffsetFirst()) - 1;
                                     if (initialPageIndex$paging_common > CollectionsKt.getLastIndex(pageFetcherSnapshotState5.getPages$paging_common())) {
                                         intRef.element += this.config.pageSize * (initialPageIndex$paging_common - CollectionsKt.getLastIndex(pageFetcherSnapshotState5.getPages$paging_common()));
                                         initialPageIndex$paging_common = CollectionsKt.getLastIndex(pageFetcherSnapshotState5.getPages$paging_common());
                                     }
                                     if (initialPageIndex$paging_common >= 0) {
-                                        int i4 = 0;
+                                        int i6 = 0;
                                         while (true) {
-                                            intRef.element += pageFetcherSnapshotState5.getPages$paging_common().get(i4).getData().size();
-                                            if (i4 != initialPageIndex$paging_common) {
-                                                i4++;
+                                            intRef.element += pageFetcherSnapshotState5.getPages$paging_common().get(i6).getData().size();
+                                            if (i6 != initialPageIndex$paging_common) {
+                                                i6++;
                                             }
                                         }
                                     }
-                                } else if (i3 != 3) {
+                                } else if (i5 != 3) {
                                     throw new NoWhenBranchMatchedException();
                                 } else {
                                     int initialPageIndex$paging_common2 = pageFetcherSnapshotState5.getInitialPageIndex$paging_common() + generationalViewportHint2.getHint().getOriginalPageOffsetLast() + 1;
@@ -797,58 +795,58 @@ public final class PageFetcherSnapshot<Key, Value> {
                                     }
                                 }
                                 Unit unit = Unit.INSTANCE;
-                                mutex2.unlock(null);
+                                mutex.unlock(null);
                                 Ref.ObjectRef objectRef6 = new Ref.ObjectRef();
                                 PageFetcherSnapshotState.Holder<Key, Value> holder7 = this.stateHolder;
-                                Mutex mutex12 = ((PageFetcherSnapshotState.Holder) holder7).lock;
-                                pageFetcherSnapshot$doLoad$1.L$0 = loadType10;
+                                Mutex mutex11 = ((PageFetcherSnapshotState.Holder) holder7).lock;
+                                pageFetcherSnapshot$doLoad$1.L$0 = loadType2;
                                 pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint2;
                                 pageFetcherSnapshot$doLoad$1.L$2 = intRef;
                                 pageFetcherSnapshot$doLoad$1.L$3 = objectRef6;
                                 pageFetcherSnapshot$doLoad$1.L$4 = holder7;
-                                pageFetcherSnapshot$doLoad$1.L$5 = mutex12;
+                                pageFetcherSnapshot$doLoad$1.L$5 = mutex11;
                                 pageFetcherSnapshot$doLoad$1.L$6 = objectRef6;
                                 pageFetcherSnapshot$doLoad$1.label = 2;
-                                if (mutex12.lock(null, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
+                                if (mutex11.lock(null, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
                                     Ref.IntRef intRef6 = intRef;
                                     holder2 = holder7;
-                                    mutex3 = mutex12;
+                                    mutex2 = mutex11;
                                     intRef2 = intRef6;
-                                    loadType2 = loadType10;
+                                    loadType3 = loadType2;
                                     objectRef = objectRef6;
                                     generationalViewportHint3 = generationalViewportHint2;
                                     objectRef2 = objectRef;
                                     try {
                                         PageFetcherSnapshotState pageFetcherSnapshotState6 = ((PageFetcherSnapshotState.Holder) holder2).state;
-                                        nextLoadKeyOrNull = nextLoadKeyOrNull(pageFetcherSnapshotState6, loadType2, generationalViewportHint3.getGenerationId(), generationalViewportHint3.getHint().presentedItemsBeyondAnchor$paging_common(loadType2) + intRef2.element);
+                                        nextLoadKeyOrNull = nextLoadKeyOrNull(pageFetcherSnapshotState6, loadType3, generationalViewportHint3.getGenerationId(), generationalViewportHint3.getHint().presentedItemsBeyondAnchor$paging_common(loadType3) + intRef2.element);
                                         if (nextLoadKeyOrNull == null) {
-                                            pageFetcherSnapshot$doLoad$1.L$0 = loadType2;
+                                            pageFetcherSnapshot$doLoad$1.L$0 = loadType3;
                                             pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint3;
                                             pageFetcherSnapshot$doLoad$1.L$2 = intRef2;
                                             pageFetcherSnapshot$doLoad$1.L$3 = objectRef2;
-                                            pageFetcherSnapshot$doLoad$1.L$4 = mutex3;
+                                            pageFetcherSnapshot$doLoad$1.L$4 = mutex2;
                                             pageFetcherSnapshot$doLoad$1.L$5 = nextLoadKeyOrNull;
                                             pageFetcherSnapshot$doLoad$1.L$6 = objectRef;
                                             pageFetcherSnapshot$doLoad$1.label = 3;
-                                            if (setLoading(pageFetcherSnapshotState6, loadType2, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
-                                                mutex4 = mutex3;
+                                            if (setLoading(pageFetcherSnapshotState6, loadType3, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
+                                                mutex3 = mutex2;
                                                 obj = nextLoadKeyOrNull;
                                                 r2 = obj;
-                                                mutex3 = mutex4;
-                                                mutex3.unlock(null);
+                                                mutex2 = mutex3;
+                                                mutex2.unlock(null);
                                                 objectRef.element = r2;
                                                 booleanRef = new Ref.BooleanRef();
                                                 if (objectRef2.element != null) {
-                                                    PagingSource.LoadParams<Key> loadParams5 = loadParams(loadType2, objectRef2.element);
+                                                    PagingSource.LoadParams<Key> loadParams5 = loadParams(loadType3, objectRef2.element);
                                                     PagingLogger pagingLogger = PagingLogger.INSTANCE;
                                                     if (pagingLogger.isLoggable(3)) {
                                                         obj2 = null;
-                                                        pagingLogger.log(3, "Start " + loadType2 + " with loadKey " + objectRef2.element + " on " + this.pagingSource, null);
+                                                        pagingLogger.log(3, "Start " + loadType3 + " with loadKey " + objectRef2.element + " on " + this.pagingSource, null);
                                                     } else {
                                                         obj2 = null;
                                                     }
                                                     PagingSource<Key, Value> pagingSource = this.pagingSource;
-                                                    pageFetcherSnapshot$doLoad$1.L$0 = loadType2;
+                                                    pageFetcherSnapshot$doLoad$1.L$0 = loadType3;
                                                     pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint3;
                                                     pageFetcherSnapshot$doLoad$1.L$2 = intRef2;
                                                     pageFetcherSnapshot$doLoad$1.L$3 = objectRef2;
@@ -860,7 +858,7 @@ public final class PageFetcherSnapshot<Key, Value> {
                                                     Object load = pagingSource.load(loadParams5, pageFetcherSnapshot$doLoad$1);
                                                     if (load != coroutine_suspended) {
                                                         generationalViewportHint4 = generationalViewportHint3;
-                                                        loadType3 = loadType2;
+                                                        loadType4 = loadType3;
                                                         objectRef3 = objectRef2;
                                                         intRef3 = intRef2;
                                                         booleanRef2 = booleanRef;
@@ -868,20 +866,20 @@ public final class PageFetcherSnapshot<Key, Value> {
                                                         obj3 = load;
                                                         loadResult6 = (PagingSource.LoadResult) obj3;
                                                         if (loadResult6 instanceof PagingSource.LoadResult.Page) {
-                                                            int i5 = WhenMappings.$EnumSwitchMapping$0[loadType3.ordinal()];
-                                                            if (i5 == 2) {
+                                                            int i7 = WhenMappings.$EnumSwitchMapping$0[loadType4.ordinal()];
+                                                            if (i7 == 2) {
                                                                 prevKey = ((PagingSource.LoadResult.Page) loadResult6).getPrevKey();
-                                                            } else if (i5 == 3) {
+                                                            } else if (i7 == 3) {
                                                                 prevKey = ((PagingSource.LoadResult.Page) loadResult6).getNextKey();
                                                             } else {
                                                                 throw new IllegalArgumentException("Use doInitialLoad for LoadType == REFRESH");
                                                             }
                                                             if (!this.pagingSource.getKeyReuseSupported() && Intrinsics.areEqual(prevKey, objectRef3.element)) {
-                                                                throw new IllegalStateException(StringsKt.trimMargin$default("The same value, " + objectRef3.element + ", was passed as the " + (loadType3 == LoadType.PREPEND ? "prevKey" : "nextKey") + " in two\n                            | sequential Pages loaded from a PagingSource. Re-using load keys in\n                            | PagingSource is often an error, and must be explicitly enabled by\n                            | overriding PagingSource.keyReuseSupported.\n                            ", null, z ? 1 : 0, null).toString());
+                                                                throw new IllegalStateException(StringsKt.trimMargin$default("The same value, " + objectRef3.element + ", was passed as the " + (loadType4 == LoadType.PREPEND ? "prevKey" : "nextKey") + " in two\n                            | sequential Pages loaded from a PagingSource. Re-using load keys in\n                            | PagingSource is often an error, and must be explicitly enabled by\n                            | overriding PagingSource.keyReuseSupported.\n                            ", null, z ? 1 : 0, null).toString());
                                                             }
                                                             holder3 = this.stateHolder;
-                                                            mutex5 = ((PageFetcherSnapshotState.Holder) holder3).lock;
-                                                            pageFetcherSnapshot$doLoad$1.L$0 = loadType3;
+                                                            Mutex mutex12 = ((PageFetcherSnapshotState.Holder) holder3).lock;
+                                                            pageFetcherSnapshot$doLoad$1.L$0 = loadType4;
                                                             pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint4;
                                                             pageFetcherSnapshot$doLoad$1.L$2 = intRef3;
                                                             pageFetcherSnapshot$doLoad$1.L$3 = objectRef3;
@@ -889,170 +887,177 @@ public final class PageFetcherSnapshot<Key, Value> {
                                                             pageFetcherSnapshot$doLoad$1.L$5 = loadParams;
                                                             pageFetcherSnapshot$doLoad$1.L$6 = loadResult6;
                                                             pageFetcherSnapshot$doLoad$1.L$7 = holder3;
-                                                            pageFetcherSnapshot$doLoad$1.L$8 = mutex5;
+                                                            pageFetcherSnapshot$doLoad$1.L$8 = mutex12;
                                                             pageFetcherSnapshot$doLoad$1.label = 5;
-                                                            if (mutex5.lock(null, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
+                                                            if (mutex12.lock(null, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
                                                                 loadResult = loadResult6;
+                                                                mutex4 = mutex12;
                                                                 try {
-                                                                    if (((PageFetcherSnapshotState.Holder) holder3).state.insert(generationalViewportHint4.getGenerationId(), loadType3, (PagingSource.LoadResult.Page) loadResult)) {
+                                                                    if (((PageFetcherSnapshotState.Holder) holder3).state.insert(generationalViewportHint4.getGenerationId(), loadType4, (PagingSource.LoadResult.Page) loadResult)) {
                                                                         PagingLogger pagingLogger2 = PagingLogger.INSTANCE;
                                                                         if (pagingLogger2.isLoggable(2)) {
-                                                                            pagingLogger2.log(2, loadResultLog(loadType3, objectRef3.element, th2), th2);
+                                                                            pagingLogger2.log(2, loadResultLog(loadType4, objectRef3.element, th), th);
                                                                         }
                                                                     } else {
                                                                         PagingLogger pagingLogger3 = PagingLogger.INSTANCE;
                                                                         if (pagingLogger3.isLoggable(3)) {
-                                                                            pagingLogger3.log(3, loadResultLog(loadType3, objectRef3.element, loadResult), th2);
+                                                                            pagingLogger3.log(3, loadResultLog(loadType4, objectRef3.element, loadResult), th);
                                                                         }
                                                                         PagingSource.LoadResult.Page page = (PagingSource.LoadResult.Page) loadResult;
                                                                         intRef3.element += page.getData().size();
-                                                                        if ((loadType3 == LoadType.PREPEND && page.getPrevKey() == null) || (loadType3 == LoadType.APPEND && page.getNextKey() == null)) {
+                                                                        if ((loadType4 == LoadType.PREPEND && page.getPrevKey() == null) || (loadType4 == LoadType.APPEND && page.getNextKey() == null)) {
                                                                             booleanRef2.element = z;
                                                                         }
-                                                                        if (WhenMappings.$EnumSwitchMapping$0[loadType3.ordinal()] == 2) {
-                                                                            loadType9 = LoadType.APPEND;
+                                                                        if (WhenMappings.$EnumSwitchMapping$0[loadType4.ordinal()] == 2) {
+                                                                            loadType10 = LoadType.APPEND;
                                                                         } else {
-                                                                            loadType9 = LoadType.PREPEND;
+                                                                            loadType10 = LoadType.PREPEND;
                                                                         }
                                                                         holder5 = this.stateHolder;
-                                                                        mutex8 = ((PageFetcherSnapshotState.Holder) holder5).lock;
-                                                                        pageFetcherSnapshot$doLoad$1.L$0 = loadType3;
+                                                                        Mutex mutex13 = ((PageFetcherSnapshotState.Holder) holder5).lock;
+                                                                        pageFetcherSnapshot$doLoad$1.L$0 = loadType4;
                                                                         pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint4;
                                                                         pageFetcherSnapshot$doLoad$1.L$2 = intRef3;
                                                                         pageFetcherSnapshot$doLoad$1.L$3 = objectRef3;
                                                                         pageFetcherSnapshot$doLoad$1.L$4 = booleanRef2;
                                                                         pageFetcherSnapshot$doLoad$1.L$5 = loadParams;
                                                                         pageFetcherSnapshot$doLoad$1.L$6 = loadResult;
-                                                                        pageFetcherSnapshot$doLoad$1.L$7 = loadType9;
+                                                                        pageFetcherSnapshot$doLoad$1.L$7 = loadType10;
                                                                         pageFetcherSnapshot$doLoad$1.L$8 = holder5;
-                                                                        pageFetcherSnapshot$doLoad$1.L$9 = mutex8;
+                                                                        pageFetcherSnapshot$doLoad$1.L$9 = mutex13;
                                                                         pageFetcherSnapshot$doLoad$1.label = 8;
-                                                                        if (mutex8.lock(null, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
+                                                                        if (mutex13.lock(null, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
                                                                             PagingSource.LoadResult loadResult7 = loadResult;
-                                                                            loadType5 = loadType9;
+                                                                            loadType6 = loadType10;
+                                                                            mutex5 = mutex13;
                                                                             generationalViewportHint6 = generationalViewportHint4;
                                                                             objectRef4 = objectRef3;
-                                                                            loadType6 = loadType3;
+                                                                            loadType7 = loadType4;
                                                                             intRef4 = intRef3;
                                                                             booleanRef3 = booleanRef2;
                                                                             loadParams2 = loadParams;
                                                                             loadResult3 = loadResult7;
-                                                                            try {
-                                                                                pageFetcherSnapshotState4 = ((PageFetcherSnapshotState.Holder) holder5).state;
-                                                                                dropEventOrNull = pageFetcherSnapshotState4.dropEventOrNull(loadType5, generationalViewportHint6.getHint());
-                                                                                if (dropEventOrNull == null) {
-                                                                                    pageFetcherSnapshotState4.drop(dropEventOrNull);
-                                                                                    Channel<PageEvent<Value>> channel2 = this.pageEventCh;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$0 = loadType6;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint6;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$2 = intRef4;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$3 = objectRef4;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$4 = booleanRef3;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$5 = loadParams2;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$6 = loadResult3;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$7 = mutex8;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$8 = pageFetcherSnapshotState4;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$9 = null;
-                                                                                    pageFetcherSnapshot$doLoad$1.label = 9;
-                                                                                    if (channel2.send(dropEventOrNull, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
-                                                                                        loadResult4 = loadResult3;
-                                                                                        loadParams3 = loadParams2;
-                                                                                        booleanRef4 = booleanRef3;
-                                                                                        objectRef5 = objectRef4;
-                                                                                        intRef5 = intRef4;
-                                                                                        mutex11 = mutex8;
-                                                                                        generationalViewportHint7 = generationalViewportHint6;
-                                                                                        pageFetcherSnapshotState2 = pageFetcherSnapshotState4;
-                                                                                        loadType7 = loadType6;
-                                                                                        Unit unit2 = Unit.INSTANCE;
-                                                                                        pageFetcherSnapshotState4 = pageFetcherSnapshotState2;
-                                                                                        generationalViewportHint6 = generationalViewportHint7;
-                                                                                        loadType6 = loadType7;
-                                                                                        intRef4 = intRef5;
-                                                                                        objectRef4 = objectRef5;
-                                                                                        booleanRef3 = booleanRef4;
-                                                                                        mutex = mutex11;
-                                                                                        objectRef4.element = nextLoadKeyOrNull(pageFetcherSnapshotState4, loadType6, generationalViewportHint6.getGenerationId(), generationalViewportHint6.getHint().presentedItemsBeyondAnchor$paging_common(loadType6) + intRef4.element);
-                                                                                        if (objectRef4.element == null && !(pageFetcherSnapshotState4.getSourceLoadStates$paging_common().get(loadType6) instanceof LoadState.Error)) {
-                                                                                            pageFetcherSnapshotState4.getSourceLoadStates$paging_common().set(loadType6, !booleanRef3.element ? LoadState.NotLoading.Companion.getComplete$paging_common() : LoadState.NotLoading.Companion.getIncomplete$paging_common());
-                                                                                        }
-                                                                                        pageEvent$paging_common = pageFetcherSnapshotState4.toPageEvent$paging_common((PagingSource.LoadResult.Page) loadResult4, loadType6);
-                                                                                        channel = this.pageEventCh;
-                                                                                        pageFetcherSnapshot$doLoad$1.L$0 = loadType6;
-                                                                                        pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint6;
-                                                                                        pageFetcherSnapshot$doLoad$1.L$2 = intRef4;
-                                                                                        pageFetcherSnapshot$doLoad$1.L$3 = objectRef4;
-                                                                                        pageFetcherSnapshot$doLoad$1.L$4 = booleanRef3;
-                                                                                        pageFetcherSnapshot$doLoad$1.L$5 = loadParams3;
-                                                                                        pageFetcherSnapshot$doLoad$1.L$6 = loadResult4;
-                                                                                        pageFetcherSnapshot$doLoad$1.L$7 = mutex;
-                                                                                        pageFetcherSnapshot$doLoad$1.L$8 = null;
-                                                                                        pageFetcherSnapshot$doLoad$1.L$9 = null;
-                                                                                        pageFetcherSnapshot$doLoad$1.label = 10;
-                                                                                        if (channel.send(pageEvent$paging_common, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
-                                                                                            intRef2 = intRef4;
-                                                                                            loadType8 = loadType6;
-                                                                                            generationalViewportHint3 = generationalViewportHint6;
-                                                                                            loadResult5 = loadResult4;
-                                                                                            loadParams4 = loadParams3;
-                                                                                            objectRef2 = objectRef4;
-                                                                                            mutex9 = mutex;
-                                                                                            Unit unit3 = Unit.INSTANCE;
-                                                                                            mutex9.unlock(null);
-                                                                                            i = ((loadParams4 instanceof PagingSource.LoadParams.Prepend) || ((PagingSource.LoadResult.Page) loadResult5).getPrevKey() != null) ? 0 : 1;
-                                                                                            i2 = ((loadParams4 instanceof PagingSource.LoadParams.Append) || ((PagingSource.LoadResult.Page) loadResult5).getNextKey() != null) ? 0 : 1;
-                                                                                            if (this.remoteMediatorConnection != null && (i != 0 || i2 != 0)) {
-                                                                                                holder6 = this.stateHolder;
-                                                                                                mutex10 = ((PageFetcherSnapshotState.Holder) holder6).lock;
-                                                                                                pageFetcherSnapshot$doLoad$1.L$0 = loadType8;
-                                                                                                pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint3;
-                                                                                                pageFetcherSnapshot$doLoad$1.L$2 = intRef2;
-                                                                                                pageFetcherSnapshot$doLoad$1.L$3 = objectRef2;
-                                                                                                pageFetcherSnapshot$doLoad$1.L$4 = booleanRef3;
-                                                                                                pageFetcherSnapshot$doLoad$1.L$5 = holder6;
-                                                                                                pageFetcherSnapshot$doLoad$1.L$6 = mutex10;
-                                                                                                pageFetcherSnapshot$doLoad$1.L$7 = null;
-                                                                                                pageFetcherSnapshot$doLoad$1.I$0 = i;
-                                                                                                pageFetcherSnapshot$doLoad$1.I$1 = i2;
-                                                                                                pageFetcherSnapshot$doLoad$1.label = 11;
-                                                                                                break;
-                                                                                            }
-                                                                                            booleanRef = booleanRef3;
-                                                                                            loadType2 = loadType8;
-                                                                                            z = true;
-                                                                                            if (objectRef2.element != null) {
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                } else {
+                                                                            pageFetcherSnapshotState4 = ((PageFetcherSnapshotState.Holder) holder5).state;
+                                                                            dropEventOrNull = pageFetcherSnapshotState4.dropEventOrNull(loadType6, generationalViewportHint6.getHint());
+                                                                            if (dropEventOrNull == null) {
+                                                                                pageFetcherSnapshotState4.drop(dropEventOrNull);
+                                                                                Channel<PageEvent<Value>> channel2 = this.pageEventCh;
+                                                                                pageFetcherSnapshot$doLoad$1.L$0 = loadType7;
+                                                                                pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint6;
+                                                                                pageFetcherSnapshot$doLoad$1.L$2 = intRef4;
+                                                                                pageFetcherSnapshot$doLoad$1.L$3 = objectRef4;
+                                                                                pageFetcherSnapshot$doLoad$1.L$4 = booleanRef3;
+                                                                                pageFetcherSnapshot$doLoad$1.L$5 = loadParams2;
+                                                                                pageFetcherSnapshot$doLoad$1.L$6 = loadResult3;
+                                                                                pageFetcherSnapshot$doLoad$1.L$7 = mutex5;
+                                                                                pageFetcherSnapshot$doLoad$1.L$8 = pageFetcherSnapshotState4;
+                                                                                pageFetcherSnapshot$doLoad$1.L$9 = null;
+                                                                                pageFetcherSnapshot$doLoad$1.label = 9;
+                                                                                if (channel2.send(dropEventOrNull, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
+                                                                                    mutex6 = mutex5;
+                                                                                    pageFetcherSnapshotState2 = pageFetcherSnapshotState4;
                                                                                     loadResult4 = loadResult3;
                                                                                     loadParams3 = loadParams2;
-                                                                                    mutex = mutex8;
-                                                                                    objectRef4.element = nextLoadKeyOrNull(pageFetcherSnapshotState4, loadType6, generationalViewportHint6.getGenerationId(), generationalViewportHint6.getHint().presentedItemsBeyondAnchor$paging_common(loadType6) + intRef4.element);
-                                                                                    if (objectRef4.element == null) {
-                                                                                        pageFetcherSnapshotState4.getSourceLoadStates$paging_common().set(loadType6, !booleanRef3.element ? LoadState.NotLoading.Companion.getComplete$paging_common() : LoadState.NotLoading.Companion.getIncomplete$paging_common());
+                                                                                    booleanRef4 = booleanRef3;
+                                                                                    objectRef5 = objectRef4;
+                                                                                    intRef5 = intRef4;
+                                                                                    generationalViewportHint7 = generationalViewportHint6;
+                                                                                    loadType8 = loadType7;
+                                                                                    Unit unit2 = Unit.INSTANCE;
+                                                                                    pageFetcherSnapshotState4 = pageFetcherSnapshotState2;
+                                                                                    mutex5 = mutex6;
+                                                                                    loadResult5 = loadResult4;
+                                                                                    loadParams4 = loadParams3;
+                                                                                    loadType7 = loadType8;
+                                                                                    generationalViewportHint6 = generationalViewportHint7;
+                                                                                    intRef4 = intRef5;
+                                                                                    objectRef4 = objectRef5;
+                                                                                    booleanRef3 = booleanRef4;
+                                                                                    objectRef4.element = nextLoadKeyOrNull(pageFetcherSnapshotState4, loadType7, generationalViewportHint6.getGenerationId(), generationalViewportHint6.getHint().presentedItemsBeyondAnchor$paging_common(loadType7) + intRef4.element);
+                                                                                    if (objectRef4.element == null && !(pageFetcherSnapshotState4.getSourceLoadStates$paging_common().get(loadType7) instanceof LoadState.Error)) {
+                                                                                        pageFetcherSnapshotState4.getSourceLoadStates$paging_common().set(loadType7, !booleanRef3.element ? LoadState.NotLoading.Companion.getComplete$paging_common() : LoadState.NotLoading.Companion.getIncomplete$paging_common());
                                                                                     }
-                                                                                    pageEvent$paging_common = pageFetcherSnapshotState4.toPageEvent$paging_common((PagingSource.LoadResult.Page) loadResult4, loadType6);
+                                                                                    pageEvent$paging_common = pageFetcherSnapshotState4.toPageEvent$paging_common((PagingSource.LoadResult.Page) loadResult5, loadType7);
                                                                                     channel = this.pageEventCh;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$0 = loadType6;
+                                                                                    pageFetcherSnapshot$doLoad$1.L$0 = loadType7;
                                                                                     pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint6;
                                                                                     pageFetcherSnapshot$doLoad$1.L$2 = intRef4;
                                                                                     pageFetcherSnapshot$doLoad$1.L$3 = objectRef4;
                                                                                     pageFetcherSnapshot$doLoad$1.L$4 = booleanRef3;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$5 = loadParams3;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$6 = loadResult4;
-                                                                                    pageFetcherSnapshot$doLoad$1.L$7 = mutex;
+                                                                                    pageFetcherSnapshot$doLoad$1.L$5 = loadParams4;
+                                                                                    pageFetcherSnapshot$doLoad$1.L$6 = loadResult5;
+                                                                                    pageFetcherSnapshot$doLoad$1.L$7 = mutex5;
                                                                                     pageFetcherSnapshot$doLoad$1.L$8 = null;
                                                                                     pageFetcherSnapshot$doLoad$1.L$9 = null;
                                                                                     pageFetcherSnapshot$doLoad$1.label = 10;
                                                                                     if (channel.send(pageEvent$paging_common, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
+                                                                                        objectRef2 = objectRef4;
+                                                                                        intRef2 = intRef4;
+                                                                                        loadType9 = loadType7;
+                                                                                        generationalViewportHint3 = generationalViewportHint6;
+                                                                                        Unit unit3 = Unit.INSTANCE;
+                                                                                        mutex5.unlock(null);
+                                                                                        i = ((loadParams4 instanceof PagingSource.LoadParams.Prepend) || ((PagingSource.LoadResult.Page) loadResult5).getPrevKey() != null) ? 0 : 1;
+                                                                                        i2 = ((loadParams4 instanceof PagingSource.LoadParams.Append) || ((PagingSource.LoadResult.Page) loadResult5).getNextKey() != null) ? 0 : 1;
+                                                                                        if (this.remoteMediatorConnection != null && (i != 0 || i2 != 0)) {
+                                                                                            holder6 = this.stateHolder;
+                                                                                            mutex8 = ((PageFetcherSnapshotState.Holder) holder6).lock;
+                                                                                            pageFetcherSnapshot$doLoad$1.L$0 = loadType9;
+                                                                                            pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint3;
+                                                                                            pageFetcherSnapshot$doLoad$1.L$2 = intRef2;
+                                                                                            pageFetcherSnapshot$doLoad$1.L$3 = objectRef2;
+                                                                                            pageFetcherSnapshot$doLoad$1.L$4 = booleanRef3;
+                                                                                            pageFetcherSnapshot$doLoad$1.L$5 = holder6;
+                                                                                            pageFetcherSnapshot$doLoad$1.L$6 = mutex8;
+                                                                                            pageFetcherSnapshot$doLoad$1.L$7 = null;
+                                                                                            pageFetcherSnapshot$doLoad$1.I$0 = i;
+                                                                                            pageFetcherSnapshot$doLoad$1.I$1 = i2;
+                                                                                            pageFetcherSnapshot$doLoad$1.label = 11;
+                                                                                            if (mutex8.lock(null, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
+                                                                                                i3 = i;
+                                                                                                i4 = i2;
+                                                                                                mutex9 = mutex8;
+                                                                                                try {
+                                                                                                    PagingState<Key, Value> currentPagingState$paging_common = ((PageFetcherSnapshotState.Holder) holder6).state.currentPagingState$paging_common(this.hintHandler.getLastAccessHint());
+                                                                                                    if (i3 != 0) {
+                                                                                                        this.remoteMediatorConnection.requestLoad(LoadType.PREPEND, currentPagingState$paging_common);
+                                                                                                    }
+                                                                                                    if (i4 != 0) {
+                                                                                                        this.remoteMediatorConnection.requestLoad(LoadType.APPEND, currentPagingState$paging_common);
+                                                                                                    }
+                                                                                                } finally {
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                        booleanRef = booleanRef3;
+                                                                                        loadType3 = loadType9;
+                                                                                        z = true;
+                                                                                        if (objectRef2.element != null) {
+                                                                                        }
                                                                                     }
                                                                                 }
-                                                                            } catch (Throwable th3) {
-                                                                                th = th3;
-                                                                                mutex = mutex8;
-                                                                                mutex.unlock(null);
-                                                                                throw th;
+                                                                            } else {
+                                                                                loadResult5 = loadResult3;
+                                                                                loadParams4 = loadParams2;
+                                                                                objectRef4.element = nextLoadKeyOrNull(pageFetcherSnapshotState4, loadType7, generationalViewportHint6.getGenerationId(), generationalViewportHint6.getHint().presentedItemsBeyondAnchor$paging_common(loadType7) + intRef4.element);
+                                                                                if (objectRef4.element == null) {
+                                                                                    pageFetcherSnapshotState4.getSourceLoadStates$paging_common().set(loadType7, !booleanRef3.element ? LoadState.NotLoading.Companion.getComplete$paging_common() : LoadState.NotLoading.Companion.getIncomplete$paging_common());
+                                                                                }
+                                                                                pageEvent$paging_common = pageFetcherSnapshotState4.toPageEvent$paging_common((PagingSource.LoadResult.Page) loadResult5, loadType7);
+                                                                                channel = this.pageEventCh;
+                                                                                pageFetcherSnapshot$doLoad$1.L$0 = loadType7;
+                                                                                pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint6;
+                                                                                pageFetcherSnapshot$doLoad$1.L$2 = intRef4;
+                                                                                pageFetcherSnapshot$doLoad$1.L$3 = objectRef4;
+                                                                                pageFetcherSnapshot$doLoad$1.L$4 = booleanRef3;
+                                                                                pageFetcherSnapshot$doLoad$1.L$5 = loadParams4;
+                                                                                pageFetcherSnapshot$doLoad$1.L$6 = loadResult5;
+                                                                                pageFetcherSnapshot$doLoad$1.L$7 = mutex5;
+                                                                                pageFetcherSnapshot$doLoad$1.L$8 = null;
+                                                                                pageFetcherSnapshot$doLoad$1.L$9 = null;
+                                                                                pageFetcherSnapshot$doLoad$1.label = 10;
+                                                                                if (channel.send(pageEvent$paging_common, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
+                                                                                }
                                                                             }
                                                                         }
                                                                     }
@@ -1065,51 +1070,45 @@ public final class PageFetcherSnapshot<Key, Value> {
                                                             }
                                                             PagingLogger pagingLogger4 = PagingLogger.INSTANCE;
                                                             if (pagingLogger4.isLoggable(2)) {
-                                                                pagingLogger4.log(2, loadResultLog(loadType3, objectRef3.element, loadResult6), null);
+                                                                pagingLogger4.log(2, loadResultLog(loadType4, objectRef3.element, loadResult6), null);
                                                             }
                                                             onInvalidLoad();
                                                             return Unit.INSTANCE;
                                                         } else {
                                                             PagingLogger pagingLogger5 = PagingLogger.INSTANCE;
                                                             if (pagingLogger5.isLoggable(2)) {
-                                                                pagingLogger5.log(2, loadResultLog(loadType3, objectRef3.element, loadResult6), null);
+                                                                pagingLogger5.log(2, loadResultLog(loadType4, objectRef3.element, loadResult6), null);
                                                             }
                                                             holder4 = this.stateHolder;
-                                                            mutex6 = ((PageFetcherSnapshotState.Holder) holder4).lock;
-                                                            pageFetcherSnapshot$doLoad$1.L$0 = loadType3;
+                                                            Mutex mutex14 = ((PageFetcherSnapshotState.Holder) holder4).lock;
+                                                            pageFetcherSnapshot$doLoad$1.L$0 = loadType4;
                                                             pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint4;
                                                             pageFetcherSnapshot$doLoad$1.L$2 = loadResult6;
                                                             pageFetcherSnapshot$doLoad$1.L$3 = holder4;
-                                                            pageFetcherSnapshot$doLoad$1.L$4 = mutex6;
+                                                            pageFetcherSnapshot$doLoad$1.L$4 = mutex14;
                                                             pageFetcherSnapshot$doLoad$1.L$5 = null;
                                                             pageFetcherSnapshot$doLoad$1.label = 6;
-                                                            if (mutex6.lock(null, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
+                                                            if (mutex14.lock(null, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
                                                                 loadResult2 = loadResult6;
+                                                                mutex7 = mutex14;
                                                                 pageFetcherSnapshot$doLoad$12 = pageFetcherSnapshot$doLoad$1;
-                                                                loadType4 = loadType3;
-                                                                try {
-                                                                    pageFetcherSnapshotState3 = ((PageFetcherSnapshotState.Holder) holder4).state;
-                                                                    error = new LoadState.Error(((PagingSource.LoadResult.Error) loadResult2).getThrowable());
-                                                                    pageFetcherSnapshot$doLoad$12.L$0 = loadType4;
-                                                                    pageFetcherSnapshot$doLoad$12.L$1 = generationalViewportHint4;
-                                                                    pageFetcherSnapshot$doLoad$12.L$2 = mutex6;
-                                                                    pageFetcherSnapshot$doLoad$12.L$3 = pageFetcherSnapshotState3;
-                                                                    pageFetcherSnapshot$doLoad$12.L$4 = null;
-                                                                    pageFetcherSnapshot$doLoad$12.label = 7;
-                                                                    if (setError(pageFetcherSnapshotState3, loadType4, error, pageFetcherSnapshot$doLoad$12) != coroutine_suspended) {
-                                                                        mutex7 = mutex6;
-                                                                        pageFetcherSnapshotState = pageFetcherSnapshotState3;
-                                                                        generationalViewportHint5 = generationalViewportHint4;
-                                                                        pageFetcherSnapshotState.getFailedHintsByLoadType$paging_common().put(loadType4, generationalViewportHint5.getHint());
-                                                                        Unit unit4 = Unit.INSTANCE;
-                                                                        mutex7.unlock(null);
-                                                                        return Unit.INSTANCE;
-                                                                    }
-                                                                } catch (Throwable th4) {
-                                                                    th = th4;
-                                                                    mutex7 = mutex6;
-                                                                    mutex7.unlock(null);
-                                                                    throw th;
+                                                                loadType5 = loadType4;
+                                                                pageFetcherSnapshotState3 = ((PageFetcherSnapshotState.Holder) holder4).state;
+                                                                error = new LoadState.Error(((PagingSource.LoadResult.Error) loadResult2).getThrowable());
+                                                                pageFetcherSnapshot$doLoad$12.L$0 = loadType5;
+                                                                pageFetcherSnapshot$doLoad$12.L$1 = generationalViewportHint4;
+                                                                pageFetcherSnapshot$doLoad$12.L$2 = mutex7;
+                                                                pageFetcherSnapshot$doLoad$12.L$3 = pageFetcherSnapshotState3;
+                                                                pageFetcherSnapshot$doLoad$12.L$4 = null;
+                                                                pageFetcherSnapshot$doLoad$12.label = 7;
+                                                                if (setError(pageFetcherSnapshotState3, loadType5, error, pageFetcherSnapshot$doLoad$12) != coroutine_suspended) {
+                                                                    pageFetcherSnapshotState = pageFetcherSnapshotState3;
+                                                                    generationalViewportHint5 = generationalViewportHint4;
+                                                                    mutex10 = mutex7;
+                                                                    pageFetcherSnapshotState.getFailedHintsByLoadType$paging_common().put(loadType5, generationalViewportHint5.getHint());
+                                                                    Unit unit4 = Unit.INSTANCE;
+                                                                    mutex10.unlock(null);
+                                                                    return Unit.INSTANCE;
                                                                 }
                                                             }
                                                         }
@@ -1119,17 +1118,17 @@ public final class PageFetcherSnapshot<Key, Value> {
                                             }
                                         } else {
                                             r2 = 0;
-                                            mutex3.unlock(null);
+                                            mutex2.unlock(null);
                                             objectRef.element = r2;
                                             booleanRef = new Ref.BooleanRef();
                                             if (objectRef2.element != null) {
                                             }
                                             return Unit.INSTANCE;
                                         }
-                                    } catch (Throwable th5) {
-                                        th = th5;
-                                        mutex4 = mutex3;
-                                        mutex4.unlock(null);
+                                    } catch (Throwable th2) {
+                                        th = th2;
+                                        mutex3 = mutex2;
+                                        mutex3.unlock(null);
                                         throw th;
                                     }
                                 }
@@ -1138,46 +1137,46 @@ public final class PageFetcherSnapshot<Key, Value> {
                             }
                         case 2:
                             objectRef = (Ref.ObjectRef) pageFetcherSnapshot$doLoad$1.L$6;
-                            mutex3 = (Mutex) pageFetcherSnapshot$doLoad$1.L$5;
+                            mutex2 = (Mutex) pageFetcherSnapshot$doLoad$1.L$5;
                             holder2 = (PageFetcherSnapshotState.Holder) pageFetcherSnapshot$doLoad$1.L$4;
                             objectRef2 = (Ref.ObjectRef) pageFetcherSnapshot$doLoad$1.L$3;
                             intRef2 = (Ref.IntRef) pageFetcherSnapshot$doLoad$1.L$2;
                             generationalViewportHint3 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
-                            loadType2 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
+                            loadType3 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
                             ResultKt.throwOnFailure(obj3);
                             PageFetcherSnapshotState pageFetcherSnapshotState62 = ((PageFetcherSnapshotState.Holder) holder2).state;
-                            nextLoadKeyOrNull = nextLoadKeyOrNull(pageFetcherSnapshotState62, loadType2, generationalViewportHint3.getGenerationId(), generationalViewportHint3.getHint().presentedItemsBeyondAnchor$paging_common(loadType2) + intRef2.element);
+                            nextLoadKeyOrNull = nextLoadKeyOrNull(pageFetcherSnapshotState62, loadType3, generationalViewportHint3.getGenerationId(), generationalViewportHint3.getHint().presentedItemsBeyondAnchor$paging_common(loadType3) + intRef2.element);
                             if (nextLoadKeyOrNull == null) {
                             }
                             break;
                         case 3:
                             objectRef = (Ref.ObjectRef) pageFetcherSnapshot$doLoad$1.L$6;
                             obj = pageFetcherSnapshot$doLoad$1.L$5;
-                            mutex4 = (Mutex) pageFetcherSnapshot$doLoad$1.L$4;
+                            mutex3 = (Mutex) pageFetcherSnapshot$doLoad$1.L$4;
                             objectRef2 = (Ref.ObjectRef) pageFetcherSnapshot$doLoad$1.L$3;
                             intRef2 = (Ref.IntRef) pageFetcherSnapshot$doLoad$1.L$2;
                             generationalViewportHint3 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
-                            loadType2 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
+                            loadType3 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
                             try {
                                 ResultKt.throwOnFailure(obj3);
                                 r2 = obj;
-                                mutex3 = mutex4;
-                                mutex3.unlock(null);
+                                mutex2 = mutex3;
+                                mutex2.unlock(null);
                                 objectRef.element = r2;
                                 booleanRef = new Ref.BooleanRef();
                                 if (objectRef2.element != null) {
                                 }
                                 return Unit.INSTANCE;
-                            } catch (Throwable th6) {
-                                th = th6;
-                                mutex4.unlock(null);
+                            } catch (Throwable th3) {
+                                th = th3;
+                                mutex3.unlock(null);
                                 throw th;
                             }
                         case 4:
                             ResultKt.throwOnFailure(obj3);
                             intRef3 = (Ref.IntRef) pageFetcherSnapshot$doLoad$1.L$2;
                             generationalViewportHint4 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
-                            loadType3 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
+                            loadType4 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
                             loadParams = (PagingSource.LoadParams) pageFetcherSnapshot$doLoad$1.L$5;
                             booleanRef2 = (Ref.BooleanRef) pageFetcherSnapshot$doLoad$1.L$4;
                             objectRef3 = (Ref.ObjectRef) pageFetcherSnapshot$doLoad$1.L$3;
@@ -1186,6 +1185,7 @@ public final class PageFetcherSnapshot<Key, Value> {
                             }
                             return coroutine_suspended;
                         case 5:
+                            mutex4 = (Mutex) pageFetcherSnapshot$doLoad$1.L$8;
                             holder3 = (PageFetcherSnapshotState.Holder) pageFetcherSnapshot$doLoad$1.L$7;
                             loadResult = (PagingSource.LoadResult) pageFetcherSnapshot$doLoad$1.L$6;
                             loadParams = (PagingSource.LoadParams) pageFetcherSnapshot$doLoad$1.L$5;
@@ -1193,190 +1193,193 @@ public final class PageFetcherSnapshot<Key, Value> {
                             objectRef3 = (Ref.ObjectRef) pageFetcherSnapshot$doLoad$1.L$3;
                             intRef3 = (Ref.IntRef) pageFetcherSnapshot$doLoad$1.L$2;
                             generationalViewportHint4 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
-                            loadType3 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
+                            loadType4 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
                             ResultKt.throwOnFailure(obj3);
-                            mutex5 = (Mutex) pageFetcherSnapshot$doLoad$1.L$8;
-                            if (((PageFetcherSnapshotState.Holder) holder3).state.insert(generationalViewportHint4.getGenerationId(), loadType3, (PagingSource.LoadResult.Page) loadResult)) {
+                            if (((PageFetcherSnapshotState.Holder) holder3).state.insert(generationalViewportHint4.getGenerationId(), loadType4, (PagingSource.LoadResult.Page) loadResult)) {
                             }
                             break;
                         case 6:
                             holder4 = (PageFetcherSnapshotState.Holder) pageFetcherSnapshot$doLoad$1.L$3;
                             loadResult2 = (PagingSource.LoadResult) pageFetcherSnapshot$doLoad$1.L$2;
                             ResultKt.throwOnFailure(obj3);
-                            mutex6 = (Mutex) pageFetcherSnapshot$doLoad$1.L$4;
                             pageFetcherSnapshot$doLoad$12 = pageFetcherSnapshot$doLoad$1;
                             generationalViewportHint4 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
-                            loadType4 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
+                            loadType5 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
+                            mutex7 = (Mutex) pageFetcherSnapshot$doLoad$1.L$4;
                             pageFetcherSnapshotState3 = ((PageFetcherSnapshotState.Holder) holder4).state;
                             error = new LoadState.Error(((PagingSource.LoadResult.Error) loadResult2).getThrowable());
-                            pageFetcherSnapshot$doLoad$12.L$0 = loadType4;
+                            pageFetcherSnapshot$doLoad$12.L$0 = loadType5;
                             pageFetcherSnapshot$doLoad$12.L$1 = generationalViewportHint4;
-                            pageFetcherSnapshot$doLoad$12.L$2 = mutex6;
+                            pageFetcherSnapshot$doLoad$12.L$2 = mutex7;
                             pageFetcherSnapshot$doLoad$12.L$3 = pageFetcherSnapshotState3;
                             pageFetcherSnapshot$doLoad$12.L$4 = null;
                             pageFetcherSnapshot$doLoad$12.label = 7;
-                            if (setError(pageFetcherSnapshotState3, loadType4, error, pageFetcherSnapshot$doLoad$12) != coroutine_suspended) {
+                            if (setError(pageFetcherSnapshotState3, loadType5, error, pageFetcherSnapshot$doLoad$12) != coroutine_suspended) {
                             }
                             return coroutine_suspended;
                         case 7:
                             pageFetcherSnapshotState = (PageFetcherSnapshotState) pageFetcherSnapshot$doLoad$1.L$3;
-                            mutex7 = (Mutex) pageFetcherSnapshot$doLoad$1.L$2;
+                            Mutex mutex15 = (Mutex) pageFetcherSnapshot$doLoad$1.L$2;
                             generationalViewportHint5 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
-                            loadType4 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
-                            try {
-                                ResultKt.throwOnFailure(obj3);
-                                pageFetcherSnapshotState.getFailedHintsByLoadType$paging_common().put(loadType4, generationalViewportHint5.getHint());
-                                Unit unit42 = Unit.INSTANCE;
-                                mutex7.unlock(null);
-                                return Unit.INSTANCE;
-                            } catch (Throwable th7) {
-                                th = th7;
-                                mutex7.unlock(null);
-                                throw th;
-                            }
+                            loadType5 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
+                            ResultKt.throwOnFailure(obj3);
+                            mutex10 = mutex15;
+                            pageFetcherSnapshotState.getFailedHintsByLoadType$paging_common().put(loadType5, generationalViewportHint5.getHint());
+                            Unit unit42 = Unit.INSTANCE;
+                            mutex10.unlock(null);
+                            return Unit.INSTANCE;
                         case 8:
+                            mutex5 = (Mutex) pageFetcherSnapshot$doLoad$1.L$9;
                             holder5 = (PageFetcherSnapshotState.Holder) pageFetcherSnapshot$doLoad$1.L$8;
-                            loadType5 = (LoadType) pageFetcherSnapshot$doLoad$1.L$7;
+                            loadType6 = (LoadType) pageFetcherSnapshot$doLoad$1.L$7;
                             loadResult3 = (PagingSource.LoadResult) pageFetcherSnapshot$doLoad$1.L$6;
                             loadParams2 = (PagingSource.LoadParams) pageFetcherSnapshot$doLoad$1.L$5;
                             booleanRef3 = (Ref.BooleanRef) pageFetcherSnapshot$doLoad$1.L$4;
                             objectRef4 = (Ref.ObjectRef) pageFetcherSnapshot$doLoad$1.L$3;
                             intRef4 = (Ref.IntRef) pageFetcherSnapshot$doLoad$1.L$2;
-                            GenerationalViewportHint generationalViewportHint8 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
-                            loadType6 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
+                            generationalViewportHint6 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
+                            loadType7 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
                             ResultKt.throwOnFailure(obj3);
-                            mutex8 = (Mutex) pageFetcherSnapshot$doLoad$1.L$9;
-                            generationalViewportHint6 = generationalViewportHint8;
                             pageFetcherSnapshotState4 = ((PageFetcherSnapshotState.Holder) holder5).state;
-                            dropEventOrNull = pageFetcherSnapshotState4.dropEventOrNull(loadType5, generationalViewportHint6.getHint());
+                            dropEventOrNull = pageFetcherSnapshotState4.dropEventOrNull(loadType6, generationalViewportHint6.getHint());
                             if (dropEventOrNull == null) {
                             }
                             break;
                         case 9:
                             pageFetcherSnapshotState2 = (PageFetcherSnapshotState) pageFetcherSnapshot$doLoad$1.L$8;
-                            Mutex mutex13 = (Mutex) pageFetcherSnapshot$doLoad$1.L$7;
+                            mutex6 = (Mutex) pageFetcherSnapshot$doLoad$1.L$7;
                             loadResult4 = (PagingSource.LoadResult) pageFetcherSnapshot$doLoad$1.L$6;
                             loadParams3 = (PagingSource.LoadParams) pageFetcherSnapshot$doLoad$1.L$5;
                             booleanRef4 = (Ref.BooleanRef) pageFetcherSnapshot$doLoad$1.L$4;
                             objectRef5 = (Ref.ObjectRef) pageFetcherSnapshot$doLoad$1.L$3;
                             intRef5 = (Ref.IntRef) pageFetcherSnapshot$doLoad$1.L$2;
                             generationalViewportHint7 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
-                            loadType7 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
-                            ResultKt.throwOnFailure(obj3);
-                            mutex11 = mutex13;
-                            Unit unit22 = Unit.INSTANCE;
-                            pageFetcherSnapshotState4 = pageFetcherSnapshotState2;
-                            generationalViewportHint6 = generationalViewportHint7;
-                            loadType6 = loadType7;
-                            intRef4 = intRef5;
-                            objectRef4 = objectRef5;
-                            booleanRef3 = booleanRef4;
-                            mutex = mutex11;
-                            objectRef4.element = nextLoadKeyOrNull(pageFetcherSnapshotState4, loadType6, generationalViewportHint6.getGenerationId(), generationalViewportHint6.getHint().presentedItemsBeyondAnchor$paging_common(loadType6) + intRef4.element);
-                            if (objectRef4.element == null) {
-                            }
-                            pageEvent$paging_common = pageFetcherSnapshotState4.toPageEvent$paging_common((PagingSource.LoadResult.Page) loadResult4, loadType6);
-                            channel = this.pageEventCh;
-                            pageFetcherSnapshot$doLoad$1.L$0 = loadType6;
-                            pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint6;
-                            pageFetcherSnapshot$doLoad$1.L$2 = intRef4;
-                            pageFetcherSnapshot$doLoad$1.L$3 = objectRef4;
-                            pageFetcherSnapshot$doLoad$1.L$4 = booleanRef3;
-                            pageFetcherSnapshot$doLoad$1.L$5 = loadParams3;
-                            pageFetcherSnapshot$doLoad$1.L$6 = loadResult4;
-                            pageFetcherSnapshot$doLoad$1.L$7 = mutex;
-                            pageFetcherSnapshot$doLoad$1.L$8 = null;
-                            pageFetcherSnapshot$doLoad$1.L$9 = null;
-                            pageFetcherSnapshot$doLoad$1.label = 10;
-                            if (channel.send(pageEvent$paging_common, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
+                            loadType8 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
+                            try {
+                                ResultKt.throwOnFailure(obj3);
+                                Unit unit22 = Unit.INSTANCE;
+                                pageFetcherSnapshotState4 = pageFetcherSnapshotState2;
+                                mutex5 = mutex6;
+                                loadResult5 = loadResult4;
+                                loadParams4 = loadParams3;
+                                loadType7 = loadType8;
+                                generationalViewportHint6 = generationalViewportHint7;
+                                intRef4 = intRef5;
+                                objectRef4 = objectRef5;
+                                booleanRef3 = booleanRef4;
+                                objectRef4.element = nextLoadKeyOrNull(pageFetcherSnapshotState4, loadType7, generationalViewportHint6.getGenerationId(), generationalViewportHint6.getHint().presentedItemsBeyondAnchor$paging_common(loadType7) + intRef4.element);
+                                if (objectRef4.element == null) {
+                                }
+                                pageEvent$paging_common = pageFetcherSnapshotState4.toPageEvent$paging_common((PagingSource.LoadResult.Page) loadResult5, loadType7);
+                                channel = this.pageEventCh;
+                                pageFetcherSnapshot$doLoad$1.L$0 = loadType7;
+                                pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint6;
+                                pageFetcherSnapshot$doLoad$1.L$2 = intRef4;
+                                pageFetcherSnapshot$doLoad$1.L$3 = objectRef4;
+                                pageFetcherSnapshot$doLoad$1.L$4 = booleanRef3;
+                                pageFetcherSnapshot$doLoad$1.L$5 = loadParams4;
+                                pageFetcherSnapshot$doLoad$1.L$6 = loadResult5;
+                                pageFetcherSnapshot$doLoad$1.L$7 = mutex5;
+                                pageFetcherSnapshot$doLoad$1.L$8 = null;
+                                pageFetcherSnapshot$doLoad$1.L$9 = null;
+                                pageFetcherSnapshot$doLoad$1.label = 10;
+                                if (channel.send(pageEvent$paging_common, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
+                                }
+                            } catch (Throwable th4) {
+                                th = th4;
+                                mutex5 = mutex6;
+                                mutex5.unlock(null);
+                                throw th;
                             }
                             break;
                         case 10:
-                            Mutex mutex14 = (Mutex) pageFetcherSnapshot$doLoad$1.L$7;
+                            mutex5 = (Mutex) pageFetcherSnapshot$doLoad$1.L$7;
                             loadResult5 = (PagingSource.LoadResult) pageFetcherSnapshot$doLoad$1.L$6;
                             loadParams4 = (PagingSource.LoadParams) pageFetcherSnapshot$doLoad$1.L$5;
                             Ref.BooleanRef booleanRef5 = (Ref.BooleanRef) pageFetcherSnapshot$doLoad$1.L$4;
                             Ref.ObjectRef objectRef7 = (Ref.ObjectRef) pageFetcherSnapshot$doLoad$1.L$3;
                             Ref.IntRef intRef7 = (Ref.IntRef) pageFetcherSnapshot$doLoad$1.L$2;
-                            GenerationalViewportHint generationalViewportHint9 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
-                            loadType8 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
-                            ResultKt.throwOnFailure(obj3);
-                            booleanRef3 = booleanRef5;
-                            objectRef2 = objectRef7;
-                            intRef2 = intRef7;
-                            generationalViewportHint3 = generationalViewportHint9;
-                            mutex9 = mutex14;
-                            Unit unit32 = Unit.INSTANCE;
-                            mutex9.unlock(null);
-                            if (loadParams4 instanceof PagingSource.LoadParams.Prepend) {
-                                break;
-                            }
-                            if (loadParams4 instanceof PagingSource.LoadParams.Append) {
-                                break;
-                            }
-                            if (this.remoteMediatorConnection != null) {
-                                holder6 = this.stateHolder;
-                                mutex10 = ((PageFetcherSnapshotState.Holder) holder6).lock;
-                                pageFetcherSnapshot$doLoad$1.L$0 = loadType8;
-                                pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint3;
-                                pageFetcherSnapshot$doLoad$1.L$2 = intRef2;
-                                pageFetcherSnapshot$doLoad$1.L$3 = objectRef2;
-                                pageFetcherSnapshot$doLoad$1.L$4 = booleanRef3;
-                                pageFetcherSnapshot$doLoad$1.L$5 = holder6;
-                                pageFetcherSnapshot$doLoad$1.L$6 = mutex10;
-                                pageFetcherSnapshot$doLoad$1.L$7 = null;
-                                pageFetcherSnapshot$doLoad$1.I$0 = i;
-                                pageFetcherSnapshot$doLoad$1.I$1 = i2;
-                                pageFetcherSnapshot$doLoad$1.label = 11;
-                                break;
-                            }
-                            booleanRef = booleanRef3;
-                            loadType2 = loadType8;
-                            z = true;
-                            if (objectRef2.element != null) {
-                            }
-                            return Unit.INSTANCE;
-                        case 11:
-                            i2 = pageFetcherSnapshot$doLoad$1.I$1;
-                            i = pageFetcherSnapshot$doLoad$1.I$0;
-                            holder6 = (PageFetcherSnapshotState.Holder) pageFetcherSnapshot$doLoad$1.L$5;
-                            ResultKt.throwOnFailure(obj3);
-                            generationalViewportHint3 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
-                            mutex10 = (Mutex) pageFetcherSnapshot$doLoad$1.L$6;
-                            booleanRef3 = (Ref.BooleanRef) pageFetcherSnapshot$doLoad$1.L$4;
-                            objectRef2 = (Ref.ObjectRef) pageFetcherSnapshot$doLoad$1.L$3;
-                            loadType8 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
-                            intRef2 = (Ref.IntRef) pageFetcherSnapshot$doLoad$1.L$2;
+                            GenerationalViewportHint generationalViewportHint8 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
+                            loadType9 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
                             try {
-                                PagingState<Key, Value> currentPagingState$paging_common = ((PageFetcherSnapshotState.Holder) holder6).state.currentPagingState$paging_common(this.hintHandler.getLastAccessHint());
-                                if (i != 0) {
-                                    this.remoteMediatorConnection.requestLoad(LoadType.PREPEND, currentPagingState$paging_common);
+                                ResultKt.throwOnFailure(obj3);
+                                booleanRef3 = booleanRef5;
+                                objectRef2 = objectRef7;
+                                intRef2 = intRef7;
+                                generationalViewportHint3 = generationalViewportHint8;
+                                Unit unit32 = Unit.INSTANCE;
+                                mutex5.unlock(null);
+                                if (loadParams4 instanceof PagingSource.LoadParams.Prepend) {
+                                    break;
                                 }
-                                if (i2 != 0) {
-                                    this.remoteMediatorConnection.requestLoad(LoadType.APPEND, currentPagingState$paging_common);
+                                if (loadParams4 instanceof PagingSource.LoadParams.Append) {
+                                    break;
+                                }
+                                if (this.remoteMediatorConnection != null) {
+                                    holder6 = this.stateHolder;
+                                    mutex8 = ((PageFetcherSnapshotState.Holder) holder6).lock;
+                                    pageFetcherSnapshot$doLoad$1.L$0 = loadType9;
+                                    pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint3;
+                                    pageFetcherSnapshot$doLoad$1.L$2 = intRef2;
+                                    pageFetcherSnapshot$doLoad$1.L$3 = objectRef2;
+                                    pageFetcherSnapshot$doLoad$1.L$4 = booleanRef3;
+                                    pageFetcherSnapshot$doLoad$1.L$5 = holder6;
+                                    pageFetcherSnapshot$doLoad$1.L$6 = mutex8;
+                                    pageFetcherSnapshot$doLoad$1.L$7 = null;
+                                    pageFetcherSnapshot$doLoad$1.I$0 = i;
+                                    pageFetcherSnapshot$doLoad$1.I$1 = i2;
+                                    pageFetcherSnapshot$doLoad$1.label = 11;
+                                    if (mutex8.lock(null, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
+                                    }
+                                    return coroutine_suspended;
                                 }
                                 booleanRef = booleanRef3;
-                                loadType2 = loadType8;
+                                loadType3 = loadType9;
                                 z = true;
                                 if (objectRef2.element != null) {
                                 }
                                 return Unit.INSTANCE;
-                            } finally {
+                            } catch (Throwable th5) {
+                                th = th5;
+                                mutex5.unlock(null);
+                                throw th;
                             }
+                        case 11:
+                            i4 = pageFetcherSnapshot$doLoad$1.I$1;
+                            i3 = pageFetcherSnapshot$doLoad$1.I$0;
+                            holder6 = (PageFetcherSnapshotState.Holder) pageFetcherSnapshot$doLoad$1.L$5;
+                            ResultKt.throwOnFailure(obj3);
+                            generationalViewportHint3 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
+                            mutex9 = (Mutex) pageFetcherSnapshot$doLoad$1.L$6;
+                            booleanRef3 = (Ref.BooleanRef) pageFetcherSnapshot$doLoad$1.L$4;
+                            objectRef2 = (Ref.ObjectRef) pageFetcherSnapshot$doLoad$1.L$3;
+                            loadType9 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
+                            intRef2 = (Ref.IntRef) pageFetcherSnapshot$doLoad$1.L$2;
+                            PagingState<Key, Value> currentPagingState$paging_common2 = ((PageFetcherSnapshotState.Holder) holder6).state.currentPagingState$paging_common(this.hintHandler.getLastAccessHint());
+                            if (i3 != 0) {
+                            }
+                            if (i4 != 0) {
+                            }
+                            booleanRef = booleanRef3;
+                            loadType3 = loadType9;
+                            z = true;
+                            if (objectRef2.element != null) {
+                            }
+                            return Unit.INSTANCE;
                         default:
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                 }
             }
-            switch (mutex) {
+            switch (pageFetcherSnapshot$doLoad$1.label) {
             }
-        } catch (Throwable th8) {
-            th = th8;
+        } catch (Throwable th6) {
+            mutex10.unlock(null);
+            throw th6;
         }
         pageFetcherSnapshot$doLoad$1 = new PageFetcherSnapshot$doLoad$1(this, continuation);
         Object obj32 = pageFetcherSnapshot$doLoad$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        mutex = pageFetcherSnapshot$doLoad$1.label;
         boolean z2 = true;
         z2 = true;
         z2 = true;

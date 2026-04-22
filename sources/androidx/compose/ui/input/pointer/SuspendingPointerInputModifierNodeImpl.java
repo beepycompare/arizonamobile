@@ -523,14 +523,8 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
             i = suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeoutOrNull$1.label;
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
         /* JADX WARN: Removed duplicated region for block: B:18:0x0039  */
-        /* JADX WARN: Type inference failed for: r11v0, types: [long] */
-        /* JADX WARN: Type inference failed for: r11v1, types: [kotlinx.coroutines.Job] */
-        /* JADX WARN: Type inference failed for: r11v3, types: [kotlinx.coroutines.Job] */
-        /* JADX WARN: Type inference failed for: r11v7 */
-        /* JADX WARN: Type inference failed for: r11v8 */
         @Override // androidx.compose.ui.input.pointer.AwaitPointerEventScope
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -539,52 +533,61 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
             SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1 suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1;
             int i;
             Job launch$default;
+            Throwable th;
+            Job job;
             CancellableContinuation<? super PointerEvent> cancellableContinuation;
-            try {
-                if (continuation instanceof SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1) {
-                    suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1 = (SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1) continuation;
-                    if ((suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.label & Integer.MIN_VALUE) != 0) {
-                        suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.label -= Integer.MIN_VALUE;
-                        Object obj = suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.result;
-                        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                        i = suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.label;
-                        if (i != 0) {
-                            ResultKt.throwOnFailure(obj);
-                            if (j <= 0 && (cancellableContinuation = this.pointerAwaiter) != null) {
-                                Result.Companion companion = Result.Companion;
-                                cancellableContinuation.resumeWith(Result.m9183constructorimpl(ResultKt.createFailure(new PointerEventTimeoutCancellationException(j))));
-                            }
-                            launch$default = BuildersKt__Builders_commonKt.launch$default(SuspendingPointerInputModifierNodeImpl.this.getCoroutineScope(), null, null, new SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$job$1(j, this, null), 3, null);
+            if (continuation instanceof SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1) {
+                suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1 = (SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1) continuation;
+                if ((suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.label & Integer.MIN_VALUE) != 0) {
+                    suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.label -= Integer.MIN_VALUE;
+                    Object obj = suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.label;
+                    if (i != 0) {
+                        ResultKt.throwOnFailure(obj);
+                        if (j <= 0 && (cancellableContinuation = this.pointerAwaiter) != null) {
+                            Result.Companion companion = Result.Companion;
+                            cancellableContinuation.resumeWith(Result.m9183constructorimpl(ResultKt.createFailure(new PointerEventTimeoutCancellationException(j))));
+                        }
+                        launch$default = BuildersKt__Builders_commonKt.launch$default(SuspendingPointerInputModifierNodeImpl.this.getCoroutineScope(), null, null, new SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$job$1(j, this, null), 3, null);
+                        try {
                             suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.L$0 = launch$default;
                             suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.label = 1;
                             obj = function2.invoke(this, suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1);
-                            j = launch$default;
                             if (obj == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                        } else if (i != 1) {
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                        } else {
-                            Job job = (Job) suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.L$0;
-                            ResultKt.throwOnFailure(obj);
-                            j = job;
+                            job = launch$default;
+                        } catch (Throwable th2) {
+                            th = th2;
+                            job = launch$default;
+                            job.cancel((CancellationException) CancelTimeoutCancellationException.INSTANCE);
+                            throw th;
                         }
-                        j.cancel(CancelTimeoutCancellationException.INSTANCE);
-                        return obj;
+                    } else if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        job = (Job) suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.L$0;
+                        try {
+                            ResultKt.throwOnFailure(obj);
+                        } catch (Throwable th3) {
+                            th = th3;
+                            job.cancel((CancellationException) CancelTimeoutCancellationException.INSTANCE);
+                            throw th;
+                        }
                     }
+                    job.cancel((CancellationException) CancelTimeoutCancellationException.INSTANCE);
+                    return obj;
                 }
-                if (i != 0) {
-                }
-                j.cancel(CancelTimeoutCancellationException.INSTANCE);
-                return obj;
-            } catch (Throwable th) {
-                j.cancel(CancelTimeoutCancellationException.INSTANCE);
-                throw th;
             }
             suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1 = new SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1(this, continuation);
             Object obj2 = suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.result;
             Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             i = suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.label;
+            if (i != 0) {
+            }
+            job.cancel((CancellationException) CancelTimeoutCancellationException.INSTANCE);
+            return obj2;
         }
 
         @Override // androidx.compose.ui.input.pointer.AwaitPointerEventScope

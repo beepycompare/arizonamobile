@@ -261,7 +261,7 @@ public final class Types {
 
         public int hashCode() {
             Type type = this.ownerType;
-            return ((type == null ? 0 : type.hashCode()) ^ this.argumentsList.hashCode()) ^ this.rawType.hashCode();
+            return this.rawType.hashCode() ^ ((type == null ? 0 : type.hashCode()) ^ this.argumentsList.hashCode());
         }
 
         public boolean equals(@CheckForNull Object other) {
@@ -353,7 +353,7 @@ public final class Types {
         }
 
         public int hashCode() {
-            return this.genericDeclaration.hashCode() ^ this.name.hashCode();
+            return this.name.hashCode() ^ this.genericDeclaration.hashCode();
         }
 
         public boolean equals(@CheckForNull Object obj) {
@@ -412,7 +412,7 @@ public final class Types {
         }
 
         public int hashCode() {
-            return this.lowerBounds.hashCode() ^ this.upperBounds.hashCode();
+            return this.upperBounds.hashCode() ^ this.lowerBounds.hashCode();
         }
 
         public String toString() {
@@ -502,14 +502,10 @@ public final class Types {
             String typeName(Type type) {
                 try {
                     return (String) Type.class.getMethod("getTypeName", new Class[0]).invoke(type, new Object[0]);
-                } catch (IllegalAccessException e) {
-                    e = e;
+                } catch (IllegalAccessException | InvocationTargetException e) {
                     throw new RuntimeException(e);
                 } catch (NoSuchMethodException unused) {
                     throw new AssertionError("Type.getTypeName should be available in Java 8");
-                } catch (InvocationTargetException e2) {
-                    e = e2;
-                    throw new RuntimeException(e);
                 }
             }
         },

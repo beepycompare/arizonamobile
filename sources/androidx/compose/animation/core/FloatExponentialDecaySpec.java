@@ -51,6 +51,6 @@ public final class FloatExponentialDecaySpec implements FloatDecayAnimationSpec 
         }
         double log = Math.log(Math.abs(getAbsVelocityThreshold() / f2));
         float f3 = this.friction;
-        return (f - (f2 / f3)) + ((f2 / f3) * ((float) Math.exp((f3 * ((log / f3) * 1000)) / 1000.0f)));
+        return (f - (f2 / f3)) + ((f2 / f3) * ((float) Math.exp((f3 * ((log / f3) * 1000.0d)) / 1000.0d)));
     }
 }

@@ -41,7 +41,7 @@ public final class EncodedPayload {
     }
 
     public int hashCode() {
-        return ((this.encoding.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.bytes);
+        return Arrays.hashCode(this.bytes) ^ ((this.encoding.hashCode() ^ 1000003) * 1000003);
     }
 
     public String toString() {

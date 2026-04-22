@@ -162,9 +162,11 @@ public final class ResourceFileSystem extends FileSystem {
             throw new FileNotFoundException("file not found: " + file);
         }
         String relativePath = toRelativePath(file);
-        for (Pair<FileSystem, Path> pair : getRoots()) {
+        Iterator<Pair<FileSystem, Path>> it = getRoots().iterator();
+        while (it.hasNext()) {
+            Pair<FileSystem, Path> next = it.next();
             try {
-                return pair.component1().openReadOnly(pair.component2().resolve(relativePath));
+                return next.component1().openReadOnly(next.component2().resolve(relativePath));
             } catch (FileNotFoundException unused) {
             }
         }

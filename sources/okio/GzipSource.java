@@ -55,7 +55,7 @@ public final class GzipSource implements Source {
                 gzipSource = this;
             }
             if (gzipSource.section == 2) {
-                consumeTrailer();
+                gzipSource.consumeTrailer();
                 gzipSource.section = (byte) 3;
                 if (!gzipSource.source.exhausted()) {
                     throw new IOException("gzip finished without exhausting source");

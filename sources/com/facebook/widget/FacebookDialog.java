@@ -253,7 +253,7 @@ public class FacebookDialog {
             return FacebookDialog.canPresentOpenGraphActionDialog(this.activity, OpenGraphActionDialogFeature.OG_ACTION_DIALOG);
         }
 
-        /* JADX WARN: Type inference failed for: r1v1, types: [com.facebook.widget.FacebookDialog$Builder, com.facebook.widget.FacebookDialog$OpenGraphActionDialogBuilder] */
+        /* JADX WARN: Type inference failed for: r0v1, types: [com.facebook.widget.FacebookDialog$Builder, com.facebook.widget.FacebookDialog$OpenGraphActionDialogBuilder] */
         @Override // com.facebook.widget.FacebookDialog.Builder
         public /* bridge */ /* synthetic */ OpenGraphActionDialogBuilder setApplicationName(String str) {
             return super.setApplicationName(str);
@@ -264,7 +264,7 @@ public class FacebookDialog {
             return this;
         }
 
-        /* JADX WARN: Type inference failed for: r1v1, types: [com.facebook.widget.FacebookDialog$Builder, com.facebook.widget.FacebookDialog$OpenGraphActionDialogBuilder] */
+        /* JADX WARN: Type inference failed for: r0v1, types: [com.facebook.widget.FacebookDialog$Builder, com.facebook.widget.FacebookDialog$OpenGraphActionDialogBuilder] */
         @Override // com.facebook.widget.FacebookDialog.Builder
         public /* bridge */ /* synthetic */ OpenGraphActionDialogBuilder setFragment(Fragment fragment) {
             return super.setFragment(fragment);
@@ -334,7 +334,7 @@ public class FacebookDialog {
             throw new FacebookException("Can not set attachments prior to setting action.");
         }
 
-        /* JADX WARN: Type inference failed for: r1v1, types: [com.facebook.widget.FacebookDialog$Builder, com.facebook.widget.FacebookDialog$OpenGraphActionDialogBuilder] */
+        /* JADX WARN: Type inference failed for: r0v1, types: [com.facebook.widget.FacebookDialog$Builder, com.facebook.widget.FacebookDialog$OpenGraphActionDialogBuilder] */
         @Override // com.facebook.widget.FacebookDialog.Builder
         public /* bridge */ /* synthetic */ OpenGraphActionDialogBuilder setRequestCode(int i) {
             return super.setRequestCode(i);
@@ -486,7 +486,7 @@ public class FacebookDialog {
             return FacebookDialog.canPresentShareDialog(this.activity, ShareDialogFeature.SHARE_DIALOG);
         }
 
-        /* JADX WARN: Type inference failed for: r1v1, types: [com.facebook.widget.FacebookDialog$ShareDialogBuilder, com.facebook.widget.FacebookDialog$Builder] */
+        /* JADX WARN: Type inference failed for: r0v1, types: [com.facebook.widget.FacebookDialog$ShareDialogBuilder, com.facebook.widget.FacebookDialog$Builder] */
         @Override // com.facebook.widget.FacebookDialog.Builder
         public /* bridge */ /* synthetic */ ShareDialogBuilder setApplicationName(String str) {
             return super.setApplicationName(str);
@@ -507,7 +507,7 @@ public class FacebookDialog {
             return this;
         }
 
-        /* JADX WARN: Type inference failed for: r1v1, types: [com.facebook.widget.FacebookDialog$ShareDialogBuilder, com.facebook.widget.FacebookDialog$Builder] */
+        /* JADX WARN: Type inference failed for: r0v1, types: [com.facebook.widget.FacebookDialog$ShareDialogBuilder, com.facebook.widget.FacebookDialog$Builder] */
         @Override // com.facebook.widget.FacebookDialog.Builder
         public /* bridge */ /* synthetic */ ShareDialogBuilder setFragment(Fragment fragment) {
             return super.setFragment(fragment);
@@ -543,7 +543,7 @@ public class FacebookDialog {
             return this;
         }
 
-        /* JADX WARN: Type inference failed for: r1v1, types: [com.facebook.widget.FacebookDialog$ShareDialogBuilder, com.facebook.widget.FacebookDialog$Builder] */
+        /* JADX WARN: Type inference failed for: r0v1, types: [com.facebook.widget.FacebookDialog$ShareDialogBuilder, com.facebook.widget.FacebookDialog$Builder] */
         @Override // com.facebook.widget.FacebookDialog.Builder
         public /* bridge */ /* synthetic */ ShareDialogBuilder setRequestCode(int i) {
             return super.setRequestCode(i);

@@ -188,7 +188,7 @@ public final class FileLruCache {
             int read;
             byte[] bArr = new byte[1024];
             long j2 = 0;
-            while (j2 < j && (read = read(bArr, 0, (int) Math.min(j - j2, 1024))) >= 0) {
+            while (j2 < j && (read = read(bArr, 0, (int) Math.min(j - j2, 1024L))) >= 0) {
                 j2 += read;
             }
             return j2;

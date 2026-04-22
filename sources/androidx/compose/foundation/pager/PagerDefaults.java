@@ -65,7 +65,7 @@ public final class PagerDefaults {
         if ((((i & 112) ^ 48) <= 32 || !composer.changed(pagerSnapDistance)) && (i & 48) != 32) {
             z = false;
         }
-        boolean changed2 = changed | z | composer.changed(density) | composer.changed(layoutDirection.ordinal());
+        boolean changed2 = composer.changed(density) | changed | z | composer.changed(layoutDirection.ordinal());
         Object rememberedValue = composer.rememberedValue();
         if (changed2 || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = SnapFlingBehaviorKt.snapFlingBehavior(PagerSnapLayoutInfoProviderKt.SnapLayoutInfoProvider(pagerState, pagerSnapDistance, new Function3() { // from class: androidx.compose.foundation.pager.PagerDefaults$$ExternalSyntheticLambda0

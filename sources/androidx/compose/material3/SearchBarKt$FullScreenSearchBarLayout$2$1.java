@@ -84,35 +84,37 @@ public final class SearchBarKt$FullScreenSearchBarLayout$2$1 implements MeasureP
                     final Placeable placeable = mo6216measureBRTryo0;
                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable2), "InputField")) {
                         final Placeable mo6216measureBRTryo02 = measurable2.mo6216measureBRTryo0(Constraints.Companion.m7518fixedJhjzzOo(m7525constrainWidthK40F9xA, intValue2));
-                        final int top = this.$unconsumedInsets.getTop(measureScope2) + measureScope2.mo399roundToPx0680j_4(SearchBarKt.getSearchBarVerticalPadding());
+                        int top = this.$unconsumedInsets.getTop(measureScope2) + measureScope2.mo399roundToPx0680j_4(SearchBarKt.getSearchBarVerticalPadding());
                         int i3 = measureScope2.mo399roundToPx0680j_4(SearchBarKt.getSearchBarVerticalPadding());
-                        final int lerp3 = MathHelpersKt.lerp(0, top, Math.min(this.$state.getProgress(), 1 - f));
-                        final int lerp4 = MathHelpersKt.lerp(0, i3, this.$state.getProgress());
+                        final int lerp3 = MathHelpersKt.lerp(0, top, Math.min(this.$state.getProgress(), 1.0f - f));
+                        int lerp4 = MathHelpersKt.lerp(0, i3, this.$state.getProgress());
                         int height = mo6216measureBRTryo02.getHeight() + lerp3 + lerp4;
                         int size3 = list4.size();
                         int i4 = 0;
                         while (i4 < size3) {
                             Measurable measurable3 = list2.get(i4);
                             int i5 = i4;
-                            int i6 = height;
+                            final int i6 = top;
                             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable3), "Content")) {
-                                final Placeable mo6216measureBRTryo03 = measurable3.mo6216measureBRTryo0(ConstraintsKt.Constraints(m7525constrainWidthK40F9xA, m7525constrainWidthK40F9xA, 0, RangesKt.coerceAtLeast(m7524constrainHeightK40F9xA - i6, 0)));
+                                final Placeable mo6216measureBRTryo03 = measurable3.mo6216measureBRTryo0(ConstraintsKt.Constraints(m7525constrainWidthK40F9xA, m7525constrainWidthK40F9xA, 0, RangesKt.coerceAtLeast(m7524constrainHeightK40F9xA - height, 0)));
                                 int m7508getMaxWidthimpl = Constraints.m7508getMaxWidthimpl(j2);
                                 int m7507getMaxHeightimpl = Constraints.m7507getMaxHeightimpl(j2);
+                                final int i7 = lerp4;
                                 final MutableState<BackEventProgress.InProgress> mutableState = this.$lastInProgressValue;
                                 final SearchBarState searchBarState = this.$state;
                                 final MutableState<BackEventProgress.InProgress> mutableState2 = this.$firstInProgressValue;
                                 return MeasureScope.layout$default(measureScope, m7508getMaxWidthimpl, m7507getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.material3.SearchBarKt$FullScreenSearchBarLayout$2$1$$ExternalSyntheticLambda1
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj) {
-                                        return SearchBarKt$FullScreenSearchBarLayout$2$1.measure_3p2s80s$lambda$6(MutableState.this, f, searchBarState, placeable, mo6216measureBRTryo02, lerp3, mo6216measureBRTryo03, lerp4, j2, measureScope2, coerceAtLeast, mutableState2, coerceAtLeast2, top, (Placeable.PlacementScope) obj);
+                                        return SearchBarKt$FullScreenSearchBarLayout$2$1.measure_3p2s80s$lambda$6(MutableState.this, f, searchBarState, placeable, mo6216measureBRTryo02, lerp3, mo6216measureBRTryo03, i7, j2, measureScope2, coerceAtLeast, mutableState2, coerceAtLeast2, i6, (Placeable.PlacementScope) obj);
                                     }
                                 }, 4, null);
                             }
                             measureScope2 = measureScope;
                             j2 = j;
                             i4 = i5 + 1;
-                            height = i6;
+                            top = i6;
+                            lerp4 = lerp4;
                             list2 = list;
                         }
                         ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");

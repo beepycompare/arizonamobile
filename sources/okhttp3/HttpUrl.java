@@ -668,6 +668,7 @@ public final class HttpUrl {
                 if (i > str2.length()) {
                     return builder;
                 }
+                this = builder;
                 str = str2;
                 z = z3;
             }
@@ -985,10 +986,7 @@ public final class HttpUrl {
             } else if (httpUrl != null) {
                 this.scheme = httpUrl.scheme();
             } else {
-                if (input.length() > 6) {
-                    input = StringsKt.take(input, 6) + "...";
-                }
-                throw new IllegalArgumentException("Expected URL scheme 'http' or 'https' but no scheme was found for " + input);
+                throw new IllegalArgumentException("Expected URL scheme 'http' or 'https' but no scheme was found for " + (input.length() > 6 ? StringsKt.take(input, 6) + "..." : input));
             }
             int slashCount = slashCount(input, indexOfFirstNonAsciiWhitespace$default, indexOfLastNonAsciiWhitespace$default);
             char c2 = '?';
@@ -1103,12 +1101,15 @@ public final class HttpUrl {
             while (i3 < i2) {
                 int delimiterOffset = _UtilCommonKt.delimiterOffset(str, "/\\", i3, i2);
                 boolean z = delimiterOffset < i2;
+                Builder builder = this;
                 String str2 = str;
-                push(str2, i3, delimiterOffset, z, true);
+                builder.push(str2, i3, delimiterOffset, z, true);
                 if (z) {
                     i3 = delimiterOffset + 1;
+                    this = builder;
                     str = str2;
                 } else {
+                    this = builder;
                     str = str2;
                     i3 = delimiterOffset;
                 }

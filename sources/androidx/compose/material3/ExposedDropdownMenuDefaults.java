@@ -198,7 +198,19 @@ public final class ExposedDropdownMenuDefaults {
         long j46 = m4771copywmQWz5c$default;
         long j47 = value5;
         long j48 = value8;
-        TextFieldColors m2692colors0hiis_0 = TextFieldDefaults.INSTANCE.m2692colors0hiis_0(value, value2, j46, value3, value4, j47, value6, value7, j48, value9, textSelectionColors3, j39, value10, j45, j40, value11, value12, m4771copywmQWz5c$default3, j41, value13, value14, m4771copywmQWz5c$default4, j42, value15, value16, value17, value18, value19, value20, m4771copywmQWz5c$default5, j43, 0L, 0L, 0L, 0L, value21, value22, m4771copywmQWz5c$default6, j44, value23, value24, m4771copywmQWz5c$default7, value25, composer, i & 2147483646, i2 & 2147483646, i3 & 2147483646, (i4 & 14) | (458752 & i13) | (3670016 & i13) | (29360128 & i13) | (234881024 & i13) | (i13 & 1879048192), i15, 0, 15);
+        long j49 = value2;
+        long j50 = value4;
+        long j51 = value7;
+        long j52 = j39;
+        long j53 = j40;
+        long j54 = value12;
+        long j55 = j41;
+        long j56 = value14;
+        long j57 = j42;
+        long j58 = value16;
+        long j59 = value18;
+        long j60 = value20;
+        TextFieldColors m2692colors0hiis_0 = TextFieldDefaults.INSTANCE.m2692colors0hiis_0(value, j49, j46, value3, j50, j47, value6, j51, j48, value9, textSelectionColors3, j52, value10, j45, j53, value11, j54, m4771copywmQWz5c$default3, j55, value13, j56, m4771copywmQWz5c$default4, j57, value15, j58, value17, j59, value19, j60, m4771copywmQWz5c$default5, j43, 0L, 0L, 0L, 0L, value21, value22, m4771copywmQWz5c$default6, j44, value23, value24, m4771copywmQWz5c$default7, value25, composer, i & 2147483646, i2 & 2147483646, i3 & 2147483646, (i4 & 14) | (458752 & i13) | (3670016 & i13) | (29360128 & i13) | (234881024 & i13) | (i13 & 1879048192), i15, 0, 15);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -323,7 +335,19 @@ public final class ExposedDropdownMenuDefaults {
         long j47 = m4771copywmQWz5c$default;
         long j48 = m4807getTransparent0d7_KjU2;
         long j49 = value4;
-        TextFieldColors m2348colors0hiis_0 = OutlinedTextFieldDefaults.INSTANCE.m2348colors0hiis_0(value, value2, j47, value3, m4807getTransparent0d7_KjU, j48, m4807getTransparent0d7_KjU3, m4807getTransparent0d7_KjU4, j49, value5, textSelectionColors3, j39, value6, j46, j40, value7, value8, m4771copywmQWz5c$default3, j41, value9, value10, m4771copywmQWz5c$default4, j42, value11, value12, m4771copywmQWz5c$default5, j43, value13, value14, m4771copywmQWz5c$default6, j44, 0L, 0L, 0L, 0L, value15, value16, m4771copywmQWz5c$default7, j45, value17, value18, m4771copywmQWz5c$default8, value19, composer, i & 2147483646, i2 & 2147483646, i3 & 2147483646, (i4 & 14) | (458752 & i14) | (3670016 & i14) | (29360128 & i14) | (234881024 & i14) | (i14 & 1879048192), i16, 0, 15);
+        long j50 = value2;
+        long j51 = m4807getTransparent0d7_KjU;
+        long j52 = m4807getTransparent0d7_KjU4;
+        long j53 = j39;
+        long j54 = j40;
+        long j55 = value8;
+        long j56 = j41;
+        long j57 = value10;
+        long j58 = j42;
+        long j59 = value12;
+        long j60 = j43;
+        long j61 = value14;
+        TextFieldColors m2348colors0hiis_0 = OutlinedTextFieldDefaults.INSTANCE.m2348colors0hiis_0(value, j50, j47, value3, j51, j48, m4807getTransparent0d7_KjU3, j52, j49, value5, textSelectionColors3, j53, value6, j46, j54, value7, j55, m4771copywmQWz5c$default3, j56, value9, j57, m4771copywmQWz5c$default4, j58, value11, j59, m4771copywmQWz5c$default5, j60, value13, j61, m4771copywmQWz5c$default6, j44, 0L, 0L, 0L, 0L, value15, value16, m4771copywmQWz5c$default7, j45, value17, value18, m4771copywmQWz5c$default8, value19, composer, i & 2147483646, i2 & 2147483646, i3 & 2147483646, (i4 & 14) | (458752 & i14) | (3670016 & i14) | (29360128 & i14) | (234881024 & i14) | (i14 & 1879048192), i16, 0, 15);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -338,12 +362,13 @@ public final class ExposedDropdownMenuDefaults {
     static {
         float f;
         f = ExposedDropdownMenuKt.ExposedDropdownMenuItemHorizontalPadding;
-        ItemContentPadding = PaddingKt.m812PaddingValuesYgX7TsA(f, Dp.m7555constructorimpl(0));
+        ItemContentPadding = PaddingKt.m812PaddingValuesYgX7TsA(f, Dp.m7555constructorimpl(0.0f));
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
     public final /* synthetic */ void TrailingIcon(boolean z, Composer composer, final int i) {
         int i2;
+        final ExposedDropdownMenuDefaults exposedDropdownMenuDefaults;
         final boolean z2;
         Composer startRestartGroup = composer.startRestartGroup(-1803742020);
         ComposerKt.sourceInformation(startRestartGroup, "C(TrailingIcon)N(expanded)849@45151L32:ExposedDropdownMenu.kt#uh7d8r");
@@ -359,12 +384,14 @@ public final class ExposedDropdownMenuDefaults {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1803742020, i2, -1, "androidx.compose.material3.ExposedDropdownMenuDefaults.TrailingIcon (ExposedDropdownMenu.kt:849)");
             }
+            exposedDropdownMenuDefaults = this;
             z2 = z;
-            TrailingIcon(z2, Modifier.Companion, startRestartGroup, (i2 & 14) | 48 | ((i2 << 3) & 896), 0);
+            exposedDropdownMenuDefaults.TrailingIcon(z2, Modifier.Companion, startRestartGroup, (i2 & 14) | 48 | ((i2 << 3) & 896), 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         } else {
+            exposedDropdownMenuDefaults = this;
             z2 = z;
             startRestartGroup.skipToGroupEnd();
         }

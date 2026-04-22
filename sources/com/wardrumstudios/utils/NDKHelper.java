@@ -105,14 +105,12 @@ public class NDKHelper {
         loadedSO = true;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v4, types: [android.graphics.Bitmap] */
     public boolean loadTexture(String str) {
         try {
             File file = new File(this.activity.getExternalFilesDir(null), !str.startsWith("/") ? "/" + str : str);
-            str = BitmapFactory.decodeStream(file.canRead() ? new FileInputStream(file) : this.activity.getResources().getAssets().open(str));
-            if (str != 0) {
-                GLUtils.texImage2D(3553, 0, str, 0);
+            Bitmap decodeStream = BitmapFactory.decodeStream(file.canRead() ? new FileInputStream(file) : this.activity.getResources().getAssets().open(str));
+            if (decodeStream != null) {
+                GLUtils.texImage2D(3553, 0, decodeStream, 0);
                 return true;
             }
             return true;

@@ -296,7 +296,7 @@ public final class MeasuredPolygon extends AbstractList<MeasuredCubic> {
             int size4 = arrayList3.size();
             for (int i4 = 0; i4 < size4; i4++) {
                 int intValue = ((Number) ((Pair) arrayList3.get(i4)).getSecond()).intValue();
-                createListBuilder.add(new ProgressableFeature(Utils.positiveModulo((mutableFloatList.get(intValue) + mutableFloatList.get(intValue + 1)) / 2, 1.0f), (Feature) ((Pair) arrayList3.get(i4)).getFirst()));
+                createListBuilder.add(new ProgressableFeature(Utils.positiveModulo((mutableFloatList.get(intValue) + mutableFloatList.get(intValue + 1)) / 2.0f, 1.0f), (Feature) ((Pair) arrayList3.get(i4)).getFirst()));
             }
             return new MeasuredPolygon(measurer, CollectionsKt.build(createListBuilder), arrayList2, mutableFloatList, null);
         }

@@ -43,6 +43,8 @@ public final class DownloadScreenComponent$onCancelDownloadGame$$inlined$launchS
         return ((DownloadScreenComponent$onCancelDownloadGame$$inlined$launchSafe$default$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v8 */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         FilesUpdaterInteractor filesUpdaterInteractor;
@@ -58,7 +60,9 @@ public final class DownloadScreenComponent$onCancelDownloadGame$$inlined$launchS
                 this.L$2 = SpillingKt.nullOutSpilledVariable(coroutineScope);
                 this.I$0 = 0;
                 this.label = 1;
-                if (filesUpdaterInteractor.cancelDownload(this) == coroutine_suspended) {
+                Object cancelDownload = filesUpdaterInteractor.cancelDownload(this);
+                this = cancelDownload;
+                if (cancelDownload == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {
@@ -67,6 +71,7 @@ public final class DownloadScreenComponent$onCancelDownloadGame$$inlined$launchS
                 CoroutineScope coroutineScope2 = (CoroutineScope) this.L$2;
                 Continuation continuation = (Continuation) this.L$1;
                 ResultKt.throwOnFailure(obj);
+                this = this;
             }
         } catch (Exception e) {
             this.receiver$inlined.handleError(e);

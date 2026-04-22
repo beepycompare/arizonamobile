@@ -173,8 +173,9 @@ public final class Options extends AbstractList<ByteString> implements RandomAcc
         private final void buildTrieRecursive(long j, Buffer buffer, int i, List<? extends ByteString> list, int i2, int i3, List<Integer> list2) {
             int i4;
             int i5;
-            int i6;
             long j2;
+            int i6;
+            long j3;
             int i7 = i;
             if (i2 >= i3) {
                 throw new IllegalArgumentException("Failed requirement.".toString());
@@ -186,6 +187,7 @@ public final class Options extends AbstractList<ByteString> implements RandomAcc
             }
             ByteString byteString = list.get(i2);
             ByteString byteString2 = list.get(i3 - 1);
+            char c = 65535;
             if (i7 == byteString.size()) {
                 int i9 = i2 + 1;
                 i4 = i9;
@@ -195,6 +197,7 @@ public final class Options extends AbstractList<ByteString> implements RandomAcc
                 i4 = i2;
                 i5 = -1;
             }
+            long j4 = 2;
             if (byteString.getByte(i7) != byteString2.getByte(i7)) {
                 int i10 = 1;
                 for (int i11 = i4 + 1; i11 < i3; i11++) {
@@ -229,13 +232,13 @@ public final class Options extends AbstractList<ByteString> implements RandomAcc
                     }
                     if (i13 == i6 && i7 + 1 == list.get(i4).size()) {
                         buffer.writeInt(list2.get(i4).intValue());
-                        j2 = intCount;
+                        j3 = intCount;
                     } else {
                         buffer.writeInt(((int) (getIntCount(buffer2) + intCount)) * (-1));
-                        j2 = intCount;
-                        buildTrieRecursive(j2, buffer2, i7 + 1, list, i4, i6, list2);
+                        j3 = intCount;
+                        buildTrieRecursive(j3, buffer2, i7 + 1, list, i4, i6, list2);
                     }
-                    intCount = j2;
+                    intCount = j3;
                     i4 = i6;
                 }
                 Long.valueOf(buffer.writeAll(buffer2));
@@ -243,10 +246,23 @@ public final class Options extends AbstractList<ByteString> implements RandomAcc
             }
             int min = Math.min(byteString.size(), byteString2.size());
             int i15 = 0;
-            for (int i16 = i7; i16 < min && byteString.getByte(i16) == byteString2.getByte(i16); i16++) {
+            int i16 = i7;
+            while (true) {
+                char c2 = c;
+                if (i16 >= min) {
+                    j2 = j4;
+                    break;
+                }
+                j2 = j4;
+                if (byteString.getByte(i16) != byteString2.getByte(i16)) {
+                    break;
+                }
                 i15++;
+                i16++;
+                c = c2;
+                j4 = j2;
             }
-            long intCount2 = j + getIntCount(buffer) + 2 + i15 + 1;
+            long intCount2 = j + getIntCount(buffer) + j2 + i15 + 1;
             buffer.writeInt(-i15);
             buffer.writeInt(i5);
             int i17 = i7 + i15;

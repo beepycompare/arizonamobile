@@ -83,7 +83,6 @@ public final class ContentUriFetcher implements Fetcher {
                 bundle.putParcelable("android.content.extra.SIZE", new Point(m8619unboximpl, m8619unboximpl2));
                 return bundle;
             }
-            return null;
         }
         return null;
     }

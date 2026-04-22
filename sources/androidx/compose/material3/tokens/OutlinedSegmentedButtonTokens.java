@@ -8,7 +8,7 @@ import kotlin.Metadata;
 public final class OutlinedSegmentedButtonTokens {
     public static final int $stable = 0;
     public static final OutlinedSegmentedButtonTokens INSTANCE = new OutlinedSegmentedButtonTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 40.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(40.0f);
     private static final ColorSchemeKeyTokens DisabledIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledIconOpacity = 0.38f;
     private static final ColorSchemeKeyTokens DisabledLabelTextColor = ColorSchemeKeyTokens.OnSurface;
@@ -17,7 +17,7 @@ public final class OutlinedSegmentedButtonTokens {
     private static final float DisabledOutlineOpacity = 0.12f;
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens OutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float OutlineWidth = Dp.m7555constructorimpl((float) 1.0d);
+    private static final float OutlineWidth = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens SelectedContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedFocusIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedFocusLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
@@ -36,7 +36,7 @@ public final class OutlinedSegmentedButtonTokens {
     private static final ColorSchemeKeyTokens UnselectedPressedIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens UnselectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens UnselectedIconColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float IconSize = Dp.m7555constructorimpl((float) 18.0d);
+    private static final float IconSize = Dp.m7555constructorimpl(18.0f);
 
     private OutlinedSegmentedButtonTokens() {
     }

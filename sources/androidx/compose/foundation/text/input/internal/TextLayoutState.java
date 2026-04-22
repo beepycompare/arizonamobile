@@ -41,7 +41,7 @@ public final class TextLayoutState {
         this.textLayoutNodeCoordinates$delegate = SnapshotStateKt.mutableStateOf(null, SnapshotStateKt.neverEqualPolicy());
         this.coreNodeCoordinates$delegate = SnapshotStateKt.mutableStateOf(null, SnapshotStateKt.neverEqualPolicy());
         this.decoratorNodeCoordinates$delegate = SnapshotStateKt.mutableStateOf(null, SnapshotStateKt.neverEqualPolicy());
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7553boximpl(Dp.m7555constructorimpl(0)), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7553boximpl(Dp.m7555constructorimpl(0.0f)), null, 2, null);
         this.minHeightForSingleLineField$delegate = mutableStateOf$default;
         this.bringIntoViewRequester = BringIntoViewRequesterKt.BringIntoViewRequester();
     }
@@ -155,7 +155,7 @@ public final class TextLayoutState {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0020, code lost:
-        if (r2 == null) goto L13;
+        if (r1 == null) goto L13;
      */
     /* renamed from: coercedInVisibleBoundsOfInputText-MK-Hz9U$foundation  reason: not valid java name */
     /*

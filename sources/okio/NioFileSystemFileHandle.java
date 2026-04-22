@@ -19,16 +19,20 @@ public final class NioFileSystemFileHandle extends FileHandle {
 
     @Override // okio.FileHandle
     protected synchronized void protectedResize(long j) {
+        NioFileSystemFileHandle nioFileSystemFileHandle;
         try {
             try {
                 long size = size();
                 long j2 = j - size;
                 if (j2 > 0) {
                     int i = (int) j2;
-                    protectedWrite(size, new byte[i], 0, i);
+                    nioFileSystemFileHandle = this;
+                    nioFileSystemFileHandle.protectedWrite(size, new byte[i], 0, i);
                 } else {
-                    this.fileChannel.truncate(j);
+                    nioFileSystemFileHandle = this;
+                    nioFileSystemFileHandle.fileChannel.truncate(j);
                 }
+                return;
             } catch (Throwable th) {
                 th = th;
                 throw th;
@@ -37,6 +41,7 @@ public final class NioFileSystemFileHandle extends FileHandle {
             th = th2;
             throw th;
         }
+        throw th;
     }
 
     @Override // okio.FileHandle

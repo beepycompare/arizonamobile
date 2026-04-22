@@ -311,7 +311,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
         return this.value instanceof Cancellation;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0058, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0056, code lost:
         return true;
      */
     @Override // java.util.concurrent.Future
@@ -331,21 +331,20 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
         } else {
             cancellation = Cancellation.CAUSELESS_CANCELLED;
         }
-        AbstractResolvableFuture<V> abstractResolvableFuture = this;
         boolean z2 = false;
         while (true) {
-            if (ATOMIC_HELPER.casValue(abstractResolvableFuture, obj, cancellation)) {
+            if (ATOMIC_HELPER.casValue(this, obj, cancellation)) {
                 if (z) {
-                    abstractResolvableFuture.interruptTask();
+                    this.interruptTask();
                 }
-                complete(abstractResolvableFuture);
+                complete(this);
                 if (!(obj instanceof SetFuture)) {
                     break;
                 }
                 ListenableFuture<? extends V> listenableFuture = ((SetFuture) obj).future;
                 if (listenableFuture instanceof AbstractResolvableFuture) {
-                    abstractResolvableFuture = (AbstractResolvableFuture) listenableFuture;
-                    obj = abstractResolvableFuture.value;
+                    this = (AbstractResolvableFuture) listenableFuture;
+                    obj = this.value;
                     if (!(obj == null) && !(obj instanceof SetFuture)) {
                         break;
                     }
@@ -355,7 +354,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
                     break;
                 }
             } else {
-                obj = abstractResolvableFuture.value;
+                obj = this.value;
                 if (!(obj instanceof SetFuture)) {
                     return z2;
                 }
@@ -549,15 +548,15 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
         do {
             listener2 = this.listeners;
         } while (!ATOMIC_HELPER.casListeners(this, listener2, Listener.TOMBSTONE));
-        Listener listener3 = listener;
-        Listener listener4 = listener2;
-        while (listener4 != null) {
-            Listener listener5 = listener4.next;
-            listener4.next = listener3;
-            listener3 = listener4;
-            listener4 = listener5;
+        while (true) {
+            Listener listener3 = listener;
+            listener = listener2;
+            if (listener == null) {
+                return listener3;
+            }
+            listener2 = listener.next;
+            listener.next = listener3;
         }
-        return listener3;
     }
 
     public String toString() {

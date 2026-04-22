@@ -837,10 +837,7 @@ public final class Sets {
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public boolean contains(@CheckForNull Object o) {
             Integer num = this.inputSet.get(o);
-            if (num != null) {
-                return ((1 << num.intValue()) & this.mask) != 0;
-            }
-            return false;
+            return (num == null || (this.mask & (1 << num.intValue())) == 0) ? false : true;
         }
     }
 

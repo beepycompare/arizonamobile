@@ -9,10 +9,10 @@ public final class SearchBarTokens {
     public static final int $stable = 0;
     public static final SearchBarTokens INSTANCE = new SearchBarTokens();
     private static final ShapeKeyTokens AvatarShape = ShapeKeyTokens.CornerFull;
-    private static final float AvatarSize = Dp.m7555constructorimpl((float) 30.0d);
+    private static final float AvatarSize = Dp.m7555constructorimpl(30.0f);
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainerHigh;
     private static final float ContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 56.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(56.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ColorSchemeKeyTokens HoverSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;

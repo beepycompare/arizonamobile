@@ -66,9 +66,9 @@ public final class ProgressIndicatorKt {
     public static final int SecondLineHeadDuration = 850;
     public static final int SecondLineTailDelay = 900;
     public static final int SecondLineTailDuration = 850;
-    private static final float LinearIndicatorWidth = Dp.m7555constructorimpl(240);
+    private static final float LinearIndicatorWidth = Dp.m7555constructorimpl(240.0f);
     private static final float LinearIndicatorHeight = LinearProgressIndicatorTokens.INSTANCE.m3496getHeightD9Ej5fM();
-    private static final float StopIndicatorTrailingSpace = Dp.m7555constructorimpl(6);
+    private static final float StopIndicatorTrailingSpace = Dp.m7555constructorimpl(6.0f);
     private static final float CircularIndicatorDiameter = CircularProgressIndicatorTokens.INSTANCE.m3205getSizeD9Ej5fM();
     private static final CubicBezierEasing LinearIndeterminateProgressEasing = MotionTokens.INSTANCE.getEasingEmphasizedAccelerateCubicBezier();
     private static final CubicBezierEasing CircularProgressEasing = MotionTokens.INSTANCE.getEasingStandardCubicBezier();
@@ -1493,31 +1493,30 @@ public final class ProgressIndicatorKt {
     private static final void m2385drawLinearIndicatorqYKTg0g(DrawScope drawScope, float f, float f2, long j, float f3, int i) {
         float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32));
         float intBitsToFloat2 = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L));
-        float f4 = 2;
-        float f5 = intBitsToFloat2 / f4;
+        float f4 = intBitsToFloat2 / 2.0f;
         boolean z = drawScope.getLayoutDirection() == LayoutDirection.Ltr;
-        float f6 = (z ? f : 1.0f - f2) * intBitsToFloat;
-        float f7 = (z ? f2 : 1.0f - f) * intBitsToFloat;
+        float f5 = (z ? f : 1.0f - f2) * intBitsToFloat;
+        float f6 = (z ? f2 : 1.0f - f) * intBitsToFloat;
         if (StrokeCap.m5142equalsimpl0(i, StrokeCap.Companion.m5146getButtKaPHkGw()) || intBitsToFloat2 > intBitsToFloat) {
-            DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, Offset.m4519constructorimpl((Float.floatToRawIntBits(f6) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(f7) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L)), f3, 0, null, 0.0f, null, 0, 496, null);
+            DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, Offset.m4519constructorimpl((Float.floatToRawIntBits(f5) << 32) | (Float.floatToRawIntBits(f4) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(f6) << 32) | (Float.floatToRawIntBits(f4) & 4294967295L)), f3, 0, null, 0.0f, null, 0, 496, null);
             return;
         }
-        float f8 = f3 / f4;
-        float f9 = intBitsToFloat - f8;
-        if (f6 < f8) {
-            f6 = f8;
+        float f7 = f3 / 2.0f;
+        float f8 = intBitsToFloat - f7;
+        if (f5 < f7) {
+            f5 = f7;
         }
-        if (f6 > f9) {
-            f6 = f9;
+        if (f5 > f8) {
+            f5 = f8;
         }
-        if (f7 < f8) {
-            f7 = f8;
+        if (f6 < f7) {
+            f6 = f7;
         }
-        if (f7 <= f9) {
-            f9 = f7;
+        if (f6 <= f8) {
+            f8 = f6;
         }
         if (Math.abs(f2 - f) > 0.0f) {
-            DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, Offset.m4519constructorimpl((Float.floatToRawIntBits(f6) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(f9) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L)), f3, i, null, 0.0f, null, 0, WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND, null);
+            DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, Offset.m4519constructorimpl((Float.floatToRawIntBits(f5) << 32) | (Float.floatToRawIntBits(f4) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(f8) << 32) | (Float.floatToRawIntBits(f4) & 4294967295L)), f3, i, null, 0.0f, null, 0, WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND, null);
         }
     }
 
@@ -2105,7 +2104,7 @@ public final class ProgressIndicatorKt {
             f = Dp.m7555constructorimpl(f + f2);
         }
         float f3 = (f / ((float) (drawScope.mo401toDpu2uoSUM(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) * 3.141592653589793d))) * 360.0f;
-        m2381drawCircularIndicator42QJj7c(drawScope, 270.0f + floatValue + Math.min(floatValue, f3), (360.0f - floatValue) - (Math.min(floatValue, f3) * 2), j, stroke);
+        m2381drawCircularIndicator42QJj7c(drawScope, 270.0f + floatValue + Math.min(floatValue, f3), (360.0f - floatValue) - (Math.min(floatValue, f3) * 2.0f), j, stroke);
         m2383drawDeterminateCircularIndicator42QJj7c(drawScope, 270.0f, floatValue, j2, stroke);
         return Unit.INSTANCE;
     }
@@ -2544,7 +2543,7 @@ public final class ProgressIndicatorKt {
         drawContext.getCanvas().save();
         try {
             drawContext.getTransform().mo5273rotateUv8p0NA(floatValue2, mo5345getCenterF1C5BW0);
-            m2381drawCircularIndicator42QJj7c(drawScope, floatValue + Math.min(floatValue, f3), (360.0f - floatValue) - (Math.min(floatValue, f3) * 2), j, stroke);
+            m2381drawCircularIndicator42QJj7c(drawScope, floatValue + Math.min(floatValue, f3), (360.0f - floatValue) - (Math.min(floatValue, f3) * 2.0f), j, stroke);
             m2383drawDeterminateCircularIndicator42QJj7c(drawScope, 0.0f, floatValue, j2, stroke);
             drawContext.getCanvas().restore();
             drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
@@ -3058,9 +3057,8 @@ public final class ProgressIndicatorKt {
 
     /* renamed from: drawCircularIndicator-42QJj7c  reason: not valid java name */
     private static final void m2381drawCircularIndicator42QJj7c(DrawScope drawScope, float f, float f2, long j, Stroke stroke) {
-        float width;
-        float f3 = 2;
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32)) - (f3 * (stroke.getWidth() / f3));
+        float width = stroke.getWidth() / 2.0f;
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32)) - (2.0f * width);
         DrawScope.m5325drawArcyD3GUKo$default(drawScope, j, f, f2, false, Offset.m4519constructorimpl((Float.floatToRawIntBits(width) & 4294967295L) | (Float.floatToRawIntBits(width) << 32)), Size.m4587constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L)), 0.0f, stroke, null, 0, 832, null);
     }
 
@@ -3076,7 +3074,7 @@ public final class ProgressIndicatorKt {
 
     /* renamed from: drawIndeterminateCircularIndicator-hrjfTZI  reason: not valid java name */
     private static final void m2384drawIndeterminateCircularIndicatorhrjfTZI(DrawScope drawScope, float f, float f2, float f3, long j, Stroke stroke) {
-        m2381drawCircularIndicator42QJj7c(drawScope, f + (StrokeCap.m5142equalsimpl0(stroke.m5415getCapKaPHkGw(), StrokeCap.Companion.m5146getButtKaPHkGw()) ? 0.0f : ((f2 / Dp.m7555constructorimpl(CircularIndicatorDiameter / 2)) * 57.29578f) / 2.0f), Math.max(f3, 0.1f), j, stroke);
+        m2381drawCircularIndicator42QJj7c(drawScope, f + (StrokeCap.m5142equalsimpl0(stroke.m5415getCapKaPHkGw(), StrokeCap.Companion.m5146getButtKaPHkGw()) ? 0.0f : ((f2 / Dp.m7555constructorimpl(CircularIndicatorDiameter / 2.0f)) * 57.29578f) / 2.0f), Math.max(f3, 0.1f), j, stroke);
     }
 
     public static final InfiniteRepeatableSpec<Float> getCircularIndeterminateGlobalRotationAnimationSpec() {

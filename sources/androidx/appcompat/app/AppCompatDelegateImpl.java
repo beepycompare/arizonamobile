@@ -289,6 +289,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
 
     @Override // androidx.appcompat.app.AppCompatDelegate
     public Context attachBaseContext2(Context context) {
+        AppCompatDelegateImpl appCompatDelegateImpl;
         Context context2;
         this.mBaseContextAttached = true;
         int mapNightMode = mapNightMode(context, calculateNightMode());
@@ -297,18 +298,20 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         }
         LocaleListCompat calculateApplicationLocales = calculateApplicationLocales(context);
         if (context instanceof ContextThemeWrapper) {
+            appCompatDelegateImpl = this;
             context2 = context;
             try {
-                ((ContextThemeWrapper) context2).applyOverrideConfiguration(createOverrideAppConfiguration(context2, mapNightMode, calculateApplicationLocales, null, false));
+                ((ContextThemeWrapper) context2).applyOverrideConfiguration(appCompatDelegateImpl.createOverrideAppConfiguration(context2, mapNightMode, calculateApplicationLocales, null, false));
                 return context2;
             } catch (IllegalStateException unused) {
             }
         } else {
+            appCompatDelegateImpl = this;
             context2 = context;
         }
         if (context2 instanceof androidx.appcompat.view.ContextThemeWrapper) {
             try {
-                ((androidx.appcompat.view.ContextThemeWrapper) context2).applyOverrideConfiguration(createOverrideAppConfiguration(context2, mapNightMode, calculateApplicationLocales, null, false));
+                ((androidx.appcompat.view.ContextThemeWrapper) context2).applyOverrideConfiguration(appCompatDelegateImpl.createOverrideAppConfiguration(context2, mapNightMode, calculateApplicationLocales, null, false));
                 return context2;
             } catch (IllegalStateException unused2) {
             }
@@ -322,7 +325,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         Configuration configuration2 = context2.createConfigurationContext(configuration).getResources().getConfiguration();
         Configuration configuration3 = context2.getResources().getConfiguration();
         configuration2.uiMode = configuration3.uiMode;
-        Configuration createOverrideAppConfiguration = createOverrideAppConfiguration(context2, mapNightMode, calculateApplicationLocales, !configuration2.equals(configuration3) ? generateConfigDelta(configuration2, configuration3) : null, true);
+        Configuration createOverrideAppConfiguration = appCompatDelegateImpl.createOverrideAppConfiguration(context2, mapNightMode, calculateApplicationLocales, !configuration2.equals(configuration3) ? generateConfigDelta(configuration2, configuration3) : null, true);
         androidx.appcompat.view.ContextThemeWrapper contextThemeWrapper = new androidx.appcompat.view.ContextThemeWrapper(context2, R.style.Theme_AppCompat_Empty);
         contextThemeWrapper.applyOverrideConfiguration(createOverrideAppConfiguration);
         try {

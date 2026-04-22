@@ -164,7 +164,7 @@ public final class zay extends GoogleApi implements ModuleInstallClient {
         return doRegisterEventListener(builder2.build()).onSuccessTask(new SuccessContinuation() { // from class: com.google.android.gms.common.moduleinstall.internal.zak
             @Override // com.google.android.gms.tasks.SuccessContinuation
             public final Task then(Object obj) {
-                Void r2 = (Void) obj;
+                Void r1 = (Void) obj;
                 int i = zay.zab;
                 AtomicReference atomicReference2 = atomicReference;
                 if (atomicReference2.get() != null) {

@@ -24,51 +24,52 @@ final class AndroidFlingSpline {
         float f7;
         float f8;
         float f9;
-        float f10;
-        float f11 = 0.0f;
+        float f10 = 0.0f;
         int i = 0;
-        float f12 = 0.0f;
+        float f11 = 0.0f;
         while (true) {
-            float f13 = 1.0f;
+            float f12 = 1.0f;
             if (i < 100) {
-                float f14 = i / 100;
-                float f15 = 1.0f;
+                float f13 = i / 100.0f;
+                float f14 = 1.0f;
                 while (true) {
-                    f = ((f15 - f11) / 2.0f) + f11;
-                    f2 = f13 - f;
+                    f = ((f14 - f10) / 2.0f) + f10;
+                    f2 = f12 - f;
                     f3 = f * 3.0f * f2;
                     f4 = f * f * f;
-                    float f16 = (((f2 * 0.175f) + (f * 0.35000002f)) * f3) + f4;
-                    f5 = f13;
-                    f6 = f14;
-                    if (Math.abs(f16 - f14) < 1.0E-5d) {
+                    float f15 = (((f2 * 0.175f) + (f * 0.35000002f)) * f3) + f4;
+                    f5 = f12;
+                    float f16 = f14;
+                    if (Math.abs(f15 - f13) < 1.0E-5d) {
                         break;
-                    }
-                    if (f16 > f6) {
-                        f15 = f;
+                    } else if (f15 > f13) {
+                        f14 = f;
+                        f12 = f5;
                     } else {
-                        f11 = f;
+                        f10 = f;
+                        f12 = f5;
+                        f14 = f16;
                     }
-                    f13 = f5;
-                    f14 = f6;
                 }
+                float f17 = 0.5f;
                 SplinePositions[i] = (f3 * ((f2 * 0.5f) + f)) + f4;
-                float f17 = f5;
+                float f18 = f5;
                 while (true) {
-                    f7 = ((f17 - f12) / 2.0f) + f12;
-                    f8 = f5 - f7;
-                    f9 = f7 * 3.0f * f8;
-                    f10 = f7 * f7 * f7;
-                    float f18 = (((f8 * 0.5f) + f7) * f9) + f10;
-                    if (Math.abs(f18 - f6) >= 1.0E-5d) {
-                        if (f18 > f6) {
-                            f17 = f7;
+                    f6 = ((f18 - f11) / 2.0f) + f11;
+                    f7 = f5 - f6;
+                    f8 = f6 * 3.0f * f7;
+                    f9 = f6 * f6 * f6;
+                    float f19 = (((f7 * f17) + f6) * f8) + f9;
+                    if (Math.abs(f19 - f13) >= 1.0E-5d) {
+                        if (f19 > f13) {
+                            f18 = f6;
                         } else {
-                            f12 = f7;
+                            f11 = f6;
                         }
+                        f17 = 0.5f;
                     }
                 }
-                SplineTimes[i] = (f9 * ((f8 * 0.175f) + (f7 * 0.35000002f))) + f10;
+                SplineTimes[i] = (f8 * ((f7 * 0.175f) + (f6 * 0.35000002f))) + f9;
                 i++;
             } else {
                 SplineTimes[100] = 1.0f;
@@ -82,16 +83,14 @@ final class AndroidFlingSpline {
     public final long m678flingPositionLfoxSSI(float f) {
         float f2;
         float f3;
-        float f4 = 100;
-        int i = (int) (f4 * f);
+        int i = (int) (100.0f * f);
         if (i < 100) {
-            float f5 = i / f4;
+            float f4 = i / 100.0f;
             int i2 = i + 1;
-            float f6 = i2 / f4;
             float[] fArr = SplinePositions;
-            float f7 = fArr[i];
-            f3 = (fArr[i2] - f7) / (f6 - f5);
-            f2 = f7 + ((f - f5) * f3);
+            float f5 = fArr[i];
+            f3 = (fArr[i2] - f5) / ((i2 / 100.0f) - f4);
+            f2 = f5 + ((f - f4) * f3);
         } else {
             f2 = 1.0f;
             f3 = 0.0f;

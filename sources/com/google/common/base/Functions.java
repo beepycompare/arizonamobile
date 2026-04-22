@@ -166,7 +166,7 @@ public final class Functions {
         }
 
         public int hashCode() {
-            return this.f.hashCode() ^ this.g.hashCode();
+            return this.g.hashCode() ^ this.f.hashCode();
         }
 
         public String toString() {

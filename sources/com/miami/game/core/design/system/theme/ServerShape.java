@@ -22,7 +22,7 @@ public final class ServerShape implements Shape {
         Intrinsics.checkNotNullParameter(density, "density");
         Path path$default = PathParser.toPath$default(new PathParser().parsePathString("M26.6108 3H525.16C536.586 3 546.28 11.3887 547.921 22.6969L597.116 361.697C599.13 375.569 588.372 388 574.355 388H75.8064C64.3798 388 54.6859 379.611 53.0448 368.303L3.84924 29.3032C1.83612 15.4313 12.5937 3 26.6108 3Z"), null, 1, null);
         float[] m5016constructorimpl$default = Matrix.m5016constructorimpl$default(null, 1, null);
-        Matrix.m5032scaleimpl$default(m5016constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 594, Float.intBitsToFloat((int) (j & 4294967295L)) / 379, 0.0f, 4, null);
+        Matrix.m5032scaleimpl$default(m5016constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 594.0f, Float.intBitsToFloat((int) (j & 4294967295L)) / 379.0f, 0.0f, 4, null);
         path$default.mo4663transform58bKbWc(m5016constructorimpl$default);
         return new Outline.Generic(path$default);
     }

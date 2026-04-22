@@ -69,7 +69,7 @@ class WrappedDrawableApi14 extends Drawable implements Drawable.Callback, Wrappe
     public int getChangingConfigurations() {
         int changingConfigurations = super.getChangingConfigurations();
         WrappedDrawableState wrappedDrawableState = this.mState;
-        return changingConfigurations | (wrappedDrawableState != null ? wrappedDrawableState.getChangingConfigurations() : 0) | this.mDrawable.getChangingConfigurations();
+        return this.mDrawable.getChangingConfigurations() | changingConfigurations | (wrappedDrawableState != null ? wrappedDrawableState.getChangingConfigurations() : 0);
     }
 
     @Override // android.graphics.drawable.Drawable

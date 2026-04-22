@@ -627,10 +627,10 @@ public final class MutableOrderedScatterSet<E> extends OrderedScatterSet<E> {
                             jArr3[i17] = (jArr3[i17] & (-4294967296L)) | findFirstAvailableSlot;
                             jArr3[i16] = (jArr3[i16] & 4294967295L) | (-4294967296L);
                         } else {
-                            jArr3[i16] = (Integer.MAX_VALUE << 32) | findFirstAvailableSlot;
+                            jArr3[i16] = 9223372032559808512L | findFirstAvailableSlot;
                         }
                         i2 = i16;
-                        jArr3[findFirstAvailableSlot] = Integer.MAX_VALUE | (i2 << 32);
+                        jArr3[findFirstAvailableSlot] = (i2 << 32) | SieveCacheKt.NodeLinkMask;
                     } else {
                         jArr[i13] = ((i & 127) << i14) | (j6 & (~(255 << i14)));
                         Object obj2 = objArr[findFirstAvailableSlot];

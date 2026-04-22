@@ -42,6 +42,6 @@ final class AutoValue_SdkHeartBeatResult extends SdkHeartBeatResult {
 
     public int hashCode() {
         long j = this.millis;
-        return ((this.sdkName.hashCode() ^ 1000003) * 1000003) ^ ((int) (j ^ (j >>> 32)));
+        return ((int) (j ^ (j >>> 32))) ^ ((this.sdkName.hashCode() ^ 1000003) * 1000003);
     }
 }

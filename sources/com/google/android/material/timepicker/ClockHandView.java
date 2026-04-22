@@ -253,7 +253,7 @@ public class ClockHandView extends View {
             z = false;
             z3 = false;
         }
-        boolean handleTouchInput = this.changedDuringTouch | handleTouchInput(x, y, z2, z, z3);
+        boolean handleTouchInput = handleTouchInput(x, y, z2, z, z3) | this.changedDuringTouch;
         this.changedDuringTouch = handleTouchInput;
         if (handleTouchInput && z3 && (onActionUpListener = this.onActionUpListener) != null) {
             onActionUpListener.onActionUp(getDegreesFromXY(x, y), this.isInTapRegion);

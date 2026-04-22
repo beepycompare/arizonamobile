@@ -338,13 +338,7 @@ public final class LazyStaggeredGridMeasuredItem implements LazyStaggeredGridIte
 
     /* renamed from: copy-4Tuh3kE  reason: not valid java name */
     private final long m1048copy4Tuh3kE(long j, Function1<? super Integer, Integer> function1) {
-        int m7683getXimpl = isVertical() ? IntOffset.m7683getXimpl(j) : function1.invoke(Integer.valueOf(IntOffset.m7683getXimpl(j))).intValue();
-        boolean isVertical = isVertical();
-        int m7684getYimpl = IntOffset.m7684getYimpl(j);
-        if (isVertical) {
-            m7684getYimpl = function1.invoke(Integer.valueOf(m7684getYimpl)).intValue();
-        }
-        return IntOffset.m7677constructorimpl((m7683getXimpl << 32) | (m7684getYimpl & 4294967295L));
+        return IntOffset.m7677constructorimpl(((isVertical() ? IntOffset.m7683getXimpl(j) : function1.invoke(Integer.valueOf(IntOffset.m7683getXimpl(j))).intValue()) << 32) | ((isVertical() ? function1.invoke(Integer.valueOf(IntOffset.m7684getYimpl(j))).intValue() : IntOffset.m7684getYimpl(j)) & 4294967295L));
     }
 
     public String toString() {

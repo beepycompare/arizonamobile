@@ -19,9 +19,9 @@ final class TextToolbarHelperApi28 {
     public final void addMenuItem(Menu menu, int i, Context context, TextClassification textClassification, int i2) {
         if (i2 < 0) {
             addLegacyMenuItem(menu, i, context, textClassification);
-        } else {
-            addMenuItem(menu, i, context, i2 == 0, textClassification.getActions().get(i2));
+            return;
         }
+        addMenuItem(menu, i, context, i2 == 0, textClassification.getActions().get(i2));
     }
 
     public final void addMenuItem(Menu menu, int i, Context context, boolean z, final RemoteAction remoteAction) {

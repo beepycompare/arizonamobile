@@ -228,13 +228,13 @@ public final class Utf8 {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:10:0x0017, code lost:
-            if (r8.get(r9) > (-65)) goto L12;
+            if (r7.get(r8) > (-65)) goto L12;
          */
         /* JADX WARN: Code restructure failed: missing block: B:31:0x004c, code lost:
-            if (r8.get(r9) > (-65)) goto L31;
+            if (r7.get(r8) > (-65)) goto L31;
          */
         /* JADX WARN: Code restructure failed: missing block: B:52:0x008f, code lost:
-            if (r8.get(r7) > (-65)) goto L51;
+            if (r7.get(r6) > (-65)) goto L51;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -516,13 +516,13 @@ public final class Utf8 {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:10:0x0015, code lost:
-            if (r8[r9] > (-65)) goto L12;
+            if (r7[r8] > (-65)) goto L12;
          */
         /* JADX WARN: Code restructure failed: missing block: B:31:0x0046, code lost:
-            if (r8[r9] > (-65)) goto L31;
+            if (r7[r8] > (-65)) goto L31;
          */
         /* JADX WARN: Code restructure failed: missing block: B:52:0x0083, code lost:
-            if (r8[r7] > (-65)) goto L51;
+            if (r7[r6] > (-65)) goto L51;
          */
         @Override // androidx.datastore.preferences.protobuf.Utf8.Processor
         /*
@@ -663,7 +663,7 @@ public final class Utf8 {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:12:0x001d, code lost:
-            return r10 + r0;
+            return r9 + r6;
          */
         @Override // androidx.datastore.preferences.protobuf.Utf8.Processor
         /*
@@ -801,10 +801,10 @@ public final class Utf8 {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:35:0x0058, code lost:
-            if (androidx.datastore.preferences.protobuf.UnsafeUtil.getByte(r12, r0) > (-65)) goto L36;
+            if (androidx.datastore.preferences.protobuf.UnsafeUtil.getByte(r11, r0) > (-65)) goto L36;
          */
         /* JADX WARN: Code restructure failed: missing block: B:58:0x009e, code lost:
-            if (androidx.datastore.preferences.protobuf.UnsafeUtil.getByte(r12, r0) > (-65)) goto L56;
+            if (androidx.datastore.preferences.protobuf.UnsafeUtil.getByte(r11, r0) > (-65)) goto L56;
          */
         @Override // androidx.datastore.preferences.protobuf.Utf8.Processor
         /*
@@ -876,14 +876,11 @@ public final class Utf8 {
             return partialIsValidUtf8(bytes, j2, (int) (j3 - j2));
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:14:0x002d, code lost:
-            if (androidx.datastore.preferences.protobuf.UnsafeUtil.getByte(r0) > (-65)) goto L16;
+        /* JADX WARN: Code restructure failed: missing block: B:35:0x0062, code lost:
+            if (androidx.datastore.preferences.protobuf.UnsafeUtil.getByte(r0) > (-65)) goto L36;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:35:0x0061, code lost:
-            if (androidx.datastore.preferences.protobuf.UnsafeUtil.getByte(r0) > (-65)) goto L35;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:56:0x00a3, code lost:
-            if (androidx.datastore.preferences.protobuf.UnsafeUtil.getByte(r0) > (-65)) goto L55;
+        /* JADX WARN: Code restructure failed: missing block: B:58:0x00a8, code lost:
+            if (androidx.datastore.preferences.protobuf.UnsafeUtil.getByte(r0) > (-65)) goto L56;
          */
         @Override // androidx.datastore.preferences.protobuf.Utf8.Processor
         /*
@@ -904,49 +901,52 @@ public final class Utf8 {
                 byte b2 = (byte) state;
                 if (b2 < -32) {
                     if (b2 >= -62) {
-                        j = 1 + addressOffset;
-                    }
-                    return -1;
-                } else if (b2 < -16) {
-                    byte b3 = (byte) (~(state >> 8));
-                    if (b3 == 0) {
-                        long j3 = addressOffset + 1;
-                        b3 = UnsafeUtil.getByte(addressOffset);
-                        if (j3 >= j2) {
-                            return Utf8.incompleteStateFor(b2, b3);
+                        long j3 = 1 + addressOffset;
+                        if (UnsafeUtil.getByte(addressOffset) <= -65) {
+                            addressOffset = j3;
                         }
-                        addressOffset = j3;
-                    }
-                    if (b3 <= -65 && ((b2 != -32 || b3 >= -96) && (b2 != -19 || b3 < -96))) {
-                        j = 1 + addressOffset;
-                    }
-                    return -1;
-                } else {
-                    byte b4 = (byte) (~(state >> 8));
-                    if (b4 == 0) {
-                        long j4 = addressOffset + 1;
-                        b4 = UnsafeUtil.getByte(addressOffset);
-                        if (j4 >= j2) {
-                            return Utf8.incompleteStateFor(b2, b4);
-                        }
-                        b = 0;
-                        addressOffset = j4;
-                    } else {
-                        b = (byte) (state >> 16);
-                    }
-                    if (b == 0) {
-                        long j5 = addressOffset + 1;
-                        b = UnsafeUtil.getByte(addressOffset);
-                        if (j5 >= j2) {
-                            return Utf8.incompleteStateFor(b2, b4, b);
-                        }
-                        addressOffset = j5;
-                    }
-                    if (b4 <= -65 && (((b2 << Ascii.FS) + (b4 + 112)) >> 30) == 0 && b <= -65) {
-                        j = 1 + addressOffset;
                     }
                     return -1;
                 }
+                if (b2 < -16) {
+                    byte b3 = (byte) (~(state >> 8));
+                    if (b3 == 0) {
+                        long j4 = addressOffset + 1;
+                        b3 = UnsafeUtil.getByte(addressOffset);
+                        if (j4 >= j2) {
+                            return Utf8.incompleteStateFor(b2, b3);
+                        }
+                        addressOffset = j4;
+                    }
+                    if (b3 <= -65 && ((b2 != -32 || b3 >= -96) && (b2 != -19 || b3 < -96))) {
+                        j = addressOffset + 1;
+                    }
+                    return -1;
+                }
+                byte b4 = (byte) (~(state >> 8));
+                if (b4 == 0) {
+                    long j5 = addressOffset + 1;
+                    b4 = UnsafeUtil.getByte(addressOffset);
+                    if (j5 >= j2) {
+                        return Utf8.incompleteStateFor(b2, b4);
+                    }
+                    b = 0;
+                    addressOffset = j5;
+                } else {
+                    b = (byte) (state >> 16);
+                }
+                if (b == 0) {
+                    long j6 = addressOffset + 1;
+                    b = UnsafeUtil.getByte(addressOffset);
+                    if (j6 >= j2) {
+                        return Utf8.incompleteStateFor(b2, b4, b);
+                    }
+                    addressOffset = j6;
+                }
+                if (b4 <= -65 && (((b2 << Ascii.FS) + (b4 + 112)) >> 30) == 0 && b <= -65) {
+                    j = addressOffset + 1;
+                }
+                return -1;
                 addressOffset = j;
             }
             return partialIsValidUtf8(addressOffset, (int) (j2 - addressOffset));

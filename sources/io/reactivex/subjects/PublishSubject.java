@@ -117,7 +117,8 @@ public final class PublishSubject<T> extends Subject<T> {
             return;
         }
         this.error = th;
-        for (PublishDisposable<T> publishDisposable : this.subscribers.getAndSet(publishDisposableArr2)) {
+        PublishDisposable<T>[] andSet = this.subscribers.getAndSet(publishDisposableArr2);
+        for (PublishDisposable<T> publishDisposable : andSet) {
             publishDisposable.onError(th);
         }
     }
@@ -129,7 +130,8 @@ public final class PublishSubject<T> extends Subject<T> {
         if (publishDisposableArr == publishDisposableArr2) {
             return;
         }
-        for (PublishDisposable<T> publishDisposable : this.subscribers.getAndSet(publishDisposableArr2)) {
+        PublishDisposable<T>[] andSet = this.subscribers.getAndSet(publishDisposableArr2);
+        for (PublishDisposable<T> publishDisposable : andSet) {
             publishDisposable.onComplete();
         }
     }

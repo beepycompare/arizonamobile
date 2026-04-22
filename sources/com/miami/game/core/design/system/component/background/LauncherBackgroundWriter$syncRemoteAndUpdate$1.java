@@ -62,10 +62,10 @@ public final class LauncherBackgroundWriter$syncRemoteAndUpdate$1 extends Suspen
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x035f  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0360 A[Catch: all -> 0x0423, TryCatch #1 {all -> 0x0423, blocks: (B:29:0x0103, B:31:0x0169, B:33:0x016f, B:35:0x0177, B:37:0x017f, B:79:0x0358, B:86:0x0385, B:88:0x038d, B:90:0x0395, B:82:0x0360, B:84:0x036b, B:85:0x0381, B:78:0x034e), top: B:111:0x0103 }] */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x038d A[Catch: all -> 0x0423, TryCatch #1 {all -> 0x0423, blocks: (B:29:0x0103, B:31:0x0169, B:33:0x016f, B:35:0x0177, B:37:0x017f, B:79:0x0358, B:86:0x0385, B:88:0x038d, B:90:0x0395, B:82:0x0360, B:84:0x036b, B:85:0x0381, B:78:0x034e), top: B:111:0x0103 }] */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0395 A[Catch: all -> 0x0423, TRY_LEAVE, TryCatch #1 {all -> 0x0423, blocks: (B:29:0x0103, B:31:0x0169, B:33:0x016f, B:35:0x0177, B:37:0x017f, B:79:0x0358, B:86:0x0385, B:88:0x038d, B:90:0x0395, B:82:0x0360, B:84:0x036b, B:85:0x0381, B:78:0x034e), top: B:111:0x0103 }] */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x035d  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x035e A[Catch: all -> 0x007c, TryCatch #2 {all -> 0x007c, blocks: (B:6:0x0077, B:13:0x008a, B:17:0x009f, B:19:0x00db, B:21:0x00e3, B:24:0x00f3, B:25:0x00f8, B:28:0x00ff, B:30:0x0167, B:32:0x016d, B:34:0x0175, B:36:0x017d, B:78:0x0356, B:85:0x0383, B:87:0x038b, B:89:0x0393, B:92:0x03a1, B:94:0x03c5, B:95:0x03c9, B:81:0x035e, B:83:0x0369, B:84:0x037f, B:77:0x034c), top: B:105:0x004b }] */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x038b A[Catch: all -> 0x007c, TryCatch #2 {all -> 0x007c, blocks: (B:6:0x0077, B:13:0x008a, B:17:0x009f, B:19:0x00db, B:21:0x00e3, B:24:0x00f3, B:25:0x00f8, B:28:0x00ff, B:30:0x0167, B:32:0x016d, B:34:0x0175, B:36:0x017d, B:78:0x0356, B:85:0x0383, B:87:0x038b, B:89:0x0393, B:92:0x03a1, B:94:0x03c5, B:95:0x03c9, B:81:0x035e, B:83:0x0369, B:84:0x037f, B:77:0x034c), top: B:105:0x004b }] */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0393 A[Catch: all -> 0x007c, TryCatch #2 {all -> 0x007c, blocks: (B:6:0x0077, B:13:0x008a, B:17:0x009f, B:19:0x00db, B:21:0x00e3, B:24:0x00f3, B:25:0x00f8, B:28:0x00ff, B:30:0x0167, B:32:0x016d, B:34:0x0175, B:36:0x017d, B:78:0x0356, B:85:0x0383, B:87:0x038b, B:89:0x0393, B:92:0x03a1, B:94:0x03c5, B:95:0x03c9, B:81:0x035e, B:83:0x0369, B:84:0x037f, B:77:0x034c), top: B:105:0x004b }] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -111,127 +111,117 @@ public final class LauncherBackgroundWriter$syncRemoteAndUpdate$1 extends Suspen
                     if (string2 == null) {
                         string2 = "background_home.webp";
                     }
-                    try {
-                        ensureDir = LauncherBackgroundWriter.INSTANCE.ensureDir();
-                        File file = new File(ensureDir, string2);
-                        Log.d("LauncherBgWriter", "syncRemoteAndUpdate: remoteFileName=" + buildLocalFileName);
-                        Log.d("LauncherBgWriter", "syncRemoteAndUpdate: currentFileName=" + string2);
-                        Log.d("LauncherBgWriter", "syncRemoteAndUpdate: currentFile=" + file.getAbsolutePath() + ", exists=" + file.exists() + ", size=" + file.length());
-                        if (!Intrinsics.areEqual(string2, buildLocalFileName) || !file.exists() || file.length() <= 0) {
-                            buildRemoteUrl = LauncherBackgroundWriter.INSTANCE.buildRemoteUrl(obj2);
-                            Log.d("LauncherBgWriter", "syncRemoteAndUpdate: fullUrl=" + buildRemoteUrl);
-                            File file2 = new File(ensureDir, buildLocalFileName);
-                            File file3 = new File(file2.getParentFile(), file2.getName() + ".tmp");
-                            Log.d("LauncherBgWriter", "syncRemoteAndUpdate: target=" + file2.getAbsolutePath());
-                            Log.d("LauncherBgWriter", "syncRemoteAndUpdate: tmp=" + file3.getAbsolutePath());
-                            try {
-                                Result.Companion companion = Result.Companion;
-                                if (file3.exists()) {
-                                    Log.d("LauncherBgWriter", "syncRemoteAndUpdate: delete old tmp=" + file3.getAbsolutePath());
-                                    file3.delete();
-                                }
-                                LauncherBackgroundWriter.INSTANCE.downloadToFile(buildRemoteUrl, file3);
-                                Log.d("LauncherBgWriter", "syncRemoteAndUpdate: after download tmpExists=" + file3.exists() + ", tmpSize=" + file3.length());
-                                try {
-                                } catch (Throwable th) {
-                                    th = th;
-                                    Result.Companion companion2 = Result.Companion;
-                                    m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
-                                    m9186exceptionOrNullimpl = Result.m9186exceptionOrNullimpl(m9183constructorimpl);
-                                    if (m9186exceptionOrNullimpl != null) {
-                                    }
-                                    booleanValue = ((Boolean) bool).booleanValue();
-                                    if (!booleanValue) {
-                                    }
-                                }
-                            } catch (Throwable th2) {
-                                th = th2;
-                                str = ensureDir;
+                    ensureDir = LauncherBackgroundWriter.INSTANCE.ensureDir();
+                    File file = new File(ensureDir, string2);
+                    Log.d("LauncherBgWriter", "syncRemoteAndUpdate: remoteFileName=" + buildLocalFileName);
+                    Log.d("LauncherBgWriter", "syncRemoteAndUpdate: currentFileName=" + string2);
+                    Log.d("LauncherBgWriter", "syncRemoteAndUpdate: currentFile=" + file.getAbsolutePath() + ", exists=" + file.exists() + ", size=" + file.length());
+                    if (!Intrinsics.areEqual(string2, buildLocalFileName) || !file.exists() || file.length() <= 0) {
+                        buildRemoteUrl = LauncherBackgroundWriter.INSTANCE.buildRemoteUrl(obj2);
+                        Log.d("LauncherBgWriter", "syncRemoteAndUpdate: fullUrl=" + buildRemoteUrl);
+                        File file2 = new File(ensureDir, buildLocalFileName);
+                        File file3 = new File(file2.getParentFile(), file2.getName() + ".tmp");
+                        Log.d("LauncherBgWriter", "syncRemoteAndUpdate: target=" + file2.getAbsolutePath());
+                        Log.d("LauncherBgWriter", "syncRemoteAndUpdate: tmp=" + file3.getAbsolutePath());
+                        try {
+                            Result.Companion companion = Result.Companion;
+                            if (file3.exists()) {
+                                Log.d("LauncherBgWriter", "syncRemoteAndUpdate: delete old tmp=" + file3.getAbsolutePath());
+                                file3.delete();
                             }
-                            if (file3.exists() && file3.length() > 0) {
-                                isDecodableImage = LauncherBackgroundWriter.INSTANCE.isDecodableImage(file3);
-                                if (!isDecodableImage) {
-                                    throw new IllegalStateException("Downloaded file is not decodable image".toString());
+                            LauncherBackgroundWriter.INSTANCE.downloadToFile(buildRemoteUrl, file3);
+                            Log.d("LauncherBgWriter", "syncRemoteAndUpdate: after download tmpExists=" + file3.exists() + ", tmpSize=" + file3.length());
+                            try {
+                            } catch (Throwable th) {
+                                th = th;
+                                Result.Companion companion2 = Result.Companion;
+                                m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
+                                m9186exceptionOrNullimpl = Result.m9186exceptionOrNullimpl(m9183constructorimpl);
+                                if (m9186exceptionOrNullimpl != null) {
                                 }
-                                if (file2.exists()) {
-                                    Log.d("LauncherBgWriter", "syncRemoteAndUpdate: delete old target=" + file2.getAbsolutePath());
-                                    file2.delete();
+                                booleanValue = ((Boolean) bool).booleanValue();
+                                if (!booleanValue) {
                                 }
-                                boolean renameTo = file3.renameTo(file2);
-                                Log.d("LauncherBgWriter", "syncRemoteAndUpdate: rename tmp->target result=" + renameTo);
-                                if (renameTo) {
-                                    sharedPreferences2 = LauncherBackgroundWriter.prefs;
-                                    if (sharedPreferences2 == null) {
-                                        Intrinsics.throwUninitializedPropertyAccessException("prefs");
-                                        sharedPreferences2 = null;
+                            }
+                        } catch (Throwable th2) {
+                            th = th2;
+                            str = ensureDir;
+                        }
+                        if (file3.exists() && file3.length() > 0) {
+                            isDecodableImage = LauncherBackgroundWriter.INSTANCE.isDecodableImage(file3);
+                            if (!isDecodableImage) {
+                                throw new IllegalStateException("Downloaded file is not decodable image".toString());
+                            }
+                            if (file2.exists()) {
+                                Log.d("LauncherBgWriter", "syncRemoteAndUpdate: delete old target=" + file2.getAbsolutePath());
+                                file2.delete();
+                            }
+                            boolean renameTo = file3.renameTo(file2);
+                            Log.d("LauncherBgWriter", "syncRemoteAndUpdate: rename tmp->target result=" + renameTo);
+                            if (renameTo) {
+                                sharedPreferences2 = LauncherBackgroundWriter.prefs;
+                                if (sharedPreferences2 == null) {
+                                    Intrinsics.throwUninitializedPropertyAccessException("prefs");
+                                    sharedPreferences2 = null;
+                                }
+                                Log.d("LauncherBgWriter", str + sharedPreferences2.edit().putString("current_file_name", buildLocalFileName).commit());
+                                if (Intrinsics.areEqual(string2, buildLocalFileName)) {
+                                    str = ensureDir;
+                                } else {
+                                    File file4 = new File(ensureDir, string2);
+                                    str = ensureDir;
+                                    Log.d("LauncherBgWriter", "syncRemoteAndUpdate: oldFile=" + file4.getAbsolutePath() + ", exists=" + file4.exists() + ", size=" + file4.length());
+                                    if (file4.exists() && !Intrinsics.areEqual(file4.getName(), "background_home.webp") && !Intrinsics.areEqual(file4.getName(), buildLocalFileName)) {
+                                        Log.d("LauncherBgWriter", "syncRemoteAndUpdate: delete oldFile result=" + file4.delete());
                                     }
-                                    Log.d("LauncherBgWriter", str + sharedPreferences2.edit().putString("current_file_name", buildLocalFileName).commit());
-                                    if (Intrinsics.areEqual(string2, buildLocalFileName)) {
-                                        str = ensureDir;
-                                    } else {
-                                        File file4 = new File(ensureDir, string2);
-                                        str = ensureDir;
-                                        Log.d("LauncherBgWriter", "syncRemoteAndUpdate: oldFile=" + file4.getAbsolutePath() + ", exists=" + file4.exists() + ", size=" + file4.length());
-                                        if (file4.exists() && !Intrinsics.areEqual(file4.getName(), "background_home.webp") && !Intrinsics.areEqual(file4.getName(), buildLocalFileName)) {
-                                            Log.d("LauncherBgWriter", "syncRemoteAndUpdate: delete oldFile result=" + file4.delete());
-                                        }
+                                }
+                                m9183constructorimpl = Result.m9183constructorimpl(Boxing.boxBoolean(true));
+                                m9186exceptionOrNullimpl = Result.m9186exceptionOrNullimpl(m9183constructorimpl);
+                                if (m9186exceptionOrNullimpl != null) {
+                                    bool = m9183constructorimpl;
+                                } else {
+                                    Log.e("LauncherBgWriter", "syncRemoteAndUpdate: download/update failed", m9186exceptionOrNullimpl);
+                                    if (file3.exists()) {
+                                        Log.d("LauncherBgWriter", "syncRemoteAndUpdate: tmp delete after fail result=" + file3.delete());
                                     }
-                                    m9183constructorimpl = Result.m9183constructorimpl(Boxing.boxBoolean(true));
-                                    m9186exceptionOrNullimpl = Result.m9186exceptionOrNullimpl(m9183constructorimpl);
-                                    if (m9186exceptionOrNullimpl != null) {
-                                        bool = m9183constructorimpl;
-                                    } else {
-                                        Log.e("LauncherBgWriter", "syncRemoteAndUpdate: download/update failed", m9186exceptionOrNullimpl);
-                                        if (file3.exists()) {
-                                            Log.d("LauncherBgWriter", "syncRemoteAndUpdate: tmp delete after fail result=" + file3.delete());
-                                        }
-                                        bool = Boxing.boxBoolean(false);
-                                    }
-                                    booleanValue = ((Boolean) bool).booleanValue();
-                                    if (!booleanValue) {
-                                        try {
-                                            decodeBitmapSafe = LauncherBackgroundWriter.INSTANCE.decodeBitmapSafe(file2, this.$maxSidePx);
-                                            Log.d("LauncherBgWriter", "syncRemoteAndUpdate: decoded target bitmapNull=" + (decodeBitmapSafe == null) + ", target=" + file2.getAbsolutePath());
-                                            LauncherBackgroundWriter launcherBackgroundWriter = LauncherBackgroundWriter.INSTANCE;
-                                            ImageBitmap asImageBitmap = decodeBitmapSafe != null ? AndroidImageBitmap_androidKt.asImageBitmap(decodeBitmapSafe) : null;
-                                            this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
-                                            this.L$1 = SpillingKt.nullOutSpilledVariable(str3);
-                                            this.L$2 = SpillingKt.nullOutSpilledVariable(obj2);
-                                            this.L$3 = SpillingKt.nullOutSpilledVariable(buildLocalFileName);
-                                            this.L$4 = SpillingKt.nullOutSpilledVariable(string2);
-                                            this.L$5 = SpillingKt.nullOutSpilledVariable(str);
-                                            this.L$6 = SpillingKt.nullOutSpilledVariable(file);
-                                            this.L$7 = SpillingKt.nullOutSpilledVariable(buildRemoteUrl);
-                                            this.L$8 = SpillingKt.nullOutSpilledVariable(file2);
-                                            this.L$9 = SpillingKt.nullOutSpilledVariable(file3);
-                                            this.L$10 = SpillingKt.nullOutSpilledVariable(decodeBitmapSafe);
-                                            this.Z$0 = booleanValue;
-                                            this.label = 1;
-                                            emitNew = launcherBackgroundWriter.emitNew(file2, asImageBitmap, this);
-                                            if (emitNew == coroutine_suspended) {
-                                                return coroutine_suspended;
-                                            }
-                                        } catch (Throwable th3) {
-                                            th = th3;
-                                            Log.e("LauncherBgWriter", "syncRemoteAndUpdate: fatal error", th);
-                                            return Unit.INSTANCE;
-                                        }
-                                    } else {
-                                        Log.e("LauncherBgWriter", "syncRemoteAndUpdate: downloaded=false, stop");
-                                        return Unit.INSTANCE;
+                                    bool = Boxing.boxBoolean(false);
+                                }
+                                booleanValue = ((Boolean) bool).booleanValue();
+                                if (!booleanValue) {
+                                    decodeBitmapSafe = LauncherBackgroundWriter.INSTANCE.decodeBitmapSafe(file2, this.$maxSidePx);
+                                    Log.d("LauncherBgWriter", "syncRemoteAndUpdate: decoded target bitmapNull=" + (decodeBitmapSafe == null) + ", target=" + file2.getAbsolutePath());
+                                    LauncherBackgroundWriter launcherBackgroundWriter = LauncherBackgroundWriter.INSTANCE;
+                                    ImageBitmap asImageBitmap = decodeBitmapSafe != null ? AndroidImageBitmap_androidKt.asImageBitmap(decodeBitmapSafe) : null;
+                                    this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
+                                    this.L$1 = SpillingKt.nullOutSpilledVariable(str3);
+                                    this.L$2 = SpillingKt.nullOutSpilledVariable(obj2);
+                                    this.L$3 = SpillingKt.nullOutSpilledVariable(buildLocalFileName);
+                                    this.L$4 = SpillingKt.nullOutSpilledVariable(string2);
+                                    this.L$5 = SpillingKt.nullOutSpilledVariable(str);
+                                    this.L$6 = SpillingKt.nullOutSpilledVariable(file);
+                                    this.L$7 = SpillingKt.nullOutSpilledVariable(buildRemoteUrl);
+                                    this.L$8 = SpillingKt.nullOutSpilledVariable(file2);
+                                    this.L$9 = SpillingKt.nullOutSpilledVariable(file3);
+                                    this.L$10 = SpillingKt.nullOutSpilledVariable(decodeBitmapSafe);
+                                    this.Z$0 = booleanValue;
+                                    this.label = 1;
+                                    emitNew = launcherBackgroundWriter.emitNew(file2, asImageBitmap, this);
+                                    if (emitNew == coroutine_suspended) {
+                                        return coroutine_suspended;
                                     }
                                 } else {
-                                    throw new IllegalStateException("Rename failed".toString());
+                                    Log.e("LauncherBgWriter", "syncRemoteAndUpdate: downloaded=false, stop");
+                                    return Unit.INSTANCE;
                                 }
                             } else {
-                                throw new IllegalStateException("Empty download".toString());
+                                throw new IllegalStateException("Rename failed".toString());
                             }
                         } else {
-                            Log.d("LauncherBgWriter", "syncRemoteAndUpdate: same file already exists, skip download");
-                            return Unit.INSTANCE;
+                            throw new IllegalStateException("Empty download".toString());
                         }
-                    } catch (Throwable th4) {
-                        th = th4;
+                    } else {
+                        Log.d("LauncherBgWriter", "syncRemoteAndUpdate: same file already exists, skip download");
+                        return Unit.INSTANCE;
                     }
                 } else {
                     Log.e("LauncherBgWriter", "syncRemoteAndUpdate: remotePath is empty, skip");
@@ -252,8 +242,8 @@ public final class LauncherBackgroundWriter$syncRemoteAndUpdate$1 extends Suspen
                 String str8 = (String) this.L$1;
                 ResultKt.throwOnFailure(obj);
             }
-        } catch (Throwable th5) {
-            th = th5;
+        } catch (Throwable th3) {
+            Log.e("LauncherBgWriter", "syncRemoteAndUpdate: fatal error", th3);
         }
         return Unit.INSTANCE;
     }

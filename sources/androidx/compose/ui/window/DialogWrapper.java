@@ -88,7 +88,7 @@ public final class DialogWrapper extends ComponentDialog implements ViewRootForI
         this.onDismissRequest = function0;
         this.properties = dialogProperties;
         this.composeView = view;
-        float m7555constructorimpl = Dp.m7555constructorimpl(8);
+        float m7555constructorimpl = Dp.m7555constructorimpl(8.0f);
         this.maxSupportedElevation = m7555constructorimpl;
         Window window = getWindow();
         if (window == null) {

@@ -45,7 +45,7 @@ final class PagerBringIntoViewSpec implements BringIntoViewSpec {
     }
 
     private final float overrideProposedOffsetMove(float f) {
-        float firstVisiblePageOffset$foundation = this.pagerState.getFirstVisiblePageOffset$foundation() * (-1);
+        float firstVisiblePageOffset$foundation = this.pagerState.getFirstVisiblePageOffset$foundation() * (-1.0f);
         while (f > 0.0f && firstVisiblePageOffset$foundation < f) {
             firstVisiblePageOffset$foundation += this.pagerState.getPageSizeWithSpacing$foundation();
         }

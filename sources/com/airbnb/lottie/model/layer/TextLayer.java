@@ -307,6 +307,7 @@ public class TextLayer extends BaseLayer {
     }
 
     private void drawGlyphTextLine(String str, DocumentData documentData, Font font, Canvas canvas, float f, float f2, float f3, int i) {
+        TextLayer textLayer;
         DocumentData documentData2;
         Canvas canvas2;
         float f4;
@@ -315,19 +316,22 @@ public class TextLayer extends BaseLayer {
         while (i3 < str.length()) {
             FontCharacter fontCharacter = this.composition.getCharacters().get(FontCharacter.hashFor(str.charAt(i3), font.getFamily(), font.getStyle()));
             if (fontCharacter == null) {
+                textLayer = this;
                 documentData2 = documentData;
                 canvas2 = canvas;
                 f4 = f2;
                 i2 = i;
             } else {
+                textLayer = this;
                 documentData2 = documentData;
                 canvas2 = canvas;
                 f4 = f2;
                 i2 = i;
-                drawCharacterAsGlyph(fontCharacter, f4, documentData2, canvas2, i3, i2);
+                textLayer.drawCharacterAsGlyph(fontCharacter, f4, documentData2, canvas2, i3, i2);
                 canvas2.translate((((float) fontCharacter.getWidth()) * f4 * Utils.dpScale()) + f3, 0.0f);
             }
             i3++;
+            this = textLayer;
             f2 = f4;
             documentData = documentData2;
             canvas = canvas2;
@@ -502,17 +506,17 @@ public class TextLayer extends BaseLayer {
             int i5 = i4 + 1;
             while (i5 < this.charStrings.size()) {
                 String str2 = this.charStrings.get(i5);
-                if (isJoiningRightToLeft(str2)) {
+                if (this.isJoiningRightToLeft(str2)) {
                     this.charStringBuilder.insert(0, str2);
                     i5++;
                 }
             }
             String sb = this.charStringBuilder.toString();
-            DocumentData documentData2 = documentData;
-            drawCharacterFromFont(sb, documentData2, canvas, i + i4, i2);
-            canvas.translate(this.fillPaint.measureText(sb) + f, 0.0f);
+            TextLayer textLayer = this;
+            textLayer.drawCharacterFromFont(sb, documentData, canvas, i + i4, i2);
+            canvas.translate(textLayer.fillPaint.measureText(sb) + f, 0.0f);
             i4 = i5;
-            documentData = documentData2;
+            this = textLayer;
         }
     }
 

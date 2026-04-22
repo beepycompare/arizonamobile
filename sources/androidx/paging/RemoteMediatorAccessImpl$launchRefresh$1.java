@@ -105,8 +105,8 @@ public final class RemoteMediatorAccessImpl$launchRefresh$1 extends SuspendLambd
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             AccessorStateHolder accessorStateHolder;
-            RemoteMediatorAccessImpl remoteMediatorAccessImpl;
             RemoteMediator remoteMediator;
+            RemoteMediatorAccessImpl remoteMediatorAccessImpl;
             Ref.BooleanRef booleanRef;
             AccessorStateHolder accessorStateHolder2;
             boolean booleanValue;
@@ -125,17 +125,18 @@ public final class RemoteMediatorAccessImpl$launchRefresh$1 extends SuspendLambd
                     }
                 });
                 if (pagingState != null) {
-                    remoteMediatorAccessImpl = this.this$0;
+                    RemoteMediatorAccessImpl remoteMediatorAccessImpl2 = this.this$0;
                     Ref.BooleanRef booleanRef2 = this.$launchAppendPrepend;
-                    remoteMediator = remoteMediatorAccessImpl.remoteMediator;
+                    remoteMediator = remoteMediatorAccessImpl2.remoteMediator;
                     LoadType loadType = LoadType.REFRESH;
-                    this.L$0 = remoteMediatorAccessImpl;
+                    this.L$0 = remoteMediatorAccessImpl2;
                     this.L$1 = booleanRef2;
                     this.label = 1;
                     obj = remoteMediator.load(loadType, pagingState, this);
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
+                    remoteMediatorAccessImpl = remoteMediatorAccessImpl2;
                     booleanRef = booleanRef2;
                 }
                 return Unit.INSTANCE;

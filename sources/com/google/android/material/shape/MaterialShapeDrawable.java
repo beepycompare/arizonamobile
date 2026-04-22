@@ -1030,18 +1030,12 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     public float getCornerSizeDiffX() {
-        float cornerSize;
-        float cornerSize2;
         float[] fArr = this.springAnimatedCornerSizes;
         if (fArr != null) {
-            cornerSize = (fArr[3] + fArr[2]) - fArr[1];
-            cornerSize2 = fArr[0];
-        } else {
-            RectF boundsAsRectF = getBoundsAsRectF();
-            cornerSize = (this.pathProvider.getCornerSizeForIndex(3, getShapeAppearanceModel()).getCornerSize(boundsAsRectF) + this.pathProvider.getCornerSizeForIndex(2, getShapeAppearanceModel()).getCornerSize(boundsAsRectF)) - this.pathProvider.getCornerSizeForIndex(1, getShapeAppearanceModel()).getCornerSize(boundsAsRectF);
-            cornerSize2 = this.pathProvider.getCornerSizeForIndex(0, getShapeAppearanceModel()).getCornerSize(boundsAsRectF);
+            return (((fArr[3] + fArr[2]) - fArr[1]) - fArr[0]) / 2.0f;
         }
-        return (cornerSize - cornerSize2) / 2.0f;
+        RectF boundsAsRectF = getBoundsAsRectF();
+        return (((this.pathProvider.getCornerSizeForIndex(3, getShapeAppearanceModel()).getCornerSize(boundsAsRectF) + this.pathProvider.getCornerSizeForIndex(2, getShapeAppearanceModel()).getCornerSize(boundsAsRectF)) - this.pathProvider.getCornerSizeForIndex(1, getShapeAppearanceModel()).getCornerSize(boundsAsRectF)) - this.pathProvider.getCornerSizeForIndex(0, getShapeAppearanceModel()).getCornerSize(boundsAsRectF)) / 2.0f;
     }
 
     /* loaded from: classes4.dex */

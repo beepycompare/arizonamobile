@@ -491,22 +491,55 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             return getSortedSetDelegate().last();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r4v1, types: [com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection] */
+        /* JADX WARN: Type inference failed for: r4v3 */
         @Override // java.util.SortedSet
         public SortedSet<V> headSet(@ParametricNullness V toElement) {
             refreshIfEmpty();
-            return new WrappedSortedSet(getKey(), getSortedSetDelegate().headSet(toElement), getAncestor() == null ? this : getAncestor());
+            AbstractMapBasedMultimap abstractMapBasedMultimap = AbstractMapBasedMultimap.this;
+            Object key = getKey();
+            SortedSet<V> headSet = getSortedSetDelegate().headSet(toElement);
+            AbstractMapBasedMultimap<K, V>.WrappedCollection ancestor = getAncestor();
+            ?? r4 = this;
+            if (ancestor != null) {
+                r4 = getAncestor();
+            }
+            return new WrappedSortedSet(key, headSet, r4);
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r4v1, types: [com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection] */
+        /* JADX WARN: Type inference failed for: r4v3 */
         @Override // java.util.SortedSet
         public SortedSet<V> subSet(@ParametricNullness V fromElement, @ParametricNullness V toElement) {
             refreshIfEmpty();
-            return new WrappedSortedSet(getKey(), getSortedSetDelegate().subSet(fromElement, toElement), getAncestor() == null ? this : getAncestor());
+            AbstractMapBasedMultimap abstractMapBasedMultimap = AbstractMapBasedMultimap.this;
+            Object key = getKey();
+            SortedSet<V> subSet = getSortedSetDelegate().subSet(fromElement, toElement);
+            AbstractMapBasedMultimap<K, V>.WrappedCollection ancestor = getAncestor();
+            ?? r4 = this;
+            if (ancestor != null) {
+                r4 = getAncestor();
+            }
+            return new WrappedSortedSet(key, subSet, r4);
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r4v1, types: [com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection] */
+        /* JADX WARN: Type inference failed for: r4v3 */
         @Override // java.util.SortedSet
         public SortedSet<V> tailSet(@ParametricNullness V fromElement) {
             refreshIfEmpty();
-            return new WrappedSortedSet(getKey(), getSortedSetDelegate().tailSet(fromElement), getAncestor() == null ? this : getAncestor());
+            AbstractMapBasedMultimap abstractMapBasedMultimap = AbstractMapBasedMultimap.this;
+            Object key = getKey();
+            SortedSet<V> tailSet = getSortedSetDelegate().tailSet(fromElement);
+            AbstractMapBasedMultimap<K, V>.WrappedCollection ancestor = getAncestor();
+            ?? r4 = this;
+            if (ancestor != null) {
+                r4 = getAncestor();
+            }
+            return new WrappedSortedSet(key, tailSet, r4);
         }
     }
 
@@ -559,8 +592,18 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             return (V) Iterators.pollNext(descendingIterator());
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r4v1, types: [com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection] */
+        /* JADX WARN: Type inference failed for: r4v3 */
         private NavigableSet<V> wrap(NavigableSet<V> wrapped) {
-            return new WrappedNavigableSet(this.key, wrapped, getAncestor() == null ? this : getAncestor());
+            AbstractMapBasedMultimap abstractMapBasedMultimap = AbstractMapBasedMultimap.this;
+            K k = this.key;
+            AbstractMapBasedMultimap<K, V>.WrappedCollection ancestor = getAncestor();
+            ?? r4 = this;
+            if (ancestor != null) {
+                r4 = getAncestor();
+            }
+            return new WrappedNavigableSet(k, wrapped, r4);
         }
 
         @Override // java.util.NavigableSet
@@ -676,10 +719,21 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
         }
 
         /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r0v0, types: [com.google.common.collect.AbstractMapBasedMultimap] */
+        /* JADX WARN: Type inference failed for: r3v1, types: [com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection] */
+        /* JADX WARN: Type inference failed for: r3v4 */
         @Override // java.util.List
         public List<V> subList(int fromIndex, int toIndex) {
             refreshIfEmpty();
-            return AbstractMapBasedMultimap.this.wrapList(getKey(), getListDelegate().subList(fromIndex, toIndex), getAncestor() == null ? this : getAncestor());
+            ?? r0 = AbstractMapBasedMultimap.this;
+            Object key = getKey();
+            List<V> subList = getListDelegate().subList(fromIndex, toIndex);
+            AbstractMapBasedMultimap<K, V>.WrappedCollection ancestor = getAncestor();
+            ?? r3 = this;
+            if (ancestor != null) {
+                r3 = getAncestor();
+            }
+            return r0.wrapList(key, subList, r3);
         }
 
         /* loaded from: classes4.dex */

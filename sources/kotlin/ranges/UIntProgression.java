@@ -56,11 +56,12 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
         int compare2;
         int i = this.step;
         int i2 = this.first;
+        int i3 = this.last;
         if (i > 0) {
-            compare2 = Integer.compare(i2 ^ Integer.MIN_VALUE, this.last ^ Integer.MIN_VALUE);
+            compare2 = Integer.compare(i2 ^ Integer.MIN_VALUE, i3 ^ Integer.MIN_VALUE);
             return compare2 > 0;
         }
-        compare = Integer.compare(i2 ^ Integer.MIN_VALUE, this.last ^ Integer.MIN_VALUE);
+        compare = Integer.compare(i2 ^ Integer.MIN_VALUE, i3 ^ Integer.MIN_VALUE);
         return compare < 0;
     }
 

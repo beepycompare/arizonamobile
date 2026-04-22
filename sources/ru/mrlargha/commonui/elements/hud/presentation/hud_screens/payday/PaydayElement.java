@@ -25,7 +25,6 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
-import kotlinx.datetime.internal.DateCalculationsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
@@ -327,17 +326,14 @@ public final class PaydayElement {
     private final String formatTime(long j) {
         if (j > 3600) {
             StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-            long j2 = (long) DateCalculationsKt.SECONDS_PER_HOUR;
-            long j3 = 60;
-            String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(j / j2), Long.valueOf((j % j2) / j3), Long.valueOf(j % j3)}, 3));
+            String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(j / 3600), Long.valueOf((j % 3600) / 60), Long.valueOf(j % 60)}, 3));
             Intrinsics.checkNotNullExpressionValue(format, "format(...)");
             return format;
         } else if (j <= 0) {
             return "00:00";
         } else {
             StringCompanionObject stringCompanionObject2 = StringCompanionObject.INSTANCE;
-            long j4 = 60;
-            String format2 = String.format("%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(j / j4), Long.valueOf(j % j4)}, 2));
+            String format2 = String.format("%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(j / 60), Long.valueOf(j % 60)}, 2));
             Intrinsics.checkNotNullExpressionValue(format2, "format(...)");
             return format2;
         }
@@ -345,13 +341,8 @@ public final class PaydayElement {
 
     private final String formatTimer(long j) {
         long coerceAtLeast = RangesKt.coerceAtLeast(j, 0L);
-        long j2 = (long) DateCalculationsKt.SECONDS_PER_HOUR;
-        long j3 = coerceAtLeast / j2;
-        long j4 = 60;
-        long j5 = (coerceAtLeast % j2) / j4;
-        long j6 = coerceAtLeast % j4;
         StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-        String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(j3), Long.valueOf(j5), Long.valueOf(j6)}, 3));
+        String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(coerceAtLeast / 3600), Long.valueOf((coerceAtLeast % 3600) / 60), Long.valueOf(coerceAtLeast % 60)}, 3));
         Intrinsics.checkNotNullExpressionValue(format, "format(...)");
         return format;
     }

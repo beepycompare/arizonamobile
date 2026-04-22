@@ -189,6 +189,9 @@ public class ChangeTransform extends Transition {
         return matchedTransitionValues != null && viewGroup2 == matchedTransitionValues.view;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v1, types: [androidx.transition.Transition] */
+    /* JADX WARN: Type inference failed for: r3v7 */
     private void createGhostView(ViewGroup viewGroup, TransitionValues transitionValues, TransitionValues transitionValues2) {
         View view = transitionValues2.view;
         Matrix matrix = new Matrix((Matrix) transitionValues2.values.get(PROPNAME_PARENT_MATRIX));
@@ -198,11 +201,11 @@ public class ChangeTransform extends Transition {
             return;
         }
         addGhost.reserveEndViewTransition((ViewGroup) transitionValues.values.get(PROPNAME_PARENT), transitionValues.view);
-        Transition transition = this;
-        while (transition.mParent != null) {
-            transition = transition.mParent;
+        ?? r3 = this;
+        while (r3.mParent != null) {
+            r3 = r3.mParent;
         }
-        transition.addListener(new GhostListener(view, addGhost));
+        r3.addListener(new GhostListener(view, addGhost));
         if (SUPPORTS_VIEW_REMOVAL_SUPPRESSION) {
             if (transitionValues.view != transitionValues2.view) {
                 ViewUtils.setTransitionAlpha(transitionValues.view, 0.0f);

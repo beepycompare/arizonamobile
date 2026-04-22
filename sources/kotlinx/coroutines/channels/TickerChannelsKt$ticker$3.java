@@ -63,10 +63,10 @@ public final class TickerChannelsKt$ticker$3 extends SuspendLambda implements Fu
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0040, code lost:
-        if (r11 == r0) goto L16;
+        if (r10 == r0) goto L16;
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x005c, code lost:
-        if (r11 == r0) goto L16;
+        if (r10 == r0) goto L16;
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x005e, code lost:
         return r0;

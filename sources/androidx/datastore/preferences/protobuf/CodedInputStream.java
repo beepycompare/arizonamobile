@@ -827,7 +827,7 @@ public abstract class CodedInputStream {
             }
             byte[] bArr = this.buffer;
             this.pos = i + 4;
-            return ((bArr[i + 3] & 255) << 24) | (bArr[i] & 255) | ((bArr[i + 1] & 255) << 8) | ((bArr[i + 2] & 255) << 16);
+            return (bArr[i] & 255) | ((bArr[i + 1] & 255) << 8) | ((bArr[i + 2] & 255) << 16) | ((bArr[i + 3] & 255) << 24);
         }
 
         @Override // androidx.datastore.preferences.protobuf.CodedInputStream
@@ -1491,7 +1491,7 @@ public abstract class CodedInputStream {
                 throw InvalidProtocolBufferException.truncatedMessage();
             }
             this.pos = 4 + j;
-            return ((UnsafeUtil.getByte(j + 3) & 255) << 24) | (UnsafeUtil.getByte(j) & 255) | ((UnsafeUtil.getByte(1 + j) & 255) << 8) | ((UnsafeUtil.getByte(2 + j) & 255) << 16);
+            return (UnsafeUtil.getByte(j) & 255) | ((UnsafeUtil.getByte(1 + j) & 255) << 8) | ((UnsafeUtil.getByte(2 + j) & 255) << 16) | ((UnsafeUtil.getByte(j + 3) & 255) << 24);
         }
 
         @Override // androidx.datastore.preferences.protobuf.CodedInputStream
@@ -2243,7 +2243,7 @@ public abstract class CodedInputStream {
             }
             byte[] bArr = this.buffer;
             this.pos = i + 4;
-            return ((bArr[i + 3] & 255) << 24) | (bArr[i] & 255) | ((bArr[i + 1] & 255) << 8) | ((bArr[i + 2] & 255) << 16);
+            return (bArr[i] & 255) | ((bArr[i + 1] & 255) << 8) | ((bArr[i + 2] & 255) << 16) | ((bArr[i + 3] & 255) << 24);
         }
 
         @Override // androidx.datastore.preferences.protobuf.CodedInputStream
@@ -3142,28 +3142,19 @@ public abstract class CodedInputStream {
             if (currentRemaining() >= 4) {
                 long j = this.currentByteBufferPos;
                 this.currentByteBufferPos = 4 + j;
-                return ((UnsafeUtil.getByte(j + 3) & 255) << 24) | (UnsafeUtil.getByte(j) & 255) | ((UnsafeUtil.getByte(1 + j) & 255) << 8) | ((UnsafeUtil.getByte(2 + j) & 255) << 16);
+                return (UnsafeUtil.getByte(j) & 255) | ((UnsafeUtil.getByte(1 + j) & 255) << 8) | ((UnsafeUtil.getByte(2 + j) & 255) << 16) | ((UnsafeUtil.getByte(j + 3) & 255) << 24);
             }
-            return (readRawByte() & 255) | ((readRawByte() & 255) << 8) | ((readRawByte() & 255) << 16) | ((readRawByte() & 255) << 24);
+            return ((readRawByte() & 255) << 24) | (readRawByte() & 255) | ((readRawByte() & 255) << 8) | ((readRawByte() & 255) << 16);
         }
 
         @Override // androidx.datastore.preferences.protobuf.CodedInputStream
         public long readRawLittleEndian64() throws IOException {
-            char c;
-            long readRawByte;
-            byte readRawByte2;
             if (currentRemaining() >= 8) {
                 long j = this.currentByteBufferPos;
                 this.currentByteBufferPos = 8 + j;
-                c = '8';
-                readRawByte = (UnsafeUtil.getByte(j) & 255) | ((UnsafeUtil.getByte(1 + j) & 255) << 8) | ((UnsafeUtil.getByte(2 + j) & 255) << 16) | ((UnsafeUtil.getByte(3 + j) & 255) << 24) | ((UnsafeUtil.getByte(4 + j) & 255) << 32) | ((UnsafeUtil.getByte(5 + j) & 255) << 40) | ((UnsafeUtil.getByte(6 + j) & 255) << 48);
-                readRawByte2 = UnsafeUtil.getByte(j + 7);
-            } else {
-                c = '8';
-                readRawByte = (readRawByte() & 255) | ((readRawByte() & 255) << 8) | ((readRawByte() & 255) << 16) | ((readRawByte() & 255) << 24) | ((readRawByte() & 255) << 32) | ((readRawByte() & 255) << 40) | ((readRawByte() & 255) << 48);
-                readRawByte2 = readRawByte();
+                return (UnsafeUtil.getByte(j) & 255) | ((UnsafeUtil.getByte(1 + j) & 255) << 8) | ((UnsafeUtil.getByte(2 + j) & 255) << 16) | ((UnsafeUtil.getByte(3 + j) & 255) << 24) | ((UnsafeUtil.getByte(4 + j) & 255) << 32) | ((UnsafeUtil.getByte(5 + j) & 255) << 40) | ((UnsafeUtil.getByte(6 + j) & 255) << 48) | ((UnsafeUtil.getByte(j + 7) & 255) << 56);
             }
-            return readRawByte | ((readRawByte2 & 255) << c);
+            return ((readRawByte() & 255) << 56) | (readRawByte() & 255) | ((readRawByte() & 255) << 8) | ((readRawByte() & 255) << 16) | ((readRawByte() & 255) << 24) | ((readRawByte() & 255) << 32) | ((readRawByte() & 255) << 40) | ((readRawByte() & 255) << 48);
         }
 
         @Override // androidx.datastore.preferences.protobuf.CodedInputStream

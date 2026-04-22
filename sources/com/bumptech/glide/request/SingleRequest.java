@@ -7,10 +7,6 @@ import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.GlideContext;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.DataSource;
-import com.bumptech.glide.load.Key;
-import com.bumptech.glide.load.Options;
-import com.bumptech.glide.load.Transformation;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.Engine;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.engine.Resource;
@@ -23,7 +19,6 @@ import com.bumptech.glide.util.Util;
 import com.bumptech.glide.util.pool.GlideTrace;
 import com.bumptech.glide.util.pool.StateVerifier;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.Executor;
 /* loaded from: classes3.dex */
 public final class SingleRequest<R> implements Request, SizeReadyCallback, ResourceCallback {
@@ -288,105 +283,67 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     @Override // com.bumptech.glide.request.target.SizeReadyCallback
     public void onSizeReady(int i, int i2) {
-        int i3;
-        Class<?> resourceClass;
-        Class<R> cls;
-        Priority priority;
-        DiskCacheStrategy diskCacheStrategy;
-        Map<Class<?>, Transformation<?>> transformations;
-        boolean isTransformationRequired;
-        boolean isScaleOnlyOrNoTransform;
-        Options options;
-        boolean isMemoryCacheable;
-        boolean useUnlimitedSourceGeneratorsPool;
-        boolean useAnimationPool;
-        boolean onlyRetrieveFromCache;
-        Executor executor;
-        SingleRequest<R> singleRequest = this;
-        singleRequest.stateVerifier.throwIfRecycled();
-        Object obj = singleRequest.requestLock;
-        synchronized (obj) {
+        Object obj;
+        this.stateVerifier.throwIfRecycled();
+        Object obj2 = this.requestLock;
+        synchronized (obj2) {
             try {
                 try {
                     boolean z = IS_VERBOSE_LOGGABLE;
                     if (z) {
-                        singleRequest.logV("Got onSizeReady in " + LogTime.getElapsedMillis(singleRequest.startTime));
+                        logV("Got onSizeReady in " + LogTime.getElapsedMillis(this.startTime));
                     }
-                    if (singleRequest.status == Status.WAITING_FOR_SIZE) {
-                        singleRequest.status = Status.RUNNING;
-                        float sizeMultiplier = singleRequest.requestOptions.getSizeMultiplier();
-                        singleRequest.width = maybeApplySizeMultiplier(i, sizeMultiplier);
-                        singleRequest.height = maybeApplySizeMultiplier(i2, sizeMultiplier);
-                        if (z) {
-                            singleRequest.logV("finished setup for calling load in " + LogTime.getElapsedMillis(singleRequest.startTime));
-                        }
-                        Engine engine = singleRequest.engine;
-                        GlideContext glideContext = singleRequest.glideContext;
+                    if (this.status != Status.WAITING_FOR_SIZE) {
+                        return;
+                    }
+                    this.status = Status.RUNNING;
+                    float sizeMultiplier = this.requestOptions.getSizeMultiplier();
+                    this.width = maybeApplySizeMultiplier(i, sizeMultiplier);
+                    this.height = maybeApplySizeMultiplier(i2, sizeMultiplier);
+                    if (z) {
+                        logV("finished setup for calling load in " + LogTime.getElapsedMillis(this.startTime));
+                    }
+                    try {
                         try {
-                            Object obj2 = singleRequest.model;
-                            Key signature = singleRequest.requestOptions.getSignature();
                             try {
-                                int i4 = singleRequest.width;
                                 try {
-                                    i3 = singleRequest.height;
-                                    resourceClass = singleRequest.requestOptions.getResourceClass();
-                                    try {
-                                        cls = singleRequest.transcodeClass;
-                                        try {
-                                            priority = singleRequest.priority;
-                                            diskCacheStrategy = singleRequest.requestOptions.getDiskCacheStrategy();
-                                            transformations = singleRequest.requestOptions.getTransformations();
-                                            isTransformationRequired = singleRequest.requestOptions.isTransformationRequired();
-                                            isScaleOnlyOrNoTransform = singleRequest.requestOptions.isScaleOnlyOrNoTransform();
-                                            options = singleRequest.requestOptions.getOptions();
-                                            isMemoryCacheable = singleRequest.requestOptions.isMemoryCacheable();
-                                            useUnlimitedSourceGeneratorsPool = singleRequest.requestOptions.getUseUnlimitedSourceGeneratorsPool();
-                                            useAnimationPool = singleRequest.requestOptions.getUseAnimationPool();
-                                            onlyRetrieveFromCache = singleRequest.requestOptions.getOnlyRetrieveFromCache();
-                                            executor = singleRequest.callbackExecutor;
-                                            singleRequest = obj;
-                                        } catch (Throwable th) {
-                                            th = th;
-                                            singleRequest = obj;
-                                        }
-                                    } catch (Throwable th2) {
-                                        th = th2;
-                                        singleRequest = obj;
-                                    }
-                                } catch (Throwable th3) {
-                                    th = th3;
-                                    singleRequest = obj;
+                                } catch (Throwable th) {
+                                    th = th;
+                                    obj = obj2;
                                 }
-                                try {
-                                    singleRequest.loadStatus = engine.load(glideContext, obj2, signature, i4, i3, resourceClass, cls, priority, diskCacheStrategy, transformations, isTransformationRequired, isScaleOnlyOrNoTransform, options, isMemoryCacheable, useUnlimitedSourceGeneratorsPool, useAnimationPool, onlyRetrieveFromCache, singleRequest, executor);
-                                    if (singleRequest.status != Status.RUNNING) {
-                                        singleRequest.loadStatus = null;
-                                    }
-                                    if (z) {
-                                        singleRequest.logV("finished onSizeReady in " + LogTime.getElapsedMillis(singleRequest.startTime));
-                                    }
-                                } catch (Throwable th4) {
-                                    th = th4;
-                                    throw th;
-                                }
-                            } catch (Throwable th5) {
-                                th = th5;
-                                singleRequest = obj;
+                            } catch (Throwable th2) {
+                                th = th2;
+                                obj = obj2;
                             }
-                        } catch (Throwable th6) {
-                            th = th6;
-                            singleRequest = obj;
+                        } catch (Throwable th3) {
+                            th = th3;
+                            obj = obj2;
                         }
+                        try {
+                            this.loadStatus = this.engine.load(this.glideContext, this.model, this.requestOptions.getSignature(), this.width, this.height, this.requestOptions.getResourceClass(), this.transcodeClass, this.priority, this.requestOptions.getDiskCacheStrategy(), this.requestOptions.getTransformations(), this.requestOptions.isTransformationRequired(), this.requestOptions.isScaleOnlyOrNoTransform(), this.requestOptions.getOptions(), this.requestOptions.isMemoryCacheable(), this.requestOptions.getUseUnlimitedSourceGeneratorsPool(), this.requestOptions.getUseAnimationPool(), this.requestOptions.getOnlyRetrieveFromCache(), this, this.callbackExecutor);
+                            if (this.status != Status.RUNNING) {
+                                this.loadStatus = null;
+                            }
+                            if (z) {
+                                logV("finished onSizeReady in " + LogTime.getElapsedMillis(this.startTime));
+                            }
+                        } catch (Throwable th4) {
+                            th = th4;
+                            obj = obj2;
+                            throw th;
+                        }
+                    } catch (Throwable th5) {
+                        th = th5;
+                        obj = obj2;
                     }
-                } catch (Throwable th7) {
-                    th = th7;
-                    singleRequest = obj;
+                } catch (Throwable th6) {
+                    th = th6;
+                    obj = obj2;
                 }
-            } catch (Throwable th8) {
-                th = th8;
+            } catch (Throwable th7) {
+                th = th7;
             }
         }
     }

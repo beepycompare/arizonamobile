@@ -194,8 +194,8 @@ public final class AnchoredDraggableNode<T> extends DragGestureNode {
 
     public final void update(AnchoredDraggableState<T> anchoredDraggableState, Orientation orientation, boolean z, Boolean bool, MutableInteractionSource mutableInteractionSource, OverscrollEffect overscrollEffect, Boolean bool2, FlingBehavior flingBehavior) {
         boolean z2;
+        boolean z3;
         this.flingBehavior = flingBehavior;
-        boolean z3 = true;
         if (Intrinsics.areEqual(this.state, anchoredDraggableState)) {
             z2 = false;
         } else {
@@ -211,6 +211,7 @@ public final class AnchoredDraggableNode<T> extends DragGestureNode {
             z3 = z2;
         } else {
             this.reverseDirection = bool;
+            z3 = true;
         }
         this.startDragImmediately = bool2;
         this.overscrollEffect = overscrollEffect;
@@ -224,7 +225,7 @@ public final class AnchoredDraggableNode<T> extends DragGestureNode {
         if (this.orientation != Orientation.Vertical) {
             f = 0.0f;
         }
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(f2) << 32));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -71,11 +71,7 @@ public final class StreamKey implements Comparable<StreamKey>, Parcelable {
     @Override // java.lang.Comparable
     public int compareTo(StreamKey streamKey) {
         int i = this.periodIndex - streamKey.periodIndex;
-        if (i == 0) {
-            int i2 = this.groupIndex - streamKey.groupIndex;
-            return i2 == 0 ? this.streamIndex - streamKey.streamIndex : i2;
-        }
-        return i;
+        return (i == 0 && (i = this.groupIndex - streamKey.groupIndex) == 0) ? this.streamIndex - streamKey.streamIndex : i;
     }
 
     @Override // android.os.Parcelable

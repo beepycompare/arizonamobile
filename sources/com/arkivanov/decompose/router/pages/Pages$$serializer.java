@@ -69,13 +69,13 @@ public /* synthetic */ class Pages$$serializer<C> implements GeneratedSerializer
             boolean z = true;
             int i3 = 0;
             int i4 = 0;
-            list = null;
+            List list2 = null;
             while (z) {
                 int decodeElementIndex = beginStructure.decodeElementIndex(serialDescriptor);
                 if (decodeElementIndex == -1) {
                     z = false;
                 } else if (decodeElementIndex == 0) {
-                    list = (List) beginStructure.decodeSerializableElement(serialDescriptor, 0, new ArrayListSerializer(this.typeSerial0), list);
+                    list2 = (List) beginStructure.decodeSerializableElement(serialDescriptor, 0, new ArrayListSerializer(this.typeSerial0), list2);
                     i4 |= 1;
                 } else if (decodeElementIndex != 1) {
                     throw new UnknownFieldException(decodeElementIndex);
@@ -84,6 +84,7 @@ public /* synthetic */ class Pages$$serializer<C> implements GeneratedSerializer
                     i4 |= 2;
                 }
             }
+            list = list2;
             i = i3;
             i2 = i4;
         }

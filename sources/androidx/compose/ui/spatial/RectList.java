@@ -109,7 +109,7 @@ public final class RectList {
             long j = jArr[i9];
             if ((((int) j) & 33554431) == i6) {
                 jArr[i8] = (i2 << 32) | (i3 & 4294967295L);
-                jArr[i8 + 1] = (i4 << 32) | (i5 & 4294967295L);
+                jArr[i8 + 1] = (i4 << 32) | (4294967295L & i5);
                 jArr[i9] = (((j >> 63) & 1) << 60) | j;
                 return true;
             }
@@ -125,7 +125,7 @@ public final class RectList {
             int i5 = i4 + 2;
             long j = jArr[i5];
             if ((((int) j) & 33554431) == i2) {
-                jArr[i5] = ((z ? 1L : 0L) * LockFreeTaskQueueCore.CLOSED_MASK) | ((-6917529027641081857L) & j) | ((z2 ? 1L : 0L) * 4611686018427387904L);
+                jArr[i5] = ((-6917529027641081857L) & j) | ((z ? 1L : 0L) * LockFreeTaskQueueCore.CLOSED_MASK) | ((z2 ? 1L : 0L) * 4611686018427387904L);
                 return true;
             }
         }
@@ -140,7 +140,7 @@ public final class RectList {
             int i5 = i4 + 2;
             long j = jArr[i5];
             if ((((int) j) & 33554431) == i2) {
-                jArr[i5] = ((z ? 1L : 0L) * Long.MIN_VALUE) | (8070450532247928831L & j) | ((z ? 1L : 0L) * LockFreeTaskQueueCore.FROZEN_MASK);
+                jArr[i5] = (8070450532247928831L & j) | ((z ? 1L : 0L) * LockFreeTaskQueueCore.FROZEN_MASK) | ((z ? 1L : 0L) * Long.MIN_VALUE);
                 return true;
             }
         }
@@ -212,7 +212,7 @@ public final class RectList {
     }
 
     public final void updateSubhierarchy(int i, int i2, int i3) {
-        updateSubhierarchy((Math.min(this.itemsSize / 3, 1023) << 50) | (0 << 25) | (i & 33554431), i2, i3);
+        updateSubhierarchy((Math.min(this.itemsSize / 3, 1023) << 50) | (i & 33554431), i2, i3);
     }
 
     private final void updateSubhierarchy(long j, int i, int i2) {
@@ -556,24 +556,17 @@ public final class RectList {
         StringBuilder sb = new StringBuilder();
         long[] jArr = this.items;
         int i = this.itemsSize;
-        int i2 = 0;
-        while (i2 < jArr.length - 2 && i2 < i) {
+        for (int i2 = 0; i2 < jArr.length - 2 && i2 < i; i2 += 3) {
             long j = jArr[i2];
             long j2 = jArr[i2 + 1];
             long j3 = jArr[i2 + 2];
-            int i3 = i;
-            StringBuilder sb2 = sb;
-            StringBuilder append = sb2.append("id=" + (((int) j3) & 33554431) + ", rect=[" + ((int) (j >> 32)) + AbstractJsonLexerKt.COMMA + ((int) j) + AbstractJsonLexerKt.COMMA + ((int) (j2 >> 32)) + AbstractJsonLexerKt.COMMA + ((int) j2) + "], parent=" + (33554431 & ((int) (j3 >> 25))) + ", lastChildOffset=" + (((int) (j3 >> 50)) & 1023) + ", updated=" + (((int) (j3 >> 60)) & 1) + ", focusable=" + (((int) (j3 >> 61)) & 1) + ", gesturable=" + (((int) (j3 >> 62)) & 1));
+            StringBuilder append = sb.append("id=" + (((int) j3) & 33554431) + ", rect=[" + ((int) (j >> 32)) + AbstractJsonLexerKt.COMMA + ((int) j) + AbstractJsonLexerKt.COMMA + ((int) (j2 >> 32)) + AbstractJsonLexerKt.COMMA + ((int) j2) + "], parent=" + (33554431 & ((int) (j3 >> 25))) + ", lastChildOffset=" + (((int) (j3 >> 50)) & 1023) + ", updated=" + (((int) (j3 >> 60)) & 1) + ", focusable=" + (((int) (j3 >> 61)) & 1) + ", gesturable=" + (((int) (j3 >> 62)) & 1));
             Intrinsics.checkNotNullExpressionValue(append, "append(...)");
             Intrinsics.checkNotNullExpressionValue(append.append('\n'), "append(...)");
-            i2 += 3;
-            jArr = jArr;
-            sb = sb2;
-            i = i3;
         }
-        String sb3 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb3, "toString(...)");
-        return sb3;
+        String sb2 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+        return sb2;
     }
 
     public final void insert(int i, int i2, int i3, int i4, int i5, int i6, boolean z, boolean z2, boolean z3, int i7) {
@@ -589,7 +582,7 @@ public final class RectList {
         jArr2[i8] = (i2 << 32) | (i3 & 4294967295L);
         jArr2[i8 + 1] = (i4 << 32) | (i5 & 4294967295L);
         int i10 = i6 & 33554431;
-        jArr2[i8 + 2] = ((z3 ? 1L : 0L) << 63) | ((z2 ? 1L : 0L) << 62) | ((z ? 1L : 0L) << 61) | (1 << 60) | (Math.min(0, 1023) << 50) | (i10 << 25) | (i & 33554431);
+        jArr2[i8 + 2] = ((z3 ? 1L : 0L) << 63) | ((z2 ? 1L : 0L) << 62) | ((z ? 1L : 0L) << 61) | LockFreeTaskQueueCore.FROZEN_MASK | (Math.min(0, 1023) << 50) | (i10 << 25) | (i & 33554431);
         if (i6 < 0) {
             return;
         }
@@ -597,7 +590,7 @@ public final class RectList {
             int i12 = i11 + 2;
             long j = jArr2[i12];
             if ((((int) j) & 33554431) == i10) {
-                jArr2[i12] = (j & RectListKt.getEverythingButLastChildOffset()) | (Math.min((i8 - i11) / 3, 1023) << 50);
+                jArr2[i12] = (Math.min((i8 - i11) / 3, 1023) << 50) | (j & RectListKt.getEverythingButLastChildOffset());
                 return;
             }
         }

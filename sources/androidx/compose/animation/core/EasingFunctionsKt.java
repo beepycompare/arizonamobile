@@ -212,7 +212,7 @@ public final class EasingFunctionsKt {
             return 1.0f;
         }
         float f2 = f * 10.0f;
-        return (float) ((-((float) Math.pow(2.0f, f2 - 10.0f))) * Math.sin((f2 - 10.75f) * 2.0943951023931953d));
+        return (float) ((-((float) Math.pow(2.0d, f2 - 10.0f))) * Math.sin((f2 - 10.75f) * 2.0943951023931953d));
     }
 
     public static final Easing getEaseOutElastic() {
@@ -227,7 +227,7 @@ public final class EasingFunctionsKt {
         if (f == 1.0f) {
             return 1.0f;
         }
-        return (float) ((((float) Math.pow(2.0f, (-10.0f) * f)) * Math.sin(((f * 10.0f) - 0.75f) * 2.0943951023931953d)) + 1.0f);
+        return (float) ((((float) Math.pow(2.0d, (-10.0f) * f)) * Math.sin(((f * 10.0f) - 0.75f) * 2.0943951023931953d)) + 1.0d);
     }
 
     public static final Easing getEaseInOutElastic() {
@@ -236,8 +236,6 @@ public final class EasingFunctionsKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final float EaseInOutElastic$lambda$0(float f) {
-        double d;
-        double d2;
         if (f == 0.0f) {
             return 0.0f;
         }
@@ -246,9 +244,9 @@ public final class EasingFunctionsKt {
         }
         if (0.0f <= f && f <= 0.5f) {
             float f2 = f * 20.0f;
-            return (float) ((-(((float) Math.pow(d2, f2 - 10.0f)) * Math.sin((f2 - 11.125f) * 1.3962634015954636d))) / 2.0f);
+            return (float) ((-(((float) Math.pow(2.0d, f2 - 10.0f)) * Math.sin((f2 - 11.125f) * 1.3962634015954636d))) / 2.0d);
         }
-        return ((float) ((((float) Math.pow(d, ((-20.0f) * f) + 10.0f)) * Math.sin(((f * 20.0f) - 11.125f) * 1.3962634015954636d)) / 2.0f)) + 1.0f;
+        return ((float) ((((float) Math.pow(2.0d, ((-20.0f) * f) + 10.0f)) * Math.sin(((f * 20.0f) - 11.125f) * 1.3962634015954636d)) / 2.0d)) + 1.0f;
     }
 
     public static final Easing getEaseOutBounce() {
@@ -261,7 +259,7 @@ public final class EasingFunctionsKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final float EaseInBounce$lambda$0(float f) {
-        return 1 - EaseOutBounce.transform(1.0f - f);
+        return 1.0f - EaseOutBounce.transform(1.0f - f);
     }
 
     public static final Easing getEaseInOutBounce() {
@@ -272,9 +270,9 @@ public final class EasingFunctionsKt {
     public static final float EaseInOutBounce$lambda$0(float f) {
         float transform;
         if (f < 0.5d) {
-            transform = 1 - EaseOutBounce.transform(1.0f - (f * 2.0f));
+            transform = 1.0f - EaseOutBounce.transform(1.0f - (f * 2.0f));
         } else {
-            transform = 1 + EaseOutBounce.transform((f * 2.0f) - 1.0f);
+            transform = 1.0f + EaseOutBounce.transform((f * 2.0f) - 1.0f);
         }
         return transform / 2.0f;
     }

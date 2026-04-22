@@ -104,17 +104,16 @@ public final class YearMonthKt {
 
     public static final YearMonth fromProlepticMonth(YearMonth.Companion companion, long j) {
         Intrinsics.checkNotNullParameter(companion, "<this>");
-        long j2 = 12;
-        long j3 = j / j2;
-        if ((j ^ j2) < 0 && j3 * j2 != j) {
-            j3--;
+        long j2 = j / 12;
+        if ((j ^ 12) < 0 && j2 * 12 != j) {
+            j2--;
         }
         int year = LocalDate.Companion.getMIN$kotlinx_datetime().getYear();
-        if (j3 > LocalDate.Companion.getMAX$kotlinx_datetime().getYear() || year > j3) {
-            throw new IllegalArgumentException(("Year " + j3 + " is out of range: " + LocalDate.Companion.getMIN$kotlinx_datetime().getYear() + ".." + LocalDate.Companion.getMAX$kotlinx_datetime().getYear()).toString());
+        if (j2 > LocalDate.Companion.getMAX$kotlinx_datetime().getYear() || year > j2) {
+            throw new IllegalArgumentException(("Year " + j2 + " is out of range: " + LocalDate.Companion.getMIN$kotlinx_datetime().getYear() + ".." + LocalDate.Companion.getMAX$kotlinx_datetime().getYear()).toString());
         }
-        long j4 = j % j2;
-        return new YearMonth((int) j3, ((int) (j4 + (j2 & (((j4 ^ j2) & ((-j4) | j4)) >> 63)))) + 1);
+        long j3 = j % 12;
+        return new YearMonth((int) j2, ((int) (j3 + (12 & (((j3 ^ 12) & ((-j3) | j3)) >> 63)))) + 1);
     }
 
     public static final YearMonth getMAX(YearMonth.Companion companion) {

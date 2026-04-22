@@ -102,8 +102,8 @@ public final class NewContainerScreen extends SAMPUIElement {
     }
 
     private final void colorizeTextView(TextView textView, int i) {
-        SpannableString spannableString = new SpannableString(r2);
-        int indexOf$default = StringsKt.indexOf$default((CharSequence) r2, "контейнера", 0, false, 6, (Object) null);
+        SpannableString spannableString = new SpannableString(r1);
+        int indexOf$default = StringsKt.indexOf$default((CharSequence) r1, "контейнера", 0, false, 6, (Object) null);
         spannableString.setSpan(new ForegroundColorSpan(i), indexOf$default, "контейнера".length() + indexOf$default, 33);
         textView.setText(spannableString);
     }

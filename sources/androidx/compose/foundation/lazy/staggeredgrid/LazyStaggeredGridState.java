@@ -311,7 +311,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
         if (r9.waitForFirstLayout(r0) == r1) goto L19;
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x006f, code lost:
-        if (r9.scroll(r7, r8, r0) != r1) goto L11;
+        if (r6.scroll(r7, r8, r0) != r1) goto L11;
      */
     /* JADX WARN: Code restructure failed: missing block: B:23:0x0071, code lost:
         return r1;

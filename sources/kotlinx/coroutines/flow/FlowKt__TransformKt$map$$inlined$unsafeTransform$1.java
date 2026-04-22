@@ -51,7 +51,7 @@ public final class FlowKt__TransformKt$map$$inlined$unsafeTransform$1<R> impleme
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:21:0x005e, code lost:
-            if (r7.emit(r8, r0) != r1) goto L11;
+            if (r6.emit(r8, r0) != r1) goto L11;
          */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
         /* JADX WARN: Removed duplicated region for block: B:16:0x003d  */

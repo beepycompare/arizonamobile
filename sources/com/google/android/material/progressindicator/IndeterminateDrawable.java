@@ -157,17 +157,15 @@ public final class IndeterminateDrawable<S extends BaseProgressIndicatorSpec> ex
         return this.drawingDelegate.getPreferredHeight();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0111  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0110  */
     @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void draw(Canvas canvas) {
-        Canvas canvas2;
         int i;
         Drawable drawable;
         if (!getBounds().isEmpty() && isVisible() && canvas.getClipBounds(this.clipBounds)) {
-            int i2 = 0;
             if (isSystemAnimatorDisabled() && (drawable = this.staticDummyDrawable) != null) {
                 drawable.setBounds(getBounds());
                 this.staticDummyDrawable.setTint(this.baseSpec.indicatorColors[0]);
@@ -176,46 +174,39 @@ public final class IndeterminateDrawable<S extends BaseProgressIndicatorSpec> ex
             }
             canvas.save();
             this.drawingDelegate.validateSpecAndAdjustCanvas(canvas, getBounds(), getGrowFraction(), isShowing(), isHiding());
-            int i3 = this.baseSpec.indicatorTrackGapSize;
+            int i2 = this.baseSpec.indicatorTrackGapSize;
             int alpha = getAlpha();
             boolean z = (this.baseSpec instanceof LinearProgressIndicatorSpec) || ((this.baseSpec instanceof CircularProgressIndicatorSpec) && ((CircularProgressIndicatorSpec) this.baseSpec).indeterminateTrackVisible);
-            boolean z2 = z && i3 == 0 && !this.baseSpec.hasWavyEffect(false);
+            boolean z2 = z && i2 == 0 && !this.baseSpec.hasWavyEffect(false);
             if (z2) {
-                canvas2 = canvas;
-                this.drawingDelegate.fillTrack(canvas2, this.paint, 0.0f, 1.0f, this.baseSpec.trackColor, alpha, 0);
+                this.drawingDelegate.fillTrack(canvas, this.paint, 0.0f, 1.0f, this.baseSpec.trackColor, alpha, 0);
             } else if (z) {
                 DrawingDelegate.ActiveIndicator activeIndicator = this.animatorDelegate.activeIndicators.get(0);
                 DrawingDelegate.ActiveIndicator activeIndicator2 = this.animatorDelegate.activeIndicators.get(this.animatorDelegate.activeIndicators.size() - 1);
                 DrawingDelegate<S> drawingDelegate = this.drawingDelegate;
                 if (drawingDelegate instanceof LinearDrawingDelegate) {
-                    i = i3;
+                    i = i2;
                     drawingDelegate.fillTrack(canvas, this.paint, 0.0f, activeIndicator.startFraction, this.baseSpec.trackColor, alpha, i);
-                    canvas2 = canvas;
-                    this.drawingDelegate.fillTrack(canvas2, this.paint, activeIndicator2.endFraction, 1.0f, this.baseSpec.trackColor, alpha, i);
+                    this.drawingDelegate.fillTrack(canvas, this.paint, activeIndicator2.endFraction, 1.0f, this.baseSpec.trackColor, alpha, i);
                 } else {
-                    canvas2 = canvas;
-                    i = i3;
+                    i = i2;
                     canvas.save();
                     canvas.rotate(activeIndicator2.rotationDegree);
-                    this.drawingDelegate.fillTrack(canvas2, this.paint, activeIndicator2.endFraction, activeIndicator.startFraction + 1.0f, this.baseSpec.trackColor, alpha, i);
+                    this.drawingDelegate.fillTrack(canvas, this.paint, activeIndicator2.endFraction, activeIndicator.startFraction + 1.0f, this.baseSpec.trackColor, alpha, i);
                     canvas.restore();
                 }
-                while (i2 < this.animatorDelegate.activeIndicators.size()) {
-                    DrawingDelegate.ActiveIndicator activeIndicator3 = this.animatorDelegate.activeIndicators.get(i2);
+                for (int i3 = 0; i3 < this.animatorDelegate.activeIndicators.size(); i3++) {
+                    DrawingDelegate.ActiveIndicator activeIndicator3 = this.animatorDelegate.activeIndicators.get(i3);
                     activeIndicator3.phaseFraction = getPhaseFraction();
                     this.drawingDelegate.fillIndicator(canvas, this.paint, activeIndicator3, getAlpha());
-                    if (i2 > 0 && !z2 && z) {
-                        this.drawingDelegate.fillTrack(canvas2, this.paint, this.animatorDelegate.activeIndicators.get(i2 - 1).endFraction, activeIndicator3.startFraction, this.baseSpec.trackColor, alpha, i);
+                    if (i3 > 0 && !z2 && z) {
+                        this.drawingDelegate.fillTrack(canvas, this.paint, this.animatorDelegate.activeIndicators.get(i3 - 1).endFraction, activeIndicator3.startFraction, this.baseSpec.trackColor, alpha, i);
                     }
-                    i2++;
-                    canvas2 = canvas;
                 }
                 canvas.restore();
-            } else {
-                canvas2 = canvas;
             }
-            i = i3;
-            while (i2 < this.animatorDelegate.activeIndicators.size()) {
+            i = i2;
+            while (i3 < this.animatorDelegate.activeIndicators.size()) {
             }
             canvas.restore();
         }

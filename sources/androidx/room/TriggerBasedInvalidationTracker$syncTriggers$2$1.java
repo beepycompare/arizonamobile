@@ -41,10 +41,10 @@ public final class TriggerBasedInvalidationTracker$syncTriggers$2$1 extends Susp
         return ((TriggerBasedInvalidationTracker$syncTriggers$2$1) create(transactor, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0047, code lost:
-        if (r6 == r0) goto L46;
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0046, code lost:
+        if (r6 == r1) goto L46;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x00b4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x00b3, code lost:
         if (r14 != false) goto L38;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

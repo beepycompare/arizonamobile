@@ -145,16 +145,16 @@ public final class WindowHeightSizeClass implements Comparable<WindowHeightSizeC
         public final float m3948breakpointsr04XMo(int i) {
             if (!WindowHeightSizeClass.m3942equalsimpl0(i, m3951getExpandedPt018CI())) {
                 if (WindowHeightSizeClass.m3942equalsimpl0(i, m3952getMediumPt018CI())) {
-                    return Dp.m7555constructorimpl((float) androidx.window.core.layout.WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND);
+                    return Dp.m7555constructorimpl(480.0f);
                 }
-                return Dp.m7555constructorimpl(0);
+                return Dp.m7555constructorimpl(0.0f);
             }
-            return Dp.m7555constructorimpl(900);
+            return Dp.m7555constructorimpl(900.0f);
         }
 
         /* renamed from: fromHeight-BkRwncw$material3_window_size_class  reason: not valid java name */
         public final int m3949fromHeightBkRwncw$material3_window_size_class(float f, Set<WindowHeightSizeClass> set) {
-            if (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0)) < 0) {
+            if (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0.0f)) < 0) {
                 throw new IllegalArgumentException("Width must not be negative".toString());
             }
             if (set.isEmpty()) {

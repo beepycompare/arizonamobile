@@ -483,9 +483,9 @@ public class CollapsingToolbarLayout extends FrameLayout {
         if (viewGroup != null) {
             View view = collapsingToolbarLayout.toolbarDirectChild;
             if (view == null || view == collapsingToolbarLayout) {
-                setMinimumHeight(getHeightWithMargins(viewGroup));
+                collapsingToolbarLayout.setMinimumHeight(getHeightWithMargins(viewGroup));
             } else {
-                setMinimumHeight(getHeightWithMargins(view));
+                collapsingToolbarLayout.setMinimumHeight(getHeightWithMargins(view));
             }
         }
     }

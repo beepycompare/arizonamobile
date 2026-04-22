@@ -140,9 +140,7 @@ public final class TimePickerKt$ClockFace$1 implements Function3<IntList, Compos
                             composer.updateRememberedValue(rememberedValue);
                         }
                         ComposerKt.sourceInformationMarkerEnd(composer);
-                        boolean z2 = z;
-                        TimePickerKt.ClockText(SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), analogTimePickerState, i2, z2, composer, 0);
-                        z = z2;
+                        TimePickerKt.ClockText(SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), analogTimePickerState, i2, z, composer, 0);
                     }
                     composer.endReplaceGroup();
                     if (TimePickerSelectionMode.m2778equalsimpl0(this.$state.mo1702getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m2782getHouryecRtBI()) && this.$state.is24hour()) {
@@ -229,7 +227,7 @@ public final class TimePickerKt$ClockFace$1 implements Function3<IntList, Compos
 
                     /* JADX INFO: Access modifiers changed from: package-private */
                     public static final Unit invoke$lambda$2$lambda$1$lambda$0(int i, SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        SemanticsPropertiesKt.setTraversalIndex(semanticsPropertyReceiver, 12 + i);
+                        SemanticsPropertiesKt.setTraversalIndex(semanticsPropertyReceiver, 12.0f + i);
                         return Unit.INSTANCE;
                     }
                 }

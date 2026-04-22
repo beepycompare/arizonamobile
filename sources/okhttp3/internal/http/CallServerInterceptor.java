@@ -36,12 +36,10 @@ public final class CallServerInterceptor implements Interceptor {
     private CallServerInterceptor() {
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x00c0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00f9 A[Catch: IOException -> 0x0205, TryCatch #2 {IOException -> 0x0205, blocks: (B:49:0x00f3, B:51:0x00f9, B:53:0x0102, B:54:0x0105, B:55:0x012c, B:60:0x0138, B:63:0x0143, B:64:0x014a, B:67:0x014e, B:73:0x0160, B:75:0x01a7, B:77:0x01b6, B:84:0x01cb, B:87:0x01da, B:88:0x0204, B:79:0x01c0, B:74:0x018c), top: B:105:0x00f3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0133  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0135  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x020c  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0215  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00f9 A[Catch: IOException -> 0x0205, TryCatch #1 {IOException -> 0x0205, blocks: (B:44:0x00c0, B:46:0x00c9, B:47:0x00cd, B:48:0x00f3, B:50:0x00f9, B:52:0x0102, B:53:0x0105, B:54:0x012c, B:59:0x0138, B:62:0x0143, B:63:0x014a, B:66:0x014e, B:72:0x0160, B:74:0x01a7, B:76:0x01b6, B:83:0x01cb, B:86:0x01da, B:87:0x0204, B:78:0x01c0, B:73:0x018c), top: B:97:0x00c0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0133  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0135  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x00c0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     @Override // okhttp3.Interceptor
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -91,12 +89,6 @@ public final class CallServerInterceptor implements Interceptor {
                             build = builder.request(request$okhttp).handshake(exchange$okhttp.getConnection$okhttp().handshake()).sentRequestAtMillis(currentTimeMillis).receivedResponseAtMillis(System.currentTimeMillis()).build();
                             code = build.code();
                             while (shouldIgnoreAndWaitForRealResponse(code)) {
-                                try {
-                                } catch (IOException e2) {
-                                    e = e2;
-                                    if (iOException == null) {
-                                    }
-                                }
                             }
                             exchange$okhttp.responseHeadersEnd(build);
                             if (code != 101) {
@@ -164,11 +156,11 @@ public final class CallServerInterceptor implements Interceptor {
                 }
                 builder = builder2;
                 iOException = null;
-            } catch (IOException e3) {
-                e = e3;
+            } catch (IOException e2) {
+                e = e2;
             }
-        } catch (IOException e4) {
-            e = e4;
+        } catch (IOException e3) {
+            e = e3;
             z = true;
             builder2 = null;
         }
@@ -180,13 +172,12 @@ public final class CallServerInterceptor implements Interceptor {
                     exchange$okhttp.responseHeadersStart();
                     z = false;
                 }
-            } catch (IOException e5) {
-                e = e5;
-                if (iOException == null) {
-                    ExceptionsKt.addSuppressed(iOException, e);
+            } catch (IOException e4) {
+                if (iOException != null) {
+                    ExceptionsKt.addSuppressed(iOException, e4);
                     throw iOException;
                 }
-                throw e;
+                throw e4;
             }
         }
         build = builder.request(request$okhttp).handshake(exchange$okhttp.getConnection$okhttp().handshake()).sentRequestAtMillis(currentTimeMillis).receivedResponseAtMillis(System.currentTimeMillis()).build();

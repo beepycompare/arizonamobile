@@ -70,16 +70,15 @@ public final class BiasAlignment implements Alignment {
     @Override // androidx.compose.ui.Alignment
     /* renamed from: align-KFBX0sM */
     public long mo4246alignKFBX0sM(long j, long j2, LayoutDirection layoutDirection) {
-        float f;
-        float f2 = (((int) (j2 >> 32)) - ((int) (j >> 32))) / 2.0f;
-        float f3 = (((int) (j2 & 4294967295L)) - ((int) (j & 4294967295L))) / 2.0f;
+        float f = (((int) (j2 >> 32)) - ((int) (j >> 32))) / 2.0f;
+        float f2 = (((int) (j2 & 4294967295L)) - ((int) (j & 4294967295L))) / 2.0f;
         LayoutDirection layoutDirection2 = LayoutDirection.Ltr;
-        float f4 = this.horizontalBias;
+        float f3 = this.horizontalBias;
         if (layoutDirection != layoutDirection2) {
-            f4 *= -1;
+            f3 *= -1.0f;
         }
-        float f5 = f3 * (1 + this.verticalBias);
-        return IntOffset.m7677constructorimpl((Math.round(f2 * (f4 + f)) << 32) | (Math.round(f5) & 4294967295L));
+        int round = Math.round(f * (f3 + 1.0f));
+        return IntOffset.m7677constructorimpl((Math.round(f2 * (1.0f + this.verticalBias)) & 4294967295L) | (round << 32));
     }
 
     /* compiled from: Alignment.kt */
@@ -133,9 +132,9 @@ public final class BiasAlignment implements Alignment {
             LayoutDirection layoutDirection2 = LayoutDirection.Ltr;
             float f2 = this.bias;
             if (layoutDirection != layoutDirection2) {
-                f2 *= -1;
+                f2 *= -1.0f;
             }
-            return Math.round(f * (1 + f2));
+            return Math.round(f * (1.0f + f2));
         }
 
         @Override // androidx.compose.ui.Alignment.Horizontal
@@ -191,7 +190,7 @@ public final class BiasAlignment implements Alignment {
 
         @Override // androidx.compose.ui.Alignment.Vertical
         public int align(int i, int i2) {
-            return Math.round(((i2 - i) / 2.0f) * (1 + this.bias));
+            return Math.round(((i2 - i) / 2.0f) * (1.0f + this.bias));
         }
 
         @Override // androidx.compose.ui.Alignment.Vertical

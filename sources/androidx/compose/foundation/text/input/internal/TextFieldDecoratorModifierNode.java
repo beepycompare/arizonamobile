@@ -207,8 +207,8 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
                     PointerInputScope pointerInputScope = this.$this_SuspendingPointerInputModifierNode;
                     Function0 function0 = 
                     /*  JADX ERROR: Method code generation error
-                        jadx.core.utils.exceptions.CodegenException: Error generate insn: 0x001b: CONSTRUCTOR  (r8v0 'function0' kotlin.jvm.functions.Function0) = 
-                          (r12v4 'textFieldSelectionState' androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState A[DONT_INLINE])
+                        jadx.core.utils.exceptions.CodegenException: Error generate insn: 0x001b: CONSTRUCTOR  (r7v0 'function0' kotlin.jvm.functions.Function0) = 
+                          (r11v4 'textFieldSelectionState' androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState A[DONT_INLINE])
                           (r6v0 'textFieldDecoratorModifierNode' androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode A[DONT_INLINE])
                          call: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1$$ExternalSyntheticLambda0.<init>(androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState, androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode):void type: CONSTRUCTOR in method: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1.1.invokeSuspend(java.lang.Object):java.lang.Object, file: classes.dex
                         	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:309)
@@ -242,59 +242,60 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
                     /*
                         this = this;
                         kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()
-                        int r0 = r11.label
-                        if (r0 != 0) goto L58
-                        kotlin.ResultKt.throwOnFailure(r12)
-                        java.lang.Object r12 = r11.L$0
-                        r0 = r12
+                        int r0 = r10.label
+                        if (r0 != 0) goto L59
+                        kotlin.ResultKt.throwOnFailure(r11)
+                        java.lang.Object r11 = r10.L$0
+                        r0 = r11
                         kotlinx.coroutines.CoroutineScope r0 = (kotlinx.coroutines.CoroutineScope) r0
-                        androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode r12 = r11.this$0
-                        androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState r12 = r12.getTextFieldSelectionState()
-                        androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode r6 = r11.this$0
-                        androidx.compose.ui.input.pointer.PointerInputScope r7 = r11.$this_SuspendingPointerInputModifierNode
-                        androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1$$ExternalSyntheticLambda0 r8 = new androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1$$ExternalSyntheticLambda0
-                        r8.<init>(r12, r6)
+                        androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode r11 = r10.this$0
+                        androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState r11 = r11.getTextFieldSelectionState()
+                        androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode r6 = r10.this$0
+                        androidx.compose.ui.input.pointer.PointerInputScope r10 = r10.$this_SuspendingPointerInputModifierNode
+                        androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1$$ExternalSyntheticLambda0 r7 = new androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1$$ExternalSyntheticLambda0
+                        r7.<init>(r11, r6)
                         kotlinx.coroutines.CoroutineStart r2 = kotlinx.coroutines.CoroutineStart.UNDISPATCHED
                         androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1$1$1 r1 = new androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1$1$1
-                        r9 = 0
-                        r1.<init>(r12, r7, r9)
+                        r8 = 0
+                        r1.<init>(r11, r10, r8)
                         r3 = r1
                         kotlin.jvm.functions.Function2 r3 = (kotlin.jvm.functions.Function2) r3
                         r4 = 1
                         r5 = 0
                         r1 = 0
                         kotlinx.coroutines.BuildersKt.launch$default(r0, r1, r2, r3, r4, r5)
-                        kotlinx.coroutines.CoroutineStart r10 = kotlinx.coroutines.CoroutineStart.UNDISPATCHED
+                        kotlinx.coroutines.CoroutineStart r9 = kotlinx.coroutines.CoroutineStart.UNDISPATCHED
                         androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1$1$2 r1 = new androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1$1$2
                         r2 = r6
                         r6 = 0
-                        r3 = r12
-                        r4 = r7
-                        r5 = r8
+                        r4 = r10
+                        r3 = r11
+                        r5 = r7
                         r1.<init>(r2, r3, r4, r5, r6)
-                        r6 = r4
-                        r7 = r5
+                        r10 = r3
+                        r11 = r4
+                        r6 = r5
                         r3 = r1
                         kotlin.jvm.functions.Function2 r3 = (kotlin.jvm.functions.Function2) r3
                         r4 = 1
                         r5 = 0
                         r1 = 0
-                        r2 = r10
+                        r2 = r9
                         kotlinx.coroutines.BuildersKt.launch$default(r0, r1, r2, r3, r4, r5)
                         kotlinx.coroutines.CoroutineStart r2 = kotlinx.coroutines.CoroutineStart.UNDISPATCHED
                         androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1$1$3 r1 = new androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1$1$3
-                        r1.<init>(r12, r6, r7, r9)
+                        r1.<init>(r10, r11, r6, r8)
                         r3 = r1
                         kotlin.jvm.functions.Function2 r3 = (kotlin.jvm.functions.Function2) r3
                         r1 = 0
                         kotlinx.coroutines.BuildersKt.launch$default(r0, r1, r2, r3, r4, r5)
-                        kotlin.Unit r12 = kotlin.Unit.INSTANCE
-                        return r12
-                    L58:
-                        java.lang.IllegalStateException r12 = new java.lang.IllegalStateException
-                        java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
-                        r12.<init>(r0)
-                        throw r12
+                        kotlin.Unit r10 = kotlin.Unit.INSTANCE
+                        return r10
+                    L59:
+                        java.lang.IllegalStateException r10 = new java.lang.IllegalStateException
+                        java.lang.String r11 = "call to 'resume' before 'invoke' with coroutine"
+                        r10.<init>(r11)
+                        throw r10
                     */
                     throw new UnsupportedOperationException("Method not decompiled: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1.AnonymousClass1.invokeSuspend(java.lang.Object):java.lang.Object");
                 }
@@ -598,9 +599,8 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     public void draw(ContentDrawScope contentDrawScope) {
         contentDrawScope.drawContent();
         if (getAutofillHighlightOn()) {
-            ContentDrawScope contentDrawScope2 = contentDrawScope;
             TextFieldDecoratorModifierNode textFieldDecoratorModifierNode = this;
-            DrawScope.m5339drawRectAsUm42w$default(contentDrawScope2, AutofillHighlightKt.m1132resolveAutofillHighlightWkMShQ((Brush) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldDecoratorModifierNode, AutofillHighlightKt.getLocalAutofillHighlightBrush()), ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldDecoratorModifierNode, AutofillHighlightKt.getLocalAutofillHighlightColor())).m4782unboximpl(), AutofillHighlight_androidKt.autofillHighlightColor()), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+            DrawScope.m5339drawRectAsUm42w$default(contentDrawScope, AutofillHighlightKt.m1132resolveAutofillHighlightWkMShQ((Brush) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldDecoratorModifierNode, AutofillHighlightKt.getLocalAutofillHighlightBrush()), ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldDecoratorModifierNode, AutofillHighlightKt.getLocalAutofillHighlightColor())).m4782unboximpl(), AutofillHighlight_androidKt.autofillHighlightColor()), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
         }
     }
 

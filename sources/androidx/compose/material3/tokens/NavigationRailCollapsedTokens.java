@@ -10,11 +10,11 @@ public final class NavigationRailCollapsedTokens {
     public static final NavigationRailCollapsedTokens INSTANCE = new NavigationRailCollapsedTokens();
     private static final float ContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
-    private static final float ContainerWidth = Dp.m7555constructorimpl((float) 96.0d);
-    private static final float ItemVerticalSpace = Dp.m7555constructorimpl((float) 4.0d);
-    private static final float TopSpace = Dp.m7555constructorimpl((float) 44.0d);
+    private static final float ContainerWidth = Dp.m7555constructorimpl(96.0f);
+    private static final float ItemVerticalSpace = Dp.m7555constructorimpl(4.0f);
+    private static final float TopSpace = Dp.m7555constructorimpl(44.0f);
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float NarrowContainerWidth = Dp.m7555constructorimpl((float) 80.0d);
+    private static final float NarrowContainerWidth = Dp.m7555constructorimpl(80.0f);
 
     private NavigationRailCollapsedTokens() {
     }

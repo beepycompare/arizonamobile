@@ -77,7 +77,7 @@ import okhttp3.internal.ws.WebSocketProtocol;
 /* loaded from: classes.dex */
 public final class SegmentedButtonKt {
     private static final float CheckedZIndexFactor = 5.0f;
-    private static final float IconSpacing = Dp.m7555constructorimpl(8);
+    private static final float IconSpacing = Dp.m7555constructorimpl(8.0f);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit MultiChoiceSegmentedButtonRow_uFdPcIQ$lambda$13(Modifier modifier, float f, Function3 function3, int i, int i2, Composer composer, int i3) {

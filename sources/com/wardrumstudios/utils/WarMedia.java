@@ -908,7 +908,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
             } catch (NullPointerException | Exception unused) {
             }
         }
-        ShowSDErrorDialog();
+        this.ShowSDErrorDialog();
         return "";
     }
 
@@ -1186,111 +1186,118 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
     /* JADX WARN: Type inference failed for: r4v10 */
     /* JADX WARN: Type inference failed for: r4v12 */
     /* JADX WARN: Type inference failed for: r4v13 */
+    /* JADX WARN: Type inference failed for: r4v14 */
     /* JADX WARN: Type inference failed for: r4v3 */
     /* JADX WARN: Type inference failed for: r4v4 */
     /* JADX WARN: Type inference failed for: r4v5, types: [com.wardrumstudios.utils.WarMedia] */
     /* JADX WARN: Type inference failed for: r4v6, types: [com.wardrumstudios.utils.WarMedia] */
     void PauseMoviePlayerThread(boolean z) {
         WarMedia warMedia;
-        if (!this.skipMovies) {
-            if (z) {
-                try {
-                    MediaPlayer mediaPlayer = this.moviePlayer;
-                    if (mediaPlayer != null) {
-                        if (!mediaPlayer.isPlaying()) {
-                            System.out.println("moviePlayer not playing");
-                            this.moviePlayer.release();
-                            this.moviePlayer = null;
-                            this.bMoviePlayerPaused = false;
-                            return;
-                        }
-                        try {
-                            this.currentMovieMS = this.moviePlayer.getCurrentPosition();
-                            this.moviePlayer.pause();
-                            this.bMoviePlayerPaused = true;
-                            System.out.println("moviePlayer paused at " + this.currentMovieMS);
-                        } catch (Exception e) {
-                            System.out.println("moviePlayer pause failed " + e.getMessage());
-                            try {
-                                MediaPlayer mediaPlayer2 = this.moviePlayer;
-                                if (mediaPlayer2 != null) {
-                                    mediaPlayer2.release();
-                                }
-                            } catch (Exception unused) {
-                            }
-                            this.moviePlayer = null;
-                            ClearVidView();
-                            this.bMoviePlayerPaused = false;
-                        }
+        if (this.skipMovies) {
+            return;
+        }
+        if (z) {
+            try {
+                MediaPlayer mediaPlayer = this.moviePlayer;
+                if (mediaPlayer != null) {
+                    if (!mediaPlayer.isPlaying()) {
+                        System.out.println("moviePlayer not playing");
+                        this.moviePlayer.release();
+                        this.moviePlayer = null;
+                        this.bMoviePlayerPaused = false;
+                        return;
                     }
-                } catch (IllegalStateException e2) {
-                    System.out.println("PauseMoviePlayerThread err " + e2.getMessage());
-                    ClearVidView();
-                    this.moviePlayer = null;
-                    this.bIsPlayingMovie = 0;
-                    this.bMoviePlayerPaused = false;
-                }
-            } else {
-                System.out.println("moviePlayer resume bMoviePlayerPaused " + this.bMoviePlayerPaused + " moviePlayer " + this.moviePlayer);
-                boolean z2 = this.bMoviePlayerPaused;
-                if (z2 && this.moviePlayer == null) {
-                    int i = this.currentMovieLength;
-                    String str = this.currentMovieFilename;
-                    if (i > 0) {
-                        PlayMovieInFile(str, 1.0f, this.currentMovieOffset, i);
-                    } else {
-                        PlayMovie(str, 1.0f);
-                    }
-                    this.bMoviePlayerPaused = false;
-                } else if (z2 && this.moviePlayer != null) {
-                    int i2 = 0;
                     try {
-                        do {
-                            warMedia = 5;
-                            if (IsMovieViewActive()) {
-                                break;
+                        this.currentMovieMS = this.moviePlayer.getCurrentPosition();
+                        this.moviePlayer.pause();
+                        this.bMoviePlayerPaused = true;
+                        System.out.println("moviePlayer paused at " + this.currentMovieMS);
+                        return;
+                    } catch (Exception e) {
+                        System.out.println("moviePlayer pause failed " + e.getMessage());
+                        try {
+                            MediaPlayer mediaPlayer2 = this.moviePlayer;
+                            if (mediaPlayer2 != null) {
+                                mediaPlayer2.release();
                             }
-                            if (!this.FinalRelease) {
-                                System.out.println("moviePlayer waiting for vidViewIsActive");
-                            }
-                            mSleep(100L);
-                            i2++;
-                        } while (i2 <= 5);
+                        } catch (Exception unused) {
+                        }
+                        this.moviePlayer = null;
+                        ClearVidView();
+                        this.bMoviePlayerPaused = false;
+                        return;
+                    }
+                }
+                return;
+            } catch (IllegalStateException e2) {
+                System.out.println("PauseMoviePlayerThread err " + e2.getMessage());
+                ClearVidView();
+                this.moviePlayer = null;
+                this.bIsPlayingMovie = 0;
+                this.bMoviePlayerPaused = false;
+                return;
+            }
+        }
+        System.out.println("moviePlayer resume bMoviePlayerPaused " + this.bMoviePlayerPaused + " moviePlayer " + this.moviePlayer);
+        boolean z2 = this.bMoviePlayerPaused;
+        if (z2 && this.moviePlayer == null) {
+            int i = this.currentMovieLength;
+            String str = this.currentMovieFilename;
+            if (i > 0) {
+                PlayMovieInFile(str, 1.0f, this.currentMovieOffset, i);
+            } else {
+                PlayMovie(str, 1.0f);
+            }
+            this.bMoviePlayerPaused = false;
+        } else if (!z2 || this.moviePlayer == null) {
+        } else {
+            int i2 = 0;
+            try {
+                do {
+                    warMedia = 5;
+                    if (IsMovieViewActive()) {
                         break;
-                        if (i2 <= 5) {
-                            try {
-                                System.out.println("moviePlayer paused false");
-                                int i3 = this.currentMovieLength;
-                                String str2 = this.currentMovieFilename;
-                                if (i3 > 0) {
-                                    WarMedia warMedia2 = this;
-                                    warMedia2.PlayMovieInFile(str2, 1.0f, this.currentMovieOffset, i3, this.movieWindowHolder);
-                                    warMedia = warMedia2;
-                                } else {
-                                    warMedia = this;
-                                    PlayMovie(str2, 1.0f);
-                                }
-                            } catch (Exception e3) {
-                                e = e3;
-                                warMedia = this;
-                                System.out.println("moviePlayer resume failed " + e.getMessage());
-                                warMedia.moviePlayer = null;
-                                ClearVidView();
-                                warMedia.bMoviePlayerPaused = false;
-                            }
+                    }
+                    if (!this.FinalRelease) {
+                        System.out.println("moviePlayer waiting for vidViewIsActive");
+                    }
+                    mSleep(100L);
+                    i2++;
+                } while (i2 <= 5);
+                break;
+                if (i2 <= 5) {
+                    try {
+                        System.out.println("moviePlayer paused false");
+                        int i3 = this.currentMovieLength;
+                        String str2 = this.currentMovieFilename;
+                        if (i3 > 0) {
+                            WarMedia warMedia2 = this;
+                            warMedia2.PlayMovieInFile(str2, 1.0f, this.currentMovieOffset, i3, this.movieWindowHolder);
+                            warMedia = warMedia2;
                         } else {
                             WarMedia warMedia3 = this;
-                            warMedia3.moviePlayer.release();
-                            warMedia3.moviePlayer = null;
-                            ClearVidView();
+                            warMedia3.PlayMovie(str2, 1.0f);
                             warMedia = warMedia3;
                         }
-                    } catch (Exception e4) {
-                        e = e4;
+                    } catch (Exception e3) {
+                        e = e3;
+                        warMedia = this;
+                        System.out.println("moviePlayer resume failed " + e.getMessage());
+                        warMedia.moviePlayer = null;
+                        warMedia.ClearVidView();
+                        warMedia.bMoviePlayerPaused = false;
                     }
-                    warMedia.bMoviePlayerPaused = false;
+                } else {
+                    WarMedia warMedia4 = this;
+                    warMedia4.moviePlayer.release();
+                    warMedia4.moviePlayer = null;
+                    warMedia4.ClearVidView();
+                    warMedia = warMedia4;
                 }
+            } catch (Exception e4) {
+                e = e4;
             }
+            warMedia.bMoviePlayerPaused = false;
         }
     }
 
@@ -1743,10 +1750,12 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
                     layoutParams.gravity = 17;
                     SurfaceView surfaceView2 = this.customMovieSurface;
                     if (surfaceView2 == null) {
-                        surfaceView2 = this.vidView;
+                        this.vidView.setLayoutParams(layoutParams);
+                        return;
+                    } else {
+                        surfaceView2.setLayoutParams(layoutParams);
+                        return;
                     }
-                    surfaceView2.setLayoutParams(layoutParams);
-                    return;
                 }
                 System.out.println("videosize error (" + videoWidth + StringUtils.COMMA + videoHeight + ")");
             } catch (IllegalStateException | Exception unused) {

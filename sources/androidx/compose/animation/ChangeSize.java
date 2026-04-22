@@ -94,8 +94,7 @@ public final class ChangeSize {
 
             /* renamed from: invoke-mzRDjE0  reason: not valid java name */
             public final long m81invokemzRDjE0(long j) {
-                long j2 = 0;
-                return IntSize.m7721constructorimpl((j2 & 4294967295L) | (j2 << 32));
+                return IntSize.m7721constructorimpl(0L);
             }
         } : anonymousClass1, finiteAnimationSpec, (i & 8) != 0 ? true : z);
     }

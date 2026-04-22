@@ -396,7 +396,7 @@ public final class SwitchKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1195356302, "C161@6809L7,153@6374L1160:Switch.kt#uh7d8r");
             shape2 = shape;
-            Modifier m263backgroundbw27NRU2 = BackgroundKt.m263backgroundbw27NRU(IndicationKt.indication(BoxScopeInstance.INSTANCE.align(Modifier.Companion, Alignment.Companion.getCenterStart()).then(new ThumbElement(interactionSource, z, MotionSchemeKt.value(MotionSchemeKeyTokens.FastSpatial, startRestartGroup, 6))), interactionSource, RippleKt.m2402rippleH2RKhps$default(false, Dp.m7555constructorimpl(SwitchTokens.INSTANCE.m3798getStateLayerSizeD9Ej5fM() / 2), 0L, 4, null)), m2597thumbColorWaAFU9c$material3, shape2);
+            Modifier m263backgroundbw27NRU2 = BackgroundKt.m263backgroundbw27NRU(IndicationKt.indication(BoxScopeInstance.INSTANCE.align(Modifier.Companion, Alignment.Companion.getCenterStart()).then(new ThumbElement(interactionSource, z, MotionSchemeKt.value(MotionSchemeKeyTokens.FastSpatial, startRestartGroup, 6))), interactionSource, RippleKt.m2402rippleH2RKhps$default(false, Dp.m7555constructorimpl(SwitchTokens.INSTANCE.m3798getStateLayerSizeD9Ej5fM() / 2.0f), 0L, 4, null)), m2597thumbColorWaAFU9c$material3, shape2);
             Alignment center = Alignment.Companion.getCenter();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(center, false);
@@ -471,7 +471,7 @@ public final class SwitchKt {
         SwitchWidth = SwitchTokens.INSTANCE.m3801getTrackWidthD9Ej5fM();
         float m3799getTrackHeightD9Ej5fM = SwitchTokens.INSTANCE.m3799getTrackHeightD9Ej5fM();
         SwitchHeight = m3799getTrackHeightD9Ej5fM;
-        ThumbPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(m3799getTrackHeightD9Ej5fM - m3796getSelectedHandleWidthD9Ej5fM) / 2);
+        ThumbPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(m3799getTrackHeightD9Ej5fM - m3796getSelectedHandleWidthD9Ej5fM) / 2.0f);
         SnapSpec = new SnapSpec<>(0, 1, null);
     }
 

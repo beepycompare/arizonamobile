@@ -7,10 +7,10 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class FabMediumTokens {
     public static final int $stable = 0;
-    private static final float ContainerHeight;
-    private static final float ContainerWidth;
     public static final FabMediumTokens INSTANCE = new FabMediumTokens();
-    private static final float IconSize = Dp.m7555constructorimpl((float) 28.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(80.0f);
+    private static final float ContainerWidth = Dp.m7555constructorimpl(80.0f);
+    private static final float IconSize = Dp.m7555constructorimpl(28.0f);
 
     private FabMediumTokens() {
     }
@@ -28,11 +28,5 @@ public final class FabMediumTokens {
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
     public final float m3398getIconSizeD9Ej5fM() {
         return IconSize;
-    }
-
-    static {
-        float f = (float) 80.0d;
-        ContainerHeight = Dp.m7555constructorimpl(f);
-        ContainerWidth = Dp.m7555constructorimpl(f);
     }
 }

@@ -19,7 +19,7 @@ public final class MaterialElevationScale extends MaterialVisibility<ScaleProvid
         super.clearAdditionalAnimatorProvider();
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [com.google.android.material.transition.ScaleProvider, com.google.android.material.transition.VisibilityAnimatorProvider] */
+    /* JADX WARN: Type inference failed for: r0v1, types: [com.google.android.material.transition.ScaleProvider, com.google.android.material.transition.VisibilityAnimatorProvider] */
     @Override // com.google.android.material.transition.MaterialVisibility
     public /* bridge */ /* synthetic */ ScaleProvider getPrimaryAnimatorProvider() {
         return super.getPrimaryAnimatorProvider();

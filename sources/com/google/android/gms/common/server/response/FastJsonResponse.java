@@ -628,11 +628,11 @@ public abstract class FastJsonResponse {
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean isFieldSet(Field field) {
         if (field.zac == 11) {
-            boolean z = field.zad;
-            String str = field.zae;
-            if (z) {
+            if (field.zad) {
+                String str = field.zae;
                 throw new UnsupportedOperationException("Concrete type arrays not supported");
             }
+            String str2 = field.zae;
             throw new UnsupportedOperationException("Concrete types not supported");
         }
         return isPrimitiveFieldSet(field.zae);

@@ -156,7 +156,7 @@ public final class PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combi
             }
 
             /* JADX WARN: Code restructure failed: missing block: B:17:0x0046, code lost:
-                if (r7.onNext(r2, r6, r0) == r1) goto L19;
+                if (r7.onNext(r5, r6, r0) == r1) goto L19;
              */
             /* JADX WARN: Code restructure failed: missing block: B:20:0x004f, code lost:
                 if (kotlinx.coroutines.YieldKt.yield(r0) != r1) goto L11;

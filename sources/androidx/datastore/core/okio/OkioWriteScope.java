@@ -45,9 +45,9 @@ public final class OkioWriteScope<T> extends OkioReadScope<T> implements WriteSc
     /* JADX WARN: Type inference failed for: r0v7 */
     /* JADX WARN: Type inference failed for: r0v8 */
     /* JADX WARN: Type inference failed for: r9v11 */
-    /* JADX WARN: Type inference failed for: r9v19, types: [java.io.Closeable] */
-    /* JADX WARN: Type inference failed for: r9v24, types: [java.io.Closeable] */
-    /* JADX WARN: Type inference failed for: r9v25 */
+    /* JADX WARN: Type inference failed for: r9v15, types: [java.io.Closeable] */
+    /* JADX WARN: Type inference failed for: r9v20, types: [java.io.Closeable] */
+    /* JADX WARN: Type inference failed for: r9v21 */
     /* JADX WARN: Type inference failed for: r9v7, types: [java.io.Closeable] */
     @Override // androidx.datastore.core.WriteScope
     /*

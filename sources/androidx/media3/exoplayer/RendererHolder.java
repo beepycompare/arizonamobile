@@ -157,7 +157,7 @@ class RendererHolder {
     public boolean isEnded() {
         boolean isEnded = isRendererEnabled(this.primaryRenderer) ? this.primaryRenderer.isEnded() : true;
         Renderer renderer = this.secondaryRenderer;
-        return (renderer == null || !isRendererEnabled(renderer)) ? isEnded : isEnded & this.secondaryRenderer.isEnded();
+        return (renderer == null || !isRendererEnabled(renderer)) ? isEnded : this.secondaryRenderer.isEnded() & isEnded;
     }
 
     public boolean isReadingFromPeriod(MediaPeriodHolder mediaPeriodHolder) {

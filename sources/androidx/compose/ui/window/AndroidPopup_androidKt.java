@@ -83,11 +83,11 @@ public final class AndroidPopup_androidKt {
     /* JADX WARN: Removed duplicated region for block: B:136:0x006d  */
     /* JADX WARN: Removed duplicated region for block: B:146:0x0086  */
     /* JADX WARN: Removed duplicated region for block: B:151:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x00a6  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x00a2  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x00a5  */
     /* JADX WARN: Removed duplicated region for block: B:158:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x0144  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0151  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x013b  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0148  */
     /* JADX WARN: Removed duplicated region for block: B:195:? A[RETURN, SYNTHETIC] */
     /* renamed from: Popup-K5zGePQ */
     /*
@@ -146,19 +146,14 @@ public final class AndroidPopup_androidKt {
                     }
                     if (!startRestartGroup.shouldExecute((i3 & 9363) == 9362, i3 & 1)) {
                         alignment2 = i6 != 0 ? Alignment.Companion.getTopStart() : obj;
-                        if (i7 != 0) {
-                            long j4 = 0;
-                            j3 = IntOffset.m7677constructorimpl((j4 & 4294967295L) | (j4 << 32));
-                        } else {
-                            j3 = j2;
-                        }
+                        j3 = i7 != 0 ? IntOffset.m7677constructorimpl(0L) : j2;
                         Function0<Unit> function03 = i4 != 0 ? null : obj2;
                         PopupProperties popupProperties3 = i5 != 0 ? new PopupProperties(false, false, false, false, 15, (DefaultConstructorMarker) null) : obj3;
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(71005054, i3, -1, "androidx.compose.ui.window.Popup (AndroidPopup.android.kt:269)");
                         }
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -483613200, "CC(remember):AndroidPopup.android.kt#9igjgp");
-                        boolean z = ((i3 & 112) == 32) | ((i3 & 14) == 4);
+                        boolean z = ((i3 & 14) == 4) | ((i3 & 112) == 32);
                         Object rememberedValue = startRestartGroup.rememberedValue();
                         if (z || rememberedValue == Composer.Companion.getEmpty()) {
                             rememberedValue = new AlignmentOffsetPositionProvider(alignment2, j3, null);

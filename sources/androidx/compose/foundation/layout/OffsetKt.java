@@ -84,10 +84,10 @@ public final class OffsetKt {
     /* renamed from: offset-VpY3zN4$default  reason: not valid java name */
     public static /* synthetic */ Modifier m778offsetVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         return m777offsetVpY3zN4(modifier, f, f2);
     }
@@ -95,10 +95,10 @@ public final class OffsetKt {
     /* renamed from: absoluteOffset-VpY3zN4$default  reason: not valid java name */
     public static /* synthetic */ Modifier m776absoluteOffsetVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7555constructorimpl(0);
+            f = Dp.m7555constructorimpl(0.0f);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7555constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0.0f);
         }
         return m775absoluteOffsetVpY3zN4(modifier, f, f2);
     }

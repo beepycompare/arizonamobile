@@ -67,7 +67,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Exce
         String str = this.reason;
         int hashCode2 = (((hashCode ^ (str == null ? 0 : str.hashCode())) * 1000003) ^ this.frames.hashCode()) * 1000003;
         CrashlyticsReport.Session.Event.Application.Execution.Exception exception = this.causedBy;
-        return ((hashCode2 ^ (exception != null ? exception.hashCode() : 0)) * 1000003) ^ this.overflowCount;
+        return this.overflowCount ^ ((hashCode2 ^ (exception != null ? exception.hashCode() : 0)) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -127,7 +127,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Exce
                 if (this.frames == null) {
                     sb.append(" frames");
                 }
-                if ((1 & this.set$0) == 0) {
+                if ((this.set$0 & 1) == 0) {
                     sb.append(" overflowCount");
                 }
                 throw new IllegalStateException("Missing required properties:" + ((Object) sb));

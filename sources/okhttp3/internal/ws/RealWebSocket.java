@@ -271,21 +271,32 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     }
 
     public final void loopReader(Response response) throws IOException {
+        Throwable th;
+        RealWebSocket realWebSocket;
         Intrinsics.checkNotNullParameter(response, "response");
         try {
-            try {
-                this.listener.onOpen(this, response);
-                while (this.receivedCloseCode == -1) {
-                    WebSocketReader webSocketReader = this.reader;
-                    Intrinsics.checkNotNull(webSocketReader);
-                    webSocketReader.processNextFrame();
-                }
-            } catch (Exception e) {
-                failWebSocket$default(this, e, null, false, 6, null);
-                finishReader();
+            this.listener.onOpen(this, response);
+            while (this.receivedCloseCode == -1) {
+                WebSocketReader webSocketReader = this.reader;
+                Intrinsics.checkNotNull(webSocketReader);
+                webSocketReader.processNextFrame();
             }
-        } finally {
             finishReader();
+        } catch (Exception e) {
+            realWebSocket = this;
+            try {
+                failWebSocket$default(realWebSocket, e, null, false, 6, null);
+                realWebSocket.finishReader();
+            } catch (Throwable th2) {
+                th = th2;
+                realWebSocket.finishReader();
+                throw th;
+            }
+        } catch (Throwable th3) {
+            th = th3;
+            realWebSocket = this;
+            realWebSocket.finishReader();
+            throw th;
         }
     }
 

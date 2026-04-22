@@ -251,12 +251,12 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
         return intrinsicMeasurable.maxIntrinsicHeight(Integer.MAX_VALUE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00a5  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00ba  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0137  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00dd  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x013b  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x016b  */
     @Override // androidx.compose.ui.node.DrawModifierNode
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -269,7 +269,7 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
         ContentDrawScope contentDrawScope2;
         DrawContext drawContext;
         GraphicsLayer graphicsLayer2;
-        if (Dp.m7554compareTo0680j_4(this.velocity, Dp.m7555constructorimpl(0)) <= 0) {
+        if (Dp.m7554compareTo0680j_4(this.velocity, Dp.m7555constructorimpl(0.0f)) <= 0) {
             int i = WhenMappings.$EnumSwitchMapping$0[contentDrawScope.getLayoutDirection().ordinal()];
             if (i == 1) {
                 contentWidth = (-this.offset.getValue().floatValue()) + getContentWidth() + getSpacingPx();
@@ -392,8 +392,11 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
                     }
                     if (z2) {
                         contentDrawScope2.getDrawContext().getTransform().translate(contentWidth2222, 0.0f);
-                        GraphicsLayerKt.drawLayer(contentDrawScope2, graphicsLayer2);
-                        contentDrawScope2.getDrawContext().getTransform().translate(-contentWidth2222, -0.0f);
+                        try {
+                            GraphicsLayerKt.drawLayer(contentDrawScope2, graphicsLayer2);
+                            contentDrawScope2.getDrawContext().getTransform().translate(-contentWidth2222, -0.0f);
+                        } finally {
+                        }
                     }
                 } else {
                     if (z) {
@@ -401,8 +404,11 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
                     }
                     if (z2) {
                         contentDrawScope2.getDrawContext().getTransform().translate(contentWidth2222, 0.0f);
-                        contentDrawScope.drawContent();
-                        contentDrawScope2.getDrawContext().getTransform().translate(-contentWidth2222, -0.0f);
+                        try {
+                            contentDrawScope.drawContent();
+                            contentDrawScope2.getDrawContext().getTransform().translate(-contentWidth2222, -0.0f);
+                        } finally {
+                        }
                     }
                 }
                 contentDrawScope2.getDrawContext().getTransform().translate(-f222, -0.0f);

@@ -94,45 +94,37 @@ public final class UnboundLocalDateTime {
 
         public final UnboundLocalDateTime fromInstant(Instant instant) {
             long j;
-            long j2;
             Intrinsics.checkNotNullParameter(instant, "instant");
             long epochSeconds = instant.getEpochSeconds();
-            long j3 = epochSeconds / 86400;
-            if ((epochSeconds ^ 86400) < 0 && j3 * 86400 != epochSeconds) {
-                j3--;
+            long j2 = epochSeconds / 86400;
+            if ((epochSeconds ^ 86400) < 0 && j2 * 86400 != epochSeconds) {
+                j2--;
             }
-            long j4 = epochSeconds % 86400;
-            int i = (int) (j4 + (86400 & (((j4 ^ 86400) & ((-j4) | j4)) >> 63)));
-            long j5 = (j3 + 719528) - 60;
-            if (j5 < 0) {
-                j = -1;
-                long j6 = 146097;
-                long j7 = ((j5 + 1) / j6) - 1;
-                j2 = 400 * j7;
-                j5 += (-j7) * j6;
+            long j3 = epochSeconds % 86400;
+            int i = (int) (j3 + (86400 & (((j3 ^ 86400) & ((-j3) | j3)) >> 63)));
+            long j4 = 719468 + j2;
+            if (j4 < 0) {
+                long j5 = ((j2 + 719469) / 146097) - 1;
+                j = j5 * 400;
+                j4 += (-j5) * 146097;
             } else {
-                j = -1;
-                j2 = 0;
+                j = 0;
             }
-            long j8 = 400;
-            long j9 = ((j8 * j5) + 591) / 146097;
-            long j10 = 365;
-            long j11 = 4;
-            long j12 = 100;
-            long j13 = j5 - ((((j10 * j9) + (j9 / j11)) - (j9 / j12)) + (j9 / j8));
-            if (j13 < 0) {
-                j9 += j;
-                j13 = j5 - ((((j10 * j9) + (j9 / j11)) - (j9 / j12)) + (j9 / j8));
+            long j6 = ((400 * j4) + 591) / 146097;
+            long j7 = j4 - ((((365 * j6) + (j6 / 4)) - (j6 / 100)) + (j6 / 400));
+            if (j7 < 0) {
+                j6--;
+                j7 = j4 - ((((365 * j6) + (j6 / 4)) - (j6 / 100)) + (j6 / 400));
             }
-            long j14 = j9 + j2;
-            int i2 = (int) j13;
+            long j8 = j6 + j;
+            int i2 = (int) j7;
             int i3 = ((i2 * 5) + 2) / BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER;
             int i4 = ((i3 + 2) % 12) + 1;
             int i5 = (i2 - (((i3 * 306) + 5) / 10)) + 1;
             int i6 = i / DateCalculationsKt.SECONDS_PER_HOUR;
             int i7 = i - (i6 * DateCalculationsKt.SECONDS_PER_HOUR);
             int i8 = i7 / 60;
-            return new UnboundLocalDateTime((int) (j14 + (i3 / 10)), i4, i5, i6, i8, i7 - (i8 * 60), instant.getNanosecondsOfSecond());
+            return new UnboundLocalDateTime((int) (j8 + (i3 / 10)), i4, i5, i6, i8, i7 - (i8 * 60), instant.getNanosecondsOfSecond());
         }
     }
 }

@@ -72,8 +72,8 @@ import kotlinx.coroutines.Job;
 @Metadata(d1 = {"\u0000\u0092\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aË\u0001\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u000f2\b\b\u0002\u0010\u0011\u001a\u00020\t2\b\b\u0002\u0010\u0012\u001a\u00020\u000f2\u0015\b\u0002\u0010\u0013\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00142\u0013\b\u0002\u0010\u0015\u001a\r\u0012\u0004\u0012\u00020\u00160\u0003¢\u0006\u0002\b\u00142\b\b\u0002\u0010\u0017\u001a\u00020\u00182\u001c\u0010\u0019\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00010\u001a¢\u0006\u0002\b\u0014¢\u0006\u0002\b\u001cH\u0007¢\u0006\u0004\b\u001d\u0010\u001e\u001aÁ\u0001\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u000f2\b\b\u0002\u0010\u0011\u001a\u00020\t2\b\b\u0002\u0010\u0012\u001a\u00020\u000f2\u0015\b\u0002\u0010\u0013\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00142\u0013\b\u0002\u0010\u0015\u001a\r\u0012\u0004\u0012\u00020\u00160\u0003¢\u0006\u0002\b\u00142\b\b\u0002\u0010\u0017\u001a\u00020\u00182\u001c\u0010\u0019\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00010\u001a¢\u0006\u0002\b\u0014¢\u0006\u0002\b\u001cH\u0007¢\u0006\u0004\b\u001f\u0010 \u001aú\u0001\u0010!\u001a\u00020\u0001*\u00020\"2\u0012\u0010#\u001a\u000e\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020&0$2\u0006\u0010'\u001a\u00020(2\f\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032!\u0010*\u001a\u001d\u0012\u0013\u0012\u00110%¢\u0006\f\b+\u0012\b\b,\u0012\u0004\b\b(-\u0012\u0004\u0012\u00020\u00010\u001a2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u000f2\b\b\u0002\u0010\u0011\u001a\u00020\t2\u0015\b\u0002\u0010\u0013\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00142\u0013\b\u0002\u0010\u0015\u001a\r\u0012\u0004\u0012\u00020\u00160\u0003¢\u0006\u0002\b\u00142\u001c\u0010\u0019\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00010\u001a¢\u0006\u0002\b\u0014¢\u0006\u0002\b\u001cH\u0001¢\u0006\u0004\b.\u0010/\u001a\u0014\u00100\u001a\u00020%*\u0002012\u0006\u00102\u001a\u00020%H\u0002\u001a\u0014\u00103\u001a\u00020%*\u0002012\u0006\u00102\u001a\u00020%H\u0002\u001a-\u00104\u001a\u00020\u00072\b\b\u0002\u00105\u001a\u00020\u000b2\u0014\b\u0002\u00106\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020\u000b0\u001aH\u0007¢\u0006\u0002\u00108\u001a5\u00109\u001a\u00020\u00012\u0006\u0010:\u001a\u00020\u000f2\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\u0006\u0010;\u001a\u00020\u000b2\u0006\u0010<\u001a\u00020\u000bH\u0003¢\u0006\u0004\b=\u0010>\"\u0010\u0010?\u001a\u00020\tX\u0082\u0004¢\u0006\u0004\n\u0002\u0010@\"\u0010\u0010A\u001a\u00020\tX\u0082\u0004¢\u0006\u0004\n\u0002\u0010@\"\u0010\u0010B\u001a\u00020CX\u0082\u0004¢\u0006\u0004\n\u0002\u0010D¨\u0006E²\u0006\n\u0010F\u001a\u00020%X\u008a\u0084\u0002"}, d2 = {"ModalBottomSheet", "", "onDismissRequest", "Lkotlin/Function0;", "modifier", "Landroidx/compose/ui/Modifier;", "sheetState", "Landroidx/compose/material3/SheetState;", "sheetMaxWidth", "Landroidx/compose/ui/unit/Dp;", "sheetGesturesEnabled", "", "shape", "Landroidx/compose/ui/graphics/Shape;", "containerColor", "Landroidx/compose/ui/graphics/Color;", "contentColor", "tonalElevation", "scrimColor", "dragHandle", "Landroidx/compose/runtime/Composable;", "contentWindowInsets", "Landroidx/compose/foundation/layout/WindowInsets;", "properties", "Landroidx/compose/material3/ModalBottomSheetProperties;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/ColumnScope;", "Lkotlin/ExtensionFunctionType;", "ModalBottomSheet-YbuCTN8", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/material3/SheetState;FZLandroidx/compose/ui/graphics/Shape;JJFJLkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/material3/ModalBottomSheetProperties;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;III)V", "ModalBottomSheet-dYc4hso", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/material3/SheetState;FLandroidx/compose/ui/graphics/Shape;JJFJLkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/material3/ModalBottomSheetProperties;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;III)V", "ModalBottomSheetContent", "Landroidx/compose/foundation/layout/BoxScope;", "predictiveBackProgress", "Landroidx/compose/animation/core/Animatable;", "", "Landroidx/compose/animation/core/AnimationVector1D;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "animateToDismiss", "settleToDismiss", "Lkotlin/ParameterName;", "name", "velocity", "ModalBottomSheetContent-7---e2Q", "(Landroidx/compose/foundation/layout/BoxScope;Landroidx/compose/animation/core/Animatable;Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Landroidx/compose/material3/SheetState;FZLandroidx/compose/ui/graphics/Shape;JJFLkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;III)V", "calculatePredictiveBackScaleX", "Landroidx/compose/ui/graphics/GraphicsLayerScope;", "progress", "calculatePredictiveBackScaleY", "rememberModalBottomSheetState", "skipPartiallyExpanded", "confirmValueChange", "Landroidx/compose/material3/SheetValue;", "(ZLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Landroidx/compose/material3/SheetState;", "Scrim", "color", "visible", "dismissEnabled", "Scrim-KTwxG1Y", "(JLkotlin/jvm/functions/Function0;ZZLandroidx/compose/runtime/Composer;I)V", "PredictiveBackMaxScaleXDistance", "F", "PredictiveBackMaxScaleYDistance", "PredictiveBackChildTransformOrigin", "Landroidx/compose/ui/graphics/TransformOrigin;", "J", "material3", "alpha"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ModalBottomSheetKt {
-    private static final float PredictiveBackMaxScaleXDistance = Dp.m7555constructorimpl(48);
-    private static final float PredictiveBackMaxScaleYDistance = Dp.m7555constructorimpl(24);
+    private static final float PredictiveBackMaxScaleXDistance = Dp.m7555constructorimpl(48.0f);
+    private static final float PredictiveBackMaxScaleYDistance = Dp.m7555constructorimpl(24.0f);
     private static final long PredictiveBackChildTransformOrigin = TransformOriginKt.TransformOrigin(0.5f, 0.0f);
 
     /* compiled from: ModalBottomSheet.kt */
@@ -142,9 +142,9 @@ public final class ModalBottomSheetKt {
     /* JADX WARN: Removed duplicated region for block: B:153:0x01c0  */
     /* JADX WARN: Removed duplicated region for block: B:160:0x01d2  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x052e  */
-    /* JADX WARN: Removed duplicated region for block: B:319:0x054b  */
-    /* JADX WARN: Removed duplicated region for block: B:321:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:317:0x0530  */
+    /* JADX WARN: Removed duplicated region for block: B:320:0x054d  */
+    /* JADX WARN: Removed duplicated region for block: B:322:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0063  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x006d  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x0070  */
@@ -159,8 +159,8 @@ public final class ModalBottomSheetKt {
     /* JADX WARN: Removed duplicated region for block: B:89:0x00fe  */
     /* JADX WARN: Removed duplicated region for block: B:90:0x0103  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x011c  */
-    /* JADX WARN: Type inference failed for: r10v16 */
-    /* JADX WARN: Type inference failed for: r10v25 */
+    /* JADX WARN: Type inference failed for: r11v20 */
+    /* JADX WARN: Type inference failed for: r11v29 */
     /* renamed from: ModalBottomSheet-YbuCTN8  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -201,8 +201,8 @@ public final class ModalBottomSheetKt {
         ModalBottomSheetKt$ModalBottomSheet$1 modalBottomSheetKt$ModalBottomSheet$1;
         float f6;
         ModalBottomSheetProperties modalBottomSheetProperties3;
-        float f7;
         Function2<? super Composer, ? super Integer, ? extends WindowInsets> function25;
+        float f7;
         long j10;
         boolean z4;
         Modifier modifier3;
@@ -373,7 +373,7 @@ public final class ModalBottomSheetKt {
                                 } else {
                                     j8 = j2;
                                 }
-                                float m7555constructorimpl = i8 != 0 ? Dp.m7555constructorimpl(0) : f2;
+                                float m7555constructorimpl = i8 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
                                 if ((i3 & 512) != 0) {
                                     j9 = BottomSheetDefaults.INSTANCE.getScrimColor(startRestartGroup, 6);
                                     i7 &= -1879048193;
@@ -410,8 +410,8 @@ public final class ModalBottomSheetKt {
                                 if (i12 != 0) {
                                     f6 = m1749getSheetMaxWidthD9Ej5fM;
                                     modalBottomSheetProperties3 = new ModalBottomSheetProperties(false, false, 3, (DefaultConstructorMarker) null);
-                                    f7 = m7555constructorimpl;
                                     function25 = modalBottomSheetKt$ModalBottomSheet$1;
+                                    f7 = m7555constructorimpl;
                                     j10 = j7;
                                     z4 = z2;
                                     modifier3 = companion;
@@ -423,8 +423,8 @@ public final class ModalBottomSheetKt {
                                 } else {
                                     f6 = m1749getSheetMaxWidthD9Ej5fM;
                                     modalBottomSheetProperties3 = modalBottomSheetProperties;
-                                    f7 = m7555constructorimpl;
                                     function25 = modalBottomSheetKt$ModalBottomSheet$1;
+                                    f7 = m7555constructorimpl;
                                     j10 = j7;
                                     z4 = z2;
                                     modifier3 = companion;
@@ -771,9 +771,9 @@ public final class ModalBottomSheetKt {
     /* JADX WARN: Removed duplicated region for block: B:133:0x0183  */
     /* JADX WARN: Removed duplicated region for block: B:143:0x01a4  */
     /* JADX WARN: Removed duplicated region for block: B:150:0x01b6  */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x031f  */
-    /* JADX WARN: Removed duplicated region for block: B:221:0x033a  */
-    /* JADX WARN: Removed duplicated region for block: B:223:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x0322  */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x033d  */
+    /* JADX WARN: Removed duplicated region for block: B:224:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0068  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
@@ -823,15 +823,16 @@ public final class ModalBottomSheetKt {
         ScopeUpdateScope endRestartGroup;
         Shape shape3;
         long j9;
+        long j10;
         ModalBottomSheetKt$ModalBottomSheet$7 modalBottomSheetKt$ModalBottomSheet$7;
         Function2 function25;
         Shape shape4;
-        SheetState sheetState3;
-        float f5;
-        float f6;
         Modifier modifier2;
-        long j10;
+        float f5;
         Function2 function26;
+        SheetState sheetState3;
+        long j11;
+        float f6;
         int i13;
         int i14;
         int i15;
@@ -966,7 +967,7 @@ public final class ModalBottomSheetKt {
                                 shape4 = obj2;
                                 modifier2 = companion;
                                 sheetState3 = obj;
-                                j10 = j5;
+                                j11 = j5;
                                 f5 = f;
                                 f6 = f2;
                                 j8 = j3;
@@ -986,19 +987,21 @@ public final class ModalBottomSheetKt {
                                     shape3 = obj2;
                                 }
                                 if ((i3 & 32) != 0) {
-                                    j4 = BottomSheetDefaults.INSTANCE.getContainerColor(startRestartGroup, 6);
+                                    j9 = BottomSheetDefaults.INSTANCE.getContainerColor(startRestartGroup, 6);
                                     i4 &= -458753;
+                                } else {
+                                    j9 = j4;
                                 }
                                 if ((i3 & 64) != 0) {
-                                    j5 = ColorSchemeKt.m1902contentColorForek8zF_U(j4, startRestartGroup, (i4 >> 15) & 14);
+                                    j5 = ColorSchemeKt.m1902contentColorForek8zF_U(j9, startRestartGroup, (i4 >> 15) & 14);
                                     i4 &= -3670017;
                                 }
-                                float m7555constructorimpl = i6 != 0 ? Dp.m7555constructorimpl(0) : f2;
+                                float m7555constructorimpl = i6 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
                                 if ((i3 & 256) != 0) {
-                                    j9 = BottomSheetDefaults.INSTANCE.getScrimColor(startRestartGroup, 6);
+                                    j10 = BottomSheetDefaults.INSTANCE.getScrimColor(startRestartGroup, 6);
                                     i4 = (-234881025) & i4;
                                 } else {
-                                    j9 = j3;
+                                    j10 = j3;
                                 }
                                 Function2<Composer, Integer, Unit> m1939getLambda$655173438$material3 = i8 != 0 ? ComposableSingletons$ModalBottomSheetKt.INSTANCE.m1939getLambda$655173438$material3() : function2;
                                 if ((i3 & 1024) != 0) {
@@ -1028,16 +1031,16 @@ public final class ModalBottomSheetKt {
                                 }
                                 modalBottomSheetProperties2 = i11 != 0 ? ModalBottomSheetDefaults.INSTANCE.getProperties() : modalBottomSheetProperties;
                                 function25 = modalBottomSheetKt$ModalBottomSheet$7;
+                                j4 = j9;
                                 shape4 = shape3;
-                                sheetState3 = obj;
-                                Function2 function27 = m1939getLambda$655173438$material3;
-                                f5 = m1749getSheetMaxWidthD9Ej5fM;
-                                long j11 = j5;
-                                f6 = m7555constructorimpl;
                                 modifier2 = companion;
-                                j10 = j11;
-                                j8 = j9;
-                                function26 = function27;
+                                float f7 = m7555constructorimpl;
+                                f5 = m1749getSheetMaxWidthD9Ej5fM;
+                                function26 = m1939getLambda$655173438$material3;
+                                sheetState3 = obj;
+                                j11 = j5;
+                                j8 = j10;
+                                f6 = f7;
                             }
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
@@ -1046,11 +1049,11 @@ public final class ModalBottomSheetKt {
                             int i17 = i4 << 3;
                             int i18 = i12 << 3;
                             composer2 = startRestartGroup;
-                            m2250ModalBottomSheetYbuCTN8(function0, modifier2, sheetState3, f5, true, shape4, j4, j10, f6, j8, function26, function25, modalBottomSheetProperties2, function3, composer2, (i4 & 14) | 24576 | (i4 & 112) | (i4 & 896) | (i4 & 7168) | (i17 & 458752) | (i17 & 3670016) | (i17 & 29360128) | (i17 & 234881024) | (i17 & 1879048192), ((i4 >> 27) & 14) | (i18 & 112) | (i18 & 896) | (i18 & 7168), 0);
+                            m2250ModalBottomSheetYbuCTN8(function0, modifier2, sheetState3, f5, true, shape4, j4, j11, f6, j8, function26, function25, modalBottomSheetProperties2, function3, composer2, (i4 & 14) | 24576 | (i4 & 112) | (i4 & 896) | (i4 & 7168) | (i17 & 458752) | (i17 & 3670016) | (i17 & 29360128) | (i17 & 234881024) | (i17 & 1879048192), ((i4 >> 27) & 14) | (i18 & 112) | (i18 & 896) | (i18 & 7168), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
-                            long j12 = j10;
+                            long j12 = j11;
                             companion = modifier2;
                             shape2 = shape4;
                             j7 = j12;
@@ -1744,7 +1747,7 @@ public final class ModalBottomSheetKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalBottomSheetContent_7___e2Q$lambda$18$lambda$17$lambda$16(float f, IntSize intSize, SheetState sheetState, DraggableAnchorsConfig draggableAnchorsConfig) {
         draggableAnchorsConfig.at(SheetValue.Hidden, f);
-        if (((int) (intSize.m7730unboximpl() & 4294967295L)) > f / 2 && !sheetState.getSkipPartiallyExpanded$material3()) {
+        if (((int) (intSize.m7730unboximpl() & 4294967295L)) > f / 2.0f && !sheetState.getSkipPartiallyExpanded$material3()) {
             draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, f / 2.0f);
         }
         if (((int) (intSize.m7730unboximpl() & 4294967295L)) != 0) {

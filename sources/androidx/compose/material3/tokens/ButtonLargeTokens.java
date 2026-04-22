@@ -7,18 +7,18 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class ButtonLargeTokens {
     public static final int $stable = 0;
-    private static final float LeadingSpace;
-    private static final float TrailingSpace;
     public static final ButtonLargeTokens INSTANCE = new ButtonLargeTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 96.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(96.0f);
     private static final ShapeKeyTokens ContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens ContainerShapeSquare = ShapeKeyTokens.CornerExtraLarge;
-    private static final float IconLabelSpace = Dp.m7555constructorimpl((float) 12.0d);
-    private static final float IconSize = Dp.m7555constructorimpl((float) 32.0d);
-    private static final float OutlinedOutlineWidth = Dp.m7555constructorimpl((float) 2.0d);
+    private static final float IconLabelSpace = Dp.m7555constructorimpl(12.0f);
+    private static final float IconSize = Dp.m7555constructorimpl(32.0f);
+    private static final float LeadingSpace = Dp.m7555constructorimpl(48.0f);
+    private static final float OutlinedOutlineWidth = Dp.m7555constructorimpl(2.0f);
     private static final ShapeKeyTokens PressedContainerShape = ShapeKeyTokens.CornerLarge;
     private static final ShapeKeyTokens SelectedContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens SelectedContainerShapeSquare = ShapeKeyTokens.CornerExtraLarge;
+    private static final float TrailingSpace = Dp.m7555constructorimpl(48.0f);
 
     private ButtonLargeTokens() {
     }
@@ -71,11 +71,5 @@ public final class ButtonLargeTokens {
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
     public final float m3157getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
-    }
-
-    static {
-        float f = (float) 48.0d;
-        LeadingSpace = Dp.m7555constructorimpl(f);
-        TrailingSpace = Dp.m7555constructorimpl(f);
     }
 }

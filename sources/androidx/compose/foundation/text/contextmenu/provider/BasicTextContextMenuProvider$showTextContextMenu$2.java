@@ -37,6 +37,8 @@ final class BasicTextContextMenuProvider$showTextContextMenu$2 extends SuspendLa
         return ((BasicTextContextMenuProvider$showTextContextMenu$2) create(continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r4v4, types: [kotlin.Unit, java.lang.Object] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -55,7 +57,8 @@ final class BasicTextContextMenuProvider$showTextContextMenu$2 extends SuspendLa
                 ResultKt.throwOnFailure(obj);
             }
             this.this$0.setSession(null);
-            return Unit.INSTANCE;
+            this = Unit.INSTANCE;
+            return this;
         } catch (Throwable th) {
             this.this$0.setSession(null);
             throw th;

@@ -54,7 +54,8 @@ public final class AsyncProcessor<T> extends FlowableProcessor<T> {
         }
         this.value = null;
         this.error = th;
-        for (AsyncSubscription<T> asyncSubscription : this.subscribers.getAndSet(asyncSubscriptionArr2)) {
+        AsyncSubscription<T>[] andSet = this.subscribers.getAndSet(asyncSubscriptionArr2);
+        for (AsyncSubscription<T> asyncSubscription : andSet) {
             asyncSubscription.onError(th);
         }
     }

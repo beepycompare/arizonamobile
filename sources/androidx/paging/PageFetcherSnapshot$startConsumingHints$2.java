@@ -42,7 +42,7 @@ public final class PageFetcherSnapshot$startConsumingHints$2 extends SuspendLamb
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0067, code lost:
-        if (r8 == r0) goto L16;
+        if (r7 == r0) goto L16;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*

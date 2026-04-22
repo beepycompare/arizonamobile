@@ -74,7 +74,6 @@ public final class LazyListKt$rememberLazyListMeasurePolicy$1$1 implements LazyL
         final int i3;
         float mo694getSpacingD9Ej5fM;
         int m7508getMaxWidthimpl;
-        LazyListItemProvider lazyListItemProvider;
         long m7677constructorimpl;
         float scrollToBeConsumed$foundation;
         ObservableScopeInvalidator.m1005attachToScopeimpl(this.$state.m936getMeasurementScopeInvalidatorzYiylxw$foundation());
@@ -109,7 +108,7 @@ public final class LazyListKt$rememberLazyListMeasurePolicy$1$1 implements LazyL
         }
         final int i9 = i8 - i3;
         final long m7527offsetNN6EwU = ConstraintsKt.m7527offsetNN6EwU(j, -i7, -i6);
-        LazyListItemProvider invoke = this.$itemProviderLambda.invoke();
+        final LazyListItemProvider invoke = this.$itemProviderLambda.invoke();
         invoke.getItemScope().setMaxSize(Constraints.m7508getMaxWidthimpl(m7527offsetNN6EwU), Constraints.m7507getMaxHeightimpl(m7527offsetNN6EwU));
         if (this.$isVertical) {
             Arrangement.Vertical vertical = this.$verticalArrangement;
@@ -144,20 +143,17 @@ public final class LazyListKt$rememberLazyListMeasurePolicy$1$1 implements LazyL
             if (z5) {
                 i4 += i11;
             }
-            lazyListItemProvider = invoke;
-            m7677constructorimpl = IntOffset.m7677constructorimpl((i << 32) | (i4 & 4294967295L));
+            m7677constructorimpl = IntOffset.m7677constructorimpl((i4 & 4294967295L) | (i << 32));
         } else {
-            lazyListItemProvider = invoke;
-            m7677constructorimpl = IntOffset.m7677constructorimpl((i << 32) | (i4 & 4294967295L));
+            m7677constructorimpl = IntOffset.m7677constructorimpl((i4 & 4294967295L) | (i << 32));
         }
         final boolean z6 = this.$isVertical;
         final Alignment.Horizontal horizontal2 = this.$horizontalAlignment;
         final long j2 = m7677constructorimpl;
-        final LazyListItemProvider lazyListItemProvider2 = lazyListItemProvider;
         final Alignment.Vertical vertical2 = this.$verticalAlignment;
         final boolean z7 = this.$reverseLayout;
         final LazyListState lazyListState = this.$state;
-        LazyListMeasuredItemProvider lazyListMeasuredItemProvider = new LazyListMeasuredItemProvider(m7527offsetNN6EwU, z6, lazyListItemProvider2, lazyLayoutMeasureScope, itemCount, i10, horizontal2, vertical2, z7, i3, i9, j2, lazyListState) { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measuredItemProvider$1
+        LazyListMeasuredItemProvider lazyListMeasuredItemProvider = new LazyListMeasuredItemProvider(m7527offsetNN6EwU, z6, invoke, lazyLayoutMeasureScope, itemCount, i10, horizontal2, vertical2, z7, i3, i9, j2, lazyListState) { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measuredItemProvider$1
             final /* synthetic */ int $afterContentPadding;
             final /* synthetic */ int $beforeContentPadding;
             final /* synthetic */ Alignment.Horizontal $horizontalAlignment;
@@ -197,11 +193,11 @@ public final class LazyListKt$rememberLazyListMeasurePolicy$1$1 implements LazyL
         Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
         Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
         try {
-            int updateScrollPositionIfTheFirstItemWasMoved$foundation = lazyListState2.updateScrollPositionIfTheFirstItemWasMoved$foundation(lazyListItemProvider2, lazyListState2.getFirstVisibleItemIndex());
+            int updateScrollPositionIfTheFirstItemWasMoved$foundation = lazyListState2.updateScrollPositionIfTheFirstItemWasMoved$foundation(invoke, lazyListState2.getFirstVisibleItemIndex());
             int firstVisibleItemScrollOffset = lazyListState2.getFirstVisibleItemScrollOffset();
             Unit unit = Unit.INSTANCE;
             companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-            List<Integer> calculateLazyLayoutPinnedIndices = LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(lazyListItemProvider2, this.$state.getPinnedItems$foundation(), this.$state.getBeyondBoundsInfo$foundation());
+            List<Integer> calculateLazyLayoutPinnedIndices = LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(invoke, this.$state.getPinnedItems$foundation(), this.$state.getBeyondBoundsInfo$foundation());
             if (lazyLayoutMeasureScope.isLookingAhead() || !z) {
                 scrollToBeConsumed$foundation = this.$state.getScrollToBeConsumed$foundation();
             } else {

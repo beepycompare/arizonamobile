@@ -7,17 +7,14 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class FilledTextFieldTokens {
     public static final int $stable = 0;
-    private static final float ActiveIndicatorHeight;
-    private static final float DisabledActiveIndicatorHeight;
-    private static final float HoverActiveIndicatorHeight;
-    private static final float LeadingIconSize;
-    private static final float TrailingIconSize;
     public static final FilledTextFieldTokens INSTANCE = new FilledTextFieldTokens();
     private static final ColorSchemeKeyTokens ActiveIndicatorColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final float ActiveIndicatorHeight = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens CaretColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraSmallTop;
     private static final ColorSchemeKeyTokens DisabledActiveIndicatorColor = ColorSchemeKeyTokens.OnSurface;
+    private static final float DisabledActiveIndicatorHeight = Dp.m7555constructorimpl(1.0f);
     private static final float DisabledActiveIndicatorOpacity = 0.38f;
     private static final ColorSchemeKeyTokens DisabledContainerColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledContainerOpacity = 0.04f;
@@ -51,13 +48,14 @@ public final class FilledTextFieldTokens {
     private static final ColorSchemeKeyTokens ErrorSupportingColor = ColorSchemeKeyTokens.Error;
     private static final ColorSchemeKeyTokens ErrorTrailingIconColor = ColorSchemeKeyTokens.Error;
     private static final ColorSchemeKeyTokens FocusActiveIndicatorColor = ColorSchemeKeyTokens.Primary;
-    private static final float FocusActiveIndicatorHeight = Dp.m7555constructorimpl((float) 2.0d);
+    private static final float FocusActiveIndicatorHeight = Dp.m7555constructorimpl(2.0f);
     private static final ColorSchemeKeyTokens FocusInputColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FocusLabelColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens FocusLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens FocusSupportingColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens FocusTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens HoverActiveIndicatorColor = ColorSchemeKeyTokens.OnSurface;
+    private static final float HoverActiveIndicatorHeight = Dp.m7555constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens HoverInputColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens HoverLabelColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens HoverLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -71,21 +69,13 @@ public final class FilledTextFieldTokens {
     private static final ColorSchemeKeyTokens LabelColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens LabelFont = TypographyKeyTokens.BodyLarge;
     private static final ColorSchemeKeyTokens LeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final float LeadingIconSize = Dp.m7555constructorimpl(24.0f);
     private static final ColorSchemeKeyTokens SupportingColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens SupportingFont = TypographyKeyTokens.BodySmall;
     private static final ColorSchemeKeyTokens TrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final float TrailingIconSize = Dp.m7555constructorimpl(24.0f);
 
     private FilledTextFieldTokens() {
-    }
-
-    static {
-        float f = (float) 1.0d;
-        ActiveIndicatorHeight = Dp.m7555constructorimpl(f);
-        DisabledActiveIndicatorHeight = Dp.m7555constructorimpl(f);
-        HoverActiveIndicatorHeight = Dp.m7555constructorimpl(f);
-        float f2 = (float) 24.0d;
-        LeadingIconSize = Dp.m7555constructorimpl(f2);
-        TrailingIconSize = Dp.m7555constructorimpl(f2);
     }
 
     public final ColorSchemeKeyTokens getActiveIndicatorColor() {

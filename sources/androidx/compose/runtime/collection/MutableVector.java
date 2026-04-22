@@ -288,14 +288,14 @@ public final class MutableVector<T> implements RandomAccess {
         throw new NoSuchElementException(str);
     }
 
-    /* JADX WARN: Type inference failed for: r3v0, types: [T, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r2v0, types: [T, java.lang.Object] */
     public final T firstOrNull(Function1<? super T, Boolean> function1) {
         T[] tArr = this.content;
         int size = getSize();
         for (int i = 0; i < size; i++) {
-            ?? r3 = (Object) tArr[i];
-            if (function1.invoke(r3).booleanValue()) {
-                return r3;
+            ?? r2 = (Object) tArr[i];
+            if (function1.invoke(r2).booleanValue()) {
+                return r2;
             }
         }
         return null;
@@ -457,13 +457,13 @@ public final class MutableVector<T> implements RandomAccess {
         return -1;
     }
 
-    /* JADX WARN: Type inference failed for: r2v0, types: [T, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r1v0, types: [T, java.lang.Object] */
     public final T lastOrNull(Function1<? super T, Boolean> function1) {
         T[] tArr = this.content;
         for (int size = getSize() - 1; size >= 0; size--) {
-            ?? r2 = (Object) tArr[size];
-            if (function1.invoke(r2).booleanValue()) {
-                return r2;
+            ?? r1 = (Object) tArr[size];
+            if (function1.invoke(r1).booleanValue()) {
+                return r1;
             }
         }
         return null;

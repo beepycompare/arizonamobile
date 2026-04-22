@@ -249,6 +249,7 @@ public final class DiskLruCache implements Closeable {
 
     public synchronized Value get(String str) throws IOException {
         Throwable th;
+        DiskLruCache diskLruCache;
         try {
             try {
                 checkNotClosed();
@@ -264,6 +265,7 @@ public final class DiskLruCache implements Closeable {
                             }
                         } catch (Throwable th2) {
                             th = th2;
+                            diskLruCache = this;
                             throw th;
                         }
                     }
@@ -280,6 +282,7 @@ public final class DiskLruCache implements Closeable {
                 return null;
             } catch (Throwable th3) {
                 th = th3;
+                diskLruCache = this;
                 th = th;
                 throw th;
             }

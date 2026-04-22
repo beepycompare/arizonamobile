@@ -54,10 +54,10 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$6<T> implements
     public Object collect(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
         AnonymousClass1 anonymousClass1;
         int i;
+        Object[] objArr;
+        int length;
         FlowCollector<? super T> flowCollector2;
         int i2;
-        int i3;
-        Object[] objArr;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
             if ((anonymousClass1.label & Integer.MIN_VALUE) != 0) {
@@ -68,38 +68,37 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$6<T> implements
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Object[] objArr2 = this.$this_asFlow$inlined;
-                    int length = objArr2.length;
-                    flowCollector2 = flowCollector;
-                    i2 = length;
-                    i3 = 0;
                     objArr = objArr2;
-                    if (i3 < i2) {
+                    length = objArr2.length;
+                    flowCollector2 = flowCollector;
+                    i2 = 0;
+                    if (i2 < length) {
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    i2 = anonymousClass1.I$1;
-                    i3 = anonymousClass1.I$0;
+                    length = anonymousClass1.I$1;
+                    i2 = anonymousClass1.I$0;
                     objArr = (Object[]) anonymousClass1.L$1;
                     ResultKt.throwOnFailure(obj);
                     FlowCollector<? super T> flowCollector3 = (FlowCollector) anonymousClass1.L$0;
-                    i3++;
+                    i2++;
                     flowCollector2 = flowCollector3;
-                    if (i3 < i2) {
-                        Object obj2 = objArr[i3];
+                    if (i2 < length) {
+                        Object obj2 = objArr[i2];
                         anonymousClass1.L$0 = flowCollector2;
                         anonymousClass1.L$1 = objArr;
-                        anonymousClass1.I$0 = i3;
-                        anonymousClass1.I$1 = i2;
+                        anonymousClass1.I$0 = i2;
+                        anonymousClass1.I$1 = length;
                         anonymousClass1.label = 1;
                         Object emit = flowCollector2.emit(obj2, anonymousClass1);
                         flowCollector3 = flowCollector2;
                         if (emit == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        i3++;
+                        i2++;
                         flowCollector2 = flowCollector3;
-                        if (i3 < i2) {
+                        if (i2 < length) {
                             return Unit.INSTANCE;
                         }
                     }

@@ -7,7 +7,6 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
 /* compiled from: Cam.android.kt */
 @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0017\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u0000 \u001f2\u00020\u0001:\u0001\u001fBG\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0003\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\u0006\u0010\t\u001a\u00020\u0003\u0012\u0006\u0010\n\u001a\u00020\u0003¢\u0006\u0004\b\u000b\u0010\fJ\u000e\u0010\u0018\u001a\u00020\u00032\u0006\u0010\u0019\u001a\u00020\u0000J\u0006\u0010\u001a\u001a\u00020\u001bJ\u000e\u0010\u001c\u001a\u00020\u001b2\u0006\u0010\u001d\u001a\u00020\u001eR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000eR\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u000eR\u0011\u0010\u0006\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u000eR\u0011\u0010\u0007\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u000eR\u001a\u0010\b\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u000e\"\u0004\b\u0014\u0010\u0015R\u0011\u0010\t\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u000eR\u0011\u0010\n\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u000e¨\u0006 "}, d2 = {"Landroidx/compose/material3/internal/colorUtil/Cam;", "", "hue", "", "chroma", "j", CmcdData.OBJECT_TYPE_MANIFEST, CmcdData.STREAMING_FORMAT_SS, "jstar", "astar", "bstar", "<init>", "(FFFFFFFF)V", "getHue", "()F", "getChroma", "getJ", "getM", "getS", "getJstar", "setJstar", "(F)V", "getAstar", "getBstar", "distance", "other", "viewedInSrgb", "", "viewed", TypedValues.AttributesType.S_FRAME, "Landroidx/compose/material3/internal/colorUtil/Frame;", "Companion", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
@@ -93,7 +92,7 @@ public final class Cam {
         if (f4 != 0.0f) {
             if (this.j != 0.0f) {
                 f = f4 / ((float) Math.sqrt(f3 / 100.0f));
-                float pow = f / ((float) Math.pow(1.64f - ((float) Math.pow((float) Math.pow(0.29f, frame.getN()), 0.73f)), 1.1111112f));
+                float pow = f / ((float) Math.pow(1.64f - ((float) Math.pow((float) Math.pow(0.28999999165534973d, frame.getN()), 0.7300000190734863d)), 1.1111111640930176d));
                 float f5 = (this.hue * 3.1415927f) / 180.0f;
                 float aw = frame.getAw() * ((float) Math.pow(this.j / 100.0f, (1.0f / frame.getC()) / frame.getZ()));
                 float cos = (((float) Math.cos(2.0f + f5)) + 3.8f) * 0.25f * 3846.1538f * frame.getNc() * frame.getNcb();
@@ -107,10 +106,9 @@ public final class Cam {
                 float f9 = nbb * 460.0f;
                 float f10 = (((451.0f * f7) + f9) + (288.0f * f8)) / 1403.0f;
                 float f11 = ((f9 - (891.0f * f7)) - (261.0f * f8)) / 1403.0f;
-                double d2 = 2.3809524f;
-                float signum = Math.signum(f10) * (100.0f / frame.getFl()) * ((float) Math.pow(Math.max(0.0f, (Math.abs(f10) * 27.13f) / (400.0f - Math.abs(f10))), d2));
-                float signum2 = Math.signum(f11) * (100.0f / frame.getFl()) * ((float) Math.pow(Math.max(0.0f, (Math.abs(f11) * 27.13f) / (400.0f - Math.abs(f11))), d2));
-                float signum3 = Math.signum(((f9 - (f7 * 220.0f)) - (f8 * 6300.0f)) / 1403.0f) * (100.0f / frame.getFl()) * ((float) Math.pow(Math.max(0.0f, (Math.abs(f2) * 27.13f) / (400.0f - Math.abs(f2))), d2));
+                float signum = Math.signum(f10) * (100.0f / frame.getFl()) * ((float) Math.pow(Math.max(0.0f, (Math.abs(f10) * 27.13f) / (400.0f - Math.abs(f10))), 2.3809523582458496d));
+                float signum2 = Math.signum(f11) * (100.0f / frame.getFl()) * ((float) Math.pow(Math.max(0.0f, (Math.abs(f11) * 27.13f) / (400.0f - Math.abs(f11))), 2.3809523582458496d));
+                float signum3 = Math.signum(((f9 - (f7 * 220.0f)) - (f8 * 6300.0f)) / 1403.0f) * (100.0f / frame.getFl()) * ((float) Math.pow(Math.max(0.0f, (Math.abs(f2) * 27.13f) / (400.0f - Math.abs(f2))), 2.3809523582458496d));
                 float f12 = signum / frame.getRgbD()[0];
                 float f13 = signum2 / frame.getRgbD()[1];
                 float f14 = signum3 / frame.getRgbD()[2];
@@ -123,24 +121,23 @@ public final class Cam {
             }
         }
         f = 0.0f;
-        float pow2 = f / ((float) Math.pow(1.64f - ((float) Math.pow((float) Math.pow(0.29f, frame.getN()), 0.73f)), 1.1111112f));
+        float pow2 = f / ((float) Math.pow(1.64f - ((float) Math.pow((float) Math.pow(0.28999999165534973d, frame.getN()), 0.7300000190734863d)), 1.1111111640930176d));
         float f52 = (this.hue * 3.1415927f) / 180.0f;
         float aw2 = frame.getAw() * ((float) Math.pow(this.j / 100.0f, (1.0f / frame.getC()) / frame.getZ()));
         float cos3 = (((float) Math.cos(2.0f + f52)) + 3.8f) * 0.25f * 3846.1538f * frame.getNc() * frame.getNcb();
         float nbb2 = aw2 / frame.getNbb();
-        double d3 = f52;
-        float sin2 = (float) Math.sin(d3);
-        float cos22 = (float) Math.cos(d3);
+        double d2 = f52;
+        float sin2 = (float) Math.sin(d2);
+        float cos22 = (float) Math.cos(d2);
         float f62 = (((0.305f + nbb2) * 23.0f) * pow2) / (((cos3 * 23.0f) + ((11.0f * pow2) * cos22)) + ((pow2 * 108.0f) * sin2));
         float f72 = cos22 * f62;
         float f82 = f62 * sin2;
         float f92 = nbb2 * 460.0f;
         float f102 = (((451.0f * f72) + f92) + (288.0f * f82)) / 1403.0f;
         float f112 = ((f92 - (891.0f * f72)) - (261.0f * f82)) / 1403.0f;
-        double d22 = 2.3809524f;
-        float signum4 = Math.signum(f102) * (100.0f / frame.getFl()) * ((float) Math.pow(Math.max(0.0f, (Math.abs(f102) * 27.13f) / (400.0f - Math.abs(f102))), d22));
-        float signum22 = Math.signum(f112) * (100.0f / frame.getFl()) * ((float) Math.pow(Math.max(0.0f, (Math.abs(f112) * 27.13f) / (400.0f - Math.abs(f112))), d22));
-        float signum32 = Math.signum(((f92 - (f72 * 220.0f)) - (f82 * 6300.0f)) / 1403.0f) * (100.0f / frame.getFl()) * ((float) Math.pow(Math.max(0.0f, (Math.abs(f2) * 27.13f) / (400.0f - Math.abs(f2))), d22));
+        float signum4 = Math.signum(f102) * (100.0f / frame.getFl()) * ((float) Math.pow(Math.max(0.0f, (Math.abs(f102) * 27.13f) / (400.0f - Math.abs(f102))), 2.3809523582458496d));
+        float signum22 = Math.signum(f112) * (100.0f / frame.getFl()) * ((float) Math.pow(Math.max(0.0f, (Math.abs(f112) * 27.13f) / (400.0f - Math.abs(f112))), 2.3809523582458496d));
+        float signum32 = Math.signum(((f92 - (f72 * 220.0f)) - (f82 * 6300.0f)) / 1403.0f) * (100.0f / frame.getFl()) * ((float) Math.pow(Math.max(0.0f, (Math.abs(f2) * 27.13f) / (400.0f - Math.abs(f2))), 2.3809523582458496d));
         float f122 = signum4 / frame.getRgbD()[0];
         float f132 = signum22 / frame.getRgbD()[1];
         float f142 = signum32 / frame.getRgbD()[2];
@@ -187,10 +184,9 @@ public final class Cam {
             float f7 = frame.getRgbD()[0] * f4;
             float f8 = frame.getRgbD()[1] * f5;
             float f9 = frame.getRgbD()[2] * f6;
-            double d = 0.42f;
-            float pow2 = (float) Math.pow((frame.getFl() * Math.abs(f7)) / 100.0f, d);
-            float pow3 = (float) Math.pow((frame.getFl() * Math.abs(f8)) / 100.0f, d);
-            float pow4 = (float) Math.pow((frame.getFl() * Math.abs(f9)) / 100.0f, d);
+            float pow2 = (float) Math.pow((frame.getFl() * Math.abs(f7)) / 100.0f, 0.41999998688697815d);
+            float pow3 = (float) Math.pow((frame.getFl() * Math.abs(f8)) / 100.0f, 0.41999998688697815d);
+            float pow4 = (float) Math.pow((frame.getFl() * Math.abs(f9)) / 100.0f, 0.41999998688697815d);
             float signum = ((Math.signum(f7) * 400.0f) * pow2) / (pow2 + 27.13f);
             float signum2 = ((Math.signum(f8) * 400.0f) * pow3) / (pow3 + 27.13f);
             float signum3 = ((Math.signum(f9) * 400.0f) * pow4) / (pow4 + 27.13f);
@@ -208,13 +204,13 @@ public final class Cam {
             float f15 = atan2;
             float f16 = (f15 * 3.1415927f) / 180.0f;
             float pow5 = ((float) Math.pow((f14 * frame.getNbb()) / frame.getAw(), frame.getC() * frame.getZ())) * 100.0f;
-            float pow6 = ((float) Math.pow(((((((((float) Math.cos((((((double) f15) < 20.14d ? ((float) RouletteView.PREMIUM_ROULETTE_WIDTH) + f15 : f15) * 3.1415927f) / 180.0f) + 2.0f)) + 3.8f) * 0.25f) * 3846.1538f) * frame.getNc()) * frame.getNcb()) * ((float) Math.sqrt((f10 * f10) + (f11 * f11)))) / (f13 + 0.305f), 0.9f)) * ((float) Math.pow(1.64f - ((float) Math.pow(0.29f, frame.getN())), 0.73f)) * ((float) Math.sqrt(pow5 / 100.0f));
+            float pow6 = ((float) Math.pow(((((((((float) Math.cos((((((double) f15) < 20.14d ? 360.0f + f15 : f15) * 3.1415927f) / 180.0f) + 2.0f)) + 3.8f) * 0.25f) * 3846.1538f) * frame.getNc()) * frame.getNcb()) * ((float) Math.sqrt((f10 * f10) + (f11 * f11)))) / (f13 + 0.305f), 0.8999999761581421d)) * ((float) Math.pow(1.64f - ((float) Math.pow(0.28999999165534973d, frame.getN())), 0.7300000190734863d)) * ((float) Math.sqrt(pow5 / 100.0f));
             float flRoot = pow6 * frame.getFlRoot();
             float sqrt = ((float) Math.sqrt((pow * frame.getC()) / (frame.getAw() + 4.0f))) * 50.0f;
             float f17 = (1.7f * pow5) / ((0.007f * pow5) + 1.0f);
             float log = ((float) Math.log((0.0228f * flRoot) + 1.0f)) * 43.85965f;
-            double d2 = f16;
-            return new Cam(f15, pow6, pow5, flRoot, sqrt, f17, log * ((float) Math.cos(d2)), log * ((float) Math.sin(d2)));
+            double d = f16;
+            return new Cam(f15, pow6, pow5, flRoot, sqrt, f17, log * ((float) Math.cos(d)), log * ((float) Math.sin(d)));
         }
 
         private final Cam fromJch(float f, float f2, float f3) {
@@ -272,7 +268,7 @@ public final class Cam {
             Cam cam = null;
             float f7 = 1000.0f;
             while (Math.abs(f6 - f4) > 0.009999999776482582d) {
-                float f8 = ((f4 - f6) / 2) + f6;
+                float f8 = ((f4 - f6) / 2.0f) + f6;
                 int viewedInSrgb = fromJch(f8, f2, f).viewedInSrgb();
                 float lstarFromInt = CamUtils.INSTANCE.lstarFromInt(viewedInSrgb);
                 float abs = (float) Math.abs(f3 - lstarFromInt);

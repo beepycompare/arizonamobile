@@ -779,36 +779,30 @@ public final class TreeMultiset<E> extends AbstractSortedMultiset<E> implements 
                 AvlNode<E> avlNode = this.left;
                 if (avlNode == null) {
                     result[0] = 0;
-                    if (count > 0) {
-                        return addLeftChild(e, count);
-                    }
-                } else {
-                    this.left = avlNode.setCount(comparator, e, count, result);
-                    if (count == 0 && result[0] != 0) {
-                        this.distinctElements--;
-                    } else if (count > 0 && result[0] == 0) {
-                        this.distinctElements++;
-                    }
-                    this.totalCount += count - result[0];
-                    return rebalance();
+                    return count > 0 ? addLeftChild(e, count) : this;
                 }
+                this.left = avlNode.setCount(comparator, e, count, result);
+                if (count == 0 && result[0] != 0) {
+                    this.distinctElements--;
+                } else if (count > 0 && result[0] == 0) {
+                    this.distinctElements++;
+                }
+                this.totalCount += count - result[0];
+                return rebalance();
             } else if (compare > 0) {
                 AvlNode<E> avlNode2 = this.right;
                 if (avlNode2 == null) {
                     result[0] = 0;
-                    if (count > 0) {
-                        return addRightChild(e, count);
-                    }
-                } else {
-                    this.right = avlNode2.setCount(comparator, e, count, result);
-                    if (count == 0 && result[0] != 0) {
-                        this.distinctElements--;
-                    } else if (count > 0 && result[0] == 0) {
-                        this.distinctElements++;
-                    }
-                    this.totalCount += count - result[0];
-                    return rebalance();
+                    return count > 0 ? addRightChild(e, count) : this;
                 }
+                this.right = avlNode2.setCount(comparator, e, count, result);
+                if (count == 0 && result[0] != 0) {
+                    this.distinctElements--;
+                } else if (count > 0 && result[0] == 0) {
+                    this.distinctElements++;
+                }
+                this.totalCount += count - result[0];
+                return rebalance();
             } else {
                 result[0] = this.elemCount;
                 if (count == 0) {
@@ -818,7 +812,6 @@ public final class TreeMultiset<E> extends AbstractSortedMultiset<E> implements 
                 this.elemCount = count;
                 return this;
             }
-            return this;
         }
 
         /* JADX WARN: Multi-variable type inference failed */

@@ -109,7 +109,7 @@ public abstract class zzah extends zzac implements List, RandomAccess {
                 if (!it.hasNext() || !Objects.equals(obj2, it.next())) {
                     return false;
                 }
-                while (r1.hasNext()) {
+                while (r6.hasNext()) {
                 }
             }
             return !it.hasNext();

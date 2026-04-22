@@ -98,8 +98,9 @@ final class ChannelFlowTransformLatest$flowCollect$3 extends SuspendLambda imple
             this.$collector = flowCollector;
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-        /* JADX WARN: Removed duplicated region for block: B:14:0x003c  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x003f  */
         @Override // kotlinx.coroutines.flow.FlowCollector
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -107,7 +108,6 @@ final class ChannelFlowTransformLatest$flowCollect$3 extends SuspendLambda imple
         public final Object emit(T t, Continuation<? super Unit> continuation) {
             ChannelFlowTransformLatest$flowCollect$3$1$emit$1 channelFlowTransformLatest$flowCollect$3$1$emit$1;
             int i;
-            AnonymousClass1<T> anonymousClass1;
             Job launch$default;
             if (continuation instanceof ChannelFlowTransformLatest$flowCollect$3$1$emit$1) {
                 channelFlowTransformLatest$flowCollect$3$1$emit$1 = (ChannelFlowTransformLatest$flowCollect$3$1$emit$1) continuation;
@@ -129,29 +129,30 @@ final class ChannelFlowTransformLatest$flowCollect$3 extends SuspendLambda imple
                                 return coroutine_suspended;
                             }
                         }
-                        anonymousClass1 = this;
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
                         Job job2 = (Job) channelFlowTransformLatest$flowCollect$3$1$emit$1.L$2;
-                        t = (T) channelFlowTransformLatest$flowCollect$3$1$emit$1.L$1;
-                        anonymousClass1 = (AnonymousClass1) channelFlowTransformLatest$flowCollect$3$1$emit$1.L$0;
+                        Object obj2 = channelFlowTransformLatest$flowCollect$3$1$emit$1.L$1;
+                        AnonymousClass1<T> anonymousClass1 = (AnonymousClass1) channelFlowTransformLatest$flowCollect$3$1$emit$1.L$0;
                         ResultKt.throwOnFailure(obj);
+                        t = obj2;
+                        this = anonymousClass1;
                     }
-                    Ref.ObjectRef<Job> objectRef = anonymousClass1.$previousFlow;
-                    launch$default = BuildersKt__Builders_commonKt.launch$default(anonymousClass1.$$this$coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass2(anonymousClass1.this$0, anonymousClass1.$collector, t, null), 1, null);
+                    Ref.ObjectRef<Job> objectRef = this.$previousFlow;
+                    launch$default = BuildersKt__Builders_commonKt.launch$default(this.$$this$coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass2(this.this$0, this.$collector, t, null), 1, null);
                     objectRef.element = (T) launch$default;
                     return Unit.INSTANCE;
                 }
             }
             channelFlowTransformLatest$flowCollect$3$1$emit$1 = new ChannelFlowTransformLatest$flowCollect$3$1$emit$1(this, continuation);
-            Object obj2 = channelFlowTransformLatest$flowCollect$3$1$emit$1.result;
+            Object obj3 = channelFlowTransformLatest$flowCollect$3$1$emit$1.result;
             Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             i = channelFlowTransformLatest$flowCollect$3$1$emit$1.label;
             if (i != 0) {
             }
-            Ref.ObjectRef<Job> objectRef2 = anonymousClass1.$previousFlow;
-            launch$default = BuildersKt__Builders_commonKt.launch$default(anonymousClass1.$$this$coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass2(anonymousClass1.this$0, anonymousClass1.$collector, t, null), 1, null);
+            Ref.ObjectRef<Job> objectRef2 = this.$previousFlow;
+            launch$default = BuildersKt__Builders_commonKt.launch$default(this.$$this$coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass2(this.this$0, this.$collector, t, null), 1, null);
             objectRef2.element = (T) launch$default;
             return Unit.INSTANCE;
         }

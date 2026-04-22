@@ -384,7 +384,7 @@ public final class ComposerImpl implements Composer {
         this.providersInvalidStack.clear();
         this.providerUpdates = null;
         this.insertFixups.clear();
-        this.compositeKeyHashCode = 0;
+        this.compositeKeyHashCode = 0L;
         this.childrenComposing = 0;
         this.nodeExpected = false;
         this.inserting = false;
@@ -975,6 +975,7 @@ public final class ComposerImpl implements Composer {
 
     @Override // androidx.compose.runtime.Composer
     public CompositionContext buildContext() {
+        ComposerImpl composerImpl;
         startGroup(ComposerKt.referenceKey, ComposerKt.getReference());
         if (getInserting()) {
             SlotWriter.markGroup$default(this.writer, 0, 1, null);
@@ -982,14 +983,17 @@ public final class ComposerImpl implements Composer {
         Object nextSlot = nextSlot();
         ReusableRememberObserverHolder reusableRememberObserverHolder = nextSlot instanceof RememberObserverHolder ? (RememberObserverHolder) nextSlot : null;
         if (reusableRememberObserverHolder == null) {
+            composerImpl = this;
             reusableRememberObserverHolder = new ReusableRememberObserverHolder(new CompositionContextHolder(new CompositionContextImpl(getCompositeKeyHashCode(), this.forceRecomposeScopes, this.sourceMarkersEnabled, getComposition().getObserverHolder$runtime())), -1);
-            updateValue(reusableRememberObserverHolder);
+            composerImpl.updateValue(reusableRememberObserverHolder);
+        } else {
+            composerImpl = this;
         }
         RememberObserver wrapped = reusableRememberObserverHolder.getWrapped();
         Intrinsics.checkNotNull(wrapped, "null cannot be cast to non-null type androidx.compose.runtime.ComposerImpl.CompositionContextHolder");
         CompositionContextHolder compositionContextHolder = (CompositionContextHolder) wrapped;
-        compositionContextHolder.getRef().updateCompositionLocalScope(currentCompositionLocalScope());
-        endGroup();
+        compositionContextHolder.getRef().updateCompositionLocalScope(composerImpl.currentCompositionLocalScope());
+        composerImpl.endGroup();
         return compositionContextHolder.getRef();
     }
 
@@ -1047,7 +1051,7 @@ public final class ComposerImpl implements Composer {
         this.reader.startGroup();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x006c  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x007a  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x007c  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0085  */
@@ -1063,7 +1067,7 @@ public final class ComposerImpl implements Composer {
         int i3 = this.rGroupIndex;
         if (obj3 == null) {
             if (obj2 != null && i == 207 && !Intrinsics.areEqual(obj2, Composer.Companion.getEmpty())) {
-                this.compositeKeyHashCode = i3 ^ Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ obj2.hashCode(), 3);
+                this.compositeKeyHashCode = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ obj2.hashCode(), 3) ^ i3;
                 if (obj3 == null) {
                     this.rGroupIndex++;
                 }
@@ -1155,9 +1159,9 @@ public final class ComposerImpl implements Composer {
                 enterGroup(z, pending);
                 return;
             }
-            rotateLeft = i3 ^ Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ i, 3);
+            rotateLeft = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ i, 3) ^ i3;
         } else {
-            rotateLeft = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ (obj3 instanceof Enum ? ((Enum) obj3).ordinal() : obj.hashCode()), 3) ^ 0;
+            rotateLeft = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ (obj3 instanceof Enum ? ((Enum) obj3).ordinal() : obj.hashCode()), 3);
         }
         this.compositeKeyHashCode = rotateLeft;
         if (obj3 == null) {
@@ -1216,7 +1220,7 @@ public final class ComposerImpl implements Composer {
                 }
             } else {
                 int ordinal = groupObjectKey instanceof Enum ? ((Enum) groupObjectKey).ordinal() : groupObjectKey.hashCode();
-                rotateRight2 = Long.rotateRight(getCompositeKeyHashCode() ^ 0, 3);
+                rotateRight2 = Long.rotateRight(getCompositeKeyHashCode(), 3);
                 j2 = ordinal;
             }
             this.compositeKeyHashCode = Long.rotateRight(rotateRight2 ^ j2, 3);
@@ -1234,7 +1238,7 @@ public final class ComposerImpl implements Composer {
                 }
             } else {
                 int ordinal2 = groupObjectKey2 instanceof Enum ? ((Enum) groupObjectKey2).ordinal() : groupObjectKey2.hashCode();
-                rotateRight = Long.rotateRight(getCompositeKeyHashCode() ^ 0, 3);
+                rotateRight = Long.rotateRight(getCompositeKeyHashCode(), 3);
                 j = ordinal2;
             }
             this.compositeKeyHashCode = Long.rotateRight(rotateRight ^ j, 3);
@@ -1575,8 +1579,8 @@ public final class ComposerImpl implements Composer {
         return slotReader.groupKey(slotReader.getParent());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00c8  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00c6  */
     @Override // androidx.compose.runtime.Composer
     @ComposeCompilerApi
     /*
@@ -1584,7 +1588,6 @@ public final class ComposerImpl implements Composer {
     */
     public void skipCurrentGroup() {
         long rotateLeft;
-        long j;
         if (this.invalidations.isEmpty()) {
             skipGroup();
             return;
@@ -1596,7 +1599,6 @@ public final class ComposerImpl implements Composer {
         int i = this.rGroupIndex;
         if (groupObjectKey != null) {
             rotateLeft = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ (groupObjectKey instanceof Enum ? ((Enum) groupObjectKey).ordinal() : groupObjectKey.hashCode()), 3);
-            j = 0;
         } else if (groupAux != null && groupKey == 207 && !Intrinsics.areEqual(groupAux, Composer.Companion.getEmpty())) {
             this.compositeKeyHashCode = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ groupAux.hashCode(), 3) ^ i;
             startReaderGroup(slotReader.isNode(), null);
@@ -1604,10 +1606,10 @@ public final class ComposerImpl implements Composer {
             slotReader.endGroup();
             if (groupObjectKey == null) {
                 if (groupObjectKey instanceof Enum) {
-                    this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode() ^ 0, 3) ^ ((Enum) groupObjectKey).ordinal(), 3);
+                    this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode(), 3) ^ ((Enum) groupObjectKey).ordinal(), 3);
                     return;
                 } else {
-                    this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode() ^ 0, 3) ^ groupObjectKey.hashCode(), 3);
+                    this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode(), 3) ^ groupObjectKey.hashCode(), 3);
                     return;
                 }
             } else if (groupAux == null || groupKey != 207 || Intrinsics.areEqual(groupAux, Composer.Companion.getEmpty())) {
@@ -1618,10 +1620,9 @@ public final class ComposerImpl implements Composer {
                 return;
             }
         } else {
-            rotateLeft = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ groupKey, 3);
-            j = i;
+            rotateLeft = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ groupKey, 3) ^ i;
         }
-        this.compositeKeyHashCode = rotateLeft ^ j;
+        this.compositeKeyHashCode = rotateLeft;
         startReaderGroup(slotReader.isNode(), null);
         recomposeToGroupEnd();
         slotReader.endGroup();
@@ -1823,7 +1824,7 @@ public final class ComposerImpl implements Composer {
         invokeMovableContentLambda(movableContent, currentCompositionLocalScope(), obj, false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0034, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0036, code lost:
         recordProviderUpdate(r14);
      */
     /*
@@ -1834,7 +1835,7 @@ public final class ComposerImpl implements Composer {
         updateSlot(obj);
         long compositeKeyHashCode = getCompositeKeyHashCode();
         try {
-            this.compositeKeyHashCode = (long) MovableContentKt.movableContentKey;
+            this.compositeKeyHashCode = 126665345L;
             boolean z2 = false;
             if (getInserting()) {
                 SlotWriter.markGroup$default(this.writer, 0, 1, null);
@@ -2941,9 +2942,9 @@ public final class ComposerImpl implements Composer {
             }
             this.compositeKeyHashCode = i2 ^ Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ i, 3);
         } else if (!(obj instanceof Enum)) {
-            this.compositeKeyHashCode = 0 ^ Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ obj.hashCode(), 3);
+            this.compositeKeyHashCode = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ obj.hashCode(), 3);
         } else {
-            this.compositeKeyHashCode = 0 ^ Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ ((Enum) obj).ordinal(), 3);
+            this.compositeKeyHashCode = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ ((Enum) obj).ordinal(), 3);
         }
     }
 
@@ -2959,9 +2960,9 @@ public final class ComposerImpl implements Composer {
             }
             this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode() ^ i2, 3) ^ i, 3);
         } else if (!(obj instanceof Enum)) {
-            this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode() ^ 0, 3) ^ obj.hashCode(), 3);
+            this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode(), 3) ^ obj.hashCode(), 3);
         } else {
-            this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode() ^ 0, 3) ^ ((Enum) obj).ordinal(), 3);
+            this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode(), 3) ^ ((Enum) obj).ordinal(), 3);
         }
     }
 
@@ -3020,8 +3021,8 @@ public final class ComposerImpl implements Composer {
 
     private final long compositeKeyOf(int i, int i2, long j) {
         long rotateLeft;
-        long j2 = 0;
         int i3 = 3;
+        long j2 = 0;
         int i4 = 0;
         while (i >= 0) {
             if (i != i2) {

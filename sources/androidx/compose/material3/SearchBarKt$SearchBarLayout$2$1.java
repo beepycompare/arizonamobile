@@ -100,12 +100,12 @@ public final class SearchBarKt$SearchBarLayout$2$1 implements MeasurePolicy {
                         int width = mo6216measureBRTryo0.getWidth();
                         final Placeable mo6216measureBRTryo02 = measurable3.mo6216measureBRTryo0(Constraints.Companion.m7518fixedJhjzzOo(width, lerp4 - lerp5));
                         if (measurable4 != null) {
-                            if (Constraints.m7503getHasBoundedHeightimpl(j)) {
+                            if (Constraints.m7503getHasBoundedHeightimpl(j2)) {
                                 i = 0;
-                                m7507getMaxHeightimpl = RangesKt.coerceAtLeast(Constraints.m7507getMaxHeightimpl(j) - (i6 + i5), 0);
+                                m7507getMaxHeightimpl = RangesKt.coerceAtLeast(Constraints.m7507getMaxHeightimpl(j2) - (i6 + i5), 0);
                             } else {
                                 i = 0;
-                                m7507getMaxHeightimpl = Constraints.m7507getMaxHeightimpl(j);
+                                m7507getMaxHeightimpl = Constraints.m7507getMaxHeightimpl(j2);
                             }
                             placeable = measurable4.mo6216measureBRTryo0(ConstraintsKt.Constraints(width, width, i, m7507getMaxHeightimpl));
                         } else {

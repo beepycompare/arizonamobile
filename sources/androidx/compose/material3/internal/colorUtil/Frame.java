@@ -121,16 +121,15 @@ public final class Frame {
             float yFromLstar = ((float) CamUtils.INSTANCE.yFromLstar(f2)) / fArr[1];
             double d2 = yFromLstar;
             float sqrt = ((float) Math.sqrt(d2)) + 1.48f;
-            float pow = 0.725f / ((float) Math.pow(d2, 0.2f));
-            double d3 = 0.42f;
-            float[] fArr6 = {(float) Math.pow(((fArr5[0] * cbrt) * f7) / 100.0f, d3), (float) Math.pow(((fArr5[1] * cbrt) * f8) / 100.0f, d3), (float) Math.pow(((fArr5[2] * cbrt) * f9) / 100.0f, d3)};
+            float pow = 0.725f / ((float) Math.pow(d2, 0.20000000298023224d));
+            float[] fArr6 = {(float) Math.pow(((fArr5[0] * cbrt) * f7) / 100.0f, 0.41999998688697815d), (float) Math.pow(((fArr5[1] * cbrt) * f8) / 100.0f, 0.41999998688697815d), (float) Math.pow(((fArr5[2] * cbrt) * f9) / 100.0f, 0.41999998688697815d)};
             float f14 = fArr6[0];
             float f15 = (f14 * 400.0f) / (f14 + 27.13f);
             float f16 = fArr6[1];
             float f17 = (f16 * 400.0f) / (f16 + 27.13f);
             float f18 = fArr6[2];
             float[] fArr7 = {f15, f17, (400.0f * f18) / (f18 + 27.13f)};
-            return new Frame(yFromLstar, ((fArr7[0] * 2.0f) + fArr7[1] + (fArr7[2] * 0.05f)) * pow, pow, pow, lerp, f10, fArr5, cbrt, (float) Math.pow(cbrt, 0.25f), sqrt, null);
+            return new Frame(yFromLstar, ((fArr7[0] * 2.0f) + fArr7[1] + (fArr7[2] * 0.05f)) * pow, pow, pow, lerp, f10, fArr5, cbrt, (float) Math.pow(cbrt, 0.25d), sqrt, null);
         }
     }
 

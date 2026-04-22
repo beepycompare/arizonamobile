@@ -62,7 +62,7 @@ final class AutoValue_EventStoreConfig extends EventStoreConfig {
     public int hashCode() {
         long j = this.maxStorageSizeInBytes;
         long j2 = this.eventCleanUpAge;
-        return ((((((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ this.loadBatchSize) * 1000003) ^ this.criticalSectionEnterTimeoutMs) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.maxBlobByteSizePerRow;
+        return this.maxBlobByteSizePerRow ^ ((((((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ this.loadBatchSize) * 1000003) ^ this.criticalSectionEnterTimeoutMs) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003);
     }
 
     /* loaded from: classes3.dex */

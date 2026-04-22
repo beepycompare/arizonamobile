@@ -101,10 +101,7 @@ final class FarmHashFingerprint64 extends AbstractNonStreamingHashFunction {
 
     private static long hashLength65Plus(byte[] bytes, int offset, int length) {
         byte[] bArr = bytes;
-        long j = 81;
-        long j2 = K1;
-        long j3 = (j * K1) + 113;
-        long shiftMix = shiftMix((j3 * K2) + 113) * K2;
+        long shiftMix = shiftMix(-7956866745689871395L) * K2;
         long[] jArr = new long[2];
         long[] jArr2 = new long[2];
         char c = 1;
@@ -113,40 +110,40 @@ final class FarmHashFingerprint64 extends AbstractNonStreamingHashFunction {
         int i3 = i & 63;
         int i4 = i2 + i3;
         int i5 = i4 - 63;
-        long j4 = j3;
-        long load64 = (j * K2) + LittleEndianByteArray.load64(bytes, offset);
+        long j = 2480279821605975764L;
+        long load64 = 95310865018149119L + LittleEndianByteArray.load64(bytes, offset);
+        long j2 = shiftMix;
         int i6 = offset;
         while (true) {
-            long j5 = j2;
-            long rotateRight = (Long.rotateRight(((load64 + j4) + jArr[0]) + LittleEndianByteArray.load64(bArr, i6 + 8), 37) * j5) ^ jArr2[c];
             char c2 = c;
-            long rotateRight2 = (Long.rotateRight(j4 + jArr[c] + LittleEndianByteArray.load64(bArr, i6 + 48), 42) * j5) + jArr[0] + LittleEndianByteArray.load64(bArr, i6 + 40);
-            long rotateRight3 = Long.rotateRight(shiftMix + jArr2[0], 33) * j5;
-            weakHashLength32WithSeeds(bArr, i6, jArr[c2] * j5, rotateRight + jArr2[0], jArr);
+            long rotateRight = Long.rotateRight(load64 + j + jArr[0] + LittleEndianByteArray.load64(bArr, i6 + 8), 37) * K1;
+            long rotateRight2 = Long.rotateRight(j + jArr[c2] + LittleEndianByteArray.load64(bArr, i6 + 48), 42) * K1;
+            long j3 = rotateRight ^ jArr2[c2];
+            j = rotateRight2 + jArr[0] + LittleEndianByteArray.load64(bArr, i6 + 40);
+            long rotateRight3 = Long.rotateRight(j2 + jArr2[0], 33) * K1;
+            weakHashLength32WithSeeds(bArr, i6, jArr[c2] * K1, j3 + jArr2[0], jArr);
             int i7 = i6;
             long[] jArr3 = jArr;
-            weakHashLength32WithSeeds(bArr, i7 + 32, jArr2[c2] + rotateRight3, rotateRight2 + LittleEndianByteArray.load64(bArr, i7 + 16), jArr2);
+            weakHashLength32WithSeeds(bArr, i7 + 32, rotateRight3 + jArr2[c2], LittleEndianByteArray.load64(bArr, i7 + 16) + j, jArr2);
             i6 = i7 + 64;
             if (i6 == i2) {
-                long j6 = ((rotateRight & 255) << c2) + j5;
-                long j7 = jArr2[0] + i3;
-                jArr2[0] = j7;
-                long j8 = jArr3[0] + j7;
-                jArr3[0] = j8;
-                jArr2[0] = jArr2[0] + j8;
-                long rotateRight4 = (Long.rotateRight(((rotateRight3 + rotateRight2) + jArr3[0]) + LittleEndianByteArray.load64(bArr, i4 - 55), 37) * j6) ^ (jArr2[c2] * 9);
-                long rotateRight5 = (Long.rotateRight(rotateRight2 + jArr3[c2] + LittleEndianByteArray.load64(bArr, i4 - 15), 42) * j6) + (jArr3[0] * 9) + LittleEndianByteArray.load64(bArr, i4 - 23);
-                long rotateRight6 = Long.rotateRight(rotateRight + jArr2[0], 33) * j6;
-                weakHashLength32WithSeeds(bArr, i5, jArr3[c2] * j6, jArr2[0] + rotateRight4, jArr3);
-                weakHashLength32WithSeeds(bArr, i4 - 31, jArr2[c2] + rotateRight6, LittleEndianByteArray.load64(bArr, i4 - 47) + rotateRight5, jArr2);
-                return hashLength16(hashLength16(jArr3[0], jArr2[0], j6) + (shiftMix(rotateRight5) * K0) + rotateRight4, hashLength16(jArr3[c2], jArr2[c2], j6) + rotateRight6, j6);
+                long j4 = ((j3 & 255) << c2) + K1;
+                long j5 = jArr2[0] + i3;
+                jArr2[0] = j5;
+                long j6 = jArr3[0] + j5;
+                jArr3[0] = j6;
+                jArr2[0] = jArr2[0] + j6;
+                long rotateRight4 = (Long.rotateRight(((rotateRight3 + j) + jArr3[0]) + LittleEndianByteArray.load64(bArr, i4 - 55), 37) * j4) ^ (jArr2[c2] * 9);
+                long rotateRight5 = (Long.rotateRight(j + jArr3[c2] + LittleEndianByteArray.load64(bArr, i4 - 15), 42) * j4) + (jArr3[0] * 9) + LittleEndianByteArray.load64(bArr, i4 - 23);
+                long rotateRight6 = Long.rotateRight(j3 + jArr2[0], 33) * j4;
+                weakHashLength32WithSeeds(bArr, i5, jArr3[c2] * j4, jArr2[0] + rotateRight4, jArr3);
+                weakHashLength32WithSeeds(bArr, i4 - 31, rotateRight6 + jArr2[c2], LittleEndianByteArray.load64(bArr, i4 - 47) + rotateRight5, jArr2);
+                return hashLength16(hashLength16(jArr3[0], jArr2[0], j4) + (shiftMix(rotateRight5) * K0) + rotateRight4, hashLength16(jArr3[c2], jArr2[c2], j4) + rotateRight6, j4);
             }
             bArr = bytes;
-            load64 = rotateRight3;
-            j2 = j5;
-            shiftMix = rotateRight;
             c = c2;
-            j4 = rotateRight2;
+            j2 = j3;
+            load64 = rotateRight3;
             jArr = jArr3;
         }
     }

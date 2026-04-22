@@ -419,7 +419,11 @@ public class MenuItemWrapperICS extends BaseMenuWrapper implements MenuItem {
         @Override // androidx.core.view.ActionProvider
         public void setVisibilityListener(ActionProvider.VisibilityListener visibilityListener) {
             this.mListener = visibilityListener;
-            this.mInner.setVisibilityListener(visibilityListener != null ? this : null);
+            android.view.ActionProvider actionProvider = this.mInner;
+            if (visibilityListener == null) {
+                this = null;
+            }
+            actionProvider.setVisibilityListener(this);
         }
 
         @Override // android.view.ActionProvider.VisibilityListener

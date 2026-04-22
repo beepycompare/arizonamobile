@@ -155,16 +155,15 @@ public final class RoundedPolygon {
         float f = calculateBounds$default[2] - calculateBounds$default[0];
         float f2 = calculateBounds$default[3] - calculateBounds$default[1];
         final float max = Math.max(f, f2);
-        float f3 = 2;
-        final float f4 = ((max - f) / f3) - calculateBounds$default[0];
-        final float f5 = ((max - f2) / f3) - calculateBounds$default[1];
+        final float f3 = ((max - f) / 2.0f) - calculateBounds$default[0];
+        final float f4 = ((max - f2) / 2.0f) - calculateBounds$default[1];
         return transformed(new PointTransformer() { // from class: androidx.graphics.shapes.RoundedPolygon$normalized$1
             @Override // androidx.graphics.shapes.PointTransformer
             /* renamed from: transform-XgqJiTY */
-            public final long mo8115transformXgqJiTY(float f6, float f7) {
-                float f8 = f6 + f4;
-                float f9 = max;
-                return FloatFloatPair.m12constructorimpl(f8 / f9, (f7 + f5) / f9);
+            public final long mo8115transformXgqJiTY(float f5, float f6) {
+                float f7 = f5 + f3;
+                float f8 = max;
+                return FloatFloatPair.m12constructorimpl(f7 / f8, (f6 + f4) / f8);
             }
         });
     }

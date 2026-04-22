@@ -84,35 +84,33 @@ public final class PublisherAsFlow<T> extends ChannelFlow<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x00b6, code lost:
-        if (r0 == r3) goto L28;
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00ac, code lost:
+        if (r15 == r1) goto L27;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x002b  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x009b  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00a1 A[Catch: all -> 0x005d, TRY_ENTER, TryCatch #0 {all -> 0x005d, blocks: (B:13:0x003d, B:33:0x00b9, B:35:0x00c5, B:23:0x0083, B:30:0x00a1, B:18:0x0059), top: B:40:0x0029 }] */
-    /* JADX WARN: Type inference failed for: r4v0, types: [int] */
-    /* JADX WARN: Type inference failed for: r4v13 */
-    /* JADX WARN: Type inference failed for: r4v14 */
-    /* JADX WARN: Type inference failed for: r4v8, types: [kotlinx.coroutines.reactive.ReactiveSubscriber] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x00b6 -> B:14:0x0040). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0091  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0097 A[Catch: all -> 0x0058, TRY_ENTER, TryCatch #0 {all -> 0x0058, blocks: (B:13:0x0039, B:34:0x00af, B:36:0x00ba, B:24:0x007a, B:31:0x0097, B:18:0x0054), top: B:41:0x0025 }] */
+    /* JADX WARN: Type inference failed for: r14v13 */
+    /* JADX WARN: Type inference failed for: r14v14 */
+    /* JADX WARN: Type inference failed for: r14v6, types: [kotlinx.coroutines.reactive.ReactiveSubscriber] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:32:0x00ac -> B:34:0x00af). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object collectImpl(CoroutineContext coroutineContext, FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
         PublisherAsFlow$collectImpl$1 publisherAsFlow$collectImpl$1;
+        int i;
+        FlowCollector flowCollector2;
         ReactiveSubscriber reactiveSubscriber;
         ReactiveSubscriber reactiveSubscriber2;
-        PublisherAsFlow<T> publisherAsFlow;
         long j;
-        FlowCollector<? super T> flowCollector2;
-        PublisherAsFlow<T> publisherAsFlow2;
+        PublisherAsFlow<T> publisherAsFlow;
         FlowCollector flowCollector3;
-        long j2;
         ReactiveSubscriber reactiveSubscriber3;
-        Object takeNextOrNull;
+        long j2;
         try {
             if (continuation instanceof PublisherAsFlow$collectImpl$1) {
                 publisherAsFlow$collectImpl$1 = (PublisherAsFlow$collectImpl$1) continuation;
@@ -120,65 +118,79 @@ public final class PublisherAsFlow<T> extends ChannelFlow<T> {
                     publisherAsFlow$collectImpl$1.label -= Integer.MIN_VALUE;
                     Object obj = publisherAsFlow$collectImpl$1.result;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    reactiveSubscriber = publisherAsFlow$collectImpl$1.label;
-                    if (reactiveSubscriber != 0) {
+                    i = publisherAsFlow$collectImpl$1.label;
+                    if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         ReactiveSubscriber reactiveSubscriber4 = new ReactiveSubscriber(this.capacity, this.onBufferOverflow, getRequestSize());
                         ReactiveFlowKt.injectCoroutineContext(this.publisher, coroutineContext).subscribe(reactiveSubscriber4);
-                        reactiveSubscriber2 = reactiveSubscriber4;
-                        publisherAsFlow = this;
-                        j = 0;
                         flowCollector2 = flowCollector;
-                        publisherAsFlow$collectImpl$1.L$0 = publisherAsFlow;
+                        reactiveSubscriber = reactiveSubscriber4;
+                        j2 = 0;
+                        reactiveSubscriber3 = reactiveSubscriber;
+                        publisherAsFlow$collectImpl$1.L$0 = this;
                         publisherAsFlow$collectImpl$1.L$1 = flowCollector2;
-                        publisherAsFlow$collectImpl$1.L$2 = reactiveSubscriber2;
-                        publisherAsFlow$collectImpl$1.J$0 = j;
+                        publisherAsFlow$collectImpl$1.L$2 = reactiveSubscriber3;
+                        publisherAsFlow$collectImpl$1.J$0 = j2;
                         publisherAsFlow$collectImpl$1.label = 1;
-                        takeNextOrNull = reactiveSubscriber2.takeNextOrNull(publisherAsFlow$collectImpl$1);
-                        if (takeNextOrNull != coroutine_suspended) {
+                        obj = reactiveSubscriber3.takeNextOrNull(publisherAsFlow$collectImpl$1);
+                        if (obj != coroutine_suspended) {
                         }
                         return coroutine_suspended;
-                    } else if (reactiveSubscriber != 1) {
-                        if (reactiveSubscriber == 2) {
-                            j2 = publisherAsFlow$collectImpl$1.J$0;
-                            ReactiveSubscriber reactiveSubscriber5 = (ReactiveSubscriber) publisherAsFlow$collectImpl$1.L$2;
-                            FlowCollector<? super T> flowCollector4 = (FlowCollector) publisherAsFlow$collectImpl$1.L$1;
-                            publisherAsFlow2 = (PublisherAsFlow) publisherAsFlow$collectImpl$1.L$0;
+                    } else if (i != 1) {
+                        if (i == 2) {
+                            j = publisherAsFlow$collectImpl$1.J$0;
+                            FlowCollector<? super T> flowCollector4 = (FlowCollector<? super T>) ((ReactiveSubscriber) publisherAsFlow$collectImpl$1.L$2);
+                            FlowCollector flowCollector5 = (FlowCollector) publisherAsFlow$collectImpl$1.L$1;
+                            publisherAsFlow = (PublisherAsFlow) publisherAsFlow$collectImpl$1.L$0;
                             ResultKt.throwOnFailure(obj);
-                            reactiveSubscriber = reactiveSubscriber5;
-                            FlowCollector<? super T> flowCollector5 = flowCollector4;
-                            flowCollector2 = flowCollector5;
-                            j = j2 + 1;
-                            if (j == publisherAsFlow2.getRequestSize()) {
-                                reactiveSubscriber.makeRequest();
-                                j = 0;
+                            FlowCollector flowCollector6 = flowCollector5;
+                            flowCollector = flowCollector4;
+                            long j3 = j + 1;
+                            if (j3 != publisherAsFlow.getRequestSize()) {
+                                this = publisherAsFlow;
+                                j2 = j3;
+                                flowCollector2 = flowCollector6;
+                                reactiveSubscriber3 = flowCollector;
+                                publisherAsFlow$collectImpl$1.L$0 = this;
+                                publisherAsFlow$collectImpl$1.L$1 = flowCollector2;
+                                publisherAsFlow$collectImpl$1.L$2 = reactiveSubscriber3;
+                                publisherAsFlow$collectImpl$1.J$0 = j2;
+                                publisherAsFlow$collectImpl$1.label = 1;
+                                obj = reactiveSubscriber3.takeNextOrNull(publisherAsFlow$collectImpl$1);
+                                if (obj != coroutine_suspended) {
+                                }
+                                return coroutine_suspended;
                             }
-                            publisherAsFlow = publisherAsFlow2;
-                            reactiveSubscriber2 = reactiveSubscriber;
-                            publisherAsFlow$collectImpl$1.L$0 = publisherAsFlow;
+                            ((ReactiveSubscriber) flowCollector).makeRequest();
+                            flowCollector2 = flowCollector6;
+                            this = publisherAsFlow;
+                            reactiveSubscriber = flowCollector;
+                            j2 = 0;
+                            reactiveSubscriber3 = reactiveSubscriber;
+                            publisherAsFlow$collectImpl$1.L$0 = this;
                             publisherAsFlow$collectImpl$1.L$1 = flowCollector2;
-                            publisherAsFlow$collectImpl$1.L$2 = reactiveSubscriber2;
-                            publisherAsFlow$collectImpl$1.J$0 = j;
+                            publisherAsFlow$collectImpl$1.L$2 = reactiveSubscriber3;
+                            publisherAsFlow$collectImpl$1.J$0 = j2;
                             publisherAsFlow$collectImpl$1.label = 1;
-                            takeNextOrNull = reactiveSubscriber2.takeNextOrNull(publisherAsFlow$collectImpl$1);
-                            if (takeNextOrNull != coroutine_suspended) {
+                            obj = reactiveSubscriber3.takeNextOrNull(publisherAsFlow$collectImpl$1);
+                            if (obj != coroutine_suspended) {
                                 flowCollector3 = flowCollector2;
-                                obj = takeNextOrNull;
-                                publisherAsFlow2 = publisherAsFlow;
-                                j2 = j;
-                                reactiveSubscriber3 = reactiveSubscriber2;
+                                long j4 = j2;
+                                publisherAsFlow = this;
+                                j = j4;
+                                reactiveSubscriber2 = reactiveSubscriber3;
                                 if (obj == null) {
                                     JobKt.ensureActive(publisherAsFlow$collectImpl$1.getContext());
-                                    publisherAsFlow$collectImpl$1.L$0 = publisherAsFlow2;
+                                    publisherAsFlow$collectImpl$1.L$0 = publisherAsFlow;
                                     publisherAsFlow$collectImpl$1.L$1 = flowCollector3;
-                                    publisherAsFlow$collectImpl$1.L$2 = reactiveSubscriber3;
-                                    publisherAsFlow$collectImpl$1.J$0 = j2;
+                                    publisherAsFlow$collectImpl$1.L$2 = reactiveSubscriber2;
+                                    publisherAsFlow$collectImpl$1.J$0 = j;
                                     publisherAsFlow$collectImpl$1.label = 2;
                                     Object emit = flowCollector3.emit(obj, publisherAsFlow$collectImpl$1);
-                                    reactiveSubscriber = reactiveSubscriber3;
-                                    flowCollector5 = flowCollector3;
+                                    flowCollector6 = flowCollector3;
+                                    flowCollector = reactiveSubscriber2;
                                 } else {
-                                    reactiveSubscriber3.cancel();
+                                    reactiveSubscriber2.cancel();
                                     return Unit.INSTANCE;
                                 }
                             }
@@ -186,28 +198,28 @@ public final class PublisherAsFlow<T> extends ChannelFlow<T> {
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        j2 = publisherAsFlow$collectImpl$1.J$0;
-                        ReactiveSubscriber reactiveSubscriber6 = (ReactiveSubscriber) publisherAsFlow$collectImpl$1.L$2;
-                        FlowCollector flowCollector6 = (FlowCollector) publisherAsFlow$collectImpl$1.L$1;
-                        publisherAsFlow2 = (PublisherAsFlow) publisherAsFlow$collectImpl$1.L$0;
+                        j = publisherAsFlow$collectImpl$1.J$0;
+                        ReactiveSubscriber reactiveSubscriber5 = (ReactiveSubscriber) publisherAsFlow$collectImpl$1.L$2;
+                        FlowCollector flowCollector7 = (FlowCollector) publisherAsFlow$collectImpl$1.L$1;
+                        publisherAsFlow = (PublisherAsFlow) publisherAsFlow$collectImpl$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                        reactiveSubscriber3 = reactiveSubscriber6;
-                        flowCollector3 = flowCollector6;
+                        flowCollector3 = flowCollector7;
+                        reactiveSubscriber2 = reactiveSubscriber5;
                         if (obj == null) {
                         }
                     }
                 }
             }
-            if (reactiveSubscriber != 0) {
+            if (i != 0) {
             }
         } catch (Throwable th) {
-            reactiveSubscriber.cancel();
+            flowCollector.cancel();
             throw th;
         }
         publisherAsFlow$collectImpl$1 = new PublisherAsFlow$collectImpl$1(this, continuation);
         Object obj2 = publisherAsFlow$collectImpl$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        reactiveSubscriber = publisherAsFlow$collectImpl$1.label;
+        i = publisherAsFlow$collectImpl$1.label;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

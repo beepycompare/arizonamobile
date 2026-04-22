@@ -26,7 +26,7 @@ public final class HudImprovingSkills {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final int getProc(double d, double d2) {
-        return (int) ((d / d2) * 100);
+        return (int) ((d / d2) * 100.0d);
     }
 
     private HudImprovingSkills() {

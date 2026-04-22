@@ -109,12 +109,12 @@ public final class FutureKt {
             public final void invoke(Object obj, Throwable th) {
                 Job job2 = Job.this;
                 if (th != null) {
-                    r0 = th instanceof CancellationException ? (CancellationException) th : null;
-                    if (r0 == null) {
-                        r0 = ExceptionsKt.CancellationException("CompletableFuture was completed exceptionally", th);
+                    r2 = th instanceof CancellationException ? (CancellationException) th : null;
+                    if (r2 == null) {
+                        r2 = ExceptionsKt.CancellationException("CompletableFuture was completed exceptionally", th);
                     }
                 }
-                job2.cancel(r0);
+                job2.cancel(r2);
             }
         };
         completableFuture.handle(new BiFunction() { // from class: kotlinx.coroutines.future.FutureKt$$ExternalSyntheticLambda4

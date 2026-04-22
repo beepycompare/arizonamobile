@@ -47,13 +47,13 @@ public final class LazyListIntervalContent extends LazyLayoutIntervalContent<Laz
         return mutableIntList != null ? mutableIntList : IntListKt.emptyIntList();
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [androidx.compose.foundation.lazy.layout.MutableIntervalList] */
+    /* JADX WARN: Type inference failed for: r1v1, types: [androidx.compose.foundation.lazy.layout.MutableIntervalList] */
     @Override // androidx.compose.foundation.lazy.LazyListScope
     public void items(int i, Function1<? super Integer, ? extends Object> function1, Function1<? super Integer, ? extends Object> function12, Function4<? super LazyItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4) {
         getIntervals().addInterval(i, new LazyListInterval(function1, function12, function4));
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [androidx.compose.foundation.lazy.layout.MutableIntervalList] */
+    /* JADX WARN: Type inference failed for: r3v1, types: [androidx.compose.foundation.lazy.layout.MutableIntervalList] */
     @Override // androidx.compose.foundation.lazy.LazyListScope
     public void item(final Object obj, final Object obj2, final Function3<? super LazyItemScope, ? super Composer, ? super Integer, Unit> function3) {
         getIntervals().addInterval(1, new LazyListInterval(obj != null ? new Function1() { // from class: androidx.compose.foundation.lazy.LazyListIntervalContent$$ExternalSyntheticLambda0

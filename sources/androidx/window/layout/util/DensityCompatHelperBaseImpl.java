@@ -25,6 +25,6 @@ public final class DensityCompatHelperBaseImpl implements DensityCompatHelper {
     public float density(Configuration configuration, WindowMetrics windowMetrics) {
         Intrinsics.checkNotNullParameter(configuration, "configuration");
         Intrinsics.checkNotNullParameter(windowMetrics, "windowMetrics");
-        return configuration.densityDpi / 160;
+        return configuration.densityDpi / 160.0f;
     }
 }

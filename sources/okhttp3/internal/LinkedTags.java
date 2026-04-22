@@ -34,7 +34,10 @@ final class LinkedTags<K> extends Tags {
         LinkedTags<K> linkedTags = this.next;
         if (!areEqual) {
             Tags plus = linkedTags.plus(key, null);
-            linkedTags = plus == this.next ? this : new LinkedTags<>(this.key, this.value, plus);
+            if (plus != this.next) {
+                this = new LinkedTags<>(this.key, this.value, plus);
+            }
+            linkedTags = this;
         }
         return t != null ? new LinkedTags(key, t, linkedTags) : linkedTags;
     }

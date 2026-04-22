@@ -289,8 +289,8 @@ public final class SharedSessionRepositoryImpl implements SharedSessionRepositor
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003b  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x006f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -348,7 +348,7 @@ public final class SharedSessionRepositoryImpl implements SharedSessionRepositor
         i = sharedSessionRepositoryImpl$notifySubscribers$1.label;
         if (i != 0) {
         }
-        while (r8.hasNext()) {
+        while (r4.hasNext()) {
         }
         return Unit.INSTANCE;
     }

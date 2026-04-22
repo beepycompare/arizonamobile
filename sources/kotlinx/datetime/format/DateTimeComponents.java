@@ -1,5 +1,6 @@
 package kotlinx.datetime.format;
 
+import androidx.media3.exoplayer.Renderer;
 import kotlin.Deprecated;
 import kotlin.Metadata;
 import kotlin.ReplaceWith;
@@ -474,7 +475,7 @@ public final class DateTimeComponents {
         setOffset(utcOffset);
         Integer year = getYear();
         Intrinsics.checkNotNull(year);
-        setYear(Integer.valueOf(year.intValue() + ((int) ((instant.getEpochSeconds() / DateCalculationsKt.SECONDS_PER_10000_YEARS) * 10000))));
+        setYear(Integer.valueOf(year.intValue() + ((int) ((instant.getEpochSeconds() / DateCalculationsKt.SECONDS_PER_10000_YEARS) * Renderer.DEFAULT_DURATION_TO_PROGRESS_US))));
     }
 
     public final void setDateTimeOffset(LocalDateTime localDateTime, UtcOffset utcOffset) {

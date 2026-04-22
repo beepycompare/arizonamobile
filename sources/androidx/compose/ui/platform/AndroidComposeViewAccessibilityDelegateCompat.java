@@ -1220,10 +1220,10 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x01d1 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x01ef  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0231  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:101:0x01ce -> B:102:0x01cf). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x01c9 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x01e7  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0229  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:101:0x01c6 -> B:102:0x01c7). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1235,7 +1235,6 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         Function0 function03;
         Function0 function04;
         float f;
-        int i3;
         float f2;
         float intBitsToFloat;
         AccessibilityAction accessibilityAction;
@@ -1453,8 +1452,8 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                                             return false;
                                                         }
                                                         int size = list.size();
-                                                        for (int i4 = 0; i4 < size; i4++) {
-                                                            CustomAccessibilityAction customAccessibilityAction = (CustomAccessibilityAction) list.get(i4);
+                                                        for (int i3 = 0; i3 < size; i3++) {
+                                                            CustomAccessibilityAction customAccessibilityAction = (CustomAccessibilityAction) list.get(i3);
                                                             if (Intrinsics.areEqual(customAccessibilityAction.getLabel(), charSequence)) {
                                                                 return customAccessibilityAction.getAction().invoke().booleanValue();
                                                             }
@@ -1479,12 +1478,12 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                         float coerceAtMost = RangesKt.coerceAtMost(progressBarRangeInfo.getRange().getStart().floatValue(), progressBarRangeInfo.getRange().getEndInclusive().floatValue());
                                         if (progressBarRangeInfo.getSteps() > 0) {
                                             f = coerceAtLeast - coerceAtMost;
-                                            i3 = progressBarRangeInfo.getSteps() + 1;
+                                            f2 = progressBarRangeInfo.getSteps() + 1;
                                         } else {
                                             f = coerceAtLeast - coerceAtMost;
-                                            i3 = 20;
+                                            f2 = 20.0f;
                                         }
-                                        float f3 = f / i3;
+                                        float f3 = f / f2;
                                         if (z2) {
                                             f3 = -f3;
                                         }
@@ -1502,14 +1501,10 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                     return false;
                                 }
                                 ScrollAxisRange scrollAxisRange3 = (ScrollAxisRange) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getHorizontalScrollAxisRange());
-                                if (scrollAxisRange3 == null || !z7) {
-                                    f2 = 0.0f;
-                                } else {
+                                if (scrollAxisRange3 != null && z7) {
                                     if (scrollViewportLength != null) {
                                         intBitsToFloat2 = scrollViewportLength.floatValue();
-                                        f2 = 0.0f;
                                     } else {
-                                        f2 = 0.0f;
                                         intBitsToFloat2 = Float.intBitsToFloat((int) (m4560getSizeNHjbRc >> 32));
                                     }
                                     if (z3 || z2) {
@@ -1526,11 +1521,11 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                         if (!semanticsNode.getUnmergedConfig$ui().contains(SemanticsActions.INSTANCE.getPageLeft()) && !semanticsNode.getUnmergedConfig$ui().contains(SemanticsActions.INSTANCE.getPageRight())) {
                                             Function2 function22 = (Function2) accessibilityAction21.getAction();
                                             if (function22 != null) {
-                                                return ((Boolean) function22.invoke(Float.valueOf(intBitsToFloat2), Float.valueOf(f2))).booleanValue();
+                                                return ((Boolean) function22.invoke(Float.valueOf(intBitsToFloat2), Float.valueOf(0.0f))).booleanValue();
                                             }
                                             return false;
                                         }
-                                        if (intBitsToFloat2 > f2) {
+                                        if (intBitsToFloat2 > 0.0f) {
                                             accessibilityAction2 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsActions.INSTANCE.getPageRight());
                                         } else {
                                             accessibilityAction2 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsActions.INSTANCE.getPageLeft());
@@ -1546,7 +1541,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                     if (scrollViewportLength != null) {
                                         intBitsToFloat = scrollViewportLength.floatValue();
                                     } else {
-                                        intBitsToFloat = Float.intBitsToFloat((int) (4294967295L & m4560getSizeNHjbRc));
+                                        intBitsToFloat = Float.intBitsToFloat((int) (m4560getSizeNHjbRc & 4294967295L));
                                     }
                                     if (z5 || z2) {
                                         intBitsToFloat = -intBitsToFloat;
@@ -1558,11 +1553,11 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                         if (!semanticsNode.getUnmergedConfig$ui().contains(SemanticsActions.INSTANCE.getPageUp()) && !semanticsNode.getUnmergedConfig$ui().contains(SemanticsActions.INSTANCE.getPageDown())) {
                                             Function2 function23 = (Function2) accessibilityAction21.getAction();
                                             if (function23 != null) {
-                                                return ((Boolean) function23.invoke(Float.valueOf(f2), Float.valueOf(intBitsToFloat))).booleanValue();
+                                                return ((Boolean) function23.invoke(Float.valueOf(0.0f), Float.valueOf(intBitsToFloat))).booleanValue();
                                             }
                                             return false;
                                         }
-                                        if (intBitsToFloat > f2) {
+                                        if (intBitsToFloat > 0.0f) {
                                             accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsActions.INSTANCE.getPageDown());
                                         } else {
                                             accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsActions.INSTANCE.getPageUp());
@@ -1629,126 +1624,122 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
             if (orDefault2 != -1) {
                 accessibilityNodeInfoCompat.getExtras().putInt(str, orDefault2);
             }
+        } else if (semanticsNode.getUnmergedConfig$ui().contains(SemanticsActions.INSTANCE.getGetTextLayoutResult()) && bundle != null && Intrinsics.areEqual(str, AccessibilityNodeInfoCompat.EXTRA_DATA_TEXT_CHARACTER_LOCATION_KEY)) {
+            int i2 = bundle.getInt(AccessibilityNodeInfoCompat.EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_START_INDEX, -1);
+            int i3 = bundle.getInt(AccessibilityNodeInfoCompat.EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_LENGTH, -1);
+            if (i3 > 0 && i2 >= 0) {
+                if (i2 < (iterableTextForAccessibility != null ? iterableTextForAccessibility.length() : Integer.MAX_VALUE)) {
+                    TextLayoutResult textLayoutResult = SemanticsUtils_androidKt.getTextLayoutResult(semanticsNode.getUnmergedConfig$ui());
+                    if (textLayoutResult == null) {
+                        return;
+                    }
+                    ArrayList arrayList = new ArrayList();
+                    for (int i4 = 0; i4 < i3; i4++) {
+                        int i5 = i2 + i4;
+                        if (i5 >= textLayoutResult.getLayoutInput().getText().length()) {
+                            arrayList.add(null);
+                        } else {
+                            arrayList.add(toScreenCoords(semanticsNode, textLayoutResult.getBoundingBox(i5)));
+                        }
+                    }
+                    accessibilityNodeInfoCompat.getExtras().putParcelableArray(str, (Parcelable[]) arrayList.toArray(new RectF[0]));
+                    return;
+                }
+            }
+            Log.e(LogTag, "Invalid arguments for accessibility character locations");
+        } else if (semanticsNode.getUnmergedConfig$ui().contains(SemanticsProperties.INSTANCE.getTestTag()) && bundle != null && Intrinsics.areEqual(str, ExtraDataTestTagKey)) {
+            String str2 = (String) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getTestTag());
+            if (str2 != null) {
+                accessibilityNodeInfoCompat.getExtras().putCharSequence(str, str2);
+            }
+        } else if (Intrinsics.areEqual(str, ExtraDataIdKey)) {
+            accessibilityNodeInfoCompat.getExtras().putInt(str, semanticsNode.getId());
+        } else if (Intrinsics.areEqual(str, ExtraDataShapeTypeKey)) {
+            Shape shape = (Shape) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getShape());
+            if (shape != null) {
+                androidx.compose.ui.geometry.Rect shapeBounds = getShapeBounds(semanticsNode, getBoundsInScreen(accessibilityNodeInfoCompat), shape);
+                Outline m6660createOutline12SF9DM = m6660createOutline12SF9DM(shape, shapeBounds.m4560getSizeNHjbRc(), semanticsNode.getLayoutInfo().getLayoutDirection());
+                if (m6660createOutline12SF9DM instanceof Outline.Rectangle) {
+                    accessibilityNodeInfoCompat.getExtras().putInt(ExtraDataShapeTypeKey, 0);
+                    accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRectKey, toAndroidRect(m6660createOutline12SF9DM, shapeBounds.getLeft(), shapeBounds.getTop()));
+                } else if (m6660createOutline12SF9DM instanceof Outline.Rounded) {
+                    accessibilityNodeInfoCompat.getExtras().putInt(ExtraDataShapeTypeKey, 1);
+                    accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRectKey, toAndroidRect(m6660createOutline12SF9DM, shapeBounds.getLeft(), shapeBounds.getTop()));
+                    accessibilityNodeInfoCompat.getExtras().putFloatArray(ExtraDataShapeRectCornersKey, toCornerArray(m6660createOutline12SF9DM));
+                } else if (m6660createOutline12SF9DM instanceof Outline.Generic) {
+                    accessibilityNodeInfoCompat.getExtras().putInt(ExtraDataShapeTypeKey, 2);
+                    accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRegionKey, toRegion(m6660createOutline12SF9DM, shapeBounds.getLeft(), shapeBounds.getTop()));
+                } else {
+                    throw new NoWhenBranchMatchedException();
+                }
+            }
+        } else if (Intrinsics.areEqual(str, ExtraDataShapeRectKey)) {
+            Shape shape2 = (Shape) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getShape());
+            if (shape2 != null) {
+                androidx.compose.ui.geometry.Rect shapeBounds2 = getShapeBounds(semanticsNode, getBoundsInScreen(accessibilityNodeInfoCompat), shape2);
+                Rect androidRect = toAndroidRect(m6660createOutline12SF9DM(shape2, shapeBounds2.m4560getSizeNHjbRc(), semanticsNode.getLayoutInfo().getLayoutDirection()), shapeBounds2.getLeft(), shapeBounds2.getTop());
+                if (androidRect != null) {
+                    accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRectKey, androidRect);
+                }
+            }
+        } else if (Intrinsics.areEqual(str, ExtraDataShapeRectCornersKey)) {
+            Shape shape3 = (Shape) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getShape());
+            if (shape3 == null || (cornerArray = toCornerArray(m6660createOutline12SF9DM(shape3, getShapeBounds(semanticsNode, getBoundsInScreen(accessibilityNodeInfoCompat), shape3).m4560getSizeNHjbRc(), semanticsNode.getLayoutInfo().getLayoutDirection()))) == null) {
+                return;
+            }
+            accessibilityNodeInfoCompat.getExtras().putFloatArray(ExtraDataShapeRectCornersKey, cornerArray);
+        } else if (Intrinsics.areEqual(str, ExtraDataShapeRegionKey)) {
+            Shape shape4 = (Shape) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getShape());
+            if (shape4 != null) {
+                androidx.compose.ui.geometry.Rect shapeBounds3 = getShapeBounds(semanticsNode, getBoundsInScreen(accessibilityNodeInfoCompat), shape4);
+                Region region = toRegion(m6660createOutline12SF9DM(shape4, shapeBounds3.m4560getSizeNHjbRc(), semanticsNode.getLayoutInfo().getLayoutDirection()), shapeBounds3.getLeft(), shapeBounds3.getTop());
+                if (region != null) {
+                    accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRegionKey, region);
+                }
+            }
         } else {
-            int i2 = 0;
-            if (semanticsNode.getUnmergedConfig$ui().contains(SemanticsActions.INSTANCE.getGetTextLayoutResult()) && bundle != null && Intrinsics.areEqual(str, AccessibilityNodeInfoCompat.EXTRA_DATA_TEXT_CHARACTER_LOCATION_KEY)) {
-                int i3 = bundle.getInt(AccessibilityNodeInfoCompat.EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_START_INDEX, -1);
-                int i4 = bundle.getInt(AccessibilityNodeInfoCompat.EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_LENGTH, -1);
-                if (i4 > 0 && i3 >= 0) {
-                    if (i3 < (iterableTextForAccessibility != null ? iterableTextForAccessibility.length() : Integer.MAX_VALUE)) {
-                        TextLayoutResult textLayoutResult = SemanticsUtils_androidKt.getTextLayoutResult(semanticsNode.getUnmergedConfig$ui());
-                        if (textLayoutResult == null) {
-                            return;
-                        }
-                        ArrayList arrayList = new ArrayList();
-                        for (int i5 = 0; i5 < i4; i5++) {
-                            int i6 = i3 + i5;
-                            if (i6 >= textLayoutResult.getLayoutInput().getText().length()) {
-                                arrayList.add(null);
-                            } else {
-                                arrayList.add(toScreenCoords(semanticsNode, textLayoutResult.getBoundingBox(i6)));
-                            }
-                        }
-                        accessibilityNodeInfoCompat.getExtras().putParcelableArray(str, (Parcelable[]) arrayList.toArray(new RectF[0]));
-                        return;
-                    }
-                }
-                Log.e(LogTag, "Invalid arguments for accessibility character locations");
-            } else if (semanticsNode.getUnmergedConfig$ui().contains(SemanticsProperties.INSTANCE.getTestTag()) && bundle != null && Intrinsics.areEqual(str, ExtraDataTestTagKey)) {
-                String str2 = (String) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getTestTag());
-                if (str2 != null) {
-                    accessibilityNodeInfoCompat.getExtras().putCharSequence(str, str2);
-                }
-            } else if (Intrinsics.areEqual(str, ExtraDataIdKey)) {
-                accessibilityNodeInfoCompat.getExtras().putInt(str, semanticsNode.getId());
-            } else if (Intrinsics.areEqual(str, ExtraDataShapeTypeKey)) {
-                Shape shape = (Shape) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getShape());
-                if (shape != null) {
-                    androidx.compose.ui.geometry.Rect shapeBounds = getShapeBounds(semanticsNode, getBoundsInScreen(accessibilityNodeInfoCompat), shape);
-                    Outline m6660createOutline12SF9DM = m6660createOutline12SF9DM(shape, shapeBounds.m4560getSizeNHjbRc(), semanticsNode.getLayoutInfo().getLayoutDirection());
-                    if (m6660createOutline12SF9DM instanceof Outline.Rectangle) {
-                        accessibilityNodeInfoCompat.getExtras().putInt(ExtraDataShapeTypeKey, 0);
-                        accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRectKey, toAndroidRect(m6660createOutline12SF9DM, shapeBounds.getLeft(), shapeBounds.getTop()));
-                    } else if (m6660createOutline12SF9DM instanceof Outline.Rounded) {
-                        accessibilityNodeInfoCompat.getExtras().putInt(ExtraDataShapeTypeKey, 1);
-                        accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRectKey, toAndroidRect(m6660createOutline12SF9DM, shapeBounds.getLeft(), shapeBounds.getTop()));
-                        accessibilityNodeInfoCompat.getExtras().putFloatArray(ExtraDataShapeRectCornersKey, toCornerArray(m6660createOutline12SF9DM));
-                    } else if (m6660createOutline12SF9DM instanceof Outline.Generic) {
-                        accessibilityNodeInfoCompat.getExtras().putInt(ExtraDataShapeTypeKey, 2);
-                        accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRegionKey, toRegion(m6660createOutline12SF9DM, shapeBounds.getLeft(), shapeBounds.getTop()));
-                    } else {
-                        throw new NoWhenBranchMatchedException();
-                    }
-                }
-            } else if (Intrinsics.areEqual(str, ExtraDataShapeRectKey)) {
-                Shape shape2 = (Shape) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getShape());
-                if (shape2 != null) {
-                    androidx.compose.ui.geometry.Rect shapeBounds2 = getShapeBounds(semanticsNode, getBoundsInScreen(accessibilityNodeInfoCompat), shape2);
-                    Rect androidRect = toAndroidRect(m6660createOutline12SF9DM(shape2, shapeBounds2.m4560getSizeNHjbRc(), semanticsNode.getLayoutInfo().getLayoutDirection()), shapeBounds2.getLeft(), shapeBounds2.getTop());
-                    if (androidRect != null) {
-                        accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRectKey, androidRect);
-                    }
-                }
-            } else if (Intrinsics.areEqual(str, ExtraDataShapeRectCornersKey)) {
-                Shape shape3 = (Shape) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getShape());
-                if (shape3 == null || (cornerArray = toCornerArray(m6660createOutline12SF9DM(shape3, getShapeBounds(semanticsNode, getBoundsInScreen(accessibilityNodeInfoCompat), shape3).m4560getSizeNHjbRc(), semanticsNode.getLayoutInfo().getLayoutDirection()))) == null) {
-                    return;
-                }
-                accessibilityNodeInfoCompat.getExtras().putFloatArray(ExtraDataShapeRectCornersKey, cornerArray);
-            } else if (Intrinsics.areEqual(str, ExtraDataShapeRegionKey)) {
-                Shape shape4 = (Shape) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getShape());
-                if (shape4 != null) {
-                    androidx.compose.ui.geometry.Rect shapeBounds3 = getShapeBounds(semanticsNode, getBoundsInScreen(accessibilityNodeInfoCompat), shape4);
-                    Region region = toRegion(m6660createOutline12SF9DM(shape4, shapeBounds3.m4560getSizeNHjbRc(), semanticsNode.getLayoutInfo().getLayoutDirection()), shapeBounds3.getLeft(), shapeBounds3.getTop());
-                    if (region != null) {
-                        accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRegionKey, region);
-                    }
-                }
-            } else {
-                ScatterSet<SemanticsPropertyKey<?>> accessibilityExtraKeys$ui = semanticsNode.getUnmergedConfig$ui().getAccessibilityExtraKeys$ui();
-                if (accessibilityExtraKeys$ui == null) {
-                    return;
-                }
-                Object[] objArr = accessibilityExtraKeys$ui.elements;
-                long[] jArr = accessibilityExtraKeys$ui.metadata;
-                int length = jArr.length - 2;
-                if (length < 0) {
-                    return;
-                }
-                int i7 = 0;
-                while (true) {
-                    long j = jArr[i7];
-                    if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                        int i8 = 8 - ((~(i7 - length)) >>> 31);
-                        for (int i9 = i2; i9 < i8; i9++) {
-                            if ((255 & j) < 128) {
-                                SemanticsPropertyKey semanticsPropertyKey = (SemanticsPropertyKey) objArr[(i7 << 3) + i9];
-                                String accessibilityExtraKey$ui = semanticsPropertyKey.getAccessibilityExtraKey$ui();
-                                if (Intrinsics.areEqual(accessibilityExtraKey$ui, str)) {
-                                    Object orNull = SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), semanticsPropertyKey);
-                                    if (orNull instanceof Serializable) {
-                                        accessibilityNodeInfoCompat.getExtras().putSerializable(accessibilityExtraKey$ui, (Serializable) orNull);
-                                    } else if (!(orNull instanceof Parcelable)) {
-                                        throw new IllegalStateException("Accessibility extra values must be either Serializable or Parcelable.");
-                                    } else {
-                                        accessibilityNodeInfoCompat.getExtras().putParcelable(accessibilityExtraKey$ui, (Parcelable) orNull);
-                                    }
+            ScatterSet<SemanticsPropertyKey<?>> accessibilityExtraKeys$ui = semanticsNode.getUnmergedConfig$ui().getAccessibilityExtraKeys$ui();
+            if (accessibilityExtraKeys$ui == null) {
+                return;
+            }
+            Object[] objArr = accessibilityExtraKeys$ui.elements;
+            long[] jArr = accessibilityExtraKeys$ui.metadata;
+            int length = jArr.length - 2;
+            if (length < 0) {
+                return;
+            }
+            int i6 = 0;
+            while (true) {
+                long j = jArr[i6];
+                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i7 = 8 - ((~(i6 - length)) >>> 31);
+                    for (int i8 = 0; i8 < i7; i8++) {
+                        if ((255 & j) < 128) {
+                            SemanticsPropertyKey semanticsPropertyKey = (SemanticsPropertyKey) objArr[(i6 << 3) + i8];
+                            String accessibilityExtraKey$ui = semanticsPropertyKey.getAccessibilityExtraKey$ui();
+                            if (Intrinsics.areEqual(accessibilityExtraKey$ui, str)) {
+                                Object orNull = SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), semanticsPropertyKey);
+                                if (orNull instanceof Serializable) {
+                                    accessibilityNodeInfoCompat.getExtras().putSerializable(accessibilityExtraKey$ui, (Serializable) orNull);
+                                } else if (!(orNull instanceof Parcelable)) {
+                                    throw new IllegalStateException("Accessibility extra values must be either Serializable or Parcelable.");
                                 } else {
-                                    continue;
+                                    accessibilityNodeInfoCompat.getExtras().putParcelable(accessibilityExtraKey$ui, (Parcelable) orNull);
                                 }
+                            } else {
+                                continue;
                             }
-                            j >>= 8;
                         }
-                        if (i8 != 8) {
-                            return;
-                        }
+                        j >>= 8;
                     }
-                    if (i7 == length) {
+                    if (i7 != 8) {
                         return;
                     }
-                    i7++;
-                    i2 = 0;
                 }
+                if (i6 == length) {
+                    return;
+                }
+                i6++;
             }
         }
     }
@@ -1860,7 +1851,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
             AndroidComposeView androidComposeView = this.view;
             float left = intersect.getLeft();
             long mo6165localToScreenMKHz9U = androidComposeView.mo6165localToScreenMKHz9U(Offset.m4519constructorimpl((Float.floatToRawIntBits(intersect.getTop()) & 4294967295L) | (Float.floatToRawIntBits(left) << 32)));
-            long mo6165localToScreenMKHz9U2 = this.view.mo6165localToScreenMKHz9U(Offset.m4519constructorimpl((Float.floatToRawIntBits(intersect.getRight()) << 32) | (Float.floatToRawIntBits(intersect.getBottom()) & 4294967295L)));
+            long mo6165localToScreenMKHz9U2 = this.view.mo6165localToScreenMKHz9U(Offset.m4519constructorimpl((Float.floatToRawIntBits(intersect.getBottom()) & 4294967295L) | (Float.floatToRawIntBits(intersect.getRight()) << 32)));
             int i = (int) (mo6165localToScreenMKHz9U >> 32);
             int i2 = (int) (mo6165localToScreenMKHz9U2 >> 32);
             int i3 = (int) (mo6165localToScreenMKHz9U & 4294967295L);
@@ -3101,9 +3092,8 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                 companion = AccessibilityIterators.LineTextSegmentIterator.Companion.getInstance();
                 ((AccessibilityIterators.LineTextSegmentIterator) companion).initialize(iterableTextForAccessibility, textLayoutResult);
             } else {
-                AccessibilityIterators.AbstractTextSegmentIterator companion2 = AccessibilityIterators.PageTextSegmentIterator.Companion.getInstance();
-                ((AccessibilityIterators.PageTextSegmentIterator) companion2).initialize(iterableTextForAccessibility, textLayoutResult, semanticsNode);
-                companion = companion2;
+                companion = AccessibilityIterators.PageTextSegmentIterator.Companion.getInstance();
+                ((AccessibilityIterators.PageTextSegmentIterator) companion).initialize(iterableTextForAccessibility, textLayoutResult, semanticsNode);
             }
         }
         return companion;

@@ -49,7 +49,7 @@ public final class AndroidPrefetchScheduler implements PrefetchScheduler, Priori
             return;
         }
         long nanos = TimeUnit.MILLISECONDS.toNanos(this.view.getDrawingTime());
-        this.scope.setFrameIdle(System.nanoTime() > (((long) 2) * frameIntervalNs) + nanos);
+        this.scope.setFrameIdle(System.nanoTime() > (2 * frameIntervalNs) + nanos);
         this.scope.setNextFrameTimeNs(Math.max(this.frameStartTimeNanos, nanos) + frameIntervalNs);
         boolean z = false;
         while (!this.prefetchRequests.isEmpty() && !z) {
@@ -174,7 +174,7 @@ public final class AndroidPrefetchScheduler implements PrefetchScheduler, Priori
 
         /* JADX INFO: Access modifiers changed from: private */
         /* JADX WARN: Code restructure failed: missing block: B:8:0x001e, code lost:
-            if (r5 >= 30.0f) goto L8;
+            if (r4 >= 30.0f) goto L8;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -187,7 +187,7 @@ public final class AndroidPrefetchScheduler implements PrefetchScheduler, Priori
                     f = display.getRefreshRate();
                 }
                 f = 60.0f;
-                AndroidPrefetchScheduler.frameIntervalNs = 1000000000 / f;
+                AndroidPrefetchScheduler.frameIntervalNs = 1.0E9f / f;
             }
         }
     }

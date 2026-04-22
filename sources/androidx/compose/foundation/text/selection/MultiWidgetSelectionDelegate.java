@@ -161,7 +161,7 @@ public final class MultiWidgetSelectionDelegate implements Selectable {
         TextLayoutResult invoke = this.layoutResultCallback.invoke();
         if (invoke != null && (lineForOffset = invoke.getLineForOffset(i)) < invoke.getLineCount()) {
             float lineTop = invoke.getLineTop(lineForOffset);
-            return ((invoke.getLineBottom(lineForOffset) - lineTop) / 2) + lineTop;
+            return ((invoke.getLineBottom(lineForOffset) - lineTop) / 2.0f) + lineTop;
         }
         return -1.0f;
     }

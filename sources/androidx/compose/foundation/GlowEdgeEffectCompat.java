@@ -14,7 +14,7 @@ final class GlowEdgeEffectCompat extends EdgeEffect {
 
     public GlowEdgeEffectCompat(Context context) {
         super(context);
-        this.oppositeReleaseDeltaThreshold = AndroidDensity_androidKt.Density(context).mo405toPx0680j_4(Dp.m7555constructorimpl(1));
+        this.oppositeReleaseDeltaThreshold = AndroidDensity_androidKt.Density(context).mo405toPx0680j_4(Dp.m7555constructorimpl(1.0f));
     }
 
     @Override // android.widget.EdgeEffect

@@ -47,7 +47,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Thre
     }
 
     public int hashCode() {
-        return ((((this.name.hashCode() ^ 1000003) * 1000003) ^ this.importance) * 1000003) ^ this.frames.hashCode();
+        return this.frames.hashCode() ^ ((((this.name.hashCode() ^ 1000003) * 1000003) ^ this.importance) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

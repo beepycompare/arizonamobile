@@ -7,21 +7,21 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class LargeIconButtonTokens {
     public static final int $stable = 0;
-    private static final float IconSize;
-    private static final float NarrowLeadingSpace;
-    private static final float NarrowTrailingSpace;
-    private static final float UniformLeadingSpace;
-    private static final float UniformTrailingSpace;
-    private static final float WideLeadingSpace;
-    private static final float WideTrailingSpace;
     public static final LargeIconButtonTokens INSTANCE = new LargeIconButtonTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 96.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(96.0f);
     private static final ShapeKeyTokens ContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens ContainerShapeSquare = ShapeKeyTokens.CornerExtraLarge;
-    private static final float OutlinedOutlineWidth = Dp.m7555constructorimpl((float) 2.0d);
+    private static final float IconSize = Dp.m7555constructorimpl(32.0f);
+    private static final float NarrowLeadingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float NarrowTrailingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float OutlinedOutlineWidth = Dp.m7555constructorimpl(2.0f);
     private static final ShapeKeyTokens PressedContainerShape = ShapeKeyTokens.CornerLarge;
     private static final ShapeKeyTokens SelectedContainerShapeRound = ShapeKeyTokens.CornerExtraLarge;
     private static final ShapeKeyTokens SelectedContainerShapeSquare = ShapeKeyTokens.CornerFull;
+    private static final float UniformLeadingSpace = Dp.m7555constructorimpl(32.0f);
+    private static final float UniformTrailingSpace = Dp.m7555constructorimpl(32.0f);
+    private static final float WideLeadingSpace = Dp.m7555constructorimpl(48.0f);
+    private static final float WideTrailingSpace = Dp.m7555constructorimpl(48.0f);
 
     private LargeIconButtonTokens() {
     }
@@ -89,18 +89,5 @@ public final class LargeIconButtonTokens {
     /* renamed from: getWideTrailingSpace-D9Ej5fM  reason: not valid java name */
     public final float m3492getWideTrailingSpaceD9Ej5fM() {
         return WideTrailingSpace;
-    }
-
-    static {
-        float f = (float) 32.0d;
-        IconSize = Dp.m7555constructorimpl(f);
-        float f2 = (float) 16.0d;
-        NarrowLeadingSpace = Dp.m7555constructorimpl(f2);
-        NarrowTrailingSpace = Dp.m7555constructorimpl(f2);
-        UniformLeadingSpace = Dp.m7555constructorimpl(f);
-        UniformTrailingSpace = Dp.m7555constructorimpl(f);
-        float f3 = (float) 48.0d;
-        WideLeadingSpace = Dp.m7555constructorimpl(f3);
-        WideTrailingSpace = Dp.m7555constructorimpl(f3);
     }
 }

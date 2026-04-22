@@ -49,6 +49,6 @@ final class AutoValue_SchedulerConfig extends SchedulerConfig {
     }
 
     public int hashCode() {
-        return ((this.clock.hashCode() ^ 1000003) * 1000003) ^ this.values.hashCode();
+        return this.values.hashCode() ^ ((this.clock.hashCode() ^ 1000003) * 1000003);
     }
 }

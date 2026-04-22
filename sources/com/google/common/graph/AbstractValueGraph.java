@@ -155,7 +155,7 @@ public abstract class AbstractValueGraph<N, V> extends AbstractBaseGraph<N> impl
             @Override // com.google.common.base.Function
             public final Object apply(Object obj) {
                 Object requireNonNull;
-                requireNonNull = Objects.requireNonNull(ValueGraph.this.edgeValueOrDefault(r2.nodeU(), ((EndpointPair) obj).nodeV(), null));
+                requireNonNull = Objects.requireNonNull(ValueGraph.this.edgeValueOrDefault(r1.nodeU(), ((EndpointPair) obj).nodeV(), null));
                 return requireNonNull;
             }
         });

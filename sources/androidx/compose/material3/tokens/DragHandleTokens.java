@@ -8,34 +8,25 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class DragHandleTokens {
     public static final int $stable = 0;
-    private static final float DraggedHeight;
-    private static final float DraggedWidth;
-    private static final float PressedHeight;
-    private static final float PressedWidth;
     public static final DragHandleTokens INSTANCE = new DragHandleTokens();
     private static final ColorSchemeKeyTokens Color = ColorSchemeKeyTokens.Outline;
-    private static final float ContainerWidth = Dp.m7555constructorimpl((float) 24.0d);
+    private static final float ContainerWidth = Dp.m7555constructorimpl(24.0f);
     private static final ColorSchemeKeyTokens DraggedColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DraggedElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
+    private static final float DraggedHeight = Dp.m7555constructorimpl(52.0f);
     private static final ShapeKeyTokens DraggedShape = ShapeKeyTokens.CornerMedium;
+    private static final float DraggedWidth = Dp.m7555constructorimpl(12.0f);
     private static final float Elevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
-    private static final float Height = Dp.m7555constructorimpl((float) 48.0d);
+    private static final float Height = Dp.m7555constructorimpl(48.0f);
     private static final ColorSchemeKeyTokens PressedColor = ColorSchemeKeyTokens.OnSurface;
     private static final float PressedElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
+    private static final float PressedHeight = Dp.m7555constructorimpl(52.0f);
     private static final ShapeKeyTokens PressedShape = ShapeKeyTokens.CornerMedium;
+    private static final float PressedWidth = Dp.m7555constructorimpl(12.0f);
     private static final ShapeKeyTokens Shape = ShapeKeyTokens.CornerFull;
-    private static final float Width = Dp.m7555constructorimpl((float) 4.0d);
+    private static final float Width = Dp.m7555constructorimpl(4.0f);
 
     private DragHandleTokens() {
-    }
-
-    static {
-        float f = (float) 52.0d;
-        DraggedHeight = Dp.m7555constructorimpl(f);
-        float f2 = (float) 12.0d;
-        DraggedWidth = Dp.m7555constructorimpl(f2);
-        PressedHeight = Dp.m7555constructorimpl(f);
-        PressedWidth = Dp.m7555constructorimpl(f2);
     }
 
     public final ColorSchemeKeyTokens getColor() {

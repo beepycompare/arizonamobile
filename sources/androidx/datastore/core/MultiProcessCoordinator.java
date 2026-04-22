@@ -86,19 +86,23 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
         return this.updateNotifications;
     }
 
+    /* JADX WARN: Can't wrap try/catch for region: R(8:1|(3:(5:(2:3|(11:5|6|7|(1:(1:(1:(8:12|13|14|(1:16)|17|18|19|20)(2:32|33))(8:34|35|36|37|38|39|(6:42|(0)|17|18|19|20)|41))(1:50))(1:65)|51|52|53|55|56|(5:58|37|38|39|(0))|41))|55|56|(0)|41)|52|53)|70|6|7|(0)(0)|51|(1:(0))) */
     /* JADX WARN: Code restructure failed: missing block: B:28:0x007c, code lost:
-        if (r11.lock(null, r0) == r1) goto L41;
+        if (r10.lock(null, r0) == r1) goto L41;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x00d9, code lost:
+        r8 = th;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00ba A[Catch: all -> 0x00d8, TRY_ENTER, TRY_LEAVE, TryCatch #3 {all -> 0x00d8, blocks: (B:42:0x00ba, B:53:0x00d4, B:56:0x00dc), top: B:69:0x0025 }] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00d4 A[Catch: all -> 0x00d8, TRY_ENTER, TryCatch #3 {all -> 0x00d8, blocks: (B:42:0x00ba, B:53:0x00d4, B:56:0x00dc), top: B:69:0x0025 }] */
-    /* JADX WARN: Type inference failed for: r11v3 */
-    /* JADX WARN: Type inference failed for: r11v4 */
-    /* JADX WARN: Type inference failed for: r11v5, types: [kotlinx.coroutines.sync.Mutex] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00bb A[Catch: all -> 0x00d9, TRY_ENTER, TRY_LEAVE, TryCatch #4 {all -> 0x00d9, blocks: (B:42:0x00bb, B:53:0x00d5, B:56:0x00dc), top: B:68:0x0025 }] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00d5 A[Catch: all -> 0x00d9, TRY_ENTER, TryCatch #4 {all -> 0x00d9, blocks: (B:42:0x00bb, B:53:0x00d5, B:56:0x00dc), top: B:68:0x0025 }] */
+    /* JADX WARN: Type inference failed for: r10v1, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r10v16 */
+    /* JADX WARN: Type inference failed for: r10v3, types: [kotlinx.coroutines.sync.Mutex] */
     @Override // androidx.datastore.core.InterProcessCoordinator
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -110,165 +114,161 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
         Mutex mutex;
         Throwable th;
         Object exclusiveFileLockWithRetryIfDeadlock;
-        Function1<? super Continuation<? super T>, ? extends Object> function12;
         java.io.Closeable closeable;
         Mutex mutex2;
+        Object obj;
+        Function1<? super Continuation<? super T>, ? extends Object> function12;
         FileLock fileLock;
         FileLock fileLock2;
         Object invoke;
-        java.io.Closeable closeable2;
         Mutex mutex3;
+        Object obj2;
         try {
             try {
                 try {
-                    try {
-                        if (continuation instanceof MultiProcessCoordinator$lock$1) {
-                            multiProcessCoordinator$lock$1 = (MultiProcessCoordinator$lock$1) continuation;
-                            if ((multiProcessCoordinator$lock$1.label & Integer.MIN_VALUE) != 0) {
-                                multiProcessCoordinator$lock$1.label -= Integer.MIN_VALUE;
-                                Object obj = multiProcessCoordinator$lock$1.result;
-                                coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                                i = multiProcessCoordinator$lock$1.label;
-                                if (i != 0) {
-                                    ResultKt.throwOnFailure(obj);
-                                    mutex = this.inMemoryMutex;
-                                    multiProcessCoordinator$lock$1.L$0 = function1;
-                                    multiProcessCoordinator$lock$1.L$1 = mutex;
-                                    multiProcessCoordinator$lock$1.label = 1;
-                                } else if (i != 1) {
-                                    if (i != 2) {
-                                        if (i == 3) {
-                                            fileLock = (FileLock) multiProcessCoordinator$lock$1.L$2;
-                                            closeable2 = (java.io.Closeable) multiProcessCoordinator$lock$1.L$1;
-                                            mutex3 = (Mutex) multiProcessCoordinator$lock$1.L$0;
-                                            try {
-                                                ResultKt.throwOnFailure(obj);
-                                                if (fileLock != null) {
-                                                    fileLock.release();
-                                                }
-                                                try {
-                                                    kotlin.io.CloseableKt.closeFinally(closeable2, null);
-                                                    mutex3.unlock(null);
-                                                    return obj;
-                                                } catch (Throwable th2) {
-                                                    th = th2;
-                                                    mutex = mutex3;
-                                                    mutex.unlock(null);
-                                                    throw th;
-                                                }
-                                            } catch (Throwable th3) {
-                                                th = th3;
-                                                if (fileLock != null) {
-                                                }
-                                                throw th;
-                                            }
-                                        }
-                                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                                    }
-                                    closeable = (java.io.Closeable) multiProcessCoordinator$lock$1.L$2;
-                                    mutex2 = (Mutex) multiProcessCoordinator$lock$1.L$1;
-                                    function12 = (Function1) multiProcessCoordinator$lock$1.L$0;
-                                    try {
-                                        ResultKt.throwOnFailure(obj);
-                                        fileLock2 = (FileLock) obj;
+                    if (continuation instanceof MultiProcessCoordinator$lock$1) {
+                        multiProcessCoordinator$lock$1 = (MultiProcessCoordinator$lock$1) continuation;
+                        if ((multiProcessCoordinator$lock$1.label & Integer.MIN_VALUE) != 0) {
+                            multiProcessCoordinator$lock$1.label -= Integer.MIN_VALUE;
+                            ?? r10 = multiProcessCoordinator$lock$1.result;
+                            coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                            i = multiProcessCoordinator$lock$1.label;
+                            if (i != 0) {
+                                ResultKt.throwOnFailure(r10);
+                                mutex = this.inMemoryMutex;
+                                multiProcessCoordinator$lock$1.L$0 = function1;
+                                multiProcessCoordinator$lock$1.L$1 = mutex;
+                                multiProcessCoordinator$lock$1.label = 1;
+                            } else if (i != 1) {
+                                if (i != 2) {
+                                    if (i == 3) {
+                                        fileLock = (FileLock) multiProcessCoordinator$lock$1.L$2;
+                                        closeable = (java.io.Closeable) multiProcessCoordinator$lock$1.L$1;
+                                        mutex3 = (Mutex) multiProcessCoordinator$lock$1.L$0;
                                         try {
-                                            multiProcessCoordinator$lock$1.L$0 = mutex2;
-                                            multiProcessCoordinator$lock$1.L$1 = closeable;
-                                            multiProcessCoordinator$lock$1.L$2 = fileLock2;
-                                            multiProcessCoordinator$lock$1.label = 3;
-                                            invoke = function12.invoke(multiProcessCoordinator$lock$1);
-                                            if (invoke != coroutine_suspended) {
-                                                closeable2 = closeable;
-                                                fileLock = fileLock2;
-                                                obj = invoke;
-                                                mutex3 = mutex2;
-                                                if (fileLock != null) {
-                                                }
-                                                kotlin.io.CloseableKt.closeFinally(closeable2, null);
-                                                mutex3.unlock(null);
-                                                return obj;
-                                            }
-                                            return coroutine_suspended;
-                                        } catch (Throwable th4) {
-                                            fileLock = fileLock2;
-                                            th = th4;
+                                            ResultKt.throwOnFailure(r10);
+                                            obj2 = r10;
                                             if (fileLock != null) {
                                                 fileLock.release();
                                             }
+                                            try {
+                                                kotlin.io.CloseableKt.closeFinally(closeable, null);
+                                                mutex3.unlock(null);
+                                                return obj2;
+                                            } catch (Throwable th2) {
+                                                th = th2;
+                                                r10 = mutex3;
+                                                r10.unlock(null);
+                                                throw th;
+                                            }
+                                        } catch (Throwable th3) {
+                                            th = th3;
+                                            if (fileLock != null) {
+                                            }
                                             throw th;
                                         }
-                                    } catch (Throwable th5) {
-                                        th = th5;
-                                        fileLock = null;
+                                    }
+                                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                                }
+                                closeable = (java.io.Closeable) multiProcessCoordinator$lock$1.L$2;
+                                mutex2 = (Mutex) multiProcessCoordinator$lock$1.L$1;
+                                function12 = (Function1) multiProcessCoordinator$lock$1.L$0;
+                                try {
+                                    ResultKt.throwOnFailure(r10);
+                                    obj = r10;
+                                    fileLock2 = (FileLock) obj;
+                                    try {
+                                        multiProcessCoordinator$lock$1.L$0 = mutex2;
+                                        multiProcessCoordinator$lock$1.L$1 = closeable;
+                                        multiProcessCoordinator$lock$1.L$2 = fileLock2;
+                                        multiProcessCoordinator$lock$1.label = 3;
+                                        invoke = function12.invoke(multiProcessCoordinator$lock$1);
+                                        if (invoke != coroutine_suspended) {
+                                            mutex3 = mutex2;
+                                            fileLock = fileLock2;
+                                            obj2 = invoke;
+                                            if (fileLock != null) {
+                                            }
+                                            kotlin.io.CloseableKt.closeFinally(closeable, null);
+                                            mutex3.unlock(null);
+                                            return obj2;
+                                        }
+                                        return coroutine_suspended;
+                                    } catch (Throwable th4) {
+                                        fileLock = fileLock2;
+                                        th = th4;
                                         if (fileLock != null) {
+                                            fileLock.release();
                                         }
                                         throw th;
                                     }
-                                } else {
-                                    ResultKt.throwOnFailure(obj);
-                                    mutex = (Mutex) multiProcessCoordinator$lock$1.L$1;
-                                    function1 = (Function1) multiProcessCoordinator$lock$1.L$0;
-                                }
-                                FileOutputStream fileOutputStream = new FileOutputStream(getLockFile());
-                                FileOutputStream fileOutputStream2 = fileOutputStream;
-                                Companion companion = Companion;
-                                multiProcessCoordinator$lock$1.L$0 = function1;
-                                multiProcessCoordinator$lock$1.L$1 = mutex;
-                                multiProcessCoordinator$lock$1.L$2 = fileOutputStream;
-                                multiProcessCoordinator$lock$1.label = 2;
-                                exclusiveFileLockWithRetryIfDeadlock = companion.getExclusiveFileLockWithRetryIfDeadlock(fileOutputStream2, multiProcessCoordinator$lock$1);
-                                if (exclusiveFileLockWithRetryIfDeadlock != coroutine_suspended) {
-                                    function12 = function1;
-                                    closeable = fileOutputStream;
-                                    mutex2 = mutex;
-                                    obj = exclusiveFileLockWithRetryIfDeadlock;
-                                    fileLock2 = (FileLock) obj;
-                                    multiProcessCoordinator$lock$1.L$0 = mutex2;
-                                    multiProcessCoordinator$lock$1.L$1 = closeable;
-                                    multiProcessCoordinator$lock$1.L$2 = fileLock2;
-                                    multiProcessCoordinator$lock$1.label = 3;
-                                    invoke = function12.invoke(multiProcessCoordinator$lock$1);
-                                    if (invoke != coroutine_suspended) {
+                                } catch (Throwable th5) {
+                                    th = th5;
+                                    fileLock = null;
+                                    if (fileLock != null) {
                                     }
+                                    throw th;
                                 }
-                                return coroutine_suspended;
+                            } else {
+                                ResultKt.throwOnFailure(r10);
+                                mutex = (Mutex) multiProcessCoordinator$lock$1.L$1;
+                                function1 = (Function1) multiProcessCoordinator$lock$1.L$0;
                             }
+                            FileOutputStream fileOutputStream = new FileOutputStream(getLockFile());
+                            FileOutputStream fileOutputStream2 = fileOutputStream;
+                            Companion companion = Companion;
+                            multiProcessCoordinator$lock$1.L$0 = function1;
+                            multiProcessCoordinator$lock$1.L$1 = mutex;
+                            multiProcessCoordinator$lock$1.L$2 = fileOutputStream;
+                            multiProcessCoordinator$lock$1.label = 2;
+                            exclusiveFileLockWithRetryIfDeadlock = companion.getExclusiveFileLockWithRetryIfDeadlock(fileOutputStream2, multiProcessCoordinator$lock$1);
+                            if (exclusiveFileLockWithRetryIfDeadlock != coroutine_suspended) {
+                                Function1<? super Continuation<? super T>, ? extends Object> function13 = function1;
+                                closeable = fileOutputStream;
+                                mutex2 = mutex;
+                                obj = exclusiveFileLockWithRetryIfDeadlock;
+                                function12 = function13;
+                                fileLock2 = (FileLock) obj;
+                                multiProcessCoordinator$lock$1.L$0 = mutex2;
+                                multiProcessCoordinator$lock$1.L$1 = closeable;
+                                multiProcessCoordinator$lock$1.L$2 = fileLock2;
+                                multiProcessCoordinator$lock$1.label = 3;
+                                invoke = function12.invoke(multiProcessCoordinator$lock$1);
+                                if (invoke != coroutine_suspended) {
+                                }
+                            }
+                            return coroutine_suspended;
                         }
-                        Companion companion2 = Companion;
-                        multiProcessCoordinator$lock$1.L$0 = function1;
-                        multiProcessCoordinator$lock$1.L$1 = mutex;
-                        multiProcessCoordinator$lock$1.L$2 = fileOutputStream;
-                        multiProcessCoordinator$lock$1.label = 2;
-                        exclusiveFileLockWithRetryIfDeadlock = companion2.getExclusiveFileLockWithRetryIfDeadlock(fileOutputStream2, multiProcessCoordinator$lock$1);
-                        if (exclusiveFileLockWithRetryIfDeadlock != coroutine_suspended) {
-                        }
-                        return coroutine_suspended;
-                    } catch (Throwable th6) {
-                        th = th6;
-                        fileLock = null;
-                        if (fileLock != null) {
-                        }
-                        throw th;
                     }
-                    FileOutputStream fileOutputStream22 = fileOutputStream;
-                } catch (Throwable th7) {
-                    th = th7;
+                    Companion companion2 = Companion;
+                    multiProcessCoordinator$lock$1.L$0 = function1;
+                    multiProcessCoordinator$lock$1.L$1 = mutex;
+                    multiProcessCoordinator$lock$1.L$2 = fileOutputStream;
+                    multiProcessCoordinator$lock$1.label = 2;
+                    exclusiveFileLockWithRetryIfDeadlock = companion2.getExclusiveFileLockWithRetryIfDeadlock(fileOutputStream2, multiProcessCoordinator$lock$1);
+                    if (exclusiveFileLockWithRetryIfDeadlock != coroutine_suspended) {
+                    }
+                    return coroutine_suspended;
+                } catch (Throwable th6) {
+                    th = th6;
+                    fileLock = null;
+                    if (fileLock != null) {
+                    }
                     throw th;
                 }
-                FileOutputStream fileOutputStream3 = new FileOutputStream(getLockFile());
-            } catch (Throwable th8) {
-                th = th8;
-                mutex.unlock(null);
+                FileOutputStream fileOutputStream22 = fileOutputStream;
+            } catch (Throwable th7) {
+                th = th7;
                 throw th;
             }
             if (i != 0) {
             }
-        } catch (Throwable th9) {
-            th = th9;
-            mutex = multiProcessCoordinator$lock$1;
+            FileOutputStream fileOutputStream3 = new FileOutputStream(getLockFile());
+        } catch (Throwable th8) {
+            th = th8;
         }
         multiProcessCoordinator$lock$1 = new MultiProcessCoordinator$lock$1(this, continuation);
-        Object obj2 = multiProcessCoordinator$lock$1.result;
+        ?? r102 = multiProcessCoordinator$lock$1.result;
         coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = multiProcessCoordinator$lock$1.label;
     }
@@ -277,13 +277,15 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
     /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x005b  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x007d  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00e7 A[Catch: all -> 0x0100, TRY_ENTER, TRY_LEAVE, TryCatch #1 {all -> 0x0100, blocks: (B:58:0x00e7, B:67:0x00fc, B:70:0x0105), top: B:87:0x002a }] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00ef  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x00fc A[Catch: all -> 0x0100, TRY_ENTER, TryCatch #1 {all -> 0x0100, blocks: (B:58:0x00e7, B:67:0x00fc, B:70:0x0105), top: B:87:0x002a }] */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0116  */
-    /* JADX WARN: Type inference failed for: r3v1, types: [androidx.datastore.core.MultiProcessCoordinator$tryLock$1] */
-    /* JADX WARN: Type inference failed for: r3v19, types: [androidx.datastore.core.MultiProcessCoordinator$tryLock$1] */
-    /* JADX WARN: Type inference failed for: r5v0, types: [int] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00e7 A[Catch: all -> 0x0101, TRY_ENTER, TRY_LEAVE, TryCatch #2 {all -> 0x0101, blocks: (B:59:0x00e7, B:70:0x00fd, B:73:0x0107), top: B:92:0x002a }] */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x00ef  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00fd A[Catch: all -> 0x0101, TRY_ENTER, TryCatch #2 {all -> 0x0101, blocks: (B:59:0x00e7, B:70:0x00fd, B:73:0x0107), top: B:92:0x002a }] */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0118  */
+    /* JADX WARN: Type inference failed for: r11v0 */
+    /* JADX WARN: Type inference failed for: r11v1, types: [java.io.Closeable] */
+    /* JADX WARN: Type inference failed for: r2v2 */
+    /* JADX WARN: Type inference failed for: r2v3 */
+    /* JADX WARN: Type inference failed for: r2v4, types: [kotlinx.coroutines.sync.Mutex] */
     /* JADX WARN: Type inference failed for: r9v1 */
     /* JADX WARN: Type inference failed for: r9v2 */
     /* JADX WARN: Type inference failed for: r9v4 */
@@ -292,179 +294,187 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public <T> Object tryLock(Function2<? super Boolean, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
-        Mutex mutex;
-        ?? r5;
+        MultiProcessCoordinator$tryLock$1 multiProcessCoordinator$tryLock$1;
+        Object coroutine_suspended;
+        int i;
         boolean z;
+        Mutex mutex;
         FileInputStream fileInputStream;
         Throwable th;
+        Throwable th2;
+        boolean z2;
         FileLock fileLock;
         String message;
         FileLock fileLock2;
         Mutex mutex2;
-        boolean z2;
         java.io.Closeable closeable;
-        Mutex mutex3;
-        boolean z3;
-        Function2<? super Boolean, ? super Continuation<? super T>, ? extends Object> function22 = function2;
         try {
-            try {
-                if (continuation instanceof MultiProcessCoordinator$tryLock$1) {
-                    MultiProcessCoordinator$tryLock$1 multiProcessCoordinator$tryLock$1 = (MultiProcessCoordinator$tryLock$1) continuation;
-                    if ((multiProcessCoordinator$tryLock$1.label & Integer.MIN_VALUE) != 0) {
-                        multiProcessCoordinator$tryLock$1.label -= Integer.MIN_VALUE;
-                        mutex = multiProcessCoordinator$tryLock$1;
-                        Object obj = ((MultiProcessCoordinator$tryLock$1) mutex).result;
-                        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                        r5 = ((MultiProcessCoordinator$tryLock$1) mutex).label;
-                        if (r5 == 0) {
-                            if (r5 == 1) {
-                                z3 = ((MultiProcessCoordinator$tryLock$1) mutex).Z$0;
-                                mutex3 = (Mutex) ((MultiProcessCoordinator$tryLock$1) mutex).L$0;
+            if (continuation instanceof MultiProcessCoordinator$tryLock$1) {
+                multiProcessCoordinator$tryLock$1 = (MultiProcessCoordinator$tryLock$1) continuation;
+                if ((multiProcessCoordinator$tryLock$1.label & Integer.MIN_VALUE) != 0) {
+                    multiProcessCoordinator$tryLock$1.label -= Integer.MIN_VALUE;
+                    Object obj = multiProcessCoordinator$tryLock$1.result;
+                    coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = multiProcessCoordinator$tryLock$1.label;
+                    if (i == 0) {
+                        if (i == 1) {
+                            z2 = multiProcessCoordinator$tryLock$1.Z$0;
+                            mutex = (Mutex) multiProcessCoordinator$tryLock$1.L$0;
+                            try {
                                 ResultKt.throwOnFailure(obj);
-                                if (z3) {
-                                    mutex3.unlock(null);
+                                if (z2) {
+                                    mutex.unlock(null);
                                 }
                                 return obj;
-                            } else if (r5 == 2) {
-                                z2 = ((MultiProcessCoordinator$tryLock$1) mutex).Z$0;
-                                fileLock = (FileLock) ((MultiProcessCoordinator$tryLock$1) mutex).L$2;
-                                closeable = (java.io.Closeable) ((MultiProcessCoordinator$tryLock$1) mutex).L$1;
-                                mutex2 = (Mutex) ((MultiProcessCoordinator$tryLock$1) mutex).L$0;
+                            } catch (Throwable th3) {
+                                th2 = th3;
+                                if (z2) {
+                                }
+                                throw th2;
+                            }
+                        } else if (i == 2) {
+                            z2 = multiProcessCoordinator$tryLock$1.Z$0;
+                            fileLock = (FileLock) multiProcessCoordinator$tryLock$1.L$2;
+                            closeable = (java.io.Closeable) multiProcessCoordinator$tryLock$1.L$1;
+                            mutex2 = (Mutex) multiProcessCoordinator$tryLock$1.L$0;
+                            try {
+                                ResultKt.throwOnFailure(obj);
+                                if (fileLock != null) {
+                                    fileLock.release();
+                                }
                                 try {
-                                    ResultKt.throwOnFailure(obj);
-                                    if (fileLock != null) {
-                                        fileLock.release();
-                                    }
                                     kotlin.io.CloseableKt.closeFinally(closeable, null);
                                     if (z2) {
                                         mutex2.unlock(null);
                                     }
                                     return obj;
-                                } catch (Throwable th2) {
-                                    th = th2;
+                                } catch (Throwable th4) {
+                                    th2 = th4;
+                                    mutex = mutex2;
+                                    if (z2) {
+                                    }
+                                    throw th2;
+                                }
+                            } catch (Throwable th5) {
+                                th = th5;
+                                if (fileLock != null) {
+                                }
+                                throw th;
+                            }
+                        } else {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                    }
+                    ResultKt.throwOnFailure(obj);
+                    Mutex mutex3 = this.inMemoryMutex;
+                    z = mutex3.tryLock(null);
+                    try {
+                        if (z == 0) {
+                            Boolean boxBoolean = Boxing.boxBoolean(false);
+                            multiProcessCoordinator$tryLock$1.L$0 = mutex3;
+                            multiProcessCoordinator$tryLock$1.Z$0 = z;
+                            multiProcessCoordinator$tryLock$1.label = 1;
+                            obj = function2.invoke(boxBoolean, multiProcessCoordinator$tryLock$1);
+                            if (obj != coroutine_suspended) {
+                                mutex = mutex3;
+                                z2 = z;
+                                if (z2) {
+                                }
+                                return obj;
+                            }
+                        } else {
+                            FileInputStream fileInputStream2 = new FileInputStream(getLockFile());
+                            try {
+                                try {
+                                    try {
+                                        fileLock2 = fileInputStream2.getChannel().tryLock(0L, Long.MAX_VALUE, true);
+                                    } catch (IOException e) {
+                                        String message2 = e.getMessage();
+                                        if ((message2 == null || !StringsKt.startsWith$default(message2, this.LOCK_ERROR_MESSAGE, false, 2, (Object) null)) && ((message = e.getMessage()) == null || !StringsKt.startsWith$default(message, DEADLOCK_ERROR_MESSAGE, false, 2, (Object) null))) {
+                                            throw e;
+                                        }
+                                        fileLock2 = null;
+                                    }
+                                } catch (Throwable th6) {
+                                    th = th6;
+                                    fileLock = null;
+                                    if (fileLock != null) {
+                                        fileLock.release();
+                                    }
+                                    throw th;
+                                }
+                                try {
+                                    Boolean boxBoolean2 = Boxing.boxBoolean(fileLock2 != null);
+                                    multiProcessCoordinator$tryLock$1.L$0 = mutex3;
+                                    multiProcessCoordinator$tryLock$1.L$1 = fileInputStream2;
+                                    multiProcessCoordinator$tryLock$1.L$2 = fileLock2;
+                                    multiProcessCoordinator$tryLock$1.Z$0 = z;
+                                    multiProcessCoordinator$tryLock$1.label = 2;
+                                    obj = function2.invoke(boxBoolean2, multiProcessCoordinator$tryLock$1);
+                                    if (obj != coroutine_suspended) {
+                                        fileLock = fileLock2;
+                                        mutex2 = mutex3;
+                                        z2 = z;
+                                        closeable = fileInputStream2;
+                                        if (fileLock != null) {
+                                        }
+                                        kotlin.io.CloseableKt.closeFinally(closeable, null);
+                                        if (z2) {
+                                        }
+                                        return obj;
+                                    }
+                                } catch (Throwable th7) {
+                                    th = th7;
+                                    fileLock = fileLock2;
                                     if (fileLock != null) {
                                     }
                                     throw th;
                                 }
-                            } else {
-                                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                            }
-                        }
-                        ResultKt.throwOnFailure(obj);
-                        Mutex mutex4 = this.inMemoryMutex;
-                        z = mutex4.tryLock(null);
-                        try {
-                            if (z == 0) {
-                                Boolean boxBoolean = Boxing.boxBoolean(false);
-                                ((MultiProcessCoordinator$tryLock$1) mutex).L$0 = mutex4;
-                                ((MultiProcessCoordinator$tryLock$1) mutex).Z$0 = z;
-                                ((MultiProcessCoordinator$tryLock$1) mutex).label = 1;
-                                obj = function22.invoke(boxBoolean, mutex);
-                                if (obj != coroutine_suspended) {
-                                    mutex3 = mutex4;
-                                    z3 = z;
-                                    if (z3) {
-                                    }
-                                    return obj;
-                                }
-                            } else {
-                                fileInputStream = new FileInputStream(getLockFile());
+                            } catch (Throwable th8) {
+                                th = th8;
+                                mutex = mutex3;
+                                z = z;
+                                fileInputStream = fileInputStream2;
                                 try {
+                                    throw th;
+                                } catch (Throwable th9) {
                                     try {
-                                        try {
-                                            fileLock2 = fileInputStream.getChannel().tryLock(0L, Long.MAX_VALUE, true);
-                                        } catch (IOException e) {
-                                            String message2 = e.getMessage();
-                                            if ((message2 == null || !StringsKt.startsWith$default(message2, this.LOCK_ERROR_MESSAGE, false, 2, (Object) null)) && ((message = e.getMessage()) == null || !StringsKt.startsWith$default(message, DEADLOCK_ERROR_MESSAGE, false, 2, (Object) null))) {
-                                                throw e;
-                                            }
-                                            fileLock2 = null;
+                                        kotlin.io.CloseableKt.closeFinally(fileInputStream, th);
+                                        throw th9;
+                                    } catch (Throwable th10) {
+                                        th2 = th10;
+                                        z2 = z;
+                                        if (z2) {
+                                            mutex.unlock(null);
                                         }
-                                        try {
-                                            Boolean boxBoolean2 = Boxing.boxBoolean(fileLock2 != null);
-                                            ((MultiProcessCoordinator$tryLock$1) mutex).L$0 = mutex4;
-                                            ((MultiProcessCoordinator$tryLock$1) mutex).L$1 = fileInputStream;
-                                            ((MultiProcessCoordinator$tryLock$1) mutex).L$2 = fileLock2;
-                                            ((MultiProcessCoordinator$tryLock$1) mutex).Z$0 = z;
-                                            ((MultiProcessCoordinator$tryLock$1) mutex).label = 2;
-                                            obj = function22.invoke(boxBoolean2, mutex);
-                                            if (obj != coroutine_suspended) {
-                                                mutex2 = mutex4;
-                                                z2 = z;
-                                                closeable = fileInputStream;
-                                                fileLock = fileLock2;
-                                                if (fileLock != null) {
-                                                }
-                                                kotlin.io.CloseableKt.closeFinally(closeable, null);
-                                                if (z2) {
-                                                }
-                                                return obj;
-                                            }
-                                        } catch (Throwable th3) {
-                                            th = th3;
-                                            fileLock = fileLock2;
-                                            if (fileLock != null) {
-                                                fileLock.release();
-                                            }
-                                            throw th;
-                                        }
-                                    } catch (Throwable th4) {
-                                        th = th4;
-                                        fileLock = null;
-                                        if (fileLock != null) {
-                                        }
-                                        throw th;
-                                    }
-                                } catch (Throwable th5) {
-                                    th = th5;
-                                    mutex = mutex4;
-                                    z = z;
-                                    try {
-                                        throw th;
-                                    } catch (Throwable th6) {
-                                        try {
-                                            kotlin.io.CloseableKt.closeFinally(fileInputStream, th);
-                                            throw th6;
-                                        } catch (Throwable th7) {
-                                            th = th7;
-                                            function22 = z;
-                                            if (function22 != null) {
-                                            }
-                                            throw th;
-                                        }
+                                        throw th2;
                                     }
                                 }
                             }
-                            return coroutine_suspended;
-                        } catch (Throwable th8) {
-                            th = th8;
-                            mutex = mutex4;
-                            function22 = z;
-                            if (function22 != null) {
-                                mutex.unlock(null);
-                            }
-                            throw th;
                         }
+                        return coroutine_suspended;
+                    } catch (Throwable th11) {
+                        th2 = th11;
+                        mutex = mutex3;
+                        z2 = z;
+                        if (z2) {
+                        }
+                        throw th2;
                     }
                 }
-                if (r5 == 0) {
-                }
-            } catch (Throwable th9) {
-                z = function22;
-                fileInputStream = r5;
-                th = th9;
-                mutex = mutex;
             }
-        } catch (Throwable th10) {
-            th = th10;
-            if (function22 != null) {
+            if (i == 0) {
             }
-            throw th;
+        } catch (Throwable th12) {
+            z = this;
+            mutex = multiProcessCoordinator$tryLock$1;
+            fileInputStream = coroutine_suspended;
+            th = th12;
         }
-        mutex = new MultiProcessCoordinator$tryLock$1(this, continuation);
-        Object obj2 = ((MultiProcessCoordinator$tryLock$1) mutex).result;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        r5 = ((MultiProcessCoordinator$tryLock$1) mutex).label;
+        multiProcessCoordinator$tryLock$1 = new MultiProcessCoordinator$tryLock$1(this, continuation);
+        Object obj2 = multiProcessCoordinator$tryLock$1.result;
+        coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = multiProcessCoordinator$tryLock$1.label;
     }
 
     private final File getLockFile() {
@@ -531,10 +541,10 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-        /* JADX WARN: Removed duplicated region for block: B:14:0x003a  */
-        /* JADX WARN: Removed duplicated region for block: B:29:0x0088  */
-        /* JADX WARN: Removed duplicated region for block: B:31:0x004c A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x0039  */
+        /* JADX WARN: Removed duplicated region for block: B:29:0x0089  */
+        /* JADX WARN: Removed duplicated region for block: B:31:0x004b A[EXC_TOP_SPLITTER, SYNTHETIC] */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x0081 -> B:27:0x0084). Please submit an issue!!! */
         /*
             Code decompiled incorrectly, please refer to instructions dump.

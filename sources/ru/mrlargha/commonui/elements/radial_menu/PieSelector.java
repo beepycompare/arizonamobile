@@ -324,7 +324,7 @@ public final class PieSelector extends View {
             PieSelector pieSelector7 = this.this$0;
             this.resizedBitmap = pieSelector7.drawableToBitmap(drawable, pieSelector7.sectorBitmapSize);
             PieSelector pieSelector8 = this.this$0;
-            this.bitmapPoint = new PointF(pieSelector8.polarToDec(pieSelector8.get_innerRadius() + (this.this$0.get_outerRadius() * this.this$0.bitmapDistanceMultiplier), this.startAngle + (this.sweepAngle / 2)));
+            this.bitmapPoint = new PointF(pieSelector8.polarToDec(pieSelector8.get_innerRadius() + (this.this$0.get_outerRadius() * this.this$0.bitmapDistanceMultiplier), this.startAngle + (this.sweepAngle / 2.0f)));
         }
 
         public final void draw(Canvas canvas) {
@@ -371,11 +371,11 @@ public final class PieSelector extends View {
             return;
         }
         Sector sector2 = this.sectors.get(i);
-        canvas.drawBitmap(drawableToBitmap(sector2.getSectorDrawable(), this.centerBitmapSize), this.viewRect.exactCenterX() - (this.centerBitmapSize / 2), (this.viewRect.exactCenterY() - this.centerBitmapSize) - (this.paddingInCenter * 4), this.emptyPaint);
+        canvas.drawBitmap(drawableToBitmap(sector2.getSectorDrawable(), this.centerBitmapSize), this.viewRect.exactCenterX() - (this.centerBitmapSize / 2), (this.viewRect.exactCenterY() - this.centerBitmapSize) - (this.paddingInCenter * 4.0f), this.emptyPaint);
         SectorData sectorData = sector2.getSectorData();
         List<String> split$default = StringsKt.split$default((CharSequence) sectorData.getTitle(), new String[]{"\n"}, false, 0, 6, (Object) null);
         drawTextLinesCentered(split$default, this.viewRect.exactCenterY() + this.paddingInCenter, this.titlePaint, canvas);
-        drawTextLinesCentered(StringsKt.split$default((CharSequence) sectorData.getCaption(), new String[]{"\n"}, false, 0, 6, (Object) null), this.viewRect.exactCenterY() + (this.paddingInCenter * 2) + getStringListHeight(split$default, this.titlePaint), this.captionPaint, canvas);
+        drawTextLinesCentered(StringsKt.split$default((CharSequence) sectorData.getCaption(), new String[]{"\n"}, false, 0, 6, (Object) null), this.viewRect.exactCenterY() + (this.paddingInCenter * 2.0f) + getStringListHeight(split$default, this.titlePaint), this.captionPaint, canvas);
     }
 
     @Override // android.view.View
@@ -435,7 +435,7 @@ public final class PieSelector extends View {
         } else if (actionMasked == 2) {
             double hypot = Math.hypot(point.x, point.y);
             double degrees = Math.toDegrees(Math.atan2(point.y, point.x));
-            double abs = degrees > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE ? ((double) RouletteView.PREMIUM_ROULETTE_WIDTH) - degrees : Math.abs(degrees);
+            double abs = degrees > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE ? 360.0d - degrees : Math.abs(degrees);
             this.isCenterSelected = hypot < ((double) get_innerRadius());
             for (Sector sector2 : this.sectors) {
                 sector2.setSelected(abs >= ((double) sector2.getStartAngle()) && abs <= ((double) ((sector2.getStartAngle() + sector2.getSweepAngle()) + this.spaceAngle)) && hypot > ((double) get_innerRadius()));
@@ -496,13 +496,13 @@ public final class PieSelector extends View {
     }
 
     private final void drawTextLinesCentered(List<String> list, float f, Paint paint, Canvas canvas) {
-        Integer num;
         List<String> list2 = list;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
         for (String str : list2) {
             arrayList.add(Integer.valueOf(getTextHeight(str, paint)));
         }
-        float intValue = ((Integer) CollectionsKt.maxOrNull((Iterable<? extends Comparable>) arrayList)) != null ? num.intValue() : 20.0f;
+        Integer num = (Integer) CollectionsKt.maxOrNull((Iterable<? extends Comparable>) arrayList);
+        float intValue = num != null ? num.intValue() : 20.0f;
         int i = 0;
         for (Object obj : list2) {
             int i2 = i + 1;
@@ -510,8 +510,7 @@ public final class PieSelector extends View {
                 CollectionsKt.throwIndexOverflow();
             }
             String str2 = (String) obj;
-            float f2 = 2;
-            canvas.drawText(str2, this.viewRect.exactCenterX() - (paint.measureText(str2) / f2), ((this.paddingInCenter + intValue) * i) + f + (intValue / f2), paint);
+            canvas.drawText(str2, this.viewRect.exactCenterX() - (paint.measureText(str2) / 2.0f), ((this.paddingInCenter + intValue) * i) + f + (intValue / 2.0f), paint);
             i = i2;
         }
     }

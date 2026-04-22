@@ -43,13 +43,13 @@ public final class DataStoreImpl$readState$2<T> extends SuspendLambda implements
         return ((DataStoreImpl$readState$2) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0045, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0043, code lost:
         if (r5 == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0055, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0053, code lost:
         if (r5 == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0057, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0055, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

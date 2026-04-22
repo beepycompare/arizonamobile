@@ -455,15 +455,15 @@ public final class Authorization implements InterfaceController {
                     AuthorizationBinding authorizationBinding2 = authorizationBinding;
                     if (i2 > i) {
                         authorizationBinding2.authBackground.setTranslationY(-(i2 - i));
-                        return;
+                    } else {
+                        authorizationBinding2.authBackground.setTranslationY(0.0f);
                     }
-                    authorizationBinding2.authBackground.setTranslationY(0.0f);
                 }
             }
         });
     }
 
-    /* JADX WARN: Type inference failed for: r10v117, types: [ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$onServerMessage$1] */
+    /* JADX WARN: Type inference failed for: r10v116, types: [ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$onServerMessage$1] */
     /* JADX WARN: Type inference failed for: r10v20, types: [ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$onServerMessage$3] */
     public final void onServerMessage(int i, String data) {
         String obj;

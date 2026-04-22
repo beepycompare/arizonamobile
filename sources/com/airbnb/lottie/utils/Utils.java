@@ -61,7 +61,7 @@ public final class Utils {
     private static final float INV_SQRT_2 = (float) (Math.sqrt(2.0d) / 2.0d);
 
     public static int hashFor(float f, float f2, float f3, float f4) {
-        int i = f != 0.0f ? (int) (527 * f) : 17;
+        int i = f != 0.0f ? (int) (527.0f * f) : 17;
         if (f2 != 0.0f) {
             i = (int) (i * 31 * f2);
         }

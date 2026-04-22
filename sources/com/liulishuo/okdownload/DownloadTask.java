@@ -42,6 +42,7 @@ public class DownloadTask extends IdentifiedTask implements Comparable<DownloadT
     private final boolean wifiRequired;
 
     public DownloadTask(String str, Uri uri, int i, int i2, int i3, int i4, int i5, boolean z, int i6, Map<String, List<String>> map, String str2, boolean z2, boolean z3, Boolean bool, Integer num, Boolean bool2) {
+        String str3;
         Boolean bool3;
         String name;
         this.url = str;
@@ -65,9 +66,11 @@ public class DownloadTask extends IdentifiedTask implements Comparable<DownloadT
                     if (file.exists() && file.isFile()) {
                         throw new IllegalArgumentException("If you want filename from response please make sure you provide path is directory " + file.getPath());
                     }
-                    if (!Util.isEmpty(str2)) {
+                    if (Util.isEmpty(str2)) {
+                        str3 = str2;
+                    } else {
                         Util.w("DownloadTask", "Discard filename[" + str2 + "] because you set filenameFromResponse=true");
-                        str2 = null;
+                        str3 = null;
                     }
                     this.directoryFile = file;
                 } else if (file.exists() && file.isDirectory() && Util.isEmpty(str2)) {
@@ -76,42 +79,47 @@ public class DownloadTask extends IdentifiedTask implements Comparable<DownloadT
                     if (Util.isEmpty(str2)) {
                         String name2 = file.getName();
                         this.directoryFile = Util.getParentFile(file);
-                        str2 = name2;
+                        str3 = name2;
                     } else {
                         this.directoryFile = file;
+                        str3 = str2;
                     }
                 }
                 bool3 = bool;
-            } else if (file.exists() && file.isDirectory()) {
-                bool3 = true;
-                this.directoryFile = file;
             } else {
-                bool3 = false;
-                if (file.exists()) {
-                    if (!Util.isEmpty(str2) && !file.getName().equals(str2)) {
-                        throw new IllegalArgumentException("Uri already provided filename!");
-                    }
-                    name = file.getName();
-                    this.directoryFile = Util.getParentFile(file);
-                } else if (Util.isEmpty(str2)) {
-                    name = file.getName();
-                    this.directoryFile = Util.getParentFile(file);
-                } else {
+                if (file.exists() && file.isDirectory()) {
+                    bool3 = true;
                     this.directoryFile = file;
+                } else {
+                    bool3 = false;
+                    if (file.exists()) {
+                        if (!Util.isEmpty(str2) && !file.getName().equals(str2)) {
+                            throw new IllegalArgumentException("Uri already provided filename!");
+                        }
+                        name = file.getName();
+                        this.directoryFile = Util.getParentFile(file);
+                    } else if (Util.isEmpty(str2)) {
+                        name = file.getName();
+                        this.directoryFile = Util.getParentFile(file);
+                    } else {
+                        this.directoryFile = file;
+                    }
+                    str3 = name;
                 }
-                str2 = name;
+                str3 = str2;
             }
             this.filenameFromResponse = bool3.booleanValue();
         } else {
             this.filenameFromResponse = false;
             this.directoryFile = new File(uri.getPath());
+            str3 = str2;
         }
-        if (Util.isEmpty(str2)) {
+        if (Util.isEmpty(str3)) {
             this.filenameHolder = new DownloadStrategy.FilenameHolder();
             this.providedPathFile = this.directoryFile;
         } else {
-            this.filenameHolder = new DownloadStrategy.FilenameHolder(str2);
-            File file2 = new File(this.directoryFile, str2);
+            this.filenameHolder = new DownloadStrategy.FilenameHolder(str3);
+            File file2 = new File(this.directoryFile, str3);
             this.targetFile = file2;
             this.providedPathFile = file2;
         }

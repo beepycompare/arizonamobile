@@ -91,7 +91,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0041  */
-    /* JADX WARN: Type inference failed for: r7v13, types: [kotlinx.coroutines.sync.Mutex] */
+    /* JADX WARN: Type inference failed for: r7v5, types: [kotlinx.coroutines.sync.Mutex] */
     @Override // androidx.room.PooledConnection
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -168,15 +168,15 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Can't wrap try/catch for region: R(10:1|(2:3|(7:5|6|7|(1:(1:(1:(2:26|27)(1:(2:14|15)(4:17|18|19|20)))(5:28|29|(1:31)|32|(1:35)(1:34)))(1:37))(3:41|(1:43)|44)|38|(4:40|(0)|32|(0))|35))|67|6|7|(0)(0)|38|(0)|35|(2:(1:63)|(0))) */
+    /* JADX WARN: Can't wrap try/catch for region: R(10:1|(2:3|(7:5|6|7|(1:(1:(1:(2:27|28)(1:(2:14|15)(4:17|18|19|21)))(5:29|30|(1:32)|33|(1:36)(1:35)))(1:38))(3:42|(1:44)|45)|39|(4:41|(0)|33|(0))|36))|70|6|7|(0)(0)|39|(0)|36|(1:(0))) */
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0058, code lost:
         r11 = move-exception;
      */
     /* JADX WARN: Code restructure failed: missing block: B:34:0x0072, code lost:
-        if (beginTransaction(r11, r0) == r1) goto L35;
+        if (beginTransaction(r11, r0) == r1) goto L36;
      */
     /* JADX WARN: Code restructure failed: missing block: B:47:0x0099, code lost:
-        if ((r11 instanceof androidx.room.coroutines.ConnectionPool.RollbackException) != false) goto L50;
+        if ((r11 instanceof androidx.room.coroutines.ConnectionPool.RollbackException) != false) goto L51;
      */
     /* JADX WARN: Code restructure failed: missing block: B:48:0x009b, code lost:
         r11 = r11.getResult();
@@ -186,7 +186,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
         r0.label = 4;
      */
     /* JADX WARN: Code restructure failed: missing block: B:50:0x00a9, code lost:
-        if (endTransaction(false, r0) == r1) goto L35;
+        if (endTransaction(false, r0) == r1) goto L36;
      */
     /* JADX WARN: Code restructure failed: missing block: B:52:0x00ac, code lost:
         return r11;
@@ -210,21 +210,25 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
         r0.label = 5;
      */
     /* JADX WARN: Code restructure failed: missing block: B:58:0x00bd, code lost:
-        if (endTransaction(false, r0) != r1) goto L20;
+        if (endTransaction(false, r0) != r1) goto L64;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x00c0, code lost:
-        r13 = e;
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00c2, code lost:
+        r12 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00c1, code lost:
-        r12 = r8;
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x00c3, code lost:
+        r10 = r11;
+        r11 = r8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:77:?, code lost:
+        throw r11;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x002a  */
     /* JADX WARN: Removed duplicated region for block: B:30:0x0063  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x0087  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x008a  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x0096 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00cd  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -264,19 +268,19 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
                     } else if (i != 5) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        th = (Throwable) pooledConnectionImpl$transaction$1.L$1;
-                        Throwable th = (Throwable) pooledConnectionImpl$transaction$1.L$0;
+                        Throwable th = (Throwable) pooledConnectionImpl$transaction$1.L$1;
+                        Throwable th2 = (Throwable) pooledConnectionImpl$transaction$1.L$0;
                         try {
                             ResultKt.throwOnFailure(obj);
+                            throw th;
                         } catch (SQLException e) {
                             e = e;
-                            if (th == null) {
-                                ExceptionsKt.addSuppressed(th, e);
+                            if (th2 == null) {
+                                ExceptionsKt.addSuppressed(th2, e);
                                 throw th;
                             }
                             throw e;
                         }
-                        throw th;
                     }
                 } else {
                     function2 = (Function2) pooledConnectionImpl$transaction$1.L$0;
@@ -320,7 +324,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
     /* JADX WARN: Removed duplicated region for block: B:14:0x003f  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0061 A[Catch: all -> 0x00c0, TryCatch #0 {all -> 0x00c0, blocks: (B:17:0x0053, B:19:0x0061, B:25:0x0071, B:31:0x00af, B:26:0x007b, B:27:0x0080, B:28:0x0081, B:29:0x008b, B:30:0x0095), top: B:37:0x0053 }] */
     /* JADX WARN: Removed duplicated region for block: B:30:0x0095 A[Catch: all -> 0x00c0, TryCatch #0 {all -> 0x00c0, blocks: (B:17:0x0053, B:19:0x0061, B:25:0x0071, B:31:0x00af, B:26:0x007b, B:27:0x0080, B:28:0x0081, B:29:0x008b, B:30:0x0095), top: B:37:0x0053 }] */
-    /* JADX WARN: Type inference failed for: r7v18, types: [kotlinx.coroutines.sync.Mutex] */
+    /* JADX WARN: Type inference failed for: r7v15, types: [kotlinx.coroutines.sync.Mutex] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

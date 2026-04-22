@@ -26,11 +26,10 @@ public final class R9 {
                 return false;
             }
             String str = this.f764a;
-            String str2 = r9.f764a;
             if (str != null) {
-                return str.equals(str2);
+                return str.equals(r9.f764a);
             }
-            if (str2 == null) {
+            if (r9.f764a == null) {
                 return true;
             }
         }

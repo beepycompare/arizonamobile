@@ -49,12 +49,12 @@ final class HudCapt$startTimer$1 extends SuspendLambda implements Function2<Coro
         return ((HudCapt$startTimer$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x007e, code lost:
-        if (kotlinx.coroutines.DelayKt.delay(1000, r19) != r1) goto L6;
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x007c, code lost:
+        if (kotlinx.coroutines.DelayKt.delay(1000, r20) != r1) goto L6;
      */
     /* JADX WARN: Removed duplicated region for block: B:13:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0083  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:18:0x007e -> B:20:0x0081). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0082  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:18:0x007c -> B:20:0x007f). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -84,17 +84,16 @@ final class HudCapt$startTimer$1 extends SuspendLambda implements Function2<Coro
                 j5 = this.$time;
                 if (j4 >= j5) {
                     j = (j5 - j4) / 1000;
-                    long j6 = 60;
-                    long j7 = j / j6;
-                    long j8 = j % j6;
+                    long j6 = j / 60;
+                    long j7 = j % 60;
                     this.I$0 = i;
                     this.J$0 = j;
-                    this.J$1 = j7;
-                    this.J$2 = j8;
+                    this.J$1 = j6;
+                    this.J$2 = j7;
                     this.label = 1;
-                    if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass1(this.$binding, j7, j8, null), this) != coroutine_suspended) {
-                        j3 = j8;
-                        j2 = j7;
+                    if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass1(this.$binding, j6, j7, null), this) != coroutine_suspended) {
+                        j3 = j7;
+                        j2 = j6;
                         this.I$0 = i;
                         this.J$0 = j;
                         this.J$1 = j2;

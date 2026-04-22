@@ -45,8 +45,8 @@ public final class FlowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$colle
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0054  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0056  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -55,7 +55,6 @@ public final class FlowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$colle
         AnonymousClass1 anonymousClass1;
         Object obj;
         int i;
-        FlowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$1<T> flowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$1;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
             if ((anonymousClass1.label & Integer.MIN_VALUE) != 0) {
@@ -73,15 +72,14 @@ public final class FlowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$colle
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    flowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$1 = this;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    flowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$1 = (FlowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$1) anonymousClass1.L$0;
+                    this = (FlowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$1) anonymousClass1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 if (((Boolean) obj).booleanValue()) {
-                    throw new AbortFlowException(flowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$1);
+                    throw new AbortFlowException(this);
                 }
                 return Unit.INSTANCE;
             }

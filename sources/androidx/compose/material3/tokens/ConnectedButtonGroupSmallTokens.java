@@ -9,8 +9,8 @@ import kotlin.Metadata;
 public final class ConnectedButtonGroupSmallTokens {
     public static final int $stable = 0;
     public static final ConnectedButtonGroupSmallTokens INSTANCE = new ConnectedButtonGroupSmallTokens();
-    private static final float BetweenSpace = Dp.m7555constructorimpl((float) 2.0d);
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 40.0d);
+    private static final float BetweenSpace = Dp.m7555constructorimpl(2.0f);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(40.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
     private static final CornerSize InnerCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueSmall();
     private static final CornerSize PressedInnerCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueExtraSmall();

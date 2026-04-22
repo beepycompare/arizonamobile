@@ -8,7 +8,7 @@ import kotlin.Metadata;
 public final class AppBarMediumTokens {
     public static final int $stable = 0;
     public static final AppBarMediumTokens INSTANCE = new AppBarMediumTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 112.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl(112.0f);
     private static final TypographyKeyTokens TitleFont = TypographyKeyTokens.HeadlineSmall;
 
     private AppBarMediumTokens() {

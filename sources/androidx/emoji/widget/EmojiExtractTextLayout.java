@@ -42,19 +42,20 @@ public class EmojiExtractTextLayout extends LinearLayout {
     }
 
     private void init(Context context, AttributeSet attributeSet, int i, int i2) {
-        if (!this.mInitialized) {
-            this.mInitialized = true;
-            setOrientation(0);
-            View inflate = LayoutInflater.from(context).inflate(R.layout.input_method_extract_view, (ViewGroup) this, true);
-            this.mExtractAccessories = (ViewGroup) inflate.findViewById(R.id.inputExtractAccessories);
-            this.mExtractAction = (ExtractButtonCompat) inflate.findViewById(R.id.inputExtractAction);
-            this.mExtractEditText = (EmojiExtractEditText) inflate.findViewById(16908325);
-            if (attributeSet != null) {
-                TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.EmojiExtractTextLayout, i, i2);
-                ViewCompat.saveAttributeDataForStyleable(this, context, R.styleable.EmojiExtractTextLayout, attributeSet, obtainStyledAttributes, i, i2);
-                this.mExtractEditText.setEmojiReplaceStrategy(obtainStyledAttributes.getInteger(R.styleable.EmojiExtractTextLayout_emojiReplaceStrategy, 0));
-                obtainStyledAttributes.recycle();
-            }
+        if (this.mInitialized) {
+            return;
+        }
+        this.mInitialized = true;
+        setOrientation(0);
+        View inflate = LayoutInflater.from(context).inflate(R.layout.input_method_extract_view, (ViewGroup) this, true);
+        this.mExtractAccessories = (ViewGroup) inflate.findViewById(R.id.inputExtractAccessories);
+        this.mExtractAction = (ExtractButtonCompat) inflate.findViewById(R.id.inputExtractAction);
+        this.mExtractEditText = (EmojiExtractEditText) inflate.findViewById(16908325);
+        if (attributeSet != null) {
+            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.EmojiExtractTextLayout, i, i2);
+            ViewCompat.saveAttributeDataForStyleable(this, context, R.styleable.EmojiExtractTextLayout, attributeSet, obtainStyledAttributes, i, i2);
+            this.mExtractEditText.setEmojiReplaceStrategy(obtainStyledAttributes.getInteger(R.styleable.EmojiExtractTextLayout_emojiReplaceStrategy, 0));
+            obtainStyledAttributes.recycle();
         }
     }
 

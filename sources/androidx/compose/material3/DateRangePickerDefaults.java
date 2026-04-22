@@ -464,7 +464,7 @@ public final class DateRangePickerDefaults {
         Composer startRestartGroup = composer.startRestartGroup(1381313200);
         ComposerKt.sourceInformation(startRestartGroup, "C(DateRangePickerHeadline)N(selectedStartDateMillis,selectedEndDateMillis,displayMode:c#material3.DisplayMode,dateFormatter,modifier,contentColor:c#ui.graphics.Color,startDateText,endDateText,startDatePlaceholder,endDatePlaceholder,datesDelimiter,locale)504@23527L168,502@23453L792:DateRangePicker.kt#uh7d8r");
         if ((i2 & 6) == 0) {
-            i4 = i2 | (startRestartGroup.changed(l) ? 4 : 2);
+            i4 = (startRestartGroup.changed(l) ? 4 : 2) | i2;
         } else {
             i4 = i2;
         }
@@ -480,22 +480,23 @@ public final class DateRangePickerDefaults {
         if ((i2 & 24576) == 0) {
             i4 |= startRestartGroup.changed(modifier) ? 16384 : 8192;
         }
+        int i6 = i4;
         if ((196608 & i2) == 0) {
-            i4 |= startRestartGroup.changed(j) ? 131072 : 65536;
+            i6 |= startRestartGroup.changed(j) ? 131072 : 65536;
         }
         if ((i2 & 1572864) == 0) {
-            i4 |= startRestartGroup.changed(str) ? 1048576 : 524288;
+            i6 |= startRestartGroup.changed(str) ? 1048576 : 524288;
         }
         if ((i2 & 12582912) == 0) {
-            i4 |= startRestartGroup.changed(str2) ? 8388608 : 4194304;
+            i6 |= startRestartGroup.changed(str2) ? 8388608 : 4194304;
         }
         if ((i2 & 100663296) == 0) {
-            i4 |= startRestartGroup.changedInstance(function2) ? 67108864 : 33554432;
+            i6 |= startRestartGroup.changedInstance(function2) ? 67108864 : 33554432;
         }
         if ((i2 & 805306368) == 0) {
-            i4 |= startRestartGroup.changedInstance(function22) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+            i6 |= startRestartGroup.changedInstance(function22) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
         }
-        int i6 = i4;
+        int i7 = i6;
         if ((i3 & 6) == 0) {
             i5 = i3 | (startRestartGroup.changedInstance(function23) ? 4 : 2);
         } else {
@@ -504,15 +505,15 @@ public final class DateRangePickerDefaults {
         if ((i3 & 48) == 0) {
             i5 |= startRestartGroup.changedInstance(locale) ? 32 : 16;
         }
-        if (!startRestartGroup.shouldExecute(((i6 & 306783379) == 306783378 && (i5 & 19) == 18) ? false : true, i6 & 1)) {
+        if (!startRestartGroup.shouldExecute(((i7 & 306783379) == 306783378 && (i5 & 19) == 18) ? false : true, i7 & 1)) {
             l3 = l;
             composer2 = startRestartGroup;
             composer2.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1381313200, i6, i5, "androidx.compose.material3.DateRangePickerDefaults.DateRangePickerHeadline (DateRangePicker.kt:468)");
+                ComposerKt.traceEventStart(1381313200, i7, i5, "androidx.compose.material3.DateRangePickerDefaults.DateRangePickerHeadline (DateRangePicker.kt:468)");
             }
-            int i7 = i5;
+            int i8 = i5;
             String formatDate$default = DatePickerFormatter.formatDate$default(datePickerFormatter, l, locale, false, 4, null);
             l3 = l;
             String formatDate$default2 = DatePickerFormatter.formatDate$default(datePickerFormatter, l2, locale, false, 4, null);
@@ -595,7 +596,7 @@ public final class DateRangePickerDefaults {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Modifier clearAndSetSemantics = SemanticsModifierKt.clearAndSetSemantics(modifier, (Function1) rememberedValue);
             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
-            Arrangement.HorizontalOrVertical m688spacedBy0680j_4 = Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(4));
+            Arrangement.HorizontalOrVertical m688spacedBy0680j_4 = Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(4.0f));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(m688spacedBy0680j_4, centerVertically, startRestartGroup, 54);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
@@ -628,26 +629,26 @@ public final class DateRangePickerDefaults {
             if (formatDate$default != null) {
                 startRestartGroup.startReplaceGroup(-177386503);
                 ComposerKt.sourceInformation(startRestartGroup, "512@23895L53");
-                TextKt.m2712TextNvy7gAk(formatDate$default, null, j, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, startRestartGroup, (i6 >> 9) & 896, 0, 262138);
+                TextKt.m2712TextNvy7gAk(formatDate$default, null, j, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, startRestartGroup, (i7 >> 9) & 896, 0, 262138);
                 composer2 = startRestartGroup;
                 composer2.endReplaceGroup();
             } else {
                 composer2 = startRestartGroup;
                 composer2.startReplaceGroup(-177297192);
                 ComposerKt.sourceInformation(composer2, "514@23986L22");
-                function2.invoke(composer2, Integer.valueOf((i6 >> 24) & 14));
+                function2.invoke(composer2, Integer.valueOf((i7 >> 24) & 14));
                 composer2.endReplaceGroup();
             }
-            function23.invoke(composer2, Integer.valueOf(i7 & 14));
+            function23.invoke(composer2, Integer.valueOf(i8 & 14));
             if (str3 != null) {
                 composer2.startReplaceGroup(-177171301);
                 ComposerKt.sourceInformation(composer2, "518@24112L51");
-                TextKt.m2712TextNvy7gAk(str3, null, j, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer2, (i6 >> 9) & 896, 0, 262138);
+                TextKt.m2712TextNvy7gAk(str3, null, j, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer2, (i7 >> 9) & 896, 0, 262138);
                 composer2.endReplaceGroup();
             } else {
                 composer2.startReplaceGroup(-177083974);
                 ComposerKt.sourceInformation(composer2, "520@24201L20");
-                function22.invoke(composer2, Integer.valueOf((i6 >> 27) & 14));
+                function22.invoke(composer2, Integer.valueOf((i7 >> 27) & 14));
                 composer2.endReplaceGroup();
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);

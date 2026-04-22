@@ -606,8 +606,11 @@ public abstract class BaseEncoding {
 
         @Override // com.google.common.io.BaseEncoding
         public BaseEncoding withPadChar(char padChar) {
-            Character ch;
-            return (8 % this.alphabet.bitsPerChar == 0 || ((ch = this.paddingChar) != null && ch.charValue() == padChar)) ? this : newInstance(this.alphabet, Character.valueOf(padChar));
+            if (8 % this.alphabet.bitsPerChar != 0) {
+                Character ch = this.paddingChar;
+                return (ch == null || ch.charValue() != padChar) ? newInstance(this.alphabet, Character.valueOf(padChar)) : this;
+            }
+            return this;
         }
 
         @Override // com.google.common.io.BaseEncoding
@@ -683,7 +686,7 @@ public abstract class BaseEncoding {
         }
 
         public int hashCode() {
-            return this.alphabet.hashCode() ^ Objects.hashCode(this.paddingChar);
+            return Objects.hashCode(this.paddingChar) ^ this.alphabet.hashCode();
         }
     }
 

@@ -26,7 +26,7 @@ public final class LazilyParsedNumber extends Number {
                 return (int) Long.parseLong(this.value);
             }
         } catch (NumberFormatException unused2) {
-            return asBigDecimal().intValue();
+            return this.asBigDecimal().intValue();
         }
     }
 

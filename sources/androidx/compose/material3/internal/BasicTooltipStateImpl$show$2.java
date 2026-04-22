@@ -42,6 +42,8 @@ final class BasicTooltipStateImpl$show$2 extends SuspendLambda implements Functi
     /* JADX WARN: Code restructure failed: missing block: B:20:0x0049, code lost:
         if (kotlinx.coroutines.TimeoutKt.withTimeout(1500, new androidx.compose.material3.internal.BasicTooltipStateImpl$show$2.AnonymousClass1(r5.$cancellableShow, null), r5) == r0) goto L19;
      */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v4, types: [kotlin.Unit, java.lang.Object] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -73,7 +75,8 @@ final class BasicTooltipStateImpl$show$2 extends SuspendLambda implements Functi
             ResultKt.throwOnFailure(obj);
         }
         this.this$0.setVisible(false);
-        return Unit.INSTANCE;
+        this = Unit.INSTANCE;
+        return this;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

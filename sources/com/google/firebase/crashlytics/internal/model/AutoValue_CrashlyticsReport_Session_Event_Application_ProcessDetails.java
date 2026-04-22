@@ -53,7 +53,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_ProcessDetails
     }
 
     public int hashCode() {
-        return ((((((this.processName.hashCode() ^ 1000003) * 1000003) ^ this.pid) * 1000003) ^ this.importance) * 1000003) ^ (this.defaultProcess ? 1231 : 1237);
+        return (this.defaultProcess ? 1231 : 1237) ^ ((((((this.processName.hashCode() ^ 1000003) * 1000003) ^ this.pid) * 1000003) ^ this.importance) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

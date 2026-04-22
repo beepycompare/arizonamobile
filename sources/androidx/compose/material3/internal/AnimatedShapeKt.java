@@ -61,15 +61,16 @@ public final class AnimatedShapeKt {
 
                 @Override // androidx.compose.material3.ShapeWithHorizontalCenterOptically
                 public float offset() {
-                    float f = 2;
-                    return (((((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m2987topStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue() + ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m2985bottomStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue()) / f) - ((((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m2986topEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue() + ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m2984bottomEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue()) / f)) * 0.11f;
+                    float floatValue = ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m2987topStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue();
+                    float floatValue2 = ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m2986topEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue();
+                    return (((floatValue + ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m2985bottomStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue()) / 2.0f) - ((floatValue2 + ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m2984bottomEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue()) / 2.0f)) * 0.11f;
                 }
 
                 @Override // androidx.compose.ui.graphics.Shape
                 /* renamed from: createOutline-Pq9zytI */
                 public Outline mo320createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density2) {
                     AnimatedShapeState.this.m2991setSizeuvyYCjk(j);
-                    setClampedRange(RangesKt.rangeTo(0.0f, Float.intBitsToFloat((int) (4294967295L & j)) / 2));
+                    setClampedRange(RangesKt.rangeTo(0.0f, Float.intBitsToFloat((int) (4294967295L & j)) / 2.0f));
                     return RoundedCornerShapeKt.RoundedCornerShape(((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m2987topStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue(), ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m2986topEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue(), ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m2984bottomEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue(), ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m2985bottomStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue()).mo320createOutlinePq9zytI(j, layoutDirection, density2);
                 }
             };

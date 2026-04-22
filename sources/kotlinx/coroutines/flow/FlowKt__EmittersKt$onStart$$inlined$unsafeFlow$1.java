@@ -45,8 +45,8 @@ public final class FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1<T> implement
         this.$this_onStart$inlined = flow;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x007c, code lost:
-        if (r7.collect(r2, r0) != r1) goto L11;
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x007b, code lost:
+        if (r5.collect(r6, r0) != r1) goto L11;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x0047  */
@@ -57,10 +57,8 @@ public final class FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1<T> implement
     public Object collect(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
         AnonymousClass1 anonymousClass1;
         int i;
-        Throwable th;
         SafeCollector safeCollector;
         FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1<T> flowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;
-        FlowCollector<? super T> flowCollector2;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
             if ((anonymousClass1.label & Integer.MIN_VALUE) != 0) {
@@ -79,12 +77,11 @@ public final class FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1<T> implement
                         anonymousClass1.label = 1;
                         if (function2.invoke(safeCollector2, anonymousClass1) != coroutine_suspended) {
                             flowKt__EmittersKt$onStart$$inlined$unsafeFlow$1 = this;
-                            flowCollector2 = flowCollector;
                             safeCollector = safeCollector2;
                         }
                         return coroutine_suspended;
-                    } catch (Throwable th2) {
-                        th = th2;
+                    } catch (Throwable th) {
+                        th = th;
                         safeCollector = safeCollector2;
                         safeCollector.releaseIntercepted();
                         throw th;
@@ -97,12 +94,12 @@ public final class FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1<T> implement
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     safeCollector = (SafeCollector) anonymousClass1.L$2;
-                    flowCollector2 = (FlowCollector) anonymousClass1.L$1;
+                    flowCollector = (FlowCollector) anonymousClass1.L$1;
                     flowKt__EmittersKt$onStart$$inlined$unsafeFlow$1 = (FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1) anonymousClass1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th3) {
-                        th = th3;
+                    } catch (Throwable th2) {
+                        th = th2;
                         safeCollector.releaseIntercepted();
                         throw th;
                     }

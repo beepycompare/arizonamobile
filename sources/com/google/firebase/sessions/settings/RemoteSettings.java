@@ -77,12 +77,24 @@ public final class RemoteSettings implements SettingsProvider {
         return this.settingsCache.sessionSamplingRate();
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x007f, code lost:
+        if (r13.lock(null, r0) == r1) goto L30;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x014a, code lost:
+        if (r2.configsFetcher.doConfigFetch(r13, new com.google.firebase.sessions.settings.RemoteSettings$updateSettings$2$1(r2, null), new com.google.firebase.sessions.settings.RemoteSettings$updateSettings$2$2(null), r0) == r1) goto L30;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0029  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x008f A[Catch: all -> 0x0159, TRY_LEAVE, TryCatch #1 {all -> 0x0159, blocks: (B:36:0x0087, B:38:0x008f, B:41:0x009a), top: B:64:0x0087 }] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x009a A[Catch: all -> 0x0159, TRY_ENTER, TRY_LEAVE, TryCatch #1 {all -> 0x0159, blocks: (B:36:0x0087, B:38:0x008f, B:41:0x009a), top: B:64:0x0087 }] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00bd A[Catch: all -> 0x004f, TRY_LEAVE, TryCatch #2 {all -> 0x004f, blocks: (B:21:0x004b, B:45:0x00af, B:47:0x00bd, B:51:0x00c9), top: B:65:0x004b }] */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00c8  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x005d  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x008b A[Catch: all -> 0x0155, TRY_LEAVE, TryCatch #0 {all -> 0x0155, blocks: (B:33:0x0083, B:35:0x008b, B:38:0x0096), top: B:58:0x0083 }] */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0096 A[Catch: all -> 0x0155, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x0155, blocks: (B:33:0x0083, B:35:0x008b, B:38:0x0096), top: B:58:0x0083 }] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00ba A[Catch: all -> 0x004c, TRY_LEAVE, TryCatch #1 {all -> 0x004c, blocks: (B:14:0x0033, B:51:0x014d, B:19:0x0048, B:42:0x00ac, B:44:0x00ba, B:48:0x00c6), top: B:59:0x0027 }] */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00c5  */
+    /* JADX WARN: Type inference failed for: r12v0, types: [com.google.firebase.sessions.settings.RemoteSettings, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r12v1, types: [kotlinx.coroutines.sync.Mutex] */
+    /* JADX WARN: Type inference failed for: r12v20 */
+    /* JADX WARN: Type inference failed for: r12v3, types: [com.google.firebase.sessions.settings.RemoteSettings, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r12v5 */
     @Override // com.google.firebase.sessions.settings.SettingsProvider
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -91,58 +103,51 @@ public final class RemoteSettings implements SettingsProvider {
         RemoteSettings$updateSettings$1 remoteSettings$updateSettings$1;
         int i;
         Mutex mutex;
+        ?? r12;
         RemoteSettings remoteSettings;
         Mutex mutex2;
-        Throwable th;
-        Mutex mutex3;
         String fid;
         try {
-            if (continuation instanceof RemoteSettings$updateSettings$1) {
-                remoteSettings$updateSettings$1 = (RemoteSettings$updateSettings$1) continuation;
-                if ((remoteSettings$updateSettings$1.label & Integer.MIN_VALUE) != 0) {
-                    remoteSettings$updateSettings$1.label -= Integer.MIN_VALUE;
-                    Object obj = remoteSettings$updateSettings$1.result;
-                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    i = remoteSettings$updateSettings$1.label;
-                    if (i != 0) {
-                        ResultKt.throwOnFailure(obj);
-                        if (this.fetchInProgress.isLocked() || this.settingsCache.hasCacheExpired()) {
+            try {
+                if (continuation instanceof RemoteSettings$updateSettings$1) {
+                    remoteSettings$updateSettings$1 = (RemoteSettings$updateSettings$1) continuation;
+                    if ((remoteSettings$updateSettings$1.label & Integer.MIN_VALUE) != 0) {
+                        remoteSettings$updateSettings$1.label -= Integer.MIN_VALUE;
+                        Object obj = remoteSettings$updateSettings$1.result;
+                        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                        i = remoteSettings$updateSettings$1.label;
+                        if (i != 0) {
+                            ResultKt.throwOnFailure(obj);
+                            if (!this.fetchInProgress.isLocked() && !this.settingsCache.hasCacheExpired()) {
+                                return Unit.INSTANCE;
+                            }
                             mutex = this.fetchInProgress;
                             remoteSettings$updateSettings$1.L$0 = this;
                             remoteSettings$updateSettings$1.L$1 = mutex;
                             remoteSettings$updateSettings$1.label = 1;
-                            if (mutex.lock(null, remoteSettings$updateSettings$1) != coroutine_suspended) {
-                                remoteSettings = this;
-                            }
-                            return coroutine_suspended;
-                        }
-                        return Unit.INSTANCE;
-                    } else if (i != 1) {
-                        if (i != 2) {
+                            this = this;
+                        } else if (i == 1) {
+                            ResultKt.throwOnFailure(obj);
+                            mutex = (Mutex) remoteSettings$updateSettings$1.L$1;
+                            r12 = (RemoteSettings) remoteSettings$updateSettings$1.L$0;
+                        } else if (i != 2) {
                             if (i == 3) {
                                 mutex2 = (Mutex) remoteSettings$updateSettings$1.L$0;
-                                try {
-                                    ResultKt.throwOnFailure(obj);
-                                    Unit unit = Unit.INSTANCE;
-                                    mutex2.unlock(null);
-                                    return Unit.INSTANCE;
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    mutex2.unlock(null);
-                                    throw th;
-                                }
+                                ResultKt.throwOnFailure(obj);
+                                Unit unit = Unit.INSTANCE;
+                                mutex2.unlock(null);
+                                return Unit.INSTANCE;
                             }
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                        }
-                        mutex3 = (Mutex) remoteSettings$updateSettings$1.L$1;
-                        remoteSettings = (RemoteSettings) remoteSettings$updateSettings$1.L$0;
-                        try {
+                        } else {
+                            mutex2 = (Mutex) remoteSettings$updateSettings$1.L$1;
+                            remoteSettings = (RemoteSettings) remoteSettings$updateSettings$1.L$0;
                             ResultKt.throwOnFailure(obj);
                             fid = ((InstallationId) obj).getFid();
                             if (!Intrinsics.areEqual(fid, "")) {
                                 Log.w(FirebaseSessions.TAG, "Error getting Firebase Installation ID. Skipping this Session Event.");
                                 Unit unit2 = Unit.INSTANCE;
-                                mutex3.unlock(null);
+                                mutex2.unlock(null);
                                 return unit2;
                             }
                             String INCREMENTAL = Build.VERSION.INCREMENTAL;
@@ -151,63 +156,51 @@ public final class RemoteSettings implements SettingsProvider {
                             Intrinsics.checkNotNullExpressionValue(RELEASE, "RELEASE");
                             Map<String, String> mapOf = MapsKt.mapOf(TuplesKt.to("X-Crashlytics-Installation-ID", fid), TuplesKt.to("X-Crashlytics-Device-Model", remoteSettings.sanitize(Build.MANUFACTURER + Build.MODEL)), TuplesKt.to("X-Crashlytics-OS-Build-Version", remoteSettings.sanitize(INCREMENTAL)), TuplesKt.to("X-Crashlytics-OS-Display-Version", remoteSettings.sanitize(RELEASE)), TuplesKt.to("X-Crashlytics-API-Client-Version", remoteSettings.appInfo.getSessionSdkVersion()));
                             Log.d(FirebaseSessions.TAG, "Fetching settings from server.");
-                            remoteSettings$updateSettings$1.L$0 = mutex3;
+                            remoteSettings$updateSettings$1.L$0 = mutex2;
                             remoteSettings$updateSettings$1.L$1 = null;
                             remoteSettings$updateSettings$1.label = 3;
-                            if (remoteSettings.configsFetcher.doConfigFetch(mapOf, new RemoteSettings$updateSettings$2$1(remoteSettings, null), new RemoteSettings$updateSettings$2$2(null), remoteSettings$updateSettings$1) != coroutine_suspended) {
-                                mutex2 = mutex3;
-                                Unit unit3 = Unit.INSTANCE;
-                                mutex2.unlock(null);
-                                return Unit.INSTANCE;
+                        }
+                        if (r12.settingsCache.hasCacheExpired()) {
+                            Log.d(FirebaseSessions.TAG, "Remote settings cache not expired. Using cached values.");
+                            Unit unit3 = Unit.INSTANCE;
+                            mutex.unlock(null);
+                            return unit3;
+                        }
+                        InstallationId.Companion companion = InstallationId.Companion;
+                        FirebaseInstallationsApi firebaseInstallationsApi = r12.firebaseInstallationsApi;
+                        remoteSettings$updateSettings$1.L$0 = r12;
+                        remoteSettings$updateSettings$1.L$1 = mutex;
+                        remoteSettings$updateSettings$1.label = 2;
+                        Object create = companion.create(firebaseInstallationsApi, remoteSettings$updateSettings$1);
+                        if (create != coroutine_suspended) {
+                            remoteSettings = r12;
+                            mutex2 = mutex;
+                            obj = create;
+                            fid = ((InstallationId) obj).getFid();
+                            if (!Intrinsics.areEqual(fid, "")) {
                             }
-                            return coroutine_suspended;
-                        } catch (Throwable th3) {
-                            th = th3;
-                            mutex2 = mutex3;
-                            mutex2.unlock(null);
-                            throw th;
                         }
-                    } else {
-                        remoteSettings = (RemoteSettings) remoteSettings$updateSettings$1.L$0;
-                        ResultKt.throwOnFailure(obj);
-                        mutex = (Mutex) remoteSettings$updateSettings$1.L$1;
+                        return coroutine_suspended;
                     }
-                    if (remoteSettings.settingsCache.hasCacheExpired()) {
-                        Log.d(FirebaseSessions.TAG, "Remote settings cache not expired. Using cached values.");
-                        Unit unit4 = Unit.INSTANCE;
-                        mutex.unlock(null);
-                        return unit4;
-                    }
-                    InstallationId.Companion companion = InstallationId.Companion;
-                    FirebaseInstallationsApi firebaseInstallationsApi = remoteSettings.firebaseInstallationsApi;
-                    remoteSettings$updateSettings$1.L$0 = remoteSettings;
-                    remoteSettings$updateSettings$1.L$1 = mutex;
-                    remoteSettings$updateSettings$1.label = 2;
-                    Object create = companion.create(firebaseInstallationsApi, remoteSettings$updateSettings$1);
-                    if (create != coroutine_suspended) {
-                        mutex3 = mutex;
-                        obj = create;
-                        fid = ((InstallationId) obj).getFid();
-                        if (!Intrinsics.areEqual(fid, "")) {
-                        }
-                    }
-                    return coroutine_suspended;
                 }
+                if (r12.settingsCache.hasCacheExpired()) {
+                }
+            } catch (Throwable th) {
+                Mutex mutex3 = mutex;
+                th = th;
+                this = mutex3;
+                this.unlock(null);
+                throw th;
             }
-            if (remoteSettings.settingsCache.hasCacheExpired()) {
+            if (i != 0) {
             }
-        } catch (Throwable th4) {
-            mutex2 = mutex;
-            th = th4;
-            mutex2.unlock(null);
-            throw th;
+        } catch (Throwable th2) {
+            th = th2;
         }
         remoteSettings$updateSettings$1 = new RemoteSettings$updateSettings$1(this, continuation);
         Object obj2 = remoteSettings$updateSettings$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = remoteSettings$updateSettings$1.label;
-        if (i != 0) {
-        }
     }
 
     @Override // com.google.firebase.sessions.settings.SettingsProvider

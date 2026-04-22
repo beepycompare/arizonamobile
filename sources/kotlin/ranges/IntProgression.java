@@ -47,7 +47,8 @@ public class IntProgression implements Iterable<Integer>, KMappedMarker {
     public boolean isEmpty() {
         int i = this.step;
         int i2 = this.first;
-        return i > 0 ? i2 > this.last : i2 < this.last;
+        int i3 = this.last;
+        return i > 0 ? i2 > i3 : i2 < i3;
     }
 
     public boolean equals(Object obj) {

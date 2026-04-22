@@ -167,7 +167,7 @@ public final class DrawablePainter extends Painter implements RememberObserver {
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     protected boolean applyAlpha(float f) {
-        this.drawable.setAlpha(RangesKt.coerceIn(MathKt.roundToInt(f * 255), 0, 255));
+        this.drawable.setAlpha(RangesKt.coerceIn(MathKt.roundToInt(f * 255.0f), 0, 255));
         return true;
     }
 

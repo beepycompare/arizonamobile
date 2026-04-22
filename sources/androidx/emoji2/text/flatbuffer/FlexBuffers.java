@@ -616,7 +616,7 @@ public class FlexBuffers {
         }
 
         public int hashCode() {
-            return this.end ^ this.byteWidth;
+            return this.byteWidth ^ this.end;
         }
     }
 

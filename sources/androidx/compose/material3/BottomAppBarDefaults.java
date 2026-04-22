@@ -32,7 +32,7 @@ public final class BottomAppBarDefaults {
     private static final Arrangement.Horizontal FlexibleFixedHorizontalArrangement;
     private static final Arrangement.Horizontal FlexibleHorizontalArrangement;
     public static final BottomAppBarDefaults INSTANCE = new BottomAppBarDefaults();
-    private static final float ContainerElevation = Dp.m7555constructorimpl(0);
+    private static final float ContainerElevation = Dp.m7555constructorimpl(0.0f);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean exitAlwaysScrollBehavior$lambda$1$lambda$0() {

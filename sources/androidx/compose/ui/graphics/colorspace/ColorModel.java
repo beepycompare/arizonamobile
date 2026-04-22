@@ -9,12 +9,12 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 @JvmInline
 /* loaded from: classes.dex */
 public final class ColorModel {
-    private static final long Cmyk;
-    public static final Companion Companion = new Companion(null);
-    private static final long Lab;
-    private static final long Rgb;
-    private static final long Xyz;
     private final long packedValue;
+    public static final Companion Companion = new Companion(null);
+    private static final long Rgb = m5200constructorimpl(12884901888L);
+    private static final long Xyz = m5200constructorimpl(12884901889L);
+    private static final long Lab = m5200constructorimpl(12884901890L);
+    private static final long Cmyk = m5200constructorimpl(17179869187L);
 
     /* renamed from: box-impl  reason: not valid java name */
     public static final /* synthetic */ ColorModel m5199boximpl(long j) {
@@ -96,15 +96,6 @@ public final class ColorModel {
         public final long m5207getCmykxdoWZVw() {
             return ColorModel.Cmyk;
         }
-    }
-
-    static {
-        long j = 3;
-        long j2 = j << 32;
-        Rgb = m5200constructorimpl((0 & 4294967295L) | j2);
-        Xyz = m5200constructorimpl((1 & 4294967295L) | j2);
-        Lab = m5200constructorimpl(j2 | (2 & 4294967295L));
-        Cmyk = m5200constructorimpl((j & 4294967295L) | (4 << 32));
     }
 
     public String toString() {

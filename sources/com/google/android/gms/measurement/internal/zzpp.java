@@ -1136,7 +1136,6 @@ public final class zzpp extends zzjf {
                 return bundle;
             } catch (UnsupportedOperationException e) {
                 this.zzu.zzaV().zze().zzb("Install referrer url isn't a hierarchical URI", e);
-                return null;
             }
         }
         return null;

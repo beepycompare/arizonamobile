@@ -27,9 +27,9 @@ public final class BringIntoViewRequesterImpl implements BringIntoViewRequester 
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x003f  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0053  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0071  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x006c -> B:19:0x006f). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0051  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x006f  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x006a -> B:19:0x006d). Please submit an issue!!! */
     @Override // androidx.compose.foundation.relocation.BringIntoViewRequester
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -37,10 +37,10 @@ public final class BringIntoViewRequesterImpl implements BringIntoViewRequester 
     public Object bringIntoView(Rect rect, Continuation<? super Unit> continuation) {
         BringIntoViewRequesterImpl$bringIntoView$1 bringIntoViewRequesterImpl$bringIntoView$1;
         int i;
+        int size;
         final Rect rect2;
         int i2;
         Object[] objArr;
-        int i3;
         if (continuation instanceof BringIntoViewRequesterImpl$bringIntoView$1) {
             bringIntoViewRequesterImpl$bringIntoView$1 = (BringIntoViewRequesterImpl$bringIntoView$1) continuation;
             if ((bringIntoViewRequesterImpl$bringIntoView$1.label & Integer.MIN_VALUE) != 0) {
@@ -52,24 +52,23 @@ public final class BringIntoViewRequesterImpl implements BringIntoViewRequester 
                     ResultKt.throwOnFailure(obj);
                     MutableVector<BringIntoViewRequesterNode> mutableVector = this.nodes;
                     Object[] objArr2 = mutableVector.content;
-                    int size = mutableVector.getSize();
+                    size = mutableVector.getSize();
                     rect2 = rect;
-                    i2 = size;
+                    i2 = 0;
                     objArr = objArr2;
-                    i3 = 0;
-                    if (i3 < i2) {
+                    if (i2 < size) {
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    i2 = bringIntoViewRequesterImpl$bringIntoView$1.I$1;
-                    i3 = bringIntoViewRequesterImpl$bringIntoView$1.I$0;
+                    size = bringIntoViewRequesterImpl$bringIntoView$1.I$1;
+                    i2 = bringIntoViewRequesterImpl$bringIntoView$1.I$0;
                     ResultKt.throwOnFailure(obj);
                     rect2 = (Rect) bringIntoViewRequesterImpl$bringIntoView$1.L$0;
                     Object[] objArr3 = (Object[]) bringIntoViewRequesterImpl$bringIntoView$1.L$1;
-                    i3++;
+                    i2++;
                     objArr = objArr3;
-                    if (i3 < i2) {
+                    if (i2 < size) {
                         Function0 function0 = new Function0() { // from class: androidx.compose.foundation.relocation.BringIntoViewRequesterImpl$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
@@ -80,17 +79,17 @@ public final class BringIntoViewRequesterImpl implements BringIntoViewRequester 
                         };
                         bringIntoViewRequesterImpl$bringIntoView$1.L$0 = rect2;
                         bringIntoViewRequesterImpl$bringIntoView$1.L$1 = objArr;
-                        bringIntoViewRequesterImpl$bringIntoView$1.I$0 = i3;
-                        bringIntoViewRequesterImpl$bringIntoView$1.I$1 = i2;
+                        bringIntoViewRequesterImpl$bringIntoView$1.I$0 = i2;
+                        bringIntoViewRequesterImpl$bringIntoView$1.I$1 = size;
                         bringIntoViewRequesterImpl$bringIntoView$1.label = 1;
-                        Object bringIntoView = BringIntoViewModifierNodeKt.bringIntoView((BringIntoViewRequesterNode) objArr[i3], function0, bringIntoViewRequesterImpl$bringIntoView$1);
+                        Object bringIntoView = BringIntoViewModifierNodeKt.bringIntoView((BringIntoViewRequesterNode) objArr[i2], function0, bringIntoViewRequesterImpl$bringIntoView$1);
                         objArr3 = objArr;
                         if (bringIntoView == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        i3++;
+                        i2++;
                         objArr = objArr3;
-                        if (i3 < i2) {
+                        if (i2 < size) {
                             return Unit.INSTANCE;
                         }
                     }

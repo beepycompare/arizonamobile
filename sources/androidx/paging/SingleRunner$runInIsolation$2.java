@@ -52,19 +52,22 @@ public final class SingleRunner$runInIsolation$2 extends SuspendLambda implement
         if (r10.invoke(r9) == r0) goto L20;
      */
     /* JADX WARN: Code restructure failed: missing block: B:30:0x0093, code lost:
-        if (r10.onFinish(r1, r2) == r0) goto L20;
+        if (r9 == r0) goto L20;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r10v15, types: [androidx.paging.SingleRunner$Holder] */
+    /* JADX WARN: Type inference failed for: r10v16, types: [androidx.paging.SingleRunner$Holder] */
     /* JADX WARN: Type inference failed for: r1v0, types: [int] */
     /* JADX WARN: Type inference failed for: r1v1, types: [kotlinx.coroutines.Job] */
-    /* JADX WARN: Type inference failed for: r1v10, types: [kotlinx.coroutines.Job] */
+    /* JADX WARN: Type inference failed for: r1v14 */
     /* JADX WARN: Type inference failed for: r1v15 */
-    /* JADX WARN: Type inference failed for: r1v16 */
+    /* JADX WARN: Type inference failed for: r1v9, types: [kotlinx.coroutines.Job] */
     /* JADX WARN: Type inference failed for: r2v0 */
     /* JADX WARN: Type inference failed for: r2v1, types: [int] */
     /* JADX WARN: Type inference failed for: r2v3, types: [kotlin.coroutines.Continuation] */
     /* JADX WARN: Type inference failed for: r3v2, types: [androidx.paging.SingleRunner$Holder] */
+    /* JADX WARN: Type inference failed for: r9v0, types: [java.lang.Object, androidx.paging.SingleRunner$runInIsolation$2] */
+    /* JADX WARN: Type inference failed for: r9v1, types: [androidx.paging.SingleRunner$runInIsolation$2] */
+    /* JADX WARN: Type inference failed for: r9v5, types: [java.lang.Object] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -76,12 +79,12 @@ public final class SingleRunner$runInIsolation$2 extends SuspendLambda implement
         ?? r10;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         ?? r1 = this.label;
-        SingleRunner$runInIsolation$2 singleRunner$runInIsolation$2 = 4;
+        ?? r2 = 4;
         try {
         } catch (Throwable th) {
             r3 = this.this$0.holder;
             this.L$0 = th;
-            this.label = singleRunner$runInIsolation$2;
+            this.label = r2;
             if (r3.onFinish(r1, this) != coroutine_suspended) {
                 throw th;
             }
@@ -94,7 +97,7 @@ public final class SingleRunner$runInIsolation$2 extends SuspendLambda implement
                 holder = this.this$0.holder;
                 this.L$0 = job2;
                 this.label = 1;
-                Object tryEnqueue = holder.tryEnqueue(this.$priority, job2, this);
+                Object tryEnqueue = holder.tryEnqueue(this.$priority, job2, (Continuation) this);
                 if (tryEnqueue != coroutine_suspended) {
                     job = job2;
                     obj = tryEnqueue;
@@ -121,9 +124,10 @@ public final class SingleRunner$runInIsolation$2 extends SuspendLambda implement
             ResultKt.throwOnFailure(obj);
             r1 = job3;
             r10 = this.this$0.holder;
-            singleRunner$runInIsolation$2 = this;
+            r2 = (Continuation) this;
             this.L$0 = null;
             this.label = 3;
+            this = r10.onFinish(r1, r2);
         }
         if (((Boolean) obj).booleanValue()) {
             Function1<Continuation<? super Unit>, Object> function1 = this.$block;

@@ -89,9 +89,8 @@ public final class ScaleDrawable extends Drawable implements Drawable.Callback, 
         int width = rect.width();
         int height = rect.height();
         double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(intrinsicWidth, intrinsicHeight, width, height, this.scale);
-        double d = 2;
-        int roundToInt = MathKt.roundToInt((width - (intrinsicWidth * computeSizeMultiplier)) / d);
-        int roundToInt2 = MathKt.roundToInt((height - (intrinsicHeight * computeSizeMultiplier)) / d);
+        int roundToInt = MathKt.roundToInt((width - (intrinsicWidth * computeSizeMultiplier)) / 2.0d);
+        int roundToInt2 = MathKt.roundToInt((height - (intrinsicHeight * computeSizeMultiplier)) / 2.0d);
         this.child.setBounds(roundToInt, roundToInt2, intrinsicWidth + roundToInt, intrinsicHeight + roundToInt2);
         this.childDx = rect.left;
         this.childDy = rect.top;

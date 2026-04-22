@@ -15,7 +15,6 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
-import kotlin.UShort;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: MotionEventAdapter.android.kt */
@@ -134,7 +133,7 @@ public final class MotionEventAdapter {
 
             /* JADX INFO: Access modifiers changed from: private */
             public final int packShorts(short s, short s2) {
-                return (s << 16) | (s2 & UShort.MAX_VALUE);
+                return (s << 16) | (65535 & s2);
             }
 
             /* JADX INFO: Access modifiers changed from: private */
@@ -144,7 +143,7 @@ public final class MotionEventAdapter {
 
             /* JADX INFO: Access modifiers changed from: private */
             public final short unpackShort2(int i) {
-                return (short) (i & 65535);
+                return (short) (65535 & i);
             }
 
             private Companion() {
@@ -327,9 +326,10 @@ public final class MotionEventAdapter {
         if (indexOfKey >= 0) {
             j = this.motionEventToComposePointerIdMap.valueAt(indexOfKey);
         } else {
-            j = this.nextId;
-            this.nextId = 1 + j;
-            this.motionEventToComposePointerIdMap.put(i, j);
+            long j2 = this.nextId;
+            this.nextId = 1 + j2;
+            this.motionEventToComposePointerIdMap.put(i, j2);
+            j = j2;
         }
         return PointerId.m6065constructorimpl(j);
     }
@@ -416,7 +416,6 @@ public final class MotionEventAdapter {
         } else {
             m4543getZeroF1C5BW0 = Offset.Companion.m4543getZeroF1C5BW0();
         }
-        long j6 = m4543getZeroF1C5BW0;
-        return new PointerInputEventData(m6003getComposePointerId_I2yYro, motionEvent.getEventTime(), j2, j, z, pressure, m6164getUnknownT8wyACA, this.activeHoverIds.get(motionEvent.getPointerId(i), false), arrayList, j6, m4521copydBAh8RU$default, null);
+        return new PointerInputEventData(m6003getComposePointerId_I2yYro, motionEvent.getEventTime(), j2, j, z, pressure, m6164getUnknownT8wyACA, this.activeHoverIds.get(motionEvent.getPointerId(i), false), arrayList, m4543getZeroF1C5BW0, m4521copydBAh8RU$default, null);
     }
 }

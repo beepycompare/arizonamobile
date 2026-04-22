@@ -400,7 +400,7 @@ public final class GsonTypes {
         }
 
         public int hashCode() {
-            return (Arrays.hashCode(this.typeArguments) ^ this.rawType.hashCode()) ^ hashCodeOrZero(this.ownerType);
+            return hashCodeOrZero(this.ownerType) ^ (Arrays.hashCode(this.typeArguments) ^ this.rawType.hashCode());
         }
 
         public String toString() {
@@ -493,7 +493,7 @@ public final class GsonTypes {
 
         public int hashCode() {
             Type type = this.lowerBound;
-            return (type != null ? type.hashCode() + 31 : 1) ^ (this.upperBound.hashCode() + 31);
+            return (this.upperBound.hashCode() + 31) ^ (type != null ? type.hashCode() + 31 : 1);
         }
 
         public String toString() {

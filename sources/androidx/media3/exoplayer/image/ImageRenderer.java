@@ -123,8 +123,8 @@ public class ImageRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0027, code lost:
-        if (r2 >= r6) goto L14;
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0026, code lost:
+        if (r2 >= r5) goto L14;
      */
     @Override // androidx.media3.exoplayer.BaseRenderer
     /*

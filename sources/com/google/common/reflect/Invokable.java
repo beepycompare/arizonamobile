@@ -307,11 +307,13 @@ public abstract class Invokable<T, R> implements AnnotatedElement, Member {
         @Override // com.google.common.reflect.Invokable
         public Type[] getGenericParameterTypes() {
             Type[] genericParameterTypes = this.constructor.getGenericParameterTypes();
-            if (genericParameterTypes.length <= 0 || !mayNeedHiddenThis()) {
-                return genericParameterTypes;
+            if (genericParameterTypes.length > 0 && mayNeedHiddenThis()) {
+                Class<?>[] parameterTypes = this.constructor.getParameterTypes();
+                if (genericParameterTypes.length == parameterTypes.length && parameterTypes[0] == getDeclaringClass().getEnclosingClass()) {
+                    return (Type[]) Arrays.copyOfRange(genericParameterTypes, 1, genericParameterTypes.length);
+                }
             }
-            Class<?>[] parameterTypes = this.constructor.getParameterTypes();
-            return (genericParameterTypes.length == parameterTypes.length && parameterTypes[0] == getDeclaringClass().getEnclosingClass()) ? (Type[]) Arrays.copyOfRange(genericParameterTypes, 1, genericParameterTypes.length) : genericParameterTypes;
+            return genericParameterTypes;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */

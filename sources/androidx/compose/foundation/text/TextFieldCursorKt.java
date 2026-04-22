@@ -123,7 +123,7 @@ public final class TextFieldCursorKt {
                 rect = new Rect(0.0f, 0.0f, 0.0f, 0.0f);
             }
             float coerceAtLeast = RangesKt.coerceAtLeast((float) Math.floor(contentDrawScope.mo405toPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness())), 1.0f);
-            float f = coerceAtLeast / 2;
+            float f = coerceAtLeast / 2.0f;
             float coerceAtLeast2 = RangesKt.coerceAtLeast(RangesKt.coerceAtMost(rect.getLeft() + f, Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() >> 32)) - f), f);
             if (((int) coerceAtLeast) % 2 == 1) {
                 rint = ((float) Math.floor(coerceAtLeast2)) + 0.5f;
@@ -131,7 +131,7 @@ public final class TextFieldCursorKt {
                 rint = (float) Math.rint(coerceAtLeast2);
             }
             ContentDrawScope contentDrawScope2 = contentDrawScope;
-            DrawScope.m5331drawLine1RTmtNc$default(contentDrawScope2, brush, Offset.m4519constructorimpl((Float.floatToRawIntBits(rect.getTop()) & 4294967295L) | (Float.floatToRawIntBits(rint) << 32)), Offset.m4519constructorimpl((Float.floatToRawIntBits(rect.getBottom()) & 4294967295L) | (Float.floatToRawIntBits(rint) << 32)), coerceAtLeast, 0, null, cursorAlpha, null, 0, 432, null);
+            DrawScope.m5331drawLine1RTmtNc$default(contentDrawScope2, brush, Offset.m4519constructorimpl((Float.floatToRawIntBits(rint) << 32) | (Float.floatToRawIntBits(rect.getTop()) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(rect.getBottom()) & 4294967295L) | (Float.floatToRawIntBits(rint) << 32)), coerceAtLeast, 0, null, cursorAlpha, null, 0, 432, null);
         }
         return Unit.INSTANCE;
     }

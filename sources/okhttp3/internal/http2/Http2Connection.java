@@ -1,5 +1,6 @@
 package okhttp3.internal.http2;
 
+import androidx.media3.common.C;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import java.io.Closeable;
@@ -258,83 +259,51 @@ public final class Http2Connection implements Closeable, Lockable {
         return newStream(0, requestHeaders, z);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:100:0x005e A[Catch: all -> 0x0092, TryCatch #0 {all -> 0x0092, blocks: (B:98:0x005b, B:100:0x005e, B:104:0x006d, B:101:0x0064, B:103:0x0068, B:109:0x0078, B:110:0x0083, B:119:0x0090, B:120:0x0091), top: B:128:0x000b }] */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0064 A[Catch: all -> 0x0092, TryCatch #0 {all -> 0x0092, blocks: (B:98:0x005b, B:100:0x005e, B:104:0x006d, B:101:0x0064, B:103:0x0068, B:109:0x0078, B:110:0x0083, B:119:0x0090, B:120:0x0091), top: B:128:0x000b }] */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0072  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0050 A[Catch: all -> 0x008b, TryCatch #3 {all -> 0x008b, blocks: (B:85:0x002d, B:87:0x0032, B:89:0x003a, B:94:0x004a, B:96:0x0050, B:97:0x0059, B:112:0x0085, B:113:0x008a), top: B:133:0x0020 }] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x004a A[Catch: all -> 0x0084, TryCatch #1 {, blocks: (B:52:0x0008, B:53:0x000b, B:72:0x0055, B:74:0x0058, B:78:0x0067, B:75:0x005e, B:77:0x0062, B:83:0x0072, B:84:0x007d, B:54:0x000c, B:56:0x0013, B:57:0x0018, B:59:0x001c, B:61:0x002c, B:63:0x0034, B:68:0x0044, B:70:0x004a, B:71:0x0053, B:85:0x007e, B:86:0x0083), top: B:95:0x0008 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final Http2Stream newStream(int i, List<Header> list, boolean z) throws IOException {
-        Throwable th;
+        int i2;
+        Http2Stream http2Stream;
         boolean z2;
         boolean z3 = !z;
         synchronized (this.writer) {
-            try {
-                try {
-                    synchronized (this) {
-                        try {
-                            if (this.nextStreamId > 1073741823) {
-                                try {
-                                    shutdown(ErrorCode.REFUSED_STREAM);
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    throw th;
-                                }
-                            }
-                            try {
-                                if (this.isShutdown) {
-                                    throw new ConnectionShutdownException();
-                                }
-                                int i2 = this.nextStreamId;
-                                this.nextStreamId = i2 + 2;
-                                Http2Stream http2Stream = new Http2Stream(i2, this, z3, false, null);
-                                if (z && this.writeBytesTotal < this.writeBytesMaximum && http2Stream.getWriteBytesTotal() < http2Stream.getWriteBytesMaximum()) {
-                                    z2 = false;
-                                    if (http2Stream.isOpen()) {
-                                        this.streams.put(Integer.valueOf(i2), http2Stream);
-                                    }
-                                    Unit unit = Unit.INSTANCE;
-                                    if (i != 0) {
-                                        this.writer.headers(z3, i2, list);
-                                    } else if (this.client) {
-                                        throw new IllegalArgumentException("client streams shouldn't have associated stream IDs".toString());
-                                    } else {
-                                        this.writer.pushPromise(i, i2, list);
-                                    }
-                                    Unit unit2 = Unit.INSTANCE;
-                                    if (z2) {
-                                        this.writer.flush();
-                                    }
-                                    return http2Stream;
-                                }
-                                z2 = true;
-                                if (http2Stream.isOpen()) {
-                                }
-                                Unit unit3 = Unit.INSTANCE;
-                                if (i != 0) {
-                                }
-                                Unit unit22 = Unit.INSTANCE;
-                                if (z2) {
-                                }
-                                return http2Stream;
-                            } catch (Throwable th3) {
-                                th = th3;
-                                th = th;
-                                throw th;
-                            }
-                        } catch (Throwable th4) {
-                            th = th4;
-                        }
-                    }
-                } catch (Throwable th5) {
-                    th = th5;
-                    throw th;
+            synchronized (this) {
+                if (this.nextStreamId > 1073741823) {
+                    shutdown(ErrorCode.REFUSED_STREAM);
                 }
-            } catch (Throwable th6) {
-                th = th6;
+                if (this.isShutdown) {
+                    throw new ConnectionShutdownException();
+                }
+                i2 = this.nextStreamId;
+                this.nextStreamId = i2 + 2;
+                http2Stream = new Http2Stream(i2, this, z3, false, null);
+                if (z && this.writeBytesTotal < this.writeBytesMaximum && http2Stream.getWriteBytesTotal() < http2Stream.getWriteBytesMaximum()) {
+                    z2 = false;
+                    if (http2Stream.isOpen()) {
+                        this.streams.put(Integer.valueOf(i2), http2Stream);
+                    }
+                    Unit unit = Unit.INSTANCE;
+                }
+                z2 = true;
+                if (http2Stream.isOpen()) {
+                }
+                Unit unit2 = Unit.INSTANCE;
             }
+            if (i == 0) {
+                this.writer.headers(z3, i2, list);
+            } else if (this.client) {
+                throw new IllegalArgumentException("client streams shouldn't have associated stream IDs".toString());
+            } else {
+                this.writer.pushPromise(i, i2, list);
+            }
+            Unit unit3 = Unit.INSTANCE;
         }
+        if (z2) {
+            this.writer.flush();
+        }
+        return http2Stream;
     }
 
     public final void writeHeaders$okhttp(int i, boolean z, List<Header> alternating) throws IOException {
@@ -590,7 +559,7 @@ public final class Http2Connection implements Closeable, Lockable {
                 return;
             }
             this.degradedPingsSent = j2 + 1;
-            this.degradedPongDeadlineNs = System.nanoTime() + 1000000000;
+            this.degradedPongDeadlineNs = System.nanoTime() + C.NANOS_PER_SECOND;
             Unit unit = Unit.INSTANCE;
             TaskQueue.execute$default(this.writerQueue, this.connectionName + " ping", 0L, false, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
@@ -778,13 +747,10 @@ public final class Http2Connection implements Closeable, Lockable {
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r0v0, types: [okhttp3.internal.http2.ErrorCode] */
-        /* JADX WARN: Type inference failed for: r0v7, types: [java.io.Closeable] */
-        /* JADX WARN: Type inference failed for: r0v8, types: [okhttp3.internal.http2.ErrorCode] */
+        /* JADX WARN: Type inference failed for: r6v5, types: [java.io.Closeable] */
         /* renamed from: invoke */
         public void invoke2() {
-            ErrorCode errorCode;
-            Http2Reader http2Reader = ErrorCode.INTERNAL_ERROR;
+            ErrorCode errorCode = ErrorCode.INTERNAL_ERROR;
             ErrorCode errorCode2 = ErrorCode.INTERNAL_ERROR;
             IOException e = null;
             try {
@@ -792,17 +758,15 @@ public final class Http2Connection implements Closeable, Lockable {
                     this.reader.readConnectionPreface(this);
                     do {
                     } while (this.reader.nextFrame(false, this));
-                    http2Reader = ErrorCode.NO_ERROR;
+                    errorCode = ErrorCode.NO_ERROR;
                     errorCode2 = ErrorCode.CANCEL;
-                    errorCode = http2Reader;
                 } catch (IOException e2) {
                     e = e2;
-                    ErrorCode errorCode3 = ErrorCode.PROTOCOL_ERROR;
+                    errorCode = ErrorCode.PROTOCOL_ERROR;
                     errorCode2 = ErrorCode.PROTOCOL_ERROR;
-                    errorCode = errorCode3;
                 }
             } finally {
-                this.this$0.close$okhttp(http2Reader, errorCode2, e);
+                this.this$0.close$okhttp(errorCode, errorCode2, e);
                 _UtilCommonKt.closeQuietly(this.reader);
             }
         }
@@ -989,8 +953,10 @@ public final class Http2Connection implements Closeable, Lockable {
         public void ping(boolean z, final int i, final int i2) {
             Http2Connection http2Connection = this.this$0;
             if (!z) {
+                TaskQueue taskQueue = http2Connection.writerQueue;
+                String str = this.this$0.getConnectionName$okhttp() + " ping";
                 final Http2Connection http2Connection2 = this.this$0;
-                TaskQueue.execute$default(http2Connection.writerQueue, this.this$0.getConnectionName$okhttp() + " ping", 0L, false, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$ReaderRunnable$$ExternalSyntheticLambda0
+                TaskQueue.execute$default(taskQueue, str, 0L, false, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$ReaderRunnable$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         return Http2Connection.ReaderRunnable.ping$lambda$1(Http2Connection.this, i, i2);

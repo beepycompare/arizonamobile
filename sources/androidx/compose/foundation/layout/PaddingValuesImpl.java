@@ -107,6 +107,6 @@ public final class PaddingValuesImpl implements PaddingValues {
     }
 
     public /* synthetic */ PaddingValuesImpl(float f, float f2, float f3, float f4, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m7555constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7555constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7555constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7555constructorimpl(0) : f4, null);
+        this((i & 1) != 0 ? Dp.m7555constructorimpl(0.0f) : f, (i & 2) != 0 ? Dp.m7555constructorimpl(0.0f) : f2, (i & 4) != 0 ? Dp.m7555constructorimpl(0.0f) : f3, (i & 8) != 0 ? Dp.m7555constructorimpl(0.0f) : f4, null);
     }
 }

@@ -75,6 +75,8 @@ final class DefaultScrollableState$scroll$2 extends SuspendLambda implements Fun
             return ((AnonymousClass1) create(scrollScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r5v6, types: [kotlin.Unit, java.lang.Object] */
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             MutableState mutableState;
@@ -100,7 +102,8 @@ final class DefaultScrollableState$scroll$2 extends SuspendLambda implements Fun
                 }
                 mutableState3 = this.this$0.isScrollingState;
                 mutableState3.setValue(Boxing.boxBoolean(false));
-                return Unit.INSTANCE;
+                this = Unit.INSTANCE;
+                return this;
             } catch (Throwable th) {
                 mutableState = this.this$0.isScrollingState;
                 mutableState.setValue(Boxing.boxBoolean(false));

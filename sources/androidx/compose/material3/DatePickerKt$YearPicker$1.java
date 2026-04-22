@@ -80,13 +80,14 @@ public final class DatePickerKt$YearPicker$1 implements Function2<Composer, Inte
         final DatePickerColors datePickerColors = this.$colors;
         Object rememberedValue = composer.rememberedValue();
         if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = new Function1() { // from class: androidx.compose.material3.DatePickerKt$YearPicker$1$$ExternalSyntheticLambda0
+            Function1 function12 = new Function1() { // from class: androidx.compose.material3.DatePickerKt$YearPicker$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     return DatePickerKt$YearPicker$1.invoke$lambda$1$lambda$0(IntRange.this, calendarModel2, year2, year, function1, selectableDates, datePickerColors, (LazyGridScope) obj);
                 }
             };
-            composer.updateRememberedValue(rememberedValue);
+            composer.updateRememberedValue(function12);
+            rememberedValue = function12;
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         LazyGridDslKt.LazyVerticalGrid(fixed2, m264backgroundbw27NRU$default, rememberLazyGridState, null, false, m688spacedBy0680j_4, horizontalOrVertical, null, false, null, (Function1) rememberedValue, composer, 1769472, 0, 920);

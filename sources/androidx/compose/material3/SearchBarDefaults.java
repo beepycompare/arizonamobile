@@ -262,10 +262,10 @@ public final class SearchBarDefaults {
     }
 
     public final SearchBarScrollBehavior enterAlwaysSearchBarScrollBehavior(float f, float f2, Function0<Boolean> function0, AnimationSpec<Float> animationSpec, DecayAnimationSpec<Float> decayAnimationSpec, boolean z, Composer composer, int i, int i2) {
-        final Function0<Boolean> function02;
+        Function0<Boolean> function02;
         ComposerKt.sourceInformationMarkerStart(composer, 1222500790, "C(enterAlwaysSearchBarScrollBehavior)N(initialOffset,initialOffsetLimit,canScroll,snapAnimationSpec,flingAnimationSpec,reverseLayout)1088@48597L8,1090@48770L7,1091@48835L26,1105@49345L375,1094@48944L776:SearchBar.kt#uh7d8r");
-        final float f3 = (i2 & 1) != 0 ? 0.0f : f;
-        final float f4 = (i2 & 2) != 0 ? -3.4028235E38f : f2;
+        float f3 = (i2 & 1) != 0 ? 0.0f : f;
+        float f4 = (i2 & 2) != 0 ? -3.4028235E38f : f2;
         if ((i2 & 4) != 0) {
             ComposerKt.sourceInformationMarkerStart(composer, -1997773186, "CC(remember):SearchBar.kt#9igjgp");
             Object rememberedValue = composer.rememberedValue();
@@ -278,13 +278,13 @@ public final class SearchBarDefaults {
                 };
                 composer.updateRememberedValue(rememberedValue);
             }
-            ComposerKt.sourceInformationMarkerEnd(composer);
             function02 = (Function0) rememberedValue;
+            ComposerKt.sourceInformationMarkerEnd(composer);
         } else {
             function02 = function0;
         }
-        final FiniteAnimationSpec value = (i2 & 8) != 0 ? MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, composer, 6) : animationSpec;
-        final DecayAnimationSpec<Float> rememberSplineBasedDecay = (i2 & 16) != 0 ? SplineBasedFloatDecayAnimationSpec_androidKt.rememberSplineBasedDecay(composer, 0) : decayAnimationSpec;
+        FiniteAnimationSpec value = (i2 & 8) != 0 ? MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, composer, 6) : animationSpec;
+        DecayAnimationSpec<Float> rememberSplineBasedDecay = (i2 & 16) != 0 ? SplineBasedFloatDecayAnimationSpec_androidKt.rememberSplineBasedDecay(composer, 0) : decayAnimationSpec;
         boolean z2 = (i2 & 32) != 0 ? false : z;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1222500790, i, -1, "androidx.compose.material3.SearchBarDefaults.enterAlwaysSearchBarScrollBehavior (SearchBar.kt:1094)");
@@ -293,22 +293,26 @@ public final class SearchBarDefaults {
         Saver<EnterAlwaysSearchBarScrollBehavior, ?> Saver = EnterAlwaysSearchBarScrollBehavior.Companion.Saver(function02, value, rememberSplineBasedDecay);
         ComposerKt.sourceInformationMarkerStart(composer, -1997748883, "CC(remember):SearchBar.kt#9igjgp");
         boolean z3 = true;
-        boolean z4 = ((((i & 112) ^ 48) > 32 && composer.changed(f4)) || (i & 48) == 32) | ((((i & 14) ^ 6) > 4 && composer.changed(f3)) || (i & 6) == 4) | ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(function02)) || (i & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
+        boolean z4 = ((((i & 14) ^ 6) > 4 && composer.changed(f3)) || (i & 6) == 4) | ((((i & 112) ^ 48) > 32 && composer.changed(f4)) || (i & 48) == 32) | ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(function02)) || (i & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
         if ((((458752 & i) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) <= 131072 || !composer.changed(z2)) && (i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) != 131072) {
             z3 = false;
         }
         boolean changedInstance = z4 | z3 | composer.changedInstance(value) | composer.changedInstance(rememberSplineBasedDecay);
         Object rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
+            final float f5 = f3;
+            final float f6 = f4;
+            final Function0<Boolean> function03 = function02;
+            final AnimationSpec<Float> animationSpec2 = value;
+            final DecayAnimationSpec<Float> decayAnimationSpec2 = rememberSplineBasedDecay;
             final boolean z5 = z2;
-            Function0 function03 = new Function0() { // from class: androidx.compose.material3.SearchBarDefaults$$ExternalSyntheticLambda5
+            rememberedValue2 = new Function0() { // from class: androidx.compose.material3.SearchBarDefaults$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    return SearchBarDefaults.enterAlwaysSearchBarScrollBehavior$lambda$3$lambda$2(f3, f4, function02, z5, value, rememberSplineBasedDecay);
+                    return SearchBarDefaults.enterAlwaysSearchBarScrollBehavior$lambda$3$lambda$2(f5, f6, function03, z5, animationSpec2, decayAnimationSpec2);
                 }
             };
-            composer.updateRememberedValue(function03);
-            rememberedValue2 = function03;
+            composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         EnterAlwaysSearchBarScrollBehavior enterAlwaysSearchBarScrollBehavior = (EnterAlwaysSearchBarScrollBehavior) RememberSaveableKt.m4213rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue2, composer, 0);
@@ -2832,8 +2836,8 @@ public final class SearchBarDefaults {
                                         ComposerKt.traceEventStart(-813926844, i22, -1, "androidx.compose.material3.SearchBarDefaults.InputField.<anonymous> (SearchBar.kt:1698)");
                                     }
                                     TextFieldDefaults textFieldDefaults = TextFieldDefaults.INSTANCE;
-                                    int i23 = i22;
                                     String str2 = str;
+                                    int i23 = i22;
                                     boolean z10 = z8;
                                     VisualTransformation none = VisualTransformation.Companion.getNone();
                                     MutableInteractionSource mutableInteractionSource6 = mutableInteractionSource5;

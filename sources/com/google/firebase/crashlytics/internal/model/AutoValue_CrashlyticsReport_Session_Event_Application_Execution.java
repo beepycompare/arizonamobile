@@ -75,7 +75,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution exte
         CrashlyticsReport.Session.Event.Application.Execution.Exception exception = this.exception;
         int hashCode2 = (hashCode ^ (exception == null ? 0 : exception.hashCode())) * 1000003;
         CrashlyticsReport.ApplicationExitInfo applicationExitInfo = this.appExitInfo;
-        return ((((hashCode2 ^ (applicationExitInfo != null ? applicationExitInfo.hashCode() : 0)) * 1000003) ^ this.signal.hashCode()) * 1000003) ^ this.binaries.hashCode();
+        return this.binaries.hashCode() ^ ((((hashCode2 ^ (applicationExitInfo != null ? applicationExitInfo.hashCode() : 0)) * 1000003) ^ this.signal.hashCode()) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

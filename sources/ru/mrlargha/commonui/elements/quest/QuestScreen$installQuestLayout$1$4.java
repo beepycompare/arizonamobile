@@ -26,9 +26,9 @@ public final class QuestScreen$installQuestLayout$1$4 implements QuestAdapter.On
         this.this$0 = questScreen;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00d0  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x014a  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0150  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00cf  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x014f  */
     @Override // ru.mrlargha.commonui.elements.quest.QuestAdapter.OnQuestClickListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -46,7 +46,7 @@ public final class QuestScreen$installQuestLayout$1$4 implements QuestAdapter.On
         this.$this_apply.rodinaQuestInfoTitle.setText(quest.getTitle());
         this.$this_apply.textProgress.setText(quest.getTextProgress());
         this.$this_apply.rodinaQuestInfoDescription.setText(quest.getDescription());
-        this.$this_apply.rodinaQuestStatText.setText((Math.abs(quest.getProgress() / quest.getMaxProgress()) <= Double.MAX_VALUE ? MathKt.roundToInt(progress * 100) : 0) + "%");
+        this.$this_apply.rodinaQuestStatText.setText((Math.abs(quest.getProgress() / quest.getMaxProgress()) <= Double.MAX_VALUE ? MathKt.roundToInt(progress * 100.0d) : 0) + "%");
         this.$this_apply.rodinaQuestProgress.setMax(quest.getMaxProgress());
         this.$this_apply.rodinaQuestProgress.setProgress(quest.getProgress());
         CharSequence charSequence = "";

@@ -299,9 +299,8 @@ public final class RangeSliderState {
     }
 
     public final void updateMinMaxPx$material3() {
-        float f = 2;
-        float max = Math.max(getTotalWidth$material3() - (getEndThumbWidth$material3() / f), 0.0f);
-        float min = Math.min(getStartThumbWidth$material3() / f, max);
+        float max = Math.max(getTotalWidth$material3() - (getEndThumbWidth$material3() / 2.0f), 0.0f);
+        float min = Math.min(getStartThumbWidth$material3() / 2.0f, max);
         if (isDragging$material3()) {
             return;
         }

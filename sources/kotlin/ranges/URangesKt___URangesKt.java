@@ -259,7 +259,7 @@ public class URangesKt___URangesKt {
     public static final ULongRange m10473untileb3DHEI(long j, long j2) {
         int compare;
         compare = Long.compare(j2 ^ Long.MIN_VALUE, 0 ^ Long.MIN_VALUE);
-        return compare <= 0 ? ULongRange.Companion.getEMPTY() : new ULongRange(j, ULong.m9362constructorimpl(j2 - ULong.m9362constructorimpl(1 & 4294967295L)), null);
+        return compare <= 0 ? ULongRange.Companion.getEMPTY() : new ULongRange(j, ULong.m9362constructorimpl(j2 - ULong.m9362constructorimpl(1L)), null);
     }
 
     /* renamed from: until-5PvTz6A  reason: not valid java name */

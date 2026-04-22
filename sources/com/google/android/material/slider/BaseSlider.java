@@ -1639,20 +1639,24 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
     }
 
     private float calculateStartTrackCornerSize(float f) {
-        if (this.values.isEmpty() || !hasGapBetweenThumbAndTrack()) {
-            return f;
+        if (!this.values.isEmpty() && hasGapBetweenThumbAndTrack()) {
+            float valueToX = valueToX(this.values.get((isRtl() || isVertical()) ? this.values.size() - 1 : 0).floatValue()) - this.trackSidePadding;
+            if (valueToX < f) {
+                return Math.max(valueToX, this.trackInsideCornerSize);
+            }
         }
-        float valueToX = valueToX(this.values.get((isRtl() || isVertical()) ? this.values.size() - 1 : 0).floatValue()) - this.trackSidePadding;
-        return valueToX < f ? Math.max(valueToX, this.trackInsideCornerSize) : f;
+        return f;
     }
 
     private float calculateEndTrackCornerSize(float f) {
-        if (this.values.isEmpty() || !hasGapBetweenThumbAndTrack()) {
-            return f;
+        if (!this.values.isEmpty() && hasGapBetweenThumbAndTrack()) {
+            float valueToX = valueToX(this.values.get((isRtl() || isVertical()) ? 0 : this.values.size() - 1).floatValue()) - this.trackSidePadding;
+            int i = this.trackWidth;
+            if (valueToX > i - f) {
+                return Math.max(i - valueToX, this.trackInsideCornerSize);
+            }
         }
-        float valueToX = valueToX(this.values.get((isRtl() || isVertical()) ? 0 : this.values.size() - 1).floatValue()) - this.trackSidePadding;
-        int i = this.trackWidth;
-        return valueToX > ((float) i) - f ? Math.max(i - valueToX, this.trackInsideCornerSize) : f;
+        return f;
     }
 
     private void drawTrackIcons(Canvas canvas, RectF rectF, RectF rectF2) {
@@ -1875,6 +1879,7 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
     }
 
     private void drawThumbs(Canvas canvas, int i, int i2) {
+        BaseSlider<S, L, T> baseSlider;
         Canvas canvas2;
         int i3;
         int i4;
@@ -1883,24 +1888,27 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
             float floatValue = this.values.get(i5).floatValue();
             Drawable drawable = this.customThumbDrawable;
             if (drawable != null) {
+                baseSlider = this;
                 canvas2 = canvas;
                 i3 = i;
                 i4 = i2;
-                drawThumbDrawable(canvas2, i3, i4, floatValue, drawable);
+                baseSlider.drawThumbDrawable(canvas2, i3, i4, floatValue, drawable);
             } else {
+                baseSlider = this;
                 canvas2 = canvas;
                 i3 = i;
                 i4 = i2;
-                if (i5 < this.customThumbDrawablesForValues.size()) {
-                    drawThumbDrawable(canvas2, i3, i4, floatValue, this.customThumbDrawablesForValues.get(i5));
+                if (i5 < baseSlider.customThumbDrawablesForValues.size()) {
+                    baseSlider.drawThumbDrawable(canvas2, i3, i4, floatValue, baseSlider.customThumbDrawablesForValues.get(i5));
                 } else {
-                    if (!isEnabled()) {
-                        canvas2.drawCircle(this.trackSidePadding + (normalizeValue(floatValue) * i3), i4, getThumbRadius(), this.thumbPaint);
+                    if (!baseSlider.isEnabled()) {
+                        canvas2.drawCircle(baseSlider.trackSidePadding + (baseSlider.normalizeValue(floatValue) * i3), i4, baseSlider.getThumbRadius(), baseSlider.thumbPaint);
                     }
-                    drawThumbDrawable(canvas2, i3, i4, floatValue, this.defaultThumbDrawable);
+                    baseSlider.drawThumbDrawable(canvas2, i3, i4, floatValue, baseSlider.defaultThumbDrawable);
                 }
             }
             i5++;
+            this = baseSlider;
             canvas = canvas2;
             i = i3;
             i2 = i4;

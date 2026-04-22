@@ -117,7 +117,7 @@ public final class ConnectionPoolImpl implements ConnectionPool {
     /* JADX WARN: Removed duplicated region for block: B:71:0x0143 A[Catch: all -> 0x018d, TRY_LEAVE, TryCatch #4 {all -> 0x018d, blocks: (B:64:0x0128, B:69:0x0138, B:71:0x0143, B:79:0x0181, B:80:0x018c), top: B:105:0x0128 }] */
     /* JADX WARN: Removed duplicated region for block: B:77:0x016f  */
     /* JADX WARN: Removed duplicated region for block: B:79:0x0181 A[Catch: all -> 0x018d, TRY_ENTER, TryCatch #4 {all -> 0x018d, blocks: (B:64:0x0128, B:69:0x0138, B:71:0x0143, B:79:0x0181, B:80:0x018c), top: B:105:0x0128 }] */
-    /* JADX WARN: Type inference failed for: r0v14, types: [androidx.room.coroutines.PooledConnectionImpl, T] */
+    /* JADX WARN: Type inference failed for: r1v11, types: [androidx.room.coroutines.PooledConnectionImpl, T] */
     @Override // androidx.room.coroutines.ConnectionPool
     /*
         Code decompiled incorrectly, please refer to instructions dump.

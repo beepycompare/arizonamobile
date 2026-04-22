@@ -78,7 +78,7 @@ public final class QuestAdapter extends RecyclerView.Adapter<QuestViewHolder> {
             binding.rodinaQuestInfoStatTitle.setVisibility(0);
             binding.rodinaQuestProgress.setVisibility(0);
             binding.rodinaQuestInfoStatText.setVisibility(0);
-            binding.rodinaQuestInfoStatText.setText(MathKt.roundToInt((questLine2.getProgress() / questLine2.getMaxProgress()) * 100) + "%");
+            binding.rodinaQuestInfoStatText.setText(MathKt.roundToInt((questLine2.getProgress() / questLine2.getMaxProgress()) * 100.0d) + "%");
             binding.rodinaQuestProgress.setMax(questLine2.getMaxProgress());
             binding.rodinaQuestProgress.setProgress(questLine2.getProgress());
         }

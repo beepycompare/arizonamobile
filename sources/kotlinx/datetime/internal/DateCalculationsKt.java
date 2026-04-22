@@ -26,7 +26,7 @@ public final class DateCalculationsKt {
     public static final boolean isLeapYear(int i) {
         long j = i;
         if ((3 & j) == 0) {
-            return j % ((long) 100) != 0 || j % ((long) 400) == 0;
+            return j % 100 != 0 || j % 400 == 0;
         }
         return false;
     }

@@ -91,7 +91,7 @@ public final /* synthetic */ class PagingDataTransforms__PagingDataTransforms_jv
                 }
 
                 /* JADX WARN: Code restructure failed: missing block: B:21:0x006f, code lost:
-                    if (r10.emit(r11, r0) != r1) goto L11;
+                    if (r8.emit(r10, r0) != r1) goto L11;
                  */
                 /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
                 /* JADX WARN: Removed duplicated region for block: B:16:0x003e  */
@@ -198,7 +198,7 @@ public final /* synthetic */ class PagingDataTransforms__PagingDataTransforms_jv
                 }
 
                 /* JADX WARN: Code restructure failed: missing block: B:21:0x006f, code lost:
-                    if (r10.emit(r11, r0) != r1) goto L11;
+                    if (r8.emit(r10, r0) != r1) goto L11;
                  */
                 /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
                 /* JADX WARN: Removed duplicated region for block: B:16:0x003e  */
@@ -305,7 +305,7 @@ public final /* synthetic */ class PagingDataTransforms__PagingDataTransforms_jv
                 }
 
                 /* JADX WARN: Code restructure failed: missing block: B:21:0x006f, code lost:
-                    if (r10.emit(r11, r0) != r1) goto L11;
+                    if (r8.emit(r10, r0) != r1) goto L11;
                  */
                 /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
                 /* JADX WARN: Removed duplicated region for block: B:16:0x003e  */

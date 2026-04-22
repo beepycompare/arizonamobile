@@ -146,9 +146,8 @@ public final class BannerElement {
         CountDownTimer start = new CountDownTimer(timer) { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.banner.BannerElement$setBannerInfo$1$2
             @Override // android.os.CountDownTimer
             public void onTick(long j) {
-                long j2;
-                long j3;
-                bannerElementBinding.time.setText(((j / 1000) / 60) + StringUtils.PROCESS_POSTFIX_DELIMITER + (j2 % j3));
+                long j2 = j / 1000;
+                bannerElementBinding.time.setText((j2 / 60) + StringUtils.PROCESS_POSTFIX_DELIMITER + (j2 % 60));
             }
 
             @Override // android.os.CountDownTimer

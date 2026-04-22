@@ -60,24 +60,22 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     }
 
     private List<String> getFieldNames(Field field) {
-        String str;
-        List<String> list;
+        String value;
+        List<String> asList;
         SerializedName serializedName = (SerializedName) field.getAnnotation(SerializedName.class);
         if (serializedName == null) {
-            str = this.fieldNamingPolicy.translateName(field);
-            list = this.fieldNamingPolicy.alternateNames(field);
+            value = this.fieldNamingPolicy.translateName(field);
+            asList = this.fieldNamingPolicy.alternateNames(field);
         } else {
-            String value = serializedName.value();
-            List<String> asList = Arrays.asList(serializedName.alternate());
-            str = value;
-            list = asList;
+            value = serializedName.value();
+            asList = Arrays.asList(serializedName.alternate());
         }
-        if (list.isEmpty()) {
-            return Collections.singletonList(str);
+        if (asList.isEmpty()) {
+            return Collections.singletonList(value);
         }
-        ArrayList arrayList = new ArrayList(list.size() + 1);
-        arrayList.add(str);
-        arrayList.addAll(list);
+        ArrayList arrayList = new ArrayList(asList.size() + 1);
+        arrayList.add(value);
+        arrayList.addAll(asList);
         return arrayList;
     }
 

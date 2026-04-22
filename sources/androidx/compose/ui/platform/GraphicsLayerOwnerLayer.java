@@ -54,7 +54,7 @@ public final class GraphicsLayerOwnerLayer implements OwnedLayer, GraphicLayerIn
     private int mutatedFields;
     private Outline outline;
     private final AndroidComposeView ownerView;
-    private long size;
+    private long size = IntSize.m7721constructorimpl(9223372034707292159L);
     private final float[] matrixCache = Matrix.m5016constructorimpl$default(null, 1, null);
     private Density density = DensityKt.Density$default(1.0f, 0.0f, 2, null);
     private LayoutDirection layoutDirection = LayoutDirection.Ltr;
@@ -91,8 +91,6 @@ public final class GraphicsLayerOwnerLayer implements OwnedLayer, GraphicLayerIn
         this.ownerView = androidComposeView;
         this.drawBlock = function2;
         this.invalidateParentLayer = function0;
-        long j = Integer.MAX_VALUE;
-        this.size = IntSize.m7721constructorimpl((j & 4294967295L) | (j << 32));
     }
 
     private final void setDirty(boolean z) {
@@ -368,8 +366,7 @@ public final class GraphicsLayerOwnerLayer implements OwnedLayer, GraphicLayerIn
             }
             this.transformOrigin = TransformOrigin.Companion.m5185getCenterSzJe1aQ();
             this.drawnWithEnabledZ = false;
-            long j = Integer.MAX_VALUE;
-            this.size = IntSize.m7721constructorimpl((j & 4294967295L) | (j << 32));
+            this.size = IntSize.m7721constructorimpl(9223372034707292159L);
             this.outline = null;
             this.mutatedFields = 0;
             return;

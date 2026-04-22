@@ -197,25 +197,17 @@ public final class FirebaseAnalytics {
     @EnsuresNonNull({"this.executor"})
     private final ExecutorService zzb() {
         FirebaseAnalytics firebaseAnalytics;
+        ExecutorService executorService;
         synchronized (FirebaseAnalytics.class) {
-            try {
-                try {
-                    if (this.zzc == null) {
-                        firebaseAnalytics = this;
-                        firebaseAnalytics.zzc = new zza(firebaseAnalytics, 0, 1, 30L, TimeUnit.SECONDS, new ArrayBlockingQueue(100));
-                    } else {
-                        firebaseAnalytics = this;
-                    }
-                    return firebaseAnalytics.zzc;
-                } catch (Throwable th) {
-                    th = th;
-                    throw th;
-                }
-            } catch (Throwable th2) {
-                th = th2;
-                throw th;
+            if (this.zzc == null) {
+                firebaseAnalytics = this;
+                firebaseAnalytics.zzc = new zza(firebaseAnalytics, 0, 1, 30L, TimeUnit.SECONDS, new ArrayBlockingQueue(100));
+            } else {
+                firebaseAnalytics = this;
             }
+            executorService = firebaseAnalytics.zzc;
         }
+        return executorService;
     }
 
     public Task<String> getAppInstanceId() {

@@ -102,13 +102,12 @@ public final class HudBodycam {
 
     private final long toSecondsOfDay(long j) {
         Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Europe/Moscow"));
-        long j2 = 1000;
-        calendar.setTime(new Date(j * j2));
+        calendar.setTime(new Date(j * 1000));
         int i = calendar.get(11);
         int i2 = calendar.get(12);
         int i3 = calendar.get(13);
         Log.d("Tag", "toSecondsOfDay: " + i + " " + i2 + " " + i3);
-        return ((i * 3600) + (i2 * 60) + i3) * j2;
+        return ((i * 3600) + (i2 * 60) + i3) * 1000;
     }
 
     private final void hide() {

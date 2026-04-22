@@ -76,7 +76,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Device extends Crashlytics
         int i = this.proximityOn ? 1231 : 1237;
         long j = this.ramUsed;
         long j2 = this.diskUsed;
-        return ((((((hashCode ^ i) * 1000003) ^ this.orientation) * 1000003) ^ ((int) (j ^ (j >>> 32)))) * 1000003) ^ ((int) (j2 ^ (j2 >>> 32)));
+        return ((int) (j2 ^ (j2 >>> 32))) ^ ((((((hashCode ^ i) * 1000003) ^ this.orientation) * 1000003) ^ ((int) (j ^ (j >>> 32)))) * 1000003);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

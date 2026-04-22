@@ -58,9 +58,8 @@ public final class TextListAdapter extends ListAdapter<TextInfo, ViewHolder> {
         this.activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int i2 = displayMetrics.widthPixels;
         int i3 = displayMetrics.heightPixels;
-        double d = 100;
-        binding.carsTextItem.getLayoutParams().width = (int) ((i2 * 11.71d) / d);
-        binding.carsTextItem.getLayoutParams().height = (int) ((i3 * 6.01d) / d);
+        binding.carsTextItem.getLayoutParams().width = (int) ((i2 * 11.71d) / 100.0d);
+        binding.carsTextItem.getLayoutParams().height = (int) ((i3 * 6.01d) / 100.0d);
         TextInfo item = getItem(i);
         binding.itemTitle.setText(item.getTitle());
         binding.itemValue.setText(item.getValue());
