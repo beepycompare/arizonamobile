@@ -317,7 +317,7 @@ public final class HomeScreenKt {
         Intrinsics.checkNotNullParameter(onClickNotifications, "onClickNotifications");
         Intrinsics.checkNotNullParameter(onLongClickGame, "onLongClickGame");
         Composer startRestartGroup = composer.startRestartGroup(392307616);
-        ComposerKt.sourceInformation(startRestartGroup, "C(HomeScreen)N(uiState,notificationState,onClickGame,onClickServer,onClickShop,onClickNews,onClickSocial,onClickAccount,onClickForum,onClickSettings,onClickSetup,onClickNotifications,onLongClickGame)109@4642L2203:HomeScreen.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(HomeScreen)N(uiState,notificationState,onClickGame,onClickServer,onClickShop,onClickNews,onClickSocial,onClickAccount,onClickForum,onClickSettings,onClickSetup,onClickNotifications,onLongClickGame)109@4642L2286:HomeScreen.kt#dswm0d");
         if ((i & 6) == 0) {
             i3 = i | (startRestartGroup.changed(uiState) ? 4 : 2);
         } else {
@@ -396,12 +396,13 @@ public final class HomeScreenKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1468741282, "C135@5468L166,143@5644L584,158@6250L265,169@6625L22,170@6671L72,166@6524L315:HomeScreen.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1468743855, "C135@5468L166,145@5733L584,160@6339L259,171@6708L22,172@6754L72,168@6607L315:HomeScreen.kt#dswm0d");
             Main_backgroundKt.BackgroundImage(uiState.getBackGroundId(), false, uiState.getImageBitmap(), uiState.getFile(), uiState.getVersion(), startRestartGroup, 48);
+            boolean z = (uiState.getFile() == null && uiState.getImageBitmap() == null) ? false : true;
             HomeContent(uiState, notificationState, onClickGame, onClickServer, onClickShop, onClickNews, onClickSocial, onClickAccount, onClickForum, onClickSettings, onClickSetup, onClickNotifications, onLongClickGame, startRestartGroup, 2147483646 & i5, i6 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED);
-            final State<Float> animateFloatAsState = AnimateAsStateKt.animateFloatAsState(uiState.getImageBitmap() == null ? 1.0f : 0.0f, AnimationSpecKt.tween$default(ServiceStarter.ERROR_UNKNOWN, 0, EasingKt.getFastOutSlowInEasing(), 2, null), 0.0f, "bg_alpha", null, startRestartGroup, 3072, 20);
+            final State<Float> animateFloatAsState = AnimateAsStateKt.animateFloatAsState(z ? 0.0f : 1.0f, AnimationSpecKt.tween$default(ServiceStarter.ERROR_UNKNOWN, 0, EasingKt.getFastOutSlowInEasing(), 2, null), 0.0f, "bg_alpha", null, startRestartGroup, 3072, 20);
             Modifier fillMaxSize$default2 = SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2030795556, "CC(remember):HomeScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2030792900, "CC(remember):HomeScreen.kt#9igjgp");
             boolean changed = startRestartGroup.changed(animateFloatAsState);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -464,7 +465,7 @@ public final class HomeScreenKt {
         Intrinsics.checkNotNullParameter(onClickNotifications, "onClickNotifications");
         Intrinsics.checkNotNullParameter(onLongClickGame, "onLongClickGame");
         Composer startRestartGroup = composer.startRestartGroup(258468589);
-        ComposerKt.sourceInformation(startRestartGroup, "C(HomeContent)N(uiState,notificationState,onClickGame,onClickServer,onClickShop,onClickNews,onClickSocial,onClickAccount,onClickForum,onClickSettings,onClickSetup,onClickNotifications,onLongClickGame)196@7371L1307:HomeScreen.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(HomeContent)N(uiState,notificationState,onClickGame,onClickServer,onClickShop,onClickNews,onClickSocial,onClickAccount,onClickForum,onClickSettings,onClickSetup,onClickNotifications,onLongClickGame)198@7454L1307:HomeScreen.kt#dswm0d");
         if ((i & 6) == 0) {
             i3 = (startRestartGroup.changed(uiState) ? 4 : 2) | i;
         } else {
@@ -512,7 +513,7 @@ public final class HomeScreenKt {
             composer2.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(258468589, i5, i6, "com.miami.game.feature.home.ui.compose.HomeContent (HomeScreen.kt:195)");
+                ComposerKt.traceEventStart(258468589, i5, i6, "com.miami.game.feature.home.ui.compose.HomeContent (HomeScreen.kt:197)");
             }
             Modifier fillMaxSize$default = SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
@@ -540,7 +541,7 @@ public final class HomeScreenKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -637544234, "C201@7482L523,216@8014L382,227@8406L266:HomeScreen.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -637544234, "C203@7565L523,218@8097L382,229@8489L266:HomeScreen.kt#dswm0d");
             Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(PaddingKt.m822paddingqDBjuR0$default(boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getCenterStart()), Dp.m7555constructorimpl(32.0f), 0.0f, 0.0f, Dp.m7555constructorimpl(16.0f), 6, null), 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), Alignment.Companion.getStart(), startRestartGroup, 6);
@@ -567,7 +568,7 @@ public final class HomeScreenKt {
             Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1749381735, "C206@7696L110,210@7819L104,214@7936L59:HomeScreen.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1749381735, "C208@7779L110,212@7902L104,216@8019L59:HomeScreen.kt#dswm0d");
             int i7 = i5 & 14;
             int i8 = i5 >> 15;
             SocialContentKt.SocialContent(uiState, onClickSocial, startRestartGroup, (i8 & 112) | i7);
@@ -605,7 +606,7 @@ public final class HomeScreenKt {
             Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1659112318, "C217@8066L320:HomeScreen.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1659112318, "C219@8149L320:HomeScreen.kt#dswm0d");
             MenuContentKt.MenuContent(uiState, notificationState, onClickAccount, onClickForum, onClickSettings, onClickNotifications, startRestartGroup, (i5 & WebSocketProtocol.PAYLOAD_SHORT) | (i8 & 896) | (i8 & 7168) | (57344 & i8) | ((i6 << 12) & 458752));
             composer2 = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -640,7 +641,7 @@ public final class HomeScreenKt {
             Updater.m4049setimpl(m4041constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer2, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer2, 863299728, "C228@8461L201:HomeScreen.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(composer2, 863299728, "C230@8544L201:HomeScreen.kt#dswm0d");
             int i9 = i5 >> 3;
             PlayContentKt.PlayContent(uiState, onClickGame, onClickServer, onLongClickGame, composer2, (i9 & 896) | i7 | (i9 & 112) | ((i6 << 3) & 7168));
             ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -672,12 +673,12 @@ public final class HomeScreenKt {
 
     private static final void NewsItemUiPreview(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(1764360146);
-        ComposerKt.sourceInformation(startRestartGroup, "C(NewsItemUiPreview)244@8833L464:HomeScreen.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(NewsItemUiPreview)246@8916L464:HomeScreen.kt#dswm0d");
         if (!startRestartGroup.shouldExecute(i != 0, i & 1)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1764360146, i, -1, "com.miami.game.feature.home.ui.compose.NewsItemUiPreview (HomeScreen.kt:242)");
+                ComposerKt.traceEventStart(1764360146, i, -1, "com.miami.game.feature.home.ui.compose.NewsItemUiPreview (HomeScreen.kt:244)");
             }
             BoxKt.Box(PaddingKt.m818padding3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7555constructorimpl(36.0f)), startRestartGroup, 6);
             if (ComposerKt.isTraceInProgress()) {

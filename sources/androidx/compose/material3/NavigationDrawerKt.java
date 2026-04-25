@@ -103,84 +103,74 @@ public final class NavigationDrawerKt {
     private static final float PredictiveBackDrawerMaxScaleYDistance = Dp.m7555constructorimpl(48.0f);
     private static final TweenSpec<Float> AnchoredDraggableDefaultAnimationSpec = new TweenSpec<>(256, 0, null, 6, null);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DismissibleDrawerSheet_Snr_uVM$lambda$46(DrawerState drawerState, Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, Function3 function3, int i, int i2, Composer composer, int i3) {
         m2283DismissibleDrawerSheetSnr_uVM(drawerState, modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DismissibleDrawerSheet_afqeVBk$lambda$45(Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, Function3 function3, int i, int i2, Composer composer, int i3) {
         m2284DismissibleDrawerSheetafqeVBk(modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DismissibleNavigationDrawer$lambda$39(Function2 function2, Modifier modifier, DrawerState drawerState, boolean z, Function2 function22, int i, int i2, Composer composer, int i3) {
         DismissibleNavigationDrawer(function2, modifier, drawerState, z, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DrawerPredictiveBackHandler$lambda$62(DrawerState drawerState, Function3 function3, int i, Composer composer, int i2) {
         DrawerPredictiveBackHandler(drawerState, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float DrawerSheet_cm3T3N0$lambda$51$lambda$50() {
         return 0.0f;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DrawerSheet_cm3T3N0$lambda$53(DrawerPredictiveBackState drawerPredictiveBackState, WindowInsets windowInsets, Modifier modifier, Shape shape, long j, long j2, float f, FloatProducer floatProducer, Function3 function3, int i, int i2, Composer composer, int i3) {
         m2285DrawerSheetcm3T3N0(drawerPredictiveBackState, windowInsets, modifier, shape, j, j2, f, floatProducer, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalDrawerSheet_Snr_uVM$lambda$44(DrawerState drawerState, Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, Function3 function3, int i, int i2, Composer composer, int i3) {
         m2286ModalDrawerSheetSnr_uVM(drawerState, modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalDrawerSheet_afqeVBk$lambda$43(Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, Function3 function3, int i, int i2, Composer composer, int i3) {
         m2287ModalDrawerSheetafqeVBk(modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalNavigationDrawer_FHprtrg$lambda$25(Function2 function2, Modifier modifier, DrawerState drawerState, boolean z, long j, Function2 function22, int i, int i2, Composer composer, int i3) {
         m2288ModalNavigationDrawerFHprtrg(function2, modifier, drawerState, z, j, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NavigationDrawerItem$lambda$65(Function2 function2, boolean z, Function0 function0, Modifier modifier, Function2 function22, Function2 function23, Shape shape, NavigationDrawerItemColors navigationDrawerItemColors, MutableInteractionSource mutableInteractionSource, int i, int i2, Composer composer, int i3) {
         NavigationDrawerItem(function2, z, function0, modifier, function22, function23, shape, navigationDrawerItemColors, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit PermanentDrawerSheet_afqeVBk$lambda$49(Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, Function3 function3, int i, int i2, Composer composer, int i3) {
         m2289PermanentDrawerSheetafqeVBk(modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit PermanentNavigationDrawer$lambda$42(Function2 function2, Modifier modifier, Function2 function22, int i, int i2, Composer composer, int i3) {
         PermanentNavigationDrawer(function2, modifier, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Scrim_Bx497Mc$lambda$72(boolean z, Function0 function0, Function0 function02, long j, int i, Composer composer, int i2) {
         m2290ScrimBx497Mc(z, function0, function02, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final /* synthetic */ float access$getDrawerVelocityThreshold$p() {
+        return DrawerVelocityThreshold;
+    }
+
     public static final boolean rememberDrawerState$lambda$1$lambda$0(DrawerValue drawerValue) {
         return true;
     }
@@ -233,43 +223,42 @@ public final class NavigationDrawerKt {
         return drawerState;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DrawerState rememberDrawerState$lambda$3$lambda$2(DrawerValue drawerValue, Function1 function1) {
         return new DrawerState(drawerValue, function1);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0265  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0268  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x02cb  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x02d7  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x02db  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x0378  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x0384  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0388  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x0413  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x0415  */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x057f  */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x058b  */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x058f  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x0607  */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x0611  */
-    /* JADX WARN: Removed duplicated region for block: B:245:0x061f  */
-    /* JADX WARN: Removed duplicated region for block: B:247:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004c  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x006a  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00b9  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00bb  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:282:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:285:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:286:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:296:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:303:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:306:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:307:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:316:0x00b9  */
+    /* JADX WARN: Removed duplicated region for block: B:317:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:320:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:379:0x0265  */
+    /* JADX WARN: Removed duplicated region for block: B:380:0x0268  */
+    /* JADX WARN: Removed duplicated region for block: B:383:0x02cb  */
+    /* JADX WARN: Removed duplicated region for block: B:386:0x02d7  */
+    /* JADX WARN: Removed duplicated region for block: B:387:0x02db  */
+    /* JADX WARN: Removed duplicated region for block: B:395:0x0378  */
+    /* JADX WARN: Removed duplicated region for block: B:398:0x0384  */
+    /* JADX WARN: Removed duplicated region for block: B:399:0x0388  */
+    /* JADX WARN: Removed duplicated region for block: B:407:0x0413  */
+    /* JADX WARN: Removed duplicated region for block: B:408:0x0415  */
+    /* JADX WARN: Removed duplicated region for block: B:476:0x057f  */
+    /* JADX WARN: Removed duplicated region for block: B:479:0x058b  */
+    /* JADX WARN: Removed duplicated region for block: B:480:0x058f  */
+    /* JADX WARN: Removed duplicated region for block: B:488:0x0607  */
+    /* JADX WARN: Removed duplicated region for block: B:490:0x0611  */
+    /* JADX WARN: Removed duplicated region for block: B:493:0x061f  */
+    /* JADX WARN: Removed duplicated region for block: B:495:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r15v7 */
     /* JADX WARN: Type inference failed for: r8v30 */
-    /* renamed from: ModalNavigationDrawer-FHprtrg  reason: not valid java name */
+    /* renamed from: ModalNavigationDrawer-FHprtrg */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -872,22 +861,18 @@ public final class NavigationDrawerKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final boolean ModalNavigationDrawer_FHprtrg$lambda$5(MutableState<Boolean> mutableState) {
         return mutableState.getValue().booleanValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final void ModalNavigationDrawer_FHprtrg$lambda$6(MutableState<Boolean> mutableState, boolean z) {
         mutableState.setValue(Boolean.valueOf(z));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final float ModalNavigationDrawer_FHprtrg$lambda$8(MutableFloatState mutableFloatState) {
         return mutableFloatState.getFloatValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalNavigationDrawer_FHprtrg$lambda$11$lambda$10(DrawerState drawerState, Density density, FiniteAnimationSpec finiteAnimationSpec, FiniteAnimationSpec finiteAnimationSpec2, FiniteAnimationSpec finiteAnimationSpec3) {
         drawerState.setDensity$material3(density);
         drawerState.setOpenDrawerMotionSpec$material3(finiteAnimationSpec);
@@ -896,7 +881,6 @@ public final class NavigationDrawerKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalNavigationDrawer_FHprtrg$lambda$24$lambda$14$lambda$13(boolean z, DrawerState drawerState, CoroutineScope coroutineScope) {
         if (z && drawerState.getConfirmStateChange$material3().invoke(DrawerValue.Closed).booleanValue()) {
             BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new NavigationDrawerKt$ModalNavigationDrawer$2$2$1$1(drawerState, null), 3, null);
@@ -904,7 +888,6 @@ public final class NavigationDrawerKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final IntOffset ModalNavigationDrawer_FHprtrg$lambda$24$lambda$19$lambda$18(DrawerState drawerState, Density density) {
         int i;
         float currentOffset = drawerState.getCurrentOffset();
@@ -916,7 +899,6 @@ public final class NavigationDrawerKt {
         return IntOffset.m7674boximpl(IntOffset.m7677constructorimpl(i << 32));
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21(String str, final DrawerState drawerState, final CoroutineScope coroutineScope, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, str);
         if (drawerState.isOpen()) {
@@ -930,7 +912,6 @@ public final class NavigationDrawerKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21$lambda$20(DrawerState drawerState, CoroutineScope coroutineScope) {
         if (drawerState.getConfirmStateChange$material3().invoke(DrawerValue.Closed).booleanValue()) {
             BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new NavigationDrawerKt$ModalNavigationDrawer$2$5$1$1$1(drawerState, null), 3, null);
@@ -939,36 +920,36 @@ public final class NavigationDrawerKt {
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x01dc  */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x01df  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x0232  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x023e  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0242  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0302  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x030e  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0312  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x03e1  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x03ed  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x03f1  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x04a5  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x04b1  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x04b5  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x0554  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x055c  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x0568  */
-    /* JADX WARN: Removed duplicated region for block: B:187:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0087  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x010b  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x01a3  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:225:0x0068  */
+    /* JADX WARN: Removed duplicated region for block: B:226:0x006b  */
+    /* JADX WARN: Removed duplicated region for block: B:236:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:237:0x0087  */
+    /* JADX WARN: Removed duplicated region for block: B:246:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:268:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:271:0x010b  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x01a3  */
+    /* JADX WARN: Removed duplicated region for block: B:290:0x01dc  */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x01df  */
+    /* JADX WARN: Removed duplicated region for block: B:294:0x0232  */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x023e  */
+    /* JADX WARN: Removed duplicated region for block: B:298:0x0242  */
+    /* JADX WARN: Removed duplicated region for block: B:319:0x0302  */
+    /* JADX WARN: Removed duplicated region for block: B:322:0x030e  */
+    /* JADX WARN: Removed duplicated region for block: B:323:0x0312  */
+    /* JADX WARN: Removed duplicated region for block: B:344:0x03e1  */
+    /* JADX WARN: Removed duplicated region for block: B:347:0x03ed  */
+    /* JADX WARN: Removed duplicated region for block: B:348:0x03f1  */
+    /* JADX WARN: Removed duplicated region for block: B:356:0x04a5  */
+    /* JADX WARN: Removed duplicated region for block: B:359:0x04b1  */
+    /* JADX WARN: Removed duplicated region for block: B:360:0x04b5  */
+    /* JADX WARN: Removed duplicated region for block: B:368:0x0554  */
+    /* JADX WARN: Removed duplicated region for block: B:370:0x055c  */
+    /* JADX WARN: Removed duplicated region for block: B:373:0x0568  */
+    /* JADX WARN: Removed duplicated region for block: B:375:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1518,17 +1499,14 @@ public final class NavigationDrawerKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final boolean DismissibleNavigationDrawer$lambda$27(MutableState<Boolean> mutableState) {
         return mutableState.getValue().booleanValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final void DismissibleNavigationDrawer$lambda$28(MutableState<Boolean> mutableState, boolean z) {
         mutableState.setValue(Boolean.valueOf(z));
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DismissibleNavigationDrawer$lambda$30$lambda$29(DrawerState drawerState, Density density, FiniteAnimationSpec finiteAnimationSpec, FiniteAnimationSpec finiteAnimationSpec2) {
         drawerState.setDensity$material3(density);
         drawerState.setOpenDrawerMotionSpec$material3(finiteAnimationSpec);
@@ -1536,7 +1514,6 @@ public final class NavigationDrawerKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32(String str, final DrawerState drawerState, final CoroutineScope coroutineScope, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, str);
         if (drawerState.isOpen()) {
@@ -1550,7 +1527,6 @@ public final class NavigationDrawerKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32$lambda$31(DrawerState drawerState, CoroutineScope coroutineScope) {
         if (drawerState.getConfirmStateChange$material3().invoke(DrawerValue.Closed).booleanValue()) {
             BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new NavigationDrawerKt$DismissibleNavigationDrawer$2$1$1$1$1$1(drawerState, null), 3, null);
@@ -1559,14 +1535,14 @@ public final class NavigationDrawerKt {
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0066  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0224  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x022e  */
-    /* JADX WARN: Removed duplicated region for block: B:78:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0068  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0224  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x022e  */
+    /* JADX WARN: Removed duplicated region for block: B:157:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1703,19 +1679,19 @@ public final class NavigationDrawerKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:124:0x0190  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x01c7  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x01d3  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x01e4  */
-    /* JADX WARN: Removed duplicated region for block: B:134:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x00b5  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00bd  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00bf  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x00dd  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x00df  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x00e8  */
-    /* renamed from: ModalDrawerSheet-afqeVBk  reason: not valid java name */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:205:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x00dd  */
+    /* JADX WARN: Removed duplicated region for block: B:217:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x0190  */
+    /* JADX WARN: Removed duplicated region for block: B:262:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:264:0x01d3  */
+    /* JADX WARN: Removed duplicated region for block: B:267:0x01e4  */
+    /* JADX WARN: Removed duplicated region for block: B:269:? A[RETURN, SYNTHETIC] */
+    /* renamed from: ModalDrawerSheet-afqeVBk */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1964,27 +1940,27 @@ public final class NavigationDrawerKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:132:0x019a  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x01c2  */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x01c7  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x01d6  */
-    /* JADX WARN: Removed duplicated region for block: B:142:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0066  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0081  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00b9  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x00cf  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x00d7  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x00fd  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x00ff  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0108  */
-    /* renamed from: ModalDrawerSheet-Snr_uVM  reason: not valid java name */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:199:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x00b9  */
+    /* JADX WARN: Removed duplicated region for block: B:221:0x00cf  */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x00d7  */
+    /* JADX WARN: Removed duplicated region for block: B:225:0x00da  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:236:0x00ff  */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x0108  */
+    /* JADX WARN: Removed duplicated region for block: B:275:0x019a  */
+    /* JADX WARN: Removed duplicated region for block: B:278:0x01c2  */
+    /* JADX WARN: Removed duplicated region for block: B:280:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:283:0x01d6  */
+    /* JADX WARN: Removed duplicated region for block: B:285:? A[RETURN, SYNTHETIC] */
+    /* renamed from: ModalDrawerSheet-Snr_uVM */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2224,23 +2200,23 @@ public final class NavigationDrawerKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:124:0x01c3  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x01d4  */
-    /* JADX WARN: Removed duplicated region for block: B:129:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0063  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0082  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00bc  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00bf  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x00ec  */
-    /* renamed from: DismissibleDrawerSheet-afqeVBk  reason: not valid java name */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x0063  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:199:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:210:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x00ec  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x01c3  */
+    /* JADX WARN: Removed duplicated region for block: B:257:0x01d4  */
+    /* JADX WARN: Removed duplicated region for block: B:259:? A[RETURN, SYNTHETIC] */
+    /* renamed from: DismissibleDrawerSheet-afqeVBk */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2465,27 +2441,27 @@ public final class NavigationDrawerKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:126:0x018b  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x01b3  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x01b8  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x01c8  */
-    /* JADX WARN: Removed duplicated region for block: B:136:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0082  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0095  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x009d  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00ba  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x00ce  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x00d6  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00d9  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x00fe  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0107  */
-    /* renamed from: DismissibleDrawerSheet-Snr_uVM  reason: not valid java name */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x0095  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x00ba  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:217:0x00d9  */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x00fe  */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x0107  */
+    /* JADX WARN: Removed duplicated region for block: B:263:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x01b3  */
+    /* JADX WARN: Removed duplicated region for block: B:268:0x01b8  */
+    /* JADX WARN: Removed duplicated region for block: B:271:0x01c8  */
+    /* JADX WARN: Removed duplicated region for block: B:273:? A[RETURN, SYNTHETIC] */
+    /* renamed from: DismissibleDrawerSheet-Snr_uVM */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2709,23 +2685,23 @@ public final class NavigationDrawerKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0200  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0212  */
-    /* JADX WARN: Removed duplicated region for block: B:136:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0063  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0082  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00bc  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00bf  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00e2  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x00e4  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x00ed  */
-    /* renamed from: PermanentDrawerSheet-afqeVBk  reason: not valid java name */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x0063  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:217:0x00e2  */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x00e4  */
+    /* JADX WARN: Removed duplicated region for block: B:221:0x00ed  */
+    /* JADX WARN: Removed duplicated region for block: B:268:0x0200  */
+    /* JADX WARN: Removed duplicated region for block: B:271:0x0212  */
+    /* JADX WARN: Removed duplicated region for block: B:273:? A[RETURN, SYNTHETIC] */
+    /* renamed from: PermanentDrawerSheet-afqeVBk */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2963,32 +2939,31 @@ public final class NavigationDrawerKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit PermanentDrawerSheet_afqeVBk$lambda$48$lambda$47(String str, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, str);
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x0127  */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x02bd  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x02d0  */
-    /* JADX WARN: Removed duplicated region for block: B:165:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x009a  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00bf  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00dd  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x00fd  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0100  */
-    /* renamed from: DrawerSheet-cm3T3N0  reason: not valid java name */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x009a  */
+    /* JADX WARN: Removed duplicated region for block: B:225:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:236:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:237:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:246:0x00dd  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:270:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:326:0x02bd  */
+    /* JADX WARN: Removed duplicated region for block: B:329:0x02d0  */
+    /* JADX WARN: Removed duplicated region for block: B:331:? A[RETURN, SYNTHETIC] */
+    /* renamed from: DrawerSheet-cm3T3N0 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -3362,7 +3337,6 @@ public final class NavigationDrawerKt {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit horizontalScaleUp$lambda$54(FloatProducer floatProducer, float f, boolean z, GraphicsLayerScope graphicsLayerScope) {
         float invoke = floatProducer.invoke();
         graphicsLayerScope.setScaleX(invoke > 0.0f ? (invoke / f) + 1.0f : 1.0f);
@@ -3370,7 +3344,6 @@ public final class NavigationDrawerKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final Modifier horizontalScaleDown(Modifier modifier, final FloatProducer floatProducer, final float f, final boolean z) {
         return GraphicsLayerModifierKt.graphicsLayer(modifier, new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda30
             @Override // kotlin.jvm.functions.Function1
@@ -3380,7 +3353,6 @@ public final class NavigationDrawerKt {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit horizontalScaleDown$lambda$55(FloatProducer floatProducer, float f, boolean z, GraphicsLayerScope graphicsLayerScope) {
         float invoke = floatProducer.invoke();
         graphicsLayerScope.setScaleX(invoke > 0.0f ? 1.0f / ((invoke / f) + 1.0f) : 1.0f);
@@ -3397,7 +3369,6 @@ public final class NavigationDrawerKt {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit predictiveBackDrawerContainer$lambda$56(DrawerPredictiveBackState drawerPredictiveBackState, boolean z, GraphicsLayerScope graphicsLayerScope) {
         graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX(graphicsLayerScope, drawerPredictiveBackState));
         graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY(graphicsLayerScope, drawerPredictiveBackState));
@@ -3405,7 +3376,6 @@ public final class NavigationDrawerKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final Modifier predictiveBackDrawerChild(Modifier modifier, final DrawerPredictiveBackState drawerPredictiveBackState, final boolean z) {
         return GraphicsLayerModifierKt.graphicsLayer(modifier, new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function1
@@ -3415,7 +3385,6 @@ public final class NavigationDrawerKt {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit predictiveBackDrawerChild$lambda$57(DrawerPredictiveBackState drawerPredictiveBackState, boolean z, GraphicsLayerScope graphicsLayerScope) {
         float calculatePredictiveBackScaleX = calculatePredictiveBackScaleX(graphicsLayerScope, drawerPredictiveBackState);
         graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX == 0.0f ? 1.0f : calculatePredictiveBackScaleY(graphicsLayerScope, drawerPredictiveBackState) / calculatePredictiveBackScaleX);
@@ -3539,24 +3508,24 @@ public final class NavigationDrawerKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x011f  */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0121  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x012a  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x029a  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x02ad  */
-    /* JADX WARN: Removed duplicated region for block: B:153:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a5  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x00d4  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00dc  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x00f2  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x00fa  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x00ff  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x00d4  */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:242:0x00f2  */
+    /* JADX WARN: Removed duplicated region for block: B:245:0x00fa  */
+    /* JADX WARN: Removed duplicated region for block: B:246:0x00ff  */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x011f  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:302:0x029a  */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x02ad  */
+    /* JADX WARN: Removed duplicated region for block: B:307:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r2v10 */
     /* JADX WARN: Type inference failed for: r2v5, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r2v9 */
@@ -3967,18 +3936,16 @@ public final class NavigationDrawerKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NavigationDrawerItem$lambda$64$lambda$63(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.m6793setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6781getTabo7Vup1c());
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final float calculateFraction(float f, float f2, float f3) {
         return RangesKt.coerceIn((f3 - f) / (f2 - f), 0.0f, 1.0f);
     }
 
-    /* renamed from: Scrim-Bx497Mc  reason: not valid java name */
+    /* renamed from: Scrim-Bx497Mc */
     private static final void m2290ScrimBx497Mc(final boolean z, final Function0<Unit> function0, final Function0<Float> function02, final long j, Composer composer, final int i) {
         int i2;
         Modifier.Companion companion;
@@ -4070,7 +4037,6 @@ public final class NavigationDrawerKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Scrim_Bx497Mc$lambda$69$lambda$68(String str, final Function0 function0, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str);
         SemanticsPropertiesKt.onClick$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda0
@@ -4082,13 +4048,11 @@ public final class NavigationDrawerKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean Scrim_Bx497Mc$lambda$69$lambda$68$lambda$67(Function0 function0) {
         function0.invoke();
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Scrim_Bx497Mc$lambda$71$lambda$70(long j, Function0 function0, DrawScope drawScope) {
         DrawScope.m5340drawRectnJ9OG0$default(drawScope, j, 0L, 0L, ((Number) function0.invoke()).floatValue(), null, null, 0, 118, null);
         return Unit.INSTANCE;

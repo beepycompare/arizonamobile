@@ -57,8 +57,8 @@ public final class DrawerState {
     public DrawerState(DrawerValue drawerValue, Function1<? super DrawerValue, Boolean> function1) {
         MutableState mutableStateOf$default;
         this.confirmStateChange = function1;
-        TweenSpec tweenSpec = NavigationDrawerKt.AnchoredDraggableDefaultAnimationSpec;
-        this.anchoredDraggableMotionSpec = tweenSpec;
+        TweenSpec access$getAnchoredDraggableDefaultAnimationSpec$p = NavigationDrawerKt.access$getAnchoredDraggableDefaultAnimationSpec$p();
+        this.anchoredDraggableMotionSpec = access$getAnchoredDraggableDefaultAnimationSpec$p;
         this.anchoredDraggableState = AnchoredDraggableKt.AnchoredDraggableState(drawerValue, new Function1() { // from class: androidx.compose.material3.DrawerState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
@@ -68,10 +68,10 @@ public final class DrawerState {
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 float mo405toPx0680j_4;
-                mo405toPx0680j_4 = DrawerState.this.requireDensity().mo405toPx0680j_4(NavigationDrawerKt.DrawerVelocityThreshold);
+                mo405toPx0680j_4 = DrawerState.this.requireDensity().mo405toPx0680j_4(NavigationDrawerKt.access$getDrawerVelocityThreshold$p());
                 return Float.valueOf(mo405toPx0680j_4);
             }
-        }, tweenSpec, AnchoredDraggableDefaults.INSTANCE.getDecayAnimationSpec(), function1);
+        }, access$getAnchoredDraggableDefaultAnimationSpec$p, AnchoredDraggableDefaults.INSTANCE.getDecayAnimationSpec(), function1);
         this.offset = new State<Float>() { // from class: androidx.compose.material3.DrawerState$offset$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // androidx.compose.runtime.State
@@ -112,7 +112,7 @@ public final class DrawerState {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final float anchoredDraggableState$lambda$1(float f) {
-        return f * NavigationDrawerKt.DrawerPositionalThreshold;
+        return f * NavigationDrawerKt.access$getDrawerPositionalThreshold$p();
     }
 
     public final boolean isOpen() {

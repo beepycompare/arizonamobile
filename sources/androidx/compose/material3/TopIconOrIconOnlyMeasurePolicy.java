@@ -102,14 +102,14 @@ final class TopIconOrIconOnlyMeasurePolicy implements MeasurePolicy {
                             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable3), "indicator")) {
                                 Placeable mo6216measureBRTryo03 = measurable3.mo6216measureBRTryo0(ConstraintsKt.m7523constrainN9IONVI(m7498copyZbe2FdA$default, Constraints.Companion.m7518fixedJhjzzOo(roundToInt, height)));
                                 if (!this.hasLabel) {
-                                    return NavigationItemKt.m2321placeIconX9ElhV4(measureScope2, mo6216measureBRTryo0, mo6216measureBRTryo02, mo6216measureBRTryo03, j);
+                                    return NavigationItemKt.m2317access$placeIconX9ElhV4(measureScope2, mo6216measureBRTryo0, mo6216measureBRTryo02, mo6216measureBRTryo03, j);
                                 }
                                 int size4 = list2.size();
                                 int i4 = 0;
                                 while (i4 < size4) {
                                     Measurable measurable4 = list.get(i4);
                                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable4), Constants.ScionAnalytics.PARAM_LABEL)) {
-                                        return NavigationItemKt.m2323placeLabelAndTopIconqoqLrGI(measureScope2, measurable4.mo6216measureBRTryo0(ConstraintsKt.m7528offsetNN6EwU$default(m7498copyZbe2FdA$default, 0, -(mo6216measureBRTryo03.getHeight() + measureScope2.mo399roundToPx0680j_4(this.indicatorToLabelVerticalPadding)), 1, null)), mo6216measureBRTryo0, mo6216measureBRTryo02, mo6216measureBRTryo03, j, this.indicatorToLabelVerticalPadding, this.indicatorVerticalPadding, this.topIconItemVerticalPadding);
+                                        return NavigationItemKt.m2319access$placeLabelAndTopIconqoqLrGI(measureScope2, measurable4.mo6216measureBRTryo0(ConstraintsKt.m7528offsetNN6EwU$default(m7498copyZbe2FdA$default, 0, -(mo6216measureBRTryo03.getHeight() + measureScope2.mo399roundToPx0680j_4(this.indicatorToLabelVerticalPadding)), 1, null)), mo6216measureBRTryo0, mo6216measureBRTryo02, mo6216measureBRTryo03, j, this.indicatorToLabelVerticalPadding, this.indicatorVerticalPadding, this.topIconItemVerticalPadding);
                                     }
                                     i4++;
                                     mo6216measureBRTryo03 = mo6216measureBRTryo03;

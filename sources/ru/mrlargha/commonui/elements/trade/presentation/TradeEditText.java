@@ -21,6 +21,7 @@ import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.ViewMoneyPartInputBinding;
 import ru.mrlargha.commonui.databinding.ViewUniversalMoneyInputBinding;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.commonui.utils.ui.money.MoneyFormatter;
 import ru.mrlargha.commonui.utils.ui.money.MoneyParts;
@@ -154,15 +155,19 @@ public final class TradeEditText {
     public final void setType(int i) {
         this.isNewMoney = false;
         this.editTextType = i;
-        if (i == 0) {
+        if (i != 0) {
+            if (i == 1) {
+                setIcon(R.drawable.trade_euro_ic);
+            } else if (i == 2) {
+                setIcon(R.drawable.trade_bitcoin_ic);
+            } else if (i == 3) {
+                setIcon(R.drawable.trade_asc_ic);
+            } else if (i == 10) {
+                setIcon(R.drawable.ic_rubble);
+            }
+        } else if (UtilsKt.isArizonaType()) {
             this.isNewMoney = true;
-        } else if (i == 1) {
-            setIcon(R.drawable.trade_euro_ic);
-        } else if (i == 2) {
-            setIcon(R.drawable.trade_bitcoin_ic);
-        } else if (i == 3) {
-            setIcon(R.drawable.trade_asc_ic);
-        } else if (i == 10) {
+        } else {
             setIcon(R.drawable.ic_rubble);
         }
         this.binding.layoutMoney.setVisibility(this.isNewMoney ? 0 : 8);

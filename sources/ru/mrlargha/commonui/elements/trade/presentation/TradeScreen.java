@@ -103,7 +103,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             public final Object invoke(Object obj) {
                 return TradeScreen.tradeInventoryAdapter$lambda$0(TradeScreen.this, (DraggedItem) obj);
             }
-        }, rvInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda15
+        }, rvInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda17
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return TradeScreen.tradeInventoryAdapter$lambda$1(TradeScreen.this, (InventoryItem) obj);
@@ -111,12 +111,12 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         });
         RecyclerView rvSendItems = bind.rvSendItems;
         Intrinsics.checkNotNullExpressionValue(rvSendItems, "rvSendItems");
-        this.sendItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda16
+        this.sendItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return TradeScreen.sendItemsAdapter$lambda$0(TradeScreen.this, (DraggedItem) obj);
             }
-        }, rvSendItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda1
+        }, rvSendItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return TradeScreen.sendItemsAdapter$lambda$1(TradeScreen.this, (InventoryItem) obj);
@@ -124,12 +124,12 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         });
         RecyclerView rvReceiveItems = bind.rvReceiveItems;
         Intrinsics.checkNotNullExpressionValue(rvReceiveItems, "rvReceiveItems");
-        this.getItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda2
+        this.getItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return TradeScreen.getItemsAdapter$lambda$0((DraggedItem) obj);
             }
-        }, rvReceiveItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda3
+        }, rvReceiveItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return TradeScreen.getItemsAdapter$lambda$1(TradeScreen.this, (InventoryItem) obj);
@@ -143,83 +143,86 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         addViewToConstraintLayout(constraintLayout, -1, -1);
         UtilsKt.checkItemsName(activity, UtilsKt.isArizonaType());
         initAdapters();
-        bind.btnAccept.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda4
+        bind.btnAccept.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TradeScreen._init_$lambda$0(TradeScreen.this, view);
             }
         });
-        bind.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda5
+        bind.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TradeScreen.this.closeScreen();
             }
         });
-        bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda6
+        bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TradeScreen.this.closeScreen();
             }
         });
+        bind.btnSendItemText.setText(TextWithIconsKt.toTextWithIcons("$ Деньги <ic>1<ic>", activity, new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp)));
+        tradeEditText.setType(0);
+        tradeEditText2.setType(0);
         if (UtilsKt.isArizonaType()) {
-            tradeEditText2.setEnabled(false);
-            tradeEditText.setType(0);
-            tradeEditText2.setType(0);
-            bind.btnSendItemText.setText(TextWithIconsKt.toTextWithIcons("$ Деньги <ic>1<ic>", activity, new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp)));
             bind.btnReceiveItemText.setText(TextWithIconsKt.toTextWithIcons("Валюты", activity, new IconAndSize[0]));
-            bind.btnSendItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda7
+            tradeEditText2.setEnabled(false);
+            bind.btnSendItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     TradeScreen.this.binding.currencyChoice.setVisibility(0);
                 }
             });
-            bind.currencyChoice.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda8
+            bind.currencyChoice.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     TradeScreen.this.binding.currencyChoice.setVisibility(8);
                 }
             });
-            bind.buttonCurrency1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda9
+            bind.buttonCurrency1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda10
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     TradeScreen._init_$lambda$5(TradeScreen.this, view);
                 }
             });
-            bind.buttonCurrency2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda10
+            bind.buttonCurrency2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda11
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     TradeScreen._init_$lambda$6(TradeScreen.this, view);
                 }
             });
-            bind.buttonCurrency3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda11
+            bind.buttonCurrency3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda12
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     TradeScreen._init_$lambda$7(TradeScreen.this, view);
                 }
             });
-            bind.buttonCurrency4.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda12
+            bind.buttonCurrency4.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     TradeScreen._init_$lambda$8(TradeScreen.this, view);
                 }
             });
         } else {
-            tradeEditText.setType(10);
-            tradeEditText2.setType(10);
-            bind.btnSendItem.setVisibility(8);
+            bind.btnSendItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda14
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    SAMPUIElement.notifyClick$default(TradeScreen.this, 0, 4, null, 4, null);
+                }
+            });
             bind.btnReceiveItem.setVisibility(8);
         }
-        bind.btnArizonaReceiveItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda13
+        bind.btnArizonaReceiveItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda15
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 SAMPUIElement.notifyClick$default(TradeScreen.this, 0, 9, null, 4, null);
             }
         });
         initObservers();
-        tradeEditText.setOnValueChanged(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda14
+        tradeEditText.setOnValueChanged(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda16
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return TradeScreen._init_$lambda$10(TradeScreen.this, (Long) obj);
+                return TradeScreen._init_$lambda$11(TradeScreen.this, (Long) obj);
             }
         });
     }
@@ -333,7 +336,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit _init_$lambda$10(TradeScreen tradeScreen, Long l) {
+    public static final Unit _init_$lambda$11(TradeScreen tradeScreen, Long l) {
         Long value = tradeScreen.topMoneyController.getValue();
         if (value == null) {
             tradeScreen.topMoneyController.setValidation(false);
@@ -361,6 +364,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
     }
 
     private final void defaultScreenState() {
+        this.binding.btnSendItem.setEnabled(true);
         this.sendItemsList.clear();
         this.getItemsList.clear();
         Group groupProgressBar = this.binding.groupProgressBar;
@@ -555,9 +559,11 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         this.topMoneyController.setValue(tradeValueResponse.getSelf().getValue());
         this.bottomMoneyController.setValue(tradeValueResponse.getTarget().getValue());
         this.binding.btnReceiveItemText.setText(setButtonText(tradeValueResponse.getTarget().getType()));
+        this.bottomMoneyController.setType(tradeValueResponse.getTarget().getType());
         if (UtilsKt.isArizonaType()) {
-            this.bottomMoneyController.setType(tradeValueResponse.getTarget().getType());
+            return;
         }
+        this.topMoneyController.setType(tradeValueResponse.getSelf().getType());
     }
 
     private final void editUi(TradeResponse tradeResponse) {

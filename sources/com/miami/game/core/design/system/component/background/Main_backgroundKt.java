@@ -38,10 +38,11 @@ public final class Main_backgroundKt {
 
     public static final void BackgroundImage(final int i, final boolean z, final ImageBitmap imageBitmap, final File file, final int i2, Composer composer, final int i3) {
         int i4;
+        Context context;
+        String str;
         int i5;
-        int i6;
         Composer startRestartGroup = composer.startRestartGroup(1841108206);
-        ComposerKt.sourceInformation(startRestartGroup, "C(BackgroundImage)N(default,isBlur,imageBitmap,file,version)23@906L29,19@761L182:main_background.kt#nlkwnv");
+        ComposerKt.sourceInformation(startRestartGroup, "C(BackgroundImage)N(default,isBlur,imageBitmap,file,version)18@787L7,24@945L29,20@800L182:main_background.kt#nlkwnv");
         if ((i3 & 6) == 0) {
             i4 = (startRestartGroup.changed(i) ? 4 : 2) | i3;
         } else {
@@ -65,33 +66,44 @@ public final class Main_backgroundKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1841108206, i4, -1, "com.miami.game.core.design.system.component.background.BackgroundImage (main_background.kt:17)");
             }
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+            Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            Context context2 = (Context) consume;
             ImageKt.Image(PainterResources_androidKt.painterResource(i, startRestartGroup, i4 & 14), (String) null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getCrop(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
-            if (imageBitmap != null) {
-                startRestartGroup.startReplaceGroup(1722531998);
-                ComposerKt.sourceInformation(startRestartGroup, "27@983L182");
-                i5 = 0;
-                i6 = 1;
-                ImageKt.m321Image5hnEew(imageBitmap, null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, ContentScale.Companion.getCrop(), 0.0f, null, 0, startRestartGroup, ((i4 >> 6) & 14) | 25008, 232);
+            if (file != null) {
+                startRestartGroup.startReplaceGroup(1722561634);
+                ComposerKt.sourceInformation(startRestartGroup, "28@1015L418");
+                SingletonAsyncImageKt.m8558AsyncImage10Xjiaw(new ImageRequest.Builder(context2).data(file).memoryCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + i2).diskCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + i2).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
+                startRestartGroup.endReplaceGroup();
+                context = context2;
+                str = "_";
+                i5 = 1;
+            } else if (imageBitmap == null) {
+                context = context2;
+                str = "_";
+                i5 = 1;
+                startRestartGroup.startReplaceGroup(1723205876);
                 startRestartGroup.endReplaceGroup();
             } else {
-                i5 = 0;
-                i6 = 1;
-                startRestartGroup.startReplaceGroup(1722712852);
+                startRestartGroup.startReplaceGroup(1723025022);
+                ComposerKt.sourceInformation(startRestartGroup, "39@1480L182");
+                context = context2;
+                str = "_";
+                i5 = 1;
+                ImageKt.m321Image5hnEew(imageBitmap, null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, ContentScale.Companion.getCrop(), 0.0f, null, 0, startRestartGroup, ((i4 >> 6) & 14) | 25008, 232);
                 startRestartGroup.endReplaceGroup();
             }
             if (z && file != null) {
-                startRestartGroup.startReplaceGroup(1722759662);
-                ComposerKt.sourceInformation(startRestartGroup, "36@1280L7,35@1214L438");
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ImageRequest.Builder diskCacheKey = new ImageRequest.Builder((Context) consume).data(file).memoryCacheKey("launcher_bg_" + i2).diskCacheKey("launcher_bg_" + i2);
-                Transformation[] transformationArr = new Transformation[i6];
-                transformationArr[i5] = new CoilBlurTransformation(i5, i5, 3, null);
-                SingletonAsyncImageKt.m8558AsyncImage10Xjiaw(ImageRequestsKt.transformations(diskCacheKey, transformationArr).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, i6, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
+                startRestartGroup.startReplaceGroup(1723253895);
+                ComposerKt.sourceInformation(startRestartGroup, "47@1711L477");
+                ImageRequest.Builder diskCacheKey = new ImageRequest.Builder(context).data(file).memoryCacheKey("launcher_bg_blur_" + file.getAbsolutePath() + str + i2).diskCacheKey("launcher_bg_blur_" + file.getAbsolutePath() + str + i2);
+                Transformation[] transformationArr = new Transformation[i5];
+                transformationArr[0] = new CoilBlurTransformation(0, 0, 3, null);
+                SingletonAsyncImageKt.m8558AsyncImage10Xjiaw(ImageRequestsKt.transformations(diskCacheKey, transformationArr).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, i5, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
                 startRestartGroup.endReplaceGroup();
             } else {
-                startRestartGroup.startReplaceGroup(1723195956);
+                startRestartGroup.startReplaceGroup(1723727668);
                 startRestartGroup.endReplaceGroup();
             }
             if (ComposerKt.isTraceInProgress()) {

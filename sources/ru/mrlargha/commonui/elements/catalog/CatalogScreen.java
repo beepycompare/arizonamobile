@@ -90,14 +90,19 @@ public final class CatalogScreen extends SAMPUIElement {
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void onBackendMessage(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
-        if (i == 0) {
-            setupTitleData((CatalogInfoModel) MapperKt.toModel(data, CatalogInfoModel.class));
-        } else if (i == 1) {
-            this.catalogItemList = CollectionsKt.plus((Collection) this.catalogItemList, (Iterable) MapperKt.toListModel(data, CatalogItemModel.class));
-            this.catalogAdapter.addCatalogItems(MapperKt.toListModel(data, CatalogItemModel.class));
-        } else if (i != 2) {
-        } else {
-            removeCatalogItemById(Integer.parseInt(data));
+        try {
+            if (i == 0) {
+                setupTitleData((CatalogInfoModel) MapperKt.toModel(data, CatalogInfoModel.class));
+            } else if (i == 1) {
+                this.catalogItemList = CollectionsKt.plus((Collection) this.catalogItemList, (Iterable) MapperKt.toListModel(data, CatalogItemModel.class));
+                this.catalogAdapter.addCatalogItems(MapperKt.toListModel(data, CatalogItemModel.class));
+            } else if (i != 2) {
+            } else {
+                removeCatalogItemById(Integer.parseInt(data));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(getTargetActivity(), "Ошибка", 1).show();
         }
     }
 

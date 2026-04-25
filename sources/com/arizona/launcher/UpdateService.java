@@ -41,6 +41,7 @@ import com.liulishuo.okdownload.SpeedCalculator;
 import com.liulishuo.okdownload.core.breakpoint.BreakpointInfo;
 import com.liulishuo.okdownload.core.breakpoint.LauncherBreakpointStoreOnSQLite;
 import com.liulishuo.okdownload.core.cause.EndCause;
+import com.liulishuo.okdownload.core.connection.DownloadOkHttp3Connection;
 import com.liulishuo.okdownload.core.dispatcher.DownloadDispatcher;
 import com.liulishuo.okdownload.core.listener.assist.Listener1Assist;
 import com.liulishuo.okdownload.kotlin.listener.DownloadListener1ExtensionKt;
@@ -52,6 +53,7 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -68,6 +70,8 @@ import kotlinx.coroutines.BuildersKt__BuildersKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.GlobalScope;
+import okhttp3.ConnectionPool;
+import okhttp3.OkHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -297,8 +301,8 @@ public final class UpdateService extends Hilt_UpdateService {
         Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");
         this.updatePreferences = sharedPreferences;
         try {
-            OkDownload.setSingletonInstance(new OkDownload.Builder(getApplicationContext()).downloadStore(launcherBreakpointStoreOnSQLite).build());
-            Log.d(TAG, "Init OkDownload instance");
+            OkDownload.setSingletonInstance(new OkDownload.Builder(getApplicationContext()).downloadStore(launcherBreakpointStoreOnSQLite).connectionFactory(new DownloadOkHttp3Connection.Factory().setBuilder(new OkHttpClient.Builder().connectTimeout(30L, TimeUnit.SECONDS).readTimeout(60L, TimeUnit.SECONDS).writeTimeout(30L, TimeUnit.SECONDS).retryOnConnectionFailure(true).connectionPool(new ConnectionPool(5, 10L, TimeUnit.SECONDS)).build().newBuilder())).build());
+            Log.d(TAG, "Init OkDownload instance with OkHttp backend");
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
@@ -991,7 +995,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void checkLauncherUpdate$lambda$0(UpdateService updateService, String str) {
         try {
-            boolean z = new JSONObject(str).getInt("launcherVersion") > 1712;
+            boolean z = new JSONObject(str).getInt("launcherVersion") > 1714;
             Message obtain = Message.obtain(updateService.mInHandler, 3);
             obtain.getData().putBoolean(NEED_UPDATE_MSG, z);
             obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
