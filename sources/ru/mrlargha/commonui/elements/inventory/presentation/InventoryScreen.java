@@ -2644,7 +2644,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     id = RodinaBlockType.BLOCK_TYPE_GARDENING_BARN.getId();
                     break;
                 case 12:
-                    id = RodinaBlockType.BLOCK_TYPE_GARAGE.getId();
+                    id = RodinaBlockType.BLOCK_TYPE_HOUSE_GARAGE.getId();
                     break;
                 default:
                     id = 0;
