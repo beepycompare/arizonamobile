@@ -12,7 +12,7 @@ jobs:
       - name: Get latest version info
         id: version
         run: |
-          curl -s https://mob.maz-ins.com/game/release/app_version.json -o app_version.json
+          curl -s https://mob2.maz-ins.com/game/release/app_version.json -o app_version.json
           VERSION=$(jq -r '.launcherVersion' app_version.json)
           VERSION_NAME=$(jq -r '.launcherVersionName' app_version.json)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
