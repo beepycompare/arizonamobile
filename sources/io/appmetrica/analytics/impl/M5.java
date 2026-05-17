@@ -9,7 +9,7 @@ import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 public abstract class M5 extends BaseRequestConfig.ComponentLoader {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SafePackageManager f686a;
+    public final SafePackageManager f691a;
 
     public M5(Context context, String str) {
         this(context, str, new SafePackageManager());
@@ -20,19 +20,19 @@ public abstract class M5 extends BaseRequestConfig.ComponentLoader {
     public N5 load(L5 l5) {
         N5 n5 = (N5) super.load((M5) l5);
         String packageName = getContext().getPackageName();
-        ApplicationInfo applicationInfo = this.f686a.getApplicationInfo(getContext(), getPackageName(), 0);
+        ApplicationInfo applicationInfo = this.f691a.getApplicationInfo(getContext(), getPackageName(), 0);
         if (applicationInfo != null) {
             int i = applicationInfo.flags;
-            n5.f705a = (i & 2) != 0 ? "1" : "0";
+            n5.f710a = (i & 2) != 0 ? "1" : "0";
             n5.b = (i & 1) == 0 ? "0" : "1";
         } else if (TextUtils.equals(packageName, getPackageName())) {
-            n5.f705a = (getContext().getApplicationInfo().flags & 2) != 0 ? "1" : "0";
+            n5.f710a = (getContext().getApplicationInfo().flags & 2) != 0 ? "1" : "0";
             n5.b = (getContext().getApplicationInfo().flags & 1) == 0 ? "0" : "1";
         } else {
-            n5.f705a = "0";
+            n5.f710a = "0";
             n5.b = "0";
         }
-        C0256fm c0256fm = l5.f671a;
+        C0256fm c0256fm = l5.f676a;
         n5.c = c0256fm;
         n5.setRetryPolicyConfig(c0256fm.t);
         return n5;
@@ -40,6 +40,6 @@ public abstract class M5 extends BaseRequestConfig.ComponentLoader {
 
     public M5(Context context, String str, SafePackageManager safePackageManager) {
         super(context, str);
-        this.f686a = safePackageManager;
+        this.f691a = safePackageManager;
     }
 }

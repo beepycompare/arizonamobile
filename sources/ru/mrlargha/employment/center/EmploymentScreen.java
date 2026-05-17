@@ -2,10 +2,8 @@ package ru.mrlargha.employment.center;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 import androidx.exifinterface.media.ExifInterface;
 import com.google.gson.JsonParseException;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
@@ -47,7 +45,7 @@ import ru.mrlargha.feature.employment.center.databinding.EmploymentCenterMainBin
 import ru.mrlargha.feature.employment.center.databinding.EmploymentCenterSalaryTableBinding;
 import ru.mrlargha.feature.employment.center.databinding.EmploymentCenterScreenBinding;
 /* compiled from: EmploymentScreen.kt */
-@Metadata(d1 = {"\u0000\u008e\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0003:;<B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\"H\u0016J\u0018\u0010#\u001a\u00020 2\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u0006H\u0016J\u0010\u0010'\u001a\u00020 2\u0006\u0010(\u001a\u00020)H\u0002J\b\u0010*\u001a\u00020 H\u0002J\u0010\u0010+\u001a\u00020 2\u0006\u0010$\u001a\u00020\u0018H\u0002J\u0010\u0010,\u001a\u00020 2\u0006\u0010-\u001a\u00020.H\u0002J\u0010\u0010/\u001a\u00020 2\u0006\u0010(\u001a\u000200H\u0002J\u0010\u00101\u001a\u00020 2\u0006\u00102\u001a\u00020\u0016H\u0002J\b\u00103\u001a\u00020 H\u0002J\b\u00104\u001a\u00020 H\u0002J\u0010\u00105\u001a\u00020 2\u0006\u00106\u001a\u00020\u0006H\u0002J\u0010\u00107\u001a\u00020 2\u0006\u00108\u001a\u000209H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006="}, d2 = {"Lru/mrlargha/employment/center/EmploymentScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/employment/center/databinding/EmploymentCenterScreenBinding;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/employment/center/EmploymentApi;", "apiData", "", "Lru/mrlargha/employment/center/Job;", "mainData", "Lru/mrlargha/employment/center/data/EmploymentData;", "jobsAdapter", "Lru/mrlargha/employment/center/JobsAdapter;", "bonusesAdapter", "Lru/mrlargha/employment/center/BonusesAdapter;", "textBonusAdapter", "Lru/mrlargha/employment/center/TextBonusAdapter;", "setVisible", "", "visible", "", "onBackendMessage", "data", "", "subId", "selectJob", "item", "Lru/mrlargha/employment/center/data/SelectJob;", "getApiData", "setMainInfo", "setServerInfo", "info", "Lru/mrlargha/employment/center/data/JobInfo;", "onClickBonus", "Lru/mrlargha/employment/center/data/BonusItem;", "onSelectJob", "job", "setupAdapters", "setupNavigation", "clickJobsButton", "id", "navigateTo", "nav", "Lru/mrlargha/employment/center/EmploymentScreen$Navigation;", "EasterBites", "Navigation", "Spawner", "employment-center"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u008e\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0003:;<B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\"H\u0016J\u0018\u0010#\u001a\u00020 2\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u0006H\u0016J\u0010\u0010'\u001a\u00020 2\u0006\u0010(\u001a\u00020)H\u0002J\b\u0010*\u001a\u00020 H\u0002J\u0010\u0010+\u001a\u00020 2\u0006\u0010$\u001a\u00020\u0018H\u0002J\u0010\u0010,\u001a\u00020 2\u0006\u0010-\u001a\u00020.H\u0002J\u0010\u0010/\u001a\u00020 2\u0006\u0010(\u001a\u000200H\u0002J\u0010\u00101\u001a\u00020 2\u0006\u00102\u001a\u00020\u0016H\u0002J\b\u00103\u001a\u00020 H\u0002J\b\u00104\u001a\u00020 H\u0002J\u0010\u00105\u001a\u00020 2\u0006\u00106\u001a\u00020\u0006H\u0002J\u0010\u00107\u001a\u00020 2\u0006\u00108\u001a\u000209H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006="}, d2 = {"Lru/mrlargha/employment/center/EmploymentScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/employment/center/databinding/EmploymentCenterScreenBinding;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/employment/center/EmploymentApi;", "apiData", "", "Lru/mrlargha/employment/center/Job;", "mainData", "Lru/mrlargha/employment/center/data/EmploymentData;", "jobsAdapter", "Lru/mrlargha/employment/center/JobsAdapter;", "bonusesAdapter", "Lru/mrlargha/employment/center/BonusesAdapter;", "textBonusAdapter", "Lru/mrlargha/employment/center/TextBonusAdapter;", "setVisible", "", "visible", "", "onBackendMessageHandled", "data", "", "subId", "selectJob", "item", "Lru/mrlargha/employment/center/data/SelectJob;", "getApiData", "setMainInfo", "setServerInfo", "info", "Lru/mrlargha/employment/center/data/JobInfo;", "onClickBonus", "Lru/mrlargha/employment/center/data/BonusItem;", "onSelectJob", "job", "setupAdapters", "setupNavigation", "clickJobsButton", "id", "navigateTo", "nav", "Lru/mrlargha/employment/center/EmploymentScreen$Navigation;", "EasterBites", "Navigation", "Spawner", "employment-center"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class EmploymentScreen extends SAMPUIElement implements InterfaceController {
     private final EmploymentApi api;
@@ -137,33 +135,27 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
-        try {
-            if (i == 0) {
-                if (MapperKt.isJsonValid(data)) {
-                    setMainInfo((EmploymentData) MapperKt.getGson().fromJson(data, (Class<Object>) EmploymentData.class));
-                    return;
-                }
-                throw new JsonParseException("Json is not valid");
-            } else if (i == 1) {
-                if (MapperKt.isJsonValid(data)) {
-                    setServerInfo((JobInfo) MapperKt.getGson().fromJson(data, (Class<Object>) JobInfo.class));
-                    return;
-                }
-                throw new JsonParseException("Json is not valid");
-            } else if (i != 2) {
-            } else {
-                if (MapperKt.isJsonValid(data)) {
-                    selectJob((SelectJob) MapperKt.getGson().fromJson(data, (Class<Object>) SelectJob.class));
-                    return;
-                }
-                throw new JsonParseException("Json is not valid");
+        if (i == 0) {
+            if (MapperKt.isJsonValid(data)) {
+                setMainInfo((EmploymentData) MapperKt.getGson().fromJson(data, (Class<Object>) EmploymentData.class));
+                return;
             }
-        } catch (Exception e) {
-            Log.d("EmploymentScreen", data + "  " + e.getMessage());
-            e.printStackTrace();
-            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+            throw new JsonParseException("Json is not valid");
+        } else if (i == 1) {
+            if (MapperKt.isJsonValid(data)) {
+                setServerInfo((JobInfo) MapperKt.getGson().fromJson(data, (Class<Object>) JobInfo.class));
+                return;
+            }
+            throw new JsonParseException("Json is not valid");
+        } else if (i != 2) {
+        } else {
+            if (MapperKt.isJsonValid(data)) {
+                selectJob((SelectJob) MapperKt.getGson().fromJson(data, (Class<Object>) SelectJob.class));
+                return;
+            }
+            throw new JsonParseException("Json is not valid");
         }
     }
 
@@ -304,17 +296,17 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         } else {
             i = 0;
             for (Number number : list) {
-                if ((number.intValue() == 1) && (i = i + 1) < 0) {
+                if (number.intValue() == 1 && (i = i + 1) < 0) {
                     CollectionsKt.throwCountOverflow();
                 }
             }
         }
         if (i < 3) {
-            employmentCenterMainBinding.buttonAction4text.setText("Информация о работе");
-            employmentCenterMainBinding.buttonAction1text.setText("Устроиться на работу");
+            employmentCenterMainBinding.buttonAction4text.setText(getTargetActivity().getString(R.string.employment_job_info));
+            employmentCenterMainBinding.buttonAction1text.setText(getTargetActivity().getString(R.string.employment_get_job));
         } else {
-            employmentCenterMainBinding.buttonAction4text.setText("Информация");
-            employmentCenterMainBinding.buttonAction1text.setText("Устроиться");
+            employmentCenterMainBinding.buttonAction4text.setText(getTargetActivity().getString(R.string.employment_job_info_short));
+            employmentCenterMainBinding.buttonAction1text.setText(getTargetActivity().getString(R.string.employment_get_job_short));
         }
         employmentCenterMainBinding.buttonAction1.setVisibility(8);
         employmentCenterMainBinding.buttonAction2.setVisibility(8);
@@ -415,8 +407,8 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         EmploymentCenterMainBinding employmentCenterMainBinding = this.binding.main;
         employmentCenterMainBinding.title.setText(job.getName());
         Picasso picasso = Picasso.get();
-        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso.load(resourceUrl$default + "projects/arizona-rp/systems/employment_center/banners/mobile/" + job.getId() + ".webp").into(employmentCenterMainBinding.image);
+        String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso.load(projectResourceUrl$default + "systems/employment_center/banners/mobile/" + job.getId() + ".webp").into(employmentCenterMainBinding.image);
         employmentCenterMainBinding.labelBonus.setText("+" + job.getBonusSalary().getPercent() + "%");
         employmentCenterMainBinding.timer.setText(TimeConverterKt.taskPageTimeConvert(job.getBonusSalary().getEndUnixTime()));
         if (job.getBonusSalary().getPercent() > 0 || job.getBonusSalary().getEndUnixTime() - System.currentTimeMillis() > 0) {
@@ -449,7 +441,7 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
                 EmploymentScreen.onSelectJob$lambda$0$2(EmploymentScreen.this, view);
             }
         });
-        employmentCenterMainBinding.buttonAction5text.setText("Необходим " + job.getMinLevel() + " уровень");
+        employmentCenterMainBinding.buttonAction5text.setText(getTargetActivity().getString(R.string.employment_required_level_caps, new Object[]{Integer.valueOf(job.getMinLevel())}));
         this.binding.main.content.setVisibility(0);
         this.binding.main.loaderBar.setVisibility(8);
         notifyClick(0, 1, String.valueOf(job.getId()));

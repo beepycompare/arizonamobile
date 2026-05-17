@@ -1,7 +1,7 @@
 package com.nvidia.devtech;
 
 import java.io.InputStream;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class NvAPKFile {
     public int bufferSize;
     public byte[] data;

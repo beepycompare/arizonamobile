@@ -8,12 +8,12 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class v extends MessageNano {
     public static volatile v[] e;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f323a;
+    public long f328a;
     public w b;
     public int c;
     public byte[] d;
@@ -34,7 +34,7 @@ public final class v extends MessageNano {
     }
 
     public final v a() {
-        this.f323a = 0L;
+        this.f328a = 0L;
         this.b = null;
         this.c = 0;
         this.d = WireFormatNano.EMPTY_BYTES;
@@ -45,7 +45,7 @@ public final class v extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        long j = this.f323a;
+        long j = this.f328a;
         if (j != 0) {
             computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(1, j);
         }
@@ -62,7 +62,7 @@ public final class v extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        long j = this.f323a;
+        long j = this.f328a;
         if (j != 0) {
             codedOutputByteBufferNano.writeInt64(1, j);
         }
@@ -88,7 +88,7 @@ public final class v extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 8) {
-                this.f323a = codedInputByteBufferNano.readInt64();
+                this.f328a = codedInputByteBufferNano.readInt64();
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new w();

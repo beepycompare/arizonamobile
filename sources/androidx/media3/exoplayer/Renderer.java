@@ -126,11 +126,8 @@ public interface Renderer extends PlayerMessage.Target {
 
     default long getDurationToProgressUs(long j, long j2) {
         if (getState() == 1) {
-            if (isReady() || isEnded()) {
-                return 1000000L;
-            }
-            return DEFAULT_DURATION_TO_PROGRESS_US;
+            return (isReady() || isEnded()) ? 1000000L : 10000L;
         }
-        return DEFAULT_DURATION_TO_PROGRESS_US;
+        return 10000L;
     }
 }

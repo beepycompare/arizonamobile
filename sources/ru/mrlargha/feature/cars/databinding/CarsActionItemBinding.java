@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.cars.R;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public final class CarsActionItemBinding implements ViewBinding {
     public final CustomCardView carsActionItem;
     public final ImageView itemIc;

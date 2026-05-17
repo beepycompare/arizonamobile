@@ -5,11 +5,11 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* renamed from: ru.rustore.sdk.metrics.internal.a  reason: case insensitive filesystem */
-/* loaded from: classes6.dex */
+/* loaded from: classes3.dex */
 public final class C0813a extends Lambda implements Function1<Byte, CharSequence> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0813a f1600a = new C0813a();
+    public static final C0813a f1605a = new C0813a();
 
     public C0813a() {
         super(1);

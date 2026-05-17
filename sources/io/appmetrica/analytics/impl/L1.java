@@ -15,25 +15,25 @@ public final class L1 {
     public static A1 d;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f667a;
+    public final Context f672a;
     public final InterfaceC0738z1 b;
     public BinderC0713y1 c;
 
     public L1(Context context, InterfaceC0738z1 interfaceC0738z1) {
-        this.f667a = context;
+        this.f672a = context;
         this.b = interfaceC0738z1;
     }
 
     public final void b() {
-        C0448na.a(this.f667a);
-        PublicLogger.Companion.init(this.f667a);
-        Context context = this.f667a;
+        C0448na.a(this.f672a);
+        PublicLogger.Companion.init(this.f672a);
+        Context context = this.f672a;
         InterfaceC0738z1 interfaceC0738z1 = this.b;
         if (d == null) {
             B1 b1 = new B1(context, interfaceC0738z1, new C0188d5(context));
             C0228ek c0228ek = C0448na.I.v;
             E1 e1 = new E1(b1);
-            LinkedHashMap linkedHashMap = c0228ek.f981a;
+            LinkedHashMap linkedHashMap = c0228ek.f986a;
             Object obj = linkedHashMap.get(1);
             if (obj == null) {
                 obj = new ArrayList();
@@ -46,7 +46,7 @@ public final class L1 {
         if (a1 != null) {
             this.c = new BinderC0713y1(a1);
             C0448na c0448na = C0448na.I;
-            c0448na.f = new C0432mj(c0448na.f1133a, new C0457nj(a1));
+            c0448na.f = new C0432mj(c0448na.f1138a, new C0457nj(a1));
             ((B1) a1).onCreate();
         }
     }
@@ -67,7 +67,7 @@ public final class L1 {
     public final void a(Intent intent, int i) {
         A1 a1 = d;
         if (a1 != null) {
-            ((C0612u0) ((B1) a1).c).f1244a.stopSelf(i);
+            ((C0612u0) ((B1) a1).c).f1249a.stopSelf(i);
         }
     }
 
@@ -81,7 +81,7 @@ public final class L1 {
     public final int a(Intent intent, int i, int i2) {
         A1 a1 = d;
         if (a1 != null) {
-            ((C0612u0) ((B1) a1).c).f1244a.stopSelf(i2);
+            ((C0612u0) ((B1) a1).c).f1249a.stopSelf(i2);
             return 2;
         }
         return 2;

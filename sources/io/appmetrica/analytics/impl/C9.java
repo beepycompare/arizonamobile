@@ -8,17 +8,17 @@ public final class C9 implements ProtobufConverter {
     public final C0535qm fromModel(B9 b9) {
         C0535qm c0535qm = new C0535qm();
         if (b9 != null) {
-            c0535qm.f1193a = b9.f515a;
+            c0535qm.f1198a = b9.f520a;
         }
         return c0535qm;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        return new B9(((C0535qm) obj).f1193a);
+        return new B9(((C0535qm) obj).f1198a);
     }
 
     public final B9 a(C0535qm c0535qm) {
-        return new B9(c0535qm.f1193a);
+        return new B9(c0535qm.f1198a);
     }
 }

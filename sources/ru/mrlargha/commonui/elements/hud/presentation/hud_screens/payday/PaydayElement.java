@@ -37,7 +37,7 @@ import ru.mrlargha.commonui.utils.ui.money.MoneyFormatter;
 import ru.mrlargha.commonui.utils.ui.textWithIcons.IconAndSize;
 import ru.mrlargha.commonui.utils.ui.textWithIcons.TextWithIconsKt;
 /* compiled from: PaydayElement.kt */
-@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bJ\u000e\u0010\u001c\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bJ\b\u0010\u001d\u001a\u00020\u0019H\u0002J\u0006\u0010\u001e\u001a\u00020\u0019J\u0010\u0010\u001f\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0010\u0010 \u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0010\u0010!\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0010\u0010\"\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0016\u0010#\u001a\b\u0012\u0004\u0012\u00020$0\u00152\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0018\u0010%\u001a\u00020\u00192\u0006\u0010\u0002\u001a\u00020\u00162\u0006\u0010&\u001a\u00020$H\u0002J\u001a\u0010'\u001a\u0004\u0018\u00010(2\u0006\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020\u001bH\u0002J\u0010\u0010,\u001a\u00020\u001b2\u0006\u0010-\u001a\u00020\u000fH\u0002J\u0010\u0010.\u001a\u00020\u001b2\u0006\u0010/\u001a\u00020\u000fH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0019\u0010\u0014\u001a\r\u0012\t\u0012\u00070\u0016¢\u0006\u0002\b\u00170\u0015X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00060"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementPaydayBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementPaydayBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/HudElementPaydayBinding;", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "clockJob", "Lkotlinx/coroutines/Job;", "secondsPassed", "", "currentData", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayData;", "isVisible", "", "cards", "", "Lru/mrlargha/commonui/databinding/HudElementPaydayItemBinding;", "Lkotlin/jvm/internal/EnhancedNullability;", "setVisibility", "", "data", "", "setInfo", "startClock", "stopClock", "render", "renderHeader", "renderOnline", "renderCards", "buildCards", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayCardUi;", "bindCard", "item", "formExtraCard", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/ExtraData;", "int", "", "postfix", "formatTime", "actualTime", "formatTimer", "seconds", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0007\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bJ\u000e\u0010\u001c\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bJ\b\u0010\u001d\u001a\u00020\u0019H\u0002J\u0006\u0010\u001e\u001a\u00020\u0019J\u0010\u0010\u001f\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0010\u0010 \u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0010\u0010!\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0010\u0010\"\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0016\u0010#\u001a\b\u0012\u0004\u0012\u00020$0\u00152\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0018\u0010%\u001a\u00020\u00192\u0006\u0010\u0002\u001a\u00020\u00162\u0006\u0010&\u001a\u00020$H\u0002J\u001a\u0010'\u001a\u0004\u0018\u00010(2\u0006\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020\u001bH\u0002J\u001a\u0010'\u001a\u0004\u0018\u00010(2\u0006\u0010,\u001a\u00020-2\u0006\u0010+\u001a\u00020\u001bH\u0002J\u0010\u0010.\u001a\u00020\u001b2\u0006\u0010,\u001a\u00020-H\u0002J\u0010\u0010/\u001a\u00020\u001b2\u0006\u0010,\u001a\u00020\u000fH\u0002J\u0010\u00100\u001a\u00020\u001b2\u0006\u00101\u001a\u00020\u000fH\u0002J\u0010\u00102\u001a\u00020\u001b2\u0006\u00103\u001a\u00020\u000fH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0019\u0010\u0014\u001a\r\u0012\t\u0012\u00070\u0016¢\u0006\u0002\b\u00170\u0015X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00064"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementPaydayBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementPaydayBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/HudElementPaydayBinding;", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "clockJob", "Lkotlinx/coroutines/Job;", "secondsPassed", "", "currentData", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayData;", "isVisible", "", "cards", "", "Lru/mrlargha/commonui/databinding/HudElementPaydayItemBinding;", "Lkotlin/jvm/internal/EnhancedNullability;", "setVisibility", "", "data", "", "setInfo", "startClock", "stopClock", "render", "renderHeader", "renderOnline", "renderCards", "buildCards", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayCardUi;", "bindCard", "item", "formExtraCard", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/ExtraData;", "int", "", "postfix", "value", "", "formatFloat", "formatMainIncome", "formatTime", "actualTime", "formatTimer", "seconds", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class PaydayElement {
     private final HudElementPaydayBinding binding;
@@ -124,7 +124,7 @@ public final class PaydayElement {
         TextView textView = this.binding.tvMainIncome;
         Context context = this.binding.getRoot().getContext();
         Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
-        textView.setText(TextWithIconsKt.toTextWithIcons(StringsKt.replace$default(StringsKt.replace$default(MoneyFormatter.format$default(MoneyFormatter.INSTANCE, paydayData.getIncomeMoney(), true, "+ ", null, 8, null), ":kk:", "<ic>1<ic>", false, 4, (Object) null), ":k:", "<ic>2<ic>", false, 4, (Object) null), context, new IconAndSize(R.drawable.hud_element_payday_kk, R.dimen._12sdp, R.dimen._7sdp), new IconAndSize(R.drawable.hud_element_payday_k, R.dimen._8sdp, R.dimen._7sdp)));
+        textView.setText(TextWithIconsKt.toTextWithIcons(StringsKt.replace$default(StringsKt.replace$default(formatMainIncome(paydayData.getIncomeMoney()), ":kk:", "<ic>1<ic>", false, 4, (Object) null), ":k:", "<ic>2<ic>", false, 4, (Object) null), context, new IconAndSize(R.drawable.hud_element_payday_kk, R.dimen._12sdp, R.dimen._7sdp), new IconAndSize(R.drawable.hud_element_payday_k, R.dimen._8sdp, R.dimen._7sdp)));
         boolean z = paydayData.getPaydayMultiplier().getValue() >= 3;
         FrameLayout root = this.binding.badgePaydayMultiplier.root;
         Intrinsics.checkNotNullExpressionValue(root, "root");
@@ -191,7 +191,7 @@ public final class PaydayElement {
             paydayCardUi = new PaydayCardUi(paydayData.getLevel().getLevel() + " уровень", paydayData.getLevel().getCurrentExp() + " / " + paydayData.getLevel().getMaxExp(), null, null, R.drawable.hud_element_payday_ic_level, "#1558A0", "#5DDCFF", false, null, 396, null);
         }
         arrayList2.add(paydayCardUi);
-        ExtraData formExtraCard = formExtraCard(paydayData.getDeposit().getPercent(), "%");
+        ExtraData formExtraCard = formExtraCard(paydayData.getDeposit().getActualPercent(), "%");
         if (paydayData.getDeposit().getTaxWarningProperty().length() > 0) {
             paydayCardUi2 = new PaydayCardUi("Скоро слетит", paydayData.getDeposit().getTaxWarningProperty(), null, null, R.drawable.hud_element_payday_ic_deposit_warn, "#FFA600", "#FFF2BD", false, null, 396, null);
             c = 0;
@@ -211,7 +211,7 @@ public final class PaydayElement {
             paydayCardUi2 = new PaydayCardUi("Депозит", spannableString2, null, null, R.drawable.hud_element_payday_ic_deposit, "#46A015", "#CCF053", true, null, 268, null);
         }
         arrayList2.add(paydayCardUi2);
-        ExtraData formExtraCard2 = formExtraCard(paydayData.getFraction().getPercent(), "%");
+        ExtraData formExtraCard2 = formExtraCard(paydayData.getFraction().getActualPercent(), "%");
         ExtraData extraData = paydayData.getFraction().getMultiplier() > 1 ? new ExtraData("X" + paydayData.getFraction().getMultiplier(), -1, Color.parseColor("#FF4400")) : null;
         if (paydayData.getFraction().getDebuffType().length() > 0) {
             if (Intrinsics.areEqual(paydayData.getFraction().getDebuffType(), "medCard")) {
@@ -321,6 +321,26 @@ public final class PaydayElement {
             return new ExtraData("+" + i + str, Color.parseColor("#CCF053"), Color.parseColor("#1C5800"));
         }
         return new ExtraData(i + " " + str, Color.parseColor("#FFC3C3"), Color.parseColor("#AA0000"));
+    }
+
+    private final ExtraData formExtraCard(float f, String str) {
+        if (f == 0.0f) {
+            return null;
+        }
+        String formatFloat = formatFloat(f);
+        if (f > 0.0f) {
+            return new ExtraData("+" + formatFloat + str, Color.parseColor("#CCF053"), Color.parseColor("#1C5800"));
+        }
+        return new ExtraData(formatFloat + str, Color.parseColor("#FFC3C3"), Color.parseColor("#AA0000"));
+    }
+
+    private final String formatFloat(float f) {
+        return StringsKt.trimEnd(StringsKt.trimEnd(String.valueOf(f), '0'), '.');
+    }
+
+    private final String formatMainIncome(long j) {
+        String format$default = MoneyFormatter.format$default(MoneyFormatter.INSTANCE, j, false, null, null, 14, null);
+        return j >= 0 ? "+" + format$default : format$default;
     }
 
     private final String formatTime(long j) {

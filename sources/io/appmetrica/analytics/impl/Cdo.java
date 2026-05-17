@@ -8,12 +8,12 @@ public final class Cdo {
     public static final int[] c = {0, 1, 2, 3};
 
     /* renamed from: a  reason: collision with root package name */
-    public final SparseArray f964a = new SparseArray();
+    public final SparseArray f969a = new SparseArray();
     public int b = 0;
 
     public Cdo(int[] iArr) {
         for (int i : iArr) {
-            this.f964a.put(i, new HashMap());
+            this.f969a.put(i, new HashMap());
         }
     }
 }

@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class LayoutWheelSettingsBinding implements ViewBinding {
     public final AppCompatButton btnFrontMinus;
     public final AppCompatButton btnFrontPlus;

@@ -7,11 +7,11 @@ import android.os.ResultReceiver;
 public final class B6 extends ResultReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final A6 f512a;
+    public final A6 f517a;
 
     public B6(Handler handler, A6 a6) {
         super(handler);
-        this.f512a = a6;
+        this.f517a = a6;
     }
 
     public static void a(ResultReceiver resultReceiver, S3 s3) {
@@ -27,13 +27,13 @@ public final class B6 extends ResultReceiver {
         if (bundle == null) {
             bundle = new Bundle();
         }
-        this.f512a.a(i, bundle);
+        this.f517a.a(i, bundle);
     }
 
     public static void a(ResultReceiver resultReceiver, Jl jl, S3 s3) {
         if (resultReceiver != null) {
             Bundle bundle = new Bundle();
-            bundle.putInt("startup_error_key_code", jl.f648a);
+            bundle.putInt("startup_error_key_code", jl.f653a);
             s3.b(bundle);
             resultReceiver.send(2, bundle);
         }

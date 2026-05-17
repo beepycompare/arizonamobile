@@ -102,8 +102,9 @@ public class AppCompatActivity extends FragmentActivity implements AppCompatCall
         });
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity, android.view.ContextThemeWrapper, android.content.ContextWrapper
-    protected void attachBaseContext(Context context) {
+    public void attachBaseContext(Context context) {
         super.attachBaseContext(getDelegate().attachBaseContext2(context));
     }
 

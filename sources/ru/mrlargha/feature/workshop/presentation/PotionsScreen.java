@@ -1,7 +1,6 @@
 package ru.mrlargha.feature.workshop.presentation;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Handler;
 import android.util.Log;
@@ -64,7 +63,7 @@ import ru.mrlargha.feature.workshop.domain.WorkshopResponse;
 import ru.mrlargha.feature.workshop.presentation.adapters.SelectColorAdapter;
 import ru.mrlargha.feature.workshop.presentation.adapters.WorkshopAdapter;
 /* compiled from: PotionsScreen.kt */
-@Metadata(d1 = {"\u0000 \u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u001a\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u0001hB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u00104\u001a\u000205H\u0002J\b\u00106\u001a\u000205H\u0002J\b\u00107\u001a\u000205H\u0002J\u0010\u00108\u001a\u0002052\u0006\u00109\u001a\u00020.H\u0002J\u0010\u0010:\u001a\u0002052\u0006\u0010;\u001a\u00020.H\u0002J\u0010\u0010<\u001a\u0002052\u0006\u0010=\u001a\u00020.H\u0002J\u0010\u0010>\u001a\u0002052\u0006\u0010?\u001a\u00020.H\u0002J\u0010\u0010@\u001a\u0002052\u0006\u0010?\u001a\u00020.H\u0002J\b\u0010A\u001a\u000205H\u0002J\b\u0010B\u001a\u000205H\u0002J\b\u0010C\u001a\u000205H\u0002J\u0010\u0010D\u001a\u0002052\u0006\u0010E\u001a\u00020.H\u0002J\u0010\u0010F\u001a\u0002052\u0006\u0010G\u001a\u00020.H\u0002J\u0010\u0010H\u001a\u0002052\u0006\u0010G\u001a\u00020.H\u0002J\b\u0010I\u001a\u000205H\u0002J\u0010\u0010J\u001a\u0002052\u0006\u0010K\u001a\u00020\u0013H\u0002J\u0010\u0010L\u001a\u0002052\u0006\u0010K\u001a\u00020\u0013H\u0002J\u0010\u0010M\u001a\u0002052\u0006\u0010K\u001a\u00020\u0013H\u0002J(\u0010N\u001a\u0002052\u0006\u0010O\u001a\u00020P2\u0006\u0010Q\u001a\u00020R2\u0006\u0010S\u001a\u00020T2\u0006\u0010U\u001a\u00020RH\u0002J\b\u0010V\u001a\u000205H\u0002J\u0018\u0010W\u001a\u0002052\u0006\u0010X\u001a\u00020T2\u0006\u0010Y\u001a\u00020\u0006H\u0016J\u0010\u0010Z\u001a\u0002052\u0006\u0010?\u001a\u00020.H\u0002J\b\u0010[\u001a\u000205H\u0002J\u0018\u0010\\\u001a\u0002052\u0006\u0010]\u001a\u00020^2\u0006\u0010_\u001a\u00020.H\u0002J\u0018\u0010`\u001a\u0002052\u0006\u0010X\u001a\u00020T2\u0006\u0010Y\u001a\u00020\u0006H\u0002J\u0010\u0010a\u001a\u0002052\u0006\u0010b\u001a\u00020cH\u0002J\b\u0010d\u001a\u000205H\u0002J\u0010\u0010e\u001a\u0002052\u0006\u0010;\u001a\u00020.H\u0016J\u0010\u0010f\u001a\u0002052\u0006\u0010;\u001a\u00020.H\u0016J\b\u0010g\u001a\u000205H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n\u0012\u0004\u0012\u00020\u0013\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00060\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010!\u001a\u00020\u001f¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#R\u000e\u0010$\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010'\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010(\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010)\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010*\u001a\n ,*\u0004\u0018\u00010+0+X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u00020.X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020.X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006i"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/PotionsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "potionScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/workshop/databinding/PotionsScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "inventoryItemList", "availableList", "", "inventoryAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopAdapter;", "colorsAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/SelectColorAdapter;", "selectedColor", "progress", "progressIncrement", "progressHandler", "Landroid/os/Handler;", "incrementHandler", "handler", "getHandler", "()Landroid/os/Handler;", "leftItemIndex", "centerItemIndex", "rightItemIndex", "currentItem", "currentStoneBench", "currentPaintItem", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "currentScreenType", "isDisableAll", "runnable", "Ljava/lang/Runnable;", "btnIsClicked", "clearFields", "", "initViewSize", "clearAllField", "clearItemsMainFieldClicked", "sendRequest", "setCountsVisibility", "visible", "leftItemUi", "isLocked", "btnSharpenEnableStatus", "isEnabled", "btnPaintEnableStatus", "sendRightItemData", "paintingScreenType", "fixingScreenType", "changeInventoryType", "isFixingScreen", "visibilityLeftRightViews", "isVisible", "paintingScreen", "initColors", "updateMainField", "item", "updateRightField", "updateLeftField", "clearViewFromItem", "imageView", "Landroid/widget/ImageView;", "textView", "Landroid/widget/TextView;", "message", "", "view", "addLockedItems", "onBackendMessage", "data", "subId", "enableStatusButtons", "refreshData", "startProgressBarAnimation", "time", "", "stop", "sendData", "initItemInfo", "response", "Lru/mrlargha/feature/workshop/domain/WorkshopResponse;", "getInventoryList", "setVisibility", "setVisible", "closeScreen", "Spawner", "workshop"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0098\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u001a\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u0001gB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u00100\u001a\u0002012\u0006\u00102\u001a\u00020\u0006H\u0002J\u0010\u00103\u001a\u0002012\u0006\u00102\u001a\u00020\u0006H\u0002J\b\u00104\u001a\u000205H\u0002J\b\u00106\u001a\u000205H\u0002J\b\u00107\u001a\u000205H\u0002J\u0010\u00108\u001a\u0002052\u0006\u00109\u001a\u00020,H\u0002J\u0010\u0010:\u001a\u0002052\u0006\u0010;\u001a\u00020,H\u0002J\u0010\u0010<\u001a\u0002052\u0006\u0010=\u001a\u00020,H\u0002J\u0010\u0010>\u001a\u0002052\u0006\u0010?\u001a\u00020,H\u0002J\u0010\u0010@\u001a\u0002052\u0006\u0010?\u001a\u00020,H\u0002J\b\u0010A\u001a\u000205H\u0002J\b\u0010B\u001a\u000205H\u0002J\b\u0010C\u001a\u000205H\u0002J\u0010\u0010D\u001a\u0002052\u0006\u0010E\u001a\u00020,H\u0002J\u0010\u0010F\u001a\u0002052\u0006\u0010G\u001a\u00020,H\u0002J\u0010\u0010H\u001a\u0002052\u0006\u0010G\u001a\u00020,H\u0002J\b\u0010I\u001a\u000205H\u0002J\u0010\u0010J\u001a\u0002052\u0006\u0010K\u001a\u00020\u0013H\u0002J\u0010\u0010L\u001a\u0002052\u0006\u0010K\u001a\u00020\u0013H\u0002J\u0010\u0010M\u001a\u0002052\u0006\u0010K\u001a\u00020\u0013H\u0002J(\u0010N\u001a\u0002052\u0006\u0010O\u001a\u00020P2\u0006\u0010Q\u001a\u00020R2\u0006\u0010S\u001a\u0002012\u0006\u0010T\u001a\u00020RH\u0002J\b\u0010U\u001a\u000205H\u0002J\u0018\u0010V\u001a\u0002052\u0006\u0010W\u001a\u0002012\u0006\u0010X\u001a\u00020\u0006H\u0016J\u0010\u0010Y\u001a\u0002052\u0006\u0010?\u001a\u00020,H\u0002J\b\u0010Z\u001a\u000205H\u0002J\u0018\u0010[\u001a\u0002052\u0006\u0010\\\u001a\u00020]2\u0006\u0010^\u001a\u00020,H\u0002J\u0018\u0010_\u001a\u0002052\u0006\u0010W\u001a\u0002012\u0006\u0010X\u001a\u00020\u0006H\u0002J\u0010\u0010`\u001a\u0002052\u0006\u0010a\u001a\u00020bH\u0002J\b\u0010c\u001a\u000205H\u0002J\u0010\u0010d\u001a\u0002052\u0006\u0010;\u001a\u00020,H\u0016J\u0010\u0010e\u001a\u0002052\u0006\u0010;\u001a\u00020,H\u0016J\b\u0010f\u001a\u000205H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n\u0012\u0004\u0012\u00020\u0013\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00060\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010!\u001a\u00020\u001f¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#R\u000e\u0010$\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010'\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010(\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010)\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u00020,X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006h"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/PotionsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "potionScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/workshop/databinding/PotionsScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "inventoryItemList", "availableList", "", "inventoryAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopAdapter;", "colorsAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/SelectColorAdapter;", "selectedColor", "progress", "progressIncrement", "progressHandler", "Landroid/os/Handler;", "incrementHandler", "handler", "getHandler", "()Landroid/os/Handler;", "leftItemIndex", "centerItemIndex", "rightItemIndex", "currentItem", "currentStoneBench", "currentPaintItem", "currentScreenType", "isDisableAll", "", "runnable", "Ljava/lang/Runnable;", "btnIsClicked", "text", "", "resId", "paddedText", "clearFields", "", "initViewSize", "clearAllField", "clearItemsMainFieldClicked", "sendRequest", "setCountsVisibility", "visible", "leftItemUi", "isLocked", "btnSharpenEnableStatus", "isEnabled", "btnPaintEnableStatus", "sendRightItemData", "paintingScreenType", "fixingScreenType", "changeInventoryType", "isFixingScreen", "visibilityLeftRightViews", "isVisible", "paintingScreen", "initColors", "updateMainField", "item", "updateRightField", "updateLeftField", "clearViewFromItem", "imageView", "Landroid/widget/ImageView;", "textView", "Landroid/widget/TextView;", "message", "view", "addLockedItems", "onBackendMessageHandled", "data", "subId", "enableStatusButtons", "refreshData", "startProgressBarAnimation", "time", "", "stop", "sendData", "initItemInfo", "response", "Lru/mrlargha/feature/workshop/domain/WorkshopResponse;", "getInventoryList", "setVisibility", "setVisible", "closeScreen", "Spawner", "workshop"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class PotionsScreen extends SAMPUIElement implements InterfaceController {
     private List<Integer> availableList;
@@ -83,7 +82,6 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
     private final WorkshopAdapter inventoryAdapter;
     private List<InventoryItem> inventoryItemList;
     private List<InventoryItem> inventoryList;
-    private final boolean isArizonaType;
     private boolean isDisableAll;
     private int leftItemIndex;
     private final ConstraintLayout potionScreen;
@@ -93,7 +91,6 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
     private int rightItemIndex;
     private Runnable runnable;
     private int selectedColor;
-    private final SharedPreferences sharedPref;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PotionsScreen(Activity targetActivity, int i) {
@@ -126,12 +123,8 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         this.leftItemIndex = -1;
         this.centerItemIndex = -1;
         this.rightItemIndex = -1;
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
-        this.sharedPref = sharedPreferences;
-        boolean z = sharedPreferences.getBoolean("isArizonaType", false);
-        this.isArizonaType = z;
         addViewToConstraintLayout(constraintLayout, -1, -1);
-        UtilsKt.checkItemsName(activity, z);
+        UtilsKt.checkItemsName(activity, UtilsKt.isArizonaType());
         GridLayoutManager gridLayoutManager = new GridLayoutManager(activity, 5);
         gridLayoutManager.setItemPrefetchEnabled(false);
         bind.rvMainInventory.setLayoutManager(gridLayoutManager);
@@ -205,6 +198,16 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         return this.handler;
     }
 
+    private final String text(int i) {
+        String string = getTargetActivity().getString(i);
+        Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+        return string;
+    }
+
+    private final String paddedText(int i) {
+        return text(i) + " ";
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$0(PotionsScreen potionsScreen, View view) {
         if (potionsScreen.btnIsClicked) {
@@ -216,7 +219,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$1(PotionsScreen potionsScreen, View view) {
-        if (potionsScreen.isArizonaType && potionsScreen.currentScreenType == 1) {
+        if (UtilsKt.isArizonaType() && potionsScreen.currentScreenType == 1) {
             potionsScreen.sendData(StringKt.toStringJson(0), 4);
         } else {
             potionsScreen.sendData(StringKt.toStringJson(0), 6);
@@ -242,9 +245,10 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
         TextView tvRightItemDescription = potionsScreen.binding.tvRightItemDescription;
         Intrinsics.checkNotNullExpressionValue(tvRightItemDescription, "tvRightItemDescription");
+        String text = potionsScreen.text(ru.mrlargha.commonui.R.string.sharpening);
         TextView tvTitleText = potionsScreen.binding.rightItemField.tvTitleText;
         Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
-        potionsScreen.clearViewFromItem(ivItemImage, tvRightItemDescription, "заточка", tvTitleText);
+        potionsScreen.clearViewFromItem(ivItemImage, tvRightItemDescription, text, tvTitleText);
         potionsScreen.btnSharpenEnableStatus(false);
         potionsScreen.btnPaintEnableStatus(false);
         potionsScreen.currentStoneBench = null;
@@ -263,9 +267,10 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
         TextView tvLeftItemDescription = potionsScreen.binding.tvLeftItemDescription;
         Intrinsics.checkNotNullExpressionValue(tvLeftItemDescription, "tvLeftItemDescription");
+        String text = potionsScreen.text(ru.mrlargha.commonui.R.string.workshop_paint_material);
         TextView tvTitleText = potionsScreen.binding.leftItemField.tvTitleText;
         Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
-        potionsScreen.clearViewFromItem(ivItemImage, tvLeftItemDescription, "краска", tvTitleText);
+        potionsScreen.clearViewFromItem(ivItemImage, tvLeftItemDescription, text, tvTitleText);
         TextView tvNeedRes = potionsScreen.binding.leftItemField.tvNeedRes;
         Intrinsics.checkNotNullExpressionValue(tvNeedRes, "tvNeedRes");
         tvNeedRes.setVisibility(8);
@@ -306,16 +311,18 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
         TextView tvMainItemDescription = this.binding.tvMainItemDescription;
         Intrinsics.checkNotNullExpressionValue(tvMainItemDescription, "tvMainItemDescription");
+        String paddedText = paddedText(ru.mrlargha.commonui.R.string.item);
         TextView tvTitleText = this.binding.mainItemField.tvTitleText;
         Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
-        clearViewFromItem(ivItemImage, tvMainItemDescription, "предмет ", tvTitleText);
+        clearViewFromItem(ivItemImage, tvMainItemDescription, paddedText, tvTitleText);
         ImageView ivItemImage2 = this.binding.rightItemField.ivItemImage;
         Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
         TextView tvRightItemDescription = this.binding.tvRightItemDescription;
         Intrinsics.checkNotNullExpressionValue(tvRightItemDescription, "tvRightItemDescription");
+        String paddedText2 = paddedText(ru.mrlargha.commonui.R.string.sharpening);
         TextView tvTitleText2 = this.binding.rightItemField.tvTitleText;
         Intrinsics.checkNotNullExpressionValue(tvTitleText2, "tvTitleText");
-        clearViewFromItem(ivItemImage2, tvRightItemDescription, "заточка ", tvTitleText2);
+        clearViewFromItem(ivItemImage2, tvRightItemDescription, paddedText2, tvTitleText2);
     }
 
     private final void clearItemsMainFieldClicked(boolean z) {
@@ -325,46 +332,51 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
             Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
             TextView tvMainItemDescription = this.binding.tvMainItemDescription;
             Intrinsics.checkNotNullExpressionValue(tvMainItemDescription, "tvMainItemDescription");
+            String paddedText = paddedText(ru.mrlargha.commonui.R.string.item);
             TextView tvTitleText = this.binding.mainItemField.tvTitleText;
             Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
-            clearViewFromItem(ivItemImage, tvMainItemDescription, "предмет ", tvTitleText);
+            clearViewFromItem(ivItemImage, tvMainItemDescription, paddedText, tvTitleText);
             ImageView ivItemImage2 = this.binding.rightItemField.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
             TextView tvRightItemDescription = this.binding.tvRightItemDescription;
             Intrinsics.checkNotNullExpressionValue(tvRightItemDescription, "tvRightItemDescription");
+            String paddedText2 = paddedText(ru.mrlargha.commonui.R.string.sharpening);
             TextView tvTitleText2 = this.binding.rightItemField.tvTitleText;
             Intrinsics.checkNotNullExpressionValue(tvTitleText2, "tvTitleText");
-            clearViewFromItem(ivItemImage2, tvRightItemDescription, "заточка ", tvTitleText2);
+            clearViewFromItem(ivItemImage2, tvRightItemDescription, paddedText2, tvTitleText2);
             if (z && this.centerItemIndex != -1) {
                 this.centerItemIndex = -1;
                 this.rightItemIndex = -1;
                 sendData(StringKt.toStringJson(new SharpenRequest(this.centerItemIndex, this.leftItemIndex, this.rightItemIndex)), 1);
             }
         } else if (i == 1) {
-            boolean z2 = this.isArizonaType;
+            boolean isArizonaType = UtilsKt.isArizonaType();
             PotionsScreenBinding potionsScreenBinding = this.binding;
-            if (z2) {
+            if (isArizonaType) {
                 ImageView ivItemImage3 = potionsScreenBinding.mainItemField.ivItemImage;
                 Intrinsics.checkNotNullExpressionValue(ivItemImage3, "ivItemImage");
                 TextView tvMainItemDescription2 = this.binding.tvMainItemDescription;
                 Intrinsics.checkNotNullExpressionValue(tvMainItemDescription2, "tvMainItemDescription");
+                String paddedText3 = paddedText(ru.mrlargha.commonui.R.string.item);
                 TextView tvTitleText3 = this.binding.mainItemField.tvTitleText;
                 Intrinsics.checkNotNullExpressionValue(tvTitleText3, "tvTitleText");
-                clearViewFromItem(ivItemImage3, tvMainItemDescription2, "предмет ", tvTitleText3);
+                clearViewFromItem(ivItemImage3, tvMainItemDescription2, paddedText3, tvTitleText3);
                 ImageView ivItemImage4 = this.binding.rightItemField.ivItemImage;
                 Intrinsics.checkNotNullExpressionValue(ivItemImage4, "ivItemImage");
                 TextView tvRightItemDescription2 = this.binding.tvRightItemDescription;
                 Intrinsics.checkNotNullExpressionValue(tvRightItemDescription2, "tvRightItemDescription");
+                String paddedText4 = paddedText(ru.mrlargha.commonui.R.string.sharpening);
                 TextView tvTitleText4 = this.binding.rightItemField.tvTitleText;
                 Intrinsics.checkNotNullExpressionValue(tvTitleText4, "tvTitleText");
-                clearViewFromItem(ivItemImage4, tvRightItemDescription2, "заточка ", tvTitleText4);
+                clearViewFromItem(ivItemImage4, tvRightItemDescription2, paddedText4, tvTitleText4);
                 ImageView ivItemImage5 = this.binding.leftItemField.ivItemImage;
                 Intrinsics.checkNotNullExpressionValue(ivItemImage5, "ivItemImage");
                 TextView tvLeftItemDescription = this.binding.tvLeftItemDescription;
                 Intrinsics.checkNotNullExpressionValue(tvLeftItemDescription, "tvLeftItemDescription");
+                String paddedText5 = paddedText(ru.mrlargha.commonui.R.string.workshop_paint_material);
                 TextView tvTitleText5 = this.binding.leftItemField.tvTitleText;
                 Intrinsics.checkNotNullExpressionValue(tvTitleText5, "tvTitleText");
-                clearViewFromItem(ivItemImage5, tvLeftItemDescription, "краска ", tvTitleText5);
+                clearViewFromItem(ivItemImage5, tvLeftItemDescription, paddedText5, tvTitleText5);
                 TextView tvNeedRes = this.binding.leftItemField.tvNeedRes;
                 Intrinsics.checkNotNullExpressionValue(tvNeedRes, "tvNeedRes");
                 tvNeedRes.setVisibility(8);
@@ -379,9 +391,10 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                 Intrinsics.checkNotNullExpressionValue(ivItemImage6, "ivItemImage");
                 TextView tvMainItemDescription3 = this.binding.tvMainItemDescription;
                 Intrinsics.checkNotNullExpressionValue(tvMainItemDescription3, "tvMainItemDescription");
+                String paddedText6 = paddedText(ru.mrlargha.commonui.R.string.item);
                 TextView tvTitleText6 = this.binding.mainItemField.tvTitleText;
                 Intrinsics.checkNotNullExpressionValue(tvTitleText6, "tvTitleText");
-                clearViewFromItem(ivItemImage6, tvMainItemDescription3, "предмет ", tvTitleText6);
+                clearViewFromItem(ivItemImage6, tvMainItemDescription3, paddedText6, tvTitleText6);
                 if (z && this.centerItemIndex != -1) {
                     this.centerItemIndex = -1;
                     sendData(StringKt.toStringJson(new FixingRequest(this.centerItemIndex)), 5);
@@ -393,9 +406,10 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
             Intrinsics.checkNotNullExpressionValue(ivItemImage7, "ivItemImage");
             TextView tvMainItemDescription4 = this.binding.tvMainItemDescription;
             Intrinsics.checkNotNullExpressionValue(tvMainItemDescription4, "tvMainItemDescription");
+            String paddedText7 = paddedText(ru.mrlargha.commonui.R.string.item);
             TextView tvTitleText7 = this.binding.mainItemField.tvTitleText;
             Intrinsics.checkNotNullExpressionValue(tvTitleText7, "tvTitleText");
-            clearViewFromItem(ivItemImage7, tvMainItemDescription4, "предмет ", tvTitleText7);
+            clearViewFromItem(ivItemImage7, tvMainItemDescription4, paddedText7, tvTitleText7);
             if (z && this.centerItemIndex != -1) {
                 this.centerItemIndex = -1;
                 sendData(StringKt.toStringJson(new FixingRequest(this.centerItemIndex)), 5);
@@ -422,7 +436,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         PotionsScreenBinding potionsScreenBinding = this.binding;
         if (z) {
             potionsScreenBinding.leftItemField.ivItemImage.setImageResource(ru.mrlargha.commonui.R.drawable.ic_locked_item);
-            this.binding.tvLeftItemDescription.setText("недоступно ");
+            this.binding.tvLeftItemDescription.setText(paddedText(ru.mrlargha.commonui.R.string.unavailable));
             this.binding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.grey_type3));
             TextView tvTitleText = this.binding.leftItemField.tvTitleText;
             Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
@@ -434,7 +448,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
             return;
         }
         potionsScreenBinding.leftItemField.ivItemImage.setImageResource(ru.mrlargha.commonui.R.drawable.ic_empty_item);
-        this.binding.tvLeftItemDescription.setText("краска ");
+        this.binding.tvLeftItemDescription.setText(paddedText(ru.mrlargha.commonui.R.string.workshop_paint_material));
         this.binding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.grey_type2));
         this.binding.leftItemField.item.setClickable(true);
     }
@@ -481,8 +495,8 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         Intrinsics.checkNotNullExpressionValue(groupWorkbench, "groupWorkbench");
         groupWorkbench.setVisibility(8);
         paintingScreen(true);
-        this.binding.tvTitle.setText("покраска");
-        this.binding.btnPaintItem.setText("покрасить");
+        this.binding.tvTitle.setText(text(ru.mrlargha.commonui.R.string.painting));
+        this.binding.btnPaintItem.setText(text(ru.mrlargha.commonui.R.string.workshop_paint_action));
         leftItemUi(false);
         changeInventoryType(false);
     }
@@ -495,7 +509,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         paintingScreen(true);
         ProgressBar progressBar = this.binding.progressBar;
         Intrinsics.checkNotNullExpressionValue(progressBar, "progressBar");
-        progressBar.setVisibility(this.isArizonaType ? 8 : 0);
+        progressBar.setVisibility(UtilsKt.isArizonaType() ? 8 : 0);
         RecyclerView rvColors = this.binding.rvColors;
         Intrinsics.checkNotNullExpressionValue(rvColors, "rvColors");
         rvColors.setVisibility(8);
@@ -505,8 +519,8 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         TextView tvEndCount = this.binding.tvEndCount;
         Intrinsics.checkNotNullExpressionValue(tvEndCount, "tvEndCount");
         tvEndCount.setVisibility(8);
-        this.binding.tvTitle.setText("починка");
-        this.binding.btnPaintItem.setText("починить");
+        this.binding.tvTitle.setText(text(ru.mrlargha.commonui.R.string.fixing));
+        this.binding.btnPaintItem.setText(text(ru.mrlargha.commonui.R.string.workshop_fix_action));
         changeInventoryType(true);
     }
 
@@ -683,9 +697,10 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
         TextView tvRightItemDescription = this.binding.tvRightItemDescription;
         Intrinsics.checkNotNullExpressionValue(tvRightItemDescription, "tvRightItemDescription");
+        String paddedText = paddedText(ru.mrlargha.commonui.R.string.sharpening);
         TextView tvTitleText = this.binding.rightItemField.tvTitleText;
         Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
-        clearViewFromItem(ivItemImage2, tvRightItemDescription, "заточка ", tvTitleText);
+        clearViewFromItem(ivItemImage2, tvRightItemDescription, paddedText, tvTitleText);
         sendRightItemData();
     }
 
@@ -720,9 +735,10 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
         TextView tvLeftItemDescription = this.binding.tvLeftItemDescription;
         Intrinsics.checkNotNullExpressionValue(tvLeftItemDescription, "tvLeftItemDescription");
+        String paddedText = paddedText(ru.mrlargha.commonui.R.string.painting);
         TextView tvTitleText = this.binding.leftItemField.tvTitleText;
         Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
-        clearViewFromItem(ivItemImage2, tvLeftItemDescription, "покраска ", tvTitleText);
+        clearViewFromItem(ivItemImage2, tvLeftItemDescription, paddedText, tvTitleText);
         TextView tvNeedRes = this.binding.leftItemField.tvNeedRes;
         Intrinsics.checkNotNullExpressionValue(tvNeedRes, "tvNeedRes");
         tvNeedRes.setVisibility(8);
@@ -752,12 +768,12 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
             }
             this.inventoryItemList = CollectionsKt.toMutableList((Collection) arrayList);
         }
-        this.inventoryAdapter.setArizona(this.isArizonaType);
+        this.inventoryAdapter.setArizona(UtilsKt.isArizonaType());
         this.inventoryAdapter.submitList(CollectionsKt.toList(this.inventoryItemList));
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Object obj;
         Integer itemStrength;
         Object obj2;
@@ -785,7 +801,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                 this.incrementHandler.postDelayed(new Runnable() { // from class: ru.mrlargha.feature.workshop.presentation.PotionsScreen$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PotionsScreen.onBackendMessage$lambda$0(PotionsScreen.this);
+                        PotionsScreen.onBackendMessageHandled$lambda$0(PotionsScreen.this);
                     }
                 }, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
                 SelectColorAdapter selectColorAdapter = this.colorsAdapter;
@@ -823,7 +839,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                 this.incrementHandler.postDelayed(new Runnable() { // from class: ru.mrlargha.feature.workshop.presentation.PotionsScreen$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PotionsScreen.onBackendMessage$lambda$1(PotionsScreen.this);
+                        PotionsScreen.onBackendMessageHandled$lambda$1(PotionsScreen.this);
                     }
                 }, 500L);
                 enableStatusButtons(true);
@@ -854,7 +870,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
             long longValue = (inventoryItem == null || (amount = inventoryItem.getAmount()) == null) ? 0L : amount.longValue();
             Integer amount2 = craftItemInfo.getAmount();
             int intValue = amount2 != null ? amount2.intValue() : 0;
-            if (this.isArizonaType && this.currentScreenType == 1 && this.currentPaintItem != null) {
+            if (UtilsKt.isArizonaType() && this.currentScreenType == 1 && this.currentPaintItem != null) {
                 TextView tvTitleText = this.binding.leftItemField.tvTitleText;
                 Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
                 tvTitleText.setVisibility(0);
@@ -953,7 +969,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                                 list.set(i4, inventoryItem4);
                             }
                         }
-                        if (this.isArizonaType && this.currentScreenType == 2 && (itemStrength = inventoryItem4.getItemStrength()) != null && itemStrength.intValue() == 100) {
+                        if (UtilsKt.isArizonaType() && this.currentScreenType == 2 && (itemStrength = inventoryItem4.getItemStrength()) != null && itemStrength.intValue() == 100) {
                             this.binding.mainItemField.parentLayout.performClick();
                         }
                         this.inventoryAdapter.submitList(this.inventoryItemList);
@@ -968,14 +984,14 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void onBackendMessage$lambda$0(PotionsScreen potionsScreen) {
+    public static final void onBackendMessageHandled$lambda$0(PotionsScreen potionsScreen) {
         ImageView ivBgSharpResult = potionsScreen.binding.ivBgSharpResult;
         Intrinsics.checkNotNullExpressionValue(ivBgSharpResult, "ivBgSharpResult");
         ivBgSharpResult.setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void onBackendMessage$lambda$1(PotionsScreen potionsScreen) {
+    public static final void onBackendMessageHandled$lambda$1(PotionsScreen potionsScreen) {
         potionsScreen.refreshData();
         potionsScreen.addLockedItems();
     }
@@ -1048,7 +1064,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         if (inventoryItem9 != null) {
             updateRightField(inventoryItem9);
         }
-        if (this.isArizonaType && this.currentScreenType == 1 && (inventoryItem = this.currentPaintItem) != null) {
+        if (UtilsKt.isArizonaType() && this.currentScreenType == 1 && (inventoryItem = this.currentPaintItem) != null) {
             updateLeftField(inventoryItem);
         }
     }

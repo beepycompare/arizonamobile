@@ -31,10 +31,11 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 import org.json.JSONObject;
 /* compiled from: FirebaseServerHandler.kt */
-@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u000e\n\u0002\u0010$\n\u0002\b\t\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001e\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u00052\u0006\u0010\u001c\u001a\u00020\u00052\u0006\u0010\u001d\u001a\u00020\bJ\u000e\u0010\u001e\u001a\u00020\u00052\u0006\u0010\u001f\u001a\u00020\u0010J\f\u0010 \u001a\u00020\u0012*\u00020\u0012H\u0002J\u0010\u0010!\u001a\u0004\u0018\u00010\u00102\u0006\u0010\u001f\u001a\u00020\u0010J\f\u0010\"\u001a\u00020\u0005*\u00020\u0012H\u0002J\u0010\u0010#\u001a\u00020\u00102\u0006\u0010$\u001a\u00020\u0012H\u0002J\u000e\u0010%\u001a\u00020\u00052\u0006\u0010\u001f\u001a\u00020\u0010J\u000e\u0010&\u001a\u00020\u00052\u0006\u0010\u001f\u001a\u00020\u0010J\u000e\u0010'\u001a\u00020\u00052\u0006\u0010\u001f\u001a\u00020\u0010J\u001a\u0010(\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u00100)H\u0086@¢\u0006\u0002\u0010*J\u0010\u0010+\u001a\u00020\u00102\b\b\u0002\u0010,\u001a\u00020\u0005J\u0006\u0010-\u001a\u00020\u0010J\u0006\u0010.\u001a\u00020\u0010J\u0006\u0010/\u001a\u00020\u0010J\u0006\u00100\u001a\u00020\u0010J\u0006\u00101\u001a\u00020\u0010R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\t\u001a\u00020\n8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\r\u0010\u000e\u001a\u0004\b\u000b\u0010\fR\u001a\u0010\u0013\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u00100\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00062"}, d2 = {"Lcom/miami/game/core/connection/resolver/FirebaseConfigHelper;", "", "<init>", "()V", "isDebug", "", "isArizona", "sharedPref", "Landroid/content/SharedPreferences;", "remoteConfig", "Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "getRemoteConfig", "()Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "remoteConfig$delegate", "Lkotlin/Lazy;", "getRawLink", "", "type", "Lcom/miami/game/core/connection/resolver/FirebaseConfigLinks;", "linkCache", "", "hostRegex", "Lkotlin/text/Regex;", "httpClient", "Lokhttp3/OkHttpClient;", "setDebug", "", "debug", BuildConfig.FLAVOR, "sharedPreferences", "isServiceAvailable", "url", "toReserve", "extractHost", "hasReserve", "fetchLink", "primary", "checkWithIsReachable", "checkWithUnixSystemPing", "checkWithLinuxNC", "fetchAll", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getResourceUrl", "useDebug", "getServerApiUrl", "getSoundUrl", "getNewsAuthBaseUrl", "getHudPingUrl", "getChannelsState", "connection-resolver"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u000f\n\u0002\u0010$\n\u0002\b\n\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J(\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u00052\u0006\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u001e\u001a\u00020\t2\b\b\u0002\u0010\u001f\u001a\u00020\u0005J\u000e\u0010 \u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u0011J\f\u0010\"\u001a\u00020\u0013*\u00020\u0013H\u0002J\u0010\u0010#\u001a\u0004\u0018\u00010\u00112\u0006\u0010!\u001a\u00020\u0011J\f\u0010$\u001a\u00020\u0005*\u00020\u0013H\u0002J\u0010\u0010%\u001a\u00020\u00112\u0006\u0010&\u001a\u00020\u0013H\u0002J\u000e\u0010'\u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u0011J\u000e\u0010(\u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u0011J\u000e\u0010)\u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u0011J\u001a\u0010*\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00110+H\u0086@¢\u0006\u0002\u0010,J\u0012\u0010-\u001a\u00020\u00112\b\b\u0002\u0010.\u001a\u00020\u0005H\u0002J\u0010\u0010/\u001a\u00020\u00112\b\b\u0002\u0010.\u001a\u00020\u0005J\u0006\u00100\u001a\u00020\u0011J\u0006\u00101\u001a\u00020\u0011J\u0006\u00102\u001a\u00020\u0011J\u0006\u00103\u001a\u00020\u0011J\u0006\u00104\u001a\u00020\u0011R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\n\u001a\u00020\u000b8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000e\u0010\u000f\u001a\u0004\b\f\u0010\rR\u001a\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00110\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00065"}, d2 = {"Lcom/miami/game/core/connection/resolver/FirebaseConfigHelper;", "", "<init>", "()V", "isDebug", "", "isArizona", "isBrazil", "sharedPref", "Landroid/content/SharedPreferences;", "remoteConfig", "Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "getRemoteConfig", "()Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "remoteConfig$delegate", "Lkotlin/Lazy;", "getRawLink", "", "type", "Lcom/miami/game/core/connection/resolver/FirebaseConfigLinks;", "linkCache", "", "hostRegex", "Lkotlin/text/Regex;", "httpClient", "Lokhttp3/OkHttpClient;", "setDebug", "", "debug", BuildConfig.FLAVOR, "sharedPreferences", "brazil", "isServiceAvailable", "url", "toReserve", "extractHost", "hasReserve", "fetchLink", "primary", "checkWithIsReachable", "checkWithUnixSystemPing", "checkWithLinuxNC", "fetchAll", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getResourceUrl", "useDebug", "getProjectResourceUrl", "getServerApiUrl", "getSoundUrl", "getNewsAuthBaseUrl", "getHudPingUrl", "getChannelsState", "connection-resolver"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class FirebaseConfigHelper {
     private static boolean isArizona;
+    private static boolean isBrazil;
     private static boolean isDebug;
     private static SharedPreferences sharedPref;
     public static final FirebaseConfigHelper INSTANCE = new FirebaseConfigHelper();
@@ -100,10 +101,18 @@ public final class FirebaseConfigHelper {
         return string;
     }
 
-    public final void setDebug(boolean z, boolean z2, SharedPreferences sharedPreferences) {
+    public static /* synthetic */ void setDebug$default(FirebaseConfigHelper firebaseConfigHelper, boolean z, boolean z2, SharedPreferences sharedPreferences, boolean z3, int i, Object obj) {
+        if ((i & 8) != 0) {
+            z3 = false;
+        }
+        firebaseConfigHelper.setDebug(z, z2, sharedPreferences, z3);
+    }
+
+    public final void setDebug(boolean z, boolean z2, SharedPreferences sharedPreferences, boolean z3) {
         Intrinsics.checkNotNullParameter(sharedPreferences, "sharedPreferences");
         isDebug = z;
         isArizona = z2;
+        isBrazil = z3;
         sharedPref = sharedPreferences;
     }
 
@@ -158,20 +167,20 @@ public final class FirebaseConfigHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean hasReserve(FirebaseConfigLinks firebaseConfigLinks) {
-        Object m9183constructorimpl;
+        Object m9202constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9183constructorimpl = Result.m9183constructorimpl(INSTANCE.toReserve(firebaseConfigLinks));
+            m9202constructorimpl = Result.m9202constructorimpl(INSTANCE.toReserve(firebaseConfigLinks));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
+            m9202constructorimpl = Result.m9202constructorimpl(ResultKt.createFailure(th));
         }
-        return Result.m9190isSuccessimpl(m9183constructorimpl);
+        return Result.m9209isSuccessimpl(m9202constructorimpl);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final String fetchLink(FirebaseConfigLinks firebaseConfigLinks) {
-        Object m9183constructorimpl;
+        Object m9202constructorimpl;
         String rawLink = getRawLink(firebaseConfigLinks);
         if ((checkWithIsReachable(rawLink) || checkWithUnixSystemPing(rawLink) || checkWithLinuxNC(rawLink)) && isServiceAvailable(rawLink)) {
             return rawLink;
@@ -179,16 +188,16 @@ public final class FirebaseConfigHelper {
         try {
             Result.Companion companion = Result.Companion;
             FirebaseConfigHelper firebaseConfigHelper = this;
-            m9183constructorimpl = Result.m9183constructorimpl(getRawLink(toReserve(firebaseConfigLinks)));
+            m9202constructorimpl = Result.m9202constructorimpl(getRawLink(toReserve(firebaseConfigLinks)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
+            m9202constructorimpl = Result.m9202constructorimpl(ResultKt.createFailure(th));
         }
         String str = null;
-        if (Result.m9189isFailureimpl(m9183constructorimpl)) {
-            m9183constructorimpl = null;
+        if (Result.m9208isFailureimpl(m9202constructorimpl)) {
+            m9202constructorimpl = null;
         }
-        String str2 = (String) m9183constructorimpl;
+        String str2 = (String) m9202constructorimpl;
         if (str2 != null) {
             FirebaseConfigHelper firebaseConfigHelper2 = INSTANCE;
             if ((firebaseConfigHelper2.checkWithIsReachable(rawLink) || firebaseConfigHelper2.checkWithUnixSystemPing(rawLink) || firebaseConfigHelper2.checkWithLinuxNC(rawLink)) && firebaseConfigHelper2.isServiceAvailable(str2)) {
@@ -218,14 +227,14 @@ public final class FirebaseConfigHelper {
         return BuildersKt.withContext(Dispatchers.getIO(), new FirebaseConfigHelper$fetchAll$2(null), continuation);
     }
 
-    public static /* synthetic */ String getResourceUrl$default(FirebaseConfigHelper firebaseConfigHelper, boolean z, int i, Object obj) {
+    static /* synthetic */ String getResourceUrl$default(FirebaseConfigHelper firebaseConfigHelper, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
             z = true;
         }
         return firebaseConfigHelper.getResourceUrl(z);
     }
 
-    public final String getResourceUrl(boolean z) {
+    private final String getResourceUrl(boolean z) {
         SharedPreferences sharedPreferences = sharedPref;
         int i = sharedPreferences != null ? sharedPreferences.getInt("server_id", 1) : 1;
         if (isDebug && z && isArizona && i == 0) {
@@ -233,6 +242,23 @@ public final class FirebaseConfigHelper {
         }
         String str = linkCache.get(FirebaseConfigLinks.MAIN_RESOURCE);
         return str == null ? getRawLink(FirebaseConfigLinks.MAIN_RESOURCE) : str;
+    }
+
+    public static /* synthetic */ String getProjectResourceUrl$default(FirebaseConfigHelper firebaseConfigHelper, boolean z, int i, Object obj) {
+        if ((i & 1) != 0) {
+            z = true;
+        }
+        return firebaseConfigHelper.getProjectResourceUrl(z);
+    }
+
+    public final String getProjectResourceUrl(boolean z) {
+        String str;
+        if (isArizona) {
+            str = isBrazil ? "projects/brazil-rp/" : "projects/arizona-rp/";
+        } else {
+            str = "projects/rodina-rp/";
+        }
+        return getResourceUrl(z) + str;
     }
 
     public final String getServerApiUrl() {
@@ -266,7 +292,7 @@ public final class FirebaseConfigHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence getChannelsState$lambda$0(FirebaseConfigLinks linkType) {
-        Object m9183constructorimpl;
+        Object m9202constructorimpl;
         Intrinsics.checkNotNullParameter(linkType, "linkType");
         String str = linkCache.get(linkType);
         if (str == null) {
@@ -276,15 +302,15 @@ public final class FirebaseConfigHelper {
         String rawLink = firebaseConfigHelper.getRawLink(linkType);
         try {
             Result.Companion companion = Result.Companion;
-            m9183constructorimpl = Result.m9183constructorimpl(firebaseConfigHelper.getRawLink(firebaseConfigHelper.toReserve(linkType)));
+            m9202constructorimpl = Result.m9202constructorimpl(firebaseConfigHelper.getRawLink(firebaseConfigHelper.toReserve(linkType)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
+            m9202constructorimpl = Result.m9202constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9189isFailureimpl(m9183constructorimpl)) {
-            m9183constructorimpl = null;
+        if (Result.m9208isFailureimpl(m9202constructorimpl)) {
+            m9202constructorimpl = null;
         }
-        String str2 = (String) m9183constructorimpl;
+        String str2 = (String) m9202constructorimpl;
         if (!Intrinsics.areEqual(str, rawLink) && Intrinsics.areEqual(str, str2)) {
             return "1";
         }

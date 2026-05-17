@@ -16,7 +16,7 @@ public final class C0590t3 implements ProtobufConverter {
     /* renamed from: a */
     public final C0690x3 fromModel(C0565s3 c0565s3) {
         C0690x3 c0690x3 = new C0690x3();
-        c0690x3.f1297a = a(c0565s3.f1216a);
+        c0690x3.f1302a = a(c0565s3.f1221a);
         int size = c0565s3.b.size();
         C0615u3[] c0615u3Arr = new C0615u3[size];
         for (int i = 0; i < size; i++) {
@@ -29,7 +29,7 @@ public final class C0590t3 implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final C0565s3 toModel(C0690x3 c0690x3) {
-        C0615u3 c0615u3 = c0690x3.f1297a;
+        C0615u3 c0615u3 = c0690x3.f1302a;
         if (c0615u3 == null) {
             c0615u3 = new C0615u3();
         }
@@ -45,7 +45,7 @@ public final class C0590t3 implements ProtobufConverter {
     public static C0615u3 a(C0540r3 c0540r3) {
         C0665w3 c0665w3;
         C0615u3 c0615u3 = new C0615u3();
-        Map map = c0540r3.f1199a;
+        Map map = c0540r3.f1204a;
         int i = 0;
         if (map != null) {
             c0665w3 = new C0665w3();
@@ -54,18 +54,18 @@ public final class C0590t3 implements ProtobufConverter {
             for (int i2 = 0; i2 < size; i2++) {
                 c0640v3Arr[i2] = new C0640v3();
             }
-            c0665w3.f1280a = c0640v3Arr;
+            c0665w3.f1285a = c0640v3Arr;
             int i3 = 0;
             for (Map.Entry entry : map.entrySet()) {
-                C0640v3 c0640v3 = c0665w3.f1280a[i3];
-                c0640v3.f1267a = (String) entry.getKey();
+                C0640v3 c0640v3 = c0665w3.f1285a[i3];
+                c0640v3.f1272a = (String) entry.getKey();
                 c0640v3.b = (String) entry.getValue();
                 i3++;
             }
         } else {
             c0665w3 = null;
         }
-        c0615u3.f1247a = c0665w3;
+        c0615u3.f1252a = c0665w3;
         int ordinal = c0540r3.b.ordinal();
         if (ordinal != 0) {
             if (ordinal != 1) {
@@ -87,12 +87,12 @@ public final class C0590t3 implements ProtobufConverter {
     public static C0540r3 a(C0615u3 c0615u3) {
         LinkedHashMap linkedHashMap;
         S7 s7;
-        C0665w3 c0665w3 = c0615u3.f1247a;
+        C0665w3 c0665w3 = c0615u3.f1252a;
         if (c0665w3 != null) {
-            C0640v3[] c0640v3Arr = c0665w3.f1280a;
+            C0640v3[] c0640v3Arr = c0665w3.f1285a;
             linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(c0640v3Arr.length), 16));
             for (C0640v3 c0640v3 : c0640v3Arr) {
-                Pair pair = TuplesKt.to(c0640v3.f1267a, c0640v3.b);
+                Pair pair = TuplesKt.to(c0640v3.f1272a, c0640v3.b);
                 linkedHashMap.put(pair.getFirst(), pair.getSecond());
             }
         } else {

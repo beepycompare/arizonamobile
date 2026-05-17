@@ -13,7 +13,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ItemRatingScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.arizona.rating.ItemRatingScreen$loadCars$1", f = "ItemRatingScreen.kt", i = {}, l = {238, 239}, m = "invokeSuspend", n = {}, nl = {239, 242}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.arizona.rating.ItemRatingScreen$loadCars$1", f = "ItemRatingScreen.kt", i = {}, l = {231, 232}, m = "invokeSuspend", n = {}, nl = {232, 235}, s = {}, v = 2)
 /* loaded from: classes5.dex */
 public final class ItemRatingScreen$loadCars$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;

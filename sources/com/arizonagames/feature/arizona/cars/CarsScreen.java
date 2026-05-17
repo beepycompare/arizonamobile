@@ -2,12 +2,10 @@ package com.arizonagames.feature.arizona.cars;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.arizona.common.utils.EasyAnimation;
 import com.arizonagames.feature.arizona.cars.ActionsListAdapter;
@@ -38,7 +36,7 @@ import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 /* compiled from: CarsScreen.kt */
-@Metadata(d1 = {"\u0000´\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001LB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u00102\u001a\u0002032\u0006\u00104\u001a\u0002012\u0006\u00105\u001a\u00020\u0005H\u0016J\u0010\u00106\u001a\u0002032\u0006\u00104\u001a\u000207H\u0002J\u0010\u00108\u001a\u0002032\u0006\u00109\u001a\u00020:H\u0002J\u0010\u0010;\u001a\u0002032\u0006\u0010<\u001a\u00020\u0005H\u0002J\b\u0010=\u001a\u000203H\u0002J\u0016\u0010>\u001a\u0002032\f\u0010?\u001a\b\u0012\u0004\u0012\u00020\u001a0,H\u0002J\u0018\u0010@\u001a\u0002032\u0006\u0010A\u001a\u00020\u00052\u0006\u0010B\u001a\u00020\u0005H\u0002J\u0016\u0010C\u001a\u0002032\f\u0010D\u001a\b\u0012\u0004\u0012\u00020\u001c0,H\u0002J\u0016\u0010E\u001a\u0002032\f\u0010D\u001a\b\u0012\u0004\u0012\u00020\u001e0,H\u0002J\u0016\u0010F\u001a\u0002032\f\u0010D\u001a\b\u0012\u0004\u0012\u00020 0,H\u0002J\u0016\u0010G\u001a\u0002032\f\u0010D\u001a\b\u0012\u0004\u0012\u00020\"0,H\u0002J\u0016\u0010H\u001a\u0002032\f\u0010D\u001a\b\u0012\u0004\u0012\u00020$0,H\u0002J\u0010\u0010I\u001a\u0002032\u0006\u0010J\u001a\u00020KH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001c0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001e0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020 0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010!\u001a\b\u0012\u0004\u0012\u00020\"0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\b\u0012\u0004\u0012\u00020$0\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010%\u001a\u00020&¢\u0006\b\n\u0000\u001a\u0004\b'\u0010(R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020-0,X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u00020/0,X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00100\u001a\b\u0012\u0004\u0012\u0002010,X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006M"}, d2 = {"Lcom/arizonagames/feature/arizona/cars/CarsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lcom/arizonagames/feature/arizona/cars/databinding/CarsLayoutBinding;", "carInfoListAdapter", "Lcom/arizonagames/feature/arizona/cars/CarInfoListAdapter;", "toggleSwitchListAdapter", "Lcom/arizonagames/feature/arizona/cars/ToggleSwitchListAdapter;", "actionsListAdapter", "Lcom/arizonagames/feature/arizona/cars/ActionsListAdapter;", "circleProgressbarListAdapter", "Lcom/arizonagames/feature/arizona/cars/CircleProgressbarListAdapter;", "carInfoSecondScreenListAdapter", "Lcom/arizonagames/feature/arizona/cars/CarInfoSecondScreenListAdapter;", "textListAdapter", "Lcom/arizonagames/feature/arizona/cars/TextListAdapter;", "carsItemList", "", "Lcom/arizonagames/feature/arizona/cars/CarInfoListItem;", "toggleSwitchItemList", "Lcom/arizonagames/feature/arizona/cars/ToggleSwitchInfo;", "actionButtonItemList", "Lcom/arizonagames/feature/arizona/cars/ActionButtonInfo;", "circleProgressBarItemList", "Lcom/arizonagames/feature/arizona/cars/CircleProgressBarInfo;", "textInfoItemList", "Lcom/arizonagames/feature/arizona/cars/TextInfo;", "carInfoSecondScreen", "Lcom/arizonagames/feature/arizona/cars/CarInfoSecondScreen;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/arizona/cars/CarsApi;", "qualityTypeList", "", "Lru/mrlargha/arizona/cars/QualityType;", "bonusType", "Lru/mrlargha/arizona/cars/BonusType;", "bonuses", "", "onBackendMessage", "", "data", "subId", "updateFavorites", "Lcom/arizonagames/feature/arizona/cars/Favorite;", "setCarInfoArizona", "item", "Lcom/arizonagames/feature/arizona/cars/VehicleItem;", "onQuality", "rarity", "loadData", "setCarInfoList", "carInfoList", "setSlotsInfo", "slotsCount", "partCount", "setToggleSwitchInfo", "infoList", "setActionButtonsInfo", "setCircleProgressBarsInfo", "setTextInfo", "setCarInfoSecondScreen", "setCarRarity", "info", "Lcom/arizonagames/feature/arizona/cars/CarsRarity;", "Spawner", "cars"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000´\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001LB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u00102\u001a\u0002032\u0006\u00104\u001a\u0002012\u0006\u00105\u001a\u00020\u0005H\u0016J\u0010\u00106\u001a\u0002032\u0006\u00104\u001a\u000207H\u0002J\u0010\u00108\u001a\u0002032\u0006\u00109\u001a\u00020:H\u0002J\u0010\u0010;\u001a\u0002032\u0006\u0010<\u001a\u00020\u0005H\u0002J\b\u0010=\u001a\u000203H\u0002J\u0016\u0010>\u001a\u0002032\f\u0010?\u001a\b\u0012\u0004\u0012\u00020\u001a0,H\u0002J\u0018\u0010@\u001a\u0002032\u0006\u0010A\u001a\u00020\u00052\u0006\u0010B\u001a\u00020\u0005H\u0002J\u0016\u0010C\u001a\u0002032\f\u0010D\u001a\b\u0012\u0004\u0012\u00020\u001c0,H\u0002J\u0016\u0010E\u001a\u0002032\f\u0010D\u001a\b\u0012\u0004\u0012\u00020\u001e0,H\u0002J\u0016\u0010F\u001a\u0002032\f\u0010D\u001a\b\u0012\u0004\u0012\u00020 0,H\u0002J\u0016\u0010G\u001a\u0002032\f\u0010D\u001a\b\u0012\u0004\u0012\u00020\"0,H\u0002J\u0016\u0010H\u001a\u0002032\f\u0010D\u001a\b\u0012\u0004\u0012\u00020$0,H\u0002J\u0010\u0010I\u001a\u0002032\u0006\u0010J\u001a\u00020KH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001c0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001e0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020 0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010!\u001a\b\u0012\u0004\u0012\u00020\"0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\b\u0012\u0004\u0012\u00020$0\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010%\u001a\u00020&¢\u0006\b\n\u0000\u001a\u0004\b'\u0010(R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020-0,X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u00020/0,X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00100\u001a\b\u0012\u0004\u0012\u0002010,X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006M"}, d2 = {"Lcom/arizonagames/feature/arizona/cars/CarsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lcom/arizonagames/feature/arizona/cars/databinding/CarsLayoutBinding;", "carInfoListAdapter", "Lcom/arizonagames/feature/arizona/cars/CarInfoListAdapter;", "toggleSwitchListAdapter", "Lcom/arizonagames/feature/arizona/cars/ToggleSwitchListAdapter;", "actionsListAdapter", "Lcom/arizonagames/feature/arizona/cars/ActionsListAdapter;", "circleProgressbarListAdapter", "Lcom/arizonagames/feature/arizona/cars/CircleProgressbarListAdapter;", "carInfoSecondScreenListAdapter", "Lcom/arizonagames/feature/arizona/cars/CarInfoSecondScreenListAdapter;", "textListAdapter", "Lcom/arizonagames/feature/arizona/cars/TextListAdapter;", "carsItemList", "", "Lcom/arizonagames/feature/arizona/cars/CarInfoListItem;", "toggleSwitchItemList", "Lcom/arizonagames/feature/arizona/cars/ToggleSwitchInfo;", "actionButtonItemList", "Lcom/arizonagames/feature/arizona/cars/ActionButtonInfo;", "circleProgressBarItemList", "Lcom/arizonagames/feature/arizona/cars/CircleProgressBarInfo;", "textInfoItemList", "Lcom/arizonagames/feature/arizona/cars/TextInfo;", "carInfoSecondScreen", "Lcom/arizonagames/feature/arizona/cars/CarInfoSecondScreen;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/arizona/cars/CarsApi;", "qualityTypeList", "", "Lru/mrlargha/arizona/cars/QualityType;", "bonusType", "Lru/mrlargha/arizona/cars/BonusType;", "bonuses", "", "onBackendMessageHandled", "", "data", "subId", "updateFavorites", "Lcom/arizonagames/feature/arizona/cars/Favorite;", "setCarInfoArizona", "item", "Lcom/arizonagames/feature/arizona/cars/VehicleItem;", "onQuality", "rarity", "loadData", "setCarInfoList", "carInfoList", "setSlotsInfo", "slotsCount", "partCount", "setToggleSwitchInfo", "infoList", "setActionButtonsInfo", "setCircleProgressBarsInfo", "setTextInfo", "setCarInfoSecondScreen", "setCarRarity", "info", "Lcom/arizonagames/feature/arizona/cars/CarsRarity;", "Spawner", "cars"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class CarsScreen extends SAMPUIElement {
     private final List<ActionButtonInfo> actionButtonItemList;
@@ -253,67 +251,61 @@ public final class CarsScreen extends SAMPUIElement {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
-        try {
-            switch (i) {
-                case 0:
-                    setCarInfoList(MapperKt.toListModel(data, CarInfoListItem.class));
+        switch (i) {
+            case 0:
+                setCarInfoList(MapperKt.toListModel(data, CarInfoListItem.class));
+                return;
+            case 1:
+                setSlotsInfo(Integer.parseInt(data), 0);
+                return;
+            case 2:
+                setSlotsInfo(Integer.parseInt(data), 1);
+                return;
+            case 3:
+                setToggleSwitchInfo(MapperKt.toListModel(data, ToggleSwitchInfo.class));
+                return;
+            case 4:
+                setActionButtonsInfo(MapperKt.toListModel(data, ActionButtonInfo.class));
+                return;
+            case 5:
+                setCircleProgressBarsInfo(MapperKt.toListModel(data, CircleProgressBarInfo.class));
+                return;
+            case 6:
+                setTextInfo(MapperKt.toListModel(data, TextInfo.class));
+                return;
+            case 7:
+                setCarInfoSecondScreen(MapperKt.toListModel(data, CarInfoSecondScreen.class));
+                return;
+            case 8:
+                this.binding.carName.setText(data);
+                return;
+            case 9:
+                CarsLayoutBinding carsLayoutBinding = this.binding;
+                carsLayoutBinding.mainPage.setVisibility(8);
+                carsLayoutBinding.secondPage.setVisibility(0);
+                return;
+            case 10:
+                if (MapperKt.isJsonValid(data)) {
+                    setCarRarity((CarsRarity) MapperKt.getGson().fromJson(data, (Class<Object>) CarsRarity.class));
                     return;
-                case 1:
-                    setSlotsInfo(Integer.parseInt(data), 0);
+                }
+                throw new JsonParseException("Json is not valid");
+            case 11:
+                if (MapperKt.isJsonValid(data)) {
+                    setCarInfoArizona((VehicleItem) MapperKt.getGson().fromJson(data, (Class<Object>) VehicleItem.class));
                     return;
-                case 2:
-                    setSlotsInfo(Integer.parseInt(data), 1);
+                }
+                throw new JsonParseException("Json is not valid");
+            case 12:
+                if (MapperKt.isJsonValid(data)) {
+                    updateFavorites((Favorite) MapperKt.getGson().fromJson(data, (Class<Object>) Favorite.class));
                     return;
-                case 3:
-                    setToggleSwitchInfo(MapperKt.toListModel(data, ToggleSwitchInfo.class));
-                    return;
-                case 4:
-                    setActionButtonsInfo(MapperKt.toListModel(data, ActionButtonInfo.class));
-                    return;
-                case 5:
-                    setCircleProgressBarsInfo(MapperKt.toListModel(data, CircleProgressBarInfo.class));
-                    return;
-                case 6:
-                    setTextInfo(MapperKt.toListModel(data, TextInfo.class));
-                    return;
-                case 7:
-                    setCarInfoSecondScreen(MapperKt.toListModel(data, CarInfoSecondScreen.class));
-                    return;
-                case 8:
-                    this.binding.carName.setText(data);
-                    return;
-                case 9:
-                    CarsLayoutBinding carsLayoutBinding = this.binding;
-                    carsLayoutBinding.mainPage.setVisibility(8);
-                    carsLayoutBinding.secondPage.setVisibility(0);
-                    return;
-                case 10:
-                    if (MapperKt.isJsonValid(data)) {
-                        setCarRarity((CarsRarity) MapperKt.getGson().fromJson(data, (Class<Object>) CarsRarity.class));
-                        return;
-                    }
-                    throw new JsonParseException("Json is not valid");
-                case 11:
-                    if (MapperKt.isJsonValid(data)) {
-                        setCarInfoArizona((VehicleItem) MapperKt.getGson().fromJson(data, (Class<Object>) VehicleItem.class));
-                        return;
-                    }
-                    throw new JsonParseException("Json is not valid");
-                case 12:
-                    if (MapperKt.isJsonValid(data)) {
-                        updateFavorites((Favorite) MapperKt.getGson().fromJson(data, (Class<Object>) Favorite.class));
-                        return;
-                    }
-                    throw new JsonParseException("Json is not valid");
-                default:
-                    return;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.d("cars", data + "  " + e.getMessage());
-            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+                }
+                throw new JsonParseException("Json is not valid");
+            default:
+                return;
         }
     }
 
@@ -356,9 +348,9 @@ public final class CarsScreen extends SAMPUIElement {
         this.binding.overlay.setVisibility(0);
         CarsLayoutBinding carsLayoutBinding = this.binding;
         if (i == 1) {
-            carsLayoutBinding.bonusTitle.setText("Недостатки:");
+            carsLayoutBinding.bonusTitle.setText(getTargetActivity().getString(R.string.cars_disadvantages));
         } else {
-            carsLayoutBinding.bonusTitle.setText("Бонусы:");
+            carsLayoutBinding.bonusTitle.setText(getTargetActivity().getString(R.string.cars_bonuses));
         }
         String str = "#9A9A9A";
         if (i != 1) {

@@ -3,5 +3,5 @@ package io.appmetrica.analytics.impl;
 public abstract class Wj {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Xj f841a = new Xj();
+    public static final Xj f846a = new Xj();
 }

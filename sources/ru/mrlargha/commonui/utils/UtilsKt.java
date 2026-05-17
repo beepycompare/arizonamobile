@@ -63,10 +63,11 @@ import ru.mrlargha.commonui.elements.inventory.domain.InventorySendRequest;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 /* compiled from: Utils.kt */
-@Metadata(d1 = {"\u0000ª\u0001\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\u001a\u0012\u0010\u0018\u001a\u00020\u0019*\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c\u001a\n\u0010\u001d\u001a\u00020\u001e*\u00020\u001f\u001a\n\u0010 \u001a\u00020\u001c*\u00020\u001f\u001a\"\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c2\b\b\u0002\u0010&\u001a\u00020$\u001a\"\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$2\b\b\u0002\u0010&\u001a\u00020$\u001a\u0018\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$\u001a\u0018\u0010(\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$\u001a\u0012\u0010)\u001a\u0004\u0018\u00010\"2\u0006\u0010*\u001a\u00020+H\u0002\u001a \u0010,\u001a\u00020\u001c2\u0006\u0010-\u001a\u00020\u001c2\u0006\u0010.\u001a\u00020\u001c2\u0006\u0010/\u001a\u00020\u001cH\u0002\u001aM\u00100\u001a\u0002H1\"\u0004\b\u0000\u00101*\u0002H12\u0017\u00102\u001a\u0013\u0012\u0004\u0012\u0002H1\u0012\u0004\u0012\u00020\u000e03¢\u0006\u0002\b42\u0017\u00105\u001a\u0013\u0012\u0004\u0012\u0002H1\u0012\u0004\u0012\u00020\u001903¢\u0006\u0002\b4H\u0086\bø\u0001\u0000¢\u0006\u0002\u00106\u001a\u0018\u00107\u001a\u00020\u000e2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020;H\u0007\u001a\u000e\u0010<\u001a\u00020$2\u0006\u0010=\u001a\u00020$\u001a\u000e\u0010>\u001a\u00020\u001c2\u0006\u0010?\u001a\u00020\u001c\u001a\u0018\u0010@\u001a\u0004\u0018\u00010$2\u0006\u0010A\u001a\u00020B2\u0006\u0010C\u001a\u00020$\u001a\u000e\u0010D\u001a\u00020\u001c2\u0006\u0010E\u001a\u00020\u001c\u001a\u0014\u0010F\u001a\b\u0012\u0004\u0012\u00020$0\u00012\u0006\u0010G\u001a\u00020\u001f\u001a\u001e\u0010H\u001a\u00020\u00192\u0006\u0010:\u001a\u00020\u001a2\u0006\u0010I\u001a\u00020\u001c2\u0006\u0010G\u001a\u00020\u001f\u001a\u001e\u0010H\u001a\u00020\u00192\u0006\u0010:\u001a\u00020J2\u0006\u0010I\u001a\u00020\u001c2\u0006\u0010G\u001a\u00020\u001f\u001a\u000e\u0010K\u001a\u00020$2\u0006\u0010L\u001a\u00020$\u001a\u0016\u0010M\u001a\u00020\u00192\u0006\u0010N\u001a\u00020O2\u0006\u0010P\u001a\u00020\"\u001a\u0016\u0010Q\u001a\u00020\u00192\u0006\u0010N\u001a\u00020O2\u0006\u0010A\u001a\u00020B\u001a\u0016\u0010R\u001a\u00020\u00192\u0006\u0010A\u001a\u00020B2\u0006\u0010S\u001a\u00020\u000e\u001a\"\u0010T\u001a\u00020\u00192\u0006\u0010A\u001a\u00020B2\u0006\u0010U\u001a\u00020\u001c2\n\b\u0002\u0010V\u001a\u0004\u0018\u00010W\u001a&\u0010X\u001a\u00020\u00192\u0006\u0010Y\u001a\u00020Z2\u0006\u0010[\u001a\u00020\u001c2\u0006\u0010\\\u001a\u0002092\u0006\u0010]\u001a\u000209\u001a\u001a\u0010^\u001a\u0004\u0018\u0001092\b\u0010_\u001a\u0004\u0018\u0001092\u0006\u0010`\u001a\u000209\u001a\u000e\u0010a\u001a\u00020$2\u0006\u0010b\u001a\u00020$\u001a\u000e\u0010c\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c\u001a\u000e\u0010d\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c\u001a\u0006\u0010e\u001a\u00020$\u001a\u0012\u0010f\u001a\u00020$2\b\u0010g\u001a\u0004\u0018\u00010$H\u0002\u001a\u000e\u0010h\u001a\u00020\u000e2\u0006\u0010A\u001a\u00020B\u001a\u000e\u0010i\u001a\u00020j2\u0006\u0010A\u001a\u00020B\u001a\u000e\u0010k\u001a\u00020$2\u0006\u0010l\u001a\u00020\u001c\u001a\u000e\u0010m\u001a\u00020$2\u0006\u0010n\u001a\u00020o\u001a\u001a\u0010p\u001a\u00020\u0019*\u00020\u001a2\u0006\u0010q\u001a\u00020$2\u0006\u0010?\u001a\u00020\u001c\u001a\n\u0010r\u001a\u00020s*\u00020B\u001a&\u0010t\u001a\u00020\u00192\u0006\u0010N\u001a\u00020O2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$H\u0086@¢\u0006\u0002\u0010u\u001a\u001c\u0010v\u001a\u00020\u0019*\u00020O2\u0006\u0010w\u001a\u00020$2\b\b\u0002\u0010x\u001a\u00020$\u001a\"\u0010y\u001a\u00020\u0019*\u00020O2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$H\u0086@¢\u0006\u0002\u0010u\u001a\"\u0010z\u001a\u00020\u0019*\u00020O2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$H\u0086@¢\u0006\u0002\u0010u\u001a\"\u0010{\u001a\u00020\u0019*\u00020O2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$H\u0086@¢\u0006\u0002\u0010u\u001a$\u0010|\u001a\u00020\u0019*\u00020O2\b\b\u0002\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001cH\u0086@¢\u0006\u0002\u0010}\" \u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0004\b\u0005\u0010\u0006\"\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\f\"\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012\"\u0011\u0010\u0013\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0010\"\u001a\u0010\u0014\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0010\"\u0004\b\u0016\u0010\u0012\"\u0011\u0010\u0017\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0010\"\u000e\u0010'\u001a\u00020\u001cX\u0082T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006~"}, d2 = {"itemsName", "", "Lru/mrlargha/commonui/utils/ItemsInfo;", "getItemsName", "()Ljava/util/List;", "setItemsName", "(Ljava/util/List;)V", "zipFileIcons", "Ljava/util/zip/ZipFile;", "getZipFileIcons", "()Ljava/util/zip/ZipFile;", "setZipFileIcons", "(Ljava/util/zip/ZipFile;)V", "_isArizonaType", "", "get_isArizonaType", "()Z", "set_isArizonaType", "(Z)V", "isArizonaType", "_isDebug", "get_isDebug", "set_isDebug", "isDebug", "setTextTimeFormat", "", "Landroid/widget/TextView;", "time", "", "getAnimationScale", "", "Landroid/app/Activity;", "getKeyboardHeightOrNull", "getIconFromArchive", "Landroid/graphics/Bitmap;", "folderName", "", "item", "gearsIconName", "MAX_DIM", "getIconFromArchiveWithFormat", "getBitmapFromEntry", "entry", "Ljava/util/zip/ZipEntry;", "calculateInSampleSizeToMax", "srcW", "srcH", "maxDim", "applyIf", ExifInterface.GPS_DIRECTION_TRUE, "predicate", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "block", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "setDragClick", "itemVal", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "view", "Landroid/view/View;", "updateJsonString", "jsonString", "getColorTint", "color", "getJsonFromAssets", "context", "Landroid/content/Context;", "fileName", "nextMultipleOfFive", "x", "getItemsDescription", "targetActivity", "setDrawableEnd", "viewInt", "Landroid/widget/EditText;", "deleteSvgWord", "svg", "setImage", "imageView", "Landroid/widget/ImageView;", "bitmap", "setNotLoadedImage", "checkItemsName", "isArizona", "getItemsJson", "type", "dir", "Ljava/io/File;", "sendData", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "backendID", "fromItem", "toItem", "updateInventoryItem", "originalItem", "newItem", "convertPngToWebp", "png", "defineArzMenuText", "defineRodMenuText", "getDeviceName", "capitalize", CmcdData.STREAMING_FORMAT_SS, "getArizonaType", "getServerId", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "formatNumberWithSpaces", "number", "formatTime", "millisUntilFinished", "", "setColoredTextBeforeDot", "fullText", "getBaseShredPref", "Landroid/content/SharedPreferences;", "loadGifFromZipAsync", "(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "gifLoadFromCdn", "url", "fallbackImage", "gifGetFromZipAcyncGif", "gifGetFromZipAcync", "setImageFromZipAcync", "setImageFromArchive", "(Landroid/widget/ImageView;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "CommonUI"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ª\u0001\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u000e\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\u001a\u0012\u0010\u001c\u001a\u00020\u001d*\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 \u001a\n\u0010!\u001a\u00020\"*\u00020#\u001a\n\u0010$\u001a\u00020 *\u00020#\u001a\"\u0010%\u001a\u0004\u0018\u00010&2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020 2\b\b\u0002\u0010*\u001a\u00020(\u001a\"\u0010%\u001a\u0004\u0018\u00010&2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020(2\b\b\u0002\u0010*\u001a\u00020(\u001a\u0018\u0010%\u001a\u0004\u0018\u00010&2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020(\u001a\u0018\u0010,\u001a\u0004\u0018\u00010&2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020(\u001a\u0012\u0010-\u001a\u0004\u0018\u00010&2\u0006\u0010.\u001a\u00020/H\u0002\u001a \u00100\u001a\u00020 2\u0006\u00101\u001a\u00020 2\u0006\u00102\u001a\u00020 2\u0006\u00103\u001a\u00020 H\u0002\u001aM\u00104\u001a\u0002H5\"\u0004\b\u0000\u00105*\u0002H52\u0017\u00106\u001a\u0013\u0012\u0004\u0012\u0002H5\u0012\u0004\u0012\u00020\u000e07¢\u0006\u0002\b82\u0017\u00109\u001a\u0013\u0012\u0004\u0012\u0002H5\u0012\u0004\u0012\u00020\u001d07¢\u0006\u0002\b8H\u0086\bø\u0001\u0000¢\u0006\u0002\u0010:\u001a\u0018\u0010;\u001a\u00020\u000e2\u0006\u0010<\u001a\u00020=2\u0006\u0010>\u001a\u00020?H\u0007\u001a\u000e\u0010@\u001a\u00020(2\u0006\u0010A\u001a\u00020(\u001a\u000e\u0010B\u001a\u00020 2\u0006\u0010C\u001a\u00020 \u001a\u0018\u0010D\u001a\u0004\u0018\u00010(2\u0006\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020(\u001a\u000e\u0010H\u001a\u00020 2\u0006\u0010I\u001a\u00020 \u001a\u0014\u0010J\u001a\b\u0012\u0004\u0012\u00020(0\u00012\u0006\u0010K\u001a\u00020#\u001a\u001e\u0010L\u001a\u00020\u001d2\u0006\u0010>\u001a\u00020\u001e2\u0006\u0010M\u001a\u00020 2\u0006\u0010K\u001a\u00020#\u001a\u001e\u0010L\u001a\u00020\u001d2\u0006\u0010>\u001a\u00020N2\u0006\u0010M\u001a\u00020 2\u0006\u0010K\u001a\u00020#\u001a\u000e\u0010O\u001a\u00020(2\u0006\u0010P\u001a\u00020(\u001a\u0016\u0010Q\u001a\u00020\u001d2\u0006\u0010R\u001a\u00020S2\u0006\u0010T\u001a\u00020&\u001a\u0016\u0010U\u001a\u00020\u001d2\u0006\u0010R\u001a\u00020S2\u0006\u0010E\u001a\u00020F\u001a\u0016\u0010V\u001a\u00020\u001d2\u0006\u0010E\u001a\u00020F2\u0006\u0010W\u001a\u00020\u000e\u001a\"\u0010X\u001a\u00020\u001d2\u0006\u0010E\u001a\u00020F2\u0006\u0010Y\u001a\u00020 2\n\b\u0002\u0010Z\u001a\u0004\u0018\u00010[\u001a&\u0010\\\u001a\u00020\u001d2\u0006\u0010]\u001a\u00020^2\u0006\u0010_\u001a\u00020 2\u0006\u0010`\u001a\u00020=2\u0006\u0010a\u001a\u00020=\u001a\u001a\u0010b\u001a\u0004\u0018\u00010=2\b\u0010c\u001a\u0004\u0018\u00010=2\u0006\u0010d\u001a\u00020=\u001a\u000e\u0010e\u001a\u00020(2\u0006\u0010f\u001a\u00020(\u001a\u0016\u0010g\u001a\u00020(2\u0006\u0010E\u001a\u00020F2\u0006\u0010)\u001a\u00020 \u001a\u0016\u0010h\u001a\u00020(2\u0006\u0010E\u001a\u00020F2\u0006\u0010)\u001a\u00020 \u001a\u0006\u0010i\u001a\u00020(\u001a\u0012\u0010j\u001a\u00020(2\b\u0010k\u001a\u0004\u0018\u00010(H\u0002\u001a\u000e\u0010l\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020F\u001a\u000e\u0010m\u001a\u00020n2\u0006\u0010E\u001a\u00020F\u001a\u000e\u0010o\u001a\u00020(2\u0006\u0010p\u001a\u00020 \u001a\u000e\u0010q\u001a\u00020(2\u0006\u0010r\u001a\u00020s\u001a\u001a\u0010t\u001a\u00020\u001d*\u00020\u001e2\u0006\u0010u\u001a\u00020(2\u0006\u0010C\u001a\u00020 \u001a\n\u0010v\u001a\u00020w*\u00020F\u001a&\u0010x\u001a\u00020\u001d2\u0006\u0010R\u001a\u00020S2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020(H\u0086@¢\u0006\u0002\u0010y\u001a\u001c\u0010z\u001a\u00020\u001d*\u00020S2\u0006\u0010{\u001a\u00020(2\b\b\u0002\u0010|\u001a\u00020(\u001a\"\u0010}\u001a\u00020\u001d*\u00020S2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020(H\u0086@¢\u0006\u0002\u0010y\u001a\"\u0010~\u001a\u00020\u001d*\u00020S2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020(H\u0086@¢\u0006\u0002\u0010y\u001a\"\u0010\u007f\u001a\u00020\u001d*\u00020S2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020(H\u0086@¢\u0006\u0002\u0010y\u001a&\u0010\u0080\u0001\u001a\u00020\u001d*\u00020S2\b\b\u0002\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020 H\u0086@¢\u0006\u0003\u0010\u0081\u0001\" \u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0004\b\u0005\u0010\u0006\"\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\f\"\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012\"\u0011\u0010\u0013\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0010\"\u001a\u0010\u0014\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0010\"\u0004\b\u0016\u0010\u0012\"\u0011\u0010\u0017\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0010\"\u001a\u0010\u0018\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u0010\"\u0004\b\u001a\u0010\u0012\"\u0011\u0010\u001b\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u001b\u0010\u0010\"\u000e\u0010+\u001a\u00020 X\u0082T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\u0082\u0001"}, d2 = {"itemsName", "", "Lru/mrlargha/commonui/utils/ItemsInfo;", "getItemsName", "()Ljava/util/List;", "setItemsName", "(Ljava/util/List;)V", "zipFileIcons", "Ljava/util/zip/ZipFile;", "getZipFileIcons", "()Ljava/util/zip/ZipFile;", "setZipFileIcons", "(Ljava/util/zip/ZipFile;)V", "_isArizonaType", "", "get_isArizonaType", "()Z", "set_isArizonaType", "(Z)V", "isArizonaType", "_isBrazilType", "get_isBrazilType", "set_isBrazilType", "isBrazilType", "_isDebug", "get_isDebug", "set_isDebug", "isDebug", "setTextTimeFormat", "", "Landroid/widget/TextView;", "time", "", "getAnimationScale", "", "Landroid/app/Activity;", "getKeyboardHeightOrNull", "getIconFromArchive", "Landroid/graphics/Bitmap;", "folderName", "", "item", "gearsIconName", "MAX_DIM", "getIconFromArchiveWithFormat", "getBitmapFromEntry", "entry", "Ljava/util/zip/ZipEntry;", "calculateInSampleSizeToMax", "srcW", "srcH", "maxDim", "applyIf", ExifInterface.GPS_DIRECTION_TRUE, "predicate", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "block", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "setDragClick", "itemVal", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "view", "Landroid/view/View;", "updateJsonString", "jsonString", "getColorTint", "color", "getJsonFromAssets", "context", "Landroid/content/Context;", "fileName", "nextMultipleOfFive", "x", "getItemsDescription", "targetActivity", "setDrawableEnd", "viewInt", "Landroid/widget/EditText;", "deleteSvgWord", "svg", "setImage", "imageView", "Landroid/widget/ImageView;", "bitmap", "setNotLoadedImage", "checkItemsName", "isArizona", "getItemsJson", "type", "dir", "Ljava/io/File;", "sendData", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "backendID", "fromItem", "toItem", "updateInventoryItem", "originalItem", "newItem", "convertPngToWebp", "png", "defineArzMenuText", "defineRodMenuText", "getDeviceName", "capitalize", CmcdData.STREAMING_FORMAT_SS, "getArizonaType", "getServerId", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "formatNumberWithSpaces", "number", "formatTime", "millisUntilFinished", "", "setColoredTextBeforeDot", "fullText", "getBaseShredPref", "Landroid/content/SharedPreferences;", "loadGifFromZipAsync", "(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "gifLoadFromCdn", "url", "fallbackImage", "gifGetFromZipAcyncGif", "gifGetFromZipAcync", "setImageFromZipAcync", "setImageFromArchive", "(Landroid/widget/ImageView;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "CommonUI"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class UtilsKt {
     private static final int MAX_DIM = 1024;
+    private static boolean _isBrazilType;
     private static ZipFile zipFileIcons;
     private static List<ItemsInfo> itemsName = CollectionsKt.emptyList();
     private static boolean _isArizonaType = true;
@@ -99,6 +100,18 @@ public final class UtilsKt {
 
     public static final boolean isArizonaType() {
         return _isArizonaType;
+    }
+
+    public static final boolean get_isBrazilType() {
+        return _isBrazilType;
+    }
+
+    public static final void set_isBrazilType(boolean z) {
+        _isBrazilType = z;
+    }
+
+    public static final boolean isBrazilType() {
+        return _isBrazilType;
     }
 
     public static final boolean get_isDebug() {
@@ -382,7 +395,7 @@ public final class UtilsKt {
 
     public static final List<String> getItemsDescription(Activity targetActivity) {
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
-        if (targetActivity.getSharedPreferences("flavorType", 0).getBoolean("isArizonaType", false)) {
+        if (isArizonaType()) {
             return ConstantsKt.getItemsDescription();
         }
         return ConstantsKt.getRodinaItemsDescription();
@@ -566,12 +579,150 @@ public final class UtilsKt {
         return StringsKt.replace$default(png, "png", "webp", false, 4, (Object) null);
     }
 
-    public static final String defineArzMenuText(int i) {
-        return i == ArzInventoryButtonTypes.BUTTON_INVENTORY.ordinal() ? "Инвентарь" : i == ArzInventoryButtonTypes.BUTTON_CAR_INVENTORY.ordinal() ? "Транспорт" : i == ArzInventoryButtonTypes.BUTTON_CHEST.ordinal() ? "Сундук" : i == ArzInventoryButtonTypes.BUTTON_HOTEL_ROOM.ordinal() ? "Шкаф" : i == ArzInventoryButtonTypes.BUTTON_TRUNK.ordinal() ? "Багажник" : i == ArzInventoryButtonTypes.BUTTON_FAM_FLAT.ordinal() ? "Общак" : (i == ArzInventoryButtonTypes.BUTTON_HOUSE.ordinal() || i == ArzInventoryButtonTypes.BUTTON_TRAILER.ordinal()) ? "Шкаф" : i == ArzInventoryButtonTypes.BUTTON_STOREHOUSE.ordinal() ? "Склад" : i == ArzInventoryButtonTypes.BUTTON_PAWNSHOP.ordinal() ? "Меню ломбарда" : i == ArzInventoryButtonTypes.BUTTON_TRASH.ordinal() ? "Мусорка" : i == ArzInventoryButtonTypes.BUTTON_SECURITY.ordinal() ? "Охранники" : i == ArzInventoryButtonTypes.BUTTON_CARS.ordinal() ? "Мой транспорт" : i == ArzInventoryButtonTypes.BUTTON_BIZ.ordinal() ? "Мои бизнесы" : i == ArzInventoryButtonTypes.BUTTON_HOUSES.ordinal() ? "Мои дома" : "";
+    public static final String defineArzMenuText(Context context, int i) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        if (i == ArzInventoryButtonTypes.BUTTON_INVENTORY.ordinal()) {
+            String string = context.getString(R.string.inventory);
+            Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+            return string;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_CAR_INVENTORY.ordinal()) {
+            String string2 = context.getString(R.string.my_transport);
+            Intrinsics.checkNotNullExpressionValue(string2, "getString(...)");
+            return string2;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_CHEST.ordinal()) {
+            String string3 = context.getString(R.string.warehouse_chest);
+            Intrinsics.checkNotNullExpressionValue(string3, "getString(...)");
+            return string3;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_HOTEL_ROOM.ordinal()) {
+            String string4 = context.getString(R.string.warehouse_house);
+            Intrinsics.checkNotNullExpressionValue(string4, "getString(...)");
+            return string4;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_TRUNK.ordinal()) {
+            String string5 = context.getString(R.string.warehouse_trunk);
+            Intrinsics.checkNotNullExpressionValue(string5, "getString(...)");
+            return string5;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_FAM_FLAT.ordinal()) {
+            String string6 = context.getString(R.string.warehouse_family);
+            Intrinsics.checkNotNullExpressionValue(string6, "getString(...)");
+            return string6;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_HOUSE.ordinal()) {
+            String string7 = context.getString(R.string.warehouse_house);
+            Intrinsics.checkNotNullExpressionValue(string7, "getString(...)");
+            return string7;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_TRAILER.ordinal()) {
+            String string8 = context.getString(R.string.warehouse_house);
+            Intrinsics.checkNotNullExpressionValue(string8, "getString(...)");
+            return string8;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_STOREHOUSE.ordinal()) {
+            String string9 = context.getString(R.string.warehouse_storehouse);
+            Intrinsics.checkNotNullExpressionValue(string9, "getString(...)");
+            return string9;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_PAWNSHOP.ordinal()) {
+            String string10 = context.getString(R.string.warehouse_lombard_menu);
+            Intrinsics.checkNotNullExpressionValue(string10, "getString(...)");
+            return string10;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_TRASH.ordinal()) {
+            String string11 = context.getString(R.string.warehouse_trash);
+            Intrinsics.checkNotNullExpressionValue(string11, "getString(...)");
+            return string11;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_SECURITY.ordinal()) {
+            String string12 = context.getString(R.string.security_guards);
+            Intrinsics.checkNotNullExpressionValue(string12, "getString(...)");
+            return string12;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_CARS.ordinal()) {
+            String string13 = context.getString(R.string.my_transport);
+            Intrinsics.checkNotNullExpressionValue(string13, "getString(...)");
+            return string13;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_BIZ.ordinal()) {
+            String string14 = context.getString(R.string.my_businesses);
+            Intrinsics.checkNotNullExpressionValue(string14, "getString(...)");
+            return string14;
+        } else if (i == ArzInventoryButtonTypes.BUTTON_HOUSES.ordinal()) {
+            String string15 = context.getString(R.string.my_houses);
+            Intrinsics.checkNotNullExpressionValue(string15, "getString(...)");
+            return string15;
+        } else {
+            return "";
+        }
     }
 
-    public static final String defineRodMenuText(int i) {
-        return i == RodInventoryButtonTypes.BUTTON_INVENTORY.ordinal() ? "Инвентарь" : i == RodInventoryButtonTypes.BUTTON_CAR_INVENTORY.ordinal() ? "Транспорт" : i == RodInventoryButtonTypes.BUTTON_TRASH.ordinal() ? "Мусорка" : i == RodInventoryButtonTypes.BUTTON_TRUNK.ordinal() ? "Багажник" : i == RodInventoryButtonTypes.BUTTON_HOUSE.ordinal() ? "Домашний шкаф" : i == RodInventoryButtonTypes.BUTTON_DRAWER.ordinal() ? "Тумбочка" : i == RodInventoryButtonTypes.BUTTON_SHIP.ordinal() ? "Трюм корабля" : i == RodInventoryButtonTypes.BUTTON_CAMPER.ordinal() ? "Дом на колесах" : i == RodInventoryButtonTypes.BUTTON_BANK_VAULT.ordinal() ? "Банковское хранилище" : i == RodInventoryButtonTypes.BUTTON_FRACTION_WAREHOUSE.ordinal() ? "Общак фракции" : i == RodInventoryButtonTypes.BUTTON_FAMILY_WAREHOUSE.ordinal() ? "Общак семьи" : i == RodInventoryButtonTypes.BUTTON_GARDENING_BARN.ordinal() ? "Амбар" : i == RodInventoryButtonTypes.BUTTON_GARAGE.ordinal() ? "Гараж" : i == RodInventoryButtonTypes.BUTTON_SECURITY.ordinal() ? "Охранники" : i == RodInventoryButtonTypes.BUTTON_CARS.ordinal() ? "Мой транспорт" : i == RodInventoryButtonTypes.BUTTON_BIZ.ordinal() ? "Мои бизнесы" : i == RodInventoryButtonTypes.BUTTON_HOUSES.ordinal() ? "Мои дома" : i == RodInventoryButtonTypes.BUTTON_TRAILER.ordinal() ? "Трейлер" : "";
+    public static final String defineRodMenuText(Context context, int i) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        if (i == RodInventoryButtonTypes.BUTTON_INVENTORY.ordinal()) {
+            String string = context.getString(R.string.inventory);
+            Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+            return string;
+        } else if (i == RodInventoryButtonTypes.BUTTON_CAR_INVENTORY.ordinal()) {
+            String string2 = context.getString(R.string.my_transport);
+            Intrinsics.checkNotNullExpressionValue(string2, "getString(...)");
+            return string2;
+        } else if (i == RodInventoryButtonTypes.BUTTON_TRASH.ordinal()) {
+            String string3 = context.getString(R.string.warehouse_trash);
+            Intrinsics.checkNotNullExpressionValue(string3, "getString(...)");
+            return string3;
+        } else if (i == RodInventoryButtonTypes.BUTTON_TRUNK.ordinal()) {
+            String string4 = context.getString(R.string.warehouse_trunk);
+            Intrinsics.checkNotNullExpressionValue(string4, "getString(...)");
+            return string4;
+        } else if (i == RodInventoryButtonTypes.BUTTON_HOUSE.ordinal()) {
+            String string5 = context.getString(R.string.warehouse_home_wardrobe);
+            Intrinsics.checkNotNullExpressionValue(string5, "getString(...)");
+            return string5;
+        } else if (i == RodInventoryButtonTypes.BUTTON_DRAWER.ordinal()) {
+            String string6 = context.getString(R.string.warehouse_nightstand);
+            Intrinsics.checkNotNullExpressionValue(string6, "getString(...)");
+            return string6;
+        } else if (i == RodInventoryButtonTypes.BUTTON_SHIP.ordinal()) {
+            String string7 = context.getString(R.string.warehouse_ship);
+            Intrinsics.checkNotNullExpressionValue(string7, "getString(...)");
+            return string7;
+        } else if (i == RodInventoryButtonTypes.BUTTON_CAMPER.ordinal()) {
+            String string8 = context.getString(R.string.warehouse_motorhome);
+            Intrinsics.checkNotNullExpressionValue(string8, "getString(...)");
+            return string8;
+        } else if (i == RodInventoryButtonTypes.BUTTON_BANK_VAULT.ordinal()) {
+            String string9 = context.getString(R.string.warehouse_bank_vault);
+            Intrinsics.checkNotNullExpressionValue(string9, "getString(...)");
+            return string9;
+        } else if (i == RodInventoryButtonTypes.BUTTON_FRACTION_WAREHOUSE.ordinal()) {
+            String string10 = context.getString(R.string.warehouse_fraction);
+            Intrinsics.checkNotNullExpressionValue(string10, "getString(...)");
+            return string10;
+        } else if (i == RodInventoryButtonTypes.BUTTON_FAMILY_WAREHOUSE.ordinal()) {
+            String string11 = context.getString(R.string.warehouse_family);
+            Intrinsics.checkNotNullExpressionValue(string11, "getString(...)");
+            return string11;
+        } else if (i == RodInventoryButtonTypes.BUTTON_GARDENING_BARN.ordinal()) {
+            String string12 = context.getString(R.string.warehouse_barn);
+            Intrinsics.checkNotNullExpressionValue(string12, "getString(...)");
+            return string12;
+        } else if (i == RodInventoryButtonTypes.BUTTON_GARAGE.ordinal()) {
+            String string13 = context.getString(R.string.garage);
+            Intrinsics.checkNotNullExpressionValue(string13, "getString(...)");
+            return string13;
+        } else if (i == RodInventoryButtonTypes.BUTTON_SECURITY.ordinal()) {
+            String string14 = context.getString(R.string.security_guards);
+            Intrinsics.checkNotNullExpressionValue(string14, "getString(...)");
+            return string14;
+        } else if (i == RodInventoryButtonTypes.BUTTON_CARS.ordinal()) {
+            String string15 = context.getString(R.string.my_transport);
+            Intrinsics.checkNotNullExpressionValue(string15, "getString(...)");
+            return string15;
+        } else if (i == RodInventoryButtonTypes.BUTTON_BIZ.ordinal()) {
+            String string16 = context.getString(R.string.my_businesses);
+            Intrinsics.checkNotNullExpressionValue(string16, "getString(...)");
+            return string16;
+        } else if (i == RodInventoryButtonTypes.BUTTON_HOUSES.ordinal()) {
+            String string17 = context.getString(R.string.my_houses);
+            Intrinsics.checkNotNullExpressionValue(string17, "getString(...)");
+            return string17;
+        } else if (i == RodInventoryButtonTypes.BUTTON_TRAILER.ordinal()) {
+            String string18 = context.getString(R.string.trailer);
+            Intrinsics.checkNotNullExpressionValue(string18, "getString(...)");
+            return string18;
+        } else {
+            return "";
+        }
     }
 
     public static final String getDeviceName() {
@@ -604,7 +755,7 @@ public final class UtilsKt {
 
     public static final boolean getArizonaType(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        return getBaseShredPref(context).getBoolean("isArizonaType", false);
+        return isArizonaType();
     }
 
     public static final ServerInfoItem getServerId(Context context) {

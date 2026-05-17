@@ -3,7 +3,7 @@ package com.miami.game.core.foreground.service;
 import com.miami.game.core.files.updater.domain.FilesUpdaterInteractor;
 import dagger.MembersInjector;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DownloadService_MembersInjector implements MembersInjector<DownloadService> {
     private final Provider<FilesUpdaterInteractor> filesUpdaterInteractorProvider;
 

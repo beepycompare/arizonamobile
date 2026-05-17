@@ -137,7 +137,7 @@ public class IabHelper {
     void consume(Purchase purchase) throws IabException {
         checkNotDisposed();
         checkSetupDone("consume");
-        if (!purchase.mItemType.equals(ITEM_TYPE_INAPP)) {
+        if (!purchase.mItemType.equals("inapp")) {
             throw new IabException((int) IABHELPER_INVALID_CONSUMPTION, "Items of type '" + purchase.mItemType + "' can't be consumed.");
         }
         try {
@@ -385,14 +385,14 @@ public class IabHelper {
     }
 
     public void launchPurchaseFlow(Activity activity, String str, int i, OnIabPurchaseFinishedListener onIabPurchaseFinishedListener, String str2) {
-        launchPurchaseFlow(activity, str, ITEM_TYPE_INAPP, i, onIabPurchaseFinishedListener, str2);
+        launchPurchaseFlow(activity, str, "inapp", i, onIabPurchaseFinishedListener, str2);
     }
 
     public void launchPurchaseFlow(Activity activity, String str, String str2, int i, OnIabPurchaseFinishedListener onIabPurchaseFinishedListener, String str3) {
         checkNotDisposed();
         checkSetupDone("launchPurchaseFlow");
         flagStartAsync("launchPurchaseFlow");
-        if (str2.equals(ITEM_TYPE_SUBS) && !this.mSubscriptionsSupported) {
+        if (str2.equals("subs") && !this.mSubscriptionsSupported) {
             IabResult iabResult = new IabResult(IABHELPER_SUBSCRIPTIONS_NOT_AVAILABLE, "Subscriptions are not available.");
             flagEndAsync();
             if (onIabPurchaseFinishedListener != null) {
@@ -450,7 +450,7 @@ public class IabHelper {
     }
 
     public void launchSubscriptionPurchaseFlow(Activity activity, String str, int i, OnIabPurchaseFinishedListener onIabPurchaseFinishedListener, String str2) {
-        launchPurchaseFlow(activity, str, ITEM_TYPE_SUBS, i, onIabPurchaseFinishedListener, str2);
+        launchPurchaseFlow(activity, str, "subs", i, onIabPurchaseFinishedListener, str2);
     }
 
     void logDebug(String str) {
@@ -478,17 +478,17 @@ public class IabHelper {
         checkSetupDone("queryInventory");
         try {
             Inventory inventory = new Inventory();
-            int queryPurchases = queryPurchases(inventory, ITEM_TYPE_INAPP);
+            int queryPurchases = queryPurchases(inventory, "inapp");
             if (queryPurchases == 0) {
-                if (z && (querySkuDetails2 = querySkuDetails(ITEM_TYPE_INAPP, inventory, list)) != 0) {
+                if (z && (querySkuDetails2 = querySkuDetails("inapp", inventory, list)) != 0) {
                     throw new IabException(querySkuDetails2, "Error refreshing inventory (querying prices of items).");
                 }
                 if (this.mSubscriptionsSupported) {
-                    int queryPurchases2 = queryPurchases(inventory, ITEM_TYPE_SUBS);
+                    int queryPurchases2 = queryPurchases(inventory, "subs");
                     if (queryPurchases2 != 0) {
                         throw new IabException(queryPurchases2, "Error refreshing inventory (querying owned subscriptions).");
                     }
-                    if (z && (querySkuDetails = querySkuDetails(ITEM_TYPE_SUBS, inventory, list)) != 0) {
+                    if (z && (querySkuDetails = querySkuDetails("subs", inventory, list)) != 0) {
                         throw new IabException(querySkuDetails, "Error refreshing inventory (querying prices of subscriptions).");
                     }
                 }
@@ -642,7 +642,7 @@ public class IabHelper {
                 String packageName = IabHelper.this.mContext.getPackageName();
                 try {
                     IabHelper.this.logDebug("Checking for in-app billing 3 support.");
-                    int isBillingSupported = IabHelper.this.mService.isBillingSupported(3, packageName, IabHelper.ITEM_TYPE_INAPP);
+                    int isBillingSupported = IabHelper.this.mService.isBillingSupported(3, packageName, "inapp");
                     if (isBillingSupported != 0) {
                         OnIabSetupFinishedListener onIabSetupFinishedListener2 = onIabSetupFinishedListener;
                         if (onIabSetupFinishedListener2 != null) {
@@ -652,7 +652,7 @@ public class IabHelper {
                         return;
                     }
                     IabHelper.this.logDebug("In-app billing version 3 supported for " + packageName);
-                    int isBillingSupported2 = IabHelper.this.mService.isBillingSupported(3, packageName, IabHelper.ITEM_TYPE_SUBS);
+                    int isBillingSupported2 = IabHelper.this.mService.isBillingSupported(3, packageName, "subs");
                     IabHelper iabHelper = IabHelper.this;
                     if (isBillingSupported2 == 0) {
                         iabHelper.logDebug("Subscriptions AVAILABLE.");

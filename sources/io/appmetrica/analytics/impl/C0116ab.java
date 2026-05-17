@@ -18,18 +18,18 @@ import kotlin.collections.MapsKt;
 public final class C0116ab implements InternalClientModuleFacade {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Oc f902a = new Oc();
+    public final Oc f907a = new Oc();
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFacade
     public final void reportAdRevenue(ModuleAdRevenue moduleAdRevenue) {
         AdType adType;
         Map<String, String> linkedHashMap;
-        Oc oc = this.f902a;
+        Oc oc = this.f907a;
         oc.getClass();
         AdRevenue.Builder newBuilder = AdRevenue.newBuilder(moduleAdRevenue.getAdRevenue(), moduleAdRevenue.getCurrency());
         ModuleAdType adType2 = moduleAdRevenue.getAdType();
         ModuleAdType.values();
-        switch (adType2 == null ? -1 : Nc.f708a[adType2.ordinal()]) {
+        switch (adType2 == null ? -1 : Nc.f713a[adType2.ordinal()]) {
             case -1:
                 adType = null;
                 break;
@@ -63,7 +63,7 @@ public final class C0116ab implements InternalClientModuleFacade {
         if (payload == null || (linkedHashMap = MapsKt.toMutableMap(payload)) == null) {
             linkedHashMap = new LinkedHashMap<>();
         }
-        oc.f722a.getClass();
+        oc.f727a.getClass();
         linkedHashMap.put(AdRevenueConstants.LAYER_KEY, "native");
         ModulesFacade.reportAdRevenue(withPrecision.withPayload(linkedHashMap).build(), Boolean.valueOf(moduleAdRevenue.getAutoCollected()));
     }
@@ -78,7 +78,7 @@ public final class C0116ab implements InternalClientModuleFacade {
         }
         InternalModuleEvent.Category category2 = internalModuleEvent.getCategory();
         if (category2 != null) {
-            int i = Za.f883a[category2.ordinal()];
+            int i = Za.f888a[category2.ordinal()];
             if (i != 1) {
                 category = i != 2 ? null : ModuleEvent.Category.GENERAL;
             } else {

@@ -12,13 +12,13 @@ import dagger.hilt.android.internal.managers.ViewComponentManager;
 import dagger.hilt.internal.GeneratedComponentManager;
 import dagger.hilt.internal.GeneratedComponentManagerHolder;
 import dagger.hilt.internal.Preconditions;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FragmentComponentManager implements GeneratedComponentManager<Object> {
     private volatile Object component;
     private final Object componentLock = new Object();
     private final Fragment fragment;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface FragmentComponentBuilderEntryPoint {
         FragmentComponentBuilder fragmentComponentBuilder();
     }

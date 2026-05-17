@@ -10,7 +10,6 @@ import android.os.HandlerThread;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
-import androidx.media3.exoplayer.Renderer;
 import com.google.android.vending.licensing.ILicenseResultListener;
 import com.google.android.vending.licensing.ILicensingService;
 import com.google.android.vending.licensing.util.Base64;
@@ -72,7 +71,7 @@ public class LicenseChecker implements ServiceConnection {
 
         private void startTimeout() {
             Log.i(LicenseChecker.TAG, "Start monitoring timeout.");
-            LicenseChecker.this.mHandler.postDelayed(this.mOnTimeout, Renderer.DEFAULT_DURATION_TO_PROGRESS_US);
+            LicenseChecker.this.mHandler.postDelayed(this.mOnTimeout, 10000L);
         }
 
         @Override // com.google.android.vending.licensing.ILicenseResultListener

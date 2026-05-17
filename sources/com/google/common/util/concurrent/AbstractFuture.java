@@ -1,6 +1,7 @@
 package com.google.common.util.concurrent;
 
 import androidx.concurrent.futures.AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0;
+import com.google.android.gms.internal.play_billing.zzcp$$ExternalSyntheticBackportWithForwarding0;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.util.concurrent.internal.InternalFutureFailureAccess;
@@ -852,12 +853,12 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
 
         @Override // com.google.common.util.concurrent.AbstractFuture.AtomicHelper
         boolean casWaiters(AbstractFuture<?> future, @CheckForNull Waiter expect, @CheckForNull Waiter update) {
-            return Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0.m(UNSAFE, future, WAITERS_OFFSET, expect, update);
+            return zzcp$$ExternalSyntheticBackportWithForwarding0.m(UNSAFE, future, WAITERS_OFFSET, expect, update);
         }
 
         @Override // com.google.common.util.concurrent.AbstractFuture.AtomicHelper
         boolean casListeners(AbstractFuture<?> future, @CheckForNull Listener expect, Listener update) {
-            return Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0.m(UNSAFE, future, LISTENERS_OFFSET, expect, update);
+            return zzcp$$ExternalSyntheticBackportWithForwarding0.m(UNSAFE, future, LISTENERS_OFFSET, expect, update);
         }
 
         @Override // com.google.common.util.concurrent.AbstractFuture.AtomicHelper
@@ -886,7 +887,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
 
         @Override // com.google.common.util.concurrent.AbstractFuture.AtomicHelper
         boolean casValue(AbstractFuture<?> future, @CheckForNull Object expect, Object update) {
-            return Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0.m(UNSAFE, future, VALUE_OFFSET, expect, update);
+            return zzcp$$ExternalSyntheticBackportWithForwarding0.m(UNSAFE, future, VALUE_OFFSET, expect, update);
         }
     }
 

@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowKt;
 /* compiled from: utils.kt */
 @Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\u001a\u0010\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u0003\u001aA\u0010\u0006\u001a\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u000b2\b\b\u0002\u0010\u000f\u001a\u00020\r¢\u0006\u0002\u0010\u0010\"\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"textChanges", "Lkotlinx/coroutines/flow/Flow;", "", "Landroid/widget/EditText;", "SPAN_REGEX", "Lkotlin/text/Regex;", "buildSpannableList", "Landroid/text/SpannableString;", "rawList", "", "textColor", "", TtmlNode.BOLD, "", TtmlNode.ATTR_TTS_BACKGROUND_COLOR, "roundedBadge", "(Ljava/util/List;IZLjava/lang/Integer;Z)Landroid/text/SpannableString;", "CommonUI"}, k = 2, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes6.dex */
+/* loaded from: classes3.dex */
 public final class UtilsKt {
     private static final Regex SPAN_REGEX = new Regex("<span>(.*?)</span>", RegexOption.IGNORE_CASE);
 

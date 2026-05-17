@@ -13,7 +13,7 @@ import androidx.graphics.shapes.Shapes_androidKt;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class MaterialShapes {
     private static final CornerRounding CORNER_ROUND_15 = new CornerRounding(0.15f, 0.0f);
     private static final CornerRounding CORNER_ROUND_20 = new CornerRounding(0.2f, 0.0f);
@@ -445,7 +445,7 @@ public final class MaterialShapes {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class VertexAndRounding {
         private CornerRounding rounding;
         private PointF vertex;

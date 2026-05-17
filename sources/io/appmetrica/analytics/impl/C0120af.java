@@ -8,7 +8,7 @@ import org.json.JSONObject;
 public final class C0120af implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0503pf f904a;
+    public final C0503pf f909a;
 
     public C0120af() {
         this(new C0503pf());
@@ -18,32 +18,32 @@ public final class C0120af implements ProtobufConverter {
     /* renamed from: a */
     public final C0428mf fromModel(C0172cf c0172cf) {
         C0428mf c0428mf = new C0428mf();
-        if (!TextUtils.isEmpty(c0172cf.f938a)) {
-            c0428mf.f1117a = c0172cf.f938a;
+        if (!TextUtils.isEmpty(c0172cf.f943a)) {
+            c0428mf.f1122a = c0172cf.f943a;
         }
         c0428mf.b = c0172cf.b.toString();
-        c0428mf.c = this.f904a.fromModel(c0172cf.c).intValue();
+        c0428mf.c = this.f909a.fromModel(c0172cf.c).intValue();
         return c0428mf;
     }
 
     public C0120af(C0503pf c0503pf) {
-        this.f904a = c0503pf;
+        this.f909a = c0503pf;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final C0172cf toModel(C0428mf c0428mf) {
         JSONObject jSONObject;
-        String str = c0428mf.f1117a;
+        String str = c0428mf.f1122a;
         String str2 = c0428mf.b;
         if (!TextUtils.isEmpty(str2)) {
             try {
                 jSONObject = new JSONObject(str2);
             } catch (Throwable unused) {
             }
-            return new C0172cf(str, jSONObject, this.f904a.toModel(Integer.valueOf(c0428mf.c)));
+            return new C0172cf(str, jSONObject, this.f909a.toModel(Integer.valueOf(c0428mf.c)));
         }
         jSONObject = new JSONObject();
-        return new C0172cf(str, jSONObject, this.f904a.toModel(Integer.valueOf(c0428mf.c)));
+        return new C0172cf(str, jSONObject, this.f909a.toModel(Integer.valueOf(c0428mf.c)));
     }
 }

@@ -2,7 +2,7 @@ package androidx.media3.database;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DefaultDatabaseProvider implements DatabaseProvider {
     private final SQLiteOpenHelper sqliteOpenHelper;
 

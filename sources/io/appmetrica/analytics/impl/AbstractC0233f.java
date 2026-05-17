@@ -6,11 +6,11 @@ import android.content.Context;
 public abstract class AbstractC0233f implements InterfaceC0238f4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f985a;
+    public final Context f990a;
     public final Bg b;
 
     public AbstractC0233f(Context context, Bg bg) {
-        this.f985a = context.getApplicationContext();
+        this.f990a = context.getApplicationContext();
         this.b = bg;
         bg.a(this);
         C0448na.k().n().b(this);
@@ -28,7 +28,7 @@ public abstract class AbstractC0233f implements InterfaceC0238f4 {
     public abstract void b(P5 p5, C0492p4 c0492p4);
 
     public final Context c() {
-        return this.f985a;
+        return this.f990a;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0238f4

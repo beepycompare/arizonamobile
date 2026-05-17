@@ -8,7 +8,7 @@ import java.util.HashMap;
 public final class C0481oi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f1157a = new HashMap();
+    public final HashMap f1162a = new HashMap();
     public final C0737z0 b;
 
     public C0481oi(C0737z0 c0737z0) {
@@ -16,15 +16,15 @@ public final class C0481oi {
     }
 
     public static C0481oi a() {
-        return AbstractC0456ni.f1138a;
+        return AbstractC0456ni.f1143a;
     }
 
     public final C0278gi a(Context context, String str) {
         C0278gi c0278gi;
-        C0278gi c0278gi2 = (C0278gi) this.f1157a.get(str);
+        C0278gi c0278gi2 = (C0278gi) this.f1162a.get(str);
         if (c0278gi2 == null) {
-            synchronized (this.f1157a) {
-                c0278gi = (C0278gi) this.f1157a.get(str);
+            synchronized (this.f1162a) {
+                c0278gi = (C0278gi) this.f1162a.get(str);
                 if (c0278gi == null) {
                     IHandlerExecutor a2 = C0135b4.l().c.a();
                     this.b.getClass();
@@ -32,7 +32,7 @@ public final class C0481oi {
                         ((C0746z9) a2).b.post(new RunnableC0431mi(this, context));
                     }
                     c0278gi = new C0278gi(context.getApplicationContext(), str, new C0737z0());
-                    this.f1157a.put(str, c0278gi);
+                    this.f1162a.put(str, c0278gi);
                     c0278gi.c(str);
                 }
             }

@@ -210,24 +210,24 @@ public final class MutableIntList extends IntList {
         int[] iArr = this.content;
         int i2 = this._size - 1;
         while (true) {
-            int i3 = -1;
+            int i3 = 0;
+            int i4 = -1;
             if (-1 >= i2) {
                 break;
             }
-            int i4 = iArr[i2];
+            int i5 = iArr[i2];
             int length = elements.length;
-            int i5 = 0;
             while (true) {
-                if (i5 >= length) {
+                if (i3 >= length) {
                     break;
-                }
-                if (elements[i5] == i4) {
-                    i3 = i5;
+                } else if (elements[i3] == i5) {
+                    i4 = i3;
                     break;
+                } else {
+                    i3++;
                 }
-                i5++;
             }
-            if (i3 < 0) {
+            if (i4 < 0) {
                 removeAt(i2);
             }
             i2--;

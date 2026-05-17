@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class AbstractC0259g {
 
     /* renamed from: a  reason: collision with root package name */
-    public final X4 f1002a;
+    public final X4 f1007a;
     public final Qk b;
     public final Uk c;
     public final Pk d;
@@ -15,7 +15,7 @@ public abstract class AbstractC0259g {
     public final SystemTimeProvider f;
 
     public AbstractC0259g(X4 x4, Qk qk, Uk uk, Pk pk, Ra ra, SystemTimeProvider systemTimeProvider) {
-        this.f1002a = x4;
+        this.f1007a = x4;
         this.b = qk;
         this.c = uk;
         this.d = pk;
@@ -29,7 +29,7 @@ public abstract class AbstractC0259g {
 
     public final Dk b() {
         if (this.c.h()) {
-            return new Dk(this.f1002a, this.c, a(), this.f);
+            return new Dk(this.f1007a, this.c, a(), this.f);
         }
         return null;
     }
@@ -38,17 +38,17 @@ public abstract class AbstractC0259g {
         if (this.c.h()) {
             this.e.reportEvent("create session with non-empty storage");
         }
-        X4 x4 = this.f1002a;
+        X4 x4 = this.f1007a;
         Uk uk = this.c;
         long a2 = this.b.a();
         Uk uk2 = this.c;
         uk2.a(Uk.f, Long.valueOf(a2));
-        uk2.a(Uk.d, Long.valueOf(ek.f570a));
-        uk2.a(Uk.h, Long.valueOf(ek.f570a));
+        uk2.a(Uk.d, Long.valueOf(ek.f575a));
+        uk2.a(Uk.h, Long.valueOf(ek.f575a));
         uk2.a(Uk.g, 0L);
         uk2.a(Uk.i, Boolean.TRUE);
         uk2.b();
-        this.f1002a.e.a(a2, this.d.f742a, TimeUnit.MILLISECONDS.toSeconds(ek.b));
+        this.f1007a.e.a(a2, this.d.f747a, TimeUnit.MILLISECONDS.toSeconds(ek.b));
         return new Dk(x4, uk, a(), new SystemTimeProvider());
     }
 
@@ -59,7 +59,7 @@ public abstract class AbstractC0259g {
         fk.d = this.c.c.a(Uk.h);
         fk.c = this.c.c.a(Uk.f);
         fk.h = this.c.c.a(Uk.d);
-        fk.f583a = this.c.c.a(Uk.e);
+        fk.f588a = this.c.c.a(Uk.e);
         return new Gk(fk);
     }
 }

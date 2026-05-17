@@ -1,12 +1,11 @@
 package io.appmetrica.analytics.billingv8.impl;
 
-import com.google.android.billing.IabHelper;
 import io.appmetrica.analytics.billinginterface.internal.BillingInfo;
 import io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoManager;
 import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class m {
     public static void a(Map map, Map map2, String str, BillingInfoManager billingInfoManager) {
         long currentTimeMillis = new SystemTimeProvider().currentTimeMillis();
@@ -21,7 +20,7 @@ public final class m {
             }
         }
         billingInfoManager.update(map);
-        if (billingInfoManager.isFirstInappCheckOccurred() || !Intrinsics.areEqual(IabHelper.ITEM_TYPE_INAPP, str)) {
+        if (billingInfoManager.isFirstInappCheckOccurred() || !Intrinsics.areEqual("inapp", str)) {
             return;
         }
         billingInfoManager.markFirstInappCheckOccurred();

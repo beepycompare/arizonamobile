@@ -113,7 +113,7 @@ public final class Time {
     }
 
     /* renamed from: minus-5sfh64U  reason: not valid java name */
-    public final long m9064minus5sfh64U(Time time) {
+    public final long m9068minus5sfh64U(Time time) {
         Intrinsics.checkNotNullParameter(time, "time");
         Duration.Companion companion = Duration.Companion;
         return DurationKt.toDuration(this.ms - time.ms, DurationUnit.MILLISECONDS);

@@ -96,7 +96,7 @@ public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
             ImageView ivItemImage = itemSubInventoryBinding.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
             ivItemImage.setVisibility(0);
-            if (itemVal.getInventoryType() != RodinaBlockType.BLOCK_TYPE_WALLET.getId() || itemVal.getInventoryType() != RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId() || itemVal.getInventoryType() != ArizonaBlockType.BLOCK_TYPE_WALLET.getId() || itemVal.getInventoryType() != ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId() || itemVal.getInventoryType() != ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId()) {
+            if (itemVal.getInventoryType() != RodinaBlockType.BLOCK_TYPE_WALLET.getId() || itemVal.getInventoryType() != RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId() || itemVal.getInventoryType() != ArizonaBlockType.BLOCK_TYPE_WALLET.getId() || itemVal.getInventoryType() != ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId() || itemVal.getInventoryType() != ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId() || itemVal.getInventoryType() != ArizonaBlockType.BLOCK_TYPE_CRYPTO_BAG.getId()) {
                 try {
                     itemSubInventoryBinding.getRoot().setOnLongClickListener(new View.OnLongClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.UpgradesInventoryViewHolder$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnLongClickListener

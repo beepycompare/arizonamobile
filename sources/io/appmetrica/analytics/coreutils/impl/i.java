@@ -6,23 +6,23 @@ import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
 import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtilsTiramisu;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class i extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f391a;
+    public final /* synthetic */ Context f396a;
     public final /* synthetic */ String b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public i(Context context, String str) {
         super(0);
-        this.f391a = context;
+        this.f396a = context;
         this.b = str;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        PackageManager packageManager = this.f391a.getPackageManager();
+        PackageManager packageManager = this.f396a.getPackageManager();
         if (AndroidUtils.isApiAchieved(33)) {
             return PackageManagerUtilsTiramisu.INSTANCE.resolveContentProvider(packageManager, this.b);
         }

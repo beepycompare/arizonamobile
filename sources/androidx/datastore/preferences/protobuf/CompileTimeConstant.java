@@ -8,6 +8,6 @@ import java.lang.annotation.Target;
 @Target({ElementType.PARAMETER, ElementType.FIELD})
 @Documented
 @Retention(RetentionPolicy.CLASS)
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 @interface CompileTimeConstant {
 }

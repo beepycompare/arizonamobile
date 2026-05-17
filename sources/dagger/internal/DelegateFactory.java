@@ -1,5 +1,5 @@
 package dagger.internal;
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public final class DelegateFactory<T> implements Factory<T> {
     private Provider<T> delegate;
 

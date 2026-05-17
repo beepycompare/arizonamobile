@@ -1,9 +1,12 @@
 package com.arizona.launcher;
 
+import android.content.Context;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.adjust.sdk.Adjust;
 import com.adjust.sdk.AdjustConfig;
 import com.adjust.sdk.LogLevel;
 import com.arizona.launcher.util.FlavorUtilKt;
+import com.arizona.launcher.util.ProjectLocale;
 import com.google.firebase.Firebase;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
@@ -16,14 +19,21 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
 /* compiled from: ArizonaApplication.kt */
-@Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0004\u001a\u00020\u0005H\u0016J\b\u0010\u0006\u001a\u00020\u0005H\u0002¨\u0006\u0007"}, d2 = {"Lcom/arizona/launcher/ArizonaApplication;", "Landroid/app/Application;", "<init>", "()V", "onCreate", "", "adjustInitialize", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0014J\b\u0010\b\u001a\u00020\u0005H\u0016J\b\u0010\t\u001a\u00020\u0005H\u0002¨\u0006\n"}, d2 = {"Lcom/arizona/launcher/ArizonaApplication;", "Landroid/app/Application;", "<init>", "()V", "attachBaseContext", "", TtmlNode.RUBY_BASE, "Landroid/content/Context;", "onCreate", "adjustInitialize", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
 @HiltAndroidApp
 /* loaded from: classes3.dex */
 public final class ArizonaApplication extends Hilt_ArizonaApplication {
     public static final int $stable = 8;
 
+    @Override // android.content.ContextWrapper
+    protected void attachBaseContext(Context base) {
+        Intrinsics.checkNotNullParameter(base, "base");
+        super.attachBaseContext(ProjectLocale.wrap(base));
+    }
+
     @Override // com.arizona.launcher.Hilt_ArizonaApplication, android.app.Application
     public void onCreate() {
+        ProjectLocale.applyDefault();
         super.onCreate();
         ArizonaApplication arizonaApplication = this;
         FirebaseApp.initializeApp(arizonaApplication);
@@ -35,6 +45,10 @@ public final class ArizonaApplication extends Hilt_ArizonaApplication {
         Intrinsics.checkNotNullExpressionValue(build, "build(...)");
         AppMetrica.activate(arizonaApplication, build);
         Timber.Forest.plant(new Timber.DebugTree());
+        LogcatHelper companion = LogcatHelper.Companion.getInstance(arizonaApplication);
+        if (companion != null) {
+            companion.start();
+        }
         adjustInitialize();
     }
 

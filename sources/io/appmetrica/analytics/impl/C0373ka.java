@@ -6,7 +6,7 @@ public final class C0373ka implements Ud {
     public final C0192d9 a(Integer num, String str) {
         C0192d9 c0192d9 = new C0192d9();
         if (num != null) {
-            c0192d9.f955a = num.intValue();
+            c0192d9.f960a = num.intValue();
         }
         if (str != null) {
             c0192d9.b = str;

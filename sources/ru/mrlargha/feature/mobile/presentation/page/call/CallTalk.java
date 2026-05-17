@@ -56,7 +56,7 @@ public final class CallTalk implements MobileController {
         this.mpCallBinding = bind;
         HistoryManager.Companion.push(MobilePhonePage.CALL_TALK_PAGE.getId());
         binding.phoneBackground.setBackgroundColor(Color.parseColor("#2C2C2C"));
-        bind.mpReceiveCallTitle.setText("Вы звоните");
+        bind.mpReceiveCallTitle.setText(context.getString(R.string.mobile_you_are_calling));
         bind.mpReceiveCallActionAccept.removeAllViews();
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(bind.mpReceiveCallActionButtons);

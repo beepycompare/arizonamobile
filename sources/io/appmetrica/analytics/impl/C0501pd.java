@@ -11,13 +11,13 @@ import kotlin.collections.MapsKt;
 public final class C0501pd implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0707xk f1174a = C0448na.k().p();
+    public final C0707xk f1179a = C0448na.k().p();
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final C0584sm[] fromModel(Map<String, ? extends Object> map) {
         C0584sm c0584sm;
-        Map<String, Yc> c = this.f1174a.c();
+        Map<String, Yc> c = this.f1179a.c();
         ArrayList arrayList = new ArrayList();
         for (Map.Entry<String, ? extends Object> entry : map.entrySet()) {
             String key = entry.getKey();
@@ -27,7 +27,7 @@ public final class C0501pd implements Converter {
                 c0584sm = null;
             } else {
                 c0584sm = new C0584sm();
-                c0584sm.f1225a = key;
+                c0584sm.f1230a = key;
                 c0584sm.b = (byte[]) yc.c.fromModel(value);
             }
             if (c0584sm != null) {
@@ -44,11 +44,11 @@ public final class C0501pd implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Map<String, Object> toModel(C0584sm[] c0584smArr) {
-        Map<String, Yc> c = this.f1174a.c();
+        Map<String, Yc> c = this.f1179a.c();
         ArrayList arrayList = new ArrayList();
         for (C0584sm c0584sm : c0584smArr) {
-            Yc yc = c.get(c0584sm.f1225a);
-            Pair pair = yc != null ? TuplesKt.to(c0584sm.f1225a, yc.c.toModel(c0584sm.b)) : null;
+            Yc yc = c.get(c0584sm.f1230a);
+            Pair pair = yc != null ? TuplesKt.to(c0584sm.f1230a, yc.c.toModel(c0584sm.b)) : null;
             if (pair != null) {
                 arrayList.add(pair);
             }

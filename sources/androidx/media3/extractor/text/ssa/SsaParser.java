@@ -13,7 +13,6 @@ import androidx.media3.common.util.Consumer;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
-import androidx.media3.exoplayer.Renderer;
 import androidx.media3.extractor.text.CuesWithTiming;
 import androidx.media3.extractor.text.SubtitleParser;
 import androidx.media3.extractor.text.ssa.SsaStyle;
@@ -137,7 +136,7 @@ public final class SsaParser implements SubtitleParser {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0059 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x005b A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:4:0x0006  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -263,7 +262,7 @@ public final class SsaParser implements SubtitleParser {
 
     private static long parseTimecodeUs(String str) {
         Matcher matcher = SSA_TIMECODE_PATTERN.matcher(str.trim());
-        return !matcher.matches() ? C.TIME_UNSET : (Long.parseLong((String) Util.castNonNull(matcher.group(1))) * 3600000000L) + (Long.parseLong((String) Util.castNonNull(matcher.group(2))) * 60000000) + (Long.parseLong((String) Util.castNonNull(matcher.group(3))) * 1000000) + (Long.parseLong((String) Util.castNonNull(matcher.group(4))) * Renderer.DEFAULT_DURATION_TO_PROGRESS_US);
+        return !matcher.matches() ? C.TIME_UNSET : (Long.parseLong((String) Util.castNonNull(matcher.group(1))) * 3600000000L) + (Long.parseLong((String) Util.castNonNull(matcher.group(2))) * 60000000) + (Long.parseLong((String) Util.castNonNull(matcher.group(3))) * 1000000) + (Long.parseLong((String) Util.castNonNull(matcher.group(4))) * 10000);
     }
 
     private static Cue createCue(String str, int i, SsaStyle ssaStyle, SsaStyle.Overrides overrides, float f, float f2) {

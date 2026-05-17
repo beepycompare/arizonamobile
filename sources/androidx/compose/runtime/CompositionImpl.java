@@ -537,7 +537,6 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
         long j3;
         Object obj2;
         int i3;
-        boolean z2;
         if (ScopeMap.m4148getSizeimpl(this.invalidations) > 0) {
             ArrayList arrayList = new ArrayList();
             MutableScatterMap mutableScatterMap = this.invalidations;
@@ -561,7 +560,6 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                                 j2 = j5;
                                 Object obj4 = mutableScatterMap.values[i8];
                                 Intrinsics.checkNotNull(obj3, "null cannot be cast to non-null type Key of androidx.compose.runtime.collection.ScopeMap");
-                                boolean z3 = true;
                                 if (obj4 instanceof MutableScatterSet) {
                                     Intrinsics.checkNotNull(obj4, "null cannot be cast to non-null type androidx.collection.MutableScatterSet<Scope of androidx.compose.runtime.collection.ScopeMap>");
                                     MutableScatterSet mutableScatterSet = (MutableScatterSet) obj4;
@@ -589,13 +587,8 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                                                         RecomposeScopeImpl recomposeScopeImpl = (RecomposeScopeImpl) obj2;
                                                         i3 = i12;
                                                         Anchor anchor = recomposeScopeImpl.getAnchor();
-                                                        if (anchor == null || !function1.invoke(anchor).booleanValue()) {
-                                                            z2 = false;
-                                                        } else {
+                                                        if (anchor != null && function1.invoke(anchor).booleanValue()) {
                                                             arrayList.add(TuplesKt.to(recomposeScopeImpl, obj5));
-                                                            z2 = true;
-                                                        }
-                                                        if (z2) {
                                                             mutableScatterSet.removeElementAt(i13);
                                                         }
                                                     } else {
@@ -635,11 +628,11 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                                     RecomposeScopeImpl recomposeScopeImpl2 = (RecomposeScopeImpl) obj3;
                                     Anchor anchor2 = recomposeScopeImpl2.getAnchor();
                                     if (anchor2 == null || !function1.invoke(anchor2).booleanValue()) {
-                                        z3 = false;
+                                        z = false;
                                     } else {
                                         arrayList.add(TuplesKt.to(recomposeScopeImpl2, obj4));
+                                        z = true;
                                     }
-                                    z = z3;
                                 }
                                 if (z) {
                                     mutableScatterMap.removeValueAt(i8);
@@ -657,8 +650,8 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                             i5 = i2;
                             j4 = j >> i2;
                             c2 = c;
-                            j5 = j2;
                             jArr3 = jArr2;
+                            j5 = j2;
                         }
                         jArr = jArr3;
                         if (i6 != i5) {
@@ -744,6 +737,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
         char c2;
         long j5;
         int i2;
+        boolean z;
         long[] jArr3;
         int i3;
         int i4;
@@ -769,7 +763,6 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                             Object obj = mutableScatterMap.keys[i9];
                             Object obj2 = mutableScatterMap.values[i9];
                             c2 = c3;
-                            boolean z = true;
                             if (obj2 instanceof MutableScatterSet) {
                                 Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type androidx.collection.MutableScatterSet<Scope of androidx.compose.runtime.collection.ScopeMap>");
                                 MutableScatterSet mutableScatterSet = (MutableScatterSet) obj2;
@@ -836,9 +829,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                                 i = i8;
                                 j5 = j7;
                                 Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
-                                if (ScopeMap.m4144containsimpl(this.observations, (DerivedState) obj2)) {
-                                    z = false;
-                                }
+                                z = !ScopeMap.m4144containsimpl(this.observations, (DerivedState) obj2);
                             }
                             if (z) {
                                 mutableScatterMap.removeValueAt(i9);
@@ -1127,6 +1118,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
         }
     }
 
+    /* JADX WARN: Finally extract failed */
     private final void applyChangesInLocked(ChangeList changeList) {
         String str;
         RememberEventDispatcher rememberEventDispatcher;
@@ -1158,137 +1150,142 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                 recordingApplier.onBeginChanges();
                 SlotWriter openWriter = this.slotTable.openWriter();
                 int i2 = 0;
-                changeList.executeAndFlushAllPendingChanges(recordingApplier, openWriter, rememberEventDispatcher, this.composer.getErrorContext$runtime());
-                Unit unit = Unit.INSTANCE;
-                openWriter.close(true);
-                recordingApplier.onEndChanges();
-                Unit unit2 = Unit.INSTANCE;
-                Trace.INSTANCE.endSection(beginSection);
-                this.rememberManager.dispatchRememberObservers();
-                this.rememberManager.dispatchSideEffects();
-                if (this.pendingInvalidScopes) {
-                    Object beginSection2 = Trace.INSTANCE.beginSection("Compose:unobserve");
-                    this.pendingInvalidScopes = false;
-                    MutableScatterMap<Object, Object> mutableScatterMap = this.observations;
-                    long[] jArr4 = mutableScatterMap.metadata;
-                    int length = jArr4.length - 2;
-                    if (length >= 0) {
-                        int i3 = 0;
-                        while (true) {
-                            long j3 = jArr4[i3];
-                            char c2 = 7;
-                            long j4 = -9187201950435737472L;
-                            if ((((~j3) << 7) & j3 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                int i4 = 8;
-                                int i5 = 8 - ((~(i3 - length)) >>> 31);
-                                int i6 = i2;
-                                while (i6 < i5) {
-                                    if ((j3 & 255) < 128) {
-                                        int i7 = (i3 << 3) + i6;
-                                        c = c2;
-                                        Object obj = mutableScatterMap.keys[i7];
-                                        Object obj2 = mutableScatterMap.values[i7];
-                                        j2 = j4;
-                                        if (obj2 instanceof MutableScatterSet) {
-                                            Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type androidx.collection.MutableScatterSet<Scope of androidx.compose.runtime.collection.ScopeMap>");
-                                            MutableScatterSet mutableScatterSet = (MutableScatterSet) obj2;
-                                            Object[] objArr = mutableScatterSet.elements;
-                                            long[] jArr5 = mutableScatterSet.metadata;
-                                            int length2 = jArr5.length - 2;
-                                            if (length2 >= 0) {
-                                                j = j3;
-                                                int i8 = i4;
-                                                int i9 = 0;
-                                                while (true) {
-                                                    long j5 = jArr5[i9];
-                                                    Object[] objArr2 = objArr;
-                                                    long[] jArr6 = jArr5;
-                                                    if ((((~j5) << c) & j5 & j2) != j2) {
-                                                        int i10 = 8 - ((~(i9 - length2)) >>> 31);
-                                                        int i11 = 0;
-                                                        while (i11 < i10) {
-                                                            if ((j5 & 255) < 128) {
-                                                                jArr3 = jArr4;
-                                                                int i12 = (i9 << 3) + i11;
-                                                                if (!((RecomposeScopeImpl) objArr2[i12]).getValid()) {
-                                                                    mutableScatterSet.removeElementAt(i12);
+                try {
+                    changeList.executeAndFlushAllPendingChanges(recordingApplier, openWriter, rememberEventDispatcher, this.composer.getErrorContext$runtime());
+                    Unit unit = Unit.INSTANCE;
+                    openWriter.close(true);
+                    recordingApplier.onEndChanges();
+                    Unit unit2 = Unit.INSTANCE;
+                    Trace.INSTANCE.endSection(beginSection);
+                    this.rememberManager.dispatchRememberObservers();
+                    this.rememberManager.dispatchSideEffects();
+                    if (this.pendingInvalidScopes) {
+                        Object beginSection2 = Trace.INSTANCE.beginSection("Compose:unobserve");
+                        this.pendingInvalidScopes = false;
+                        MutableScatterMap<Object, Object> mutableScatterMap = this.observations;
+                        long[] jArr4 = mutableScatterMap.metadata;
+                        int length = jArr4.length - 2;
+                        if (length >= 0) {
+                            int i3 = 0;
+                            while (true) {
+                                long j3 = jArr4[i3];
+                                char c2 = 7;
+                                long j4 = -9187201950435737472L;
+                                if ((((~j3) << 7) & j3 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                    int i4 = 8;
+                                    int i5 = 8 - ((~(i3 - length)) >>> 31);
+                                    int i6 = i2;
+                                    while (i6 < i5) {
+                                        if ((j3 & 255) < 128) {
+                                            int i7 = (i3 << 3) + i6;
+                                            c = c2;
+                                            Object obj = mutableScatterMap.keys[i7];
+                                            Object obj2 = mutableScatterMap.values[i7];
+                                            j2 = j4;
+                                            if (obj2 instanceof MutableScatterSet) {
+                                                Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type androidx.collection.MutableScatterSet<Scope of androidx.compose.runtime.collection.ScopeMap>");
+                                                MutableScatterSet mutableScatterSet = (MutableScatterSet) obj2;
+                                                Object[] objArr = mutableScatterSet.elements;
+                                                long[] jArr5 = mutableScatterSet.metadata;
+                                                int length2 = jArr5.length - 2;
+                                                if (length2 >= 0) {
+                                                    j = j3;
+                                                    int i8 = i4;
+                                                    int i9 = 0;
+                                                    while (true) {
+                                                        long j5 = jArr5[i9];
+                                                        Object[] objArr2 = objArr;
+                                                        long[] jArr6 = jArr5;
+                                                        if ((((~j5) << c) & j5 & j2) != j2) {
+                                                            int i10 = 8 - ((~(i9 - length2)) >>> 31);
+                                                            int i11 = 0;
+                                                            while (i11 < i10) {
+                                                                if ((j5 & 255) < 128) {
+                                                                    jArr3 = jArr4;
+                                                                    int i12 = (i9 << 3) + i11;
+                                                                    if (!((RecomposeScopeImpl) objArr2[i12]).getValid()) {
+                                                                        mutableScatterSet.removeElementAt(i12);
+                                                                    }
+                                                                } else {
+                                                                    jArr3 = jArr4;
                                                                 }
-                                                            } else {
-                                                                jArr3 = jArr4;
+                                                                j5 >>= i8;
+                                                                i11++;
+                                                                jArr4 = jArr3;
                                                             }
-                                                            j5 >>= i8;
-                                                            i11++;
-                                                            jArr4 = jArr3;
+                                                            jArr2 = jArr4;
+                                                            if (i10 != i8) {
+                                                                break;
+                                                            }
+                                                        } else {
+                                                            jArr2 = jArr4;
                                                         }
-                                                        jArr2 = jArr4;
-                                                        if (i10 != i8) {
+                                                        if (i9 == length2) {
                                                             break;
                                                         }
-                                                    } else {
-                                                        jArr2 = jArr4;
+                                                        i9++;
+                                                        objArr = objArr2;
+                                                        jArr5 = jArr6;
+                                                        jArr4 = jArr2;
+                                                        i8 = 8;
                                                     }
-                                                    if (i9 == length2) {
-                                                        break;
-                                                    }
-                                                    i9++;
-                                                    objArr = objArr2;
-                                                    jArr5 = jArr6;
-                                                    jArr4 = jArr2;
-                                                    i8 = 8;
+                                                } else {
+                                                    jArr2 = jArr4;
+                                                    j = j3;
                                                 }
+                                                z = mutableScatterSet.isEmpty();
                                             } else {
                                                 jArr2 = jArr4;
                                                 j = j3;
+                                                Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
+                                                z = !((RecomposeScopeImpl) obj2).getValid();
                                             }
-                                            z = mutableScatterSet.isEmpty();
+                                            if (z) {
+                                                mutableScatterMap.removeValueAt(i7);
+                                            }
+                                            i = 8;
                                         } else {
                                             jArr2 = jArr4;
                                             j = j3;
-                                            Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
-                                            z = !((RecomposeScopeImpl) obj2).getValid();
+                                            c = c2;
+                                            j2 = j4;
+                                            i = i4;
                                         }
-                                        if (z) {
-                                            mutableScatterMap.removeValueAt(i7);
-                                        }
-                                        i = 8;
-                                    } else {
-                                        jArr2 = jArr4;
-                                        j = j3;
-                                        c = c2;
-                                        j2 = j4;
-                                        i = i4;
+                                        j3 = j >> i;
+                                        i6++;
+                                        i4 = i;
+                                        c2 = c;
+                                        j4 = j2;
+                                        jArr4 = jArr2;
                                     }
-                                    j3 = j >> i;
-                                    i6++;
-                                    i4 = i;
-                                    c2 = c;
-                                    j4 = j2;
-                                    jArr4 = jArr2;
+                                    jArr = jArr4;
+                                    if (i5 != i4) {
+                                        break;
+                                    }
+                                } else {
+                                    jArr = jArr4;
                                 }
-                                jArr = jArr4;
-                                if (i5 != i4) {
+                                if (i3 == length) {
                                     break;
                                 }
-                            } else {
-                                jArr = jArr4;
+                                i3++;
+                                jArr4 = jArr;
+                                i2 = 0;
                             }
-                            if (i3 == length) {
-                                break;
-                            }
-                            i3++;
-                            jArr4 = jArr;
-                            i2 = 0;
                         }
+                        cleanUpDerivedStateObservations();
+                        Unit unit3 = Unit.INSTANCE;
+                        Trace.INSTANCE.endSection(beginSection2);
                     }
-                    cleanUpDerivedStateObservations();
-                    Unit unit3 = Unit.INSTANCE;
-                    Trace.INSTANCE.endSection(beginSection2);
-                }
-                try {
-                    if (this.lateChanges.isEmpty() && this.pendingPausedComposition == null) {
-                        this.rememberManager.dispatchAbandons();
+                    try {
+                        if (this.lateChanges.isEmpty() && this.pendingPausedComposition == null) {
+                            this.rememberManager.dispatchAbandons();
+                        }
+                    } finally {
                     }
-                } finally {
+                } catch (Throwable th) {
+                    openWriter.close(false);
+                    throw th;
                 }
             } else {
                 try {
@@ -1298,12 +1295,12 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                 } finally {
                 }
             }
-        } catch (Throwable th) {
+        } catch (Throwable th2) {
             try {
                 if (this.lateChanges.isEmpty() && this.pendingPausedComposition == null) {
                     this.rememberManager.dispatchAbandons();
                 }
-                throw th;
+                throw th2;
             } finally {
             }
         }
@@ -1702,68 +1699,61 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     }
 
     private final void addPendingInvalidationsLocked(Set<? extends Object> set, boolean z) {
+        char c;
         long j;
         long j2;
         long j3;
-        char c;
         long[] jArr;
         String str;
-        int i;
-        int i2;
         long[] jArr2;
         String str2;
-        int i3;
-        int i4;
+        int i;
         long j4;
         boolean contains;
         String str3;
-        int i5;
+        int i2;
         long[] jArr3;
-        int i6;
+        int i3;
         long[] jArr4;
+        int i4;
+        int i5;
+        long j5;
+        boolean z2;
+        int i6;
+        long j6;
+        long j7;
+        char c2;
+        long j8;
         int i7;
         int i8;
-        long j5;
         int i9;
-        boolean z2;
-        long[] jArr5;
-        long[] jArr6;
-        long j6;
-        long[] jArr7;
-        int i10;
-        long[] jArr8;
-        int i11;
-        char c2;
-        int i12;
-        int i13;
-        long[] jArr9;
         Object obj = null;
-        int i14 = 8;
+        char c3 = 7;
+        long j9 = -9187201950435737472L;
+        int i10 = 8;
         if (set instanceof ScatterSetWrapper) {
             ScatterSet set$runtime = ((ScatterSetWrapper) set).getSet$runtime();
             Object[] objArr = set$runtime.elements;
-            long[] jArr10 = set$runtime.metadata;
-            int length = jArr10.length - 2;
+            long[] jArr5 = set$runtime.metadata;
+            int length = jArr5.length - 2;
             if (length >= 0) {
-                int i15 = 0;
-                j = 128;
-                j2 = 255;
+                int i11 = 0;
+                j2 = 128;
                 while (true) {
-                    long j7 = jArr10[i15];
-                    char c3 = 7;
-                    j3 = -9187201950435737472L;
-                    if ((((~j7) << 7) & j7 & (-9187201950435737472L)) != -9187201950435737472L) {
-                        int i16 = 8 - ((~(i15 - length)) >>> 31);
-                        int i17 = 0;
-                        while (i17 < i16) {
-                            if ((j7 & 255) < 128) {
-                                Object obj2 = objArr[(i15 << 3) + i17];
+                    long j10 = jArr5[i11];
+                    j3 = 255;
+                    if ((((~j10) << c3) & j10 & j9) != j9) {
+                        int i12 = 8 - ((~(i11 - length)) >>> 31);
+                        int i13 = 0;
+                        while (i13 < i12) {
+                            if ((j10 & 255) < 128) {
                                 c2 = c3;
+                                Object obj2 = objArr[(i11 << 3) + i13];
+                                j8 = j9;
                                 if (obj2 instanceof RecomposeScopeImpl) {
                                     ((RecomposeScopeImpl) obj2).invalidateForResult(obj);
-                                    jArr8 = jArr10;
-                                    i11 = i15;
-                                    i12 = length;
+                                    j7 = j10;
+                                    i7 = length;
                                 } else {
                                     addPendingInvalidationsLocked(obj2, z);
                                     Object obj3 = this.derivedStates.get(obj2);
@@ -1771,108 +1761,99 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                                         if (obj3 instanceof MutableScatterSet) {
                                             MutableScatterSet mutableScatterSet = (MutableScatterSet) obj3;
                                             Object[] objArr2 = mutableScatterSet.elements;
-                                            long[] jArr11 = mutableScatterSet.metadata;
-                                            int length2 = jArr11.length - 2;
+                                            long[] jArr6 = mutableScatterSet.metadata;
+                                            int length2 = jArr6.length - 2;
                                             if (length2 >= 0) {
-                                                i11 = i15;
-                                                int i18 = 0;
+                                                j7 = j10;
+                                                int i14 = 0;
                                                 while (true) {
-                                                    long j8 = jArr11[i18];
-                                                    int i19 = i14;
-                                                    i12 = length;
-                                                    if ((((~j8) << c2) & j8 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                                        int i20 = 8 - ((~(i18 - length2)) >>> 31);
-                                                        int i21 = 0;
-                                                        while (i21 < i20) {
-                                                            if ((j8 & 255) < 128) {
-                                                                jArr9 = jArr10;
-                                                                addPendingInvalidationsLocked((DerivedState) objArr2[(i18 << 3) + i21], z);
+                                                    long j11 = jArr6[i14];
+                                                    int i15 = i10;
+                                                    i7 = length;
+                                                    if ((((~j11) << c2) & j11 & j8) != j8) {
+                                                        int i16 = 8 - ((~(i14 - length2)) >>> 31);
+                                                        int i17 = 0;
+                                                        while (i17 < i16) {
+                                                            if ((j11 & 255) < 128) {
+                                                                i9 = i15;
+                                                                addPendingInvalidationsLocked((DerivedState) objArr2[(i14 << 3) + i17], z);
                                                             } else {
-                                                                jArr9 = jArr10;
+                                                                i9 = i15;
                                                             }
-                                                            j8 >>= i19;
-                                                            i21++;
-                                                            jArr10 = jArr9;
+                                                            j11 >>= i9;
+                                                            i17++;
+                                                            i15 = i9;
                                                         }
-                                                        jArr8 = jArr10;
-                                                        if (i20 != i19) {
+                                                        if (i16 != i15) {
                                                             break;
                                                         }
-                                                    } else {
-                                                        jArr8 = jArr10;
                                                     }
-                                                    if (i18 == length2) {
+                                                    if (i14 == length2) {
                                                         break;
                                                     }
-                                                    i18++;
-                                                    length = i12;
-                                                    jArr10 = jArr8;
-                                                    i14 = 8;
+                                                    i14++;
+                                                    length = i7;
+                                                    i10 = 8;
                                                 }
                                             }
                                         } else {
-                                            jArr8 = jArr10;
-                                            i11 = i15;
-                                            i12 = length;
+                                            j7 = j10;
+                                            i7 = length;
                                             addPendingInvalidationsLocked((DerivedState) obj3, z);
                                         }
                                         Unit unit = Unit.INSTANCE;
                                     }
-                                    jArr8 = jArr10;
-                                    i11 = i15;
-                                    i12 = length;
+                                    j7 = j10;
+                                    i7 = length;
                                     Unit unit2 = Unit.INSTANCE;
                                 }
-                                i13 = 8;
+                                i8 = 8;
                             } else {
-                                jArr8 = jArr10;
-                                i11 = i15;
+                                j7 = j10;
                                 c2 = c3;
-                                i12 = length;
-                                i13 = i14;
+                                j8 = j9;
+                                i7 = length;
+                                i8 = i10;
                             }
-                            j7 >>= i13;
-                            i17++;
-                            i15 = i11;
-                            i14 = i13;
+                            i13++;
+                            length = i7;
+                            i10 = i8;
                             c3 = c2;
-                            length = i12;
-                            jArr10 = jArr8;
+                            j9 = j8;
+                            j10 = j7 >> i8;
                             obj = null;
                         }
-                        jArr7 = jArr10;
-                        int i22 = i15;
                         c = c3;
-                        int i23 = length;
-                        if (i16 != i14) {
+                        j = j9;
+                        int i18 = length;
+                        if (i12 != i10) {
                             break;
                         }
-                        i10 = i22;
-                        length = i23;
+                        length = i18;
                     } else {
-                        jArr7 = jArr10;
-                        c = 7;
-                        i10 = i15;
+                        c = c3;
+                        j = j9;
                     }
-                    if (i10 == length) {
+                    if (i11 == length) {
                         break;
                     }
-                    i15 = i10 + 1;
-                    jArr10 = jArr7;
+                    i11++;
+                    c3 = c;
+                    j9 = j;
                     obj = null;
-                    i14 = 8;
+                    i10 = 8;
                 }
             } else {
-                j = 128;
-                j2 = 255;
-                j3 = -9187201950435737472L;
                 c = 7;
+                j = -9187201950435737472L;
+                j2 = 128;
+                j3 = 255;
             }
         } else {
-            j = 128;
-            j2 = 255;
-            j3 = -9187201950435737472L;
             c = 7;
+            j = -9187201950435737472L;
+            j2 = 128;
+            j3 = 255;
             for (Object obj4 : set) {
                 if (obj4 instanceof RecomposeScopeImpl) {
                     ((RecomposeScopeImpl) obj4).invalidateForResult(null);
@@ -1883,28 +1864,28 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                         if (obj5 instanceof MutableScatterSet) {
                             MutableScatterSet mutableScatterSet2 = (MutableScatterSet) obj5;
                             Object[] objArr3 = mutableScatterSet2.elements;
-                            long[] jArr12 = mutableScatterSet2.metadata;
-                            int length3 = jArr12.length - 2;
+                            long[] jArr7 = mutableScatterSet2.metadata;
+                            int length3 = jArr7.length - 2;
                             if (length3 >= 0) {
-                                int i24 = 0;
+                                int i19 = 0;
                                 while (true) {
-                                    long j9 = jArr12[i24];
-                                    if ((((~j9) << 7) & j9 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                        int i25 = 8 - ((~(i24 - length3)) >>> 31);
-                                        for (int i26 = 0; i26 < i25; i26++) {
-                                            if ((j9 & 255) < 128) {
-                                                addPendingInvalidationsLocked((DerivedState) objArr3[(i24 << 3) + i26], z);
+                                    long j12 = jArr7[i19];
+                                    if ((((~j12) << 7) & j12 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                        int i20 = 8 - ((~(i19 - length3)) >>> 31);
+                                        for (int i21 = 0; i21 < i20; i21++) {
+                                            if ((j12 & 255) < 128) {
+                                                addPendingInvalidationsLocked((DerivedState) objArr3[(i19 << 3) + i21], z);
                                             }
-                                            j9 >>= 8;
+                                            j12 >>= 8;
                                         }
-                                        if (i25 != 8) {
+                                        if (i20 != 8) {
                                             break;
                                         }
                                     }
-                                    if (i24 == length3) {
+                                    if (i19 == length3) {
                                         break;
                                     }
-                                    i24++;
+                                    i19++;
                                 }
                             }
                         } else {
@@ -1920,242 +1901,224 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
         String str4 = "null cannot be cast to non-null type androidx.collection.MutableScatterSet<Scope of androidx.compose.runtime.collection.ScopeMap>";
         if (z && mutableScatterSet3.isNotEmpty()) {
             MutableScatterMap<Object, Object> mutableScatterMap = this.observations;
-            long[] jArr13 = mutableScatterMap.metadata;
-            int length4 = jArr13.length - 2;
+            long[] jArr8 = mutableScatterMap.metadata;
+            int length4 = jArr8.length - 2;
             if (length4 >= 0) {
-                int i27 = 0;
+                int i22 = 0;
                 while (true) {
-                    long j10 = jArr13[i27];
-                    if ((((~j10) << c) & j10 & j3) != j3) {
-                        int i28 = 8 - ((~(i27 - length4)) >>> 31);
-                        int i29 = 0;
-                        while (i29 < i28) {
-                            if ((j10 & j2) < j) {
-                                int i30 = (i27 << 3) + i29;
-                                Object obj6 = mutableScatterMap.keys[i30];
-                                Object obj7 = mutableScatterMap.values[i30];
+                    long j13 = jArr8[i22];
+                    if ((((~j13) << c) & j13 & j) != j) {
+                        int i23 = 8 - ((~(i22 - length4)) >>> 31);
+                        int i24 = 0;
+                        while (i24 < i23) {
+                            if ((j13 & j3) < j2) {
+                                int i25 = (i22 << 3) + i24;
+                                Object obj6 = mutableScatterMap.keys[i25];
+                                Object obj7 = mutableScatterMap.values[i25];
                                 if (obj7 instanceof MutableScatterSet) {
                                     Intrinsics.checkNotNull(obj7, "null cannot be cast to non-null type androidx.collection.MutableScatterSet<Scope of androidx.compose.runtime.collection.ScopeMap>");
                                     MutableScatterSet mutableScatterSet5 = (MutableScatterSet) obj7;
                                     Object[] objArr4 = mutableScatterSet5.elements;
-                                    jArr4 = jArr13;
-                                    long[] jArr14 = mutableScatterSet5.metadata;
-                                    j5 = j10;
-                                    int length5 = jArr14.length - 2;
-                                    i7 = length4;
-                                    i8 = i27;
+                                    long[] jArr9 = mutableScatterSet5.metadata;
+                                    jArr4 = jArr8;
+                                    int length5 = jArr9.length - 2;
                                     if (length5 >= 0) {
-                                        int i31 = 0;
-                                        Object[] objArr5 = objArr4;
+                                        j5 = j13;
+                                        int i26 = 0;
                                         while (true) {
-                                            long j11 = jArr14[i31];
-                                            i9 = i28;
-                                            Object[] objArr6 = objArr5;
-                                            if ((((~j11) << c) & j11 & j3) != j3) {
-                                                int i32 = 8 - ((~(i31 - length5)) >>> 31);
-                                                int i33 = 0;
-                                                while (i33 < i32) {
-                                                    if ((j11 & j2) < j) {
-                                                        jArr6 = jArr14;
-                                                        int i34 = (i31 << 3) + i33;
-                                                        j6 = j11;
-                                                        RecomposeScopeImpl recomposeScopeImpl = (RecomposeScopeImpl) objArr6[i34];
+                                            long j14 = jArr9[i26];
+                                            i4 = length4;
+                                            i5 = i22;
+                                            if ((((~j14) << c) & j14 & j) != j) {
+                                                int i27 = 8 - ((~(i26 - length5)) >>> 31);
+                                                int i28 = 0;
+                                                while (i28 < i27) {
+                                                    if ((j14 & j3) < j2) {
+                                                        i6 = i28;
+                                                        int i29 = (i26 << 3) + i6;
+                                                        j6 = j14;
+                                                        RecomposeScopeImpl recomposeScopeImpl = (RecomposeScopeImpl) objArr4[i29];
                                                         if (mutableScatterSet3.contains(recomposeScopeImpl) || mutableScatterSet4.contains(recomposeScopeImpl)) {
-                                                            mutableScatterSet5.removeElementAt(i34);
+                                                            mutableScatterSet5.removeElementAt(i29);
                                                         }
                                                     } else {
-                                                        jArr6 = jArr14;
-                                                        j6 = j11;
+                                                        i6 = i28;
+                                                        j6 = j14;
                                                     }
-                                                    j11 = j6 >> 8;
-                                                    i33++;
-                                                    jArr14 = jArr6;
+                                                    j14 = j6 >> 8;
+                                                    i28 = i6 + 1;
                                                 }
-                                                jArr5 = jArr14;
-                                                if (i32 != 8) {
+                                                if (i27 != 8) {
                                                     break;
                                                 }
-                                            } else {
-                                                jArr5 = jArr14;
                                             }
-                                            if (i31 == length5) {
+                                            if (i26 == length5) {
                                                 break;
                                             }
-                                            i31++;
-                                            i28 = i9;
-                                            objArr5 = objArr6;
-                                            jArr14 = jArr5;
+                                            i26++;
+                                            length4 = i4;
+                                            i22 = i5;
                                         }
                                     } else {
-                                        i9 = i28;
+                                        i4 = length4;
+                                        i5 = i22;
+                                        j5 = j13;
                                     }
                                     z2 = mutableScatterSet5.isEmpty();
                                 } else {
-                                    jArr4 = jArr13;
-                                    i7 = length4;
-                                    i8 = i27;
-                                    j5 = j10;
-                                    i9 = i28;
+                                    jArr4 = jArr8;
+                                    i4 = length4;
+                                    i5 = i22;
+                                    j5 = j13;
                                     Intrinsics.checkNotNull(obj7, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
                                     RecomposeScopeImpl recomposeScopeImpl2 = (RecomposeScopeImpl) obj7;
                                     z2 = mutableScatterSet3.contains(recomposeScopeImpl2) || mutableScatterSet4.contains(recomposeScopeImpl2);
                                 }
                                 if (z2) {
-                                    mutableScatterMap.removeValueAt(i30);
+                                    mutableScatterMap.removeValueAt(i25);
                                 }
                             } else {
-                                jArr4 = jArr13;
-                                i7 = length4;
-                                i8 = i27;
-                                j5 = j10;
-                                i9 = i28;
+                                jArr4 = jArr8;
+                                i4 = length4;
+                                i5 = i22;
+                                j5 = j13;
                             }
-                            j10 = j5 >> 8;
-                            i29++;
-                            jArr13 = jArr4;
-                            length4 = i7;
-                            i27 = i8;
-                            i28 = i9;
+                            j13 = j5 >> 8;
+                            i24++;
+                            jArr8 = jArr4;
+                            length4 = i4;
+                            i22 = i5;
                         }
-                        jArr3 = jArr13;
-                        int i35 = length4;
-                        int i36 = i27;
-                        if (i28 != 8) {
+                        jArr3 = jArr8;
+                        int i30 = length4;
+                        int i31 = i22;
+                        if (i23 != 8) {
                             break;
                         }
-                        length4 = i35;
-                        i6 = i36;
+                        length4 = i30;
+                        i3 = i31;
                     } else {
-                        jArr3 = jArr13;
-                        i6 = i27;
+                        jArr3 = jArr8;
+                        i3 = i22;
                     }
-                    if (i6 == length4) {
+                    if (i3 == length4) {
                         break;
                     }
-                    i27 = i6 + 1;
-                    jArr13 = jArr3;
+                    i22 = i3 + 1;
+                    jArr8 = jArr3;
                 }
             }
             mutableScatterSet3.clear();
             cleanUpDerivedStateObservations();
         } else if (mutableScatterSet4.isNotEmpty()) {
             MutableScatterMap<Object, Object> mutableScatterMap2 = this.observations;
-            long[] jArr15 = mutableScatterMap2.metadata;
-            int length6 = jArr15.length - 2;
+            long[] jArr10 = mutableScatterMap2.metadata;
+            int length6 = jArr10.length - 2;
             if (length6 >= 0) {
-                int i37 = 0;
+                int i32 = 0;
                 while (true) {
-                    long j12 = jArr15[i37];
-                    if ((((~j12) << c) & j12 & j3) != j3) {
-                        int i38 = 8 - ((~(i37 - length6)) >>> 31);
-                        int i39 = 0;
-                        while (i39 < i38) {
-                            if ((j12 & j2) < j) {
-                                int i40 = (i37 << 3) + i39;
-                                Object obj8 = mutableScatterMap2.keys[i40];
-                                Object obj9 = mutableScatterMap2.values[i40];
+                    long j15 = jArr10[i32];
+                    if ((((~j15) << c) & j15 & j) != j) {
+                        int i33 = 8 - ((~(i32 - length6)) >>> 31);
+                        int i34 = 0;
+                        while (i34 < i33) {
+                            if ((j15 & j3) < j2) {
+                                int i35 = (i32 << 3) + i34;
+                                Object obj8 = mutableScatterMap2.keys[i35];
+                                Object obj9 = mutableScatterMap2.values[i35];
                                 if (obj9 instanceof MutableScatterSet) {
                                     Intrinsics.checkNotNull(obj9, str4);
                                     MutableScatterSet mutableScatterSet6 = (MutableScatterSet) obj9;
-                                    Object[] objArr7 = mutableScatterSet6.elements;
-                                    long[] jArr16 = mutableScatterSet6.metadata;
-                                    int length7 = jArr16.length - 2;
-                                    jArr2 = jArr15;
+                                    Object[] objArr5 = mutableScatterSet6.elements;
+                                    long[] jArr11 = mutableScatterSet6.metadata;
+                                    int length7 = jArr11.length - 2;
+                                    jArr2 = jArr10;
                                     if (length7 >= 0) {
-                                        j4 = j12;
-                                        int i41 = 0;
+                                        j4 = j15;
+                                        int i36 = 0;
                                         while (true) {
-                                            long j13 = jArr16[i41];
-                                            i3 = length6;
-                                            i4 = i37;
-                                            if ((((~j13) << c) & j13 & j3) != j3) {
-                                                int i42 = 8 - ((~(i41 - length7)) >>> 31);
-                                                int i43 = 0;
-                                                while (i43 < i42) {
-                                                    if ((j13 & j2) < j) {
+                                            long j16 = jArr11[i36];
+                                            long[] jArr12 = jArr11;
+                                            i = length6;
+                                            if ((((~j16) << c) & j16 & j) != j) {
+                                                int i37 = 8 - ((~(i36 - length7)) >>> 31);
+                                                int i38 = 0;
+                                                while (i38 < i37) {
+                                                    if ((j16 & j3) < j2) {
                                                         str3 = str4;
-                                                        int i44 = (i41 << 3) + i43;
-                                                        i5 = i43;
-                                                        if (mutableScatterSet4.contains((RecomposeScopeImpl) objArr7[i44])) {
-                                                            mutableScatterSet6.removeElementAt(i44);
+                                                        int i39 = (i36 << 3) + i38;
+                                                        i2 = i38;
+                                                        if (mutableScatterSet4.contains((RecomposeScopeImpl) objArr5[i39])) {
+                                                            mutableScatterSet6.removeElementAt(i39);
                                                         }
                                                     } else {
                                                         str3 = str4;
-                                                        i5 = i43;
+                                                        i2 = i38;
                                                     }
-                                                    j13 >>= 8;
-                                                    i43 = i5 + 1;
+                                                    j16 >>= 8;
+                                                    i38 = i2 + 1;
                                                     str4 = str3;
                                                 }
                                                 str2 = str4;
-                                                if (i42 != 8) {
+                                                if (i37 != 8) {
                                                     break;
                                                 }
                                             } else {
                                                 str2 = str4;
                                             }
-                                            if (i41 == length7) {
+                                            if (i36 == length7) {
                                                 break;
                                             }
-                                            i41++;
-                                            length6 = i3;
-                                            i37 = i4;
+                                            i36++;
+                                            length6 = i;
+                                            jArr11 = jArr12;
                                             str4 = str2;
                                         }
                                     } else {
                                         str2 = str4;
-                                        i3 = length6;
-                                        i4 = i37;
-                                        j4 = j12;
+                                        i = length6;
+                                        j4 = j15;
                                     }
                                     contains = mutableScatterSet6.isEmpty();
                                 } else {
-                                    jArr2 = jArr15;
+                                    jArr2 = jArr10;
                                     str2 = str4;
-                                    i3 = length6;
-                                    i4 = i37;
-                                    j4 = j12;
+                                    i = length6;
+                                    j4 = j15;
                                     Intrinsics.checkNotNull(obj9, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
                                     contains = mutableScatterSet4.contains((RecomposeScopeImpl) obj9);
                                 }
                                 if (contains) {
-                                    mutableScatterMap2.removeValueAt(i40);
+                                    mutableScatterMap2.removeValueAt(i35);
                                 }
                             } else {
-                                jArr2 = jArr15;
+                                jArr2 = jArr10;
                                 str2 = str4;
-                                i3 = length6;
-                                i4 = i37;
-                                j4 = j12;
+                                i = length6;
+                                j4 = j15;
                             }
-                            j12 = j4 >> 8;
-                            i39++;
-                            jArr15 = jArr2;
-                            length6 = i3;
-                            i37 = i4;
+                            j15 = j4 >> 8;
+                            i34++;
+                            jArr10 = jArr2;
+                            length6 = i;
                             str4 = str2;
                         }
-                        jArr = jArr15;
+                        jArr = jArr10;
                         str = str4;
-                        i = length6;
-                        int i45 = i37;
-                        if (i38 != 8) {
+                        int i40 = length6;
+                        if (i33 != 8) {
                             break;
                         }
-                        i2 = i45;
+                        length6 = i40;
                     } else {
-                        jArr = jArr15;
+                        jArr = jArr10;
                         str = str4;
-                        i = length6;
-                        i2 = i37;
                     }
-                    int i46 = i;
-                    if (i2 == i46) {
+                    if (i32 == length6) {
                         break;
                     }
-                    i37 = i2 + 1;
-                    length6 = i46;
-                    jArr15 = jArr;
+                    i32++;
+                    jArr10 = jArr;
                     str4 = str;
                 }
             }

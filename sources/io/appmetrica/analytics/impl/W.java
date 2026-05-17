@@ -5,24 +5,24 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class W implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0710xn f831a;
+    public final C0710xn f836a;
 
     public W(C0710xn c0710xn) {
-        this.f831a = c0710xn;
+        this.f836a = c0710xn;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final R5 fromModel(V v) {
         R5 r5 = new R5();
-        C0685wn c0685wn = v.f817a;
+        C0685wn c0685wn = v.f822a;
         if (c0685wn != null) {
-            r5.f761a = this.f831a.fromModel(c0685wn);
+            r5.f766a = this.f836a.fromModel(c0685wn);
         }
         r5.b = new C0111a6[v.b.size()];
         int i = 0;
         for (C0685wn c0685wn2 : v.b) {
-            r5.b[i] = this.f831a.fromModel(c0685wn2);
+            r5.b[i] = this.f836a.fromModel(c0685wn2);
             i++;
         }
         String str = v.c;

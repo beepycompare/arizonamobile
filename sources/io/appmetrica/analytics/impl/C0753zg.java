@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
 public final class C0753zg implements K {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1334a;
+    public final String f1339a;
     public final C0728yg b;
 
     public C0753zg(String str) {
@@ -28,7 +28,7 @@ public final class C0753zg implements K {
     public final AdTrackingInfoResult b(Context context) {
         Method method = Class.forName("io.appmetrica.analytics.identifiers.internal.AdvIdentifiersProvider").getMethod("requestIdentifiers", Context.class, Bundle.class);
         Bundle bundle = new Bundle();
-        bundle.putString("io.appmetrica.analytics.identifiers.extra.PROVIDER", this.f1334a);
+        bundle.putString("io.appmetrica.analytics.identifiers.extra.PROVIDER", this.f1339a);
         C0728yg c0728yg = this.b;
         Object[] objArr = {context, bundle};
         AdTrackingInfo adTrackingInfo = null;
@@ -37,7 +37,7 @@ public final class C0753zg implements K {
         if (bundle2 != null) {
             Bundle bundle3 = bundle2.getBundle("io.appmetrica.analytics.identifiers.extra.TRACKING_INFO");
             if (bundle3 != null) {
-                Object obj = AbstractC0642v5.f1268a.get(bundle3.getString("io.appmetrica.analytics.identifiers.extra.PROVIDER"));
+                Object obj = AbstractC0642v5.f1273a.get(bundle3.getString("io.appmetrica.analytics.identifiers.extra.PROVIDER"));
                 if (obj != null) {
                     adTrackingInfo = new AdTrackingInfo((AdTrackingInfo.Provider) obj, bundle3.getString("io.appmetrica.analytics.identifiers.extra.ID"), bundle3.containsKey("io.appmetrica.analytics.identifiers.extra.LIMITED") ? Boolean.valueOf(bundle3.getBoolean("io.appmetrica.analytics.identifiers.extra.LIMITED")) : null);
                 } else {
@@ -50,7 +50,7 @@ public final class C0753zg implements K {
     }
 
     public C0753zg(String str, C0728yg c0728yg) {
-        this.f1334a = str;
+        this.f1339a = str;
         this.b = c0728yg;
     }
 
@@ -66,14 +66,14 @@ public final class C0753zg implements K {
                 try {
                     return this.b(context);
                 } catch (InvocationTargetException e) {
-                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f1334a + " adv_id: " + (e.getTargetException() != null ? e.getTargetException().getMessage() : null));
+                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f1339a + " adv_id: " + (e.getTargetException() != null ? e.getTargetException().getMessage() : null));
                     adTrackingInfoResult = adTrackingInfoResult2;
                     try {
                         Thread.sleep(((Jn) gi).b);
                     } catch (InterruptedException unused) {
                     }
                 } catch (Throwable th) {
-                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f1334a + " adv_id: " + th.getMessage());
+                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f1339a + " adv_id: " + th.getMessage());
                     adTrackingInfoResult = adTrackingInfoResult2;
                     Thread.sleep(((Jn) gi).b);
                 }

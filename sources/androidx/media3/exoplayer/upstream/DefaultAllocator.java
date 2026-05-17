@@ -4,7 +4,7 @@ import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.upstream.Allocator;
 import com.google.common.base.Preconditions;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class DefaultAllocator implements Allocator {
     private static final int AVAILABLE_EXTRA_CAPACITY = 100;
     private int allocatedCount;

@@ -186,34 +186,22 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
     public static final void setupListeners$lambda$0$2(DonateReplenishmentDialogPage donateReplenishmentDialogPage, DonateReplenishmentDialogBinding donateReplenishmentDialogBinding, View view) {
         long j = donateReplenishmentDialogPage.getAmount;
         if (j <= 0) {
-            Toast.makeText(donateReplenishmentDialogBinding.getRoot().getContext(), "Введите сумму больше нуля", 0).show();
-            return;
-        }
-        if (j >= 1500000000) {
-            Context context = donateReplenishmentDialogBinding.getRoot().getContext();
-            Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
-            if (UtilsKt.getArizonaType(context)) {
-                Toast.makeText(donateReplenishmentDialogBinding.getRoot().getContext(), "Слишком большое число за раз", 0).show();
-                return;
-            }
-        }
-        if (donateReplenishmentDialogPage.upp >= 1000000) {
-            Context context2 = donateReplenishmentDialogBinding.getRoot().getContext();
-            Intrinsics.checkNotNullExpressionValue(context2, "getContext(...)");
-            if (!UtilsKt.getArizonaType(context2)) {
-                Toast.makeText(donateReplenishmentDialogBinding.getRoot().getContext(), "Введите сумму меньше 1 000 000", 0).show();
-                return;
-            }
-        }
-        int i = WhenMappings.$EnumSwitchMapping$0[donateReplenishmentDialogPage.rateType.ordinal()];
-        if (i == 1) {
-            donateReplenishmentDialogPage.getNotifier().clickedWrapper(donateReplenishmentDialogPage.getBackendId(), (int) donateReplenishmentDialogPage.upp, 7);
-        } else if (i == 2) {
-            donateReplenishmentDialogPage.getNotifier().clickedWrapper(donateReplenishmentDialogPage.getBackendId(), (int) donateReplenishmentDialogPage.upp, 5);
-        } else if (i != 3) {
-            throw new NoWhenBranchMatchedException();
+            Toast.makeText(donateReplenishmentDialogBinding.getRoot().getContext(), donateReplenishmentDialogBinding.getRoot().getContext().getString(R.string.donate_amount_gt_zero), 0).show();
+        } else if (j >= 1500000000 && UtilsKt.isArizonaType()) {
+            Toast.makeText(donateReplenishmentDialogBinding.getRoot().getContext(), donateReplenishmentDialogBinding.getRoot().getContext().getString(R.string.donate_amount_too_large_once), 0).show();
+        } else if (donateReplenishmentDialogPage.upp >= 1000000 && !UtilsKt.isArizonaType()) {
+            Toast.makeText(donateReplenishmentDialogBinding.getRoot().getContext(), donateReplenishmentDialogBinding.getRoot().getContext().getString(R.string.donate_amount_less_than_limit), 0).show();
         } else {
-            donateReplenishmentDialogPage.getNotifier().clickedWrapper(donateReplenishmentDialogPage.getBackendId(), (int) donateReplenishmentDialogPage.upp, 8);
+            int i = WhenMappings.$EnumSwitchMapping$0[donateReplenishmentDialogPage.rateType.ordinal()];
+            if (i == 1) {
+                donateReplenishmentDialogPage.getNotifier().clickedWrapper(donateReplenishmentDialogPage.getBackendId(), (int) donateReplenishmentDialogPage.upp, 7);
+            } else if (i == 2) {
+                donateReplenishmentDialogPage.getNotifier().clickedWrapper(donateReplenishmentDialogPage.getBackendId(), (int) donateReplenishmentDialogPage.upp, 5);
+            } else if (i != 3) {
+                throw new NoWhenBranchMatchedException();
+            } else {
+                donateReplenishmentDialogPage.getNotifier().clickedWrapper(donateReplenishmentDialogPage.getBackendId(), (int) donateReplenishmentDialogPage.upp, 8);
+            }
         }
     }
 
@@ -237,7 +225,7 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
 
     private final void setRateType(DonateBoostModelUi donateBoostModelUi) {
         DonateReplenishmentDialogBinding donateReplenishmentDialogBinding = this.binding;
-        int i = (!UtilsKt.getArizonaType(getTargetActivity()) || this.rateType == DonateRateType.BUY_AZ) ? R.drawable.blueprint_ic_rub : -1;
+        int i = (!UtilsKt.isArizonaType() || this.rateType == DonateRateType.BUY_AZ) ? R.drawable.blueprint_ic_rub : -1;
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.rateType.ordinal()];
         if (i2 == 1) {
             donateReplenishmentDialogBinding.tvMoney.setText(String.valueOf(donateBoostModelUi.getRate().getFrom()));
@@ -279,8 +267,8 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         RecyclerView rvReplenishment = donateReplenishmentDialogBinding.rvReplenishment;
         Intrinsics.checkNotNullExpressionValue(rvReplenishment, "rvReplenishment");
         rvReplenishment.setVisibility(8);
-        donateReplenishmentDialogBinding.tvTitle.setText("ОБМЕН AZ COINS НА EXP");
-        donateReplenishmentDialogBinding.tvBtnTitle.setText("ОБМЕНЯТЬ");
+        donateReplenishmentDialogBinding.tvTitle.setText(donateReplenishmentDialogBinding.getRoot().getContext().getString(R.string.donate_exchange_az_to_exp));
+        donateReplenishmentDialogBinding.tvBtnTitle.setText(donateReplenishmentDialogBinding.getRoot().getContext().getString(R.string.donate_exchange_action));
         donateReplenishmentDialogBinding.etReplenishmentSum.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(6)});
     }
 
@@ -308,8 +296,8 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         RecyclerView rvReplenishment = donateReplenishmentDialogBinding.rvReplenishment;
         Intrinsics.checkNotNullExpressionValue(rvReplenishment, "rvReplenishment");
         rvReplenishment.setVisibility(0);
-        donateReplenishmentDialogBinding.tvTitle.setText("пополнение az коинов");
-        donateReplenishmentDialogBinding.tvBtnTitle.setText("Пополнить");
+        donateReplenishmentDialogBinding.tvTitle.setText(donateReplenishmentDialogBinding.getRoot().getContext().getString(R.string.donate_top_up_az_coins_title));
+        donateReplenishmentDialogBinding.tvBtnTitle.setText(donateReplenishmentDialogBinding.getRoot().getContext().getString(R.string.top_up));
         donateReplenishmentDialogBinding.etReplenishmentSum.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(9)});
     }
 
@@ -337,8 +325,8 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         RecyclerView rvReplenishment = donateReplenishmentDialogBinding.rvReplenishment;
         Intrinsics.checkNotNullExpressionValue(rvReplenishment, "rvReplenishment");
         rvReplenishment.setVisibility(8);
-        donateReplenishmentDialogBinding.tvTitle.setText("обмен az coins");
-        donateReplenishmentDialogBinding.tvBtnTitle.setText("ОБМЕНЯТЬ");
+        donateReplenishmentDialogBinding.tvTitle.setText(donateReplenishmentDialogBinding.getRoot().getContext().getString(R.string.donate_exchange_az_coins_title));
+        donateReplenishmentDialogBinding.tvBtnTitle.setText(donateReplenishmentDialogBinding.getRoot().getContext().getString(R.string.donate_exchange_action));
         donateReplenishmentDialogBinding.etReplenishmentSum.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(6)});
     }
 

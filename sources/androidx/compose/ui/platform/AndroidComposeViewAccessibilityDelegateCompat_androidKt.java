@@ -144,17 +144,18 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
         Object orNull = SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getStateDescription());
         ToggleableState toggleableState = (ToggleableState) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getToggleableState());
         Role role = (Role) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getRole());
+        int i = 0;
         if (toggleableState != null) {
-            int i = WhenMappings.$EnumSwitchMapping$0[toggleableState.ordinal()];
-            if (i == 1) {
+            int i2 = WhenMappings.$EnumSwitchMapping$0[toggleableState.ordinal()];
+            if (i2 == 1) {
                 if ((role == null ? false : Role.m6770equalsimpl0(role.m6773unboximpl(), Role.Companion.m6780getSwitcho7Vup1c())) && orNull == null) {
                     orNull = resources.getString(R.string.state_on);
                 }
-            } else if (i == 2) {
+            } else if (i2 == 2) {
                 if ((role == null ? false : Role.m6770equalsimpl0(role.m6773unboximpl(), Role.Companion.m6780getSwitcho7Vup1c())) && orNull == null) {
                     orNull = resources.getString(R.string.state_off);
                 }
-            } else if (i != 3) {
+            } else if (i2 != 3) {
                 throw new NoWhenBranchMatchedException();
             } else {
                 if (orNull == null) {
@@ -178,17 +179,17 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
             if (progressBarRangeInfo != ProgressBarRangeInfo.Companion.getIndeterminate()) {
                 if (orNull == null) {
                     ClosedFloatingPointRange<Float> range = progressBarRangeInfo.getRange();
-                    float current = ((range.getEndInclusive().floatValue() - range.getStart().floatValue()) > 0.0f ? 1 : ((range.getEndInclusive().floatValue() - range.getStart().floatValue()) == 0.0f ? 0 : -1)) == 0 ? 0.0f : (progressBarRangeInfo.getCurrent() - range.getStart().floatValue()) / (range.getEndInclusive().floatValue() - range.getStart().floatValue());
+                    float current = range.getEndInclusive().floatValue() - range.getStart().floatValue() == 0.0f ? 0.0f : (progressBarRangeInfo.getCurrent() - range.getStart().floatValue()) / (range.getEndInclusive().floatValue() - range.getStart().floatValue());
                     if (current < 0.0f) {
                         current = 0.0f;
                     }
                     if (current > 1.0f) {
                         current = 1.0f;
                     }
-                    if (!(current == 0.0f)) {
-                        r4 = (current == 1.0f ? 1 : 0) != 0 ? 100 : RangesKt.coerceIn(Math.round(current * 100.0f), 1, 99);
+                    if (current != 0.0f) {
+                        i = current == 1.0f ? 100 : RangesKt.coerceIn(Math.round(current * 100.0f), 1, 99);
                     }
-                    orNull = resources.getString(R.string.template_percent, Integer.valueOf(r4));
+                    orNull = resources.getString(R.string.template_percent, Integer.valueOf(i));
                 }
             } else if (orNull == null) {
                 orNull = resources.getString(R.string.in_progress);

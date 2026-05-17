@@ -11,7 +11,7 @@ public final class C0488p0 {
     public static final long k = TimeUnit.SECONDS.toMillis(10);
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1164a;
+    public final Context f1169a;
     public final ICommonExecutor b;
     public boolean c;
     public IAppMetricaService d;
@@ -64,7 +64,7 @@ public final class C0488p0 {
         this.f = new Object();
         this.i = new RunnableC0438n0(this);
         this.j = new ServiceConnectionC0463o0(this);
-        this.f1164a = context.getApplicationContext();
+        this.f1169a = context.getApplicationContext();
         this.b = iCommonExecutor;
         this.c = false;
         this.g = f1;

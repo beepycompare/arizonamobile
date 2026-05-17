@@ -1,5 +1,8 @@
 package com.arizonagames.feature.arizona.family;
 
+import android.app.Activity;
+import android.widget.TextView;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.arizonagames.feature.arizona.family.data.FamilyData;
 import com.arizonagames.feature.arizona.family.data.FamilyMembersCount;
 import com.arizonagames.feature.arizona.family.databinding.FamilyMainBinding;
@@ -8,6 +11,7 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
@@ -18,7 +22,7 @@ import kotlinx.coroutines.Dispatchers;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FamilyScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$loadMembersCount$1", f = "FamilyScreen.kt", i = {0, 0}, l = {615}, m = "invokeSuspend", n = {"it", "$i$a$-let-FamilyScreen$loadMembersCount$1$1"}, nl = {618}, s = {"L$1", "I$0"}, v = 2)
+@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$loadMembersCount$1", f = "FamilyScreen.kt", i = {0, 0}, l = {TypedValues.MotionType.TYPE_PATHMOTION_ARC}, m = "invokeSuspend", n = {"it", "$i$a$-let-FamilyScreen$loadMembersCount$1$1"}, nl = {TypedValues.MotionType.TYPE_QUANTIZE_MOTIONSTEPS}, s = {"L$1", "I$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class FamilyScreen$loadMembersCount$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int I$0;
@@ -50,8 +54,10 @@ public final class FamilyScreen$loadMembersCount$1 extends SuspendLambda impleme
         FamilyMembersCount familyMembersCount;
         FamilyMembersCount familyMembersCount2;
         FamilyMainBinding familyMainBinding;
+        Activity targetActivity;
         FamilyScreen familyScreen;
         FamilyMainBinding familyMainBinding2;
+        Activity targetActivity2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -64,7 +70,9 @@ public final class FamilyScreen$loadMembersCount$1 extends SuspendLambda impleme
                     familyMembersCount2 = familyScreen2.membersCount;
                     if (familyMembersCount2 != null) {
                         familyMainBinding = familyScreen2.binding;
-                        familyMainBinding.topbar.textDevil.setText(familyMembersCount2.getCount() + " человек");
+                        TextView textView = familyMainBinding.topbar.textDevil;
+                        targetActivity = familyScreen2.getTargetActivity();
+                        textView.setText(targetActivity.getString(R.string.family_people_count, new Object[]{Boxing.boxInt(familyMembersCount2.getCount())}));
                     }
                 } else {
                     this.L$0 = familyScreen2;
@@ -89,7 +97,9 @@ public final class FamilyScreen$loadMembersCount$1 extends SuspendLambda impleme
         FamilyMembersCount familyMembersCount3 = (FamilyMembersCount) obj;
         familyScreen.membersCount = familyMembersCount3;
         familyMainBinding2 = familyScreen.binding;
-        familyMainBinding2.topbar.textDevil.setText(familyMembersCount3.getCount() + " человек");
+        TextView textView2 = familyMainBinding2.topbar.textDevil;
+        targetActivity2 = familyScreen.getTargetActivity();
+        textView2.setText(targetActivity2.getString(R.string.family_people_count, new Object[]{Boxing.boxInt(familyMembersCount3.getCount())}));
         return Unit.INSTANCE;
     }
 }

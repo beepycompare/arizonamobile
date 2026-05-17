@@ -14,7 +14,7 @@ import androidx.viewbinding.ViewBindings;
 import com.google.android.material.card.MaterialCardView;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.arizona.promo.R;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public final class PromoItemBinding implements ViewBinding {
     public final CardView available;
     public final TextView bottomText;

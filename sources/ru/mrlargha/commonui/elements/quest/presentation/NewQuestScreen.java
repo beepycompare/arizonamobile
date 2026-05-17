@@ -46,7 +46,7 @@ import ru.mrlargha.commonui.elements.quest.presentation.adapter.QuestTaskAdapter
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 /* compiled from: NewQuestScreen.kt */
-@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\n\u0018\u00002\u00020\u00012\u00020\u0002:\u0001)B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001cH\u0016J\b\u0010\u001d\u001a\u00020\u001aH\u0002J\u0018\u0010\u001e\u001a\u00020\u001a2\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u0006H\u0016J\b\u0010\"\u001a\u00020\u001aH\u0002J\u0010\u0010#\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u001cH\u0002J\u0010\u0010%\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u001cH\u0002J\u0018\u0010&\u001a\u00020\u001a2\u0006\u0010'\u001a\u00020\u00062\u0006\u0010\u001f\u001a\u00020 H\u0002J\b\u0010(\u001a\u00020\u001aH\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Lru/mrlargha/commonui/elements/quest/presentation/NewQuestScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "questScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/SeasonalRodinaQuestScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "questActivityAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestActivityAdapter;", "questStageAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestStageAdapter;", "questTaskAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestTaskAdapter;", "questTaskList", "", "Lru/mrlargha/commonui/elements/quest/domain/QuestTask;", "backgroundId", "setVisible", "", "visible", "", "initAdapters", "onBackendMessage", "data", "", "subId", "changeBackground", "firstInterfaceVisibility", "isVisible", "secondInterfaceVisibility", "sendData", "indexKey", "closeScreen", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\n\u0018\u00002\u00020\u00012\u00020\u0002:\u0001)B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001cH\u0016J\b\u0010\u001d\u001a\u00020\u001aH\u0002J\u0018\u0010\u001e\u001a\u00020\u001a2\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u0006H\u0016J\b\u0010\"\u001a\u00020\u001aH\u0002J\u0010\u0010#\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u001cH\u0002J\u0010\u0010%\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u001cH\u0002J\u0018\u0010&\u001a\u00020\u001a2\u0006\u0010'\u001a\u00020\u00062\u0006\u0010\u001f\u001a\u00020 H\u0002J\b\u0010(\u001a\u00020\u001aH\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Lru/mrlargha/commonui/elements/quest/presentation/NewQuestScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "questScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/SeasonalRodinaQuestScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "questActivityAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestActivityAdapter;", "questStageAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestStageAdapter;", "questTaskAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestTaskAdapter;", "questTaskList", "", "Lru/mrlargha/commonui/elements/quest/domain/QuestTask;", "backgroundId", "setVisible", "", "visible", "", "initAdapters", "onBackendMessageHandled", "data", "", "subId", "changeBackground", "firstInterfaceVisibility", "isVisible", "secondInterfaceVisibility", "sendData", "indexKey", "closeScreen", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class NewQuestScreen extends SAMPUIElement implements InterfaceController {
     private int backgroundId;
@@ -107,7 +107,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         this.binding = bind;
         this.frontendNotifier = (IBackendNotifier) targetActivity;
         this.questActivityAdapter = new QuestActivityAdapter();
-        this.questStageAdapter = new QuestStageAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda4
+        this.questStageAdapter = new QuestStageAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return NewQuestScreen.questStageAdapter$lambda$0(NewQuestScreen.this, (QuestStage) obj);
@@ -116,19 +116,19 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         this.questTaskList = new ArrayList();
         addViewToConstraintLayout(constraintLayout, -1, -1);
         initAdapters();
-        bind.ivGetQuest.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda5
+        bind.ivGetQuest.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 NewQuestScreen.this.sendData(0, "");
             }
         });
-        bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda6
+        bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 NewQuestScreen._init_$lambda$1(NewQuestScreen.this, view);
             }
         });
-        bind.btnExit.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda7
+        bind.btnExit.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 NewQuestScreen.this.closeScreen();
@@ -322,7 +322,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void onBackendMessage$lambda$0(NewQuestScreen newQuestScreen) {
+    public static final void onBackendMessageHandled$lambda$0(NewQuestScreen newQuestScreen) {
         QuestTaskAdapter questTaskAdapter = newQuestScreen.questTaskAdapter;
         QuestTaskAdapter questTaskAdapter2 = null;
         if (questTaskAdapter == null) {
@@ -340,7 +340,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void onBackendMessage$lambda$2(NewQuestScreen newQuestScreen) {
+    public static final void onBackendMessageHandled$lambda$2(NewQuestScreen newQuestScreen) {
         QuestTaskAdapter questTaskAdapter = newQuestScreen.questTaskAdapter;
         QuestTaskAdapter questTaskAdapter2 = null;
         if (questTaskAdapter == null) {
@@ -358,7 +358,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == 0) {
             ActivityQuestResponse activityQuestResponse = (ActivityQuestResponse) MapperKt.jsonToModel(data, ActivityQuestResponse.class, getBackendID(), getTargetActivity(), this.frontendNotifier);
@@ -371,10 +371,10 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
             firstInterfaceVisibility(false);
             secondInterfaceVisibility(true);
             this.questStageAdapter.submitList(jsonToListModel);
-            new Handler().postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda2
+            new Handler().postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NewQuestScreen.onBackendMessage$lambda$0(NewQuestScreen.this);
+                    NewQuestScreen.onBackendMessageHandled$lambda$0(NewQuestScreen.this);
                 }
             }, 300L);
         } else if (i == 2) {
@@ -395,10 +395,10 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
                 mutableMap.put(Integer.valueOf(questTask.getId()), questTask);
             }
             this.questTaskList = CollectionsKt.toMutableList(mutableMap.values());
-            new Handler().postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda3
+            new Handler().postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NewQuestScreen.onBackendMessage$lambda$2(NewQuestScreen.this);
+                    NewQuestScreen.onBackendMessageHandled$lambda$2(NewQuestScreen.this);
                 }
             }, 300L);
         } else {

@@ -9,21 +9,21 @@ import kotlin.jvm.internal.Lambda;
 public final class H extends Lambda implements Function0<String> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ List<J> f1579a;
+    public final /* synthetic */ List<J> f1584a;
     public final /* synthetic */ int b = 10;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public H(List list) {
         super(0);
-        this.f1579a = list;
+        this.f1584a = list;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final String invoke() {
-        List<J> list = this.f1579a;
+        List<J> list = this.f1584a;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (J j : list) {
-            arrayList.add(new C0832u(j.f1583a));
+            arrayList.add(new C0832u(j.f1588a));
         }
         return "Getting first " + this.b + " from storage: " + arrayList;
     }

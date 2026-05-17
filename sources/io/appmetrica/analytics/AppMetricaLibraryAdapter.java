@@ -9,15 +9,15 @@ import io.appmetrica.analytics.impl.C0135b4;
 import io.appmetrica.analytics.impl.Cb;
 import io.appmetrica.analytics.impl.F0;
 import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AppMetricaLibraryAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private static F0 f276a = new F0();
+    private static F0 f281a = new F0();
 
     public static void activate(Context context) {
-        F0 f0 = f276a;
-        if (f0.f575a.f516a.a(context).f1194a) {
+        F0 f0 = f281a;
+        if (f0.f580a.f521a.a(context).f1199a) {
             Cb cb = f0.b;
             Context applicationContext = context.getApplicationContext();
             cb.getClass();
@@ -29,27 +29,27 @@ public class AppMetricaLibraryAdapter {
     }
 
     public static void reportEvent(String str, String str2, String str3) {
-        f276a.a(str, str2, str3);
+        f281a.a(str, str2, str3);
     }
 
     public static void setAdvIdentifiersTracking(boolean z) {
-        F0 f0 = f276a;
-        if (f0.f575a.c.a((Void) null).f1194a) {
+        F0 f0 = f281a;
+        if (f0.f580a.c.a((Void) null).f1199a) {
             f0.b.getClass();
             ModulesFacade.setAdvIdentifiersTracking(z);
         }
     }
 
     public static void setProxy(F0 f0) {
-        f276a = f0;
+        f281a = f0;
     }
 
     public static void subscribeForAutoCollectedData(Context context, String str) {
-        F0 f0 = f276a;
+        F0 f0 = f281a;
         f0.getClass();
         ImportantLogger.INSTANCE.info("[AppMetricaLibraryAdapterProxy]", "Subscribe for auto-collected data with api key: " + ApiKeyUtils.createPartialApiKey(str), new Object[0]);
-        Bb bb = f0.f575a;
-        if (bb.g.a(str).f1194a && bb.f516a.a(context).f1194a) {
+        Bb bb = f0.f580a;
+        if (bb.g.a(str).f1199a && bb.f521a.a(context).f1199a) {
             f0.b.getClass();
             C0135b4.l().g.a(context);
             C0131b0 b = C0135b4.l().b();
@@ -59,9 +59,9 @@ public class AppMetricaLibraryAdapter {
     }
 
     public static void activate(Context context, AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
-        F0 f0 = f276a;
-        Bb bb = f0.f575a;
-        if (bb.f516a.a(context).f1194a && bb.b.a(appMetricaLibraryAdapterConfig).f1194a) {
+        F0 f0 = f281a;
+        Bb bb = f0.f580a;
+        if (bb.f521a.a(context).f1199a && bb.b.a(appMetricaLibraryAdapterConfig).f1199a) {
             Cb cb = f0.b;
             Context applicationContext = context.getApplicationContext();
             cb.getClass();

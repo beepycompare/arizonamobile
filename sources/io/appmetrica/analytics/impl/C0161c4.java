@@ -8,13 +8,13 @@ import java.util.HashMap;
 public final class C0161c4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0112a7 f929a;
+    public final C0112a7 f934a;
     public C0573sb b;
     public C0598tb c;
     public Zb d;
 
     public C0161c4(File file) {
-        this.f929a = new C0112a7(file);
+        this.f934a = new C0112a7(file);
     }
 
     public final synchronized Ha a(Context context) {
@@ -38,14 +38,14 @@ public final class C0161c4 {
             synchronized (this) {
                 zb = this.d;
                 if (zb == null) {
-                    C0112a7 c0112a7 = this.f929a;
-                    String a2 = new Z6(c0112a7.f900a, c0112a7.b, true).a(context, new N3());
+                    C0112a7 c0112a7 = this.f934a;
+                    String a2 = new Z6(c0112a7.f905a, c0112a7.b, true).a(context, new N3());
                     M6 m6 = AbstractC0667w5.c;
                     m6.getClass();
                     HashMap hashMap = new HashMap();
-                    hashMap.put("preferences", InterfaceC0592t5.f1230a);
+                    hashMap.put("preferences", InterfaceC0592t5.f1235a);
                     C0309hn c0309hn = m6.c;
-                    W6 w6 = m6.f687a;
+                    W6 w6 = m6.f692a;
                     S6 s6 = w6.c;
                     T6 t6 = w6.d;
                     C0498pa c0498pa = new C0498pa(false);

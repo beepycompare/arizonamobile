@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class H0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f605a;
+    public final String f610a;
     public final String b;
     public final CounterConfigurationReporterType c;
     public final int d;
@@ -14,7 +14,7 @@ public final class H0 {
     public final String f;
 
     public H0(String str, String str2, CounterConfigurationReporterType counterConfigurationReporterType, int i, String str3, String str4) {
-        this.f605a = str;
+        this.f610a = str;
         this.b = str2;
         this.c = counterConfigurationReporterType;
         this.d = i;
@@ -28,7 +28,7 @@ public final class H0 {
         }
         if (obj instanceof H0) {
             H0 h0 = (H0) obj;
-            return Intrinsics.areEqual(this.f605a, h0.f605a) && Intrinsics.areEqual(this.b, h0.b) && this.c == h0.c && this.d == h0.d && Intrinsics.areEqual(this.e, h0.e) && Intrinsics.areEqual(this.f, h0.f);
+            return Intrinsics.areEqual(this.f610a, h0.f610a) && Intrinsics.areEqual(this.b, h0.b) && this.c == h0.c && this.d == h0.d && Intrinsics.areEqual(this.e, h0.e) && Intrinsics.areEqual(this.f, h0.f);
         }
         return false;
     }
@@ -36,12 +36,12 @@ public final class H0 {
     public final int hashCode() {
         int hashCode = this.b.hashCode();
         int hashCode2 = this.c.hashCode();
-        int hashCode3 = (this.e.hashCode() + ((Integer.hashCode(this.d) + ((hashCode2 + ((hashCode + (this.f605a.hashCode() * 31)) * 31)) * 31)) * 31)) * 31;
+        int hashCode3 = (this.e.hashCode() + ((Integer.hashCode(this.d) + ((hashCode2 + ((hashCode + (this.f610a.hashCode() * 31)) * 31)) * 31)) * 31)) * 31;
         String str = this.f;
         return hashCode3 + (str == null ? 0 : str.hashCode());
     }
 
     public final String toString() {
-        return "AppMetricaNativeCrashMetadata(apiKey=" + this.f605a + ", packageName=" + this.b + ", reporterType=" + this.c + ", processID=" + this.d + ", processSessionID=" + this.e + ", errorEnvironment=" + this.f + ')';
+        return "AppMetricaNativeCrashMetadata(apiKey=" + this.f610a + ", packageName=" + this.b + ", reporterType=" + this.c + ", processID=" + this.d + ", processSessionID=" + this.e + ", errorEnvironment=" + this.f + ')';
     }
 }

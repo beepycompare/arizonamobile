@@ -5,7 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class PicassoProvider extends ContentProvider {
     static Context context;
 

@@ -1,6 +1,5 @@
 package kotlinx.coroutines.scheduling;
 
-import androidx.media3.exoplayer.Renderer;
 import com.google.android.vending.expansion.downloader.DownloaderClientMarshaller;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
@@ -310,7 +309,7 @@ public final class CoroutineScheduler implements Executor, Closeable {
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public void close() {
-        shutdown(Renderer.DEFAULT_DURATION_TO_PROGRESS_US);
+        shutdown(10000L);
     }
 
     public final void shutdown(long j) {

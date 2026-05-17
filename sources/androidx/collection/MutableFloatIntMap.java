@@ -216,7 +216,7 @@ public final class MutableFloatIntMap extends FloatIntMap {
     public final void adjustStorage$collection() {
         int compare;
         if (this._capacity > 8) {
-            compare = Long.compare(ULong.m9362constructorimpl(ULong.m9362constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m9362constructorimpl(ULong.m9362constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
+            compare = Long.compare(ULong.m9381constructorimpl(ULong.m9381constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m9381constructorimpl(ULong.m9381constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
             if (compare <= 0) {
                 dropDeletes$collection();
                 return;

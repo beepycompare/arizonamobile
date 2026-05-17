@@ -24,20 +24,20 @@ public class C0523qa extends C2 {
     public final Mn a(List<Object> list) {
         int i;
         int i2 = 0;
-        if (list == null || (list.size() <= this.f528a && this.b == null)) {
+        if (list == null || (list.size() <= this.f533a && this.b == null)) {
             i = 0;
         } else {
             ArrayList arrayList = new ArrayList();
             i = 0;
             int i3 = 0;
             for (Object obj : list) {
-                if (i3 < this.f528a) {
+                if (i3 < this.f533a) {
                     InterfaceC0597ta interfaceC0597ta = this.b;
                     if (interfaceC0597ta != null) {
                         Mn a2 = interfaceC0597ta.a(obj);
-                        Object obj2 = a2.f699a;
+                        Object obj2 = a2.f704a;
                         i += a2.b.getBytesTruncated();
-                        lo.a(obj, a2.f699a);
+                        lo.a(obj, a2.f704a);
                         obj = obj2;
                     }
                     arrayList.add(obj);

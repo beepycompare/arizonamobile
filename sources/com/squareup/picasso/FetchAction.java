@@ -3,7 +3,7 @@ package com.squareup.picasso;
 import android.graphics.Bitmap;
 import com.squareup.picasso.Picasso;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FetchAction extends Action<Object> {
     private Callback callback;
     private final Object target;

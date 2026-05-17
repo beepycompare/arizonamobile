@@ -45,7 +45,7 @@ public final class SingleFlatMap<T, R> extends Single<R> {
         }
 
         public final void subscribe(final SingleObserver<R> downstream, T t) {
-            Object m9183constructorimpl;
+            Object m9202constructorimpl;
             Intrinsics.checkNotNullParameter(downstream, "downstream");
             SingleObserver<R> singleObserver = new SingleObserver<R>(this) { // from class: ru.rustore.sdk.reactive.single.SingleFlatMap$SingleFlatMapSubscriber$subscribe$singleFlatMapObserver$1
                 final /* synthetic */ SingleFlatMap<T, R>.SingleFlatMapSubscriber this$0;
@@ -97,22 +97,22 @@ public final class SingleFlatMap<T, R> extends Single<R> {
             try {
                 Result.Companion companion = Result.Companion;
                 SingleFlatMapSubscriber singleFlatMapSubscriber = this;
-                m9183constructorimpl = Result.m9183constructorimpl((Single) ((SingleFlatMap) singleFlatMap).mapper.invoke(t));
+                m9202constructorimpl = Result.m9202constructorimpl((Single) ((SingleFlatMap) singleFlatMap).mapper.invoke(t));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
+                m9202constructorimpl = Result.m9202constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9190isSuccessimpl(m9183constructorimpl)) {
-                Single single = (Single) m9183constructorimpl;
+            if (Result.m9209isSuccessimpl(m9202constructorimpl)) {
+                Single single = (Single) m9202constructorimpl;
                 if (!isDisposed()) {
                     single.subscribe(singleObserver);
                 }
             }
-            Throwable m9186exceptionOrNullimpl = Result.m9186exceptionOrNullimpl(m9183constructorimpl);
-            if (m9186exceptionOrNullimpl == null || isDisposed()) {
+            Throwable m9205exceptionOrNullimpl = Result.m9205exceptionOrNullimpl(m9202constructorimpl);
+            if (m9205exceptionOrNullimpl == null || isDisposed()) {
                 return;
             }
-            singleObserver.onError(m9186exceptionOrNullimpl);
+            singleObserver.onError(m9205exceptionOrNullimpl);
         }
 
         @Override // ru.rustore.sdk.reactive.core.Disposable

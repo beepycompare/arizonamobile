@@ -6,19 +6,19 @@ import java.util.List;
 public final class Gh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f598a;
+    public final /* synthetic */ String f603a;
     public final /* synthetic */ List b;
     public final /* synthetic */ C0278gi c;
 
     public Gh(C0278gi c0278gi, String str, List list) {
         this.c = c0278gi;
-        this.f598a = str;
+        this.f603a = str;
         this.b = list;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         C0278gi c0278gi = this.c;
-        C0278gi.a(c0278gi.f1015a, c0278gi.d, c0278gi.e).reportEvent(this.f598a, CollectionUtils.getMapFromList(this.b));
+        C0278gi.a(c0278gi.f1020a, c0278gi.d, c0278gi.e).reportEvent(this.f603a, CollectionUtils.getMapFromList(this.b));
     }
 }

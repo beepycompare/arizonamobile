@@ -82,7 +82,7 @@ public final class CarSharingRented implements MobileController {
     public final void setRentInfo(MobilePhoneRentInfo rentInfo) {
         Intrinsics.checkNotNullParameter(rentInfo, "rentInfo");
         this.carRentedBinding.mpArizonamobilHeaderTitle.setText(StringsKt.substringBefore$default(rentInfo.getName(), " - arizonamobil", (String) null, 2, (Object) null));
-        this.carRentedBinding.mpArizonamobileHeaderIdText.setText("ID: " + rentInfo.getId());
+        this.carRentedBinding.mpArizonamobileHeaderIdText.setText(this.context.getString(R.string.mobile_id_format, new Object[]{Integer.valueOf(rentInfo.getId())}));
         this.carRentedBinding.mpArizonamobileDateTill.setText(rentInfo.getUnixTime());
     }
 

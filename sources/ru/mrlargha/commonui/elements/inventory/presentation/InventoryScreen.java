@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.inventory.presentation;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.os.Handler;
 import android.util.Log;
 import android.view.DragEvent;
@@ -95,7 +94,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: InventoryScreen.kt */
-@Metadata(d1 = {"\u0000Ì\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u000e\n\u0002\b\u0010\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u0000 ¦\u00012\u00020\u00012\u00020\u0002:\u0004¥\u0001¦\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010O\u001a\u00020PH\u0002J\b\u0010Q\u001a\u00020PH\u0002J\u0018\u0010R\u001a\u00020P2\u0006\u0010S\u001a\u00020\u00062\u0006\u0010T\u001a\u00020\u0006H\u0002J\u0010\u0010U\u001a\u00020P2\u0006\u0010V\u001a\u00020\u0013H\u0002J\u0010\u0010W\u001a\u00020P2\u0006\u0010V\u001a\u00020\u0013H\u0002J\b\u0010X\u001a\u00020PH\u0002J\b\u0010Y\u001a\u00020PH\u0002J\b\u0010Z\u001a\u00020PH\u0002J\b\u0010[\u001a\u00020PH\u0002J\u0010\u0010\\\u001a\u00020P2\u0006\u0010V\u001a\u00020\u0011H\u0002J\b\u0010]\u001a\u00020PH\u0002J\b\u0010^\u001a\u00020PH\u0002J\u0016\u0010_\u001a\u00020P2\f\u0010`\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u0016\u0010a\u001a\u00020P2\f\u0010`\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\b\u0010b\u001a\u00020PH\u0002J\u0018\u0010c\u001a\u00020P2\u0006\u0010d\u001a\u00020e2\u0006\u0010f\u001a\u00020\u0006H\u0002J\b\u0010g\u001a\u00020PH\u0002J\b\u0010h\u001a\u00020PH\u0002J \u0010i\u001a\u00020P2\u0006\u0010j\u001a\u00020\u00062\u0006\u0010k\u001a\u00020\u00062\u0006\u0010l\u001a\u00020\u0006H\u0002J\u0016\u0010m\u001a\u00020P2\f\u0010`\u001a\b\u0012\u0004\u0012\u00020&0\u0010H\u0002J\b\u0010n\u001a\u00020PH\u0002J\b\u0010o\u001a\u00020PH\u0002J\b\u0010p\u001a\u00020PH\u0002J\u0018\u0010q\u001a\u00020P2\u0006\u0010r\u001a\u00020s2\u0006\u0010S\u001a\u00020\u0006H\u0016J\u0010\u0010t\u001a\u00020P2\u0006\u0010u\u001a\u00020\u0006H\u0002J\u0010\u0010v\u001a\u00020P2\u0006\u0010u\u001a\u00020\u0006H\u0002J\b\u0010w\u001a\u00020PH\u0002J\b\u0010x\u001a\u00020PH\u0002J\b\u0010y\u001a\u00020PH\u0002J\u0010\u0010z\u001a\u00020P2\u0006\u0010{\u001a\u00020\u0006H\u0002J\u0010\u0010|\u001a\u00020P2\u0006\u0010{\u001a\u00020\u0006H\u0002J\u0016\u0010}\u001a\u00020P2\f\u0010`\u001a\b\u0012\u0004\u0012\u00020\u00060\u0010H\u0002J\u0016\u0010~\u001a\u00020P2\f\u0010`\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u0010\u0010\u007f\u001a\u00020P2\u0006\u0010r\u001a\u00020sH\u0002J\u000f\u0010\u0080\u0001\u001a\u00020P2\u0006\u0010r\u001a\u00020sJ\u0013\u0010\u0081\u0001\u001a\u00020P2\b\u0010V\u001a\u0004\u0018\u00010\u0011H\u0002J\t\u0010\u0082\u0001\u001a\u00020PH\u0002J\u001a\u0010\u0083\u0001\u001a\t\u0012\u0004\u0012\u00020\u00110\u0084\u00012\b\u0010\u0085\u0001\u001a\u00030\u0086\u0001H\u0002J\u001a\u0010\u0087\u0001\u001a\u00020P2\u0006\u0010V\u001a\u00020\u00112\u0007\u0010\u0088\u0001\u001a\u000206H\u0002J\u0012\u0010\u0089\u0001\u001a\u00020P2\u0007\u0010\u0088\u0001\u001a\u000206H\u0002J\u0012\u0010\u008a\u0001\u001a\u00020P2\u0007\u0010\u0088\u0001\u001a\u000206H\u0002J\u001a\u0010\u008b\u0001\u001a\u00020P2\u0006\u0010V\u001a\u00020\u00112\u0007\u0010\u0088\u0001\u001a\u000206H\u0002J\u0012\u0010\u008c\u0001\u001a\u00020P2\u0007\u0010\u0088\u0001\u001a\u000206H\u0002J\u001a\u0010\u008d\u0001\u001a\u00020P2\u0006\u0010V\u001a\u00020\u00112\u0007\u0010\u0088\u0001\u001a\u000206H\u0002J\u0012\u0010\u008e\u0001\u001a\u00020P2\u0007\u0010\u0088\u0001\u001a\u000206H\u0002J\u0012\u0010\u008f\u0001\u001a\u00020P2\u0007\u0010\u0088\u0001\u001a\u000206H\u0002J\u0013\u0010\u0090\u0001\u001a\u00020P2\b\u0010\u0091\u0001\u001a\u00030\u0092\u0001H\u0002J\t\u0010\u0093\u0001\u001a\u00020PH\u0002J\u001a\u0010\u0094\u0001\u001a\u00020P2\u0006\u0010r\u001a\u00020\u00062\u0007\u0010\u0095\u0001\u001a\u00020\u0006H\u0016J\u001b\u0010\u0094\u0001\u001a\u00020P2\u0006\u0010r\u001a\u00020\u00062\b\u0010\u0095\u0001\u001a\u00030\u0096\u0001H\u0016J&\u0010\u0097\u0001\u001a\u00020P2\u0007\u0010d\u001a\u00030\u0098\u00012\u0007\u0010\u0099\u0001\u001a\u00020s2\t\b\u0002\u0010\u009a\u0001\u001a\u00020\u0006H\u0002J\u0013\u0010\u009b\u0001\u001a\u00020P2\b\u0010\u009c\u0001\u001a\u00030\u009d\u0001H\u0002J\u001b\u0010\u009e\u0001\u001a\u00020P2\u0007\u0010\u009f\u0001\u001a\u00020\u00112\u0007\u0010 \u0001\u001a\u00020\u0011H\u0002J\t\u0010¡\u0001\u001a\u00020PH\u0002J\u0019\u0010¢\u0001\u001a\u00020P2\u0006\u0010r\u001a\u00020s2\u0006\u0010S\u001a\u00020\u0006H\u0002J\u0012\u0010£\u0001\u001a\u00020P2\u0007\u0010¤\u0001\u001a\u000206H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\u00020\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\u00020\u001dX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\u00020\u001dX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001fR\u0014\u0010\"\u001a\u00020\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b#\u0010$R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020&0\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00103\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010:\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010;\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020=X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010>\u001a\n @*\u0004\u0018\u00010?0?X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010C\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010D\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010E\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010F\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010G\u001a\u00020H¢\u0006\b\n\u0000\u001a\u0004\bI\u0010JR\u0011\u0010K\u001a\u00020L¢\u0006\b\n\u0000\u001a\u0004\bM\u0010N¨\u0006§\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen;", "Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "inventoryScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/MainInventoryBinding;", "person", "Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonSection;", "mainInventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "menuItemList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryMenuData;", "inventoryMenuAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/InventoryMenuAdapter;", "mainInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "subInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "getSubInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "accessoriesInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "getAccessoriesInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "upgradesInventoryAdapter", "getUpgradesInventoryAdapter", "walletInventoryAdapter", "getWalletInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "guardInfoList", "Lru/mrlargha/commonui/elements/inventory/domain/models/GuardInfo;", "guardAccessoriesList", "guardInventoryList", "guardWeaponList", "guardNumber", "guardSubInventoryAdapter", "guardInventoryAdapter", "vehicleSubList", "vehicleTechnicalList", "vehicleVisualList", "vehicleAccessoriesAdapter", "vehicleTechAdapter", "vehicleVisualAdapter", "warehouseList", "warehouseAdapter", "isAccessoriesListVisible", "", "isUpgradesListVisible", "isWalletListVisible", "isTechnicalListVisible", "isVisualListVisible", "selectedInventoryItem", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "currentWarehouse", "vehicleVisibilityState", "currentModSkin", "currentSkin", "clickedMenuButtons", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "getApi", "()Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "initRetrofit", "", "initClickListeners", "sendRequestToClicks", "subId", "button", "menuClickHandlerArz", "item", "menuClickHandlerRod", "initViewSize", "observeClickBtnInventoryGuard", "initAdapters", "defaultInventoryScreen", "showSelectorDialog", "btnTechnicalPressed", "btnVisualPressed", "addItemsVehicleTechList", "list", "addItemsVehicleVisList", "guardsTypeClickListeners", "setItemBackground", "view", "Landroid/view/View;", "res", "setVisibilityBtnGuards", "defaultGuardScreen", "editMainUi", "viewParent", "margin", "viewItem", "guardInfoSetUi", "observeGuardAccessories", "initObservers", "refreshItemVisibility", "onBackendMessage", "data", "", "getArzWarehouseType", "id", "getRodWarehouseType", "showGuardScreen", "showVehicleScreen", "showWarehouseScreen", "getAndShowMenuButtonsArz", "bits", "getAndShowMenuButtonsRod", "addMenuCategories", "addInfoToDatabase", "setSkinType", "addAccessPages", "updateInfoToDatabase", "addLockedItems", "editResponseInfo", "", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "colorItem", "isColorItem", "changeGuardSubList", "changeGunImprovementsItem", "changeCaseArmorItem", "changeSkinItem", "changeVehicleSubList", "changeVisualVehicleList", "changeTechVehicleList", "addTopBars", "skin", "Lru/mrlargha/commonui/elements/inventory/domain/models/Skin;", "getUserInfo", "onUpdateData", "value", "", "observeUserSkin", "Landroid/widget/ImageView;", "url", "defaultImage", "addVehicleInfo", "userBars", "Lru/mrlargha/commonui/elements/inventory/domain/models/VehicleInfoBars;", "sendGuardData", "fromItem", "toItem", "closeAllInventoryScreens", "sendRequestTo", "setVisible", "visible", "Spawner", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Æ\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u000e\n\u0002\b\u0010\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u0000 ¢\u00012\u00020\u00012\u00020\u0002:\u0004¡\u0001¢\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010K\u001a\u00020LH\u0002J\b\u0010M\u001a\u00020LH\u0002J\u0018\u0010N\u001a\u00020L2\u0006\u0010O\u001a\u00020\u00062\u0006\u0010P\u001a\u00020\u0006H\u0002J\u0010\u0010Q\u001a\u00020L2\u0006\u0010R\u001a\u00020\u0013H\u0002J\u0010\u0010S\u001a\u00020L2\u0006\u0010R\u001a\u00020\u0013H\u0002J\b\u0010T\u001a\u00020LH\u0002J\b\u0010U\u001a\u00020LH\u0002J\b\u0010V\u001a\u00020LH\u0002J\b\u0010W\u001a\u00020LH\u0002J\u0010\u0010X\u001a\u00020L2\u0006\u0010R\u001a\u00020\u0011H\u0002J\b\u0010Y\u001a\u00020LH\u0002J\b\u0010Z\u001a\u00020LH\u0002J\u0016\u0010[\u001a\u00020L2\f\u0010\\\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u0016\u0010]\u001a\u00020L2\f\u0010\\\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\b\u0010^\u001a\u00020LH\u0002J\u0018\u0010_\u001a\u00020L2\u0006\u0010`\u001a\u00020a2\u0006\u0010b\u001a\u00020\u0006H\u0002J\b\u0010c\u001a\u00020LH\u0002J\b\u0010d\u001a\u00020LH\u0002J \u0010e\u001a\u00020L2\u0006\u0010f\u001a\u00020\u00062\u0006\u0010g\u001a\u00020\u00062\u0006\u0010h\u001a\u00020\u0006H\u0002J\u0016\u0010i\u001a\u00020L2\f\u0010\\\u001a\b\u0012\u0004\u0012\u00020&0\u0010H\u0002J\b\u0010j\u001a\u00020LH\u0002J\b\u0010k\u001a\u00020LH\u0002J\b\u0010l\u001a\u00020LH\u0002J\u0018\u0010m\u001a\u00020L2\u0006\u0010n\u001a\u00020o2\u0006\u0010O\u001a\u00020\u0006H\u0016J\u0010\u0010p\u001a\u00020L2\u0006\u0010q\u001a\u00020\u0006H\u0002J\u0010\u0010r\u001a\u00020L2\u0006\u0010q\u001a\u00020\u0006H\u0002J\b\u0010s\u001a\u00020LH\u0002J\b\u0010t\u001a\u00020LH\u0002J\b\u0010u\u001a\u00020LH\u0002J\u0010\u0010v\u001a\u00020L2\u0006\u0010w\u001a\u00020\u0006H\u0002J\u0010\u0010x\u001a\u00020L2\u0006\u0010w\u001a\u00020\u0006H\u0002J\u0016\u0010y\u001a\u00020L2\f\u0010\\\u001a\b\u0012\u0004\u0012\u00020\u00060\u0010H\u0002J\u0016\u0010z\u001a\u00020L2\f\u0010\\\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u0010\u0010{\u001a\u00020L2\u0006\u0010n\u001a\u00020oH\u0002J\u000e\u0010|\u001a\u00020L2\u0006\u0010n\u001a\u00020oJ\u0012\u0010}\u001a\u00020L2\b\u0010R\u001a\u0004\u0018\u00010\u0011H\u0002J\b\u0010~\u001a\u00020LH\u0002J\u0019\u0010\u007f\u001a\t\u0012\u0004\u0012\u00020\u00110\u0080\u00012\b\u0010\u0081\u0001\u001a\u00030\u0082\u0001H\u0002J\u001a\u0010\u0083\u0001\u001a\u00020L2\u0006\u0010R\u001a\u00020\u00112\u0007\u0010\u0084\u0001\u001a\u000206H\u0002J\u0012\u0010\u0085\u0001\u001a\u00020L2\u0007\u0010\u0084\u0001\u001a\u000206H\u0002J\u0012\u0010\u0086\u0001\u001a\u00020L2\u0007\u0010\u0084\u0001\u001a\u000206H\u0002J\u001a\u0010\u0087\u0001\u001a\u00020L2\u0006\u0010R\u001a\u00020\u00112\u0007\u0010\u0084\u0001\u001a\u000206H\u0002J\u0012\u0010\u0088\u0001\u001a\u00020L2\u0007\u0010\u0084\u0001\u001a\u000206H\u0002J\u001a\u0010\u0089\u0001\u001a\u00020L2\u0006\u0010R\u001a\u00020\u00112\u0007\u0010\u0084\u0001\u001a\u000206H\u0002J\u0012\u0010\u008a\u0001\u001a\u00020L2\u0007\u0010\u0084\u0001\u001a\u000206H\u0002J\u0012\u0010\u008b\u0001\u001a\u00020L2\u0007\u0010\u0084\u0001\u001a\u000206H\u0002J\u0013\u0010\u008c\u0001\u001a\u00020L2\b\u0010\u008d\u0001\u001a\u00030\u008e\u0001H\u0002J\t\u0010\u008f\u0001\u001a\u00020LH\u0002J\u001a\u0010\u0090\u0001\u001a\u00020L2\u0006\u0010n\u001a\u00020\u00062\u0007\u0010\u0091\u0001\u001a\u00020\u0006H\u0016J\u001b\u0010\u0090\u0001\u001a\u00020L2\u0006\u0010n\u001a\u00020\u00062\b\u0010\u0091\u0001\u001a\u00030\u0092\u0001H\u0016J&\u0010\u0093\u0001\u001a\u00020L2\u0007\u0010`\u001a\u00030\u0094\u00012\u0007\u0010\u0095\u0001\u001a\u00020o2\t\b\u0002\u0010\u0096\u0001\u001a\u00020\u0006H\u0002J\u0013\u0010\u0097\u0001\u001a\u00020L2\b\u0010\u0098\u0001\u001a\u00030\u0099\u0001H\u0002J\u001b\u0010\u009a\u0001\u001a\u00020L2\u0007\u0010\u009b\u0001\u001a\u00020\u00112\u0007\u0010\u009c\u0001\u001a\u00020\u0011H\u0002J\t\u0010\u009d\u0001\u001a\u00020LH\u0002J\u0019\u0010\u009e\u0001\u001a\u00020L2\u0006\u0010n\u001a\u00020o2\u0006\u0010O\u001a\u00020\u0006H\u0002J\u0012\u0010\u009f\u0001\u001a\u00020L2\u0007\u0010 \u0001\u001a\u000206H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\u00020\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\u00020\u001dX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\u00020\u001dX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001fR\u0014\u0010\"\u001a\u00020\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b#\u0010$R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020&0\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00103\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010:\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010;\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020=X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010>\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010?\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010@\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010A\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010C\u001a\u00020D¢\u0006\b\n\u0000\u001a\u0004\bE\u0010FR\u0011\u0010G\u001a\u00020H¢\u0006\b\n\u0000\u001a\u0004\bI\u0010J¨\u0006£\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen;", "Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "inventoryScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/MainInventoryBinding;", "person", "Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonSection;", "mainInventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "menuItemList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryMenuData;", "inventoryMenuAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/InventoryMenuAdapter;", "mainInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "subInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "getSubInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "accessoriesInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "getAccessoriesInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "upgradesInventoryAdapter", "getUpgradesInventoryAdapter", "walletInventoryAdapter", "getWalletInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "guardInfoList", "Lru/mrlargha/commonui/elements/inventory/domain/models/GuardInfo;", "guardAccessoriesList", "guardInventoryList", "guardWeaponList", "guardNumber", "guardSubInventoryAdapter", "guardInventoryAdapter", "vehicleSubList", "vehicleTechnicalList", "vehicleVisualList", "vehicleAccessoriesAdapter", "vehicleTechAdapter", "vehicleVisualAdapter", "warehouseList", "warehouseAdapter", "isAccessoriesListVisible", "", "isUpgradesListVisible", "isWalletListVisible", "isTechnicalListVisible", "isVisualListVisible", "selectedInventoryItem", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "currentWarehouse", "vehicleVisibilityState", "currentModSkin", "currentSkin", "clickedMenuButtons", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "getApi", "()Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "initRetrofit", "", "initClickListeners", "sendRequestToClicks", "subId", "button", "menuClickHandlerArz", "item", "menuClickHandlerRod", "initViewSize", "observeClickBtnInventoryGuard", "initAdapters", "defaultInventoryScreen", "showSelectorDialog", "btnTechnicalPressed", "btnVisualPressed", "addItemsVehicleTechList", "list", "addItemsVehicleVisList", "guardsTypeClickListeners", "setItemBackground", "view", "Landroid/view/View;", "res", "setVisibilityBtnGuards", "defaultGuardScreen", "editMainUi", "viewParent", "margin", "viewItem", "guardInfoSetUi", "observeGuardAccessories", "initObservers", "refreshItemVisibility", "onBackendMessageHandled", "data", "", "getArzWarehouseType", "id", "getRodWarehouseType", "showGuardScreen", "showVehicleScreen", "showWarehouseScreen", "getAndShowMenuButtonsArz", "bits", "getAndShowMenuButtonsRod", "addMenuCategories", "addInfoToDatabase", "setSkinType", "addAccessPages", "updateInfoToDatabase", "addLockedItems", "editResponseInfo", "", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "colorItem", "isColorItem", "changeGuardSubList", "changeGunImprovementsItem", "changeCaseArmorItem", "changeSkinItem", "changeVehicleSubList", "changeVisualVehicleList", "changeTechVehicleList", "addTopBars", "skin", "Lru/mrlargha/commonui/elements/inventory/domain/models/Skin;", "getUserInfo", "onUpdateData", "value", "", "observeUserSkin", "Landroid/widget/ImageView;", "url", "defaultImage", "addVehicleInfo", "userBars", "Lru/mrlargha/commonui/elements/inventory/domain/models/VehicleInfoBars;", "sendGuardData", "fromItem", "toItem", "closeAllInventoryScreens", "sendRequestTo", "setVisible", "visible", "Spawner", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class InventoryScreen extends BaseInventory implements InterfaceController {
     public static final Companion Companion = new Companion(null);
@@ -119,7 +118,6 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     private InventoryMenuAdapter inventoryMenuAdapter;
     private final ConstraintLayout inventoryScreen;
     private boolean isAccessoriesListVisible;
-    private final boolean isArizonaType;
     private boolean isTechnicalListVisible;
     private boolean isUpgradesListVisible;
     private boolean isVisualListVisible;
@@ -129,7 +127,6 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     private List<InventoryMenuData> menuItemList;
     private final InventoryPersonSection person;
     private InventoryItem selectedInventoryItem;
-    private final SharedPreferences sharedPref;
     private final SubInventoryAdapter subInventoryAdapter;
     private final UpgradesInventoryAdapter upgradesInventoryAdapter;
     private final UpgradesInventoryAdapter vehicleAccessoriesAdapter;
@@ -377,10 +374,6 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             }
         }));
         this.db = AppDatabase.Companion.invoke(activity);
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
-        this.sharedPref = sharedPreferences;
-        boolean z = sharedPreferences.getBoolean("isArizonaType", false);
-        this.isArizonaType = z;
         ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
         this.client = arizonaRetrofit;
         this.api = (InventoryApi) ArizonaRetrofit.create$default(arizonaRetrofit, InventoryApi.class, false, null, null, 14, null);
@@ -391,7 +384,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         RecyclerView rvSubInventory = bind.personSection.rvSubInventory;
         Intrinsics.checkNotNullExpressionValue(rvSubInventory, "rvSubInventory");
         rvSubInventory.setVisibility(0);
-        UtilsKt.checkItemsName(activity, z);
+        UtilsKt.checkItemsName(activity, UtilsKt.isArizonaType());
         initAdapters();
         initClickListeners();
         setVisible(false);
@@ -452,7 +445,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit inventoryMenuAdapter$lambda$0(InventoryScreen inventoryScreen, InventoryMenuData it) {
         Intrinsics.checkNotNullParameter(it, "it");
-        if (inventoryScreen.isArizonaType) {
+        if (UtilsKt.isArizonaType()) {
             inventoryScreen.menuClickHandlerArz(it);
         } else {
             inventoryScreen.menuClickHandlerRod(it);
@@ -1115,8 +1108,10 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     /* JADX INFO: Access modifiers changed from: private */
     public final void observeClickBtnInventoryGuard() {
         AppCompatTextView appCompatTextView = this.binding.tvInventory;
+        Activity targetActivity = getTargetActivity();
+        int i = R.string.inventory_guard_title;
         GuardInfo guardInfo = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
-        appCompatTextView.setText("ИНВЕНТАРЬ ОХРАННИКА - " + ((guardInfo == null || (r1 = guardInfo.getName()) == null) ? "" : ""));
+        appCompatTextView.setText(targetActivity.getString(i, new Object[]{(guardInfo == null || (r3 = guardInfo.getName()) == null) ? "" : ""}));
         Group groupCharacterInfo = this.binding.groupCharacterInfo;
         Intrinsics.checkNotNullExpressionValue(groupCharacterInfo, "groupCharacterInfo");
         groupCharacterInfo.setVisibility(8);
@@ -1262,25 +1257,25 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     }
 
     private final void guardsTypeClickListeners() {
-        this.binding.layoutGuards.btnGuardTypeOne.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda22
+        this.binding.layoutGuards.btnGuardTypeOne.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.guardsTypeClickListeners$lambda$0(InventoryScreen.this, view);
             }
         });
-        this.binding.layoutGuards.btnGuardTypeTwo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda33
+        this.binding.layoutGuards.btnGuardTypeTwo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.guardsTypeClickListeners$lambda$1(InventoryScreen.this, view);
             }
         });
-        this.binding.layoutGuards.btnGuardTypeThree.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda44
+        this.binding.layoutGuards.btnGuardTypeThree.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda22
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.guardsTypeClickListeners$lambda$2(InventoryScreen.this, view);
             }
         });
-        this.binding.layoutGuards.btnGuardTypeFour.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda51
+        this.binding.layoutGuards.btnGuardTypeFour.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda33
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.guardsTypeClickListeners$lambda$3(InventoryScreen.this, view);
@@ -1400,7 +1395,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     }
 
     private final void defaultGuardScreen() {
-        this.binding.tvInventory.setText("ИНВЕНТАРЬ");
+        this.binding.tvInventory.setText(getTargetActivity().getString(R.string.inventory_title_uppercase));
         Group groupCharacterInfo = this.binding.groupCharacterInfo;
         Intrinsics.checkNotNullExpressionValue(groupCharacterInfo, "groupCharacterInfo");
         groupCharacterInfo.setVisibility(0);
@@ -1431,7 +1426,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             LayoutGuardInventoryBinding layoutGuardInventoryBinding = this.binding.layoutGuards;
             layoutGuardInventoryBinding.tvGuardName.setText(guardInfo.getName());
             layoutGuardInventoryBinding.tvGuardType.setText(guardInfo.getQuality());
-            layoutGuardInventoryBinding.tvGuardLevel.setText(guardInfo.getLevel() + " уровень");
+            layoutGuardInventoryBinding.tvGuardLevel.setText(getTargetActivity().getString(R.string.inventory_guard_level, new Object[]{guardInfo.getLevel()}));
             layoutGuardInventoryBinding.tvGuardExpPoints.setText(guardInfo.getExp() + "/" + guardInfo.getMaxExp());
             layoutGuardInventoryBinding.tvGuardHealthCount.setText(String.valueOf(guardInfo.getHealth()));
             layoutGuardInventoryBinding.tvGuardShieldCount.setText(String.valueOf(guardInfo.getDefence()));
@@ -1448,10 +1443,10 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             RecyclerView rvGuardInventory = this.binding.rvGuardInventory;
             Intrinsics.checkNotNullExpressionValue(rvGuardInventory, "rvGuardInventory");
             rvGuardInventory.setVisibility(8);
-            if (this.isArizonaType) {
-                str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/inventory/skins/512/" + guardInfo.getSkin() + ".webp";
+            if (UtilsKt.isArizonaType()) {
+                str = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/inventory/skins/512/" + guardInfo.getSkin() + ".webp";
             } else {
-                str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/inventory/skins/512/" + guardInfo.getSkin() + ".webp";
+                str = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/inventory/skins/512/" + guardInfo.getSkin() + ".webp";
             }
             String str2 = str;
             AppCompatImageView ivGuardSkin = this.binding.layoutGuards.ivGuardSkin;
@@ -1540,7 +1535,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Integer id;
         ArrayList arrayList;
         int id2;
@@ -1578,987 +1573,973 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         int id19;
         int id20;
         Intrinsics.checkNotNullParameter(data, "data");
-        Log.d("TAG_INVENTORY", "subID: " + i + " ===== data: " + data);
         Object obj5 = null;
-        boolean z = true;
-        try {
-            if (i == 0) {
-                Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
-                Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
-                InventoryResponse inventoryResponse = (InventoryResponse) fromJson;
-                if (inventoryResponse.getType() != ArizonaBlockType.BLOCK_TYPE_WAREHOUSE_MATTER.getId() && inventoryResponse.getType() != ArizonaBlockType.BLOCK_TYPE_SOCIAL_HOUSE.getId()) {
-                    RecyclerView rvCategoryMenu = this.binding.rvCategoryMenu;
-                    Intrinsics.checkNotNullExpressionValue(rvCategoryMenu, "rvCategoryMenu");
-                    rvCategoryMenu.setVisibility(0);
+        if (i == 0) {
+            Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
+            Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
+            InventoryResponse inventoryResponse = (InventoryResponse) fromJson;
+            if (inventoryResponse.getType() != ArizonaBlockType.BLOCK_TYPE_WAREHOUSE_MATTER.getId() && inventoryResponse.getType() != ArizonaBlockType.BLOCK_TYPE_SOCIAL_HOUSE.getId()) {
+                RecyclerView rvCategoryMenu = this.binding.rvCategoryMenu;
+                Intrinsics.checkNotNullExpressionValue(rvCategoryMenu, "rvCategoryMenu");
+                rvCategoryMenu.setVisibility(0);
+            }
+            int type = inventoryResponse.getType();
+            if (type == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
+                this.mainInventoryAdapter.setMaxItems(inventoryResponse.getMaxSlot());
+                if (inventoryResponse.getItems().get(0).getSlot() == 0) {
+                    this.mainInventoryList.clear();
+                    new Handler().postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda44
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            InventoryScreen.onBackendMessageHandled$lambda$0(InventoryScreen.this);
+                        }
+                    }, 1000L);
                 }
-                int type = inventoryResponse.getType();
-                if (type == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
-                    this.mainInventoryAdapter.setMaxItems(inventoryResponse.getMaxSlot());
-                    if (inventoryResponse.getItems().get(0).getSlot() == 0) {
-                        this.mainInventoryList.clear();
-                        new Handler().postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda0
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                InventoryScreen.onBackendMessage$lambda$0(InventoryScreen.this);
-                            }
-                        }, 1000L);
+                CollectionsKt.removeAll((List) this.mainInventoryList, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda51
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj6) {
+                        return Boolean.valueOf(InventoryScreen.onBackendMessageHandled$lambda$1((InventoryItem) obj6));
                     }
-                    CollectionsKt.removeAll((List) this.mainInventoryList, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda11
-                        @Override // kotlin.jvm.functions.Function1
-                        public final Object invoke(Object obj6) {
-                            return Boolean.valueOf(InventoryScreen.onBackendMessage$lambda$1((InventoryItem) obj6));
-                        }
-                    });
-                    CollectionsKt.addAll(this.mainInventoryList, editResponseInfo(inventoryResponse));
-                    Iterator<T> it = this.mainInventoryList.iterator();
-                    while (true) {
-                        if (!it.hasNext()) {
-                            break;
-                        }
-                        Object next = it.next();
-                        Integer item = ((InventoryItem) next).getItem();
-                        if (item != null && item.intValue() == 9202) {
-                            obj5 = next;
-                            break;
-                        }
+                });
+                CollectionsKt.addAll(this.mainInventoryList, editResponseInfo(inventoryResponse));
+                Iterator<T> it = this.mainInventoryList.iterator();
+                while (true) {
+                    if (!it.hasNext()) {
+                        break;
                     }
-                    Log.d("TAG_INVENTORY", "init mainInventoryList: " + obj5);
-                } else if (type == ArizonaBlockType.BLOCK_TYPE_ATTACH.getId()) {
-                    if (inventoryResponse.getItems().get(0).getSlot() == 0) {
-                        getSubAccessoriesList().clear();
-                        getSubCaseArmorSkinList().clear();
-                        setSubAccessoriesList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
-                        Unit unit = Unit.INSTANCE;
-                    } else {
-                        Boolean.valueOf(getSubAccessoriesList().addAll(editResponseInfo(inventoryResponse)));
+                    Object next = it.next();
+                    Integer item = ((InventoryItem) next).getItem();
+                    if (item != null && item.intValue() == 9202) {
+                        obj5 = next;
+                        break;
                     }
+                }
+                Log.d("TAG_INVENTORY", "init mainInventoryList: " + obj5);
+            } else if (type == ArizonaBlockType.BLOCK_TYPE_ATTACH.getId()) {
+                if (inventoryResponse.getItems().get(0).getSlot() == 0) {
+                    getSubAccessoriesList().clear();
+                    getSubCaseArmorSkinList().clear();
+                    setSubAccessoriesList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
+                    Unit unit = Unit.INSTANCE;
                 } else {
-                    if (!this.isArizonaType) {
-                        id12 = RodinaBlockType.BLOCK_TYPE_IMPROV_GUN.getId();
-                    } else {
-                        id12 = ArizonaBlockType.BLOCK_TYPE_GUN.getId();
+                    Boolean.valueOf(getSubAccessoriesList().addAll(editResponseInfo(inventoryResponse)));
+                }
+            } else {
+                if (!UtilsKt.isArizonaType()) {
+                    id12 = RodinaBlockType.BLOCK_TYPE_IMPROV_GUN.getId();
+                } else {
+                    id12 = ArizonaBlockType.BLOCK_TYPE_GUN.getId();
+                }
+                if (type == id12) {
+                    if (inventoryResponse.getItems().get(0).getSlot() == 0) {
+                        getSubUpgradesList().clear();
                     }
-                    if (type == id12) {
-                        if (inventoryResponse.getItems().get(0).getSlot() == 0) {
-                            getSubUpgradesList().clear();
-                        }
-                        setSubUpgradesList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
+                    setSubUpgradesList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
+                } else {
+                    if (!UtilsKt.isArizonaType()) {
+                        id13 = RodinaBlockType.BLOCK_TYPE_IMPROV.getId();
                     } else {
-                        if (!this.isArizonaType) {
-                            id13 = RodinaBlockType.BLOCK_TYPE_IMPROV.getId();
+                        id13 = ArizonaBlockType.BLOCK_TYPE_IMPROV.getId();
+                    }
+                    if (type == id13) {
+                        BaseInventory.setSubCaseArmorSkinList$default(this, editResponseInfo(inventoryResponse), null, 2, null);
+                    } else {
+                        if (!UtilsKt.isArizonaType()) {
+                            id14 = RodinaBlockType.BLOCK_TYPE_SKIN.getId();
                         } else {
-                            id13 = ArizonaBlockType.BLOCK_TYPE_IMPROV.getId();
+                            id14 = ArizonaBlockType.BLOCK_TYPE_SKIN.getId();
                         }
-                        if (type == id13) {
-                            BaseInventory.setSubCaseArmorSkinList$default(this, editResponseInfo(inventoryResponse), null, 2, null);
-                        } else {
-                            if (!this.isArizonaType) {
-                                id14 = RodinaBlockType.BLOCK_TYPE_SKIN.getId();
-                            } else {
-                                id14 = ArizonaBlockType.BLOCK_TYPE_SKIN.getId();
+                        if (type == id14) {
+                            BaseInventory.setSubCaseArmorSkinList$default(this, null, editResponseInfo(inventoryResponse), 1, null);
+                        } else if (type == ArizonaBlockType.BLOCK_TYPE_MOD_SKIN.getId()) {
+                            List<InventoryItem> items11 = inventoryResponse.getItems();
+                            ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(items11, 10));
+                            for (InventoryItem inventoryItem : items11) {
+                                this.currentModSkin = inventoryItem;
+                                arrayList2.add(Unit.INSTANCE);
                             }
-                            if (type == id14) {
-                                BaseInventory.setSubCaseArmorSkinList$default(this, null, editResponseInfo(inventoryResponse), 1, null);
-                            } else if (type == ArizonaBlockType.BLOCK_TYPE_MOD_SKIN.getId()) {
-                                List<InventoryItem> items11 = inventoryResponse.getItems();
-                                ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(items11, 10));
-                                for (InventoryItem inventoryItem : items11) {
-                                    this.currentModSkin = inventoryItem;
-                                    arrayList2.add(Unit.INSTANCE);
+                            InventoryItem inventoryItem2 = this.currentModSkin;
+                            if ((inventoryItem2 != null ? inventoryItem2.getItem() : null) != null) {
+                                CollectionsKt.addAll(getSubCaseArmorSkinList(), editResponseInfo(inventoryResponse));
+                                if (getSubCaseArmorSkinList().size() >= 3) {
+                                    getSubCaseArmorSkinList().set(1, getSubCaseArmorSkinList().get(2));
+                                    getSubCaseArmorSkinList().set(2, getSubCaseArmorSkinList().get(1));
                                 }
-                                ArrayList arrayList3 = arrayList2;
-                                InventoryItem inventoryItem2 = this.currentModSkin;
-                                if ((inventoryItem2 != null ? inventoryItem2.getItem() : null) != null) {
-                                    CollectionsKt.addAll(getSubCaseArmorSkinList(), editResponseInfo(inventoryResponse));
-                                    if (getSubCaseArmorSkinList().size() >= 3) {
-                                        getSubCaseArmorSkinList().set(1, getSubCaseArmorSkinList().get(2));
-                                        getSubCaseArmorSkinList().set(2, getSubCaseArmorSkinList().get(1));
-                                    }
-                                }
+                            }
+                        } else {
+                            if (!UtilsKt.isArizonaType()) {
+                                id15 = RodinaBlockType.BLOCK_TYPE_WALLET.getId();
                             } else {
-                                if (!this.isArizonaType) {
-                                    id15 = RodinaBlockType.BLOCK_TYPE_WALLET.getId();
-                                } else {
-                                    id15 = ArizonaBlockType.BLOCK_TYPE_WALLET.getId();
-                                }
-                                if (type != id15 && type != ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId()) {
-                                    if (type == ArizonaBlockType.BLOCK_TYPE_ACTOR_ATTACH.getId()) {
-                                        this.guardAccessoriesList.addAll(editResponseInfo(inventoryResponse));
-                                    } else {
-                                        if (!this.isArizonaType) {
-                                            id16 = RodinaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
-                                        } else {
-                                            id16 = ArizonaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
-                                        }
-                                        if (type == id16) {
-                                            this.guardInventoryList.addAll(editResponseInfo(inventoryResponse));
-                                        } else {
-                                            if (!this.isArizonaType) {
-                                                id17 = RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
-                                            } else {
-                                                id17 = ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
-                                            }
-                                            if (type == id17) {
-                                                this.guardWeaponList.clear();
-                                                this.guardWeaponList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
-                                            } else {
-                                                if (type != ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId() && type != ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
-                                                    if (this.isArizonaType) {
-                                                        id18 = ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
-                                                    } else {
-                                                        id18 = RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
-                                                    }
-                                                    if (type != id18) {
-                                                        int id21 = RodinaBlockType.BLOCK_TYPE_VEH_SKIN.getId();
-                                                        boolean z2 = this.isArizonaType;
-                                                        if (type != id21) {
-                                                            if (!z2) {
-                                                                id19 = RodinaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
-                                                            } else {
-                                                                id19 = ArizonaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
-                                                            }
-                                                            if (type == id19) {
-                                                                if (inventoryResponse.getItems().get(0).getSlot() == 0) {
-                                                                    this.vehicleTechnicalList.clear();
-                                                                }
-                                                                this.vehicleTechnicalList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
-                                                            } else {
-                                                                if (!this.isArizonaType) {
-                                                                    id20 = RodinaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
-                                                                } else {
-                                                                    id20 = ArizonaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
-                                                                }
-                                                                if (type == id20) {
-                                                                    int slot = inventoryResponse.getItems().get(0).getSlot();
-                                                                    List<InventoryItem> list = this.vehicleVisualList;
-                                                                    if (slot == 0) {
-                                                                        list.clear();
-                                                                        this.vehicleVisualList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
-                                                                        Unit unit2 = Unit.INSTANCE;
-                                                                    } else {
-                                                                        Boolean.valueOf(list.addAll(editResponseInfo(inventoryResponse)));
-                                                                    }
-                                                                }
-                                                            }
-                                                        } else if (!z2) {
-                                                            this.vehicleSubList.clear();
-                                                            CollectionsKt.addAll(this.vehicleSubList, CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
-                                                        }
-                                                    }
-                                                }
-                                                if (inventoryResponse.getType() == ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId()) {
-                                                    this.vehicleSubList.clear();
-                                                }
-                                                CollectionsKt.addAll(this.vehicleSubList, CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
-                                            }
-                                        }
-                                    }
-                                }
+                                id15 = ArizonaBlockType.BLOCK_TYPE_WALLET.getId();
+                            }
+                            if (type == id15 || type == ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId() || type == ArizonaBlockType.BLOCK_TYPE_CRYPTO_BAG.getId()) {
                                 Log.e("wallet", "onBackendMessage:");
                                 if (this.isWalletListVisible) {
                                     setWalletInventoryList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
                                 }
-                                if (!this.isArizonaType) {
+                                if (!UtilsKt.isArizonaType()) {
                                     setWalletInventoryList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
                                 } else {
                                     setWalletInventoryList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
                                     getWalletInventoryAdapter().submitList(CollectionsKt.toList(getWalletInventoryList()));
-                                    if (inventoryResponse.getType() == ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId()) {
+                                    if (inventoryResponse.getType() == ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId() || inventoryResponse.getType() == ArizonaBlockType.BLOCK_TYPE_CRYPTO_BAG.getId()) {
                                         this.person.openFishing();
                                     }
                                 }
-                            }
-                        }
-                    }
-                }
-                Log.d(ConstantsKt.INVENTORY_TAG, "type " + inventoryResponse.getType());
-                if (this.isArizonaType && ConstantsKt.getArizonaWarehouseIds().contains(Integer.valueOf(inventoryResponse.getType()))) {
-                    if (inventoryResponse.getItems().get(0).getSlot() == 0) {
-                        this.warehouseList.clear();
-                    }
-                    CollectionsKt.addAll(this.warehouseList, CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
-                    BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_WAREHOUSE.getId());
-                    this.currentWarehouse = inventoryResponse.getType();
-                    showWarehouseScreen();
-                } else if (!this.isArizonaType && ConstantsKt.getRodinaWarehouseIds().contains(Integer.valueOf(inventoryResponse.getType()))) {
-                    Log.d(ConstantsKt.INVENTORY_TAG, "openTrash");
-                    if (inventoryResponse.getItems().get(0).getSlot() == 0) {
-                        this.warehouseList.clear();
-                    }
-                    CollectionsKt.addAll(this.warehouseList, CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
-                    BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_WAREHOUSE.getId());
-                    this.currentWarehouse = inventoryResponse.getType();
-                    showWarehouseScreen();
-                }
-            } else if (i == 1) {
-                if (StringsKt.startsWith$default(data, "{\"skin\"", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) data, (CharSequence) "oil", false, 2, (Object) null)) {
-                    this.inventoryMenuAdapter.resetSelectItemPosition();
-                    if (!this.clickedMenuButtons) {
-                        refreshItemVisibility();
-                    }
-                    ProgressBar progressBar = this.binding.progressBar;
-                    Intrinsics.checkNotNullExpressionValue(progressBar, "progressBar");
-                    progressBar.setVisibility(0);
-                    Object fromJson2 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) Skin.class);
-                    Intrinsics.checkNotNullExpressionValue(fromJson2, "fromJson(...)");
-                    Skin skin = (Skin) fromJson2;
-                    this.vehicleVisibilityState = skin.getVehicle();
-                    RecyclerView rvCategoryMenu2 = this.binding.rvCategoryMenu;
-                    Intrinsics.checkNotNullExpressionValue(rvCategoryMenu2, "rvCategoryMenu");
-                    rvCategoryMenu2.setVisibility(0);
-                    if (this.isArizonaType) {
-                        getAndShowMenuButtonsArz(skin.getButtons());
-                    } else {
-                        getAndShowMenuButtonsRod(skin.getButtons());
-                    }
-                    addTopBars(skin);
-                    this.currentWarehouse = skin.getWarehouseType();
-                    addLockedItems();
-                    defaultInventoryScreen();
-                    setVisible(true);
-                } else if (!StringsKt.startsWith$default(data, "{\"securities\"", false, 2, (Object) null)) {
-                    if (!StringsKt.startsWith$default(data, "{\"skin\"", false, 2, (Object) null) || !StringsKt.contains$default((CharSequence) data, (CharSequence) "oil", false, 2, (Object) null)) {
-                        if (StringsKt.contains$default((CharSequence) data, (CharSequence) "\"money\"", false, 2, (Object) null)) {
-                            Object fromJson3 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) WarehouseMoney.class);
-                            Intrinsics.checkNotNullExpressionValue(fromJson3, "fromJson(...)");
-                            WarehouseMoney warehouseMoney = (WarehouseMoney) fromJson3;
-                            TextView etStoreMoney = this.binding.layoutWarehouse.etStoreMoney;
-                            Intrinsics.checkNotNullExpressionValue(etStoreMoney, "etStoreMoney");
-                            TextView textView = etStoreMoney;
-                            if (warehouseMoney.getMoney() == -1) {
-                                z = false;
-                            }
-                            if (!z) {
-                                r12 = 8;
-                            }
-                            textView.setVisibility(r12);
-                            this.binding.layoutWarehouse.etStoreMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(warehouseMoney.getMoney(), false, null, null, 7, null));
-                            boolean z3 = this.isArizonaType;
-                            MainInventoryBinding mainInventoryBinding = this.binding;
-                            if (z3) {
-                                TextView etStoreMoney2 = mainInventoryBinding.layoutWarehouse.etStoreMoney;
-                                Intrinsics.checkNotNullExpressionValue(etStoreMoney2, "etStoreMoney");
-                                UtilsKt.setDrawableEnd(etStoreMoney2, R.drawable.ic_dollar_16, getTargetActivity());
+                            } else if (type == ArizonaBlockType.BLOCK_TYPE_ACTOR_ATTACH.getId()) {
+                                this.guardAccessoriesList.addAll(editResponseInfo(inventoryResponse));
                             } else {
-                                TextView etStoreMoney3 = mainInventoryBinding.layoutWarehouse.etStoreMoney;
-                                Intrinsics.checkNotNullExpressionValue(etStoreMoney3, "etStoreMoney");
-                                UtilsKt.setDrawableEnd(etStoreMoney3, R.drawable.ic_rubble, getTargetActivity());
+                                if (!UtilsKt.isArizonaType()) {
+                                    id16 = RodinaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
+                                } else {
+                                    id16 = ArizonaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
+                                }
+                                if (type == id16) {
+                                    this.guardInventoryList.addAll(editResponseInfo(inventoryResponse));
+                                } else {
+                                    if (!UtilsKt.isArizonaType()) {
+                                        id17 = RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
+                                    } else {
+                                        id17 = ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
+                                    }
+                                    if (type == id17) {
+                                        this.guardWeaponList.clear();
+                                        this.guardWeaponList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
+                                    } else {
+                                        if (type != ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId() && type != ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
+                                            if (UtilsKt.isArizonaType()) {
+                                                id18 = ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
+                                            } else {
+                                                id18 = RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
+                                            }
+                                            if (type != id18) {
+                                                if (type == RodinaBlockType.BLOCK_TYPE_VEH_SKIN.getId()) {
+                                                    if (!UtilsKt.isArizonaType()) {
+                                                        this.vehicleSubList.clear();
+                                                        CollectionsKt.addAll(this.vehicleSubList, CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
+                                                    }
+                                                } else {
+                                                    if (!UtilsKt.isArizonaType()) {
+                                                        id19 = RodinaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
+                                                    } else {
+                                                        id19 = ArizonaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
+                                                    }
+                                                    if (type == id19) {
+                                                        if (inventoryResponse.getItems().get(0).getSlot() == 0) {
+                                                            this.vehicleTechnicalList.clear();
+                                                        }
+                                                        this.vehicleTechnicalList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
+                                                    } else {
+                                                        if (!UtilsKt.isArizonaType()) {
+                                                            id20 = RodinaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
+                                                        } else {
+                                                            id20 = ArizonaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
+                                                        }
+                                                        if (type == id20) {
+                                                            int slot = inventoryResponse.getItems().get(0).getSlot();
+                                                            List<InventoryItem> list = this.vehicleVisualList;
+                                                            if (slot == 0) {
+                                                                list.clear();
+                                                                this.vehicleVisualList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
+                                                                Unit unit2 = Unit.INSTANCE;
+                                                            } else {
+                                                                Boolean.valueOf(list.addAll(editResponseInfo(inventoryResponse)));
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        if (inventoryResponse.getType() == ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId()) {
+                                            this.vehicleSubList.clear();
+                                        }
+                                        CollectionsKt.addAll(this.vehicleSubList, CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
+                                    }
+                                }
                             }
                         }
-                    } else {
-                        Object fromJson4 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) VehicleInfoBars.class);
-                        Intrinsics.checkNotNullExpressionValue(fromJson4, "fromJson(...)");
-                        VehicleInfoBars vehicleInfoBars = (VehicleInfoBars) fromJson4;
-                        this.vehicleVisibilityState = 1;
-                        if (this.isArizonaType) {
-                            getAndShowMenuButtonsArz(vehicleInfoBars.getButtons());
+                    }
+                }
+            }
+            Log.d(ConstantsKt.INVENTORY_TAG, "type " + inventoryResponse.getType());
+            if (UtilsKt.isArizonaType() && ConstantsKt.getArizonaWarehouseIds().contains(Integer.valueOf(inventoryResponse.getType()))) {
+                if (inventoryResponse.getItems().get(0).getSlot() == 0) {
+                    this.warehouseList.clear();
+                }
+                CollectionsKt.addAll(this.warehouseList, CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
+                BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_WAREHOUSE.getId());
+                this.currentWarehouse = inventoryResponse.getType();
+                showWarehouseScreen();
+            } else if (!UtilsKt.isArizonaType() && ConstantsKt.getRodinaWarehouseIds().contains(Integer.valueOf(inventoryResponse.getType()))) {
+                Log.d(ConstantsKt.INVENTORY_TAG, "openTrash");
+                if (inventoryResponse.getItems().get(0).getSlot() == 0) {
+                    this.warehouseList.clear();
+                }
+                CollectionsKt.addAll(this.warehouseList, CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
+                BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_WAREHOUSE.getId());
+                this.currentWarehouse = inventoryResponse.getType();
+                showWarehouseScreen();
+            }
+        } else if (i == 1) {
+            if (StringsKt.startsWith$default(data, "{\"skin\"", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) data, (CharSequence) "oil", false, 2, (Object) null)) {
+                this.inventoryMenuAdapter.resetSelectItemPosition();
+                if (!this.clickedMenuButtons) {
+                    refreshItemVisibility();
+                }
+                ProgressBar progressBar = this.binding.progressBar;
+                Intrinsics.checkNotNullExpressionValue(progressBar, "progressBar");
+                progressBar.setVisibility(0);
+                Object fromJson2 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) Skin.class);
+                Intrinsics.checkNotNullExpressionValue(fromJson2, "fromJson(...)");
+                Skin skin = (Skin) fromJson2;
+                this.vehicleVisibilityState = skin.getVehicle();
+                RecyclerView rvCategoryMenu2 = this.binding.rvCategoryMenu;
+                Intrinsics.checkNotNullExpressionValue(rvCategoryMenu2, "rvCategoryMenu");
+                rvCategoryMenu2.setVisibility(0);
+                if (UtilsKt.isArizonaType()) {
+                    getAndShowMenuButtonsArz(skin.getButtons());
+                } else {
+                    getAndShowMenuButtonsRod(skin.getButtons());
+                }
+                addTopBars(skin);
+                this.currentWarehouse = skin.getWarehouseType();
+                addLockedItems();
+                defaultInventoryScreen();
+                setVisible(true);
+            } else if (!StringsKt.startsWith$default(data, "{\"securities\"", false, 2, (Object) null)) {
+                if (!StringsKt.startsWith$default(data, "{\"skin\"", false, 2, (Object) null) || !StringsKt.contains$default((CharSequence) data, (CharSequence) "oil", false, 2, (Object) null)) {
+                    if (StringsKt.contains$default((CharSequence) data, (CharSequence) "\"money\"", false, 2, (Object) null)) {
+                        Object fromJson3 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) WarehouseMoney.class);
+                        Intrinsics.checkNotNullExpressionValue(fromJson3, "fromJson(...)");
+                        WarehouseMoney warehouseMoney = (WarehouseMoney) fromJson3;
+                        TextView etStoreMoney = this.binding.layoutWarehouse.etStoreMoney;
+                        Intrinsics.checkNotNullExpressionValue(etStoreMoney, "etStoreMoney");
+                        etStoreMoney.setVisibility(warehouseMoney.getMoney() != -1 ? 0 : 8);
+                        this.binding.layoutWarehouse.etStoreMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(warehouseMoney.getMoney(), false, null, null, 7, null));
+                        boolean isArizonaType = UtilsKt.isArizonaType();
+                        MainInventoryBinding mainInventoryBinding = this.binding;
+                        if (isArizonaType) {
+                            TextView etStoreMoney2 = mainInventoryBinding.layoutWarehouse.etStoreMoney;
+                            Intrinsics.checkNotNullExpressionValue(etStoreMoney2, "etStoreMoney");
+                            UtilsKt.setDrawableEnd(etStoreMoney2, R.drawable.ic_dollar_16, getTargetActivity());
                         } else {
-                            getAndShowMenuButtonsRod(vehicleInfoBars.getButtons());
+                            TextView etStoreMoney3 = mainInventoryBinding.layoutWarehouse.etStoreMoney;
+                            Intrinsics.checkNotNullExpressionValue(etStoreMoney3, "etStoreMoney");
+                            UtilsKt.setDrawableEnd(etStoreMoney3, R.drawable.ic_rubble, getTargetActivity());
                         }
-                        addVehicleInfo(vehicleInfoBars);
-                        showVehicleScreen();
                     }
                 } else {
-                    Object fromJson5 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) GuardInfoResponse.class);
-                    Intrinsics.checkNotNullExpressionValue(fromJson5, "fromJson(...)");
-                    showGuardScreen();
-                    List<GuardInfo> securities = ((GuardInfoResponse) fromJson5).getSecurities();
-                    ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(securities, 10));
-                    for (GuardInfo guardInfo : securities) {
-                        ArrayList arrayList5 = new ArrayList();
-                        for (Object obj6 : this.guardAccessoriesList) {
-                            int id22 = ((InventoryItem) obj6).getId();
-                            Integer id23 = guardInfo.getId();
-                            if (id23 != null && id22 == id23.intValue()) {
-                                arrayList5.add(obj6);
-                            }
-                        }
-                        List mutableList2 = CollectionsKt.toMutableList((Collection) arrayList5);
-                        ArrayList arrayList6 = new ArrayList();
-                        for (Object obj7 : this.guardInventoryList) {
-                            int id24 = ((InventoryItem) obj7).getId();
-                            Integer id25 = guardInfo.getId();
-                            if (id25 != null && id24 == id25.intValue()) {
-                                arrayList6.add(obj7);
-                            }
-                        }
-                        ArrayList arrayList7 = arrayList6;
-                        Log.d("TAG_SEND", "GUARD: " + arrayList7);
-                        Iterator<T> it2 = this.guardWeaponList.iterator();
-                        while (true) {
-                            if (!it2.hasNext()) {
-                                obj4 = null;
-                                break;
-                            }
-                            obj4 = it2.next();
-                            int id26 = ((InventoryItem) obj4).getId();
-                            Integer id27 = guardInfo.getId();
-                            if (id27 != null && id26 == id27.intValue()) {
-                                break;
-                            }
-                        }
-                        InventoryItem inventoryItem3 = (InventoryItem) obj4;
-                        if (inventoryItem3 != null) {
-                            mutableList2.add(inventoryItem3);
-                        }
-                        arrayList4.add(GuardInfo.copy$default(guardInfo, null, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryItem3, mutableList2, CollectionsKt.toMutableList((Collection) arrayList7), 16383, null));
+                    Object fromJson4 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) VehicleInfoBars.class);
+                    Intrinsics.checkNotNullExpressionValue(fromJson4, "fromJson(...)");
+                    VehicleInfoBars vehicleInfoBars = (VehicleInfoBars) fromJson4;
+                    this.vehicleVisibilityState = 1;
+                    if (UtilsKt.isArizonaType()) {
+                        getAndShowMenuButtonsArz(vehicleInfoBars.getButtons());
+                    } else {
+                        getAndShowMenuButtonsRod(vehicleInfoBars.getButtons());
                     }
-                    this.guardInfoList = CollectionsKt.toMutableList((Collection) arrayList4);
-                    Log.d("TAG_SEND", "GUARD: " + mutableList.get(0).getInventoryList());
-                    guardInfoSetUi(this.guardInfoList);
+                    addVehicleInfo(vehicleInfoBars);
+                    showVehicleScreen();
                 }
-                addAccessPages(data);
-            } else if (i == 2) {
-                Object fromJson6 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryEditResponse.class);
-                Intrinsics.checkNotNullExpressionValue(fromJson6, "fromJson(...)");
-                InventoryEditResponse inventoryEditResponse = (InventoryEditResponse) fromJson6;
-                this.mainInventoryAdapter.setMaxItems(inventoryEditResponse.getMaxSlot());
-                Log.e("TAG", "bind: " + data);
-                int type2 = inventoryEditResponse.getType();
-                List<InventoryItem> items12 = inventoryEditResponse.getItems();
-                if (items12 != null) {
-                    List<InventoryItem> list2 = items12;
-                    ArrayList arrayList8 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
-                    for (InventoryItem inventoryItem4 : list2) {
-                        Iterator<T> it3 = UtilsKt.getItemsName().iterator();
+            } else {
+                Object fromJson5 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) GuardInfoResponse.class);
+                Intrinsics.checkNotNullExpressionValue(fromJson5, "fromJson(...)");
+                showGuardScreen();
+                List<GuardInfo> securities = ((GuardInfoResponse) fromJson5).getSecurities();
+                ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(securities, 10));
+                for (GuardInfo guardInfo : securities) {
+                    ArrayList arrayList4 = new ArrayList();
+                    for (Object obj6 : this.guardAccessoriesList) {
+                        int id21 = ((InventoryItem) obj6).getId();
+                        Integer id22 = guardInfo.getId();
+                        if (id22 != null && id21 == id22.intValue()) {
+                            arrayList4.add(obj6);
+                        }
+                    }
+                    List mutableList2 = CollectionsKt.toMutableList((Collection) arrayList4);
+                    ArrayList arrayList5 = new ArrayList();
+                    for (Object obj7 : this.guardInventoryList) {
+                        int id23 = ((InventoryItem) obj7).getId();
+                        Integer id24 = guardInfo.getId();
+                        if (id24 != null && id23 == id24.intValue()) {
+                            arrayList5.add(obj7);
+                        }
+                    }
+                    ArrayList arrayList6 = arrayList5;
+                    Log.d("TAG_SEND", "GUARD: " + arrayList6);
+                    Iterator<T> it2 = this.guardWeaponList.iterator();
+                    while (true) {
+                        if (!it2.hasNext()) {
+                            obj4 = null;
+                            break;
+                        }
+                        obj4 = it2.next();
+                        int id25 = ((InventoryItem) obj4).getId();
+                        Integer id26 = guardInfo.getId();
+                        if (id26 != null && id25 == id26.intValue()) {
+                            break;
+                        }
+                    }
+                    InventoryItem inventoryItem3 = (InventoryItem) obj4;
+                    if (inventoryItem3 != null) {
+                        mutableList2.add(inventoryItem3);
+                    }
+                    arrayList3.add(GuardInfo.copy$default(guardInfo, null, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryItem3, mutableList2, CollectionsKt.toMutableList((Collection) arrayList6), 16383, null));
+                }
+                this.guardInfoList = CollectionsKt.toMutableList((Collection) arrayList3);
+                Log.d("TAG_SEND", "GUARD: " + mutableList.get(0).getInventoryList());
+                guardInfoSetUi(this.guardInfoList);
+            }
+            addAccessPages(data);
+        } else if (i == 2) {
+            Object fromJson6 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryEditResponse.class);
+            Intrinsics.checkNotNullExpressionValue(fromJson6, "fromJson(...)");
+            InventoryEditResponse inventoryEditResponse = (InventoryEditResponse) fromJson6;
+            this.mainInventoryAdapter.setMaxItems(inventoryEditResponse.getMaxSlot());
+            Log.e("TAG", "bind: " + data);
+            int type2 = inventoryEditResponse.getType();
+            List<InventoryItem> items12 = inventoryEditResponse.getItems();
+            if (items12 != null) {
+                List<InventoryItem> list2 = items12;
+                ArrayList arrayList7 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
+                for (InventoryItem inventoryItem4 : list2) {
+                    Iterator<T> it3 = UtilsKt.getItemsName().iterator();
+                    while (true) {
+                        if (!it3.hasNext()) {
+                            obj3 = null;
+                            break;
+                        }
+                        obj3 = it3.next();
+                        int id27 = ((ItemsInfo) obj3).getId();
+                        Integer item2 = inventoryItem4.getItem();
+                        if (item2 != null && id27 == item2.intValue()) {
+                            break;
+                        }
+                    }
+                    ItemsInfo itemsInfo = (ItemsInfo) obj3;
+                    arrayList7.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : null, null, null, null, null, null, null, null, null, null, null, null, inventoryEditResponse.getType(), itemsInfo != null ? Integer.valueOf(itemsInfo.getAcs_slot()) : null, null, false, false, itemsInfo != null ? itemsInfo.getEffect() : null, null, null, null, 31260655, null));
+                }
+                arrayList = arrayList7;
+            } else {
+                arrayList = null;
+            }
+            InventoryEditResponse inventoryEditResponse2 = new InventoryEditResponse(type2, arrayList, inventoryEditResponse.getMoney(), 0, 8, null);
+            int type3 = inventoryEditResponse2.getType();
+            if (type3 == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
+                List<InventoryItem> items13 = inventoryEditResponse2.getItems();
+                if (items13 != null) {
+                    for (InventoryItem inventoryItem5 : items13) {
+                        Iterator<InventoryItem> it4 = this.mainInventoryList.iterator();
+                        int i2 = 0;
                         while (true) {
-                            if (!it3.hasNext()) {
-                                obj3 = null;
+                            if (!it4.hasNext()) {
+                                i2 = -1;
                                 break;
-                            }
-                            obj3 = it3.next();
-                            int id28 = ((ItemsInfo) obj3).getId();
-                            Integer item2 = inventoryItem4.getItem();
-                            if (item2 != null && id28 == item2.intValue()) {
+                            } else if (it4.next().getSlot() == inventoryItem5.getSlot()) {
                                 break;
+                            } else {
+                                i2++;
                             }
                         }
-                        ItemsInfo itemsInfo = (ItemsInfo) obj3;
-                        arrayList8.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : null, null, null, null, null, null, null, null, null, null, null, null, inventoryEditResponse.getType(), itemsInfo != null ? Integer.valueOf(itemsInfo.getAcs_slot()) : null, null, false, false, itemsInfo != null ? itemsInfo.getEffect() : null, null, null, null, 31260655, null));
+                        if (i2 >= 0) {
+                            InventoryItem inventoryItem6 = this.mainInventoryList.get(i2);
+                            List<InventoryItem> list3 = this.mainInventoryList;
+                            if (inventoryItem5.getItem() != null && (inventoryItem5 = UtilsKt.updateInventoryItem(inventoryItem6, inventoryItem5)) == null) {
+                                inventoryItem5 = inventoryItem6;
+                            }
+                            list3.set(i2, inventoryItem5);
+                        }
                     }
-                    arrayList = arrayList8;
+                    Unit unit3 = Unit.INSTANCE;
+                }
+                this.mainInventoryAdapter.submitList(CollectionsKt.toList(this.mainInventoryList));
+                Log.e("TAG", "response: " + this.mainInventoryAdapter.getCurrentList());
+                List<InventoryItem> items14 = inventoryEditResponse2.getItems();
+                updateInfoToDatabase(items14 != null ? (InventoryItem) CollectionsKt.firstOrNull((List<? extends Object>) items14) : null);
+            } else if (type3 == ArizonaBlockType.BLOCK_TYPE_ATTACH.getId()) {
+                this.person.updateAccessories(inventoryEditResponse2);
+            } else {
+                if (!UtilsKt.isArizonaType()) {
+                    id2 = RodinaBlockType.BLOCK_TYPE_IMPROV_GUN.getId();
                 } else {
-                    arrayList = null;
+                    id2 = ArizonaBlockType.BLOCK_TYPE_GUN.getId();
                 }
-                InventoryEditResponse inventoryEditResponse2 = new InventoryEditResponse(type2, arrayList, inventoryEditResponse.getMoney(), 0, 8, null);
-                int type3 = inventoryEditResponse2.getType();
-                if (type3 == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
-                    List<InventoryItem> items13 = inventoryEditResponse2.getItems();
-                    if (items13 != null) {
-                        for (InventoryItem inventoryItem5 : items13) {
-                            Iterator<InventoryItem> it4 = this.mainInventoryList.iterator();
-                            int i2 = 0;
+                if (type3 == id2) {
+                    if (!getSubUpgradesList().isEmpty() && (items9 = inventoryEditResponse2.getItems()) != null) {
+                        for (InventoryItem inventoryItem7 : items9) {
+                            Iterator<InventoryItem> it5 = getSubUpgradesList().iterator();
+                            int i3 = 0;
                             while (true) {
-                                if (!it4.hasNext()) {
-                                    i2 = -1;
+                                if (!it5.hasNext()) {
+                                    i3 = -1;
                                     break;
-                                } else if (it4.next().getSlot() == inventoryItem5.getSlot()) {
+                                } else if (it5.next().getSlot() == inventoryItem7.getSlot()) {
                                     break;
                                 } else {
-                                    i2++;
+                                    i3++;
                                 }
                             }
-                            if (i2 >= 0) {
-                                InventoryItem inventoryItem6 = this.mainInventoryList.get(i2);
-                                List<InventoryItem> list3 = this.mainInventoryList;
-                                if (inventoryItem5.getItem() != null && (inventoryItem5 = UtilsKt.updateInventoryItem(inventoryItem6, inventoryItem5)) == null) {
-                                    inventoryItem5 = inventoryItem6;
+                            Iterator<T> it6 = getSubUpgradesList().iterator();
+                            while (true) {
+                                if (!it6.hasNext()) {
+                                    obj2 = null;
+                                    break;
                                 }
-                                list3.set(i2, inventoryItem5);
+                                obj2 = it6.next();
+                                if (((InventoryItem) obj2).getSlot() == inventoryItem7.getSlot()) {
+                                    break;
+                                }
                             }
+                            InventoryItem updateInventoryItem = UtilsKt.updateInventoryItem((InventoryItem) obj2, inventoryItem7);
+                            if (i3 >= 0) {
+                                if (inventoryItem7.getItem() != null) {
+                                    List<InventoryItem> subUpgradesList = getSubUpgradesList();
+                                    if (updateInventoryItem == null) {
+                                        updateInventoryItem = ConstantsKt.getEmptyInventoryItem();
+                                    }
+                                    subUpgradesList.set(i3, updateInventoryItem);
+                                } else {
+                                    getSubUpgradesList().set(i3, inventoryItem7);
+                                }
+                            }
+                            getUpgradesInventoryAdapter().submitList(CollectionsKt.toList(getSubUpgradesList()));
                         }
-                        Unit unit3 = Unit.INSTANCE;
+                        Unit unit4 = Unit.INSTANCE;
                     }
-                    this.mainInventoryAdapter.submitList(CollectionsKt.toList(this.mainInventoryList));
-                    Log.e("TAG", "response: " + this.mainInventoryAdapter.getCurrentList());
-                    List<InventoryItem> items14 = inventoryEditResponse2.getItems();
-                    updateInfoToDatabase(items14 != null ? (InventoryItem) CollectionsKt.firstOrNull((List<? extends Object>) items14) : null);
-                } else if (type3 == ArizonaBlockType.BLOCK_TYPE_ATTACH.getId()) {
-                    this.person.updateAccessories(inventoryEditResponse2);
                 } else {
-                    if (!this.isArizonaType) {
-                        id2 = RodinaBlockType.BLOCK_TYPE_IMPROV_GUN.getId();
+                    if (!UtilsKt.isArizonaType()) {
+                        id3 = RodinaBlockType.BLOCK_TYPE_IMPROV.getId();
                     } else {
-                        id2 = ArizonaBlockType.BLOCK_TYPE_GUN.getId();
+                        id3 = ArizonaBlockType.BLOCK_TYPE_IMPROV.getId();
                     }
-                    if (type3 == id2) {
-                        if (!getSubUpgradesList().isEmpty() && (items9 = inventoryEditResponse2.getItems()) != null) {
-                            for (InventoryItem inventoryItem7 : items9) {
-                                Iterator<InventoryItem> it5 = getSubUpgradesList().iterator();
-                                int i3 = 0;
+                    if (type3 == id3) {
+                        List<InventoryItem> items15 = inventoryEditResponse2.getItems();
+                        if (items15 != null) {
+                            for (InventoryItem inventoryItem8 : items15) {
+                                Iterator<InventoryItem> it7 = getSubCaseArmorList().iterator();
+                                int i4 = 0;
                                 while (true) {
-                                    if (!it5.hasNext()) {
-                                        i3 = -1;
+                                    if (!it7.hasNext()) {
+                                        i4 = -1;
                                         break;
-                                    } else if (it5.next().getSlot() == inventoryItem7.getSlot()) {
+                                    } else if (it7.next().getSlot() == inventoryItem8.getSlot()) {
                                         break;
                                     } else {
-                                        i3++;
+                                        i4++;
                                     }
                                 }
-                                Iterator<T> it6 = getSubUpgradesList().iterator();
-                                while (true) {
-                                    if (!it6.hasNext()) {
-                                        obj2 = null;
-                                        break;
-                                    }
-                                    obj2 = it6.next();
-                                    if (((InventoryItem) obj2).getSlot() == inventoryItem7.getSlot()) {
-                                        break;
-                                    }
-                                }
-                                InventoryItem updateInventoryItem = UtilsKt.updateInventoryItem((InventoryItem) obj2, inventoryItem7);
-                                if (i3 >= 0) {
-                                    if (inventoryItem7.getItem() != null) {
-                                        List<InventoryItem> subUpgradesList = getSubUpgradesList();
-                                        if (updateInventoryItem == null) {
-                                            updateInventoryItem = ConstantsKt.getEmptyInventoryItem();
-                                        }
-                                        subUpgradesList.set(i3, updateInventoryItem);
-                                    } else {
-                                        getSubUpgradesList().set(i3, inventoryItem7);
-                                    }
-                                }
-                                getUpgradesInventoryAdapter().submitList(CollectionsKt.toList(getSubUpgradesList()));
+                                getSubCaseArmorList().set(i4, inventoryItem8);
+                                BaseInventory.setSubCaseArmorSkinList$default(this, getSubCaseArmorList(), null, 2, null);
+                                this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
                             }
-                            Unit unit4 = Unit.INSTANCE;
+                            Unit unit5 = Unit.INSTANCE;
                         }
                     } else {
-                        if (!this.isArizonaType) {
-                            id3 = RodinaBlockType.BLOCK_TYPE_IMPROV.getId();
+                        if (!UtilsKt.isArizonaType()) {
+                            id4 = RodinaBlockType.BLOCK_TYPE_SKIN.getId();
                         } else {
-                            id3 = ArizonaBlockType.BLOCK_TYPE_IMPROV.getId();
+                            id4 = ArizonaBlockType.BLOCK_TYPE_SKIN.getId();
                         }
-                        if (type3 == id3) {
-                            List<InventoryItem> items15 = inventoryEditResponse2.getItems();
-                            if (items15 != null) {
-                                for (InventoryItem inventoryItem8 : items15) {
-                                    Iterator<InventoryItem> it7 = getSubCaseArmorList().iterator();
-                                    int i4 = 0;
+                        if (type3 == id4) {
+                            List<InventoryItem> items16 = inventoryEditResponse2.getItems();
+                            if (items16 != null) {
+                                for (InventoryItem inventoryItem9 : items16) {
+                                    Iterator<InventoryItem> it8 = getSubSkinList().iterator();
+                                    int i5 = 0;
                                     while (true) {
-                                        if (!it7.hasNext()) {
-                                            i4 = -1;
+                                        if (!it8.hasNext()) {
+                                            i5 = -1;
                                             break;
-                                        } else if (it7.next().getSlot() == inventoryItem8.getSlot()) {
+                                        } else if (it8.next().getSlot() == inventoryItem9.getSlot()) {
                                             break;
                                         } else {
-                                            i4++;
+                                            i5++;
                                         }
                                     }
-                                    getSubCaseArmorList().set(i4, inventoryItem8);
-                                    BaseInventory.setSubCaseArmorSkinList$default(this, getSubCaseArmorList(), null, 2, null);
+                                    getSubSkinList().set(i5, inventoryItem9);
+                                    BaseInventory.setSubCaseArmorSkinList$default(this, null, getSubSkinList(), 1, null);
                                     this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
                                 }
-                                Unit unit5 = Unit.INSTANCE;
+                                Unit unit6 = Unit.INSTANCE;
+                            }
+                        } else if (type3 == ArizonaBlockType.BLOCK_TYPE_MOD_SKIN.getId()) {
+                            List<InventoryItem> items17 = inventoryEditResponse2.getItems();
+                            if (items17 != null) {
+                                for (InventoryItem inventoryItem10 : items17) {
+                                    this.currentModSkin = inventoryItem10;
+                                    Iterator<InventoryItem> it9 = getSubCaseArmorSkinList().iterator();
+                                    int i6 = 0;
+                                    while (true) {
+                                        if (!it9.hasNext()) {
+                                            i6 = -1;
+                                            break;
+                                        }
+                                        InventoryItem next2 = it9.next();
+                                        if (next2.getSlot() == inventoryItem10.getSlot() && (next2.getInventoryType() == inventoryEditResponse2.getType() || next2.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_SKIN.getId())) {
+                                            break;
+                                        }
+                                        i6++;
+                                    }
+                                    if (i6 >= 0) {
+                                        getSubCaseArmorSkinList().set(i6, inventoryItem10);
+                                    }
+                                    this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
+                                    getSubInventoryAdapter().notifyItemChanged(i6);
+                                }
+                                Unit unit7 = Unit.INSTANCE;
                             }
                         } else {
-                            if (!this.isArizonaType) {
-                                id4 = RodinaBlockType.BLOCK_TYPE_SKIN.getId();
+                            if (!UtilsKt.isArizonaType()) {
+                                id5 = RodinaBlockType.BLOCK_TYPE_WALLET.getId();
                             } else {
-                                id4 = ArizonaBlockType.BLOCK_TYPE_SKIN.getId();
+                                id5 = ArizonaBlockType.BLOCK_TYPE_WALLET.getId();
                             }
-                            if (type3 == id4) {
-                                List<InventoryItem> items16 = inventoryEditResponse2.getItems();
-                                if (items16 != null) {
-                                    for (InventoryItem inventoryItem9 : items16) {
-                                        Iterator<InventoryItem> it8 = getSubSkinList().iterator();
-                                        int i5 = 0;
-                                        while (true) {
-                                            if (!it8.hasNext()) {
-                                                i5 = -1;
-                                                break;
-                                            } else if (it8.next().getSlot() == inventoryItem9.getSlot()) {
-                                                break;
-                                            } else {
-                                                i5++;
-                                            }
-                                        }
-                                        getSubSkinList().set(i5, inventoryItem9);
-                                        BaseInventory.setSubCaseArmorSkinList$default(this, null, getSubSkinList(), 1, null);
-                                        this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
-                                    }
-                                    Unit unit6 = Unit.INSTANCE;
-                                }
-                            } else if (type3 == ArizonaBlockType.BLOCK_TYPE_MOD_SKIN.getId()) {
-                                List<InventoryItem> items17 = inventoryEditResponse2.getItems();
-                                if (items17 != null) {
-                                    for (InventoryItem inventoryItem10 : items17) {
-                                        this.currentModSkin = inventoryItem10;
-                                        Iterator<InventoryItem> it9 = getSubCaseArmorSkinList().iterator();
-                                        int i6 = 0;
-                                        while (true) {
-                                            if (!it9.hasNext()) {
-                                                i6 = -1;
-                                                break;
-                                            }
-                                            InventoryItem next2 = it9.next();
-                                            if (next2.getSlot() == inventoryItem10.getSlot() && (next2.getInventoryType() == inventoryEditResponse2.getType() || next2.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_SKIN.getId())) {
-                                                break;
-                                            }
-                                            i6++;
-                                        }
-                                        if (i6 >= 0) {
-                                            getSubCaseArmorSkinList().set(i6, inventoryItem10);
-                                        }
-                                        this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
-                                        getSubInventoryAdapter().notifyItemChanged(i6);
-                                    }
-                                    Unit unit7 = Unit.INSTANCE;
-                                }
-                            } else {
-                                if (!this.isArizonaType) {
-                                    id5 = RodinaBlockType.BLOCK_TYPE_WALLET.getId();
-                                } else {
-                                    id5 = ArizonaBlockType.BLOCK_TYPE_WALLET.getId();
-                                }
-                                if (type3 != id5 && type3 != ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId()) {
-                                    if (!this.isArizonaType) {
-                                        id6 = RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
-                                    } else {
-                                        id6 = ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
-                                    }
-                                    if (type3 == id6) {
-                                        if (!this.guardWeaponList.isEmpty() && (items8 = inventoryEditResponse2.getItems()) != null) {
-                                            for (InventoryItem inventoryItem11 : items8) {
-                                                GuardInfo guardInfo2 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
-                                                if (guardInfo2 == null) {
-                                                    return;
-                                                }
-                                                Iterator<InventoryItem> it10 = guardInfo2.getAccessoriesList().iterator();
-                                                int i7 = 0;
-                                                while (true) {
-                                                    if (!it10.hasNext()) {
-                                                        i7 = -1;
-                                                        break;
-                                                    }
-                                                    InventoryItem next3 = it10.next();
-                                                    if (next3.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId() || next3.getInventoryType() == RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId()) {
-                                                        break;
-                                                    }
-                                                    i7++;
-                                                }
-                                                if (i7 >= 0) {
-                                                    guardInfo2.getAccessoriesList().set(i7, inventoryItem11);
-                                                }
-                                                this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(guardInfo2.getAccessoriesList()));
-                                                this.guardSubInventoryAdapter.notifyItemChanged(i7);
-                                            }
-                                            Unit unit8 = Unit.INSTANCE;
-                                        }
-                                    } else if (type3 == ArizonaBlockType.BLOCK_TYPE_ACTOR_ATTACH.getId()) {
-                                        GuardInfo guardInfo3 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
-                                        if (guardInfo3 == null) {
-                                            return;
-                                        }
-                                        if (!guardInfo3.getAccessoriesList().isEmpty() && (items7 = inventoryEditResponse2.getItems()) != null) {
-                                            for (InventoryItem inventoryItem12 : items7) {
-                                                Iterator<InventoryItem> it11 = guardInfo3.getAccessoriesList().iterator();
-                                                int i8 = 0;
-                                                while (true) {
-                                                    if (!it11.hasNext()) {
-                                                        i8 = -1;
-                                                        break;
-                                                    }
-                                                    InventoryItem next4 = it11.next();
-                                                    if (next4.getSlot() == inventoryItem12.getSlot() && next4.getId() == inventoryItem12.getId()) {
-                                                        break;
-                                                    }
-                                                    i8++;
-                                                }
-                                                if (i8 >= 0) {
-                                                    guardInfo3.getAccessoriesList().set(i8, inventoryItem12);
-                                                }
-                                                this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(guardInfo3.getAccessoriesList()));
-                                                this.guardSubInventoryAdapter.notifyItemChanged(i8);
-                                            }
-                                            Unit unit9 = Unit.INSTANCE;
-                                        }
-                                    } else {
-                                        if (!this.isArizonaType) {
-                                            id7 = RodinaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
-                                        } else {
-                                            id7 = ArizonaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
-                                        }
-                                        if (type3 != id7) {
-                                            if (!this.isArizonaType) {
-                                                id8 = RodinaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
-                                            } else {
-                                                id8 = ArizonaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
-                                            }
-                                            if (type3 == id8) {
-                                                if (!this.vehicleVisualList.isEmpty() && (items5 = inventoryEditResponse2.getItems()) != null) {
-                                                    for (InventoryItem inventoryItem13 : items5) {
-                                                        Iterator<InventoryItem> it12 = this.vehicleVisualList.iterator();
-                                                        int i9 = 0;
-                                                        while (true) {
-                                                            if (!it12.hasNext()) {
-                                                                i9 = -1;
-                                                                break;
-                                                            } else if (it12.next().getSlot() == inventoryItem13.getSlot()) {
-                                                                break;
-                                                            } else {
-                                                                i9++;
-                                                            }
-                                                        }
-                                                        if (i9 >= 0) {
-                                                            this.vehicleVisualList.set(i9, inventoryItem13);
-                                                        }
-                                                        this.vehicleVisualAdapter.submitList(CollectionsKt.toList(this.vehicleVisualList));
-                                                        this.vehicleVisualAdapter.notifyItemChanged(i9);
-                                                        this.vehicleVisualAdapter.notifyDataSetChanged();
-                                                    }
-                                                    Unit unit10 = Unit.INSTANCE;
-                                                }
-                                            } else {
-                                                if (!this.isArizonaType) {
-                                                    id9 = RodinaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
-                                                } else {
-                                                    id9 = ArizonaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
-                                                }
-                                                if (type3 == id9) {
-                                                    if (!this.vehicleTechnicalList.isEmpty() && (items4 = inventoryEditResponse2.getItems()) != null) {
-                                                        for (InventoryItem inventoryItem14 : items4) {
-                                                            Iterator<InventoryItem> it13 = this.vehicleTechnicalList.iterator();
-                                                            int i10 = 0;
-                                                            while (true) {
-                                                                if (!it13.hasNext()) {
-                                                                    i10 = -1;
-                                                                    break;
-                                                                } else if (it13.next().getSlot() == inventoryItem14.getSlot()) {
-                                                                    break;
-                                                                } else {
-                                                                    i10++;
-                                                                }
-                                                            }
-                                                            if (i10 >= 0) {
-                                                                this.vehicleTechnicalList.set(i10, inventoryItem14);
-                                                            }
-                                                            this.vehicleTechAdapter.submitList(CollectionsKt.toList(this.vehicleTechnicalList));
-                                                            this.vehicleTechAdapter.notifyItemChanged(i10);
-                                                            this.vehicleTechAdapter.notifyDataSetChanged();
-                                                        }
-                                                        Unit unit11 = Unit.INSTANCE;
-                                                    }
-                                                } else {
-                                                    if (!this.isArizonaType) {
-                                                        id10 = RodinaBlockType.BLOCK_TYPE_VEH_SKIN.getId();
-                                                    } else {
-                                                        id10 = ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId();
-                                                    }
-                                                    if (type3 == id10) {
-                                                        if (!this.vehicleSubList.isEmpty() && (items3 = inventoryEditResponse2.getItems()) != null) {
-                                                            for (InventoryItem inventoryItem15 : items3) {
-                                                                Iterator<InventoryItem> it14 = this.vehicleSubList.iterator();
-                                                                int i11 = 0;
-                                                                while (true) {
-                                                                    if (!it14.hasNext()) {
-                                                                        i11 = -1;
-                                                                        break;
-                                                                    }
-                                                                    InventoryItem next5 = it14.next();
-                                                                    if (next5.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId() || next5.getInventoryType() == RodinaBlockType.BLOCK_TYPE_VEH_SKIN.getId()) {
-                                                                        break;
-                                                                    }
-                                                                    i11++;
-                                                                }
-                                                                if (i11 >= 0) {
-                                                                    this.vehicleSubList.set(i11, inventoryItem15);
-                                                                }
-                                                                this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
-                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i11);
-                                                            }
-                                                            Unit unit12 = Unit.INSTANCE;
-                                                        }
-                                                    } else if (type3 == ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
-                                                        if (!this.vehicleSubList.isEmpty() && (items2 = inventoryEditResponse2.getItems()) != null) {
-                                                            for (InventoryItem inventoryItem16 : items2) {
-                                                                Iterator<InventoryItem> it15 = this.vehicleSubList.iterator();
-                                                                int i12 = 0;
-                                                                while (true) {
-                                                                    if (!it15.hasNext()) {
-                                                                        i12 = -1;
-                                                                        break;
-                                                                    } else if (it15.next().getInventoryType() == ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
-                                                                        break;
-                                                                    } else {
-                                                                        i12++;
-                                                                    }
-                                                                }
-                                                                if (i12 >= 0) {
-                                                                    this.vehicleSubList.set(i12, inventoryItem16);
-                                                                }
-                                                                this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
-                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i12);
-                                                            }
-                                                            Unit unit13 = Unit.INSTANCE;
-                                                        }
-                                                    } else {
-                                                        if (this.isArizonaType) {
-                                                            id11 = ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
-                                                        } else {
-                                                            id11 = RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
-                                                        }
-                                                        if (type3 == id11 && !this.vehicleSubList.isEmpty() && (items = inventoryEditResponse2.getItems()) != null) {
-                                                            for (InventoryItem inventoryItem17 : items) {
-                                                                Iterator<InventoryItem> it16 = this.vehicleSubList.iterator();
-                                                                int i13 = 0;
-                                                                while (true) {
-                                                                    if (!it16.hasNext()) {
-                                                                        i13 = -1;
-                                                                        break;
-                                                                    }
-                                                                    if (it16.next().getInventoryType() == (this.isArizonaType ? ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId() : RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId())) {
-                                                                        break;
-                                                                    }
-                                                                    i13++;
-                                                                }
-                                                                if (i13 >= 0) {
-                                                                    this.vehicleSubList.set(i13, inventoryItem17);
-                                                                }
-                                                                this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
-                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i13);
-                                                            }
-                                                            Unit unit14 = Unit.INSTANCE;
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        } else {
-                                            for (GuardInfo guardInfo4 : this.guardInfoList) {
-                                                if (!guardInfo4.getInventoryList().isEmpty() && (items6 = inventoryEditResponse2.getItems()) != null) {
-                                                    for (InventoryItem inventoryItem18 : items6) {
-                                                        int id29 = inventoryItem18.getId();
-                                                        Integer id30 = guardInfo4.getId();
-                                                        if (id30 != null && id29 == id30.intValue()) {
-                                                            Iterator<InventoryItem> it17 = guardInfo4.getInventoryList().iterator();
-                                                            int i14 = 0;
-                                                            while (true) {
-                                                                if (!it17.hasNext()) {
-                                                                    i14 = -1;
-                                                                    break;
-                                                                } else if (it17.next().getSlot() == inventoryItem18.getSlot()) {
-                                                                    break;
-                                                                } else {
-                                                                    i14++;
-                                                                }
-                                                            }
-                                                            if (i14 >= 0) {
-                                                                guardInfo4.getInventoryList().set(i14, inventoryItem18);
-                                                            }
-                                                        }
-                                                    }
-                                                    Unit unit15 = Unit.INSTANCE;
-                                                }
-                                            }
-                                            GuardInfo guardInfo5 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
-                                            if (guardInfo5 != null) {
-                                                this.guardInventoryAdapter.submitList(CollectionsKt.toList(guardInfo5.getInventoryList()));
-                                                Unit unit16 = Unit.INSTANCE;
-                                                Unit unit17 = Unit.INSTANCE;
-                                            }
-                                        }
-                                    }
-                                }
+                            if (type3 == id5 || type3 == ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId() || type3 == ArizonaBlockType.BLOCK_TYPE_CRYPTO_BAG.getId()) {
                                 Log.e("wallet", "onBackendMessage: " + inventoryEditResponse2.getType());
                                 if (!getWalletInventoryList().isEmpty()) {
                                     this.isWalletListVisible = true;
                                     List<InventoryItem> items18 = inventoryEditResponse2.getItems();
                                     if (items18 != null) {
-                                        for (InventoryItem inventoryItem19 : items18) {
-                                            Iterator<InventoryItem> it18 = getWalletInventoryList().iterator();
-                                            int i15 = 0;
+                                        for (InventoryItem inventoryItem11 : items18) {
+                                            Iterator<InventoryItem> it10 = getWalletInventoryList().iterator();
+                                            int i7 = 0;
                                             while (true) {
-                                                if (!it18.hasNext()) {
-                                                    i15 = -1;
+                                                if (!it10.hasNext()) {
+                                                    i7 = -1;
                                                     break;
-                                                } else if (it18.next().getSlot() == inventoryItem19.getSlot()) {
+                                                } else if (it10.next().getSlot() == inventoryItem11.getSlot()) {
                                                     break;
                                                 } else {
-                                                    i15++;
+                                                    i7++;
                                                 }
                                             }
-                                            Iterator<T> it19 = getWalletInventoryList().iterator();
+                                            Iterator<T> it11 = getWalletInventoryList().iterator();
                                             while (true) {
-                                                if (!it19.hasNext()) {
+                                                if (!it11.hasNext()) {
                                                     obj = null;
                                                     break;
                                                 }
-                                                obj = it19.next();
-                                                if (((InventoryItem) obj).getSlot() == inventoryItem19.getSlot()) {
+                                                obj = it11.next();
+                                                if (((InventoryItem) obj).getSlot() == inventoryItem11.getSlot()) {
                                                     break;
                                                 }
                                             }
-                                            InventoryItem updateInventoryItem2 = UtilsKt.updateInventoryItem((InventoryItem) obj, inventoryItem19);
-                                            if (i15 >= 0) {
-                                                if (inventoryItem19.getItem() != null) {
+                                            InventoryItem updateInventoryItem2 = UtilsKt.updateInventoryItem((InventoryItem) obj, inventoryItem11);
+                                            if (i7 >= 0) {
+                                                if (inventoryItem11.getItem() != null) {
                                                     List<InventoryItem> walletInventoryList = getWalletInventoryList();
                                                     if (updateInventoryItem2 == null) {
                                                         updateInventoryItem2 = ConstantsKt.getEmptyInventoryItem();
                                                     }
-                                                    walletInventoryList.set(i15, updateInventoryItem2);
+                                                    walletInventoryList.set(i7, updateInventoryItem2);
                                                 } else {
-                                                    getWalletInventoryList().set(i15, inventoryItem19);
+                                                    getWalletInventoryList().set(i7, inventoryItem11);
                                                 }
                                             }
                                         }
-                                        Unit unit18 = Unit.INSTANCE;
+                                        Unit unit8 = Unit.INSTANCE;
                                     }
                                     getWalletInventoryAdapter().submitList(CollectionsKt.toList(getWalletInventoryList()));
                                 }
-                            }
-                        }
-                    }
-                }
-                if (this.isArizonaType && ConstantsKt.getArizonaWarehouseIds().contains(Integer.valueOf(inventoryEditResponse2.getType()))) {
-                    List<InventoryItem> items19 = inventoryEditResponse2.getItems();
-                    if (items19 != null) {
-                        for (InventoryItem inventoryItem20 : items19) {
-                            Iterator<InventoryItem> it20 = this.warehouseList.iterator();
-                            int i16 = 0;
-                            while (true) {
-                                if (!it20.hasNext()) {
-                                    i16 = -1;
-                                    break;
-                                } else if (it20.next().getSlot() == inventoryItem20.getSlot()) {
-                                    break;
+                            } else {
+                                if (!UtilsKt.isArizonaType()) {
+                                    id6 = RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
                                 } else {
-                                    i16++;
+                                    id6 = ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
+                                }
+                                if (type3 == id6) {
+                                    if (!this.guardWeaponList.isEmpty() && (items8 = inventoryEditResponse2.getItems()) != null) {
+                                        for (InventoryItem inventoryItem12 : items8) {
+                                            GuardInfo guardInfo2 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
+                                            if (guardInfo2 == null) {
+                                                return;
+                                            }
+                                            Iterator<InventoryItem> it12 = guardInfo2.getAccessoriesList().iterator();
+                                            int i8 = 0;
+                                            while (true) {
+                                                if (!it12.hasNext()) {
+                                                    i8 = -1;
+                                                    break;
+                                                }
+                                                InventoryItem next3 = it12.next();
+                                                if (next3.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId() || next3.getInventoryType() == RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId()) {
+                                                    break;
+                                                }
+                                                i8++;
+                                            }
+                                            if (i8 >= 0) {
+                                                guardInfo2.getAccessoriesList().set(i8, inventoryItem12);
+                                            }
+                                            this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(guardInfo2.getAccessoriesList()));
+                                            this.guardSubInventoryAdapter.notifyItemChanged(i8);
+                                        }
+                                        Unit unit9 = Unit.INSTANCE;
+                                    }
+                                } else if (type3 == ArizonaBlockType.BLOCK_TYPE_ACTOR_ATTACH.getId()) {
+                                    GuardInfo guardInfo3 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
+                                    if (guardInfo3 == null) {
+                                        return;
+                                    }
+                                    if (!guardInfo3.getAccessoriesList().isEmpty() && (items7 = inventoryEditResponse2.getItems()) != null) {
+                                        for (InventoryItem inventoryItem13 : items7) {
+                                            Iterator<InventoryItem> it13 = guardInfo3.getAccessoriesList().iterator();
+                                            int i9 = 0;
+                                            while (true) {
+                                                if (!it13.hasNext()) {
+                                                    i9 = -1;
+                                                    break;
+                                                }
+                                                InventoryItem next4 = it13.next();
+                                                if (next4.getSlot() == inventoryItem13.getSlot() && next4.getId() == inventoryItem13.getId()) {
+                                                    break;
+                                                }
+                                                i9++;
+                                            }
+                                            if (i9 >= 0) {
+                                                guardInfo3.getAccessoriesList().set(i9, inventoryItem13);
+                                            }
+                                            this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(guardInfo3.getAccessoriesList()));
+                                            this.guardSubInventoryAdapter.notifyItemChanged(i9);
+                                        }
+                                        Unit unit10 = Unit.INSTANCE;
+                                    }
+                                } else {
+                                    if (!UtilsKt.isArizonaType()) {
+                                        id7 = RodinaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
+                                    } else {
+                                        id7 = ArizonaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
+                                    }
+                                    if (type3 != id7) {
+                                        if (!UtilsKt.isArizonaType()) {
+                                            id8 = RodinaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
+                                        } else {
+                                            id8 = ArizonaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
+                                        }
+                                        if (type3 == id8) {
+                                            if (!this.vehicleVisualList.isEmpty() && (items5 = inventoryEditResponse2.getItems()) != null) {
+                                                for (InventoryItem inventoryItem14 : items5) {
+                                                    Iterator<InventoryItem> it14 = this.vehicleVisualList.iterator();
+                                                    int i10 = 0;
+                                                    while (true) {
+                                                        if (!it14.hasNext()) {
+                                                            i10 = -1;
+                                                            break;
+                                                        } else if (it14.next().getSlot() == inventoryItem14.getSlot()) {
+                                                            break;
+                                                        } else {
+                                                            i10++;
+                                                        }
+                                                    }
+                                                    if (i10 >= 0) {
+                                                        this.vehicleVisualList.set(i10, inventoryItem14);
+                                                    }
+                                                    this.vehicleVisualAdapter.submitList(CollectionsKt.toList(this.vehicleVisualList));
+                                                    this.vehicleVisualAdapter.notifyItemChanged(i10);
+                                                    this.vehicleVisualAdapter.notifyDataSetChanged();
+                                                }
+                                                Unit unit11 = Unit.INSTANCE;
+                                            }
+                                        } else {
+                                            if (!UtilsKt.isArizonaType()) {
+                                                id9 = RodinaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
+                                            } else {
+                                                id9 = ArizonaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
+                                            }
+                                            if (type3 == id9) {
+                                                if (!this.vehicleTechnicalList.isEmpty() && (items4 = inventoryEditResponse2.getItems()) != null) {
+                                                    for (InventoryItem inventoryItem15 : items4) {
+                                                        Iterator<InventoryItem> it15 = this.vehicleTechnicalList.iterator();
+                                                        int i11 = 0;
+                                                        while (true) {
+                                                            if (!it15.hasNext()) {
+                                                                i11 = -1;
+                                                                break;
+                                                            } else if (it15.next().getSlot() == inventoryItem15.getSlot()) {
+                                                                break;
+                                                            } else {
+                                                                i11++;
+                                                            }
+                                                        }
+                                                        if (i11 >= 0) {
+                                                            this.vehicleTechnicalList.set(i11, inventoryItem15);
+                                                        }
+                                                        this.vehicleTechAdapter.submitList(CollectionsKt.toList(this.vehicleTechnicalList));
+                                                        this.vehicleTechAdapter.notifyItemChanged(i11);
+                                                        this.vehicleTechAdapter.notifyDataSetChanged();
+                                                    }
+                                                    Unit unit12 = Unit.INSTANCE;
+                                                }
+                                            } else {
+                                                if (!UtilsKt.isArizonaType()) {
+                                                    id10 = RodinaBlockType.BLOCK_TYPE_VEH_SKIN.getId();
+                                                } else {
+                                                    id10 = ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId();
+                                                }
+                                                if (type3 == id10) {
+                                                    if (!this.vehicleSubList.isEmpty() && (items3 = inventoryEditResponse2.getItems()) != null) {
+                                                        for (InventoryItem inventoryItem16 : items3) {
+                                                            Iterator<InventoryItem> it16 = this.vehicleSubList.iterator();
+                                                            int i12 = 0;
+                                                            while (true) {
+                                                                if (!it16.hasNext()) {
+                                                                    i12 = -1;
+                                                                    break;
+                                                                }
+                                                                InventoryItem next5 = it16.next();
+                                                                if (next5.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId() || next5.getInventoryType() == RodinaBlockType.BLOCK_TYPE_VEH_SKIN.getId()) {
+                                                                    break;
+                                                                }
+                                                                i12++;
+                                                            }
+                                                            if (i12 >= 0) {
+                                                                this.vehicleSubList.set(i12, inventoryItem16);
+                                                            }
+                                                            this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
+                                                            this.vehicleAccessoriesAdapter.notifyItemChanged(i12);
+                                                        }
+                                                        Unit unit13 = Unit.INSTANCE;
+                                                    }
+                                                } else if (type3 == ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
+                                                    if (!this.vehicleSubList.isEmpty() && (items2 = inventoryEditResponse2.getItems()) != null) {
+                                                        for (InventoryItem inventoryItem17 : items2) {
+                                                            Iterator<InventoryItem> it17 = this.vehicleSubList.iterator();
+                                                            int i13 = 0;
+                                                            while (true) {
+                                                                if (!it17.hasNext()) {
+                                                                    i13 = -1;
+                                                                    break;
+                                                                } else if (it17.next().getInventoryType() == ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
+                                                                    break;
+                                                                } else {
+                                                                    i13++;
+                                                                }
+                                                            }
+                                                            if (i13 >= 0) {
+                                                                this.vehicleSubList.set(i13, inventoryItem17);
+                                                            }
+                                                            this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
+                                                            this.vehicleAccessoriesAdapter.notifyItemChanged(i13);
+                                                        }
+                                                        Unit unit14 = Unit.INSTANCE;
+                                                    }
+                                                } else {
+                                                    if (UtilsKt.isArizonaType()) {
+                                                        id11 = ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
+                                                    } else {
+                                                        id11 = RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
+                                                    }
+                                                    if (type3 == id11 && !this.vehicleSubList.isEmpty() && (items = inventoryEditResponse2.getItems()) != null) {
+                                                        for (InventoryItem inventoryItem18 : items) {
+                                                            Iterator<InventoryItem> it18 = this.vehicleSubList.iterator();
+                                                            int i14 = 0;
+                                                            while (true) {
+                                                                if (!it18.hasNext()) {
+                                                                    i14 = -1;
+                                                                    break;
+                                                                }
+                                                                if (it18.next().getInventoryType() == (UtilsKt.isArizonaType() ? ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId() : RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId())) {
+                                                                    break;
+                                                                }
+                                                                i14++;
+                                                            }
+                                                            if (i14 >= 0) {
+                                                                this.vehicleSubList.set(i14, inventoryItem18);
+                                                            }
+                                                            this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
+                                                            this.vehicleAccessoriesAdapter.notifyItemChanged(i14);
+                                                        }
+                                                        Unit unit15 = Unit.INSTANCE;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    } else {
+                                        for (GuardInfo guardInfo4 : this.guardInfoList) {
+                                            if (!guardInfo4.getInventoryList().isEmpty() && (items6 = inventoryEditResponse2.getItems()) != null) {
+                                                for (InventoryItem inventoryItem19 : items6) {
+                                                    int id28 = inventoryItem19.getId();
+                                                    Integer id29 = guardInfo4.getId();
+                                                    if (id29 != null && id28 == id29.intValue()) {
+                                                        Iterator<InventoryItem> it19 = guardInfo4.getInventoryList().iterator();
+                                                        int i15 = 0;
+                                                        while (true) {
+                                                            if (!it19.hasNext()) {
+                                                                i15 = -1;
+                                                                break;
+                                                            } else if (it19.next().getSlot() == inventoryItem19.getSlot()) {
+                                                                break;
+                                                            } else {
+                                                                i15++;
+                                                            }
+                                                        }
+                                                        if (i15 >= 0) {
+                                                            guardInfo4.getInventoryList().set(i15, inventoryItem19);
+                                                        }
+                                                    }
+                                                }
+                                                Unit unit16 = Unit.INSTANCE;
+                                            }
+                                        }
+                                        GuardInfo guardInfo5 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
+                                        if (guardInfo5 != null) {
+                                            this.guardInventoryAdapter.submitList(CollectionsKt.toList(guardInfo5.getInventoryList()));
+                                            Unit unit17 = Unit.INSTANCE;
+                                            Unit unit18 = Unit.INSTANCE;
+                                        }
+                                    }
                                 }
                             }
-                            if (i16 >= 0) {
-                                this.warehouseList.set(i16, inventoryItem20);
-                            }
-                            this.warehouseAdapter.submitList(CollectionsKt.toList(this.warehouseList));
-                            this.warehouseAdapter.notifyItemChanged(i16);
                         }
-                        Unit unit19 = Unit.INSTANCE;
                     }
-                } else if (!this.isArizonaType && ConstantsKt.getRodinaWarehouseIds().contains(Integer.valueOf(inventoryEditResponse2.getType())) && (items10 = inventoryEditResponse2.getItems()) != null) {
-                    for (InventoryItem inventoryItem21 : items10) {
-                        Iterator<InventoryItem> it21 = this.warehouseList.iterator();
-                        int i17 = 0;
-                        while (true) {
-                            if (!it21.hasNext()) {
-                                i17 = -1;
-                                break;
-                            } else if (it21.next().getSlot() == inventoryItem21.getSlot()) {
-                                break;
-                            } else {
-                                i17++;
-                            }
-                        }
-                        if (i17 >= 0) {
-                            this.warehouseList.set(i17, inventoryItem21);
-                        }
-                        this.warehouseAdapter.submitList(CollectionsKt.toList(this.warehouseList));
-                        this.warehouseAdapter.notifyItemChanged(i17);
-                    }
-                    Unit unit20 = Unit.INSTANCE;
-                }
-            } else if (i == 3) {
-                Object fromJson7 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) ShowDialogInfo.class);
-                Intrinsics.checkNotNullExpressionValue(fromJson7, "fromJson(...)");
-                ShowDialogInfo showDialogInfo = (ShowDialogInfo) fromJson7;
-                boolean isEmpty = this.guardInfoList.isEmpty();
-                InventoryItem inventoryItem22 = this.selectedInventoryItem;
-                if (isEmpty) {
-                    if (inventoryItem22 != null) {
-                        new SelectorDialog(getTargetActivity(), BaseInventory.Companion.getCurrentBackendId(), InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, 33554175, null), 0);
-                    }
-                } else if (inventoryItem22 != null) {
-                    Activity targetActivity = getTargetActivity();
-                    int currentBackendId = BaseInventory.Companion.getCurrentBackendId();
-                    InventoryItem copy$default = InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, 33554175, null);
-                    GuardInfo guardInfo6 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
-                    if (guardInfo6 != null && (id = guardInfo6.getId()) != null) {
-                        r12 = id.intValue();
-                    }
-                    new SelectorDialog(targetActivity, currentBackendId, copy$default, r12);
-                }
-            } else if (i == 5) {
-                setVisible(true);
-                this.clickedMenuButtons = true;
-            } else if (i == 6) {
-                Object fromJson8 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) BlockType.class);
-                Intrinsics.checkNotNullExpressionValue(fromJson8, "fromJson(...)");
-                int type4 = ((BlockType) fromJson8).getType();
-                if (type4 == 1) {
-                    RecyclerView rvAccessoriesInventory = this.binding.personSection.rvAccessoriesInventory;
-                    Intrinsics.checkNotNullExpressionValue(rvAccessoriesInventory, "rvAccessoriesInventory");
-                    if (rvAccessoriesInventory.getVisibility() == 0) {
-                        return;
-                    }
-                    this.binding.personSection.btnAccessories.performClick();
-                } else if (type4 == 2) {
-                    RecyclerView rvUpgradesInventory = this.binding.personSection.rvUpgradesInventory;
-                    Intrinsics.checkNotNullExpressionValue(rvUpgradesInventory, "rvUpgradesInventory");
-                    if (rvUpgradesInventory.getVisibility() == 0) {
-                        return;
-                    }
-                    this.binding.personSection.btnUpgrades.performClick();
-                }
-            } else if (i == 10) {
-                Integer intOrNull = StringsKt.toIntOrNull(data);
-                ConstantsKt.setHealthBar(intOrNull != null ? intOrNull.intValue() : 0);
-                this.binding.ivHealthBar.setProgress(ConstantsKt.getHealthBar());
-                this.binding.tvHealthCount.setText(data);
-            } else if (i == 11) {
-                ConstantsKt.setShieldBar(Integer.parseInt(data));
-                this.binding.ivShieldBar.setProgress(ConstantsKt.getShieldBar());
-                this.binding.tvShieldCount.setText(data);
-            } else if (i == 12) {
-                Integer intOrNull2 = StringsKt.toIntOrNull(data);
-                ConstantsKt.setSatietyBar(intOrNull2 != null ? intOrNull2.intValue() : 0);
-                this.binding.ivFoodBar.setProgress(ConstantsKt.getSatietyBar());
-                this.binding.tvFoodCount.setText(data);
-            } else if (i == UIElementID.INVENTORY_SECURITY_SCREEN.getId()) {
-                if (Intrinsics.areEqual(data, "true")) {
-                    setVisible(true);
-                    BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_SECURITY_SCREEN.getId());
-                    return;
-                }
-                setVisible(false);
-            } else if (i == UIElementID.INVENTORY_WAREHOUSE.getId()) {
-                if (Intrinsics.areEqual(data, "true")) {
-                    setVisible(true);
-                    initObservers();
-                }
-            } else if (i == UIElementID.INVENTORY_VEHICLE_SCREEN.getId()) {
-                if (Intrinsics.areEqual(data, "true")) {
-                    setVisible(true);
-                    BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_VEHICLE_SCREEN.getId());
-                    initObservers();
-                    return;
-                }
-                setVisible(false);
-            } else if (i == UIElementID.INVENTORY_WALLET_SCREEN.getId()) {
-                if (Intrinsics.areEqual(data, "true")) {
-                    this.isWalletListVisible = true;
-                    if (!this.isArizonaType) {
-                        this.mainInventoryAdapter.setWalletVisible(true);
-                        return;
-                    }
-                    setVisible(true);
-                    BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_WALLET_SCREEN.getId());
-                    initObservers();
-                } else if (!this.isArizonaType) {
-                    this.mainInventoryAdapter.setWalletVisible(false);
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+            if (UtilsKt.isArizonaType() && ConstantsKt.getArizonaWarehouseIds().contains(Integer.valueOf(inventoryEditResponse2.getType()))) {
+                List<InventoryItem> items19 = inventoryEditResponse2.getItems();
+                if (items19 != null) {
+                    for (InventoryItem inventoryItem20 : items19) {
+                        Iterator<InventoryItem> it20 = this.warehouseList.iterator();
+                        int i16 = 0;
+                        while (true) {
+                            if (!it20.hasNext()) {
+                                i16 = -1;
+                                break;
+                            } else if (it20.next().getSlot() == inventoryItem20.getSlot()) {
+                                break;
+                            } else {
+                                i16++;
+                            }
+                        }
+                        if (i16 >= 0) {
+                            this.warehouseList.set(i16, inventoryItem20);
+                        }
+                        this.warehouseAdapter.submitList(CollectionsKt.toList(this.warehouseList));
+                        this.warehouseAdapter.notifyItemChanged(i16);
+                    }
+                    Unit unit19 = Unit.INSTANCE;
+                }
+            } else if (!UtilsKt.isArizonaType() && ConstantsKt.getRodinaWarehouseIds().contains(Integer.valueOf(inventoryEditResponse2.getType())) && (items10 = inventoryEditResponse2.getItems()) != null) {
+                for (InventoryItem inventoryItem21 : items10) {
+                    Iterator<InventoryItem> it21 = this.warehouseList.iterator();
+                    int i17 = 0;
+                    while (true) {
+                        if (!it21.hasNext()) {
+                            i17 = -1;
+                            break;
+                        } else if (it21.next().getSlot() == inventoryItem21.getSlot()) {
+                            break;
+                        } else {
+                            i17++;
+                        }
+                    }
+                    if (i17 >= 0) {
+                        this.warehouseList.set(i17, inventoryItem21);
+                    }
+                    this.warehouseAdapter.submitList(CollectionsKt.toList(this.warehouseList));
+                    this.warehouseAdapter.notifyItemChanged(i17);
+                }
+                Unit unit20 = Unit.INSTANCE;
+            }
+        } else if (i == 3) {
+            Object fromJson7 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) ShowDialogInfo.class);
+            Intrinsics.checkNotNullExpressionValue(fromJson7, "fromJson(...)");
+            ShowDialogInfo showDialogInfo = (ShowDialogInfo) fromJson7;
+            boolean isEmpty = this.guardInfoList.isEmpty();
+            InventoryItem inventoryItem22 = this.selectedInventoryItem;
+            if (isEmpty) {
+                if (inventoryItem22 != null) {
+                    new SelectorDialog(getTargetActivity(), BaseInventory.Companion.getCurrentBackendId(), InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, 33554175, null), 0);
+                }
+            } else if (inventoryItem22 != null) {
+                Activity targetActivity = getTargetActivity();
+                int currentBackendId = BaseInventory.Companion.getCurrentBackendId();
+                InventoryItem copy$default = InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, 33554175, null);
+                GuardInfo guardInfo6 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
+                if (guardInfo6 != null && (id = guardInfo6.getId()) != null) {
+                    r11 = id.intValue();
+                }
+                new SelectorDialog(targetActivity, currentBackendId, copy$default, r11);
+            }
+        } else if (i == 5) {
+            setVisible(true);
+            this.clickedMenuButtons = true;
+        } else if (i == 6) {
+            Object fromJson8 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) BlockType.class);
+            Intrinsics.checkNotNullExpressionValue(fromJson8, "fromJson(...)");
+            int type4 = ((BlockType) fromJson8).getType();
+            if (type4 == 1) {
+                RecyclerView rvAccessoriesInventory = this.binding.personSection.rvAccessoriesInventory;
+                Intrinsics.checkNotNullExpressionValue(rvAccessoriesInventory, "rvAccessoriesInventory");
+                if (rvAccessoriesInventory.getVisibility() == 0) {
+                    return;
+                }
+                this.binding.personSection.btnAccessories.performClick();
+            } else if (type4 == 2) {
+                RecyclerView rvUpgradesInventory = this.binding.personSection.rvUpgradesInventory;
+                Intrinsics.checkNotNullExpressionValue(rvUpgradesInventory, "rvUpgradesInventory");
+                if (rvUpgradesInventory.getVisibility() == 0) {
+                    return;
+                }
+                this.binding.personSection.btnUpgrades.performClick();
+            }
+        } else if (i == 10) {
+            Integer intOrNull = StringsKt.toIntOrNull(data);
+            ConstantsKt.setHealthBar(intOrNull != null ? intOrNull.intValue() : 0);
+            this.binding.ivHealthBar.setProgress(ConstantsKt.getHealthBar());
+            this.binding.tvHealthCount.setText(data);
+        } else if (i == 11) {
+            ConstantsKt.setShieldBar(Integer.parseInt(data));
+            this.binding.ivShieldBar.setProgress(ConstantsKt.getShieldBar());
+            this.binding.tvShieldCount.setText(data);
+        } else if (i == 12) {
+            Integer intOrNull2 = StringsKt.toIntOrNull(data);
+            ConstantsKt.setSatietyBar(intOrNull2 != null ? intOrNull2.intValue() : 0);
+            this.binding.ivFoodBar.setProgress(ConstantsKt.getSatietyBar());
+            this.binding.tvFoodCount.setText(data);
+        } else if (i == UIElementID.INVENTORY_SECURITY_SCREEN.getId()) {
+            if (Intrinsics.areEqual(data, "true")) {
+                setVisible(true);
+                BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_SECURITY_SCREEN.getId());
+                return;
+            }
+            setVisible(false);
+        } else if (i == UIElementID.INVENTORY_WAREHOUSE.getId()) {
+            if (Intrinsics.areEqual(data, "true")) {
+                setVisible(true);
+                initObservers();
+            }
+        } else if (i == UIElementID.INVENTORY_VEHICLE_SCREEN.getId()) {
+            if (Intrinsics.areEqual(data, "true")) {
+                setVisible(true);
+                BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_VEHICLE_SCREEN.getId());
+                initObservers();
+                return;
+            }
+            setVisible(false);
+        } else if (i == UIElementID.INVENTORY_WALLET_SCREEN.getId()) {
+            if (Intrinsics.areEqual(data, "true")) {
+                this.isWalletListVisible = true;
+                if (!UtilsKt.isArizonaType()) {
+                    this.mainInventoryAdapter.setWalletVisible(true);
+                    return;
+                }
+                setVisible(true);
+                BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_WALLET_SCREEN.getId());
+                initObservers();
+            } else if (!UtilsKt.isArizonaType()) {
+                this.mainInventoryAdapter.setWalletVisible(false);
+            }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void onBackendMessage$lambda$0(InventoryScreen inventoryScreen) {
+    public static final void onBackendMessageHandled$lambda$0(InventoryScreen inventoryScreen) {
         inventoryScreen.addLockedItems();
         inventoryScreen.mainInventoryAdapter.notifyDataSetChanged();
         inventoryScreen.addInfoToDatabase(inventoryScreen.mainInventoryList);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final boolean onBackendMessage$lambda$1(InventoryItem it) {
+    public static final boolean onBackendMessageHandled$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.isLocked();
     }
@@ -2761,15 +2742,15 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
 
     private final void addMenuCategories(List<Integer> list) {
         this.menuItemList.clear();
-        if (this.isArizonaType) {
+        if (UtilsKt.isArizonaType()) {
             for (Number number : list) {
                 int intValue = number.intValue();
-                this.menuItemList.add(new InventoryMenuData(intValue, UtilsKt.defineArzMenuText(intValue)));
+                this.menuItemList.add(new InventoryMenuData(intValue, UtilsKt.defineArzMenuText(getTargetActivity(), intValue)));
             }
         } else {
             for (Number number2 : list) {
                 int intValue2 = number2.intValue();
-                this.menuItemList.add(new InventoryMenuData(intValue2, UtilsKt.defineRodMenuText(intValue2)));
+                this.menuItemList.add(new InventoryMenuData(intValue2, UtilsKt.defineRodMenuText(getTargetActivity(), intValue2)));
             }
         }
         this.inventoryMenuAdapter.submitList(CollectionsKt.toList(this.menuItemList));
@@ -2837,7 +2818,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     private final void colorItem(InventoryItem inventoryItem, boolean z) {
         int slot = inventoryItem.getSlot();
         Log.d("person_section", "colorItem: " + slot + " " + inventoryItem.getItem_type());
-        if (this.isArizonaType) {
+        if (UtilsKt.isArizonaType()) {
             Integer item_type = inventoryItem.getItem_type();
             int id = ItemTypes.ITEM_TYPE_ACCESSORIES.getId();
             if (item_type != null && item_type.intValue() == id) {
@@ -3121,10 +3102,10 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
 
     private final void addTopBars(Skin skin) {
         String str;
-        if (this.isArizonaType) {
-            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
+        if (UtilsKt.isArizonaType()) {
+            str = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
         } else {
-            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
+            str = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
         }
         String str2 = str;
         AppCompatImageView ivCharacterImage = this.binding.ivCharacterImage;
@@ -3177,10 +3158,10 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         this.binding.layoutVehicle.tvOilCount.setText(String.valueOf(vehicleInfoBars.getOil()));
         this.binding.layoutVehicle.ivEngineBar.setProgress((int) ((vehicleInfoBars.getHealth() / vehicleInfoBars.getMaxHealth()) * 100.0d));
         this.binding.layoutVehicle.tvEngineCount.setText(String.valueOf(vehicleInfoBars.getHealth()));
-        if (this.isArizonaType) {
-            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/inventory/vehicles/512/" + vehicleInfoBars.getSkin().getModel() + ".webp";
+        if (UtilsKt.isArizonaType()) {
+            str = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/inventory/vehicles/512/" + vehicleInfoBars.getSkin().getModel() + ".webp";
         } else {
-            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/inventory/vehicles/512/" + vehicleInfoBars.getSkin().getModel() + ".webp";
+            str = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/inventory/vehicles/512/" + vehicleInfoBars.getSkin().getModel() + ".webp";
         }
         AppCompatImageView ivVehicleBg = this.binding.layoutVehicle.ivVehicleBg;
         Intrinsics.checkNotNullExpressionValue(ivVehicleBg, "ivVehicleBg");

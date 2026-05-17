@@ -9,7 +9,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class C0594t7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0520q7 f1232a;
+    public final C0520q7 f1237a;
 
     public C0594t7() {
         this(null, 1, null);
@@ -19,25 +19,25 @@ public final class C0594t7 implements Converter {
     /* renamed from: a */
     public final ContentValues fromModel(C0569s7 c0569s7) {
         ContentValues contentValues = new ContentValues();
-        Long l = c0569s7.f1218a;
+        Long l = c0569s7.f1223a;
         if (l != null) {
             contentValues.put("id", Long.valueOf(l.longValue()));
         }
         Vk vk = c0569s7.b;
         if (vk != null) {
-            contentValues.put("type", Integer.valueOf(vk.f830a));
+            contentValues.put("type", Integer.valueOf(vk.f835a));
         }
         String str = c0569s7.c;
         if (str != null) {
             contentValues.put("report_request_parameters", str);
         }
-        C0520q7 c0520q7 = this.f1232a;
-        contentValues.put("session_description", MessageNano.toByteArray(c0520q7.f1185a.fromModel(c0569s7.d)));
+        C0520q7 c0520q7 = this.f1237a;
+        contentValues.put("session_description", MessageNano.toByteArray(c0520q7.f1190a.fromModel(c0569s7.d)));
         return contentValues;
     }
 
     public C0594t7(C0520q7 c0520q7) {
-        this.f1232a = c0520q7;
+        this.f1237a = c0520q7;
     }
 
     public /* synthetic */ C0594t7(C0520q7 c0520q7, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -60,6 +60,6 @@ public final class C0594t7 implements Converter {
         } else {
             vk = null;
         }
-        return new C0569s7(asLong, vk, contentValues.getAsString("report_request_parameters"), this.f1232a.toModel(contentValues.getAsByteArray("session_description")));
+        return new C0569s7(asLong, vk, contentValues.getAsString("report_request_parameters"), this.f1237a.toModel(contentValues.getAsByteArray("session_description")));
     }
 }

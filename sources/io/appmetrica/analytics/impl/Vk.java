@@ -6,9 +6,9 @@ public enum Vk {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f830a;
+    public final int f835a;
 
     Vk(int i) {
-        this.f830a = i;
+        this.f835a = i;
     }
 }

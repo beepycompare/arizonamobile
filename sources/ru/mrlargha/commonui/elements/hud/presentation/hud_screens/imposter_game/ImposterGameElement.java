@@ -36,7 +36,7 @@ public final class ImposterGameElement {
         this.binding = binding;
         this.notifier = notifier;
         this.hudListener = hudListener;
-        this.url = "projects/arizona-rp/systems/lockdown_protocol/items/";
+        this.url = "systems/lockdown_protocol/items/";
     }
 
     public final HudElementImposterGameBinding getBinding() {
@@ -82,9 +82,9 @@ public final class ImposterGameElement {
         if (imposterGameToolItem != null) {
             if (imposterGameToolItem.getId() != -1) {
                 Picasso picasso = Picasso.get();
-                String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+                String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
                 String str = this.url;
-                picasso.load(resourceUrl$default + str + imposterGameToolItem.getImage()).into(this.binding.hudImposterGameItem1Image);
+                picasso.load(projectResourceUrl$default + str + imposterGameToolItem.getImage()).into(this.binding.hudImposterGameItem1Image);
             }
             int selected = imposterGameToolItem.getSelected();
             HudElementImposterGameBinding hudElementImposterGameBinding = this.binding;
@@ -105,9 +105,9 @@ public final class ImposterGameElement {
         if (imposterGameToolItem2 != null) {
             if (imposterGameToolItem2.getId() != -1) {
                 Picasso picasso2 = Picasso.get();
-                String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+                String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
                 String str2 = this.url;
-                picasso2.load(resourceUrl$default2 + str2 + imposterGameToolItem2.getImage()).into(this.binding.hudImposterGameItem2Image);
+                picasso2.load(projectResourceUrl$default2 + str2 + imposterGameToolItem2.getImage()).into(this.binding.hudImposterGameItem2Image);
             }
             int selected2 = imposterGameToolItem2.getSelected();
             HudElementImposterGameBinding hudElementImposterGameBinding2 = this.binding;

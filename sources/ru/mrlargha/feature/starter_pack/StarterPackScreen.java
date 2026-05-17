@@ -1,10 +1,8 @@
 package ru.mrlargha.feature.starter_pack;
 
 import android.app.Activity;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
@@ -27,7 +25,7 @@ import ru.mrlargha.feature.starter_pack.adapters.StarterPackAdapter;
 import ru.mrlargha.feature.starter_pack.databinding.StarterPackBinding;
 import ru.mrlargha.feature.starter_pack.models.StarterPackModel;
 /* compiled from: StarterPackScreen.kt */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\r\u0018\u00002\u00020\u00012\u00020\u0002:\u0001(B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014H\u0016J\u0018\u0010\u0015\u001a\u00020\u00122\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0006H\u0016J\u0016\u0010\u0019\u001a\u00020\u00122\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bH\u0002J\b\u0010\u001d\u001a\u00020\u0012H\u0002J\u0010\u0010\u001e\u001a\u00020\u00122\u0006\u0010\u001f\u001a\u00020\u001cH\u0002J\u0010\u0010 \u001a\u00020\u00122\u0006\u0010\u001f\u001a\u00020\u001cH\u0002J\b\u0010!\u001a\u00020\u0012H\u0002J\b\u0010\"\u001a\u00020\u0012H\u0002J\b\u0010#\u001a\u00020\u0012H\u0002J\b\u0010$\u001a\u00020\u0012H\u0002J\b\u0010%\u001a\u00020\u0012H\u0002J\u0010\u0010&\u001a\u00020\u00172\u0006\u0010'\u001a\u00020\u0006H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006)"}, d2 = {"Lru/mrlargha/feature/starter_pack/StarterPackScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/starter_pack/databinding/StarterPackBinding;", "newbieAdapter", "Lru/mrlargha/feature/starter_pack/adapters/StarterPackAdapter;", "richAdapter", "setVisible", "", "visible", "", "onBackendMessage", "data", "", "subId", "setData", "list", "", "Lru/mrlargha/feature/starter_pack/models/StarterPackModel;", "setupNavigation", "setNewbie", CommonUrlParts.MODEL, "setRich", "initialize", "initArizona", "initRodina", "setupAdapters", "clearAdapters", "formatDuration", "seconds", "Spawner", "starter-pack"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\r\u0018\u00002\u00020\u00012\u00020\u0002:\u0001(B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014H\u0016J\u0018\u0010\u0015\u001a\u00020\u00122\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0006H\u0016J\u0016\u0010\u0019\u001a\u00020\u00122\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bH\u0002J\b\u0010\u001d\u001a\u00020\u0012H\u0002J\u0010\u0010\u001e\u001a\u00020\u00122\u0006\u0010\u001f\u001a\u00020\u001cH\u0002J\u0010\u0010 \u001a\u00020\u00122\u0006\u0010\u001f\u001a\u00020\u001cH\u0002J\b\u0010!\u001a\u00020\u0012H\u0002J\b\u0010\"\u001a\u00020\u0012H\u0002J\b\u0010#\u001a\u00020\u0012H\u0002J\b\u0010$\u001a\u00020\u0012H\u0002J\b\u0010%\u001a\u00020\u0012H\u0002J\u0010\u0010&\u001a\u00020\u00172\u0006\u0010'\u001a\u00020\u0006H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006)"}, d2 = {"Lru/mrlargha/feature/starter_pack/StarterPackScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/starter_pack/databinding/StarterPackBinding;", "newbieAdapter", "Lru/mrlargha/feature/starter_pack/adapters/StarterPackAdapter;", "richAdapter", "setVisible", "", "visible", "", "onBackendMessageHandled", "data", "", "subId", "setData", "list", "", "Lru/mrlargha/feature/starter_pack/models/StarterPackModel;", "setupNavigation", "setNewbie", CommonUrlParts.MODEL, "setRich", "initialize", "initArizona", "initRodina", "setupAdapters", "clearAdapters", "formatDuration", "seconds", "Spawner", "starter-pack"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class StarterPackScreen extends SAMPUIElement implements InterfaceController {
     private final StarterPackBinding binding;
@@ -63,16 +61,10 @@ public final class StarterPackScreen extends SAMPUIElement implements InterfaceC
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == 1) {
-            try {
-                setData(MapperKt.toListModel(data, StarterPackModel.class));
-            } catch (Exception e) {
-                Log.d("starter_pack_rodina", data + "  " + e.getMessage());
-                e.printStackTrace();
-                Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
-            }
+            setData(MapperKt.toListModel(data, StarterPackModel.class));
         }
     }
 
@@ -134,33 +126,33 @@ public final class StarterPackScreen extends SAMPUIElement implements InterfaceC
     private final void setNewbie(StarterPackModel starterPackModel) {
         this.newbieAdapter.submitList(starterPackModel.getRewards());
         StarterPackBinding starterPackBinding = this.binding;
-        starterPackBinding.tvNewbieTitle.setText("Набор " + starterPackModel.getTitle());
-        starterPackBinding.newbieLevel.setText("Доступно до " + starterPackModel.getLevel() + " уровня");
-        starterPackBinding.price1.setText(starterPackModel.getPrice() + " РУБЛЕЙ");
-        String str = "projects/arizona-rp/systems/starter_packs/background/" + starterPackModel.getImage() + ".webp";
-        String str2 = "projects/rodina-rp/systems/starter-packs/images/" + starterPackModel.getImage() + ".webp";
+        starterPackBinding.tvNewbieTitle.setText(getTargetActivity().getString(ru.mrlargha.commonui.R.string.starter_pack_title, new Object[]{starterPackModel.getTitle()}));
+        starterPackBinding.newbieLevel.setText(getTargetActivity().getString(ru.mrlargha.commonui.R.string.starter_pack_available_until_level, new Object[]{Integer.valueOf(starterPackModel.getLevel())}));
+        starterPackBinding.price1.setText(getTargetActivity().getString(ru.mrlargha.commonui.R.string.starter_pack_price_rubles, new Object[]{Integer.valueOf(starterPackModel.getPrice())}));
+        String str = "systems/starter_packs/background/" + starterPackModel.getImage() + ".webp";
+        String str2 = "systems/starter-packs/images/" + starterPackModel.getImage() + ".webp";
         Picasso picasso = Picasso.get();
-        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
         if (!UtilsKt.isArizonaType()) {
             str = str2;
         }
-        picasso.load(resourceUrl$default + str).into(starterPackBinding.bg1);
+        picasso.load(projectResourceUrl$default + str).into(starterPackBinding.bg1);
     }
 
     private final void setRich(StarterPackModel starterPackModel) {
         this.richAdapter.submitList(starterPackModel.getRewards());
         StarterPackBinding starterPackBinding = this.binding;
         starterPackBinding.tvRich2.setText(StringsKt.substringBefore$default(StringsKt.substringAfter$default(starterPackModel.getTitle(), ">", (String) null, 2, (Object) null), "<", (String) null, 2, (Object) null));
-        starterPackBinding.richLevel.setText("Доступно до " + starterPackModel.getLevel() + " уровня");
-        starterPackBinding.price2.setText(starterPackModel.getPrice() + " РУБЛЕЙ");
-        String str = "projects/arizona-rp/systems/starter_packs/background/" + starterPackModel.getImage() + ".webp";
-        String str2 = "projects/rodina-rp/systems/starter-packs/images/" + starterPackModel.getImage() + ".webp";
+        starterPackBinding.richLevel.setText(getTargetActivity().getString(ru.mrlargha.commonui.R.string.starter_pack_available_until_level, new Object[]{Integer.valueOf(starterPackModel.getLevel())}));
+        starterPackBinding.price2.setText(getTargetActivity().getString(ru.mrlargha.commonui.R.string.starter_pack_price_rubles, new Object[]{Integer.valueOf(starterPackModel.getPrice())}));
+        String str = "systems/starter_packs/background/" + starterPackModel.getImage() + ".webp";
+        String str2 = "systems/starter-packs/images/" + starterPackModel.getImage() + ".webp";
         Picasso picasso = Picasso.get();
-        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
         if (!UtilsKt.isArizonaType()) {
             str = str2;
         }
-        picasso.load(resourceUrl$default + str).into(starterPackBinding.bg2);
+        picasso.load(projectResourceUrl$default + str).into(starterPackBinding.bg2);
         if (starterPackModel.getOldPrice() > 0) {
             starterPackBinding.price2Old.setVisibility(0);
         } else {
@@ -170,7 +162,7 @@ public final class StarterPackScreen extends SAMPUIElement implements InterfaceC
         starterPackBinding.price2Old.setPaintFlags(16);
         if (starterPackModel.getDiscount() > 0) {
             starterPackBinding.discountContainer.setVisibility(0);
-            starterPackBinding.discount.setText("ВЫГОДА " + starterPackModel.getDiscount() + "%");
+            starterPackBinding.discount.setText(getTargetActivity().getString(ru.mrlargha.commonui.R.string.starter_pack_benefit, new Object[]{Integer.valueOf(starterPackModel.getDiscount())}));
         } else {
             starterPackBinding.discountContainer.setVisibility(8);
         }
@@ -183,7 +175,7 @@ public final class StarterPackScreen extends SAMPUIElement implements InterfaceC
     }
 
     private final void initialize() {
-        if (UtilsKt.getArizonaType(getTargetActivity())) {
+        if (UtilsKt.isArizonaType()) {
             initArizona();
         } else {
             initRodina();
@@ -216,13 +208,19 @@ public final class StarterPackScreen extends SAMPUIElement implements InterfaceC
         int i4 = (i % DateCalculationsKt.SECONDS_PER_HOUR) / 60;
         ArrayList arrayList = new ArrayList();
         if (i2 > 0) {
-            arrayList.add(i2 + " д.");
+            String string = getTargetActivity().getString(ru.mrlargha.commonui.R.string.starter_pack_duration_day, new Object[]{Integer.valueOf(i2)});
+            Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+            arrayList.add(string);
         }
         if (i3 > 0 || i2 > 0) {
-            arrayList.add(i3 + "час.");
+            String string2 = getTargetActivity().getString(ru.mrlargha.commonui.R.string.starter_pack_duration_hour, new Object[]{Integer.valueOf(i3)});
+            Intrinsics.checkNotNullExpressionValue(string2, "getString(...)");
+            arrayList.add(string2);
         }
-        arrayList.add(i4 + "мин.");
-        return arrayList.toString();
+        String string3 = getTargetActivity().getString(ru.mrlargha.commonui.R.string.starter_pack_duration_minute, new Object[]{Integer.valueOf(i4)});
+        Intrinsics.checkNotNullExpressionValue(string3, "getString(...)");
+        arrayList.add(string3);
+        return CollectionsKt.joinToString$default(arrayList, " ", null, null, 0, null, null, 62, null);
     }
 
     /* compiled from: StarterPackScreen.kt */

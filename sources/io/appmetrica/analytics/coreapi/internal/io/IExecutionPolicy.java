@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.coreapi.internal.io;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface IExecutionPolicy {
     boolean canBeExecuted();
 

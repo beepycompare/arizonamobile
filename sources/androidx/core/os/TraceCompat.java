@@ -5,7 +5,7 @@ import android.os.Trace;
 import android.util.Log;
 import java.lang.reflect.Method;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TraceCompat {
     private static final String TAG = "TraceCompat";
     private static Method sAsyncTraceBeginMethod;
@@ -87,7 +87,7 @@ public final class TraceCompat {
     private TraceCompat() {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     static class Api29Impl {
         private Api29Impl() {
         }

@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ImageViewAction extends Action<ImageView> {
     Callback callback;
 

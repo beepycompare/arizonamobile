@@ -8,7 +8,7 @@ import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class ItemColorBinding implements ViewBinding {
     public final CardView parentCardView;
     private final CardView rootView;

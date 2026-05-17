@@ -24,7 +24,7 @@ public final class C0500pc extends X4 implements Ma, La {
         boolean optBoolean;
         xo xoVar = this.t;
         synchronized (xoVar) {
-            optBoolean = xoVar.f1312a.a().optBoolean("referrer_handled", false);
+            optBoolean = xoVar.f1317a.a().optBoolean("referrer_handled", false);
         }
         return optBoolean;
     }
@@ -44,7 +44,7 @@ public final class C0500pc extends X4 implements Ma, La {
     public final void a() {
         xo xoVar = this.t;
         synchronized (xoVar) {
-            yo yoVar = xoVar.f1312a;
+            yo yoVar = xoVar.f1317a;
             yoVar.a(yoVar.a().put("referrer_handled", true));
         }
     }

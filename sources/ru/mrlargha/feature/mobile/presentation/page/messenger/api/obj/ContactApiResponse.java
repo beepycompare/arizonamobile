@@ -416,7 +416,7 @@ public final class ContactApiResponse {
         Integer num3 = this.phone;
         String formatPhoneNumber = num3 != null ? NumberKt.formatPhoneNumber(num3.intValue()) : null;
         String str4 = this.userImage;
-        String str5 = ((str4 == null || !StringsKt.contains$default((CharSequence) str4, (CharSequence) "http:", false, 2, (Object) null)) && ((str = this.userImage) == null || !StringsKt.contains$default((CharSequence) str, (CharSequence) "https:", false, 2, (Object) null))) ? FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + this.userImage : this.userImage;
+        String str5 = ((str4 == null || !StringsKt.contains$default((CharSequence) str4, (CharSequence) "http:", false, 2, (Object) null)) && ((str = this.userImage) == null || !StringsKt.contains$default((CharSequence) str, (CharSequence) "https:", false, 2, (Object) null))) ? StringsKt.substringBefore$default(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null), "projects", (String) null, 2, (Object) null) + this.userImage : this.userImage;
         MessageStatus messageStatus = this.isOnline ? MessageStatus.ONLINE : MessageStatus.OFFLINE;
         String str6 = str5;
         boolean z = this.isPinned;

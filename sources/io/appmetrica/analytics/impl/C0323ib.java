@@ -10,6 +10,6 @@ public class C0323ib extends AbstractC0473oa {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0473oa
     public void a(List<Rg> list) {
-        list.add(this.f1151a.b);
+        list.add(this.f1156a.b);
     }
 }

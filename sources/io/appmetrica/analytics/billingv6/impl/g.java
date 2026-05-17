@@ -4,7 +4,6 @@ import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.PurchaseHistoryRecord;
 import com.android.billingclient.api.QueryProductDetailsParams;
-import com.google.android.billing.IabHelper;
 import io.appmetrica.analytics.billinginterface.internal.BillingInfo;
 import io.appmetrica.analytics.billinginterface.internal.ProductType;
 import io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider;
@@ -15,16 +14,16 @@ import java.util.List;
 import java.util.Map;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class g extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ i f343a;
+    public final /* synthetic */ i f348a;
     public final /* synthetic */ BillingResult b;
     public final /* synthetic */ List c;
 
     public g(i iVar, BillingResult billingResult, List list) {
-        this.f343a = iVar;
+        this.f348a = iVar;
         this.b = billingResult;
         this.c = list;
     }
@@ -32,7 +31,7 @@ public final class g extends SafeRunnable {
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
         ProductType productType;
-        i iVar = this.f343a;
+        i iVar = this.f348a;
         BillingResult billingResult = this.b;
         List<PurchaseHistoryRecord> list = this.c;
         iVar.getClass();
@@ -41,16 +40,16 @@ public final class g extends SafeRunnable {
             for (PurchaseHistoryRecord purchaseHistoryRecord : list) {
                 for (String str : purchaseHistoryRecord.getProducts()) {
                     String str2 = iVar.d;
-                    if (Intrinsics.areEqual(str2, IabHelper.ITEM_TYPE_INAPP)) {
+                    if (Intrinsics.areEqual(str2, "inapp")) {
                         productType = ProductType.INAPP;
                     } else {
-                        productType = Intrinsics.areEqual(str2, IabHelper.ITEM_TYPE_SUBS) ? ProductType.SUBS : ProductType.UNKNOWN;
+                        productType = Intrinsics.areEqual(str2, "subs") ? ProductType.SUBS : ProductType.UNKNOWN;
                     }
                     BillingInfo billingInfo = new BillingInfo(productType, str, purchaseHistoryRecord.getPurchaseToken(), purchaseHistoryRecord.getPurchaseTime(), 0L);
                     linkedHashMap.put(billingInfo.productId, billingInfo);
                 }
             }
-            Map<String, BillingInfo> billingInfoToUpdate = iVar.c.getUpdatePolicy().getBillingInfoToUpdate(iVar.f345a, linkedHashMap, iVar.c.getBillingInfoManager());
+            Map<String, BillingInfo> billingInfoToUpdate = iVar.c.getUpdatePolicy().getBillingInfoToUpdate(iVar.f350a, linkedHashMap, iVar.c.getBillingInfoManager());
             if (billingInfoToUpdate.isEmpty()) {
                 m.a(linkedHashMap, billingInfoToUpdate, iVar.d, iVar.c.getBillingInfoManager());
                 iVar.f.onUpdateFinished();
@@ -80,7 +79,7 @@ public final class g extends SafeRunnable {
         } else {
             iVar.f.onUpdateFinished();
         }
-        i iVar2 = this.f343a;
+        i iVar2 = this.f348a;
         iVar2.e.a(iVar2);
     }
 }

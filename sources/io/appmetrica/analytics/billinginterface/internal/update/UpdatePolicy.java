@@ -4,7 +4,7 @@ import io.appmetrica.analytics.billinginterface.internal.BillingInfo;
 import io.appmetrica.analytics.billinginterface.internal.config.BillingConfig;
 import io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoManager;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface UpdatePolicy {
     Map<String, BillingInfo> getBillingInfoToUpdate(BillingConfig billingConfig, Map<String, BillingInfo> map, BillingInfoManager billingInfoManager);
 }

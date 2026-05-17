@@ -7,22 +7,22 @@ import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleC
 import java.util.List;
 import java.util.concurrent.Executor;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class j implements BillingInfoSender {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ServiceComponentModuleReporter f312a;
+    public final ServiceComponentModuleReporter f317a;
     public final Executor b;
     public final o c;
 
     public j(ServiceComponentModuleReporter serviceComponentModuleReporter, Executor executor, o oVar) {
-        this.f312a = serviceComponentModuleReporter;
+        this.f317a = serviceComponentModuleReporter;
         this.b = executor;
         this.c = oVar;
     }
 
     public static final void a(j jVar, ProductInfo productInfo) {
-        ServiceComponentModuleReporter serviceComponentModuleReporter = jVar.f312a;
+        ServiceComponentModuleReporter serviceComponentModuleReporter = jVar.f317a;
         ServiceModuleCounterReport.Builder withType = ServiceModuleCounterReport.Companion.newBuilder().withType(40976);
         jVar.c.getClass();
         serviceComponentModuleReporter.handleReport(withType.withValueBytes(o.a(productInfo)).build());

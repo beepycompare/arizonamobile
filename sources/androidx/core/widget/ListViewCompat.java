@@ -3,7 +3,7 @@ package androidx.core.widget;
 import android.widget.ListView;
 import androidx.annotation.ReplaceWith;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ListViewCompat {
     @ReplaceWith(expression = "listView.scrollListBy(y)")
     @Deprecated

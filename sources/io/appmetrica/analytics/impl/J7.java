@@ -6,17 +6,17 @@ import java.util.Map;
 public final class J7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f640a;
+    public final Map f645a;
     public final String b;
     public final String c;
 
     public J7(String str, HashMap hashMap, String str2) {
         this.b = str;
-        this.f640a = hashMap;
+        this.f645a = hashMap;
         this.c = str2;
     }
 
     public final String toString() {
-        return "DeferredDeeplinkState{mParameters=" + this.f640a + ", mDeeplink='" + this.b + "', mUnparsedReferrer='" + this.c + "'}";
+        return "DeferredDeeplinkState{mParameters=" + this.f645a + ", mDeeplink='" + this.b + "', mUnparsedReferrer='" + this.c + "'}";
     }
 }

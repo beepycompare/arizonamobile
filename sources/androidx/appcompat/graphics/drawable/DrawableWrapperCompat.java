@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import androidx.core.graphics.drawable.DrawableCompat;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DrawableWrapperCompat extends Drawable implements Drawable.Callback {
     private Drawable mDrawable;
 

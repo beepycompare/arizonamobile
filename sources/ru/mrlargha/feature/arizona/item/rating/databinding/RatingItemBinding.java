@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.arizona.item.rating.R;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public final class RatingItemBinding implements ViewBinding {
     public final CustomCardView bottomBg;
     public final CustomCardView card;

@@ -8,7 +8,7 @@ import dagger.Module;
 import dagger.Provides;
 import dagger.Reusable;
 @Module
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 abstract class ActivityModule {
     @Binds
     abstract Context provideContext(Activity activity);

@@ -7,16 +7,16 @@ import kotlin.jvm.internal.Lambda;
 public final class C0759zm extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Am f1338a;
+    public final /* synthetic */ Am f1343a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0759zm(Am am) {
         super(0);
-        this.f1338a = am;
+        this.f1343a = am;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        return this.f1338a.f503a.j;
+        return this.f1343a.f508a.j;
     }
 }

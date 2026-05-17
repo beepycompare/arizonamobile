@@ -199,7 +199,8 @@ public abstract class GoogleApi<O extends Api.ApiOptions> implements HasApiKey<O
         return this.zab;
     }
 
-    protected String getContextAttributionTag() {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public String getContextAttributionTag() {
         return this.zac;
     }
 

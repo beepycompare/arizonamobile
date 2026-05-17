@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class RodinaKaptScreenBinding implements ViewBinding {
     public final Guideline guideline26;
     public final Guideline guideline27;

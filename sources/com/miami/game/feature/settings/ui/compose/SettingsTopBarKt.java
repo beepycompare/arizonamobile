@@ -34,8 +34,8 @@ import androidx.compose.ui.unit.Dp;
 import androidx.media3.exoplayer.RendererCapabilities;
 import com.miami.game.core.design.system.component.other.CustomDividerKt;
 import com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt;
-import com.miami.game.feature.settings.R;
 import com.miami.game.feature.settings.ui.model.SettingsUiState;
+import com.miami.game.ui.classic.settings.R;
 import com.miami.game.ui.theme.TypeKt;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -62,7 +62,7 @@ public final class SettingsTopBarKt {
         Intrinsics.checkNotNullParameter(onSupport, "onSupport");
         Intrinsics.checkNotNullParameter(onTech, "onTech");
         Composer startRestartGroup = composer.startRestartGroup(1535138134);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SettingsTopBar)N(uiState,modifier,onRepairGame,onBack,onSupport,onTech)35@1352L2430:SettingsTopBar.kt#1gr92h");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SettingsTopBar)N(uiState,modifier,onRepairGame,onBack,onSupport,onTech)35@1355L2430:SettingsTopBar.kt#1gr92h");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(uiState) ? 4 : 2) | i;
         } else {
@@ -114,7 +114,7 @@ public final class SettingsTopBarKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 999182411, "C36@1368L2260,94@3637L139:SettingsTopBar.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 999182411, "C36@1371L2260,94@3640L139:SettingsTopBar.kt#1gr92h");
             Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(SizeKt.m850height3ABfNKs(modifier, Dp.m7555constructorimpl(80.0f)), 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), Alignment.Companion.getTop(), startRestartGroup, 6);
@@ -142,7 +142,7 @@ public final class SettingsTopBarKt {
             Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 78015367, "C42@1554L1009,67@2576L1042:SettingsTopBar.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 78015367, "C42@1557L1009,67@2579L1042:SettingsTopBar.kt#1gr92h");
             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), centerVertically, startRestartGroup, 48);
@@ -169,11 +169,11 @@ public final class SettingsTopBarKt {
             Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -782216228, "C45@1654L377,55@2075L42,54@2048L277,61@2342L28,64@2518L13,62@2387L162:SettingsTopBar.kt#1gr92h");
-            ScalingButtonKt.ScalingButton(onBack, null, ComposableSingletons$SettingsTopBarKt.INSTANCE.m9127getLambda$1729539213$settings(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -782216228, "C45@1657L377,55@2078L42,54@2051L277,61@2345L28,64@2521L13,62@2390L162:SettingsTopBar.kt#1gr92h");
+            ScalingButtonKt.ScalingButton(onBack, null, ComposableSingletons$SettingsTopBarKt.INSTANCE.m9135getLambda$1729539213$settings(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.settings_label, startRestartGroup, 0), (String) null, OffsetKt.m778offsetVpY3zN4$default(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(36.0f)), Dp.m7555constructorimpl(-Dp.m7555constructorimpl(12.0f)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(6.0f)), startRestartGroup, 6);
-            TextKt.m2712TextNvy7gAk("ВЕРСИЯ " + uiState.getAppVersion(), Modifier.Companion, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, startRestartGroup, 432, 0, 262120);
+            TextKt.m2712TextNvy7gAk("ВЕРСИЯ " + uiState.getAppVersion(), Modifier.Companion, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, startRestartGroup, 432, 0, 262120);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -207,10 +207,10 @@ public final class SettingsTopBarKt {
             Updater.m4049setimpl(m4041constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance3 = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 424319151, "C81@3125L15,83@3200L130,80@3080L250,87@3392L18,89@3470L134,86@3347L257:SettingsTopBar.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 424319151, "C81@3128L15,83@3203L130,80@3083L250,87@3395L18,89@3473L134,86@3350L257:SettingsTopBar.kt#1gr92h");
             if (uiState.isDebug()) {
                 startRestartGroup.startReplaceGroup(424322560);
-                ComposerKt.sourceInformation(startRestartGroup, "74@2830L12,76@2910L135,73@2781L264");
+                ComposerKt.sourceInformation(startRestartGroup, "74@2833L12,76@2913L135,73@2784L264");
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1676257821, "CC(remember):SettingsTopBar.kt#9igjgp");
                 boolean z = (458752 & i3) == 131072;
                 Object rememberedValue = startRestartGroup.rememberedValue();
@@ -328,7 +328,7 @@ public final class SettingsTopBarKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit SettingsTopBar$lambda$0$0$1$1(Modifier modifier, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C77@2952L39,77@2936L87:SettingsTopBar.kt#1gr92h");
+        ComposerKt.sourceInformation(composer, "C77@2955L39,77@2939L87:SettingsTopBar.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
@@ -352,7 +352,7 @@ public final class SettingsTopBarKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit SettingsTopBar$lambda$0$0$1$3(Modifier modifier, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C84@3238L42,84@3222L90:SettingsTopBar.kt#1gr92h");
+        ComposerKt.sourceInformation(composer, "C84@3241L42,84@3225L90:SettingsTopBar.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
@@ -376,7 +376,7 @@ public final class SettingsTopBarKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit SettingsTopBar$lambda$0$0$1$5(Modifier modifier, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C90@3508L46,90@3492L94:SettingsTopBar.kt#1gr92h");
+        ComposerKt.sourceInformation(composer, "C90@3511L46,90@3495L94:SettingsTopBar.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {

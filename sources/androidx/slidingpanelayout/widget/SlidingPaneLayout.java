@@ -1165,7 +1165,7 @@ public class SlidingPaneLayout extends ViewGroup implements Openable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     class AccessibilityDelegate extends AccessibilityDelegateCompat {
         private final Rect mTmpRect = new Rect();
 

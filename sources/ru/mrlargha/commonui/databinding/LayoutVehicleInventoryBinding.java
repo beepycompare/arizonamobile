@@ -13,7 +13,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class LayoutVehicleInventoryBinding implements ViewBinding {
     public final AppCompatImageButton btnVehicleTechnical;
     public final AppCompatImageButton btnVehicleVisual;

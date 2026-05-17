@@ -6,22 +6,22 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.battle_pass_view.R;
 /* loaded from: classes6.dex */
 public final class ItemRewardBinding implements ViewBinding {
-    public final CardView cvReward;
+    public final CustomCardView cvReward;
     public final ImageView ivReward;
     public final LinearLayout parentLayout;
     private final LinearLayout rootView;
     public final TextView tvDopInfo;
     public final TextView tvRewardDesc;
 
-    private ItemRewardBinding(LinearLayout linearLayout, CardView cardView, ImageView imageView, LinearLayout linearLayout2, TextView textView, TextView textView2) {
+    private ItemRewardBinding(LinearLayout linearLayout, CustomCardView customCardView, ImageView imageView, LinearLayout linearLayout2, TextView textView, TextView textView2) {
         this.rootView = linearLayout;
-        this.cvReward = cardView;
+        this.cvReward = customCardView;
         this.ivReward = imageView;
         this.parentLayout = linearLayout2;
         this.tvDopInfo = textView;
@@ -47,8 +47,8 @@ public final class ItemRewardBinding implements ViewBinding {
 
     public static ItemRewardBinding bind(View view) {
         int i = R.id.cvReward;
-        CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
-        if (cardView != null) {
+        CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(view, i);
+        if (customCardView != null) {
             i = R.id.ivReward;
             ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
             if (imageView != null) {
@@ -59,7 +59,7 @@ public final class ItemRewardBinding implements ViewBinding {
                     i = R.id.tvRewardDesc;
                     TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                     if (textView2 != null) {
-                        return new ItemRewardBinding(linearLayout, cardView, imageView, linearLayout, textView, textView2);
+                        return new ItemRewardBinding(linearLayout, customCardView, imageView, linearLayout, textView, textView2);
                     }
                 }
             }

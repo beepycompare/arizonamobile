@@ -1,31 +1,32 @@
 package io.appmetrica.analytics.billingv8.impl;
 
 import com.android.billingclient.api.BillingResult;
+import com.android.billingclient.api.ProductDetails;
 import com.android.billingclient.api.QueryProductDetailsResult;
 import com.android.billingclient.api.QueryPurchasesParams;
 import io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider;
 import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 import java.util.List;
 import kotlin.jvm.functions.Function0;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class e extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ f f355a;
+    public final /* synthetic */ f f360a;
     public final /* synthetic */ BillingResult b;
     public final /* synthetic */ QueryProductDetailsResult c;
 
     public e(f fVar, BillingResult billingResult, QueryProductDetailsResult queryProductDetailsResult) {
-        this.f355a = fVar;
+        this.f360a = fVar;
         this.b = billingResult;
         this.c = queryProductDetailsResult;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        f fVar = this.f355a;
+        f fVar = this.f360a;
         BillingResult billingResult = this.b;
-        List productDetailsList = this.c.getProductDetailsList();
+        List<ProductDetails> productDetailsList = this.c.getProductDetailsList();
         fVar.getClass();
         if (billingResult.getResponseCode() == 0 && !productDetailsList.isEmpty()) {
             UtilsProvider utilsProvider = fVar.c;
@@ -35,7 +36,7 @@ public final class e extends SafeRunnable {
             k kVar = new k(utilsProvider, function0, list, productDetailsList, dVar, fVar.g);
             dVar.b.add(kVar);
             if (fVar.b.isReady()) {
-                fVar.b.queryPurchasesAsync(QueryPurchasesParams.newBuilder().setProductType(fVar.f356a).build(), kVar);
+                fVar.b.queryPurchasesAsync(QueryPurchasesParams.newBuilder().setProductType(fVar.f361a).build(), kVar);
             } else {
                 fVar.f.a(kVar);
                 fVar.g.onUpdateFinished();
@@ -43,7 +44,7 @@ public final class e extends SafeRunnable {
         } else {
             fVar.g.onUpdateFinished();
         }
-        f fVar2 = this.f355a;
+        f fVar2 = this.f360a;
         fVar2.f.a(fVar2);
     }
 }

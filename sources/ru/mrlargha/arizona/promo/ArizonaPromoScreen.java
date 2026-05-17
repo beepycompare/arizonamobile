@@ -6,10 +6,8 @@ import android.content.ClipboardManager;
 import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 import androidx.core.app.NotificationCompat;
 import com.google.gson.JsonParseException;
 import java.util.Iterator;
@@ -41,7 +39,7 @@ import ru.mrlargha.feature.arizona.promo.databinding.PromoMainBinding;
 import ru.mrlargha.feature.arizona.promo.databinding.ReferalsBinding;
 import ru.mrlargha.feature.arizona.promo.databinding.TopbarBinding;
 /* compiled from: PromoScreen.kt */
-@Metadata(d1 = {"\u0000\u0084\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0002>?B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0016J\u0018\u0010!\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u0006H\u0016J\b\u0010%\u001a\u00020\u001eH\u0002J\b\u0010&\u001a\u00020\u001eH\u0002J\u0010\u0010'\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020)H\u0002J\u0010\u0010*\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020+H\u0002J\u0010\u0010,\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020+H\u0002J\u0016\u0010-\u001a\u00020\u001e2\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020)0.H\u0002J\u0010\u0010/\u001a\u00020\u001e2\u0006\u0010\"\u001a\u000200H\u0002J\u0010\u00101\u001a\u00020\u001e2\u0006\u0010\"\u001a\u000202H\u0002J\u0010\u00103\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020\u001cH\u0002J\u0017\u00104\u001a\u00020\u001e2\b\u0010\"\u001a\u0004\u0018\u00010\u0006H\u0002¢\u0006\u0002\u00105J\u0010\u00106\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u00107\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020\u001cH\u0002J\b\u00108\u001a\u00020\u001eH\u0002J\b\u00109\u001a\u00020\u001eH\u0002J\u0010\u0010:\u001a\u00020\u001e2\u0006\u0010;\u001a\u00020<H\u0002J\u0010\u0010=\u001a\u00020\u001e2\u0006\u0010;\u001a\u00020<H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0015\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0011\u0010\u0018\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0017R\u000e\u0010\u001a\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006@"}, d2 = {"Lru/mrlargha/arizona/promo/ArizonaPromoScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/arizona/promo/databinding/PromoMainBinding;", "promoAdapter", "Lru/mrlargha/arizona/promo/PromoAdapter;", "promoManagementAdapter", "Lru/mrlargha/arizona/promo/ManagementItemsAdapter;", "refProgressAdapter", "Lru/mrlargha/arizona/promo/ProgressItemsAdapter;", "activateProgressAdapter", "doneColor", "getDoneColor", "()I", "undoneColor", "getUndoneColor", "activateId", "locker", "Lru/mrlargha/arizona/promo/PromoLevelLocker;", "setVisible", "", "visible", "", "onBackendMessage", "data", "", "subId", "setupProject", "setupNavigation", "onSelectPromoItem", "item", "Lru/mrlargha/arizona/promo/PromoItem;", "onGetActivateItem", "Lru/mrlargha/arizona/promo/PromoReward;", "onRefItem", "setActivationPage", "", "setManagementPage", "Lru/mrlargha/arizona/promo/PromoManagement;", "setRefPage", "Lru/mrlargha/arizona/promo/ReferralResponse;", "setLevelLocker", "openPromo", "(Ljava/lang/Integer;)V", "setPromo", "checkLocker", "setupAdapters", "clearAdapters", "topbarNavigation", "nav", "Lru/mrlargha/arizona/promo/ArizonaPromoScreen$Navigation;", "navigateTo", "Navigation", "Spawner", NotificationCompat.CATEGORY_PROMO}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0084\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0002>?B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0016J\u0018\u0010!\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u0006H\u0016J\b\u0010%\u001a\u00020\u001eH\u0002J\b\u0010&\u001a\u00020\u001eH\u0002J\u0010\u0010'\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020)H\u0002J\u0010\u0010*\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020+H\u0002J\u0010\u0010,\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020+H\u0002J\u0016\u0010-\u001a\u00020\u001e2\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020)0.H\u0002J\u0010\u0010/\u001a\u00020\u001e2\u0006\u0010\"\u001a\u000200H\u0002J\u0010\u00101\u001a\u00020\u001e2\u0006\u0010\"\u001a\u000202H\u0002J\u0010\u00103\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020\u001cH\u0002J\u0017\u00104\u001a\u00020\u001e2\b\u0010\"\u001a\u0004\u0018\u00010\u0006H\u0002¢\u0006\u0002\u00105J\u0010\u00106\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u00107\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020\u001cH\u0002J\b\u00108\u001a\u00020\u001eH\u0002J\b\u00109\u001a\u00020\u001eH\u0002J\u0010\u0010:\u001a\u00020\u001e2\u0006\u0010;\u001a\u00020<H\u0002J\u0010\u0010=\u001a\u00020\u001e2\u0006\u0010;\u001a\u00020<H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0015\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0011\u0010\u0018\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0017R\u000e\u0010\u001a\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006@"}, d2 = {"Lru/mrlargha/arizona/promo/ArizonaPromoScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/arizona/promo/databinding/PromoMainBinding;", "promoAdapter", "Lru/mrlargha/arizona/promo/PromoAdapter;", "promoManagementAdapter", "Lru/mrlargha/arizona/promo/ManagementItemsAdapter;", "refProgressAdapter", "Lru/mrlargha/arizona/promo/ProgressItemsAdapter;", "activateProgressAdapter", "doneColor", "getDoneColor", "()I", "undoneColor", "getUndoneColor", "activateId", "locker", "Lru/mrlargha/arizona/promo/PromoLevelLocker;", "setVisible", "", "visible", "", "onBackendMessageHandled", "data", "", "subId", "setupProject", "setupNavigation", "onSelectPromoItem", "item", "Lru/mrlargha/arizona/promo/PromoItem;", "onGetActivateItem", "Lru/mrlargha/arizona/promo/PromoReward;", "onRefItem", "setActivationPage", "", "setManagementPage", "Lru/mrlargha/arizona/promo/PromoManagement;", "setRefPage", "Lru/mrlargha/arizona/promo/ReferralResponse;", "setLevelLocker", "openPromo", "(Ljava/lang/Integer;)V", "setPromo", "checkLocker", "setupAdapters", "clearAdapters", "topbarNavigation", "nav", "Lru/mrlargha/arizona/promo/ArizonaPromoScreen$Navigation;", "navigateTo", "Navigation", "Spawner", NotificationCompat.CATEGORY_PROMO}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ArizonaPromoScreen extends SAMPUIElement implements InterfaceController {
     private int activateId;
@@ -162,38 +160,32 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
-        try {
-            switch (i) {
-                case 1:
-                    setActivationPage(MapperKt.toListModel(data, PromoItem.class));
+        switch (i) {
+            case 1:
+                setActivationPage(MapperKt.toListModel(data, PromoItem.class));
+                return;
+            case 2:
+                setManagementPage((PromoManagement) MapperKt.toModel(data, PromoManagement.class));
+                return;
+            case 3:
+                setRefPage((ReferralResponse) MapperKt.toModel(data, ReferralResponse.class));
+                return;
+            case 4:
+                if (MapperKt.isJsonValid(data)) {
+                    setLevelLocker((PromoLevelLocker) MapperKt.getGson().fromJson(data, (Class<Object>) PromoLevelLocker.class));
                     return;
-                case 2:
-                    setManagementPage((PromoManagement) MapperKt.toModel(data, PromoManagement.class));
-                    return;
-                case 3:
-                    setRefPage((ReferralResponse) MapperKt.toModel(data, ReferralResponse.class));
-                    return;
-                case 4:
-                    if (MapperKt.isJsonValid(data)) {
-                        setLevelLocker((PromoLevelLocker) MapperKt.getGson().fromJson(data, (Class<Object>) PromoLevelLocker.class));
-                        return;
-                    }
-                    throw new JsonParseException("Json is not valid");
-                case 5:
-                    setPromo(data);
-                    return;
-                case 6:
-                    openPromo(StringsKt.toIntOrNull(data));
-                    return;
-                default:
-                    return;
-            }
-        } catch (Exception e) {
-            Log.d("promo_rodina", data + "  " + e.getMessage());
-            e.printStackTrace();
-            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+                }
+                throw new JsonParseException("Json is not valid");
+            case 5:
+                setPromo(data);
+                return;
+            case 6:
+                openPromo(StringsKt.toIntOrNull(data));
+                return;
+            default:
+                return;
         }
     }
 
@@ -201,17 +193,17 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
         boolean isArizonaType = UtilsKt.isArizonaType();
         PromoMainBinding promoMainBinding = this.binding;
         if (isArizonaType) {
-            promoMainBinding.activate.projectBonusText.setText("VIP статус");
+            promoMainBinding.activate.projectBonusText.setText(getTargetActivity().getString(R.string.promo_vip_status));
             this.binding.levelLocker.bgImage.setImageResource(R.drawable.promo_level_locker_image);
             this.binding.activate.imagePoster.setImageResource(R.drawable.poster_img);
             this.binding.referals.header.projectImg.setImageResource(R.drawable.referrals_return_image);
             return;
         }
-        promoMainBinding.activate.projectBonusText.setText("ADD VIP на 30 дней");
+        promoMainBinding.activate.projectBonusText.setText(getTargetActivity().getString(R.string.promo_add_vip_30_days));
         this.binding.levelLocker.bgImage.setImageResource(R.drawable.promo_level_locker_image_rodina);
         this.binding.activate.imagePoster.setImageResource(R.drawable.poster_img_rodina);
         this.binding.referals.header.projectImg.setImageResource(R.drawable.referrals_return_image_rodina);
-        this.binding.referals.header.currency.setText("руб.");
+        this.binding.referals.header.currency.setText(getTargetActivity().getString(R.string.promo_rub));
     }
 
     private final void setupNavigation() {
@@ -549,7 +541,7 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
             this.binding.management.getRoot().setVisibility(8);
             LevelLockerBinding levelLockerBinding = this.binding.levelLocker;
             levelLockerBinding.getRoot().setVisibility(0);
-            levelLockerBinding.text.setText("с " + promoLevelLocker.getMinLevel() + " уровня");
+            levelLockerBinding.text.setText(getTargetActivity().getString(R.string.promo_from_level, new Object[]{Integer.valueOf(promoLevelLocker.getMinLevel())}));
             TopbarBinding topbarBinding = this.binding.topbar;
             topbarBinding.coins.setVisibility(8);
             topbarBinding.getButton.setVisibility(8);
@@ -664,7 +656,7 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
 
     /* compiled from: PromoScreen.kt */
     @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/arizona/promo/ArizonaPromoScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", NotificationCompat.CATEGORY_PROMO}, k = 1, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf((Object[]) new UIElementID[]{UIElementID.RODINA_PROMO, UIElementID.ARIZONA_PROMO});
 

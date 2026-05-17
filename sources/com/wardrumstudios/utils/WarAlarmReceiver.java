@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import com.google.android.vending.expansion.downloader.DownloaderClientMarshaller;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class WarAlarmReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {

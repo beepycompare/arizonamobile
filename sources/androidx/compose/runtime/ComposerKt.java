@@ -253,7 +253,6 @@ public final class ComposerKt {
         long j2;
         int i4;
         Object obj2;
-        boolean z2;
         SlotTable slotTable = new SlotTable();
         if (slotWriter.getCollectingSourceInformation()) {
             slotTable.collectSourceInformation();
@@ -337,13 +336,8 @@ public final class ComposerKt {
                                                             RecomposeScopeImpl recomposeScopeImpl = (RecomposeScopeImpl) obj3;
                                                             obj2 = obj3;
                                                             Anchor anchor = recomposeScopeImpl.getAnchor();
-                                                            if (anchor == null || !slotWriter.inGroup(anchor$runtime, anchor)) {
-                                                                z2 = false;
-                                                            } else {
+                                                            if (anchor != null && slotWriter.inGroup(anchor$runtime, anchor)) {
                                                                 emptyList.add(TuplesKt.to(recomposeScopeImpl, obj5));
-                                                                z2 = true;
-                                                            }
-                                                            if (z2) {
                                                                 mutableScatterSet.removeElementAt(i16);
                                                             }
                                                         } else {

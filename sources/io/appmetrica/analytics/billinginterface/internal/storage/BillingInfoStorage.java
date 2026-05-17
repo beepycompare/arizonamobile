@@ -2,7 +2,7 @@ package io.appmetrica.analytics.billinginterface.internal.storage;
 
 import io.appmetrica.analytics.billinginterface.internal.BillingInfo;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface BillingInfoStorage {
     List<BillingInfo> getBillingInfo();
 

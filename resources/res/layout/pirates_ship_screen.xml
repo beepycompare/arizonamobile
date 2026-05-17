@@ -5,7 +5,7 @@
         <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent">
             <FrameLayout android:layout_width="wrap_content" android:layout_height="@dimen/_30sdp">
                 <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                    <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:id="@+id/level" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1 уровень" android:textEditSuggestionItemLayout="@dimen/_12sdp" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                    <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:id="@+id/level" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/event_preview_level" android:textEditSuggestionItemLayout="@dimen/_12sdp" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
                     <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/parent" android:layout_width="@dimen/_140sdp" android:layout_height="@dimen/_12sdp">
                         <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="match_parent" app:cardBackgroundColor="#343940" app:cardCornerRadius="@dimen/_4sdp" app:cardElevation="0dp"/>
                         <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/progress_bar" android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="@color/gradient" app:backgroundSecondColor="@color/main" app:corners="@dimen/_4sdp"/>
@@ -26,7 +26,7 @@
                 <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="right" android:id="@+id/rating" android:layout_width="@dimen/_80sdp" android:layout_height="@dimen/_24sdp" app:backgroundMainColor="@color/main" app:corners="@dimen/_6sdp">
                     <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
                         <ImageView android:layout_gravity="center_vertical" android:id="@+id/currency" android:layout_width="@dimen/_8sdp" android:layout_height="wrap_content" android:src="@drawable/pirates_rating"/>
-                        <TextView android:textSize="@dimen/_9sdp" android:textColor="@color/color6" android:id="@+id/tab_ship" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:text="Рейтинг" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                        <TextView android:textSize="@dimen/_9sdp" android:textColor="@color/color6" android:id="@+id/tab_ship" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:text="@string/event_rating_title" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
                     </LinearLayout>
                 </ru.mrlargha.commonui.utils.ui.CustomCardView>
             </FrameLayout>

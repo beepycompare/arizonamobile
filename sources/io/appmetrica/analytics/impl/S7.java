@@ -8,9 +8,9 @@ public enum S7 {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f778a;
+    public final String f783a;
 
     S7(String str) {
-        this.f778a = str;
+        this.f783a = str;
     }
 }

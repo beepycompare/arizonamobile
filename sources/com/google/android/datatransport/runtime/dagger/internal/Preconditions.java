@@ -1,5 +1,5 @@
 package com.google.android.datatransport.runtime.dagger.internal;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Preconditions {
     public static <T> T checkNotNull(T t) {
         t.getClass();

@@ -98,7 +98,7 @@ public final class TerritoryAdapter extends RecyclerView.Adapter<TerritoriesItem
                 }
             });
         }
-        binding.title.setText("№ " + gangZoneItem.getId());
+        binding.title.setText(binding.getRoot().getContext().getString(R.string.family_zone_number, Integer.valueOf(gangZoneItem.getId())));
         binding.coins.setText(String.valueOf(gangZoneItem.getFamily_moneta()));
         binding.money.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gangZoneItem.getFamily_money(), false, null, null, 7, null));
         binding.gpsButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.adapters.TerritoryAdapter$$ExternalSyntheticLambda2
@@ -111,7 +111,7 @@ public final class TerritoryAdapter extends RecyclerView.Adapter<TerritoriesItem
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onBindViewHolder$lambda$0$2$0(GangZoneItem gangZoneItem, UniqCellItem uniqCellItem, TerritoryAdapter territoryAdapter, View view) {
-        territoryAdapter.onClick.invoke(new FrameMapData(gangZoneItem.getId(), gangZoneItem != null ? gangZoneItem.getFamily_name() : null, gangZoneItem != null ? Integer.valueOf(gangZoneItem.getFamily_flag()) : null, gangZoneItem != null ? Integer.valueOf(gangZoneItem.getFamily_logo()) : null, gangZoneItem != null ? Long.valueOf(gangZoneItem.getFamily_money()) : null, gangZoneItem != null ? Integer.valueOf(gangZoneItem.getFamily_moneta()) : null, uniqCellItem != null ? uniqCellItem.getName() : null));
+        territoryAdapter.onClick.invoke(new FrameMapData(gangZoneItem.getId(), gangZoneItem.getFamily_name(), Integer.valueOf(gangZoneItem.getFamily_flag()), Integer.valueOf(gangZoneItem.getFamily_logo()), Long.valueOf(gangZoneItem.getFamily_money()), Integer.valueOf(gangZoneItem.getFamily_moneta()), uniqCellItem.getName()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

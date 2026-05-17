@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CloudyBackground.android.kt */
 @Metadata(d1 = {"\u0000>\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\u001a\u0019\u0010\u0002\u001a\u00020\u0003*\u00020\u00032\u0006\u0010\u0002\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\u0005\u001ac\u0010\u0006\u001a\u00020\u0003*\u00020\u00032\u0006\u0010\u0002\u001a\u00020\u00042\b\b\u0003\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u000e2\u0014\b\u0002\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u00130\u0011H\u0007¢\u0006\u0004\b\u0014\u0010\u0015\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"TAG", "", "sky", "Landroidx/compose/ui/Modifier;", "Lcom/skydoves/cloudy/Sky;", "(Landroidx/compose/ui/Modifier;Lcom/skydoves/cloudy/Sky;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/Modifier;", "cloudy", "radius", "", "progressive", "Lcom/skydoves/cloudy/CloudyProgressive;", "tint", "Landroidx/compose/ui/graphics/Color;", "enabled", "", "cpuBlurEnabled", "onStateChanged", "Lkotlin/Function1;", "Lcom/skydoves/cloudy/CloudyState;", "", "cloudy-NpZTi58", "(Landroidx/compose/ui/Modifier;Lcom/skydoves/cloudy/Sky;ILcom/skydoves/cloudy/CloudyProgressive;JZZLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Landroidx/compose/ui/Modifier;", "cloudy_release"}, k = 2, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CloudyBackground_androidKt {
     private static final String TAG = "CloudyBackground";
 
@@ -36,7 +36,7 @@ public final class CloudyBackground_androidKt {
 
     @FunctionKeyMeta(endOffset = 4051, key = -1688490395, startOffset = 3089)
     /* renamed from: cloudy-NpZTi58  reason: not valid java name */
-    public static final Modifier m9142cloudyNpZTi58(Modifier cloudy, Sky sky, int i, CloudyProgressive cloudyProgressive, long j, boolean z, boolean z2, Function1<? super CloudyState, Unit> function1, Composer composer, int i2, int i3) {
+    public static final Modifier m9161cloudyNpZTi58(Modifier cloudy, Sky sky, int i, CloudyProgressive cloudyProgressive, long j, boolean z, boolean z2, Function1<? super CloudyState, Unit> function1, Composer composer, int i2, int i3) {
         Function1<? super CloudyState, Unit> function12;
         Intrinsics.checkNotNullParameter(cloudy, "$this$cloudy");
         Intrinsics.checkNotNullParameter(sky, "sky");

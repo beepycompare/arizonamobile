@@ -12,6 +12,6 @@ import kotlin.annotation.AnnotationTarget;
 @kotlin.annotation.Target(allowedTargets = {AnnotationTarget.EXPRESSION})
 @Retention(RetentionPolicy.SOURCE)
 @kotlin.annotation.Retention(AnnotationRetention.SOURCE)
-/* loaded from: classes.dex */
+/* loaded from: classes5.dex */
 public @interface DontMemoize {
 }

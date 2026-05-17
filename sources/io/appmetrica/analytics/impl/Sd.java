@@ -9,17 +9,17 @@ import io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
 public final class Sd implements ServiceNetworkContext {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0239f5 f781a;
+    public final C0239f5 f786a;
     public final String b = new C0181co().a();
     public final C0583sl c = new C0583sl();
 
     public Sd(Context context) {
-        this.f781a = new C0239f5(new C0493p5(context), new C0506pi(C0448na.k().h()));
+        this.f786a = new C0239f5(new C0493p5(context), new C0506pi(C0448na.k().h()));
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
     public final IExecutionPolicy getExecutionPolicy() {
-        return this.f781a;
+        return this.f786a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext

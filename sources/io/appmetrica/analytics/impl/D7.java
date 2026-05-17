@@ -10,7 +10,7 @@ import java.util.Map;
 public final class D7 implements Hc {
 
     /* renamed from: a  reason: collision with root package name */
-    public Location f545a;
+    public Location f550a;
     public Boolean b;
     public Boolean c;
     public Boolean e;
@@ -44,7 +44,7 @@ public final class D7 implements Hc {
     }
 
     public final Location k() {
-        return this.f545a;
+        return this.f550a;
     }
 
     public final Boolean l() {
@@ -100,7 +100,7 @@ public final class D7 implements Hc {
 
     @Override // io.appmetrica.analytics.impl.Hc
     public final void a(Location location) {
-        this.f545a = location;
+        this.f550a = location;
     }
 
     @Override // io.appmetrica.analytics.impl.Hc
@@ -213,7 +213,7 @@ public final class D7 implements Hc {
         if (appMetricaConfig.locationTracking == null && lo.a(bool)) {
             newConfigBuilder.withLocationTracking(bool.booleanValue());
         }
-        Location location = this.f545a;
+        Location location = this.f550a;
         if (appMetricaConfig.location == null && lo.a(location)) {
             newConfigBuilder.withLocation(location);
         }
@@ -229,7 +229,7 @@ public final class D7 implements Hc {
             newConfigBuilder.withAdvIdentifiersTracking(bool3.booleanValue());
         }
         this.k = true;
-        this.f545a = null;
+        this.f550a = null;
         this.b = null;
         this.c = null;
         this.d = Boolean.FALSE;

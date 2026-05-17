@@ -1,5 +1,6 @@
 package com.miami.game.feature.download.screen.ui.compose;
 
+import android.net.Uri;
 import androidx.compose.foundation.ImageKt;
 import androidx.compose.foundation.layout.Arrangement;
 import androidx.compose.foundation.layout.BoxKt;
@@ -34,8 +35,8 @@ import androidx.compose.ui.unit.Dp;
 import androidx.compose.ui.unit.TextUnitKt;
 import androidx.media3.exoplayer.RendererCapabilities;
 import com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt;
-import com.miami.game.core.drawable.resources.R;
 import com.miami.game.feature.download.screen.ui.model.DownloadScreenUiState;
+import com.miami.game.ui.classic.download.screen.R;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -52,19 +53,20 @@ public final class DownloadContentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Type inference failed for: r2v10, types: [int, boolean] */
-    /* JADX WARN: Type inference failed for: r2v38 */
-    /* JADX WARN: Type inference failed for: r2v9 */
+    /* JADX WARN: Type inference failed for: r2v11 */
+    /* JADX WARN: Type inference failed for: r2v13, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r2v37 */
     public static final void DownloadContent(final DownloadScreenUiState uiState, final Function0<Unit> onSoundClick, Composer composer, final int i) {
         int i2;
+        int i3;
         ?? r2;
         boolean z;
-        int i3;
         int i4;
+        int i5;
         Intrinsics.checkNotNullParameter(uiState, "uiState");
         Intrinsics.checkNotNullParameter(onSoundClick, "onSoundClick");
         Composer startRestartGroup = composer.startRestartGroup(-321713629);
-        ComposerKt.sourceInformation(startRestartGroup, "C(DownloadContent)N(uiState,onSoundClick)33@1408L1821:DownloadContent.kt#k3v2wi");
+        ComposerKt.sourceInformation(startRestartGroup, "C(DownloadContent)N(uiState,onSoundClick)45@1734L1902:DownloadContent.kt#k3v2wi");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(uiState) ? 4 : 2) | i;
         } else {
@@ -79,18 +81,24 @@ public final class DownloadContentKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-321713629, i2, -1, "com.miami.game.feature.download.screen.ui.compose.DownloadContent (DownloadContent.kt:25)");
             }
-            if (uiState.getVideoUri() == null || uiState.isLauncherUpdate()) {
-                startRestartGroup.startReplaceGroup(-2098483994);
-                ComposerKt.sourceInformation(startRestartGroup, "29@1234L42,29@1228L169");
-                r2 = 1;
-                ImageKt.Image(PainterResources_androidKt.painterResource(uiState.getLauncherUpdateRes(), startRestartGroup, 0), (String) null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getCrop(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
+            Uri videoUri = uiState.getVideoUri();
+            if (videoUri != null && !uiState.isLauncherUpdate()) {
+                startRestartGroup.startReplaceGroup(-2098511801);
+                ComposerKt.sourceInformation(startRestartGroup, "29@1235L40");
+                VideoPlayerKt.ExoPlayerView(videoUri, uiState.getSoundOn(), startRestartGroup, 0);
                 startRestartGroup.endReplaceGroup();
+                r2 = 1;
             } else {
-                startRestartGroup.startReplaceGroup(70852435);
-                ComposerKt.sourceInformation(startRestartGroup, "28@1164L48");
-                VideoPlayerKt.ExoPlayerView(uiState.getVideoUri(), uiState.getSoundOn(), startRestartGroup, 0);
-                startRestartGroup.endReplaceGroup();
+                startRestartGroup.startReplaceGroup(-2098438362);
+                ComposerKt.sourceInformation(startRestartGroup, "38@1546L34,37@1517L205");
+                if (uiState.isArizona()) {
+                    i3 = R.drawable.arizona_launcher_update;
+                } else {
+                    i3 = R.drawable.rodina_launcher_update;
+                }
                 r2 = 1;
+                ImageKt.Image(PainterResources_androidKt.painterResource(i3, startRestartGroup, 0), (String) null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getCrop(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
+                startRestartGroup.endReplaceGroup();
             }
             Modifier fillMaxSize$default = SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, r2, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
@@ -118,13 +126,13 @@ public final class DownloadContentKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 246913741, "C63@2450L773:DownloadContent.kt#k3v2wi");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 246916252, "C75@2776L854:DownloadContent.kt#k3v2wi");
             if (!uiState.isLauncherUpdate()) {
                 startRestartGroup.startReplaceGroup(246919258);
-                ComposerKt.sourceInformation(startRestartGroup, "47@1921L509,43@1771L659");
+                ComposerKt.sourceInformation(startRestartGroup, "59@2247L509,55@2097L659");
                 z = r2;
-                i3 = i2;
-                i4 = 4;
+                i4 = i2;
+                i5 = 4;
                 ScalingButtonKt.ScalingButton(onSoundClick, boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getTopEnd()), ComposableLambdaKt.rememberComposableLambda(-2005235955, r2, new Function3() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadContentKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function3
                     public final Object invoke(Object obj, Object obj2, Object obj3) {
@@ -136,8 +144,8 @@ public final class DownloadContentKt {
                 startRestartGroup.endReplaceGroup();
             } else {
                 z = r2;
-                i3 = i2;
-                i4 = 4;
+                i4 = i2;
+                i5 = 4;
                 startRestartGroup.startReplaceGroup(247575621);
                 startRestartGroup.endReplaceGroup();
             }
@@ -168,14 +176,14 @@ public final class DownloadContentKt {
             Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2040831088, "C68@2652L10,68@2625L169,71@2834L10,71@2807L205,77@3159L40,75@3025L188:DownloadContent.kt#k3v2wi");
-            int i5 = i4;
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2040833599, "C81@2995L10,80@2951L199,86@3207L10,85@3163L235,94@3566L40,91@3411L209:DownloadContent.kt#k3v2wi");
+            int i6 = i5;
             TextKt.m2712TextNvy7gAk(uiState.getTextDownload() + " " + uiState.getDownloadingStringState(), null, Color.Companion.m4809getWhite0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131066);
             TextKt.m2712TextNvy7gAk("Осталось времени: " + uiState.getTimeRemainingString(), null, Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, TextUnitKt.getSp(10), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, 24960, 0, 131050);
             startRestartGroup = startRestartGroup;
             Modifier m819paddingVpY3zN4 = PaddingKt.m819paddingVpY3zN4(Modifier.Companion, Dp.m7555constructorimpl(32.0f), Dp.m7555constructorimpl(28.0f));
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1873812849, "CC(remember):DownloadContent.kt#9igjgp");
-            boolean z2 = (i3 & 14) == i5 ? z : false;
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1873810257, "CC(remember):DownloadContent.kt#9igjgp");
+            boolean z2 = (i4 & 14) == i6 ? z : false;
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadContentKt$$ExternalSyntheticLambda1
@@ -221,17 +229,17 @@ public final class DownloadContentKt {
     public static final Unit DownloadContent$lambda$0$0(DownloadScreenUiState downloadScreenUiState, BoxScope ScalingButton, Composer composer, int i) {
         int i2;
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C54@2181L25,53@2154L262:DownloadContent.kt#k3v2wi");
+        ComposerKt.sourceInformation(composer, "C66@2507L25,65@2480L262:DownloadContent.kt#k3v2wi");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-2005235955, i, -1, "com.miami.game.feature.download.screen.ui.compose.DownloadContent.<anonymous>.<anonymous> (DownloadContent.kt:48)");
+                ComposerKt.traceEventStart(-2005235955, i, -1, "com.miami.game.feature.download.screen.ui.compose.DownloadContent.<anonymous>.<anonymous> (DownloadContent.kt:60)");
             }
             if (downloadScreenUiState.getSoundOn()) {
-                i2 = R.drawable.download_screen_sound_btn;
+                i2 = com.miami.game.core.drawable.resources.R.drawable.download_screen_sound_btn;
             } else {
-                i2 = R.drawable.download_screen_sound_btn_off;
+                i2 = com.miami.game.core.drawable.resources.R.drawable.download_screen_sound_btn_off;
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(i2, composer, 0), (String) null, PaddingKt.m822paddingqDBjuR0$default(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(80.0f)), 0.0f, Dp.m7555constructorimpl(24.0f), 0.0f, 0.0f, 13, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {

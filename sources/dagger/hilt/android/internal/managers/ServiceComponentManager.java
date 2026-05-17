@@ -6,12 +6,12 @@ import dagger.hilt.EntryPoints;
 import dagger.hilt.android.internal.builders.ServiceComponentBuilder;
 import dagger.hilt.internal.GeneratedComponentManager;
 import dagger.hilt.internal.Preconditions;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ServiceComponentManager implements GeneratedComponentManager<Object> {
     private Object component;
     private final Service service;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface ServiceComponentBuilderEntryPoint {
         ServiceComponentBuilder serviceComponentBuilder();
     }

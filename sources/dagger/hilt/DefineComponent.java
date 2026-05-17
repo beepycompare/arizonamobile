@@ -7,12 +7,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.CLASS)
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public @interface DefineComponent {
 
     @Target({ElementType.TYPE})
     @Retention(RetentionPolicy.CLASS)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public @interface Builder {
     }
 

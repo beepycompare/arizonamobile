@@ -4,20 +4,20 @@ package io.appmetrica.analytics.impl;
 public final class C0478of implements Si {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ze f1155a;
+    public final Ze f1160a;
 
     public C0478of(Ze ze) {
-        this.f1155a = ze;
+        this.f1160a = ze;
     }
 
     @Override // io.appmetrica.analytics.impl.Si
     public final boolean a() {
-        return this.f1155a.i();
+        return this.f1160a.i();
     }
 
     @Override // io.appmetrica.analytics.impl.Si
     public final void b() {
-        this.f1155a.h().b();
+        this.f1160a.h().b();
     }
 
     public C0478of() {

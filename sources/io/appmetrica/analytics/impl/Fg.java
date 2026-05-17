@@ -7,6 +7,6 @@ public final class Fg extends V4 {
 
     @Override // io.appmetrica.analytics.impl.V4
     public final <C extends Ea> Kl a() {
-        return new Ig(this.f822a);
+        return new Ig(this.f827a);
     }
 }

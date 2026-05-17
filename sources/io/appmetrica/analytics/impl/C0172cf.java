@@ -7,17 +7,17 @@ import org.json.JSONObject;
 public final class C0172cf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f938a;
+    public final String f943a;
     public final JSONObject b;
     public final S7 c;
 
     public C0172cf(String str, JSONObject jSONObject, S7 s7) {
-        this.f938a = str;
+        this.f943a = str;
         this.b = jSONObject;
         this.c = s7;
     }
 
     public final String toString() {
-        return "Candidate{trackingId='" + this.f938a + "', additionalParams=" + this.b + ", source=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "Candidate{trackingId='" + this.f943a + "', additionalParams=" + this.b + ", source=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 }

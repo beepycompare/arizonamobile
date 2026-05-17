@@ -15,7 +15,7 @@ import kotlin.jvm.JvmStatic;
 public final class C0614u2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0614u2 f1246a = new C0614u2();
+    public static final C0614u2 f1251a = new C0614u2();
 
     private C0614u2() {
     }

@@ -16,7 +16,7 @@ import kotlin.collections.CollectionsKt;
 public final class C0355ji implements Sa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1066a;
+    public final Context f1071a;
     public final Bf b;
     public final C0680wi c;
     public final Handler d;
@@ -29,7 +29,7 @@ public final class C0355ji implements Sa {
     public C0394l6 k;
 
     public C0355ji(Context context, Bf bf, C0680wi c0680wi, Handler handler, Ol ol) {
-        this.f1066a = context;
+        this.f1071a = context;
         this.b = bf;
         this.c = c0680wi;
         this.d = handler;
@@ -125,7 +125,7 @@ public final class C0355ji implements Sa {
             if (!this.i.contains(reporterConfig.apiKey)) {
                 this.e.i();
             }
-            Context context = this.f1066a;
+            Context context = this.f1071a;
             C0724yc c0724yc2 = new C0724yc(context, this.b, reporterConfig, this.c, new M9(context));
             c0724yc2.i = new C0474ob(this.d, c0724yc2);
             Ol ol = this.e;

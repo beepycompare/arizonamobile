@@ -2,12 +2,12 @@ package androidx.core.graphics;
 
 import android.graphics.BlendMode;
 import android.graphics.PorterDuff;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 class BlendModeUtils {
     private BlendModeUtils() {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     static class Api29Impl {
         private Api29Impl() {
         }

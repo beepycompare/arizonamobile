@@ -7,8 +7,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import androidx.core.app.NotificationCompat;
-import androidx.media3.exoplayer.Renderer;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class WarBootNotify extends Service {
     private void CreateAlarmIntent(int i, String str) {
         String[] split = str.split("\\|");
@@ -22,7 +21,7 @@ public class WarBootNotify extends Service {
             System.currentTimeMillis();
             long currentTimeMillis = parseLong - System.currentTimeMillis();
             if (currentTimeMillis < 0) {
-                currentTimeMillis = Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
+                currentTimeMillis = 10000;
             }
             Intent intent = new Intent(this, WarServiceNotifyReceiver.class);
             intent.putExtra("class", str4);

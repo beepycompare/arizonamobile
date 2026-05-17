@@ -2,7 +2,7 @@ package androidx.media3.common;
 
 import android.view.Surface;
 import com.google.common.base.Preconditions;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SurfaceInfo {
     public final int height;
     public final boolean isEncoderInputSurface;

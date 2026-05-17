@@ -3,12 +3,12 @@ package io.appmetrica.analytics.impl;
 public final class qo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1194a;
+    public final boolean f1199a;
     public final String b;
 
     public qo(so soVar, boolean z, String str) {
         soVar.getClass();
-        this.f1194a = z;
+        this.f1199a = z;
         this.b = str;
     }
 }

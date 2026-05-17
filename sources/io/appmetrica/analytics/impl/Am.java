@@ -27,15 +27,15 @@ import kotlin.text.StringsKt;
 public final class Am {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bm f503a;
+    public final Bm f508a;
     public volatile NetworkTask b;
 
     public Am(Bm bm) {
-        this.f503a = bm;
+        this.f508a = bm;
     }
 
     public final Context b() {
-        return this.f503a.f525a;
+        return this.f508a.f530a;
     }
 
     public final synchronized NetworkTask c() {
@@ -45,12 +45,12 @@ public final class Am {
                 networkTask = this.b;
                 if (networkTask == null || networkTask.isRemoved()) {
                     C0153bm d = d();
-                    Vd vd = Vd.f827a;
+                    Vd vd = Vd.f832a;
                     Xl xl = new Xl(new C0274ge(), C0448na.I.p());
                     FinalConfigProvider finalConfigProvider = new FinalConfigProvider(d);
                     SynchronizedBlockingExecutor synchronizedBlockingExecutor = new SynchronizedBlockingExecutor();
-                    C0493p5 c0493p5 = new C0493p5(this.f503a.f525a);
-                    AllHostsExponentialBackoffPolicy allHostsExponentialBackoffPolicy = new AllHostsExponentialBackoffPolicy(Vd.f827a.a(Td.STARTUP));
+                    C0493p5 c0493p5 = new C0493p5(this.f508a.f530a);
+                    AllHostsExponentialBackoffPolicy allHostsExponentialBackoffPolicy = new AllHostsExponentialBackoffPolicy(Vd.f832a.a(Td.STARTUP));
                     try {
                         C0734ym c0734ym = new C0734ym(this, new Rl(), new FullUrlFormer(xl, finalConfigProvider), new RequestDataHolder(), new ResponseDataHolder(new DefaultResponseValidityChecker()), finalConfigProvider);
                         this = this;
@@ -73,40 +73,40 @@ public final class Am {
     }
 
     public final C0153bm d() {
-        return (C0153bm) this.f503a.l.a();
+        return (C0153bm) this.f508a.l.a();
     }
 
     public final C0256fm e() {
         C0256fm c0256fm;
-        Il il = this.f503a.l;
+        Il il = this.f508a.l;
         synchronized (il) {
-            c0256fm = il.c.f671a;
+            c0256fm = il.c.f676a;
         }
         return c0256fm;
     }
 
     public final void f() {
         C0256fm c0256fm;
-        Il il = this.f503a.l;
+        Il il = this.f508a.l;
         synchronized (il) {
-            c0256fm = il.c.f671a;
+            c0256fm = il.c.f676a;
         }
         C0359jm c0359jm = c0256fm.c;
         C0333im a2 = c0359jm.a(c0359jm.m);
-        String str = c0256fm.f999a;
+        String str = c0256fm.f1004a;
         String str2 = c0256fm.b;
-        po poVar = this.f503a.n;
+        po poVar = this.f508a.n;
         String str3 = c0256fm.d;
         poVar.getClass();
         if (!po.a(str3)) {
-            a2.f1049a = this.f503a.m.a().id;
+            a2.f1054a = this.f508a.m.a().id;
         }
-        String str4 = c0256fm.f999a;
+        String str4 = c0256fm.f1004a;
         if (str4 == null || str4.length() == 0) {
-            str = this.f503a.h.a();
+            str = this.f508a.h.a();
             str2 = "";
         }
-        List<String> list = this.f503a.c.e;
+        List<String> list = this.f508a.c.e;
         a2.g = (list == null || list.isEmpty()) ? null : null;
         C0256fm c0256fm2 = new C0256fm(str, str2, new C0359jm(a2));
         b(c0256fm2);
@@ -127,19 +127,19 @@ public final class Am {
             return false;
         }
         C0256fm e = e();
-        Set set = AbstractC0179cm.f944a;
+        Set set = AbstractC0179cm.f949a;
         boolean z3 = true;
         if (!e.w) {
-            if (AbstractC0179cm.b.currentTimeSeconds() <= e.o + e.z.f539a) {
+            if (AbstractC0179cm.b.currentTimeSeconds() <= e.o + e.z.f544a) {
                 z = false;
                 if (!z) {
-                    if (AbstractC0179cm.a(e.d) && AbstractC0179cm.a(e.f999a) && AbstractC0179cm.a(e.b)) {
+                    if (AbstractC0179cm.a(e.d) && AbstractC0179cm.a(e.f1004a) && AbstractC0179cm.a(e.b)) {
                         z2 = true;
                     }
                     z = !z2;
-                    C3 c3 = this.f503a.k;
+                    C3 c3 = this.f508a.k;
                     Map map = d().h;
-                    C0740z3 c0740z3 = this.f503a.j;
+                    C0740z3 c0740z3 = this.f508a.j;
                     c3.getClass();
                     boolean a2 = C3.a(map, e, c0740z3);
                     if (z2) {
@@ -161,16 +161,16 @@ public final class Am {
     }
 
     public final Q4 a() {
-        return this.f503a.f;
+        return this.f508a.f;
     }
 
     public final synchronized void b(C0256fm c0256fm) {
-        this.f503a.l.a(c0256fm);
-        C0230em c0230em = this.f503a.g;
-        c0230em.b.a(c0256fm.f999a);
+        this.f508a.l.a(c0256fm);
+        C0230em c0230em = this.f508a.g;
+        c0230em.b.a(c0256fm.f1004a);
         c0230em.b.b(c0256fm.b);
-        c0230em.f983a.save(c0256fm.c);
-        this.f503a.e.a(c0256fm);
+        c0230em.f988a.save(c0256fm.c);
+        this.f508a.e.a(c0256fm);
     }
 
     public final synchronized boolean a(List<String> list, Map<String, String> map) {
@@ -187,21 +187,21 @@ public final class Am {
         String str;
         boolean equals;
         String a2 = Fm.a(c0153bm.h);
-        Map map = c0153bm.i.f1199a;
+        Map map = c0153bm.i.f1204a;
         String str2 = c0205dm.j;
         String str3 = e().k;
         if (!Fm.a(Fm.a(str2))) {
             str2 = Fm.a(Fm.a(str3)) ? str3 : null;
         }
-        String str4 = e().f999a;
+        String str4 = e().f1004a;
         if (str4 != null) {
             str = StringsKt.isBlank(str4) ? null : str4;
         }
         str = c0205dm.h;
         C0333im c0333im = new C0333im(c0205dm.b);
         String str5 = c0205dm.i;
-        c0333im.o = this.f503a.i.currentTimeSeconds();
-        c0333im.f1049a = e().d;
+        c0333im.o = this.f508a.i.currentTimeSeconds();
+        c0333im.f1054a = e().d;
         c0333im.c = c0205dm.d;
         c0333im.f = c0205dm.c;
         c0333im.g = c0153bm.e;
@@ -212,7 +212,7 @@ public final class Am {
         c0333im.i = c0205dm.o;
         c0333im.j = str2;
         c0333im.k = a2;
-        this.f503a.k.getClass();
+        this.f508a.k.getClass();
         HashMap a3 = Fm.a(str2);
         if (lo.a(map)) {
             equals = lo.a((Map) a3);
@@ -258,7 +258,7 @@ public final class Am {
                     } catch (Throwable unused) {
                     }
                     long longValue = l == null ? l.longValue() : 0L;
-                    Wj.f841a.a(longValue, c0205dm.l);
+                    Wj.f846a.a(longValue, c0205dm.l);
                     a2 = a(c0205dm, c0153bm, longValue);
                     h();
                     b(a2);
@@ -268,7 +268,7 @@ public final class Am {
             l = null;
             if (l == null) {
             }
-            Wj.f841a.a(longValue, c0205dm.l);
+            Wj.f846a.a(longValue, c0205dm.l);
             a2 = a(c0205dm, c0153bm, longValue);
             h();
             b(a2);
@@ -279,13 +279,13 @@ public final class Am {
 
     public final void a(C0256fm c0256fm) {
         ArrayList arrayList;
-        Bm bm = this.f503a;
+        Bm bm = this.f508a;
         Fl fl = bm.d;
         String str = bm.b;
-        synchronized (fl.f584a.b) {
-            Hl hl = fl.f584a;
+        synchronized (fl.f589a.b) {
+            Hl hl = fl.f589a;
             hl.c = c0256fm;
-            Collection collection = (Collection) hl.f618a.f1172a.get(str);
+            Collection collection = (Collection) hl.f623a.f1177a.get(str);
             if (collection == null) {
                 arrayList = new ArrayList();
             } else {
@@ -302,12 +302,12 @@ public final class Am {
         synchronized (this) {
             this.b = null;
         }
-        Bm bm = this.f503a;
-        bm.d.a(bm.f.f748a, jl, e());
+        Bm bm = this.f508a;
+        bm.d.a(bm.f.f753a, jl, e());
     }
 
     public final synchronized void a(Zl zl) {
-        this.f503a.l.a(zl);
+        this.f508a.l.a(zl);
         C0153bm d = d();
         if (d.k) {
             List list = d.j;
@@ -316,7 +316,7 @@ public final class Am {
                     C0256fm e = e();
                     C0359jm c0359jm = e.c;
                     C0333im a2 = c0359jm.a(c0359jm.m);
-                    String str = e.f999a;
+                    String str = e.f1004a;
                     String str2 = e.b;
                     a2.g = list;
                     C0256fm c0256fm = new C0256fm(str, str2, new C0359jm(a2));
@@ -329,7 +329,7 @@ public final class Am {
                 C0256fm e2 = e();
                 C0359jm c0359jm2 = e2.c;
                 C0333im a3 = c0359jm2.a(c0359jm2.m);
-                String str3 = e2.f999a;
+                String str3 = e2.f1004a;
                 String str4 = e2.b;
                 a3.g = null;
                 C0256fm c0256fm2 = new C0256fm(str3, str4, new C0359jm(a3));

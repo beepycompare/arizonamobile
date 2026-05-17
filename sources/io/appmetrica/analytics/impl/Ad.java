@@ -5,7 +5,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public abstract class Ad implements InterfaceC0232eo, InterfaceC0314i2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f498a;
+    public final String f503a;
     public final int b;
     public final so c;
     public final J2 d;
@@ -13,7 +13,7 @@ public abstract class Ad implements InterfaceC0232eo, InterfaceC0314i2 {
 
     public Ad(int i, String str, so soVar, J2 j2) {
         this.b = i;
-        this.f498a = str;
+        this.f503a = str;
         this.c = soVar;
         this.d = j2;
     }
@@ -21,7 +21,7 @@ public abstract class Ad implements InterfaceC0232eo, InterfaceC0314i2 {
     public final C0258fo a() {
         C0258fo c0258fo = new C0258fo();
         c0258fo.b = this.b;
-        c0258fo.f1001a = this.f498a.getBytes();
+        c0258fo.f1006a = this.f503a.getBytes();
         c0258fo.d = new C0310ho();
         c0258fo.c = new C0284go();
         return c0258fo;
@@ -35,7 +35,7 @@ public abstract class Ad implements InterfaceC0232eo, InterfaceC0314i2 {
     }
 
     public final String c() {
-        return this.f498a;
+        return this.f503a;
     }
 
     public final so d() {
@@ -47,11 +47,11 @@ public abstract class Ad implements InterfaceC0232eo, InterfaceC0314i2 {
     }
 
     public final boolean f() {
-        qo a2 = this.c.a(this.f498a);
-        if (a2.f1194a) {
+        qo a2 = this.c.a(this.f503a);
+        if (a2.f1199a) {
             return true;
         }
-        this.e.warning("Attribute " + this.f498a + " of type " + ((String) On.f731a.get(this.b)) + " is skipped because " + a2.b, new Object[0]);
+        this.e.warning("Attribute " + this.f503a + " of type " + ((String) On.f736a.get(this.b)) + " is skipped because " + a2.b, new Object[0]);
         return false;
     }
 

@@ -14,7 +14,7 @@ import android.os.SystemClock;
 import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class PicassoDrawable extends BitmapDrawable {
     private static final Paint DEBUG_PAINT = new Paint();
     private static final float FADE_DURATION = 200.0f;

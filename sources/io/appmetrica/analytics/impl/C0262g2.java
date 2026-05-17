@@ -11,24 +11,24 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public final class C0262g2 implements InterfaceC0408lk, ApplicationStateProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashSet f1004a = new HashSet();
+    public final HashSet f1009a = new HashSet();
     public final HashSet b = new HashSet();
     public volatile ApplicationState c = ApplicationState.UNKNOWN;
     public final CopyOnWriteArraySet d = new CopyOnWriteArraySet();
 
     public final void a(int i) {
-        this.f1004a.remove(Integer.valueOf(i));
+        this.f1009a.remove(Integer.valueOf(i));
         a();
     }
 
     public final void b(int i) {
         this.b.add(Integer.valueOf(i));
-        this.f1004a.remove(Integer.valueOf(i));
+        this.f1009a.remove(Integer.valueOf(i));
         a();
     }
 
     public final void c(int i) {
-        this.f1004a.add(Integer.valueOf(i));
+        this.f1009a.add(Integer.valueOf(i));
         this.b.remove(Integer.valueOf(i));
         a();
     }
@@ -60,7 +60,7 @@ public final class C0262g2 implements InterfaceC0408lk, ApplicationStateProvider
 
     public final void a() {
         ApplicationState applicationState = ApplicationState.UNKNOWN;
-        if (!this.f1004a.isEmpty()) {
+        if (!this.f1009a.isEmpty()) {
             applicationState = ApplicationState.VISIBLE;
         } else if (!this.b.isEmpty()) {
             applicationState = ApplicationState.BACKGROUND;

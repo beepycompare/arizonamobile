@@ -7,7 +7,6 @@ import androidx.media3.common.TrackGroup;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
-import androidx.media3.exoplayer.Renderer;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.chunk.MediaChunk;
 import androidx.media3.exoplayer.source.chunk.MediaChunkIterator;
@@ -122,7 +121,7 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
     }
 
     public AdaptiveTrackSelection(TrackGroup trackGroup, int[] iArr, BandwidthMeter bandwidthMeter) {
-        this(trackGroup, iArr, 0, bandwidthMeter, Renderer.DEFAULT_DURATION_TO_PROGRESS_US, 25000L, 25000L, DEFAULT_MAX_WIDTH_TO_DISCARD, DEFAULT_MAX_HEIGHT_TO_DISCARD, 0.7f, 0.75f, ImmutableList.of(), Clock.DEFAULT);
+        this(trackGroup, iArr, 0, bandwidthMeter, 10000L, 25000L, 25000L, DEFAULT_MAX_WIDTH_TO_DISCARD, DEFAULT_MAX_HEIGHT_TO_DISCARD, 0.7f, 0.75f, ImmutableList.of(), Clock.DEFAULT);
     }
 
     protected AdaptiveTrackSelection(TrackGroup trackGroup, int[] iArr, int i, BandwidthMeter bandwidthMeter, long j, long j2, long j3, int i2, int i3, float f, float f2, List<AdaptationCheckpoint> list, Clock clock) {

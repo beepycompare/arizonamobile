@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.painter.Painter;
 import androidx.compose.ui.layout.ContentScale;
 import androidx.compose.ui.res.PainterResources_androidKt;
 import androidx.compose.ui.unit.Dp;
-import com.miami.game.feature.select.server.R;
+import com.miami.game.ui.classic.select.server.R;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
@@ -37,7 +37,7 @@ public final class ComposableSingletons$SelectServerScreenKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_22973248$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C151@6055L73,150@6032L224:SelectServerScreen.kt#2ojkxh");
+        ComposerKt.sourceInformation(composer, "C151@6055L76,150@6032L227:SelectServerScreen.kt#2ojkxh");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {

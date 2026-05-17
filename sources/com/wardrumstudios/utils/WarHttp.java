@@ -23,13 +23,13 @@ import org.apache.http.conn.ssl.X509HostnameVerifier;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.HttpConnectionParams;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class WarHttp {
     private static boolean AddLineFeeds = false;
     private int timeoutSeconds = 3;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class MyVerifier extends AbstractVerifier {
         private final X509HostnameVerifier delegate;
 

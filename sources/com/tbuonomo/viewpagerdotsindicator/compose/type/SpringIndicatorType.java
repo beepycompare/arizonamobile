@@ -49,7 +49,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SpringIndicatorType.kt */
 @Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\b\u0007\u0018\u00002\u00020\u0001B\u0019\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003¢\u0006\u0002\u0010\u0005JN\u0010\u0006\u001a\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\n0\t2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0014\u0010\u0011\u001a\u0010\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u0007\u0018\u00010\u0012H\u0017ø\u0001\u0000¢\u0006\u0004\b\u0013\u0010\u0014JB\u0010\u0015\u001a\u00020\u00102\u0006\u0010\u0016\u001a\u00020\n2\u0006\u0010\u0017\u001a\u00020\n2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u0018\u001a\u00020\n2\u0006\u0010\u0019\u001a\u00020\n2\u0006\u0010\u001a\u001a\u00020\u0010H\u0002ø\u0001\u0000¢\u0006\u0004\b\u001b\u0010\u001cR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u001d²\u0006\n\u0010\u0016\u001a\u00020\nX\u008a\u008e\u0002²\u0006\n\u0010\u0017\u001a\u00020\nX\u008a\u008e\u0002²\u0006\n\u0010\u001a\u001a\u00020\u0010X\u008a\u0084\u0002²\u0006\n\u0010\u001e\u001a\u00020\u0010X\u008a\u0084\u0002"}, d2 = {"Lcom/tbuonomo/viewpagerdotsindicator/compose/type/SpringIndicatorType;", "Lcom/tbuonomo/viewpagerdotsindicator/compose/type/IndicatorType;", "dotsGraphic", "Lcom/tbuonomo/viewpagerdotsindicator/compose/model/DotGraphic;", "selectorDotGraphic", "(Lcom/tbuonomo/viewpagerdotsindicator/compose/model/DotGraphic;Lcom/tbuonomo/viewpagerdotsindicator/compose/model/DotGraphic;)V", "IndicatorTypeComposable", "", "globalOffsetProvider", "Lkotlin/Function0;", "", "modifier", "Landroidx/compose/ui/Modifier;", "dotCount", "", "dotSpacing", "Landroidx/compose/ui/unit/Dp;", "onDotClicked", "Lkotlin/Function1;", "IndicatorTypeComposable--jt2gSs", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;IFLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "computeSelectorDotPositionDp", "firstDotPositionX", "lastDotPositionX", "globalOffset", "density", "centeredOffset", "computeSelectorDotPositionDp-tI-LSbM", "(FFIFFF)F", "viewpagerdotsindicator_release", "foregroundDotPositionDp"}, k = 1, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SpringIndicatorType extends IndicatorType {
     public static final int $stable = 0;
     private final DotGraphic dotsGraphic;
@@ -72,7 +72,7 @@ public final class SpringIndicatorType extends IndicatorType {
 
     @Override // com.tbuonomo.viewpagerdotsindicator.compose.type.IndicatorType
     /* renamed from: IndicatorTypeComposable--jt2gSs */
-    public void mo9162IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
+    public void mo9181IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
         int i3;
         final MutableState mutableState;
         final MutableState mutableState2;
@@ -355,17 +355,17 @@ public final class SpringIndicatorType extends IndicatorType {
 
                         @Override // kotlin.jvm.functions.Function0
                         public /* bridge */ /* synthetic */ Dp invoke() {
-                            return Dp.m7553boximpl(m9168invokeD9Ej5fM());
+                            return Dp.m7553boximpl(m9187invokeD9Ej5fM());
                         }
 
                         /* renamed from: invoke-D9Ej5fM  reason: not valid java name */
-                        public final float m9168invokeD9Ej5fM() {
+                        public final float m9187invokeD9Ej5fM() {
                             DotGraphic dotGraphic3;
                             DotGraphic dotGraphic4;
                             dotGraphic3 = SpringIndicatorType.this.dotsGraphic;
-                            float m9161getSizeD9Ej5fM = dotGraphic3.m9161getSizeD9Ej5fM();
+                            float m9180getSizeD9Ej5fM = dotGraphic3.m9180getSizeD9Ej5fM();
                             dotGraphic4 = SpringIndicatorType.this.selectorDotGraphic;
-                            return Dp.m7555constructorimpl(Dp.m7555constructorimpl(m9161getSizeD9Ej5fM - dotGraphic4.m9161getSizeD9Ej5fM()) / 2.0f);
+                            return Dp.m7555constructorimpl(Dp.m7555constructorimpl(m9180getSizeD9Ej5fM - dotGraphic4.m9180getSizeD9Ej5fM()) / 2.0f);
                         }
                     });
                     composer2.updateRememberedValue(rememberedValue4);
@@ -391,15 +391,15 @@ public final class SpringIndicatorType extends IndicatorType {
 
                         @Override // kotlin.jvm.functions.Function0
                         public /* bridge */ /* synthetic */ Dp invoke() {
-                            return Dp.m7553boximpl(m9169invokeD9Ej5fM());
+                            return Dp.m7553boximpl(m9188invokeD9Ej5fM());
                         }
 
                         /* renamed from: invoke-D9Ej5fM  reason: not valid java name */
-                        public final float m9169invokeD9Ej5fM() {
+                        public final float m9188invokeD9Ej5fM() {
                             float IndicatorTypeComposable__jt2gSs$lambda$1;
                             float IndicatorTypeComposable__jt2gSs$lambda$4;
                             float IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8;
-                            float m9167computeSelectorDotPositionDptILSbM;
+                            float m9186computeSelectorDotPositionDptILSbM;
                             SpringIndicatorType springIndicatorType2 = SpringIndicatorType.this;
                             IndicatorTypeComposable__jt2gSs$lambda$1 = SpringIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$1(mutableState6);
                             IndicatorTypeComposable__jt2gSs$lambda$4 = SpringIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$4(mutableState5);
@@ -407,8 +407,8 @@ public final class SpringIndicatorType extends IndicatorType {
                             float floatValue = globalOffsetProvider.invoke().floatValue();
                             float f2 = density;
                             IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8 = SpringIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8(state);
-                            m9167computeSelectorDotPositionDptILSbM = springIndicatorType2.m9167computeSelectorDotPositionDptILSbM(IndicatorTypeComposable__jt2gSs$lambda$1, IndicatorTypeComposable__jt2gSs$lambda$4, i8, floatValue, f2, IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8);
-                            return m9167computeSelectorDotPositionDptILSbM;
+                            m9186computeSelectorDotPositionDptILSbM = springIndicatorType2.m9186computeSelectorDotPositionDptILSbM(IndicatorTypeComposable__jt2gSs$lambda$1, IndicatorTypeComposable__jt2gSs$lambda$4, i8, floatValue, f2, IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8);
+                            return m9186computeSelectorDotPositionDptILSbM;
                         }
                     });
                     composer2.updateRememberedValue(rememberedValue5);
@@ -446,7 +446,7 @@ public final class SpringIndicatorType extends IndicatorType {
                 }
 
                 public final void invoke(Composer composer3, int i8) {
-                    SpringIndicatorType.this.mo9162IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+                    SpringIndicatorType.this.mo9181IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
                 }
             });
         }
@@ -474,7 +474,7 @@ public final class SpringIndicatorType extends IndicatorType {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: computeSelectorDotPositionDp-tI-LSbM  reason: not valid java name */
-    public final float m9167computeSelectorDotPositionDptILSbM(float f, float f2, int i, float f3, float f4, float f5) {
+    public final float m9186computeSelectorDotPositionDptILSbM(float f, float f2, int i, float f3, float f4, float f5) {
         return Dp.m7555constructorimpl(Dp.m7555constructorimpl((f + (((f2 - f) / (i - 1)) * f3)) / f4) + f5);
     }
 

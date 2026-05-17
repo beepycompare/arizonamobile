@@ -10,7 +10,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class S3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IdentifiersResult f776a;
+    public final IdentifiersResult f781a;
     public final IdentifiersResult b;
     public final IdentifiersResult c;
     public final IdentifiersResult d;
@@ -27,7 +27,7 @@ public final class S3 {
     public final Bundle o;
 
     public S3(IdentifiersResult identifiersResult, IdentifiersResult identifiersResult2, IdentifiersResult identifiersResult3, IdentifiersResult identifiersResult4, IdentifiersResult identifiersResult5, IdentifiersResult identifiersResult6, IdentifiersResult identifiersResult7, IdentifiersResult identifiersResult8, IdentifiersResult identifiersResult9, IdentifiersResult identifiersResult10, IdentifiersResult identifiersResult11, long j, long j2, V9 v9, Bundle bundle) {
-        this.f776a = identifiersResult;
+        this.f781a = identifiersResult;
         this.b = identifiersResult2;
         this.c = identifiersResult3;
         this.d = identifiersResult4;
@@ -59,7 +59,7 @@ public final class S3 {
     }
 
     public final void b(Bundle bundle) {
-        IdentifiersResult identifiersResult = this.f776a;
+        IdentifiersResult identifiersResult = this.f781a;
         Bundle bundle2 = new Bundle();
         bundle2.putParcelable("value", identifiersResult);
         bundle.putBundle("Uuid", bundle2);
@@ -113,7 +113,7 @@ public final class S3 {
     }
 
     public final String toString() {
-        return "ClientIdentifiersHolder{mUuidData=" + this.f776a + ", mDeviceIdData=" + this.b + ", mDeviceIdHashData=" + this.c + ", mReportAdUrlData=" + this.d + ", mGetAdUrlData=" + this.e + ", mResponseClidsData=" + this.f + ", mClientClidsForRequestData=" + this.g + ", mGaidData=" + this.h + ", mHoaidData=" + this.i + ", yandexAdvIdData=" + this.j + ", customSdkHostsData=" + this.k + ", mServerTimeOffset=" + this.l + ", nextStartupTime=" + this.m + ", features=" + this.n + ", modulesConfig=" + this.o + AbstractJsonLexerKt.END_OBJ;
+        return "ClientIdentifiersHolder{mUuidData=" + this.f781a + ", mDeviceIdData=" + this.b + ", mDeviceIdHashData=" + this.c + ", mReportAdUrlData=" + this.d + ", mGetAdUrlData=" + this.e + ", mResponseClidsData=" + this.f + ", mClientClidsForRequestData=" + this.g + ", mGaidData=" + this.h + ", mHoaidData=" + this.i + ", yandexAdvIdData=" + this.j + ", customSdkHostsData=" + this.k + ", mServerTimeOffset=" + this.l + ", nextStartupTime=" + this.m + ", features=" + this.n + ", modulesConfig=" + this.o + AbstractJsonLexerKt.END_OBJ;
     }
 
     public static V9 a(Bundle bundle) {

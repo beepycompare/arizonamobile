@@ -87,7 +87,7 @@ public final class CarSharingMain implements MobileController {
     }
 
     public final void addBalance(int i) {
-        this.arizonaMobilBinding.mpArizonamobileBalanceCount.setText(i + "$");
+        this.arizonaMobilBinding.mpArizonamobileBalanceCount.setText(this.context.getString(R.string.mobile_price_currency, new Object[]{Integer.valueOf(i)}));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -103,7 +103,8 @@ public final class CarSharingMain implements MobileController {
         }
         try {
             if (Integer.parseInt(new Regex("[^0-9]").replace(sb.toString(), "")) <= 0) {
-                Toast.makeText(carSharingMain.context, "Пополните баланс!", 0).show();
+                Activity activity = carSharingMain.context;
+                Toast.makeText(activity, activity.getString(R.string.mobile_top_up_balance), 0).show();
                 return;
             }
             HistoryManager.Companion.getOrCreatePage(MobilePhonePage.ARIZONAMOBIL_CARS.getId());

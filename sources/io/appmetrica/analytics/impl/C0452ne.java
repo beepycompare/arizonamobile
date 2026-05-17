@@ -11,7 +11,7 @@ public final class C0452ne extends ECommerceEvent {
     public static final int e = 7;
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f1135a;
+    public final int f1140a;
     public final C0502pe b;
     public final InterfaceC0139b8 c;
 
@@ -34,11 +34,11 @@ public final class C0452ne extends ECommerceEvent {
     }
 
     public final String toString() {
-        return "OrderInfoEvent{eventType=" + this.f1135a + ", order=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "OrderInfoEvent{eventType=" + this.f1140a + ", order=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
     public C0452ne(int i, C0502pe c0502pe, InterfaceC0139b8 interfaceC0139b8) {
-        this.f1135a = i;
+        this.f1140a = i;
         this.b = c0502pe;
         this.c = interfaceC0139b8;
     }

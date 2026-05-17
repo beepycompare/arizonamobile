@@ -58,9 +58,9 @@ public class ConflatedBufferedChannel<E> extends BufferedChannel<E> {
 
     static /* synthetic */ <E> Object send$suspendImpl(ConflatedBufferedChannel<E> conflatedBufferedChannel, E e, Continuation<? super Unit> continuation) {
         UndeliveredElementException callUndeliveredElementCatchingException$default;
-        Object m10729trySendImplMj0NB7M = conflatedBufferedChannel.m10729trySendImplMj0NB7M(e, true);
-        if (m10729trySendImplMj0NB7M instanceof ChannelResult.Closed) {
-            ChannelResult.m10714exceptionOrNullimpl(m10729trySendImplMj0NB7M);
+        Object m10748trySendImplMj0NB7M = conflatedBufferedChannel.m10748trySendImplMj0NB7M(e, true);
+        if (m10748trySendImplMj0NB7M instanceof ChannelResult.Closed) {
+            ChannelResult.m10733exceptionOrNullimpl(m10748trySendImplMj0NB7M);
             Function1<E, Unit> function1 = conflatedBufferedChannel.onUndeliveredElement;
             if (function1 != null && (callUndeliveredElementCatchingException$default = OnUndeliveredElementKt.callUndeliveredElementCatchingException$default(function1, e, null, 2, null)) != null) {
                 ExceptionsKt.addSuppressed(callUndeliveredElementCatchingException$default, conflatedBufferedChannel.getSendException());
@@ -72,9 +72,9 @@ public class ConflatedBufferedChannel<E> extends BufferedChannel<E> {
     }
 
     static /* synthetic */ <E> Object sendBroadcast$suspendImpl(ConflatedBufferedChannel<E> conflatedBufferedChannel, E e, Continuation<? super Boolean> continuation) {
-        Object m10729trySendImplMj0NB7M = conflatedBufferedChannel.m10729trySendImplMj0NB7M(e, true);
-        if (!(m10729trySendImplMj0NB7M instanceof ChannelResult.Failed)) {
-            Unit unit = (Unit) m10729trySendImplMj0NB7M;
+        Object m10748trySendImplMj0NB7M = conflatedBufferedChannel.m10748trySendImplMj0NB7M(e, true);
+        if (!(m10748trySendImplMj0NB7M instanceof ChannelResult.Failed)) {
+            Unit unit = (Unit) m10748trySendImplMj0NB7M;
             return Boxing.boxBoolean(true);
         }
         return Boxing.boxBoolean(false);
@@ -83,26 +83,26 @@ public class ConflatedBufferedChannel<E> extends BufferedChannel<E> {
     @Override // kotlinx.coroutines.channels.BufferedChannel, kotlinx.coroutines.channels.SendChannel
     /* renamed from: trySend-JP2dKIU */
     public Object mo8396trySendJP2dKIU(E e) {
-        return m10729trySendImplMj0NB7M(e, false);
+        return m10748trySendImplMj0NB7M(e, false);
     }
 
     /* renamed from: trySendImpl-Mj0NB7M  reason: not valid java name */
-    private final Object m10729trySendImplMj0NB7M(E e, boolean z) {
-        return this.onBufferOverflow == BufferOverflow.DROP_LATEST ? m10728trySendDropLatestMj0NB7M(e, z) : m10704trySendDropOldestJP2dKIU(e);
+    private final Object m10748trySendImplMj0NB7M(E e, boolean z) {
+        return this.onBufferOverflow == BufferOverflow.DROP_LATEST ? m10747trySendDropLatestMj0NB7M(e, z) : m10723trySendDropOldestJP2dKIU(e);
     }
 
     /* renamed from: trySendDropLatest-Mj0NB7M  reason: not valid java name */
-    private final Object m10728trySendDropLatestMj0NB7M(E e, boolean z) {
+    private final Object m10747trySendDropLatestMj0NB7M(E e, boolean z) {
         Function1<E, Unit> function1;
         UndeliveredElementException callUndeliveredElementCatchingException$default;
         Object mo8396trySendJP2dKIU = super.mo8396trySendJP2dKIU(e);
-        if (ChannelResult.m10720isSuccessimpl(mo8396trySendJP2dKIU) || ChannelResult.m10718isClosedimpl(mo8396trySendJP2dKIU)) {
+        if (ChannelResult.m10739isSuccessimpl(mo8396trySendJP2dKIU) || ChannelResult.m10737isClosedimpl(mo8396trySendJP2dKIU)) {
             return mo8396trySendJP2dKIU;
         }
         if (z && (function1 = this.onUndeliveredElement) != null && (callUndeliveredElementCatchingException$default = OnUndeliveredElementKt.callUndeliveredElementCatchingException$default(function1, e, null, 2, null)) != null) {
             throw callUndeliveredElementCatchingException$default;
         }
-        return ChannelResult.Companion.m10725successJP2dKIU(Unit.INSTANCE);
+        return ChannelResult.Companion.m10744successJP2dKIU(Unit.INSTANCE);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -116,7 +116,7 @@ public class ConflatedBufferedChannel<E> extends BufferedChannel<E> {
         } else if (!(mo8396trySendJP2dKIU instanceof ChannelResult.Closed)) {
             throw new IllegalStateException("unreachable".toString());
         } else {
-            ChannelResult.m10714exceptionOrNullimpl(mo8396trySendJP2dKIU);
+            ChannelResult.m10733exceptionOrNullimpl(mo8396trySendJP2dKIU);
             selectInstance.selectInRegistrationPhase(BufferedChannelKt.getCHANNEL_CLOSED());
         }
     }

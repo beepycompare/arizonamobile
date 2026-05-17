@@ -34,6 +34,7 @@ import kotlinx.coroutines.BuildersKt__BuildersKt;
 import kotlinx.coroutines.Dispatchers;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: FilesChek.kt */
 @Metadata(d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\b\b\n\u0002\u0010%\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0000\b\u0007\u0018\u00002\u00020\u0001B'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ0\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\u00112\u0006\u0010\u0014\u001a\u00020\u00112\b\b\u0002\u0010\u0015\u001a\u00020\u00112\u0006\u0010\u0016\u001a\u00020\u0017JB\u0010\u0018\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u001b0\u001a0\u00192\u0006\u0010\u001c\u001a\u00020\u00172\u0006\u0010\u001d\u001a\u00020\u00032\u0006\u0010\u001e\u001a\u00020\u00032\b\b\u0002\u0010\u0015\u001a\u00020\u0011H\u0086@¢\u0006\u0002\u0010\u001fJ2\u0010 \u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00030\u0019\u0012\u0004\u0012\u00020\u001b0\u001a2\u0006\u0010!\u001a\u00020\u00172\b\b\u0002\u0010\u0015\u001a\u00020\u0011H\u0086@¢\u0006\u0002\u0010\"JL\u0010#\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030$2\u0006\u0010%\u001a\u00020\u00172\u0006\u0010\u001d\u001a\u00020\u00032\u0006\u0010\u001e\u001a\u00020\u00032\u0006\u0010\u0012\u001a\u00020\u00112\u0006\u0010&\u001a\u00020\u00112\u0006\u0010\u0014\u001a\u00020\u00112\b\b\u0002\u0010\u0015\u001a\u00020\u0011J0\u0010'\u001a\u00020\u00112\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+2\u0006\u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0014\u001a\u00020\u00112\b\b\u0002\u0010\u0015\u001a\u00020\u0011J\u0016\u0010,\u001a\u00020\u00032\u0006\u0010-\u001a\u00020.2\u0006\u0010(\u001a\u00020)J\f\u0010/\u001a\u00020\u0003*\u000200H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00030\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u00061"}, d2 = {"Lcom/arizona/launcher/downloader/FilesChek;", "", "TAG", "", "updatePreferences", "Landroid/content/SharedPreferences;", "contentResolver", "Landroid/content/ContentResolver;", "context", "Landroid/content/Context;", "<init>", "(Ljava/lang/String;Landroid/content/SharedPreferences;Landroid/content/ContentResolver;Landroid/content/Context;)V", "excludeFromCheck", "", "localManifestStore", "Lcom/arizona/launcher/downloader/LocalManifestStore;", "isAllFilesOk", "", "checkHash", "purgeExtraFiles", "forceFileEditDate", "useManifest", "mDataInfo", "Lorg/json/JSONArray;", "getFilesToDownload", "", "Lkotlin/Pair;", "", "sources", "dir", "destDir", "(Lorg/json/JSONArray;Ljava/lang/String;Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "checkGameDataUpdate", "dataInfo", "(Lorg/json/JSONArray;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllDamagedFiles", "", "fileSourceJson", "addExtraFilesToPurgeList", "checkSingleFile", "file", "Ljava/io/File;", "fileJson", "Lorg/json/JSONObject;", "getFileChecksum", "digest", "Ljava/security/MessageDigest;", "toHex", "", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
@@ -363,16 +364,17 @@ public final class FilesChek {
                 this.updatePreferences.edit().putLong(file.getAbsolutePath(), j3).apply();
                 Log.d(this.TAG, "Force date update after hash check, new file date: " + j4 + "}");
             }
-            String str = this.TAG;
             if (areEqual) {
-                Log.v(str, name + " - good, after hash check");
+                if (!UtilsKt.isDebug()) {
+                    Log.v(this.TAG, name + " - good, after hash check");
+                }
                 LocalManifestStore localManifestStore2 = this.localManifestStore;
                 String path2 = file.getPath();
                 Intrinsics.checkNotNullExpressionValue(path2, "getPath(...)");
                 LocalManifestStore.put$default(localManifestStore2, path2, new FileHashEntry(fileChecksum, Long.valueOf(j), Long.valueOf(j4)), false, 4, null);
                 return areEqual;
             }
-            Log.v(str, name + " - bad, after hash check");
+            Log.v(this.TAG, name + " - bad, after hash check");
             return areEqual;
         }
         Log.v(this.TAG, name + " - good");

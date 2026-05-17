@@ -50,10 +50,11 @@ public final class DownloadScreenKt {
         Composer startRestartGroup = composer.startRestartGroup(-1785886338);
         ComposerKt.sourceInformation(startRestartGroup, "C(DownloadScreenRoute)N(component)26@1179L2,25@1148L39,29@1249L260,29@1212L297,35@1541L7,36@1574L192,36@1553L213,45@1805L29,51@1985L23,47@1840L174:DownloadScreen.kt#k3v2wi");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(component) : startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
+        boolean z = true;
         if (!startRestartGroup.shouldExecute((i2 & 3) != 2, i2 & 1)) {
             composer2 = startRestartGroup;
             composer2.skipToGroupEnd();
@@ -103,9 +104,11 @@ public final class DownloadScreenKt {
             composer2 = startRestartGroup;
             DownloadScreenUiState DownloadScreenRoute$lambda$3 = DownloadScreenRoute$lambda$3(collectAsStateWithLifecycle);
             ComposerKt.sourceInformationMarkerStart(composer2, 1750180885, "CC(remember):DownloadScreen.kt#9igjgp");
-            boolean changedInstance = composer2.changedInstance(component);
+            if ((i2 & 14) != 4 && ((i2 & 8) == 0 || !composer2.changedInstance(component))) {
+                z = false;
+            }
             DownloadScreenKt$DownloadScreenRoute$4$1 rememberedValue4 = composer2.rememberedValue();
-            if (changedInstance || rememberedValue4 == Composer.Companion.getEmpty()) {
+            if (z || rememberedValue4 == Composer.Companion.getEmpty()) {
                 rememberedValue4 = new DownloadScreenKt$DownloadScreenRoute$4$1(component);
                 composer2.updateRememberedValue(rememberedValue4);
             }

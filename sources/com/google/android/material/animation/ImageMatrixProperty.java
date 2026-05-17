@@ -3,7 +3,7 @@ package com.google.android.material.animation;
 import android.graphics.Matrix;
 import android.util.Property;
 import android.widget.ImageView;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ImageMatrixProperty extends Property<ImageView, Matrix> {
     private final Matrix matrix;
 

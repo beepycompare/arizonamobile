@@ -8,7 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class FileTypes {
     public static final int AC3 = 0;
     public static final int AC4 = 1;
@@ -78,7 +78,7 @@ public final class FileTypes {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Type {
     }
 

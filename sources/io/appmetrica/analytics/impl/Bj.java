@@ -5,14 +5,14 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 public final class Bj implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f522a;
+    public final /* synthetic */ PluginErrorDetails f527a;
 
     public Bj(PluginErrorDetails pluginErrorDetails) {
-        this.f522a = pluginErrorDetails;
+        this.f527a = pluginErrorDetails;
     }
 
     @Override // io.appmetrica.analytics.impl.Qa
     public final void a(Ra ra) {
-        ra.getPluginExtension().reportUnhandledException(this.f522a);
+        ra.getPluginExtension().reportUnhandledException(this.f527a);
     }
 }

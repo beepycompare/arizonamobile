@@ -10,7 +10,7 @@ public final class X {
     public static X d;
 
     /* renamed from: a  reason: collision with root package name */
-    public final U f1596a;
+    public final U f1601a;
     public final MetricsClient b;
 
     /* loaded from: classes6.dex */
@@ -45,7 +45,7 @@ public final class X {
         Y y = new Y(context);
         N n = new N(new I(new C0827o(context, new B(new C0834w(), new C0835x(), new C0837z(new a0()), new A())), bVar), new K(new C0831t(), new c0()), new L(new C0831t()), bVar);
         U u = new U(n, new T(n, new S(new b0(y, new c0()), new C(context), new O(new C0830s(new C0814b(), new Q(), bVar)), new e0(context))));
-        this.f1596a = u;
+        this.f1601a = u;
         this.b = new MetricsClient(new C0826n(u, new C0815c(n), new V(context, new C0816d(new C0818f(new C0817e()))), z, bVar));
     }
 }

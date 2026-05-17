@@ -2,7 +2,7 @@ package com.miami.game.core.connection.resolver.data;
 
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ConnectionResolverImpl_Factory implements Factory<ConnectionResolverImpl> {
     private final Provider<AvailabilityService> availabilityServiceProvider;
     private final Provider<ServersList> serversListProvider;

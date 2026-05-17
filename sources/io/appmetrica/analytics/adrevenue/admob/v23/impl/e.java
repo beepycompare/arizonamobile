@@ -4,15 +4,15 @@ import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
 import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenue;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class e implements ModuleAdRevenueProcessor {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final b f292a;
+    protected final b f297a;
     public final ClientContext b;
 
     public e(b bVar, ClientContext clientContext) {
-        this.f292a = bVar;
+        this.f297a = bVar;
         this.b = clientContext;
     }
 

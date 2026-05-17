@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/_15sdp">
     <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/_24sdp">
-        <TextView android:textSize="@dimen/_20sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="создать свой\10промокод можно" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
-        <ru.mrlargha.commonui.utils.ui.GradientText.ArizonaGradientTextView android:textSize="@dimen/_20sdp" android:textColor="@color/white" android:id="@+id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="c 10 уровня" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" app:endColor="#ff9112" app:startColor="#fcd80f"/>
+        <TextView android:textSize="@dimen/_20sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/promo_create_code" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+        <ru.mrlargha.commonui.utils.ui.GradientText.ArizonaGradientTextView android:textSize="@dimen/_20sdp" android:textColor="@color/white" android:id="@+id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/promo_from_level_placeholder" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" app:endColor="#ff9112" app:startColor="#fcd80f"/>
     </LinearLayout>
     <ImageView android:layout_gravity="right" android:id="@+id/bg_image" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/promo_level_locker_image" android:scaleType="fitEnd"/>
 </FrameLayout>

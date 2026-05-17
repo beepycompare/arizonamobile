@@ -26,7 +26,6 @@ import androidx.compose.ui.node.ComposeUiNode;
 import androidx.compose.ui.platform.AccessibilityManager;
 import androidx.compose.ui.platform.CompositionLocalsKt;
 import androidx.compose.ui.util.ListUtilsKt;
-import androidx.media3.exoplayer.Renderer;
 import androidx.media3.exoplayer.RendererCapabilities;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
@@ -160,7 +159,7 @@ public final class SnackbarHostKt {
         if (i == 1) {
             j = Long.MAX_VALUE;
         } else if (i == 2) {
-            j = Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
+            j = 10000;
         } else if (i != 3) {
             throw new NoWhenBranchMatchedException();
         } else {

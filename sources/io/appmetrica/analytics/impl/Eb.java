@@ -5,5 +5,5 @@ import java.util.List;
 public final class Eb {
 
     /* renamed from: a  reason: collision with root package name */
-    public List f565a;
+    public List f570a;
 }

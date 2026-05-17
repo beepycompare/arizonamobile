@@ -7,15 +7,15 @@ import java.util.Arrays;
 public final class C0342j5 implements PermissionStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    public final PermissionStrategy[] f1056a;
+    public final PermissionStrategy[] f1061a;
 
     public C0342j5(PermissionStrategy... permissionStrategyArr) {
-        this.f1056a = permissionStrategyArr;
+        this.f1061a = permissionStrategyArr;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy
     public final boolean forbidUsePermission(String str) {
-        for (PermissionStrategy permissionStrategy : this.f1056a) {
+        for (PermissionStrategy permissionStrategy : this.f1061a) {
             if (permissionStrategy.forbidUsePermission(str)) {
                 return true;
             }
@@ -24,6 +24,6 @@ public final class C0342j5 implements PermissionStrategy {
     }
 
     public final String toString() {
-        return "CompositePermissionStrategy(strategies=" + Arrays.toString(this.f1056a) + ')';
+        return "CompositePermissionStrategy(strategies=" + Arrays.toString(this.f1061a) + ')';
     }
 }

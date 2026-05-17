@@ -1,7 +1,7 @@
 package androidx.media3.exoplayer.source;
 
 import androidx.media3.common.Timeline;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public abstract class ForwardingTimeline extends Timeline {
     protected final Timeline timeline;
 

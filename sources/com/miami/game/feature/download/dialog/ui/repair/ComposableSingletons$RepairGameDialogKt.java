@@ -33,12 +33,12 @@ public final class ComposableSingletons$RepairGameDialogKt {
     });
 
     /* renamed from: getLambda$-1796529959$dialogs  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9101getLambda$1796529959$dialogs() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9104getLambda$1796529959$dialogs() {
         return f138lambda$1796529959;
     }
 
     /* renamed from: getLambda$-277375600$dialogs  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9102getLambda$277375600$dialogs() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9105getLambda$277375600$dialogs() {
         return f139lambda$277375600;
     }
 

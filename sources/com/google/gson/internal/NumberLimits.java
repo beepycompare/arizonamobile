@@ -1,6 +1,5 @@
 package com.google.gson.internal;
 
-import androidx.media3.exoplayer.Renderer;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 /* loaded from: classes4.dex */
@@ -19,7 +18,7 @@ public class NumberLimits {
     public static BigDecimal parseBigDecimal(String str) throws NumberFormatException {
         checkNumberStringLength(str);
         BigDecimal bigDecimal = new BigDecimal(str);
-        if (Math.abs(bigDecimal.scale()) < Renderer.DEFAULT_DURATION_TO_PROGRESS_US) {
+        if (Math.abs(bigDecimal.scale()) < 10000) {
             return bigDecimal;
         }
         throw new NumberFormatException("Number has unsupported scale: " + str);

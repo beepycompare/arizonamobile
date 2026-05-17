@@ -73,13 +73,14 @@ public final class RepairGameErrorKt {
 
     public static final void RepairGameErrorDialogRoute(final CommonDialogComponent component, final Function0<Unit> onBackClick, final Function0<Unit> onConfirm, Composer composer, final int i) {
         int i2;
+        Composer composer2;
         Intrinsics.checkNotNullParameter(component, "component");
         Intrinsics.checkNotNullParameter(onBackClick, "onBackClick");
         Intrinsics.checkNotNullParameter(onConfirm, "onConfirm");
         Composer startRestartGroup = composer.startRestartGroup(2044412224);
         ComposerKt.sourceInformation(startRestartGroup, "C(RepairGameErrorDialogRoute)N(component,onBackClick,onConfirm)31@1464L33,33@1559L183,33@1522L220,41@1781L29,44@1866L20,45@1908L20,43@1816L119:RepairGameError.kt#wxnm6r");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(component) : startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
@@ -89,18 +90,20 @@ public final class RepairGameErrorKt {
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i2 |= startRestartGroup.changedInstance(onConfirm) ? 256 : 128;
         }
-        if (!startRestartGroup.shouldExecute((i2 & 147) != 146, i2 & 1)) {
-            startRestartGroup.skipToGroupEnd();
+        int i3 = i2;
+        if (!startRestartGroup.shouldExecute((i3 & 147) != 146, i3 & 1)) {
+            composer2 = startRestartGroup;
+            composer2.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(2044412224, i2, -1, "com.miami.game.feature.download.dialog.ui.repair.RepairGameErrorDialogRoute (RepairGameError.kt:30)");
+                ComposerKt.traceEventStart(2044412224, i3, -1, "com.miami.game.feature.download.dialog.ui.repair.RepairGameErrorDialogRoute (RepairGameError.kt:30)");
             }
-            int i3 = i2 & 112;
-            BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i3, 1);
+            int i4 = i3 & 112;
+            BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i4, 1);
             SharedEventFlow<CommonDialogUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1880100503, "CC(remember):RepairGameError.kt#9igjgp");
-            boolean z = (i3 == 32) | ((i2 & 896) == 256);
+            boolean z = (i4 == 32) | ((i3 & 896) == 256);
             RepairGameErrorKt$RepairGameErrorDialogRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (z || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new RepairGameErrorKt$RepairGameErrorDialogRoute$1$1(onBackClick, onConfirm, null);
@@ -108,31 +111,32 @@ public final class RepairGameErrorKt {
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue, startRestartGroup, 0, 6);
-            startRestartGroup = startRestartGroup;
             FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1880110164, "CC(remember):RepairGameError.kt#9igjgp");
-            boolean changedInstance = startRestartGroup.changedInstance(component);
-            RepairGameErrorKt$RepairGameErrorDialogRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
-            if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
+            composer2 = startRestartGroup;
+            ComposerKt.sourceInformationMarkerStart(composer2, 1880110164, "CC(remember):RepairGameError.kt#9igjgp");
+            int i5 = i3 & 14;
+            boolean z2 = i5 == 4 || ((i3 & 8) != 0 && composer2.changedInstance(component));
+            RepairGameErrorKt$RepairGameErrorDialogRoute$2$1 rememberedValue2 = composer2.rememberedValue();
+            if (z2 || rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new RepairGameErrorKt$RepairGameErrorDialogRoute$2$1(component);
-                startRestartGroup.updateRememberedValue(rememberedValue2);
+                composer2.updateRememberedValue(rememberedValue2);
             }
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function0 = (Function0) ((KFunction) rememberedValue2);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1880111508, "CC(remember):RepairGameError.kt#9igjgp");
-            boolean changedInstance2 = startRestartGroup.changedInstance(component);
-            RepairGameErrorKt$RepairGameErrorDialogRoute$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
-            if (changedInstance2 || rememberedValue3 == Composer.Companion.getEmpty()) {
+            ComposerKt.sourceInformationMarkerStart(composer2, 1880111508, "CC(remember):RepairGameError.kt#9igjgp");
+            boolean z3 = i5 == 4 || ((i3 & 8) != 0 && composer2.changedInstance(component));
+            RepairGameErrorKt$RepairGameErrorDialogRoute$3$1 rememberedValue3 = composer2.rememberedValue();
+            if (z3 || rememberedValue3 == Composer.Companion.getEmpty()) {
                 rememberedValue3 = new RepairGameErrorKt$RepairGameErrorDialogRoute$3$1(component);
-                startRestartGroup.updateRememberedValue(rememberedValue3);
+                composer2.updateRememberedValue(rememberedValue3);
             }
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            RepairGameErrorDialogContent(function0, (Function0) ((KFunction) rememberedValue3), startRestartGroup, 0);
+            ComposerKt.sourceInformationMarkerEnd(composer2);
+            RepairGameErrorDialogContent(function0, (Function0) ((KFunction) rememberedValue3), composer2, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
-        ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
+        ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameErrorKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2

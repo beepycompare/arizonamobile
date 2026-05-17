@@ -6,7 +6,7 @@ import com.miami.game.core.local.repository.common.LocalRepository;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LocalRepositoryModule_ProvideLocalRepositoryFactory implements Factory<LocalRepository> {
     private final Provider<Context> contextProvider;
     private final Provider<Gson> gsonProvider;

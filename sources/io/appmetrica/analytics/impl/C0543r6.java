@@ -9,7 +9,7 @@ public final class C0543r6 implements Cf {
     public static final C0519q6 b = new C0519q6();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Cf f1202a;
+    public final Cf f1207a;
 
     public C0543r6() {
         this(null, 1, null);
@@ -17,12 +17,12 @@ public final class C0543r6 implements Cf {
 
     @Override // io.appmetrica.analytics.impl.Cf
     public final String a() {
-        return this.f1202a.a();
+        return this.f1207a.a();
     }
 
     public final boolean b() {
         try {
-            String a2 = this.f1202a.a();
+            String a2 = this.f1207a.a();
             if (a2 != null && a2.length() > 0) {
                 if (!StringsKt.contains$default((CharSequence) a2, (CharSequence) StringUtils.PROCESS_POSTFIX_DELIMITER, false, 2, (Object) null)) {
                     return true;
@@ -34,12 +34,12 @@ public final class C0543r6 implements Cf {
     }
 
     public C0543r6(Cf cf) {
-        this.f1202a = cf;
+        this.f1207a = cf;
     }
 
     public final boolean a(String str) {
         try {
-            String a2 = this.f1202a.a();
+            String a2 = this.f1207a.a();
             if (a2 != null && a2.length() > 0) {
                 if (StringsKt.endsWith$default(a2, StringUtils.PROCESS_POSTFIX_DELIMITER + str, false, 2, (Object) null)) {
                     return true;

@@ -8,7 +8,7 @@ import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public final class GsonConverterFactory extends Converter.Factory {
     private final Gson gson;
     private final boolean streaming;

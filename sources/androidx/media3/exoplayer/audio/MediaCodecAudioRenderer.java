@@ -245,16 +245,13 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     protected long getDurationToProgressUs(long j, long j2, boolean z) {
         boolean z2 = this.audioSink.hasPendingData() && this.nextBufferToWritePresentationTimeUs != C.TIME_UNSET;
         if (!this.isStarted) {
-            if (z2 || super.isEnded()) {
-                return 1000000L;
-            }
-            return Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
+            return (z2 || super.isEnded()) ? 1000000L : 10000L;
         }
         long audioTrackBufferSizeUs = this.audioSink.getAudioTrackBufferSizeUs();
         if (this.hasReportedAudioPositionAdvancing && z2 && audioTrackBufferSizeUs != C.TIME_UNSET) {
-            return Math.max((long) Renderer.DEFAULT_DURATION_TO_PROGRESS_US, (((float) Math.min(audioTrackBufferSizeUs, this.nextBufferToWritePresentationTimeUs - j)) / (getPlaybackParameters() != null ? getPlaybackParameters().speed : 1.0f)) / 2.0f);
+            return Math.max(10000L, (((float) Math.min(audioTrackBufferSizeUs, this.nextBufferToWritePresentationTimeUs - j)) / (getPlaybackParameters() != null ? getPlaybackParameters().speed : 1.0f)) / 2.0f);
         }
-        return Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
+        return 10000L;
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer

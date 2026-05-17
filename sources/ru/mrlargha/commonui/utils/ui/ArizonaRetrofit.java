@@ -89,9 +89,7 @@ public final class ArizonaRetrofit {
         Intrinsics.checkNotNullParameter(onError, "onError");
         this.onError = onError;
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
-        if (ru.mrlargha.commonui.utils.UtilsKt.isDebug()) {
-            httpLoggingInterceptor.level(HttpLoggingInterceptor.Level.BODY);
-        } else {
+        if (!ru.mrlargha.commonui.utils.UtilsKt.isDebug()) {
             httpLoggingInterceptor.level(HttpLoggingInterceptor.Level.HEADERS);
         }
         OkHttpClient build = new OkHttpClient.Builder().addInterceptor(new Interceptor() { // from class: ru.mrlargha.commonui.utils.ui.ArizonaRetrofit$create$$inlined$-addInterceptor$1

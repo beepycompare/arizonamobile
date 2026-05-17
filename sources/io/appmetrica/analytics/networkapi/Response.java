@@ -11,7 +11,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class Response {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f1389a;
+    private final boolean f1394a;
     private final int b;
     private final byte[] c;
     private final Map d;
@@ -43,15 +43,15 @@ public final class Response {
     }
 
     public final boolean isCompleted() {
-        return this.f1389a;
+        return this.f1394a;
     }
 
     public String toString() {
-        return "Response(isCompleted=" + this.f1389a + ", code=" + this.b + ", responseDataLength=" + this.c.length + ", headers=" + this.d + ", exception=" + this.e + ", url=" + this.f + ')';
+        return "Response(isCompleted=" + this.f1394a + ", code=" + this.b + ", responseDataLength=" + this.c.length + ", headers=" + this.d + ", exception=" + this.e + ", url=" + this.f + ')';
     }
 
     private Response(boolean z, int i, byte[] bArr, Map map, Throwable th, String str) {
-        this.f1389a = z;
+        this.f1394a = z;
         this.b = i;
         this.c = bArr;
         this.d = map;
@@ -64,7 +64,7 @@ public final class Response {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final boolean f1390a;
+        private final boolean f1395a;
         private final int b;
         private final byte[] c;
         private final Throwable d;
@@ -72,7 +72,7 @@ public final class Response {
         private String f;
 
         private Builder(boolean z, int i, byte[] bArr, Throwable th) {
-            this.f1390a = z;
+            this.f1395a = z;
             this.b = i;
             this.c = bArr;
             this.d = th;
@@ -80,7 +80,7 @@ public final class Response {
         }
 
         public final Response build() {
-            return new Response(this.f1390a, this.b, this.c, this.e, this.d, this.f, null);
+            return new Response(this.f1395a, this.b, this.c, this.e, this.d, this.f, null);
         }
 
         public final Builder withHeaders(Map<String, ? extends List<String>> map) {

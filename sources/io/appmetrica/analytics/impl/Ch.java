@@ -5,20 +5,20 @@ import android.content.Context;
 public final class Ch implements InterfaceC0264g4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Y4 f535a;
+    public final Y4 f540a;
 
     public Ch(Y4 y4) {
-        this.f535a = y4;
+        this.f540a = y4;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0264g4
     /* renamed from: b */
     public final Ag a(Context context, C0188d5 c0188d5, P3 p3, C0492p4 c0492p4) {
         Bg bg;
-        Q4 q4 = new Q4(p3.b, p3.f735a);
-        Cg cg = new Cg(this.f535a);
+        Q4 q4 = new Q4(p3.b, p3.f740a);
+        Cg cg = new Cg(this.f540a);
         synchronized (c0188d5) {
-            bg = (Bg) c0188d5.a(q4, c0492p4, cg, c0188d5.f952a);
+            bg = (Bg) c0188d5.a(q4, c0492p4, cg, c0188d5.f957a);
         }
         return new Ag(context, bg);
     }

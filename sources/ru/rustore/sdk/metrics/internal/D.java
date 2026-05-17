@@ -6,13 +6,13 @@ import ru.rustore.sdk.metrics.MetricsEvent;
 public final class D {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1575a;
+    public final String f1580a;
     public final MetricsEvent b;
 
     public D(String uuid, MetricsEvent metricsEvent) {
         Intrinsics.checkNotNullParameter(uuid, "uuid");
         Intrinsics.checkNotNullParameter(metricsEvent, "metricsEvent");
-        this.f1575a = uuid;
+        this.f1580a = uuid;
         this.b = metricsEvent;
     }
 
@@ -23,12 +23,12 @@ public final class D {
         if (Intrinsics.areEqual(D.class, obj != null ? obj.getClass() : null)) {
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type ru.rustore.sdk.metrics.internal.domain.model.PersistentMetricsEvent");
             D d = (D) obj;
-            return Intrinsics.areEqual(this.f1575a, d.f1575a) && Intrinsics.areEqual(this.b, d.b);
+            return Intrinsics.areEqual(this.f1580a, d.f1580a) && Intrinsics.areEqual(this.b, d.b);
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f1575a.hashCode() * 31);
+        return this.b.hashCode() + (this.f1580a.hashCode() * 31);
     }
 }

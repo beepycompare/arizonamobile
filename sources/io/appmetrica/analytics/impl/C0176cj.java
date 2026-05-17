@@ -10,7 +10,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0176cj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f941a;
+    public final String f946a;
     public final List b;
     public final String c;
     public final Map d;
@@ -20,11 +20,11 @@ public final class C0176cj {
     }
 
     public final String toString() {
-        return "ScreenWrapper{name='" + this.f941a + "', categoriesPath=" + this.b + ", searchQuery='" + this.c + "', payload=" + this.d + AbstractJsonLexerKt.END_OBJ;
+        return "ScreenWrapper{name='" + this.f946a + "', categoriesPath=" + this.b + ", searchQuery='" + this.c + "', payload=" + this.d + AbstractJsonLexerKt.END_OBJ;
     }
 
     public C0176cj(String str, String str2, List list, Map map) {
-        this.f941a = str;
+        this.f946a = str;
         this.b = list;
         this.c = str2;
         this.d = map;

@@ -7,11 +7,11 @@ import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.AdRevenueCollector;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class IronSourceV9ClientModuleEntryPoint extends ModuleClientEntryPoint<Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    private ClientContext f301a = null;
+    private ClientContext f306a = null;
     private final AtomicBoolean b = new AtomicBoolean(false);
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
@@ -26,13 +26,13 @@ public class IronSourceV9ClientModuleEntryPoint extends ModuleClientEntryPoint<O
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
     public void initClientSide(ClientContext clientContext) {
-        this.f301a = clientContext;
+        this.f306a = clientContext;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
     public void onActivated() {
         ClientContext clientContext;
-        if (!ReflectionUtils.detectClassExists("com.unity3d.mediation.LevelPlay") || (clientContext = this.f301a) == null) {
+        if (!ReflectionUtils.detectClassExists("com.unity3d.mediation.LevelPlay") || (clientContext = this.f306a) == null) {
             return;
         }
         LevelPlay.addImpressionDataListener(new c(clientContext));

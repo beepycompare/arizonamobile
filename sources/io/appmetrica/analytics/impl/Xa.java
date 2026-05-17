@@ -13,7 +13,7 @@ public final class Xa implements Parcelable {
     public static final Parcelable.Creator<Xa> CREATOR = new Wa();
 
     /* renamed from: a  reason: collision with root package name */
-    public final ResultReceiver f851a;
+    public final ResultReceiver f856a;
     public final List b;
     public final HashMap c;
     public final boolean d;
@@ -21,7 +21,7 @@ public final class Xa implements Parcelable {
     public Xa(B6 b6, List list, Map map, boolean z) {
         HashMap hashMap;
         this.b = list;
-        this.f851a = b6;
+        this.f856a = b6;
         if (map == null) {
             hashMap = new HashMap();
         } else {
@@ -39,7 +39,7 @@ public final class Xa implements Parcelable {
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         Bundle bundle = new Bundle();
-        bundle.putParcelable("io.appmetrica.analytics.internal.CounterConfiguration.receiver", this.f851a);
+        bundle.putParcelable("io.appmetrica.analytics.internal.CounterConfiguration.receiver", this.f856a);
         if (this.b != null) {
             bundle.putStringArrayList("io.appmetrica.analytics.internal.CounterConfiguration.identifiersList", new ArrayList<>(this.b));
         }
@@ -54,7 +54,7 @@ public final class Xa implements Parcelable {
     public Xa(Parcel parcel) {
         Bundle readBundle = parcel.readBundle(B6.class.getClassLoader());
         if (readBundle != null) {
-            this.f851a = (ResultReceiver) readBundle.getParcelable("io.appmetrica.analytics.internal.CounterConfiguration.receiver");
+            this.f856a = (ResultReceiver) readBundle.getParcelable("io.appmetrica.analytics.internal.CounterConfiguration.receiver");
             this.b = readBundle.getStringArrayList("io.appmetrica.analytics.internal.CounterConfiguration.identifiersList");
             this.c = Fm.a(readBundle.getString("io.appmetrica.analytics.internal.CounterConfiguration.clidsForVerification"));
             this.d = readBundle.getBoolean("io.appmetrica.analytics.internal.CounterConfiguration.forceRefreshConfiguration");

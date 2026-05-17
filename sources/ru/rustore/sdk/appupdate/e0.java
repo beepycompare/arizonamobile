@@ -13,12 +13,12 @@ public final class e0 {
     public static volatile e0 i;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1536a;
+    public final Context f1541a;
     public final Map<String, Object> b;
     public final Lazy c = LazyKt.lazy(new d());
     public final Lazy d = LazyKt.lazy(new c());
     public final Lazy e = LazyKt.lazy(new e());
-    public final Lazy f = LazyKt.lazy(b.f1537a);
+    public final Lazy f = LazyKt.lazy(b.f1542a);
     public final Lazy g = LazyKt.lazy(new f());
     public final Lazy h = LazyKt.lazy(new g());
 
@@ -30,7 +30,7 @@ public final class e0 {
     public static final class b extends Lambda implements Function0<C0796j> {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final b f1537a = new b();
+        public static final b f1542a = new b();
 
         public b() {
             super(0);
@@ -62,7 +62,7 @@ public final class e0 {
 
         @Override // kotlin.jvm.functions.Function0
         public final C0791e invoke() {
-            return new C0791e((C0800n) e0.this.d.getValue(), (a0) e0.this.h.getValue(), (L) e0.this.e.getValue(), AnalyticsEventProvider.INSTANCE, e0.this.f1536a);
+            return new C0791e((C0800n) e0.this.d.getValue(), (a0) e0.this.h.getValue(), (L) e0.this.e.getValue(), AnalyticsEventProvider.INSTANCE, e0.this.f1541a);
         }
     }
 
@@ -74,7 +74,7 @@ public final class e0 {
 
         @Override // kotlin.jvm.functions.Function0
         public final L invoke() {
-            return new L(new K(e0.this.f1536a));
+            return new L(new K(e0.this.f1541a));
         }
     }
 
@@ -86,7 +86,7 @@ public final class e0 {
 
         @Override // kotlin.jvm.functions.Function0
         public final MetricsClient invoke() {
-            return MetricsClient.Companion.getInstance(e0.this.f1536a);
+            return MetricsClient.Companion.getInstance(e0.this.f1541a);
         }
     }
 
@@ -103,7 +103,7 @@ public final class e0 {
     }
 
     public e0(Context context, Map map) {
-        this.f1536a = context;
+        this.f1541a = context;
         this.b = map;
     }
 }

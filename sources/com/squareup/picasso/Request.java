@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Request {
     private static final long TOO_LONG_LOG = TimeUnit.SECONDS.toNanos(5);
     public final boolean centerCrop;
@@ -145,7 +145,7 @@ public final class Request {
         return new Builder();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private boolean centerCrop;
         private int centerCropGravity;

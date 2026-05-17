@@ -1,5 +1,5 @@
 package androidx.text.emoji.flatbuffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class Constants {
     static final int FILE_IDENTIFIER_LENGTH = 4;
     static final int SIZEOF_BYTE = 1;

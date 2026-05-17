@@ -209,11 +209,14 @@ public abstract class IntSet {
                 }
                 i2++;
             }
+            String sb2 = sb.toString();
+            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+            return sb2;
         }
         sb.append(postfix);
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-        return sb2;
+        String sb22 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
+        return sb22;
     }
 
     public static /* synthetic */ String joinToString$default(IntSet intSet, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, int i, CharSequence charSequence4, Function1 transform, int i2, Object obj) {
@@ -274,14 +277,11 @@ public abstract class IntSet {
                 }
                 i5++;
             }
-            String sb2 = sb.toString();
-            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-            return sb2;
         }
         sb.append(postfix);
-        String sb22 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
-        return sb22;
+        String sb2 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+        return sb2;
     }
 
     public final String joinToString(CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function1<? super Integer, ? extends CharSequence> transform) {
@@ -781,14 +781,11 @@ public abstract class IntSet {
                 }
                 i++;
             }
-            String sb2 = sb.toString();
-            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-            return sb2;
         }
         sb.append((CharSequence) r4);
-        String sb22 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
-        return sb22;
+        String sb2 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+        return sb2;
     }
 
     public final String joinToString(CharSequence separator, Function1<? super Integer, ? extends CharSequence> transform) {

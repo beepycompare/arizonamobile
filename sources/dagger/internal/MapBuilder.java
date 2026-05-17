@@ -2,7 +2,7 @@ package dagger.internal;
 
 import java.util.Collections;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public final class MapBuilder<K, V> {
     private final Map<K, V> contributions;
 

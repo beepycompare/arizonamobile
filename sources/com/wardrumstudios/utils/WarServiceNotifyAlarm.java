@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import androidx.media3.common.C;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class WarServiceNotifyAlarm extends Service {
     public int icon;
     private NotificationManager mManager;

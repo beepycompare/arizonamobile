@@ -10,22 +10,22 @@ import dagger.hilt.internal.Preconditions;
 import dagger.multibindings.Multibinds;
 import java.util.Map;
 import javax.inject.Inject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DefaultViewModelFactories {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface ActivityEntryPoint {
         InternalFactoryFactory getHiltInternalFactoryFactory();
     }
 
     @Module
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     interface ActivityModule {
         @Multibinds
         Map<Class<?>, Boolean> viewModelKeys();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface FragmentEntryPoint {
         InternalFactoryFactory getHiltInternalFactoryFactory();
     }
@@ -38,7 +38,7 @@ public final class DefaultViewModelFactories {
         return ((FragmentEntryPoint) EntryPoints.get(fragment, FragmentEntryPoint.class)).getHiltInternalFactoryFactory().fromFragment(fragment, delegateFactory);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class InternalFactoryFactory {
         private final Map<Class<?>, Boolean> keySet;
         private final ViewModelComponentBuilder viewModelComponentBuilder;

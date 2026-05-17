@@ -54,7 +54,7 @@ public final class MeetingsAdapter extends RecyclerView.Adapter<MeetingsItemView
         formatUnixTime = MeetingsAdapterKt.formatUnixTime(capturesItem.getDate_attack_unix(), this.currentZone);
         binding.data.setText((CharSequence) formatUnixTime.getFirst());
         binding.time.setText((CharSequence) formatUnixTime.getSecond());
-        binding.territory.setText("№ " + capturesItem.getCapture_id_zone());
+        binding.territory.setText(binding.getRoot().getContext().getString(R.string.family_zone_number, Integer.valueOf(capturesItem.getCapture_id_zone())));
         binding.deffence1.setText(capturesItem.getFamily_name());
         binding.attack1.setText(capturesItem.getAttack_family_name());
     }

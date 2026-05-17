@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class HudElementTimeBinding implements ViewBinding {
     public final TextView btnClose;
     public final HudElementTimeItemBinding card0;

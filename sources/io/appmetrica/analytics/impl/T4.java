@@ -3,15 +3,15 @@ package io.appmetrica.analytics.impl;
 public abstract class T4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final X4 f793a;
+    public final X4 f798a;
     public final String b = "[ComponentMigrationToV113]";
 
     public T4(X4 x4) {
-        this.f793a = x4;
+        this.f798a = x4;
     }
 
     public final X4 a() {
-        return this.f793a;
+        return this.f798a;
     }
 
     public final String b() {

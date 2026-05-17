@@ -3,7 +3,7 @@ package androidx.text.emoji.flatbuffer;
 import androidx.text.emoji.flatbuffer.Utf8;
 import androidx.window.core.layout.WindowSizeClass;
 import java.nio.ByteBuffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class Utf8Safe extends Utf8 {
     private static int computeEncodedLength(CharSequence charSequence) {
         int length = charSequence.length();
@@ -346,7 +346,7 @@ public final class Utf8Safe extends Utf8 {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static class UnpairedSurrogateException extends IllegalArgumentException {
         UnpairedSurrogateException(int i, int i2) {
             super("Unpaired surrogate at index " + i + " of " + i2);

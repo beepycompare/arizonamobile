@@ -60,7 +60,7 @@ import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes2.dex */
 public final class ExoPlayerImplInternal implements Handler.Callback, MediaPeriod.Callback, TrackSelector.InvalidationListener, MediaSourceList.MediaSourceListInfoRefreshListener, DefaultMediaClock.PlaybackParametersListener, PlayerMessage.Sender, AudioFocusManager.PlayerControl, VideoFrameMetadataListener {
-    private static final long BUFFERING_MAXIMUM_INTERVAL_MS = Util.usToMs(Renderer.DEFAULT_DURATION_TO_PROGRESS_US);
+    private static final long BUFFERING_MAXIMUM_INTERVAL_MS = Util.usToMs(10000);
     private static final long DURATION_TO_ADVANCE_READING_THRESHOLD_US = 10000000;
     private static final int MSG_ADD_MEDIA_SOURCES = 18;
     private static final int MSG_ATTEMPT_RENDERER_ERROR_RECOVERY = 25;

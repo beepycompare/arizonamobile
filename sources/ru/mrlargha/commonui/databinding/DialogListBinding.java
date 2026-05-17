@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class DialogListBinding implements ViewBinding {
     public final DialogButtonsBinding buttons;
     public final TextView caption;

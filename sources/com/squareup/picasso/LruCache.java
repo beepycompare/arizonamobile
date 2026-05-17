@@ -2,7 +2,7 @@ package com.squareup.picasso;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LruCache implements Cache {
     final android.util.LruCache<String, BitmapAndSize> cache;
 
@@ -85,7 +85,7 @@ public final class LruCache implements Cache {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class BitmapAndSize {
         final Bitmap bitmap;
         final int byteCount;

@@ -1,6 +1,5 @@
 package ru.mrlargha.commonui.elements.quest;
 
-import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,20 +13,17 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.RodinaQuestAwardsItemBinding;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: QuestAwardsAdapter.kt */
-@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u0017B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u0018\u0010\u000b\u001a\u00020\u00022\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016J\b\u0010\u0010\u001a\u00020\u000fH\u0016J\u0018\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u000fH\u0016J\u0014\u0010\u0015\u001a\u00020\u00122\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0016R\u001e\u0010\u0005\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0006j\b\u0012\u0004\u0012\u00020\u0007`\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082.¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/commonui/elements/quest/QuestAwardsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/quest/QuestAwardsAdapter$QuestAwardsViewHolder;", "<init>", "()V", "questAwards", "Ljava/util/ArrayList;", "Lru/mrlargha/commonui/elements/quest/QuestAwards;", "Lkotlin/collections/ArrayList;", "sharedPreferences", "Landroid/content/SharedPreferences;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "getItemCount", "onBindViewHolder", "", "holder", "position", "addQuestAwards", "", "QuestAwardsViewHolder", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u0015B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u0018\u0010\t\u001a\u00020\u00022\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0016J\b\u0010\u000e\u001a\u00020\rH\u0016J\u0018\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00022\u0006\u0010\u0012\u001a\u00020\rH\u0016J\u0014\u0010\u0013\u001a\u00020\u00102\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0014R\u001e\u0010\u0005\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0006j\b\u0012\u0004\u0012\u00020\u0007`\bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lru/mrlargha/commonui/elements/quest/QuestAwardsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/quest/QuestAwardsAdapter$QuestAwardsViewHolder;", "<init>", "()V", "questAwards", "Ljava/util/ArrayList;", "Lru/mrlargha/commonui/elements/quest/QuestAwards;", "Lkotlin/collections/ArrayList;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "getItemCount", "onBindViewHolder", "", "holder", "position", "addQuestAwards", "", "QuestAwardsViewHolder", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class QuestAwardsAdapter extends RecyclerView.Adapter<QuestAwardsViewHolder> {
     private final ArrayList<QuestAwards> questAwards = new ArrayList<>();
-    private SharedPreferences sharedPreferences;
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public QuestAwardsViewHolder onCreateViewHolder(ViewGroup parent, int i) {
         Intrinsics.checkNotNullParameter(parent, "parent");
-        SharedPreferences sharedPreferences = parent.getContext().getSharedPreferences("flavorType", 0);
-        Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");
-        this.sharedPreferences = sharedPreferences;
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.rodina_quest_awards_item, parent, false);
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
         return new QuestAwardsViewHolder(inflate);
@@ -42,22 +38,20 @@ public final class QuestAwardsAdapter extends RecyclerView.Adapter<QuestAwardsVi
     public void onBindViewHolder(QuestAwardsViewHolder holder, int i) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         RodinaQuestAwardsItemBinding binding = holder.getBinding();
-        SharedPreferences sharedPreferences = this.sharedPreferences;
-        if (sharedPreferences == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("sharedPreferences");
-            sharedPreferences = null;
-        }
-        boolean z = sharedPreferences.getBoolean("isArizonaType", false);
         QuestAwards questAwards = this.questAwards.get(i);
         Intrinsics.checkNotNullExpressionValue(questAwards, "get(...)");
         QuestAwards questAwards2 = questAwards;
-        if (z) {
+        if (UtilsKt.isArizonaType()) {
             binding.rodinaQuestInfoTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAwards2.getTitle(), 0.0f, 1, null));
-            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);
+            Picasso picasso = Picasso.get();
+            String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            picasso.load(projectResourceUrl$default + "assets/images/donate/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);
             return;
         }
         binding.rodinaQuestInfoTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAwards2.getTitle(), 0.0f, 1, null));
-        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/other/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);
+        Picasso picasso2 = Picasso.get();
+        String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso2.load(projectResourceUrl$default2 + "assets/images/other/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);
     }
 
     public final void addQuestAwards(List<QuestAwards> questAwards) {

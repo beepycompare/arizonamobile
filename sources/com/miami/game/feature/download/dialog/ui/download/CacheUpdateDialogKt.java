@@ -73,13 +73,14 @@ public final class CacheUpdateDialogKt {
 
     public static final void CacheUpdateDialogRoute(final CommonDialogComponent component, final Function0<Unit> onBackClick, final Function0<Unit> navigateToDownloadScreen, Composer composer, final int i) {
         int i2;
+        Composer composer2;
         Intrinsics.checkNotNullParameter(component, "component");
         Intrinsics.checkNotNullParameter(onBackClick, "onBackClick");
         Intrinsics.checkNotNullParameter(navigateToDownloadScreen, "navigateToDownloadScreen");
         Composer startRestartGroup = composer.startRestartGroup(101938191);
         ComposerKt.sourceInformation(startRestartGroup, "C(CacheUpdateDialogRoute)N(component,onBackClick,navigateToDownloadScreen)31@1477L33,33@1572L198,33@1535L235,41@1809L29,45@1916L20,46@1958L20,43@1844L141:CacheUpdateDialog.kt#as3uag");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(component) : startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
@@ -89,50 +90,56 @@ public final class CacheUpdateDialogKt {
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i2 |= startRestartGroup.changedInstance(navigateToDownloadScreen) ? 256 : 128;
         }
-        if (!startRestartGroup.shouldExecute((i2 & 147) != 146, i2 & 1)) {
-            startRestartGroup.skipToGroupEnd();
+        int i3 = i2;
+        boolean z = true;
+        if (!startRestartGroup.shouldExecute((i3 & 147) != 146, i3 & 1)) {
+            composer2 = startRestartGroup;
+            composer2.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(101938191, i2, -1, "com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogRoute (CacheUpdateDialog.kt:30)");
+                ComposerKt.traceEventStart(101938191, i3, -1, "com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogRoute (CacheUpdateDialog.kt:30)");
             }
-            int i3 = i2 & 112;
-            BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i3, 1);
+            int i4 = i3 & 112;
+            BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i4, 1);
             SharedEventFlow<CommonDialogUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -821638379, "CC(remember):CacheUpdateDialog.kt#9igjgp");
-            boolean z = (i3 == 32) | ((i2 & 896) == 256);
+            boolean z2 = (i4 == 32) | ((i3 & 896) == 256);
             CacheUpdateDialogKt$CacheUpdateDialogRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
-            if (z || rememberedValue == Composer.Companion.getEmpty()) {
+            if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new CacheUpdateDialogKt$CacheUpdateDialogRoute$1$1(onBackClick, navigateToDownloadScreen, null);
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue, startRestartGroup, 0, 6);
-            startRestartGroup = startRestartGroup;
+            composer2 = startRestartGroup;
             CommonDialogUiState CacheUpdateDialogRoute$lambda$1 = CacheUpdateDialogRoute$lambda$1(FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7));
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -821627549, "CC(remember):CacheUpdateDialog.kt#9igjgp");
-            boolean changedInstance = startRestartGroup.changedInstance(component);
-            CacheUpdateDialogKt$CacheUpdateDialogRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
-            if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
+            ComposerKt.sourceInformationMarkerStart(composer2, -821627549, "CC(remember):CacheUpdateDialog.kt#9igjgp");
+            int i5 = i3 & 14;
+            boolean z3 = i5 == 4 || ((i3 & 8) != 0 && composer2.changedInstance(component));
+            CacheUpdateDialogKt$CacheUpdateDialogRoute$2$1 rememberedValue2 = composer2.rememberedValue();
+            if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new CacheUpdateDialogKt$CacheUpdateDialogRoute$2$1(component);
-                startRestartGroup.updateRememberedValue(rememberedValue2);
+                composer2.updateRememberedValue(rememberedValue2);
             }
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function0 = (Function0) ((KFunction) rememberedValue2);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -821626205, "CC(remember):CacheUpdateDialog.kt#9igjgp");
-            boolean changedInstance2 = startRestartGroup.changedInstance(component);
-            CacheUpdateDialogKt$CacheUpdateDialogRoute$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
-            if (changedInstance2 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                rememberedValue3 = new CacheUpdateDialogKt$CacheUpdateDialogRoute$3$1(component);
-                startRestartGroup.updateRememberedValue(rememberedValue3);
+            ComposerKt.sourceInformationMarkerStart(composer2, -821626205, "CC(remember):CacheUpdateDialog.kt#9igjgp");
+            if (i5 != 4 && ((i3 & 8) == 0 || !composer2.changedInstance(component))) {
+                z = false;
             }
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            CacheUpdateDialogScreen(CacheUpdateDialogRoute$lambda$1, function0, (Function0) ((KFunction) rememberedValue3), startRestartGroup, 0);
+            CacheUpdateDialogKt$CacheUpdateDialogRoute$3$1 rememberedValue3 = composer2.rememberedValue();
+            if (z || rememberedValue3 == Composer.Companion.getEmpty()) {
+                rememberedValue3 = new CacheUpdateDialogKt$CacheUpdateDialogRoute$3$1(component);
+                composer2.updateRememberedValue(rememberedValue3);
+            }
+            ComposerKt.sourceInformationMarkerEnd(composer2);
+            CacheUpdateDialogScreen(CacheUpdateDialogRoute$lambda$1, function0, (Function0) ((KFunction) rememberedValue3), composer2, CommonDialogUiState.$stable);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
-        ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
+        ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
@@ -151,7 +158,7 @@ public final class CacheUpdateDialogKt {
         Composer startRestartGroup = composer.startRestartGroup(1364349116);
         ComposerKt.sourceInformation(startRestartGroup, "C(CacheUpdateDialogScreen)N(uiState,onConfirm,onDismiss)57@2193L138:CacheUpdateDialog.kt#as3uag");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changed(uiState) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(uiState) : startRestartGroup.changedInstance(uiState) ? 4 : 2) | i;
         } else {
             i2 = i;
         }

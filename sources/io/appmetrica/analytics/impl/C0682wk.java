@@ -9,17 +9,17 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class C0682wk implements ServiceModuleReporterComponentLifecycle, ServiceModuleReporterComponentLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CopyOnWriteArrayList f1290a = new CopyOnWriteArrayList();
+    public final CopyOnWriteArrayList f1295a = new CopyOnWriteArrayList();
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleReporterComponentLifecycleListener
     public final void onMainReporterCreated(ServiceModuleReporterComponentContext serviceModuleReporterComponentContext) {
-        for (ServiceModuleReporterComponentLifecycleListener serviceModuleReporterComponentLifecycleListener : this.f1290a) {
+        for (ServiceModuleReporterComponentLifecycleListener serviceModuleReporterComponentLifecycleListener : this.f1295a) {
             serviceModuleReporterComponentLifecycleListener.onMainReporterCreated(serviceModuleReporterComponentContext);
         }
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleReporterComponentLifecycle
     public final void subscribe(ServiceModuleReporterComponentLifecycleListener serviceModuleReporterComponentLifecycleListener) {
-        this.f1290a.add(serviceModuleReporterComponentLifecycleListener);
+        this.f1295a.add(serviceModuleReporterComponentLifecycleListener);
     }
 }

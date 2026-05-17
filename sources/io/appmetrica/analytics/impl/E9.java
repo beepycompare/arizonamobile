@@ -9,7 +9,7 @@ public final class E9 extends C0323ib {
 
     @Override // io.appmetrica.analytics.impl.C0323ib, io.appmetrica.analytics.impl.AbstractC0473oa
     public final void a(List<Rg> list) {
-        list.add(this.f1151a.u);
+        list.add(this.f1156a.u);
         super.a(list);
     }
 }

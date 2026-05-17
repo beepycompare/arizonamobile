@@ -2,7 +2,7 @@ package ru.mrlargha.commonui.elements.donate.presentation;
 
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import androidx.compose.runtime.ComposerKt;
+import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import java.util.List;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
@@ -28,7 +28,7 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.DonateCategoryMo
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1", f = "DonateScreen.kt", i = {}, l = {ComposerKt.providerMapsKey}, m = "invokeSuspend", n = {}, nl = {229}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1", f = "DonateScreen.kt", i = {}, l = {DownloaderService.STATUS_QUEUED_FOR_WIFI}, m = "invokeSuspend", n = {}, nl = {222}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ DonateScreenBinding $this_with;
@@ -56,7 +56,7 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: DonateScreen.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1", f = "DonateScreen.kt", i = {}, l = {205}, m = "invokeSuspend", n = {}, nl = {228}, s = {}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1", f = "DonateScreen.kt", i = {}, l = {198}, m = "invokeSuspend", n = {}, nl = {221}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

@@ -28,6 +28,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.miami.game.feature.home.ui.HomeComponent;
 import java.util.HashMap;
 import java.util.Map;
 import kotlin.text.Typography;
@@ -1381,7 +1382,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
                 }
                 break;
             case 2627:
-                if (str.equals("RU")) {
+                if (str.equals(HomeComponent.RUSSIA_COUNTRY_CODE)) {
                     c = Typography.paragraph;
                     break;
                 }

@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class TestTestScreenBinding implements ViewBinding {
     public final FrameLayout baseTest;
     public final TextView btnMinus;

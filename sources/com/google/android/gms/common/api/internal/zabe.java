@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
 import androidx.fragment.app.FragmentActivity;
-import androidx.media3.exoplayer.Renderer;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.Api;
@@ -63,7 +62,7 @@ public final class zabe extends GoogleApiClient implements zabz {
     final Queue zaa = new LinkedList();
 
     public zabe(Context context, Lock lock, Looper looper, ClientSettings clientSettings, GoogleApiAvailability googleApiAvailability, Api.AbstractClientBuilder abstractClientBuilder, Map map, List list, List list2, Map map2, int i, int i2, ArrayList arrayList) {
-        this.zaq = true != ClientLibraryUtils.isPackageSide() ? 120000L : Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
+        this.zaq = true != ClientLibraryUtils.isPackageSide() ? 120000L : 10000L;
         this.zar = 5000L;
         this.zad = new HashSet();
         this.zau = new ListenerHolders();

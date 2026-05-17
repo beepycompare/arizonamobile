@@ -2,7 +2,7 @@ package androidx.cardview;
 /* loaded from: classes.dex */
 public final class R {
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes5.dex */
     public static final class attr {
         public static int cardBackgroundColor = 0x7f0400be;
         public static int cardCornerRadius = 0x7f0400bf;

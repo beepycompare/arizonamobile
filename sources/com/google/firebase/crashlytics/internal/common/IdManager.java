@@ -3,7 +3,6 @@ package com.google.firebase.crashlytics.internal.common;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import androidx.media3.exoplayer.Renderer;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.crashlytics.internal.Logger;
 import com.google.firebase.crashlytics.internal.common.InstallIdProvider;
@@ -116,15 +115,15 @@ public class IdManager implements InstallIdProvider {
         String str = null;
         if (z) {
             try {
-                token = ((InstallationTokenResult) Tasks.await(this.firebaseInstallations.getToken(false), Renderer.DEFAULT_DURATION_TO_PROGRESS_US, TimeUnit.MILLISECONDS)).getToken();
+                token = ((InstallationTokenResult) Tasks.await(this.firebaseInstallations.getToken(false), 10000L, TimeUnit.MILLISECONDS)).getToken();
             } catch (Exception e) {
                 Logger.getLogger().w("Error getting Firebase authentication token.", e);
             }
-            str = (String) Tasks.await(this.firebaseInstallations.getId(), Renderer.DEFAULT_DURATION_TO_PROGRESS_US, TimeUnit.MILLISECONDS);
+            str = (String) Tasks.await(this.firebaseInstallations.getId(), 10000L, TimeUnit.MILLISECONDS);
             return new FirebaseInstallationId(str, token);
         }
         token = null;
-        str = (String) Tasks.await(this.firebaseInstallations.getId(), Renderer.DEFAULT_DURATION_TO_PROGRESS_US, TimeUnit.MILLISECONDS);
+        str = (String) Tasks.await(this.firebaseInstallations.getId(), 10000L, TimeUnit.MILLISECONDS);
         return new FirebaseInstallationId(str, token);
     }
 

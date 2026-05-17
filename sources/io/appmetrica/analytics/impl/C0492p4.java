@@ -6,12 +6,12 @@ import android.os.ResultReceiver;
 public final class C0492p4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Zl f1167a;
+    public final Zl f1172a;
     public final C0467o4 b;
     public final ResultReceiver c;
 
     public C0492p4(Zl zl, C0467o4 c0467o4, ResultReceiver resultReceiver) {
-        this.f1167a = zl;
+        this.f1172a = zl;
         this.b = c0467o4;
         this.c = resultReceiver;
     }

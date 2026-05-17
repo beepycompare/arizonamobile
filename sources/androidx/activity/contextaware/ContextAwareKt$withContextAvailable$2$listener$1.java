@@ -22,18 +22,18 @@ public final class ContextAwareKt$withContextAvailable$2$listener$1 implements O
 
     @Override // androidx.activity.contextaware.OnContextAvailableListener
     public void onContextAvailable(Context context) {
-        Object m9183constructorimpl;
+        Object m9202constructorimpl;
         Intrinsics.checkNotNullParameter(context, "context");
         Continuation continuation = this.$co;
         Function1<Context, R> function1 = this.$onContextAvailable;
         try {
             Result.Companion companion = Result.Companion;
             ContextAwareKt$withContextAvailable$2$listener$1 contextAwareKt$withContextAvailable$2$listener$1 = this;
-            m9183constructorimpl = Result.m9183constructorimpl(function1.invoke(context));
+            m9202constructorimpl = Result.m9202constructorimpl(function1.invoke(context));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9183constructorimpl = Result.m9183constructorimpl(ResultKt.createFailure(th));
+            m9202constructorimpl = Result.m9202constructorimpl(ResultKt.createFailure(th));
         }
-        continuation.resumeWith(m9183constructorimpl);
+        continuation.resumeWith(m9202constructorimpl);
     }
 }

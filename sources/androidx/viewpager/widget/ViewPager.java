@@ -136,7 +136,7 @@ public class ViewPager extends ViewGroup {
     @Target({ElementType.TYPE})
     @Inherited
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface DecorView {
     }
 

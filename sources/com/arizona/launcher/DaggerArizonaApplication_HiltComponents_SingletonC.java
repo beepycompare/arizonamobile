@@ -65,6 +65,7 @@ import com.miami.game.core.news.data.NewsRepository;
 import com.miami.game.core.news.data.api.NewsApiRepository;
 import com.miami.game.core.news.data.store.NewsPrefRepository;
 import com.miami.game.core.news.domain.NewsInteractor;
+import com.miami.game.core.play.country.billing.BillingPlayCountryResolver;
 import com.miami.game.core.privacy.privacyInteractor;
 import com.miami.game.core.server.ServersInteractor;
 import com.miami.game.core.server.data.FavoriteServerDatabase;
@@ -547,7 +548,7 @@ public final class DaggerArizonaApplication_HiltComponents_SingletonC {
                         return (T) new HomeComponent.Factory() { // from class: com.arizona.launcher.DaggerArizonaApplication_HiltComponents_SingletonC.ActivityCImpl.SwitchingProvider.2
                             @Override // com.miami.game.feature.home.ui.HomeComponent.Factory
                             public HomeComponent invoke(ComponentContext componentContext2) {
-                                return new HomeComponent(componentContext2, SwitchingProvider.this.singletonCImpl.privacyInteractorProvider.get(), SwitchingProvider.this.singletonCImpl.newsInteractorProvider.get(), CoreAppModule_ProvideBuildConfigRepositoryFactory.provideBuildConfigRepository(), SwitchingProvider.this.singletonCImpl.provideAppNetworkDataSourceProvider.get(), SwitchingProvider.this.singletonCImpl.serversInteractorProvider.get(), SwitchingProvider.this.singletonCImpl.settingsInteractorProvider.get(), SwitchingProvider.this.singletonCImpl.notificationStateHolderProvider.get());
+                                return new HomeComponent(componentContext2, SwitchingProvider.this.singletonCImpl.privacyInteractorProvider.get(), SwitchingProvider.this.singletonCImpl.newsInteractorProvider.get(), CoreAppModule_ProvideBuildConfigRepositoryFactory.provideBuildConfigRepository(), SwitchingProvider.this.singletonCImpl.provideAppNetworkDataSourceProvider.get(), SwitchingProvider.this.singletonCImpl.billingPlayCountryResolver(), SwitchingProvider.this.singletonCImpl.serversInteractorProvider.get(), SwitchingProvider.this.singletonCImpl.settingsInteractorProvider.get(), SwitchingProvider.this.singletonCImpl.notificationStateHolderProvider.get());
                             }
                         };
                     case 2:
@@ -803,6 +804,10 @@ public final class DaggerArizonaApplication_HiltComponents_SingletonC {
 
         NewsRepository newsRepository() {
             return new NewsRepository(newsApiRepository(), newsPrefRepository());
+        }
+
+        BillingPlayCountryResolver billingPlayCountryResolver() {
+            return new BillingPlayCountryResolver(ApplicationContextModule_ProvideContextFactory.provideContext(this.applicationContextModule));
         }
 
         Downloader downloader() {

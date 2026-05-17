@@ -17,7 +17,7 @@ public abstract class JsonReader implements Closeable {
     String[] pathNames = new String[32];
     int[] pathIndices = new int[32];
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Token {
         BEGIN_ARRAY,
         END_ARRAY,

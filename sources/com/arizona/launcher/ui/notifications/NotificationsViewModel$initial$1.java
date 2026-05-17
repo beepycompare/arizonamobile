@@ -1,6 +1,6 @@
 package com.arizona.launcher.ui.notifications;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.compose.ui.spatial.RectListKt;
 import androidx.media3.common.C;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -16,7 +16,7 @@ import kotlinx.coroutines.DelayKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NotificationsViewModel.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel$initial$1", f = "NotificationsViewModel.kt", i = {}, l = {50}, m = "invokeSuspend", n = {}, nl = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_TAG}, s = {}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel$initial$1", f = "NotificationsViewModel.kt", i = {}, l = {58}, m = "invokeSuspend", n = {}, nl = {59}, s = {}, v = 2)
 /* loaded from: classes3.dex */
 public final class NotificationsViewModel$initial$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -39,19 +39,23 @@ public final class NotificationsViewModel$initial$1 extends SuspendLambda implem
         return ((NotificationsViewModel$initial$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v8 */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        boolean z;
         Object loadNotifications;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         try {
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
+                z = this.this$0.useMockNotifications;
+                NotificationsViewModel notificationsViewModel = this.this$0;
+                if (z) {
+                    notificationsViewModel.loadMockNotifications();
+                    return Unit.INSTANCE;
+                }
                 this.label = 1;
-                loadNotifications = this.this$0.loadNotifications(this);
-                this = loadNotifications;
+                loadNotifications = notificationsViewModel.loadNotifications(this);
                 if (loadNotifications == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -59,7 +63,6 @@ public final class NotificationsViewModel$initial$1 extends SuspendLambda implem
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             } else {
                 ResultKt.throwOnFailure(obj);
-                this = this;
             }
         } catch (Exception unused) {
             BuildersKt__Builders_commonKt.launch$default(this.this$0.getScope(), null, null, new AnonymousClass1(this.this$0, null), 3, null);
@@ -70,7 +73,7 @@ public final class NotificationsViewModel$initial$1 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: NotificationsViewModel.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel$initial$1$1", f = "NotificationsViewModel.kt", i = {}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_BOTTOM_OF}, m = "invokeSuspend", n = {}, nl = {ConstraintLayout.LayoutParams.Table.LAYOUT_MARGIN_BASELINE}, s = {}, v = 2)
+    @DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel$initial$1$1", f = "NotificationsViewModel.kt", i = {}, l = {61}, m = "invokeSuspend", n = {}, nl = {RectListKt.BitOffsetForGesturable}, s = {}, v = 2)
     /* renamed from: com.arizona.launcher.ui.notifications.NotificationsViewModel$initial$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

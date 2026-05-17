@@ -2,7 +2,7 @@ package io.appmetrica.analytics.billing.impl;
 
 import io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class e extends BaseProtobufStateSerializer {
     public final d a() {
         return new d();

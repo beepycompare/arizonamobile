@@ -7,6 +7,6 @@ import kotlin.comparisons.ComparisonsKt;
 public final class C0196dd implements Comparator {
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        return ComparisonsKt.compareValues(((C0144bd) obj).f919a, ((C0144bd) obj2).f919a);
+        return ComparisonsKt.compareValues(((C0144bd) obj).f924a, ((C0144bd) obj2).f924a);
     }
 }

@@ -3,7 +3,7 @@ package dagger.hilt.android.internal.builders;
 import android.view.View;
 import dagger.BindsInstance;
 import dagger.hilt.android.components.ViewWithFragmentComponent;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface ViewWithFragmentComponentBuilder {
     ViewWithFragmentComponent build();
 

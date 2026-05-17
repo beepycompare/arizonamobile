@@ -17,6 +17,6 @@ public class Pg extends AbstractCallableC0704xh {
     @Override // io.appmetrica.analytics.impl.AbstractCallableC0704xh
     public final void a(IAppMetricaService iAppMetricaService) {
         C0654vh c0654vh = this.e;
-        iAppMetricaService.reportData(c0654vh.c, c0654vh.f1272a.d(c0654vh.e.c()));
+        iAppMetricaService.reportData(c0654vh.c, c0654vh.f1277a.d(c0654vh.e.c()));
     }
 }

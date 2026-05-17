@@ -8,7 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.business.R;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public final class MyBusinessChildStatItemBinding implements ViewBinding {
     public final ConstraintLayout myBusinessChildStatItem;
     private final ConstraintLayout rootView;

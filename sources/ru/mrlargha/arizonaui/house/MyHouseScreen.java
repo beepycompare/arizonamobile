@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.NotificationCompat;
 import androidx.core.internal.view.SupportMenu;
@@ -34,7 +33,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
 /* compiled from: MyHouseScreen.kt */
-@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u0000 /2\u00020\u0001:\u0002/0B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0016\u0010\u001e\u001a\u00020\u001b2\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 H\u0002J\u0010\u0010\"\u001a\u00020\u001b2\u0006\u0010\u001f\u001a\u00020#H\u0002J\u0010\u0010$\u001a\u00020\u001b2\u0006\u0010\u001f\u001a\u00020%H\u0002J\u0016\u0010&\u001a\u00020\u001b2\f\u0010'\u001a\b\u0012\u0004\u0012\u00020(0 H\u0002J\u0016\u0010)\u001a\u00020\u001b2\f\u0010'\u001a\b\u0012\u0004\u0012\u00020*0 H\u0002J\u0018\u0010+\u001a\u00020\u001b2\u0006\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00061"}, d2 = {"Lru/mrlargha/arizonaui/house/MyHouseScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "myBizScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/arizonaui/databinding/MyHouseScreenBinding;", "houseListAdapter", "Lru/mrlargha/arizonaui/house/MyHousesListAdapter;", "mainHouseStatAdapter", "Lru/mrlargha/arizonaui/house/MyHouseMainInfoAdapter;", "parentStatAdapter", "Lru/mrlargha/arizonaui/house/MyHouseParentStatAdapter;", "menuAdapter", "Lru/mrlargha/arizonaui/house/MyHouseMenuAdapter;", "tenantsAdapter", "Lru/mrlargha/arizonaui/house/MyHousesTenantsAdapter;", "upgradeAdapter", "Lru/mrlargha/arizonaui/house/MyHousesUpgradesAdapter;", "currentPage", "currentHouseId", "setCheckInfo", "", "isOpened", "", "setHouseList", "info", "", "Lru/mrlargha/arizonaui/house/MyHouseScreen$Companion$HouseItemInfo;", "setMainHouseInfo", "Lru/mrlargha/arizonaui/house/MyHouseScreen$Companion$MainHouseInfo;", "setHouseStat", "Lru/mrlargha/arizonaui/house/MyHouseScreen$Companion$HouseDetailInfo;", "setMenuList", "items", "Lru/mrlargha/arizonaui/house/MyHouseScreen$Companion$MenuItem;", "setHouseUpgrades", "Lru/mrlargha/arizonaui/house/MyHouseScreen$Companion$UpgradeItem;", "onBackendMessage", "data", "", "subId", "Companion", "Spawner", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u0000 /2\u00020\u0001:\u0002/0B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0016\u0010\u001e\u001a\u00020\u001b2\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 H\u0002J\u0010\u0010\"\u001a\u00020\u001b2\u0006\u0010\u001f\u001a\u00020#H\u0002J\u0010\u0010$\u001a\u00020\u001b2\u0006\u0010\u001f\u001a\u00020%H\u0002J\u0016\u0010&\u001a\u00020\u001b2\f\u0010'\u001a\b\u0012\u0004\u0012\u00020(0 H\u0002J\u0016\u0010)\u001a\u00020\u001b2\f\u0010'\u001a\b\u0012\u0004\u0012\u00020*0 H\u0002J\u0018\u0010+\u001a\u00020\u001b2\u0006\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00061"}, d2 = {"Lru/mrlargha/arizonaui/house/MyHouseScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "myBizScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/arizonaui/databinding/MyHouseScreenBinding;", "houseListAdapter", "Lru/mrlargha/arizonaui/house/MyHousesListAdapter;", "mainHouseStatAdapter", "Lru/mrlargha/arizonaui/house/MyHouseMainInfoAdapter;", "parentStatAdapter", "Lru/mrlargha/arizonaui/house/MyHouseParentStatAdapter;", "menuAdapter", "Lru/mrlargha/arizonaui/house/MyHouseMenuAdapter;", "tenantsAdapter", "Lru/mrlargha/arizonaui/house/MyHousesTenantsAdapter;", "upgradeAdapter", "Lru/mrlargha/arizonaui/house/MyHousesUpgradesAdapter;", "currentPage", "currentHouseId", "setCheckInfo", "", "isOpened", "", "setHouseList", "info", "", "Lru/mrlargha/arizonaui/house/MyHouseScreen$Companion$HouseItemInfo;", "setMainHouseInfo", "Lru/mrlargha/arizonaui/house/MyHouseScreen$Companion$MainHouseInfo;", "setHouseStat", "Lru/mrlargha/arizonaui/house/MyHouseScreen$Companion$HouseDetailInfo;", "setMenuList", "items", "Lru/mrlargha/arizonaui/house/MyHouseScreen$Companion$MenuItem;", "setHouseUpgrades", "Lru/mrlargha/arizonaui/house/MyHouseScreen$Companion$UpgradeItem;", "onBackendMessageHandled", "data", "", "subId", "Companion", "Spawner", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class MyHouseScreen extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
@@ -261,25 +260,19 @@ public final class MyHouseScreen extends SAMPUIElement {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
-        try {
-            if (i == 0) {
-                setHouseList(MapperKt.toListModel(StringsKt.replace$default(data, "\\", "", false, 4, (Object) null), Companion.HouseItemInfo.class));
-            } else if (i == 1) {
-                setMenuList(MapperKt.toListModel(data, Companion.MenuItem.class));
-            } else if (i == 2) {
-                setMainHouseInfo((Companion.MainHouseInfo) MapperKt.toModel(data, Companion.MainHouseInfo.class));
-            } else if (i == 3) {
-                setHouseStat((Companion.HouseDetailInfo) MapperKt.toModel(data, Companion.HouseDetailInfo.class));
-            } else if (i != 4) {
-            } else {
-                setHouseUpgrades(MapperKt.toListModel(data, Companion.UpgradeItem.class));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
-            getNotifier().setUIElementVisible(getBackendID(), false);
+        if (i == 0) {
+            setHouseList(MapperKt.toListModel(StringsKt.replace$default(data, "\\", "", false, 4, (Object) null), Companion.HouseItemInfo.class));
+        } else if (i == 1) {
+            setMenuList(MapperKt.toListModel(data, Companion.MenuItem.class));
+        } else if (i == 2) {
+            setMainHouseInfo((Companion.MainHouseInfo) MapperKt.toModel(data, Companion.MainHouseInfo.class));
+        } else if (i == 3) {
+            setHouseStat((Companion.HouseDetailInfo) MapperKt.toModel(data, Companion.HouseDetailInfo.class));
+        } else if (i != 4) {
+        } else {
+            setHouseUpgrades(MapperKt.toListModel(data, Companion.UpgradeItem.class));
         }
     }
 

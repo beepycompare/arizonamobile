@@ -57,13 +57,29 @@ public final class RolesAdapter extends RecyclerView.Adapter<RoleViewHolder> {
         final SituationScreen.Companion.RoleInfo roleInfo2 = roleInfo;
         final SituationItemBinding binding = holder.getBinding();
         binding.mainInfoTitle.setText(roleInfo2.getTitle());
-        binding.rang.setText(roleInfo2.getMinRank() + " ранга");
+        TextView textView = binding.rang;
+        Context context = this.context;
+        if (context == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("context");
+            context = null;
+        }
+        textView.setText(context.getResources().getQuantityString(R.plurals.situation_rank, roleInfo2.getMinRank(), Integer.valueOf(roleInfo2.getMinRank())));
         if (roleInfo2.getMaxSlots() > 0) {
-            TextView textView = binding.freeSlotsTitle;
-            int slots = roleInfo2.getSlots();
-            textView.setText("Свободные слоты: " + slots + " / " + roleInfo2.getMaxSlots());
+            TextView textView2 = binding.freeSlotsTitle;
+            Context context2 = this.context;
+            if (context2 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("context");
+                context2 = null;
+            }
+            textView2.setText(context2.getString(R.string.situation_free_slots_limited, Integer.valueOf(roleInfo2.getSlots()), Integer.valueOf(roleInfo2.getMaxSlots())));
         } else {
-            binding.freeSlotsTitle.setText("Свободные слоты: " + roleInfo2.getSlots() + " / ∞");
+            TextView textView3 = binding.freeSlotsTitle;
+            Context context3 = this.context;
+            if (context3 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("context");
+                context3 = null;
+            }
+            textView3.setText(context3.getString(R.string.situation_free_slots_unlimited));
         }
         binding.fullInfo.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, roleInfo2.getDescription(), 0.0f, 1, null));
         if (roleInfo2.isPressed()) {

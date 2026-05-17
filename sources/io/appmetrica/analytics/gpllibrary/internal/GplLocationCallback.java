@@ -3,18 +3,19 @@ package io.appmetrica.analytics.gpllibrary.internal;
 import android.location.LocationListener;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationResult;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 class GplLocationCallback extends LocationCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LocationListener f441a;
+    private final LocationListener f446a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public GplLocationCallback(LocationListener locationListener) {
-        this.f441a = locationListener;
+        this.f446a = locationListener;
     }
 
+    @Override // com.google.android.gms.location.LocationCallback
     public void onLocationResult(LocationResult locationResult) {
-        this.f441a.onLocationChanged(locationResult.getLastLocation());
+        this.f446a.onLocationChanged(locationResult.getLastLocation());
     }
 }

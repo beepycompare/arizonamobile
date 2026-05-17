@@ -7,16 +7,16 @@ import kotlin.jvm.internal.Lambda;
 public final class C0199dg extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0224eg f959a;
+    public final /* synthetic */ C0224eg f964a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0199dg(C0224eg c0224eg) {
         super(0);
-        this.f959a = c0224eg;
+        this.f964a = c0224eg;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        return new C0173cg(this.f959a);
+        return new C0173cg(this.f964a);
     }
 }

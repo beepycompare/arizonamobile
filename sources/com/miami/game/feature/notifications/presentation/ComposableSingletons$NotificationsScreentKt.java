@@ -33,14 +33,14 @@ public final class ComposableSingletons$NotificationsScreentKt {
     });
 
     /* renamed from: getLambda$-556808038$notifications  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9119getLambda$556808038$notifications() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9122getLambda$556808038$notifications() {
         return f143lambda$556808038;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda__556808038$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C122@4761L84,121@4730L290:NotificationsScreent.kt#21zkme");
+        ComposerKt.sourceInformation(composer, "C122@4764L84,121@4733L290:NotificationsScreent.kt#21zkme");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {

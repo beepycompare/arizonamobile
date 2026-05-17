@@ -13,13 +13,13 @@ import java.util.LinkedHashMap;
 public final class Ti implements Ui {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f801a;
+    public final Context f806a;
     public final String b = NativeProtocol.CONTENT_SCHEME + a() + "/clids";
     public final String c = "clid_key";
     public final String d = "clid_value";
 
     public Ti(Context context) {
-        this.f801a = context;
+        this.f806a = context;
     }
 
     public final String a() {
@@ -31,12 +31,12 @@ public final class Ti implements Ui {
     public final C0540r3 invoke() {
         Throwable th;
         Cursor cursor;
-        if (!PackageManagerUtils.hasContentProvider(this.f801a, "com.yandex.preinstallsatellite.appmetrica.provider")) {
+        if (!PackageManagerUtils.hasContentProvider(this.f806a, "com.yandex.preinstallsatellite.appmetrica.provider")) {
             AbstractC0253fj.a("Satellite content provider with clids was not found.", new Object[0]);
             return null;
         }
         try {
-            cursor = this.f801a.getContentResolver().query(Uri.parse(this.b), null, null, null, null);
+            cursor = this.f806a.getContentResolver().query(Uri.parse(this.b), null, null, null, null);
             try {
             } catch (Throwable th2) {
                 th = th2;

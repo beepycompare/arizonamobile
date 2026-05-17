@@ -21,7 +21,7 @@ import java.util.Set;
 import java.util.WeakHashMap;
 import java.util.concurrent.ExecutorService;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Dispatcher {
     static final int AIRPLANE_MODE_CHANGE = 10;
     private static final int AIRPLANE_MODE_OFF = 0;
@@ -405,7 +405,7 @@ public class Dispatcher {
         Utils.log(DISPATCHER_THREAD_NAME, "delivered", sb.toString());
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static class DispatcherHandler extends Handler {
         private final Dispatcher dispatcher;
 
@@ -462,14 +462,14 @@ public class Dispatcher {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class DispatcherThread extends HandlerThread {
         DispatcherThread() {
             super("Picasso-Dispatcher", 10);
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static class NetworkBroadcastReceiver extends BroadcastReceiver {
         static final String EXTRA_AIRPLANE_STATE = "state";
         private final Dispatcher dispatcher;

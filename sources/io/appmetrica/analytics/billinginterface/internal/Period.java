@@ -2,15 +2,15 @@ package io.appmetrica.analytics.billinginterface.internal;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Period {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f334a = Pattern.compile("P(\\d+)(\\S+)");
+    private static final Pattern f339a = Pattern.compile("P(\\d+)(\\S+)");
     public final int number;
     public final TimeUnit timeUnit;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public enum TimeUnit {
         TIME_UNIT_UNKNOWN,
         DAY,
@@ -26,7 +26,7 @@ public class Period {
 
     public static Period parse(String str) {
         TimeUnit timeUnit;
-        Matcher matcher = f334a.matcher(str);
+        Matcher matcher = f339a.matcher(str);
         if (matcher.find()) {
             String group = matcher.group(1);
             String group2 = matcher.group(2);

@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public final class G3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile C7 f590a = new C7();
+    public volatile C7 f595a = new C7();
 
     public static Location b(String str) {
         if (TextUtils.isEmpty(str)) {
@@ -137,7 +137,7 @@ public final class G3 {
                 newConfigBuilder.withCustomHosts(AbstractC0271gb.a(jSONObject.optJSONArray("customHosts")));
             }
             if (jSONObject.has("additional_config")) {
-                C7 c7 = this.f590a;
+                C7 c7 = this.f595a;
                 jSONObject.optJSONObject("additional_config");
                 c7.getClass();
             }

@@ -66,7 +66,7 @@ public final class NotificationItemKt {
         Composer startRestartGroup = composer.startRestartGroup(-753000446);
         ComposerKt.sourceInformation(startRestartGroup, "C(NotificationItem)N(notificationModel)43@1811L32,44@1848L2433:NotificationItem.kt#21zkme");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(notificationModel) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(notificationModel) : startRestartGroup.changedInstance(notificationModel) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
@@ -150,7 +150,7 @@ public final class NotificationItemKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1889896846, "C56@2172L78,57@2264L255:NotificationItem.kt#21zkme");
-            AnimatedLoadingKt.m9081AnimatedLoadinguFdPcIQ(true, Dp.m7555constructorimpl(40.0f), OffsetKt.m777offsetVpY3zN4(Modifier.Companion, Dp.m7555constructorimpl(32.0f), Dp.m7555constructorimpl(32.0f)), startRestartGroup, 438, 0);
+            AnimatedLoadingKt.m9083AnimatedLoadinguFdPcIQ(true, Dp.m7555constructorimpl(40.0f), OffsetKt.m777offsetVpY3zN4(Modifier.Companion, Dp.m7555constructorimpl(32.0f), Dp.m7555constructorimpl(32.0f)), startRestartGroup, 438, 0);
             SingletonAsyncImageKt.m8558AsyncImage10Xjiaw(notificationModel.getImageUrl(), null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(160.0f)), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -240,8 +240,8 @@ public final class NotificationItemKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -191347082, "C94@3517L29,98@3719L10,99@3776L13,100@3828L13,95@3567L296,106@4087L10,107@4144L13,108@4196L13,103@3936L295:NotificationItem.kt#21zkme");
             SpacerKt.Spacer(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(2.0f)), startRestartGroup, 6);
             composer2 = startRestartGroup;
-            TextKt.m2712TextNvy7gAk(notificationModel.getTitle(), null, ColorKt.Color(4294046193L), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(24.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(24.0f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
-            TextKt.m2712TextNvy7gAk(notificationModel.getText(), null, ColorKt.Color(4291150552L), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), composer2, 6), null, null, null, 0L, null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), composer2, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
+            TextKt.m2712TextNvy7gAk(notificationModel.getTitle(), null, ColorKt.Color(4294046193L), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(24.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(24.0f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
+            TextKt.m2712TextNvy7gAk(notificationModel.getText(), null, ColorKt.Color(4291150552L), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), composer2, 6), null, null, null, 0L, null, null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), composer2, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();

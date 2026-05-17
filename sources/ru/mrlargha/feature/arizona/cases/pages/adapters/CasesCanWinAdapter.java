@@ -80,7 +80,7 @@ public final class CasesCanWinAdapter extends ListAdapter<CasesGuaranteedPrizeMo
             }
             ItemsInfo itemsInfo = (ItemsInfo) obj;
             if (itemsInfo != null) {
-                arizonaCasesCanWinItemBinding.tvPrizeName.setText(itemsInfo.getName() + "\n" + casesGuaranteedPrizeModel.m11154getCount());
+                arizonaCasesCanWinItemBinding.tvPrizeName.setText(itemsInfo.getName() + "\n" + casesGuaranteedPrizeModel.m11173getCount());
                 if (casesGuaranteedPrizeModel.getCustom_image() != null) {
                     ImageView ivPrize = arizonaCasesCanWinItemBinding.ivPrize;
                     Intrinsics.checkNotNullExpressionValue(ivPrize, "ivPrize");

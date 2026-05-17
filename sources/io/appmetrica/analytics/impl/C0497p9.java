@@ -8,9 +8,9 @@ public final class C0497p9 implements ProtobufConverter {
     /* renamed from: a */
     public final C0447n9 fromModel(C0472o9 c0472o9) {
         C0447n9 c0447n9 = new C0447n9();
-        String str = c0472o9.f1150a;
+        String str = c0472o9.f1155a;
         if (str != null) {
-            c0447n9.f1132a = str.getBytes();
+            c0447n9.f1137a = str.getBytes();
         }
         return c0447n9;
     }
@@ -18,6 +18,6 @@ public final class C0497p9 implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final C0472o9 toModel(C0447n9 c0447n9) {
-        return new C0472o9(new String(c0447n9.f1132a));
+        return new C0472o9(new String(c0447n9.f1137a));
     }
 }

@@ -1,7 +1,7 @@
 package androidx.media3.container;
 
 import androidx.media3.common.Metadata;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Mp4AlternateGroupData implements Metadata.Entry {
     public final int alternateGroup;
 

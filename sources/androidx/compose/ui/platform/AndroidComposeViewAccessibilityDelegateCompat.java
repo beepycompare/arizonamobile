@@ -841,7 +841,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
             }
         }
         String iterableTextForAccessibility = getIterableTextForAccessibility(semanticsNode);
-        if (!(iterableTextForAccessibility == null || iterableTextForAccessibility.length() == 0)) {
+        if (iterableTextForAccessibility != null && iterableTextForAccessibility.length() != 0) {
             accessibilityNodeInfoCompat.setTextSelection(getAccessibilitySelectionStart(semanticsNode), getAccessibilitySelectionEnd(semanticsNode));
             AccessibilityAction accessibilityAction8 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsActions.INSTANCE.getSetSelection());
             accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(131072, accessibilityAction8 != null ? accessibilityAction8.getLabel() : null));
@@ -860,7 +860,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
             ArrayList arrayList = new ArrayList();
             arrayList.add(ExtraDataIdKey);
             CharSequence text = accessibilityNodeInfoCompat.getText();
-            if (!(text == null || text.length() == 0) && semanticsNode.getUnmergedConfig$ui().contains(SemanticsActions.INSTANCE.getGetTextLayoutResult())) {
+            if (text != null && text.length() != 0 && semanticsNode.getUnmergedConfig$ui().contains(SemanticsActions.INSTANCE.getGetTextLayoutResult())) {
                 arrayList.add(AccessibilityNodeInfoCompat.EXTRA_DATA_TEXT_CHARACTER_LOCATION_KEY);
             }
             if (semanticsNode.getUnmergedConfig$ui().contains(SemanticsProperties.INSTANCE.getTestTag())) {
@@ -885,7 +885,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                             int i5 = 8 - ((~(i4 - length)) >>> 31);
                             long j2 = j;
                             for (int i6 = 0; i6 < i5; i6++) {
-                                if (((j2 & 255) < 128) && (accessibilityExtraKey$ui = ((SemanticsPropertyKey) objArr[(i4 << 3) + i6]).getAccessibilityExtraKey$ui()) != null) {
+                                if ((j2 & 255) < 128 && (accessibilityExtraKey$ui = ((SemanticsPropertyKey) objArr[(i4 << 3) + i6]).getAccessibilityExtraKey$ui()) != null) {
                                     arrayList.add(accessibilityExtraKey$ui);
                                     Unit unit26 = Unit.INSTANCE;
                                     Unit unit27 = Unit.INSTANCE;
@@ -2325,8 +2325,8 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         this.previousSemanticsRoot = new SemanticsNodeCopy(this.view.getSemanticsOwner().getUnmergedRootSemanticsNode(), getCurrentSemanticsNodes());
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:172:0x059c, code lost:
-        if (r1.isEmpty() == false) goto L171;
+    /* JADX WARN: Code restructure failed: missing block: B:169:0x0598, code lost:
+        if (r1.isEmpty() == false) goto L170;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2428,7 +2428,6 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                                     int i27 = (i24 << 3) + i26;
                                                     Object obj = objArr3[i27];
                                                     Object obj2 = objArr4[i27];
-                                                    boolean z3 = true;
                                                     SemanticsPropertyKey semanticsPropertyKey = (SemanticsPropertyKey) obj;
                                                     i8 = i21;
                                                     if (((Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getHorizontalScrollAxisRange()) || Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getVerticalScrollAxisRange())) ? androidComposeViewAccessibilityDelegateCompat.registerScrollingId(i22, arrayList4) : false) || !Intrinsics.areEqual(obj2, SemanticsConfigurationKt.getOrNull(semanticsNodeCopy.getUnmergedConfig(), semanticsPropertyKey))) {
@@ -2456,12 +2455,12 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                                                 i9 = i26;
                                                                 arrayList3 = arrayList4;
                                                                 jArr3 = jArr4;
-                                                                objArr2 = objArr3;
                                                                 i11 = i20;
                                                                 i10 = i24;
                                                                 semanticsNode2 = semanticsNode4;
                                                                 iArr3 = iArr4;
                                                                 i12 = i22;
+                                                                objArr2 = objArr3;
                                                                 sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i22), 2048, 64, null, 8, null);
                                                                 Boolean.valueOf(sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 2048, 0, null, 8, null));
                                                             } else {
@@ -2519,43 +2518,43 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                                                             int coerceAtMost = RangesKt.coerceAtMost(length3, length4);
                                                                             int i28 = 0;
                                                                             while (true) {
-                                                                                i14 = length3;
+                                                                                i14 = coerceAtMost;
                                                                                 if (i28 >= coerceAtMost) {
-                                                                                    i15 = length4;
+                                                                                    i15 = length3;
                                                                                     break;
                                                                                 }
-                                                                                i15 = length4;
+                                                                                i15 = length3;
                                                                                 if (str3.charAt(i28) != str4.charAt(i28)) {
                                                                                     break;
                                                                                 }
                                                                                 i28++;
-                                                                                length3 = i14;
-                                                                                length4 = i15;
+                                                                                coerceAtMost = i14;
+                                                                                length3 = i15;
                                                                             }
                                                                             int i29 = 0;
                                                                             while (true) {
-                                                                                if (i29 >= coerceAtMost - i28) {
+                                                                                if (i29 >= i14 - i28) {
                                                                                     i16 = i29;
                                                                                     break;
                                                                                 }
                                                                                 i16 = i29;
-                                                                                if (str3.charAt((i14 - 1) - i29) != str4.charAt((i15 - 1) - i16)) {
+                                                                                if (str3.charAt((i15 - 1) - i29) != str4.charAt((length4 - 1) - i16)) {
                                                                                     break;
                                                                                 }
                                                                                 i29 = i16 + 1;
                                                                             }
-                                                                            int i30 = (i14 - i16) - i28;
-                                                                            int i31 = (i15 - i16) - i28;
+                                                                            int i30 = (i15 - i16) - i28;
+                                                                            int i31 = (length4 - i16) - i28;
                                                                             boolean contains = semanticsNodeCopy.getUnmergedConfig().contains(SemanticsProperties.INSTANCE.getPassword());
                                                                             boolean contains2 = semanticsNode2.getUnmergedConfig$ui().contains(SemanticsProperties.INSTANCE.getPassword());
                                                                             boolean contains3 = semanticsNodeCopy.getUnmergedConfig().contains(SemanticsProperties.INSTANCE.getEditableText());
-                                                                            boolean z4 = contains3 && !contains && contains2;
-                                                                            z3 = (contains3 && contains && !contains2) ? false : false;
-                                                                            if (z4 || z3) {
-                                                                                z2 = z4;
-                                                                                createTextSelectionChangedEvent = androidComposeViewAccessibilityDelegateCompat.createTextSelectionChangedEvent(androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 0, 0, Integer.valueOf(i15), trimToSize);
+                                                                            boolean z3 = contains3 && !contains && contains2;
+                                                                            boolean z4 = contains3 && contains && !contains2;
+                                                                            if (z3 || z4) {
+                                                                                z2 = z3;
+                                                                                createTextSelectionChangedEvent = androidComposeViewAccessibilityDelegateCompat.createTextSelectionChangedEvent(androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 0, 0, Integer.valueOf(length4), trimToSize);
                                                                             } else {
-                                                                                z2 = z4;
+                                                                                z2 = z3;
                                                                                 createTextSelectionChangedEvent = androidComposeViewAccessibilityDelegateCompat.createEvent(androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 16);
                                                                                 createTextSelectionChangedEvent.setFromIndex(i28);
                                                                                 createTextSelectionChangedEvent.setRemovedCount(i30);
@@ -2565,7 +2564,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                                                             }
                                                                             createTextSelectionChangedEvent.setClassName(TextFieldClassName);
                                                                             androidComposeViewAccessibilityDelegateCompat.sendEvent(createTextSelectionChangedEvent);
-                                                                            if (z2 || z3) {
+                                                                            if (z2 || z4) {
                                                                                 long m7007unboximpl = ((TextRange) semanticsNode2.getUnmergedConfig$ui().get(SemanticsProperties.INSTANCE.getTextSelectionRange())).m7007unboximpl();
                                                                                 createTextSelectionChangedEvent.setFromIndex(TextRange.m7003getStartimpl(m7007unboximpl));
                                                                                 createTextSelectionChangedEvent.setToIndex(TextRange.m6998getEndimpl(m7007unboximpl));
@@ -2666,8 +2665,8 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                                 iArr4 = iArr3;
                                                 semanticsNode4 = semanticsNode2;
                                                 i21 = i8;
-                                                arrayList4 = arrayList3;
                                                 objArr3 = objArr2;
+                                                arrayList4 = arrayList3;
                                                 i24 = i10;
                                                 jArr4 = jArr3;
                                             }
@@ -2704,8 +2703,8 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                         semanticsNode4 = semanticsNode;
                                         jArr5 = jArr6;
                                         jArr4 = jArr2;
-                                        arrayList4 = arrayList2;
                                         objArr3 = objArr;
+                                        arrayList4 = arrayList2;
                                         i23 = 8;
                                         i24 = i34;
                                         i21 = i2;

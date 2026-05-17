@@ -8,7 +8,7 @@ import kotlin.collections.CollectionsKt;
 public final class C0146bf implements InterfaceC0155bo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f921a;
+    public final boolean f926a;
 
     public C0146bf(C0198df c0198df) {
         boolean z;
@@ -22,17 +22,17 @@ public final class C0146bf implements InterfaceC0155bo {
             }
         }
         z = true;
-        this.f921a = z;
+        this.f926a = z;
     }
 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final List<C0172cf> invoke(List<? extends C0172cf> list, C0528qf c0528qf) {
-        C0172cf c0172cf = new C0172cf(c0528qf.f1189a, c0528qf.b, c0528qf.e);
+        C0172cf c0172cf = new C0172cf(c0528qf.f1194a, c0528qf.b, c0528qf.e);
         if (!(list instanceof Collection) || !list.isEmpty()) {
             for (C0172cf c0172cf2 : list) {
                 if (c0172cf2.c == c0528qf.e) {
-                    if (c0172cf.c == S7.c && this.f921a) {
+                    if (c0172cf.c == S7.c && this.f926a) {
                         return CollectionsKt.plus((Collection<? extends C0172cf>) list, c0172cf);
                     }
                     return null;

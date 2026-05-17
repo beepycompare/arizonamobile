@@ -3,7 +3,7 @@ package dagger.hilt.android.internal.builders;
 import androidx.fragment.app.Fragment;
 import dagger.BindsInstance;
 import dagger.hilt.android.components.FragmentComponent;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface FragmentComponentBuilder {
     FragmentComponent build();
 

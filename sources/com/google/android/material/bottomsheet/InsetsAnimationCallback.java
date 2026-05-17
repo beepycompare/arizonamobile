@@ -6,7 +6,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.animation.AnimationUtils;
 import java.util.Iterator;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 class InsetsAnimationCallback extends WindowInsetsAnimationCompat.Callback {
     private int startTranslationY;
     private int startY;

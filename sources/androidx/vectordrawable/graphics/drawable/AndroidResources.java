@@ -1,5 +1,5 @@
 package androidx.vectordrawable.graphics.drawable;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class AndroidResources {
     public static final int FAST_OUT_LINEAR_IN = 17563663;
     public static final int FAST_OUT_SLOW_IN = 17563661;

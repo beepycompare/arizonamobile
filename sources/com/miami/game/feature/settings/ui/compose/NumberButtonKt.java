@@ -30,7 +30,7 @@ import androidx.compose.ui.res.PainterResources_androidKt;
 import androidx.compose.ui.unit.Dp;
 import androidx.media3.exoplayer.RendererCapabilities;
 import com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt;
-import com.miami.game.feature.settings.R;
+import com.miami.game.ui.classic.settings.R;
 import com.miami.game.ui.theme.TypeKt;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -66,7 +66,7 @@ public final class NumberButtonKt {
         Intrinsics.checkNotNullParameter(number, "number");
         Intrinsics.checkNotNullParameter(onClick, "onClick");
         Composer startRestartGroup = composer.startRestartGroup(-1572625182);
-        ComposerKt.sourceInformation(startRestartGroup, "C(NumberButtonText)N(number,onClick,isActive)25@1079L19,26@1105L493,24@1046L552:NumberButton.kt#1gr92h");
+        ComposerKt.sourceInformation(startRestartGroup, "C(NumberButtonText)N(number,onClick,isActive)25@1082L19,26@1108L493,24@1049L552:NumberButton.kt#1gr92h");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(number) ? 4 : 2) | i;
         } else {
@@ -131,7 +131,7 @@ public final class NumberButtonKt {
     public static final Unit NumberButtonText$lambda$1(String str, int i, BoxScope ScalingButton, Composer composer, int i2) {
         int i3;
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C27@1115L271,38@1442L10,40@1521L13,37@1395L197:NumberButton.kt#1gr92h");
+        ComposerKt.sourceInformation(composer, "C27@1118L271,38@1445L10,40@1524L13,37@1398L197:NumberButton.kt#1gr92h");
         if ((i2 & 6) == 0) {
             i3 = i2 | (composer.changed(ScalingButton) ? 4 : 2);
         } else {
@@ -169,7 +169,7 @@ public final class NumberButtonKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, -1390094668, "C32@1241L22,31@1208L168:NumberButton.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(composer, -1390094668, "C32@1244L22,31@1211L168:NumberButton.kt#1gr92h");
             ImageKt.Image(PainterResources_androidKt.painterResource(i, composer, 0), (String) null, Modifier.Companion, (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, Painter.$stable | 25008, 104);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -177,7 +177,7 @@ public final class NumberButtonKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
-            TextKt.m2712TextNvy7gAk(str, ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(16.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131048);
+            TextKt.m2712TextNvy7gAk(str, ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(16.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131048);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -190,7 +190,7 @@ public final class NumberButtonKt {
         Intrinsics.checkNotNullParameter(number, "number");
         Intrinsics.checkNotNullParameter(onClick, "onClick");
         Composer startRestartGroup = composer.startRestartGroup(1369453397);
-        ComposerKt.sourceInformation(startRestartGroup, "C(NumberButton)N(number,onClick,isActive)48@1825L19,49@1851L493,47@1792L552:NumberButton.kt#1gr92h");
+        ComposerKt.sourceInformation(startRestartGroup, "C(NumberButton)N(number,onClick,isActive)48@1828L19,49@1854L493,47@1795L552:NumberButton.kt#1gr92h");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(number) ? 4 : 2) | i;
         } else {
@@ -255,7 +255,7 @@ public final class NumberButtonKt {
     public static final Unit NumberButton$lambda$1(String str, int i, BoxScope ScalingButton, Composer composer, int i2) {
         int i3;
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C50@1861L271,61@2188L10,63@2267L13,60@2141L197:NumberButton.kt#1gr92h");
+        ComposerKt.sourceInformation(composer, "C50@1864L271,61@2191L10,63@2270L13,60@2144L197:NumberButton.kt#1gr92h");
         if ((i2 & 6) == 0) {
             i3 = i2 | (composer.changed(ScalingButton) ? 4 : 2);
         } else {
@@ -293,7 +293,7 @@ public final class NumberButtonKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 344663265, "C55@1987L22,54@1954L168:NumberButton.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(composer, 344663265, "C55@1990L22,54@1957L168:NumberButton.kt#1gr92h");
             ImageKt.Image(PainterResources_androidKt.painterResource(i, composer, 0), (String) null, Modifier.Companion, (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, Painter.$stable | 25008, 104);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -301,7 +301,7 @@ public final class NumberButtonKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
-            TextKt.m2712TextNvy7gAk(str, ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(16.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131048);
+            TextKt.m2712TextNvy7gAk(str, ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(16.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131048);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -314,7 +314,7 @@ public final class NumberButtonKt {
         Intrinsics.checkNotNullParameter(text, "text");
         Intrinsics.checkNotNullParameter(onClick, "onClick");
         Composer startRestartGroup = composer.startRestartGroup(2013669460);
-        ComposerKt.sourceInformation(startRestartGroup, "C(KeyboardButton)N(text,onClick,isActive)72@2565L30,73@2602L544,71@2532L614:NumberButton.kt#1gr92h");
+        ComposerKt.sourceInformation(startRestartGroup, "C(KeyboardButton)N(text,onClick,isActive)72@2568L30,73@2605L544,71@2535L614:NumberButton.kt#1gr92h");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(text) ? 4 : 2) | i;
         } else {
@@ -381,7 +381,7 @@ public final class NumberButtonKt {
     public static final Unit KeyboardButton$lambda$1(String str, int i, BoxScope ScalingButton, Composer composer, int i2) {
         int i3;
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C74@2612L271,85@2937L10,87@3016L13,84@2892L248:NumberButton.kt#1gr92h");
+        ComposerKt.sourceInformation(composer, "C74@2615L271,85@2940L10,87@3019L13,84@2895L248:NumberButton.kt#1gr92h");
         if ((i2 & 6) == 0) {
             i3 = i2 | (composer.changed(ScalingButton) ? 4 : 2);
         } else {
@@ -419,7 +419,7 @@ public final class NumberButtonKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 658053314, "C79@2738L22,78@2705L168:NumberButton.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(composer, 658053314, "C79@2741L22,78@2708L168:NumberButton.kt#1gr92h");
             ImageKt.Image(PainterResources_androidKt.painterResource(i, composer, 0), (String) null, Modifier.Companion, (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, Painter.$stable | 25008, 104);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -427,7 +427,7 @@ public final class NumberButtonKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
-            TextKt.m2712TextNvy7gAk(str, OffsetKt.m778offsetVpY3zN4$default(ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), 0.0f, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(2.0f)), 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(18.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131048);
+            TextKt.m2712TextNvy7gAk(str, OffsetKt.m778offsetVpY3zN4$default(ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), 0.0f, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(2.0f)), 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(18.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131048);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

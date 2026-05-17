@@ -10,10 +10,10 @@ public final class C0285h extends AbstractC0473oa {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0473oa
     public final void a(List<Rg> list) {
-        list.add(this.f1151a.p);
-        list.add(this.f1151a.o);
-        list.add(this.f1151a.r);
-        list.add(this.f1151a.g);
-        list.add(this.f1151a.q);
+        list.add(this.f1156a.p);
+        list.add(this.f1156a.o);
+        list.add(this.f1156a.r);
+        list.add(this.f1156a.g);
+        list.add(this.f1156a.q);
     }
 }

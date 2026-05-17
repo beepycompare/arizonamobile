@@ -17,7 +17,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 /* compiled from: D8$$SyntheticClass */
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     public static /* synthetic */ int m(byte b) {
         return b & 255;
@@ -28,7 +28,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ long m9252m(long j, long j2) {
+    public static /* synthetic */ long m9271m(long j, long j2) {
         if (j2 < 0) {
             return (j ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE) ? j : j - j2;
         } else if (j >= 0) {
@@ -43,7 +43,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ String m9253m(int i, int i2) {
+    public static /* synthetic */ String m9272m(int i, int i2) {
         return Long.toString(i & 4294967295L, i2);
     }
 
@@ -123,7 +123,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ Set m9255m(Object[] objArr) {
+    public static /* synthetic */ Set m9274m(Object[] objArr) {
         HashSet hashSet = new HashSet(objArr.length);
         for (Object obj : objArr) {
             if (!hashSet.add(Objects.requireNonNull(obj))) {
@@ -134,7 +134,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ void m9256m(Object obj) {
+    public static /* synthetic */ void m9275m(Object obj) {
         if (obj instanceof AutoCloseable) {
             ((AutoCloseable) obj).close();
         } else if (obj instanceof ExecutorService) {

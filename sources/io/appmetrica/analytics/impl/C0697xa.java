@@ -8,11 +8,11 @@ import org.json.JSONObject;
 public final class C0697xa {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final HashSet f1303a;
+    public static final HashSet f1308a;
 
     static {
         HashSet hashSet = new HashSet();
-        f1303a = hashSet;
+        f1308a = hashSet;
         hashSet.add("get_ad");
         hashSet.add("report");
         hashSet.add("report_ad");

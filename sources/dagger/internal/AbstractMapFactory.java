@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public abstract class AbstractMapFactory<K, V, V2> implements Factory<Map<K, V2>> {
     private final Map<K, Provider<V>> contributingMap;
 
@@ -18,7 +18,7 @@ public abstract class AbstractMapFactory<K, V, V2> implements Factory<Map<K, V2>
         return this.contributingMap;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes5.dex */
     public static abstract class Builder<K, V, V2> {
         final LinkedHashMap<K, Provider<V>> map;
 

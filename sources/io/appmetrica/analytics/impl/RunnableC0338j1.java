@@ -6,16 +6,16 @@ import io.appmetrica.analytics.AnrListener;
 public final class RunnableC0338j1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AnrListener f1053a;
+    public final /* synthetic */ AnrListener f1058a;
     public final /* synthetic */ C0588t1 b;
 
     public RunnableC0338j1(C0588t1 c0588t1, AnrListener anrListener) {
         this.b = c0588t1;
-        this.f1053a = anrListener;
+        this.f1058a = anrListener;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0588t1.a(this.b).a(this.f1053a);
+        C0588t1.a(this.b).a(this.f1058a);
     }
 }

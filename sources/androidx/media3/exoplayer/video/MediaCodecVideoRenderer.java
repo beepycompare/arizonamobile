@@ -63,7 +63,7 @@ import kotlin.text.Typography;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okhttp3.internal.ws.WebSocketProtocol;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class MediaCodecVideoRenderer extends MediaCodecRenderer implements VideoFrameReleaseControl.FrameTimingEvaluator {
     private static final int HEVC_MAX_INPUT_SIZE_THRESHOLD = 2097152;
     private static final float INITIAL_FORMAT_MAX_INPUT_SIZE_SCALE_FACTOR = 1.5f;
@@ -143,7 +143,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         return true;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder {
         private long allowedJoiningTimeMs;
         private boolean buildCalled;
@@ -404,7 +404,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class Api26 {
         private Api26() {
         }
@@ -906,7 +906,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x008e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0087, code lost:
         if (r3.equals(androidx.media3.common.MimeTypes.VIDEO_AV1) == false) goto L19;
      */
     /*
@@ -1138,7 +1138,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x003b  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0040  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00a6  */
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1810,7 +1810,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class CodecMaxValues {
         public final int height;
         public final int inputSize;
@@ -1864,7 +1864,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:621:0x0851, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:621:0x0848, code lost:
         if (r0.equals("PGN528") == false) goto L46;
      */
     /*
@@ -3174,7 +3174,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public final class OnFrameRenderedListener implements MediaCodecAdapter.OnFrameRenderedListener, Handler.Callback {
         private static final int HANDLE_FRAME_RENDERED = 0;
         private final Handler handler;

@@ -3,7 +3,7 @@ package dagger.hilt.android.internal.modules;
 import android.app.Application;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ApplicationContextModule_ProvideApplicationFactory implements Factory<Application> {
     private final ApplicationContextModule module;
 

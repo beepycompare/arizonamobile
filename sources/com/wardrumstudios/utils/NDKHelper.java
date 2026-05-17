@@ -14,7 +14,7 @@ import android.util.Log;
 import androidx.media3.common.MimeTypes;
 import java.io.File;
 import java.io.FileInputStream;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class NDKHelper {
     private static boolean loadedSO = false;
     NativeActivity activity;

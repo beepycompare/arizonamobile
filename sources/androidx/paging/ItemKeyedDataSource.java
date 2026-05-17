@@ -149,7 +149,7 @@ public abstract class ItemKeyedDataSource<Key, Value> extends DataSource<Key, Va
             public void onResult(List<? extends Value> data) {
                 Intrinsics.checkNotNullParameter(data, "data");
                 Result.Companion companion = Result.Companion;
-                cancellableContinuation.resumeWith(Result.m9183constructorimpl(new DataSource.BaseResult(data, this.getPrevKey$paging_common(data), this.getNextKey$paging_common(data), 0, 0, 24, null)));
+                cancellableContinuation.resumeWith(Result.m9202constructorimpl(new DataSource.BaseResult(data, this.getPrevKey$paging_common(data), this.getNextKey$paging_common(data), 0, 0, 24, null)));
             }
         };
     }
@@ -236,14 +236,14 @@ public abstract class ItemKeyedDataSource<Key, Value> extends DataSource<Key, Va
             public void onResult(List<? extends Value> data, int i, int i2) {
                 Intrinsics.checkNotNullParameter(data, "data");
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(new DataSource.BaseResult(data, this.getPrevKey$paging_common(data), this.getNextKey$paging_common(data), i, (i2 - data.size()) - i)));
+                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(new DataSource.BaseResult(data, this.getPrevKey$paging_common(data), this.getNextKey$paging_common(data), i, (i2 - data.size()) - i)));
             }
 
             @Override // androidx.paging.ItemKeyedDataSource.LoadCallback
             public void onResult(List<? extends Value> data) {
                 Intrinsics.checkNotNullParameter(data, "data");
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(new DataSource.BaseResult(data, this.getPrevKey$paging_common(data), this.getNextKey$paging_common(data), 0, 0, 24, null)));
+                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(new DataSource.BaseResult(data, this.getPrevKey$paging_common(data), this.getNextKey$paging_common(data), 0, 0, 24, null)));
             }
         });
         Object result = cancellableContinuationImpl.getResult();

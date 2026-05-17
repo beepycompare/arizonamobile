@@ -6,10 +6,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0518q5 implements Rc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1184a;
+    public final String f1189a;
 
     public C0518q5(String str) {
-        this.f1184a = str;
+        this.f1189a = str;
     }
 
     public final C0518q5 a(String str) {
@@ -17,27 +17,27 @@ public final class C0518q5 implements Rc {
     }
 
     public final String b() {
-        return this.f1184a;
+        return this.f1189a;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof C0518q5) && Intrinsics.areEqual(this.f1184a, ((C0518q5) obj).f1184a);
+        return (obj instanceof C0518q5) && Intrinsics.areEqual(this.f1189a, ((C0518q5) obj).f1189a);
     }
 
     public final int hashCode() {
-        return this.f1184a.hashCode();
+        return this.f1189a.hashCode();
     }
 
     public final String toString() {
-        return "ConstantModuleEntryPointProvider(className=" + this.f1184a + ')';
+        return "ConstantModuleEntryPointProvider(className=" + this.f1189a + ')';
     }
 
     public static C0518q5 a(C0518q5 c0518q5, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = c0518q5.f1184a;
+            str = c0518q5.f1189a;
         }
         c0518q5.getClass();
         return new C0518q5(str);
@@ -45,6 +45,6 @@ public final class C0518q5 implements Rc {
 
     @Override // io.appmetrica.analytics.impl.Rc
     public final String a() {
-        return this.f1184a;
+        return this.f1189a;
     }
 }

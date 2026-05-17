@@ -1,7 +1,7 @@
 package androidx.media3.extractor;
 
 import androidx.media3.extractor.SeekMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface TrackAwareSeekMap extends SeekMap {
     SeekMap.SeekPoints getSeekPoints(long j, int i);
 

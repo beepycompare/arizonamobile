@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.metaldetector;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,16 +20,15 @@ import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.MetaldetectorScreenBinding;
 import ru.mrlargha.commonui.elements.quest.GsonStore;
 import ru.mrlargha.commonui.elements.quest.RodinaSerializableData;
+import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: MetaldetectorScreen.kt */
-@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u00002\u00020\u0001:\u0002\u0019\u001aB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0011*\u0004\u0018\u00010\u00100\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lru/mrlargha/commonui/elements/metaldetector/MetaldetectorScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screenLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/MetaldetectorScreenBinding;", "lastDuration", "", "lastLevel", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "onBackendMessage", "", "data", "", "subId", "MetaldetectorData", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u00002\u00020\u0001:\u0002\u0014\u0015B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lru/mrlargha/commonui/elements/metaldetector/MetaldetectorScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screenLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/MetaldetectorScreenBinding;", "lastDuration", "", "lastLevel", "onBackendMessageHandled", "", "data", "", "subId", "MetaldetectorData", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class MetaldetectorScreen extends SAMPUIElement {
     private final MetaldetectorScreenBinding binding;
-    private final boolean isArizonaType;
     private float lastDuration;
     private int lastLevel;
     private final ConstraintLayout screenLayout;
-    private final SharedPreferences sharedPref;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public MetaldetectorScreen(Activity targetActivity, int i) {
@@ -44,9 +42,6 @@ public final class MetaldetectorScreen extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
         this.lastDuration = 1.0f;
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
-        this.sharedPref = sharedPreferences;
-        this.isArizonaType = sharedPreferences.getBoolean("isArizonaType", false);
         addViewToConstraintLayout(constraintLayout, -1, -1);
         MetaldetectorScreen metaldetectorScreen = this;
         MaterialButton digButton = bind.digButton;
@@ -139,7 +134,7 @@ public final class MetaldetectorScreen extends SAMPUIElement {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) MetaldetectorData.class);
         Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
@@ -157,16 +152,16 @@ public final class MetaldetectorScreen extends SAMPUIElement {
         if (level2 != null) {
             this.lastLevel = level2.intValue();
             if (intValue == 1) {
-                this.binding.imageView37.setColorFilter(this.isArizonaType ? Color.rgb(89, 232, 39) : Color.rgb(255, (int) ComposerKt.providerMapsKey, 51));
+                this.binding.imageView37.setColorFilter(UtilsKt.isArizonaType() ? Color.rgb(89, 232, 39) : Color.rgb(255, (int) ComposerKt.providerMapsKey, 51));
             } else if (intValue == 2) {
-                this.binding.imageView37.setColorFilter(this.isArizonaType ? Color.rgb(255, (int) ComposerKt.providerMapsKey, 51) : Color.parseColor("#59E827"));
+                this.binding.imageView37.setColorFilter(UtilsKt.isArizonaType() ? Color.rgb(255, (int) ComposerKt.providerMapsKey, 51) : Color.parseColor("#59E827"));
             } else if (intValue == 3) {
-                this.binding.imageView37.setColorFilter(this.isArizonaType ? Color.rgb(240, 108, 13) : Color.rgb(255, 33, 33));
+                this.binding.imageView37.setColorFilter(UtilsKt.isArizonaType() ? Color.rgb(240, 108, 13) : Color.rgb(255, 33, 33));
             } else if (intValue == 4) {
-                if (this.isArizonaType) {
+                if (UtilsKt.isArizonaType()) {
                     this.binding.imageView37.setColorFilter(Color.rgb(255, 255, 255));
                 }
-            } else if (intValue == 5 && this.isArizonaType) {
+            } else if (intValue == 5 && UtilsKt.isArizonaType()) {
                 this.binding.imageView37.setColorFilter(Color.rgb(215, 14, 14));
             }
         }

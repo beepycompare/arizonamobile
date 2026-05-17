@@ -21,24 +21,24 @@ public final class NumberSpanParserOperation<Output> implements ParserOperation<
     /* JADX WARN: Multi-variable type inference failed */
     public NumberSpanParserOperation(List<? extends NumberConsumer<? super Output>> consumers) {
         boolean z;
-        boolean z2;
         int i;
         Intrinsics.checkNotNullParameter(consumers, "consumers");
         this.consumers = consumers;
         Iterator it = consumers.iterator();
         int i2 = 0;
+        int i3 = 0;
         while (true) {
-            int i3 = 1;
+            int i4 = 1;
             if (!it.hasNext()) {
                 break;
             }
             Integer length = ((NumberConsumer) it.next()).getLength();
             if (length != null) {
-                i3 = length.intValue();
+                i4 = length.intValue();
             }
-            i2 += i3;
+            i3 += i4;
         }
-        this.minLength = i2;
+        this.minLength = i3;
         List<NumberConsumer<Output>> list = this.consumers;
         if (!(list instanceof Collection) || !list.isEmpty()) {
             Iterator<T> it2 = list.iterator();
@@ -56,31 +56,28 @@ public final class NumberSpanParserOperation<Output> implements ParserOperation<
             Iterator<T> it3 = list2.iterator();
             while (it3.hasNext()) {
                 Integer length2 = ((NumberConsumer) it3.next()).getLength();
-                if ((length2 != null ? length2.intValue() : Integer.MAX_VALUE) > 0) {
-                    z2 = true;
+                if (length2 != null) {
+                    i = length2.intValue();
                     continue;
                 } else {
-                    z2 = false;
+                    i = Integer.MAX_VALUE;
                     continue;
                 }
-                if (!z2) {
+                if (i <= 0) {
                     throw new IllegalArgumentException("Failed requirement.".toString());
                 }
             }
         }
         List<NumberConsumer<Output>> list3 = this.consumers;
-        if ((list3 instanceof Collection) && list3.isEmpty()) {
-            i = 0;
-        } else {
+        if (!(list3 instanceof Collection) || !list3.isEmpty()) {
             Iterator<T> it4 = list3.iterator();
-            i = 0;
             while (it4.hasNext()) {
-                if ((((NumberConsumer) it4.next()).getLength() == null) && (i = i + 1) < 0) {
+                if (((NumberConsumer) it4.next()).getLength() == null && (i2 = i2 + 1) < 0) {
                     CollectionsKt.throwCountOverflow();
                 }
             }
         }
-        if (i <= 1) {
+        if (i2 <= 1) {
             return;
         }
         ArrayList arrayList = new ArrayList();
@@ -119,10 +116,10 @@ public final class NumberSpanParserOperation<Output> implements ParserOperation<
 
     @Override // kotlinx.datetime.internal.format.parser.ParserOperation
     /* renamed from: consume-FANa98k  reason: not valid java name */
-    public Object mo10797consumeFANa98k(Output output, CharSequence input, int i) {
+    public Object mo10816consumeFANa98k(Output output, CharSequence input, int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         if (this.minLength + i > input.length()) {
-            return ParseResult.Companion.m10807ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda0
+            return ParseResult.Companion.m10826ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     return NumberSpanParserOperation.consume_FANa98k$lambda$8(NumberSpanParserOperation.this);
@@ -135,7 +132,7 @@ public final class NumberSpanParserOperation<Output> implements ParserOperation<
             int i2 = intRef.element;
         }
         if (intRef.element < this.minLength) {
-            return ParseResult.Companion.m10807ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda1
+            return ParseResult.Companion.m10826ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     return NumberSpanParserOperation.consume_FANa98k$lambda$9(Ref.IntRef.this, this);
@@ -150,7 +147,7 @@ public final class NumberSpanParserOperation<Output> implements ParserOperation<
             final NumberConsumptionError consume = this.consumers.get(i3).consume(output, input, i, intValue);
             if (consume != null) {
                 final String obj = input.subSequence(i, intValue).toString();
-                return ParseResult.Companion.m10807ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda2
+                return ParseResult.Companion.m10826ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         return NumberSpanParserOperation.consume_FANa98k$lambda$10(obj, this, i3, consume);
@@ -160,7 +157,7 @@ public final class NumberSpanParserOperation<Output> implements ParserOperation<
             i3++;
             i = intValue;
         }
-        return ParseResult.Companion.m10808OkQi1bsqg(i);
+        return ParseResult.Companion.m10827OkQi1bsqg(i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

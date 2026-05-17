@@ -8,12 +8,12 @@ import kotlin.text.Charsets;
 public final class C0322ia implements N9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final J8 f1042a = new J8();
+    public final J8 f1047a = new J8();
 
     public final C0166c9[] a(byte[] bArr) {
         int i = 0;
         if (bArr != null) {
-            Map<String, byte[]> model = this.f1042a.toModel(bArr);
+            Map<String, byte[]> model = this.f1047a.toModel(bArr);
             C0166c9[] c0166c9Arr = new C0166c9[model.size()];
             for (Object obj : model.entrySet()) {
                 int i2 = i + 1;
@@ -22,7 +22,7 @@ public final class C0322ia implements N9 {
                 }
                 Map.Entry entry = (Map.Entry) obj;
                 C0166c9 c0166c9 = new C0166c9();
-                c0166c9.f933a = ((String) entry.getKey()).getBytes(Charsets.UTF_8);
+                c0166c9.f938a = ((String) entry.getKey()).getBytes(Charsets.UTF_8);
                 c0166c9.b = (byte[]) entry.getValue();
                 c0166c9Arr[i] = c0166c9;
                 i = i2;

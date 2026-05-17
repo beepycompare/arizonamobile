@@ -489,14 +489,11 @@ public abstract class ObjectFloatMap<K> {
                 i3++;
                 jArr3 = jArr;
             }
-            String sb2 = sb.toString();
-            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-            return sb2;
         }
         sb.append(postfix);
-        String sb22 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
-        return sb22;
+        String sb2 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+        return sb2;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

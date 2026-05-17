@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import com.google.common.base.Preconditions;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.dataflow.qual.Pure;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public final class Assertions {
     private Assertions() {
     }

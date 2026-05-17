@@ -10,10 +10,10 @@ public final class Vm extends Ci {
 
     @Override // io.appmetrica.analytics.impl.Ci
     public final Object a(int i) {
-        return this.f536a.getString(i);
+        return this.f541a.getString(i);
     }
 
     public final String b(int i) {
-        return this.f536a.getString(i);
+        return this.f541a.getString(i);
     }
 }

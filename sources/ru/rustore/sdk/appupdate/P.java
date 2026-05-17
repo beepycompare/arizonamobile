@@ -17,7 +17,7 @@ import ru.rustore.sdk.core.util.ContextExtKt;
 public final class P implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1516a;
+    public final Context f1521a;
     public final C0801o b;
     public final String c;
     public final AppUpdateParams d;
@@ -40,7 +40,7 @@ public final class P implements ServiceConnection {
         Intrinsics.checkNotNullParameter(appUpdateParams, "appUpdateParams");
         Intrinsics.checkNotNullParameter(onSuccess, "onSuccess");
         Intrinsics.checkNotNullParameter(onError, "onError");
-        this.f1516a = context;
+        this.f1521a = context;
         this.b = appUpdateInfoMapper;
         this.c = applicationId;
         this.d = appUpdateParams;
@@ -61,13 +61,13 @@ public final class P implements ServiceConnection {
                 message = "";
             }
             function1.invoke(new RuStoreException(message));
-            ContextExtKt.unbindServiceSafely(this.f1516a, this);
+            ContextExtKt.unbindServiceSafely(this.f1521a, this);
         }
     }
 
     @Override // android.content.ServiceConnection
     public final void onServiceDisconnected(ComponentName componentName) {
         this.f.invoke(new RuStoreException("onServiceDisconnected"));
-        ContextExtKt.unbindServiceSafely(this.f1516a, this);
+        ContextExtKt.unbindServiceSafely(this.f1521a, this);
     }
 }

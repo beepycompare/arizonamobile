@@ -7,12 +7,12 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class x extends MessageNano {
     public static volatile x[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f325a;
+    public boolean f330a;
     public w b;
     public v c;
 
@@ -32,7 +32,7 @@ public final class x extends MessageNano {
     }
 
     public final x a() {
-        this.f325a = false;
+        this.f330a = false;
         this.b = null;
         this.c = null;
         this.cachedSize = -1;
@@ -42,7 +42,7 @@ public final class x extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        boolean z = this.f325a;
+        boolean z = this.f330a;
         if (z) {
             computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(1, z);
         }
@@ -56,7 +56,7 @@ public final class x extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        boolean z = this.f325a;
+        boolean z = this.f330a;
         if (z) {
             codedOutputByteBufferNano.writeBool(1, z);
         }
@@ -79,7 +79,7 @@ public final class x extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 8) {
-                this.f325a = codedInputByteBufferNano.readBool();
+                this.f330a = codedInputByteBufferNano.readBool();
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new w();

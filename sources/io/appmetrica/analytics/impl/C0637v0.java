@@ -9,14 +9,14 @@ import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 public final class C0637v0 implements Ba {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Handler f1265a;
+    public final Handler f1270a;
     public final IHandlerExecutor b;
     public final C0212e4 c;
 
     public C0637v0() {
         IHandlerExecutor a2 = C0135b4.l().g().a();
         this.b = a2;
-        this.f1265a = a2.getHandler();
+        this.f1270a = a2.getHandler();
         this.c = new C0212e4();
     }
 
@@ -26,7 +26,7 @@ public final class C0637v0 implements Ba {
 
     @Override // io.appmetrica.analytics.impl.Ba
     public final Handler b() {
-        return this.f1265a;
+        return this.f1270a;
     }
 
     @Override // io.appmetrica.analytics.impl.Ba

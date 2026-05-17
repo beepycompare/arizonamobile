@@ -49,8 +49,9 @@ import androidx.media3.exoplayer.RendererCapabilities;
 import coil3.compose.SingletonAsyncImageKt;
 import com.miami.game.core.design.system.component.other.AnimatedLoadingKt;
 import com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt;
-import com.miami.game.feature.home.R;
+import com.miami.game.core.server.model.ServerModel;
 import com.miami.game.feature.home.ui.model.HomeUiState;
+import com.miami.game.ui.classic.home.R;
 import com.miami.game.ui.theme.TypeKt;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -78,7 +79,7 @@ public final class ServerButtonKt {
         Intrinsics.checkNotNullParameter(uiState, "uiState");
         Intrinsics.checkNotNullParameter(onClickServer, "onClickServer");
         Composer startRestartGroup = composer.startRestartGroup(-830128021);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ServerButton)N(uiState,onClickServer)45@2019L3449,45@1990L3478:ServerButton.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(ServerButton)N(uiState,onClickServer)45@2022L3467,45@1993L3496:ServerButton.kt#dswm0d");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(uiState) ? 4 : 2) | i;
         } else {
@@ -121,15 +122,16 @@ public final class ServerButtonKt {
         Composer composer2;
         ContentScale fillHeight;
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C61@2600L137,46@2029L3433:ServerButton.kt#dswm0d");
+        ComposerKt.sourceInformation(composer, "C62@2653L137,47@2082L3401:ServerButton.kt#dswm0d");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1603655072, i, -1, "com.miami.game.feature.home.ui.compose.ServerButton.<anonymous> (ServerButton.kt:46)");
             }
+            ServerModel currentServer = homeUiState.getCurrentServer();
             Modifier m277borderziNgDLE = BorderKt.m277borderziNgDLE(BackgroundKt.m263backgroundbw27NRU(SizeKt.m869width3ABfNKs(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(32.0f)), Dp.m7555constructorimpl(180.0f)), Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), new ServerHomeShape()), Dp.m7555constructorimpl(2.0f), Brush.Companion.m4727verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4804getLightGray0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new ServerHomeShape());
-            ComposerKt.sourceInformationMarkerStart(composer, 780753801, "CC(remember):ServerButton.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, 780755401, "CC(remember):ServerButton.kt#9igjgp");
             Object rememberedValue = composer.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function1() { // from class: com.miami.game.feature.home.ui.compose.ServerButtonKt$$ExternalSyntheticLambda2
@@ -170,7 +172,7 @@ public final class ServerButtonKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 76644041, "C70@2901L2338,124@5275L47,123@5252L199:ServerButton.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(composer, 76643049, "C71@2954L2306,125@5296L47,124@5273L199:ServerButton.kt#dswm0d");
             Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null);
             Alignment.Vertical centerVertically2 = Alignment.Companion.getCenterVertically();
             ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
@@ -198,11 +200,11 @@ public final class ServerButtonKt {
             Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 1173809505, "C:ServerButton.kt#dswm0d");
-            if (homeUiState.getCurrentServer() != null) {
-                composer.startReplaceGroup(1173830305);
-                ComposerKt.sourceInformation(composer, "80@3331L462,90@3814L979");
-                if (homeUiState.getCurrentServer().isArizona()) {
+            ComposerKt.sourceInformationMarkerStart(composer, 1173808513, "C:ServerButton.kt#dswm0d");
+            if (currentServer != null) {
+                composer.startReplaceGroup(1173821625);
+                ComposerKt.sourceInformation(composer, "81@3368L454,91@3843L971");
+                if (currentServer.isArizona()) {
                     fillHeight = ContentScale.Companion.getCrop();
                 } else {
                     fillHeight = ContentScale.Companion.getFillHeight();
@@ -235,9 +237,9 @@ public final class ServerButtonKt {
                 Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(composer, 1583302100, "C82@3445L28,83@3498L273:ServerButton.kt#dswm0d");
-                AnimatedLoadingKt.m9081AnimatedLoadinguFdPcIQ(true, Dp.m7555constructorimpl(16.0f), null, composer, 54, 4);
-                SingletonAsyncImageKt.m8558AsyncImage10Xjiaw(homeUiState.getCurrentServer().getIcon(), null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(70.0f)), null, null, null, contentScale, 0.0f, null, 0, false, composer, 432, 0, 1976);
+                ComposerKt.sourceInformationMarkerStart(composer, 1583301852, "C83@3482L28,84@3535L265:ServerButton.kt#dswm0d");
+                AnimatedLoadingKt.m9083AnimatedLoadinguFdPcIQ(true, Dp.m7555constructorimpl(16.0f), null, composer, 54, 4);
+                SingletonAsyncImageKt.m8558AsyncImage10Xjiaw(currentServer.getIcon(), null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(70.0f)), null, null, null, contentScale, 0.0f, null, 0, false, composer, 432, 0, 1976);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 composer.endNode();
@@ -270,9 +272,9 @@ public final class ServerButtonKt {
                 Updater.m4049setimpl(m4041constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
                 ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(composer, -1442354001, "C100@4318L10,101@4379L13,102@4435L13,96@4104L370,106@4601L11,107@4672L10,108@4733L12,104@4499L272:ServerButton.kt#dswm0d");
-                TextKt.m2712TextNvy7gAk(String.valueOf(homeUiState.getCurrentServer().getName()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(16.0f), composer, 6), null, null, null, 0L, null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(17.0f), composer, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 24576, 112618);
-                TextKt.m2712TextNvy7gAk("ВЫБРАТЬ СЕРВЕР", null, MaterialTheme.INSTANCE.getColorScheme(composer, MaterialTheme.$stable).m1877getPrimary0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(9.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131050);
+                ComposerKt.sourceInformationMarkerStart(composer, -1442354249, "C101@4339L10,102@4400L13,103@4456L13,97@4133L362,107@4622L11,108@4693L10,109@4754L12,105@4520L272:ServerButton.kt#dswm0d");
+                TextKt.m2712TextNvy7gAk(String.valueOf(currentServer.getName()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(16.0f), composer, 6), null, null, null, 0L, null, null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(17.0f), composer, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 24576, 112618);
+                TextKt.m2712TextNvy7gAk("ВЫБРАТЬ СЕРВЕР", null, MaterialTheme.INSTANCE.getColorScheme(composer, MaterialTheme.$stable).m1877getPrimary0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(9.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131050);
                 composer2 = composer;
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -282,8 +284,8 @@ public final class ServerButtonKt {
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 composer2.endReplaceGroup();
             } else {
-                composer.startReplaceGroup(1175523370);
-                ComposerKt.sourceInformation(composer, "115@4980L10,112@4839L368");
+                composer.startReplaceGroup(1175491626);
+                ComposerKt.sourceInformation(composer, "116@5001L10,113@4860L368");
                 TextKt.m2712TextNvy7gAk("СЕРВЕР НЕ ВЫБРАН", SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, TextUnitKt.getSp(12), null, null, null, 0L, null, TextAlign.m7426boximpl(TextAlign.Companion.m7433getCentere0LSkKk()), 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 25014, 0, 130024);
                 composer2 = composer;
                 composer2.endReplaceGroup();

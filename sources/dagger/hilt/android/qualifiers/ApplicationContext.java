@@ -5,6 +5,6 @@ import java.lang.annotation.Target;
 import javax.inject.Qualifier;
 @Target({ElementType.METHOD, ElementType.PARAMETER, ElementType.FIELD})
 @Qualifier
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public @interface ApplicationContext {
 }

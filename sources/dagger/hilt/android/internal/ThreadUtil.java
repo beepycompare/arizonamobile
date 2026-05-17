@@ -1,7 +1,7 @@
 package dagger.hilt.android.internal;
 
 import android.os.Looper;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ThreadUtil {
     private static Thread mainThread;
 

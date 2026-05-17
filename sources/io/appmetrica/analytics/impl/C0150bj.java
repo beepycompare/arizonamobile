@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0150bj implements InterfaceC0387l {
 
     /* renamed from: a  reason: collision with root package name */
-    public Ve f924a;
+    public Ve f929a;
     public ScreenInfo b;
     public boolean c;
     public boolean d;
@@ -64,15 +64,15 @@ public final class C0150bj implements InterfaceC0387l {
     }
 
     public final Ve a(Context context) {
-        if (this.f924a == null) {
-            this.f924a = new Ve(C0135b4.l().c(context).a(context));
+        if (this.f929a == null) {
+            this.f929a = new Ve(C0135b4.l().c(context).a(context));
         }
-        Ve ve = this.f924a;
+        Ve ve = this.f929a;
         Intrinsics.checkNotNull(ve);
         return ve;
     }
 
     public final void a(Ve ve) {
-        this.f924a = ve;
+        this.f929a = ve;
     }
 }

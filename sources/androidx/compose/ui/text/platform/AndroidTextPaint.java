@@ -131,14 +131,12 @@ public final class AndroidTextPaint extends TextPaint {
     /* renamed from: setColor-8_81llA  reason: not valid java name */
     public final void m7272setColor8_81llA(long j) {
         Color color = this.lastColor;
-        if (color == null ? false : Color.m4773equalsimpl0(color.m4782unboximpl(), j)) {
+        if ((color == null ? false : Color.m4773equalsimpl0(color.m4782unboximpl(), j)) || j == 16) {
             return;
         }
-        if (j != 16) {
-            this.lastColor = Color.m4762boximpl(j);
-            setColor(ColorKt.m4826toArgb8_81llA(j));
-            clearShader();
-        }
+        this.lastColor = Color.m4762boximpl(j);
+        setColor(ColorKt.m4826toArgb8_81llA(j));
+        clearShader();
     }
 
     /* renamed from: setBrush-12SF9DM$default  reason: not valid java name */

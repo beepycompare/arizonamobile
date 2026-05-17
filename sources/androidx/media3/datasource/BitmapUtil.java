@@ -8,7 +8,7 @@ import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.common.ParserException;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class BitmapUtil {
     private BitmapUtil() {
     }

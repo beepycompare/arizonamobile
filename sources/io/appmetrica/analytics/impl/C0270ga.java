@@ -14,14 +14,14 @@ public final class C0270ga extends A4 {
         Xa xa = bundle != null ? (Xa) bundle.getParcelable("io.appmetrica.analytics.impl.IdentifiersData") : null;
         if (xa != null) {
             if (xa.d) {
-                C0467o4 c0467o4 = c0616u4.b.d.f1335a;
+                C0467o4 c0467o4 = c0616u4.b.d.f1340a;
                 Boolean bool = c0467o4.n;
                 Boolean bool2 = c0467o4.i;
                 C0448na.I.c().c(bool != null ? bool.booleanValue() : true);
                 C0448na.I.h().b(bool2);
             }
         }
-        this.f493a.a(xa);
+        this.f498a.a(xa);
         return false;
     }
 }

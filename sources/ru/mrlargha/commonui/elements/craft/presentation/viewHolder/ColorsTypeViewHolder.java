@@ -43,7 +43,7 @@ public final class ColorsTypeViewHolder extends RecyclerView.ViewHolder {
             itemColorBinding.parentCardView.setCardBackgroundColor(UtilsKt.getColorTint(R.color.transparent100));
         }
         if (item.getColor() == -858993409) {
-            itemColorBinding.tvColorName.setText("Без цвета");
+            itemColorBinding.tvColorName.setText(this.binding.getRoot().getContext().getString(R.string.craft_no_color));
             itemColorBinding.tvColorName.setTextColor(Color.parseColor("#FFFFFF"));
             itemColorBinding.viewBgLocked.setBackgroundResource(R.drawable.bg_item_without_color);
             itemColorBinding.parentCardView.setCardBackgroundColor(UtilsKt.getColorTint(R.color.transparent100));

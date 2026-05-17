@@ -71,7 +71,7 @@ public final class SecureTextFieldController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void scheduleHide() {
-        if (ChannelResult.m10719isFailureimpl(this.resetTimerSignal.mo8396trySendJP2dKIU(Unit.INSTANCE))) {
+        if (ChannelResult.m10738isFailureimpl(this.resetTimerSignal.mo8396trySendJP2dKIU(Unit.INSTANCE))) {
             this.passwordInputTransformation.hide();
         }
     }

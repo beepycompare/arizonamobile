@@ -100,7 +100,7 @@ public final class SelectServerScreenKt {
             i2 = i;
         }
         if ((i & 48) == 0) {
-            i2 |= startRestartGroup.changedInstance(component) ? 32 : 16;
+            i2 |= (i & 64) == 0 ? startRestartGroup.changed(component) : startRestartGroup.changedInstance(component) ? 32 : 16;
         }
         int i3 = i2;
         if (startRestartGroup.shouldExecute((i3 & 19) != 18, i3 & 1)) {
@@ -123,45 +123,46 @@ public final class SelectServerScreenKt {
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue, startRestartGroup, 0, 6);
             SelectServerUiState SelectServerRoute$lambda$0 = SelectServerRoute$lambda$0(collectAsStateWithLifecycle);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878707507, "CC(remember):SelectServerScreen.kt#9igjgp");
-            boolean changedInstance = startRestartGroup.changedInstance(component);
+            int i5 = i3 & 112;
+            boolean z2 = i5 == 32 || ((i3 & 64) != 0 && startRestartGroup.changedInstance(component));
             SelectServerScreenKt$SelectServerRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
-            if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
+            if (z2 || rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new SelectServerScreenKt$SelectServerRoute$2$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             KFunction kFunction = (KFunction) rememberedValue2;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878708853, "CC(remember):SelectServerScreen.kt#9igjgp");
-            boolean changedInstance2 = startRestartGroup.changedInstance(component);
+            boolean z3 = i5 == 32 || ((i3 & 64) != 0 && startRestartGroup.changedInstance(component));
             SelectServerScreenKt$SelectServerRoute$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
-            if (changedInstance2 || rememberedValue3 == Composer.Companion.getEmpty()) {
+            if (z3 || rememberedValue3 == Composer.Companion.getEmpty()) {
                 rememberedValue3 = new SelectServerScreenKt$SelectServerRoute$3$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             KFunction kFunction2 = (KFunction) rememberedValue3;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878710327, "CC(remember):SelectServerScreen.kt#9igjgp");
-            boolean changedInstance3 = startRestartGroup.changedInstance(component);
+            boolean z4 = i5 == 32 || ((i3 & 64) != 0 && startRestartGroup.changedInstance(component));
             SelectServerScreenKt$SelectServerRoute$4$1 rememberedValue4 = startRestartGroup.rememberedValue();
-            if (changedInstance3 || rememberedValue4 == Composer.Companion.getEmpty()) {
+            if (z4 || rememberedValue4 == Composer.Companion.getEmpty()) {
                 rememberedValue4 = new SelectServerScreenKt$SelectServerRoute$4$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue4);
             }
             KFunction kFunction3 = (KFunction) rememberedValue4;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878711929, "CC(remember):SelectServerScreen.kt#9igjgp");
-            boolean changedInstance4 = startRestartGroup.changedInstance(component);
+            boolean z5 = i5 == 32 || ((i3 & 64) != 0 && startRestartGroup.changedInstance(component));
             SelectServerScreenKt$SelectServerRoute$5$1 rememberedValue5 = startRestartGroup.rememberedValue();
-            if (changedInstance4 || rememberedValue5 == Composer.Companion.getEmpty()) {
+            if (z5 || rememberedValue5 == Composer.Companion.getEmpty()) {
                 rememberedValue5 = new SelectServerScreenKt$SelectServerRoute$5$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue5);
             }
             KFunction kFunction4 = (KFunction) rememberedValue5;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878713560, "CC(remember):SelectServerScreen.kt#9igjgp");
-            boolean changedInstance5 = startRestartGroup.changedInstance(component);
+            boolean z6 = i5 == 32 || ((i3 & 64) != 0 && startRestartGroup.changedInstance(component));
             SelectServerScreenKt$SelectServerRoute$6$1 rememberedValue6 = startRestartGroup.rememberedValue();
-            if (changedInstance5 || rememberedValue6 == Composer.Companion.getEmpty()) {
+            if (z6 || rememberedValue6 == Composer.Companion.getEmpty()) {
                 rememberedValue6 = new SelectServerScreenKt$SelectServerRoute$6$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue6);
             }
@@ -206,7 +207,7 @@ public final class SelectServerScreenKt {
         Intrinsics.checkNotNullParameter(onMobileList, "onMobileList");
         Intrinsics.checkNotNullParameter(onDesktopList, "onDesktopList");
         Composer startRestartGroup = composer.startRestartGroup(1256713563);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SelectServerScreen)N(uiState,navigateHome,onSelect,onFavorite,onFavoriteList,onMobileList,onDesktopList)79@3199L60,80@3276L24,82@3324L23,84@3353L95,85@3453L2819:SelectServerScreen.kt#2ojkxh");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SelectServerScreen)N(uiState,navigateHome,onSelect,onFavorite,onFavoriteList,onMobileList,onDesktopList)79@3199L60,80@3276L24,82@3324L23,84@3353L95,85@3453L2822:SelectServerScreen.kt#2ojkxh");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(uiState) ? 4 : 2) | i;
         } else {
@@ -284,7 +285,7 @@ public final class SelectServerScreenKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 153058187, "C91@3607L2134,143@5787L157,142@5750L516:SelectServerScreen.kt#2ojkxh");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 153058280, "C91@3607L2134,143@5787L157,142@5750L519:SelectServerScreen.kt#2ojkxh");
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), startRestartGroup, 0);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -434,16 +435,16 @@ public final class SelectServerScreenKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1451227624, "C110@4417L10,111@4475L13,112@4527L13,113@4583L12,107@4268L349:SelectServerScreen.kt#2ojkxh");
                 long m4771copywmQWz5c$default = Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null);
                 TextStyle bodyMedium = MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodyMedium();
-                long m9135dpToSp8Feqmps = TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(32.0f), startRestartGroup, 6);
-                long m9135dpToSp8Feqmps2 = TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(32.0f), startRestartGroup, 6);
-                long m9135dpToSp8Feqmps3 = TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(1.0f), startRestartGroup, 6);
-                TextUnitKt.m7762checkArithmeticR2X_6o(m9135dpToSp8Feqmps3);
-                long pack = TextUnitKt.pack(TextUnit.m7747getRawTypeimpl(m9135dpToSp8Feqmps3), -TextUnit.m7749getValueimpl(m9135dpToSp8Feqmps3));
+                long m9154dpToSp8Feqmps = TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(32.0f), startRestartGroup, 6);
+                long m9154dpToSp8Feqmps2 = TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(32.0f), startRestartGroup, 6);
+                long m9154dpToSp8Feqmps3 = TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(1.0f), startRestartGroup, 6);
+                TextUnitKt.m7762checkArithmeticR2X_6o(m9154dpToSp8Feqmps3);
+                long pack = TextUnitKt.pack(TextUnit.m7747getRawTypeimpl(m9154dpToSp8Feqmps3), -TextUnit.m7749getValueimpl(m9154dpToSp8Feqmps3));
                 z2 = false;
                 z = true;
                 str = "CC(remember):SelectServerScreen.kt#9igjgp";
                 boxScopeInstance = boxScopeInstance2;
-                TextKt.m2712TextNvy7gAk("НЕТ ИЗБРАННЫХ", null, m4771copywmQWz5c$default, null, m9135dpToSp8Feqmps, null, null, null, pack, null, null, m9135dpToSp8Feqmps2, 0, false, 0, 0, null, bodyMedium, startRestartGroup, 390, 0, 128746);
+                TextKt.m2712TextNvy7gAk("НЕТ ИЗБРАННЫХ", null, m4771copywmQWz5c$default, null, m9154dpToSp8Feqmps, null, null, null, pack, null, null, m9154dpToSp8Feqmps2, 0, false, 0, 0, null, bodyMedium, startRestartGroup, 390, 0, 128746);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

@@ -8,7 +8,7 @@ import com.google.gson.stream.JsonToken;
 import java.io.IOException;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 final class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
     private final TypeAdapter<T> adapter;
     private final Gson gson;

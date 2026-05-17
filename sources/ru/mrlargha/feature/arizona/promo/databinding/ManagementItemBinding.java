@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.arizona.promo.R;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public final class ManagementItemBinding implements ViewBinding {
     public final View colorBottom;
     public final ImageView image;

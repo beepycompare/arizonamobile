@@ -23,13 +23,13 @@ public final class Nf implements to {
                 if (decode != null && decode.length != 0) {
                     c0454ng = new C0454ng(decode);
                     Vf vf = new Vf();
-                    str = c0454ng.f1137a;
+                    str = c0454ng.f1142a;
                     if (str != null) {
                         bytes = new byte[0];
                     } else {
                         bytes = str.getBytes();
                     }
-                    vf.f828a = bytes;
+                    vf.f833a = bytes;
                     vf.c = c0454ng.b;
                     vf.b = c0454ng.c;
                     ordinal = c0454ng.d.ordinal();
@@ -45,10 +45,10 @@ public final class Nf implements to {
                 }
                 c0454ng = null;
                 Vf vf2 = new Vf();
-                str = c0454ng.f1137a;
+                str = c0454ng.f1142a;
                 if (str != null) {
                 }
-                vf2.f828a = bytes;
+                vf2.f833a = bytes;
                 vf2.c = c0454ng.b;
                 vf2.b = c0454ng.c;
                 ordinal = c0454ng.d.ordinal();

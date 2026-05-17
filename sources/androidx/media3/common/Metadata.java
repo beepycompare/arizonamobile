@@ -8,7 +8,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Longs;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Metadata {
     private final Entry[] entries;
     public final long presentationTimeUs;

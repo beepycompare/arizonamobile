@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0344j7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0402le f1058a;
+    public final C0402le f1063a;
 
     public C0344j7() {
         this(null, 1, null);
@@ -18,9 +18,9 @@ public final class C0344j7 implements Converter {
     /* renamed from: a */
     public final C0445n7 fromModel(C0319i7 c0319i7) {
         C0445n7 c0445n7 = new C0445n7();
-        Boolean bool = c0319i7.f1039a;
+        Boolean bool = c0319i7.f1044a;
         if (bool != null) {
-            c0445n7.f1130a = this.f1058a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
+            c0445n7.f1135a = this.f1063a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
         }
         Double d = c0319i7.c;
         if (d != null) {
@@ -62,7 +62,7 @@ public final class C0344j7 implements Converter {
     }
 
     public C0344j7(C0402le c0402le) {
-        this.f1058a = c0402le;
+        this.f1063a = c0402le;
     }
 
     public /* synthetic */ C0344j7(C0402le c0402le, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -76,7 +76,7 @@ public final class C0344j7 implements Converter {
             return new C0319i7(null, null, null, null, null, null, null, null, null, null);
         }
         C0445n7 c0445n72 = new C0445n7();
-        Boolean a2 = this.f1058a.a(c0445n7.f1130a);
+        Boolean a2 = this.f1063a.a(c0445n7.f1135a);
         Double valueOf = Double.valueOf(c0445n7.c);
         if (valueOf.doubleValue() == c0445n72.c) {
             valueOf = null;

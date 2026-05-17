@@ -4,7 +4,7 @@ import dagger.internal.AbstractMapFactory;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public final class MapFactory<K, V> extends AbstractMapFactory<K, V, V> {
     private static final Provider<Map<Object, Object>> EMPTY = InstanceFactory.create(Collections.emptyMap());
 
@@ -29,7 +29,7 @@ public final class MapFactory<K, V> extends AbstractMapFactory<K, V, V> {
         return Collections.unmodifiableMap(newLinkedHashMapWithExpectedSize);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder<K, V> extends AbstractMapFactory.Builder<K, V, V> {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // dagger.internal.AbstractMapFactory.Builder

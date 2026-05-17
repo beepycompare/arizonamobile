@@ -10,27 +10,27 @@ public final class Ub implements PermissionStrategy, LocationControllerObserver 
     public static final List c = CollectionsKt.listOf((Object[]) new String[]{"android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION"});
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f809a;
+    public volatile boolean f814a;
 
     @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy
     public final boolean forbidUsePermission(String str) {
         if (c.contains(str)) {
-            return !this.f809a;
+            return !this.f814a;
         }
         return false;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationControllerObserver
     public final void startLocationTracking() {
-        this.f809a = true;
+        this.f814a = true;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationControllerObserver
     public final void stopLocationTracking() {
-        this.f809a = false;
+        this.f814a = false;
     }
 
     public final String toString() {
-        return "LocationFlagStrategy(enabled=" + this.f809a + ", locationPermissions=" + c + ')';
+        return "LocationFlagStrategy(enabled=" + this.f814a + ", locationPermissions=" + c + ')';
     }
 }

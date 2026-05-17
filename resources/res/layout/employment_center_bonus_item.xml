@@ -9,7 +9,7 @@
         </ru.mrlargha.commonui.utils.ui.CustomCardView>
         <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_horizontal" android:orientation="vertical" android:paddingLeft="@dimen/_6sdp" android:paddingRight="@dimen/_6sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="@dimen/_6sdp">
             <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
-            <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:id="@+id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Механик" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:id="@+id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/employment_preview_job" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
             <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
             <include android:id="@+id/label1" layout="@layout/employment_center_label_item"/>
             <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>

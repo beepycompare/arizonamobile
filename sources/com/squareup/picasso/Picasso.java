@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 import java.util.concurrent.ExecutorService;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Picasso {
     static final String TAG = "Picasso";
     final Cache cache;
@@ -74,19 +74,19 @@ public class Picasso {
     };
     static volatile Picasso singleton = null;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         void onImageLoadFailed(Picasso picasso, Uri uri, Exception exc);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum Priority {
         LOW,
         NORMAL,
         HIGH
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface RequestTransformer {
         public static final RequestTransformer IDENTITY = new RequestTransformer() { // from class: com.squareup.picasso.Picasso.RequestTransformer.1
             @Override // com.squareup.picasso.Picasso.RequestTransformer
@@ -400,7 +400,7 @@ public class Picasso {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static class CleanupThread extends Thread {
         private final Handler handler;
         private final ReferenceQueue<Object> referenceQueue;
@@ -471,7 +471,7 @@ public class Picasso {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
         private Cache cache;
         private final Context context;
@@ -597,7 +597,7 @@ public class Picasso {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum LoadedFrom {
         MEMORY(-16711936),
         DISK(-16776961),

@@ -1,6 +1,6 @@
 package com.google.common.base;
 @ElementTypesAreNonnullByDefault
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class Utf8 {
     public static int encodedLength(CharSequence sequence) {
         int length = sequence.length();

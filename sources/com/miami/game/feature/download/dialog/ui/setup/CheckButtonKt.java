@@ -22,7 +22,7 @@ import androidx.compose.ui.layout.MeasurePolicy;
 import androidx.compose.ui.node.ComposeUiNode;
 import androidx.compose.ui.res.PainterResources_androidKt;
 import androidx.compose.ui.unit.Dp;
-import com.miami.game.feature.download.dialog.R;
+import com.miami.game.ui.classic.dialogs.R;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -40,7 +40,7 @@ public final class CheckButtonKt {
     public static final void CheckButton(final boolean z, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(-2120433779);
-        ComposerKt.sourceInformation(startRestartGroup, "C(CheckButton)N(isActive)16@588L406:CheckButton.kt#18sjrx");
+        ComposerKt.sourceInformation(startRestartGroup, "C(CheckButton)N(isActive)16@583L406:CheckButton.kt#18sjrx");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(z) ? 4 : 2) | i;
         } else {
@@ -79,7 +79,7 @@ public final class CheckButtonKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1277460566, "C20@818L22,19@789L199:CheckButton.kt#18sjrx");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1277460566, "C20@813L22,19@784L199:CheckButton.kt#18sjrx");
             ImageKt.Image(PainterResources_androidKt.painterResource(z ? R.drawable.accept_button_active : R.drawable.accept_button_not_active, startRestartGroup, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(60.0f)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

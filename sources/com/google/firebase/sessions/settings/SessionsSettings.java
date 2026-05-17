@@ -71,19 +71,19 @@ public final class SessionsSettings {
     }
 
     /* renamed from: getSessionRestartTimeout-UwyO8pc  reason: not valid java name */
-    public final long m9068getSessionRestartTimeoutUwyO8pc() {
-        Duration mo9066getSessionRestartTimeoutFghU774 = this.localOverrideSettings.mo9066getSessionRestartTimeoutFghU774();
-        if (mo9066getSessionRestartTimeoutFghU774 != null) {
-            long m10585unboximpl = mo9066getSessionRestartTimeoutFghU774.m10585unboximpl();
-            if (m9067isValidSessionRestartTimeoutLRDsOJo(m10585unboximpl)) {
-                return m10585unboximpl;
+    public final long m9072getSessionRestartTimeoutUwyO8pc() {
+        Duration mo9070getSessionRestartTimeoutFghU774 = this.localOverrideSettings.mo9070getSessionRestartTimeoutFghU774();
+        if (mo9070getSessionRestartTimeoutFghU774 != null) {
+            long m10604unboximpl = mo9070getSessionRestartTimeoutFghU774.m10604unboximpl();
+            if (m9071isValidSessionRestartTimeoutLRDsOJo(m10604unboximpl)) {
+                return m10604unboximpl;
             }
         }
-        Duration mo9066getSessionRestartTimeoutFghU7742 = this.remoteSettings.mo9066getSessionRestartTimeoutFghU774();
-        if (mo9066getSessionRestartTimeoutFghU7742 != null) {
-            long m10585unboximpl2 = mo9066getSessionRestartTimeoutFghU7742.m10585unboximpl();
-            if (m9067isValidSessionRestartTimeoutLRDsOJo(m10585unboximpl2)) {
-                return m10585unboximpl2;
+        Duration mo9070getSessionRestartTimeoutFghU7742 = this.remoteSettings.mo9070getSessionRestartTimeoutFghU774();
+        if (mo9070getSessionRestartTimeoutFghU7742 != null) {
+            long m10604unboximpl2 = mo9070getSessionRestartTimeoutFghU7742.m10604unboximpl();
+            if (m9071isValidSessionRestartTimeoutLRDsOJo(m10604unboximpl2)) {
+                return m10604unboximpl2;
             }
         }
         Duration.Companion companion = Duration.Companion;
@@ -91,8 +91,8 @@ public final class SessionsSettings {
     }
 
     /* renamed from: isValidSessionRestartTimeout-LRDsOJo  reason: not valid java name */
-    private final boolean m9067isValidSessionRestartTimeoutLRDsOJo(long j) {
-        return Duration.m10566isPositiveimpl(j) && Duration.m10561isFiniteimpl(j);
+    private final boolean m9071isValidSessionRestartTimeoutLRDsOJo(long j) {
+        return Duration.m10585isPositiveimpl(j) && Duration.m10580isFiniteimpl(j);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x004a, code lost:

@@ -6,7 +6,7 @@ import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class FlatBufferBuilder {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     ByteBuffer bb;
@@ -24,7 +24,7 @@ public class FlatBufferBuilder {
     int vtable_in_use;
     int[] vtables;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static abstract class ByteBufferFactory {
         public abstract ByteBuffer newByteBuffer(int i);
 
@@ -91,7 +91,7 @@ public class FlatBufferBuilder {
         return this;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class HeapByteBufferFactory extends ByteBufferFactory {
         public static final HeapByteBufferFactory INSTANCE = new HeapByteBufferFactory();
 
@@ -595,7 +595,7 @@ public class FlatBufferBuilder {
         return new ByteBufferBackedInputStream(duplicate);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     static class ByteBufferBackedInputStream extends InputStream {
         ByteBuffer buf;
 

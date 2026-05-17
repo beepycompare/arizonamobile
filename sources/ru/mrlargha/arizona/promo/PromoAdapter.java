@@ -1,5 +1,6 @@
 package ru.mrlargha.arizona.promo;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
@@ -24,7 +25,7 @@ import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.arizona.promo.R;
 import ru.mrlargha.feature.arizona.promo.databinding.PromoItemBinding;
 /* compiled from: PromoAdapter.kt */
-@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\u0010\t\n\u0000\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001b\u0012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\r\u001a\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\u00062\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u0011H\u0016J\b\u0010\u0015\u001a\u00020\u0011H\u0016J\u0014\u0010\u0016\u001a\u00020\u00062\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00050\u0018J\u0006\u0010\u0019\u001a\u00020\u0006J\f\u0010\u001a\u001a\u00020\u001b*\u00020\u001cH\u0002R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00050\n¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006\u001d"}, d2 = {"Lru/mrlargha/arizona/promo/PromoAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/arizona/promo/PromoItemViewHolder;", "onSelect", "Lkotlin/Function1;", "Lru/mrlargha/arizona/promo/PromoItem;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "itemsList", "", "getItemsList", "()Ljava/util/List;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "addAllItems", "items", "", "clearList", "toText", "", "", NotificationCompat.CATEGORY_PROMO}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001b\u0012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\r\u001a\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\u00062\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u0011H\u0016J\b\u0010\u0015\u001a\u00020\u0011H\u0016J\u0014\u0010\u0016\u001a\u00020\u00062\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00050\u0018J\u0006\u0010\u0019\u001a\u00020\u0006J\u0014\u0010\u001a\u001a\u00020\u001b*\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001eH\u0002R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00050\n¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006\u001f"}, d2 = {"Lru/mrlargha/arizona/promo/PromoAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/arizona/promo/PromoItemViewHolder;", "onSelect", "Lkotlin/Function1;", "Lru/mrlargha/arizona/promo/PromoItem;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "itemsList", "", "getItemsList", "()Ljava/util/List;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "addAllItems", "items", "", "clearList", "toText", "", "", "context", "Landroid/content/Context;", NotificationCompat.CATEGORY_PROMO}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class PromoAdapter extends RecyclerView.Adapter<PromoItemViewHolder> {
     private final List<PromoItem> itemsList;
@@ -53,9 +54,9 @@ public final class PromoAdapter extends RecyclerView.Adapter<PromoItemViewHolder
         return new PromoItemViewHolder(inflate);
     }
 
-    /* JADX WARN: Type inference failed for: r2v5, types: [ru.mrlargha.arizona.promo.PromoAdapter$onBindViewHolder$1$4] */
+    /* JADX WARN: Type inference failed for: r0v5, types: [ru.mrlargha.arizona.promo.PromoAdapter$onBindViewHolder$1$4] */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-    public void onBindViewHolder(PromoItemViewHolder holder, int i) {
+    public void onBindViewHolder(final PromoItemViewHolder holder, int i) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         final PromoItem promoItem = (PromoItem) CollectionsKt.getOrNull(this.itemsList, i);
         if (promoItem == null) {
@@ -118,31 +119,37 @@ public final class PromoAdapter extends RecyclerView.Adapter<PromoItemViewHolder
         }
         binding.timerText.setText(promoItem.getBadge());
         binding.bottomText.setText(promoItem.getDescription());
-        binding.timerText2.setText(toText(promoItem.getTimer()));
-        binding.timerContainer.setVisibility(0);
+        TextView textView = binding.timerText2;
         long timer = promoItem.getTimer();
-        if (timer == -1) {
+        Context context = holder.itemView.getContext();
+        Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
+        textView.setText(toText(timer, context));
+        binding.timerContainer.setVisibility(0);
+        long timer2 = promoItem.getTimer();
+        if (timer2 == -1) {
             binding.timerContainer.setVisibility(8);
-        } else if (timer == 0) {
+        } else if (timer2 == 0) {
             binding.timerIc.setColorFilter(Color.parseColor("#82DB2A"));
             binding.timerText2.setTextColor(Color.parseColor("#82DB2A"));
         } else {
             binding.timerIc.setColorFilter(Color.parseColor("#FFBF00"));
             binding.timerText2.setTextColor(Color.parseColor("#FFBF00"));
         }
-        CountDownTimer timer2 = holder.getTimer();
-        if (timer2 != null) {
-            timer2.cancel();
+        CountDownTimer timer3 = holder.getTimer();
+        if (timer3 != null) {
+            timer3.cancel();
         }
         holder.setTimer(null);
-        final long timer3 = promoItem.getTimer() * 1000;
-        holder.setTimer(new CountDownTimer(timer3) { // from class: ru.mrlargha.arizona.promo.PromoAdapter$onBindViewHolder$1$4
+        final long timer4 = promoItem.getTimer() * 1000;
+        holder.setTimer(new CountDownTimer(timer4) { // from class: ru.mrlargha.arizona.promo.PromoAdapter$onBindViewHolder$1$4
             @Override // android.os.CountDownTimer
             public void onTick(long j) {
                 String text;
-                TextView textView = PromoItemBinding.this.timerText2;
-                text = this.toText(j / 1000);
-                textView.setText(text);
+                TextView textView2 = PromoItemBinding.this.timerText2;
+                Context context2 = holder.itemView.getContext();
+                Intrinsics.checkNotNullExpressionValue(context2, "getContext(...)");
+                text = this.toText(j / 1000, context2);
+                textView2.setText(text);
             }
 
             @Override // android.os.CountDownTimer
@@ -183,7 +190,7 @@ public final class PromoAdapter extends RecyclerView.Adapter<PromoItemViewHolder
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final String toText(long j) {
+    public final String toText(long j, Context context) {
         if (j <= 0) {
             return "0";
         }
@@ -194,7 +201,7 @@ public final class PromoAdapter extends RecyclerView.Adapter<PromoItemViewHolder
         StringBuilder sb = new StringBuilder();
         int i = (j2 > 0L ? 1 : (j2 == 0L ? 0 : -1));
         if (i > 0) {
-            sb.append(j2 + " дн.");
+            sb.append(context.getString(R.string.promo_days_short, Long.valueOf(j2)));
         } else {
             int i2 = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
             if (i2 > 0 || i > 0) {

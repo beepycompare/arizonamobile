@@ -8,26 +8,45 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import com.arizona.common.utils.ViewIdGenerator;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
+import kotlin.Unit;
 import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
+import kotlin.io.CloseableKt;
+import kotlin.io.FilesKt;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
+import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.utils.TokenManagerKt;
 /* compiled from: SAMPUIElement.kt */
-@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0003\b&\u0018\u0000 >2\u00020\u0001:\u0002>?B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0016J\b\u0010!\u001a\u00020 H\u0016J\u001e\u0010\"\u001a\u00020\u001e2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u00052\u0006\u0010&\u001a\u00020\u0005J\"\u0010'\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020\r2\b\b\u0002\u0010)\u001a\u00020\u00052\b\b\u0002\u0010*\u001a\u00020\u0005J\"\u0010+\u001a\u00020\u001e2\u0006\u0010,\u001a\u00020\u00052\b\b\u0002\u0010-\u001a\u00020\u00052\b\b\u0002\u0010.\u001a\u00020\u000fJ\u0018\u0010/\u001a\u00020\u001e2\u0006\u00100\u001a\u00020\u000f2\u0006\u0010-\u001a\u00020\u0005H\u0016J\b\u00101\u001a\u00020\u001eH\u0016J\u0010\u00102\u001a\u00020\u001e2\u0006\u00103\u001a\u00020\u000fH\u0016J\u0006\u00104\u001a\u00020\u001eJ\u0006\u00105\u001a\u00020\u0005J&\u00106\u001a\u00020\u001e*\u00020\r2\u0006\u0010,\u001a\u00020\u00052\b\b\u0002\u0010-\u001a\u00020\u00052\b\b\u0002\u0010.\u001a\u00020\u000fJ\n\u00107\u001a\u00020\u001e*\u00020\rJ\n\u00108\u001a\u00020\u001e*\u00020\rJ*\u00106\u001a\u00020\u001e*\u00020\r2\u0006\u0010,\u001a\u00020\u00052\b\b\u0002\u0010-\u001a\u00020\u00052\f\u0010.\u001a\b\u0012\u0004\u0012\u00020\u000f09J\b\u0010:\u001a\u00020\u001eH\u0016J\u0018\u0010;\u001a\u00020\u001e2\u0006\u00100\u001a\u00020\u00052\u0006\u0010<\u001a\u00020\u0005H\u0016J\u0018\u0010;\u001a\u00020\u001e2\u0006\u00100\u001a\u00020\u00052\u0006\u0010<\u001a\u00020=H\u0016R\u0014\u0010\u0002\u001a\u00020\u0003X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u001c\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0014\u0010\u0013\u001a\u00020\u0014X\u0094\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0014\u0010\u0017\u001a\u00020\u0018X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006@"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement;", "", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "getTargetActivity", "()Landroid/app/Activity;", "getBackendID", "()I", "innerView", "Landroid/view/View;", "CLASS_TAG", "", "kotlin.jvm.PlatformType", "getCLASS_TAG", "()Ljava/lang/String;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "getNotifier", "()Lru/mrlargha/commonui/core/IBackendNotifier;", "sharedPreferences", "Landroid/content/SharedPreferences;", "getSharedPreferences", "()Landroid/content/SharedPreferences;", "baseLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "setVisibility", "", "visible", "", "isOnScreen", "setPosition", "type", "Lru/mrlargha/commonui/core/SAMPUIElement$PositionType;", "x", "y", "addViewToConstraintLayout", "view", "width", "height", "notifyClick", "id", "subId", "message", "onBackendMessage", "data", "onLayoutClick", "consumeUserInput", "text", "removeFromLayout", "getViewId", "bindBackendClick", "gone", "show", "Lkotlin/Function0;", "removeAllChildren", "onUpdateData", "value", "", "Companion", "PositionType", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\t\n\u0002\b\u0003\b&\u0018\u0000 H2\u00020\u0001:\u0002HIB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0016J\b\u0010!\u001a\u00020 H\u0016J\u0006\u0010\"\u001a\u00020\u001eJ\u001e\u0010#\u001a\u00020\u001e2\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u00052\u0006\u0010'\u001a\u00020\u0005J\"\u0010(\u001a\u00020\u001e2\u0006\u0010)\u001a\u00020\r2\b\b\u0002\u0010*\u001a\u00020\u00052\b\b\u0002\u0010+\u001a\u00020\u0005J\"\u0010,\u001a\u00020\u001e2\u0006\u0010-\u001a\u00020\u00052\b\b\u0002\u0010.\u001a\u00020\u00052\b\b\u0002\u0010/\u001a\u00020\u000fJ\u0016\u00100\u001a\u00020\u001e2\u0006\u00101\u001a\u00020\u000f2\u0006\u0010.\u001a\u00020\u0005J\u0018\u00102\u001a\u00020\u001e2\u0006\u00101\u001a\u00020\u000f2\u0006\u0010.\u001a\u00020\u0005H\u0016JB\u00103\u001a\u00020\u001e2\u0006\u0010.\u001a\u00020\u00052\n\b\u0002\u00101\u001a\u0004\u0018\u00010\u000f2\b\b\u0002\u00104\u001a\u00020\u000f2\b\b\u0002\u00105\u001a\u00020 2\f\u00106\u001a\b\u0012\u0004\u0012\u00020\u001e07H\u0084\bø\u0001\u0000J&\u00108\u001a\u00020\u001e2\u0006\u0010.\u001a\u00020\u00052\b\u00101\u001a\u0004\u0018\u00010\u000f2\n\u00109\u001a\u00060:j\u0002`;H\u0001J\b\u0010<\u001a\u00020\u001eH\u0016J\u0010\u0010=\u001a\u00020\u001e2\u0006\u0010>\u001a\u00020\u000fH\u0016J\u0006\u0010?\u001a\u00020\u001eJ\u0006\u0010@\u001a\u00020\u0005J&\u0010A\u001a\u00020\u001e*\u00020\r2\u0006\u0010-\u001a\u00020\u00052\b\b\u0002\u0010.\u001a\u00020\u00052\b\b\u0002\u0010/\u001a\u00020\u000fJ\n\u0010B\u001a\u00020\u001e*\u00020\rJ\n\u0010C\u001a\u00020\u001e*\u00020\rJ*\u0010A\u001a\u00020\u001e*\u00020\r2\u0006\u0010-\u001a\u00020\u00052\b\b\u0002\u0010.\u001a\u00020\u00052\f\u0010/\u001a\b\u0012\u0004\u0012\u00020\u000f07J\b\u0010D\u001a\u00020\u001eH\u0016J\u0018\u0010E\u001a\u00020\u001e2\u0006\u00101\u001a\u00020\u00052\u0006\u0010F\u001a\u00020\u0005H\u0016J\u0018\u0010E\u001a\u00020\u001e2\u0006\u00101\u001a\u00020\u00052\u0006\u0010F\u001a\u00020GH\u0016R\u0014\u0010\u0002\u001a\u00020\u0003X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u001c\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0014\u0010\u0013\u001a\u00020\u0014X\u0094\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0014\u0010\u0017\u001a\u00020\u0018X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006J"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement;", "", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "getTargetActivity", "()Landroid/app/Activity;", "getBackendID", "()I", "innerView", "Landroid/view/View;", "CLASS_TAG", "", "kotlin.jvm.PlatformType", "getCLASS_TAG", "()Ljava/lang/String;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "getNotifier", "()Lru/mrlargha/commonui/core/IBackendNotifier;", "sharedPreferences", "Landroid/content/SharedPreferences;", "getSharedPreferences", "()Landroid/content/SharedPreferences;", "baseLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "setVisibility", "", "visible", "", "isOnScreen", "bringToFront", "setPosition", "type", "Lru/mrlargha/commonui/core/SAMPUIElement$PositionType;", "x", "y", "addViewToConstraintLayout", "view", "width", "height", "notifyClick", "id", "subId", "message", "onBackendMessage", "data", "onBackendMessageHandled", "handleBackendMessage", "errorMessage", "showErrorToast", "block", "Lkotlin/Function0;", "appendBackendMessageErrorToCrashFile", "exception", "Ljava/lang/Exception;", "Lkotlin/Exception;", "onLayoutClick", "consumeUserInput", "text", "removeFromLayout", "getViewId", "bindBackendClick", "gone", "show", "removeAllChildren", "onUpdateData", "value", "", "Companion", "PositionType", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public abstract class SAMPUIElement {
-    public static final Companion Companion = new Companion(null);
+    private static final String CRASH_LOG_DIR_NAME = "logcat";
+    private static final String CRASH_LOG_FILE_NAME = "crashes.log";
     public static final String SP_NAME = "UI_ELEMENTS_SP";
     private static final String TAG = "SAMPUIElementBase";
+    private static final String UI_BACKEND_ERROR_DIVIDER = "==================== UI BACKEND ERROR ====================";
     private final String CLASS_TAG;
     private final int backendID;
     private final ConstraintLayout baseLayout;
@@ -35,10 +54,12 @@ public abstract class SAMPUIElement {
     private final IBackendNotifier notifier;
     private final SharedPreferences sharedPreferences;
     private final Activity targetActivity;
+    public static final Companion Companion = new Companion(null);
+    private static final Object crashLogWriteLock = new Object();
 
     /* compiled from: SAMPUIElement.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -88,7 +109,7 @@ public abstract class SAMPUIElement {
         Intrinsics.checkNotNullParameter(text, "text");
     }
 
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
     }
 
@@ -105,7 +126,7 @@ public abstract class SAMPUIElement {
     }
 
     /* compiled from: SAMPUIElement.kt */
-    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\nR\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement$Companion;", "", "<init>", "()V", "SP_NAME", "", "TAG", "hideKeyboard", "", "activity", "Landroid/app/Activity;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eR\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement$Companion;", "", "<init>", "()V", "SP_NAME", "", "TAG", "CRASH_LOG_DIR_NAME", "CRASH_LOG_FILE_NAME", "UI_BACKEND_ERROR_DIVIDER", "crashLogWriteLock", "hideKeyboard", "", "activity", "Landroid/app/Activity;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -174,7 +195,7 @@ public abstract class SAMPUIElement {
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: SAMPUIElement.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\u000f\b\u0086\u0081\u0002\u0018\u0000 \u00112\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001\u0011B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010¨\u0006\u0012"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement$PositionType;", "", "backendCode", "", "<init>", "(Ljava/lang/String;II)V", "getBackendCode", "()I", "LEFT_TOP", "RIGHT_TOP", "CENTER_TOP", "LEFT_CENTER", "CENTER", "RIGHT_CENTER", "LEFT_BOTTOM", "CENTER_BOTTOM", "RIGHT_BOTTOM", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class PositionType {
         private static final /* synthetic */ EnumEntries $ENTRIES;
         private static final /* synthetic */ PositionType[] $VALUES;
@@ -228,7 +249,7 @@ public abstract class SAMPUIElement {
 
         /* compiled from: SAMPUIElement.kt */
         @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007¨\u0006\b"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement$PositionType$Companion;", "", "<init>", "()V", "valueOf", "Lru/mrlargha/commonui/core/SAMPUIElement$PositionType;", "value", "", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class Companion {
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
                 this();
@@ -253,11 +274,13 @@ public abstract class SAMPUIElement {
     public void setVisibility(boolean z) {
         this.baseLayout.setVisibility(z ? 0 : 8);
         View view = this.innerView;
-        if (view == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("innerView");
-            view = null;
+        if (view != null) {
+            if (view == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("innerView");
+                view = null;
+            }
+            view.setVisibility(z ? 0 : 8);
         }
-        view.setVisibility(z ? 0 : 8);
         if (this.backendID != UIElementID.RODINA_METAL_DETECTOR.getId()) {
             Activity activity = this.targetActivity;
             Intrinsics.checkNotNull(activity, "null cannot be cast to non-null type ru.mrlargha.commonui.core.IBackendNotifier");
@@ -267,6 +290,20 @@ public abstract class SAMPUIElement {
 
     public boolean isOnScreen() {
         return this.baseLayout.getVisibility() == 0;
+    }
+
+    public final void bringToFront() {
+        this.baseLayout.bringToFront();
+        View view = this.innerView;
+        if (view != null) {
+            if (view == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("innerView");
+                view = null;
+            }
+            view.bringToFront();
+        }
+        this.baseLayout.invalidate();
+        this.baseLayout.requestLayout();
     }
 
     public final void setPosition(PositionType type, int i, int i2) {
@@ -565,6 +602,168 @@ public abstract class SAMPUIElement {
         byte[] bytes = message.getBytes(Charsets.UTF_8);
         Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
         notifier.clickedWrapper(i3, i, i2, bytes);
+    }
+
+    public final void onBackendMessage(String data, int i) {
+        Intrinsics.checkNotNullParameter(data, "data");
+        try {
+            onBackendMessageHandled(data, i);
+        } catch (Exception e) {
+            String take = StringsKt.take(data, 200);
+            if (take == null) {
+                take = "";
+            }
+            Log.e(this.CLASS_TAG, "Failed to handle backend message. backendId=" + getBackendID() + ", subId=" + i + ", data=" + take, e);
+            appendBackendMessageErrorToCrashFile(i, data, e);
+            try {
+                FirebaseCrashlytics.getInstance().setCustomKey("server_id", TokenManagerKt.getServerId());
+                FirebaseCrashlytics.getInstance().setCustomKey("ui_backend_id", getBackendID());
+                FirebaseCrashlytics.getInstance().setCustomKey("ui_backend_sub_id", i);
+                FirebaseCrashlytics.getInstance().setCustomKey("ui_backend_data", StringsKt.take(data, 1000));
+                FirebaseCrashlytics.getInstance().recordException(e);
+            } catch (IllegalStateException e2) {
+                Log.w(this.CLASS_TAG, "Crashlytics is not available for backend message reporting", e2);
+            }
+            Toast.makeText(this.targetActivity.getApplicationContext(), "Ошибка", 1).show();
+        }
+    }
+
+    public static /* synthetic */ void handleBackendMessage$default(SAMPUIElement sAMPUIElement, int i, String str, String errorMessage, boolean z, Function0 block, int i2, Object obj) {
+        if (obj == null) {
+            if ((i2 & 2) != 0) {
+                str = null;
+            }
+            if ((i2 & 4) != 0) {
+                errorMessage = "Ошибка";
+            }
+            if ((i2 & 8) != 0) {
+                z = true;
+            }
+            Intrinsics.checkNotNullParameter(errorMessage, "errorMessage");
+            Intrinsics.checkNotNullParameter(block, "block");
+            try {
+                block.invoke();
+                return;
+            } catch (Exception e) {
+                String take = str != null ? StringsKt.take(str, 200) : null;
+                if (take == null) {
+                    take = "";
+                }
+                Log.e(sAMPUIElement.CLASS_TAG, "Failed to handle backend message. backendId=" + sAMPUIElement.getBackendID() + ", subId=" + i + ", data=" + take, e);
+                sAMPUIElement.appendBackendMessageErrorToCrashFile(i, str, e);
+                try {
+                    FirebaseCrashlytics.getInstance().setCustomKey("server_id", TokenManagerKt.getServerId());
+                    FirebaseCrashlytics.getInstance().setCustomKey("ui_backend_id", sAMPUIElement.getBackendID());
+                    FirebaseCrashlytics.getInstance().setCustomKey("ui_backend_sub_id", i);
+                    FirebaseCrashlytics firebaseCrashlytics = FirebaseCrashlytics.getInstance();
+                    if (str == null) {
+                        str = "";
+                    }
+                    firebaseCrashlytics.setCustomKey("ui_backend_data", StringsKt.take(str, 1000));
+                    FirebaseCrashlytics.getInstance().recordException(e);
+                } catch (IllegalStateException e2) {
+                    Log.w(sAMPUIElement.CLASS_TAG, "Crashlytics is not available for backend message reporting", e2);
+                }
+                if (z) {
+                    Toast.makeText(sAMPUIElement.targetActivity.getApplicationContext(), errorMessage, 1).show();
+                    return;
+                }
+                return;
+            }
+        }
+        throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: handleBackendMessage");
+    }
+
+    protected final void handleBackendMessage(int i, String str, String errorMessage, boolean z, Function0<Unit> block) {
+        Intrinsics.checkNotNullParameter(errorMessage, "errorMessage");
+        Intrinsics.checkNotNullParameter(block, "block");
+        try {
+            block.invoke();
+        } catch (Exception e) {
+            String take = str != null ? StringsKt.take(str, 200) : null;
+            if (take == null) {
+                take = "";
+            }
+            Log.e(this.CLASS_TAG, "Failed to handle backend message. backendId=" + getBackendID() + ", subId=" + i + ", data=" + take, e);
+            appendBackendMessageErrorToCrashFile(i, str, e);
+            try {
+                FirebaseCrashlytics.getInstance().setCustomKey("server_id", TokenManagerKt.getServerId());
+                FirebaseCrashlytics.getInstance().setCustomKey("ui_backend_id", getBackendID());
+                FirebaseCrashlytics.getInstance().setCustomKey("ui_backend_sub_id", i);
+                FirebaseCrashlytics firebaseCrashlytics = FirebaseCrashlytics.getInstance();
+                if (str == null) {
+                    str = "";
+                }
+                firebaseCrashlytics.setCustomKey("ui_backend_data", StringsKt.take(str, 1000));
+                FirebaseCrashlytics.getInstance().recordException(e);
+            } catch (IllegalStateException e2) {
+                Log.w(this.CLASS_TAG, "Crashlytics is not available for backend message reporting", e2);
+            }
+            if (z) {
+                Toast.makeText(this.targetActivity.getApplicationContext(), errorMessage, 1).show();
+            }
+        }
+    }
+
+    public final void appendBackendMessageErrorToCrashFile(int i, String str, Exception exception) {
+        File resolve;
+        Intrinsics.checkNotNullParameter(exception, "exception");
+        File externalFilesDir = this.targetActivity.getApplicationContext().getExternalFilesDir(null);
+        if (externalFilesDir == null || (resolve = FilesKt.resolve(externalFilesDir, CRASH_LOG_DIR_NAME)) == null) {
+            return;
+        }
+        if (!resolve.exists() && !resolve.mkdirs()) {
+            Log.w(this.CLASS_TAG, "Unable to create crash log directory: " + resolve.getAbsolutePath());
+            return;
+        }
+        File resolve2 = FilesKt.resolve(resolve, CRASH_LOG_FILE_NAME);
+        StringWriter stringWriter = new StringWriter();
+        BufferedWriter printWriter = new PrintWriter(stringWriter);
+        try {
+            exception.printStackTrace(printWriter);
+            Unit unit = Unit.INSTANCE;
+            CloseableKt.closeFinally(printWriter, null);
+            String format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US).format(new Date());
+            StringBuilder sb = new StringBuilder("\n==================== UI BACKEND ERROR ====================\n");
+            sb.append("TIME: " + format).append('\n');
+            sb.append("UI CLASS: " + this.CLASS_TAG).append('\n');
+            sb.append("BACKEND ID: " + this.backendID).append('\n');
+            sb.append("SUB ID: " + i).append('\n');
+            sb.append("TYPE: " + exception.getClass().getName()).append('\n');
+            String message = exception.getMessage();
+            if (message == null) {
+                message = "no message";
+            }
+            sb.append("MESSAGE: " + message).append('\n');
+            if (str == null) {
+                str = "";
+            }
+            String take = StringsKt.take(str, 4000);
+            if (take.length() == 0) {
+                take = "no data";
+            }
+            sb.append("DATA: " + ((Object) take)).append("\n\nSTACKTRACE:\n");
+            String stringWriter2 = stringWriter.toString();
+            Intrinsics.checkNotNullExpressionValue(stringWriter2, "toString(...)");
+            sb.append(StringsKt.trimEnd((CharSequence) stringWriter2).toString()).append("\n==================== UI BACKEND ERROR ====================\n");
+            String sb2 = sb.toString();
+            synchronized (crashLogWriteLock) {
+                try {
+                    OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(resolve2, true), Charsets.UTF_8);
+                    printWriter = outputStreamWriter instanceof BufferedWriter ? (BufferedWriter) outputStreamWriter : new BufferedWriter(outputStreamWriter, 8192);
+                    try {
+                        printWriter.write(sb2);
+                        Unit unit2 = Unit.INSTANCE;
+                        CloseableKt.closeFinally(printWriter, null);
+                        Unit unit3 = Unit.INSTANCE;
+                    } finally {
+                    }
+                } catch (IOException e) {
+                    Integer.valueOf(Log.e(this.CLASS_TAG, "Unable to append backend error to crash file", e));
+                }
+            }
+        } finally {
+        }
     }
 
     public final void removeFromLayout() {

@@ -54,7 +54,7 @@ public final class DownloadScreenComponent$observeExternal$1 extends SuspendLamb
             do {
                 value = mutableStateFlow.getValue();
                 Timber.Forest.d(downloadExternalUiState.toString(), new Object[0]);
-            } while (!mutableStateFlow.compareAndSet(value, DownloadScreenUiState.copy$default((DownloadScreenUiState) value, downloadExternalUiState.getTextDownload(), downloadExternalUiState.getTimeRemainingString(), downloadExternalUiState.getDownloadingStringState(), false, false, downloadExternalUiState.getPercentageProgress(), null, false, downloadExternalUiState.isDialogVisible(), downloadExternalUiState.isLauncherUpdate(), 0, 1240, null)));
+            } while (!mutableStateFlow.compareAndSet(value, DownloadScreenUiState.copy$default((DownloadScreenUiState) value, downloadExternalUiState.getTextDownload(), downloadExternalUiState.getTimeRemainingString(), downloadExternalUiState.getDownloadingStringState(), false, false, downloadExternalUiState.getPercentageProgress(), null, false, downloadExternalUiState.isDialogVisible(), downloadExternalUiState.isLauncherUpdate(), false, 1240, null)));
             return Unit.INSTANCE;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

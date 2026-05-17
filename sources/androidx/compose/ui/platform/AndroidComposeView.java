@@ -1564,7 +1564,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                                     arrayList = new ArrayList();
                                 }
                                 arrayList.add(node2);
-                            } else if (((node2.getKindSet$ui() & m6535constructorimpl) != 0) && (node2 instanceof DelegatingNode)) {
+                            } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
                                     if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
@@ -1623,7 +1623,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                                         linkedHashSet2 = new LinkedHashSet();
                                     }
                                     linkedHashSet2.add(node4);
-                                } else if (((node4.getKindSet$ui() & m6535constructorimpl2) != 0) && (node4 instanceof DelegatingNode)) {
+                                } else if ((node4.getKindSet$ui() & m6535constructorimpl2) != 0 && (node4 instanceof DelegatingNode)) {
                                     int i2 = 0;
                                     for (Modifier.Node delegate$ui2 = ((DelegatingNode) node4).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
                                         if ((delegate$ui2.getKindSet$ui() & m6535constructorimpl2) != 0) {
@@ -2107,7 +2107,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             }
             long m6644convertMeasureSpecI7RO_PI = m6644convertMeasureSpecI7RO_PI(i);
             long m6644convertMeasureSpecI7RO_PI2 = m6644convertMeasureSpecI7RO_PI(i2);
-            long m7516fitPrioritizingHeightZbe2FdA = Constraints.Companion.m7516fitPrioritizingHeightZbe2FdA((int) ULong.m9362constructorimpl(m6644convertMeasureSpecI7RO_PI >>> 32), (int) ULong.m9362constructorimpl(m6644convertMeasureSpecI7RO_PI & 4294967295L), (int) ULong.m9362constructorimpl(m6644convertMeasureSpecI7RO_PI2 >>> 32), (int) ULong.m9362constructorimpl(4294967295L & m6644convertMeasureSpecI7RO_PI2));
+            long m7516fitPrioritizingHeightZbe2FdA = Constraints.Companion.m7516fitPrioritizingHeightZbe2FdA((int) ULong.m9381constructorimpl(m6644convertMeasureSpecI7RO_PI >>> 32), (int) ULong.m9381constructorimpl(m6644convertMeasureSpecI7RO_PI & 4294967295L), (int) ULong.m9381constructorimpl(m6644convertMeasureSpecI7RO_PI2 >>> 32), (int) ULong.m9381constructorimpl(4294967295L & m6644convertMeasureSpecI7RO_PI2));
             Constraints constraints = this.onMeasureConstraints;
             boolean z = false;
             if (constraints == null) {
@@ -2135,17 +2135,17 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
     /* renamed from: component1-VKZWuLQ  reason: not valid java name */
     private final int m6642component1VKZWuLQ(long j) {
-        return (int) ULong.m9362constructorimpl(j >>> 32);
+        return (int) ULong.m9381constructorimpl(j >>> 32);
     }
 
     /* renamed from: component2-VKZWuLQ  reason: not valid java name */
     private final int m6643component2VKZWuLQ(long j) {
-        return (int) ULong.m9362constructorimpl(j & 4294967295L);
+        return (int) ULong.m9381constructorimpl(j & 4294967295L);
     }
 
     /* renamed from: pack-ZIaKswc  reason: not valid java name */
     private final long m6651packZIaKswc(int i, int i2) {
-        return ULong.m9362constructorimpl(ULong.m9362constructorimpl(ULong.m9362constructorimpl(i) << 32) | ULong.m9362constructorimpl(i2));
+        return ULong.m9381constructorimpl(ULong.m9381constructorimpl(ULong.m9381constructorimpl(i) << 32) | ULong.m9381constructorimpl(i2));
     }
 
     /* renamed from: convertMeasureSpec-I7RO_PI  reason: not valid java name */

@@ -46,14 +46,14 @@ public final class StarterPackAdapter extends ListAdapter<StarterPackRewardsMode
             StarterpackItemBinding starterpackItemBinding = this.binding;
             starterpackItemBinding.rarity.setBackgroundColor(Color.parseColor(model.getColor()));
             starterpackItemBinding.tvTitle.setText(model.getTitle());
-            String str = "projects/arizona-rp/systems/starter_packs/items/" + model.getIcon() + ".webp";
-            String str2 = "projects/rodina-rp/systems/starter-packs/images/" + model.getIcon() + ".webp";
+            String str = "systems/starter_packs/items/" + model.getIcon() + ".webp";
+            String str2 = "systems/starter-packs/images/" + model.getIcon() + ".webp";
             Picasso picasso = Picasso.get();
-            String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             if (!UtilsKt.isArizonaType()) {
                 str = str2;
             }
-            picasso.load(resourceUrl$default + str).into(starterpackItemBinding.imagePrise);
+            picasso.load(projectResourceUrl$default + str).into(starterpackItemBinding.imagePrise);
             starterpackItemBinding.bg.setForeground(new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{Color.parseColor("#80" + StringsKt.removePrefix(model.getColor(), (CharSequence) "#")), 0}));
         }
     }

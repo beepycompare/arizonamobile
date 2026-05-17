@@ -59,7 +59,7 @@ public final class PlayContentKt {
         Intrinsics.checkNotNullParameter(onClickServer, "onClickServer");
         Intrinsics.checkNotNullParameter(onLongClickGame, "onLongClickGame");
         Composer startRestartGroup = composer.startRestartGroup(1510136117);
-        ComposerKt.sourceInformation(startRestartGroup, "C(PlayContent)N(uiState,onClickGame,onClickServer,onLongClickGame)41@1702L61,42@1808L396,42@1768L436,54@2254L1248:PlayContent.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(PlayContent)N(uiState,onClickGame,onClickServer,onLongClickGame)41@1705L61,42@1811L396,42@1771L436,54@2257L1248:PlayContent.kt#dswm0d");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(uiState) ? 4 : 2) | i;
         } else {
@@ -125,7 +125,7 @@ public final class PlayContentKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -677206807, "C61@2425L22,62@2456L36,63@2501L494:PlayContent.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -677206807, "C61@2428L22,62@2459L36,63@2504L494:PlayContent.kt#dswm0d");
             int i3 = i2 & 14;
             OnlineContentKt.OnlineContent(uiState, startRestartGroup, i3);
             int i4 = i2 >> 3;
@@ -156,8 +156,8 @@ public final class PlayContentKt {
             Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1066622857, "C64@2558L27,65@2646L339,65@2598L387:PlayContent.kt#dswm0d");
-            AnimatedLoadingKt.m9081AnimatedLoadinguFdPcIQ(isCheckingFiles, 0.0f, null, startRestartGroup, 0, 6);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1066622857, "C64@2561L27,65@2649L339,65@2601L387:PlayContent.kt#dswm0d");
+            AnimatedLoadingKt.m9083AnimatedLoadinguFdPcIQ(isCheckingFiles, 0.0f, null, startRestartGroup, 0, 6);
             ScalingButtonKt.ScalingButtonLong(onClickGame, onLongClickGame, null, ComposableLambdaKt.rememberComposableLambda(775434495, true, new Function3() { // from class: com.miami.game.feature.home.ui.compose.PlayContentKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
@@ -174,14 +174,14 @@ public final class PlayContentKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             if (isCheckingFiles) {
                 startRestartGroup.startReplaceGroup(-676623729);
-                ComposerKt.sourceInformation(startRestartGroup, "80@3103L10,81@3156L13,82@3200L13,79@3034L392");
-                TextKt.m2712TextNvy7gAk((String) mutableState.getValue(), SizeKt.m850height3ABfNKs(OffsetKt.m778offsetVpY3zN4$default(columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getStart()), Dp.m7555constructorimpl(62.0f), 0.0f, 2, null), Dp.m7555constructorimpl(24.0f)), ColorKt.Color(4294046193L), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(13.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(13.0f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getHeadlineSmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129000);
+                ComposerKt.sourceInformation(startRestartGroup, "80@3106L10,81@3159L13,82@3203L13,79@3037L392");
+                TextKt.m2712TextNvy7gAk((String) mutableState.getValue(), SizeKt.m850height3ABfNKs(OffsetKt.m778offsetVpY3zN4$default(columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getStart()), Dp.m7555constructorimpl(62.0f), 0.0f, 2, null), Dp.m7555constructorimpl(24.0f)), ColorKt.Color(4294046193L), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(13.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(13.0f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getHeadlineSmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129000);
                 startRestartGroup = startRestartGroup;
                 startRestartGroup.endReplaceGroup();
             } else {
                 startRestartGroup = startRestartGroup;
                 startRestartGroup.startReplaceGroup(-676229471);
-                ComposerKt.sourceInformation(startRestartGroup, "90@3456L30");
+                ComposerKt.sourceInformation(startRestartGroup, "90@3459L30");
                 SpacerKt.Spacer(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(24.0f)), startRestartGroup, 6);
                 startRestartGroup.endReplaceGroup();
             }
@@ -221,19 +221,19 @@ public final class PlayContentKt {
                 ComposerKt.sourceInformation(composer, "");
                 if (homeUiState.isPrivacyAccepted()) {
                     composer.startReplaceGroup(-1659944538);
-                    ComposerKt.sourceInformation(composer, "68@2771L13");
+                    ComposerKt.sourceInformation(composer, "68@2774L13");
                     ImagesKt.UpdateImage(composer, 0);
                     composer.endReplaceGroup();
                 } else {
                     composer.startReplaceGroup(-1659878105);
-                    ComposerKt.sourceInformation(composer, "70@2838L12");
+                    ComposerKt.sourceInformation(composer, "70@2841L12");
                     ImagesKt.SetupImage(composer, 0);
                     composer.endReplaceGroup();
                 }
                 composer.endReplaceGroup();
             } else {
                 composer.startReplaceGroup(-1659793351);
-                ComposerKt.sourceInformation(composer, "74@2919L34");
+                ComposerKt.sourceInformation(composer, "74@2922L34");
                 ImagesKt.PlayImage(homeUiState.isCheckingFiles(), composer, 0);
                 composer.endReplaceGroup();
             }

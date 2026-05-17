@@ -4,15 +4,15 @@ package io.appmetrica.analytics.impl;
 public final class C0307hl implements so {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0737z0 f1032a;
+    public final C0737z0 f1037a;
 
     public C0307hl(C0737z0 c0737z0) {
-        this.f1032a = c0737z0;
+        this.f1037a = c0737z0;
     }
 
     @Override // io.appmetrica.analytics.impl.so
     public final qo a(Void r3) {
-        this.f1032a.getClass();
+        this.f1037a.getClass();
         if (C0737z0.a()) {
             return new qo(this, true, "");
         }

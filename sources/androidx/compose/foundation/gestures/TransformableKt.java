@@ -456,7 +456,7 @@ public final class TransformableKt {
                     } else {
                         int i18 = i3;
                         float f17 = f2;
-                        ChannelResult.m10710boximpl(channel2.mo8396trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE));
+                        ChannelResult.m10729boximpl(channel2.mo8396trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE));
                         i6 = i14;
                         f4 = f3;
                         j2 = j;

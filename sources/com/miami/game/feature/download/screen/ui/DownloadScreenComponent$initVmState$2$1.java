@@ -78,7 +78,7 @@ final class DownloadScreenComponent$initVmState$2$1 extends SuspendLambda implem
         mutableStateFlow = this.this$0.stateStore;
         do {
             value = mutableStateFlow.getValue();
-        } while (!mutableStateFlow.compareAndSet(value, DownloadScreenUiState.copy$default((DownloadScreenUiState) value, null, null, null, false, false, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, null, booleanValue, false, false, 0, 1919, null)));
+        } while (!mutableStateFlow.compareAndSet(value, DownloadScreenUiState.copy$default((DownloadScreenUiState) value, null, null, null, false, false, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, null, booleanValue, false, false, false, 1919, null)));
         return Unit.INSTANCE;
     }
 }

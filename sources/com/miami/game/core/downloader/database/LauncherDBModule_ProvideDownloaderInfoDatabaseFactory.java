@@ -4,7 +4,7 @@ import android.content.Context;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LauncherDBModule_ProvideDownloaderInfoDatabaseFactory implements Factory<DownloaderInfoDatabase> {
     private final Provider<Context> contextProvider;
     private final LauncherDBModule module;

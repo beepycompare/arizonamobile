@@ -216,9 +216,9 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         binding.dayTitle.setText("ДЕНЬ " + i2);
         boolean z3 = true;
         if (this.isArizona) {
-            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/welcome_calendar/" + rewardInfo.getImage() + ".webp";
+            str = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/welcome_calendar/" + rewardInfo.getImage() + ".webp";
         } else {
-            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/battlepass/items/" + rewardInfo.getImage() + ".webp";
+            str = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/battlepass/items/" + rewardInfo.getImage() + ".webp";
         }
         Picasso.get().load(str).networkPolicy(NetworkPolicy.NO_CACHE, new NetworkPolicy[0]).memoryPolicy(MemoryPolicy.NO_CACHE, new MemoryPolicy[0]).into(binding.rewardIc);
         DailyRewardsScreen.UpdatePlayerInfo updatePlayerInfo6 = this.updateInfo;

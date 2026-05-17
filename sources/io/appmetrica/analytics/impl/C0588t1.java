@@ -33,7 +33,7 @@ import java.util.Map;
 public final class C0588t1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0737z0 f1228a;
+    public final C0737z0 f1233a;
     public final Ho b;
     public final C0481oi c;
     public final D7 d;
@@ -43,7 +43,7 @@ public final class C0588t1 {
     public final Wk h;
 
     public C0588t1(C0737z0 c0737z0, A2 a2, C0307hl c0307hl, Ho ho, C0283gn c0283gn, C0481oi c0481oi, D7 d7, Wk wk) {
-        this.f1228a = c0737z0;
+        this.f1233a = c0737z0;
         this.b = ho;
         this.c = c0481oi;
         this.d = d7;
@@ -71,7 +71,7 @@ public final class C0588t1 {
         } else {
             orCreatePublicLogger.info("Session auto tracking disabled", new Object[0]);
         }
-        c0283gn.f1018a.getClass();
+        c0283gn.f1023a.getClass();
         C0712y0 a3 = C0712y0.a(applicationContext);
         a3.d.a(appMetricaConfig, a3);
         IHandlerExecutor c = c();
@@ -81,12 +81,12 @@ public final class C0588t1 {
                 C0588t1.this.b(context, appMetricaConfig);
             }
         });
-        this.f1228a.getClass();
+        this.f1233a.getClass();
         C0737z0.b();
     }
 
     public final String b() {
-        this.f1228a.getClass();
+        this.f1233a.getClass();
         C0712y0 c0712y0 = C0712y0.e;
         if (c0712y0 == null) {
             return null;
@@ -95,35 +95,35 @@ public final class C0588t1 {
     }
 
     public final C0349jc d() {
-        this.f1228a.getClass();
+        this.f1233a.getClass();
         return C0712y0.e.f().i();
     }
 
     public final void e() {
-        d().f1062a.a(this.h.a());
+        d().f1067a.a(this.h.a());
     }
 
     public final void f() {
-        this.f.f492a.a(null);
+        this.f.f497a.a(null);
         this.g.getClass();
         IHandlerExecutor c = c();
         ((C0746z9) c).b.post(new W0(this));
     }
 
     public final void c(Activity activity) {
-        this.f.f492a.a(null);
+        this.f.f497a.a(null);
         this.g.getClass();
         IHandlerExecutor c = c();
         ((C0746z9) c).b.post(new RunnableC0287h1(this, activity));
     }
 
     public final void b(Context context, AppMetricaConfig appMetricaConfig) {
-        C0737z0 c0737z0 = this.f1228a;
+        C0737z0 c0737z0 = this.f1233a;
         Context applicationContext = context.getApplicationContext();
         c0737z0.getClass();
         C0712y0 a2 = C0712y0.a(applicationContext);
         a2.f().b(this.d.a(appMetricaConfig));
-        Context context2 = a2.f1314a;
+        Context context2 = a2.f1319a;
         ((C0746z9) C0135b4.l().c.a()).execute(new RunnableC0663w1(context2));
     }
 
@@ -140,7 +140,7 @@ public final class C0588t1 {
 
     public final void c(String str, String str2) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.r.a(str);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -149,8 +149,8 @@ public final class C0588t1 {
 
     public final void d(String str, String str2) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
-        if (a2.n.a(str).f1194a) {
+        a2.f497a.a(null);
+        if (a2.n.a(str).f1199a) {
             this.g.getClass();
             IHandlerExecutor c = c();
             ((C0746z9) c).b.post(new RunnableC0184d1(this, str, str2));
@@ -163,7 +163,7 @@ public final class C0588t1 {
 
     public final void b(String str) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.r.a(str);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -179,7 +179,7 @@ public final class C0588t1 {
 
     public final void b(Activity activity) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.c.a(activity);
         this.g.getClass();
         Intent a3 = C0283gn.a(activity);
@@ -188,7 +188,7 @@ public final class C0588t1 {
     }
 
     public final void c(String str) {
-        if (this.e.a((Void) null).f1194a && this.f.m.a(str).f1194a) {
+        if (this.e.a((Void) null).f1199a && this.f.m.a(str).f1199a) {
             this.g.getClass();
             IHandlerExecutor c = c();
             ((C0746z9) c).b.post(new RunnableC0209e1(this, str));
@@ -196,7 +196,7 @@ public final class C0588t1 {
     }
 
     public final void a(Activity activity) {
-        this.f.f492a.a(null);
+        this.f.f497a.a(null);
         this.g.getClass();
         IHandlerExecutor c = c();
         ((C0746z9) c).b.post(new RunnableC0414m1(this, activity));
@@ -229,7 +229,7 @@ public final class C0588t1 {
     }
 
     public final void b(final Object... objArr) {
-        this.f.f492a.a(null);
+        this.f.f497a.a(null);
         this.g.getClass();
         IHandlerExecutor c = c();
         ((C0746z9) c).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.t1$$ExternalSyntheticLambda2
@@ -242,7 +242,7 @@ public final class C0588t1 {
 
     public final void a(String str, Map<String, Object> map) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.r.a(str);
         this.g.getClass();
         List listFromMap = CollectionUtils.getListFromMap(map);
@@ -253,13 +253,13 @@ public final class C0588t1 {
     public final void b(Context context) {
         this.f.f.a(context);
         this.g.e.a(context);
-        this.f1228a.getClass();
+        this.f1233a.getClass();
         C0712y0.a(context);
     }
 
     public final void a(String str, Throwable th) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.s.a(str);
         this.g.getClass();
         if (th == null) {
@@ -272,7 +272,7 @@ public final class C0588t1 {
 
     public final void a(String str, String str2, Throwable th) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.t.a(str);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -281,7 +281,7 @@ public final class C0588t1 {
 
     public final void a(Throwable th) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.u.a(th);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -290,7 +290,7 @@ public final class C0588t1 {
 
     public final void a(String str) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.i.a(str);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -299,7 +299,7 @@ public final class C0588t1 {
 
     public final void a(Intent intent) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.d.a(intent);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -322,7 +322,7 @@ public final class C0588t1 {
 
     public final void a(UserProfile userProfile) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.v.a(userProfile);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -331,7 +331,7 @@ public final class C0588t1 {
 
     public final void a(Revenue revenue) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.w.a(revenue);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -340,7 +340,7 @@ public final class C0588t1 {
 
     public final void a(AdRevenue adRevenue) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.x.a(adRevenue);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -349,7 +349,7 @@ public final class C0588t1 {
 
     public final void a(ECommerceEvent eCommerceEvent) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.y.a(eCommerceEvent);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -358,7 +358,7 @@ public final class C0588t1 {
 
     public final void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.g.a(deferredDeeplinkParametersListener);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -367,7 +367,7 @@ public final class C0588t1 {
 
     public final void a(DeferredDeeplinkListener deferredDeeplinkListener) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.g.a(deferredDeeplinkListener);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -391,9 +391,9 @@ public final class C0588t1 {
         c0283gn.e.a(context.getApplicationContext());
         C0481oi c0481oi = this.c;
         Context applicationContext = context.getApplicationContext();
-        if (((C0278gi) c0481oi.f1157a.get(reporterConfig.apiKey)) == null) {
-            synchronized (c0481oi.f1157a) {
-                if (((C0278gi) c0481oi.f1157a.get(reporterConfig.apiKey)) == null) {
+        if (((C0278gi) c0481oi.f1162a.get(reporterConfig.apiKey)) == null) {
+            synchronized (c0481oi.f1162a) {
+                if (((C0278gi) c0481oi.f1162a.get(reporterConfig.apiKey)) == null) {
                     String str = reporterConfig.apiKey;
                     IHandlerExecutor a3 = C0135b4.l().c.a();
                     c0481oi.b.getClass();
@@ -401,7 +401,7 @@ public final class C0588t1 {
                         ((C0746z9) a3).b.post(new RunnableC0431mi(c0481oi, applicationContext));
                     }
                     C0278gi c0278gi = new C0278gi(applicationContext.getApplicationContext(), str, new C0737z0());
-                    c0481oi.f1157a.put(str, c0278gi);
+                    c0481oi.f1162a.put(str, c0278gi);
                     c0278gi.a(reporterConfig);
                 }
             }
@@ -410,7 +410,7 @@ public final class C0588t1 {
 
     public final void a(WebView webView) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.l.a(webView);
         Ho ho = this.g.b;
         ho.getClass();
@@ -422,7 +422,7 @@ public final class C0588t1 {
                 synchronized (ho) {
                     PublicLogger publicLogger = ho.b;
                     if (publicLogger == null) {
-                        ho.f619a.add(eo);
+                        ho.f624a.add(eo);
                     } else {
                         eo.consume(publicLogger);
                     }
@@ -472,7 +472,7 @@ public final class C0588t1 {
 
     public final void a(AnrListener anrListener) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.p.a(anrListener);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -481,7 +481,7 @@ public final class C0588t1 {
 
     public final void a(ExternalAttribution externalAttribution) {
         A2 a2 = this.f;
-        a2.f492a.a(null);
+        a2.f497a.a(null);
         a2.q.a(externalAttribution);
         this.g.getClass();
         IHandlerExecutor c = c();
@@ -504,6 +504,6 @@ public final class C0588t1 {
     }
 
     public static Ia a(C0588t1 c0588t1) {
-        return c0588t1.d().f1062a;
+        return c0588t1.d().f1067a;
     }
 }

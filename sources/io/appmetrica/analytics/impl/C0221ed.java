@@ -19,7 +19,7 @@ import org.json.JSONObject;
 public final class C0221ed implements Tj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0633ul f977a;
+    public final InterfaceC0633ul f982a;
     public final String b;
     public final SystemTimeProvider c;
     public final List d;
@@ -27,7 +27,7 @@ public final class C0221ed implements Tj {
     public final long f;
 
     public C0221ed(InterfaceC0633ul interfaceC0633ul, String str, SystemTimeProvider systemTimeProvider, List<C0144bd> list) {
-        this.f977a = interfaceC0633ul;
+        this.f982a = interfaceC0633ul;
         this.b = str;
         this.c = systemTimeProvider;
         this.d = list;
@@ -41,7 +41,7 @@ public final class C0221ed implements Tj {
             return null;
         }
         List sortedWith = CollectionsKt.sortedWith(this.d, new C0196dd());
-        String c = ((AbstractC0725yd) this.f977a).c(this.e, (String) null);
+        String c = ((AbstractC0725yd) this.f982a).c(this.e, (String) null);
         if (c != null) {
             try {
                 JSONObject jSONObject = new JSONObject(c);
@@ -61,9 +61,9 @@ public final class C0221ed implements Tj {
             c0600td = null;
         }
         long currentTimeMillis = this.c.currentTimeMillis();
-        if (c0600td == null || currentTimeMillis - c0600td.b > this.f || !Intrinsics.areEqual(sortedWith, c0600td.f1236a)) {
+        if (c0600td == null || currentTimeMillis - c0600td.b > this.f || !Intrinsics.areEqual(sortedWith, c0600td.f1241a)) {
             C0600td c0600td2 = new C0600td(sortedWith, currentTimeMillis);
-            InterfaceC0633ul interfaceC0633ul = this.f977a;
+            InterfaceC0633ul interfaceC0633ul = this.f982a;
             AbstractC0725yd abstractC0725yd = (AbstractC0725yd) interfaceC0633ul;
             InterfaceC0633ul interfaceC0633ul2 = (InterfaceC0633ul) abstractC0725yd.b(abstractC0725yd.f(this.e), c0600td2.a());
             return new Sj(this.b + "_status", c0600td2.a());

@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="ghetto_territories">
+        <item quantity="one">%d território</item>
+        <item quantity="other">%d territórios</item>
+    </plurals>
     <plurals name="mtrl_badge_content_description">
         <item quantity="one">%d nova notificação</item>
         <item quantity="other">%d novas notificações</item>
+    </plurals>
+    <plurals name="situation_promo_hours">
+        <item quantity="one">%d hora</item>
+        <item quantity="other">%d horas</item>
+    </plurals>
+    <plurals name="situation_rank">
+        <item quantity="one">%d grau</item>
+        <item quantity="other">%d graus</item>
     </plurals>
 </resources>

@@ -3,7 +3,7 @@ package dagger.hilt.android.internal;
 import android.app.Application;
 import android.content.Context;
 import android.content.ContextWrapper;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class Contexts {
     public static Application getApplication(Context context) {
         if (context instanceof Application) {

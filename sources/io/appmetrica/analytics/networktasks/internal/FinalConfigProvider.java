@@ -7,14 +7,14 @@ import kotlin.Metadata;
 public final class FinalConfigProvider<T> implements ConfigProvider<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f1406a;
+    private final Object f1411a;
 
     public FinalConfigProvider(T t) {
-        this.f1406a = t;
+        this.f1411a = t;
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.ConfigProvider
     public T getConfig() {
-        return (T) this.f1406a;
+        return (T) this.f1411a;
     }
 }

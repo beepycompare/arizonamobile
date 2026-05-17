@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.elements.metaldetector.LocatorView;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class HudRadarScreenBinding implements ViewBinding {
     public final CustomCardView btnUnlock;
     public final ImageView ivScanner;

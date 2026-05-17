@@ -7,16 +7,16 @@ import java.util.concurrent.TimeUnit;
 public final class Xj {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile long f856a;
+    public volatile long f861a;
     public Ze b;
     public TimeProvider c;
 
     public static Xj c() {
-        return Wj.f841a;
+        return Wj.f846a;
     }
 
     public final synchronized long a() {
-        return (System.currentTimeMillis() / 1000) + this.f856a;
+        return (System.currentTimeMillis() / 1000) + this.f861a;
     }
 
     public final synchronized void b() {
@@ -25,7 +25,7 @@ public final class Xj {
     }
 
     public final synchronized long d() {
-        return this.f856a;
+        return this.f861a;
     }
 
     public final synchronized void e() {
@@ -37,7 +37,7 @@ public final class Xj {
     }
 
     public final synchronized void a(long j, Long l) {
-        this.f856a = (j - this.c.currentTimeMillis()) / 1000;
+        this.f861a = (j - this.c.currentTimeMillis()) / 1000;
         boolean z = true;
         if (this.b.b(true)) {
             if (l != null) {
@@ -51,13 +51,13 @@ public final class Xj {
                 this.b.d(false);
             }
         }
-        this.b.d(this.f856a);
+        this.b.d(this.f861a);
         this.b.b();
     }
 
     public final void a(Ze ze, TimeProvider timeProvider) {
         this.b = ze;
-        this.f856a = ze.a(0);
+        this.f861a = ze.a(0);
         this.c = timeProvider;
     }
 }

@@ -96,7 +96,7 @@ public final class M3 extends P5 {
 
     @Override // io.appmetrica.analytics.impl.P5, io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
     public final void setName(String str) {
-        this.f736a = d(str);
+        this.f741a = d(str);
     }
 
     @Override // io.appmetrica.analytics.impl.P5, io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
@@ -126,7 +126,7 @@ public final class M3 extends P5 {
         this.q = new HashMap();
         a(publicLogger);
         this.b = e(str);
-        this.f736a = d(str2);
+        this.f741a = d(str2);
         setType(i);
         setCustomType(i2);
     }
@@ -172,20 +172,20 @@ public final class M3 extends P5 {
         EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         m3.d = 40976;
         Mi mi = new Mi();
-        mi.b = oi.f726a.currency.getCurrencyCode().getBytes();
-        mi.f = oi.f726a.priceMicros;
-        mi.c = StringUtils.stringToBytesForProtobuf(new Xm(200, "revenue productID", oi.e).a(oi.f726a.productID));
-        mi.f697a = ((Integer) WrapUtils.getOrDefault(oi.f726a.quantity, 1)).intValue();
+        mi.b = oi.f731a.currency.getCurrencyCode().getBytes();
+        mi.f = oi.f731a.priceMicros;
+        mi.c = StringUtils.stringToBytesForProtobuf(new Xm(200, "revenue productID", oi.e).a(oi.f731a.productID));
+        mi.f702a = ((Integer) WrapUtils.getOrDefault(oi.f731a.quantity, 1)).intValue();
         Um um = oi.b;
-        String str = oi.f726a.payload;
+        String str = oi.f731a.payload;
         um.getClass();
         mi.d = StringUtils.stringToBytesForProtobuf(um.a(str));
-        if (lo.a(oi.f726a.receipt)) {
+        if (lo.a(oi.f731a.receipt)) {
             Hi hi = new Hi();
-            String str2 = (String) oi.c.a(oi.f726a.receipt.data);
-            i = !StringUtils.equalsNullSafety(oi.f726a.receipt.data, str2) ? oi.f726a.receipt.data.length() : 0;
-            hi.f615a = StringUtils.stringToBytesForProtobuf(str2);
-            hi.b = StringUtils.stringToBytesForProtobuf((String) oi.d.a(oi.f726a.receipt.signature));
+            String str2 = (String) oi.c.a(oi.f731a.receipt.data);
+            i = !StringUtils.equalsNullSafety(oi.f731a.receipt.data, str2) ? oi.f731a.receipt.data.length() : 0;
+            hi.f620a = StringUtils.stringToBytesForProtobuf(str2);
+            hi.b = StringUtils.stringToBytesForProtobuf((String) oi.d.a(oi.f731a.receipt.signature));
             mi.e = hi;
         } else {
             i = 0;
@@ -200,7 +200,7 @@ public final class M3 extends P5 {
         this.q = new HashMap();
         a(publicLogger);
         a(bArr);
-        this.f736a = d(str);
+        this.f741a = d(str);
         setType(i);
     }
 

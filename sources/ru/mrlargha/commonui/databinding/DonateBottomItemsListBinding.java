@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class DonateBottomItemsListBinding implements ViewBinding {
     private final FrameLayout rootView;
     public final RecyclerView rvBottomItems;

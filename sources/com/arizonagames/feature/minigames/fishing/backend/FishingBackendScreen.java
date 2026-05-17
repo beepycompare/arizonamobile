@@ -1,11 +1,9 @@
 package com.arizonagames.feature.minigames.fishing.backend;
 
 import android.app.Activity;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.arizona.common.utils.EasyAnimation;
 import com.arizona.common.utils.GridItemDecoration;
@@ -24,7 +22,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
 /* compiled from: FishingBackendScreen.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001\u0016B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0005H\u0016J\u0010\u0010\u0013\u001a\u00020\u000f2\u0006\u0010\u0014\u001a\u00020\u0015H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lcom/arizonagames/feature/minigames/fishing/backend/FishingBackendScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lcom/arizonagames/feature/minigames/fishing/backend/databinding/BackendGameLayoutBinding;", "fishingAdapter", "Lcom/arizonagames/feature/minigames/fishing/backend/FishingAdapter;", "onBackendMessage", "", "data", "", "subId", "setItems", "info", "Lcom/arizonagames/feature/minigames/fishing/backend/GameData;", "Spawner", "fishing-backend"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001\u0016B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0005H\u0016J\u0010\u0010\u0013\u001a\u00020\u000f2\u0006\u0010\u0014\u001a\u00020\u0015H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lcom/arizonagames/feature/minigames/fishing/backend/FishingBackendScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lcom/arizonagames/feature/minigames/fishing/backend/databinding/BackendGameLayoutBinding;", "fishingAdapter", "Lcom/arizonagames/feature/minigames/fishing/backend/FishingAdapter;", "onBackendMessageHandled", "", "data", "", "subId", "setItems", "info", "Lcom/arizonagames/feature/minigames/fishing/backend/GameData;", "Spawner", "fishing-backend"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class FishingBackendScreen extends SAMPUIElement {
     private final BackendGameLayoutBinding binding;
@@ -106,20 +104,14 @@ public final class FishingBackendScreen extends SAMPUIElement {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == 0) {
-            try {
-                if (MapperKt.isJsonValid(data)) {
-                    setItems((GameData) MapperKt.getGson().fromJson(data, (Class<Object>) GameData.class));
-                    return;
-                }
-                throw new JsonParseException("Json is not valid");
-            } catch (Exception e) {
-                Log.d("FishingBackendScreen", data + "  " + e.getMessage());
-                e.printStackTrace();
-                Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+            if (MapperKt.isJsonValid(data)) {
+                setItems((GameData) MapperKt.getGson().fromJson(data, (Class<Object>) GameData.class));
+                return;
             }
+            throw new JsonParseException("Json is not valid");
         }
     }
 }

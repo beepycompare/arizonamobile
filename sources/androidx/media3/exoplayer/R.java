@@ -1,18 +1,18 @@
 package androidx.media3.exoplayer;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public final class R {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public static final class string {
-        public static int exo_download_completed = 0x7f1200b6;
-        public static int exo_download_description = 0x7f1200b7;
-        public static int exo_download_downloading = 0x7f1200b8;
-        public static int exo_download_failed = 0x7f1200b9;
-        public static int exo_download_notification_channel_name = 0x7f1200ba;
-        public static int exo_download_paused = 0x7f1200bb;
-        public static int exo_download_paused_for_network = 0x7f1200bc;
-        public static int exo_download_paused_for_wifi = 0x7f1200bd;
-        public static int exo_download_removing = 0x7f1200be;
+        public static int exo_download_completed = 0x7f120196;
+        public static int exo_download_description = 0x7f120197;
+        public static int exo_download_downloading = 0x7f120198;
+        public static int exo_download_failed = 0x7f120199;
+        public static int exo_download_notification_channel_name = 0x7f12019a;
+        public static int exo_download_paused = 0x7f12019b;
+        public static int exo_download_paused_for_network = 0x7f12019c;
+        public static int exo_download_paused_for_wifi = 0x7f12019d;
+        public static int exo_download_removing = 0x7f12019e;
 
         private string() {
         }

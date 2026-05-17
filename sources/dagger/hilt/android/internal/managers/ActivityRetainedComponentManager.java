@@ -15,25 +15,25 @@ import dagger.hilt.android.components.ActivityRetainedComponent;
 import dagger.hilt.android.internal.builders.ActivityRetainedComponentBuilder;
 import dagger.hilt.android.internal.lifecycle.RetainedLifecycleImpl;
 import dagger.hilt.internal.GeneratedComponentManager;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class ActivityRetainedComponentManager implements GeneratedComponentManager<ActivityRetainedComponent> {
     private volatile ActivityRetainedComponent component;
     private final Object componentLock = new Object();
     private final Context context;
     private final ViewModelStoreOwner viewModelStoreOwner;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface ActivityRetainedComponentBuilderEntryPoint {
         ActivityRetainedComponentBuilder retainedComponentBuilder();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface ActivityRetainedLifecycleEntryPoint {
         ActivityRetainedLifecycle getActivityRetainedLifecycle();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class ActivityRetainedComponentViewModel extends ViewModel {
         private final ActivityRetainedComponent component;
         private final SavedStateHandleHolder savedStateHandleHolder;
@@ -97,7 +97,7 @@ final class ActivityRetainedComponentManager implements GeneratedComponentManage
     }
 
     @Module
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     static abstract class LifecycleModule {
         LifecycleModule() {
         }

@@ -14,7 +14,7 @@ import java.nio.charset.CoderResult;
 import java.nio.charset.CodingErrorAction;
 import java.util.Arrays;
 @ElementTypesAreNonnullByDefault
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class ReaderInputStream extends InputStream {
     private ByteBuffer byteBuffer;
     private CharBuffer charBuffer;

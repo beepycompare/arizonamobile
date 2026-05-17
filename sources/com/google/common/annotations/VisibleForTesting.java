@@ -1,4 +1,4 @@
 package com.google.common.annotations;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public @interface VisibleForTesting {
 }

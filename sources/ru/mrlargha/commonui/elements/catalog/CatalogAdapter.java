@@ -99,7 +99,7 @@ public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHo
             binding.catalogItemPriceText.setVisibility(8);
         }
         if (ru.mrlargha.commonui.utils.UtilsKt.isArizonaType()) {
-            Picasso.get().load((FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate/") + catalogItemModel2.getImg() + ".webp").error(R.drawable.baseline_warning_24).into(binding.catalogImage, new Callback() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogAdapter$onBindViewHolder$1$1
+            Picasso.get().load((FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/donate/") + catalogItemModel2.getImg() + ".webp").error(R.drawable.baseline_warning_24).into(binding.catalogImage, new Callback() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogAdapter$onBindViewHolder$1$1
                 @Override // com.squareup.picasso.Callback
                 public void onError(Exception exc) {
                 }
@@ -115,7 +115,7 @@ public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHo
                 }
             });
         } else {
-            String str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/" + (catalogItemModel2.getUrl() != null ? catalogItemModel2.getUrl() : "systems/battlepass/items/");
+            String str = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + (catalogItemModel2.getUrl() != null ? catalogItemModel2.getUrl() : "systems/battlepass/items/");
             if (StringsKt.contains$default((CharSequence) catalogItemModel2.getImg(), (CharSequence) ".gif", false, 2, (Object) null)) {
                 ImageView catalogImage = binding.catalogImage;
                 Intrinsics.checkNotNullExpressionValue(catalogImage, "catalogImage");

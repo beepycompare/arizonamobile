@@ -96,7 +96,7 @@ public final class UpdateService extends Hilt_UpdateService {
     private static final String PREFERENCE_FILE_KEY = "downloadPreference";
     private static final String TAG = "UPDATE_SERVICE";
     private static final String TASK_ID_LIST_KEY = "taskIdList";
-    private static final long TIMEOUT_DOWNLOADER = 5000;
+    private static final long TIMEOUT_DOWNLOADER = 15000;
     public static final int UPDATE_GAME_DATA = 2;
     public static final int UPDATE_INFO = 7;
     public static final int UPDATE_LAUNCHER = 6;
@@ -159,7 +159,7 @@ public final class UpdateService extends Hilt_UpdateService {
             j4 = updateService.mDownloadedLength;
             updateService.lastDownloadedBytes = j4 + 1;
             handler = UpdateService.this.mainHandler;
-            handler.postDelayed(this, 5000L);
+            handler.postDelayed(this, 15000L);
         }
     };
 
@@ -680,7 +680,7 @@ public final class UpdateService extends Hilt_UpdateService {
         long j = this.mUpdateFilesNeedSize;
         this.mTotalLength = j;
         Log.v(TAG, "Get contentLength " + j);
-        this.mainHandler.postDelayed(this.checkTimeoutRunnable, 5000L);
+        this.mainHandler.postDelayed(this.checkTimeoutRunnable, 15000L);
         DownloadContext downloadContext = this.mDownloadContext;
         if (downloadContext != null) {
             downloadContext.start(DownloadListener1ExtensionKt.createListener1$default(null, null, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda12
@@ -995,7 +995,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void checkLauncherUpdate$lambda$0(UpdateService updateService, String str) {
         try {
-            boolean z = new JSONObject(str).getInt("launcherVersion") > 1715;
+            boolean z = new JSONObject(str).getInt("launcherVersion") > 1717;
             Message obtain = Message.obtain(updateService.mInHandler, 3);
             obtain.getData().putBoolean(NEED_UPDATE_MSG, z);
             obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
@@ -1067,7 +1067,7 @@ public final class UpdateService extends Hilt_UpdateService {
         long j = this.mUpdateFilesNeedSize;
         this.mTotalLength = j;
         Log.v(TAG, "Get contentLength " + j);
-        this.mainHandler.postDelayed(this.checkTimeoutRunnable, 5000L);
+        this.mainHandler.postDelayed(this.checkTimeoutRunnable, 15000L);
         DownloadContext downloadContext = this.mDownloadContext;
         if (downloadContext != null) {
             downloadContext.start(DownloadListener1ExtensionKt.createListener1$default(null, null, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda0
@@ -1135,7 +1135,7 @@ public final class UpdateService extends Hilt_UpdateService {
             public final void run() {
                 UpdateService.startDownloadNewLauncherApk$lambda$2$0(UpdateService.this);
             }
-        }, 1250L);
+        }, 3750L);
         return Unit.INSTANCE;
     }
 

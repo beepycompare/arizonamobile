@@ -54,7 +54,6 @@ import androidx.lifecycle.ViewTreeLifecycleOwner;
 import androidx.lifecycle.ViewTreeViewModelStoreOwner;
 import androidx.lifecycle.viewmodel.CreationExtras;
 import androidx.lifecycle.viewmodel.MutableCreationExtras;
-import androidx.media3.exoplayer.Renderer;
 import androidx.navigationevent.DirectNavigationEventInput;
 import androidx.navigationevent.NavigationEventDispatcher;
 import androidx.navigationevent.NavigationEventDispatcherOwner;
@@ -331,8 +330,9 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.core.app.ComponentActivity, android.app.Activity
-    protected void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(Bundle outState) {
         Intrinsics.checkNotNullParameter(outState, "outState");
         if (getLifecycle() instanceof LifecycleRegistry) {
             Lifecycle lifecycle = getLifecycle();
@@ -918,7 +918,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     /* loaded from: classes.dex */
     public final class ReportFullyDrawnExecutorImpl implements ReportFullyDrawnExecutor, ViewTreeObserver.OnDrawListener, Runnable {
         private Runnable currentRunnable;
-        private final long endWatchTimeMillis = SystemClock.uptimeMillis() + Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
+        private final long endWatchTimeMillis = SystemClock.uptimeMillis() + 10000;
         private boolean onDrawScheduled;
 
         public ReportFullyDrawnExecutorImpl() {

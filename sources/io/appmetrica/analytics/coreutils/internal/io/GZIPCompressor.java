@@ -2,7 +2,7 @@ package io.appmetrica.analytics.coreutils.internal.io;
 
 import io.appmetrica.analytics.coreapi.internal.io.Compressor;
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GZIPCompressor implements Compressor {
     @Override // io.appmetrica.analytics.coreapi.internal.io.Compressor
     public byte[] compress(byte[] bArr) throws IOException {

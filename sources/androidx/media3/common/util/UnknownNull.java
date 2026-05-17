@@ -9,6 +9,6 @@ import javax.annotation.meta.When;
 @TypeQualifierDefault({ElementType.TYPE_USE})
 @Nonnull(when = When.UNKNOWN)
 @Retention(RetentionPolicy.CLASS)
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public @interface UnknownNull {
 }

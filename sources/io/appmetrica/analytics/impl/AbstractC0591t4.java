@@ -16,7 +16,7 @@ public abstract class AbstractC0591t4 extends Ad {
         if (f()) {
             J2 j2 = this.d;
             int i = this.b;
-            C0258fo a2 = j2.a(cdo, (C0258fo) ((HashMap) cdo.f964a.get(i)).get(this.f498a), this);
+            C0258fo a2 = j2.a(cdo, (C0258fo) ((HashMap) cdo.f969a.get(i)).get(this.f503a), this);
             if (a2 != null) {
                 a(a2);
             }

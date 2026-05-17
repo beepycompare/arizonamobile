@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public final class C0215e7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Long f973a;
+    public final Long f978a;
     public final Vk b;
     public final Long c;
     public final EnumC0142bb d;
@@ -13,7 +13,7 @@ public final class C0215e7 {
     public final C0190d7 g;
 
     public C0215e7(Long l, Vk vk, Long l2, EnumC0142bb enumC0142bb, Long l3, Long l4, C0190d7 c0190d7) {
-        this.f973a = l;
+        this.f978a = l;
         this.b = vk;
         this.c = l2;
         this.d = enumC0142bb;

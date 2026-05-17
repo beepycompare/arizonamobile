@@ -12,7 +12,7 @@ public final class C0174ch extends Rg {
     public final boolean a(P5 p5) {
         Dk dk;
         Tk tk;
-        C0372k9 c0372k9 = this.f767a.n;
+        C0372k9 c0372k9 = this.f772a.n;
         Rk rk = c0372k9.c;
         if (rk.g == 0) {
             dk = rk.d.b();
@@ -25,22 +25,22 @@ public final class C0174ch extends Rg {
         }
         if (dk != null) {
             tk = new Tk();
-            tk.f802a = dk.d;
+            tk.f807a = dk.d;
             long andIncrement = dk.f.getAndIncrement();
             Uk uk = dk.b;
             uk.a(Uk.g, Long.valueOf(dk.f.get()));
             uk.b();
             tk.b = andIncrement;
             tk.c = TimeUnit.MILLISECONDS.toSeconds(dk.j);
-            tk.d = dk.c.f600a;
+            tk.d = dk.c.f605a;
         } else {
             long j = p5.j;
             long a2 = rk.b.a();
-            L6 l6 = rk.f769a.e;
+            L6 l6 = rk.f774a.e;
             Vk vk = Vk.BACKGROUND;
             l6.a(a2, vk, j);
             tk = new Tk();
-            tk.f802a = a2;
+            tk.f807a = a2;
             tk.d = vk;
             tk.b = 0L;
             tk.c = 0L;

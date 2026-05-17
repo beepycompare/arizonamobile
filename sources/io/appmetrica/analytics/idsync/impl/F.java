@@ -8,11 +8,11 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.json.JSONArray;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class F implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f461a = "request_state";
+    public final String f466a = "request_state";
     public final String b = "type";
     public final String c = "last_attempt";
     public final String d = "prev_attempt_result";
@@ -27,13 +27,13 @@ public final class F implements Converter {
         ?? emptyList;
         JSONObject jSONObject;
         JSONObject jSONObject2 = new JSONObject();
-        String str = this.f461a;
+        String str = this.f466a;
         if (list != null) {
             emptyList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
             for (E e : list) {
                 try {
                     jSONObject = new JSONObject();
-                    jSONObject.put(this.b, e.f460a);
+                    jSONObject.put(this.b, e.f465a);
                     jSONObject.put(this.c, e.b);
                     jSONObject.put(this.d, z.a(e.c));
                 } catch (Throwable unused) {
@@ -56,7 +56,7 @@ public final class F implements Converter {
         int i;
         try {
             ArrayList arrayList = new ArrayList();
-            if (str == null || (optJSONArray = new JSONObject(str).optJSONArray(this.f461a)) == null) {
+            if (str == null || (optJSONArray = new JSONObject(str).optJSONArray(this.f466a)) == null) {
                 return arrayList;
             }
             int length = optJSONArray.length();

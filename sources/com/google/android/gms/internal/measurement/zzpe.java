@@ -2,7 +2,6 @@ package com.google.android.gms.internal.measurement;
 
 import android.support.v4.media.session.PlaybackStateCompat;
 import androidx.media3.common.C;
-import androidx.media3.exoplayer.Renderer;
 import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
 import com.adjust.sdk.Constants;
 import kotlin.time.DurationKt;
@@ -87,7 +86,7 @@ public final class zzpe implements zzpd {
 
     static {
         zzkg zzb2 = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb();
-        zza = zzb2.zzc("measurement.ad_id_cache_time", Renderer.DEFAULT_DURATION_TO_PROGRESS_US);
+        zza = zzb2.zzc("measurement.ad_id_cache_time", 10000L);
         zzb = zzb2.zzc("measurement.app_uninstalled_additional_ad_id_cache_time", DurationKt.MILLIS_IN_HOUR);
         zzc = zzb2.zzd("measurement.config.bundle_for_all_apps_on_backgrounded", true);
         zzd = zzb2.zzc("measurement.max_bundles_per_iteration", 100L);
@@ -120,7 +119,7 @@ public final class zzpe implements zzpd {
         zzB = zzb2.zzc("measurement.rb.attribution.notify_app_delay_millis", C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
         zzC = zzb2.zzd("measurement.config.notify_trigger_uris_on_backgrounded", true);
         zzD = zzb2.zzf("measurement.rb.attribution.app_allowlist", "");
-        zzE = zzb2.zzc("measurement.upload.realtime_upload_interval", Renderer.DEFAULT_DURATION_TO_PROGRESS_US);
+        zzE = zzb2.zzc("measurement.upload.realtime_upload_interval", 10000L);
         zzF = zzb2.zzc("measurement.upload.refresh_blacklisted_config_interval", 604800000L);
         zzb2.zzc("measurement.config.cache_time.service", DurationKt.MILLIS_IN_HOUR);
         zzG = zzb2.zzc("measurement.service_client.idle_disconnect_millis", 5000L);

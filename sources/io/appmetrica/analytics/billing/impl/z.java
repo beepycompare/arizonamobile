@@ -8,7 +8,7 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class z extends MessageNano {
     public static final int l = 0;
     public static final int m = 1;
@@ -18,7 +18,7 @@ public final class z extends MessageNano {
     public static volatile z[] q;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f327a;
+    public int f332a;
     public byte[] b;
     public byte[] c;
     public byte[] d;
@@ -46,7 +46,7 @@ public final class z extends MessageNano {
     }
 
     public final z a() {
-        this.f327a = 1;
+        this.f332a = 1;
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
         this.b = bArr;
         this.c = bArr;
@@ -65,7 +65,7 @@ public final class z extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f327a;
+        int i = this.f332a;
         if (i != 1) {
             computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(1, i);
         }
@@ -108,7 +108,7 @@ public final class z extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f327a;
+        int i = this.f332a;
         if (i != 1) {
             codedOutputByteBufferNano.writeUInt32(1, i);
         }
@@ -165,7 +165,7 @@ public final class z extends MessageNano {
                 case 0:
                     break;
                 case 8:
-                    this.f327a = codedInputByteBufferNano.readUInt32();
+                    this.f332a = codedInputByteBufferNano.readUInt32();
                     break;
                 case 26:
                     this.b = codedInputByteBufferNano.readBytes();

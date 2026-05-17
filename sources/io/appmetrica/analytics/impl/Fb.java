@@ -6,14 +6,14 @@ import java.util.Iterator;
 public final class Fb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final O2 f579a;
+    public final O2 f584a;
     public final C0262g2 b;
     public final ArrayList c;
 
     public Fb(O2 o2, C0262g2 c0262g2) {
         ArrayList arrayList = new ArrayList();
         this.c = arrayList;
-        this.f579a = o2;
+        this.f584a = o2;
         arrayList.add(o2);
         this.b = c0262g2;
         arrayList.add(c0262g2);

@@ -50,23 +50,23 @@ public final class SimpleActor<T> {
         function1.invoke(th);
         simpleActor.messageQueue.close(th);
         while (true) {
-            Object m10715getOrNullimpl = ChannelResult.m10715getOrNullimpl(simpleActor.messageQueue.mo10703tryReceivePtdJZtk());
-            if (m10715getOrNullimpl == null) {
+            Object m10734getOrNullimpl = ChannelResult.m10734getOrNullimpl(simpleActor.messageQueue.mo10722tryReceivePtdJZtk());
+            if (m10734getOrNullimpl == null) {
                 return Unit.INSTANCE;
             }
-            function2.invoke(m10715getOrNullimpl, th);
+            function2.invoke(m10734getOrNullimpl, th);
         }
     }
 
     public final void offer(T t) {
         Object obj = this.messageQueue.mo8396trySendJP2dKIU(t);
         if (obj instanceof ChannelResult.Closed) {
-            Throwable m10714exceptionOrNullimpl = ChannelResult.m10714exceptionOrNullimpl(obj);
-            if (m10714exceptionOrNullimpl != null) {
-                throw m10714exceptionOrNullimpl;
+            Throwable m10733exceptionOrNullimpl = ChannelResult.m10733exceptionOrNullimpl(obj);
+            if (m10733exceptionOrNullimpl != null) {
+                throw m10733exceptionOrNullimpl;
             }
             throw new ClosedSendChannelException("Channel was closed normally");
-        } else if (!ChannelResult.m10720isSuccessimpl(obj)) {
+        } else if (!ChannelResult.m10739isSuccessimpl(obj)) {
             throw new IllegalStateException("Check failed.".toString());
         } else {
             if (this.remainingMessages.getAndIncrement() == 0) {

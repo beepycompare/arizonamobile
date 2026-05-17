@@ -97,7 +97,7 @@ public final class CasesSameCasesAdapter extends ListAdapter<CasesSameCasesModel
             ArizonaCasesSameCasesItemBinding arizonaCasesSameCasesItemBinding = this.binding;
             Log.d("CasesScreen", "initialize: " + casesSameCasesModel);
             arizonaCasesSameCasesItemBinding.tvPrizeName.setText(casesSameCasesModel.getTitle());
-            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/cases/" + casesSameCasesModel.getId() + ".webp").into(arizonaCasesSameCasesItemBinding.ivPrize);
+            Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/cases/" + casesSameCasesModel.getId() + ".webp").into(arizonaCasesSameCasesItemBinding.ivPrize);
             arizonaCasesSameCasesItemBinding.tvPrizeCost.setText(String.valueOf(casesSameCasesModel.getCost()));
             TextView tvPrizeCost = arizonaCasesSameCasesItemBinding.tvPrizeCost;
             Intrinsics.checkNotNullExpressionValue(tvPrizeCost, "tvPrizeCost");
@@ -132,7 +132,7 @@ public final class CasesSameCasesAdapter extends ListAdapter<CasesSameCasesModel
                     tvNew2.setVisibility(0);
                 }
             }
-            int i = WhenMappings.$EnumSwitchMapping$0[casesSameCasesModel.m11158getCurrency().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[casesSameCasesModel.m11177getCurrency().ordinal()];
             if (i == 1) {
                 arizonaCasesSameCasesItemBinding.ivRub.setImageResource(R.drawable.blueprint_ic_rub);
                 arizonaCasesSameCasesItemBinding.ivRub.setImageTintList(ColorStateList.valueOf(Color.parseColor("#95FF00")));

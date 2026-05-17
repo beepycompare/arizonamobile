@@ -9,10 +9,10 @@ import org.json.JSONObject;
 public final class wo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final yo f1293a;
+    public final yo f1298a;
 
     public wo(Ze ze, C0141ba c0141ba) {
-        this.f1293a = new yo(ze, c0141ba, new zo() { // from class: io.appmetrica.analytics.impl.wo$$ExternalSyntheticLambda0
+        this.f1298a = new yo(ze, c0141ba, new zo() { // from class: io.appmetrica.analytics.impl.wo$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.zo
             public final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
                 return wo.a(jSONObject, jSONObject2);
@@ -31,23 +31,23 @@ public final class wo {
     }
 
     public final synchronized void b(String str) {
-        yo yoVar = this.f1293a;
+        yo yoVar = this.f1298a;
         yoVar.a(yoVar.a().put("device_id_hash", str));
     }
 
     public final synchronized boolean c() {
-        return this.f1293a.a().optBoolean("referrer_checked", false);
+        return this.f1298a.a().optBoolean("referrer_checked", false);
     }
 
     public final synchronized void d() {
-        yo yoVar = this.f1293a;
+        yo yoVar = this.f1298a;
         yoVar.a(yoVar.a().put("referrer_checked", true));
     }
 
     public final synchronized C0454ng b() {
         byte[] decode;
         C0454ng c0454ng;
-        String optStringOrNull = JsonUtils.optStringOrNull(this.f1293a.a(), Constants.REFERRER);
+        String optStringOrNull = JsonUtils.optStringOrNull(this.f1298a.a(), Constants.REFERRER);
         if (optStringOrNull != null) {
             try {
                 decode = Base64.decode(optStringOrNull.getBytes(Charsets.UTF_8), 0);
@@ -62,16 +62,16 @@ public final class wo {
     }
 
     public final synchronized void a(String str) {
-        yo yoVar = this.f1293a;
+        yo yoVar = this.f1298a;
         yoVar.a(yoVar.a().put("device_id", str));
     }
 
     public final synchronized String a() {
-        return JsonUtils.optStringOrNull(this.f1293a.a(), "device_id_hash");
+        return JsonUtils.optStringOrNull(this.f1298a.a(), "device_id_hash");
     }
 
     public final synchronized void a(C0454ng c0454ng) {
-        yo yoVar = this.f1293a;
+        yo yoVar = this.f1298a;
         yoVar.a(yoVar.a().put(Constants.REFERRER, c0454ng != null ? new String(Base64.encode(c0454ng.a(), 0), Charsets.UTF_8) : null));
     }
 }

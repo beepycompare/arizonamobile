@@ -2,7 +2,7 @@ package com.nvidia.devtech;
 
 import android.app.Activity;
 import java.util.HashMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class NvUtil {
     private static NvUtil instance = new NvUtil();
     private Activity activity = null;

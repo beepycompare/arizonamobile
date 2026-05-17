@@ -282,7 +282,7 @@ public class ContextCompat {
         return str;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class LegacyServiceMapHolder {
         static final HashMap<Class<?>, String> SERVICES;
 

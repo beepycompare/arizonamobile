@@ -1,4 +1,4 @@
 package hilt_aggregated_deps;
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public class _com_arizona_launcher_MainViewModel_HiltModules_BindsModule {
 }

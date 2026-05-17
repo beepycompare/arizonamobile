@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.shop;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -47,7 +46,7 @@ import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: LavkaTypeScreen.kt */
-@Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u0001:B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0017H\u0016J\u0018\u0010-\u001a\u00020\u00192\u0006\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0006H\u0016J\u0010\u00101\u001a\u00020\u00192\u0006\u00102\u001a\u00020\u0017H\u0002J\u0016\u00103\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001e2\u0006\u00104\u001a\u000205H\u0002J\u0010\u00106\u001a\u00020\u00192\u0006\u00104\u001a\u000205H\u0002J\b\u00107\u001a\u00020\u0019H\u0002J\u0018\u00108\u001a\u00020\u00192\u0006\u00100\u001a\u00020\u00062\u0006\u0010.\u001a\u00020/H\u0002J\b\u00109\u001a\u00020\u0019H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001e8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b \u0010!R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010'\u001a\u00020(¢\u0006\b\n\u0000\u001a\u0004\b)\u0010*R\u000e\u0010+\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006;"}, d2 = {"Lru/mrlargha/commonui/elements/shop/LavkaTypeScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "lavkaTypeScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/LavkaTypeScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "inventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "lavkaAdapter", "Lru/mrlargha/commonui/elements/shop/adapter/LavkaTypeAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "setVisible", "", "visible", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "getInventoryList", "()Ljava/util/List;", "inventoryItemsList", "buyItemsList", "sellItemsList", "pawnShopList", "lavkaItems", "handler", "Landroid/os/Handler;", "getHandler", "()Landroid/os/Handler;", "screenType", "currentPage", "onBackendMessage", "data", "", "subId", "editUiVisibility", "isBuy", "arzInitObservers", "inventoryResponse", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "rodInitObservers", "addLockedItems", "sendData", "closeScreen", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u00016B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016H\u0016J\u0018\u0010)\u001a\u00020\u00142\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u0006H\u0016J\u0010\u0010-\u001a\u00020\u00142\u0006\u0010.\u001a\u00020\u0016H\u0002J\u0016\u0010/\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001a2\u0006\u00100\u001a\u000201H\u0002J\u0010\u00102\u001a\u00020\u00142\u0006\u00100\u001a\u000201H\u0002J\b\u00103\u001a\u00020\u0014H\u0002J\u0018\u00104\u001a\u00020\u00142\u0006\u0010,\u001a\u00020\u00062\u0006\u0010*\u001a\u00020+H\u0002J\b\u00105\u001a\u00020\u0014H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001a8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u001dR\u0014\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010!\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010#\u001a\u00020$¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&R\u000e\u0010'\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00067"}, d2 = {"Lru/mrlargha/commonui/elements/shop/LavkaTypeScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "lavkaTypeScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/LavkaTypeScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "inventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "lavkaAdapter", "Lru/mrlargha/commonui/elements/shop/adapter/LavkaTypeAdapter;", "setVisible", "", "visible", "", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "getInventoryList", "()Ljava/util/List;", "inventoryItemsList", "buyItemsList", "sellItemsList", "pawnShopList", "lavkaItems", "handler", "Landroid/os/Handler;", "getHandler", "()Landroid/os/Handler;", "screenType", "currentPage", "onBackendMessageHandled", "data", "", "subId", "editUiVisibility", "isBuy", "arzInitObservers", "inventoryResponse", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "rodInitObservers", "addLockedItems", "sendData", "closeScreen", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceController {
     private final LavkaTypeScreenBinding binding;
@@ -58,14 +57,12 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
     private final Handler handler;
     private final MainInventoryAdapter inventoryAdapter;
     private List<InventoryItem> inventoryItemsList;
-    private final boolean isArizonaType;
     private final LavkaTypeAdapter lavkaAdapter;
     private List<InventoryItem> lavkaItems;
     private final ConstraintLayout lavkaTypeScreen;
     private List<InventoryItem> pawnShopList;
     private int screenType;
     private List<InventoryItem> sellItemsList;
-    private final SharedPreferences sharedPref;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public LavkaTypeScreen(final Activity targetActivity, final int i) {
@@ -112,9 +109,6 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
             }
         }, activity);
         this.lavkaAdapter = lavkaTypeAdapter;
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
-        this.sharedPref = sharedPreferences;
-        this.isArizonaType = sharedPreferences.getBoolean("isArizonaType", false);
         this.db = AppDatabase.Companion.invoke(activity);
         this.inventoryItemsList = new ArrayList();
         this.buyItemsList = new ArrayList();
@@ -189,7 +183,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lavkaAdapter$lambda$1(Activity activity, int i, LavkaTypeScreen lavkaTypeScreen) {
-        Toast.makeText(activity.getApplicationContext(), "Ошибка в интерфейсе : " + i, 1).show();
+        Toast.makeText(activity.getApplicationContext(), activity.getString(R.string.common_interface_error, new Object[]{Integer.valueOf(i)}), 1).show();
         lavkaTypeScreen.getNotifier().setUIElementVisible(i, false);
         return Unit.INSTANCE;
     }
@@ -213,7 +207,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
     public static final void _init_$lambda$1(LavkaTypeScreen lavkaTypeScreen, View view) {
         lavkaTypeScreen.sendData(3, StringKt.toStringJson(new BlockType(0)));
         lavkaTypeScreen.currentPage = 0;
-        if (lavkaTypeScreen.isArizonaType) {
+        if (UtilsKt.isArizonaType()) {
             lavkaTypeScreen.lavkaAdapter.submitList(lavkaTypeScreen.buyItemsList);
             lavkaTypeScreen.lavkaAdapter.notifyDataSetChanged();
             lavkaTypeScreen.editUiVisibility(true);
@@ -224,7 +218,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
     public static final void _init_$lambda$2(LavkaTypeScreen lavkaTypeScreen, View view) {
         lavkaTypeScreen.sendData(3, StringKt.toStringJson(new BlockType(1)));
         lavkaTypeScreen.currentPage = 1;
-        if (lavkaTypeScreen.isArizonaType) {
+        if (UtilsKt.isArizonaType()) {
             lavkaTypeScreen.lavkaAdapter.submitList(lavkaTypeScreen.sellItemsList);
             lavkaTypeScreen.lavkaAdapter.notifyDataSetChanged();
             lavkaTypeScreen.editUiVisibility(false);
@@ -232,280 +226,273 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Object obj;
         Object obj2;
         Object obj3;
         Intrinsics.checkNotNullParameter(data, "data");
-        Log.d("TAG_LAVKA", "subID: " + i + " ====== data: " + data);
-        try {
-            if (i == 0) {
-                Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
-                Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
-                InventoryResponse inventoryResponse = (InventoryResponse) fromJson;
-                if (this.screenType != inventoryResponse.getType()) {
-                    this.lavkaItems.clear();
-                    this.screenType = inventoryResponse.getType();
+        if (i == 0) {
+            Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
+            Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
+            InventoryResponse inventoryResponse = (InventoryResponse) fromJson;
+            if (this.screenType != inventoryResponse.getType()) {
+                this.lavkaItems.clear();
+                this.screenType = inventoryResponse.getType();
+            }
+            if (UtilsKt.isArizonaType()) {
+                int i2 = this.screenType;
+                if (i2 == ArizonaBlockType.BLOCK_TYPE_SHOP_BUY.getId()) {
+                    CollectionsKt.addAll(this.buyItemsList, arzInitObservers(inventoryResponse));
+                    return;
+                } else if (i2 == ArizonaBlockType.BLOCK_TYPE_SHOP_SELL.getId()) {
+                    CollectionsKt.addAll(this.sellItemsList, arzInitObservers(inventoryResponse));
+                    return;
+                } else if (i2 == ArizonaBlockType.BLOCK_TYPE_STORE.getId()) {
+                    CollectionsKt.addAll(this.pawnShopList, arzInitObservers(inventoryResponse));
+                    this.lavkaAdapter.submitList(this.pawnShopList);
+                    return;
+                } else {
+                    return;
                 }
-                if (this.isArizonaType) {
-                    int i2 = this.screenType;
-                    if (i2 == ArizonaBlockType.BLOCK_TYPE_SHOP_BUY.getId()) {
-                        CollectionsKt.addAll(this.buyItemsList, arzInitObservers(inventoryResponse));
-                        return;
-                    } else if (i2 == ArizonaBlockType.BLOCK_TYPE_SHOP_SELL.getId()) {
-                        CollectionsKt.addAll(this.sellItemsList, arzInitObservers(inventoryResponse));
-                        return;
-                    } else if (i2 == ArizonaBlockType.BLOCK_TYPE_STORE.getId()) {
-                        CollectionsKt.addAll(this.pawnShopList, arzInitObservers(inventoryResponse));
-                        this.lavkaAdapter.submitList(this.pawnShopList);
-                        return;
-                    } else {
-                        return;
-                    }
+            }
+            rodInitObservers(inventoryResponse);
+        } else if (i == 1) {
+            Object fromJson2 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) SellerInfo.class);
+            Intrinsics.checkNotNullExpressionValue(fromJson2, "fromJson(...)");
+            SellerInfo sellerInfo = (SellerInfo) fromJson2;
+            this.binding.tvScreenTitle.setText(sellerInfo.getName());
+            ImageButton btnBuy = this.binding.btnBuy;
+            Intrinsics.checkNotNullExpressionValue(btnBuy, "btnBuy");
+            btnBuy.setVisibility(sellerInfo.getButtons() != 0 ? 0 : 8);
+            TextView tvBuy = this.binding.tvBuy;
+            Intrinsics.checkNotNullExpressionValue(tvBuy, "tvBuy");
+            tvBuy.setVisibility(sellerInfo.getButtons() != 0 ? 0 : 8);
+            ImageButton btnSell = this.binding.btnSell;
+            Intrinsics.checkNotNullExpressionValue(btnSell, "btnSell");
+            btnSell.setVisibility(sellerInfo.getButtons() != 0 ? 0 : 8);
+            TextView tvSell = this.binding.tvSell;
+            Intrinsics.checkNotNullExpressionValue(tvSell, "tvSell");
+            tvSell.setVisibility(sellerInfo.getButtons() != 0 ? 0 : 8);
+            this.currentPage = sellerInfo.getType();
+            int type = sellerInfo.getType();
+            if (type == 0) {
+                editUiVisibility(true);
+                if (UtilsKt.isArizonaType()) {
+                    this.lavkaAdapter.submitList(this.buyItemsList);
                 }
-                rodInitObservers(inventoryResponse);
-            } else if (i == 1) {
-                Object fromJson2 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) SellerInfo.class);
-                Intrinsics.checkNotNullExpressionValue(fromJson2, "fromJson(...)");
-                SellerInfo sellerInfo = (SellerInfo) fromJson2;
-                this.binding.tvScreenTitle.setText(sellerInfo.getName());
-                ImageButton btnBuy = this.binding.btnBuy;
-                Intrinsics.checkNotNullExpressionValue(btnBuy, "btnBuy");
-                btnBuy.setVisibility(sellerInfo.getButtons() != 0 ? 0 : 8);
-                TextView tvBuy = this.binding.tvBuy;
-                Intrinsics.checkNotNullExpressionValue(tvBuy, "tvBuy");
-                tvBuy.setVisibility(sellerInfo.getButtons() != 0 ? 0 : 8);
-                ImageButton btnSell = this.binding.btnSell;
-                Intrinsics.checkNotNullExpressionValue(btnSell, "btnSell");
-                btnSell.setVisibility(sellerInfo.getButtons() != 0 ? 0 : 8);
-                TextView tvSell = this.binding.tvSell;
-                Intrinsics.checkNotNullExpressionValue(tvSell, "tvSell");
-                tvSell.setVisibility(sellerInfo.getButtons() != 0 ? 0 : 8);
-                this.currentPage = sellerInfo.getType();
-                int type = sellerInfo.getType();
-                if (type == 0) {
-                    editUiVisibility(true);
-                    if (this.isArizonaType) {
-                        this.lavkaAdapter.submitList(this.buyItemsList);
-                    }
-                } else if (type == 1) {
-                    editUiVisibility(false);
-                    if (this.isArizonaType) {
-                        this.lavkaAdapter.submitList(this.sellItemsList);
-                    }
+            } else if (type == 1) {
+                editUiVisibility(false);
+                if (UtilsKt.isArizonaType()) {
+                    this.lavkaAdapter.submitList(this.sellItemsList);
                 }
-                this.lavkaAdapter.notifyDataSetChanged();
-            } else if (i == 2) {
-                Object fromJson3 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
-                Intrinsics.checkNotNullExpressionValue(fromJson3, "fromJson(...)");
-                InventoryResponse inventoryResponse2 = (InventoryResponse) fromJson3;
-                int type2 = inventoryResponse2.getType();
-                List<InventoryItem> items = inventoryResponse2.getItems();
-                ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(items, 10));
-                for (InventoryItem inventoryItem : items) {
-                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse2.getType(), null, null, false, false, null, null, null, null, 33488895, null));
-                }
-                InventoryResponse inventoryResponse3 = new InventoryResponse(type2, arrayList, 0, 4, null);
-                if (this.isArizonaType) {
-                    int type3 = inventoryResponse2.getType();
-                    if (type3 != ArizonaBlockType.BLOCK_TYPE_SHOP_BUY.getId()) {
-                        if (type3 != ArizonaBlockType.BLOCK_TYPE_SHOP_SELL.getId()) {
-                            if (type3 == ArizonaBlockType.BLOCK_TYPE_STORE.getId()) {
-                                for (InventoryItem inventoryItem2 : inventoryResponse3.getItems()) {
-                                    if (!this.pawnShopList.isEmpty()) {
-                                        Iterator<InventoryItem> it = this.pawnShopList.iterator();
-                                        int i3 = 0;
-                                        while (true) {
-                                            if (!it.hasNext()) {
-                                                i3 = -1;
-                                                break;
-                                            } else if (it.next().getSlot() == inventoryItem2.getSlot()) {
-                                                break;
-                                            } else {
-                                                i3++;
-                                            }
+            }
+            this.lavkaAdapter.notifyDataSetChanged();
+        } else if (i == 2) {
+            Object fromJson3 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
+            Intrinsics.checkNotNullExpressionValue(fromJson3, "fromJson(...)");
+            InventoryResponse inventoryResponse2 = (InventoryResponse) fromJson3;
+            int type2 = inventoryResponse2.getType();
+            List<InventoryItem> items = inventoryResponse2.getItems();
+            ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(items, 10));
+            for (InventoryItem inventoryItem : items) {
+                arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse2.getType(), null, null, false, false, null, null, null, null, 33488895, null));
+            }
+            InventoryResponse inventoryResponse3 = new InventoryResponse(type2, arrayList, 0, 4, null);
+            if (UtilsKt.isArizonaType()) {
+                int type3 = inventoryResponse2.getType();
+                if (type3 != ArizonaBlockType.BLOCK_TYPE_SHOP_BUY.getId()) {
+                    if (type3 != ArizonaBlockType.BLOCK_TYPE_SHOP_SELL.getId()) {
+                        if (type3 == ArizonaBlockType.BLOCK_TYPE_STORE.getId()) {
+                            for (InventoryItem inventoryItem2 : inventoryResponse3.getItems()) {
+                                if (!this.pawnShopList.isEmpty()) {
+                                    Iterator<InventoryItem> it = this.pawnShopList.iterator();
+                                    int i3 = 0;
+                                    while (true) {
+                                        if (!it.hasNext()) {
+                                            i3 = -1;
+                                            break;
+                                        } else if (it.next().getSlot() == inventoryItem2.getSlot()) {
+                                            break;
+                                        } else {
+                                            i3++;
                                         }
-                                        if (((InventoryItem) CollectionsKt.getOrNull(this.pawnShopList, i3)) != null) {
-                                            this.pawnShopList.set(i3, inventoryItem2);
-                                        }
-                                        this.lavkaAdapter.submitList(this.pawnShopList);
-                                        this.lavkaAdapter.notifyItemChanged(i3);
                                     }
+                                    if (((InventoryItem) CollectionsKt.getOrNull(this.pawnShopList, i3)) != null) {
+                                        this.pawnShopList.set(i3, inventoryItem2);
+                                    }
+                                    this.lavkaAdapter.submitList(this.pawnShopList);
+                                    this.lavkaAdapter.notifyItemChanged(i3);
                                 }
-                                return;
                             }
                             return;
                         }
-                        for (InventoryItem inventoryItem3 : inventoryResponse3.getItems()) {
-                            if (!this.sellItemsList.isEmpty()) {
-                                Iterator<InventoryItem> it2 = this.sellItemsList.iterator();
-                                int i4 = 0;
-                                while (true) {
-                                    if (!it2.hasNext()) {
-                                        i4 = -1;
-                                        break;
-                                    } else if (it2.next().getSlot() == inventoryItem3.getSlot()) {
-                                        break;
-                                    } else {
-                                        i4++;
-                                    }
-                                }
-                                if (((InventoryItem) CollectionsKt.getOrNull(this.sellItemsList, i4)) != null) {
-                                    this.sellItemsList.set(i4, inventoryItem3);
-                                }
-                                if (this.currentPage == 1) {
-                                    this.lavkaAdapter.submitList(this.sellItemsList);
-                                    this.lavkaAdapter.notifyItemChanged(i4);
-                                }
-                            }
-                        }
                         return;
                     }
-                    for (InventoryItem inventoryItem4 : inventoryResponse3.getItems()) {
-                        if (!this.buyItemsList.isEmpty()) {
-                            Iterator<InventoryItem> it3 = this.buyItemsList.iterator();
-                            int i5 = 0;
+                    for (InventoryItem inventoryItem3 : inventoryResponse3.getItems()) {
+                        if (!this.sellItemsList.isEmpty()) {
+                            Iterator<InventoryItem> it2 = this.sellItemsList.iterator();
+                            int i4 = 0;
                             while (true) {
-                                if (!it3.hasNext()) {
-                                    i5 = -1;
+                                if (!it2.hasNext()) {
+                                    i4 = -1;
                                     break;
-                                } else if (it3.next().getSlot() == inventoryItem4.getSlot()) {
+                                } else if (it2.next().getSlot() == inventoryItem3.getSlot()) {
                                     break;
                                 } else {
-                                    i5++;
+                                    i4++;
                                 }
                             }
-                            if (((InventoryItem) CollectionsKt.getOrNull(this.buyItemsList, i5)) != null) {
-                                this.buyItemsList.set(i5, inventoryItem4);
+                            if (((InventoryItem) CollectionsKt.getOrNull(this.sellItemsList, i4)) != null) {
+                                this.sellItemsList.set(i4, inventoryItem3);
                             }
-                            if (this.currentPage == 0) {
-                                this.lavkaAdapter.submitList(this.buyItemsList);
-                                this.lavkaAdapter.notifyItemChanged(i5);
+                            if (this.currentPage == 1) {
+                                this.lavkaAdapter.submitList(this.sellItemsList);
+                                this.lavkaAdapter.notifyItemChanged(i4);
                             }
                         }
                     }
                     return;
                 }
-                for (InventoryItem inventoryItem5 : inventoryResponse3.getItems()) {
-                    Iterator<InventoryItem> it4 = this.lavkaItems.iterator();
-                    int i6 = 0;
-                    while (true) {
-                        if (!it4.hasNext()) {
-                            i6 = -1;
-                            break;
-                        } else if (it4.next().getSlot() == inventoryItem5.getSlot()) {
-                            break;
-                        } else {
-                            i6++;
+                for (InventoryItem inventoryItem4 : inventoryResponse3.getItems()) {
+                    if (!this.buyItemsList.isEmpty()) {
+                        Iterator<InventoryItem> it3 = this.buyItemsList.iterator();
+                        int i5 = 0;
+                        while (true) {
+                            if (!it3.hasNext()) {
+                                i5 = -1;
+                                break;
+                            } else if (it3.next().getSlot() == inventoryItem4.getSlot()) {
+                                break;
+                            } else {
+                                i5++;
+                            }
+                        }
+                        if (((InventoryItem) CollectionsKt.getOrNull(this.buyItemsList, i5)) != null) {
+                            this.buyItemsList.set(i5, inventoryItem4);
+                        }
+                        if (this.currentPage == 0) {
+                            this.lavkaAdapter.submitList(this.buyItemsList);
+                            this.lavkaAdapter.notifyItemChanged(i5);
                         }
                     }
-                    if (this.lavkaItems.size() >= i6 && i6 != -1) {
-                        this.lavkaItems.set(i6, inventoryItem5);
-                    }
-                    this.lavkaAdapter.submitList(this.lavkaItems);
-                    this.lavkaAdapter.notifyItemChanged(i6);
                 }
-            } else if (i == 3) {
-                this.handler.postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.shop.LavkaTypeScreen$$ExternalSyntheticLambda0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        LavkaTypeScreen.this.addLockedItems();
-                    }
-                }, 300L);
-            } else if (i == UIElementID.INVENTORY.getId()) {
-                Object fromJson4 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
-                Intrinsics.checkNotNullExpressionValue(fromJson4, "fromJson(...)");
-                InventoryResponse inventoryResponse4 = (InventoryResponse) fromJson4;
-                int type4 = inventoryResponse4.getType();
-                List<InventoryItem> items2 = inventoryResponse4.getItems();
-                ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(items2, 10));
-                Iterator<T> it5 = items2.iterator();
+                return;
+            }
+            for (InventoryItem inventoryItem5 : inventoryResponse3.getItems()) {
+                Iterator<InventoryItem> it4 = this.lavkaItems.iterator();
+                int i6 = 0;
                 while (true) {
-                    Integer num = null;
-                    if (!it5.hasNext()) {
+                    if (!it4.hasNext()) {
+                        i6 = -1;
+                        break;
+                    } else if (it4.next().getSlot() == inventoryItem5.getSlot()) {
+                        break;
+                    } else {
+                        i6++;
+                    }
+                }
+                if (this.lavkaItems.size() >= i6 && i6 != -1) {
+                    this.lavkaItems.set(i6, inventoryItem5);
+                }
+                this.lavkaAdapter.submitList(this.lavkaItems);
+                this.lavkaAdapter.notifyItemChanged(i6);
+            }
+        } else if (i == 3) {
+            this.handler.postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.shop.LavkaTypeScreen$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    LavkaTypeScreen.this.addLockedItems();
+                }
+            }, 300L);
+        } else if (i == UIElementID.INVENTORY.getId()) {
+            Object fromJson4 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
+            Intrinsics.checkNotNullExpressionValue(fromJson4, "fromJson(...)");
+            InventoryResponse inventoryResponse4 = (InventoryResponse) fromJson4;
+            int type4 = inventoryResponse4.getType();
+            List<InventoryItem> items2 = inventoryResponse4.getItems();
+            ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(items2, 10));
+            Iterator<T> it5 = items2.iterator();
+            while (true) {
+                Integer num = null;
+                if (!it5.hasNext()) {
+                    break;
+                }
+                InventoryItem inventoryItem6 = (InventoryItem) it5.next();
+                int type5 = inventoryResponse4.getType();
+                Iterator<T> it6 = UtilsKt.getItemsName().iterator();
+                while (true) {
+                    if (!it6.hasNext()) {
+                        obj2 = null;
                         break;
                     }
-                    InventoryItem inventoryItem6 = (InventoryItem) it5.next();
-                    int type5 = inventoryResponse4.getType();
-                    Iterator<T> it6 = UtilsKt.getItemsName().iterator();
-                    while (true) {
-                        if (!it6.hasNext()) {
-                            obj2 = null;
-                            break;
-                        }
-                        obj2 = it6.next();
-                        int id = ((ItemsInfo) obj2).getId();
-                        Integer item = inventoryItem6.getItem();
-                        if (item != null && id == item.intValue()) {
-                            break;
-                        }
-                    }
-                    ItemsInfo itemsInfo = (ItemsInfo) obj2;
-                    Integer valueOf = itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : null;
-                    Iterator<T> it7 = UtilsKt.getItemsName().iterator();
-                    while (true) {
-                        if (!it7.hasNext()) {
-                            obj3 = null;
-                            break;
-                        }
-                        obj3 = it7.next();
-                        int id2 = ((ItemsInfo) obj3).getId();
-                        Integer item2 = inventoryItem6.getItem();
-                        if (item2 != null && id2 == item2.intValue()) {
-                            break;
-                        }
-                    }
-                    ItemsInfo itemsInfo2 = (ItemsInfo) obj3;
-                    if (itemsInfo2 != null) {
-                        num = Integer.valueOf(itemsInfo2.getAcs_slot());
-                    }
-                    arrayList2.add(InventoryItem.copy$default(inventoryItem6, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type5, num, null, false, false, null, null, null, null, 33357807, null));
-                }
-                for (InventoryItem inventoryItem7 : new InventoryResponse(type4, arrayList2, 0, 4, null).getItems()) {
-                    Iterator<InventoryItem> it8 = this.inventoryItemsList.iterator();
-                    int i7 = 0;
-                    while (true) {
-                        if (!it8.hasNext()) {
-                            i7 = -1;
-                            break;
-                        } else if (it8.next().getSlot() == inventoryItem7.getSlot()) {
-                            break;
-                        } else {
-                            i7++;
-                        }
-                    }
-                    Iterator<T> it9 = this.inventoryItemsList.iterator();
-                    while (true) {
-                        if (!it9.hasNext()) {
-                            obj = null;
-                            break;
-                        }
-                        obj = it9.next();
-                        if (((InventoryItem) obj).getSlot() == inventoryItem7.getSlot()) {
-                            break;
-                        }
-                    }
-                    InventoryItem updateInventoryItem = UtilsKt.updateInventoryItem((InventoryItem) obj, inventoryItem7);
-                    if (this.inventoryItemsList.size() >= i7 && i7 != -1) {
-                        Integer item3 = inventoryItem7.getItem();
-                        List<InventoryItem> list = this.inventoryItemsList;
-                        if (item3 != null) {
-                            if (updateInventoryItem == null) {
-                                updateInventoryItem = ConstantsKt.getEmptyInventoryItem();
-                            }
-                            list.set(i7, updateInventoryItem);
-                        } else {
-                            list.set(i7, inventoryItem7);
-                        }
+                    obj2 = it6.next();
+                    int id = ((ItemsInfo) obj2).getId();
+                    Integer item = inventoryItem6.getItem();
+                    if (item != null && id == item.intValue()) {
+                        break;
                     }
                 }
-                this.inventoryAdapter.submitList(this.inventoryItemsList);
-                this.inventoryAdapter.notifyDataSetChanged();
+                ItemsInfo itemsInfo = (ItemsInfo) obj2;
+                Integer valueOf = itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : null;
+                Iterator<T> it7 = UtilsKt.getItemsName().iterator();
+                while (true) {
+                    if (!it7.hasNext()) {
+                        obj3 = null;
+                        break;
+                    }
+                    obj3 = it7.next();
+                    int id2 = ((ItemsInfo) obj3).getId();
+                    Integer item2 = inventoryItem6.getItem();
+                    if (item2 != null && id2 == item2.intValue()) {
+                        break;
+                    }
+                }
+                ItemsInfo itemsInfo2 = (ItemsInfo) obj3;
+                if (itemsInfo2 != null) {
+                    num = Integer.valueOf(itemsInfo2.getAcs_slot());
+                }
+                arrayList2.add(InventoryItem.copy$default(inventoryItem6, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type5, num, null, false, false, null, null, null, null, 33357807, null));
             }
-        } catch (Exception e) {
-            Log.d(String.valueOf(getBackendID()), data + "  " + e.getMessage());
-            e.printStackTrace();
-            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+            for (InventoryItem inventoryItem7 : new InventoryResponse(type4, arrayList2, 0, 4, null).getItems()) {
+                Iterator<InventoryItem> it8 = this.inventoryItemsList.iterator();
+                int i7 = 0;
+                while (true) {
+                    if (!it8.hasNext()) {
+                        i7 = -1;
+                        break;
+                    } else if (it8.next().getSlot() == inventoryItem7.getSlot()) {
+                        break;
+                    } else {
+                        i7++;
+                    }
+                }
+                Iterator<T> it9 = this.inventoryItemsList.iterator();
+                while (true) {
+                    if (!it9.hasNext()) {
+                        obj = null;
+                        break;
+                    }
+                    obj = it9.next();
+                    if (((InventoryItem) obj).getSlot() == inventoryItem7.getSlot()) {
+                        break;
+                    }
+                }
+                InventoryItem updateInventoryItem = UtilsKt.updateInventoryItem((InventoryItem) obj, inventoryItem7);
+                if (this.inventoryItemsList.size() >= i7 && i7 != -1) {
+                    Integer item3 = inventoryItem7.getItem();
+                    List<InventoryItem> list = this.inventoryItemsList;
+                    if (item3 != null) {
+                        if (updateInventoryItem == null) {
+                            updateInventoryItem = ConstantsKt.getEmptyInventoryItem();
+                        }
+                        list.set(i7, updateInventoryItem);
+                    } else {
+                        list.set(i7, inventoryItem7);
+                    }
+                }
+            }
+            this.inventoryAdapter.submitList(this.inventoryItemsList);
+            this.inventoryAdapter.notifyDataSetChanged();
         }
     }
 

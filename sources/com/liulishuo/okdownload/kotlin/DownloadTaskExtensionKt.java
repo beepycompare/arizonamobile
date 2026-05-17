@@ -964,12 +964,12 @@ public final class DownloadTaskExtensionKt {
                 CancellableContinuation cancellableContinuation = CancellableContinuation.this;
                 if (exc != null) {
                     Result.Companion companion = Result.Companion;
-                    cancellableContinuation.resumeWith(Result.m9183constructorimpl(ResultKt.createFailure(exc)));
+                    cancellableContinuation.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(exc)));
                     return;
                 }
                 DownloadResult downloadResult = new DownloadResult(cause);
                 Result.Companion companion2 = Result.Companion;
-                cancellableContinuation.resumeWith(Result.m9183constructorimpl(downloadResult));
+                cancellableContinuation.resumeWith(Result.m9202constructorimpl(downloadResult));
             }
         }));
         function0.invoke();

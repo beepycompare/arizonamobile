@@ -32,11 +32,12 @@ import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 /* compiled from: CustomKeyboard.kt */
-@Metadata(d1 = {"\u0000\u0084\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\r\u0018\u00002\u00020\u0001:\u0002HIB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0006\u00107\u001a\u000208J\b\u00109\u001a\u000208H\u0002J\u0006\u0010:\u001a\u00020\u001eJ\u000e\u0010;\u001a\u0002082\u0006\u0010<\u001a\u00020=J\u000e\u0010>\u001a\u0002082\u0006\u0010!\u001a\u00020\"J\u0006\u0010?\u001a\u000208J&\u0010@\u001a\u0002082\u0006\u0010A\u001a\u00020\u00052\u0006\u0010B\u001a\u00020\u001e2\u0006\u0010C\u001a\u00020\u001e2\u0006\u0010D\u001a\u00020\u0005J\u0010\u0010E\u001a\u0002082\u0006\u0010<\u001a\u00020=H\u0002J\b\u0010F\u001a\u000208H\u0002J\b\u0010G\u001a\u000208H\u0002R\u000e\u0010\b\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010!\u001a\u0004\u0018\u00010\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010'\u001a\u00020(8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b+\u0010,\u001a\u0004\b)\u0010*R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u00101\u001a\b\u0012\u0004\u0012\u00020302X\u0082\u0004¢\u0006\u0004\n\u0002\u00104R\u000e\u00105\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006J"}, d2 = {"Lru/mrlargha/commonui/elements/CustomKeyboard;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "activity", "inputLayout", "Landroidx/appcompat/widget/AppCompatImageView;", "inputArea", "Landroid/widget/EditText;", "chatType", "Landroid/widget/TextView;", "currentHistory", "keySlash", "keyNext", "keyOld", "keyBinder", "rpButton", "Landroid/widget/Button;", "nonrpButton", "orgButton", "familyButton", "workButton", "vipButton", "selectButton", "sendButton", "isChat", "", "isBinderShowing", "lastHeightKeyboard", "inputListener", "Lru/mrlargha/commonui/elements/CustomKeyboard$InputListener;", "viewRect", "Landroid/graphics/Rect;", "mainHandler", "Landroid/os/Handler;", "imm", "Landroid/view/inputmethod/InputMethodManager;", "getImm", "()Landroid/view/inputmethod/InputMethodManager;", "imm$delegate", "Lkotlin/Lazy;", "showKeyboardRunnable", "Ljava/lang/Runnable;", "globalLayoutListener", "Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;", "filters", "", "Landroid/text/InputFilter$LengthFilter;", "[Landroid/text/InputFilter$LengthFilter;", "mKeyboardView", "Landroidx/constraintlayout/widget/ConstraintLayout;", "showKeyboard", "", "hideKeyboard", "getUniqueState", "setString", "str", "", "setInputLayoutForEditText", "removeListener", "setInputLayout", "thisChatType", "type", "thisIsChat", "height", "OnInputEnd", "updateTextByCurrentHistoryLevel", "updateHistoryNavigationButtonsEnabledState", "InputListener", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0084\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u000e\u0018\u00002\u00020\u0001:\u0002JKB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0006\u00108\u001a\u000209J\b\u0010:\u001a\u000209H\u0002J\u0006\u0010;\u001a\u00020\u001eJ\u000e\u0010<\u001a\u0002092\u0006\u0010=\u001a\u00020>J\u000e\u0010?\u001a\u0002092\u0006\u0010\"\u001a\u00020#J\u0006\u0010@\u001a\u000209J&\u0010A\u001a\u0002092\u0006\u0010B\u001a\u00020\u00052\u0006\u0010C\u001a\u00020\u001e2\u0006\u0010D\u001a\u00020\u001e2\u0006\u0010E\u001a\u00020\u0005J\u0010\u0010F\u001a\u0002092\u0006\u0010=\u001a\u00020>H\u0002J\b\u0010G\u001a\u000209H\u0002J\b\u0010H\u001a\u000209H\u0002J\b\u0010I\u001a\u000209H\u0002R\u000e\u0010\b\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\"\u001a\u0004\u0018\u00010#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020%X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020'X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010(\u001a\u00020)8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b,\u0010-\u001a\u0004\b*\u0010+R\u000e\u0010.\u001a\u00020/X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u000201X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u00102\u001a\b\u0012\u0004\u0012\u00020403X\u0082\u0004¢\u0006\u0004\n\u0002\u00105R\u000e\u00106\u001a\u000207X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006L"}, d2 = {"Lru/mrlargha/commonui/elements/CustomKeyboard;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "activity", "inputLayout", "Landroidx/appcompat/widget/AppCompatImageView;", "inputArea", "Landroid/widget/EditText;", "chatType", "Landroid/widget/TextView;", "currentHistory", "keySlash", "keyNext", "keyOld", "keyBinder", "rpButton", "Landroid/widget/Button;", "nonrpButton", "orgButton", "familyButton", "workButton", "vipButton", "selectButton", "sendButton", "isChat", "", "isBinderShowing", "lastHeightKeyboard", "currentChatType", "inputListener", "Lru/mrlargha/commonui/elements/CustomKeyboard$InputListener;", "viewRect", "Landroid/graphics/Rect;", "mainHandler", "Landroid/os/Handler;", "imm", "Landroid/view/inputmethod/InputMethodManager;", "getImm", "()Landroid/view/inputmethod/InputMethodManager;", "imm$delegate", "Lkotlin/Lazy;", "showKeyboardRunnable", "Ljava/lang/Runnable;", "globalLayoutListener", "Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;", "filters", "", "Landroid/text/InputFilter$LengthFilter;", "[Landroid/text/InputFilter$LengthFilter;", "mKeyboardView", "Landroidx/constraintlayout/widget/ConstraintLayout;", "showKeyboard", "", "hideKeyboard", "getUniqueState", "setString", "str", "", "setInputLayoutForEditText", "removeListener", "setInputLayout", "thisChatType", "type", "thisIsChat", "height", "OnInputEnd", "updateTextByCurrentHistoryLevel", "updateHistoryNavigationButtonsEnabledState", "updateChatTypeLabel", "InputListener", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CustomKeyboard extends SAMPUIElement {
     private final Activity activity;
     private final TextView chatType;
+    private int currentChatType;
     private int currentHistory;
     private final Button familyButton;
     private final InputFilter.LengthFilter[] filters;
@@ -366,6 +367,7 @@ public final class CustomKeyboard extends SAMPUIElement {
         updateHistoryNavigationButtonsEnabledState();
         if (z) {
             this.lastHeightKeyboard = i2;
+            this.currentChatType = i;
             this.currentHistory = -1;
             this.inputArea.requestFocus();
             this.rpButton.setVisibility(8);
@@ -374,19 +376,7 @@ public final class CustomKeyboard extends SAMPUIElement {
             this.familyButton.setVisibility(8);
             this.workButton.setVisibility(8);
             this.vipButton.setVisibility(8);
-            if (i == 0) {
-                this.chatType.setText("РП");
-            } else if (i == 1) {
-                this.chatType.setText("НРП");
-            } else if (i == 2) {
-                this.chatType.setText("ОРГ");
-            } else if (i == 3) {
-                this.chatType.setText("СЕМ");
-            } else if (i == 4) {
-                this.chatType.setText("РАБ");
-            } else if (i == 5) {
-                this.chatType.setText("VIP");
-            }
+            updateChatTypeLabel();
             Object systemService = this.activity.getSystemService("input_method");
             Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
             ((InputMethodManager) systemService).showSoftInput(this.inputArea, 1);
@@ -403,28 +393,28 @@ public final class CustomKeyboard extends SAMPUIElement {
 
     private final void OnInputEnd(String str) {
         this.currentHistory = -1;
-        CharSequence text = this.chatType.getText();
-        if (!Intrinsics.areEqual(text, "РП")) {
-            if (Intrinsics.areEqual(text, "НРП")) {
-                if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
-                    str = "/b " + str;
-                }
-            } else if (Intrinsics.areEqual(text, "ОРГ")) {
-                if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
+        int i = this.currentChatType;
+        if (i != 0) {
+            if (i != 1) {
+                if (i != 2) {
+                    if (i != 3) {
+                        if (i != 4) {
+                            if (i != 5) {
+                                str = "";
+                            } else if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
+                                str = "/vr " + str;
+                            }
+                        } else if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
+                            str = "/j " + str;
+                        }
+                    } else if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
+                        str = "/fam " + str;
+                    }
+                } else if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
                     str = "/fr " + str;
                 }
-            } else if (Intrinsics.areEqual(text, "СЕМ")) {
-                if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
-                    str = "/fam " + str;
-                }
-            } else if (Intrinsics.areEqual(text, "РАБ")) {
-                if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
-                    str = "/j " + str;
-                }
-            } else if (!Intrinsics.areEqual(text, "VIP")) {
-                str = "";
             } else if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
-                str = "/vr " + str;
+                str = "/b " + str;
             }
         }
         InputListener inputListener = this.inputListener;
@@ -500,7 +490,8 @@ public final class CustomKeyboard extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$5(CustomKeyboard customKeyboard, View view) {
-        customKeyboard.chatType.setText("РП");
+        customKeyboard.currentChatType = 0;
+        customKeyboard.updateChatTypeLabel();
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
         customKeyboard.orgButton.setVisibility(8);
@@ -520,7 +511,8 @@ public final class CustomKeyboard extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$6(CustomKeyboard customKeyboard, View view) {
-        customKeyboard.chatType.setText("НРП");
+        customKeyboard.currentChatType = 1;
+        customKeyboard.updateChatTypeLabel();
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
         customKeyboard.orgButton.setVisibility(8);
@@ -540,7 +532,8 @@ public final class CustomKeyboard extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$7(CustomKeyboard customKeyboard, View view) {
-        customKeyboard.chatType.setText("ОРГ");
+        customKeyboard.currentChatType = 2;
+        customKeyboard.updateChatTypeLabel();
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
         customKeyboard.orgButton.setVisibility(8);
@@ -560,7 +553,8 @@ public final class CustomKeyboard extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$8(CustomKeyboard customKeyboard, View view) {
-        customKeyboard.chatType.setText("СЕМ");
+        customKeyboard.currentChatType = 3;
+        customKeyboard.updateChatTypeLabel();
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
         customKeyboard.orgButton.setVisibility(8);
@@ -580,7 +574,8 @@ public final class CustomKeyboard extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$9(CustomKeyboard customKeyboard, View view) {
-        customKeyboard.chatType.setText("РАБ");
+        customKeyboard.currentChatType = 4;
+        customKeyboard.updateChatTypeLabel();
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
         customKeyboard.orgButton.setVisibility(8);
@@ -600,7 +595,8 @@ public final class CustomKeyboard extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$10(CustomKeyboard customKeyboard, View view) {
-        customKeyboard.chatType.setText("VIP");
+        customKeyboard.currentChatType = 5;
+        customKeyboard.updateChatTypeLabel();
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
         customKeyboard.orgButton.setVisibility(8);
@@ -696,6 +692,29 @@ public final class CustomKeyboard extends SAMPUIElement {
             z = true;
         }
         appCompatImageView.setEnabled(z);
+    }
+
+    private final void updateChatTypeLabel() {
+        String string;
+        TextView textView = this.chatType;
+        int i = this.currentChatType;
+        if (i == 1) {
+            string = this.activity.getString(R.string.chat_type_nonrp_short);
+        } else if (i == 2) {
+            string = this.activity.getString(R.string.chat_type_org_short);
+        } else if (i == 3) {
+            string = this.activity.getString(R.string.chat_type_family_short);
+        } else if (i == 4) {
+            string = this.activity.getString(R.string.chat_type_work_short);
+        } else {
+            Activity activity = this.activity;
+            if (i == 5) {
+                string = activity.getString(R.string.vip);
+            } else {
+                string = activity.getString(R.string.RP_to_chat);
+            }
+        }
+        textView.setText(string);
     }
 
     /* compiled from: CustomKeyboard.kt */

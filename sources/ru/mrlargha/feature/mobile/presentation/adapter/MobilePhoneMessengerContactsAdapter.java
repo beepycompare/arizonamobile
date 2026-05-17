@@ -52,7 +52,7 @@ public final class MobilePhoneMessengerContactsAdapter extends RecyclerView.Adap
         this.onAddOrRemoveUser = onAddOrRemoveUser;
         this.item = 1;
         this.contacts = new ArrayList<>();
-        this.avatarPlaceholderUrl = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/inventory/skins/256/-1.webp";
+        this.avatarPlaceholderUrl = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/inventory/skins/256/-1.webp";
     }
 
     public /* synthetic */ MobilePhoneMessengerContactsAdapter(Function1 function1, Function1 function12, int i, DefaultConstructorMarker defaultConstructorMarker) {

@@ -6,7 +6,7 @@ import org.json.JSONObject;
 public final class Sk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f785a;
+    public final String f790a;
     public final String b;
     public final String c;
     public final String d;
@@ -15,7 +15,7 @@ public final class Sk {
     public final int g;
 
     public Sk(JSONObject jSONObject) {
-        this.f785a = jSONObject.optString("analyticsSdkVersionName", "");
+        this.f790a = jSONObject.optString("analyticsSdkVersionName", "");
         this.b = jSONObject.optString("kitBuildNumber", "");
         this.c = jSONObject.optString("appVer", "");
         this.d = jSONObject.optString(RemoteConfigConstants.RequestFieldKey.APP_BUILD, "");
@@ -25,6 +25,6 @@ public final class Sk {
     }
 
     public final String toString() {
-        return "SessionRequestParams(kitVersionName='" + this.f785a + "', kitBuildNumber='" + this.b + "', appVersion='" + this.c + "', appBuild='" + this.d + "', osVersion='" + this.e + "', apiLevel=" + this.f + ", attributionId=" + this.g + ')';
+        return "SessionRequestParams(kitVersionName='" + this.f790a + "', kitBuildNumber='" + this.b + "', appVersion='" + this.c + "', appBuild='" + this.d + "', osVersion='" + this.e + "', apiLevel=" + this.f + ", attributionId=" + this.g + ')';
     }
 }

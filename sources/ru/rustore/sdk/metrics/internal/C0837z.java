@@ -6,10 +6,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0837z {
 
     /* renamed from: a  reason: collision with root package name */
-    public final a0 f1629a;
+    public final a0 f1634a;
 
     public C0837z(a0 timeProvider) {
         Intrinsics.checkNotNullParameter(timeProvider, "timeProvider");
-        this.f1629a = timeProvider;
+        this.f1634a = timeProvider;
     }
 }

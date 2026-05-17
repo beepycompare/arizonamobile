@@ -2,7 +2,7 @@ package androidx.media3.container;
 
 import androidx.media3.common.Metadata;
 import com.google.common.primitives.Longs;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Mp4TimestampData implements Metadata.Entry {
     public static final int TIMESCALE_UNSET = -1;
     private static final int UNIX_EPOCH_TO_MP4_TIME_DELTA_SECONDS = 2082844800;

@@ -3,14 +3,14 @@ package io.appmetrica.analytics.identifiers.impl;
 import android.content.Context;
 import android.content.Intent;
 import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class j implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final f f449a;
+    public final f f454a;
 
     public j(f fVar) {
-        this.f449a = fVar;
+        this.f454a = fVar;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -24,9 +24,9 @@ public final class j implements b {
         try {
             try {
                 try {
-                    m mVar = (m) ((o) this.f449a.a(context));
+                    m mVar = (m) ((o) this.f454a.a(context));
                     cVar = new c(IdentifierStatus.OK, new a("huawei", mVar.a(), Boolean.valueOf(mVar.b())), null, 4);
-                    this = this.f449a;
+                    this = this.f454a;
                 } catch (Throwable unused) {
                 }
             } catch (g e) {
@@ -35,12 +35,12 @@ public final class j implements b {
                     message = "unknown exception during binding huawei services";
                 }
                 cVar = new c(IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE, null, message);
-                this = this.f449a;
+                this = this.f454a;
                 this.b(context);
                 return cVar;
             } catch (Throwable th) {
                 cVar = new c(IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE, null, "exception while fetching hoaid: " + th.getMessage());
-                this = this.f449a;
+                this = this.f454a;
                 this.b(context);
                 return cVar;
             }
@@ -48,7 +48,7 @@ public final class j implements b {
             return cVar;
         } catch (Throwable th2) {
             try {
-                this.f449a.b(context);
+                this.f454a.b(context);
             } catch (Throwable unused2) {
             }
             throw th2;
@@ -60,8 +60,8 @@ public final class j implements b {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public j() {
-        this(new f(r1, i.f448a, "huawei"));
+        this(new f(r1, i.f453a, "huawei"));
         Intent intent;
-        intent = k.f450a;
+        intent = k.f455a;
     }
 }

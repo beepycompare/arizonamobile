@@ -14,7 +14,7 @@ public final class U4 extends T4 {
 
     @Override // io.appmetrica.analytics.impl.T4
     public final void c() {
-        We we = this.f793a.c;
+        We we = this.f798a.c;
         try {
             Uk uk = new Uk(we, C0739z2.g);
             Long a2 = uk.c.a(Uk.d);

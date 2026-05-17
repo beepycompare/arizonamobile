@@ -32,8 +32,8 @@ import androidx.compose.ui.res.PainterResources_androidKt;
 import androidx.compose.ui.unit.Dp;
 import androidx.media3.exoplayer.RendererCapabilities;
 import com.miami.game.core.design.system.theme.RoundedParallelogramLeftShape;
-import com.miami.game.feature.home.R;
 import com.miami.game.feature.home.ui.model.HomeUiState;
+import com.miami.game.ui.classic.home.R;
 import com.miami.game.ui.theme.TypeKt;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -57,7 +57,7 @@ public final class OnlineContentKt {
         int i3;
         Intrinsics.checkNotNullParameter(uiState, "uiState");
         Composer startRestartGroup = composer.startRestartGroup(400238897);
-        ComposerKt.sourceInformation(startRestartGroup, "C(OnlineContent)N(uiState)45@2076L2425:OnlineContent.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(OnlineContent)N(uiState)45@2079L2425:OnlineContent.kt#dswm0d");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(uiState) ? 4 : 2) | i;
         } else {
@@ -97,7 +97,7 @@ public final class OnlineContentKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 349516311, "C64@2868L1623:OnlineContent.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 349516311, "C64@2871L1623:OnlineContent.kt#dswm0d");
             Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null);
             Alignment.Vertical centerVertically2 = Alignment.Companion.getCenterVertically();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
@@ -125,14 +125,14 @@ public final class OnlineContentKt {
             Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 756125618, "C91@3966L10,92@4019L13,88@3847L203,95@4094L37,94@4067L166,102@4393L10,103@4446L13,99@4250L227:OnlineContent.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 756125618, "C91@3969L10,92@4022L13,88@3850L203,95@4097L37,94@4070L166,102@4396L10,103@4449L13,99@4253L227:OnlineContent.kt#dswm0d");
             if (uiState.getQueue() > 0) {
                 startRestartGroup.startReplaceGroup(756124780);
-                ComposerKt.sourceInformation(startRestartGroup, "73@3251L10,74@3308L13,70@3119L224,77@3395L36,76@3364L181,84@3720L10,85@3777L13,81@3566L246");
-                TextKt.m2712TextNvy7gAk("Очередь", null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, 390, 0, 131050);
+                ComposerKt.sourceInformation(startRestartGroup, "73@3254L10,74@3311L13,70@3122L224,77@3398L36,76@3367L181,84@3723L10,85@3780L13,81@3569L246");
+                TextKt.m2712TextNvy7gAk("Очередь", null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, 390, 0, 131050);
                 ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.queue_ic, startRestartGroup, 0), (String) null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(13.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
                 i3 = 6;
-                TextKt.m2712TextNvy7gAk(String.valueOf(uiState.getQueue()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
+                TextKt.m2712TextNvy7gAk(String.valueOf(uiState.getQueue()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
                 startRestartGroup = startRestartGroup;
                 startRestartGroup.endReplaceGroup();
             } else {
@@ -141,9 +141,9 @@ public final class OnlineContentKt {
                 startRestartGroup.endReplaceGroup();
             }
             composer2 = startRestartGroup;
-            TextKt.m2712TextNvy7gAk("Онлайн", null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), startRestartGroup, i3), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, 390, 0, 131050);
+            TextKt.m2712TextNvy7gAk("Онлайн", null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), startRestartGroup, i3), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, 390, 0, 131050);
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.online_ic, composer2, 0), (String) null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(13.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer2, Painter.$stable | 432, 120);
-            TextKt.m2712TextNvy7gAk(String.valueOf(uiState.getOnline()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), composer2, i3), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
+            TextKt.m2712TextNvy7gAk(String.valueOf(uiState.getOnline()), null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(11.0f), composer2, i3), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();

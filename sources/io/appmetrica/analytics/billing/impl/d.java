@@ -7,7 +7,7 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class d extends MessageNano {
     public static final int c = 1;
     public static final int d = 2;
@@ -15,7 +15,7 @@ public final class d extends MessageNano {
     public static volatile d[] f;
 
     /* renamed from: a  reason: collision with root package name */
-    public c[] f310a;
+    public c[] f315a;
     public boolean b;
 
     public d() {
@@ -34,7 +34,7 @@ public final class d extends MessageNano {
     }
 
     public final d a() {
-        this.f310a = c.b();
+        this.f315a = c.b();
         this.b = false;
         this.cachedSize = -1;
         return this;
@@ -43,11 +43,11 @@ public final class d extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        c[] cVarArr = this.f310a;
+        c[] cVarArr = this.f315a;
         if (cVarArr != null && cVarArr.length > 0) {
             int i = 0;
             while (true) {
-                c[] cVarArr2 = this.f310a;
+                c[] cVarArr2 = this.f315a;
                 if (i >= cVarArr2.length) {
                     break;
                 }
@@ -63,11 +63,11 @@ public final class d extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        c[] cVarArr = this.f310a;
+        c[] cVarArr = this.f315a;
         if (cVarArr != null && cVarArr.length > 0) {
             int i = 0;
             while (true) {
-                c[] cVarArr2 = this.f310a;
+                c[] cVarArr2 = this.f315a;
                 if (i >= cVarArr2.length) {
                     break;
                 }
@@ -91,7 +91,7 @@ public final class d extends MessageNano {
                 break;
             } else if (readTag == 10) {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
-                c[] cVarArr = this.f310a;
+                c[] cVarArr = this.f315a;
                 int length = cVarArr == null ? 0 : cVarArr.length;
                 int i = repeatedFieldArrayLength + length;
                 c[] cVarArr2 = new c[i];
@@ -108,7 +108,7 @@ public final class d extends MessageNano {
                 c cVar2 = new c();
                 cVarArr2[length] = cVar2;
                 codedInputByteBufferNano.readMessage(cVar2);
-                this.f310a = cVarArr2;
+                this.f315a = cVarArr2;
             } else if (readTag != 16) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

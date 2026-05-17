@@ -5,7 +5,7 @@ import android.content.Context;
 import dagger.hilt.android.internal.Contexts;
 import dagger.hilt.internal.GeneratedComponentManager;
 import dagger.hilt.internal.Preconditions;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class BroadcastReceiverComponentManager {
     public static Object generatedComponent(Context context) {
         Application application = Contexts.getApplication(context.getApplicationContext());

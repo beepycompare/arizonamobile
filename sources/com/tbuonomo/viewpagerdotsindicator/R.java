@@ -1,8 +1,8 @@
 package com.tbuonomo.viewpagerdotsindicator;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class R {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class attr {
         public static int dampingRatio = 0x7f0401bf;
         public static int dotsClickable = 0x7f0401fe;
@@ -22,39 +22,39 @@ public final class R {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int dot_background = 0x7f080760;
-        public static int spring_dot_background = 0x7f080f1b;
-        public static int spring_dot_stroke_background = 0x7f080f1c;
-        public static int worm_dot_background = 0x7f080f80;
-        public static int worm_dot_stroke_background = 0x7f080f81;
+        public static int dot_background = 0x7f080761;
+        public static int spring_dot_background = 0x7f080f1c;
+        public static int spring_dot_stroke_background = 0x7f080f1d;
+        public static int worm_dot_background = 0x7f080f83;
+        public static int worm_dot_stroke_background = 0x7f080f84;
 
         private drawable() {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class id {
-        public static int dot = 0x7f0a04ab;
-        public static int spring_dot = 0x7f0a0db1;
-        public static int worm_dot = 0x7f0a10a4;
+        public static int dot = 0x7f0a0492;
+        public static int spring_dot = 0x7f0a0d98;
+        public static int worm_dot = 0x7f0a108a;
 
         private id() {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class layout {
-        public static int dot_layout = 0x7f0d00b3;
-        public static int spring_dot_layout = 0x7f0d026f;
-        public static int worm_dot_layout = 0x7f0d029a;
+        public static int dot_layout = 0x7f0d00b1;
+        public static int spring_dot_layout = 0x7f0d026d;
+        public static int worm_dot_layout = 0x7f0d0298;
 
         private layout() {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class styleable {
         public static int DotsIndicator_dotsClickable = 0x00000000;
         public static int DotsIndicator_dotsColor = 0x00000001;

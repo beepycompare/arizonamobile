@@ -6,7 +6,7 @@ public abstract class G9 {
     public static final A9 a(int i, String str) {
         byte[] bArr;
         A9 a9 = new A9();
-        a9.f496a = i;
+        a9.f501a = i;
         if (str == null || (bArr = str.getBytes(Charsets.UTF_8)) == null) {
             bArr = a9.b;
         }

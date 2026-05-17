@@ -23,7 +23,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: NotificationsViewModel.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel$viewAllNotifications$1", f = "NotificationsViewModel.kt", i = {1, 1, 2, 2, 2, 2, 2, 2, 2}, l = {96, 98, 101}, m = "invokeSuspend", n = {"fromDb", "listToSave", "fromDb", "listToSave", "$this$forEach$iv", "element$iv", "it", "$i$f$forEach", "$i$a$-forEach-NotificationsViewModel$viewAllNotifications$1$1"}, nl = {97, 99, 102}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$5", "L$6", "I$0", "I$1"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel$viewAllNotifications$1", f = "NotificationsViewModel.kt", i = {1, 1, 2, 2, 2, 2, 2, 2, 2}, l = {110, 112, 115}, m = "invokeSuspend", n = {"fromDb", "listToSave", "fromDb", "listToSave", "$this$forEach$iv", "element$iv", "it", "$i$f$forEach", "$i$a$-forEach-NotificationsViewModel$viewAllNotifications$1$1"}, nl = {111, 113, 116}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$5", "L$6", "I$0", "I$1"}, v = 2)
 /* loaded from: classes3.dex */
 final class NotificationsViewModel$viewAllNotifications$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int I$0;
@@ -55,19 +55,23 @@ final class NotificationsViewModel$viewAllNotifications$1 extends SuspendLambda 
         return ((NotificationsViewModel$viewAllNotifications$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0061, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x00c4, code lost:
         if (r2 == r1) goto L13;
      */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00cf  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0118 A[LOOP:1: B:30:0x0112->B:32:0x0118, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0141  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0132  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x017b A[LOOP:1: B:41:0x0175->B:43:0x017b, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x01a4  */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
+        boolean z;
         NotificationsRepository notificationsRepository;
         Object allNotificationFromDB;
+        MutableLiveData mutableLiveData;
+        MutableLiveData mutableLiveData2;
+        MutableLiveData mutableLiveData3;
         List list;
         List list2;
         Iterable iterable;
@@ -76,13 +80,32 @@ final class NotificationsViewModel$viewAllNotifications$1 extends SuspendLambda 
         Iterator it;
         List list4;
         int i;
-        MutableLiveData mutableLiveData;
+        MutableLiveData mutableLiveData4;
         Object addNotificationToDB;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i2 = this.label;
         if (i2 == 0) {
             ResultKt.throwOnFailure(obj);
-            notificationsRepository = this.this$0.notificationsRepository;
+            z = this.this$0.useMockNotifications;
+            NotificationsViewModel notificationsViewModel2 = this.this$0;
+            if (z) {
+                mutableLiveData = notificationsViewModel2._notificationsLiveData;
+                List list5 = (List) mutableLiveData.getValue();
+                if (list5 == null) {
+                    list5 = CollectionsKt.emptyList();
+                }
+                List<ArizonaNotification> list6 = list5;
+                ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list6, 10));
+                for (ArizonaNotification arizonaNotification : list6) {
+                    arrayList.add(ArizonaNotification.copy$default(arizonaNotification, null, null, null, null, true, 15, null));
+                }
+                mutableLiveData2 = this.this$0._notificationsLiveData;
+                mutableLiveData2.postValue(arrayList);
+                mutableLiveData3 = this.this$0._notificationsCountData;
+                mutableLiveData3.postValue(Boxing.boxInt(0));
+                return Unit.INSTANCE;
+            }
+            notificationsRepository = notificationsViewModel2.notificationsRepository;
             this.label = 1;
             allNotificationFromDB = notificationsRepository.getAllNotificationFromDB(this);
         } else if (i2 != 1) {
@@ -91,26 +114,26 @@ final class NotificationsViewModel$viewAllNotifications$1 extends SuspendLambda 
                 list = (List) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 Log.w(NotificationsViewModel.TAG, list.toString());
-                List list5 = list2;
-                NotificationsViewModel notificationsViewModel2 = this.this$0;
-                Iterator it2 = list5.iterator();
-                iterable = list5;
-                notificationsViewModel = notificationsViewModel2;
+                List list7 = list2;
+                NotificationsViewModel notificationsViewModel3 = this.this$0;
+                Iterator it2 = list7.iterator();
+                iterable = list7;
+                notificationsViewModel = notificationsViewModel3;
                 list3 = list;
                 it = it2;
                 list4 = list2;
                 i = 0;
                 while (it.hasNext()) {
                 }
-                List<NotificationHistoryData> list6 = list4;
-                ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list6, 10));
+                List<NotificationHistoryData> list8 = list4;
+                ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list8, 10));
                 while (r2.hasNext()) {
                 }
-                mutableLiveData = this.this$0._notificationsCountData;
-                ArrayList arrayList2 = new ArrayList();
+                mutableLiveData4 = this.this$0._notificationsCountData;
+                ArrayList arrayList3 = new ArrayList();
                 while (r1.hasNext()) {
                 }
-                mutableLiveData.postValue(Boxing.boxInt(arrayList2.size()));
+                mutableLiveData4.postValue(Boxing.boxInt(arrayList3.size()));
                 return Unit.INSTANCE;
             } else if (i2 == 3) {
                 i = this.I$0;
@@ -139,19 +162,19 @@ final class NotificationsViewModel$viewAllNotifications$1 extends SuspendLambda 
                         return coroutine_suspended;
                     }
                 }
-                List<NotificationHistoryData> list62 = list4;
-                ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list62, 10));
-                for (NotificationHistoryData notificationHistoryData3 : list62) {
-                    arrayList3.add(ArizonaNotificationKt.toUi(notificationHistoryData3));
+                List<NotificationHistoryData> list82 = list4;
+                ArrayList arrayList22 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list82, 10));
+                for (NotificationHistoryData notificationHistoryData3 : list82) {
+                    arrayList22.add(ArizonaNotificationKt.toUi(notificationHistoryData3));
                 }
-                mutableLiveData = this.this$0._notificationsCountData;
-                ArrayList arrayList22 = new ArrayList();
-                for (Object obj2 : arrayList3) {
+                mutableLiveData4 = this.this$0._notificationsCountData;
+                ArrayList arrayList32 = new ArrayList();
+                for (Object obj2 : arrayList22) {
                     if (!((ArizonaNotification) obj2).isViewed()) {
-                        arrayList22.add(obj2);
+                        arrayList32.add(obj2);
                     }
                 }
-                mutableLiveData.postValue(Boxing.boxInt(arrayList22.size()));
+                mutableLiveData4.postValue(Boxing.boxInt(arrayList32.size()));
                 return Unit.INSTANCE;
             } else {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -160,40 +183,40 @@ final class NotificationsViewModel$viewAllNotifications$1 extends SuspendLambda 
             ResultKt.throwOnFailure(obj);
             allNotificationFromDB = obj;
         }
-        List list7 = (List) allNotificationFromDB;
-        List<NotificationHistoryData> list8 = list7;
-        ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list8, 10));
-        for (NotificationHistoryData notificationHistoryData4 : list8) {
+        List list9 = (List) allNotificationFromDB;
+        List<NotificationHistoryData> list10 = list9;
+        ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list10, 10));
+        for (NotificationHistoryData notificationHistoryData4 : list10) {
             arrayList4.add(NotificationHistoryData.copy$default(notificationHistoryData4, 0, null, null, null, null, true, 31, null));
         }
         ArrayList arrayList5 = arrayList4;
-        this.L$0 = list7;
+        this.L$0 = list9;
         this.L$1 = arrayList5;
         this.label = 2;
         if (this.this$0.clearDB(this) != coroutine_suspended) {
-            list = list7;
+            list = list9;
             list2 = arrayList5;
             Log.w(NotificationsViewModel.TAG, list.toString());
-            List list52 = list2;
-            NotificationsViewModel notificationsViewModel22 = this.this$0;
-            Iterator it22 = list52.iterator();
-            iterable = list52;
-            notificationsViewModel = notificationsViewModel22;
+            List list72 = list2;
+            NotificationsViewModel notificationsViewModel32 = this.this$0;
+            Iterator it22 = list72.iterator();
+            iterable = list72;
+            notificationsViewModel = notificationsViewModel32;
             list3 = list;
             it = it22;
             list4 = list2;
             i = 0;
             while (it.hasNext()) {
             }
-            List<NotificationHistoryData> list622 = list4;
-            ArrayList arrayList32 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list622, 10));
+            List<NotificationHistoryData> list822 = list4;
+            ArrayList arrayList222 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list822, 10));
             while (r2.hasNext()) {
             }
-            mutableLiveData = this.this$0._notificationsCountData;
-            ArrayList arrayList222 = new ArrayList();
+            mutableLiveData4 = this.this$0._notificationsCountData;
+            ArrayList arrayList322 = new ArrayList();
             while (r1.hasNext()) {
             }
-            mutableLiveData.postValue(Boxing.boxInt(arrayList222.size()));
+            mutableLiveData4.postValue(Boxing.boxInt(arrayList322.size()));
             return Unit.INSTANCE;
         }
         return coroutine_suspended;

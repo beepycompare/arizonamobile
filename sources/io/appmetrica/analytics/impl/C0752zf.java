@@ -11,7 +11,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0752zf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Z f1333a;
+    public final Z f1338a;
     public final List b;
 
     public C0752zf(ECommercePrice eCommercePrice) {
@@ -32,11 +32,11 @@ public final class C0752zf {
     }
 
     public final String toString() {
-        return "PriceWrapper{fiat=" + this.f1333a + ", internalComponents=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "PriceWrapper{fiat=" + this.f1338a + ", internalComponents=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 
     public C0752zf(Z z, LinkedList linkedList) {
-        this.f1333a = z;
+        this.f1338a = z;
         this.b = linkedList;
     }
 }

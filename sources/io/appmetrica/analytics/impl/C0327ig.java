@@ -8,11 +8,11 @@ import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 public final class C0327ig implements Oa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ICommonExecutor f1045a;
+    public final ICommonExecutor f1050a;
     public final InstallReferrerClient b;
 
     public C0327ig(Context context, ICommonExecutor iCommonExecutor) {
-        this.f1045a = iCommonExecutor;
+        this.f1050a = iCommonExecutor;
         this.b = InstallReferrerClient.newBuilder(context).build();
     }
 
@@ -26,7 +26,7 @@ public final class C0327ig implements Oa {
     }
 
     public final void a(final InterfaceC0578sg interfaceC0578sg, final Throwable th) {
-        this.f1045a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.ig$$ExternalSyntheticLambda0
+        this.f1050a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.ig$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 C0327ig.b(InterfaceC0578sg.this, th);

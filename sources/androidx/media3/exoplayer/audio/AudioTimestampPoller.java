@@ -4,7 +4,6 @@ import android.media.AudioTimestamp;
 import android.media.AudioTrack;
 import androidx.media3.common.C;
 import androidx.media3.common.util.Util;
-import androidx.media3.exoplayer.Renderer;
 import androidx.media3.exoplayer.audio.AudioTrackPositionTracker;
 /* loaded from: classes2.dex */
 final class AudioTimestampPoller {
@@ -113,9 +112,9 @@ final class AudioTimestampPoller {
             this.initialTimestampPositionFrames = -1L;
             this.initialTimestampSystemTimeUs = C.TIME_UNSET;
             this.initializeSystemTimeUs = System.nanoTime() / 1000;
-            this.sampleIntervalUs = Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
+            this.sampleIntervalUs = 10000L;
         } else if (i == 1) {
-            this.sampleIntervalUs = Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
+            this.sampleIntervalUs = 10000L;
         } else if (i == 2 || i == 3) {
             this.sampleIntervalUs = 10000000L;
         } else if (i == 4) {

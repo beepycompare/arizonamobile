@@ -9,25 +9,25 @@ import kotlin.collections.CollectionsKt;
 public final class C0369k6 implements Fa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CopyOnWriteArrayList f1076a = new CopyOnWriteArrayList();
+    public final CopyOnWriteArrayList f1081a = new CopyOnWriteArrayList();
 
     @Override // io.appmetrica.analytics.impl.Fa
     public final void a(Throwable th, V v) {
-        Iterator it = this.f1076a.iterator();
+        Iterator it = this.f1081a.iterator();
         while (it.hasNext()) {
             ((Fa) it.next()).a(th, v);
         }
     }
 
     public final void a(Fa... faArr) {
-        CollectionsKt.addAll(this.f1076a, faArr);
+        CollectionsKt.addAll(this.f1081a, faArr);
     }
 
     public final void a(List<? extends Fa> list) {
-        this.f1076a.addAll(list);
+        this.f1081a.addAll(list);
     }
 
     public final void a() {
-        this.f1076a.clear();
+        this.f1081a.clear();
     }
 }

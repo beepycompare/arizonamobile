@@ -227,13 +227,16 @@ public final class RecoveryHandler implements InterfaceController {
         if (i == 1) {
             recoveryHandler.sendRecoveryInfo();
         } else if (i == 2) {
-            Toast.makeText(recoveryHandler.targetActivity, "Пожалуйста, подождите...", 0).show();
+            Activity activity = recoveryHandler.targetActivity;
+            Toast.makeText(activity, activity.getString(R.string.common_please_wait), 0).show();
         } else if (i == 3) {
-            Toast.makeText(recoveryHandler.targetActivity, "Для того что бы отправить запрос повторно, необходимо ввести корректную информацию", 0).show();
+            Activity activity2 = recoveryHandler.targetActivity;
+            Toast.makeText(activity2, activity2.getString(R.string.common_retry_requires_correct_input), 0).show();
         } else if (i != 4) {
             throw new NoWhenBranchMatchedException();
         } else {
-            Toast.makeText(recoveryHandler.targetActivity, "Заполните все обязательные поля!", 0).show();
+            Activity activity3 = recoveryHandler.targetActivity;
+            Toast.makeText(activity3, activity3.getString(R.string.common_fill_required_fields), 0).show();
         }
     }
 
@@ -294,11 +297,11 @@ public final class RecoveryHandler implements InterfaceController {
                     this.recoveryHandlerBinding.accountRecoveryHandlerErrorContainer.setVisibility(0);
                     int i = WhenMappings.$EnumSwitchMapping$1[recoveryMethodType.ordinal()];
                     if (i == 1) {
-                        this.recoveryHandlerBinding.accountRecoveryHandlerErrorDescription.setText("Сервис временно недоступен. Попробуйте повторить попытку позже.");
+                        this.recoveryHandlerBinding.accountRecoveryHandlerErrorDescription.setText(this.targetActivity.getString(R.string.recovery_service_unavailable));
                     } else if (i != 2 && i != 3) {
                         throw new NoWhenBranchMatchedException();
                     } else {
-                        this.recoveryHandlerBinding.accountRecoveryHandlerErrorDescription.setText("Сервис временно недоступен. Попробуйте повторить попытку позже.");
+                        this.recoveryHandlerBinding.accountRecoveryHandlerErrorDescription.setText(this.targetActivity.getString(R.string.recovery_service_unavailable));
                         disableUpdateButton();
                         this.requestState = RequestState.RECEIVED_BAD_ANSWER_FROM_SERVER;
                     }
@@ -310,7 +313,7 @@ public final class RecoveryHandler implements InterfaceController {
             case -591463114:
                 if (data.equals("code_error")) {
                     this.recoveryHandlerBinding.accountRecoveryHandlerErrorContainer.setVisibility(0);
-                    this.recoveryHandlerBinding.accountRecoveryHandlerErrorDescription.setText("Указан неверный проверочный код. Проверьте правильность написания и повторите попытку.");
+                    this.recoveryHandlerBinding.accountRecoveryHandlerErrorDescription.setText(this.targetActivity.getString(R.string.recovery_invalid_code));
                     enableError();
                     disableUpdateButton();
                     return;
@@ -322,15 +325,15 @@ public final class RecoveryHandler implements InterfaceController {
                     this.recoveryHandlerBinding.accountRecoveryHandlerErrorContainer.setVisibility(0);
                     int i2 = WhenMappings.$EnumSwitchMapping$1[recoveryMethodType2.ordinal()];
                     if (i2 == 1) {
-                        this.recoveryHandlerBinding.accountRecoveryHandlerErrorDescription.setText("Аккаунт не найден. Никнейм или почта указаны некорректно. Проверьте правильность написания.");
+                        this.recoveryHandlerBinding.accountRecoveryHandlerErrorDescription.setText(this.targetActivity.getString(R.string.recovery_account_not_found_mail));
                     } else if (i2 == 2) {
-                        this.recoveryHandlerBinding.accountRecoveryHandlerErrorDescription.setText("Аккаунт не найден. telegram id указан некорректно. Проверьте правильность написания.");
+                        this.recoveryHandlerBinding.accountRecoveryHandlerErrorDescription.setText(this.targetActivity.getString(R.string.recovery_account_not_found_telegram));
                         disableUpdateButton();
                         this.requestState = RequestState.RECEIVED_BAD_ANSWER_FROM_SERVER;
                     } else if (i2 != 3) {
                         throw new NoWhenBranchMatchedException();
                     } else {
-                        this.recoveryHandlerBinding.accountRecoveryHandlerErrorDescription.setText("Аккаунт не найден. vk id указан некорректно. Проверьте правильность написания.");
+                        this.recoveryHandlerBinding.accountRecoveryHandlerErrorDescription.setText(this.targetActivity.getString(R.string.recovery_account_not_found_vk));
                         disableUpdateButton();
                         this.requestState = RequestState.RECEIVED_BAD_ANSWER_FROM_SERVER;
                     }
@@ -344,12 +347,17 @@ public final class RecoveryHandler implements InterfaceController {
                     AccountRecoveryHandlerBinding accountRecoveryHandlerBinding = this.recoveryHandlerBinding;
                     accountRecoveryHandlerBinding.accountRecoveryHandlerMethodIcon.setImageResource(R.drawable.auth2_icon);
                     accountRecoveryHandlerBinding.accountRecoveryTypePlaceholder.setText("");
-                    accountRecoveryHandlerBinding.accountRecoveryTypePlaceholder.setHint("Введите проверочный код");
+                    accountRecoveryHandlerBinding.accountRecoveryTypePlaceholder.setHint(this.targetActivity.getString(R.string.recovery_code_hint));
                     ConstraintLayout constraintLayout = accountRecoveryHandlerBinding.accountRecoveryHandlerInfoContainer;
                     this.requestState = RequestState.INIT;
+                    int i3 = this.recoveryMethod;
+                    int id = RecoveryMethodType.MAIL.getId();
+                    Activity activity = this.targetActivity;
+                    String string = i3 == id ? activity.getString(R.string.recovery_code_sent_mail) : activity.getString(R.string.recovery_code_sent_vk);
+                    Intrinsics.checkNotNull(string);
                     constraintLayout.setVisibility(8);
-                    accountRecoveryHandlerBinding.accountRecoveryDescription.setText("Проверочный код уже выслан " + (this.recoveryMethod == RecoveryMethodType.MAIL.getId() ? "на вашу почту" : "в Вконтакте") + ". Проверьте спам, если не можете найти его");
-                    accountRecoveryHandlerBinding.accountRecoveryHandlerUpdateButtonTxt.setText("Сбросить пароль");
+                    accountRecoveryHandlerBinding.accountRecoveryDescription.setText(string);
+                    accountRecoveryHandlerBinding.accountRecoveryHandlerUpdateButtonTxt.setText(this.targetActivity.getString(R.string.password_reset));
                     accountRecoveryHandlerBinding.accountRecoveryHandlerUpdateButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$$ExternalSyntheticLambda6
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -360,11 +368,11 @@ public final class RecoveryHandler implements InterfaceController {
                     Intrinsics.checkNotNullExpressionValue(accountRecoveryTypePlaceholder, "accountRecoveryTypePlaceholder");
                     accountRecoveryTypePlaceholder.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$onServerRecoveryResponse$lambda$0$$inlined$addTextChangedListener$default$1
                         @Override // android.text.TextWatcher
-                        public void beforeTextChanged(CharSequence charSequence, int i3, int i4, int i5) {
+                        public void beforeTextChanged(CharSequence charSequence, int i4, int i5, int i6) {
                         }
 
                         @Override // android.text.TextWatcher
-                        public void onTextChanged(CharSequence charSequence, int i3, int i4, int i5) {
+                        public void onTextChanged(CharSequence charSequence, int i4, int i5, int i6) {
                         }
 
                         @Override // android.text.TextWatcher
@@ -397,13 +405,16 @@ public final class RecoveryHandler implements InterfaceController {
         if (i == 1) {
             recoveryHandler.sendRecoveryCode();
         } else if (i == 2) {
-            Toast.makeText(recoveryHandler.targetActivity, "Пожалуйста, подождите...", 0).show();
+            Activity activity = recoveryHandler.targetActivity;
+            Toast.makeText(activity, activity.getString(R.string.common_please_wait), 0).show();
         } else if (i == 3) {
-            Toast.makeText(recoveryHandler.targetActivity, "Для того что бы отправить запрос повторно, необходимо ввести корректную информацию", 0).show();
+            Activity activity2 = recoveryHandler.targetActivity;
+            Toast.makeText(activity2, activity2.getString(R.string.common_retry_requires_correct_input), 0).show();
         } else if (i != 4) {
             throw new NoWhenBranchMatchedException();
         } else {
-            Toast.makeText(recoveryHandler.targetActivity, "Заполните все обязательные поля!", 0).show();
+            Activity activity3 = recoveryHandler.targetActivity;
+            Toast.makeText(activity3, activity3.getString(R.string.common_fill_required_fields), 0).show();
         }
     }
 
@@ -414,18 +425,18 @@ public final class RecoveryHandler implements InterfaceController {
         this.recoveryHandlerBinding.accountRecoveryHandlerInfoContainer.setVisibility(8);
         this.recoveryHandlerBinding.accountRecoveryHandlerInput.setVisibility(0);
         CharSequence text = this.recoveryHandlerBinding.accountRecoveryHandlerPlaceholder.getText();
-        if (Intrinsics.areEqual(text, "Почта")) {
-            this.recoveryHandlerBinding.accountRecoveryTypePlaceholder.setHint("Адрес электронной почты");
+        if (Intrinsics.areEqual(text, this.targetActivity.getString(R.string.email))) {
+            this.recoveryHandlerBinding.accountRecoveryTypePlaceholder.setHint(this.targetActivity.getString(R.string.recovery_mail_hint));
             this.recoveryHandlerBinding.accountRecoveryTypePlaceholder.setText("");
             this.recoveryHandlerBinding.accountRecoveryHandlerMethodIcon.setImageResource(R.drawable.mail_ic);
             this.recoveryMethod = RecoveryMethodType.MAIL.getId();
-        } else if (Intrinsics.areEqual(text, "Вконтакте")) {
-            this.recoveryHandlerBinding.accountRecoveryTypePlaceholder.setHint("ID профиля VK");
+        } else if (Intrinsics.areEqual(text, this.targetActivity.getString(R.string.vkontakte))) {
+            this.recoveryHandlerBinding.accountRecoveryTypePlaceholder.setHint(this.targetActivity.getString(R.string.recovery_vk_id_hint));
             this.recoveryHandlerBinding.accountRecoveryTypePlaceholder.setText("");
             this.recoveryHandlerBinding.accountRecoveryHandlerMethodIcon.setImageResource(R.drawable.vk_ic);
             this.recoveryMethod = RecoveryMethodType.VK.getId();
-        } else if (Intrinsics.areEqual(text, "Телеграм")) {
-            this.recoveryHandlerBinding.accountRecoveryTypePlaceholder.setHint("ID профиля Telegram");
+        } else if (Intrinsics.areEqual(text, this.targetActivity.getString(R.string.telegram))) {
+            this.recoveryHandlerBinding.accountRecoveryTypePlaceholder.setHint(this.targetActivity.getString(R.string.recovery_telegram_id_hint));
             this.recoveryHandlerBinding.accountRecoveryTypePlaceholder.setText("");
             this.recoveryHandlerBinding.accountRecoveryHandlerMethodIcon.setImageResource(R.drawable.ic_telegram);
             this.recoveryMethod = RecoveryMethodType.TELEGRAM.getId();
@@ -519,7 +530,7 @@ public final class RecoveryHandler implements InterfaceController {
 
     private final RecoveryMethodType getRecoveryMethodType() {
         CharSequence text = this.recoveryHandlerBinding.accountRecoveryHandlerPlaceholder.getText();
-        return Intrinsics.areEqual(text, "Почта") ? RecoveryMethodType.MAIL : Intrinsics.areEqual(text, "Вконтакте") ? RecoveryMethodType.VK : RecoveryMethodType.TELEGRAM;
+        return Intrinsics.areEqual(text, this.targetActivity.getString(R.string.email)) ? RecoveryMethodType.MAIL : Intrinsics.areEqual(text, this.targetActivity.getString(R.string.vkontakte)) ? RecoveryMethodType.VK : RecoveryMethodType.TELEGRAM;
     }
 
     private final void getInputText() {
@@ -535,7 +546,8 @@ public final class RecoveryHandler implements InterfaceController {
             iBackendNotifier.clickedWrapper(i, 4, 1, bytes);
             return;
         }
-        Toast.makeText(this.targetActivity, "Проверьте правильность введенных полей!", 0).show();
+        Activity activity = this.targetActivity;
+        Toast.makeText(activity, activity.getString(R.string.common_check_fields), 0).show();
     }
 
     private final void resetRecoveryHandler() {
@@ -543,14 +555,16 @@ public final class RecoveryHandler implements InterfaceController {
         this.recoveryMethod = -1;
         this.requestState = RequestState.DISABLE;
         this.inputCode = "";
-        this.inputText = "Почта";
-        this.recoveryHandlerBinding.accountRecoveryHandlerPlaceholder.setText("Способ восстановления");
+        String string = this.targetActivity.getString(R.string.email);
+        Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+        this.inputText = string;
+        this.recoveryHandlerBinding.accountRecoveryHandlerPlaceholder.setText(this.targetActivity.getString(R.string.recovery_method));
         this.recoveryHandlerBinding.accountRecoveryHandlerPlaceholder.setTextColor(Color.parseColor("#979797"));
         this.recoveryHandlerBinding.accountRecoveryHandlerInfoContainer.setVisibility(0);
-        this.recoveryHandlerBinding.accountRecoveryDescription.setText("Выберите способ получения нового пароля для вашего аккаунта");
+        this.recoveryHandlerBinding.accountRecoveryDescription.setText(this.targetActivity.getString(R.string.waytoget_password));
         this.recoveryHandlerBinding.accountRecoveryHandlerErrorContainer.setVisibility(8);
         this.recoveryHandlerBinding.accountRecoveryHandlerInput.setVisibility(8);
-        this.recoveryHandlerBinding.accountRecoveryHandlerUpdateButtonTxt.setText("Отправить код");
+        this.recoveryHandlerBinding.accountRecoveryHandlerUpdateButtonTxt.setText(this.targetActivity.getString(R.string.send_code));
         this.recoveryHandlerBinding.accountRecoveryHandlerUpdateButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -565,13 +579,16 @@ public final class RecoveryHandler implements InterfaceController {
         if (i == 1) {
             recoveryHandler.sendRecoveryInfo();
         } else if (i == 2) {
-            Toast.makeText(recoveryHandler.targetActivity, "Пожалуйста, подождите...", 0).show();
+            Activity activity = recoveryHandler.targetActivity;
+            Toast.makeText(activity, activity.getString(R.string.common_please_wait), 0).show();
         } else if (i == 3) {
-            Toast.makeText(recoveryHandler.targetActivity, "Для того что бы отправить запрос повторно, необходимо ввести корректную информацию", 0).show();
+            Activity activity2 = recoveryHandler.targetActivity;
+            Toast.makeText(activity2, activity2.getString(R.string.common_retry_requires_correct_input), 0).show();
         } else if (i != 4) {
             throw new NoWhenBranchMatchedException();
         } else {
-            Toast.makeText(recoveryHandler.targetActivity, "Заполните все обязательные поля!", 0).show();
+            Activity activity3 = recoveryHandler.targetActivity;
+            Toast.makeText(activity3, activity3.getString(R.string.common_fill_required_fields), 0).show();
         }
     }
 
@@ -588,7 +605,8 @@ public final class RecoveryHandler implements InterfaceController {
             disableUpdateButton();
             return;
         }
-        Toast.makeText(this.targetActivity, "Вернитесь на окно авторизации и введите никнейм что бы продолжить процедуру восстонавления!", 1).show();
+        Activity activity = this.targetActivity;
+        Toast.makeText(activity, activity.getString(R.string.recovery_return_to_auth_with_nickname), 1).show();
     }
 
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController

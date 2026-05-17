@@ -16,7 +16,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class MainInventoryBinding implements ViewBinding {
     public final AppCompatImageView btnBack;
     public final AppCompatButton btnMedbook;

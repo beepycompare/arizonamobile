@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class FirstPartyDataTelegramLoginSha256Attribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0593t6 f1426a = new C0593t6("appmetrica_1pd_telegram_sha256", new C0113a8(), new Gb(new C0417m4(100)));
+    private final C0593t6 f1431a = new C0593t6("appmetrica_1pd_telegram_sha256", new C0113a8(), new Gb(new C0417m4(100)));
     private final Yk b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -29,10 +29,10 @@ public class FirstPartyDataTelegramLoginSha256Attribute {
     }
 
     public UserProfileUpdate<? extends InterfaceC0232eo> withTelegramLoginValues(Iterable<String> iterable) {
-        String str = this.f1426a.c;
+        String str = this.f1431a.c;
         ArrayList a2 = this.b.a(iterable);
         Xm xm = new Xm(200, "First party data telegram logins attribute", PublicLogger.getAnonymousInstance());
-        C0593t6 c0593t6 = this.f1426a;
-        return new UserProfileUpdate<>(new Wm(str, a2, 10, xm, c0593t6.f1231a, new C0566s4(c0593t6.b)));
+        C0593t6 c0593t6 = this.f1431a;
+        return new UserProfileUpdate<>(new Wm(str, a2, 10, xm, c0593t6.f1236a, new C0566s4(c0593t6.b)));
     }
 }

@@ -210,24 +210,24 @@ public final class MutableDoubleList extends DoubleList {
         double[] dArr = this.content;
         int i2 = this._size - 1;
         while (true) {
-            int i3 = -1;
+            int i3 = 0;
+            int i4 = -1;
             if (-1 >= i2) {
                 break;
             }
             double d = dArr[i2];
             int length = elements.length;
-            int i4 = 0;
             while (true) {
-                if (i4 >= length) {
+                if (i3 >= length) {
                     break;
-                }
-                if (elements[i4] == d) {
-                    i3 = i4;
+                } else if (elements[i3] == d) {
+                    i4 = i3;
                     break;
+                } else {
+                    i3++;
                 }
-                i4++;
             }
-            if (i3 < 0) {
+            if (i4 < 0) {
                 removeAt(i2);
             }
             i2--;

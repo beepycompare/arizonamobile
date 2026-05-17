@@ -83,12 +83,12 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
         eventAwardItemBinding.itemLevelNameUsually.setText(award.getTitle());
         if (UtilsKt.isArizonaType()) {
             Picasso picasso = Picasso.get();
-            String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso.load(resourceUrl$default + "/projects/arizona-rp/systems/battlepass/easter-2026/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
+            String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            picasso.load(projectResourceUrl$default + "/systems/battlepass/easter-2026/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
         } else {
             Picasso picasso2 = Picasso.get();
-            String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso2.load(resourceUrl$default2 + "/projects/rodina-rp/systems/battlepass/items/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
+            String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            picasso2.load(projectResourceUrl$default2 + "/systems/battlepass/items/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
         }
         eventAwardItemBinding.locked.setVisibility(8);
         eventAwardItemBinding.received.setVisibility(8);

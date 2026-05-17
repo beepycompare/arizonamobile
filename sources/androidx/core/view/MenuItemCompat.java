@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import androidx.annotation.ReplaceWith;
 import androidx.core.internal.view.SupportMenuItem;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class MenuItemCompat {
     @Deprecated
     public static final int SHOW_AS_ACTION_ALWAYS = 2;
@@ -222,7 +222,7 @@ public final class MenuItemCompat {
     private MenuItemCompat() {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     static class Api26Impl {
         private Api26Impl() {
         }

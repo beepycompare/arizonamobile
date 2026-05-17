@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.io.Base64Utils;
 public final class Pn implements to {
 
     /* renamed from: a  reason: collision with root package name */
-    public final H8 f744a;
+    public final H8 f749a;
 
     public Pn() {
         this(new H8());
@@ -18,15 +18,15 @@ public final class Pn implements to {
             bArr = Base64Utils.decompressBase64GzipAsBytes(n8.b);
         } catch (Throwable unused) {
         }
-        byte[] a2 = ((G8) this.f744a.f611a.a(n8.o)).a(bArr);
+        byte[] a2 = ((G8) this.f749a.f616a.a(n8.o)).a(bArr);
         return a2 == null ? new byte[0] : a2;
     }
 
     public Pn(H8 h8) {
-        this.f744a = h8;
+        this.f749a = h8;
     }
 
     public final H8 a() {
-        return this.f744a;
+        return this.f749a;
     }
 }

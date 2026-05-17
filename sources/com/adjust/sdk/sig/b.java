@@ -1,4 +1,4 @@
 package com.adjust.sdk.sig;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class b extends RuntimeException {
 }

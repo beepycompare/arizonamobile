@@ -78,8 +78,8 @@ public final class BonusesAdapter extends RecyclerView.Adapter<EmploymentBonusVi
         int imageType = bonusItem.getImageType();
         if (imageType == 0) {
             Picasso picasso = Picasso.get();
-            String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            RequestCreator load = picasso.load(resourceUrl$default + "projects/arizona-rp/assets/images/donate/" + bonusItem.getImage() + ".webp");
+            String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            RequestCreator load = picasso.load(projectResourceUrl$default + "assets/images/donate/" + bonusItem.getImage() + ".webp");
             Target picassoTarget = holder.getPicassoTarget();
             if (picassoTarget == null) {
                 return;
@@ -87,8 +87,8 @@ public final class BonusesAdapter extends RecyclerView.Adapter<EmploymentBonusVi
             load.into(picassoTarget);
         } else if (imageType == 1) {
             Picasso picasso2 = Picasso.get();
-            String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            RequestCreator load2 = picasso2.load(resourceUrl$default2 + "projects/arizona-rp/systems/employment_center/bonuses/" + bonusItem.getImage() + ".webp");
+            String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            RequestCreator load2 = picasso2.load(projectResourceUrl$default2 + "systems/employment_center/bonuses/" + bonusItem.getImage() + ".webp");
             Target picassoTarget2 = holder.getPicassoTarget();
             if (picassoTarget2 == null) {
                 return;
@@ -113,8 +113,8 @@ public final class BonusesAdapter extends RecyclerView.Adapter<EmploymentBonusVi
             }
         } else if (imageType == 3) {
             Picasso picasso3 = Picasso.get();
-            String resourceUrl$default3 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            RequestCreator load3 = picasso3.load(resourceUrl$default3 + "projects/arizona-rp/assets/images/inventory/vehicles/256/" + bonusItem.getImage() + ".webp");
+            String projectResourceUrl$default3 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            RequestCreator load3 = picasso3.load(projectResourceUrl$default3 + "assets/images/inventory/vehicles/256/" + bonusItem.getImage() + ".webp");
             Target picassoTarget3 = holder.getPicassoTarget();
             if (picassoTarget3 == null) {
                 return;

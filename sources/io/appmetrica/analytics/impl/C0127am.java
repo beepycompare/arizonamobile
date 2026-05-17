@@ -17,11 +17,11 @@ public final class C0127am extends M5 {
     /* renamed from: b */
     public final C0153bm load(L5 l5) {
         C0153bm c0153bm = (C0153bm) super.load(l5);
-        C0256fm c0256fm = l5.f671a;
+        C0256fm c0256fm = l5.f676a;
         c0153bm.d = c0256fm.f;
         c0153bm.e = c0256fm.g;
         Zl zl = (Zl) l5.componentArguments;
-        String str = zl.f891a;
+        String str = zl.f896a;
         if (str != null) {
             c0153bm.f = str;
             c0153bm.g = zl.b;
@@ -32,7 +32,7 @@ public final class C0127am extends M5 {
         Zl zl2 = (Zl) l5.componentArguments;
         c0153bm.k = zl2.d;
         c0153bm.j = zl2.e;
-        C0256fm c0256fm2 = l5.f671a;
+        C0256fm c0256fm2 = l5.f676a;
         c0153bm.l = c0256fm2.p;
         c0153bm.m = c0256fm2.r;
         long j = c0256fm2.v;

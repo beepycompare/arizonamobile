@@ -12,19 +12,19 @@ import ru.rustore.sdk.reactive.single.SingleEmitter;
 public final class C0807u extends Lambda implements Function1<SingleEmitter<Unit>, ServiceConnection> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0804r f1566a;
+    public final /* synthetic */ C0804r f1571a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0807u(C0804r c0804r) {
         super(1);
-        this.f1566a = c0804r;
+        this.f1571a = c0804r;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final ServiceConnection invoke(SingleEmitter<Unit> singleEmitter) {
         SingleEmitter<Unit> emitter = singleEmitter;
         Intrinsics.checkNotNullParameter(emitter, "emitter");
-        Context context = this.f1566a.f1561a;
+        Context context = this.f1571a.f1566a;
         String packageName = context.getPackageName();
         Intrinsics.checkNotNullExpressionValue(packageName, "context.packageName");
         return new N(context, packageName, new C0805s(emitter), new C0806t(emitter));

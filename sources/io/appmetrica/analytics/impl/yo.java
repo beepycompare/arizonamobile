@@ -6,13 +6,13 @@ import org.json.JSONObject;
 public final class yo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bo f1326a;
+    public final Bo f1331a;
     public final Bo b;
     public final zo c;
     public JSONObject d;
 
     public yo(Bo bo, Bo bo2, zo zoVar) {
-        this.f1326a = bo;
+        this.f1331a = bo;
         this.b = bo2;
         this.c = zoVar;
     }
@@ -20,7 +20,7 @@ public final class yo {
     public final synchronized JSONObject a() {
         JSONObject jSONObject;
         if (this.d == null) {
-            JSONObject a2 = this.c.a(a(this.f1326a), a(this.b));
+            JSONObject a2 = this.c.a(a(this.f1331a), a(this.b));
             this.d = a2;
             a(a2);
         }
@@ -44,7 +44,7 @@ public final class yo {
     public final synchronized void a(JSONObject jSONObject) {
         String jSONObject2 = jSONObject.toString();
         try {
-            this.f1326a.a(jSONObject2);
+            this.f1331a.a(jSONObject2);
         } catch (Throwable unused) {
         }
         try {

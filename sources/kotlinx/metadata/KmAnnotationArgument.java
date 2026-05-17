@@ -406,20 +406,20 @@ public abstract class KmAnnotationArgument {
         }
 
         /* renamed from: copy-7apg3OU$default  reason: not valid java name */
-        public static /* synthetic */ UByteValue m10821copy7apg3OU$default(UByteValue uByteValue, byte b, int i, Object obj) {
+        public static /* synthetic */ UByteValue m10840copy7apg3OU$default(UByteValue uByteValue, byte b, int i, Object obj) {
             if ((i & 1) != 0) {
                 b = uByteValue.value;
             }
-            return uByteValue.m10823copy7apg3OU(b);
+            return uByteValue.m10842copy7apg3OU(b);
         }
 
         /* renamed from: component1-w2LRezQ  reason: not valid java name */
-        public final byte m10822component1w2LRezQ() {
+        public final byte m10841component1w2LRezQ() {
             return this.value;
         }
 
         /* renamed from: copy-7apg3OU  reason: not valid java name */
-        public final UByteValue m10823copy7apg3OU(byte b) {
+        public final UByteValue m10842copy7apg3OU(byte b) {
             return new UByteValue(b, null);
         }
 
@@ -431,7 +431,7 @@ public abstract class KmAnnotationArgument {
         }
 
         public int hashCode() {
-            return UByte.m9213hashCodeimpl(this.value);
+            return UByte.m9232hashCodeimpl(this.value);
         }
 
         private UByteValue(byte b) {
@@ -441,11 +441,11 @@ public abstract class KmAnnotationArgument {
 
         @Override // kotlinx.metadata.KmAnnotationArgument.LiteralValue
         public /* bridge */ /* synthetic */ UByte getValue() {
-            return UByte.m9195boximpl(m10824getValuew2LRezQ());
+            return UByte.m9214boximpl(m10843getValuew2LRezQ());
         }
 
         /* renamed from: getValue-w2LRezQ  reason: not valid java name */
-        public byte m10824getValuew2LRezQ() {
+        public byte m10843getValuew2LRezQ() {
             return this.value;
         }
     }
@@ -461,20 +461,20 @@ public abstract class KmAnnotationArgument {
         }
 
         /* renamed from: copy-xj2QHRw$default  reason: not valid java name */
-        public static /* synthetic */ UShortValue m10833copyxj2QHRw$default(UShortValue uShortValue, short s, int i, Object obj) {
+        public static /* synthetic */ UShortValue m10852copyxj2QHRw$default(UShortValue uShortValue, short s, int i, Object obj) {
             if ((i & 1) != 0) {
                 s = uShortValue.value;
             }
-            return uShortValue.m10835copyxj2QHRw(s);
+            return uShortValue.m10854copyxj2QHRw(s);
         }
 
         /* renamed from: component1-Mh2AYeg  reason: not valid java name */
-        public final short m10834component1Mh2AYeg() {
+        public final short m10853component1Mh2AYeg() {
             return this.value;
         }
 
         /* renamed from: copy-xj2QHRw  reason: not valid java name */
-        public final UShortValue m10835copyxj2QHRw(short s) {
+        public final UShortValue m10854copyxj2QHRw(short s) {
             return new UShortValue(s, null);
         }
 
@@ -486,7 +486,7 @@ public abstract class KmAnnotationArgument {
         }
 
         public int hashCode() {
-            return UShort.m9481hashCodeimpl(this.value);
+            return UShort.m9500hashCodeimpl(this.value);
         }
 
         private UShortValue(short s) {
@@ -496,11 +496,11 @@ public abstract class KmAnnotationArgument {
 
         @Override // kotlinx.metadata.KmAnnotationArgument.LiteralValue
         public /* bridge */ /* synthetic */ UShort getValue() {
-            return UShort.m9463boximpl(m10836getValueMh2AYeg());
+            return UShort.m9482boximpl(m10855getValueMh2AYeg());
         }
 
         /* renamed from: getValue-Mh2AYeg  reason: not valid java name */
-        public short m10836getValueMh2AYeg() {
+        public short m10855getValueMh2AYeg() {
             return this.value;
         }
     }
@@ -516,20 +516,20 @@ public abstract class KmAnnotationArgument {
         }
 
         /* renamed from: copy-WZ4Q5Ns$default  reason: not valid java name */
-        public static /* synthetic */ UIntValue m10825copyWZ4Q5Ns$default(UIntValue uIntValue, int i, int i2, Object obj) {
+        public static /* synthetic */ UIntValue m10844copyWZ4Q5Ns$default(UIntValue uIntValue, int i, int i2, Object obj) {
             if ((i2 & 1) != 0) {
                 i = uIntValue.value;
             }
-            return uIntValue.m10827copyWZ4Q5Ns(i);
+            return uIntValue.m10846copyWZ4Q5Ns(i);
         }
 
         /* renamed from: component1-pVg5ArA  reason: not valid java name */
-        public final int m10826component1pVg5ArA() {
+        public final int m10845component1pVg5ArA() {
             return this.value;
         }
 
         /* renamed from: copy-WZ4Q5Ns  reason: not valid java name */
-        public final UIntValue m10827copyWZ4Q5Ns(int i) {
+        public final UIntValue m10846copyWZ4Q5Ns(int i) {
             return new UIntValue(i, null);
         }
 
@@ -541,7 +541,7 @@ public abstract class KmAnnotationArgument {
         }
 
         public int hashCode() {
-            return UInt.m9295hashCodeimpl(this.value);
+            return UInt.m9314hashCodeimpl(this.value);
         }
 
         private UIntValue(int i) {
@@ -551,11 +551,11 @@ public abstract class KmAnnotationArgument {
 
         @Override // kotlinx.metadata.KmAnnotationArgument.LiteralValue
         public /* bridge */ /* synthetic */ UInt getValue() {
-            return UInt.m9277boximpl(m10828getValuepVg5ArA());
+            return UInt.m9296boximpl(m10847getValuepVg5ArA());
         }
 
         /* renamed from: getValue-pVg5ArA  reason: not valid java name */
-        public int m10828getValuepVg5ArA() {
+        public int m10847getValuepVg5ArA() {
             return this.value;
         }
     }
@@ -571,20 +571,20 @@ public abstract class KmAnnotationArgument {
         }
 
         /* renamed from: copy-VKZWuLQ$default  reason: not valid java name */
-        public static /* synthetic */ ULongValue m10829copyVKZWuLQ$default(ULongValue uLongValue, long j, int i, Object obj) {
+        public static /* synthetic */ ULongValue m10848copyVKZWuLQ$default(ULongValue uLongValue, long j, int i, Object obj) {
             if ((i & 1) != 0) {
                 j = uLongValue.value;
             }
-            return uLongValue.m10831copyVKZWuLQ(j);
+            return uLongValue.m10850copyVKZWuLQ(j);
         }
 
         /* renamed from: component1-s-VKNKU  reason: not valid java name */
-        public final long m10830component1sVKNKU() {
+        public final long m10849component1sVKNKU() {
             return this.value;
         }
 
         /* renamed from: copy-VKZWuLQ  reason: not valid java name */
-        public final ULongValue m10831copyVKZWuLQ(long j) {
+        public final ULongValue m10850copyVKZWuLQ(long j) {
             return new ULongValue(j, null);
         }
 
@@ -596,7 +596,7 @@ public abstract class KmAnnotationArgument {
         }
 
         public int hashCode() {
-            return ULong.m9374hashCodeimpl(this.value);
+            return ULong.m9393hashCodeimpl(this.value);
         }
 
         private ULongValue(long j) {
@@ -606,11 +606,11 @@ public abstract class KmAnnotationArgument {
 
         @Override // kotlinx.metadata.KmAnnotationArgument.LiteralValue
         public /* bridge */ /* synthetic */ ULong getValue() {
-            return ULong.m9356boximpl(m10832getValuesVKNKU());
+            return ULong.m9375boximpl(m10851getValuesVKNKU());
         }
 
         /* renamed from: getValue-s-VKNKU  reason: not valid java name */
-        public long m10832getValuesVKNKU() {
+        public long m10851getValuesVKNKU() {
             return this.value;
         }
     }

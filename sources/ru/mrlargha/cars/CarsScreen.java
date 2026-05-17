@@ -2,12 +2,10 @@ package ru.mrlargha.cars;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.FrameMetricsAggregator;
 import com.arizona.common.utils.EasyAnimation;
@@ -36,7 +34,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.cars.R;
 import ru.mrlargha.feature.cars.databinding.CarsLayoutBinding;
 /* compiled from: CarsScreen.kt */
-@Metadata(d1 = {"\u0000\u008c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001;B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020\u0005H\u0002J\u0016\u0010)\u001a\u00020'2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u001d0\rH\u0002J\u0018\u0010+\u001a\u00020'2\u0006\u0010,\u001a\u00020\u00052\u0006\u0010-\u001a\u00020\u0005H\u0002J\u0016\u0010.\u001a\u00020'2\f\u0010/\u001a\b\u0012\u0004\u0012\u00020\u001f0\rH\u0002J\u0016\u00100\u001a\u00020'2\f\u0010/\u001a\b\u0012\u0004\u0012\u00020!0\rH\u0002J\u0016\u00101\u001a\u00020'2\f\u0010/\u001a\b\u0012\u0004\u0012\u00020#0\rH\u0002J\u0016\u00102\u001a\u00020'2\f\u0010/\u001a\b\u0012\u0004\u0012\u00020%0\rH\u0002J\u0016\u00103\u001a\u00020'2\f\u0010/\u001a\b\u0012\u0004\u0012\u0002040\rH\u0002J\u0018\u00105\u001a\u00020'2\u0006\u00106\u001a\u00020\u000e2\u0006\u00107\u001a\u00020\u0005H\u0016J\u0010\u00108\u001a\u00020'2\u0006\u00109\u001a\u00020:H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\b\u0012\u0004\u0012\u00020!0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020#0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\b\u0012\u0004\u0012\u00020%0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006<"}, d2 = {"Lru/mrlargha/cars/CarsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/cars/databinding/CarsLayoutBinding;", "bonuses", "", "", "carInfoListAdapter", "Lru/mrlargha/cars/CarInfoListAdapter;", "toggleSwitchListAdapter", "Lru/mrlargha/cars/ToggleSwitchListAdapter;", "actionsListAdapter", "Lru/mrlargha/cars/ActionsListAdapter;", "circleProgressbarListAdapter", "Lru/mrlargha/cars/CircleProgressbarListAdapter;", "carInfoSecondScreenListAdapter", "Lru/mrlargha/cars/CarInfoSecondScreenListAdapter;", "textListAdapter", "Lru/mrlargha/cars/TextListAdapter;", "carsItemList", "", "Lru/mrlargha/cars/CarInfoListItem;", "toggleSwitchItemList", "Lru/mrlargha/cars/ToggleSwitchInfo;", "actionButtonItemList", "Lru/mrlargha/cars/ActionButtonInfo;", "circleProgressBarItemList", "Lru/mrlargha/cars/CircleProgressBarInfo;", "textInfoItemList", "Lru/mrlargha/cars/TextInfo;", "onQuality", "", "rarity", "setCarInfoList", "carInfoList", "setSlotsInfo", "slotsCount", "partCount", "setToggleSwitchInfo", "infoList", "setActionButtonsInfo", "setCircleProgressBarsInfo", "setTextInfo", "setCarInfoSecondScreen", "Lru/mrlargha/cars/CarInfoSecondScreen;", "onBackendMessage", "data", "subId", "setCarRarity", "info", "Lru/mrlargha/cars/CarsRarity;", "Spawner", "cars"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u008c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001;B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020\u0005H\u0002J\u0016\u0010)\u001a\u00020'2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u001d0\rH\u0002J\u0018\u0010+\u001a\u00020'2\u0006\u0010,\u001a\u00020\u00052\u0006\u0010-\u001a\u00020\u0005H\u0002J\u0016\u0010.\u001a\u00020'2\f\u0010/\u001a\b\u0012\u0004\u0012\u00020\u001f0\rH\u0002J\u0016\u00100\u001a\u00020'2\f\u0010/\u001a\b\u0012\u0004\u0012\u00020!0\rH\u0002J\u0016\u00101\u001a\u00020'2\f\u0010/\u001a\b\u0012\u0004\u0012\u00020#0\rH\u0002J\u0016\u00102\u001a\u00020'2\f\u0010/\u001a\b\u0012\u0004\u0012\u00020%0\rH\u0002J\u0016\u00103\u001a\u00020'2\f\u0010/\u001a\b\u0012\u0004\u0012\u0002040\rH\u0002J\u0018\u00105\u001a\u00020'2\u0006\u00106\u001a\u00020\u000e2\u0006\u00107\u001a\u00020\u0005H\u0016J\u0010\u00108\u001a\u00020'2\u0006\u00109\u001a\u00020:H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\b\u0012\u0004\u0012\u00020!0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020#0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\b\u0012\u0004\u0012\u00020%0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006<"}, d2 = {"Lru/mrlargha/cars/CarsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/cars/databinding/CarsLayoutBinding;", "bonuses", "", "", "carInfoListAdapter", "Lru/mrlargha/cars/CarInfoListAdapter;", "toggleSwitchListAdapter", "Lru/mrlargha/cars/ToggleSwitchListAdapter;", "actionsListAdapter", "Lru/mrlargha/cars/ActionsListAdapter;", "circleProgressbarListAdapter", "Lru/mrlargha/cars/CircleProgressbarListAdapter;", "carInfoSecondScreenListAdapter", "Lru/mrlargha/cars/CarInfoSecondScreenListAdapter;", "textListAdapter", "Lru/mrlargha/cars/TextListAdapter;", "carsItemList", "", "Lru/mrlargha/cars/CarInfoListItem;", "toggleSwitchItemList", "Lru/mrlargha/cars/ToggleSwitchInfo;", "actionButtonItemList", "Lru/mrlargha/cars/ActionButtonInfo;", "circleProgressBarItemList", "Lru/mrlargha/cars/CircleProgressBarInfo;", "textInfoItemList", "Lru/mrlargha/cars/TextInfo;", "onQuality", "", "rarity", "setCarInfoList", "carInfoList", "setSlotsInfo", "slotsCount", "partCount", "setToggleSwitchInfo", "infoList", "setActionButtonsInfo", "setCircleProgressBarsInfo", "setTextInfo", "setCarInfoSecondScreen", "Lru/mrlargha/cars/CarInfoSecondScreen;", "onBackendMessageHandled", "data", "subId", "setCarRarity", "info", "Lru/mrlargha/cars/CarsRarity;", "Spawner", "cars"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class CarsScreen extends SAMPUIElement {
     private final List<ActionButtonInfo> actionButtonItemList;
@@ -388,58 +386,52 @@ public final class CarsScreen extends SAMPUIElement {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
-        try {
-            switch (i) {
-                case 0:
-                    setCarInfoList(MapperKt.toListModel(data, CarInfoListItem.class));
+        switch (i) {
+            case 0:
+                setCarInfoList(MapperKt.toListModel(data, CarInfoListItem.class));
+                return;
+            case 1:
+                setSlotsInfo(Integer.parseInt(data), 0);
+                return;
+            case 2:
+                setSlotsInfo(Integer.parseInt(data), 1);
+                return;
+            case 3:
+                setToggleSwitchInfo(MapperKt.toListModel(data, ToggleSwitchInfo.class));
+                return;
+            case 4:
+                setActionButtonsInfo(MapperKt.toListModel(data, ActionButtonInfo.class));
+                return;
+            case 5:
+                setCircleProgressBarsInfo(MapperKt.toListModel(data, CircleProgressBarInfo.class));
+                return;
+            case 6:
+                setTextInfo(MapperKt.toListModel(data, TextInfo.class));
+                return;
+            case 7:
+                setCarInfoSecondScreen(MapperKt.toListModel(data, CarInfoSecondScreen.class));
+                return;
+            case 8:
+                this.binding.carName.setText(data);
+                return;
+            case 9:
+                CarsLayoutBinding carsLayoutBinding = this.binding;
+                carsLayoutBinding.mainPage.setVisibility(8);
+                carsLayoutBinding.secondPage.setVisibility(0);
+                return;
+            case 10:
+                if (MapperKt.isJsonValid(data)) {
+                    setCarRarity((CarsRarity) MapperKt.getGson().fromJson(data, (Class<Object>) CarsRarity.class));
                     return;
-                case 1:
-                    setSlotsInfo(Integer.parseInt(data), 0);
-                    return;
-                case 2:
-                    setSlotsInfo(Integer.parseInt(data), 1);
-                    return;
-                case 3:
-                    setToggleSwitchInfo(MapperKt.toListModel(data, ToggleSwitchInfo.class));
-                    return;
-                case 4:
-                    setActionButtonsInfo(MapperKt.toListModel(data, ActionButtonInfo.class));
-                    return;
-                case 5:
-                    setCircleProgressBarsInfo(MapperKt.toListModel(data, CircleProgressBarInfo.class));
-                    return;
-                case 6:
-                    setTextInfo(MapperKt.toListModel(data, TextInfo.class));
-                    return;
-                case 7:
-                    setCarInfoSecondScreen(MapperKt.toListModel(data, CarInfoSecondScreen.class));
-                    return;
-                case 8:
-                    this.binding.carName.setText(data);
-                    return;
-                case 9:
-                    CarsLayoutBinding carsLayoutBinding = this.binding;
-                    carsLayoutBinding.mainPage.setVisibility(8);
-                    carsLayoutBinding.secondPage.setVisibility(0);
-                    return;
-                case 10:
-                    if (MapperKt.isJsonValid(data)) {
-                        setCarRarity((CarsRarity) MapperKt.getGson().fromJson(data, (Class<Object>) CarsRarity.class));
-                        return;
-                    }
-                    throw new JsonParseException("Json is not valid");
-                case 11:
-                    this.bonuses = MapperKt.toListModel(data, String.class);
-                    return;
-                default:
-                    return;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.d("cars", data + "  " + e.getMessage());
-            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+                }
+                throw new JsonParseException("Json is not valid");
+            case 11:
+                this.bonuses = MapperKt.toListModel(data, String.class);
+                return;
+            default:
+                return;
         }
     }
 

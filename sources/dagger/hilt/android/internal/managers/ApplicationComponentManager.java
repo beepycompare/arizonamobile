@@ -1,7 +1,7 @@
 package dagger.hilt.android.internal.managers;
 
 import dagger.hilt.internal.GeneratedComponentManager;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ApplicationComponentManager implements GeneratedComponentManager<Object> {
     private volatile Object component;
     private final ComponentSupplier componentCreator;

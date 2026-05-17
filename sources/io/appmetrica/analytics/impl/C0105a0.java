@@ -8,17 +8,17 @@ import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 public final class C0105a0 extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0131b0 f893a;
+    public final /* synthetic */ C0131b0 f898a;
     public final /* synthetic */ Context b;
 
     public C0105a0(C0131b0 c0131b0, Context context) {
-        this.f893a = c0131b0;
+        this.f898a = c0131b0;
         this.b = context;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        C0131b0 c0131b0 = this.f893a;
+        C0131b0 c0131b0 = this.f898a;
         Context context = this.b;
         c0131b0.getClass();
         c0131b0.a(context, AppMetricaLibraryAdapterConfig.newConfigBuilder().build());

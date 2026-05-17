@@ -171,7 +171,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
     }
 
     /* renamed from: androidx.appcompat.app.AppCompatDelegateImpl$1  reason: invalid class name */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     class AnonymousClass1 implements Thread.UncaughtExceptionHandler {
         final /* synthetic */ Thread.UncaughtExceptionHandler val$defHandler;
 

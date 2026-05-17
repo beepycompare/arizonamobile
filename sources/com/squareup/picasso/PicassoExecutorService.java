@@ -9,7 +9,7 @@ import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class PicassoExecutorService extends ThreadPoolExecutor {
     private static final int DEFAULT_THREAD_COUNT = 3;
 
@@ -75,7 +75,7 @@ public class PicassoExecutorService extends ThreadPoolExecutor {
         return picassoFutureTask;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static final class PicassoFutureTask extends FutureTask<BitmapHunter> implements Comparable<PicassoFutureTask> {
         private final BitmapHunter hunter;
 

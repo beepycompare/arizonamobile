@@ -4,7 +4,7 @@ import androidx.lifecycle.SavedStateHandle;
 import dagger.BindsInstance;
 import dagger.hilt.android.ViewModelLifecycle;
 import dagger.hilt.android.components.ViewModelComponent;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface ViewModelComponentBuilder {
     ViewModelComponent build();
 

@@ -7,16 +7,16 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import kotlin.collections.CollectionsKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class c implements BillingInfoManager {
 
     /* renamed from: a  reason: collision with root package name */
-    public final BillingInfoStorage f353a;
+    public final BillingInfoStorage f358a;
     public boolean b;
     public final LinkedHashMap c;
 
     public c(BillingInfoStorage billingInfoStorage) {
-        this.f353a = billingInfoStorage;
+        this.f358a = billingInfoStorage;
         this.b = billingInfoStorage.isFirstInappCheckOccurred();
         List<BillingInfo> billingInfo = billingInfoStorage.getBillingInfo();
         LinkedHashMap linkedHashMap = new LinkedHashMap();
@@ -42,7 +42,7 @@ public final class c implements BillingInfoManager {
             return;
         }
         this.b = true;
-        this.f353a.saveInfo(CollectionsKt.toList(this.c.values()), this.b);
+        this.f358a.saveInfo(CollectionsKt.toList(this.c.values()), this.b);
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoManager
@@ -50,6 +50,6 @@ public final class c implements BillingInfoManager {
         for (BillingInfo billingInfo : map.values()) {
             this.c.put(billingInfo.productId, billingInfo);
         }
-        this.f353a.saveInfo(CollectionsKt.toList(this.c.values()), this.b);
+        this.f358a.saveInfo(CollectionsKt.toList(this.c.values()), this.b);
     }
 }

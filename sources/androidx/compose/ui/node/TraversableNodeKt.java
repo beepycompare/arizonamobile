@@ -136,7 +136,7 @@ public final class TraversableNodeKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x0037, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x0037, code lost:
         continue;
      */
     /*
@@ -396,7 +396,7 @@ public final class TraversableNodeKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x0034, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x0034, code lost:
         continue;
      */
     /*

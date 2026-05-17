@@ -12,7 +12,7 @@ import java.util.Map;
 public class C0304hi implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Pe f1029a = new Pe();
+    public final Pe f1034a = new Pe();
 
     @Override // io.appmetrica.analytics.impl.Ra, io.appmetrica.analytics.impl.Ua
     public final void a(Qn qn) {
@@ -28,7 +28,7 @@ public class C0304hi implements Ra {
 
     @Override // io.appmetrica.analytics.IReporter
     public final IPluginReporter getPluginExtension() {
-        return this.f1029a;
+        return this.f1034a;
     }
 
     @Override // io.appmetrica.analytics.IReporter

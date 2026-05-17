@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.Dp;
 import androidx.media3.exoplayer.RendererCapabilities;
 import com.miami.game.core.design.system.component.button.DialogButtonKt;
 import com.miami.game.core.design.system.component.dialog_frame.DialogFrameKt;
-import com.miami.game.feature.download.dialog.R;
+import com.miami.game.ui.classic.dialogs.R;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -51,9 +51,9 @@ public final class ConnectionDialogKt {
         Intrinsics.checkNotNullParameter(onClose, "onClose");
         Intrinsics.checkNotNullParameter(onConfirm, "onConfirm");
         Composer startRestartGroup = composer.startRestartGroup(522024473);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ConnectionDialog)N(connectionData,onClose,onConfirm)25@1203L1427,25@1156L1474:ConnectionDialog.kt#yp5s1q");
+        ComposerKt.sourceInformation(startRestartGroup, "C(ConnectionDialog)N(connectionData,onClose,onConfirm)25@1198L1427,25@1151L1474:ConnectionDialog.kt#yp5s1q");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changed(connectionData) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(connectionData) : startRestartGroup.changedInstance(connectionData) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
@@ -94,7 +94,7 @@ public final class ConnectionDialogKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ConnectionDialog$lambda$0(ConnectionData connectionData, final Function0 function0, final Function1 function1, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C26@1240L10,26@1213L94,29@1331L45,30@1401L47,31@1477L51,32@1537L30,33@1576L357,46@1942L30,47@1981L642:ConnectionDialog.kt#yp5s1q");
+        ComposerKt.sourceInformation(composer, "C26@1235L10,26@1208L94,29@1326L45,30@1396L47,31@1472L51,32@1532L30,33@1571L357,46@1937L30,47@1976L642:ConnectionDialog.kt#yp5s1q");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-137565439, i, -1, "com.miami.game.feature.download.dialog.ui.connection.ConnectionDialog.<anonymous> (ConnectionDialog.kt:26)");
@@ -151,10 +151,10 @@ public final class ConnectionDialogKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, -967227730, "C36@1651L75,39@1739L81,42@1833L90:ConnectionDialog.kt#yp5s1q");
-            InputFieldKt.m9091InputFieldrAjV9yQ(mutableState, Dp.m7555constructorimpl(140.0f), R.drawable.input, composer, 54);
-            InputFieldKt.m9091InputFieldrAjV9yQ(mutableState2, Dp.m7555constructorimpl(50.0f), R.drawable.input_port, composer, 54);
-            InputFieldKt.m9091InputFieldrAjV9yQ(mutableState3, Dp.m7555constructorimpl(120.0f), R.drawable.input_password, composer, 54);
+            ComposerKt.sourceInformationMarkerStart(composer, -967227730, "C36@1646L75,39@1734L81,42@1828L90:ConnectionDialog.kt#yp5s1q");
+            InputFieldKt.m9094InputFieldrAjV9yQ(mutableState, Dp.m7555constructorimpl(140.0f), R.drawable.input, composer, 54);
+            InputFieldKt.m9094InputFieldrAjV9yQ(mutableState2, Dp.m7555constructorimpl(50.0f), R.drawable.input_port, composer, 54);
+            InputFieldKt.m9094InputFieldrAjV9yQ(mutableState3, Dp.m7555constructorimpl(120.0f), R.drawable.input_password, composer, 54);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();
@@ -187,7 +187,7 @@ public final class ConnectionDialogKt {
             Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 797046465, "C48@2024L41,48@1999L185,54@2223L265,54@2197L416:ConnectionDialog.kt#yp5s1q");
+            ComposerKt.sourceInformationMarkerStart(composer, 797046465, "C48@2019L41,48@1994L185,54@2218L265,54@2192L416:ConnectionDialog.kt#yp5s1q");
             ComposerKt.sourceInformationMarkerStart(composer, 1965374053, "CC(remember):ConnectionDialog.kt#9igjgp");
             boolean changed = composer.changed(function0);
             Object rememberedValue4 = composer.rememberedValue();
@@ -203,7 +203,7 @@ public final class ConnectionDialogKt {
                 composer.updateRememberedValue(rememberedValue4);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue4, ComposableSingletons$ConnectionDialogKt.INSTANCE.m9089getLambda$751471044$dialogs(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue4, ComposableSingletons$ConnectionDialogKt.INSTANCE.m9092getLambda$751471044$dialogs(), composer, 48);
             ComposerKt.sourceInformationMarkerStart(composer, 1965380645, "CC(remember):ConnectionDialog.kt#9igjgp");
             boolean changed2 = composer.changed(function1);
             Object rememberedValue5 = composer.rememberedValue();
@@ -219,7 +219,7 @@ public final class ConnectionDialogKt {
                 composer.updateRememberedValue(rememberedValue5);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue5, false, ComposableSingletons$ConnectionDialogKt.INSTANCE.m9088getLambda$1711092251$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue5, false, ComposableSingletons$ConnectionDialogKt.INSTANCE.m9091getLambda$1711092251$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

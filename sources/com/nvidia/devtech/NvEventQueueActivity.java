@@ -35,7 +35,7 @@ import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.egl.EGLSurface;
 import javax.microedition.khronos.opengles.GL11;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class NvEventQueueActivity extends Activity implements SensorEventListener {
     private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
     private static final int EGL_OPENGL_ES2_BIT = 4;
@@ -116,7 +116,7 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
     protected int[] configAttrs = null;
     protected int[] contextAttrs = null;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class RawData {
         public byte[] data;
         public int length;
@@ -125,7 +125,7 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class RawTexture extends RawData {
         public int height;
         public int width;
@@ -136,7 +136,7 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class gSurfaceView extends SurfaceView {
         NvEventQueueActivity myActivity;
 

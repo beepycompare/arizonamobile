@@ -598,10 +598,10 @@ public abstract class PagerState implements ScrollableState {
     /* JADX WARN: Code restructure failed: missing block: B:27:0x006b, code lost:
         if (awaitScrollDependencies(r4) == r0) goto L26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x00bd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x00bc, code lost:
         if (androidx.compose.foundation.gestures.ScrollableState.scroll$default(r11, null, new androidx.compose.foundation.pager.PagerState$animateScrollToPage$3(r11, coerceInPageRange(r12), r13 * getPageSizeWithSpacing$foundation(), r9, null), r4, 1, null) != r0) goto L11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00bf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00be, code lost:
         return r0;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */

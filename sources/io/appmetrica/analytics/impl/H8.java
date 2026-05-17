@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class H8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Dc f611a;
+    public final Dc f616a;
     public final Dc b;
 
     public H8() {
@@ -12,7 +12,7 @@ public final class H8 {
 
     public H8(V7 v7, L9 l9, C0130b c0130b) {
         Dc dc = new Dc(v7);
-        this.f611a = dc;
+        this.f616a = dc;
         dc.a(I8.NONE, v7);
         dc.a(I8.EXTERNALLY_ENCRYPTED_EVENT_CRYPTER, l9);
         dc.a(I8.AES_VALUE_ENCRYPTION, c0130b);

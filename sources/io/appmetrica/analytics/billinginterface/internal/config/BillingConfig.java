@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.billinginterface.internal.config;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BillingConfig {
     public final int firstCollectingInappMaxAgeSeconds;
     public final int sendFrequencySeconds;

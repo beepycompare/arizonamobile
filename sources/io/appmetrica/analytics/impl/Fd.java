@@ -11,11 +11,11 @@ import kotlin.io.ByteStreamsKt;
 public final class Fd implements Function {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Hd f581a;
+    public final Hd f586a;
     public final Ed b;
 
     public Fd(Hd hd, Ed ed) {
-        this.f581a = hd;
+        this.f586a = hd;
         this.b = ed;
     }
 
@@ -51,7 +51,7 @@ public final class Fd implements Function {
                         bArr = null;
                     }
                     if (bArr != null) {
-                        return Base64Utils.compressBase64(MessageNano.toByteArray(this.b.fromModel(new Kd(bArr, this.f581a))));
+                        return Base64Utils.compressBase64(MessageNano.toByteArray(this.b.fromModel(new Kd(bArr, this.f586a))));
                     }
                     return null;
                 }

@@ -3,7 +3,7 @@ package com.squareup.picasso;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class MarkableInputStream extends InputStream {
     private static final int DEFAULT_BUFFER_SIZE = 4096;
     private static final int DEFAULT_LIMIT_INCREMENT = 1024;

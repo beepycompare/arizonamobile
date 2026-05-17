@@ -16,7 +16,7 @@ import kotlinx.metadata.internal.metadata.jvm.deserialization.JvmProtoBufUtil;
 public final class C0732yk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0112a7 f1323a;
+    public final C0112a7 f1328a;
     public Y6 b;
     public S2 c;
     public T2 d;
@@ -29,7 +29,7 @@ public final class C0732yk {
     public final LinkedHashMap k = new LinkedHashMap();
 
     public C0732yk(File file) {
-        this.f1323a = new C0112a7(file);
+        this.f1328a = new C0112a7(file);
     }
 
     public final IBinaryDataHelper a(Context context) {
@@ -85,21 +85,21 @@ public final class C0732yk {
         Y6 y6;
         y6 = this.b;
         if (y6 == null) {
-            C0112a7 c0112a7 = this.f1323a;
-            String a2 = new Z6(c0112a7.f900a, c0112a7.b, true).a(context, new C0254fk());
+            C0112a7 c0112a7 = this.f1328a;
+            String a2 = new Z6(c0112a7.f905a, c0112a7.b, true).a(context, new C0254fk());
             M6 m6 = AbstractC0667w5.c;
             m6.getClass();
             HashMap hashMap = new HashMap();
-            hashMap.put("preferences", InterfaceC0592t5.f1230a);
-            hashMap.put("binary_data", AbstractC0542r5.f1201a);
-            hashMap.put("temp_cache", AbstractC0660vn.f1276a);
+            hashMap.put("preferences", InterfaceC0592t5.f1235a);
+            hashMap.put("binary_data", AbstractC0542r5.f1206a);
+            hashMap.put("temp_cache", AbstractC0660vn.f1281a);
             for (ModuleServicesDatabase moduleServicesDatabase : C0448na.I.p().b()) {
                 for (TableDescription tableDescription : moduleServicesDatabase.getTables()) {
                     hashMap.put(tableDescription.getTableName(), tableDescription.getColumnNames());
                 }
             }
             C0309hn c0309hn = m6.c;
-            W6 w6 = m6.f687a;
+            W6 w6 = m6.f692a;
             U6 u6 = w6.e;
             V6 v6 = w6.f;
             C0498pa c0498pa = new C0498pa(false);
@@ -121,12 +121,12 @@ public final class C0732yk {
 
     public final synchronized Y6 c(Context context, Q4 q4) {
         Object obj;
-        String str = new H4(q4).f608a;
+        String str = new H4(q4).f613a;
         LinkedHashMap linkedHashMap = this.i;
         obj = linkedHashMap.get(str);
         if (obj == null) {
-            C0112a7 c0112a7 = this.f1323a;
-            String a2 = new Z6(c0112a7.f900a, c0112a7.b, false).a(context, new H4(q4));
+            C0112a7 c0112a7 = this.f1328a;
+            String a2 = new Z6(c0112a7.f905a, c0112a7.b, false).a(context, new H4(q4));
             M6 m6 = AbstractC0667w5.c;
             m6.getClass();
             String str2 = q4.b;
@@ -135,12 +135,12 @@ public final class C0732yk {
             }
             String format = String.format("component-%s", str2);
             C0309hn c0309hn = m6.c;
-            W6 w6 = m6.f687a;
-            O6 o6 = w6.f837a;
+            W6 w6 = m6.f692a;
+            O6 o6 = w6.f842a;
             P6 p6 = w6.b;
             C0498pa c0498pa = new C0498pa(false);
             c0498pa.a(112, new K4());
-            C0386kn c0386kn = new C0386kn(format, m6.b.f1251a);
+            C0386kn c0386kn = new C0386kn(format, m6.b.f1256a);
             c0309hn.getClass();
             obj = new Y6(context, a2, new C0334in(o6, p6, c0498pa, c0386kn), PublicLogger.getAnonymousInstance());
             linkedHashMap.put(str, obj);
@@ -150,7 +150,7 @@ public final class C0732yk {
 
     public final synchronized IBinaryDataHelper a(Context context, Q4 q4) {
         Object obj;
-        String str = new H4(q4).f608a;
+        String str = new H4(q4).f613a;
         LinkedHashMap linkedHashMap = this.k;
         obj = linkedHashMap.get(str);
         if (obj == null) {
@@ -162,7 +162,7 @@ public final class C0732yk {
 
     public final synchronized Ha b(Context context, Q4 q4) {
         Object obj;
-        String str = new H4(q4).f608a;
+        String str = new H4(q4).f613a;
         LinkedHashMap linkedHashMap = this.j;
         obj = linkedHashMap.get(str);
         if (obj == null) {

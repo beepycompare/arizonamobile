@@ -5,19 +5,19 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public abstract class ActionProvider {
     private static final String TAG = "ActionProvider(support)";
     private final Context mContext;
     private SubUiVisibilityListener mSubUiVisibilityListener;
     private VisibilityListener mVisibilityListener;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public interface SubUiVisibilityListener {
         void onSubUiVisibilityChanged(boolean z);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public interface VisibilityListener {
         void onActionProviderVisibilityChanged(boolean z);
     }

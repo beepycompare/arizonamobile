@@ -10,11 +10,11 @@ public final class Z9 {
     public static volatile Z9 c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f882a;
+    public final Context f887a;
     public final HashMap b = new HashMap();
 
     public Z9(Context context) {
-        this.f882a = context;
+        this.f887a = context;
     }
 
     public static final Z9 a(Context context) {
@@ -39,7 +39,7 @@ public final class Z9 {
         HashMap hashMap = this.b;
         obj = hashMap.get(str);
         if (obj == null) {
-            obj = new C0696x9(this.f882a, str);
+            obj = new C0696x9(this.f887a, str);
             hashMap.put(str, obj);
         }
         return (C0696x9) obj;

@@ -7,7 +7,7 @@ import io.appmetrica.analytics.impl.C0289h3;
 import io.appmetrica.analytics.impl.C0452ne;
 import io.appmetrica.analytics.impl.Kf;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class ECommerceEvent implements Kf {
     public static ECommerceEvent addCartItemEvent(ECommerceCartItem eCommerceCartItem) {
         return new C0289h3(4, eCommerceCartItem);

@@ -67,12 +67,12 @@ public final class SaveLogToDownloadsKt {
                     return null;
                 } catch (Exception unused) {
                     Result.Companion companion = Result.Companion;
-                    Result.m9183constructorimpl(Integer.valueOf(contentResolver.delete(insert, null, null)));
+                    Result.m9202constructorimpl(Integer.valueOf(contentResolver.delete(insert, null, null)));
                     return null;
                 }
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                Result.m9183constructorimpl(ResultKt.createFailure(th));
+                Result.m9202constructorimpl(ResultKt.createFailure(th));
                 return null;
             }
         }

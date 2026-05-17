@@ -1,5 +1,7 @@
 package com.arizonagames.feature.arizona.family;
 
+import android.app.Activity;
+import android.widget.TextView;
 import com.arizonagames.feature.arizona.family.adapters.RatingAdapter;
 import com.arizonagames.feature.arizona.family.data.FamilyData;
 import com.arizonagames.feature.arizona.family.data.RatingItem;
@@ -12,6 +14,7 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
@@ -21,7 +24,7 @@ import kotlinx.coroutines.Dispatchers;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FamilyScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$requestRating$1$1", f = "FamilyScreen.kt", i = {}, l = {517}, m = "invokeSuspend", n = {}, nl = {520}, s = {}, v = 2)
+@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$requestRating$1$1", f = "FamilyScreen.kt", i = {}, l = {509}, m = "invokeSuspend", n = {}, nl = {512}, s = {}, v = 2)
 /* loaded from: classes3.dex */
 public final class FamilyScreen$requestRating$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $page;
@@ -54,6 +57,8 @@ public final class FamilyScreen$requestRating$1$1 extends SuspendLambda implemen
         RatingAdapter ratingAdapter;
         RatingAdapter ratingAdapter2;
         RatingAdapter ratingAdapter3;
+        Activity targetActivity;
+        Activity targetActivity2;
         RatingAdapter ratingAdapter4;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
@@ -86,13 +91,17 @@ public final class FamilyScreen$requestRating$1$1 extends SuspendLambda implemen
                 ratingAdapter = familyScreen.ratingAdapter;
                 int top = ratingAdapter.getTop(familyData.getTitle());
                 if (top > 0) {
-                    familyTopbarBinding.ratingTop.setText((top + 1) + " месте");
+                    TextView textView = familyTopbarBinding.ratingTop;
+                    targetActivity2 = familyScreen.getTargetActivity();
+                    textView.setText(targetActivity2.getString(R.string.family_place_value, new Object[]{Boxing.boxInt(top + 1)}));
                 } else if (i2 < 5) {
                     ratingAdapter2 = familyScreen.ratingAdapter;
                     ratingAdapter2.setPage(i2 + 1);
                     ratingAdapter3 = familyScreen.ratingAdapter;
                     familyScreen.requestRating(ratingAdapter3.getPage());
-                    familyTopbarBinding.ratingTop.setText("100+ месте");
+                    TextView textView2 = familyTopbarBinding.ratingTop;
+                    targetActivity = familyScreen.getTargetActivity();
+                    textView2.setText(targetActivity.getString(R.string.family_place_100_plus));
                 }
             }
         }

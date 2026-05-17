@@ -7,12 +7,12 @@ import java.util.HashMap;
 public final class C0432mj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0457nj f1120a;
+    public final C0457nj f1125a;
     public final Context b;
     public final HashMap c = new HashMap();
 
     public C0432mj(Context context, C0457nj c0457nj) {
         this.b = context;
-        this.f1120a = c0457nj;
+        this.f1125a = c0457nj;
     }
 }

@@ -21,7 +21,6 @@ import androidx.media3.container.Mp4Box;
 import androidx.media3.container.Mp4LocationData;
 import androidx.media3.container.Mp4TimestampData;
 import androidx.media3.container.NalUnitUtil;
-import androidx.media3.exoplayer.Renderer;
 import androidx.media3.extractor.AacUtil;
 import androidx.media3.extractor.Ac3Util;
 import androidx.media3.extractor.Ac4Util;
@@ -1339,8 +1338,8 @@ public final class BoxParser {
                                             byteBuffer3.putShort(readShort4);
                                             byteBuffer3.putShort(readShort7);
                                             byteBuffer3.putShort(readShort8);
-                                            byteBuffer3.putShort((short) (readUnsignedInt / Renderer.DEFAULT_DURATION_TO_PROGRESS_US));
-                                            byteBuffer3.putShort((short) (readUnsignedInt2 / Renderer.DEFAULT_DURATION_TO_PROGRESS_US));
+                                            byteBuffer3.putShort((short) (readUnsignedInt / 10000));
+                                            byteBuffer3.putShort((short) (readUnsignedInt2 / 10000));
                                             byteBuffer = byteBuffer3;
                                             i31 = i64;
                                             i30 = i65;

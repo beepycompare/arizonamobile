@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.arizona.item.rating.R;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public final class RatingListBinding implements ViewBinding {
     public final RecyclerView itemsRv;
     private final LinearLayout rootView;

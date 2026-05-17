@@ -86,8 +86,8 @@ public final class CarInfoListAdapter extends ListAdapter<CarInfoListItem, ViewH
         CarsCarItemBinding binding = holder.getBinding();
         final CarInfoListItem item = getItem(i);
         binding.carName.setText(item.getTitle());
-        String str2 = UtilsKt.isArizonaType() ? "projects/arizona-rp/assets/images/inventory/vehicles/256/" : "projects/rodina-rp/assets/images/inventory/vehicles/512/";
-        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + str2 + item.getSysName()).into(binding.carIc);
+        String str2 = UtilsKt.isArizonaType() ? "assets/images/inventory/vehicles/256/" : "assets/images/inventory/vehicles/512/";
+        Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + str2 + item.getSysName()).into(binding.carIc);
         String status = item.getStatus();
         switch (status.hashCode()) {
             case -2058533514:

@@ -1,5 +1,6 @@
 package com.arizonagames.feature.arizona.family.adapters;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,11 +55,12 @@ public final class MainMenuAdapter extends RecyclerView.Adapter<MenuItemViewHold
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onBindViewHolder(MenuItemViewHolder holder, int i) {
         int i2;
-        String str;
+        String string;
         int parseColor;
         Intrinsics.checkNotNullParameter(holder, "holder");
         final Integer num = (Integer) CollectionsKt.getOrNull(this.items, i);
         FamilyMenuItemBinding binding = holder.getBinding();
+        Context context = binding.getRoot().getContext();
         if (num == null) {
             binding.getRoot().setVisibility(8);
             return;
@@ -99,74 +101,76 @@ public final class MainMenuAdapter extends RecyclerView.Adapter<MenuItemViewHold
                 i2 = R.drawable.family_menu_ic_info;
                 break;
         }
-        String str2 = "???";
+        String str = "???";
         switch (num.intValue()) {
             case 0:
-                str = "Главный раздел";
+                string = context.getString(R.string.family_menu_home_title);
                 break;
             case 1:
-                str = "Участники";
+                string = context.getString(R.string.family_menu_members_title);
                 break;
             case 2:
-                str = "Войны за территории";
+                string = context.getString(R.string.family_menu_wars_title);
                 break;
             case 3:
-                str = "Семейный магазин";
+                string = context.getString(R.string.family_menu_shop_title);
                 break;
             case 4:
-                str = "Управление семьей";
+                string = context.getString(R.string.family_menu_management_title);
                 break;
             case 5:
-                str = "Семейная квартира";
+                string = context.getString(R.string.family_menu_apartment_title);
                 break;
             case 6:
-                str = "Семейное поместье";
+                string = context.getString(R.string.family_menu_estate_title);
                 break;
             case 7:
-                str = "Частная фракция";
+                string = context.getString(R.string.family_menu_faction_title);
                 break;
             case 8:
-                str = "Доп. информация";
+                string = context.getString(R.string.family_menu_extra_info_title);
                 break;
             case 9:
-                str = "Покинуть";
+                string = context.getString(R.string.family_menu_leave_title);
                 break;
             default:
-                str = "???";
+                string = "???";
                 break;
         }
+        Intrinsics.checkNotNull(string);
         switch (num.intValue()) {
             case 0:
-                str2 = "Информация о вашей\nсемье";
+                str = context.getString(R.string.family_menu_home_desc);
                 break;
             case 1:
-                str2 = "Члены вашей семьи";
+                str = context.getString(R.string.family_menu_members_desc);
                 break;
             case 2:
-                str2 = "Список встреч и информация о ваших территориях";
+                str = context.getString(R.string.family_menu_wars_desc);
                 break;
             case 3:
-                str2 = "Магазин аксессуаров за семейные монеты";
+                str = context.getString(R.string.family_menu_shop_desc);
                 break;
             case 4:
-                str2 = "Общие элементы управления и настроек";
+                str = context.getString(R.string.family_menu_management_desc);
                 break;
             case 5:
-                str2 = "Информация о квартире и улучшениях";
+                str = context.getString(R.string.family_menu_apartment_desc);
                 break;
             case 6:
-                str2 = "Информация о поместье и улучшениях";
+                str = context.getString(R.string.family_menu_estate_desc);
                 break;
             case 7:
-                str2 = "Управление частной фракцией";
+                str = context.getString(R.string.family_menu_faction_desc);
                 break;
             case 8:
-                str2 = "Улучшения, бонусы, список команд, ограничения заместителей";
+                str = context.getString(R.string.family_menu_extra_info_desc);
                 break;
             case 9:
-                str2 = "Покинуть состав семьи";
+                str = context.getString(R.string.family_menu_leave_desc);
                 break;
         }
+        Intrinsics.checkNotNull(str);
         if (num.intValue() == 6) {
             parseColor = Color.parseColor("#1AE1AA33");
         } else {
@@ -182,14 +186,14 @@ public final class MainMenuAdapter extends RecyclerView.Adapter<MenuItemViewHold
             binding.itemDesc.setTextColor(this.descColor);
         }
         if (num.intValue() == 1) {
-            binding.online.setText("В сети: " + this.onlineCount + " чел.");
+            binding.online.setText(context.getString(R.string.family_online_count, Integer.valueOf(this.onlineCount)));
             binding.onlineContainer.setVisibility(0);
         } else {
             binding.onlineContainer.setVisibility(8);
         }
         binding.levelImage.setImageResource(i2);
-        binding.itemTitle.setText(str);
-        binding.itemDesc.setText(str2);
+        binding.itemTitle.setText(string);
+        binding.itemDesc.setText(str);
         binding.card.setCardBackgroundColor(parseColor);
         binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.adapters.MainMenuAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener

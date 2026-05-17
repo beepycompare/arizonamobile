@@ -1404,7 +1404,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
                 if (!(state$kotlinx_coroutines_core instanceof Incomplete) || ((Incomplete) state$kotlinx_coroutines_core).getList() == null) {
                     return;
                 }
-                jobNode.mo10758remove();
+                jobNode.mo10777remove();
                 return;
             } else if (state$kotlinx_coroutines_core != jobNode) {
                 return;

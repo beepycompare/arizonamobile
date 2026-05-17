@@ -13,7 +13,7 @@ import io.appmetrica.analytics.impl.Z7;
 public class GenderAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0593t6 f1427a = new C0593t6("appmetrica_gender", new C0113a8(), new C0733yl());
+    private final C0593t6 f1432a = new C0593t6("appmetrica_gender", new C0113a8(), new C0733yl());
 
     /* loaded from: classes5.dex */
     public enum Gender {
@@ -23,35 +23,35 @@ public class GenderAttribute {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f1428a;
+        private final String f1433a;
 
         Gender(String str) {
-            this.f1428a = str;
+            this.f1433a = str;
         }
 
         public String getStringValue() {
-            return this.f1428a;
+            return this.f1433a;
         }
     }
 
     public UserProfileUpdate<? extends InterfaceC0232eo> withValue(Gender gender) {
-        String str = this.f1427a.c;
+        String str = this.f1432a.c;
         String stringValue = gender.getStringValue();
         Z7 z7 = new Z7();
-        C0593t6 c0593t6 = this.f1427a;
-        return new UserProfileUpdate<>(new Ym(str, stringValue, z7, c0593t6.f1231a, new C0566s4(c0593t6.b)));
+        C0593t6 c0593t6 = this.f1432a;
+        return new UserProfileUpdate<>(new Ym(str, stringValue, z7, c0593t6.f1236a, new C0566s4(c0593t6.b)));
     }
 
     public UserProfileUpdate<? extends InterfaceC0232eo> withValueIfUndefined(Gender gender) {
-        String str = this.f1427a.c;
+        String str = this.f1432a.c;
         String stringValue = gender.getStringValue();
         Z7 z7 = new Z7();
-        C0593t6 c0593t6 = this.f1427a;
-        return new UserProfileUpdate<>(new Ym(str, stringValue, z7, c0593t6.f1231a, new Xk(c0593t6.b)));
+        C0593t6 c0593t6 = this.f1432a;
+        return new UserProfileUpdate<>(new Ym(str, stringValue, z7, c0593t6.f1236a, new Xk(c0593t6.b)));
     }
 
     public UserProfileUpdate<? extends InterfaceC0232eo> withValueReset() {
-        C0593t6 c0593t6 = this.f1427a;
-        return new UserProfileUpdate<>(new Bi(0, c0593t6.c, c0593t6.f1231a, c0593t6.b));
+        C0593t6 c0593t6 = this.f1432a;
+        return new UserProfileUpdate<>(new Bi(0, c0593t6.c, c0593t6.f1236a, c0593t6.b));
     }
 }

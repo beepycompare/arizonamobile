@@ -1,5 +1,5 @@
 package com.google.errorprone.annotations;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public enum Modifier {
     PUBLIC,
     PROTECTED,

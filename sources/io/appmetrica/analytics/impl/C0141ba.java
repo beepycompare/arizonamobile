@@ -9,21 +9,21 @@ import kotlin.io.FilesKt;
 public final class C0141ba implements Bo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f916a;
+    public final Context f921a;
     public final String b;
 
     public C0141ba(Context context, String str) {
-        this.f916a = context;
+        this.f921a = context;
         this.b = str;
     }
 
     @Override // io.appmetrica.analytics.impl.Bo
     public final String a() {
         try {
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f916a, this.b);
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f921a, this.b);
             if (fileFromSdkStorage != null) {
                 fileFromSdkStorage.exists();
-                File fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f916a, this.b);
+                File fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f921a, this.b);
                 if (fileFromAppStorage != null) {
                     FileUtils.copyToNullable(fileFromAppStorage, fileFromSdkStorage);
                 }
@@ -37,7 +37,7 @@ public final class C0141ba implements Bo {
     @Override // io.appmetrica.analytics.impl.Bo
     public final void a(String str) {
         try {
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f916a, this.b);
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f921a, this.b);
             if (fileFromSdkStorage != null) {
                 FilesKt.writeText$default(fileFromSdkStorage, str, null, 2, null);
             }

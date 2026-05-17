@@ -9,7 +9,6 @@ import android.os.NetworkOnMainThreadException;
 import android.os.RemoteException;
 import android.util.Log;
 import android.util.Pair;
-import androidx.media3.exoplayer.Renderer;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.Clock;
 import com.google.android.gms.common.util.DefaultClock;
@@ -159,7 +158,7 @@ public final class zzfb {
     public final int zzF(String str) {
         zzco zzcoVar = new zzco();
         zzM(new zzef(this, str, zzcoVar));
-        Integer num = (Integer) zzco.zzf(zzcoVar.zze(Renderer.DEFAULT_DURATION_TO_PROGRESS_US), Integer.class);
+        Integer num = (Integer) zzco.zzf(zzcoVar.zze(10000L), Integer.class);
         if (num == null) {
             return 25;
         }

@@ -14,7 +14,7 @@ public final class C0521q8 extends MessageNano {
     public static volatile C0521q8[] e;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f1186a;
+    public byte[] f1191a;
     public C0242f8 b;
     public byte[] c;
     public C0396l8 d;
@@ -36,7 +36,7 @@ public final class C0521q8 extends MessageNano {
 
     public final C0521q8 a() {
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f1186a = bArr;
+        this.f1191a = bArr;
         this.b = null;
         this.c = bArr;
         this.d = null;
@@ -47,10 +47,10 @@ public final class C0521q8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f1186a;
+        byte[] bArr = this.f1191a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f1186a);
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f1191a);
         }
         C0242f8 c0242f8 = this.b;
         if (c0242f8 != null) {
@@ -65,10 +65,10 @@ public final class C0521q8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f1186a;
+        byte[] bArr = this.f1191a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f1186a);
+            codedOutputByteBufferNano.writeBytes(1, this.f1191a);
         }
         C0242f8 c0242f8 = this.b;
         if (c0242f8 != null) {
@@ -92,7 +92,7 @@ public final class C0521q8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f1186a = codedInputByteBufferNano.readBytes();
+                this.f1191a = codedInputByteBufferNano.readBytes();
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new C0242f8();

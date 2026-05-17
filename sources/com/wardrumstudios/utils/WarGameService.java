@@ -22,7 +22,7 @@ import com.google.android.gms.games.snapshot.Snapshots;
 import com.google.example.games.basegameutils.GameHelper;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class WarGameService implements GameHelper.GameHelperListener, ResultCallback<AppStateManager.StateResult>, WarActivityLifecycleListener {
     public static final int CLIENT_ALL = 15;
     public static final int CLIENT_APPSTATE = 4;
@@ -41,7 +41,7 @@ public class WarGameService implements GameHelper.GameHelperListener, ResultCall
     protected boolean creatingGamehelper = true;
     byte[] savedScreenshot = null;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     class LeaderboardQuery {
         int queryId;
         PendingResult<Leaderboards.LoadScoresResult> result;
@@ -50,7 +50,7 @@ public class WarGameService implements GameHelper.GameHelperListener, ResultCall
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class OpenSnapshotResultHandler implements ResultCallback<Snapshots.OpenSnapshotResult> {
         private byte[] data;
         private String description;

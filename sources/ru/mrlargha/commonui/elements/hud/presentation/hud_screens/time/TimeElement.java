@@ -214,8 +214,8 @@ public final class TimeElement {
                 textView3.setText(format2);
             }
         }
-        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        Picasso.get().load(resourceUrl$default + "projects/arizona-rp/systems/time/icons/" + component.getImage()).into(hudElementTimeItemBinding.image);
+        String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        Picasso.get().load(projectResourceUrl$default + "systems/time/icons/" + component.getImage()).into(hudElementTimeItemBinding.image);
         String str2 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 0);
         String str3 = DonateUtilsKt.TRANSPARENT_COLOR;
         if (str2 == null) {

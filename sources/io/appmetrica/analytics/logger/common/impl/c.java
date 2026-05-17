@@ -3,12 +3,12 @@ package io.appmetrica.analytics.logger.common.impl;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final d f1368a;
+    public final d f1373a;
     public final a b;
     public final b c;
 
     public c(d dVar, a aVar, b bVar) {
-        this.f1368a = dVar;
+        this.f1373a = dVar;
         this.b = aVar;
         this.c = bVar;
     }

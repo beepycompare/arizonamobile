@@ -48,7 +48,7 @@ final class HomeComponent$observeSettings$1 extends SuspendLambda implements Fun
         ConnectionHolder connectionHolder = ConnectionHolder.INSTANCE;
         SettingsData settingsData = ConnectionHolder.INSTANCE.getSettingsData();
         float chatFontSize = settingState.getChatFontSize();
-        connectionHolder.setSettingsData(SettingsData.copy$default(settingsData, settingState.getPageSize(), chatFontSize, settingState.getCustomKeyBoard(), settingState.getStreamerMode(), settingState.getShowChatTime(), false, settingState.getShowFps(), settingState.getUpdatedGraphics(), settingState.getFullScreen(), null, null, null, 3616, null));
+        connectionHolder.setSettingsData(SettingsData.copy$default(settingsData, settingState.getPageSize(), chatFontSize, settingState.getCustomKeyBoard(), settingState.getStreamerMode(), settingState.getShowChatTime(), false, settingState.getShowFps(), settingState.getUpdatedGraphics(), settingState.getFullScreen(), settingState.getConnectionData().getIp(), settingState.getConnectionData().getPort(), settingState.getConnectionData().getPassword(), 32, null));
         return Unit.INSTANCE;
     }
 }

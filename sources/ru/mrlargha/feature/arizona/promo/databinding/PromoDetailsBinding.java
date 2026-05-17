@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.utils.ui.GradientText.ArizonaGradientTextView;
 import ru.mrlargha.feature.arizona.promo.R;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public final class PromoDetailsBinding implements ViewBinding {
     public final LinearLayout backToActivate;
     private final LinearLayout rootView;

@@ -14,19 +14,19 @@ import dagger.hilt.android.internal.builders.ViewComponentBuilder;
 import dagger.hilt.android.internal.builders.ViewWithFragmentComponentBuilder;
 import dagger.hilt.internal.GeneratedComponentManager;
 import dagger.hilt.internal.Preconditions;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ViewComponentManager implements GeneratedComponentManager<Object> {
     private volatile Object component;
     private final Object componentLock = new Object();
     private final boolean hasFragmentBindings;
     private final View view;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface ViewComponentBuilderEntryPoint {
         ViewComponentBuilder viewComponentBuilder();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface ViewWithFragmentComponentBuilderEntryPoint {
         ViewWithFragmentComponentBuilder viewWithFragmentComponentBuilder();
     }
@@ -99,7 +99,7 @@ public final class ViewComponentManager implements GeneratedComponentManager<Obj
         return context;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class FragmentContextWrapper extends ContextWrapper {
         private LayoutInflater baseInflater;
         private Fragment fragment;

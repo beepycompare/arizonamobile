@@ -23,7 +23,7 @@ public class P5 implements CounterReportApi, Parcelable {
     public static final Parcelable.Creator<P5> CREATOR = new O5();
 
     /* renamed from: a  reason: collision with root package name */
-    protected String f736a;
+    protected String f741a;
     protected String b;
     public String c;
     public int d;
@@ -96,7 +96,7 @@ public class P5 implements CounterReportApi, Parcelable {
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
     public final String getName() {
-        return this.f736a;
+        return this.f741a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
@@ -135,7 +135,7 @@ public class P5 implements CounterReportApi, Parcelable {
     }
 
     public final boolean l() {
-        return this.f736a == null;
+        return this.f741a == null;
     }
 
     public final boolean m() {
@@ -160,7 +160,7 @@ public class P5 implements CounterReportApi, Parcelable {
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
     public void setName(String str) {
-        this.f736a = str;
+        this.f741a = str;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
@@ -180,7 +180,7 @@ public class P5 implements CounterReportApi, Parcelable {
 
     public final String toString() {
         Locale locale = Locale.US;
-        String str = this.f736a;
+        String str = this.f741a;
         String str2 = EnumC0142bb.a(this.d).b;
         String str3 = this.b;
         if (str3 == null) {
@@ -194,13 +194,13 @@ public class P5 implements CounterReportApi, Parcelable {
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         Bundle bundle = new Bundle();
-        bundle.putString("CounterReport.Event", this.f736a);
+        bundle.putString("CounterReport.Event", this.f741a);
         bundle.putString("CounterReport.Value", this.b);
         bundle.putInt("CounterReport.Type", this.d);
         bundle.putInt("CounterReport.CustomType", this.e);
         bundle.putInt("CounterReport.TRUNCATED", this.g);
         bundle.putString("CounterReport.ProfileID", this.h);
-        bundle.putInt("CounterReport.UniquenessStatus", this.k.f956a);
+        bundle.putInt("CounterReport.UniquenessStatus", this.k.f961a);
         Bundle bundle2 = this.m;
         if (bundle2 != null) {
             bundle.putParcelable("CounterReport.Payload", bundle2);
@@ -218,7 +218,7 @@ public class P5 implements CounterReportApi, Parcelable {
         bundle.putLong("CounterReport.CreationTimestamp", this.j);
         EnumC0422m9 enumC0422m9 = this.l;
         if (enumC0422m9 != null) {
-            bundle.putInt("CounterReport.Source", enumC0422m9.f1114a);
+            bundle.putInt("CounterReport.Source", enumC0422m9.f1119a);
         }
         Boolean bool = this.n;
         if (bool != null) {
@@ -275,7 +275,7 @@ public class P5 implements CounterReportApi, Parcelable {
     public P5(String str, String str2, int i, SystemTimeProvider systemTimeProvider) {
         this.k = EnumC0193da.UNKNOWN;
         this.p = new HashMap();
-        this.f736a = str2;
+        this.f741a = str2;
         this.d = i;
         this.b = str;
         this.i = systemTimeProvider.elapsedRealtime();
@@ -337,7 +337,7 @@ public class P5 implements CounterReportApi, Parcelable {
 
     public static P5 a(P5 p5, EnumC0142bb enumC0142bb) {
         P5 d = d(p5);
-        d.d = enumC0142bb.f917a;
+        d.d = enumC0142bb.f922a;
         return d;
     }
 
@@ -369,7 +369,7 @@ public class P5 implements CounterReportApi, Parcelable {
             JSONObject jSONObject = new JSONObject();
             if (c0689x2 != null) {
                 jSONObject.put("background_restricted", c0689x2.b);
-                EnumC0664w2 enumC0664w2 = c0689x2.f1296a;
+                EnumC0664w2 enumC0664w2 = c0689x2.f1301a;
                 c0159c2.getClass();
                 if (enumC0664w2 != null) {
                     int ordinal = enumC0664w2.ordinal();

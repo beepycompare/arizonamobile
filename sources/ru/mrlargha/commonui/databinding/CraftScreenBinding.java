@@ -21,7 +21,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.card.MaterialCardView;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class CraftScreenBinding implements ViewBinding {
     public final View bgRVCraft;
     public final AppCompatImageView btnBack;

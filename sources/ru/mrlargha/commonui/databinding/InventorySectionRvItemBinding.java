@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class InventorySectionRvItemBinding implements ViewBinding {
     private final RecyclerView rootView;
     public final RecyclerView rv;

@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class C8 implements to {
 
     /* renamed from: a  reason: collision with root package name */
-    public final H8 f531a;
+    public final H8 f536a;
 
     public C8() {
         this(new H8());
@@ -20,11 +20,11 @@ public final class C8 implements to {
         } else {
             bArr = new byte[0];
         }
-        H8 h8 = this.f531a;
-        return ((G8) h8.f611a.a(n8.o)).a(bArr);
+        H8 h8 = this.f536a;
+        return ((G8) h8.f616a.a(n8.o)).a(bArr);
     }
 
     public C8(H8 h8) {
-        this.f531a = h8;
+        this.f536a = h8;
     }
 }

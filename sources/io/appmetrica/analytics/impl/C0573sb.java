@@ -16,7 +16,7 @@ import java.util.Set;
 public final class C0573sb implements Ha, Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f1220a = new HashMap();
+    public final HashMap f1225a = new HashMap();
     public final HashMap b = new HashMap();
     public final String c = "preferences";
     public final C0548rb d;
@@ -72,7 +72,7 @@ public final class C0573sb implements Ha, Closeable {
                                         str = ParseUtils.parseLong(string2);
                                     }
                                     if (str == null) {
-                                        c0573sb.f1220a.put(string, str);
+                                        c0573sb.f1225a.put(string, str);
                                     }
                                 } else {
                                     if ("true".equals(string2)) {
@@ -113,7 +113,7 @@ public final class C0573sb implements Ha, Closeable {
             return;
         }
         try {
-            this.f1220a.wait();
+            this.f1225a.wait();
         } catch (InterruptedException unused) {
         }
     }
@@ -151,9 +151,9 @@ public final class C0573sb implements Ha, Closeable {
 
     @Override // io.appmetrica.analytics.impl.Ha
     public final Ha remove(String str) {
-        synchronized (this.f1220a) {
+        synchronized (this.f1225a) {
             c();
-            this.f1220a.remove(str);
+            this.f1225a.remove(str);
         }
         synchronized (this.d) {
             this.b.put(str, this);
@@ -164,9 +164,9 @@ public final class C0573sb implements Ha, Closeable {
 
     public final Object b(String str) {
         Object obj;
-        synchronized (this.f1220a) {
+        synchronized (this.f1225a) {
             c();
-            obj = this.f1220a.get(str);
+            obj = this.f1225a.get(str);
         }
         return obj;
     }
@@ -273,9 +273,9 @@ public final class C0573sb implements Ha, Closeable {
     @Override // io.appmetrica.analytics.impl.Ha
     public final boolean a(String str) {
         boolean containsKey;
-        synchronized (this.f1220a) {
+        synchronized (this.f1225a) {
             c();
-            containsKey = this.f1220a.containsKey(str);
+            containsKey = this.f1225a.containsKey(str);
         }
         return containsKey;
     }
@@ -283,16 +283,16 @@ public final class C0573sb implements Ha, Closeable {
     @Override // io.appmetrica.analytics.impl.Ha
     public final Set a() {
         HashSet hashSet;
-        synchronized (this.f1220a) {
-            hashSet = new HashSet(this.f1220a.keySet());
+        synchronized (this.f1225a) {
+            hashSet = new HashSet(this.f1225a.keySet());
         }
         return hashSet;
     }
 
     public final void a(String str, Object obj) {
-        synchronized (this.f1220a) {
+        synchronized (this.f1225a) {
             c();
-            this.f1220a.put(str, obj);
+            this.f1225a.put(str, obj);
         }
         synchronized (this.d) {
             this.b.put(str, obj);

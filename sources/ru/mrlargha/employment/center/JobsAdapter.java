@@ -66,16 +66,16 @@ public final class JobsAdapter extends RecyclerView.Adapter<EmploymentItemViewHo
         if (this.level >= job.getMinLevel()) {
             binding.label1.getRoot().setBackground(Color.parseColor("#151515"));
             binding.label1.text.setTextColor(Color.parseColor("#D9FFFFFF"));
-            binding.label1.text.setText(job.getMinLevel() + " уровень");
+            binding.label1.text.setText(holder.itemView.getContext().getString(R.string.employment_level, Integer.valueOf(job.getMinLevel())));
         } else {
             binding.label1.getRoot().setBackground(Color.parseColor("#602121"));
             binding.label1.text.setTextColor(Color.parseColor("#D9FFB7B7"));
-            binding.label1.text.setText("необходим " + job.getMinLevel() + " уровень");
+            binding.label1.text.setText(holder.itemView.getContext().getString(R.string.employment_required_level, Integer.valueOf(job.getMinLevel())));
         }
         if (this.job == job.getId()) {
             binding.label1.getRoot().setBackground(Color.parseColor("#294B29"));
             binding.label1.text.setTextColor(Color.parseColor("#8DFF8D"));
-            binding.label1.text.setText("устроен");
+            binding.label1.text.setText(holder.itemView.getContext().getString(R.string.employment_hired));
         }
         if (job.getBonusSalary().getPercent() == 0) {
             binding.label2.getRoot().setVisibility(8);

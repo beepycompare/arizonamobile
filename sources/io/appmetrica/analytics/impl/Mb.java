@@ -12,7 +12,7 @@ import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFact
 public final class Mb implements Kb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0651ve f691a = new C0651ve();
+    public final C0651ve f696a = new C0651ve();
     public final C0623ub b = new C0623ub();
     public final Wb c = new Wb();
 
@@ -44,7 +44,7 @@ public final class Mb implements Kb {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
     public final PermissionExtractor getPermissionExtractor() {
-        return this.f691a;
+        return this.f696a;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationProvider

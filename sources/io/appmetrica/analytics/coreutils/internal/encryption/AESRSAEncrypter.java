@@ -9,11 +9,11 @@ import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.security.spec.X509EncodedKeySpec;
 import javax.crypto.Cipher;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AESRSAEncrypter implements Encrypter {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f403a;
+    private final String f408a;
     private final String b;
 
     public AESRSAEncrypter() {
@@ -39,7 +39,7 @@ public class AESRSAEncrypter implements Encrypter {
         }
         try {
             byteArrayOutputStream.write(cipher.doFinal(byteArray));
-            encrypt = new AESEncrypter(this.f403a, bArr2, bArr3).encrypt(bArr);
+            encrypt = new AESEncrypter(this.f408a, bArr2, bArr3).encrypt(bArr);
         } catch (Throwable unused2) {
             CloseableUtilsKt.closeSafely(byteArrayOutputStream);
             return null;
@@ -69,7 +69,7 @@ public class AESRSAEncrypter implements Encrypter {
     }
 
     AESRSAEncrypter(int i) {
-        this.f403a = AESEncrypter.DEFAULT_ALGORITHM;
+        this.f408a = AESEncrypter.DEFAULT_ALGORITHM;
         this.b = "RSA/ECB/PKCS1Padding";
     }
 }

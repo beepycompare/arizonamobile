@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public final class C0319i7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Boolean f1039a;
+    public final Boolean f1044a;
     public final Double b;
     public final Double c;
     public final Integer d;
@@ -16,7 +16,7 @@ public final class C0319i7 {
     public final String j;
 
     public C0319i7(Boolean bool, Double d, Double d2, Integer num, Integer num2, Integer num3, Integer num4, Long l, String str, String str2) {
-        this.f1039a = bool;
+        this.f1044a = bool;
         this.b = d;
         this.c = d2;
         this.d = num;

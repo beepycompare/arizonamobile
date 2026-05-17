@@ -1,13 +1,13 @@
 package io.appmetrica.analytics.coreapi.internal.identifiers;
 
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AdTrackingInfo {
     public final String advId;
     public final Boolean limitedAdTracking;
     public final Provider provider;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public enum Provider {
         GOOGLE,
         HMS,

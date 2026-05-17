@@ -40,11 +40,11 @@ public final class Ve extends AbstractC0725yd {
     }
 
     public final boolean a(boolean z) {
-        return this.f853a.getBoolean(t.b, z);
+        return this.f858a.getBoolean(t.b, z);
     }
 
     public final long b(long j2) {
-        return this.f853a.getLong(j.f867a, j2);
+        return this.f858a.getLong(j.f872a, j2);
     }
 
     public final Ve c(IdentifiersResult identifiersResult) {
@@ -76,7 +76,7 @@ public final class Ve extends AbstractC0725yd {
     }
 
     public final V9 k() {
-        String string = this.f853a.getString(w.b, null);
+        String string = this.f858a.getString(w.b, null);
         try {
             if (!TextUtils.isEmpty(string)) {
                 JSONObject jSONObject = new JSONObject(string);
@@ -96,7 +96,7 @@ public final class Ve extends AbstractC0725yd {
     }
 
     public final long n() {
-        return this.f853a.getLong(p.b, 0L);
+        return this.f858a.getLong(p.b, 0L);
     }
 
     public final IdentifiersResult o() {
@@ -104,7 +104,7 @@ public final class Ve extends AbstractC0725yd {
     }
 
     public final ScreenInfo p() {
-        return AbstractC0271gb.e(this.f853a.getString(u.b, null));
+        return AbstractC0271gb.e(this.f858a.getString(u.b, null));
     }
 
     public final IdentifiersResult q() {
@@ -116,11 +116,11 @@ public final class Ve extends AbstractC0725yd {
     }
 
     public final boolean s() {
-        return this.f853a.getBoolean(n.b, false);
+        return this.f858a.getBoolean(n.b, false);
     }
 
     public final boolean t() {
-        return this.f853a.getBoolean(v.b, false);
+        return this.f858a.getBoolean(v.b, false);
     }
 
     public final Ve u() {
@@ -132,7 +132,7 @@ public final class Ve extends AbstractC0725yd {
     }
 
     public final List<String> g() {
-        String string = this.f853a.getString(i.b, null);
+        String string = this.f858a.getString(i.b, null);
         if (TextUtils.isEmpty(string)) {
             return null;
         }
@@ -140,7 +140,7 @@ public final class Ve extends AbstractC0725yd {
     }
 
     public final long a(long j2) {
-        return this.f853a.getLong(o.b, j2);
+        return this.f858a.getLong(o.b, j2);
     }
 
     public final Ve b(IdentifiersResult identifiersResult) {
@@ -160,7 +160,7 @@ public final class Ve extends AbstractC0725yd {
     }
 
     public final AppMetricaConfig.Builder f() {
-        String string = this.f853a.getString(x.b, null);
+        String string = this.f858a.getString(x.b, null);
         if (string == null) {
             return null;
         }
@@ -176,7 +176,7 @@ public final class Ve extends AbstractC0725yd {
         IdentifiersResult identifiersResult;
         String string;
         try {
-            string = this.f853a.getString(str, null);
+            string = this.f858a.getString(str, null);
         } catch (Throwable unused) {
         }
         if (string != null) {
@@ -218,7 +218,7 @@ public final class Ve extends AbstractC0725yd {
     }
 
     public final String i(String str) {
-        return this.f853a.getString(m.b, str);
+        return this.f858a.getString(m.b, str);
     }
 
     public final Ve j(String str) {
@@ -242,7 +242,7 @@ public final class Ve extends AbstractC0725yd {
         String str = w.b;
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.putOpt("libSslEnabled", v9.f825a).put(DownloadsDB.DownloadColumns.STATUS, v9.b.getValue()).putOpt("ERROR_EXPLANATION", v9.c);
+            jSONObject.putOpt("libSslEnabled", v9.f830a).put(DownloadsDB.DownloadColumns.STATUS, v9.b.getValue()).putOpt("ERROR_EXPLANATION", v9.c);
         } catch (Throwable unused) {
         }
         return (Ve) b(str, jSONObject.toString());

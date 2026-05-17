@@ -1,22 +1,26 @@
 package ru.mrlargha.pirates;
 
+import android.content.Context;
 import androidx.core.app.NotificationCompat;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
+import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
+import ru.mrlargha.feature.event.R;
 /* compiled from: util.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0004\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u001a(\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u00012\u0006\u0010\n\u001a\u00020\u00012\u0006\u0010\u000b\u001a\u00020\u0001H\u0002¨\u0006\f"}, d2 = {"formatDurationRu", "", "totalSeconds", "", "showSeconds", "", "ruPlural", "n", "", "one", "few", "many", NotificationCompat.CATEGORY_EVENT}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\u001a \u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0007¨\u0006\b"}, d2 = {"formatDurationLocalized", "", "context", "Landroid/content/Context;", "totalSeconds", "", "showSeconds", "", NotificationCompat.CATEGORY_EVENT}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class UtilKt {
-    public static /* synthetic */ String formatDurationRu$default(int i, boolean z, int i2, Object obj) {
-        if ((i2 & 2) != 0) {
+    public static /* synthetic */ String formatDurationLocalized$default(Context context, int i, boolean z, int i2, Object obj) {
+        if ((i2 & 4) != 0) {
             z = false;
         }
-        return formatDurationRu(i, z);
+        return formatDurationLocalized(context, i, z);
     }
 
-    public static final String formatDurationRu(int i, boolean z) {
+    public static final String formatDurationLocalized(Context context, int i, boolean z) {
+        Intrinsics.checkNotNullParameter(context, "context");
         long coerceAtLeast = RangesKt.coerceAtLeast(i, 0);
         long j = coerceAtLeast / 86400;
         long j2 = coerceAtLeast % 86400;
@@ -26,27 +30,22 @@ public final class UtilKt {
         long j6 = j4 % 60;
         ArrayList arrayList = new ArrayList(4);
         if (j > 0) {
-            arrayList.add(j + " " + ruPlural(j, "день", "дня", "дней"));
+            arrayList.add(context.getString(R.string.event_time_day_short, Long.valueOf(j)));
         }
         if (j3 > 0) {
-            arrayList.add(j3 + " " + ruPlural(j3, "час", "часа", "часов"));
+            arrayList.add(context.getString(R.string.event_time_hour_short, Long.valueOf(j3)));
         }
         if (j5 > 0) {
-            arrayList.add(j5 + " " + ruPlural(j5, "минута", "минуты", "минут"));
+            arrayList.add(context.getString(R.string.event_time_minute_short, Long.valueOf(j5)));
         }
         if (z && j6 > 0) {
-            arrayList.add(j6 + " " + ruPlural(j6, "секунда", "секунды", "секунд"));
+            arrayList.add(context.getString(R.string.event_time_second_short, Long.valueOf(j6)));
         }
         if (arrayList.isEmpty()) {
-            return z ? "0 секунд" : "0 минут";
+            String string = context.getString(R.string.event_time_zero);
+            Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+            return string;
         }
         return CollectionsKt.joinToString$default(arrayList, " ", null, null, 0, null, null, 62, null);
-    }
-
-    private static final String ruPlural(long j, String str, String str2, String str3) {
-        int abs = (int) Math.abs(j);
-        int i = abs % 100;
-        int i2 = abs % 10;
-        return (11 > i || i >= 15) ? i2 == 1 ? str : (2 > i2 || i2 >= 5) ? str3 : str2 : str3;
     }
 }

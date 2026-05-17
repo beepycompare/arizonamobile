@@ -9,12 +9,12 @@ import kotlin.Unit;
 public final class C0167ca {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile Boolean f934a;
+    public volatile Boolean f939a;
 
     public final void a(Context context) {
-        if (this.f934a == null) {
+        if (this.f939a == null) {
             synchronized (this) {
-                if (this.f934a == null) {
+                if (this.f939a == null) {
                     boolean z = false;
                     try {
                         File fileFromAppStorage = FileUtils.getFileFromAppStorage(context, "uuid.dat");
@@ -26,7 +26,7 @@ public final class C0167ca {
                         }
                     } catch (Throwable unused) {
                     }
-                    this.f934a = Boolean.valueOf(z);
+                    this.f939a = Boolean.valueOf(z);
                 }
                 Unit unit = Unit.INSTANCE;
             }

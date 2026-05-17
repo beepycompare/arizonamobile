@@ -9,14 +9,14 @@ import kotlin.Metadata;
 public final class J6 implements I6 {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Jg f639a;
+    private final Jg f644a;
 
     public J6(Jg jg) {
-        this.f639a = jg;
+        this.f644a = jg;
     }
 
     @Override // io.appmetrica.analytics.impl.I6
     public File a(Context context, String str) {
-        return new File(context.getNoBackupFilesDir(), this.f639a.a(str));
+        return new File(context.getNoBackupFilesDir(), this.f644a.a(str));
     }
 }

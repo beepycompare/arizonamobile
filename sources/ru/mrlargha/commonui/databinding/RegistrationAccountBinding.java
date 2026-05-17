@@ -11,7 +11,7 @@ import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class RegistrationAccountBinding implements ViewBinding {
     public final Guideline centerLine;
     public final Guideline regTopLine;

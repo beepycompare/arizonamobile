@@ -568,6 +568,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
 
     @Override // androidx.compose.ui.node.DrawModifierNode
     public void draw(ContentDrawScope contentDrawScope) {
+        List<AnnotatedString.Range<Placeholder>> list;
         if (isAttached()) {
             SelectionController selectionController = this.selectionController;
             if (selectionController != null) {
@@ -576,7 +577,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
             Canvas canvas = contentDrawScope.getDrawContext().getCanvas();
             TextLayoutResult textLayoutResult = getLayoutCache(contentDrawScope).getTextLayoutResult();
             MultiParagraph multiParagraph = textLayoutResult.getMultiParagraph();
-            boolean z = true;
+            boolean z = false;
             boolean z2 = textLayoutResult.getHasVisualOverflow() && !TextOverflow.m7481equalsimpl0(this.overflow, TextOverflow.Companion.m7494getVisiblegIe3tQ8());
             if (z2) {
                 Rect m4567Recttz77jQw = RectKt.m4567Recttz77jQw(Offset.Companion.m4543getZeroF1C5BW0(), Size.m4587constructorimpl((Float.floatToRawIntBits((int) (textLayoutResult.m6974getSizeYbymL2g() >> 32)) << 32) | (Float.floatToRawIntBits((int) (textLayoutResult.m6974getSizeYbymL2g() & 4294967295L)) & 4294967295L)));
@@ -615,16 +616,12 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
                     multiParagraph.m6867paintLG529CI(canvas, (r14 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : mo2027invoke0d7_KjU, (r14 & 4) != 0 ? null : shadow2, (r14 & 8) != 0 ? null : textDecoration2, (r14 & 16) == 0 ? drawStyle2 : null, (r14 & 32) != 0 ? DrawScope.Companion.m5348getDefaultBlendMode0nO6VwU() : 0);
                 }
                 TextSubstitutionValue textSubstitutionValue = this.textSubstitution;
-                if (!((textSubstitutionValue == null || !textSubstitutionValue.isShowingSubstitution()) ? TextAnnotatedStringNodeKt.hasLinks(this.text) : false)) {
-                    List<AnnotatedString.Range<Placeholder>> list = this.placeholders;
-                    if (list != null && !list.isEmpty()) {
-                        z = false;
-                    }
-                    if (z) {
-                        return;
-                    }
+                if (textSubstitutionValue == null || !textSubstitutionValue.isShowingSubstitution()) {
+                    z = TextAnnotatedStringNodeKt.hasLinks(this.text);
                 }
-                contentDrawScope.drawContent();
+                if (z || !((list = this.placeholders) == null || list.isEmpty())) {
+                    contentDrawScope.drawContent();
+                }
             } finally {
                 if (z2) {
                     canvas.restore();

@@ -8,12 +8,12 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class i extends MessageNano {
     public static volatile i[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f470a;
+    public byte[] f475a;
     public byte[][] b;
 
     public i() {
@@ -32,7 +32,7 @@ public final class i extends MessageNano {
     }
 
     public final i a() {
-        this.f470a = WireFormatNano.EMPTY_BYTES;
+        this.f475a = WireFormatNano.EMPTY_BYTES;
         this.b = WireFormatNano.EMPTY_BYTES_ARRAY;
         this.cachedSize = -1;
         return this;
@@ -41,8 +41,8 @@ public final class i extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!Arrays.equals(this.f470a, WireFormatNano.EMPTY_BYTES)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f470a);
+        if (!Arrays.equals(this.f475a, WireFormatNano.EMPTY_BYTES)) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f475a);
         }
         byte[][] bArr = this.b;
         if (bArr == null || bArr.length <= 0) {
@@ -67,8 +67,8 @@ public final class i extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!Arrays.equals(this.f470a, WireFormatNano.EMPTY_BYTES)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f470a);
+        if (!Arrays.equals(this.f475a, WireFormatNano.EMPTY_BYTES)) {
+            codedOutputByteBufferNano.writeBytes(1, this.f475a);
         }
         byte[][] bArr = this.b;
         if (bArr != null && bArr.length > 0) {
@@ -96,7 +96,7 @@ public final class i extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f470a = codedInputByteBufferNano.readBytes();
+                this.f475a = codedInputByteBufferNano.readBytes();
             } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

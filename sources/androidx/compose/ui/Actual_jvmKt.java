@@ -11,7 +11,7 @@ import kotlin.collections.ArraysKt;
 import kotlin.comparisons.ComparisonsKt;
 /* compiled from: Actual.jvm.kt */
 @Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0003H\u0000\u001a\u0010\u0010\u0005\u001a\u00020\u00032\u0006\u0010\u0002\u001a\u00020\u0003H\u0000\u001a\u0018\u0010\u0006\u001a\u00020\u0007*\u00020\b2\n\u0010\t\u001a\u0006\u0012\u0002\b\u00030\nH\u0000¨\u0006\u000b"}, d2 = {"areObjectsOfSameType", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "", "b", "classKeyForObject", "tryPopulateReflectively", "", "Landroidx/compose/ui/platform/InspectorInfo;", "element", "Landroidx/compose/ui/node/ModifierNodeElement;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class Actual_jvmKt {
     public static final boolean areObjectsOfSameType(Object obj, Object obj2) {
         return obj.getClass() == obj2.getClass();

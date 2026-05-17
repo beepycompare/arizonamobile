@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentActivity;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ActivityModule_ProvideFragmentActivityFactory implements Factory<FragmentActivity> {
     private final Provider<Activity> activityProvider;
 

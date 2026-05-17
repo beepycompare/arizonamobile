@@ -7,7 +7,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0703xg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1307a;
+    public final String f1312a;
     public final String b;
     public final C0176cj c;
 
@@ -16,11 +16,11 @@ public final class C0703xg {
     }
 
     public final String toString() {
-        return "ReferrerWrapper{type='" + this.f1307a + "', identifier='" + this.b + "', screen=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "ReferrerWrapper{type='" + this.f1312a + "', identifier='" + this.b + "', screen=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
     public C0703xg(String str, String str2, C0176cj c0176cj) {
-        this.f1307a = str;
+        this.f1312a = str;
         this.b = str2;
         this.c = c0176cj;
     }

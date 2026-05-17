@@ -1,5 +1,6 @@
 package ru.mrlargha.feature.workshop.presentation;
 
+import android.content.Context;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,11 +9,12 @@ import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.workshop.databinding.WorkshopButtonsContainerBinding;
 import ru.mrlargha.feature.workshop.databinding.WorkshopInfoContainerBinding;
 /* compiled from: WorkshopResponse.kt */
-@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b6\u0018\u0000 )2\u00020\u0001:\u0006$%&'()BA\b\u0004\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\u0006\u0010\u0007\u001a\u00020\u0005\u0012\u0006\u0010\b\u001a\u00020\u0005\u0012\u0006\u0010\t\u001a\u00020\u0005\u0012\u0006\u0010\n\u001a\u00020\u0005¢\u0006\u0004\b\u000b\u0010\fJ\u000e\u0010\u001b\u001a\u00020\u00002\u0006\u0010\u001c\u001a\u00020\u000eJ\u000e\u0010\u001d\u001a\u00020\u00002\u0006\u0010\u001c\u001a\u00020\u0012J\u0016\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020#R\u001e\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\r\u001a\u00020\u000e@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u001e\u0010\u0013\u001a\u00020\u00122\u0006\u0010\r\u001a\u00020\u0012@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u001a\u0010\u0016\u001a\u00020\u0017X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0018\"\u0004\b\u0019\u0010\u001a\u0082\u0001\u0005*+,-.¨\u0006/"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopMenus;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenusModels;", "id", "", "menuName", "", "desc", "rightName", "leftName", "mainName", "buttonName", "<init>", "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "value", "Lru/mrlargha/feature/workshop/presentation/WorkshopInfoType;", "infoType", "getInfoType", "()Lru/mrlargha/feature/workshop/presentation/WorkshopInfoType;", "Lru/mrlargha/feature/workshop/presentation/WorkshopButtonsType;", "buttonsType", "getButtonsType", "()Lru/mrlargha/feature/workshop/presentation/WorkshopButtonsType;", "isHasProgress", "", "()Z", "setHasProgress", "(Z)V", "setInfoType", "type", "setButtonsType", "setVisible", "", "infoContainer", "Lru/mrlargha/feature/workshop/databinding/WorkshopInfoContainerBinding;", "buttonsContainer", "Lru/mrlargha/feature/workshop/databinding/WorkshopButtonsContainerBinding;", "SHARPING", "PAINTING", "REPAIR", "DISASSEMBLY", "TRANSFER", "Companion", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$DISASSEMBLY;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$PAINTING;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$REPAIR;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$SHARPING;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$TRANSFER;", "workshop"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b6\u0018\u0000 12\u00020\u0001:\u0006,-./01BM\b\u0004\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0001\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0001\u0010\u0005\u001a\u00020\u0003\u0012\b\b\u0001\u0010\u0006\u001a\u00020\u0003\u0012\b\b\u0001\u0010\u0007\u001a\u00020\u0003\u0012\b\b\u0001\u0010\b\u001a\u00020\u0003\u0012\b\b\u0001\u0010\t\u001a\u00020\u0003¢\u0006\u0004\b\n\u0010\u000bJ\u000e\u0010\u001a\u001a\u00020\u00002\u0006\u0010\u001b\u001a\u00020\rJ\u000e\u0010\u001c\u001a\u00020\u00002\u0006\u0010\u001b\u001a\u00020\u0011J\u000e\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 J\u000e\u0010!\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 J\u000e\u0010\"\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 J\u000e\u0010#\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 J\u000e\u0010$\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 J\u000e\u0010%\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 J\u0016\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+R\u001e\u0010\u000e\u001a\u00020\r2\u0006\u0010\f\u001a\u00020\r@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001e\u0010\u0012\u001a\u00020\u00112\u0006\u0010\f\u001a\u00020\u0011@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u001a\u0010\u0015\u001a\u00020\u0016X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0017\"\u0004\b\u0018\u0010\u0019\u0082\u0001\u000523456¨\u00067"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopMenus;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenusModels;", "id", "", "menuNameResId", "descResId", "rightNameResId", "leftNameResId", "mainNameResId", "buttonNameResId", "<init>", "(IIIIIII)V", "value", "Lru/mrlargha/feature/workshop/presentation/WorkshopInfoType;", "infoType", "getInfoType", "()Lru/mrlargha/feature/workshop/presentation/WorkshopInfoType;", "Lru/mrlargha/feature/workshop/presentation/WorkshopButtonsType;", "buttonsType", "getButtonsType", "()Lru/mrlargha/feature/workshop/presentation/WorkshopButtonsType;", "isHasProgress", "", "()Z", "setHasProgress", "(Z)V", "setInfoType", "type", "setButtonsType", "menuName", "", "context", "Landroid/content/Context;", "desc", "rightFieldName", "leftFieldName", "mainFieldName", "buttonName", "setVisible", "", "infoContainer", "Lru/mrlargha/feature/workshop/databinding/WorkshopInfoContainerBinding;", "buttonsContainer", "Lru/mrlargha/feature/workshop/databinding/WorkshopButtonsContainerBinding;", "SHARPING", "PAINTING", "REPAIR", "DISASSEMBLY", "TRANSFER", "Companion", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$DISASSEMBLY;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$PAINTING;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$REPAIR;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$SHARPING;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$TRANSFER;", "workshop"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public abstract class WorkshopMenus extends WorkshopMenusModels {
     public static final Companion Companion = new Companion(null);
@@ -20,12 +22,12 @@ public abstract class WorkshopMenus extends WorkshopMenusModels {
     private WorkshopInfoType infoType;
     private boolean isHasProgress;
 
-    public /* synthetic */ WorkshopMenus(int i, String str, String str2, String str3, String str4, String str5, String str6, DefaultConstructorMarker defaultConstructorMarker) {
-        this(i, str, str2, str3, str4, str5, str6);
+    public /* synthetic */ WorkshopMenus(int i, int i2, int i3, int i4, int i5, int i6, int i7, DefaultConstructorMarker defaultConstructorMarker) {
+        this(i, i2, i3, i4, i5, i6, i7);
     }
 
-    private WorkshopMenus(int i, String str, String str2, String str3, String str4, String str5, String str6) {
-        super(i, str, str2, str3, str4, str5, str6);
+    private WorkshopMenus(int i, int i2, int i3, int i4, int i5, int i6, int i7) {
+        super(i, i2, i3, i4, i5, i6, i7);
         this.infoType = WorkshopInfoType.NONE;
         this.buttonsType = WorkshopButtonsType.NONE;
         this.isHasProgress = true;
@@ -57,6 +59,48 @@ public abstract class WorkshopMenus extends WorkshopMenusModels {
         Intrinsics.checkNotNullParameter(type, "type");
         this.buttonsType = type;
         return this;
+    }
+
+    public final String menuName(Context context) {
+        String stringOrEmpty;
+        Intrinsics.checkNotNullParameter(context, "context");
+        stringOrEmpty = WorkshopResponseKt.stringOrEmpty(context, getMenuNameResId());
+        return stringOrEmpty;
+    }
+
+    public final String desc(Context context) {
+        String stringOrEmpty;
+        Intrinsics.checkNotNullParameter(context, "context");
+        stringOrEmpty = WorkshopResponseKt.stringOrEmpty(context, getDescResId());
+        return stringOrEmpty;
+    }
+
+    public final String rightFieldName(Context context) {
+        String stringOrEmpty;
+        Intrinsics.checkNotNullParameter(context, "context");
+        stringOrEmpty = WorkshopResponseKt.stringOrEmpty(context, getRightFieldNameResId());
+        return stringOrEmpty;
+    }
+
+    public final String leftFieldName(Context context) {
+        String stringOrEmpty;
+        Intrinsics.checkNotNullParameter(context, "context");
+        stringOrEmpty = WorkshopResponseKt.stringOrEmpty(context, getLeftFieldNameResId());
+        return stringOrEmpty;
+    }
+
+    public final String mainFieldName(Context context) {
+        String stringOrEmpty;
+        Intrinsics.checkNotNullParameter(context, "context");
+        stringOrEmpty = WorkshopResponseKt.stringOrEmpty(context, getMainFieldNameResId());
+        return stringOrEmpty;
+    }
+
+    public final String buttonName(Context context) {
+        String stringOrEmpty;
+        Intrinsics.checkNotNullParameter(context, "context");
+        stringOrEmpty = WorkshopResponseKt.stringOrEmpty(context, getButtonNameResId());
+        return stringOrEmpty;
     }
 
     public final void setVisible(WorkshopInfoContainerBinding infoContainer, WorkshopButtonsContainerBinding buttonsContainer) {
@@ -108,7 +152,7 @@ public abstract class WorkshopMenus extends WorkshopMenusModels {
         }
 
         private SHARPING() {
-            super(0, "заточка", "Перенесите предмет и камень заточки в необходимые ячейки", "заточка", "супер-заточка", "предмет", "Заточить предмет", null);
+            super(0, R.string.sharpening, R.string.workshop_sharpen_description, R.string.sharpening, R.string.workshop_super_sharpening, R.string.item, R.string.workshop_sharpen_item_action, null);
         }
 
         static {
@@ -144,7 +188,7 @@ public abstract class WorkshopMenus extends WorkshopMenusModels {
         }
 
         private PAINTING() {
-            super(1, "покраска", "", "заточка", "краска", "предмет", "Покрасить", null);
+            super(1, R.string.painting, 0, R.string.sharpening, R.string.workshop_paint_material, R.string.item, R.string.workshop_paint_action, null);
         }
 
         static {
@@ -180,7 +224,7 @@ public abstract class WorkshopMenus extends WorkshopMenusModels {
         }
 
         private REPAIR() {
-            super(2, "ремонт", "", "", "", "предмет", "Починить", null);
+            super(2, R.string.workshop_repair, 0, 0, 0, R.string.item, R.string.workshop_fix_action, null);
         }
 
         static {
@@ -216,7 +260,7 @@ public abstract class WorkshopMenus extends WorkshopMenusModels {
         }
 
         private DISASSEMBLY() {
-            super(3, "разбор", "Перенесите инструкцию для разбора и предмет в необходимые ячейки", "инструкция", "недоступно", "предмет", "Разобрать предмет", null);
+            super(3, R.string.workshop_disassembly, R.string.workshop_disassembly_description, R.string.workshop_instruction, R.string.unavailable, R.string.item, R.string.workshop_disassemble_item_action, null);
         }
 
         static {
@@ -253,7 +297,7 @@ public abstract class WorkshopMenus extends WorkshopMenusModels {
         }
 
         private TRANSFER() {
-            super(4, "Перенос характеристик", "Перенесите коллекционный и обычный аксессуары в ячейки", "Обычный аксессуар", "недоступно", "Коллекционный аксессуар", "Перенести", null);
+            super(4, R.string.workshop_transfer_characteristics, R.string.workshop_transfer_description, R.string.workshop_regular_accessory, R.string.unavailable, R.string.workshop_collectible_accessory, R.string.workshop_transfer_action, null);
         }
 
         static {

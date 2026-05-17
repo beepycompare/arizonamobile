@@ -189,30 +189,32 @@ public final class AnnotatedStringKt {
         if (i == i2 || (annotations$ui_text = annotatedString.getAnnotations$ui_text()) == null) {
             return null;
         }
-        if (i == 0 && i2 >= annotatedString.getText().length()) {
-            if (function1 == null) {
-                return annotations$ui_text;
-            }
+        int i3 = 0;
+        if (i != 0 || i2 < annotatedString.getText().length()) {
             ArrayList arrayList = new ArrayList(annotations$ui_text.size());
             int size = annotations$ui_text.size();
-            for (int i3 = 0; i3 < size; i3++) {
+            while (i3 < size) {
                 AnnotatedString.Range<? extends AnnotatedString.Annotation> range = annotations$ui_text.get(i3);
-                if (function1.invoke(range.getItem()).booleanValue()) {
-                    arrayList.add(range);
+                if ((function1 != null ? function1.invoke(range.getItem()).booleanValue() : true) && intersect(i, i2, range.getStart(), range.getEnd())) {
+                    arrayList.add(new AnnotatedString.Range(range.getItem(), RangesKt.coerceIn(range.getStart(), i, i2) - i, RangesKt.coerceIn(range.getEnd(), i, i2) - i, range.getTag()));
                 }
+                i3++;
             }
             return arrayList;
-        }
-        ArrayList arrayList2 = new ArrayList(annotations$ui_text.size());
-        int size2 = annotations$ui_text.size();
-        for (int i4 = 0; i4 < size2; i4++) {
-            AnnotatedString.Range<? extends AnnotatedString.Annotation> range2 = annotations$ui_text.get(i4);
-            boolean z = true;
-            if (((function1 != null ? function1.invoke(range2.getItem()).booleanValue() : true) && intersect(i, i2, range2.getStart(), range2.getEnd())) ? false : false) {
-                arrayList2.add(new AnnotatedString.Range(range2.getItem(), RangesKt.coerceIn(range2.getStart(), i, i2) - i, RangesKt.coerceIn(range2.getEnd(), i, i2) - i, range2.getTag()));
+        } else if (function1 == null) {
+            return annotations$ui_text;
+        } else {
+            ArrayList arrayList2 = new ArrayList(annotations$ui_text.size());
+            int size2 = annotations$ui_text.size();
+            while (i3 < size2) {
+                AnnotatedString.Range<? extends AnnotatedString.Annotation> range2 = annotations$ui_text.get(i3);
+                if (function1.invoke(range2.getItem()).booleanValue()) {
+                    arrayList2.add(range2);
+                }
+                i3++;
             }
+            return arrayList2;
         }
-        return arrayList2;
     }
 
     public static final AnnotatedString substringWithoutParagraphStyles(AnnotatedString annotatedString, int i, int i2) {

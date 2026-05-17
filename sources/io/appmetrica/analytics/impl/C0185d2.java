@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 public final class C0185d2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0272gc f949a;
+    public final C0272gc f954a;
     public final ICommonExecutor b;
     public final long c;
     public boolean d = true;
@@ -19,14 +19,14 @@ public final class C0185d2 {
     };
 
     public C0185d2(C0272gc c0272gc, IHandlerExecutor iHandlerExecutor, long j) {
-        this.f949a = c0272gc;
+        this.f954a = c0272gc;
         this.b = iHandlerExecutor;
         this.c = j;
     }
 
     public static final void a(C0185d2 c0185d2) {
-        C0298hc c0298hc = c0185d2.f949a.f1011a;
+        C0298hc c0298hc = c0185d2.f954a.f1016a;
         C0680wi c0680wi = c0298hc.h;
-        c0680wi.c.a(c0298hc.b.f607a);
+        c0680wi.c.a(c0298hc.b.f612a);
     }
 }

@@ -6,7 +6,7 @@ import java.io.IOException;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Response;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class OkHttp3Downloader implements Downloader {
     private final okhttp3.Cache cache;
     final Call.Factory client;

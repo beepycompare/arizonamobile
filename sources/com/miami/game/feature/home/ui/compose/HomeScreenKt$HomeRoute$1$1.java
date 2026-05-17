@@ -88,10 +88,12 @@ public final class HomeScreenKt$HomeRoute$1$1 extends SuspendLambda implements F
             this.$navigateTooRepairGameSuccess.invoke();
         } else if (Intrinsics.areEqual(homeUiAction, HomeUiAction.NavigateToNotification.INSTANCE)) {
             this.$navigateToNotification.invoke();
-        } else if (!Intrinsics.areEqual(homeUiAction, HomeUiAction.NotifyHwIsNotAllowed.INSTANCE)) {
+        } else if (Intrinsics.areEqual(homeUiAction, HomeUiAction.NotifyHwIsNotAllowed.INSTANCE)) {
+            Toast.makeText(this.$context, "Магазин не доступен для приложения с AppGallery", 1).show();
+        } else if (!Intrinsics.areEqual(homeUiAction, HomeUiAction.NotifyShopIsNotAllowed.INSTANCE)) {
             throw new NoWhenBranchMatchedException();
         } else {
-            Toast.makeText(this.$context, "Магазин не доступен для приложения с AppGallery", 1).show();
+            Toast.makeText(this.$context, "Магазин недоступен в вашем регионе", 1).show();
         }
         return Unit.INSTANCE;
     }

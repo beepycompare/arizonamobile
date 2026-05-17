@@ -6,16 +6,16 @@ import kotlin.jvm.internal.Lambda;
 public final class F extends Lambda implements Function0<String> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f1577a;
+    public final /* synthetic */ String f1582a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public F(String str) {
         super(0);
-        this.f1577a = str;
+        this.f1582a = str;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final String invoke() {
-        return "Delete id's from storage " + this.f1577a;
+        return "Delete id's from storage " + this.f1582a;
     }
 }

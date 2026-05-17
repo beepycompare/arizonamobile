@@ -1,22 +1,22 @@
 package io.appmetrica.analytics;
 
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AppMetricaLibraryAdapterConfig {
     public final Boolean advIdentifiersTracking;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private Boolean f277a;
+        private Boolean f282a;
 
         public AppMetricaLibraryAdapterConfig build() {
             return new AppMetricaLibraryAdapterConfig(this, 0);
         }
 
         public Builder withAdvIdentifiersTracking(boolean z) {
-            this.f277a = Boolean.valueOf(z);
+            this.f282a = Boolean.valueOf(z);
             return this;
         }
     }
@@ -34,6 +34,6 @@ public class AppMetricaLibraryAdapterConfig {
     }
 
     private AppMetricaLibraryAdapterConfig(Builder builder) {
-        this.advIdentifiersTracking = builder.f277a;
+        this.advIdentifiersTracking = builder.f282a;
     }
 }

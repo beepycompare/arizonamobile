@@ -36,7 +36,7 @@ import androidx.compose.ui.res.PainterResources_androidKt;
 import androidx.compose.ui.unit.Dp;
 import androidx.media3.exoplayer.RendererCapabilities;
 import com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt;
-import com.miami.game.feature.settings.R;
+import com.miami.game.ui.classic.settings.R;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
@@ -66,7 +66,7 @@ public final class SwitchButtonKt {
         Intrinsics.checkNotNullParameter(text, "text");
         Intrinsics.checkNotNullParameter(onClick, "onClick");
         Composer startRestartGroup = composer.startRestartGroup(945005206);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SwitchButton)N(text,onClick,checked)34@1495L949,34@1472L972:SwitchButton.kt#1gr92h");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SwitchButton)N(text,onClick,checked)34@1498L949,34@1475L972:SwitchButton.kt#1gr92h");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(text) ? 4 : 2) | i;
         } else {
@@ -110,7 +110,7 @@ public final class SwitchButtonKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SwitchButton$lambda$0(String str, boolean z, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C35@1505L933:SwitchButton.kt#1gr92h");
+        ComposerKt.sourceInformation(composer, "C35@1508L933:SwitchButton.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
@@ -144,7 +144,7 @@ public final class SwitchButtonKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, -246736908, "C57@2346L42,59@2401L27:SwitchButton.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(composer, -246736908, "C57@2349L42,59@2404L27:SwitchButton.kt#1gr92h");
             TextSettingsKt.TextSettings(str, null, composer, 0, 2);
             CustomToggleSwitch(z, composer, 0);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -163,7 +163,7 @@ public final class SwitchButtonKt {
     public static final void CustomToggleSwitch(final boolean z, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(2052617564);
-        ComposerKt.sourceInformation(startRestartGroup, "C(CustomToggleSwitch)N(checked)81@2893L475:SwitchButton.kt#1gr92h");
+        ComposerKt.sourceInformation(startRestartGroup, "C(CustomToggleSwitch)N(checked)81@2896L475:SwitchButton.kt#1gr92h");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(z) ? 4 : 2) | i;
         } else {
@@ -215,7 +215,7 @@ public final class SwitchButtonKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -935852450, "C84@2959L37,84@2943L217,89@3185L24,89@3169L193:SwitchButton.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -935852450, "C84@2962L37,84@2946L217,89@3188L24,89@3172L193:SwitchButton.kt#1gr92h");
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.switch_bg, startRestartGroup, 0), (String) null, boxScopeInstance.align(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(12.0f)), Alignment.Companion.getCenter()), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 24624, 104);
             ImageKt.Image(PainterResources_androidKt.painterResource(i3, startRestartGroup, 0), (String) null, boxScopeInstance.align(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(20.0f)), centerEnd), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 24624, 104);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

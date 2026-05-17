@@ -7,7 +7,7 @@ import io.appmetrica.analytics.impl.C0326ie;
 import io.appmetrica.analytics.impl.J9;
 import java.util.Map;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ExternalAttributions {
     public static ExternalAttribution adjust(Object obj) {
         if (obj == null) {

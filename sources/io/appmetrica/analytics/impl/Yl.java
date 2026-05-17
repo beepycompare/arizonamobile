@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public final class Yl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0697xa f873a;
+    public final C0697xa f878a;
     public final W9 b;
     public final Fi c;
     public final C0751ze d;
@@ -80,10 +80,10 @@ public final class Yl {
         C0659vm c0659vm = new C0659vm();
         JSONObject optJSONObject9 = c0245fb.optJSONObject("stat_sending");
         if (optJSONObject9 != null) {
-            c0659vm.f1275a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject9, "disabled_reporting_interval_seconds", c0659vm.f1275a);
+            c0659vm.f1280a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject9, "disabled_reporting_interval_seconds", c0659vm.f1280a);
         }
         this.e.getClass();
-        c0205dm.p = new Gm(c0659vm.f1275a);
+        c0205dm.p = new Gm(c0659vm.f1280a);
         this.b.getClass();
         C0559rm c0559rm = new C0559rm();
         try {
@@ -95,7 +95,7 @@ public final class Yl {
             JSONObject optJSONObject10 = ((JSONObject) jSONObject2).optJSONObject("list");
             if (optJSONObject10 != null) {
                 C0341j4 c0341j4 = new C0341j4();
-                c0341j4.f1055a = W9.a(optJSONObject10, "permissions_collecting", c0559rm.f1212a);
+                c0341j4.f1060a = W9.a(optJSONObject10, "permissions_collecting", c0559rm.f1217a);
                 c0341j4.b = W9.a(optJSONObject10, "features_collecting", c0559rm.b);
                 c0341j4.c = W9.a(optJSONObject10, "google_aid", c0559rm.c);
                 c0341j4.d = W9.a(optJSONObject10, "sim_info", c0559rm.d);
@@ -105,7 +105,7 @@ public final class Yl {
             }
         } catch (Throwable unused4) {
         }
-        this.f873a.getClass();
+        this.f878a.getClass();
         try {
             Object jSONObject3 = new JSONObject();
             try {
@@ -145,7 +145,7 @@ public final class Yl {
                 Iterator<String> keys2 = optJSONObject11.keys();
                 while (keys2.hasNext()) {
                     String next2 = keys2.next();
-                    if (!C0697xa.f1303a.contains(next2) && (a2 = C0697xa.a(optJSONObject11, next2)) != null) {
+                    if (!C0697xa.f1308a.contains(next2) && (a2 = C0697xa.a(optJSONObject11, next2)) != null) {
                         hashMap2.put(next2, a2);
                     }
                 }
@@ -164,14 +164,14 @@ public final class Yl {
         }
         c0205dm.q = new RetryPolicyConfig(i, i2);
         this.d.getClass();
-        if (c0205dm.b.f1090a) {
+        if (c0205dm.b.f1095a) {
             JSONObject optJSONObject13 = c0245fb.optJSONObject("permissions_collecting");
             C0609tm c0609tm = new C0609tm();
             if (optJSONObject13 != null) {
-                j = optJSONObject13.optLong("check_interval_seconds", c0609tm.f1241a);
+                j = optJSONObject13.optLong("check_interval_seconds", c0609tm.f1246a);
                 j2 = optJSONObject13.optLong("force_send_interval_seconds", c0609tm.b);
             } else {
-                j = c0609tm.f1241a;
+                j = c0609tm.f1246a;
                 j2 = c0609tm.b;
             }
             c0205dm.k = new C0701xe(j, j2);
@@ -181,10 +181,10 @@ public final class Yl {
         C0485om c0485om = new C0485om();
         JSONObject optJSONObject14 = c0245fb.optJSONObject("cache_control");
         if (optJSONObject14 != null) {
-            c0485om.f1161a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject14, "last_known_location_ttl", c0485om.f1161a);
+            c0485om.f1166a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject14, "last_known_location_ttl", c0485om.f1166a);
         }
-        c0263g3.f1005a.getClass();
-        c0205dm.r = new C0186d3(c0485om.f1161a);
+        c0263g3.f1010a.getClass();
+        c0205dm.r = new C0186d3(c0485om.f1166a);
         this.g.getClass();
         C0465o2.a(c0205dm, c0245fb);
         Em em = this.i;
@@ -193,11 +193,11 @@ public final class Yl {
         C0634um c0634um = new C0634um();
         Integer a6 = AbstractC0271gb.a(optJSONObject15, "interval_seconds", null);
         if (a6 != null) {
-            c0634um.f1261a = a6.intValue();
+            c0634um.f1266a = a6.intValue();
         }
-        em.f571a.getClass();
-        c0205dm.t = new Cm(c0634um.f1261a);
-        Map<String, Yc> c = this.j.f1206a.c();
+        em.f576a.getClass();
+        c0205dm.t = new Cm(c0634um.f1266a);
+        Map<String, Yc> c = this.j.f1211a.c();
         C0526qd c0526qd = new C0526qd(c0245fb);
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (Map.Entry<String, Yc> entry : c.entrySet()) {
@@ -207,18 +207,18 @@ public final class Yl {
             }
         }
         c0205dm.u = linkedHashMap;
-        C9 c9 = this.k.f547a;
+        C9 c9 = this.k.f552a;
         C0535qm c0535qm = new C0535qm();
         JSONObject optJSONObject16 = c0245fb.optJSONObject("external_attribution");
         if (optJSONObject16 != null) {
-            c0535qm.f1193a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject16, "collecting_interval_seconds", c0535qm.f1193a);
+            c0535qm.f1198a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject16, "collecting_interval_seconds", c0535qm.f1198a);
         }
         c9.getClass();
-        c0205dm.v = new B9(c0535qm.f1193a);
+        c0205dm.v = new B9(c0535qm.f1198a);
     }
 
     public Yl(C0297hb c0297hb, C0697xa c0697xa, W9 w9, Fi fi, C0751ze c0751ze, Hm hm, C0263g3 c0263g3, C0465o2 c0465o2, Em em, C0550rd c0550rd, D9 d9) {
-        this.f873a = c0697xa;
+        this.f878a = c0697xa;
         this.b = w9;
         this.c = fi;
         this.d = c0751ze;

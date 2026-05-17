@@ -1,5 +1,6 @@
 package ru.mrlargha.arizonaui.house;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +54,7 @@ public final class MyHousesListAdapter extends RecyclerView.Adapter<ViewHolder> 
         Intrinsics.checkNotNullExpressionValue(houseItemInfo, "get(...)");
         final MyHouseScreen.Companion.HouseItemInfo houseItemInfo2 = houseItemInfo;
         MyHousesItemBinding binding = holder.getBinding();
+        Context context = binding.getRoot().getContext();
         int i2 = 0;
         if (Intrinsics.areEqual(houseItemInfo2.getType(), "social_house")) {
             binding.houseNumber.setVisibility(8);
@@ -63,39 +65,39 @@ public final class MyHousesListAdapter extends RecyclerView.Adapter<ViewHolder> 
         }
         if (houseItemInfo2.getOpened() == 1) {
             binding.houseStatusContainer.setBackgroundResource(R.drawable.my_biz_status_close_ic);
-            binding.houseStatus.setText("закрыт");
+            binding.houseStatus.setText(context.getString(R.string.close_lower_txt));
             binding.houseStatus.setTextColor(Color.parseColor("#EB4E66"));
         } else {
             binding.houseStatusContainer.setBackgroundResource(R.drawable.my_biz_status_open_ic);
-            binding.houseStatus.setText("открыт");
+            binding.houseStatus.setText(context.getString(R.string.open_lower_txt));
             binding.houseStatus.setTextColor(Color.parseColor("#60CA5D"));
         }
         binding.houseName.setText(houseItemInfo2.getTitle());
-        binding.houseNumber.setText("№" + houseItemInfo2.getId());
-        binding.distance.setText(houseItemInfo2.getDistance() + " m");
+        binding.houseNumber.setText(context.getString(R.string.house_number_format, Integer.valueOf(houseItemInfo2.getId())));
+        binding.distance.setText(context.getString(R.string.house_distance_meters, Integer.valueOf(houseItemInfo2.getDistance())));
         String status = houseItemInfo2.getStatus();
         switch (status.hashCode()) {
             case -1997688170:
                 if (status.equals("rentedOut")) {
-                    binding.firstValue.setText("Подселен");
+                    binding.firstValue.setText(context.getString(R.string.house_settled));
                     break;
                 }
                 break;
             case -1039745817:
                 if (status.equals(Constants.NORMAL)) {
-                    binding.firstValue.setText("Спокойно");
+                    binding.firstValue.setText(context.getString(R.string.house_calm));
                     break;
                 }
                 break;
             case -934576744:
                 if (status.equals("rented")) {
-                    binding.firstValue.setText("Арендован");
+                    binding.firstValue.setText(context.getString(R.string.house_rented));
                     break;
                 }
                 break;
             case -925716324:
                 if (status.equals("robbed")) {
-                    binding.firstValue.setText("Ограблен");
+                    binding.firstValue.setText(context.getString(R.string.house_robbed));
                     break;
                 }
                 break;

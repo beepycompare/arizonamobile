@@ -152,7 +152,7 @@ public final class ItemsAdapter extends RecyclerView.Adapter<MembersViewHolder> 
                     UtilsKt.setImage(image2, iconFromArchive$default);
                 }
             } else {
-                Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "/projects/rodina-rp/assets/images/inventory/vehicles/512/" + ratingItem.getImageIndex() + ".webp").into(binding.image);
+                Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "/assets/images/inventory/vehicles/512/" + ratingItem.getImageIndex() + ".webp").into(binding.image);
             }
         } else {
             ImageView image3 = binding.image;

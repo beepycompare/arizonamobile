@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="ghetto_territories">
+        <item quantity="one">%d territory</item>
+        <item quantity="other">%d territories</item>
+    </plurals>
+    <plurals name="situation_promo_hours">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+    <plurals name="situation_rank">
+        <item quantity="one">%d rank</item>
+        <item quantity="other">%d ranks</item>
+    </plurals>
+</resources>

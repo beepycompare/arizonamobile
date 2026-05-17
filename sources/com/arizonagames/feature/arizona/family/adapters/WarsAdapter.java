@@ -1,5 +1,6 @@
 package com.arizonagames.feature.arizona.family.adapters;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,12 +24,10 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.ranges.IntRange;
 /* compiled from: WarsAdapter.kt */
-@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001b\u0012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\u0018\u001a\u00020\u00022\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u0005H\u0016J\u0018\u0010\u001c\u001a\u00020\u00062\u0006\u0010\u001d\u001a\u00020\u00022\u0006\u0010\u001e\u001a\u00020\u0005H\u0016J\b\u0010\u001f\u001a\u00020\u0005H\u0016J\u000e\u0010 \u001a\u00020\u00062\u0006\u0010!\u001a\u00020\nJ\u0014\u0010\"\u001a\u00020\u00062\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\r0\fJ\u0014\u0010#\u001a\u00020\u00062\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u000f0\fR\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u000f0\fX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00050\u0011X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lcom/arizonagames/feature/arizona/family/adapters/WarsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/arizonagames/feature/arizona/family/adapters/WarItemViewHolder;", "onClick", "Lkotlin/Function1;", "", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "data", "Lcom/arizonagames/feature/arizona/family/data/FamilyWarData;", "top", "", "Lcom/arizonagames/feature/arizona/family/data/GangZonesTopItem;", "meetings", "Lcom/arizonagames/feature/arizona/family/data/CapturesItem;", "items", "", "getItems", "()Ljava/util/List;", "setItems", "(Ljava/util/List;)V", "estateColor", "descColor", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "getItemCount", "setInfo", "info", "setTop", "setMeetings", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001b\u0012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\u0016\u001a\u00020\u00022\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0005H\u0016J\u0018\u0010\u001a\u001a\u00020\u00062\u0006\u0010\u001b\u001a\u00020\u00022\u0006\u0010\u001c\u001a\u00020\u0005H\u0016J\b\u0010\u001d\u001a\u00020\u0005H\u0016J\u000e\u0010\u001e\u001a\u00020\u00062\u0006\u0010\u001f\u001a\u00020\nJ\u0014\u0010 \u001a\u00020\u00062\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\r0\fJ\u0014\u0010!\u001a\u00020\u00062\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u000f0\fR\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u000f0\fX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00050\u0011X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015¨\u0006\""}, d2 = {"Lcom/arizonagames/feature/arizona/family/adapters/WarsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/arizonagames/feature/arizona/family/adapters/WarItemViewHolder;", "onClick", "Lkotlin/Function1;", "", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "data", "Lcom/arizonagames/feature/arizona/family/data/FamilyWarData;", "top", "", "Lcom/arizonagames/feature/arizona/family/data/GangZonesTopItem;", "meetings", "Lcom/arizonagames/feature/arizona/family/data/CapturesItem;", "items", "", "getItems", "()Ljava/util/List;", "setItems", "(Ljava/util/List;)V", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "getItemCount", "setInfo", "info", "setTop", "setMeetings", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
     private FamilyWarData data;
-    private final int descColor;
-    private final int estateColor;
     private List<Integer> items;
     private List<CapturesItem> meetings;
     private final Function1<Integer, Unit> onClick;
@@ -42,8 +41,6 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
         this.top = CollectionsKt.emptyList();
         this.meetings = CollectionsKt.emptyList();
         this.items = CollectionsKt.toMutableList(new IntRange(0, 9));
-        this.estateColor = Color.parseColor("#E0CA4C");
-        this.descColor = Color.parseColor("#ABABAB");
     }
 
     public final List<Integer> getItems() {
@@ -66,15 +63,17 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onBindViewHolder(WarItemViewHolder holder, int i) {
         int i2;
-        String str;
+        String string;
         int i3;
         int i4;
+        int i5;
         Intrinsics.checkNotNullParameter(holder, "holder");
         Integer num = (Integer) CollectionsKt.getOrNull(this.items, i);
         if (num != null) {
             final int intValue = num.intValue();
             FamilyWarItemBinding binding = holder.getBinding();
-            String str2 = "???";
+            Context context = binding.getRoot().getContext();
+            String str = "???";
             if (intValue <= 3) {
                 if (intValue == 3) {
                     binding.getRoot().setVisibility(8);
@@ -108,12 +107,13 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                     i4 = R.drawable.family_estate_ic_adi_kit;
                 }
                 if (intValue == 0) {
-                    str2 = "Капты моей семьи";
+                    str = context.getString(R.string.family_war_my_captures);
                 } else if (intValue == 1) {
-                    str2 = "ТОП Семьи ";
+                    str = context.getString(R.string.family_war_top_families);
                 } else if (intValue == 2) {
-                    str2 = "Информация";
+                    str = context.getString(R.string.family_info);
                 }
+                Intrinsics.checkNotNull(str);
                 binding.container0.setVisibility(8);
                 binding.container1.setVisibility(8);
                 binding.container2.setVisibility(8);
@@ -178,29 +178,32 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                     textView4.setText(format5 + StringUtils.PROCESS_POSTFIX_DELIMITER + format6);
                     binding.terCard3.setVisibility(8);
                     int capture_id_zone3 = capturesItem3.getCapture_id_zone();
+                    i5 = 0;
                     binding.terCard3.setVisibility(0);
                     binding.terText3.setText(String.valueOf(capture_id_zone3));
+                } else {
+                    i5 = 0;
                 }
-                GangZonesTopItem gangZonesTopItem = (GangZonesTopItem) CollectionsKt.getOrNull(this.top, 0);
+                GangZonesTopItem gangZonesTopItem = (GangZonesTopItem) CollectionsKt.getOrNull(this.top, i5);
                 if (gangZonesTopItem != null) {
                     binding.info1.setText(gangZonesTopItem.getFamily_name());
-                    binding.info11.setText(gangZonesTopItem.getTerritory_count() + " территории");
+                    binding.info11.setText(context.getString(R.string.family_territories_count_value, Integer.valueOf(gangZonesTopItem.getTerritory_count())));
                 }
                 GangZonesTopItem gangZonesTopItem2 = (GangZonesTopItem) CollectionsKt.getOrNull(this.top, 1);
                 if (gangZonesTopItem2 != null) {
                     binding.info2.setText(gangZonesTopItem2.getFamily_name());
-                    binding.info22.setText(gangZonesTopItem2.getTerritory_count() + " территории");
+                    binding.info22.setText(context.getString(R.string.family_territories_count_value, Integer.valueOf(gangZonesTopItem2.getTerritory_count())));
                 }
                 GangZonesTopItem gangZonesTopItem3 = (GangZonesTopItem) CollectionsKt.getOrNull(this.top, 2);
                 if (gangZonesTopItem3 != null) {
                     binding.info3.setText(gangZonesTopItem3.getFamily_name());
-                    binding.info33.setText(gangZonesTopItem3.getTerritory_count() + " территории");
+                    binding.info33.setText(context.getString(R.string.family_territories_count_value, Integer.valueOf(gangZonesTopItem3.getTerritory_count())));
                 }
-                binding.rank.setText(this.data.getRank() + "+ Ранг");
-                binding.terr.setText(this.data.getTerritories() + " тер");
+                binding.rank.setText(context.getString(R.string.family_rank_plus_value, Integer.valueOf(this.data.getRank())));
+                binding.terr.setText(context.getString(R.string.family_territories_short_value, Integer.valueOf(this.data.getTerritories())));
                 binding.level2Image.setImageResource(i3);
                 binding.level2ImageBg.setImageResource(i4);
-                binding.item2Title.setText(str2);
+                binding.item2Title.setText(str);
             } else {
                 binding.card2.setVisibility(8);
                 binding.card1.setVisibility(0);
@@ -229,57 +232,54 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                 }
                 switch (intValue) {
                     case 4:
-                        str = "Карта территорий";
+                        string = context.getString(R.string.family_war_map_title);
                         break;
                     case 5:
-                        str = "Полезная информация";
+                        string = context.getString(R.string.family_war_useful_info_title);
                         break;
                     case 6:
-                        str = "Список встреч";
+                        string = context.getString(R.string.family_war_meetings_title);
                         break;
                     case 7:
-                        str = "Наши территории";
+                        string = context.getString(R.string.family_war_territories_title);
                         break;
                     case 8:
-                        str = "Управление семейным предприятием";
+                        string = context.getString(R.string.family_war_enterprise_title);
                         break;
                     case 9:
-                        str = "Доступ к сражениям";
+                        string = context.getString(R.string.family_battle_access);
                         break;
                     default:
-                        str = "???";
+                        string = "???";
                         break;
                 }
+                Intrinsics.checkNotNull(string);
                 switch (intValue) {
                     case 4:
-                        str2 = "Карта семейных территорий";
+                        str = context.getString(R.string.family_war_map_desc);
                         break;
                     case 5:
-                        str2 = "Описание описание описание описание описание ";
+                        str = context.getString(R.string.family_war_useful_info_desc);
                         break;
                     case 6:
-                        str2 = "Список предстоящих встреч нашей семьи";
+                        str = context.getString(R.string.family_war_meetings_desc);
                         break;
                     case 7:
-                        str2 = "Информация о территориях во владении семьи";
+                        str = context.getString(R.string.family_war_territories_desc);
                         break;
                     case 8:
-                        str2 = "Отсутствует";
+                        str = context.getString(R.string.family_war_enterprise_desc);
                         break;
                     case 9:
-                        str2 = "Редактировать ранг доступа к сражениям";
+                        str = context.getString(R.string.family_war_access_desc);
                         break;
                 }
-                if (this.data.getDisabledItems().contains(Integer.valueOf(intValue - 4))) {
-                    binding.getRoot().setAlpha(0.2f);
-                } else {
-                    binding.getRoot().setAlpha(1.0f);
-                }
-                int parseColor = Color.parseColor("#0DFFFFFF");
+                Intrinsics.checkNotNull(str);
+                binding.getRoot().setAlpha(this.data.getDisabledItems().contains(Integer.valueOf(intValue + (-4))) ? 0.2f : 1.0f);
                 binding.levelImage.setImageResource(i2);
-                binding.itemTitle.setText(str);
-                binding.itemDesc.setText(str2);
-                binding.card1.setCardBackgroundColor(parseColor);
+                binding.itemTitle.setText(string);
+                binding.itemDesc.setText(str);
+                binding.card1.setCardBackgroundColor(Color.parseColor("#0DFFFFFF"));
             }
             binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.adapters.WarsAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener

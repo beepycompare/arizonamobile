@@ -19,7 +19,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class DefaultDownloadIndex implements WritableDownloadIndex {
     private static final String COLUMN_CONTENT_LENGTH = "content_length";
     private static final String COLUMN_DATA = "data";
@@ -341,7 +341,7 @@ public final class DefaultDownloadIndex implements WritableDownloadIndex {
         return arrayList;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     private static final class DownloadCursorImpl implements DownloadCursor {
         private final Cursor cursor;
 

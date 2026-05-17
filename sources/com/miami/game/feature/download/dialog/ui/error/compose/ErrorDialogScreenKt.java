@@ -68,13 +68,14 @@ public final class ErrorDialogScreenKt {
         Composer startRestartGroup = composer.startRestartGroup(1222259564);
         ComposerKt.sourceInformation(startRestartGroup, "C(ErrorDialogRoute)N(component,onBackClick)29@1341L33,33@1415L29,37@1516L21,35@1450L173:ErrorDialogScreen.kt#d3gn1w");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(component) : startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
         if ((i & 48) == 0) {
             i2 |= startRestartGroup.changedInstance(onBackClick) ? 32 : 16;
         }
+        boolean z = false;
         if (startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1222259564, i2, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ErrorDialogRoute (ErrorDialogScreen.kt:28)");
@@ -82,15 +83,17 @@ public final class ErrorDialogScreenKt {
             BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i2 & 112, 1);
             ErrorDialogUiState ErrorDialogRoute$lambda$0 = ErrorDialogRoute$lambda$0(FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2065377889, "CC(remember):ErrorDialogScreen.kt#9igjgp");
-            boolean changedInstance = startRestartGroup.changedInstance(component);
+            if ((i2 & 14) == 4 || ((i2 & 8) != 0 && startRestartGroup.changedInstance(component))) {
+                z = true;
+            }
             ErrorDialogScreenKt$ErrorDialogRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
-            if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
+            if (z || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new ErrorDialogScreenKt$ErrorDialogRoute$1$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             function0 = onBackClick;
-            ErrorDialogScreen(component.getErrorMessage(), ErrorDialogRoute$lambda$0, (Function0) ((KFunction) rememberedValue), function0, startRestartGroup, (i2 << 6) & 7168);
+            ErrorDialogScreen(component.getErrorMessage(), ErrorDialogRoute$lambda$0, (Function0) ((KFunction) rememberedValue), function0, startRestartGroup, (ErrorDialogUiState.$stable << 3) | ((i2 << 6) & 7168));
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -208,7 +211,7 @@ public final class ErrorDialogScreenKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$ErrorDialogScreenKt.INSTANCE.m9094getLambda$1032883188$dialogs(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$ErrorDialogScreenKt.INSTANCE.m9097getLambda$1032883188$dialogs(), composer, 48);
             ComposerKt.sourceInformationMarkerStart(composer, -1354242697, "CC(remember):ErrorDialogScreen.kt#9igjgp");
             boolean changed2 = composer.changed(function02);
             Object rememberedValue2 = composer.rememberedValue();

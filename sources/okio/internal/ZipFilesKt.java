@@ -1,6 +1,5 @@
 package okio.internal;
 
-import androidx.media3.exoplayer.Renderer;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -492,7 +491,7 @@ public final class ZipFilesKt {
     }
 
     public static final long filetimeToEpochMillis(long j) {
-        return (j / Renderer.DEFAULT_DURATION_TO_PROGRESS_US) - 11644473600000L;
+        return (j / 10000) - 11644473600000L;
     }
 
     public static final Long dosDateTimeToEpochMillis(int i, int i2) {

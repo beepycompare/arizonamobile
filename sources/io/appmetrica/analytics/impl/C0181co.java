@@ -7,9 +7,9 @@ import io.appmetrica.analytics.coreutils.internal.network.UserAgent;
 public final class C0181co {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f945a = UserAgent.getFor(BuildConfig.LIBRARY_PACKAGE_NAME, "8.0.0", "50147728");
+    public final String f950a = UserAgent.getFor(BuildConfig.LIBRARY_PACKAGE_NAME, "8.0.0", "50147728");
 
     public final String a() {
-        return this.f945a;
+        return this.f950a;
     }
 }

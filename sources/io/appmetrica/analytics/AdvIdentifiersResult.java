@@ -1,11 +1,11 @@
 package io.appmetrica.analytics;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AdvIdentifiersResult {
     public final AdvId googleAdvId;
     public final AdvId huaweiAdvId;
     public final AdvId yandexAdvId;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static class AdvId {
         public final String advId;
         public final Details details;
@@ -18,7 +18,7 @@ public class AdvIdentifiersResult {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public enum Details {
         OK,
         IDENTIFIER_PROVIDER_UNAVAILABLE,

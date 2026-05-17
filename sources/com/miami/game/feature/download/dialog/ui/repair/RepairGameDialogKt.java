@@ -66,7 +66,7 @@ public final class RepairGameDialogKt {
         Composer startRestartGroup = composer.startRestartGroup(1550967417);
         ComposerKt.sourceInformation(startRestartGroup, "C(RepairGameDialogRoute)N(component,onBackClick,onConfirm,onRetry)39@1907L33,41@2002L113,41@1965L150,47@2154L29,49@2189L166:RepairGameDialog.kt#wxnm6r");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(component) : startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
@@ -101,7 +101,7 @@ public final class RepairGameDialogKt {
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue, startRestartGroup, 0, 6);
             startRestartGroup = startRestartGroup;
             function0 = onConfirm;
-            RepairGameDialogScreen(component.getErrorMessage(), RepairGameDialogRoute$lambda$1(FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7)), function0, onBackClick, startRestartGroup, (i2 & 896) | ((i2 << 6) & 7168));
+            RepairGameDialogScreen(component.getErrorMessage(), RepairGameDialogRoute$lambda$1(FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7)), function0, onBackClick, startRestartGroup, (ErrorDialogUiState.$stable << 3) | (i2 & 896) | ((i2 << 6) & 7168));
             function02 = onBackClick;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -215,7 +215,7 @@ public final class RepairGameDialogKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$RepairGameDialogKt.INSTANCE.m9101getLambda$1796529959$dialogs(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$RepairGameDialogKt.INSTANCE.m9104getLambda$1796529959$dialogs(), composer, 48);
             ComposerKt.sourceInformationMarkerStart(composer, -308282812, "CC(remember):RepairGameDialog.kt#9igjgp");
             boolean changed2 = composer.changed(function02);
             Object rememberedValue2 = composer.rememberedValue();
@@ -231,7 +231,7 @@ public final class RepairGameDialogKt {
                 composer.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$RepairGameDialogKt.INSTANCE.m9102getLambda$277375600$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$RepairGameDialogKt.INSTANCE.m9105getLambda$277375600$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

@@ -6,15 +6,15 @@ import kotlin.jvm.internal.Ref;
 public final class C0267g7 implements InterfaceC0511pn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Ref.ObjectRef f1008a;
+    public final /* synthetic */ Ref.ObjectRef f1013a;
 
     public C0267g7(Ref.ObjectRef objectRef) {
-        this.f1008a = objectRef;
+        this.f1013a = objectRef;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // io.appmetrica.analytics.impl.InterfaceC0511pn
     public final void a(Kc kc) {
-        this.f1008a.element = kc != null ? kc.f656a : 0;
+        this.f1013a.element = kc != null ? kc.f661a : 0;
     }
 }

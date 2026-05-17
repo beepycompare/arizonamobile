@@ -2499,7 +2499,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static class FragmentIntentSenderContract extends ActivityResultContract<IntentSenderRequest, ActivityResult> {
         FragmentIntentSenderContract() {
         }

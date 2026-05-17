@@ -14,7 +14,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class Request {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f1386a;
+    private final String f1391a;
     private final Method b;
     private final byte[] c;
     private final Map d;
@@ -24,13 +24,13 @@ public final class Request {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f1387a;
+        private final String f1392a;
         private Method b = Method.GET;
         private byte[] c = new byte[0];
         private final LinkedHashMap d = new LinkedHashMap();
 
         public Builder(String str) {
-            this.f1387a = str;
+            this.f1392a = str;
         }
 
         public final Builder addHeader(String str, String str2) {
@@ -39,7 +39,7 @@ public final class Request {
         }
 
         public final Request build() {
-            return new Request(this.f1387a, this.b, this.c, MapsKt.toMap(this.d), null);
+            return new Request(this.f1392a, this.b, this.c, MapsKt.toMap(this.d), null);
         }
 
         public final Builder withBody(byte[] bArr) {
@@ -61,14 +61,14 @@ public final class Request {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f1388a;
+        private final String f1393a;
 
         Method(String str) {
-            this.f1388a = str;
+            this.f1393a = str;
         }
 
         public final String getMethodName() {
-            return this.f1388a;
+            return this.f1393a;
         }
     }
 
@@ -89,15 +89,15 @@ public final class Request {
     }
 
     public final String getUrl() {
-        return this.f1386a;
+        return this.f1391a;
     }
 
     public String toString() {
-        return "Request(url='" + this.f1386a + "', method='" + this.b + "', bodyLength=" + this.c.length + ", headers=" + this.d + ')';
+        return "Request(url='" + this.f1391a + "', method='" + this.b + "', bodyLength=" + this.c.length + ", headers=" + this.d + ')';
     }
 
     private Request(String str, Method method, byte[] bArr, Map map) {
-        this.f1386a = str;
+        this.f1391a = str;
         this.b = method;
         this.c = bArr;
         this.d = map;

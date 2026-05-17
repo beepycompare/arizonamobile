@@ -75,9 +75,9 @@ public final class BannerElement {
     public final void setVisible(String data) {
         Intrinsics.checkNotNullParameter(data, "data");
         Integer intOrNull = StringsKt.toIntOrNull(data);
-        boolean z = (intOrNull != null ? intOrNull.intValue() : 0) == 1;
+        int intValue = intOrNull != null ? intOrNull.intValue() : 0;
         BannerElementBinding bannerElementBinding = this.binding;
-        if (z) {
+        if (intValue == 1) {
             bannerElementBinding.getRoot().setVisibility(0);
             this.binding.main.setTranslationY(-300.0f);
             this.binding.main.animate().translationY(0.0f).setDuration(400L).setInterpolator(new DecelerateInterpolator()).start();
@@ -121,9 +121,9 @@ public final class BannerElement {
         bannerElementBinding.timerCard.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(bannerInfo.getTimerColor())));
         bannerElementBinding.buttonCard.setCardBackgroundColor(Color.parseColor(bannerInfo.getButtonColor()));
         if (this.isArizonaType) {
-            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/banner/" + bannerInfo.getImage()).into(bannerElementBinding.bgImg);
+            Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/banner/" + bannerInfo.getImage()).into(bannerElementBinding.bgImg);
         } else {
-            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/tpevent/images/" + bannerInfo.getImage()).into(bannerElementBinding.bgImg);
+            Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/tpevent/images/" + bannerInfo.getImage()).into(bannerElementBinding.bgImg);
         }
         int typeButton = bannerInfo.getTypeButton();
         if (typeButton == 0) {

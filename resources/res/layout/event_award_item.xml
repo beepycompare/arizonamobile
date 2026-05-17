@@ -6,7 +6,7 @@
                 <LinearLayout android:orientation="vertical" android:id="@+id/item_level_usually_container" android:layout_width="match_parent" android:layout_height="match_parent">
                     <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
                         <ImageView android:id="@+id/item_level_ic_usually" android:layout_width="match_parent" android:layout_height="@dimen/_70sdp" android:src="@drawable/baseline_warning_24"/>
-                        <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="bottom" android:id="@+id/item_level_name_usually" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_6sdp" android:layout_marginRight="@dimen/_6sdp" android:layout_marginBottom="@dimen/_4sdp" android:text="Название предмеета" android:lines="2" android:fontFamily="@font/pfdindisplaypro_regular" android:layout_marginHorizontal="@dimen/_6sdp"/>
+                        <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="bottom" android:id="@+id/item_level_name_usually" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_6sdp" android:layout_marginRight="@dimen/_6sdp" android:layout_marginBottom="@dimen/_4sdp" android:lines="2" android:fontFamily="@font/pfdindisplaypro_regular" android:layout_marginHorizontal="@dimen/_6sdp"/>
                     </FrameLayout>
                 </LinearLayout>
                 <FrameLayout android:id="@+id/locked" android:background="#b31f2329" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
@@ -14,10 +14,10 @@
                 </FrameLayout>
                 <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/received" android:background="#9a1f2329" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
                     <ImageView android:layout_gravity="center" android:layout_width="@dimen/_16sdp" android:layout_height="@dimen/_16sdp" android:src="@drawable/event_award_recieved"/>
-                    <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/main" android:gravity="center" android:id="@+id/tv_error_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ПОЛУЧЕНО" android:fontFamily="@font/heading_now_56_bold"/>
+                    <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/main" android:gravity="center" android:id="@+id/tv_error_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/event_award_received" android:fontFamily="@font/heading_now_56_bold"/>
                 </LinearLayout>
                 <androidx.cardview.widget.CardView android:layout_gravity="center" android:id="@+id/button" android:layout_width="@dimen/_52sdp" android:layout_height="@dimen/_18sdp" app:cardBackgroundColor="@color/main" app:cardCornerRadius="@dimen/_4sdp">
-                    <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/black" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Получить" android:fontFamily="@font/pfdindisplaypro_regular"/>
+                    <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/black" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/event_award_get" android:fontFamily="@font/pfdindisplaypro_regular"/>
                 </androidx.cardview.widget.CardView>
             </FrameLayout>
         </androidx.cardview.widget.CardView>

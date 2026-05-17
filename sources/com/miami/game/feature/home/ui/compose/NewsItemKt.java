@@ -40,7 +40,7 @@ import coil3.compose.SingletonAsyncImageKt;
 import com.miami.game.core.design.system.component.other.AnimatedLoadingKt;
 import com.miami.game.core.design.system.theme.NewsShape;
 import com.miami.game.core.news.domain.NewsModel;
-import com.miami.game.feature.home.R;
+import com.miami.game.ui.classic.home.R;
 import com.miami.game.ui.theme.TypeKt;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -65,7 +65,7 @@ public final class NewsItemKt {
         Intrinsics.checkNotNullParameter(newsModel, "newsModel");
         Intrinsics.checkNotNullParameter(onClickNews, "onClickNews");
         Composer startRestartGroup = composer.startRestartGroup(168788816);
-        ComposerKt.sourceInformation(startRestartGroup, "C(NewsItem)N(newsModel,onClickNews)50@1956L41,45@1782L2416:NewsItem.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(NewsItem)N(newsModel,onClickNews)50@1959L41,45@1785L2416:NewsItem.kt#dswm0d");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(newsModel) ? 4 : 2) | i;
         } else {
@@ -123,7 +123,7 @@ public final class NewsItemKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1443822074, "C54@2092L331,64@2437L161,70@2608L1334,109@3980L43,108@3951L240:NewsItem.kt#dswm0d");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1443822074, "C54@2095L331,64@2440L161,70@2611L1334,109@3983L43,108@3954L240:NewsItem.kt#dswm0d");
             Modifier m778offsetVpY3zN4$default = OffsetKt.m778offsetVpY3zN4$default(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getCenter()), 0.0f, 1, null), Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.3f, 0.0f, 0.0f, 0.0f, 14, null), null, 2, null), 0.0f, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(10.0f)), 1, null);
             Alignment center = Alignment.Companion.getCenter();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
@@ -151,8 +151,8 @@ public final class NewsItemKt {
             Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1397241035, "C61@2381L28:NewsItem.kt#dswm0d");
-            AnimatedLoadingKt.m9081AnimatedLoadinguFdPcIQ(true, Dp.m7555constructorimpl(30.0f), null, startRestartGroup, 54, 4);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1397241035, "C61@2384L28:NewsItem.kt#dswm0d");
+            AnimatedLoadingKt.m9083AnimatedLoadinguFdPcIQ(true, Dp.m7555constructorimpl(30.0f), null, startRestartGroup, 54, 4);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -186,9 +186,9 @@ public final class NewsItemKt {
             Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 241766860, "C88@3248L10,90@3337L13,91@3381L13,86@3153L430,100@3690L10,102@3776L13,103@3820L13,98@3596L336:NewsItem.kt#dswm0d");
-            TextKt.m2712TextNvy7gAk(String.valueOf(newsModel.getTitle()), OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(2.0f)), 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(16.0f), startRestartGroup, 6), null, FontWeight.Companion.getBold(), null, TextUnitKt.getSp(-0.0d), null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(16.0f), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getDisplaySmall(), startRestartGroup, 1573296, 24576, 112296);
-            TextKt.m2712TextNvy7gAk(String.valueOf(newsModel.getDate()), OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(2.0f)), 1, null), Color.Companion.m4802getGray0d7_KjU(), null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(12.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9135dpToSp8Feqmps(Dp.m7555constructorimpl(12.0f), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getLabelSmall(), startRestartGroup, 432, 24576, 112616);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 241766860, "C88@3251L10,90@3340L13,91@3384L13,86@3156L430,100@3693L10,102@3779L13,103@3823L13,98@3599L336:NewsItem.kt#dswm0d");
+            TextKt.m2712TextNvy7gAk(String.valueOf(newsModel.getTitle()), OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(2.0f)), 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(16.0f), startRestartGroup, 6), null, FontWeight.Companion.getBold(), null, TextUnitKt.getSp(-0.0d), null, null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(16.0f), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getDisplaySmall(), startRestartGroup, 1573296, 24576, 112296);
+            TextKt.m2712TextNvy7gAk(String.valueOf(newsModel.getDate()), OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(2.0f)), 1, null), Color.Companion.m4802getGray0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(12.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(12.0f), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getLabelSmall(), startRestartGroup, 432, 24576, 112616);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE, ElementType.METHOD, ElementType.CONSTRUCTOR, ElementType.FIELD})
 @Documented
 @Retention(RetentionPolicy.CLASS)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public @interface GwtIncompatible {
     String value() default "";
 }

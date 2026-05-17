@@ -11,7 +11,7 @@ import java.util.Set;
 public abstract class AbstractC0671w9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Set f1284a;
+    public static final Set f1289a;
     public static final EnumSet b;
     public static final EnumSet c;
     public static final EnumSet d;
@@ -29,7 +29,7 @@ public abstract class AbstractC0671w9 {
         EnumC0142bb enumC0142bb4 = EnumC0142bb.EVENT_TYPE_EXCEPTION_UNHANDLED_FROM_FILE;
         EnumC0142bb enumC0142bb5 = EnumC0142bb.EVENT_TYPE_PREV_SESSION_EXCEPTION_UNHANDLED_FROM_FILE;
         EnumC0142bb enumC0142bb6 = EnumC0142bb.EVENT_TYPE_ANR;
-        f1284a = CollectionUtils.unmodifiableSetOf(5892, 5896, 5891, 5889, 5890, 5968);
+        f1289a = CollectionUtils.unmodifiableSetOf(5892, 5896, 5891, 5889, 5890, 5968);
         EnumC0142bb enumC0142bb7 = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         EnumC0142bb enumC0142bb8 = EnumC0142bb.EVENT_TYPE_PURGE_BUFFER;
         EnumC0142bb enumC0142bb9 = EnumC0142bb.EVENT_TYPE_SEND_REFERRER;

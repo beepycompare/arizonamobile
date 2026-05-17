@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
-import androidx.media3.exoplayer.Renderer;
 import com.google.android.gms.common.BlockingServiceConnection;
 import com.google.android.gms.common.GoogleApiAvailabilityLight;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -262,7 +261,7 @@ public class AdvertisingIdClient {
                 if (ConnectionTracker.getInstance().bindService(context, intent, blockingServiceConnection, 1)) {
                     this.zza = blockingServiceConnection;
                     try {
-                        this.zzb = com.google.android.gms.internal.ads_identifier.zze.zza(blockingServiceConnection.getServiceWithTimeout(Renderer.DEFAULT_DURATION_TO_PROGRESS_US, TimeUnit.MILLISECONDS));
+                        this.zzb = com.google.android.gms.internal.ads_identifier.zze.zza(blockingServiceConnection.getServiceWithTimeout(10000L, TimeUnit.MILLISECONDS));
                         this.zzc = true;
                         return;
                     } catch (InterruptedException unused) {

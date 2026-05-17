@@ -8,7 +8,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestHandler;
 import java.io.IOException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ResourceRequestHandler extends RequestHandler {
     private final Context context;
 

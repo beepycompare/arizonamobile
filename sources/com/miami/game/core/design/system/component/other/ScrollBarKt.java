@@ -28,10 +28,10 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ScrollBar.kt */
 @Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0007\u001aC\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\tH\u0007¢\u0006\u0004\b\u000b\u0010\f\u001a&\u0010\r\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u000f\u001a\u00020\t¨\u0006\u0010"}, d2 = {"verticalColumnScrollbar", "Landroidx/compose/ui/Modifier;", "scrollState", "Landroidx/compose/foundation/ScrollState;", "width", "Landroidx/compose/ui/unit/Dp;", "showScrollBarTrack", "", "scrollBarCornerRadius", "", "endPadding", "verticalColumnScrollbar-osbwsH8", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/ScrollState;FZFFLandroidx/compose/runtime/Composer;II)Landroidx/compose/ui/Modifier;", "fadingTopBottomEdgesSimplified", "topFadePercentage", "bottomFadePercentage", "design-system"}, k = 2, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public final class ScrollBarKt {
     /* renamed from: verticalColumnScrollbar-osbwsH8  reason: not valid java name */
-    public static final Modifier m9082verticalColumnScrollbarosbwsH8(Modifier verticalColumnScrollbar, final ScrollState scrollState, float f, boolean z, float f2, float f3, Composer composer, int i, int i2) {
+    public static final Modifier m9084verticalColumnScrollbarosbwsH8(Modifier verticalColumnScrollbar, final ScrollState scrollState, float f, boolean z, float f2, float f3, Composer composer, int i, int i2) {
         Intrinsics.checkNotNullParameter(verticalColumnScrollbar, "$this$verticalColumnScrollbar");
         Intrinsics.checkNotNullParameter(scrollState, "scrollState");
         ComposerKt.sourceInformationMarkerStart(composer, 2015743295, "C(verticalColumnScrollbar)N(scrollState,width:c#ui.unit.Dp,showScrollBarTrack,scrollBarCornerRadius,endPadding)27@975L1364:ScrollBar.kt#8aq8qr");

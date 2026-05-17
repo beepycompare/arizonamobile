@@ -15,7 +15,7 @@ import org.json.JSONArray;
 public final class C0680wi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final F4 f1288a;
+    public final F4 f1293a;
     public final Sn b;
     public final C0730yi c;
     public final C0488p0 d;
@@ -38,15 +38,15 @@ public final class C0680wi {
     }
 
     public final void b(String str) {
-        Bf bf = this.f1288a.f607a;
+        Bf bf = this.f1293a.f612a;
         synchronized (bf) {
-            bf.f520a.put("PROCESS_CFG_INSTALL_REFERRER_SOURCE", str);
+            bf.f525a.put("PROCESS_CFG_INSTALL_REFERRER_SOURCE", str);
         }
     }
 
     public C0680wi(C0488p0 c0488p0, Sn sn, F4 f4, Yj yj, C0730yi c0730yi) {
         this.d = c0488p0;
-        this.f1288a = f4;
+        this.f1293a = f4;
         this.b = sn;
         this.f = yj;
         this.c = c0730yi;
@@ -54,21 +54,21 @@ public final class C0680wi {
 
     public final void a(Ol ol) {
         this.e = ol;
-        this.f1288a.b.setUuid(ol.g());
+        this.f1293a.b.setUuid(ol.g());
     }
 
     public final void a(Boolean bool, Boolean bool2, Boolean bool3, Boolean bool4) {
         if (lo.a(bool)) {
-            this.f1288a.b.setLocationTracking(bool.booleanValue());
+            this.f1293a.b.setLocationTracking(bool.booleanValue());
         }
         if (lo.a(bool2)) {
-            this.f1288a.b.setDataSendingEnabled(bool2.booleanValue());
+            this.f1293a.b.setDataSendingEnabled(bool2.booleanValue());
         }
         if (lo.a(bool3)) {
-            this.f1288a.b.setAdvIdentifiersTracking(bool3.booleanValue(), bool4.booleanValue());
+            this.f1293a.b.setAdvIdentifiersTracking(bool3.booleanValue(), bool4.booleanValue());
         }
         P5 a2 = P5.a();
-        F4 f4 = this.f1288a;
+        F4 f4 = this.f1293a;
         a(a(a2, f4), f4, 1, (Map) null);
     }
 
@@ -80,7 +80,7 @@ public final class C0680wi {
             p5.setValue(AbstractC0271gb.b(map));
             a(p5, fh);
         }
-        Bf bf = new Bf(fh.f607a);
+        Bf bf = new Bf(fh.f612a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(fh.b);
         D8 d8 = fh.c;
         synchronized (fh) {
@@ -90,30 +90,30 @@ public final class C0680wi {
     }
 
     public static P5 a(P5 p5, Fh fh) {
-        if (AbstractC0671w9.f1284a.contains(Integer.valueOf(p5.d))) {
+        if (AbstractC0671w9.f1289a.contains(Integer.valueOf(p5.d))) {
             p5.c = fh.d();
         }
         return p5;
     }
 
     public final void a(List list) {
-        Bf bf = this.f1288a.f607a;
+        Bf bf = this.f1293a.f612a;
         synchronized (bf) {
-            bf.f520a.put("PROCESS_CFG_CUSTOM_HOSTS", lo.a((Collection) list) ? null : new JSONArray((Collection) list).toString());
+            bf.f525a.put("PROCESS_CFG_CUSTOM_HOSTS", lo.a((Collection) list) ? null : new JSONArray((Collection) list).toString());
         }
     }
 
     public final void a(HashMap hashMap) {
-        Bf bf = this.f1288a.f607a;
+        Bf bf = this.f1293a.f612a;
         synchronized (bf) {
-            bf.f520a.put("PROCESS_CFG_CLIDS", AbstractC0271gb.b(hashMap));
+            bf.f525a.put("PROCESS_CFG_CLIDS", AbstractC0271gb.b(hashMap));
         }
     }
 
     public final void a(String str) {
-        Bf bf = this.f1288a.f607a;
+        Bf bf = this.f1293a.f612a;
         synchronized (bf) {
-            bf.f520a.put("PROCESS_CFG_DISTRIBUTION_REFERRER", str);
+            bf.f525a.put("PROCESS_CFG_DISTRIBUTION_REFERRER", str);
         }
     }
 
@@ -123,20 +123,20 @@ public final class C0680wi {
         this.d.b();
         Sn sn = this.b;
         sn.getClass();
-        Gn gn = qn.f755a;
+        Gn gn = qn.f760a;
         if (gn == null) {
             str = "";
         } else {
-            str = (String) WrapUtils.getOrDefault(gn.f603a, "");
+            str = (String) WrapUtils.getOrDefault(gn.f608a, "");
         }
-        byte[] fromModel = sn.f787a.fromModel(qn);
+        byte[] fromModel = sn.f792a.fromModel(qn);
         PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(fh.b.getApiKey());
-        Set set = AbstractC0671w9.f1284a;
+        Set set = AbstractC0671w9.f1289a;
         EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         M3 m3 = new M3(fromModel, str, 5891, orCreatePublicLogger);
         m3.c = fh.d();
         HashMap hashMap = m3.q;
-        Bf bf = new Bf(fh.f607a);
+        Bf bf = new Bf(fh.f612a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(fh.b);
         D8 d8 = fh.c;
         synchronized (fh) {

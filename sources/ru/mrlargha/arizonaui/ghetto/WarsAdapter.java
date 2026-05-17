@@ -1,5 +1,6 @@
 package ru.mrlargha.arizonaui.ghetto;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,6 +77,7 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
         Integer num = (Integer) CollectionsKt.getOrNull(this.items, i);
         if (num != null) {
             final int intValue = num.intValue();
+            Context context = holder.itemView.getContext();
             GhettoWarItemBinding binding = holder.getBinding();
             String str2 = "???";
             if (intValue <= 3) {
@@ -110,14 +112,15 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                     i4 = com.arizonagames.feature.arizona.family.R.drawable.family_estate_ic_adi_kit;
                 }
                 if (intValue == 0) {
-                    str2 = "Предстоящие капты";
+                    str2 = context.getString(R.string.ghetto_upcoming_captures);
                 } else if (intValue == 1) {
-                    str2 = "ТОП Банды ";
+                    str2 = context.getString(R.string.ghetto_top_gangs);
                 } else if (intValue == 2) {
-                    str2 = "Информация";
+                    str2 = context.getString(R.string.common_information);
                 } else if (intValue == 3) {
-                    str2 = "Капты моей банды";
+                    str2 = context.getString(R.string.ghetto_my_gang_captures);
                 }
+                Intrinsics.checkNotNull(str2);
                 binding.container0.setVisibility(8);
                 binding.container1.setVisibility(8);
                 binding.container2.setVisibility(8);
@@ -133,7 +136,7 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                     binding.container2.setVisibility(0);
                 } else if (intValue == 3) {
                     binding.container0.setVisibility(0);
-                    if (this.meetings.isEmpty()) {
+                    if (this.meetingsOwns.isEmpty()) {
                         binding.emptyList.setVisibility(0);
                     }
                 }
@@ -199,19 +202,19 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                 if (ratingData != null) {
                     binding.info1.setText(ColorsKt.ghettoNames(ratingData.getFraction_id()));
                     binding.info1.setTextColor(Color.parseColor(ColorsKt.ghettoColors(ratingData.getFraction_id())));
-                    binding.info11.setText(ratingData.getTerritories() + " территории");
+                    binding.info11.setText(context.getResources().getQuantityString(R.plurals.ghetto_territories, ratingData.getTerritories(), Integer.valueOf(ratingData.getTerritories())));
                 }
                 RatingData ratingData2 = (RatingData) CollectionsKt.getOrNull(this.top, 1);
                 if (ratingData2 != null) {
                     binding.info2.setText(ColorsKt.ghettoNames(ratingData2.getFraction_id()));
                     binding.info2.setTextColor(Color.parseColor(ColorsKt.ghettoColors(ratingData2.getFraction_id())));
-                    binding.info22.setText(ratingData2.getTerritories() + " территории");
+                    binding.info22.setText(context.getResources().getQuantityString(R.plurals.ghetto_territories, ratingData2.getTerritories(), Integer.valueOf(ratingData2.getTerritories())));
                 }
                 RatingData ratingData3 = (RatingData) CollectionsKt.getOrNull(this.top, 2);
                 if (ratingData3 != null) {
                     binding.info3.setText(ColorsKt.ghettoNames(ratingData3.getFraction_id()));
                     binding.info3.setTextColor(Color.parseColor(ColorsKt.ghettoColors(ratingData3.getFraction_id())));
-                    binding.info33.setText(ratingData3.getTerritories() + " территории");
+                    binding.info33.setText(context.getResources().getQuantityString(R.plurals.ghetto_territories, ratingData3.getTerritories(), Integer.valueOf(ratingData3.getTerritories())));
                 }
                 binding.battles.setText(String.valueOf(this.data.getFights_count()));
                 binding.terrs.setText(String.valueOf(this.data.getTerritories()));
@@ -229,11 +232,13 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                 if (intValue != 4) {
                     str = "???";
                 } else {
-                    str = "Карта территорий";
+                    str = context.getString(R.string.ghetto_territory_map);
                 }
+                Intrinsics.checkNotNull(str);
                 if (intValue == 4) {
-                    str2 = "Карта территорий банд";
+                    str2 = context.getString(R.string.ghetto_territory_map_desc);
                 }
+                Intrinsics.checkNotNull(str2);
                 int parseColor = Color.parseColor("#0DFFFFFF");
                 binding.levelImage.setImageResource(i2);
                 binding.itemTitle.setText(str);

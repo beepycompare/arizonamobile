@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class LayoutIncludeDetector {
     private final Deque<WeakReference<XmlPullParser>> mXmlParserStack = new ArrayDeque();
 

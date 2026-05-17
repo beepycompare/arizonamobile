@@ -266,7 +266,7 @@ public final class MouseWheelScrollingLogic {
     private final boolean m522onMouseWheelO0kMr_c(PointerEvent pointerEvent, long j) {
         long mo426calculateMouseWheelScroll8xgXZGE = this.mouseWheelScrollConfig.mo426calculateMouseWheelScroll8xgXZGE(this.density, pointerEvent, j);
         if (m521canConsumeDeltaUv8p0NA(this.scrollingLogic, mo426calculateMouseWheelScroll8xgXZGE)) {
-            return ChannelResult.m10720isSuccessimpl(this.channel.mo8396trySendJP2dKIU(new MouseWheelScrollDelta(mo426calculateMouseWheelScroll8xgXZGE, ((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges())).getUptimeMillis(), !this.mouseWheelScrollConfig.isSmoothScrollingEnabled() || this.mouseWheelScrollConfig.isPreciseWheelScroll(pointerEvent), null)));
+            return ChannelResult.m10739isSuccessimpl(this.channel.mo8396trySendJP2dKIU(new MouseWheelScrollDelta(mo426calculateMouseWheelScroll8xgXZGE, ((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges())).getUptimeMillis(), !this.mouseWheelScrollConfig.isSmoothScrollingEnabled() || this.mouseWheelScrollConfig.isPreciseWheelScroll(pointerEvent), null)));
         }
         return this.isScrolling;
     }
@@ -287,7 +287,7 @@ public final class MouseWheelScrollingLogic {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final MouseWheelScrollDelta sumOrNull$lambda$0(Channel channel) {
-        return (MouseWheelScrollDelta) ChannelResult.m10715getOrNullimpl(channel.mo10703tryReceivePtdJZtk());
+        return (MouseWheelScrollDelta) ChannelResult.m10734getOrNullimpl(channel.mo10722tryReceivePtdJZtk());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

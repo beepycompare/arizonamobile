@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0836y {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1628a;
+    public final String f1633a;
     public final String b;
     public final Map<String, String> c;
     public final long d;
@@ -20,7 +20,7 @@ public final class C0836y {
         Intrinsics.checkNotNullParameter(uuid, "uuid");
         Intrinsics.checkNotNullParameter(eventName, "eventName");
         Intrinsics.checkNotNullParameter(eventData, "eventData");
-        this.f1628a = uuid;
+        this.f1633a = uuid;
         this.b = eventName;
         this.c = eventData;
         this.d = j;
@@ -32,7 +32,7 @@ public final class C0836y {
         }
         if (obj instanceof C0836y) {
             C0836y c0836y = (C0836y) obj;
-            return Intrinsics.areEqual(this.f1628a, c0836y.f1628a) && Intrinsics.areEqual(this.b, c0836y.b) && Intrinsics.areEqual(this.c, c0836y.c) && this.d == c0836y.d;
+            return Intrinsics.areEqual(this.f1633a, c0836y.f1633a) && Intrinsics.areEqual(this.b, c0836y.b) && Intrinsics.areEqual(this.c, c0836y.c) && this.d == c0836y.d;
         }
         return false;
     }
@@ -40,10 +40,10 @@ public final class C0836y {
     public final int hashCode() {
         int hashCode = this.b.hashCode();
         int hashCode2 = this.c.hashCode();
-        return Long.hashCode(this.d) + ((hashCode2 + ((hashCode + (this.f1628a.hashCode() * 31)) * 31)) * 31);
+        return Long.hashCode(this.d) + ((hashCode2 + ((hashCode + (this.f1633a.hashCode() * 31)) * 31)) * 31);
     }
 
     public final String toString() {
-        return "MigrationDtoVer2(uuid=" + ((Object) ("MetricsEventUuid(value=" + this.f1628a + ')')) + ", eventName=" + this.b + ", eventData=" + this.c + ", eventTimeStamp=" + this.d + ')';
+        return "MigrationDtoVer2(uuid=" + ((Object) ("MetricsEventUuid(value=" + this.f1633a + ')')) + ", eventName=" + this.b + ", eventData=" + this.c + ", eventTimeStamp=" + this.d + ')';
     }
 }

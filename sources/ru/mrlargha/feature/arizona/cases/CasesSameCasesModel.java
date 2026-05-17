@@ -134,11 +134,13 @@ public final class CasesSameCasesModel {
     }
 
     public final String getBenefitWithPercent() {
-        return "ВЫГОДА 50%";
+        String string = CasesResponseKt.getAppContext().getString(R.string.cases_benefit_percent, 50);
+        Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+        return string;
     }
 
     /* renamed from: getCurrency  reason: collision with other method in class */
-    public final CasesCurrencyType m11158getCurrency() {
+    public final CasesCurrencyType m11177getCurrency() {
         Object obj;
         Iterator<E> it = CasesCurrencyType.getEntries().iterator();
         while (true) {

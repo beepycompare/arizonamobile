@@ -3,15 +3,15 @@ package io.appmetrica.analytics.impl;
 public final class Lh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0278gi f679a;
+    public final /* synthetic */ C0278gi f684a;
 
     public Lh(C0278gi c0278gi) {
-        this.f679a = c0278gi;
+        this.f684a = c0278gi;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0278gi c0278gi = this.f679a;
-        C0278gi.a(c0278gi.f1015a, c0278gi.d, c0278gi.e).pauseSession();
+        C0278gi c0278gi = this.f684a;
+        C0278gi.a(c0278gi.f1020a, c0278gi.d, c0278gi.e).pauseSession();
     }
 }

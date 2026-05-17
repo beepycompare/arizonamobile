@@ -1,5 +1,8 @@
 package com.arizonagames.feature.arizona.family;
 
+import android.app.Activity;
+import android.widget.TextView;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.arizonagames.feature.arizona.family.adapters.MembersAdapter;
 import com.arizonagames.feature.arizona.family.data.FamilyData;
 import com.arizonagames.feature.arizona.family.data.MemberItem;
@@ -20,7 +23,7 @@ import kotlinx.coroutines.Dispatchers;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FamilyScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$requestMembers$1$1", f = "FamilyScreen.kt", i = {}, l = {431}, m = "invokeSuspend", n = {}, nl = {434}, s = {}, v = 2)
+@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$requestMembers$1$1", f = "FamilyScreen.kt", i = {}, l = {TypedValues.CycleType.TYPE_WAVE_PERIOD}, m = "invokeSuspend", n = {}, nl = {426}, s = {}, v = 2)
 /* loaded from: classes3.dex */
 public final class FamilyScreen$requestMembers$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ FamilyData $it;
@@ -51,6 +54,7 @@ public final class FamilyScreen$requestMembers$1$1 extends SuspendLambda impleme
     public final Object invokeSuspend(Object obj) {
         FamilyMainBinding familyMainBinding;
         MembersAdapter membersAdapter;
+        Activity targetActivity;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -69,10 +73,13 @@ public final class FamilyScreen$requestMembers$1$1 extends SuspendLambda impleme
         familyMainBinding = this.this$0.binding;
         FamilyMembersBinding familyMembersBinding = familyMainBinding.members;
         int i2 = this.$page;
+        FamilyScreen familyScreen = this.this$0;
         familyMembersBinding.loaderBar.setVisibility(8);
         if (list.isEmpty() && i2 == 1) {
             familyMembersBinding.empty.setVisibility(0);
-            familyMembersBinding.empty.setText("Список пуст");
+            TextView textView = familyMembersBinding.empty;
+            targetActivity = familyScreen.getTargetActivity();
+            textView.setText(targetActivity.getString(R.string.family_empty_list));
         } else {
             familyMembersBinding.empty.setVisibility(8);
         }

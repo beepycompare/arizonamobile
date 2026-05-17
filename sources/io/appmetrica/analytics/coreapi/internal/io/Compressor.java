@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.coreapi.internal.io;
 
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface Compressor {
     byte[] compress(byte[] bArr) throws IOException;
 

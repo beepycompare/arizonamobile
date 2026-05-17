@@ -6,7 +6,7 @@ import ru.rustore.sdk.metrics.MetricsEvent;
 public final class P {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1589a;
+    public final String f1594a;
     public final String b;
     public final String c;
     public final String d;
@@ -17,7 +17,7 @@ public final class P {
         Intrinsics.checkNotNullParameter(uuid, "uuid");
         Intrinsics.checkNotNullParameter(userId, "userId");
         Intrinsics.checkNotNullParameter(metricsEvent, "metricsEvent");
-        this.f1589a = packageName;
+        this.f1594a = packageName;
         this.b = uuid;
         this.c = userId;
         this.d = str;
@@ -32,7 +32,7 @@ public final class P {
         if (Intrinsics.areEqual(P.class, obj != null ? obj.getClass() : null)) {
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type ru.rustore.sdk.metrics.internal.data.dto.RemoteMetricsEventDto");
             P p = (P) obj;
-            if (Intrinsics.areEqual(this.f1589a, p.f1589a) && Intrinsics.areEqual(this.b, p.b) && Intrinsics.areEqual(this.c, p.c)) {
+            if (Intrinsics.areEqual(this.f1594a, p.f1594a) && Intrinsics.areEqual(this.b, p.b) && Intrinsics.areEqual(this.c, p.c)) {
                 String str = this.d;
                 String str2 = p.d;
                 if (str == null) {
@@ -54,9 +54,9 @@ public final class P {
     }
 
     public final int hashCode() {
-        int hashCode = (this.c.hashCode() + ((this.b.hashCode() + (this.f1589a.hashCode() * 31)) * 31)) * 31;
+        int hashCode = (this.c.hashCode() + ((this.b.hashCode() + (this.f1594a.hashCode() * 31)) * 31)) * 31;
         String str = this.d;
         d0 d0Var = str != null ? new d0(str) : null;
-        return this.e.hashCode() + ((hashCode + (d0Var != null ? d0Var.f1604a.hashCode() : 0)) * 31);
+        return this.e.hashCode() + ((hashCode + (d0Var != null ? d0Var.f1609a.hashCode() : 0)) * 31);
     }
 }

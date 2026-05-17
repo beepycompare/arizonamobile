@@ -7,17 +7,17 @@ import java.util.ArrayList;
 public final class C0112a7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final I6 f900a;
+    public final I6 f905a;
     public final ArrayList b;
 
     public C0112a7(File file) {
         ArrayList arrayList = new ArrayList();
         this.b = arrayList;
         if (file != null) {
-            this.f900a = new C0527qe(file, new N6());
+            this.f905a = new C0527qe(file, new N6());
             arrayList.add(new C0527qe(file, new C0351je()));
         } else {
-            this.f900a = new J6(new N6());
+            this.f905a = new J6(new N6());
         }
         arrayList.add(new J6(new C0351je()));
     }

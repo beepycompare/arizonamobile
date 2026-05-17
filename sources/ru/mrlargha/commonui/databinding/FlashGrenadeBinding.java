@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class FlashGrenadeBinding implements ViewBinding {
     public final ConstraintLayout flashGrenade;
     private final ConstraintLayout rootView;

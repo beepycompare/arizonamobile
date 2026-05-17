@@ -3,7 +3,6 @@ package io.appmetrica.analytics.billingv8.impl;
 import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.ProductDetails;
 import com.android.billingclient.api.Purchase;
-import com.google.android.billing.IabHelper;
 import io.appmetrica.analytics.billinginterface.internal.ProductInfo;
 import io.appmetrica.analytics.billinginterface.internal.ProductType;
 import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
@@ -11,16 +10,16 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class j extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ k f360a;
+    public final /* synthetic */ k f365a;
     public final /* synthetic */ BillingResult b;
     public final /* synthetic */ List c;
 
     public j(k kVar, BillingResult billingResult, List list) {
-        this.f360a = kVar;
+        this.f365a = kVar;
         this.b = billingResult;
         this.c = list;
     }
@@ -38,7 +37,7 @@ public final class j extends SafeRunnable {
         String originalJson;
         ProductType productType2;
         String originalJson2;
-        k kVar = this.f360a;
+        k kVar = this.f365a;
         BillingResult billingResult = this.b;
         List<Purchase> list = this.c;
         kVar.getClass();
@@ -67,12 +66,12 @@ public final class j extends SafeRunnable {
                     String productType3 = productDetails.getProductType();
                     int hashCode = productType3.hashCode();
                     if (hashCode != 3541555) {
-                        if (hashCode == 100343516 && productType3.equals(IabHelper.ITEM_TYPE_INAPP)) {
+                        if (hashCode == 100343516 && productType3.equals("inapp")) {
                             String productType4 = productDetails.getProductType();
-                            if (Intrinsics.areEqual(productType4, IabHelper.ITEM_TYPE_INAPP)) {
+                            if (Intrinsics.areEqual(productType4, "inapp")) {
                                 productType2 = ProductType.INAPP;
                             } else {
-                                productType2 = Intrinsics.areEqual(productType4, IabHelper.ITEM_TYPE_SUBS) ? ProductType.SUBS : ProductType.UNKNOWN;
+                                productType2 = Intrinsics.areEqual(productType4, "subs") ? ProductType.SUBS : ProductType.UNKNOWN;
                             }
                             ProductType productType5 = productType2;
                             String productId = productDetails.getProductId();
@@ -82,12 +81,12 @@ public final class j extends SafeRunnable {
                             ProductDetails.OneTimePurchaseOfferDetails oneTimePurchaseOfferDetails2 = productDetails.getOneTimePurchaseOfferDetails();
                             productInfo = new ProductInfo(productType5, productId, quantity, priceAmountMicros, (oneTimePurchaseOfferDetails2 == null || (r6 = oneTimePurchaseOfferDetails2.getPriceCurrencyCode()) == null) ? "" : "", 0L, null, 1, null, purchase3.getSignature(), purchase3.getPurchaseToken(), purchase3.getPurchaseTime(), purchase4 != null ? purchase4.isAutoRenewing() : false, (purchase4 == null || (originalJson2 = purchase4.getOriginalJson()) == null) ? "{}" : originalJson2);
                         }
-                    } else if (productType3.equals(IabHelper.ITEM_TYPE_SUBS)) {
+                    } else if (productType3.equals("subs")) {
                         String productType6 = productDetails.getProductType();
-                        if (Intrinsics.areEqual(productType6, IabHelper.ITEM_TYPE_INAPP)) {
+                        if (Intrinsics.areEqual(productType6, "inapp")) {
                             productType = ProductType.INAPP;
                         } else {
-                            productType = Intrinsics.areEqual(productType6, IabHelper.ITEM_TYPE_SUBS) ? ProductType.SUBS : ProductType.UNKNOWN;
+                            productType = Intrinsics.areEqual(productType6, "subs") ? ProductType.SUBS : ProductType.UNKNOWN;
                         }
                         productInfo = new ProductInfo(productType, productDetails.getProductId(), purchase3.getQuantity(), 0L, "", 0L, null, 1, null, purchase3.getSignature(), purchase3.getPurchaseToken(), purchase3.getPurchaseTime(), purchase4 != null ? purchase4.isAutoRenewing() : false, (purchase4 == null || (originalJson = purchase4.getOriginalJson()) == null) ? "{}" : originalJson);
                     }
@@ -101,11 +100,11 @@ public final class j extends SafeRunnable {
                 if (productInfo2 == null) {
                 }
             }
-            kVar.f361a.getBillingInfoSender().sendInfo(arrayList);
+            kVar.f366a.getBillingInfoSender().sendInfo(arrayList);
             kVar.b.invoke();
             kVar.f.onUpdateFinished();
         }
-        k kVar2 = this.f360a;
+        k kVar2 = this.f365a;
         kVar2.e.a(kVar2);
     }
 }

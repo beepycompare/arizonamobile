@@ -174,12 +174,12 @@ public final class LayoutHelper {
             while (true) {
                 if (i8 >= runCount) {
                     break;
-                }
-                if (bidiRunArr[i8].getStart() == i2) {
+                } else if (bidiRunArr[i8].getStart() == i2) {
                     i7 = i8;
                     break;
+                } else {
+                    i8++;
                 }
-                i8++;
             }
             BidiRun bidiRun = bidiRunArr[i7];
             if (z || isRtlParagraph == bidiRun.isRtl()) {
@@ -204,12 +204,12 @@ public final class LayoutHelper {
         while (true) {
             if (i9 >= runCount) {
                 break;
-            }
-            if (bidiRunArr[i9].getEnd() == i2) {
+            } else if (bidiRunArr[i9].getEnd() == i2) {
                 i7 = i9;
                 break;
+            } else {
+                i9++;
             }
-            i9++;
         }
         BidiRun bidiRun2 = bidiRunArr[i7];
         if (!z && isRtlParagraph != bidiRun2.isRtl()) {

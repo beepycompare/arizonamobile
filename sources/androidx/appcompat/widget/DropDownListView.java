@@ -218,7 +218,7 @@ public class DropDownListView extends ListView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class GateKeeperDrawable extends DrawableWrapperCompat {
         private boolean mEnabled;
 

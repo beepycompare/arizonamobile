@@ -1,7 +1,7 @@
 package androidx.core.content;
 
 import java.util.ArrayList;
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public final class MimeTypeFilter {
     private MimeTypeFilter() {
     }

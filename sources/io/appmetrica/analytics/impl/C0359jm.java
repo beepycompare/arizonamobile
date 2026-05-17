@@ -13,7 +13,7 @@ public final class C0359jm {
     public final B9 B;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1068a;
+    public final String f1073a;
     public final List b;
     public final String c;
     public final String d;
@@ -49,7 +49,7 @@ public final class C0359jm {
         Map map;
         Map map2;
         B9 b9;
-        this.f1068a = c0333im.f1049a;
+        this.f1073a = c0333im.f1054a;
         List list = c0333im.b;
         this.b = list == null ? null : CollectionUtils.unmodifiableListCopy(list);
         this.c = c0333im.c;
@@ -92,7 +92,7 @@ public final class C0359jm {
         if (cm != null) {
             cm2 = c0333im.z;
         } else {
-            cm2 = new Cm(I7.b.f1261a);
+            cm2 = new Cm(I7.b.f1266a);
         }
         this.z = cm2;
         map = c0333im.A;
@@ -108,7 +108,7 @@ public final class C0359jm {
 
     public final C0333im a(C0392l4 c0392l4) {
         C0333im c0333im = new C0333im(c0392l4);
-        c0333im.f1049a = this.f1068a;
+        c0333im.f1054a = this.f1073a;
         c0333im.f = this.f;
         c0333im.g = this.g;
         c0333im.j = this.j;
@@ -139,6 +139,6 @@ public final class C0359jm {
     }
 
     public final String toString() {
-        return "StartupStateModel{uuid='" + this.f1068a + "', reportUrls=" + this.b + ", getAdUrl='" + this.c + "', reportAdUrl='" + this.d + "', certificateUrl='" + this.e + "', hostUrlsFromStartup=" + this.f + ", hostUrlsFromClient=" + this.g + ", diagnosticUrls=" + this.h + ", customSdkHosts=" + this.i + ", encodedClidsFromResponse='" + this.j + "', lastClientClidsForStartupRequest='" + this.k + "', lastChosenForRequestClids='" + this.l + "', collectingFlags=" + this.m + ", obtainTime=" + this.n + ", hadFirstStartup=" + this.o + ", startupDidNotOverrideClids=" + this.p + ", countryInit='" + this.q + "', statSending=" + this.r + ", permissionsCollectingConfig=" + this.s + ", retryPolicyConfig=" + this.t + ", obtainServerTime=" + this.u + ", firstStartupServerTime=" + this.v + ", outdated=" + this.w + ", cacheControl=" + this.x + ", attributionConfig=" + this.y + ", startupUpdateConfig=" + this.z + ", modulesRemoteConfigs=" + this.A + ", externalAttributionConfig=" + this.B + AbstractJsonLexerKt.END_OBJ;
+        return "StartupStateModel{uuid='" + this.f1073a + "', reportUrls=" + this.b + ", getAdUrl='" + this.c + "', reportAdUrl='" + this.d + "', certificateUrl='" + this.e + "', hostUrlsFromStartup=" + this.f + ", hostUrlsFromClient=" + this.g + ", diagnosticUrls=" + this.h + ", customSdkHosts=" + this.i + ", encodedClidsFromResponse='" + this.j + "', lastClientClidsForStartupRequest='" + this.k + "', lastChosenForRequestClids='" + this.l + "', collectingFlags=" + this.m + ", obtainTime=" + this.n + ", hadFirstStartup=" + this.o + ", startupDidNotOverrideClids=" + this.p + ", countryInit='" + this.q + "', statSending=" + this.r + ", permissionsCollectingConfig=" + this.s + ", retryPolicyConfig=" + this.t + ", obtainServerTime=" + this.u + ", firstStartupServerTime=" + this.v + ", outdated=" + this.w + ", cacheControl=" + this.x + ", attributionConfig=" + this.y + ", startupUpdateConfig=" + this.z + ", modulesRemoteConfigs=" + this.A + ", externalAttributionConfig=" + this.B + AbstractJsonLexerKt.END_OBJ;
     }
 }

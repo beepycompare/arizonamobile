@@ -8,7 +8,7 @@ import okhttp3.internal.connection.RealConnection;
 public final class I4 extends DatabaseScript {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f622a = 2000;
+    public final int f627a = 2000;
     public final String b = "number";
     public final String c = "global_number";
     public final String d = "number_of_type";
@@ -38,7 +38,7 @@ public final class I4 extends DatabaseScript {
         EnumC0142bb enumC0142bb;
         Long l2;
         Long l3;
-        Long l4 = c0215e7.f973a;
+        Long l4 = c0215e7.f978a;
         if (l4 == null || l4.longValue() < RealConnection.IDLE_CONNECTION_HEALTHY_NS || c0215e7.b == null || (l = c0215e7.c) == null || l.longValue() < 0 || (enumC0142bb = c0215e7.d) == null || enumC0142bb == EnumC0142bb.EVENT_TYPE_UNDEFINED || (l2 = c0215e7.e) == null || l2.longValue() < 0 || (l3 = c0215e7.f) == null || l3.longValue() < 0) {
             return false;
         }
@@ -59,7 +59,7 @@ public final class I4 extends DatabaseScript {
         try {
             sQLiteDatabase2 = sQLiteDatabase;
             try {
-                cursor = sQLiteDatabase2.query(this.w, null, null, null, null, null, null, String.valueOf(this.f622a));
+                cursor = sQLiteDatabase2.query(this.w, null, null, null, null, null, null, String.valueOf(this.f627a));
                 while (cursor.moveToNext()) {
                     try {
                         C0215e7 a2 = a(cursor);

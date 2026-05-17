@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
@@ -81,9 +82,11 @@ public final class CarSharingInfo implements MobileController {
         MobilePhoneAvailableCar mobilePhoneAvailableCar = this.carInfo;
         if (mobilePhoneAvailableCar != null) {
             bind.mpArizonamobilHeaderTitle.setText(StringsKt.substringBefore$default(mobilePhoneAvailableCar.getName(), " - arizonamobil", (String) null, 2, (Object) null));
-            bind.mpArizonamobileHeaderIdText.setText("ID: " + mobilePhoneAvailableCar.getId());
+            bind.mpArizonamobileHeaderIdText.setText(context.getString(R.string.mobile_id_format, new Object[]{Integer.valueOf(mobilePhoneAvailableCar.getId())}));
             bind.mpArizonamobileFuelPercent.setText(String.valueOf(mobilePhoneAvailableCar.getFuelValue()));
-            bind.mpArizonamobileFuelText.setText(Intrinsics.areEqual(mobilePhoneAvailableCar.getFuelType(), "petrol") ? "ТОПЛИВО" : "ЗАРЯД");
+            TextView textView = bind.mpArizonamobileFuelText;
+            Intrinsics.areEqual(mobilePhoneAvailableCar.getFuelType(), "petrol");
+            textView.setText(context.getString(R.string.mobile_fuel));
             bind.mpArizonamobilePriceDescription.setText(mobilePhoneAvailableCar.getPrice() + " $ на всю аренду");
             bind.mpFuelIndicator.setLayoutParams(new ConstraintLayout.LayoutParams(ConverterKt.dpToPx(mobilePhoneAvailableCar.getFuelValue(), context), ConverterKt.dpToPx(110, context)));
         }
@@ -110,9 +113,11 @@ public final class CarSharingInfo implements MobileController {
     public final void updateCarInfo(MobilePhoneAvailableCar carInfo) {
         Intrinsics.checkNotNullParameter(carInfo, "carInfo");
         this.mpCarSharingInfoBinding.mpArizonamobilHeaderTitle.setText(StringsKt.substringBefore$default(carInfo.getName(), " - arizonamobil", (String) null, 2, (Object) null));
-        this.mpCarSharingInfoBinding.mpArizonamobileHeaderIdText.setText("ID: " + carInfo.getId());
+        this.mpCarSharingInfoBinding.mpArizonamobileHeaderIdText.setText(this.context.getString(R.string.mobile_id_format, new Object[]{Integer.valueOf(carInfo.getId())}));
         this.mpCarSharingInfoBinding.mpArizonamobileFuelPercent.setText(String.valueOf(carInfo.getFuelValue()));
-        this.mpCarSharingInfoBinding.mpArizonamobileFuelText.setText(Intrinsics.areEqual(carInfo.getFuelType(), "petrol") ? "ТОПЛИВО" : "ЗАРЯД");
+        TextView textView = this.mpCarSharingInfoBinding.mpArizonamobileFuelText;
+        Intrinsics.areEqual(carInfo.getFuelType(), "petrol");
+        textView.setText(this.context.getString(R.string.mobile_fuel));
         this.mpCarSharingInfoBinding.mpArizonamobilePriceDescription.setText(carInfo.getPrice() + " $ на всю аренду");
         this.mpCarSharingInfoBinding.mpFuelIndicator.setLayoutParams(new ConstraintLayout.LayoutParams(ConverterKt.dpToPx((ConverterKt.dpToPx(132, this.context) / 100) * carInfo.getFuelValue(), this.context), ConverterKt.dpToPx(110, this.context)));
     }

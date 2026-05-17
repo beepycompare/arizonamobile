@@ -33,12 +33,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0707xk implements Pc, InterfaceC0385km, AskForPermissionStrategyModuleProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1310a = "rp";
+    public final String f1315a = "rp";
     public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
     public volatile AskForPermissionStrategyModuleProvider c = new A7();
 
     public static void a(String str, String str2, Throwable th) {
-        Qj qj = AbstractC0482oj.f1158a;
+        Qj qj = AbstractC0482oj.f1163a;
         Map mapOf = MapsKt.mapOf(TuplesKt.to(str, MapsKt.mapOf(TuplesKt.to(str2, ExceptionsKt.stackTraceToString(th)))));
         qj.getClass();
         qj.a(new Pj("service_module_errors", mapOf));
@@ -264,7 +264,7 @@ public final class C0707xk implements Pc, InterfaceC0385km, AskForPermissionStra
 
     public final void a(ModuleServiceEntryPoint<Object> moduleServiceEntryPoint) {
         this.b.add(moduleServiceEntryPoint);
-        if (Intrinsics.areEqual(this.f1310a, moduleServiceEntryPoint.getIdentifier()) && (moduleServiceEntryPoint instanceof AskForPermissionStrategyModuleProvider)) {
+        if (Intrinsics.areEqual(this.f1315a, moduleServiceEntryPoint.getIdentifier()) && (moduleServiceEntryPoint instanceof AskForPermissionStrategyModuleProvider)) {
             this.c = (AskForPermissionStrategyModuleProvider) moduleServiceEntryPoint;
         }
     }
@@ -272,7 +272,7 @@ public final class C0707xk implements Pc, InterfaceC0385km, AskForPermissionStra
     @Override // io.appmetrica.analytics.impl.InterfaceC0385km
     public final void a(C0256fm c0256fm) {
         HashSet hashSet = new HashSet();
-        SdkIdentifiers sdkIdentifiers = new SdkIdentifiers(c0256fm.d, c0256fm.f999a, c0256fm.b);
+        SdkIdentifiers sdkIdentifiers = new SdkIdentifiers(c0256fm.d, c0256fm.f1004a, c0256fm.b);
         Kg kg = new Kg(c0256fm.v, c0256fm.u);
         Iterator it = this.b.iterator();
         while (it.hasNext()) {
@@ -296,13 +296,13 @@ public final class C0707xk implements Pc, InterfaceC0385km, AskForPermissionStra
         while (it.hasNext()) {
             ModuleServiceEntryPoint moduleServiceEntryPoint = (ModuleServiceEntryPoint) it.next();
             try {
-                moduleServiceEntryPoint.initServiceSide(serviceContext, new C0632uk(new SdkIdentifiers(c0256fm.d, c0256fm.f999a, c0256fm.b), new Kg(c0256fm.v, c0256fm.u), c0256fm.A.get(moduleServiceEntryPoint.getIdentifier())));
+                moduleServiceEntryPoint.initServiceSide(serviceContext, new C0632uk(new SdkIdentifiers(c0256fm.d, c0256fm.f1004a, c0256fm.b), new Kg(c0256fm.v, c0256fm.u), c0256fm.A.get(moduleServiceEntryPoint.getIdentifier())));
                 ModuleEventServiceHandlerFactory moduleEventServiceHandlerFactory = moduleServiceEntryPoint.getModuleEventServiceHandlerFactory();
                 if (moduleEventServiceHandlerFactory != null) {
                     Uc uc = C0448na.I.t;
                     String identifier = moduleServiceEntryPoint.getIdentifier();
                     synchronized (uc) {
-                        uc.f810a.put(identifier, moduleEventServiceHandlerFactory);
+                        uc.f815a.put(identifier, moduleEventServiceHandlerFactory);
                     }
                 }
             } catch (Throwable th) {

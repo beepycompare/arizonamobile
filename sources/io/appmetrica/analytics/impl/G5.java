@@ -5,10 +5,10 @@ import android.content.BroadcastReceiver;
 public final class G5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final BroadcastReceiver f591a;
+    public final BroadcastReceiver f596a;
     public boolean b = false;
 
     public G5(C0589t2 c0589t2) {
-        this.f591a = c0589t2;
+        this.f596a = c0589t2;
     }
 }

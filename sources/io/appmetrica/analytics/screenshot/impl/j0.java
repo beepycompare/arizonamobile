@@ -3,11 +3,11 @@ package io.appmetrica.analytics.screenshot.impl;
 public final class j0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1474a;
+    public final boolean f1479a;
     public final k0 b;
 
     public j0(boolean z, k0 k0Var) {
-        this.f1474a = z;
+        this.f1479a = z;
         this.b = k0Var;
     }
 
@@ -16,11 +16,11 @@ public final class j0 {
     }
 
     public final boolean b() {
-        return this.f1474a;
+        return this.f1479a;
     }
 
     public final String toString() {
-        return "ServiceSideRemoteScreenshotConfig(enabled=" + this.f1474a + ", config=" + this.b + ')';
+        return "ServiceSideRemoteScreenshotConfig(enabled=" + this.f1479a + ", config=" + this.b + ')';
     }
 
     public j0() {

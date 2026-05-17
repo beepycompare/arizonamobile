@@ -5,7 +5,7 @@ import android.content.res.AssetManager;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class NvAPKFileHelper {
     private static NvAPKFileHelper instance = new NvAPKFileHelper();
     private static final boolean logAssetFiles = false;

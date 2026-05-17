@@ -6,17 +6,17 @@ import android.os.IBinder;
 import androidx.media3.common.C;
 import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 import kotlin.jvm.functions.Function1;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public final e f447a;
+    public final e f452a;
     public final Function1 b;
     public final String c;
     public final SafePackageManager d;
 
     public f(e eVar, Function1 function1, String str, SafePackageManager safePackageManager) {
-        this.f447a = eVar;
+        this.f452a = eVar;
         this.b = function1;
         this.c = str;
         this.d = safePackageManager;
@@ -30,13 +30,13 @@ public final class f {
     public final Object a(Context context) {
         IBinder iBinder;
         e eVar;
-        if (this.d.resolveService(context, this.f447a.f446a, 0) != null) {
+        if (this.d.resolveService(context, this.f452a.f451a, 0) != null) {
             try {
-                eVar = this.f447a;
+                eVar = this.f452a;
             } catch (Throwable unused) {
             }
-            if (context.bindService(eVar.f446a, eVar, 1)) {
-                e eVar2 = this.f447a;
+            if (context.bindService(eVar.f451a, eVar, 1)) {
+                e eVar2 = this.f452a;
                 if (eVar2.b == null) {
                     synchronized (eVar2.c) {
                         if (eVar2.b == null) {
@@ -63,7 +63,7 @@ public final class f {
 
     public final void b(Context context) {
         try {
-            this.f447a.a(context);
+            this.f452a.a(context);
         } catch (Throwable unused) {
         }
     }

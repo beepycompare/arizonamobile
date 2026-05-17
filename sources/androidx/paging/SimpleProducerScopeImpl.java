@@ -44,9 +44,9 @@ public final class SimpleProducerScopeImpl<T> implements SimpleProducerScope<T>,
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: invokeOnClose */
-    public void mo10771invokeOnClose(Function1<? super Throwable, Unit> handler) {
+    public void mo10790invokeOnClose(Function1<? super Throwable, Unit> handler) {
         Intrinsics.checkNotNullParameter(handler, "handler");
-        this.channel.mo10771invokeOnClose(handler);
+        this.channel.mo10790invokeOnClose(handler);
     }
 
     @Override // kotlinx.coroutines.channels.SendChannel
@@ -124,7 +124,7 @@ public final class SimpleProducerScopeImpl<T> implements SimpleProducerScope<T>,
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(Throwable th) {
                                 Result.Companion companion = Result.Companion;
-                                cancellableContinuationImpl2.resumeWith(Result.m9183constructorimpl(Unit.INSTANCE));
+                                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(Unit.INSTANCE));
                             }
                         });
                         Object result = cancellableContinuationImpl.getResult();

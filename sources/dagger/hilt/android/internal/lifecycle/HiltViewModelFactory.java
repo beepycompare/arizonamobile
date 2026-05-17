@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.inject.Provider;
 import kotlin.jvm.functions.Function1;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class HiltViewModelFactory implements ViewModelProvider.Factory {
     public static final CreationExtras.Key<Function1<Object, ViewModel>> CREATION_CALLBACK_KEY = new CreationExtras.Key<Function1<Object, ViewModel>>() { // from class: dagger.hilt.android.internal.lifecycle.HiltViewModelFactory.1
     };
@@ -26,14 +26,14 @@ public final class HiltViewModelFactory implements ViewModelProvider.Factory {
     private final Map<Class<?>, Boolean> hiltViewModelKeys;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface ActivityCreatorEntryPoint {
         ViewModelComponentBuilder getViewModelComponentBuilder();
 
         Map<Class<?>, Boolean> getViewModelKeys();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface ViewModelFactoriesEntryPoint {
         Map<Class<?>, Object> getHiltViewModelAssistedMap();
 
@@ -41,7 +41,7 @@ public final class HiltViewModelFactory implements ViewModelProvider.Factory {
     }
 
     @Module
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     interface ViewModelModule {
         @Multibinds
         Map<Class<?>, Object> hiltViewModelAssistedMap();

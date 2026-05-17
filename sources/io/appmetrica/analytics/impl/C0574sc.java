@@ -12,7 +12,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class C0574sc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1221a;
+    public final Context f1226a;
     public final C0680wi b;
     public final Bd c;
     public final M9 d;
@@ -28,7 +28,7 @@ public final class C0574sc {
     public final C0183d0 n;
 
     public C0574sc(Context context, Bf bf, C0680wi c0680wi, Ol ol) {
-        this.f1221a = context;
+        this.f1226a = context;
         this.b = c0680wi;
         this.c = new Bd(bf);
         M9 m9 = new M9(context);
@@ -51,7 +51,7 @@ public final class C0574sc {
     }
 
     public final Context b() {
-        return this.f1221a;
+        return this.f1226a;
     }
 
     public final C0643v6 c() {

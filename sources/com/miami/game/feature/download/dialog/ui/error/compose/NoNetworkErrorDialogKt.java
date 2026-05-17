@@ -64,16 +64,15 @@ public final class NoNetworkErrorDialogKt {
         return Unit.INSTANCE;
     }
 
-    public static final void NoNetworkErrorDialogRoute(final ErrorDialogComponent component, Function0<Unit> onBackClick, final Function0<Unit> onRetry, Composer composer, final int i) {
+    public static final void NoNetworkErrorDialogRoute(final ErrorDialogComponent component, final Function0<Unit> onBackClick, final Function0<Unit> onRetry, Composer composer, final int i) {
         int i2;
-        final Function0<Unit> function0;
         Intrinsics.checkNotNullParameter(component, "component");
         Intrinsics.checkNotNullParameter(onBackClick, "onBackClick");
         Intrinsics.checkNotNullParameter(onRetry, "onRetry");
         Composer startRestartGroup = composer.startRestartGroup(1779829502);
         ComposerKt.sourceInformation(startRestartGroup, "C(NoNetworkErrorDialogRoute)N(component,onBackClick,onRetry)34@1557L113,34@1520L150,40@1709L29,44@1819L21,42@1744L182:NoNetworkErrorDialog.kt#d3gn1w");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(component) : startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
@@ -83,6 +82,7 @@ public final class NoNetworkErrorDialogKt {
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i2 |= startRestartGroup.changedInstance(onRetry) ? 256 : 128;
         }
+        boolean z = true;
         if (startRestartGroup.shouldExecute((i2 & 147) != 146, i2 & 1)) {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1779829502, i2, -1, "com.miami.game.feature.download.dialog.ui.error.compose.NoNetworkErrorDialogRoute (NoNetworkErrorDialog.kt:31)");
@@ -90,9 +90,9 @@ public final class NoNetworkErrorDialogKt {
             SharedEventFlow<ErrorDialogUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1019174927, "CC(remember):NoNetworkErrorDialog.kt#9igjgp");
-            boolean z = (i2 & 896) == 256;
+            boolean z2 = (i2 & 896) == 256;
             NoNetworkErrorDialogKt$NoNetworkErrorDialogRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
-            if (z || rememberedValue == Composer.Companion.getEmpty()) {
+            if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new NoNetworkErrorDialogKt$NoNetworkErrorDialogRoute$1$1(onRetry, null);
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
@@ -101,20 +101,20 @@ public final class NoNetworkErrorDialogKt {
             startRestartGroup = startRestartGroup;
             ErrorDialogUiState NoNetworkErrorDialogRoute$lambda$1 = NoNetworkErrorDialogRoute$lambda$1(FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1019183219, "CC(remember):NoNetworkErrorDialog.kt#9igjgp");
-            boolean changedInstance = startRestartGroup.changedInstance(component);
+            if ((i2 & 14) != 4 && ((i2 & 8) == 0 || !startRestartGroup.changedInstance(component))) {
+                z = false;
+            }
             NoNetworkErrorDialogKt$NoNetworkErrorDialogRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
-            if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
+            if (z || rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new NoNetworkErrorDialogKt$NoNetworkErrorDialogRoute$2$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            function0 = onBackClick;
-            NoNetworkErrorDialogScreen(component.getErrorMessage(), NoNetworkErrorDialogRoute$lambda$1, (Function0) ((KFunction) rememberedValue2), function0, startRestartGroup, (i2 << 6) & 7168);
+            NoNetworkErrorDialogScreen(component.getErrorMessage(), NoNetworkErrorDialogRoute$lambda$1, (Function0) ((KFunction) rememberedValue2), onBackClick, startRestartGroup, ((i2 << 6) & 7168) | (ErrorDialogUiState.$stable << 3));
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         } else {
-            function0 = onBackClick;
             startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
@@ -122,7 +122,7 @@ public final class NoNetworkErrorDialogKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.NoNetworkErrorDialogKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    return NoNetworkErrorDialogKt.NoNetworkErrorDialogRoute$lambda$3(ErrorDialogComponent.this, function0, onRetry, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return NoNetworkErrorDialogKt.NoNetworkErrorDialogRoute$lambda$3(ErrorDialogComponent.this, onBackClick, onRetry, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

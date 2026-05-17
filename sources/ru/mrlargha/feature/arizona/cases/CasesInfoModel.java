@@ -201,21 +201,39 @@ public final class CasesInfoModel {
     }
 
     /* renamed from: getCost  reason: collision with other method in class */
-    public final String m11155getCost() {
-        int intValue;
+    public final String m11174getCost() {
         if (this.countLeft > 0) {
-            return "Открыть";
+            String string = CasesResponseKt.getAppContext().getString(R.string.cases_open);
+            Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+            return string;
+        } else if (isSpecialCase()) {
+            String string2 = CasesResponseKt.getAppContext().getString(R.string.cases_unavailable);
+            Intrinsics.checkNotNullExpressionValue(string2, "getString(...)");
+            return string2;
+        } else {
+            Integer num = this.cost;
+            if (num == null) {
+                String string3 = CasesResponseKt.getAppContext().getString(R.string.cases_open);
+                Intrinsics.checkNotNullExpressionValue(string3, "getString(...)");
+                return string3;
+            }
+            int intValue = num.intValue();
+            if (intValue > 0) {
+                String string4 = CasesResponseKt.getAppContext().getString(R.string.cases_open_for, Integer.valueOf(intValue));
+                Intrinsics.checkNotNullExpressionValue(string4, "getString(...)");
+                return string4;
+            }
+            String string5 = CasesResponseKt.getAppContext().getString(R.string.cases_open);
+            Intrinsics.checkNotNullExpressionValue(string5, "getString(...)");
+            return string5;
         }
-        if (isSpecialCase()) {
-            return "Недоступно";
-        }
-        Integer num = this.cost;
-        return (num == null || (intValue = num.intValue()) <= 0) ? "Открыть" : "Открыть за " + intValue;
     }
 
     /* renamed from: getCountLeft  reason: collision with other method in class */
-    public final String m11156getCountLeft() {
-        return "Осталось " + this.countLeft + " шт.";
+    public final String m11175getCountLeft() {
+        String string = CasesResponseKt.getAppContext().getString(R.string.cases_count_left, Integer.valueOf(this.countLeft));
+        Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+        return string;
     }
 
     public final String getProgress() {
@@ -224,7 +242,7 @@ public final class CasesInfoModel {
     }
 
     /* renamed from: getCurrency  reason: collision with other method in class */
-    public final CasesCurrencyType m11157getCurrency() {
+    public final CasesCurrencyType m11176getCurrency() {
         Object obj;
         Iterator<E> it = CasesCurrencyType.getEntries().iterator();
         while (true) {

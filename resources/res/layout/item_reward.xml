@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/parentLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_2sdp">
-    <androidx.cardview.widget.CardView android:id="@+id/cvReward" android:visibility="visible" android:layout_width="@dimen/_20sdp" android:layout_height="@dimen/_20sdp" android:backgroundTint="@color/battlepass5" app:cardCornerRadius="@dimen/_4sdp">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/cvReward" android:visibility="visible" android:layout_width="@dimen/_20sdp" android:layout_height="@dimen/_20sdp" app:backgroundMainColor="@color/battlepass5" app:corners="@dimen/_4sdp">
         <ImageView android:id="@+id/ivReward" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-    </androidx.cardview.widget.CardView>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
     <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/_4sdp">
         <TextView android:textSize="@dimen/_5sdp" android:textColor="@color/white" android:ellipsize="end" android:id="@+id/tvRewardDesc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium"/>
         <TextView android:textSize="@dimen/_4sdp" android:textColor="@color/white" android:ellipsize="end" android:id="@+id/tv_dop_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" android:alpha="0.6" android:fontFamily="@font/heading_now_64_regular"/>

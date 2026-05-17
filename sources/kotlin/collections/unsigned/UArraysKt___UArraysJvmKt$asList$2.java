@@ -13,30 +13,30 @@ import kotlin.collections.ArraysKt;
 public final class UArraysKt___UArraysJvmKt$asList$2 extends AbstractList<ULong> implements RandomAccess {
 
     /* renamed from: $$v$c$kotlin-ULongArray$-$this$asList$0  reason: not valid java name */
-    final /* synthetic */ long[] f151$$v$c$kotlinULongArray$$this$asList$0;
+    final /* synthetic */ long[] f156$$v$c$kotlinULongArray$$this$asList$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public UArraysKt___UArraysJvmKt$asList$2(long[] jArr) {
-        this.f151$$v$c$kotlinULongArray$$this$asList$0 = jArr;
+        this.f156$$v$c$kotlinULongArray$$this$asList$0 = jArr;
     }
 
     @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.List
     public final /* bridge */ boolean contains(Object obj) {
         if (obj instanceof ULong) {
-            return m9703containsVKZWuLQ(((ULong) obj).m9414unboximpl());
+            return m9722containsVKZWuLQ(((ULong) obj).m9433unboximpl());
         }
         return false;
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
     public /* bridge */ /* synthetic */ Object get(int i) {
-        return ULong.m9356boximpl(m9704getsVKNKU(i));
+        return ULong.m9375boximpl(m9723getsVKNKU(i));
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
     public final /* bridge */ int indexOf(Object obj) {
         if (obj instanceof ULong) {
-            return m9705indexOfVKZWuLQ(((ULong) obj).m9414unboximpl());
+            return m9724indexOfVKZWuLQ(((ULong) obj).m9433unboximpl());
         }
         return -1;
     }
@@ -44,38 +44,38 @@ public final class UArraysKt___UArraysJvmKt$asList$2 extends AbstractList<ULong>
     @Override // kotlin.collections.AbstractList, java.util.List
     public final /* bridge */ int lastIndexOf(Object obj) {
         if (obj instanceof ULong) {
-            return m9706lastIndexOfVKZWuLQ(((ULong) obj).m9414unboximpl());
+            return m9725lastIndexOfVKZWuLQ(((ULong) obj).m9433unboximpl());
         }
         return -1;
     }
 
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
-        return ULongArray.m9423getSizeimpl(this.f151$$v$c$kotlinULongArray$$this$asList$0);
+        return ULongArray.m9442getSizeimpl(this.f156$$v$c$kotlinULongArray$$this$asList$0);
     }
 
     @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
-        return ULongArray.m9425isEmptyimpl(this.f151$$v$c$kotlinULongArray$$this$asList$0);
+        return ULongArray.m9444isEmptyimpl(this.f156$$v$c$kotlinULongArray$$this$asList$0);
     }
 
     /* renamed from: contains-VKZWuLQ  reason: not valid java name */
-    public boolean m9703containsVKZWuLQ(long j) {
-        return ULongArray.m9418containsVKZWuLQ(this.f151$$v$c$kotlinULongArray$$this$asList$0, j);
+    public boolean m9722containsVKZWuLQ(long j) {
+        return ULongArray.m9437containsVKZWuLQ(this.f156$$v$c$kotlinULongArray$$this$asList$0, j);
     }
 
     /* renamed from: get-s-VKNKU  reason: not valid java name */
-    public long m9704getsVKNKU(int i) {
-        return ULongArray.m9422getsVKNKU(this.f151$$v$c$kotlinULongArray$$this$asList$0, i);
+    public long m9723getsVKNKU(int i) {
+        return ULongArray.m9441getsVKNKU(this.f156$$v$c$kotlinULongArray$$this$asList$0, i);
     }
 
     /* renamed from: indexOf-VKZWuLQ  reason: not valid java name */
-    public int m9705indexOfVKZWuLQ(long j) {
-        return ArraysKt.indexOf(this.f151$$v$c$kotlinULongArray$$this$asList$0, j);
+    public int m9724indexOfVKZWuLQ(long j) {
+        return ArraysKt.indexOf(this.f156$$v$c$kotlinULongArray$$this$asList$0, j);
     }
 
     /* renamed from: lastIndexOf-VKZWuLQ  reason: not valid java name */
-    public int m9706lastIndexOfVKZWuLQ(long j) {
-        return ArraysKt.lastIndexOf(this.f151$$v$c$kotlinULongArray$$this$asList$0, j);
+    public int m9725lastIndexOfVKZWuLQ(long j) {
+        return ArraysKt.lastIndexOf(this.f156$$v$c$kotlinULongArray$$this$asList$0, j);
     }
 }

@@ -123,7 +123,7 @@ public final class ArizonaRentAdAdapter extends ListAdapter<ArizonaRentAdModel, 
                 Intrinsics.checkNotNullExpressionValue(online3, "online");
                 online3.setVisibility(8);
             }
-            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/house_int/" + arizonaRentAdModel.getImage() + ".webp").into(mpArizonaRentAdItemBinding.ivHome);
+            Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/house_int/" + arizonaRentAdModel.getImage() + ".webp").into(mpArizonaRentAdItemBinding.ivHome);
             Intrinsics.checkNotNull(context);
             checkIsMyAd(arizonaRentAdModel.getIsMy(context));
         }

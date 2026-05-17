@@ -7,12 +7,12 @@ import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServ
 public final class Wc implements ModuleEventServiceHandlerContext {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ModulePreferences f839a;
+    public final ModulePreferences f844a;
     public final ModulePreferences b;
     public final ModuleEventServiceHandlerReporter c;
 
     public Wc(ModulePreferences modulePreferences, ModulePreferences modulePreferences2, ModuleEventServiceHandlerReporter moduleEventServiceHandlerReporter) {
-        this.f839a = modulePreferences;
+        this.f844a = modulePreferences;
         this.b = modulePreferences2;
         this.c = moduleEventServiceHandlerReporter;
     }
@@ -29,6 +29,6 @@ public final class Wc implements ModuleEventServiceHandlerContext {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerContext
     public final ModulePreferences getModulePreferences() {
-        return this.f839a;
+        return this.f844a;
     }
 }

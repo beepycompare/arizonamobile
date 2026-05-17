@@ -239,7 +239,8 @@ public abstract class BaseGmsClient<T extends IInterface> {
         connect(new LegacyClientCallbackAdapter(this));
     }
 
-    protected final void checkConnected() {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public final void checkConnected() {
         if (!isConnected()) {
             throw new IllegalStateException("Not connected. Call connect() and wait for onConnected() to be called.");
         }

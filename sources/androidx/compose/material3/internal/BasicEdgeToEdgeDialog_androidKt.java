@@ -43,7 +43,7 @@ public final class BasicEdgeToEdgeDialog_androidKt {
 
     /* compiled from: BasicEdgeToEdgeDialog.android.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

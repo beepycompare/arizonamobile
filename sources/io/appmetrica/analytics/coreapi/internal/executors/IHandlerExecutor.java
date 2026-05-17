@@ -2,7 +2,7 @@ package io.appmetrica.analytics.coreapi.internal.executors;
 
 import android.os.Handler;
 import android.os.Looper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface IHandlerExecutor extends ICommonExecutor {
     Handler getHandler();
 

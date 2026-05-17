@@ -7,16 +7,16 @@ import io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy;
 public final class C0506pi implements IExecutionPolicy {
 
     /* renamed from: a  reason: collision with root package name */
-    public final DataSendingRestrictionController f1177a;
+    public final DataSendingRestrictionController f1182a;
     public final String b = "data restriction based";
 
     public C0506pi(DataSendingRestrictionController dataSendingRestrictionController) {
-        this.f1177a = dataSendingRestrictionController;
+        this.f1182a = dataSendingRestrictionController;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy
     public final boolean canBeExecuted() {
-        return !this.f1177a.isRestrictedForSdk();
+        return !this.f1182a.isRestrictedForSdk();
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy

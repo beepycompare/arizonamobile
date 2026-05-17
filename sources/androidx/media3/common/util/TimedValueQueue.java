@@ -2,7 +2,7 @@ package androidx.media3.common.util;
 
 import com.google.common.base.Preconditions;
 import java.util.Arrays;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TimedValueQueue<V> {
     private static final int INITIAL_BUFFER_SIZE = 10;
     private int first;

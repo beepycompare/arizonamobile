@@ -1,7 +1,6 @@
 package ru.mrlargha.feature.workshop.presentation;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Handler;
 import android.util.Log;
@@ -69,7 +68,7 @@ import ru.mrlargha.feature.workshop.presentation.adapters.SelectColorAdapter;
 import ru.mrlargha.feature.workshop.presentation.adapters.WorkshopAdapter;
 import ru.mrlargha.feature.workshop.presentation.adapters.WorkshopMenuAdapter;
 /* compiled from: WorkshopScreen.kt */
-@Metadata(d1 = {"\u0000¦\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0001jB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u00107\u001a\u000208H\u0002J\u0010\u00109\u001a\u0002082\u0006\u0010:\u001a\u00020\u001eH\u0002J\u0010\u0010;\u001a\u0002082\u0006\u0010<\u001a\u00020\u001eH\u0002J\u0010\u0010=\u001a\u0002082\u0006\u0010>\u001a\u00020\u001eH\u0002J\u0010\u0010?\u001a\u0002082\u0006\u0010@\u001a\u00020\u001eH\u0002J\u0010\u0010A\u001a\u0002082\u0006\u0010@\u001a\u00020\u001eH\u0002J\b\u0010B\u001a\u000208H\u0002J\u0010\u0010C\u001a\u0002082\u0006\u0010D\u001a\u00020EH\u0002J\b\u0010F\u001a\u000208H\u0002J\u0010\u0010G\u001a\u0002082\u0006\u0010H\u001a\u00020\u001eH\u0002J\u0010\u0010I\u001a\u0002082\u0006\u0010J\u001a\u00020\u001eH\u0002J\u0010\u0010K\u001a\u0002082\u0006\u0010J\u001a\u00020\u001eH\u0002J\b\u0010L\u001a\u000208H\u0002J\u0010\u0010M\u001a\u0002082\u0006\u0010N\u001a\u00020\u0013H\u0002J\u0010\u0010O\u001a\u0002082\u0006\u0010N\u001a\u00020\u0013H\u0002J\u0010\u0010P\u001a\u0002082\u0006\u0010N\u001a\u00020\u0013H\u0002J\u0012\u0010Q\u001a\u0002082\b\u0010N\u001a\u0004\u0018\u00010\u0013H\u0002J(\u0010R\u001a\u0002082\u0006\u0010S\u001a\u00020T2\u0006\u0010U\u001a\u00020V2\u0006\u0010W\u001a\u00020X2\u0006\u0010Y\u001a\u00020VH\u0002J\b\u0010Z\u001a\u000208H\u0002J\u0018\u0010[\u001a\u0002082\u0006\u0010\\\u001a\u00020X2\u0006\u0010]\u001a\u00020\u0006H\u0016J\u0010\u0010^\u001a\u0002082\u0006\u0010@\u001a\u00020\u001eH\u0002J\b\u0010_\u001a\u000208H\u0002J\u0018\u0010`\u001a\u0002082\u0006\u0010a\u001a\u00020b2\u0006\u0010c\u001a\u00020\u001eH\u0002J\u0018\u0010d\u001a\u0002082\u0006\u0010\\\u001a\u00020X2\u0006\u0010]\u001a\u00020\u0006H\u0002J\u0010\u0010e\u001a\u0002082\u0006\u0010f\u001a\u00020gH\u0002J\u0010\u0010h\u001a\u0002082\u0006\u0010<\u001a\u00020\u001eH\u0016J\b\u0010i\u001a\u000208H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u00128BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010%\u001a\u00020#¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u000e\u0010(\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010+\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010,\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010-\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010.\u001a\n 0*\u0004\u0018\u00010/0/X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u000205X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00106\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006k"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "workshopScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/workshop/databinding/WorkshopScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "getInventoryList", "()Ljava/util/List;", "inventoryItemList", "inventoryAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopAdapter;", "workShopMenuAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopMenuAdapter;", "colorsAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/SelectColorAdapter;", "isFix", "", "selectedColor", "progress", "progressIncrement", "progressHandler", "Landroid/os/Handler;", "incrementHandler", "handler", "getHandler", "()Landroid/os/Handler;", "leftItemIndex", "centerItemIndex", "rightItemIndex", "currentMainItem", "currentRightItem", "currentLeftItem", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "currentScreenType", "isDisableAll", "runnable", "Ljava/lang/Runnable;", "btnIsClicked", "initViewSize", "", "clearItemsMainFieldClicked", "sendRequest", "setCountsVisibility", "visible", "leftItemUi", "isLocked", "btnSharpenEnableStatus", "isEnabled", "btnPaintEnableStatus", "initMenu", "initializeInfoBlock", "workshopMenus", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus;", "sendItemData", "changeInventoryType", "isFixingScreen", "visibilityLeftRightViews", "isVisible", "paintingScreen", "initColors", "clickedItem", "item", "updateMainField", "updateRightField", "updateLeftField", "clearViewFromItem", "imageView", "Landroid/widget/ImageView;", "textView", "Landroid/widget/TextView;", "message", "", "view", "addLockedItems", "onBackendMessage", "data", "subId", "enableStatusButtons", "refreshData", "startProgressBarAnimation", "time", "", "stop", "sendData", "initItemInfo", "response", "Lru/mrlargha/feature/workshop/domain/WorkshopResponse;", "setVisible", "closeScreen", "Spawner", "workshop"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0001iB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u00103\u001a\u0002042\u0006\u00105\u001a\u00020\u0006H\u0002J\u0010\u00106\u001a\u0002042\u0006\u00105\u001a\u00020\u0006H\u0002J\b\u00107\u001a\u000208H\u0002J\u0010\u00109\u001a\u0002082\u0006\u0010:\u001a\u00020\u001eH\u0002J\u0010\u0010;\u001a\u0002082\u0006\u0010<\u001a\u00020\u001eH\u0002J\u0010\u0010=\u001a\u0002082\u0006\u0010>\u001a\u00020\u001eH\u0002J\u0010\u0010?\u001a\u0002082\u0006\u0010@\u001a\u00020\u001eH\u0002J\u0010\u0010A\u001a\u0002082\u0006\u0010@\u001a\u00020\u001eH\u0002J\b\u0010B\u001a\u000208H\u0002J\u0010\u0010C\u001a\u0002082\u0006\u0010D\u001a\u00020EH\u0002J\b\u0010F\u001a\u000208H\u0002J\u0010\u0010G\u001a\u0002082\u0006\u0010H\u001a\u00020\u001eH\u0002J\u0010\u0010I\u001a\u0002082\u0006\u0010J\u001a\u00020\u001eH\u0002J\u0010\u0010K\u001a\u0002082\u0006\u0010J\u001a\u00020\u001eH\u0002J\b\u0010L\u001a\u000208H\u0002J\u0010\u0010M\u001a\u0002082\u0006\u0010N\u001a\u00020\u0013H\u0002J\u0010\u0010O\u001a\u0002082\u0006\u0010N\u001a\u00020\u0013H\u0002J\u0010\u0010P\u001a\u0002082\u0006\u0010N\u001a\u00020\u0013H\u0002J\u0012\u0010Q\u001a\u0002082\b\u0010N\u001a\u0004\u0018\u00010\u0013H\u0002J(\u0010R\u001a\u0002082\u0006\u0010S\u001a\u00020T2\u0006\u0010U\u001a\u00020V2\u0006\u0010W\u001a\u0002042\u0006\u0010X\u001a\u00020VH\u0002J\b\u0010Y\u001a\u000208H\u0002J\u0018\u0010Z\u001a\u0002082\u0006\u0010[\u001a\u0002042\u0006\u0010\\\u001a\u00020\u0006H\u0016J\u0010\u0010]\u001a\u0002082\u0006\u0010@\u001a\u00020\u001eH\u0002J\b\u0010^\u001a\u000208H\u0002J\u0018\u0010_\u001a\u0002082\u0006\u0010`\u001a\u00020a2\u0006\u0010b\u001a\u00020\u001eH\u0002J\u0018\u0010c\u001a\u0002082\u0006\u0010[\u001a\u0002042\u0006\u0010\\\u001a\u00020\u0006H\u0002J\u0010\u0010d\u001a\u0002082\u0006\u0010e\u001a\u00020fH\u0002J\u0010\u0010g\u001a\u0002082\u0006\u0010<\u001a\u00020\u001eH\u0016J\b\u0010h\u001a\u000208H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u00128BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010%\u001a\u00020#¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u000e\u0010(\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010+\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010,\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010-\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010.\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u000201X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006j"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "workshopScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/workshop/databinding/WorkshopScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "getInventoryList", "()Ljava/util/List;", "inventoryItemList", "inventoryAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopAdapter;", "workShopMenuAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopMenuAdapter;", "colorsAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/SelectColorAdapter;", "isFix", "", "selectedColor", "progress", "progressIncrement", "progressHandler", "Landroid/os/Handler;", "incrementHandler", "handler", "getHandler", "()Landroid/os/Handler;", "leftItemIndex", "centerItemIndex", "rightItemIndex", "currentMainItem", "currentRightItem", "currentLeftItem", "currentScreenType", "isDisableAll", "runnable", "Ljava/lang/Runnable;", "btnIsClicked", "text", "", "resId", "paddedText", "initViewSize", "", "clearItemsMainFieldClicked", "sendRequest", "setCountsVisibility", "visible", "leftItemUi", "isLocked", "btnSharpenEnableStatus", "isEnabled", "btnPaintEnableStatus", "initMenu", "initializeInfoBlock", "workshopMenus", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus;", "sendItemData", "changeInventoryType", "isFixingScreen", "visibilityLeftRightViews", "isVisible", "paintingScreen", "initColors", "clickedItem", "item", "updateMainField", "updateRightField", "updateLeftField", "clearViewFromItem", "imageView", "Landroid/widget/ImageView;", "textView", "Landroid/widget/TextView;", "message", "view", "addLockedItems", "onBackendMessageHandled", "data", "subId", "enableStatusButtons", "refreshData", "startProgressBarAnimation", "time", "", "stop", "sendData", "initItemInfo", "response", "Lru/mrlargha/feature/workshop/domain/WorkshopResponse;", "setVisible", "closeScreen", "Spawner", "workshop"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class WorkshopScreen extends SAMPUIElement implements InterfaceController {
     private final WorkshopScreenBinding binding;
@@ -86,7 +85,6 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     private Handler incrementHandler;
     private final WorkshopAdapter inventoryAdapter;
     private List<InventoryItem> inventoryItemList;
-    private final boolean isArizonaType;
     private boolean isDisableAll;
     private boolean isFix;
     private int leftItemIndex;
@@ -96,7 +94,6 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     private int rightItemIndex;
     private Runnable runnable;
     private int selectedColor;
-    private final SharedPreferences sharedPref;
     private WorkshopMenuAdapter workShopMenuAdapter;
     private final ConstraintLayout workshopScreen;
 
@@ -116,7 +113,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         Activity activity = targetActivity;
         this.db = AppDatabase.Companion.invoke(activity);
         this.inventoryItemList = new ArrayList();
-        this.inventoryAdapter = new WorkshopAdapter(new Function1() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda4
+        this.inventoryAdapter = new WorkshopAdapter(new Function1() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return WorkshopScreen.inventoryAdapter$lambda$0(WorkshopScreen.this, (InventoryItem) obj);
@@ -130,53 +127,49 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         this.leftItemIndex = -1;
         this.centerItemIndex = -1;
         this.rightItemIndex = -1;
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
-        this.sharedPref = sharedPreferences;
-        boolean z = sharedPreferences.getBoolean("isArizonaType", false);
-        this.isArizonaType = z;
         constraintLayout.setClickable(true);
         addViewToConstraintLayout(constraintLayout, -1, -1);
-        UtilsKt.checkItemsName(activity, z);
+        UtilsKt.checkItemsName(activity, UtilsKt.isArizonaType());
         addLockedItems();
         initMenu();
         initColors();
-        bind.buttonsContainer.btnSharpenItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda5
+        bind.buttonsContainer.btnSharpenItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WorkshopScreen.this.sendData(StringKt.toStringJson(0), 2);
             }
         });
-        bind.buttonsContainer.paintButtons.btnPaintItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda6
+        bind.buttonsContainer.paintButtons.btnPaintItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WorkshopScreen._init_$lambda$1(WorkshopScreen.this, view);
             }
         });
-        bind.infoContainers.info.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda7
+        bind.infoContainers.info.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WorkshopScreen.this.sendData(StringKt.toStringJson(0), 8);
             }
         });
-        bind.mainItemField.parentLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda8
+        bind.mainItemField.parentLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WorkshopScreen._init_$lambda$3(WorkshopScreen.this, view);
             }
         });
-        bind.rightItemField.item.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda9
+        bind.rightItemField.item.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WorkshopScreen._init_$lambda$4(WorkshopScreen.this, view);
             }
         });
-        bind.leftItemField.item.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda10
+        bind.leftItemField.item.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WorkshopScreen._init_$lambda$5(WorkshopScreen.this, view);
             }
         });
-        bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda11
+        bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WorkshopScreen.this.closeScreen();
@@ -189,7 +182,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
             workshopMenuAdapter = workshopMenuAdapter2;
         }
         if (workshopMenuAdapter.getItemCount() > 0) {
-            bind.rvMenu.post(new Runnable() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda12
+            bind.rvMenu.post(new Runnable() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
                     WorkshopScreen._init_$lambda$7(WorkshopScreen.this);
@@ -200,7 +193,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         bind.infoContainers.sharpingInfoContainer.costField.nameTextView.setText(targetActivity.getString(ru.mrlargha.commonui.R.string.cost));
         bind.buttonsContainer.paintButtons.costFieldPainting.nameTextView.setText(targetActivity.getString(ru.mrlargha.commonui.R.string.cost));
         bind.infoContainers.sharpingInfoContainer.successChanceField.ivValueIcon.setImageResource(ru.mrlargha.commonui.R.drawable.ic_percent_16);
-        if (z) {
+        if (UtilsKt.isArizonaType()) {
             bind.buttonsContainer.paintButtons.costFieldPainting.ivValueIcon.setImageResource(-1);
             bind.infoContainers.sharpingInfoContainer.costField.ivValueIcon.setImageResource(-1);
         } else {
@@ -241,7 +234,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                     workshopScreen.updateMainField(it);
                 } else if (i != 3) {
                 }
-            } else if (workshopScreen.isArizonaType) {
+            } else if (UtilsKt.isArizonaType()) {
                 workshopScreen.clickedItem(it);
                 workshopScreen.sendData(StringKt.toStringJson(new PaintingRequest(workshopScreen.centerItemIndex, workshopScreen.leftItemIndex, workshopScreen.rightItemIndex, workshopScreen.selectedColor)), 3);
             } else {
@@ -259,9 +252,19 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         return this.handler;
     }
 
+    private final String text(int i) {
+        String string = getTargetActivity().getString(i);
+        Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+        return string;
+    }
+
+    private final String paddedText(int i) {
+        return text(i) + " ";
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$1(WorkshopScreen workshopScreen, View view) {
-        if (workshopScreen.isArizonaType) {
+        if (UtilsKt.isArizonaType()) {
             if (workshopScreen.currentScreenType == 1) {
                 workshopScreen.sendData(StringKt.toStringJson(0), 4);
             }
@@ -303,9 +306,10 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
         TextView tvRightItemDescription = workshopScreen.binding.tvRightItemDescription;
         Intrinsics.checkNotNullExpressionValue(tvRightItemDescription, "tvRightItemDescription");
+        String text = workshopScreen.text(ru.mrlargha.commonui.R.string.sharpening);
         TextView tvTitleText = workshopScreen.binding.rightItemField.tvTitleText;
         Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
-        workshopScreen.clearViewFromItem(ivItemImage, tvRightItemDescription, "заточка", tvTitleText);
+        workshopScreen.clearViewFromItem(ivItemImage, tvRightItemDescription, text, tvTitleText);
         workshopScreen.btnSharpenEnableStatus(false);
         workshopScreen.btnPaintEnableStatus(false);
         workshopScreen.currentRightItem = null;
@@ -363,9 +367,10 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                     Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
                     TextView tvMainItemDescription = this.binding.tvMainItemDescription;
                     Intrinsics.checkNotNullExpressionValue(tvMainItemDescription, "tvMainItemDescription");
+                    String paddedText = paddedText(ru.mrlargha.commonui.R.string.item);
                     TextView tvTitleText = this.binding.mainItemField.tvTitleText;
                     Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
-                    clearViewFromItem(ivItemImage, tvMainItemDescription, "предмет ", tvTitleText);
+                    clearViewFromItem(ivItemImage, tvMainItemDescription, paddedText, tvTitleText);
                     if (z && this.centerItemIndex != -1) {
                         this.centerItemIndex = -1;
                         sendData(StringKt.toStringJson(new FixingRequest(this.centerItemIndex)), 5);
@@ -377,16 +382,17 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                         Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
                         TextView tvMainItemDescription2 = this.binding.tvMainItemDescription;
                         Intrinsics.checkNotNullExpressionValue(tvMainItemDescription2, "tvMainItemDescription");
+                        String paddedText2 = paddedText(ru.mrlargha.commonui.R.string.item);
                         TextView tvTitleText2 = this.binding.mainItemField.tvTitleText;
                         Intrinsics.checkNotNullExpressionValue(tvTitleText2, "tvTitleText");
-                        clearViewFromItem(ivItemImage2, tvMainItemDescription2, "предмет ", tvTitleText2);
+                        clearViewFromItem(ivItemImage2, tvMainItemDescription2, paddedText2, tvTitleText2);
                     }
                 } else if (z && this.centerItemIndex != -1) {
                     this.centerItemIndex = -1;
                     this.rightItemIndex = -1;
                     sendData(StringKt.toStringJson(new SharpenRequest(this.centerItemIndex, this.leftItemIndex, this.rightItemIndex)), 1);
                 }
-            } else if (this.isArizonaType) {
+            } else if (UtilsKt.isArizonaType()) {
                 if (z && this.centerItemIndex != -1) {
                     this.centerItemIndex = -1;
                     this.rightItemIndex = -1;
@@ -425,7 +431,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         WorkshopScreenBinding workshopScreenBinding = this.binding;
         if (z) {
             workshopScreenBinding.leftItemField.ivItemImage.setImageResource(ru.mrlargha.commonui.R.drawable.ic_locked_item);
-            this.binding.tvLeftItemDescription.setText("недоступно ");
+            this.binding.tvLeftItemDescription.setText(paddedText(ru.mrlargha.commonui.R.string.unavailable));
             this.binding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.grey_type3));
             TextView tvTitleText = this.binding.leftItemField.tvTitleText;
             Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
@@ -440,9 +446,9 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         int i = this.currentScreenType;
         WorkshopScreenBinding workshopScreenBinding2 = this.binding;
         if (i == 0) {
-            workshopScreenBinding2.tvLeftItemDescription.setText("супер-заточка ");
+            workshopScreenBinding2.tvLeftItemDescription.setText(paddedText(ru.mrlargha.commonui.R.string.workshop_super_sharpening));
         } else {
-            workshopScreenBinding2.tvLeftItemDescription.setText("краска ");
+            workshopScreenBinding2.tvLeftItemDescription.setText(paddedText(ru.mrlargha.commonui.R.string.workshop_paint_material));
         }
         this.binding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.grey_type2));
         this.binding.leftItemField.item.setClickable(true);
@@ -476,7 +482,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     }
 
     private final void initMenu() {
-        this.workShopMenuAdapter = new WorkshopMenuAdapter(new Function2() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda1
+        this.workShopMenuAdapter = new WorkshopMenuAdapter(new Function2() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 return WorkshopScreen.initMenu$lambda$0(WorkshopScreen.this, (WorkshopMenus) obj, ((Integer) obj2).intValue());
@@ -491,9 +497,9 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         }
         recyclerView.setAdapter(workshopMenuAdapter);
         this.binding.rvMenu.setHasFixedSize(true);
-        boolean z = this.isArizonaType;
+        boolean isArizonaType = UtilsKt.isArizonaType();
         WorkshopMenuAdapter workshopMenuAdapter3 = this.workShopMenuAdapter;
-        if (z) {
+        if (isArizonaType) {
             if (workshopMenuAdapter3 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("workShopMenuAdapter");
             } else {
@@ -557,15 +563,15 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         WorkshopScreenBinding workshopScreenBinding = this.binding;
         CardView root = workshopScreenBinding.leftItemField.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
-        root.setVisibility(workshopMenus.getLeftFieldName().length() > 0 ? 0 : 8);
+        root.setVisibility(workshopMenus.leftFieldName(getTargetActivity()).length() > 0 ? 0 : 8);
         CardView root2 = workshopScreenBinding.rightItemField.getRoot();
         Intrinsics.checkNotNullExpressionValue(root2, "getRoot(...)");
-        root2.setVisibility(workshopMenus.getRightFieldName().length() > 0 ? 0 : 8);
+        root2.setVisibility(workshopMenus.rightFieldName(getTargetActivity()).length() > 0 ? 0 : 8);
         ImageView ivItemImage = this.binding.mainItemField.ivItemImage;
         Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
         TextView tvMainItemDescription = this.binding.tvMainItemDescription;
         Intrinsics.checkNotNullExpressionValue(tvMainItemDescription, "tvMainItemDescription");
-        String mainFieldName = workshopMenus.getMainFieldName();
+        String mainFieldName = workshopMenus.mainFieldName(getTargetActivity());
         TextView tvTitleText = this.binding.mainItemField.tvTitleText;
         Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
         clearViewFromItem(ivItemImage, tvMainItemDescription, mainFieldName, tvTitleText);
@@ -573,18 +579,18 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
         TextView tvRightItemDescription = this.binding.tvRightItemDescription;
         Intrinsics.checkNotNullExpressionValue(tvRightItemDescription, "tvRightItemDescription");
-        String rightFieldName = workshopMenus.getRightFieldName();
+        String rightFieldName = workshopMenus.rightFieldName(getTargetActivity());
         TextView tvTitleText2 = this.binding.rightItemField.tvTitleText;
         Intrinsics.checkNotNullExpressionValue(tvTitleText2, "tvTitleText");
         clearViewFromItem(ivItemImage2, tvRightItemDescription, rightFieldName, tvTitleText2);
-        if (Intrinsics.areEqual(workshopMenus.getLeftFieldName(), "недоступно")) {
+        if (Intrinsics.areEqual(workshopMenus.leftFieldName(getTargetActivity()), text(ru.mrlargha.commonui.R.string.unavailable))) {
             leftItemUi(true);
         } else {
             ImageView ivItemImage3 = this.binding.leftItemField.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage3, "ivItemImage");
             TextView tvLeftItemDescription = this.binding.tvLeftItemDescription;
             Intrinsics.checkNotNullExpressionValue(tvLeftItemDescription, "tvLeftItemDescription");
-            String leftFieldName = workshopMenus.getLeftFieldName();
+            String leftFieldName = workshopMenus.leftFieldName(getTargetActivity());
             TextView tvTitleText3 = this.binding.leftItemField.tvTitleText;
             Intrinsics.checkNotNullExpressionValue(tvTitleText3, "tvTitleText");
             clearViewFromItem(ivItemImage3, tvLeftItemDescription, leftFieldName, tvTitleText3);
@@ -595,12 +601,12 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         Intrinsics.checkNotNullExpressionValue(buttonsContainer, "buttonsContainer");
         workshopMenus.setVisible(infoContainers, buttonsContainer);
         this.currentScreenType = workshopMenus.getId();
-        this.binding.tvTitle.setText(workshopMenus.getMenuName());
-        this.binding.buttonsContainer.btnSharpenItem.setText(workshopMenus.getButtonName());
-        this.binding.buttonsContainer.paintButtons.btnPaintItem.setText(workshopMenus.getButtonName());
-        this.binding.tvTitleDescription.setText(workshopMenus.getDesc());
-        this.binding.tvRightItemDescription.setText(workshopMenus.getRightFieldName());
-        this.binding.tvLeftItemDescription.setText(workshopMenus.getLeftFieldName());
+        this.binding.tvTitle.setText(workshopMenus.menuName(getTargetActivity()));
+        this.binding.buttonsContainer.btnSharpenItem.setText(workshopMenus.buttonName(getTargetActivity()));
+        this.binding.buttonsContainer.paintButtons.btnPaintItem.setText(workshopMenus.buttonName(getTargetActivity()));
+        this.binding.tvTitleDescription.setText(workshopMenus.desc(getTargetActivity()));
+        this.binding.tvRightItemDescription.setText(workshopMenus.rightFieldName(getTargetActivity()));
+        this.binding.tvLeftItemDescription.setText(workshopMenus.leftFieldName(getTargetActivity()));
     }
 
     private final void sendItemData() {
@@ -646,7 +652,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
 
     private final void initColors() {
         List mutableList = CollectionsKt.toMutableList((Collection) ConstantsKt.getColorList());
-        this.colorsAdapter = new SelectColorAdapter(new Function2() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda0
+        this.colorsAdapter = new SelectColorAdapter(new Function2() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 return WorkshopScreen.initColors$lambda$0(WorkshopScreen.this, ((Integer) obj).intValue(), (ItemColor) obj2);
@@ -713,13 +719,13 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x009b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x009d, code lost:
         if (r0.intValue() != r4) goto L35;
      */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x01ea  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x01ec  */
     /* JADX WARN: Removed duplicated region for block: B:144:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:147:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x012e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -730,7 +736,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         Integer enchant;
         Log.d("TAG_WORKSHOP", "clicked item " + StringKt.toStringJson(inventoryItem));
         if (this.currentScreenType == 4) {
-            if (!this.isArizonaType) {
+            if (!UtilsKt.isArizonaType()) {
                 Integer quality = inventoryItem.getQuality();
                 if (quality != null) {
                     if (quality.intValue() > 0) {
@@ -962,9 +968,10 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
         TextView tvRightItemDescription = this.binding.tvRightItemDescription;
         Intrinsics.checkNotNullExpressionValue(tvRightItemDescription, "tvRightItemDescription");
+        String paddedText = paddedText(ru.mrlargha.commonui.R.string.sharpening);
         TextView tvTitleText = this.binding.rightItemField.tvTitleText;
         Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
-        clearViewFromItem(ivItemImage2, tvRightItemDescription, "заточка ", tvTitleText);
+        clearViewFromItem(ivItemImage2, tvRightItemDescription, paddedText, tvTitleText);
         sendItemData();
     }
 
@@ -1034,27 +1041,26 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
             arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, 33551871, null));
         }
         this.inventoryItemList = CollectionsKt.toMutableList((Collection) arrayList);
-        this.inventoryAdapter.setArizona(this.isArizonaType);
+        this.inventoryAdapter.setArizona(UtilsKt.isArizonaType());
         this.inventoryAdapter.submitList(this.inventoryItemList);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x015a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x013c, code lost:
         if (r3 != 4) goto L46;
      */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x024d  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0252  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x022f  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0234  */
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Object obj;
         Integer itemStrength;
         Object obj2;
         Object obj3;
         Long amount;
         Intrinsics.checkNotNullParameter(data, "data");
-        Log.d("TAG_WORKSHOP", "data: " + data + " ======= subID: " + i);
         if (i == 0) {
             Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) CraftStart.class);
             Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
@@ -1089,10 +1095,10 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                 ImageView ivBgSharpResult = this.binding.ivBgSharpResult;
                 Intrinsics.checkNotNullExpressionValue(ivBgSharpResult, "ivBgSharpResult");
                 ivBgSharpResult.setVisibility(0);
-                this.incrementHandler.postDelayed(new Runnable() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda2
+                this.incrementHandler.postDelayed(new Runnable() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        WorkshopScreen.onBackendMessage$lambda$0(WorkshopScreen.this);
+                        WorkshopScreen.onBackendMessageHandled$lambda$0(WorkshopScreen.this);
                     }
                 }, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
                 SelectColorAdapter selectColorAdapter = this.colorsAdapter;
@@ -1127,7 +1133,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                 } else if (success == 1) {
                     this.binding.ivBgSharpResult.setBackgroundResource(ru.mrlargha.commonui.R.drawable.bg_tradeshop_test_green);
                 }
-                this.incrementHandler.postDelayed(new Runnable() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda3
+                this.incrementHandler.postDelayed(new Runnable() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
                         WorkshopScreen.this.refreshData();
@@ -1165,7 +1171,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                 long longValue = (inventoryItem != null || (amount = inventoryItem.getAmount()) == null) ? 0L : amount.longValue();
                 Integer amount2 = craftItemInfo.getAmount();
                 int intValue = amount2 == null ? amount2.intValue() : 0;
-                if (this.isArizonaType || this.currentScreenType != 1 || this.currentLeftItem == null) {
+                if (UtilsKt.isArizonaType() || this.currentScreenType != 1 || this.currentLeftItem == null) {
                     return;
                 }
                 TextView tvTitleText = this.binding.leftItemField.tvTitleText;
@@ -1202,7 +1208,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
             Integer amount22 = craftItemInfo.getAmount();
             if (amount22 == null) {
             }
-            if (this.isArizonaType) {
+            if (UtilsKt.isArizonaType()) {
             }
         } else if (i == 3) {
             Object fromJson4 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) WorkshopResponse.class);
@@ -1298,7 +1304,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                             list.set(i5, inventoryItem5);
                         }
                     }
-                    if (this.isArizonaType && this.currentScreenType == 2 && (itemStrength = inventoryItem5.getItemStrength()) != null && itemStrength.intValue() == 100) {
+                    if (UtilsKt.isArizonaType() && this.currentScreenType == 2 && (itemStrength = inventoryItem5.getItemStrength()) != null && itemStrength.intValue() == 100) {
                         this.binding.mainItemField.parentLayout.performClick();
                     }
                     this.inventoryAdapter.submitList(this.inventoryItemList);
@@ -1309,7 +1315,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void onBackendMessage$lambda$0(WorkshopScreen workshopScreen) {
+    public static final void onBackendMessageHandled$lambda$0(WorkshopScreen workshopScreen) {
         ImageView ivBgSharpResult = workshopScreen.binding.ivBgSharpResult;
         Intrinsics.checkNotNullExpressionValue(ivBgSharpResult, "ivBgSharpResult");
         ivBgSharpResult.setVisibility(8);
@@ -1378,9 +1384,9 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                 break;
             }
         }
-        InventoryItem inventoryItem9 = (InventoryItem) obj;
-        this.currentLeftItem = inventoryItem9;
-        if (this.isArizonaType) {
+        this.currentLeftItem = (InventoryItem) obj;
+        if (UtilsKt.isArizonaType()) {
+            InventoryItem inventoryItem9 = this.currentLeftItem;
             if (inventoryItem9 != null) {
                 updateLeftField(inventoryItem9);
             }

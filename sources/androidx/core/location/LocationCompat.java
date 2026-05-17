@@ -39,7 +39,7 @@ public final class LocationCompat {
         if (Build.VERSION.SDK_INT >= 26) {
             return Api26Impl.hasVerticalAccuracy(location);
         }
-        return containsExtra(location, EXTRA_VERTICAL_ACCURACY);
+        return containsExtra(location, "verticalAccuracy");
     }
 
     public static float getVerticalAccuracyMeters(Location location) {
@@ -50,14 +50,14 @@ public final class LocationCompat {
         if (extras == null) {
             return 0.0f;
         }
-        return extras.getFloat(EXTRA_VERTICAL_ACCURACY, 0.0f);
+        return extras.getFloat("verticalAccuracy", 0.0f);
     }
 
     public static void setVerticalAccuracyMeters(Location location, float f) {
         if (Build.VERSION.SDK_INT >= 26) {
             Api26Impl.setVerticalAccuracyMeters(location, f);
         } else {
-            getOrCreateExtras(location).putFloat(EXTRA_VERTICAL_ACCURACY, f);
+            getOrCreateExtras(location).putFloat("verticalAccuracy", f);
         }
     }
 
@@ -71,7 +71,7 @@ public final class LocationCompat {
         } else if (Build.VERSION.SDK_INT >= 26) {
             Api26Impl.removeVerticalAccuracy(location);
         } else {
-            removeExtra(location, EXTRA_VERTICAL_ACCURACY);
+            removeExtra(location, "verticalAccuracy");
         }
     }
 

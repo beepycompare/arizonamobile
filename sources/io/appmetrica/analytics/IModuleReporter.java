@@ -1,5 +1,5 @@
 package io.appmetrica.analytics;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface IModuleReporter {
     void reportAdRevenue(AdRevenue adRevenue, boolean z);
 

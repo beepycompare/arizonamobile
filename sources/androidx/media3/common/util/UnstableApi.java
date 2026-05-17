@@ -8,6 +8,6 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE, ElementType.METHOD, ElementType.CONSTRUCTOR, ElementType.FIELD})
 @Documented
 @Retention(RetentionPolicy.CLASS)
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public @interface UnstableApi {
 }

@@ -21,14 +21,14 @@ import kotlin.ranges.RangesKt;
 public final class C0227ej implements SdkEnvironmentProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f980a;
+    public final Context f985a;
     public final Ib b = new Ib();
     public final CopyOnWriteArrayList c = new CopyOnWriteArrayList();
     public SdkEnvironment d;
     public String e;
 
     public C0227ej(Context context) {
-        this.f980a = context;
+        this.f985a = context;
         this.d = new SdkEnvironment(new AppVersionInfo(PackageManagerUtils.getAppVersionName(context), PackageManagerUtils.getAppVersionCodeString(context)), FrameworkDetector.framework(), new ScreenInfo(0, 0, 0, 0.0f), new SdkInfo("8.0.0", "50147728", AbstractC0253fj.a()), "phone", Ib.a(context.getResources().getConfiguration()));
     }
 
@@ -38,9 +38,9 @@ public final class C0227ej implements SdkEnvironmentProvider {
             if (!Intrinsics.areEqual(screenInfo, getSdkEnvironment().getScreenInfo())) {
                 String str = this.e;
                 if (str == null) {
-                    Context context = this.f980a;
+                    Context context = this.f985a;
                     Point point = new Point(screenInfo.getWidth(), screenInfo.getHeight());
-                    SafePackageManager safePackageManager = N7.f706a;
+                    SafePackageManager safePackageManager = N7.f711a;
                     try {
                         f = context.getResources().getDisplayMetrics().density;
                     } catch (Throwable unused) {

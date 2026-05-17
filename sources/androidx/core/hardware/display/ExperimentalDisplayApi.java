@@ -12,6 +12,6 @@ import kotlin.annotation.MustBeDocumented;
 @Documented
 @Retention(RetentionPolicy.CLASS)
 @kotlin.annotation.Retention(AnnotationRetention.BINARY)
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public @interface ExperimentalDisplayApi {
 }

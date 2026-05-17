@@ -1,7 +1,7 @@
 package dagger.internal;
 
 import dagger.Lazy;
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public final class ProviderOfLazy<T> implements Provider<Lazy<T>> {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     private final Provider<T> provider;

@@ -7,11 +7,11 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0198df implements Q7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0528qf f958a;
+    public final C0528qf f963a;
     public final List<C0172cf> b;
 
     public C0198df(C0528qf c0528qf, List<C0172cf> list) {
-        this.f958a = c0528qf;
+        this.f963a = c0528qf;
         this.b = list;
     }
 
@@ -22,14 +22,14 @@ public final class C0198df implements Q7 {
 
     @Override // io.appmetrica.analytics.impl.Q7
     public final Object b() {
-        return this.f958a;
+        return this.f963a;
     }
 
     public final C0528qf c() {
-        return this.f958a;
+        return this.f963a;
     }
 
     public final String toString() {
-        return "PreloadInfoData{chosenPreloadInfo=" + this.f958a + ", candidates=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "PreloadInfoData{chosenPreloadInfo=" + this.f963a + ", candidates=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

@@ -91,84 +91,84 @@ public final class LazyStaggeredGridMeasureKt {
     /* JADX WARN: Code restructure failed: missing block: B:107:0x0249, code lost:
         if (r1 < r12) goto L117;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:149:0x02fd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:146:0x02f8, code lost:
         r6 = indexOfMinValue$default(r9, 0, 1, null);
         r7 = indexOfMaxValue(r28);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:150:0x0308, code lost:
-        if (r6 == r7) goto L480;
+    /* JADX WARN: Code restructure failed: missing block: B:147:0x0303, code lost:
+        if (r6 == r7) goto L429;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:152:0x030e, code lost:
-        if (r9[r6] != r9[r7]) goto L479;
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x0309, code lost:
+        if (r9[r6] != r9[r7]) goto L428;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:153:0x0310, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:150:0x030b, code lost:
         r6 = r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:154:0x0312, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:151:0x030d, code lost:
         r1 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:155:0x0313, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:152:0x030e, code lost:
         r7 = r28[r6];
      */
-    /* JADX WARN: Code restructure failed: missing block: B:156:0x0316, code lost:
-        if (r7 != (-1)) goto L483;
+    /* JADX WARN: Code restructure failed: missing block: B:153:0x0311, code lost:
+        if (r7 != (-1)) goto L432;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:157:0x0318, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:154:0x0313, code lost:
         r7 = r12;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:158:0x0319, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:155:0x0314, code lost:
         r7 = findPreviousItemIndex(r0, r7, r6);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:159:0x031d, code lost:
-        if (r7 >= 0) goto L485;
+    /* JADX WARN: Code restructure failed: missing block: B:156:0x0318, code lost:
+        if (r7 >= 0) goto L434;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:160:0x031f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:157:0x031a, code lost:
         r10 = r28;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:161:0x0321, code lost:
-        if (r1 != false) goto L527;
+    /* JADX WARN: Code restructure failed: missing block: B:158:0x031c, code lost:
+        if (r1 != false) goto L470;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:163:0x0327, code lost:
-        if (measure$lambda$0$misalignedStart(r10, r0, r9, r6) == false) goto L518;
+    /* JADX WARN: Code restructure failed: missing block: B:160:0x0322, code lost:
+        if (measure$lambda$0$misalignedStart(r10, r0, r9, r6) == false) goto L461;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:164:0x0329, code lost:
-        if (r50 == false) goto L518;
+    /* JADX WARN: Code restructure failed: missing block: B:161:0x0324, code lost:
+        if (r50 == false) goto L461;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:165:0x032b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:162:0x0326, code lost:
         r0.getLaneInfo().reset();
         r1 = r10.length;
         r2 = new int[r1];
         r3 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:166:0x0336, code lost:
-        if (r3 >= r1) goto L531;
+    /* JADX WARN: Code restructure failed: missing block: B:163:0x0331, code lost:
+        if (r3 >= r1) goto L474;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:167:0x0338, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:164:0x0333, code lost:
         r2[r3] = -1;
         r3 = r3 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:168:0x033f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:165:0x033a, code lost:
         r1 = r9.length;
         r3 = new int[r1];
         r4 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:169:0x0343, code lost:
-        if (r4 >= r1) goto L535;
+    /* JADX WARN: Code restructure failed: missing block: B:166:0x033e, code lost:
+        if (r4 >= r1) goto L478;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:170:0x0345, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:167:0x0340, code lost:
         r3[r4] = r9[r6];
         r4 = r4 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:172:0x0353, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:169:0x034e, code lost:
         return measure(r0, r27, r2, r3, false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:173:0x0354, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:170:0x034f, code lost:
         r11 = r27;
         r24 = r2;
         r28 = r3;
         r30 = r12;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:174:0x035e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:171:0x0359, code lost:
         r11 = r27;
         r10 = r28;
         r25 = r1;
@@ -183,86 +183,72 @@ public final class LazyStaggeredGridMeasureKt {
         r3 = (int) (r1 >> r18);
         r4 = r12 - r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:175:0x0382, code lost:
-        if (r4 == 1) goto L512;
+    /* JADX WARN: Code restructure failed: missing block: B:172:0x037d, code lost:
+        if (r4 == 1) goto L455;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:176:0x0384, code lost:
-        r29 = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:177:0x0387, code lost:
-        r29 = false;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:178:0x0389, code lost:
-        if (r29 == false) goto L511;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:179:0x038b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:173:0x037f, code lost:
         r15 = -2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:180:0x038d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:174:0x0381, code lost:
         r15 = r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:181:0x038e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:175:0x0382, code lost:
         r6.setLane(r7, r15);
         r6 = r0.getMeasuredItemProvider().m1047getAndMeasurejy6DScQ(r7, r1);
         r1 = m1043maxInRangejy6DScQ(r9, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:182:0x039e, code lost:
-        if (r4 == 1) goto L510;
+    /* JADX WARN: Code restructure failed: missing block: B:176:0x0392, code lost:
+        if (r4 == 1) goto L454;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:183:0x03a0, code lost:
-        r2 = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:184:0x03a2, code lost:
-        r2 = false;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:185:0x03a3, code lost:
-        if (r2 == false) goto L509;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:186:0x03a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:177:0x0394, code lost:
         r2 = r0.getLaneInfo().getGaps(r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:187:0x03ae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:178:0x039d, code lost:
         r2 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:188:0x03af, code lost:
-        if (r3 >= r12) goto L507;
+    /* JADX WARN: Code restructure failed: missing block: B:179:0x039e, code lost:
+        if (r3 >= r12) goto L452;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:190:0x03b3, code lost:
-        if (r9[r3] == r1) goto L500;
+    /* JADX WARN: Code restructure failed: missing block: B:181:0x03a2, code lost:
+        if (r9[r3] == r1) goto L445;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:191:0x03b5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:182:0x03a4, code lost:
         r25 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:192:0x03b7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:183:0x03a6, code lost:
         r49[r3].addFirst(r6);
         r10[r3] = r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:193:0x03be, code lost:
-        if (r2 != null) goto L505;
+    /* JADX WARN: Code restructure failed: missing block: B:184:0x03ad, code lost:
+        if (r2 != null) goto L450;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:194:0x03c0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:185:0x03af, code lost:
         r4 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:195:0x03c2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:186:0x03b1, code lost:
         r4 = r2[r3];
      */
-    /* JADX WARN: Code restructure failed: missing block: B:196:0x03c4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:187:0x03b3, code lost:
         r9[r3] = (r1 + r6.getMainAxisSizeWithSpacings()) + r4;
         r3 = r3 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:263:0x0581, code lost:
-        if ((r1 != null ? r1.getIndex() : -1) > r15) goto L444;
+    /* JADX WARN: Code restructure failed: missing block: B:254:0x0570, code lost:
+        if ((r1 != null ? r1.getIndex() : -1) > r15) goto L395;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:389:0x07b0, code lost:
-        if (r8[r1] < r7) goto L351;
+    /* JADX WARN: Code restructure failed: missing block: B:348:0x076e, code lost:
+        if (r8[r1] < r7) goto L308;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:459:0x0988, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:397:0x08c5, code lost:
+        r13 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:400:0x0929, code lost:
         r7 = r13;
         r13 = r4;
-        r10 = r48;
+        r15 = r48;
         r7 = r49;
         r24 = r3;
-        r15 = r26;
+        r30 = r12;
+        r12 = r26;
         r11 = r27;
         r3 = r0.m1038getSpanRangelOCCd4c(r0.getItemProvider(), r1, r6);
         r6 = r0.getLaneInfo();
@@ -271,82 +257,74 @@ public final class LazyStaggeredGridMeasureKt {
         r8 = (int) (r3 >> r18);
         r9 = r7 - r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:460:0x09b2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:401:0x0956, code lost:
         if (r9 == 1) goto L143;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:461:0x09b4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:402:0x0958, code lost:
         r0 = -2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:462:0x09b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:403:0x095a, code lost:
         r0 = r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:463:0x09b7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:404:0x095b, code lost:
         r6.setLane(r1, r0);
         r0 = r46.getMeasuredItemProvider().m1047getAndMeasurejy6DScQ(r1, r3);
         r3 = m1043maxInRangejy6DScQ(r14, r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:464:0x09c7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:405:0x096b, code lost:
         if (r9 == 1) goto L142;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:465:0x09c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:406:0x096d, code lost:
         r6 = r46.getLaneInfo().getGaps(r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:466:0x09d1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:407:0x0975, code lost:
         if (r6 != null) goto L125;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:467:0x09d3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:408:0x0977, code lost:
         r6 = new int[r46.getLaneCount()];
      */
-    /* JADX WARN: Code restructure failed: missing block: B:468:0x09da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:409:0x097e, code lost:
         r6 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:469:0x09db, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:410:0x097f, code lost:
         r9 = r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:470:0x09dc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:411:0x0980, code lost:
         if (r9 >= r7) goto L132;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:471:0x09de, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:412:0x0982, code lost:
         if (r6 == null) goto L131;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:472:0x09e0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:413:0x0984, code lost:
         r6[r9] = r3 - r14[r9];
      */
-    /* JADX WARN: Code restructure failed: missing block: B:473:0x09e6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:414:0x098a, code lost:
         r47[r9] = r1;
         r14[r9] = r3 + r0.getMainAxisSizeWithSpacings();
         r7[r9].addLast(r0);
         r9 = r9 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:474:0x09f9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:415:0x099d, code lost:
         r46.getLaneInfo().setGaps(r1, r6);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:475:0x0a00, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:416:0x09a4, code lost:
         if (r3 >= r2) goto L141;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:477:0x0a04, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:418:0x09a8, code lost:
         if (r14[r8] > r2) goto L140;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:478:0x0a06, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:419:0x09aa, code lost:
         r0.setVisible(false);
      */
     /* JADX WARN: Code restructure failed: missing block: B:99:0x0228, code lost:
         r11 = 1;
      */
-    /* JADX WARN: Removed duplicated region for block: B:334:0x06b5  */
-    /* JADX WARN: Removed duplicated region for block: B:355:0x0729  */
-    /* JADX WARN: Removed duplicated region for block: B:357:0x072f A[LOOP:21: B:317:0x0684->B:357:0x072f, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:362:0x0753  */
-    /* JADX WARN: Removed duplicated region for block: B:384:0x07a0  */
-    /* JADX WARN: Removed duplicated region for block: B:402:0x07c8  */
-    /* JADX WARN: Removed duplicated region for block: B:406:0x07f8  */
-    /* JADX WARN: Removed duplicated region for block: B:410:0x080e  */
-    /* JADX WARN: Removed duplicated region for block: B:413:0x0827  */
-    /* JADX WARN: Removed duplicated region for block: B:416:0x0883  */
-    /* JADX WARN: Removed duplicated region for block: B:434:0x08f5  */
-    /* JADX WARN: Removed duplicated region for block: B:443:0x090a  */
-    /* JADX WARN: Removed duplicated region for block: B:542:0x0739 A[EDGE_INSN: B:542:0x0739->B:358:0x0739 ?: BREAK  , SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:556:0x0907 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:333:0x0725  */
+    /* JADX WARN: Removed duplicated region for block: B:363:0x07c3  */
+    /* JADX WARN: Removed duplicated region for block: B:366:0x07dc  */
+    /* JADX WARN: Removed duplicated region for block: B:369:0x0838  */
+    /* JADX WARN: Removed duplicated region for block: B:387:0x08aa  */
+    /* JADX WARN: Removed duplicated region for block: B:495:0x08b6 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -383,6 +361,7 @@ public final class LazyStaggeredGridMeasureKt {
         List<LazyStaggeredGridMeasuredItem> list2;
         int[] iArr8;
         float f2;
+        int[] iArr9;
         ArrayList arrayList;
         int size;
         int i18;
@@ -393,35 +372,26 @@ public final class LazyStaggeredGridMeasureKt {
         int i21;
         int i22;
         boolean z3;
-        int i23;
-        boolean z4;
-        boolean z5;
-        ArrayList arrayList4;
         List<Integer> list3;
-        boolean z6;
-        boolean z7;
-        boolean z8;
+        ArrayList arrayList4;
+        int i23;
         int i24;
-        int i25;
         LazyStaggeredGridItemInfo lazyStaggeredGridItemInfo;
         int index;
         int min;
-        boolean z9;
         LazyStaggeredGridItemInfo lazyStaggeredGridItemInfo2;
-        boolean z10;
-        boolean z11;
+        int i25;
         int i26;
-        int i27;
         String str3;
-        boolean z12;
+        boolean z4;
         ArrayDeque[] arrayDequeArr;
-        int i28;
+        int i27;
         LazyLayoutMeasureScope lazyLayoutMeasureScope;
-        int i29;
-        int[] iArr9;
+        int i28;
+        int[] iArr10;
         LazyStaggeredGridLaneInfo lazyStaggeredGridLaneInfo;
-        int i30;
-        boolean z13;
+        int i29;
+        boolean z5;
         final LazyStaggeredGridMeasureContext lazyStaggeredGridMeasureContext2 = lazyStaggeredGridMeasureContext;
         LazyLayoutMeasureScope measureScope = lazyStaggeredGridMeasureContext2.getMeasureScope();
         int itemCount = lazyStaggeredGridMeasureContext2.getItemProvider().getItemCount();
@@ -454,11 +424,11 @@ public final class LazyStaggeredGridMeasureKt {
         offsetBy(copyOf2, -i);
         int laneCount = lazyStaggeredGridMeasureContext2.getLaneCount();
         ArrayDeque[] arrayDequeArr2 = new ArrayDeque[laneCount];
-        for (int i31 = 0; i31 < laneCount; i31++) {
-            arrayDequeArr2[i31] = new ArrayDeque(16);
+        for (int i30 = 0; i30 < laneCount; i30++) {
+            arrayDequeArr2[i30] = new ArrayDeque(16);
         }
         offsetBy(copyOf2, -lazyStaggeredGridMeasureContext2.getBeforeContentPadding());
-        boolean z14 = false;
+        boolean z6 = false;
         while (true) {
             if (!measure$lambda$0$hasSpaceBeforeFirst(copyOf, copyOf2, lazyStaggeredGridMeasureContext2)) {
                 c = ' ';
@@ -468,161 +438,161 @@ public final class LazyStaggeredGridMeasureKt {
             }
             i3 = indexOfMaxValue(copyOf);
             c = ' ';
-            int i32 = copyOf[i3];
+            int i31 = copyOf[i3];
             int length = copyOf2.length;
-            for (int i33 = 0; i33 < length; i33++) {
-                if (copyOf[i33] != copyOf[i3]) {
-                    int i34 = copyOf2[i33];
-                    int i35 = copyOf2[i3];
-                    if (i34 < i35) {
-                        copyOf2[i33] = i35;
+            for (int i32 = 0; i32 < length; i32++) {
+                if (copyOf[i32] != copyOf[i3]) {
+                    int i33 = copyOf2[i32];
+                    int i34 = copyOf2[i3];
+                    if (i33 < i34) {
+                        copyOf2[i32] = i34;
                     }
                 }
             }
             i2 = 0;
-            int findPreviousItemIndex = findPreviousItemIndex(lazyStaggeredGridMeasureContext2, i32, i3);
+            int findPreviousItemIndex = findPreviousItemIndex(lazyStaggeredGridMeasureContext2, i31, i3);
             if (findPreviousItemIndex < 0) {
                 break;
             }
             long m1038getSpanRangelOCCd4c = lazyStaggeredGridMeasureContext2.m1038getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), findPreviousItemIndex, i3);
-            int i36 = (int) (m1038getSpanRangelOCCd4c & 4294967295L);
+            int i35 = (int) (m1038getSpanRangelOCCd4c & 4294967295L);
             ArrayDeque[] arrayDequeArr3 = arrayDequeArr2;
-            boolean z15 = z14;
-            int i37 = (int) (m1038getSpanRangelOCCd4c >> 32);
-            int i38 = i36 - i37;
-            lazyStaggeredGridMeasureContext2.getLaneInfo().setLane(findPreviousItemIndex, i38 != 1 ? -2 : i37);
+            boolean z7 = z6;
+            int i36 = (int) (m1038getSpanRangelOCCd4c >> 32);
+            int i37 = i35 - i36;
+            lazyStaggeredGridMeasureContext2.getLaneInfo().setLane(findPreviousItemIndex, i37 != 1 ? -2 : i36);
             LazyStaggeredGridMeasuredItem m1047getAndMeasurejy6DScQ = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1047getAndMeasurejy6DScQ(findPreviousItemIndex, m1038getSpanRangelOCCd4c);
             int m1043maxInRangejy6DScQ = m1043maxInRangejy6DScQ(copyOf2, m1038getSpanRangelOCCd4c);
-            int[] gaps = i38 != 1 ? lazyStaggeredGridMeasureContext2.getLaneInfo().getGaps(findPreviousItemIndex) : null;
-            boolean z16 = z15;
-            while (i37 < i36) {
-                copyOf[i37] = findPreviousItemIndex;
-                int mainAxisSizeWithSpacings = m1043maxInRangejy6DScQ + m1047getAndMeasurejy6DScQ.getMainAxisSizeWithSpacings() + (gaps == null ? 0 : gaps[i37]);
-                copyOf2[i37] = mainAxisSizeWithSpacings;
+            int[] gaps = i37 != 1 ? lazyStaggeredGridMeasureContext2.getLaneInfo().getGaps(findPreviousItemIndex) : null;
+            boolean z8 = z7;
+            while (i36 < i35) {
+                copyOf[i36] = findPreviousItemIndex;
+                int mainAxisSizeWithSpacings = m1043maxInRangejy6DScQ + m1047getAndMeasurejy6DScQ.getMainAxisSizeWithSpacings() + (gaps == null ? 0 : gaps[i36]);
+                copyOf2[i36] = mainAxisSizeWithSpacings;
                 if (lazyStaggeredGridMeasureContext2.getMainAxisAvailableSize() + mainAxisSizeWithSpacings <= 0) {
-                    z16 = true;
+                    z8 = true;
                 }
-                i37++;
+                i36++;
             }
             arrayDequeArr2 = arrayDequeArr3;
-            z14 = z16;
+            z6 = z8;
         }
         ArrayDeque[] arrayDequeArr4 = arrayDequeArr2;
-        boolean z17 = z14;
-        int i39 = -lazyStaggeredGridMeasureContext2.getBeforeContentPadding();
-        int i40 = copyOf2[i2];
-        if (i40 < i39) {
-            offsetBy(copyOf2, i39 - i40);
-            i4 = i - (i39 - i40);
+        boolean z9 = z6;
+        int i38 = -lazyStaggeredGridMeasureContext2.getBeforeContentPadding();
+        int i39 = copyOf2[i2];
+        if (i39 < i38) {
+            offsetBy(copyOf2, i38 - i39);
+            i4 = i - (i38 - i39);
         } else {
             i4 = i;
         }
         offsetBy(copyOf2, lazyStaggeredGridMeasureContext2.getBeforeContentPadding());
-        int i41 = -1;
+        int i40 = -1;
         if (i3 == -1) {
             i3 = ArraysKt.indexOf(copyOf, i2);
         }
         if (i3 != -1 && measure$lambda$0$misalignedStart(copyOf, lazyStaggeredGridMeasureContext2, copyOf2, i3) && z) {
             lazyStaggeredGridMeasureContext2.getLaneInfo().reset();
             int length2 = copyOf.length;
-            int[] iArr10 = new int[length2];
-            int i42 = 0;
-            while (i42 < length2) {
-                iArr10[i42] = i41;
-                i42++;
-                i41 = -1;
+            int[] iArr11 = new int[length2];
+            int i41 = 0;
+            while (i41 < length2) {
+                iArr11[i41] = i40;
+                i41++;
+                i40 = -1;
             }
             int length3 = copyOf2.length;
-            int[] iArr11 = new int[length3];
-            for (int i43 = 0; i43 < length3; i43++) {
-                iArr11[i43] = copyOf2[i3];
+            int[] iArr12 = new int[length3];
+            for (int i42 = 0; i42 < length3; i42++) {
+                iArr12[i42] = copyOf2[i3];
             }
-            return measure(lazyStaggeredGridMeasureContext2, i4, iArr10, iArr11, false);
+            return measure(lazyStaggeredGridMeasureContext2, i4, iArr11, iArr12, false);
         }
         int[] copyOf3 = Arrays.copyOf(copyOf, copyOf.length);
         Intrinsics.checkNotNullExpressionValue(copyOf3, "copyOf(...)");
         int length4 = copyOf2.length;
-        int[] iArr12 = new int[length4];
-        for (int i44 = 0; i44 < length4; i44++) {
-            iArr12[i44] = -copyOf2[i44];
+        int[] iArr13 = new int[length4];
+        for (int i43 = 0; i43 < length4; i43++) {
+            iArr13[i43] = -copyOf2[i43];
         }
-        int mainAxisSpacing = lazyStaggeredGridMeasureContext2.getMainAxisSpacing() + i39;
+        int mainAxisSpacing = lazyStaggeredGridMeasureContext2.getMainAxisSpacing() + i38;
         int coerceAtLeast = RangesKt.coerceAtLeast(lazyStaggeredGridMeasureContext2.getMainAxisAvailableSize() + lazyStaggeredGridMeasureContext2.getAfterContentPadding(), 0);
         ArrayDeque[] arrayDequeArr5 = arrayDequeArr4;
         int indexOfMinValue$default = indexOfMinValue$default(copyOf3, 0, 1, null);
-        int i45 = 0;
-        while (indexOfMinValue$default != -1 && i45 < lazyStaggeredGridMeasureContext2.getLaneCount()) {
-            int i46 = copyOf3[indexOfMinValue$default];
-            int indexOfMinValue = indexOfMinValue(copyOf3, i46);
-            i45++;
-            if (i46 >= 0) {
+        int i44 = 0;
+        while (indexOfMinValue$default != -1 && i44 < lazyStaggeredGridMeasureContext2.getLaneCount()) {
+            int i45 = copyOf3[indexOfMinValue$default];
+            int indexOfMinValue = indexOfMinValue(copyOf3, i45);
+            i44++;
+            if (i45 >= 0) {
                 LazyLayoutMeasureScope lazyLayoutMeasureScope2 = measureScope;
-                int i47 = i4;
-                long m1038getSpanRangelOCCd4c2 = lazyStaggeredGridMeasureContext2.m1038getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), i46, indexOfMinValue$default);
-                LazyStaggeredGridMeasuredItem m1047getAndMeasurejy6DScQ2 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1047getAndMeasurejy6DScQ(i46, m1038getSpanRangelOCCd4c2);
+                int i46 = i4;
+                long m1038getSpanRangelOCCd4c2 = lazyStaggeredGridMeasureContext2.m1038getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), i45, indexOfMinValue$default);
+                LazyStaggeredGridMeasuredItem m1047getAndMeasurejy6DScQ2 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1047getAndMeasurejy6DScQ(i45, m1038getSpanRangelOCCd4c2);
                 LazyStaggeredGridLaneInfo laneInfo = lazyStaggeredGridMeasureContext2.getLaneInfo();
-                int[] iArr13 = copyOf;
-                int[] iArr14 = copyOf2;
-                int i48 = (int) (m1038getSpanRangelOCCd4c2 & 4294967295L);
-                int i49 = itemCount;
-                int i50 = (int) (m1038getSpanRangelOCCd4c2 >> c);
-                int i51 = i48 - i50;
-                if (i51 != 1) {
+                int[] iArr14 = copyOf;
+                int[] iArr15 = copyOf2;
+                int i47 = (int) (m1038getSpanRangelOCCd4c2 & 4294967295L);
+                int i48 = itemCount;
+                int i49 = (int) (m1038getSpanRangelOCCd4c2 >> c);
+                int i50 = i47 - i49;
+                if (i50 != 1) {
                     lazyStaggeredGridLaneInfo = laneInfo;
-                    i30 = -2;
+                    i29 = -2;
                 } else {
                     lazyStaggeredGridLaneInfo = laneInfo;
-                    i30 = i50;
+                    i29 = i49;
                 }
-                lazyStaggeredGridLaneInfo.setLane(i46, i30);
-                int m1043maxInRangejy6DScQ2 = m1043maxInRangejy6DScQ(iArr12, m1038getSpanRangelOCCd4c2);
-                for (int i52 = i50; i52 < i48; i52++) {
-                    iArr12[i52] = m1047getAndMeasurejy6DScQ2.getMainAxisSizeWithSpacings() + m1043maxInRangejy6DScQ2;
-                    copyOf3[i52] = i46;
-                    arrayDequeArr5[i52].addLast(m1047getAndMeasurejy6DScQ2);
+                lazyStaggeredGridLaneInfo.setLane(i45, i29);
+                int m1043maxInRangejy6DScQ2 = m1043maxInRangejy6DScQ(iArr13, m1038getSpanRangelOCCd4c2);
+                for (int i51 = i49; i51 < i47; i51++) {
+                    iArr13[i51] = m1047getAndMeasurejy6DScQ2.getMainAxisSizeWithSpacings() + m1043maxInRangejy6DScQ2;
+                    copyOf3[i51] = i45;
+                    arrayDequeArr5[i51].addLast(m1047getAndMeasurejy6DScQ2);
                 }
-                if (m1043maxInRangejy6DScQ2 >= mainAxisSpacing || iArr12[i50] > mainAxisSpacing) {
-                    z13 = z17;
+                if (m1043maxInRangejy6DScQ2 >= mainAxisSpacing || iArr13[i49] > mainAxisSpacing) {
+                    z5 = z9;
                 } else {
                     m1047getAndMeasurejy6DScQ2.setVisible(false);
-                    z13 = true;
+                    z5 = true;
                 }
-                if (i51 != 1) {
-                    z17 = z13;
-                    i45 = lazyStaggeredGridMeasureContext2.getLaneCount();
+                if (i50 != 1) {
+                    z9 = z5;
+                    i44 = lazyStaggeredGridMeasureContext2.getLaneCount();
                     indexOfMinValue$default = indexOfMinValue;
                 } else {
-                    z17 = z13;
+                    z9 = z5;
                     indexOfMinValue$default = indexOfMinValue;
-                    i45 = i45;
+                    i44 = i44;
                 }
                 measureScope = lazyLayoutMeasureScope2;
-                i4 = i47;
-                copyOf = iArr13;
-                copyOf2 = iArr14;
-                itemCount = i49;
+                i4 = i46;
+                copyOf = iArr14;
+                copyOf2 = iArr15;
+                itemCount = i48;
             } else {
                 indexOfMinValue$default = indexOfMinValue;
             }
         }
         LazyLayoutMeasureScope lazyLayoutMeasureScope3 = measureScope;
-        int i53 = i4;
-        int[] iArr15 = copyOf;
-        int[] iArr16 = copyOf2;
-        int i54 = itemCount;
+        int i52 = i4;
+        int[] iArr16 = copyOf;
+        int[] iArr17 = copyOf2;
+        int i53 = itemCount;
         loop9: while (true) {
-            int i55 = 0;
+            int i54 = 0;
             while (true) {
-                if (i55 < length4) {
-                    int i56 = iArr12[i55];
-                    if (i56 < coerceAtLeast || i56 <= 0) {
+                if (i54 < length4) {
+                    int i55 = iArr13[i54];
+                    if (i55 < coerceAtLeast || i55 <= 0) {
                         break;
                     }
-                    i55++;
+                    i54++;
                 } else {
-                    for (int i57 = 0; i57 < laneCount; i57++) {
-                        if (!arrayDequeArr5[i57].isEmpty()) {
-                            i5 = i54;
+                    for (int i56 = 0; i56 < laneCount; i56++) {
+                        if (!arrayDequeArr5[i56].isEmpty()) {
+                            i5 = i53;
                             i6 = 1;
                             break loop9;
                         }
@@ -630,104 +600,103 @@ public final class LazyStaggeredGridMeasureKt {
                 }
             }
             lazyStaggeredGridMeasureContext2 = lazyStaggeredGridMeasureContext;
-            copyOf3 = iArr9;
-            z17 = z12;
-            i54 = i5;
-            str4 = str3;
-            lazyLayoutMeasureScope3 = lazyLayoutMeasureScope;
-            coerceAtLeast = i28;
+            copyOf3 = iArr10;
             arrayDequeArr5 = arrayDequeArr;
-            length4 = i27;
-            i53 = i29;
+            lazyLayoutMeasureScope3 = lazyLayoutMeasureScope;
+            str4 = str3;
+            z9 = z4;
+            coerceAtLeast = i27;
+            length4 = i26;
+            i52 = i28;
         }
-        int i58 = 0;
-        while (i58 < laneCount) {
-            ArrayDeque arrayDeque = arrayDequeArr5[i58];
+        int i57 = 0;
+        while (i57 < laneCount) {
+            ArrayDeque arrayDeque = arrayDequeArr5[i57];
             while (arrayDeque.size() > i6 && !((LazyStaggeredGridMeasuredItem) arrayDeque.first()).isVisible()) {
                 LazyStaggeredGridMeasuredItem lazyStaggeredGridMeasuredItem = (LazyStaggeredGridMeasuredItem) arrayDeque.removeFirst();
                 int[] gaps2 = lazyStaggeredGridMeasuredItem.getSpan() != i6 ? lazyStaggeredGridMeasureContext2.getLaneInfo().getGaps(lazyStaggeredGridMeasuredItem.getIndex()) : null;
-                iArr16[i58] = iArr16[i58] - (lazyStaggeredGridMeasuredItem.getMainAxisSizeWithSpacings() + (gaps2 == null ? 0 : gaps2[i58]));
+                iArr17[i57] = iArr17[i57] - (lazyStaggeredGridMeasuredItem.getMainAxisSizeWithSpacings() + (gaps2 == null ? 0 : gaps2[i57]));
                 i6 = 1;
             }
             LazyStaggeredGridMeasuredItem lazyStaggeredGridMeasuredItem2 = (LazyStaggeredGridMeasuredItem) arrayDeque.firstOrNull();
-            iArr15[i58] = lazyStaggeredGridMeasuredItem2 != null ? lazyStaggeredGridMeasuredItem2.getIndex() : -1;
-            i58++;
+            iArr16[i57] = lazyStaggeredGridMeasuredItem2 != null ? lazyStaggeredGridMeasuredItem2.getIndex() : -1;
+            i57++;
             i6 = 1;
         }
         int length5 = copyOf3.length;
-        int i59 = 0;
+        int i58 = 0;
         while (true) {
-            if (i59 >= length5) {
+            if (i58 >= length5) {
                 break;
-            } else if (copyOf3[i59] == i5 - 1) {
-                offsetBy(iArr12, -lazyStaggeredGridMeasureContext2.getMainAxisSpacing());
+            } else if (copyOf3[i58] == i5 - 1) {
+                offsetBy(iArr13, -lazyStaggeredGridMeasureContext2.getMainAxisSpacing());
                 break;
             } else {
-                i59++;
+                i58++;
             }
         }
-        int i60 = 0;
+        int i59 = 0;
         while (true) {
-            if (i60 < length4) {
-                if (iArr12[i60] >= lazyStaggeredGridMeasureContext2.getMainAxisAvailableSize()) {
+            if (i59 < length4) {
+                if (iArr13[i59] >= lazyStaggeredGridMeasureContext2.getMainAxisAvailableSize()) {
                     i9 = i5;
-                    i12 = i53;
+                    i12 = i52;
                     i7 = i12;
-                    iArr4 = iArr15;
-                    iArr3 = iArr16;
+                    iArr4 = iArr16;
+                    iArr3 = iArr17;
                     i10 = coerceAtLeast;
                     i11 = length4;
                     str = str4;
                     break;
                 }
-                i60++;
+                i59++;
             } else {
-                int mainAxisAvailableSize = lazyStaggeredGridMeasureContext2.getMainAxisAvailableSize() - iArr12[indexOfMaxValue(iArr12)];
-                iArr3 = iArr16;
+                int mainAxisAvailableSize = lazyStaggeredGridMeasureContext2.getMainAxisAvailableSize() - iArr13[indexOfMaxValue(iArr13)];
+                iArr3 = iArr17;
                 offsetBy(iArr3, -mainAxisAvailableSize);
-                offsetBy(iArr12, mainAxisAvailableSize);
-                boolean z18 = false;
+                offsetBy(iArr13, mainAxisAvailableSize);
+                boolean z10 = false;
                 loop31: while (true) {
                     int length6 = iArr3.length;
-                    int i61 = 0;
+                    int i60 = 0;
                     while (true) {
-                        if (i61 >= length6) {
-                            i7 = i53;
-                            iArr4 = iArr15;
+                        if (i60 >= length6) {
+                            i7 = i52;
+                            iArr4 = iArr16;
                             i8 = mainAxisAvailableSize;
                             i9 = i5;
                             i10 = coerceAtLeast;
                             break loop31;
-                        }
-                        if (iArr3[i61] < lazyStaggeredGridMeasureContext2.getBeforeContentPadding()) {
+                        } else if (iArr3[i60] < lazyStaggeredGridMeasureContext2.getBeforeContentPadding()) {
                             break;
+                        } else {
+                            i60++;
+                            length4 = length4;
+                            iArr16 = iArr16;
+                            i52 = i52;
                         }
-                        i61++;
-                        length4 = length4;
-                        iArr15 = iArr15;
-                        i53 = i53;
                     }
                     str4 = str2;
                     mainAxisAvailableSize = i14;
-                    z18 = z2;
+                    z10 = z2;
                     length4 = i16;
                     coerceAtLeast = i17;
                     i5 = i15;
-                    iArr15 = iArr5;
-                    i53 = i13;
+                    iArr16 = iArr5;
+                    i52 = i13;
                 }
                 i11 = length4;
                 str = str4;
-                if (z18 && z) {
+                if (z10 && z) {
                     lazyStaggeredGridMeasureContext2.getLaneInfo().reset();
                     return measure(lazyStaggeredGridMeasureContext2, i7, iArr4, iArr3, false);
                 }
                 i12 = i7 + i8;
-                int i62 = iArr3[indexOfMinValue$default(iArr3, 0, 1, null)];
-                if (i62 < 0) {
-                    i12 += i62;
-                    offsetBy(iArr12, i62);
-                    offsetBy(iArr3, -i62);
+                int i61 = iArr3[indexOfMinValue$default(iArr3, 0, 1, null)];
+                if (i61 < 0) {
+                    i12 += i61;
+                    offsetBy(iArr13, i61);
+                    offsetBy(iArr3, -i61);
                 }
             }
         }
@@ -748,22 +717,22 @@ public final class LazyStaggeredGridMeasureKt {
         int[] copyOf4 = Arrays.copyOf(iArr3, iArr3.length);
         Intrinsics.checkNotNullExpressionValue(copyOf4, str);
         int length7 = copyOf4.length;
-        for (int i63 = 0; i63 < length7; i63++) {
-            copyOf4[i63] = -copyOf4[i63];
+        for (int i62 = 0; i62 < length7; i62++) {
+            copyOf4[i62] = -copyOf4[i62];
         }
         if (lazyStaggeredGridMeasureContext2.getBeforeContentPadding() > lazyStaggeredGridMeasureContext2.getMainAxisSpacing()) {
-            for (int i64 = 0; i64 < laneCount; i64++) {
-                ArrayDeque arrayDeque2 = arrayDequeArr5[i64];
+            for (int i63 = 0; i63 < laneCount; i63++) {
+                ArrayDeque arrayDeque2 = arrayDequeArr5[i63];
                 int size2 = arrayDeque2.size();
-                int i65 = 0;
-                while (i65 < size2) {
-                    LazyStaggeredGridMeasuredItem lazyStaggeredGridMeasuredItem3 = (LazyStaggeredGridMeasuredItem) arrayDeque2.get(i65);
+                int i64 = 0;
+                while (i64 < size2) {
+                    LazyStaggeredGridMeasuredItem lazyStaggeredGridMeasuredItem3 = (LazyStaggeredGridMeasuredItem) arrayDeque2.get(i64);
                     int[] gaps3 = lazyStaggeredGridMeasureContext2.getLaneInfo().getGaps(lazyStaggeredGridMeasuredItem3.getIndex());
-                    int mainAxisSizeWithSpacings2 = lazyStaggeredGridMeasuredItem3.getMainAxisSizeWithSpacings() + (gaps3 == null ? 0 : gaps3[i64]);
-                    if (i65 != CollectionsKt.getLastIndex(arrayDeque2) && (i26 = iArr3[i64]) != 0 && i26 >= mainAxisSizeWithSpacings2) {
-                        iArr3[i64] = i26 - mainAxisSizeWithSpacings2;
-                        i65++;
-                        iArr6[i64] = ((LazyStaggeredGridMeasuredItem) arrayDeque2.get(i65)).getIndex();
+                    int mainAxisSizeWithSpacings2 = lazyStaggeredGridMeasuredItem3.getMainAxisSizeWithSpacings() + (gaps3 == null ? 0 : gaps3[i63]);
+                    if (i64 != CollectionsKt.getLastIndex(arrayDeque2) && (i25 = iArr3[i63]) != 0 && i25 >= mainAxisSizeWithSpacings2) {
+                        iArr3[i63] = i25 - mainAxisSizeWithSpacings2;
+                        i64++;
+                        iArr6[i63] = ((LazyStaggeredGridMeasuredItem) arrayDeque2.get(i64)).getIndex();
                     }
                 }
             }
@@ -772,58 +741,53 @@ public final class LazyStaggeredGridMeasureKt {
         if (lazyStaggeredGridMeasureContext2.isVertical()) {
             m7525constrainWidthK40F9xA = Constraints.m7508getMaxWidthimpl(lazyStaggeredGridMeasureContext2.m1035getConstraintsmsEJaDk());
         } else {
-            m7525constrainWidthK40F9xA = ConstraintsKt.m7525constrainWidthK40F9xA(lazyStaggeredGridMeasureContext2.m1035getConstraintsmsEJaDk(), ArraysKt.maxOrThrow(iArr12) + beforeContentPadding);
+            m7525constrainWidthK40F9xA = ConstraintsKt.m7525constrainWidthK40F9xA(lazyStaggeredGridMeasureContext2.m1035getConstraintsmsEJaDk(), ArraysKt.maxOrThrow(iArr13) + beforeContentPadding);
         }
-        int i66 = m7525constrainWidthK40F9xA;
+        int i65 = m7525constrainWidthK40F9xA;
         if (lazyStaggeredGridMeasureContext2.isVertical()) {
-            m7507getMaxHeightimpl = ConstraintsKt.m7524constrainHeightK40F9xA(lazyStaggeredGridMeasureContext2.m1035getConstraintsmsEJaDk(), ArraysKt.maxOrThrow(iArr12) + beforeContentPadding);
+            m7507getMaxHeightimpl = ConstraintsKt.m7524constrainHeightK40F9xA(lazyStaggeredGridMeasureContext2.m1035getConstraintsmsEJaDk(), ArraysKt.maxOrThrow(iArr13) + beforeContentPadding);
         } else {
             m7507getMaxHeightimpl = Constraints.m7507getMaxHeightimpl(lazyStaggeredGridMeasureContext2.m1035getConstraintsmsEJaDk());
         }
-        int i67 = m7507getMaxHeightimpl;
-        int afterContentPadding = lazyStaggeredGridMeasureContext2.getAfterContentPadding() + (Math.min(lazyStaggeredGridMeasureContext2.isVertical() ? i67 : i66, lazyStaggeredGridMeasureContext2.getMainAxisAvailableSize()) - lazyStaggeredGridMeasureContext2.getBeforeContentPadding());
-        int i68 = copyOf4[0];
+        int i66 = m7507getMaxHeightimpl;
+        int afterContentPadding = lazyStaggeredGridMeasureContext2.getAfterContentPadding() + (Math.min(lazyStaggeredGridMeasureContext2.isVertical() ? i66 : i65, lazyStaggeredGridMeasureContext2.getMainAxisAvailableSize()) - lazyStaggeredGridMeasureContext2.getBeforeContentPadding());
+        int i67 = copyOf4[0];
         List<Integer> pinnedItems = lazyStaggeredGridMeasureContext2.getPinnedItems();
         int size3 = pinnedItems.size() - 1;
         if (size3 >= 0) {
-            int i69 = size3;
+            int i68 = size3;
             ArrayList arrayList5 = null;
             while (true) {
-                int i70 = i69 - 1;
-                int intValue = pinnedItems.get(i69).intValue();
+                int i69 = i68 - 1;
+                int intValue = pinnedItems.get(i68).intValue();
                 int lane = lazyStaggeredGridMeasureContext2.getLaneInfo().getLane(intValue);
-                int i71 = i68;
-                if (lane == -2 || lane == -1) {
-                    for (int i72 = 0; i72 < laneCount; i72++) {
-                        LazyStaggeredGridMeasuredItem lazyStaggeredGridMeasuredItem4 = (LazyStaggeredGridMeasuredItem) arrayDequeArr5[i72].firstOrNull();
-                        if (!((lazyStaggeredGridMeasuredItem4 != null ? lazyStaggeredGridMeasuredItem4.getIndex() : -1) > intValue)) {
-                            z11 = false;
+                int i70 = i67;
+                if (lane != -2 && lane != -1) {
+                    LazyStaggeredGridMeasuredItem lazyStaggeredGridMeasuredItem4 = (LazyStaggeredGridMeasuredItem) arrayDequeArr5[lane].firstOrNull();
+                } else {
+                    for (int i71 = 0; i71 < laneCount; i71++) {
+                        LazyStaggeredGridMeasuredItem lazyStaggeredGridMeasuredItem5 = (LazyStaggeredGridMeasuredItem) arrayDequeArr5[i71].firstOrNull();
+                        if ((lazyStaggeredGridMeasuredItem5 != null ? lazyStaggeredGridMeasuredItem5.getIndex() : -1) <= intValue) {
+                            i67 = i70;
+                            iArr7 = copyOf4;
                             break;
                         }
                     }
-                    z11 = true;
-                } else {
-                    LazyStaggeredGridMeasuredItem lazyStaggeredGridMeasuredItem5 = (LazyStaggeredGridMeasuredItem) arrayDequeArr5[lane].firstOrNull();
-                }
-                if (z11) {
                     iArr7 = copyOf4;
                     long m1038getSpanRangelOCCd4c3 = lazyStaggeredGridMeasureContext2.m1038getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), intValue, 0);
                     if (arrayList5 == null) {
                         arrayList5 = new ArrayList();
                     }
                     LazyStaggeredGridMeasuredItem m1047getAndMeasurejy6DScQ3 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1047getAndMeasurejy6DScQ(intValue, m1038getSpanRangelOCCd4c3);
-                    int mainAxisSizeWithSpacings3 = i71 - m1047getAndMeasurejy6DScQ3.getMainAxisSizeWithSpacings();
+                    int mainAxisSizeWithSpacings3 = i70 - m1047getAndMeasurejy6DScQ3.getMainAxisSizeWithSpacings();
                     m1047getAndMeasurejy6DScQ3.position(mainAxisSizeWithSpacings3, 0, afterContentPadding);
                     arrayList5.add(m1047getAndMeasurejy6DScQ3);
-                    i68 = mainAxisSizeWithSpacings3;
-                } else {
-                    iArr7 = copyOf4;
-                    i68 = i71;
+                    i67 = mainAxisSizeWithSpacings3;
                 }
-                if (i70 < 0) {
+                if (i69 < 0) {
                     break;
                 }
-                i69 = i70;
+                i68 = i69;
                 copyOf4 = iArr7;
             }
             list = arrayList5;
@@ -835,10 +799,10 @@ public final class LazyStaggeredGridMeasureKt {
             list = CollectionsKt.emptyList();
         }
         List list4 = list;
-        int[] iArr17 = iArr7;
-        int i73 = i10;
-        List<LazyStaggeredGridMeasuredItem> calculateVisibleItems = calculateVisibleItems(lazyStaggeredGridMeasureContext2, arrayDequeArr5, iArr17, afterContentPadding, i39, i73);
-        int i74 = iArr17[0];
+        int[] iArr18 = iArr7;
+        int i72 = i10;
+        List<LazyStaggeredGridMeasuredItem> calculateVisibleItems = calculateVisibleItems(lazyStaggeredGridMeasureContext2, arrayDequeArr5, iArr18, afterContentPadding, i38, i72);
+        int i73 = iArr18[0];
         LazyStaggeredGridMeasuredItem lazyStaggeredGridMeasuredItem6 = (LazyStaggeredGridMeasuredItem) CollectionsKt.lastOrNull((List<? extends Object>) calculateVisibleItems);
         int index2 = lazyStaggeredGridMeasuredItem6 != null ? lazyStaggeredGridMeasuredItem6.getIndex() : -1;
         if (lazyLayoutMeasureScope3.isLookingAhead() && lazyStaggeredGridMeasureContext2.getApproachLayoutInfo() != null && !lazyStaggeredGridMeasureContext2.getApproachLayoutInfo().getVisibleItemsInfo().isEmpty()) {
@@ -852,163 +816,129 @@ public final class LazyStaggeredGridMeasureKt {
             lazyStaggeredGridItemInfo = null;
             LazyStaggeredGridItemInfo lazyStaggeredGridItemInfo3 = (LazyStaggeredGridItemInfo) CollectionsKt.last((List<? extends Object>) lazyStaggeredGridMeasureContext2.getApproachLayoutInfo().getVisibleItemsInfo());
             if (lazyStaggeredGridItemInfo != null && (index = lazyStaggeredGridItemInfo.getIndex()) <= (min = Math.min(lazyStaggeredGridItemInfo3.getIndex(), i9 - 1))) {
-                int i75 = index;
-                int i76 = i74;
+                int i74 = index;
+                int i75 = i73;
                 ArrayList arrayList6 = null;
                 while (true) {
                     if (arrayList6 != null) {
                         int size5 = arrayList6.size();
                         list2 = calculateVisibleItems;
-                        int i77 = 0;
-                        while (true) {
-                            if (i77 >= size5) {
-                                z10 = false;
-                                break;
-                            }
-                            int i78 = i77;
-                            if (((LazyStaggeredGridMeasuredItem) arrayList6.get(i77)).getIndex() == i75) {
-                                z10 = true;
-                                break;
-                            }
-                            i77 = i78 + 1;
-                        }
-                        if (z10) {
-                            z9 = true;
-                            if (z9) {
-                                if (arrayList6 == null) {
-                                    arrayList6 = new ArrayList();
-                                }
-                                List<LazyStaggeredGridItemInfo> visibleItemsInfo2 = lazyStaggeredGridMeasureContext2.getApproachLayoutInfo().getVisibleItemsInfo();
-                                int size6 = visibleItemsInfo2.size();
-                                iArr8 = iArr6;
-                                int i79 = 0;
-                                while (true) {
-                                    if (i79 >= size6) {
-                                        lazyStaggeredGridItemInfo2 = null;
-                                        break;
-                                    }
-                                    LazyStaggeredGridItemInfo lazyStaggeredGridItemInfo4 = visibleItemsInfo2.get(i79);
-                                    List<LazyStaggeredGridItemInfo> list5 = visibleItemsInfo2;
-                                    if (lazyStaggeredGridItemInfo4.getIndex() == i75) {
-                                        lazyStaggeredGridItemInfo2 = lazyStaggeredGridItemInfo4;
-                                        break;
-                                    }
-                                    i79++;
-                                    visibleItemsInfo2 = list5;
-                                }
-                                LazyStaggeredGridItemInfo lazyStaggeredGridItemInfo5 = lazyStaggeredGridItemInfo2;
-                                int lane2 = lazyStaggeredGridItemInfo5 != null ? lazyStaggeredGridItemInfo5.getLane() : 0;
-                                f2 = f5;
-                                LazyStaggeredGridMeasuredItem m1047getAndMeasurejy6DScQ4 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1047getAndMeasurejy6DScQ(i75, lazyStaggeredGridMeasureContext2.m1038getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), i75, lane2));
-                                arrayList6.add(m1047getAndMeasurejy6DScQ4);
-                                int[] positions = lazyStaggeredGridMeasureContext2.getResolvedSlots().getPositions();
-                                m1047getAndMeasurejy6DScQ4.position(i76, positions.length > lane2 ? positions[lane2] : 0, afterContentPadding);
-                                i76 += m1047getAndMeasurejy6DScQ4.getMainAxisSizeWithSpacings();
-                            } else {
+                        int i76 = 0;
+                        while (i76 < size5) {
+                            int i77 = i76;
+                            if (((LazyStaggeredGridMeasuredItem) arrayList6.get(i76)).getIndex() == i74) {
                                 iArr8 = iArr6;
                                 f2 = f5;
-                            }
-                            if (i75 != min) {
+                                iArr9 = iArr3;
                                 break;
                             }
-                            i75++;
-                            calculateVisibleItems = list2;
-                            iArr6 = iArr8;
-                            f5 = f2;
+                            i76 = i77 + 1;
                         }
                     } else {
                         list2 = calculateVisibleItems;
                     }
-                    z9 = false;
-                    if (z9) {
+                    if (arrayList6 == null) {
+                        arrayList6 = new ArrayList();
                     }
-                    if (i75 != min) {
+                    List<LazyStaggeredGridItemInfo> visibleItemsInfo2 = lazyStaggeredGridMeasureContext2.getApproachLayoutInfo().getVisibleItemsInfo();
+                    int size6 = visibleItemsInfo2.size();
+                    iArr8 = iArr6;
+                    int i78 = 0;
+                    while (true) {
+                        if (i78 >= size6) {
+                            lazyStaggeredGridItemInfo2 = null;
+                            break;
+                        }
+                        LazyStaggeredGridItemInfo lazyStaggeredGridItemInfo4 = visibleItemsInfo2.get(i78);
+                        List<LazyStaggeredGridItemInfo> list5 = visibleItemsInfo2;
+                        if (lazyStaggeredGridItemInfo4.getIndex() == i74) {
+                            lazyStaggeredGridItemInfo2 = lazyStaggeredGridItemInfo4;
+                            break;
+                        }
+                        i78++;
+                        visibleItemsInfo2 = list5;
                     }
+                    LazyStaggeredGridItemInfo lazyStaggeredGridItemInfo5 = lazyStaggeredGridItemInfo2;
+                    int lane2 = lazyStaggeredGridItemInfo5 != null ? lazyStaggeredGridItemInfo5.getLane() : 0;
+                    f2 = f5;
+                    iArr9 = iArr3;
+                    LazyStaggeredGridMeasuredItem m1047getAndMeasurejy6DScQ4 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1047getAndMeasurejy6DScQ(i74, lazyStaggeredGridMeasureContext2.m1038getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), i74, lane2));
+                    arrayList6.add(m1047getAndMeasurejy6DScQ4);
+                    int[] positions = lazyStaggeredGridMeasureContext2.getResolvedSlots().getPositions();
+                    m1047getAndMeasurejy6DScQ4.position(i75, positions.length > lane2 ? positions[lane2] : 0, afterContentPadding);
+                    i75 += m1047getAndMeasurejy6DScQ4.getMainAxisSizeWithSpacings();
+                    if (i74 == min) {
+                        break;
+                    }
+                    i74++;
+                    calculateVisibleItems = list2;
+                    iArr6 = iArr8;
+                    f5 = f2;
+                    iArr3 = iArr9;
                 }
                 arrayList = arrayList6;
-                i74 = i76;
+                i73 = i75;
                 List<Integer> pinnedItems2 = lazyStaggeredGridMeasureContext2.getPinnedItems();
                 size = pinnedItems2.size();
                 i18 = 0;
                 arrayList2 = null;
                 while (i18 < size) {
                     int intValue2 = pinnedItems2.get(i18).intValue();
-                    int i80 = i9;
-                    if (intValue2 >= i80) {
+                    int i79 = i9;
+                    if (intValue2 >= i79) {
                         arrayList4 = arrayList;
                         list3 = pinnedItems2;
                     } else {
                         if (arrayList != null) {
                             int size7 = arrayList.size();
                             list3 = pinnedItems2;
-                            int i81 = 0;
-                            while (true) {
-                                if (i81 >= size7) {
-                                    arrayList4 = arrayList;
-                                    z8 = false;
-                                    break;
-                                }
+                            int i80 = 0;
+                            while (i80 < size7) {
                                 arrayList4 = arrayList;
-                                if (((LazyStaggeredGridMeasuredItem) arrayList.get(i81)).getIndex() == intValue2) {
-                                    z8 = true;
+                                if (((LazyStaggeredGridMeasuredItem) arrayList.get(i80)).getIndex() == intValue2) {
                                     break;
                                 }
-                                i81++;
+                                i80++;
                                 arrayList = arrayList4;
                             }
-                            if (z8) {
-                                z6 = true;
-                                if (!z6) {
-                                    int lane3 = lazyStaggeredGridMeasureContext2.getLaneInfo().getLane(intValue2);
-                                    if (lane3 != -2 && lane3 != -1) {
-                                    }
-                                    for (int i82 : copyOf3) {
-                                        if (i82 < intValue2) {
-                                        }
-                                    }
-                                    z7 = true;
-                                    if (z7) {
-                                        i24 = size;
-                                        i25 = i18;
-                                    } else {
-                                        i24 = size;
-                                        long m1038getSpanRangelOCCd4c4 = lazyStaggeredGridMeasureContext2.m1038getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), intValue2, 0);
-                                        if (arrayList2 == null) {
-                                            arrayList2 = new ArrayList();
-                                        }
-                                        i25 = i18;
-                                        List list6 = arrayList2;
-                                        LazyStaggeredGridMeasuredItem m1047getAndMeasurejy6DScQ5 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1047getAndMeasurejy6DScQ(intValue2, m1038getSpanRangelOCCd4c4);
-                                        m1047getAndMeasurejy6DScQ5.position(i74, 0, afterContentPadding);
-                                        i74 += m1047getAndMeasurejy6DScQ5.getMainAxisSizeWithSpacings();
-                                        list6.add(m1047getAndMeasurejy6DScQ5);
-                                        arrayList2 = list6;
-                                    }
-                                    i18 = i25 + 1;
-                                    pinnedItems2 = list3;
-                                    size = i24;
-                                    arrayList = arrayList4;
-                                    i9 = i80;
-                                }
-                            }
                         } else {
-                            arrayList4 = arrayList;
                             list3 = pinnedItems2;
                         }
-                        z6 = false;
-                        if (!z6) {
+                        arrayList4 = arrayList;
+                        int lane3 = lazyStaggeredGridMeasureContext2.getLaneInfo().getLane(intValue2);
+                        if (lane3 == -2 || lane3 == -1) {
+                            for (int i81 : copyOf3) {
+                                if (i81 < intValue2) {
+                                }
+                            }
+                            i23 = size;
+                            long m1038getSpanRangelOCCd4c4 = lazyStaggeredGridMeasureContext2.m1038getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), intValue2, 0);
+                            if (arrayList2 == null) {
+                                arrayList2 = new ArrayList();
+                            }
+                            i24 = i18;
+                            List list6 = arrayList2;
+                            LazyStaggeredGridMeasuredItem m1047getAndMeasurejy6DScQ5 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1047getAndMeasurejy6DScQ(intValue2, m1038getSpanRangelOCCd4c4);
+                            m1047getAndMeasurejy6DScQ5.position(i73, 0, afterContentPadding);
+                            i73 += m1047getAndMeasurejy6DScQ5.getMainAxisSizeWithSpacings();
+                            list6.add(m1047getAndMeasurejy6DScQ5);
+                            arrayList2 = list6;
                         }
+                        i18 = i24 + 1;
+                        pinnedItems2 = list3;
+                        size = i23;
+                        arrayList = arrayList4;
+                        i9 = i79;
                     }
-                    z7 = false;
-                    if (z7) {
-                    }
-                    i18 = i25 + 1;
+                    i23 = size;
+                    i24 = i18;
+                    i18 = i24 + 1;
                     pinnedItems2 = list3;
-                    size = i24;
+                    size = i23;
                     arrayList = arrayList4;
-                    i9 = i80;
+                    i9 = i79;
                 }
-                int i83 = i9;
+                int i82 = i9;
                 arrayList3 = arrayList;
                 if (arrayList2 == null) {
                     arrayList2 = CollectionsKt.emptyList();
@@ -1020,18 +950,18 @@ public final class LazyStaggeredGridMeasureKt {
                     arrayList7.addAll(arrayList3);
                 }
                 arrayList7.addAll(arrayList2);
-                lazyStaggeredGridMeasureContext2.getState().getItemAnimator$foundation().onMeasured((int) f, i66, i67, arrayList7, lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().getKeyIndexMap(), lazyStaggeredGridMeasureContext2.getMeasuredItemProvider(), lazyStaggeredGridMeasureContext2.isVertical(), lazyLayoutMeasureScope3.isLookingAhead(), lazyStaggeredGridMeasureContext2.getLaneCount(), lazyStaggeredGridMeasureContext2.isInLookaheadScope(), ArraysKt.minOrThrow(iArr3), ArraysKt.maxOrThrow(iArr12) + beforeContentPadding, lazyStaggeredGridMeasureContext2.getCoroutineScope(), lazyStaggeredGridMeasureContext2.getGraphicsContext());
+                lazyStaggeredGridMeasureContext2.getState().getItemAnimator$foundation().onMeasured((int) f, i65, i66, arrayList7, lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().getKeyIndexMap(), lazyStaggeredGridMeasureContext2.getMeasuredItemProvider(), lazyStaggeredGridMeasureContext2.isVertical(), lazyLayoutMeasureScope3.isLookingAhead(), lazyStaggeredGridMeasureContext2.getLaneCount(), lazyStaggeredGridMeasureContext2.isInLookaheadScope(), ArraysKt.minOrThrow(iArr9), ArraysKt.maxOrThrow(iArr13) + beforeContentPadding, lazyStaggeredGridMeasureContext2.getCoroutineScope(), lazyStaggeredGridMeasureContext2.getGraphicsContext());
                 if (!lazyLayoutMeasureScope3.isLookingAhead()) {
                     long m987getMinSizeToFitDisappearingItemsYbymL2g2 = lazyStaggeredGridMeasureContext2.getState().getItemAnimator$foundation().m987getMinSizeToFitDisappearingItemsYbymL2g();
                     if (!IntSize.m7724equalsimpl0(m987getMinSizeToFitDisappearingItemsYbymL2g2, IntSize.Companion.m7731getZeroYbymL2g())) {
-                        int i84 = lazyStaggeredGridMeasureContext2.isVertical() ? i67 : i66;
-                        int m7525constrainWidthK40F9xA2 = ConstraintsKt.m7525constrainWidthK40F9xA(lazyStaggeredGridMeasureContext2.m1035getConstraintsmsEJaDk(), Math.max(i66, (int) (m987getMinSizeToFitDisappearingItemsYbymL2g2 >> c)));
-                        int m7524constrainHeightK40F9xA = ConstraintsKt.m7524constrainHeightK40F9xA(lazyStaggeredGridMeasureContext2.m1035getConstraintsmsEJaDk(), Math.max(i67, (int) (m987getMinSizeToFitDisappearingItemsYbymL2g2 & 4294967295L)));
-                        int i85 = lazyStaggeredGridMeasureContext2.isVertical() ? m7524constrainHeightK40F9xA : m7525constrainWidthK40F9xA2;
-                        if (i85 != i84) {
+                        int i83 = lazyStaggeredGridMeasureContext2.isVertical() ? i66 : i65;
+                        int m7525constrainWidthK40F9xA2 = ConstraintsKt.m7525constrainWidthK40F9xA(lazyStaggeredGridMeasureContext2.m1035getConstraintsmsEJaDk(), Math.max(i65, (int) (m987getMinSizeToFitDisappearingItemsYbymL2g2 >> c)));
+                        int m7524constrainHeightK40F9xA = ConstraintsKt.m7524constrainHeightK40F9xA(lazyStaggeredGridMeasureContext2.m1035getConstraintsmsEJaDk(), Math.max(i66, (int) (m987getMinSizeToFitDisappearingItemsYbymL2g2 & 4294967295L)));
+                        int i84 = lazyStaggeredGridMeasureContext2.isVertical() ? m7524constrainHeightK40F9xA : m7525constrainWidthK40F9xA2;
+                        if (i84 != i83) {
                             int size8 = arrayList7.size();
-                            for (int i86 = 0; i86 < size8; i86++) {
-                                arrayList7.get(i86).updateMainAxisLayoutSize(i85);
+                            for (int i85 = 0; i85 < size8; i85++) {
+                                arrayList7.get(i85).updateMainAxisLayoutSize(i84);
                             }
                         }
                         i19 = m7525constrainWidthK40F9xA2;
@@ -1039,84 +969,55 @@ public final class LazyStaggeredGridMeasureKt {
                         i21 = i11;
                         i22 = 0;
                         while (true) {
-                            if (i22 >= i21) {
-                                z3 = false;
-                                break;
-                            }
-                            if (iArr12[i22] > lazyStaggeredGridMeasureContext2.getMainAxisAvailableSize()) {
-                                z3 = true;
-                                break;
-                            }
-                            i22++;
-                        }
-                        if (!z3) {
-                            int length8 = copyOf3.length;
-                            int i87 = 0;
-                            while (true) {
-                                if (i87 >= length8) {
-                                    z5 = true;
+                            if (i22 < i21) {
+                                if (iArr13[i22] > lazyStaggeredGridMeasureContext2.getMainAxisAvailableSize()) {
                                     break;
                                 }
-                                if (!(copyOf3[i87] < i83 + (-1))) {
-                                    z5 = false;
-                                    break;
-                                }
-                                i87++;
-                            }
-                            if (!z5) {
-                                i23 = i83;
-                                z4 = false;
-                                final LazyLayoutMeasureScope lazyLayoutMeasureScope4 = lazyLayoutMeasureScope3;
-                                return new LazyStaggeredGridMeasureResult(iArr8, iArr3, f, MeasureScope.layout$default(lazyLayoutMeasureScope3, i19, i20, null, new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridMeasureKt$$ExternalSyntheticLambda2
-                                    @Override // kotlin.jvm.functions.Function1
-                                    public final Object invoke(Object obj) {
-                                        Unit measure$lambda$0$37;
-                                        measure$lambda$0$37 = LazyStaggeredGridMeasureKt.measure$lambda$0$37(LazyStaggeredGridMeasureContext.this, arrayList7, lazyLayoutMeasureScope4, (Placeable.PlacementScope) obj);
-                                        return measure$lambda$0$37;
+                                i22++;
+                            } else {
+                                for (int i86 : copyOf3) {
+                                    if (i86 >= i82 - 1) {
+                                        z3 = false;
+                                        break;
                                     }
-                                }, 4, null), f2, z4, lazyStaggeredGridMeasureContext2.isVertical(), z17, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope4, i23, list2, IntSize.m7721constructorimpl((i20 & 4294967295L) | (i19 << c)), i39, i73, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
+                                }
                             }
                         }
-                        i23 = i83;
-                        z4 = true;
-                        final LazyLayoutMeasureScope lazyLayoutMeasureScope42 = lazyLayoutMeasureScope3;
-                        return new LazyStaggeredGridMeasureResult(iArr8, iArr3, f, MeasureScope.layout$default(lazyLayoutMeasureScope3, i19, i20, null, new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridMeasureKt$$ExternalSyntheticLambda2
+                        final LazyLayoutMeasureScope lazyLayoutMeasureScope4 = lazyLayoutMeasureScope3;
+                        return new LazyStaggeredGridMeasureResult(iArr8, iArr9, f, MeasureScope.layout$default(lazyLayoutMeasureScope3, i19, i20, null, new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridMeasureKt$$ExternalSyntheticLambda2
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj) {
                                 Unit measure$lambda$0$37;
-                                measure$lambda$0$37 = LazyStaggeredGridMeasureKt.measure$lambda$0$37(LazyStaggeredGridMeasureContext.this, arrayList7, lazyLayoutMeasureScope42, (Placeable.PlacementScope) obj);
+                                measure$lambda$0$37 = LazyStaggeredGridMeasureKt.measure$lambda$0$37(LazyStaggeredGridMeasureContext.this, arrayList7, lazyLayoutMeasureScope4, (Placeable.PlacementScope) obj);
                                 return measure$lambda$0$37;
                             }
-                        }, 4, null), f2, z4, lazyStaggeredGridMeasureContext2.isVertical(), z17, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope42, i23, list2, IntSize.m7721constructorimpl((i20 & 4294967295L) | (i19 << c)), i39, i73, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
+                        }, 4, null), f2, z3, lazyStaggeredGridMeasureContext2.isVertical(), z9, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope4, i82, list2, IntSize.m7721constructorimpl((i20 & 4294967295L) | (i19 << c)), i38, i72, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
                     }
                 }
-                i19 = i66;
-                i20 = i67;
+                i19 = i65;
+                i20 = i66;
                 i21 = i11;
                 i22 = 0;
                 while (true) {
-                    if (i22 >= i21) {
+                    if (i22 < i21) {
                     }
                     i22++;
                 }
-                if (!z3) {
-                }
-                i23 = i83;
-                z4 = true;
-                final LazyLayoutMeasureScope lazyLayoutMeasureScope422 = lazyLayoutMeasureScope3;
-                return new LazyStaggeredGridMeasureResult(iArr8, iArr3, f, MeasureScope.layout$default(lazyLayoutMeasureScope3, i19, i20, null, new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridMeasureKt$$ExternalSyntheticLambda2
+                final LazyLayoutMeasureScope lazyLayoutMeasureScope42 = lazyLayoutMeasureScope3;
+                return new LazyStaggeredGridMeasureResult(iArr8, iArr9, f, MeasureScope.layout$default(lazyLayoutMeasureScope3, i19, i20, null, new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridMeasureKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
                         Unit measure$lambda$0$37;
-                        measure$lambda$0$37 = LazyStaggeredGridMeasureKt.measure$lambda$0$37(LazyStaggeredGridMeasureContext.this, arrayList7, lazyLayoutMeasureScope422, (Placeable.PlacementScope) obj);
+                        measure$lambda$0$37 = LazyStaggeredGridMeasureKt.measure$lambda$0$37(LazyStaggeredGridMeasureContext.this, arrayList7, lazyLayoutMeasureScope42, (Placeable.PlacementScope) obj);
                         return measure$lambda$0$37;
                     }
-                }, 4, null), f2, z4, lazyStaggeredGridMeasureContext2.isVertical(), z17, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope422, i23, list2, IntSize.m7721constructorimpl((i20 & 4294967295L) | (i19 << c)), i39, i73, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
+                }, 4, null), f2, z3, lazyStaggeredGridMeasureContext2.isVertical(), z9, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope42, i82, list2, IntSize.m7721constructorimpl((i20 & 4294967295L) | (i19 << c)), i38, i72, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
             }
         }
         list2 = calculateVisibleItems;
         iArr8 = iArr6;
         f2 = f5;
+        iArr9 = iArr3;
         arrayList = null;
         List<Integer> pinnedItems22 = lazyStaggeredGridMeasureContext2.getPinnedItems();
         size = pinnedItems22.size();
@@ -1124,7 +1025,7 @@ public final class LazyStaggeredGridMeasureKt {
         arrayList2 = null;
         while (i18 < size) {
         }
-        int i832 = i9;
+        int i822 = i9;
         arrayList3 = arrayList;
         if (arrayList2 == null) {
         }
@@ -1134,31 +1035,27 @@ public final class LazyStaggeredGridMeasureKt {
         if (arrayList3 != null) {
         }
         arrayList72.addAll(arrayList2);
-        lazyStaggeredGridMeasureContext2.getState().getItemAnimator$foundation().onMeasured((int) f, i66, i67, arrayList72, lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().getKeyIndexMap(), lazyStaggeredGridMeasureContext2.getMeasuredItemProvider(), lazyStaggeredGridMeasureContext2.isVertical(), lazyLayoutMeasureScope3.isLookingAhead(), lazyStaggeredGridMeasureContext2.getLaneCount(), lazyStaggeredGridMeasureContext2.isInLookaheadScope(), ArraysKt.minOrThrow(iArr3), ArraysKt.maxOrThrow(iArr12) + beforeContentPadding, lazyStaggeredGridMeasureContext2.getCoroutineScope(), lazyStaggeredGridMeasureContext2.getGraphicsContext());
+        lazyStaggeredGridMeasureContext2.getState().getItemAnimator$foundation().onMeasured((int) f, i65, i66, arrayList72, lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().getKeyIndexMap(), lazyStaggeredGridMeasureContext2.getMeasuredItemProvider(), lazyStaggeredGridMeasureContext2.isVertical(), lazyLayoutMeasureScope3.isLookingAhead(), lazyStaggeredGridMeasureContext2.getLaneCount(), lazyStaggeredGridMeasureContext2.isInLookaheadScope(), ArraysKt.minOrThrow(iArr9), ArraysKt.maxOrThrow(iArr13) + beforeContentPadding, lazyStaggeredGridMeasureContext2.getCoroutineScope(), lazyStaggeredGridMeasureContext2.getGraphicsContext());
         if (!lazyLayoutMeasureScope3.isLookingAhead()) {
         }
-        i19 = i66;
-        i20 = i67;
+        i19 = i65;
+        i20 = i66;
         i21 = i11;
         i22 = 0;
         while (true) {
-            if (i22 >= i21) {
+            if (i22 < i21) {
             }
             i22++;
         }
-        if (!z3) {
-        }
-        i23 = i832;
-        z4 = true;
-        final LazyLayoutMeasureScope lazyLayoutMeasureScope4222 = lazyLayoutMeasureScope3;
-        return new LazyStaggeredGridMeasureResult(iArr8, iArr3, f, MeasureScope.layout$default(lazyLayoutMeasureScope3, i19, i20, null, new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridMeasureKt$$ExternalSyntheticLambda2
+        final LazyLayoutMeasureScope lazyLayoutMeasureScope422 = lazyLayoutMeasureScope3;
+        return new LazyStaggeredGridMeasureResult(iArr8, iArr9, f, MeasureScope.layout$default(lazyLayoutMeasureScope3, i19, i20, null, new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridMeasureKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure$lambda$0$37;
-                measure$lambda$0$37 = LazyStaggeredGridMeasureKt.measure$lambda$0$37(LazyStaggeredGridMeasureContext.this, arrayList72, lazyLayoutMeasureScope4222, (Placeable.PlacementScope) obj);
+                measure$lambda$0$37 = LazyStaggeredGridMeasureKt.measure$lambda$0$37(LazyStaggeredGridMeasureContext.this, arrayList72, lazyLayoutMeasureScope422, (Placeable.PlacementScope) obj);
                 return measure$lambda$0$37;
             }
-        }, 4, null), f2, z4, lazyStaggeredGridMeasureContext2.isVertical(), z17, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope4222, i23, list2, IntSize.m7721constructorimpl((i20 & 4294967295L) | (i19 << c)), i39, i73, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
+        }, 4, null), f2, z3, lazyStaggeredGridMeasureContext2.isVertical(), z9, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope422, i822, list2, IntSize.m7721constructorimpl((i20 & 4294967295L) | (i19 << c)), i38, i72, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.textview.MaterialTextView;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class ItemEmploymentTopTableBinding implements ViewBinding {
     public final Guideline guideline1;
     public final Guideline guideline2;

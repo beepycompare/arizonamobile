@@ -50,7 +50,7 @@ public final class SettingsBottomBarKt {
         Intrinsics.checkNotNullParameter(onPrivacyPolicy, "onPrivacyPolicy");
         Intrinsics.checkNotNullParameter(onLongShareLogs, "onLongShareLogs");
         Composer startRestartGroup = composer.startRestartGroup(-592364725);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SettingsBottomBar)N(onBugsReport,onShareLogs,onPrivacyPolicy,onLongShareLogs)34@1424L1803:SettingsBottomBar.kt#1gr92h");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SettingsBottomBar)N(onBugsReport,onShareLogs,onPrivacyPolicy,onLongShareLogs)33@1368L1803:SettingsBottomBar.kt#1gr92h");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(onBugsReport) ? 4 : 2) | i;
         } else {
@@ -70,7 +70,7 @@ public final class SettingsBottomBarKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-592364725, i3, -1, "com.miami.game.feature.settings.ui.compose.SettingsBottomBar (SettingsBottomBar.kt:33)");
+                ComposerKt.traceEventStart(-592364725, i3, -1, "com.miami.game.feature.settings.ui.compose.SettingsBottomBar (SettingsBottomBar.kt:32)");
             }
             Modifier background$default = BackgroundKt.background$default(SizeKt.fillMaxWidth$default(OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7555constructorimpl(8.0f), 1, null), 0.0f, 1, null), Brush.Companion.m4727verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), null, 0.0f, 6, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
@@ -98,7 +98,7 @@ public final class SettingsBottomBarKt {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 712928589, "C47@1776L1302,81@3087L134:SettingsBottomBar.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 712928589, "C46@1720L1302,80@3031L134:SettingsBottomBar.kt#1gr92h");
             Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getCenter(), Alignment.Companion.getTop(), startRestartGroup, 6);
@@ -125,7 +125,7 @@ public final class SettingsBottomBarKt {
             Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1776449196, "C52@1914L1154:SettingsBottomBar.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1776449196, "C51@1858L1154:SettingsBottomBar.kt#1gr92h");
             Modifier m850height3ABfNKs = SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(76.0f));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(-Dp.m7555constructorimpl(28.0f))), Alignment.Companion.getTop(), startRestartGroup, 6);
@@ -152,12 +152,12 @@ public final class SettingsBottomBarKt {
             Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 167246569, "C57@2092L300,64@2409L320,71@2746L307:SettingsBottomBar.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 167246569, "C56@2036L300,63@2353L320,70@2690L307:SettingsBottomBar.kt#1gr92h");
             ScalingButtonKt.ScalingButton(onBugsReport, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.getLambda$631972942$settings(), startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             int i4 = i3 >> 6;
             ScalingButtonKt.ScalingButtonLong(onShareLogs, onLongShareLogs, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.getLambda$124095881$settings(), startRestartGroup, ((i3 >> 3) & 14) | 3072 | (i4 & 112), 4);
             startRestartGroup = startRestartGroup;
-            ScalingButtonKt.ScalingButton(onPrivacyPolicy, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m9126getLambda$1935939771$settings(), startRestartGroup, (i4 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onPrivacyPolicy, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m9134getLambda$1935939771$settings(), startRestartGroup, (i4 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

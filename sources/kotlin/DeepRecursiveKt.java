@@ -17,6 +17,6 @@ public final class DeepRecursiveKt {
 
     static {
         Result.Companion companion = Result.Companion;
-        UNDEFINED_RESULT = Result.m9183constructorimpl(IntrinsicsKt.getCOROUTINE_SUSPENDED());
+        UNDEFINED_RESULT = Result.m9202constructorimpl(IntrinsicsKt.getCOROUTINE_SUSPENDED());
     }
 }

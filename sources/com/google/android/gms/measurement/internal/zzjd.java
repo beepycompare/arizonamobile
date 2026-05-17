@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
-import androidx.media3.exoplayer.Renderer;
 import com.google.android.gms.common.GooglePlayServicesUtilLight;
 import com.google.android.gms.common.GoogleSignatureVerifier;
 import com.google.android.gms.common.internal.Preconditions;
@@ -527,7 +526,7 @@ public final class zzjd extends zzga {
         zzN(zzrVar, false);
         Preconditions.checkNotEmpty(zzrVar.zza);
         try {
-            return (zzao) this.zza.zzaW().zzi(new zziq(this, zzrVar)).get(Renderer.DEFAULT_DURATION_TO_PROGRESS_US, TimeUnit.MILLISECONDS);
+            return (zzao) this.zza.zzaW().zzi(new zziq(this, zzrVar)).get(10000L, TimeUnit.MILLISECONDS);
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
             this.zza.zzaV().zzb().zzc("Failed to get consent. appId", zzgu.zzl(zzrVar.zza), e);
             return new zzao(null);
@@ -541,7 +540,7 @@ public final class zzjd extends zzga {
         zzpg zzpgVar = this.zza;
         if (zzpgVar.zzd().zzp(null, zzfy.zzaY)) {
             try {
-                return (List) zzpgVar.zzaW().zzi(new zziv(this, zzrVar, bundle)).get(Renderer.DEFAULT_DURATION_TO_PROGRESS_US, TimeUnit.MILLISECONDS);
+                return (List) zzpgVar.zzaW().zzi(new zziv(this, zzrVar, bundle)).get(10000L, TimeUnit.MILLISECONDS);
             } catch (InterruptedException | ExecutionException | TimeoutException e) {
                 this.zza.zzaV().zzb().zzc("Failed to get trigger URIs. appId", zzgu.zzl(zzrVar.zza), e);
                 return Collections.emptyList();

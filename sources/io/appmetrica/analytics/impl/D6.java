@@ -3,17 +3,17 @@ package io.appmetrica.analytics.impl;
 public final class D6 implements C6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ze f544a;
+    public final Ze f549a;
 
     public D6(Ze ze) {
-        this.f544a = ze;
+        this.f549a = ze;
     }
 
     public final void a(boolean z) {
-        this.f544a.c(z).b();
+        this.f549a.c(z).b();
     }
 
     public final Boolean a() {
-        return this.f544a.d();
+        return this.f549a.d();
     }
 }

@@ -33,19 +33,19 @@ public final class ComposableSingletons$ConnectionDialogKt {
     });
 
     /* renamed from: getLambda$-1711092251$dialogs  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9088getLambda$1711092251$dialogs() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9091getLambda$1711092251$dialogs() {
         return f131lambda$1711092251;
     }
 
     /* renamed from: getLambda$-751471044$dialogs  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9089getLambda$751471044$dialogs() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9092getLambda$751471044$dialogs() {
         return f132lambda$751471044;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda__751471044$lambda$0(BoxScope DialogButtonNo, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(DialogButtonNo, "$this$DialogButtonNo");
-        ComposerKt.sourceInformation(composer, "C51@2112L10,51@2085L85:ConnectionDialog.kt#yp5s1q");
+        ComposerKt.sourceInformation(composer, "C51@2107L10,51@2080L85:ConnectionDialog.kt#yp5s1q");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
@@ -63,7 +63,7 @@ public final class ComposableSingletons$ConnectionDialogKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda__1711092251$lambda$0(BoxScope DialogButtonYes, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(DialogButtonYes, "$this$DialogButtonYes");
-        ComposerKt.sourceInformation(composer, "C63@2535L10,63@2508L91:ConnectionDialog.kt#yp5s1q");
+        ComposerKt.sourceInformation(composer, "C63@2530L10,63@2503L91:ConnectionDialog.kt#yp5s1q");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {

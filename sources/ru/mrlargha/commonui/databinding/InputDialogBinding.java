@@ -11,7 +11,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.commonui.utils.ui.CustomEditText;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class InputDialogBinding implements ViewBinding {
     public final CustomCardView btnEmoji;
     public final DialogButtonsBinding buttons;

@@ -6,11 +6,11 @@ import io.appmetrica.analytics.idsync.internal.model.IdSyncConfig;
 import io.appmetrica.analytics.modulesapi.internal.service.ServiceContext;
 import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ServiceContext f469a;
+    public final ServiceContext f474a;
     public final IHandlerExecutor c;
     public final n d;
     public volatile IdSyncConfig e;
@@ -19,7 +19,7 @@ public final class h {
     public final C0102f g = new C0102f(this);
 
     public h(ServiceContext serviceContext, SdkIdentifiers sdkIdentifiers) {
-        this.f469a = serviceContext;
+        this.f474a = serviceContext;
         this.c = serviceContext.getExecutorProvider().getModuleExecutor();
         this.d = new n(serviceContext, new G(serviceContext.getServiceStorageProvider().modulePreferences("id-sync")), sdkIdentifiers);
     }
@@ -29,7 +29,7 @@ public final class h {
         if (!Intrinsics.areEqual(this.e, idSyncConfig)) {
             this.e = idSyncConfig;
             if (a(idSyncConfig) && !this.f) {
-                this.f469a.getActivationBarrier().subscribe(idSyncConfig.getLaunchDelay(), this.c, new C0103g(this));
+                this.f474a.getActivationBarrier().subscribe(idSyncConfig.getLaunchDelay(), this.c, new C0103g(this));
                 this.f = true;
             } else if (!a(idSyncConfig) && this.f) {
                 this.f = false;

@@ -2,7 +2,6 @@ package ru.mrlargha.commonui.elements.animation.presentation.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,15 +25,13 @@ import ru.mrlargha.commonui.elements.animation.domain.obj.Animation;
 import ru.mrlargha.commonui.elements.animation.domain.obj.AnimationFavourites;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: AnimationAdapter.kt */
-@Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001)B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u000e\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u000f\u001a\u00020\u0010J\u0018\u0010\u0019\u001a\u00020\u00022\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001dH\u0016J\u0018\u0010\u001e\u001a\u00020\u00182\u0006\u0010\u001f\u001a\u00020\u00022\u0006\u0010 \u001a\u00020\u001dH\u0016J\u0010\u0010!\u001a\u00020\u00182\u0006\u0010\u001f\u001a\u00020\u0002H\u0016J\b\u0010\"\u001a\u00020\u001dH\u0016J\u000e\u0010#\u001a\u00020\u00182\u0006\u0010$\u001a\u00020%J\u0014\u0010&\u001a\u00020\u00182\f\u0010'\u001a\b\u0012\u0004\u0012\u00020\u000b0(R\u000e\u0010\u0007\u001a\u00020\bX\u0082.¢\u0006\u0002\n\u0000R\u001e\u0010\t\u001a\u0012\u0012\u0004\u0012\u00020\u000b0\nj\b\u0012\u0004\u0012\u00020\u000b`\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082.¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n \u0013*\u0004\u0018\u00010\u00120\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0014\u001a\u00020\u0015¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0016¨\u0006*"}, d2 = {"Lru/mrlargha/commonui/elements/animation/presentation/adapter/AnimationAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/animation/presentation/adapter/AnimationHolder;", "targetActivity", "Landroid/app/Activity;", "<init>", "(Landroid/app/Activity;)V", "context", "Landroid/content/Context;", "animationList", "Ljava/util/ArrayList;", "Lru/mrlargha/commonui/elements/animation/domain/obj/Animation;", "Lkotlin/collections/ArrayList;", "sendServerEvent", "Lru/mrlargha/commonui/core/IBackendNotifier;", "onAnimationClickListener", "Lru/mrlargha/commonui/elements/animation/presentation/adapter/AnimationAdapter$OnAnimationClickListener;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "()Z", "setOnAnimationClickListener", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "onViewRecycled", "getItemCount", "changeFavouriteStatus", "animationFavourites", "Lru/mrlargha/commonui/elements/animation/domain/obj/AnimationFavourites;", "addAnimations", "data", "", "OnAnimationClickListener", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\\\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001#B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u000e\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u000f\u001a\u00020\u0010J\u0018\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0016J\u0018\u0010\u0018\u001a\u00020\u00122\u0006\u0010\u0019\u001a\u00020\u00022\u0006\u0010\u001a\u001a\u00020\u0017H\u0016J\u0010\u0010\u001b\u001a\u00020\u00122\u0006\u0010\u0019\u001a\u00020\u0002H\u0016J\b\u0010\u001c\u001a\u00020\u0017H\u0016J\u000e\u0010\u001d\u001a\u00020\u00122\u0006\u0010\u001e\u001a\u00020\u001fJ\u0014\u0010 \u001a\u00020\u00122\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u000b0\"R\u000e\u0010\u0007\u001a\u00020\bX\u0082.¢\u0006\u0002\n\u0000R\u001e\u0010\t\u001a\u0012\u0012\u0004\u0012\u00020\u000b0\nj\b\u0012\u0004\u0012\u00020\u000b`\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082.¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lru/mrlargha/commonui/elements/animation/presentation/adapter/AnimationAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/animation/presentation/adapter/AnimationHolder;", "targetActivity", "Landroid/app/Activity;", "<init>", "(Landroid/app/Activity;)V", "context", "Landroid/content/Context;", "animationList", "Ljava/util/ArrayList;", "Lru/mrlargha/commonui/elements/animation/domain/obj/Animation;", "Lkotlin/collections/ArrayList;", "sendServerEvent", "Lru/mrlargha/commonui/core/IBackendNotifier;", "onAnimationClickListener", "Lru/mrlargha/commonui/elements/animation/presentation/adapter/AnimationAdapter$OnAnimationClickListener;", "setOnAnimationClickListener", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "onViewRecycled", "getItemCount", "changeFavouriteStatus", "animationFavourites", "Lru/mrlargha/commonui/elements/animation/domain/obj/AnimationFavourites;", "addAnimations", "data", "", "OnAnimationClickListener", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder> {
     private final ArrayList<Animation> animationList;
     private Context context;
-    private final boolean isArizonaType;
     private OnAnimationClickListener onAnimationClickListener;
     private final IBackendNotifier sendServerEvent;
-    private final SharedPreferences sharedPref;
 
     /* compiled from: AnimationAdapter.kt */
     @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&¨\u0006\u0006À\u0006\u0003"}, d2 = {"Lru/mrlargha/commonui/elements/animation/presentation/adapter/AnimationAdapter$OnAnimationClickListener;", "", "callback", "", "animation", "Lru/mrlargha/commonui/elements/animation/domain/obj/Animation;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
@@ -47,13 +44,6 @@ public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         this.animationList = new ArrayList<>();
         this.sendServerEvent = (IBackendNotifier) targetActivity;
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
-        this.sharedPref = sharedPreferences;
-        this.isArizonaType = sharedPreferences.getBoolean("isArizonaType", false);
-    }
-
-    public final boolean isArizonaType() {
-        return this.isArizonaType;
     }
 
     public final void setOnAnimationClickListener(OnAnimationClickListener onAnimationClickListener) {
@@ -105,18 +95,18 @@ public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder
         }
         TextView textView = holder.getAnimationItemBinding().aiTittle;
         String name = animation.getName();
-        if (this.isArizonaType) {
+        if (UtilsKt.isArizonaType()) {
             str = "(" + animation.getId() + ")";
         } else {
             str = "";
         }
         textView.setText(name + str);
-        if (this.isArizonaType) {
-            str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/animation/img/animations/";
+        if (UtilsKt.isArizonaType()) {
+            str2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/animation/img/animations/";
         } else if (animation.getAddition() == 1) {
-            str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/animation_pirate/";
+            str2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/animation_pirate/";
         } else {
-            str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/animation/img/animations/";
+            str2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/animation/img/animations/";
         }
         if (animation.getAddition() == 1) {
             holder.getAnimationItemBinding().aiFavorite.setVisibility(8);

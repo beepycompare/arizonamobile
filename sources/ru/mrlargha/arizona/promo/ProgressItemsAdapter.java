@@ -94,8 +94,8 @@ public final class ProgressItemsAdapter extends RecyclerView.Adapter<ProgressIte
             BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new ProgressItemsAdapter$onBindViewHolder$1$2(promoReward, binding, null), 3, null);
         } else {
             Picasso picasso = Picasso.get();
-            String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso.load(resourceUrl$default + "projects/arizona-rp/assets/images/donate/" + StringsKt.substringBeforeLast$default(promoReward.getImage(), ".", (String) null, 2, (Object) null) + ".webp").into(binding.image);
+            String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            picasso.load(projectResourceUrl$default + "assets/images/donate/" + StringsKt.substringBeforeLast$default(promoReward.getImage(), ".", (String) null, 2, (Object) null) + ".webp").into(binding.image);
         }
         binding.image.setBackground(new RadialBottomCenterCircleDrawable(Color.parseColor(promoReward.getColor()), 0));
     }

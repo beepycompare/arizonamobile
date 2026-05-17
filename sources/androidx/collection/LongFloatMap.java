@@ -346,14 +346,11 @@ public abstract class LongFloatMap {
                 i5 = i2 + 1;
                 jArr4 = jArr;
             }
-            String sb2 = sb.toString();
-            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-            return sb2;
         }
         sb.append(postfix);
-        String sb22 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
-        return sb22;
+        String sb2 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+        return sb2;
     }
 
     public static /* synthetic */ String joinToString$default(LongFloatMap longFloatMap, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, int i, CharSequence charSequence4, Function2 transform, int i2, Object obj) {
@@ -946,14 +943,11 @@ public abstract class LongFloatMap {
                 i2++;
                 jArr4 = jArr;
             }
-            String sb2 = sb.toString();
-            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-            return sb2;
         }
         sb.append(postfix);
-        String sb22 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
-        return sb22;
+        String sb2 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+        return sb2;
     }
 
     public final String joinToString(CharSequence separator, CharSequence prefix, Function2<? super Long, ? super Float, ? extends CharSequence> transform) {

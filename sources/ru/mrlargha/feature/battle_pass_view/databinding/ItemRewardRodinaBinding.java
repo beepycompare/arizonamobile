@@ -5,22 +5,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.battle_pass_view.R;
 /* loaded from: classes6.dex */
 public final class ItemRewardRodinaBinding implements ViewBinding {
-    public final CardView cvReward;
+    public final CustomCardView cvReward;
     public final ImageView ivReward;
     public final ConstraintLayout parentLayout;
     private final ConstraintLayout rootView;
     public final TextView tvRewardDesc;
 
-    private ItemRewardRodinaBinding(ConstraintLayout constraintLayout, CardView cardView, ImageView imageView, ConstraintLayout constraintLayout2, TextView textView) {
+    private ItemRewardRodinaBinding(ConstraintLayout constraintLayout, CustomCardView customCardView, ImageView imageView, ConstraintLayout constraintLayout2, TextView textView) {
         this.rootView = constraintLayout;
-        this.cvReward = cardView;
+        this.cvReward = customCardView;
         this.ivReward = imageView;
         this.parentLayout = constraintLayout2;
         this.tvRewardDesc = textView;
@@ -45,8 +45,8 @@ public final class ItemRewardRodinaBinding implements ViewBinding {
 
     public static ItemRewardRodinaBinding bind(View view) {
         int i = R.id.cvReward;
-        CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
-        if (cardView != null) {
+        CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(view, i);
+        if (customCardView != null) {
             i = R.id.ivReward;
             ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
             if (imageView != null) {
@@ -54,7 +54,7 @@ public final class ItemRewardRodinaBinding implements ViewBinding {
                 i = R.id.tvRewardDesc;
                 TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                 if (textView != null) {
-                    return new ItemRewardRodinaBinding(constraintLayout, cardView, imageView, constraintLayout, textView);
+                    return new ItemRewardRodinaBinding(constraintLayout, customCardView, imageView, constraintLayout, textView);
                 }
             }
         }

@@ -7,7 +7,7 @@ import androidx.activity.ComponentActivity;
 import androidx.fragment.app.Fragment;
 import dagger.hilt.android.internal.migration.InjectedByHilt;
 import dagger.hilt.internal.Preconditions;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class OptionalInjectCheck {
     public static boolean wasInjectedByHilt(ComponentActivity activity) {
         return check(activity);

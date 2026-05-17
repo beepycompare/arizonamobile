@@ -7,17 +7,17 @@ public enum I8 {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f625a;
+    public final int f630a;
 
     I8(int i) {
-        this.f625a = i;
+        this.f630a = i;
     }
 
     public static I8 a(Integer num) {
         I8[] values;
         if (num != null) {
             for (I8 i8 : values()) {
-                if (i8.f625a == num.intValue()) {
+                if (i8.f630a == num.intValue()) {
                     return i8;
                 }
             }

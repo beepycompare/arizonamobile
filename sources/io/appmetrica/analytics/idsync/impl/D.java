@@ -1,11 +1,11 @@
 package io.appmetrica.analytics.idsync.impl;
 
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class D {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f459a;
+    public final String f464a;
     public final boolean b;
     public final String c;
     public final boolean d;
@@ -14,7 +14,7 @@ public final class D {
     public final Map g;
 
     public D(String str, boolean z, String str2, boolean z2, int i, byte[] bArr, Map map) {
-        this.f459a = str;
+        this.f464a = str;
         this.b = z;
         this.c = str2;
         this.d = z2;
@@ -24,6 +24,6 @@ public final class D {
     }
 
     public final String toString() {
-        return "RequestResult(type='" + this.f459a + "', isCompleted=" + this.b + ", url=" + this.c + ", responseCodeIsValid=" + this.d + ", responseCode=" + this.e + ", responseBody=" + this.f + ", responseHeaders=" + this.g + ')';
+        return "RequestResult(type='" + this.f464a + "', isCompleted=" + this.b + ", url=" + this.c + ", responseCodeIsValid=" + this.d + ", responseCode=" + this.e + ", responseBody=" + this.f + ", responseHeaders=" + this.g + ')';
     }
 }

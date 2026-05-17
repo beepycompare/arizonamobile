@@ -63,7 +63,7 @@ public final class DownloadScreenComponent$onSoundClick$1 extends SuspendLambda 
         }
         mutableStateFlow = this.this$0.stateStore;
         mutableStateFlow2 = this.this$0.stateStore;
-        mutableStateFlow.setValue(DownloadScreenUiState.copy$default((DownloadScreenUiState) mutableStateFlow2.getValue(), null, null, null, false, false, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, null, this.$value, false, false, 0, 1919, null));
+        mutableStateFlow.setValue(DownloadScreenUiState.copy$default((DownloadScreenUiState) mutableStateFlow2.getValue(), null, null, null, false, false, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, null, this.$value, false, false, false, 1919, null));
         return Unit.INSTANCE;
     }
 }

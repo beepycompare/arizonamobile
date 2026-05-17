@@ -16,7 +16,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt;
 import kotlin.ranges.RangesKt;
 import kotlin.text.Charsets;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
@@ -24,9 +24,9 @@ public final class C implements ProtobufConverter {
         k kVar = new k();
         String type = requestConfig.getType();
         Charset charset = Charsets.UTF_8;
-        kVar.f472a = type.getBytes(charset);
+        kVar.f477a = type.getBytes(charset);
         j jVar = new j();
-        jVar.f471a = B.f458a[requestConfig.getPreconditions().getNetworkType().ordinal()] != 1 ? 0 : 1;
+        jVar.f476a = B.f463a[requestConfig.getPreconditions().getNetworkType().ordinal()] != 1 ? 0 : 1;
         kVar.b = jVar;
         kVar.c = requestConfig.getUrl().getBytes(charset);
         Map<String, List<String>> headers = requestConfig.getHeaders();
@@ -34,7 +34,7 @@ public final class C implements ProtobufConverter {
         for (Map.Entry<String, List<String>> entry : headers.entrySet()) {
             List<String> value = entry.getValue();
             i iVar = new i();
-            iVar.f470a = entry.getKey().getBytes(Charsets.UTF_8);
+            iVar.f475a = entry.getKey().getBytes(Charsets.UTF_8);
             int size = value.size();
             byte[][] bArr = new byte[size];
             for (int i = 0; i < size; i++) {
@@ -70,12 +70,12 @@ public final class C implements ProtobufConverter {
     */
     public final RequestConfig toModel(k kVar) {
         NetworkType networkType;
-        byte[] bArr = kVar.f472a;
+        byte[] bArr = kVar.f477a;
         Charset charset = Charsets.UTF_8;
         String str = new String(bArr, charset);
         j jVar = kVar.b;
         if (jVar != null) {
-            if (jVar.f471a == 1) {
+            if (jVar.f476a == 1) {
                 networkType = NetworkType.CELL;
             } else {
                 networkType = NetworkType.ANY;
@@ -87,7 +87,7 @@ public final class C implements ProtobufConverter {
         i[] iVarArr = kVar.d;
         LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(iVarArr.length), 16));
         for (i iVar : iVarArr) {
-            String str3 = new String(iVar.f470a, Charsets.UTF_8);
+            String str3 = new String(iVar.f475a, Charsets.UTF_8);
             byte[][] bArr2 = iVar.b;
             ArrayList arrayList = new ArrayList(bArr2.length);
             for (byte[] bArr3 : bArr2) {

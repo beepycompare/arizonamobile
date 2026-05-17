@@ -9,7 +9,7 @@ import java.util.Locale;
 import kotlin.collections.ArraysKt;
 import kotlin.jvm.functions.Function1;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class StringUtils {
     public static final String COMMA = ",";
     public static final String EMPTY = "";

@@ -2,7 +2,6 @@ package ru.mrlargha.event;
 
 import android.graphics.Bitmap;
 import android.widget.ImageView;
-import com.google.android.vending.licensing.Policy;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -19,7 +18,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.event.databinding.EventEventsItemBinding;
 /* compiled from: EventScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.event.EventScreen$setEvent$1$12$1", f = "EventScreen.kt", i = {}, l = {558}, m = "invokeSuspend", n = {}, nl = {Policy.NOT_LICENSED}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.event.EventScreen$setEvent$1$12$1", f = "EventScreen.kt", i = {}, l = {554}, m = "invokeSuspend", n = {}, nl = {557}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 final class EventScreen$setEvent$1$12$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ String $it;

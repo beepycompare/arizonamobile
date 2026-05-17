@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.utils.progressBar.StoriesProgressView;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class ItemCharacteristicBinding implements ViewBinding {
     public final StoriesProgressView progressView;
     private final ConstraintLayout rootView;

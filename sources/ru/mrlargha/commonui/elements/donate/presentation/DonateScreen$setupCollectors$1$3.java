@@ -18,10 +18,11 @@ import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.StateFlow;
 import ru.mrlargha.commonui.elements.donate.presentation.UiState;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBoostModelUi;
+import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3", f = "DonateScreen.kt", i = {}, l = {271}, m = "invokeSuspend", n = {}, nl = {288}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3", f = "DonateScreen.kt", i = {}, l = {264}, m = "invokeSuspend", n = {}, nl = {281}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateScreen$setupCollectors$1$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -47,7 +48,7 @@ public final class DonateScreen$setupCollectors$1$3 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: DonateScreen.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3$1", f = "DonateScreen.kt", i = {}, l = {272}, m = "invokeSuspend", n = {}, nl = {287}, s = {}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3$1", f = "DonateScreen.kt", i = {}, l = {265}, m = "invokeSuspend", n = {}, nl = {RouletteView.DEFAULT_ROULETTE_WIDTH}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

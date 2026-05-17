@@ -7,13 +7,13 @@ import kotlin.collections.CollectionsKt;
 public final class Kn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final E3 f664a;
+    public final E3 f669a;
     public final Do b;
     public final ConjunctiveCompositeThreadSafeToggle c;
 
     public Kn(Toggle toggle) {
         E3 e3 = new E3(C0448na.k().y());
-        this.f664a = e3;
+        this.f669a = e3;
         Do r1 = new Do();
         this.b = r1;
         Toggle[] toggleArr = new Toggle[3];

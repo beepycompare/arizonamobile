@@ -11,7 +11,7 @@ public final class C0572sa extends C2 {
         int i = 0;
         if (str != null) {
             int length = str.length();
-            int i2 = this.f528a;
+            int i2 = this.f533a;
             if (length > i2) {
                 String substring = str.substring(0, i2);
                 i = str.getBytes().length - substring.getBytes().length;

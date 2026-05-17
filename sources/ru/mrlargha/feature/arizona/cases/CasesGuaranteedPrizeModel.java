@@ -174,11 +174,13 @@ public final class CasesGuaranteedPrizeModel {
     }
 
     /* renamed from: getCount  reason: collision with other method in class */
-    public final String m11154getCount() {
+    public final String m11173getCount() {
         if (this.count > 1) {
             DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.getDefault());
             decimalFormatSymbols.setGroupingSeparator(' ');
-            return new DecimalFormat("#,###", decimalFormatSymbols).format(Integer.valueOf(this.count)) + " шт.";
+            String string = CasesResponseKt.getAppContext().getString(R.string.cases_count_amount, new DecimalFormat("#,###", decimalFormatSymbols).format(Integer.valueOf(this.count)));
+            Intrinsics.checkNotNull(string);
+            return string;
         }
         return "";
     }

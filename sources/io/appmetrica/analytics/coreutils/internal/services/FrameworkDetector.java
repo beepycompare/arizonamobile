@@ -2,18 +2,18 @@ package io.appmetrica.analytics.coreutils.internal.services;
 
 import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
 import io.appmetrica.analytics.plugins.PluginErrorDetails;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FrameworkDetector {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f411a = new FrameworkDetector().detectFramework();
+    private static final String f416a = new FrameworkDetector().detectFramework();
 
     public static String framework() {
-        return f411a;
+        return f416a;
     }
 
     public static boolean isNative() {
-        return "native".equals(f411a);
+        return "native".equals(f416a);
     }
 
     public String detectFramework() {

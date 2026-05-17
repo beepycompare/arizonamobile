@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class DownloadRequest implements Parcelable {
     public static final Parcelable.Creator<DownloadRequest> CREATOR = new Parcelable.Creator<DownloadRequest>() { // from class: androidx.media3.exoplayer.offline.DownloadRequest.1
         /* JADX WARN: Can't rename method to resolve collision */
@@ -42,7 +42,7 @@ public final class DownloadRequest implements Parcelable {
     public final TimeRange timeRange;
     public final Uri uri;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class UnsupportedRequestException extends IOException {
     }
 
@@ -51,7 +51,7 @@ public final class DownloadRequest implements Parcelable {
         return 0;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
         private String customCacheKey;
         private byte[] data;

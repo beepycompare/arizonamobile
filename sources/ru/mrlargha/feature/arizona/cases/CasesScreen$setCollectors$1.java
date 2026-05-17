@@ -34,7 +34,7 @@ import ru.mrlargha.feature.arizona.cases.data.remote.models.CasesPrizeModel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CasesScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1", f = "CasesScreen.kt", i = {}, l = {ComposerKt.providerKey, 200, 213}, m = "invokeSuspend", n = {}, nl = {200, ComposerKt.providerValuesKey, 259}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1", f = "CasesScreen.kt", i = {}, l = {ComposerKt.compositionLocalMapKey, ComposerKt.providerKey, 214}, m = "invokeSuspend", n = {}, nl = {ComposerKt.providerKey, ComposerKt.providerMapsKey, 260}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class CasesScreen$setCollectors$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -61,7 +61,7 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
     /* JADX WARN: Code restructure failed: missing block: B:22:0x0055, code lost:
         if (r1.emit(r8, r7) == r0) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x00a8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x00b2, code lost:
         if (kotlinx.coroutines.flow.FlowKt.combine(r8, r1, new ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1.AnonymousClass1(null)).collect(new ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1.AnonymousClass2(r7.this$0), r7) == r0) goto L16;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -70,6 +70,7 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
     */
     public final Object invokeSuspend(Object obj) {
         Activity targetActivity;
+        Activity targetActivity2;
         MutableStateFlow mutableStateFlow;
         MutableStateFlow mutableStateFlow2;
         MutableStateFlow mutableStateFlow3;
@@ -79,7 +80,8 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
         try {
         } catch (Exception e) {
             targetActivity = this.this$0.getTargetActivity();
-            Toast.makeText(targetActivity, "Не удалось загрузить данные. Попробуйте ещё раз позже", 0).show();
+            targetActivity2 = this.this$0.getTargetActivity();
+            Toast.makeText(targetActivity, targetActivity2.getString(R.string.cases_error_load_data), 0).show();
             String message = e.getMessage();
             if (message == null) {
                 message = "error with retrofit request";

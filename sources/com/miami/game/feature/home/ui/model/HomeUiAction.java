@@ -4,7 +4,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HomeUiAction.kt */
-@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b7\u0018\u00002\u00020\u0001:\b\u0004\u0005\u0006\u0007\b\t\n\u000bB\t\b\u0004¢\u0006\u0004\b\u0002\u0010\u0003\u0082\u0001\b\f\r\u000e\u000f\u0010\u0011\u0012\u0013¨\u0006\u0014"}, d2 = {"Lcom/miami/game/feature/home/ui/model/HomeUiAction;", "", "<init>", "()V", "NavigateToSettings", "NavigateToSelectServers", "NavigateToDownloadDialog", "NavigateToDownloadScreen", "NavigateToErrorDialog", "NavigateToRepairGameSuccess", "NavigateToNotification", "NotifyHwIsNotAllowed", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToDownloadDialog;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToDownloadScreen;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToErrorDialog;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToNotification;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToRepairGameSuccess;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToSelectServers;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToSettings;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NotifyHwIsNotAllowed;", "home"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b7\u0018\u00002\u00020\u0001:\t\u0004\u0005\u0006\u0007\b\t\n\u000b\fB\t\b\u0004¢\u0006\u0004\b\u0002\u0010\u0003\u0082\u0001\t\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015¨\u0006\u0016"}, d2 = {"Lcom/miami/game/feature/home/ui/model/HomeUiAction;", "", "<init>", "()V", "NavigateToSettings", "NavigateToSelectServers", "NavigateToDownloadDialog", "NavigateToDownloadScreen", "NavigateToErrorDialog", "NavigateToRepairGameSuccess", "NavigateToNotification", "NotifyHwIsNotAllowed", "NotifyShopIsNotAllowed", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToDownloadDialog;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToDownloadScreen;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToErrorDialog;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToNotification;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToRepairGameSuccess;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToSelectServers;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NavigateToSettings;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NotifyHwIsNotAllowed;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction$NotifyShopIsNotAllowed;", "home"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public abstract class HomeUiAction {
     public static final int $stable = 0;
@@ -279,6 +279,37 @@ public abstract class HomeUiAction {
         }
 
         private NotifyHwIsNotAllowed() {
+            super(null);
+        }
+    }
+
+    /* compiled from: HomeUiAction.kt */
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\n\u0010\n\u001a\u00020\u000bHÖ\u0081\u0004¨\u0006\f"}, d2 = {"Lcom/miami/game/feature/home/ui/model/HomeUiAction$NotifyShopIsNotAllowed;", "Lcom/miami/game/feature/home/ui/model/HomeUiAction;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "toString", "", "home"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    /* loaded from: classes4.dex */
+    public static final class NotifyShopIsNotAllowed extends HomeUiAction {
+        public static final int $stable = 0;
+        public static final NotifyShopIsNotAllowed INSTANCE = new NotifyShopIsNotAllowed();
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof NotifyShopIsNotAllowed) {
+                NotifyShopIsNotAllowed notifyShopIsNotAllowed = (NotifyShopIsNotAllowed) obj;
+                return true;
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return 1457839641;
+        }
+
+        public String toString() {
+            return "NotifyShopIsNotAllowed";
+        }
+
+        private NotifyShopIsNotAllowed() {
             super(null);
         }
     }

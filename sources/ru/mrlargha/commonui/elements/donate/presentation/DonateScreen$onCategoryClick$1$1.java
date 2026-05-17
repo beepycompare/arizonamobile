@@ -1,6 +1,5 @@
 package ru.mrlargha.commonui.elements.donate.presentation;
 
-import android.app.Activity;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -42,28 +41,26 @@ public final class DonateScreen$onCategoryClick$1$1 extends SuspendLambda implem
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Activity targetActivity;
         DonateStates donateStates;
         DonateStates donateStates2;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        if (this.label == 0) {
-            ResultKt.throwOnFailure(obj);
-            targetActivity = this.this$0.getTargetActivity();
-            boolean arizonaType = UtilsKt.getArizonaType(targetActivity);
-            DonateScreen donateScreen = this.this$0;
-            if (arizonaType) {
-                donateStates2 = donateScreen.states;
-                if (donateStates2 != null) {
-                    donateStates2.setItemsArizona(this.$model.getId(), this.$model.isActionCategory());
-                }
-            } else {
-                donateStates = donateScreen.states;
-                if (donateStates != null) {
-                    donateStates.setItemsRodina(this.$model.getId(), this.$model.isLimitCategory(), this.$model.isActionCategory());
-                }
-            }
-            return Unit.INSTANCE;
+        if (this.label != 0) {
+            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        ResultKt.throwOnFailure(obj);
+        boolean isArizonaType = UtilsKt.isArizonaType();
+        DonateScreen donateScreen = this.this$0;
+        if (isArizonaType) {
+            donateStates2 = donateScreen.states;
+            if (donateStates2 != null) {
+                donateStates2.setItemsArizona(this.$model.getId(), this.$model.isActionCategory());
+            }
+        } else {
+            donateStates = donateScreen.states;
+            if (donateStates != null) {
+                donateStates.setItemsRodina(this.$model.getId(), this.$model.isLimitCategory(), this.$model.isActionCategory());
+            }
+        }
+        return Unit.INSTANCE;
     }
 }

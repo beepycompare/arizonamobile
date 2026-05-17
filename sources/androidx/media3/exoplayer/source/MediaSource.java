@@ -95,7 +95,7 @@ public interface MediaSource {
     default void updateMediaItem(MediaItem mediaItem) {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class MediaPeriodId {
         public final int adGroupIndex;
         public final int adIndexInAdGroup;

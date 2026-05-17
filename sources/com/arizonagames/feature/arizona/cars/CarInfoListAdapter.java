@@ -1,5 +1,6 @@
 package com.arizonagames.feature.arizona.cars;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -90,6 +91,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
         Object obj;
         Intrinsics.checkNotNullParameter(holder, "holder");
         CarsCarItemBinding binding = holder.getBinding();
+        Context context = holder.itemView.getContext();
         final CarInfoListItem carInfoListItem = (CarInfoListItem) CollectionsKt.getOrNull(this.itemsList, i);
         if (carInfoListItem == null) {
             return;
@@ -107,13 +109,13 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
             }
         });
         binding.carName.setText(carInfoListItem.getTitle());
-        String str = UtilsKt.isArizonaType() ? "projects/arizona-rp/assets/images/inventory/vehicles/256/" : "projects/rodina-rp/assets/images/inventory/vehicles/512/";
-        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + str + carInfoListItem.getSysName()).into(binding.carIc);
+        String str = UtilsKt.isArizonaType() ? "assets/images/inventory/vehicles/256/" : "assets/images/inventory/vehicles/512/";
+        Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + str + carInfoListItem.getSysName()).into(binding.carIc);
         String status = carInfoListItem.getStatus();
         switch (status.hashCode()) {
             case -2058533514:
                 if (status.equals("parkhouse")) {
-                    binding.carStatus.setText("Гараж дома");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_park_house));
                     binding.carStatus.setTextColor(Color.parseColor("#60CA5D"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_green);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_green_ic);
@@ -122,7 +124,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case -1289345308:
                 if (status.equals("arrested")) {
-                    binding.carStatus.setText("На штрафстоянке");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_arrested));
                     binding.carStatus.setTextColor(Color.parseColor("#F34141"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_red);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_red_ic);
@@ -131,7 +133,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case -1097519099:
                 if (status.equals("loaded")) {
-                    binding.carStatus.setText("Загружено");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_loaded));
                     binding.carStatus.setTextColor(Color.parseColor("#60CA5D"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_green);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_green_ic);
@@ -140,7 +142,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case -995418615:
                 if (status.equals("parked")) {
-                    binding.carStatus.setText("Припарковано");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_parked));
                     binding.carStatus.setTextColor(Color.parseColor("#60CA5D"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_green);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_green_ic);
@@ -149,7 +151,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case -995418215:
                 if (status.equals("parkra")) {
-                    binding.carStatus.setText("Паркинг Риелторка");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_park_ra));
                     binding.carStatus.setTextColor(Color.parseColor("#60CA5D"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_green);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_green_ic);
@@ -158,7 +160,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case -892072665:
                 if (status.equals("stolen")) {
-                    binding.carStatus.setText("Угнан");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_stolen));
                     binding.carStatus.setTextColor(Color.parseColor("#F34141"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_red);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_red_ic);
@@ -167,7 +169,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case -793209039:
                 if (status.equals("parkazt")) {
-                    binding.carStatus.setText("Паркинг AT");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_park_azt));
                     binding.carStatus.setTextColor(Color.parseColor("#60CA5D"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_green);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_green_ic);
@@ -176,7 +178,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case -793208855:
                 if (status.equals("parkbar")) {
-                    binding.carStatus.setText("Парковка бара");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_park_bar));
                     binding.carStatus.setTextColor(Color.parseColor("#60CA5D"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_green);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_green_ic);
@@ -185,7 +187,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case -793197724:
                 if (status.equals("parkmst")) {
-                    binding.carStatus.setText("Паркинг MS");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_park_mst));
                     binding.carStatus.setTextColor(Color.parseColor("#60CA5D"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_green);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_green_ic);
@@ -194,7 +196,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case -762504921:
                 if (status.equals("repaircar")) {
-                    binding.carStatus.setText("Требуется ремонт");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_repair));
                     binding.carStatus.setTextColor(Color.parseColor("#F34141"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_red);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_red_ic);
@@ -203,7 +205,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case -480017974:
                 if (status.equals("rentgive")) {
-                    binding.carStatus.setText("Сдано в аренду");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_rent_give));
                     binding.carStatus.setTextColor(Color.parseColor("#FFC852"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_orange);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_orange_ic);
@@ -212,7 +214,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case -479638720:
                 if (status.equals("renttake")) {
-                    binding.carStatus.setText("Взято в аренду");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_rent_take));
                     binding.carStatus.setTextColor(Color.parseColor("#FFC852"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_orange);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_orange_ic);
@@ -221,7 +223,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case 3556308:
                 if (status.equals("temp")) {
-                    binding.carStatus.setText("Временное");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_temp));
                     binding.carStatus.setTextColor(Color.parseColor("#FFC852"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_orange);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_orange_ic);
@@ -230,7 +232,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case 1079450808:
                 if (status.equals("notLoaded")) {
-                    binding.carStatus.setText("Не загружено");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_not_loaded));
                     binding.carStatus.setTextColor(Color.parseColor("#99FFFFFF"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_gray);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_gray_ic);
@@ -239,7 +241,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case 1180809763:
                 if (status.equals("parkrent")) {
-                    binding.carStatus.setText("Аренда на паркоместе");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_park_rent));
                     binding.carStatus.setTextColor(Color.parseColor("#60CA5D"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_green);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_green_ic);
@@ -248,7 +250,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 break;
             case 1566649931:
                 if (status.equals("parkundeground")) {
-                    binding.carStatus.setText("Подземная парковка");
+                    binding.carStatus.setText(context.getString(R.string.cars_status_park_underground));
                     binding.carStatus.setTextColor(Color.parseColor("#60CA5D"));
                     binding.statusContainer.setBackgroundResource(R.drawable.cars_car_status_container_green);
                     binding.carStatusIc.setImageResource(R.drawable.cars_main_page_car_status_green_ic);
@@ -318,7 +320,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
             if (qualityType != null) {
                 Integer rarity2 = carInfoListItem.getRarity();
                 if (rarity2 != null && rarity2.intValue() == 0) {
-                    binding.qualityText.setText("Качество не определено");
+                    binding.qualityText.setText(context.getString(R.string.cars_quality_undefined));
                     binding.rarityCard.setVisibility(8);
                 } else {
                     binding.qualityText.setText(qualityType.getName() + " (" + carInfoListItem.getRarityLevel() + ")");
@@ -328,10 +330,10 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
                 CustomCardView.setBackground$default(rarityCard, Color.parseColor(qualityType.getColors().get(1)), Color.parseColor(qualityType.getColors().get(0)), null, null, 12, null);
             }
             binding.rarityCard.setVisibility(0);
-            binding.ratingText.setText(carInfoListItem.getRatingPosition() + " место");
+            binding.ratingText.setText(context.getString(R.string.cars_rating_place, carInfoListItem.getRatingPosition()));
             Integer ratingPosition = carInfoListItem.getRatingPosition();
             if (ratingPosition != null && ratingPosition.intValue() == 0) {
-                binding.ratingText.setText("Рейтинг скоро будет определен");
+                binding.ratingText.setText(context.getString(R.string.cars_rating_pending));
             }
             if (intValue == 0) {
                 binding.ratingCard.setVisibility(8);

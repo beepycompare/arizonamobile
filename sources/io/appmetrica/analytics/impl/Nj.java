@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Nj implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f712a;
+    public final /* synthetic */ String f717a;
 
     public Nj(String str) {
-        this.f712a = str;
+        this.f717a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.Qa
     public final void a(Ra ra) {
-        ra.reportEvent(this.f712a);
+        ra.reportEvent(this.f717a);
     }
 }

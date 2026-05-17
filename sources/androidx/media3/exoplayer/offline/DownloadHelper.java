@@ -59,7 +59,7 @@ import java.util.Collections;
 import java.util.List;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class DownloadHelper {
     public static final DefaultTrackSelector.Parameters DEFAULT_TRACK_SELECTOR_PARAMETERS;
     @Deprecated
@@ -86,14 +86,14 @@ public final class DownloadHelper {
     private final DefaultTrackSelector trackSelector;
     private final Timeline.Window window;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface Callback {
         void onPrepareError(DownloadHelper downloadHelper, IOException iOException);
 
         void onPrepared(DownloadHelper downloadHelper, boolean z);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class LiveContentUnsupportedException extends IOException {
     }
 
@@ -106,7 +106,7 @@ public final class DownloadHelper {
     public static /* synthetic */ void lambda$new$0() {
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class Factory {
         private DataSource.Factory dataSourceFactory;
         private boolean debugLoggingEnabled;
@@ -718,7 +718,7 @@ public final class DownloadHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class MediaPreparer implements MediaSource.MediaSourceCaller, ProgressiveMediaSource.Listener, MediaPeriod.Callback, Handler.Callback {
         private static final int DOWNLOAD_HELPER_CALLBACK_MESSAGE_FAILED = 2;
         private static final int DOWNLOAD_HELPER_CALLBACK_MESSAGE_PREPARED = 1;
@@ -893,7 +893,7 @@ public final class DownloadHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class DownloadTrackSelection extends BaseTrackSelection {
         @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
         public int getSelectedIndex() {
@@ -914,7 +914,7 @@ public final class DownloadHelper {
         public void updateSelectedTrack(long j, long j2, long j3, List<? extends MediaChunk> list, MediaChunkIterator[] mediaChunkIteratorArr) {
         }
 
-        /* loaded from: classes.dex */
+        /* loaded from: classes3.dex */
         private static final class Factory implements ExoTrackSelection.Factory {
             private Factory() {
             }
@@ -934,7 +934,7 @@ public final class DownloadHelper {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     private static final class FakeBandwidthMeter implements BandwidthMeter {
         @Override // androidx.media3.exoplayer.upstream.BandwidthMeter
         public void addEventListener(Handler handler, BandwidthMeter.EventListener eventListener) {
@@ -959,7 +959,7 @@ public final class DownloadHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class UnreleaseableRendererCapabilitiesList implements RendererCapabilitiesList {
         private final RendererCapabilities[] rendererCapabilities;
 

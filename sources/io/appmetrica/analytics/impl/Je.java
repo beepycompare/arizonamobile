@@ -10,10 +10,10 @@ import kotlin.collections.CollectionsKt;
 public final class Je {
 
     /* renamed from: a  reason: collision with root package name */
-    public final M9 f643a;
+    public final M9 f648a;
 
     public Je(M9 m9) {
-        this.f643a = m9;
+        this.f648a = m9;
     }
 
     public final Qn a(PluginErrorDetails pluginErrorDetails) {
@@ -24,8 +24,8 @@ public final class Je {
         String platform = pluginErrorDetails.getPlatform();
         String virtualMachineVersion = pluginErrorDetails.getVirtualMachineVersion();
         Map<String, String> pluginEnvironment = pluginErrorDetails.getPluginEnvironment();
-        String str = (String) this.f643a.b.a();
-        Boolean bool = (Boolean) this.f643a.c.a();
+        String str = (String) this.f648a.b.a();
+        Boolean bool = (Boolean) this.f648a.c.a();
         if (stacktrace != null) {
             arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(stacktrace, 10));
             for (StackTraceItem stackTraceItem : stacktrace) {

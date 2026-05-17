@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.coreutils.internal.executors;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class SafeRunnable implements Runnable {
     @Override // java.lang.Runnable
     public void run() {

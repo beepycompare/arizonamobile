@@ -47,8 +47,8 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Dela
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo10760scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
-        this.$$delegate_0.mo10760scheduleResumeAfterDelay(j, cancellableContinuation);
+    public void mo10779scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
+        this.$$delegate_0.mo10779scheduleResumeAfterDelay(j, cancellableContinuation);
     }
 
     public static final /* synthetic */ AtomicIntegerFieldUpdater access$getRunningWorkers$volatile$FU() {
@@ -154,7 +154,7 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Dela
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo10759dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo10778dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         Runnable obtainTaskOrDeallocateWorker;
         this.queue.addLast(runnable);
         if (runningWorkers$volatile$FU.get(this) >= this.parallelism || !tryAllocateWorker() || (obtainTaskOrDeallocateWorker = obtainTaskOrDeallocateWorker()) == null) {

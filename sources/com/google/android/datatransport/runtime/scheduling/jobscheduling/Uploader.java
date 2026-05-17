@@ -62,14 +62,14 @@ public class Uploader {
         this.executor.execute(new Runnable() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                Uploader.this.m8827x80c37673(transportContext, i, runnable);
+                Uploader.this.m8831x80c37673(transportContext, i, runnable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$upload$1$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ void m8827x80c37673(final TransportContext transportContext, final int i, Runnable runnable) {
+    public /* synthetic */ void m8831x80c37673(final TransportContext transportContext, final int i, Runnable runnable) {
         try {
             SynchronizationGuard synchronizationGuard = this.guard;
             final EventStore eventStore = this.eventStore;
@@ -84,7 +84,7 @@ public class Uploader {
                 this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda2
                     @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                     public final Object execute() {
-                        return Uploader.this.m8826x3eac4914(transportContext, i);
+                        return Uploader.this.m8830x3eac4914(transportContext, i);
                     }
                 });
             } else {
@@ -99,7 +99,7 @@ public class Uploader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$upload$0$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Object m8826x3eac4914(TransportContext transportContext, int i) {
+    public /* synthetic */ Object m8830x3eac4914(TransportContext transportContext, int i) {
         this.workScheduler.schedule(transportContext, i + 1);
         return null;
     }
@@ -113,7 +113,7 @@ public class Uploader {
             boolean booleanValue = ((Boolean) this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda5
                 @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                 public final Object execute() {
-                    return Uploader.this.m8819x65f78bd8(transportContext);
+                    return Uploader.this.m8823x65f78bd8(transportContext);
                 }
             })).booleanValue();
             SynchronizationGuard synchronizationGuard = this.guard;
@@ -121,7 +121,7 @@ public class Uploader {
                 final Iterable<PersistedEvent> iterable = (Iterable) synchronizationGuard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda6
                     @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                     public final Object execute() {
-                        return Uploader.this.m8820xa80eb937(transportContext);
+                        return Uploader.this.m8824xa80eb937(transportContext);
                     }
                 });
                 if (!iterable.iterator().hasNext()) {
@@ -150,7 +150,7 @@ public class Uploader {
                     synchronizationGuard2.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda7
                         @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                         public final Object execute() {
-                            return Uploader.this.m8821xea25e696(iterable, transportContext2, j);
+                            return Uploader.this.m8825xea25e696(iterable, transportContext2, j);
                         }
                     });
                     uploader.workScheduler.schedule(transportContext2, i + 1, true);
@@ -161,7 +161,7 @@ public class Uploader {
                 synchronizationGuard2.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda8
                     @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                     public final Object execute() {
-                        return Uploader.this.m8822x2c3d13f5(iterable);
+                        return Uploader.this.m8826x2c3d13f5(iterable);
                     }
                 });
                 if (ok.getStatus() == BackendResponse.Status.OK) {
@@ -170,7 +170,7 @@ public class Uploader {
                         uploader2.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda9
                             @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                             public final Object execute() {
-                                return Uploader.this.m8823x6e544154();
+                                return Uploader.this.m8827x6e544154();
                             }
                         });
                     }
@@ -188,7 +188,7 @@ public class Uploader {
                     uploader2.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda10
                         @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                         public final Object execute() {
-                            return Uploader.this.m8824xb06b6eb3(hashMap);
+                            return Uploader.this.m8828xb06b6eb3(hashMap);
                         }
                     });
                 }
@@ -200,7 +200,7 @@ public class Uploader {
                 synchronizationGuard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda1
                     @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                     public final Object execute() {
-                        return Uploader.this.m8825xf2829c12(transportContext4, j);
+                        return Uploader.this.m8829xf2829c12(transportContext4, j);
                     }
                 });
                 return ok;
@@ -210,19 +210,19 @@ public class Uploader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$2$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Boolean m8819x65f78bd8(TransportContext transportContext) {
+    public /* synthetic */ Boolean m8823x65f78bd8(TransportContext transportContext) {
         return Boolean.valueOf(this.eventStore.hasPendingEventsFor(transportContext));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$3$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Iterable m8820xa80eb937(TransportContext transportContext) {
+    public /* synthetic */ Iterable m8824xa80eb937(TransportContext transportContext) {
         return this.eventStore.loadBatch(transportContext);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$4$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Object m8821xea25e696(Iterable iterable, TransportContext transportContext, long j) {
+    public /* synthetic */ Object m8825xea25e696(Iterable iterable, TransportContext transportContext, long j) {
         this.eventStore.recordFailure(iterable);
         this.eventStore.recordNextCallTime(transportContext, this.clock.getTime() + j);
         return null;
@@ -230,21 +230,21 @@ public class Uploader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$5$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Object m8822x2c3d13f5(Iterable iterable) {
+    public /* synthetic */ Object m8826x2c3d13f5(Iterable iterable) {
         this.eventStore.recordSuccess(iterable);
         return null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$6$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Object m8823x6e544154() {
+    public /* synthetic */ Object m8827x6e544154() {
         this.clientHealthMetricsStore.resetClientMetrics();
         return null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$7$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Object m8824xb06b6eb3(Map map) {
+    public /* synthetic */ Object m8828xb06b6eb3(Map map) {
         for (Map.Entry entry : map.entrySet()) {
             this.clientHealthMetricsStore.recordLogEventDropped(((Integer) entry.getValue()).intValue(), LogEventDropped.Reason.INVALID_PAYLOD, (String) entry.getKey());
         }
@@ -253,7 +253,7 @@ public class Uploader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$8$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Object m8825xf2829c12(TransportContext transportContext, long j) {
+    public /* synthetic */ Object m8829xf2829c12(TransportContext transportContext, long j) {
         this.eventStore.recordNextCallTime(transportContext, this.clock.getTime() + j);
         return null;
     }

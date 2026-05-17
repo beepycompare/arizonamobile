@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.menu;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
@@ -21,8 +20,9 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.elements.menu.model.PersonStatisticData;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: Menu.kt */
-@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001)B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u001c\u001a\u00020\u001dH\u0002J\b\u0010\u001e\u001a\u00020\u001dH\u0003J\u0010\u0010\u001f\u001a\u00020\u001d2\u0006\u0010 \u001a\u00020!H\u0003J\u0018\u0010\"\u001a\u00020\u001d2\u0006\u0010 \u001a\u00020#2\u0006\u0010$\u001a\u00020\u0005H\u0016J\u0018\u0010%\u001a\u00020\u001d2\u0006\u0010&\u001a\u00020\u00052\u0006\u0010'\u001a\u00020(H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0019*\u0004\u0018\u00010\u00180\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Lru/mrlargha/commonui/elements/menu/Menu;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "menuLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "donateButton", "Landroid/widget/RelativeLayout;", "helpButton", "personStatisticButton", "skillsButton", "awardsButton", "animationsButton", "navigatorButton", "employmentHistoryButton", "questsButton", "questsText", "Landroid/widget/TextView;", "settingsButton", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "setupButtonsNavigation", "", "showPersonStatisticLoader", "setPersonStatisticInfo", "data", "Lru/mrlargha/commonui/elements/menu/model/PersonStatisticData;", "onBackendMessage", "", "subId", "clickMenuButton", "buttonId", "buttonView", "Landroid/view/View;", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001$B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0017\u001a\u00020\u0018H\u0002J\b\u0010\u0019\u001a\u00020\u0018H\u0003J\u0010\u0010\u001a\u001a\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u001cH\u0003J\u0018\u0010\u001d\u001a\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020\u0005H\u0016J\u0018\u0010 \u001a\u00020\u00182\u0006\u0010!\u001a\u00020\u00052\u0006\u0010\"\u001a\u00020#H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006%"}, d2 = {"Lru/mrlargha/commonui/elements/menu/Menu;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "menuLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "donateButton", "Landroid/widget/RelativeLayout;", "helpButton", "personStatisticButton", "skillsButton", "awardsButton", "animationsButton", "navigatorButton", "employmentHistoryButton", "questsButton", "questsText", "Landroid/widget/TextView;", "settingsButton", "setupButtonsNavigation", "", "showPersonStatisticLoader", "setPersonStatisticInfo", "data", "Lru/mrlargha/commonui/elements/menu/model/PersonStatisticData;", "onBackendMessageHandled", "", "subId", "clickMenuButton", "buttonId", "buttonView", "Landroid/view/View;", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class Menu extends SAMPUIElement {
     private final RelativeLayout animationsButton;
@@ -30,14 +30,12 @@ public final class Menu extends SAMPUIElement {
     private final RelativeLayout donateButton;
     private final RelativeLayout employmentHistoryButton;
     private final RelativeLayout helpButton;
-    private final boolean isArizonaType;
     private final ConstraintLayout menuLayout;
     private final RelativeLayout navigatorButton;
     private final RelativeLayout personStatisticButton;
     private final RelativeLayout questsButton;
     private final TextView questsText;
     private final RelativeLayout settingsButton;
-    private final SharedPreferences sharedPref;
     private final RelativeLayout skillsButton;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -81,9 +79,6 @@ public final class Menu extends SAMPUIElement {
         View findViewById11 = constraintLayout.findViewById(R.id.element_settings);
         Intrinsics.checkNotNullExpressionValue(findViewById11, "findViewById(...)");
         this.settingsButton = (RelativeLayout) findViewById11;
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
-        this.sharedPref = sharedPreferences;
-        this.isArizonaType = sharedPreferences.getBoolean("isArizonaType", false);
         constraintLayout.setClickable(true);
         addViewToConstraintLayout(constraintLayout, -1, -1);
         ((AppCompatImageView) constraintLayout.findViewById(R.id.closeImage)).setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda0
@@ -97,14 +92,14 @@ public final class Menu extends SAMPUIElement {
     }
 
     private final void setupButtonsNavigation() {
-        boolean z = this.isArizonaType;
+        boolean isArizonaType = UtilsKt.isArizonaType();
         RelativeLayout relativeLayout = this.questsButton;
-        if (!z) {
+        if (!isArizonaType) {
             relativeLayout.setBackgroundResource(R.drawable.bg_menu_element_quests);
-            this.questsText.setText("Квесты");
+            this.questsText.setText(getTargetActivity().getString(R.string.menu_quests));
         } else {
             relativeLayout.setBackgroundResource(R.drawable.bg_menu_element_gifts);
-            this.questsText.setText("Розыгрыш");
+            this.questsText.setText(getTargetActivity().getString(R.string.menu_giveaway));
         }
         this.donateButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
@@ -245,7 +240,7 @@ public final class Menu extends SAMPUIElement {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == 0) {
             setPersonStatisticInfo((PersonStatisticData) MapperKt.toModel(data, PersonStatisticData.class));

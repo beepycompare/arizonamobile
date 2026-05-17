@@ -4,7 +4,7 @@ import androidx.lifecycle.SavedStateHandle;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ActivitySavedStateHandleModule_ProvideSavedStateHandleFactory implements Factory<SavedStateHandle> {
     private final Provider<SavedStateHandleHolder> savedStateHandleHolderProvider;
 

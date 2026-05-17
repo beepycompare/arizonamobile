@@ -8,7 +8,7 @@
         <androidx.cardview.widget.CardView android:id="@+id/button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_24sdp" app:cardBackgroundColor="#1affffff" app:cardCornerRadius="@dimen/_8sdp" app:cardElevation="0dp">
             <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_8sdp" android:layout_marginTop="@dimen/_8sdp" android:layout_marginRight="@dimen/_8sdp" android:layout_marginBottom="@dimen/_8sdp" android:layout_marginHorizontal="@dimen/_8sdp" android:layout_marginVertical="@dimen/_8sdp">
                 <ImageView android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:layout_marginRight="@dimen/_8sdp" android:src="@drawable/ghetto_info_ic_1"/>
-                <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Подробнее" android:fontFamily="@font/pfdindisplaypro_regular"/>
+                <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ghetto_more_details" android:fontFamily="@font/pfdindisplaypro_regular"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
@@ -16,8 +16,8 @@
         <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
         <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_8sdp" android:layout_marginBottom="@dimen/_8sdp" android:layout_marginVertical="@dimen/_8sdp">
             <ImageView android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:layout_marginRight="@dimen/_8sdp" android:src="@drawable/ghetto_info_ic_2"/>
-            <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Подсказка" android:fontFamily="@font/pfdindisplaypro_regular"/>
+            <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/common_hint" android:fontFamily="@font/pfdindisplaypro_regular"/>
         </LinearLayout>
-        <TextView android:textSize="@dimen/_8sdp" android:textColor="#ababab" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_24sdp" android:text="Кликните на территорию, чтобы открыть меню и начать сражение." android:fontFamily="@font/pfdindisplaypro_regular"/>
+        <TextView android:textSize="@dimen/_8sdp" android:textColor="#ababab" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_24sdp" android:text="@string/ghetto_click_territory" android:fontFamily="@font/pfdindisplaypro_regular"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

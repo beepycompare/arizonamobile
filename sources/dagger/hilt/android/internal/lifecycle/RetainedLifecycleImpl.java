@@ -6,7 +6,7 @@ import dagger.hilt.android.internal.ThreadUtil;
 import dagger.hilt.android.lifecycle.RetainedLifecycle;
 import java.util.HashSet;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class RetainedLifecycleImpl implements ActivityRetainedLifecycle, ViewModelLifecycle {
     private final Set<RetainedLifecycle.OnClearedListener> listeners = new HashSet();
     private boolean onClearedDispatched = false;

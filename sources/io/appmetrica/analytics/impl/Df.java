@@ -8,7 +8,7 @@ import kotlin.Unit;
 public final class Df implements Cf {
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile String f550a;
+    private volatile String f555a;
 
     private final String b() {
         try {
@@ -25,15 +25,15 @@ public final class Df implements Cf {
 
     @Override // io.appmetrica.analytics.impl.Cf
     public String a() {
-        if (this.f550a != null) {
-            return this.f550a;
+        if (this.f555a != null) {
+            return this.f555a;
         }
         synchronized (this) {
-            if (this.f550a == null) {
-                this.f550a = b();
+            if (this.f555a == null) {
+                this.f555a = b();
             }
             Unit unit = Unit.INSTANCE;
         }
-        return this.f550a;
+        return this.f555a;
     }
 }

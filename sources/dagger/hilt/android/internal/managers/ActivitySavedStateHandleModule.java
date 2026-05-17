@@ -4,7 +4,7 @@ import androidx.lifecycle.SavedStateHandle;
 import dagger.Module;
 import dagger.Provides;
 @Module
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 abstract class ActivitySavedStateHandleModule {
     ActivitySavedStateHandleModule() {
     }

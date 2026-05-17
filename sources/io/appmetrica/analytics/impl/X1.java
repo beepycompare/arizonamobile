@@ -12,7 +12,7 @@ public final class X1 extends MessageNano {
     public static volatile X1[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public W1[] f847a;
+    public W1[] f852a;
     public V1 b;
     public String[] c;
 
@@ -32,7 +32,7 @@ public final class X1 extends MessageNano {
     }
 
     public final X1 a() {
-        this.f847a = W1.b();
+        this.f852a = W1.b();
         this.b = null;
         this.c = WireFormatNano.EMPTY_STRING_ARRAY;
         this.cachedSize = -1;
@@ -42,12 +42,12 @@ public final class X1 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        W1[] w1Arr = this.f847a;
+        W1[] w1Arr = this.f852a;
         int i = 0;
         if (w1Arr != null && w1Arr.length > 0) {
             int i2 = 0;
             while (true) {
-                W1[] w1Arr2 = this.f847a;
+                W1[] w1Arr2 = this.f852a;
                 if (i2 >= w1Arr2.length) {
                     break;
                 }
@@ -84,12 +84,12 @@ public final class X1 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        W1[] w1Arr = this.f847a;
+        W1[] w1Arr = this.f852a;
         int i = 0;
         if (w1Arr != null && w1Arr.length > 0) {
             int i2 = 0;
             while (true) {
-                W1[] w1Arr2 = this.f847a;
+                W1[] w1Arr2 = this.f852a;
                 if (i2 >= w1Arr2.length) {
                     break;
                 }
@@ -130,7 +130,7 @@ public final class X1 extends MessageNano {
                 break;
             } else if (readTag == 10) {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
-                W1[] w1Arr = this.f847a;
+                W1[] w1Arr = this.f852a;
                 int length = w1Arr == null ? 0 : w1Arr.length;
                 int i = repeatedFieldArrayLength + length;
                 W1[] w1Arr2 = new W1[i];
@@ -147,7 +147,7 @@ public final class X1 extends MessageNano {
                 W1 w12 = new W1();
                 w1Arr2[length] = w12;
                 codedInputByteBufferNano.readMessage(w12);
-                this.f847a = w1Arr2;
+                this.f852a = w1Arr2;
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new V1();

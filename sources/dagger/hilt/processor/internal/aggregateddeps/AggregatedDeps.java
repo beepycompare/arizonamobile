@@ -3,7 +3,7 @@ package dagger.hilt.processor.internal.aggregateddeps;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.CLASS)
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public @interface AggregatedDeps {
     String[] componentEntryPoints() default {};
 

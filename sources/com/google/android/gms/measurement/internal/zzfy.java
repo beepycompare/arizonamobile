@@ -1,6 +1,5 @@
 package com.google.android.gms.measurement.internal;
 
-import androidx.media3.exoplayer.Renderer;
 import com.adjust.sdk.Constants;
 import com.google.firebase.messaging.ServiceStarter;
 import java.util.ArrayList;
@@ -130,12 +129,11 @@ public final class zzfy {
 
     static {
         Collections.synchronizedSet(new HashSet());
-        Long valueOf = Long.valueOf((long) Renderer.DEFAULT_DURATION_TO_PROGRESS_US);
-        zza = zza("measurement.ad_id_cache_time", valueOf, valueOf, zzfq.zza, false);
-        Long valueOf2 = Long.valueOf((long) DurationKt.MILLIS_IN_HOUR);
-        zzb = zza("measurement.app_uninstalled_additional_ad_id_cache_time", valueOf2, valueOf2, zzbo.zza, false);
+        zza = zza("measurement.ad_id_cache_time", 10000L, 10000L, zzfq.zza, false);
+        Long valueOf = Long.valueOf((long) DurationKt.MILLIS_IN_HOUR);
+        zzb = zza("measurement.app_uninstalled_additional_ad_id_cache_time", valueOf, valueOf, zzbo.zza, false);
         zzc = zza("measurement.monitoring.sample_period_millis", 86400000L, 86400000L, zzcf.zza, false);
-        zzd = zza("measurement.config.cache_time", 86400000L, valueOf2, zzcq.zza, false);
+        zzd = zza("measurement.config.cache_time", 86400000L, valueOf, zzcq.zza, false);
         zze = zza("measurement.config.url_scheme", Constants.SCHEME, Constants.SCHEME, zzdb.zza, false);
         zzf = zza("measurement.config.url_authority", "app-measurement.com", "app-measurement.com", zzdm.zza, false);
         zzg = zza("measurement.upload.max_bundles", 100, 100, zzdx.zza, false);
@@ -164,9 +162,9 @@ public final class zzfy {
         zzD = zza("measurement.sgtm.upload.min_delay_after_background", 600000L, 600000L, zzco.zza, false);
         zzE = zza("measurement.sgtm.batch.long_queuing_threshold", 14400000L, 14400000L, zzcp.zza, false);
         zzF = zza("measurement.upload.backoff_period", 43200000L, 43200000L, zzcr.zza, false);
-        zzG = zza("measurement.upload.window_interval", valueOf2, valueOf2, zzcs.zza, false);
-        zzH = zza("measurement.upload.interval", valueOf2, valueOf2, zzct.zza, false);
-        zzI = zza("measurement.upload.realtime_upload_interval", valueOf, valueOf, zzcu.zza, false);
+        zzG = zza("measurement.upload.window_interval", valueOf, valueOf, zzcs.zza, false);
+        zzH = zza("measurement.upload.interval", valueOf, valueOf, zzct.zza, false);
+        zzI = zza("measurement.upload.realtime_upload_interval", 10000L, 10000L, zzcu.zza, false);
         zzJ = zza("measurement.upload.debug_upload_interval", 1000L, 1000L, zzcv.zza, false);
         zzK = zza("measurement.upload.minimum_delay", 500L, 500L, zzcw.zza, false);
         zzL = zza("measurement.alarm_manager.minimum_interval", 60000L, 60000L, zzcx.zza, false);
@@ -189,12 +187,12 @@ public final class zzfy {
         zzac = zza("measurement.test.long_flag", -1L, -1L, zzdn.zza, false);
         zza("measurement.test.cached_long_flag", -1L, -1L, zzdo.zza, true);
         zzad = zza("measurement.test.int_flag", -2, -2, zzdp.zza, false);
-        Double valueOf3 = Double.valueOf(-3.0d);
-        zzae = zza("measurement.test.double_flag", valueOf3, valueOf3, zzdq.zza, false);
+        Double valueOf2 = Double.valueOf(-3.0d);
+        zzae = zza("measurement.test.double_flag", valueOf2, valueOf2, zzdq.zza, false);
         zzaf = zza("measurement.experiment.max_ids", 50, 50, zzdr.zza, false);
         zzag = zza("measurement.upload.max_item_scoped_custom_parameters", 27, 27, zzds.zza, false);
-        Integer valueOf4 = Integer.valueOf((int) ServiceStarter.ERROR_UNKNOWN);
-        zzah = zza("measurement.upload.max_event_parameter_value_length", valueOf4, valueOf4, zzdt.zza, true);
+        Integer valueOf3 = Integer.valueOf((int) ServiceStarter.ERROR_UNKNOWN);
+        zzah = zza("measurement.upload.max_event_parameter_value_length", valueOf3, valueOf3, zzdt.zza, true);
         zzai = zza("measurement.max_bundles_per_iteration", 100, 100, zzdu.zza, false);
         zzaj = zza("measurement.sdk.attribution.cache.ttl", 604800000L, 604800000L, zzdv.zza, false);
         zzak = zza("measurement.redaction.app_instance_id.ttl", 7200000L, 7200000L, zzdw.zza, false);
@@ -203,7 +201,7 @@ public final class zzfy {
         zzan = zza("measurement.rb.attribution.uri_scheme", Constants.SCHEME, Constants.SCHEME, zzea.zza, false);
         zzao = zza("measurement.rb.attribution.uri_authority", "google-analytics.com", "google-analytics.com", zzeb.zza, false);
         zzap = zza("measurement.rb.attribution.uri_path", "privacy-sandbox/register-app-conversion", "privacy-sandbox/register-app-conversion", zzec.zza, false);
-        zzaq = zza("measurement.session.engagement_interval", valueOf2, valueOf2, zzed.zza, false);
+        zzaq = zza("measurement.session.engagement_interval", valueOf, valueOf, zzed.zza, false);
         zzar = zza("measurement.rb.attribution.app_allowlist", "", "", zzee.zza, false);
         zzas = zza("measurement.rb.attribution.user_properties", "_npa,npa|_fot,fot", "_npa,npa|_fot,fot", zzef.zza, false);
         zzat = zza("measurement.rb.attribution.event_params", "value|currency", "value|currency", zzeg.zza, false);

@@ -3,6 +3,7 @@ package ru.mrlargha.event.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
@@ -54,9 +55,13 @@ public final class ShopAdapter extends RecyclerView.Adapter<EasterShopViewHolder
         binding.tvTitle.setText(shopItem.getName());
         binding.price.setText(String.valueOf(shopItem.getPrice()));
         if (UtilsKt.isArizonaType()) {
-            Picasso.get().load((UtilsKt.isDebug() ? "https://staging-cdn.azresources.cloud/" : FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null)) + "/projects/arizona-rp/systems/battlepass/easter-2026/" + shopItem.getImage() + ".webp").into(binding.ivName);
+            Picasso picasso = Picasso.get();
+            String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            picasso.load(projectResourceUrl$default + "/systems/battlepass/easter-2026/" + shopItem.getImage() + ".webp").into(binding.ivName);
         } else {
-            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "/projects/rodina-rp/systems/battlepass/items/" + shopItem.getImage() + ".webp").into(binding.ivName);
+            Picasso picasso2 = Picasso.get();
+            String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            picasso2.load(projectResourceUrl$default2 + "systems/pirate-event/shop/" + shopItem.getImage() + ".webp").into(binding.ivName);
         }
         binding.btnSelect.setVisibility(8);
         binding.btnUnselect.setVisibility(8);
@@ -73,7 +78,9 @@ public final class ShopAdapter extends RecyclerView.Adapter<EasterShopViewHolder
             binding.btnUnselect.setVisibility(0);
             binding.bg.setBackgroundResource(R.drawable.event_prise_item_bg1);
         }
-        binding.ivCurrency.setImageResource(shopItem.isAzCoins() ? ru.mrlargha.commonui.R.drawable.ic_az_coins : R.drawable.event_coin);
+        ImageView imageView = binding.ivCurrency;
+        shopItem.isAzCoins();
+        imageView.setImageResource(ru.mrlargha.commonui.R.drawable.ic_rubble);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

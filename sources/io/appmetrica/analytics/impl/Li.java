@@ -16,7 +16,7 @@ public final class Li extends MessageNano {
     public static volatile Li[] i;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f680a;
+    public byte[] f685a;
     public long b;
     public int c;
     public byte[] d;
@@ -39,7 +39,7 @@ public final class Li extends MessageNano {
 
     public final Li a() {
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f680a = bArr;
+        this.f685a = bArr;
         this.b = 0L;
         this.c = 0;
         this.d = bArr;
@@ -51,10 +51,10 @@ public final class Li extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f680a;
+        byte[] bArr = this.f685a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f680a);
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f685a);
         }
         long j = this.b;
         if (j != 0) {
@@ -73,10 +73,10 @@ public final class Li extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f680a;
+        byte[] bArr = this.f685a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f680a);
+            codedOutputByteBufferNano.writeBytes(1, this.f685a);
         }
         long j = this.b;
         if (j != 0) {
@@ -104,7 +104,7 @@ public final class Li extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f680a = codedInputByteBufferNano.readBytes();
+                this.f685a = codedInputByteBufferNano.readBytes();
             } else if (readTag == 16) {
                 this.b = codedInputByteBufferNano.readUInt64();
             } else if (readTag == 24) {

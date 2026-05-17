@@ -1,4 +1,4 @@
 package dagger.hilt.internal.aggregatedroot.codegen;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class _com_arizona_launcher_ArizonaApplication {
 }

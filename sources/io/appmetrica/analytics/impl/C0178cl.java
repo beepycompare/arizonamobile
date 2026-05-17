@@ -7,7 +7,7 @@ import java.util.List;
 public final class C0178cl implements InterfaceC0139b8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Yi f943a;
+    public final Yi f948a;
     public final Gf b;
 
     public C0178cl() {
@@ -18,12 +18,12 @@ public final class C0178cl implements InterfaceC0139b8 {
     /* renamed from: a */
     public final List<Di> fromModel(C0152bl c0152bl) {
         C0620u8 c0620u8 = new C0620u8();
-        c0620u8.f1252a = 2;
+        c0620u8.f1257a = 2;
         c0620u8.c = new C0545r8();
-        Di fromModel = this.f943a.fromModel(c0152bl.b);
-        c0620u8.c.b = (C0521q8) fromModel.f552a;
-        Di fromModel2 = this.b.fromModel(c0152bl.f925a);
-        c0620u8.c.f1204a = (C0446n8) fromModel2.f552a;
+        Di fromModel = this.f948a.fromModel(c0152bl.b);
+        c0620u8.c.b = (C0521q8) fromModel.f557a;
+        Di fromModel2 = this.b.fromModel(c0152bl.f930a);
+        c0620u8.c.f1209a = (C0446n8) fromModel2.f557a;
         return Collections.singletonList(new Di(c0620u8, new C0108a3(C0108a3.b(fromModel, fromModel2))));
     }
 
@@ -34,7 +34,7 @@ public final class C0178cl implements InterfaceC0139b8 {
     }
 
     public C0178cl(Yi yi, Gf gf) {
-        this.f943a = yi;
+        this.f948a = yi;
         this.b = gf;
     }
 

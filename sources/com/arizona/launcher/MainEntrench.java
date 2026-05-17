@@ -84,6 +84,7 @@ import com.arizona.launcher.model.servers.ServerType;
 import com.arizona.launcher.model.settings.SettingsConstants;
 import com.arizona.launcher.ui.notifications.NotificationsViewModel;
 import com.arizona.launcher.util.FlavorUtilKt;
+import com.arizona.launcher.util.ProjectLocale;
 import com.arkivanov.decompose.RetainedComponentKt;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -96,9 +97,9 @@ import com.miami.game.core.app.root.nav.main.DialogMainState;
 import com.miami.game.core.app.root.nav.main.MainComponent;
 import com.miami.game.core.app.root.nav.main.MainExternalUiStateHolder;
 import com.miami.game.core.app.root.nav.main.MainState;
-import com.miami.game.core.app.root.nav.main.compose.MainRouteKt;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.miami.game.feature.download.dialog.ui.connection.ConnectionHolder;
+import com.miami.game.feature.download.dialog.ui.connection.SettingsData;
 import com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogExternalUiState;
 import com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogExternalUiStateHolder;
 import com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogType;
@@ -106,6 +107,7 @@ import com.miami.game.feature.download.screen.ui.model.DownloadExternalUiStateHo
 import com.miami.game.feature.home.ui.model.HomeExternalUiState;
 import com.miami.game.feature.home.ui.model.HomeExternalUiStateHolder;
 import com.miami.game.feature.notifications.NotificationStateHolder;
+import com.miami.game.ui.app.root.MainRouteKt;
 import com.miami.game.ui.theme.ThemeKt;
 import dagger.hilt.android.AndroidEntryPoint;
 import java.io.BufferedWriter;
@@ -146,11 +148,13 @@ import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 import ru.rustore.sdk.core.tasks.OnFailureListener;
 import ru.rustore.sdk.core.tasks.OnSuccessListener;
 /* compiled from: MainEntrench.kt */
-@Metadata(d1 = {"\u0000\u008d\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0005*\u0001[\b\u0007\u0018\u0000 ]2\u00020\u0001:\u0002]^B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010%\u001a\u00020&2\b\u0010'\u001a\u0004\u0018\u00010(H\u0015J\b\u0010)\u001a\u00020&H\u0014J\r\u0010*\u001a\u00020&H\u0007¢\u0006\u0002\u0010+J\u0010\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0018H\u0002J\u001e\u0010/\u001a\u00020&2\u0014\u00100\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010-\u0012\u0004\u0012\u00020&01H\u0002J\b\u00102\u001a\u00020&H\u0002J\b\u00103\u001a\u00020&H\u0002J\b\u00104\u001a\u00020&H\u0002J\b\u00105\u001a\u00020&H\u0002J\b\u00106\u001a\u00020&H\u0002J\b\u00107\u001a\u00020&H\u0002J\u0010\u00108\u001a\u00020\u00152\u0006\u00109\u001a\u00020:H\u0002J\u0010\u0010;\u001a\u00020&2\u0006\u00109\u001a\u00020:H\u0002J\b\u0010<\u001a\u00020&H\u0002J\b\u0010=\u001a\u00020&H\u0002J\b\u0010>\u001a\u00020&H\u0002J\u0018\u0010?\u001a\u00020&2\u0006\u0010@\u001a\u00020-2\u0006\u0010A\u001a\u00020-H\u0002J\b\u0010B\u001a\u00020&H\u0002J\b\u0010C\u001a\u00020&H\u0014J\b\u0010D\u001a\u00020&H\u0014J\b\u0010E\u001a\u00020&H\u0014J\b\u0010F\u001a\u00020&H\u0002J\b\u0010G\u001a\u00020&H\u0002J\b\u0010H\u001a\u00020\u0015H\u0002J\b\u0010I\u001a\u00020&H\u0002J\u000e\u0010J\u001a\u00020\u00152\u0006\u00109\u001a\u00020:J\u0010\u0010K\u001a\u00020&2\u0006\u0010L\u001a\u00020\u0015H\u0002J\b\u0010M\u001a\u00020&H\u0002J\b\u0010N\u001a\u00020&H\u0002J\b\u0010O\u001a\u00020&H\u0002J\b\u0010P\u001a\u00020&H\u0002J\b\u0010Q\u001a\u00020&H\u0002J&\u0010R\u001a\u00020S*\u00020T2\u0006\u0010A\u001a\u00020-2\u0006\u0010U\u001a\u00020V2\b\b\u0002\u0010W\u001a\u00020XH\u0002J\b\u0010Y\u001a\u00020&H\u0002R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u0007\u001a\u00020\b8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000b\u0010\f\u001a\u0004\b\t\u0010\nR\u001b\u0010\r\u001a\u00020\u000e8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0011\u0010\f\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u0019\u001a\u00020\u001a8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR\u001e\u0010\u001f\u001a\u00020 8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\u0010\u0010Z\u001a\u00020[X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\\¨\u0006_"}, d2 = {"Lcom/arizona/launcher/MainEntrench;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "mService", "Landroid/os/Messenger;", "mMessenger", "mainViewModel", "Lcom/arizona/launcher/MainViewModel;", "getMainViewModel", "()Lcom/arizona/launcher/MainViewModel;", "mainViewModel$delegate", "Lkotlin/Lazy;", "notificationsViewModel", "Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "getNotificationsViewModel", "()Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "notificationsViewModel$delegate", "referrerClient", "Lcom/android/installreferrer/api/InstallReferrerClient;", "isStartApp", "", "permissionAsk", "lastStartGameTime", "", "rootFactory", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "getRootFactory", "()Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "setRootFactory", "(Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;)V", "notificationStateHolder", "Lcom/miami/game/feature/notifications/NotificationStateHolder;", "getNotificationStateHolder", "()Lcom/miami/game/feature/notifications/NotificationStateHolder;", "setNotificationStateHolder", "(Lcom/miami/game/feature/notifications/NotificationStateHolder;)V", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "onStart", "GLView", "(Landroidx/compose/runtime/Composer;I)V", "convertBytesToHumanReadable", "", "bytes", "getCurrentToken", "callback", "Lkotlin/Function1;", "checkHuaweiUpdate", "checkRUStoreUpdate", "saveGameType", "getBuildType", "initTracking", "obtainReferrerDetails", "checkNotificationPermission", "context", "Landroid/content/Context;", "openNotificationSettings", "askPermission", "checkUpdate", "observeData", "createDialog", "message", "url", "startApp", "onResume", "onPause", "onDestroy", "check", "checkLauncherUpdate", "getFirstOpen", "checkGameUpdate", "isOnline", "setProgressVisible", "visible", "showDialog", "hideDialog", "checkGame", "connectToTestServer", "shareLogs", "sendRequests", "Lkotlinx/coroutines/Job;", "Landroidx/activity/ComponentActivity;", "iterations", "", "queue", "Lcom/android/volley/RequestQueue;", "startGame", "mConnection", "com/arizona/launcher/MainEntrench$mConnection$1", "Lcom/arizona/launcher/MainEntrench$mConnection$1;", "Companion", "IncomingHandler", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0095\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0005*\u0001d\b\u0007\u0018\u0000 f2\u00020\u0001:\u0002fgB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0014J\u0012\u0010*\u001a\u00020'2\b\u0010+\u001a\u0004\u0018\u00010,H\u0015J\u0010\u0010-\u001a\u00020'2\u0006\u0010.\u001a\u00020,H\u0014J\b\u0010/\u001a\u00020'H\u0014J\r\u00100\u001a\u00020'H\u0007¢\u0006\u0002\u00101J\u0010\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\u0019H\u0002J\u001e\u00105\u001a\u00020'2\u0014\u00106\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u000103\u0012\u0004\u0012\u00020'07H\u0002J\b\u00108\u001a\u00020'H\u0002J\b\u00109\u001a\u00020'H\u0002J\b\u0010:\u001a\u00020'H\u0002J\b\u0010;\u001a\u00020'H\u0002J\b\u0010<\u001a\u00020'H\u0002J\b\u0010=\u001a\u00020'H\u0002J\u0010\u0010>\u001a\u00020\u00152\u0006\u0010?\u001a\u00020)H\u0002J\u0010\u0010@\u001a\u00020'2\u0006\u0010?\u001a\u00020)H\u0002J\b\u0010A\u001a\u00020'H\u0002J\b\u0010B\u001a\u00020'H\u0002J\b\u0010C\u001a\u00020'H\u0002J\u0018\u0010D\u001a\u00020'2\u0006\u0010E\u001a\u0002032\u0006\u0010F\u001a\u000203H\u0002J\b\u0010G\u001a\u00020'H\u0002J\b\u0010H\u001a\u00020'H\u0014J\b\u0010I\u001a\u00020'H\u0014J\b\u0010J\u001a\u00020'H\u0014J\b\u0010K\u001a\u00020'H\u0002J\b\u0010L\u001a\u00020'H\u0002J\b\u0010M\u001a\u00020\u0015H\u0002J\b\u0010N\u001a\u00020'H\u0002J\u000e\u0010O\u001a\u00020\u00152\u0006\u0010?\u001a\u00020)J\u0010\u0010P\u001a\u00020'2\u0006\u0010Q\u001a\u00020\u0015H\u0002J\b\u0010R\u001a\u00020'H\u0002J\b\u0010S\u001a\u00020'H\u0002J\b\u0010T\u001a\u00020'H\u0002J\b\u0010U\u001a\u00020'H\u0002J\b\u0010V\u001a\u00020'H\u0002J\u0010\u0010W\u001a\u00020'2\u0006\u0010X\u001a\u00020YH\u0002J\b\u0010Z\u001a\u00020'H\u0002J&\u0010[\u001a\u00020\\*\u00020]2\u0006\u0010F\u001a\u0002032\u0006\u0010^\u001a\u00020_2\b\b\u0002\u0010`\u001a\u00020aH\u0002J\b\u0010b\u001a\u00020'H\u0002R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u0007\u001a\u00020\b8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000b\u0010\f\u001a\u0004\b\t\u0010\nR\u001b\u0010\r\u001a\u00020\u000e8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0011\u0010\f\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u001a\u001a\u00020\u001b8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR\u001e\u0010 \u001a\u00020!8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\"\u0010#\"\u0004\b$\u0010%R\u0010\u0010c\u001a\u00020dX\u0082\u0004¢\u0006\u0004\n\u0002\u0010e¨\u0006h"}, d2 = {"Lcom/arizona/launcher/MainEntrench;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "mService", "Landroid/os/Messenger;", "mMessenger", "mainViewModel", "Lcom/arizona/launcher/MainViewModel;", "getMainViewModel", "()Lcom/arizona/launcher/MainViewModel;", "mainViewModel$delegate", "Lkotlin/Lazy;", "notificationsViewModel", "Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "getNotificationsViewModel", "()Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "notificationsViewModel$delegate", "referrerClient", "Lcom/android/installreferrer/api/InstallReferrerClient;", "isStartApp", "", "didRunStartupDebugAutoConnect", "permissionAsk", "lastStartGameTime", "", "rootFactory", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "getRootFactory", "()Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "setRootFactory", "(Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;)V", "notificationStateHolder", "Lcom/miami/game/feature/notifications/NotificationStateHolder;", "getNotificationStateHolder", "()Lcom/miami/game/feature/notifications/NotificationStateHolder;", "setNotificationStateHolder", "(Lcom/miami/game/feature/notifications/NotificationStateHolder;)V", "attachBaseContext", "", "newBase", "Landroid/content/Context;", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "onSaveInstanceState", "outState", "onStart", "GLView", "(Landroidx/compose/runtime/Composer;I)V", "convertBytesToHumanReadable", "", "bytes", "getCurrentToken", "callback", "Lkotlin/Function1;", "checkHuaweiUpdate", "checkRUStoreUpdate", "saveGameType", "getBuildType", "initTracking", "obtainReferrerDetails", "checkNotificationPermission", "context", "openNotificationSettings", "askPermission", "checkUpdate", "observeData", "createDialog", "message", "url", "startApp", "onResume", "onPause", "onDestroy", "check", "checkLauncherUpdate", "getFirstOpen", "checkGameUpdate", "isOnline", "setProgressVisible", "visible", "showDialog", "hideDialog", "checkGame", "connectToTestServer", "tryAutoConnectToSavedDebugServer", "syncConnectionHolderSettings", "sharedPreferences", "Landroid/content/SharedPreferences;", "shareLogs", "sendRequests", "Lkotlinx/coroutines/Job;", "Landroidx/activity/ComponentActivity;", "iterations", "", "queue", "Lcom/android/volley/RequestQueue;", "startGame", "mConnection", "com/arizona/launcher/MainEntrench$mConnection$1", "Lcom/arizona/launcher/MainEntrench$mConnection$1;", "Companion", "IncomingHandler", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
 public final class MainEntrench extends Hilt_MainEntrench {
+    private static final String STATE_DID_RUN_STARTUP_DEBUG_AUTO_CONNECT = "state_did_run_startup_debug_auto_connect";
     private static final String TAG = "MainEntrench";
+    private boolean didRunStartupDebugAutoConnect;
     private boolean isStartApp;
     private long lastStartGameTime;
     private Messenger mService;
@@ -213,6 +217,9 @@ public final class MainEntrench extends Hilt_MainEntrench {
         return Unit.INSTANCE;
     }
 
+    private final void tryAutoConnectToSavedDebugServer() {
+    }
+
     /* JADX WARN: Type inference failed for: r0v3, types: [com.arizona.launcher.MainEntrench$mConnection$1] */
     public MainEntrench() {
         final MainEntrench mainEntrench = this;
@@ -261,7 +268,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* compiled from: MainEntrench.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcom/arizona/launcher/MainEntrench$Companion;", "", "<init>", "()V", "TAG", "", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Lcom/arizona/launcher/MainEntrench$Companion;", "", "<init>", "()V", "TAG", "", "STATE_DID_RUN_STARTUP_DEBUG_AUTO_CONNECT", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -308,9 +315,18 @@ public final class MainEntrench extends Hilt_MainEntrench {
         this.notificationStateHolder = notificationStateHolder;
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // androidx.appcompat.app.AppCompatActivity, android.app.Activity, android.view.ContextThemeWrapper, android.content.ContextWrapper
+    public void attachBaseContext(Context newBase) {
+        Intrinsics.checkNotNullParameter(newBase, "newBase");
+        super.attachBaseContext(ProjectLocale.wrap(newBase));
+    }
+
     @Override // com.arizona.launcher.Hilt_MainEntrench, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     protected void onCreate(Bundle bundle) {
+        ProjectLocale.applyDefault();
         super.onCreate(bundle);
+        this.didRunStartupDebugAutoConnect = bundle != null && bundle.getBoolean(STATE_DID_RUN_STARTUP_DEBUG_AUTO_CONNECT, false);
         try {
             BuildersKt__Builders_commonKt.launch$default(LifecycleOwnerKt.getLifecycleScope(this), null, null, new MainEntrench$onCreate$1(null), 3, null);
             EdgeToEdge.enable$default(this, null, null, 3, null);
@@ -372,7 +388,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v17.1.5 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v17.1.7 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -406,6 +422,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
         if (file.exists()) {
             file.delete();
         }
+        tryAutoConnectToSavedDebugServer();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -459,12 +476,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onCreate$lambda$5(final MainEntrench mainEntrench, final MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C250@9610L269,250@9591L288:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C264@10216L269,264@10197L288:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:250)");
+                ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:264)");
             }
             ThemeKt.MyApplicationTheme(false, false, ComposableLambdaKt.rememberComposableLambda(783987227, true, new Function2() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda15
                 @Override // kotlin.jvm.functions.Function2
@@ -483,12 +500,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$5$0(MainEntrench mainEntrench, MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C251@9628L237:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C265@10234L237:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:251)");
+                ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:265)");
             }
             ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer, 0);
@@ -515,7 +532,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C252@9657L8,256@9782L43,254@9687L160:MainEntrench.kt#5ji0rp");
+            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C266@10263L8,270@10388L43,268@10293L160:MainEntrench.kt#5ji0rp");
             mainEntrench.GLView(composer, 0);
             MainRouteKt.MainRoute(mainComponent, AndroidWindowSizeClass_androidKt.calculateWindowSizeClass(mainEntrench, composer, 0), composer, MainComponent.$stable);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -532,6 +549,14 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
+    @Override // androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    public void onSaveInstanceState(Bundle outState) {
+        Intrinsics.checkNotNullParameter(outState, "outState");
+        outState.putBoolean(STATE_DID_RUN_STARTUP_DEBUG_AUTO_CONNECT, this.didRunStartupDebugAutoConnect);
+        super.onSaveInstanceState(outState);
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onStart() {
         super.onStart();
@@ -542,13 +567,13 @@ public final class MainEntrench extends Hilt_MainEntrench {
     /* JADX WARN: Type inference failed for: r0v7 */
     public final void GLView(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(163249873);
-        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)278@10287L7,279@10344L7,281@10374L48,283@10465L464,283@10432L497,298@10974L10,297@10939L150:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)302@11180L7,303@11237L7,305@11267L48,307@11358L464,307@11325L497,322@11867L10,321@11832L150:MainEntrench.kt#5ji0rp");
         int i2 = i & 1;
         if (!startRestartGroup.shouldExecute(i2 != 0, i2)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:277)");
+                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:301)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
@@ -830,8 +855,9 @@ public final class MainEntrench extends Hilt_MainEntrench {
         Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");
         SharedPreferences.Editor edit = sharedPreferences.edit();
         UtilsKt.set_isArizonaType(FlavorUtilKt.isArizona());
+        UtilsKt.set_isBrazilType(FlavorUtilKt.isBrazil());
         UtilsKt.set_isDebug(false);
-        FirebaseConfigHelper.INSTANCE.setDebug(false, FlavorUtilKt.isArizona(), sharedPreferences);
+        FirebaseConfigHelper.INSTANCE.setDebug(false, FlavorUtilKt.isArizona(), sharedPreferences, FlavorUtilKt.isBrazil());
         if (FlavorUtilKt.isArizona()) {
             edit.putBoolean("isArizonaType", true);
         } else {
@@ -1555,20 +1581,62 @@ public final class MainEntrench extends Hilt_MainEntrench {
         startActivity(new Intent(mainEntrench, GTASA.class));
     }
 
+    private static final void tryAutoConnectToSavedDebugServer$lambda$0(MainEntrench mainEntrench) {
+        if (mainEntrench.isFinishing() || mainEntrench.isDestroyed()) {
+            return;
+        }
+        ConnectionHolder.INSTANCE.getOnConnectTest().invoke();
+    }
+
+    private final void syncConnectionHolderSettings(SharedPreferences sharedPreferences) {
+        ConnectionHolder connectionHolder = ConnectionHolder.INSTANCE;
+        SettingsData settingsData = ConnectionHolder.INSTANCE.getSettingsData();
+        int i = sharedPreferences.getInt(SettingsConstants.CHAT_PAGE_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getPageSize());
+        float f = sharedPreferences.getFloat(SettingsConstants.CHAT_FONT_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getChatFontSize());
+        boolean z = sharedPreferences.getBoolean(SettingsConstants.CHAT_PRINT_TIMESTAMP, ConnectionHolder.INSTANCE.getSettingsData().getShowChatTime());
+        boolean z2 = sharedPreferences.getBoolean(SettingsConstants.AMBIENT_SOUNDS, ConnectionHolder.INSTANCE.getSettingsData().getAmbientSounds());
+        boolean z3 = sharedPreferences.getBoolean(SettingsConstants.SHOW_FPS, ConnectionHolder.INSTANCE.getSettingsData().getShowFps());
+        boolean z4 = sharedPreferences.getBoolean(SettingsConstants.UPDATED_GRAPHICS, ConnectionHolder.INSTANCE.getSettingsData().getUpdatedGraphics());
+        boolean z5 = sharedPreferences.getBoolean(SettingsConstants.USE_FULLSCREEN, ConnectionHolder.INSTANCE.getSettingsData().getFullScreen());
+        boolean z6 = sharedPreferences.getBoolean(SettingsConstants.STREAMER_MODE, ConnectionHolder.INSTANCE.getSettingsData().getStreamerMode());
+        String string = sharedPreferences.getString(SettingsConstants.DEBUG_TEST_SERVER_IP, ConnectionHolder.INSTANCE.getSettingsData().getIp());
+        if (string == null) {
+            string = "";
+        }
+        String str = string;
+        if (StringsKt.isBlank(str)) {
+            str = ConnectionHolder.INSTANCE.getSettingsData().getIp();
+        }
+        String str2 = str;
+        String string2 = sharedPreferences.getString(SettingsConstants.DEBUG_TEST_SERVER_PORT, ConnectionHolder.INSTANCE.getSettingsData().getPort());
+        if (string2 == null) {
+            string2 = "";
+        }
+        String str3 = string2;
+        if (StringsKt.isBlank(str3)) {
+            str3 = ConnectionHolder.INSTANCE.getSettingsData().getPort();
+        }
+        String str4 = str3;
+        String string3 = sharedPreferences.getString(SettingsConstants.DEBUG_TEST_SERVER_PASSWORD, ConnectionHolder.INSTANCE.getSettingsData().getPassword());
+        connectionHolder.setSettingsData(SettingsData.copy$default(settingsData, i, f, false, z6, z, z2, z3, z4, z5, str2, str4, string3 == null ? "" : string3, 4, null));
+    }
+
     private final void shareLogs() {
         File externalFilesDir = getExternalFilesDir(null);
         File file = new File((externalFilesDir != null ? externalFilesDir.getPath() : null) + "/logcat/samp.log");
         File externalFilesDir2 = getExternalFilesDir(null);
-        File file2 = new File((externalFilesDir2 != null ? externalFilesDir2.getPath() : null) + "/AZVoice/azvoice.log");
+        File file2 = new File((externalFilesDir2 != null ? externalFilesDir2.getPath() : null) + "/logcat/crashes.log");
         File externalFilesDir3 = getExternalFilesDir(null);
-        File file3 = new File((externalFilesDir3 != null ? externalFilesDir3.getPath() : null) + "/logcat/client.log");
+        File file3 = new File((externalFilesDir3 != null ? externalFilesDir3.getPath() : null) + "/AZVoice/azvoice.log");
+        File externalFilesDir4 = getExternalFilesDir(null);
+        File file4 = new File((externalFilesDir4 != null ? externalFilesDir4.getPath() : null) + "/logcat/client.log");
         Intent intent = new Intent();
         intent.setAction("android.intent.action.SEND_MULTIPLE");
-        File[] fileArr = {file, file2, file3};
+        File[] fileArr = {file, file2, file3, file4};
         ArrayList arrayList = new ArrayList();
         for (Object obj : CollectionsKt.arrayListOf(fileArr)) {
-            File file4 = (File) obj;
-            if (file4.exists() && file4.length() > 0) {
+            File file5 = (File) obj;
+            if (file5.exists() && file5.length() > 0) {
                 arrayList.add(obj);
             }
         }
@@ -1578,8 +1646,8 @@ public final class MainEntrench extends Hilt_MainEntrench {
         }
         ArrayList<File> arrayList3 = arrayList2;
         ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList3, 10));
-        for (File file5 : arrayList3) {
-            arrayList4.add(FileProvider.getUriForFile(this, "com.arizona21.game.fileprovider", file5));
+        for (File file6 : arrayList3) {
+            arrayList4.add(FileProvider.getUriForFile(this, "com.arizona21.game.fileprovider", file6));
         }
         intent.putParcelableArrayListExtra("android.intent.extra.STREAM", arrayList4);
         intent.setType("*/*");

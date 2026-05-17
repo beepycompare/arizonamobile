@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.coreutils.internal.cache;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class SynchronizedDataCache<T> extends DataCache<T> {
     public SynchronizedDataCache(long j, long j2, String str) {
         super(j, j2, str);

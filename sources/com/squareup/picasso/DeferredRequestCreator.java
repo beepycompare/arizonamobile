@@ -5,7 +5,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import java.lang.ref.WeakReference;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class DeferredRequestCreator implements ViewTreeObserver.OnPreDrawListener, View.OnAttachStateChangeListener {
     Callback callback;
     private final RequestCreator creator;

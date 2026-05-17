@@ -10,7 +10,6 @@ import android.graphics.PointF;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,7 +17,6 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.core.content.ContextCompat;
 import com.arizonagames.feature.arizona.family.adapters.CharterAdapter;
 import com.arizonagames.feature.arizona.family.adapters.CharterMembersAdapter;
@@ -88,7 +86,7 @@ import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.ui.kit.FlagsKt;
 /* compiled from: FamilyScreen.kt */
-@Metadata(d1 = {"\u0000ö\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u001b\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u00012\u00020\u0002:\u0004\u008c\u0001\u008d\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u00109\u001a\u00020:2\u0006\u0010;\u001a\u00020\u0011H\u0016J\u0018\u0010<\u001a\u00020:2\u0006\u0010=\u001a\u00020>2\u0006\u0010?\u001a\u00020\u0006H\u0016J\u0010\u0010@\u001a\u00020:2\u0006\u0010A\u001a\u00020\u001cH\u0002J\u0010\u0010B\u001a\u00020:2\u0006\u0010A\u001a\u00020CH\u0002J\u0010\u0010D\u001a\u00020:2\u0006\u0010A\u001a\u00020EH\u0002J\u0010\u0010F\u001a\u00020:2\u0006\u0010A\u001a\u00020GH\u0002J\u0010\u0010H\u001a\u00020:2\u0006\u0010A\u001a\u00020IH\u0002J\u0016\u0010J\u001a\u00020:2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u00060KH\u0002J\u0010\u0010L\u001a\u00020:2\u0006\u0010A\u001a\u00020\u001aH\u0002J\b\u0010M\u001a\u00020:H\u0002J\b\u0010N\u001a\u00020:H\u0002J\b\u0010O\u001a\u00020:H\u0002J\u0010\u0010P\u001a\u00020:2\u0006\u0010Q\u001a\u00020\u0006H\u0002J\u0010\u0010R\u001a\u00020:2\u0006\u0010S\u001a\u00020>H\u0002J\u0010\u0010T\u001a\u00020:2\u0006\u0010Q\u001a\u00020\u0006H\u0002J\u0010\u0010U\u001a\u00020:2\u0006\u0010S\u001a\u00020>H\u0002J\u0010\u0010V\u001a\u00020:2\u0006\u0010Q\u001a\u00020\u0006H\u0002J\b\u0010W\u001a\u00020:H\u0002J\b\u0010X\u001a\u00020:H\u0002J\b\u0010Y\u001a\u00020:H\u0002J\b\u0010Z\u001a\u00020:H\u0002J\b\u0010[\u001a\u00020:H\u0002J\u0016\u0010\\\u001a\u00020:2\f\u0010=\u001a\b\u0012\u0004\u0012\u00020]0KH\u0002J\b\u0010^\u001a\u00020:H\u0002J\u0010\u0010_\u001a\u00020:2\u0006\u0010=\u001a\u00020`H\u0002J\u0010\u0010a\u001a\u00020:2\u0006\u0010b\u001a\u00020cH\u0002J\u0018\u0010d\u001a\u00020:2\u0006\u0010e\u001a\u00020\u00062\u0006\u0010S\u001a\u00020>H\u0002J\b\u0010f\u001a\u00020:H\u0002J\b\u0010g\u001a\u00020:H\u0002J\b\u0010h\u001a\u00020:H\u0002J\u0010\u0010i\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010j\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010k\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010l\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010m\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010n\u001a\u00020:2\u0006\u0010b\u001a\u00020oH\u0002J\u0010\u0010p\u001a\u00020:2\u0006\u0010b\u001a\u00020cH\u0002J\b\u0010q\u001a\u00020:H\u0002J\u0010\u0010r\u001a\u00020:2\u0006\u0010b\u001a\u00020`H\u0002J\b\u0010s\u001a\u00020:H\u0002J\b\u0010t\u001a\u00020:H\u0002J\b\u0010u\u001a\u00020:H\u0002J\b\u0010v\u001a\u00020:H\u0002J\b\u0010x\u001a\u00020:H\u0002J\b\u0010z\u001a\u00020:H\u0002J\b\u0010|\u001a\u00020:H\u0002J\b\u0010~\u001a\u00020:H\u0002J\t\u0010\u0080\u0001\u001a\u00020:H\u0002J\t\u0010\u0082\u0001\u001a\u00020:H\u0002J\t\u0010\u0084\u0001\u001a\u00020:H\u0002J\t\u0010\u0086\u0001\u001a\u00020:H\u0002J\t\u0010\u0088\u0001\u001a\u00020:H\u0002J\u0013\u0010\u0089\u0001\u001a\u00020:2\b\u0010\u008a\u0001\u001a\u00030\u008b\u0001H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u00103\u001a\u000204¢\u0006\b\n\u0000\u001a\u0004\b5\u00106R\u000e\u00107\u001a\u000208X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010w\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010y\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010{\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010}\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u007f\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0081\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0083\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0085\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0087\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u008e\u0001"}, d2 = {"Lcom/arizonagames/feature/arizona/family/FamilyScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lcom/arizonagames/feature/arizona/family/databinding/FamilyMainBinding;", "createSelectedImage", "createSelectedImageMax", "createIsTitleDone", "", "createIsSloganDone", "mapCells", "xMargin", "", "yMargin", "membersCount", "Lcom/arizonagames/feature/arizona/family/data/FamilyMembersCount;", "familyData", "Lcom/arizonagames/feature/arizona/family/data/FamilyData;", "createInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyCreateData;", "colorsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CreateClanColorAdapter;", "mainMenuItemsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MainMenuAdapter;", "settingsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/SettingsAdapter;", "estateAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/EstateAdapter;", "charterAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CharterAdapter;", "warAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/WarsAdapter;", "membersAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MembersAdapter;", "charterMembersAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CharterMembersAdapter;", "ratingAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/RatingAdapter;", "territoryAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/TerritoryAdapter;", "meetingsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MeetingsAdapter;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lcom/arizonagames/feature/arizona/family/FamilyApi;", "setVisible", "", "visible", "onBackendMessage", "data", "", "subId", "setCreateInfo", "info", "setWarInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyWarData;", "setCharterInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyCharterData;", "setSettingsInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilySettingsData;", "setEstateInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyEstateData;", "setMainMenu", "", "setFamilyInfo", "setupAdapters", "clearAdapters", "setupNavigation", "requestMembers", "page", "requestMembersName", "name", "requestCharterMembers", "requestCharterMembersName", "requestRating", "requestTerritories", "requestTopTerritories", "requestMeetings", "loadMapRetrofit", "loadMembersCount", "setUniqCells", "Lcom/arizonagames/feature/arizona/family/data/UniqCellItem;", "setMap", "setFrameMap", "Lcom/arizonagames/feature/arizona/family/data/FrameMapData;", "setFrameCharter", "item", "Lcom/arizonagames/feature/arizona/family/data/CharterItem;", "setFrameMember", "id", "onClickMembersFrame", "setupCreateClanPage", "checkCreateBntState", "selectMenuItem", "selectSettingsItem", "selectEstateItem", "selectCharterItem", "selectWarItem", "selectMemberItem", "Lcom/arizonagames/feature/arizona/family/data/MemberItem;", "selectCharterMemberItem", "selectRatingItem", "selectTerritoryItem", "setupSort", "sortTerritory1", "sortTerritory2", "sortTerritory3", "sortcharter1state", "sortcharter1", "sortcharter2state", "sortcharter2", "sortcharter3state", "sortcharter3", "sortcharter4state", "sortcharter4", "sortMeetings1state", "sortMeetings1", "sortMeetings2state", "sortMeetings2", "sortMeetings3state", "sortMeetings3", "sortMembers1state", "sortMembers1", "sortMembers2state", "sortMembers2", "navigateTo", "nav", "Lcom/arizonagames/feature/arizona/family/FamilyScreen$Navigation;", "Navigation", "Spawner", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ö\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u001b\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u00012\u00020\u0002:\u0004\u008c\u0001\u008d\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u00109\u001a\u00020:2\u0006\u0010;\u001a\u00020\u0011H\u0016J\u0018\u0010<\u001a\u00020:2\u0006\u0010=\u001a\u00020>2\u0006\u0010?\u001a\u00020\u0006H\u0016J\u0010\u0010@\u001a\u00020:2\u0006\u0010A\u001a\u00020\u001cH\u0002J\u0010\u0010B\u001a\u00020:2\u0006\u0010A\u001a\u00020CH\u0002J\u0010\u0010D\u001a\u00020:2\u0006\u0010A\u001a\u00020EH\u0002J\u0010\u0010F\u001a\u00020:2\u0006\u0010A\u001a\u00020GH\u0002J\u0010\u0010H\u001a\u00020:2\u0006\u0010A\u001a\u00020IH\u0002J\u0016\u0010J\u001a\u00020:2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u00060KH\u0002J\u0010\u0010L\u001a\u00020:2\u0006\u0010A\u001a\u00020\u001aH\u0002J\b\u0010M\u001a\u00020:H\u0002J\b\u0010N\u001a\u00020:H\u0002J\b\u0010O\u001a\u00020:H\u0002J\u0010\u0010P\u001a\u00020:2\u0006\u0010Q\u001a\u00020\u0006H\u0002J\u0010\u0010R\u001a\u00020:2\u0006\u0010S\u001a\u00020>H\u0002J\u0010\u0010T\u001a\u00020:2\u0006\u0010Q\u001a\u00020\u0006H\u0002J\u0010\u0010U\u001a\u00020:2\u0006\u0010S\u001a\u00020>H\u0002J\u0010\u0010V\u001a\u00020:2\u0006\u0010Q\u001a\u00020\u0006H\u0002J\b\u0010W\u001a\u00020:H\u0002J\b\u0010X\u001a\u00020:H\u0002J\b\u0010Y\u001a\u00020:H\u0002J\b\u0010Z\u001a\u00020:H\u0002J\b\u0010[\u001a\u00020:H\u0002J\u0016\u0010\\\u001a\u00020:2\f\u0010=\u001a\b\u0012\u0004\u0012\u00020]0KH\u0002J\b\u0010^\u001a\u00020:H\u0002J\u0010\u0010_\u001a\u00020:2\u0006\u0010=\u001a\u00020`H\u0002J\u0010\u0010a\u001a\u00020:2\u0006\u0010b\u001a\u00020cH\u0002J\u0018\u0010d\u001a\u00020:2\u0006\u0010e\u001a\u00020\u00062\u0006\u0010S\u001a\u00020>H\u0002J\b\u0010f\u001a\u00020:H\u0002J\b\u0010g\u001a\u00020:H\u0002J\b\u0010h\u001a\u00020:H\u0002J\u0010\u0010i\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010j\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010k\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010l\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010m\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010n\u001a\u00020:2\u0006\u0010b\u001a\u00020oH\u0002J\u0010\u0010p\u001a\u00020:2\u0006\u0010b\u001a\u00020cH\u0002J\b\u0010q\u001a\u00020:H\u0002J\u0010\u0010r\u001a\u00020:2\u0006\u0010b\u001a\u00020`H\u0002J\b\u0010s\u001a\u00020:H\u0002J\b\u0010t\u001a\u00020:H\u0002J\b\u0010u\u001a\u00020:H\u0002J\b\u0010v\u001a\u00020:H\u0002J\b\u0010x\u001a\u00020:H\u0002J\b\u0010z\u001a\u00020:H\u0002J\b\u0010|\u001a\u00020:H\u0002J\b\u0010~\u001a\u00020:H\u0002J\t\u0010\u0080\u0001\u001a\u00020:H\u0002J\t\u0010\u0082\u0001\u001a\u00020:H\u0002J\t\u0010\u0084\u0001\u001a\u00020:H\u0002J\t\u0010\u0086\u0001\u001a\u00020:H\u0002J\t\u0010\u0088\u0001\u001a\u00020:H\u0002J\u0013\u0010\u0089\u0001\u001a\u00020:2\b\u0010\u008a\u0001\u001a\u00030\u008b\u0001H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u00103\u001a\u000204¢\u0006\b\n\u0000\u001a\u0004\b5\u00106R\u000e\u00107\u001a\u000208X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010w\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010y\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010{\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010}\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u007f\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0081\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0083\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0085\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0087\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u008e\u0001"}, d2 = {"Lcom/arizonagames/feature/arizona/family/FamilyScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lcom/arizonagames/feature/arizona/family/databinding/FamilyMainBinding;", "createSelectedImage", "createSelectedImageMax", "createIsTitleDone", "", "createIsSloganDone", "mapCells", "xMargin", "", "yMargin", "membersCount", "Lcom/arizonagames/feature/arizona/family/data/FamilyMembersCount;", "familyData", "Lcom/arizonagames/feature/arizona/family/data/FamilyData;", "createInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyCreateData;", "colorsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CreateClanColorAdapter;", "mainMenuItemsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MainMenuAdapter;", "settingsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/SettingsAdapter;", "estateAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/EstateAdapter;", "charterAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CharterAdapter;", "warAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/WarsAdapter;", "membersAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MembersAdapter;", "charterMembersAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CharterMembersAdapter;", "ratingAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/RatingAdapter;", "territoryAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/TerritoryAdapter;", "meetingsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MeetingsAdapter;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lcom/arizonagames/feature/arizona/family/FamilyApi;", "setVisible", "", "visible", "onBackendMessageHandled", "data", "", "subId", "setCreateInfo", "info", "setWarInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyWarData;", "setCharterInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyCharterData;", "setSettingsInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilySettingsData;", "setEstateInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyEstateData;", "setMainMenu", "", "setFamilyInfo", "setupAdapters", "clearAdapters", "setupNavigation", "requestMembers", "page", "requestMembersName", "name", "requestCharterMembers", "requestCharterMembersName", "requestRating", "requestTerritories", "requestTopTerritories", "requestMeetings", "loadMapRetrofit", "loadMembersCount", "setUniqCells", "Lcom/arizonagames/feature/arizona/family/data/UniqCellItem;", "setMap", "setFrameMap", "Lcom/arizonagames/feature/arizona/family/data/FrameMapData;", "setFrameCharter", "item", "Lcom/arizonagames/feature/arizona/family/data/CharterItem;", "setFrameMember", "id", "onClickMembersFrame", "setupCreateClanPage", "checkCreateBntState", "selectMenuItem", "selectSettingsItem", "selectEstateItem", "selectCharterItem", "selectWarItem", "selectMemberItem", "Lcom/arizonagames/feature/arizona/family/data/MemberItem;", "selectCharterMemberItem", "selectRatingItem", "selectTerritoryItem", "setupSort", "sortTerritory1", "sortTerritory2", "sortTerritory3", "sortcharter1state", "sortcharter1", "sortcharter2state", "sortcharter2", "sortcharter3state", "sortcharter3", "sortcharter4state", "sortcharter4", "sortMeetings1state", "sortMeetings1", "sortMeetings2state", "sortMeetings2", "sortMeetings3state", "sortMeetings3", "sortMembers1state", "sortMembers1", "sortMembers2state", "sortMembers2", "navigateTo", "nav", "Lcom/arizonagames/feature/arizona/family/FamilyScreen$Navigation;", "Navigation", "Spawner", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class FamilyScreen extends SAMPUIElement implements InterfaceController {
     private final FamilyApi api;
@@ -409,50 +407,44 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
-        try {
-            switch (i) {
-                case 0:
-                    setMainMenu(MapperKt.toListModel(data, Integer.TYPE));
+        switch (i) {
+            case 0:
+                setMainMenu(MapperKt.toListModel(data, Integer.TYPE));
+                return;
+            case 1:
+                setFamilyInfo((FamilyData) MapperKt.toModel(data, FamilyData.class));
+                return;
+            case 2:
+                setSettingsInfo((FamilySettingsData) MapperKt.toModel(data, FamilySettingsData.class));
+                return;
+            case 3:
+                setEstateInfo((FamilyEstateData) MapperKt.toModel(data, FamilyEstateData.class));
+                return;
+            case 4:
+                setWarInfo((FamilyWarData) MapperKt.toModel(data, FamilyWarData.class));
+                return;
+            case 5:
+                setCreateInfo((FamilyCreateData) MapperKt.toModel(data, FamilyCreateData.class));
+                return;
+            case 6:
+                Integer intOrNull = StringsKt.toIntOrNull(data);
+                if ((intOrNull != null ? intOrNull.intValue() : 0) == 0) {
+                    navigateTo(Navigation.Menu);
                     return;
-                case 1:
-                    setFamilyInfo((FamilyData) MapperKt.toModel(data, FamilyData.class));
+                } else {
+                    navigateTo(Navigation.Create);
                     return;
-                case 2:
-                    setSettingsInfo((FamilySettingsData) MapperKt.toModel(data, FamilySettingsData.class));
-                    return;
-                case 3:
-                    setEstateInfo((FamilyEstateData) MapperKt.toModel(data, FamilyEstateData.class));
-                    return;
-                case 4:
-                    setWarInfo((FamilyWarData) MapperKt.toModel(data, FamilyWarData.class));
-                    return;
-                case 5:
-                    setCreateInfo((FamilyCreateData) MapperKt.toModel(data, FamilyCreateData.class));
-                    return;
-                case 6:
-                    Integer intOrNull = StringsKt.toIntOrNull(data);
-                    if ((intOrNull != null ? intOrNull.intValue() : 0) == 0) {
-                        navigateTo(Navigation.Menu);
-                        return;
-                    } else {
-                        navigateTo(Navigation.Create);
-                        return;
-                    }
-                case 7:
-                    setCharterInfo((FamilyCharterData) MapperKt.toModel(data, FamilyCharterData.class));
-                    return;
-                case 8:
-                    setUniqCells(MapperKt.toListModel(data, UniqCellItem.class));
-                    return;
-                default:
-                    return;
-            }
-        } catch (Exception e) {
-            Log.d("FAMILY_ARIZONA", data + "  " + e.getMessage());
-            e.printStackTrace();
-            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+                }
+            case 7:
+                setCharterInfo((FamilyCharterData) MapperKt.toModel(data, FamilyCharterData.class));
+                return;
+            case 8:
+                setUniqCells(MapperKt.toListModel(data, UniqCellItem.class));
+                return;
+            default:
+                return;
         }
     }
 
@@ -463,16 +455,16 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         Drawable drawable = ContextCompat.getDrawable(getTargetActivity(), R.drawable.family_create_pen_ic);
         familyCreateClanBinding.familyNameEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, drawable, (Drawable) null);
         familyCreateClanBinding.familyNameEdit.setBackgroundResource(R.drawable.family_create_edit_stroke);
-        familyCreateClanBinding.titleHint.setText("Максимум 15 символов");
+        familyCreateClanBinding.titleHint.setText(getTargetActivity().getString(R.string.family_max_15_characters));
         familyCreateClanBinding.titleHint.setTextColor(Color.parseColor("#ABABAB"));
         familyCreateClanBinding.familySloganEdit.getText().clear();
         familyCreateClanBinding.familySloganEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, drawable, (Drawable) null);
         familyCreateClanBinding.familySloganEdit.setBackgroundResource(R.drawable.family_create_edit_stroke);
-        familyCreateClanBinding.sloganHint.setText("Максимум 40 символов");
+        familyCreateClanBinding.sloganHint.setText(getTargetActivity().getString(R.string.family_max_40_characters));
         familyCreateClanBinding.sloganHint.setTextColor(Color.parseColor("#ABABAB"));
         this.createSelectedImage = 0;
         familyCreateClanBinding.logoImage.setImageResource(LogoKt.familyLogo(this.createSelectedImage));
-        familyCreateClanBinding.logoNumber.setText((this.createSelectedImage + 1) + " / " + (this.createSelectedImageMax + 1));
+        familyCreateClanBinding.logoNumber.setText(getTargetActivity().getString(R.string.family_logo_number, new Object[]{Integer.valueOf(this.createSelectedImage + 1), Integer.valueOf(this.createSelectedImageMax + 1)}));
         familyCreateClanBinding.logoTitle.setText(LogoKt.familyLogoTitles(this.createSelectedImage));
         this.colorsAdapter.clear();
         familyCreateClanBinding.loaderBar.setVisibility(8);
@@ -480,9 +472,9 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         familyCreateClanBinding.buttonTitle.setVisibility(0);
         familyCreateClanBinding.createCost.setVisibility(0);
         if (familyCreateData.getMoney() >= familyCreateData.getPrice()) {
-            familyCreateClanBinding.buttonTitle.setText("Создать семью");
+            familyCreateClanBinding.buttonTitle.setText(getTargetActivity().getString(R.string.family_create_family));
         } else {
-            familyCreateClanBinding.buttonTitle.setText("Необходимо иметь");
+            familyCreateClanBinding.buttonTitle.setText(getTargetActivity().getString(R.string.family_need_to_have));
         }
         familyCreateClanBinding.buttonCreateFamily.setAlpha(0.5f);
         this.binding.create.createCost.setText(MoneyElementKt.toMoneyFormattedSpannable$default(familyCreateData.getPrice(), false, null, null, 7, null));
@@ -514,7 +506,6 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     private final void setFamilyInfo(FamilyData familyData) {
-        Integer members;
         String str;
         long j;
         this.familyData = familyData;
@@ -532,12 +523,13 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         } else {
             familyTopbarBinding.messageContainer.setVisibility(0);
         }
-        familyTopbarBinding.textRep.setText(familyData.getReputation() + " очк");
-        if (familyData.getMembers() != null) {
-            familyTopbarBinding.textDevil.setText(members.intValue() + " человек");
+        familyTopbarBinding.textRep.setText(getTargetActivity().getString(R.string.family_points_short, new Object[]{Integer.valueOf(familyData.getReputation())}));
+        Integer members = familyData.getMembers();
+        if (members != null) {
+            familyTopbarBinding.textDevil.setText(getTargetActivity().getString(R.string.family_people_count, new Object[]{Integer.valueOf(members.intValue())}));
         }
         familyTopbarBinding.textMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(familyData.getMoney(), false, null, null, 7, null));
-        familyTopbarBinding.textCoins.setText(familyData.getCoins() + " шт");
+        familyTopbarBinding.textCoins.setText(getTargetActivity().getString(R.string.family_pieces_short, new Object[]{Integer.valueOf(familyData.getCoins())}));
         if (familyData.getBg() == -1) {
             familyTopbarBinding.flag.setImageBitmap(null);
         } else {
@@ -546,22 +538,24 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyTopbarBinding.flag.setImageBitmap(UtilsKt.applyGradientMask(decodeResource));
         }
         FamilyHomePageBinding familyHomePageBinding = familyMainBinding.home;
-        familyHomePageBinding.textPercent.setText(familyData.getDeposit() + " %");
-        familyHomePageBinding.textPayday.setText(familyData.getPayDay() + " реп.");
-        familyHomePageBinding.textLevel.setText(familyData.getLevel() + " уровень");
-        familyHomePageBinding.textExperience.setText("Опыт: " + familyData.getCurrentExp() + " / " + familyData.getTotalExp() + " ");
+        familyHomePageBinding.textPercent.setText(getTargetActivity().getString(R.string.family_percent_value, new Object[]{Integer.valueOf(familyData.getDeposit())}));
+        familyHomePageBinding.textPayday.setText(getTargetActivity().getString(R.string.family_reputation_value, new Object[]{Integer.valueOf(familyData.getPayDay())}));
+        familyHomePageBinding.textLevel.setText(getTargetActivity().getString(R.string.family_level_value, new Object[]{Integer.valueOf(familyData.getLevel())}));
+        familyHomePageBinding.textExperience.setText(getTargetActivity().getString(R.string.family_experience_value, new Object[]{Integer.valueOf(familyData.getCurrentExp()), Integer.valueOf(familyData.getTotalExp())}));
         if (familyData.getTotalExp() > 0) {
             familyHomePageBinding.expProgressBar.setProgress((familyData.getCurrentExp() * 100) / familyData.getTotalExp());
             familyHomePageBinding.expProgressBar.setMax(100);
         }
         TextView textView = familyHomePageBinding.textFlag;
-        if (familyData.getFlag().length() != 0) {
+        if (familyData.getFlag().length() == 0) {
+            str = getTargetActivity().getString(R.string.family_absent);
+        } else {
             str = familyData.getFlag().toString();
         }
         textView.setText(str);
         if (familyData.getBg() != -1) {
             familyHomePageBinding.idCard.setVisibility(0);
-            familyHomePageBinding.idText.setText("ID: " + familyData.getBg());
+            familyHomePageBinding.idText.setText(getTargetActivity().getString(R.string.family_id_value, new Object[]{Integer.valueOf(familyData.getBg())}));
             familyHomePageBinding.card1.setAlpha(1.0f);
         } else {
             familyHomePageBinding.idCard.setVisibility(8);
@@ -570,7 +564,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         familyHomePageBinding.textAlliance.setText(familyData.getAliance());
         if (familyData.getFraction().length() == 0) {
             familyHomePageBinding.charterCard.setAlpha(0.2f);
-            familyHomePageBinding.textCharter.setText("Отсутствует");
+            familyHomePageBinding.textCharter.setText(getTargetActivity().getString(R.string.family_absent));
         } else {
             familyHomePageBinding.charterCard.setAlpha(1.0f);
             familyHomePageBinding.textCharter.setText(familyData.getFraction());
@@ -578,49 +572,51 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         if (familyData.getVerification() == 1) {
             j = 1;
             familyHomePageBinding.cardOfficial.setCardBackgroundColor(Color.parseColor("#1CC1FF3D"));
-            familyHomePageBinding.cardOfficialText.setText("Приобретена");
+            familyHomePageBinding.cardOfficialText.setText(getTargetActivity().getString(R.string.family_acquired_female));
             familyHomePageBinding.cardOfficialText.setTextColor(Color.parseColor("#C1FF3D"));
         } else {
             j = 1;
             familyHomePageBinding.cardOfficial.setCardBackgroundColor(Color.parseColor("#32ABABAB"));
-            familyHomePageBinding.cardOfficialText.setText("Отсутствует");
+            familyHomePageBinding.cardOfficialText.setText(getTargetActivity().getString(R.string.family_absent));
             familyHomePageBinding.cardOfficialText.setTextColor(Color.parseColor("#ABABAB"));
         }
         if (familyData.getBrand() == j) {
             familyHomePageBinding.cardBrend.setCardBackgroundColor(Color.parseColor("#1CC1FF3D"));
-            familyHomePageBinding.cardBrendText.setText("Приобретен");
+            familyHomePageBinding.cardBrendText.setText(getTargetActivity().getString(R.string.family_acquired_male));
             familyHomePageBinding.cardBrendText.setTextColor(Color.parseColor("#C1FF3D"));
         } else {
             familyHomePageBinding.cardBrend.setCardBackgroundColor(Color.parseColor("#32ABABAB"));
-            familyHomePageBinding.cardBrendText.setText("Отсутствует");
+            familyHomePageBinding.cardBrendText.setText(getTargetActivity().getString(R.string.family_absent));
             familyHomePageBinding.cardBrendText.setTextColor(Color.parseColor("#ABABAB"));
         }
         familyHomePageBinding.textDisc.setText(StringsKt.substringAfterLast$default(familyData.getDiscord(), '/', (String) null, 2, (Object) null));
         if (familyData.getDiscord().length() == 0) {
             familyHomePageBinding.discCard.setAlpha(0.2f);
-            familyHomePageBinding.discDesc.setText("Отсутствует");
+            familyHomePageBinding.discDesc.setText(getTargetActivity().getString(R.string.family_absent));
             familyHomePageBinding.buttonCopyDisc.setVisibility(8);
         } else {
             familyHomePageBinding.discCard.setAlpha(1.0f);
-            familyHomePageBinding.discDesc.setText("Копировать ссылку");
+            familyHomePageBinding.discDesc.setText(getTargetActivity().getString(R.string.family_copy_link));
             familyHomePageBinding.buttonCopyDisc.setVisibility(0);
         }
         int hasEstate = familyData.getHasEstate();
         if (hasEstate == 0) {
-            familyHomePageBinding.apartTitle.setText("Осутствует");
+            familyHomePageBinding.apartTitle.setText(getTargetActivity().getString(R.string.family_absent));
             familyHomePageBinding.cardApart.setAlpha(0.2f);
         } else if (hasEstate == 1) {
-            familyHomePageBinding.apartTitle.setText("Семейная квартира");
+            familyHomePageBinding.apartTitle.setText(getTargetActivity().getString(R.string.family_apartment));
             familyHomePageBinding.imageApart.setImageResource(R.drawable.family_menu_ic_apart2);
             familyHomePageBinding.cardApart.setAlpha(1.0f);
         } else if (hasEstate == 2) {
-            familyHomePageBinding.apartTitle.setText("Семейное поместье");
+            familyHomePageBinding.apartTitle.setText(getTargetActivity().getString(R.string.family_estate));
             familyHomePageBinding.imageApart.setImageResource(R.drawable.family_menu_ic_estate2);
             familyHomePageBinding.cardApart.setAlpha(1.0f);
         }
         Leader leader = (Leader) CollectionsKt.getOrNull(familyData.getLeaders(), 0);
         if (leader == null) {
-            leader = new Leader("Отсутствует", -1, " ");
+            String string = getTargetActivity().getString(R.string.family_absent);
+            Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+            leader = new Leader(string, -1, " ");
         }
         familyHomePageBinding.textLeader1.setText(leader.getName());
         if (leader.getOnline() == 1) {
@@ -635,7 +631,9 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         }
         Leader leader2 = (Leader) CollectionsKt.getOrNull(familyData.getLeaders(), 1);
         if (leader2 == null) {
-            leader2 = new Leader("Отсутствует", -1, " ");
+            String string2 = getTargetActivity().getString(R.string.family_absent);
+            Intrinsics.checkNotNullExpressionValue(string2, "getString(...)");
+            leader2 = new Leader(string2, -1, " ");
         }
         familyHomePageBinding.textLeader2.setText(leader2.getName());
         if (leader2.getOnline() == 1) {
@@ -650,7 +648,9 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         }
         Leader leader3 = (Leader) CollectionsKt.getOrNull(familyData.getLeaders(), 2);
         if (leader3 == null) {
-            leader3 = new Leader("Отсутствует", -1, " ");
+            String string3 = getTargetActivity().getString(R.string.family_absent);
+            Intrinsics.checkNotNullExpressionValue(string3, "getString(...)");
+            leader3 = new Leader(string3, -1, " ");
         }
         familyHomePageBinding.textLeader3.setText(leader3.getName());
         if (leader3.getOnline() == 1) {
@@ -665,7 +665,9 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         }
         Leader leader4 = (Leader) CollectionsKt.getOrNull(familyData.getLeaders(), 3);
         if (leader4 == null) {
-            leader4 = new Leader("Отсутствует", -1, " ");
+            String string4 = getTargetActivity().getString(R.string.family_absent);
+            Intrinsics.checkNotNullExpressionValue(string4, "getString(...)");
+            leader4 = new Leader(string4, -1, " ");
         }
         familyHomePageBinding.textLeader4.setText(leader4.getName());
         if (leader4.getOnline() == 1) {
@@ -1039,9 +1041,9 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     private final void setFrameMap(final FrameMapData frameMapData) {
         FamilyMapFrameBinding familyMapFrameBinding = this.binding.frameMap;
         familyMapFrameBinding.getRoot().setVisibility(0);
-        familyMapFrameBinding.title.setText("Территория №" + frameMapData.getId());
+        familyMapFrameBinding.title.setText(getTargetActivity().getString(R.string.family_territory_title, new Object[]{Integer.valueOf(frameMapData.getId())}));
         if (frameMapData.getOwner() == null) {
-            familyMapFrameBinding.famName.setText("Свободная территория");
+            familyMapFrameBinding.famName.setText(getTargetActivity().getString(R.string.family_free_territory));
             familyMapFrameBinding.logo.setVisibility(8);
             familyMapFrameBinding.flag.setVisibility(8);
         } else {
@@ -1101,14 +1103,14 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         }
         familyCharterFrameBinding.onlineImage.setImageResource(i);
         familyCharterFrameBinding.rank.setText(String.valueOf(charterItem.getFractionRank()));
-        familyCharterFrameBinding.times.setText(charterItem.getFractionDays() + " д.");
-        familyCharterFrameBinding.days.setText(charterItem.getPaidDays() + " д.");
-        familyCharterFrameBinding.activeWeek.setText(charterItem.getWeeklyActive() + " ч.");
+        familyCharterFrameBinding.times.setText(getTargetActivity().getString(R.string.family_days_value, new Object[]{Integer.valueOf(charterItem.getFractionDays())}));
+        familyCharterFrameBinding.days.setText(getTargetActivity().getString(R.string.family_days_value, new Object[]{Integer.valueOf(charterItem.getPaidDays())}));
+        familyCharterFrameBinding.activeWeek.setText(getTargetActivity().getString(R.string.family_hours_value, new Object[]{Integer.valueOf(charterItem.getWeeklyActive())}));
         familyCharterFrameBinding.memberRole.setVisibility(0);
         if (charterItem.isLeader()) {
             familyCharterFrameBinding.memberRole.setText("Лидер");
         } else if (charterItem.isDeputy()) {
-            familyCharterFrameBinding.memberRole.setText("Заместитель");
+            familyCharterFrameBinding.memberRole.setText(getTargetActivity().getString(R.string.family_role_deputy));
         } else {
             familyCharterFrameBinding.memberRole.setVisibility(8);
         }
@@ -1240,7 +1242,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         int i = familyScreen.createSelectedImage;
         familyScreen.createSelectedImage = i <= 0 ? familyScreen.createSelectedImageMax : i - 1;
         familyCreateClanBinding.logoImage.setImageResource(LogoKt.familyLogo(familyScreen.createSelectedImage));
-        familyCreateClanBinding.logoNumber.setText((familyScreen.createSelectedImage + 1) + " / " + (familyScreen.createSelectedImageMax + 1));
+        familyCreateClanBinding.logoNumber.setText(familyScreen.getTargetActivity().getString(R.string.family_logo_number, new Object[]{Integer.valueOf(familyScreen.createSelectedImage + 1), Integer.valueOf(familyScreen.createSelectedImageMax + 1)}));
         familyCreateClanBinding.logoTitle.setText(LogoKt.familyLogoTitles(familyScreen.createSelectedImage));
     }
 
@@ -1250,7 +1252,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         familyScreen.createSelectedImage = i >= familyScreen.createSelectedImageMax ? 0 : i + 1;
         familyCreateClanBinding.logoImage.setImageResource(LogoKt.familyLogo(familyScreen.createSelectedImage));
         familyCreateClanBinding.logoTitle.setText(LogoKt.familyLogoTitles(familyScreen.createSelectedImage));
-        familyCreateClanBinding.logoNumber.setText((familyScreen.createSelectedImage + 1) + " / " + (familyScreen.createSelectedImageMax + 1));
+        familyCreateClanBinding.logoNumber.setText(familyScreen.getTargetActivity().getString(R.string.family_logo_number, new Object[]{Integer.valueOf(familyScreen.createSelectedImage + 1), Integer.valueOf(familyScreen.createSelectedImageMax + 1)}));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1294,13 +1296,13 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         if (text.length() > 0 && familyCreateClanBinding.familyNameEdit.getText().length() >= 5) {
             familyCreateClanBinding.familyNameEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, ContextCompat.getDrawable(familyScreen.getTargetActivity(), R.drawable.family_create_done_ic), (Drawable) null);
             familyCreateClanBinding.familyNameEdit.setBackgroundResource(R.drawable.family_create_edit_stroke_done);
-            familyCreateClanBinding.titleHint.setText("Это название доступно!");
+            familyCreateClanBinding.titleHint.setText(familyScreen.getTargetActivity().getString(R.string.family_title_available));
             familyCreateClanBinding.titleHint.setTextColor(Color.parseColor("#C1FF3D"));
             familyScreen.createIsTitleDone = true;
         } else {
             familyCreateClanBinding.familyNameEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, ContextCompat.getDrawable(familyScreen.getTargetActivity(), R.drawable.family_create_pen_ic), (Drawable) null);
             familyCreateClanBinding.familyNameEdit.setBackgroundResource(R.drawable.family_create_edit_stroke_dont);
-            familyCreateClanBinding.titleHint.setText("Минимум символов 5");
+            familyCreateClanBinding.titleHint.setText(familyScreen.getTargetActivity().getString(R.string.family_title_min_5));
             familyCreateClanBinding.titleHint.setTextColor(Color.parseColor("#FE5B3B"));
             familyScreen.createIsTitleDone = false;
         }
@@ -1336,13 +1338,13 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         if (text.length() > 0 && familyCreateClanBinding.familySloganEdit.getText().length() >= 15) {
             familyCreateClanBinding.familySloganEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, ContextCompat.getDrawable(familyScreen.getTargetActivity(), R.drawable.family_create_done_ic), (Drawable) null);
             familyCreateClanBinding.familySloganEdit.setBackgroundResource(R.drawable.family_create_edit_stroke_done);
-            familyCreateClanBinding.sloganHint.setText("Слоган подходит!");
+            familyCreateClanBinding.sloganHint.setText(familyScreen.getTargetActivity().getString(R.string.family_slogan_ok));
             familyCreateClanBinding.sloganHint.setTextColor(Color.parseColor("#C1FF3D"));
             familyScreen.createIsSloganDone = true;
         } else {
             familyCreateClanBinding.familySloganEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, ContextCompat.getDrawable(familyScreen.getTargetActivity(), R.drawable.family_create_pen_ic), (Drawable) null);
             familyCreateClanBinding.familySloganEdit.setBackgroundResource(R.drawable.family_create_edit_stroke_dont);
-            familyCreateClanBinding.sloganHint.setText("Минимум символов 15");
+            familyCreateClanBinding.sloganHint.setText(familyScreen.getTargetActivity().getString(R.string.family_slogan_min_15));
             familyCreateClanBinding.sloganHint.setTextColor(Color.parseColor("#FE5B3B"));
             familyScreen.createIsSloganDone = false;
         }
@@ -1363,20 +1365,20 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyCreateClanBinding.buttonCreateFamily.setCardBackgroundColor(Color.parseColor("#1AFFFFFF"));
             familyCreateClanBinding.createCost.setVisibility(0);
             familyCreateClanBinding.buttonTitle.setVisibility(0);
-            familyCreateClanBinding.buttonTitle.setText("Необходимо иметь");
+            familyCreateClanBinding.buttonTitle.setText(getTargetActivity().getString(R.string.family_need_to_have));
             familyCreateClanBinding.loaderBar.setVisibility(8);
             familyCreateClanBinding.buttonCreateFamily.setAlpha(0.5f);
         } else if (!this.createIsTitleDone || !this.createIsSloganDone) {
             familyCreateClanBinding.buttonCreateFamily.setCardBackgroundColor(Color.parseColor("#1AFFFFFF"));
             familyCreateClanBinding.createCost.setVisibility(0);
             familyCreateClanBinding.buttonTitle.setVisibility(0);
-            familyCreateClanBinding.buttonTitle.setText("Создать семью");
+            familyCreateClanBinding.buttonTitle.setText(getTargetActivity().getString(R.string.family_create_family));
             familyCreateClanBinding.buttonCreateFamily.setAlpha(0.5f);
         } else {
             familyCreateClanBinding.buttonCreateFamily.setCardBackgroundColor(Color.parseColor("#4DFFFFFF"));
             familyCreateClanBinding.createCost.setVisibility(0);
             familyCreateClanBinding.buttonTitle.setVisibility(0);
-            familyCreateClanBinding.buttonTitle.setText("Создать семью");
+            familyCreateClanBinding.buttonTitle.setText(getTargetActivity().getString(R.string.family_create_family));
             familyCreateClanBinding.loaderBar.setVisibility(8);
             familyCreateClanBinding.buttonCreateFamily.setAlpha(1.0f);
             familyCreateClanBinding.buttonCreateFamily.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda18
@@ -1807,7 +1809,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             case 3:
                 this.binding.settings.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding4 = this.binding.topbar;
-                familyTopbarBinding4.title.setText("Управление семьей");
+                familyTopbarBinding4.title.setText(getTargetActivity().getString(R.string.family_title_management));
                 familyTopbarBinding4.backButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda8
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -1838,7 +1840,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             case 5:
                 this.binding.charter.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding6 = this.binding.topbar;
-                familyTopbarBinding6.title.setText("Частная фракция");
+                familyTopbarBinding6.title.setText(getTargetActivity().getString(R.string.family_title_private_faction));
                 familyTopbarBinding6.backButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda10
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -1851,7 +1853,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 this.binding.war.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding7 = this.binding.topbar;
                 familyTopbarBinding7.title.setVisibility(0);
-                familyTopbarBinding7.title.setText("Войны за территории");
+                familyTopbarBinding7.title.setText(getTargetActivity().getString(R.string.family_title_territory_wars));
                 familyTopbarBinding7.backButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda12
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -1864,7 +1866,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             case 7:
                 this.binding.home.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding8 = this.binding.topbar;
-                familyTopbarBinding8.title.setText("Настройки");
+                familyTopbarBinding8.title.setText(getTargetActivity().getString(R.string.family_title_settings));
                 familyTopbarBinding8.backButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda13
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -1926,7 +1928,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             case 9:
                 this.binding.charterMembers.getRoot().setVisibility(0);
                 final FamilyTopbarBinding familyTopbarBinding10 = this.binding.topbar;
-                familyTopbarBinding10.title.setText("Состав организации");
+                familyTopbarBinding10.title.setText(getTargetActivity().getString(R.string.family_title_organization_members));
                 familyTopbarBinding10.backButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda71
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -1976,7 +1978,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             case 10:
                 this.binding.rating.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding11 = this.binding.topbar;
-                familyTopbarBinding11.title.setText("Рейтинг семей сервера ");
+                familyTopbarBinding11.title.setText(getTargetActivity().getString(R.string.family_title_server_family_rating));
                 familyTopbarBinding11.serverName.setText(ServersKt.familyServers(TokenManagerKt.getServerId()));
                 familyTopbarBinding11.backButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
@@ -1996,7 +1998,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             case 11:
                 this.binding.map.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding12 = this.binding.topbar;
-                familyTopbarBinding12.title.setText("Семейные войны");
+                familyTopbarBinding12.title.setText(getTargetActivity().getString(R.string.family_title_family_wars));
                 familyTopbarBinding12.backButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda4
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -2008,7 +2010,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             case 12:
                 this.binding.territories.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding13 = this.binding.topbar;
-                familyTopbarBinding13.title.setText("Наши территории");
+                familyTopbarBinding13.title.setText(getTargetActivity().getString(R.string.family_title_our_territories));
                 familyTopbarBinding13.backButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda5
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -2026,7 +2028,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 this.binding.meetings.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding14 = this.binding.topbar;
                 familyTopbarBinding14.title.setVisibility(0);
-                familyTopbarBinding14.title.setText("Список встреч");
+                familyTopbarBinding14.title.setText(getTargetActivity().getString(R.string.family_title_meetings));
                 familyTopbarBinding14.backButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda6
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {

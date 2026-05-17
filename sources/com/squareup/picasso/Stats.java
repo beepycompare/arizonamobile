@@ -6,7 +6,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Stats {
     private static final int BITMAP_DECODE_FINISHED = 2;
     private static final int BITMAP_TRANSFORMED_FINISHED = 3;
@@ -115,7 +115,7 @@ public class Stats {
         return j / i;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static class StatsHandler extends Handler {
         private final Stats stats;
 

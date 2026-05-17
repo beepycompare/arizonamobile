@@ -67,28 +67,31 @@ public final class FailDownloadDialogKt {
         Composer startRestartGroup = composer.startRestartGroup(2025743521);
         ComposerKt.sourceInformation(startRestartGroup, "C(FailDownloadErrorDialogRoot)N(component,onBackClick)32@1383L29,36@1496L21,34@1418L185:FailDownloadDialog.kt#d3gn1w");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(component) : startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
         if ((i & 48) == 0) {
             i2 |= startRestartGroup.changedInstance(onBackClick) ? 32 : 16;
         }
+        boolean z = false;
         if (startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2025743521, i2, -1, "com.miami.game.feature.download.dialog.ui.error.compose.FailDownloadErrorDialogRoot (FailDownloadDialog.kt:27)");
             }
             ErrorDialogUiState FailDownloadErrorDialogRoot$lambda$0 = FailDownloadErrorDialogRoot$lambda$0(FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1119348086, "CC(remember):FailDownloadDialog.kt#9igjgp");
-            boolean changedInstance = startRestartGroup.changedInstance(component);
+            if ((i2 & 14) == 4 || ((i2 & 8) != 0 && startRestartGroup.changedInstance(component))) {
+                z = true;
+            }
             FailDownloadDialogKt$FailDownloadErrorDialogRoot$1$1 rememberedValue = startRestartGroup.rememberedValue();
-            if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
+            if (z || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new FailDownloadDialogKt$FailDownloadErrorDialogRoot$1$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             function0 = onBackClick;
-            FailDownloadErrorDialogScreen(component.getErrorMessage(), FailDownloadErrorDialogRoot$lambda$0, (Function0) ((KFunction) rememberedValue), function0, startRestartGroup, (i2 << 6) & 7168);
+            FailDownloadErrorDialogScreen(component.getErrorMessage(), FailDownloadErrorDialogRoot$lambda$0, (Function0) ((KFunction) rememberedValue), function0, startRestartGroup, (ErrorDialogUiState.$stable << 3) | ((i2 << 6) & 7168));
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -219,7 +222,7 @@ public final class FailDownloadDialogKt {
                 composer.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$FailDownloadDialogKt.INSTANCE.m9095getLambda$1143154327$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$FailDownloadDialogKt.INSTANCE.m9098getLambda$1143154327$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

@@ -3,34 +3,33 @@ package io.appmetrica.analytics.billingv6.impl;
 import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.QueryPurchaseHistoryParams;
-import com.google.android.billing.IabHelper;
 import io.appmetrica.analytics.billinginterface.internal.config.BillingConfig;
 import io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider;
 import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 import kotlin.collections.CollectionsKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class a extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ b f337a;
+    public final /* synthetic */ b f342a;
     public final /* synthetic */ BillingResult b;
 
     public a(b bVar, BillingResult billingResult) {
-        this.f337a = bVar;
+        this.f342a = bVar;
         this.b = billingResult;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        b bVar = this.f337a;
+        b bVar = this.f342a;
         BillingResult billingResult = this.b;
         bVar.getClass();
         if (billingResult.getResponseCode() != 0) {
             bVar.e.onUpdateFinished();
             return;
         }
-        for (String str : CollectionsKt.listOf((Object[]) new String[]{IabHelper.ITEM_TYPE_INAPP, IabHelper.ITEM_TYPE_SUBS})) {
-            BillingConfig billingConfig = bVar.f338a;
+        for (String str : CollectionsKt.listOf((Object[]) new String[]{"inapp", "subs"})) {
+            BillingConfig billingConfig = bVar.f343a;
             BillingClient billingClient = bVar.b;
             UtilsProvider utilsProvider = bVar.c;
             d dVar = bVar.d;

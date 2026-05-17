@@ -2,7 +2,7 @@ package androidx.media3.common.util;
 
 import com.google.common.base.Preconditions;
 import java.util.NoSuchElementException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class LongArrayQueue {
     public static final int DEFAULT_INITIAL_CAPACITY = 16;
     private long[] data;

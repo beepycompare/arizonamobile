@@ -3,7 +3,7 @@ package dagger.hilt.android.migration;
 import android.app.Application;
 import dagger.hilt.android.internal.migration.HasCustomInject;
 import dagger.hilt.internal.Preconditions;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class CustomInjection {
     public static void inject(Application app) {
         Preconditions.checkNotNull(app);

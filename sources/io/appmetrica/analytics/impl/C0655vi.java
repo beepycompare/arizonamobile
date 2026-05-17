@@ -23,14 +23,14 @@ public final class C0655vi extends C0411ln {
     @Override // io.appmetrica.analytics.impl.C0411ln
     public final void f() {
         this.b.a();
-        C0380kh c0380kh = (C0380kh) ((X4) this.f1103a).k.a();
+        C0380kh c0380kh = (C0380kh) ((X4) this.f1108a).k.a();
         if (c0380kh.k.a(c0380kh.j)) {
             String str = c0380kh.m;
             if (TextUtils.isEmpty(str) || "-1".equals(str)) {
                 return;
             }
             try {
-                a(Vd.a((X4) this.f1103a));
+                a(Vd.a((X4) this.f1108a));
             } catch (Throwable unused) {
             }
         }
@@ -46,8 +46,8 @@ public final class C0655vi extends C0411ln {
             return;
         }
         this.e.remove(this.d);
-        if (((C0380kh) ((X4) this.f1103a).k.a()).g > 0) {
-            this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(((C0380kh) ((X4) this.f1103a).k.a()).g));
+        if (((C0380kh) ((X4) this.f1108a).k.a()).g > 0) {
+            this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(((C0380kh) ((X4) this.f1108a).k.a()).g));
         }
     }
 }

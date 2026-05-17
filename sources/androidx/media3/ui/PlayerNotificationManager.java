@@ -826,7 +826,7 @@ public class PlayerNotificationManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class MediaStyle extends NotificationCompat.Style {
         private final int[] actionsToShowInCompact;
         private final MediaSession.Token token;

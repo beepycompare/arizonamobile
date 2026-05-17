@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class D4 implements E2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0616u4 f542a;
+    public final /* synthetic */ C0616u4 f547a;
 
     public D4(C0616u4 c0616u4) {
-        this.f542a = c0616u4;
+        this.f547a = c0616u4;
     }
 
     @Override // io.appmetrica.analytics.impl.E2
     public final boolean a(Object obj, P5 p5) {
-        return ((A4) obj).a(p5, this.f542a);
+        return ((A4) obj).a(p5, this.f547a);
     }
 }

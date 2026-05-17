@@ -8,14 +8,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class ThreadFactoryC0750zd implements ThreadFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final AtomicInteger f1332a = new AtomicInteger(0);
+    public static final AtomicInteger f1337a = new AtomicInteger(0);
 
     public static int a() {
-        return f1332a.incrementAndGet();
+        return f1337a.incrementAndGet();
     }
 
     @Override // java.util.concurrent.ThreadFactory
     public final Thread newThread(Runnable runnable) {
-        return new InterruptionSafeThread(runnable, "null-" + f1332a.incrementAndGet());
+        return new InterruptionSafeThread(runnable, "null-" + f1337a.incrementAndGet());
     }
 }

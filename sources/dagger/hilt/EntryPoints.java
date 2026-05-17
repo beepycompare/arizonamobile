@@ -6,7 +6,7 @@ import dagger.hilt.internal.Preconditions;
 import dagger.hilt.internal.TestSingletonComponent;
 import java.lang.annotation.Annotation;
 import javax.annotation.Nonnull;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class EntryPoints {
     private static final String EARLY_ENTRY_POINT = "dagger.hilt.android.EarlyEntryPoint";
 

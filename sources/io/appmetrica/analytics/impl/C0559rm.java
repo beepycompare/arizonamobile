@@ -13,7 +13,7 @@ public final class C0559rm extends MessageNano {
     public static volatile C0559rm[] g;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f1212a;
+    public boolean f1217a;
     public boolean b;
     public boolean c;
     public boolean d;
@@ -36,7 +36,7 @@ public final class C0559rm extends MessageNano {
     }
 
     public final C0559rm a() {
-        this.f1212a = false;
+        this.f1217a = false;
         this.b = false;
         this.c = false;
         this.d = false;
@@ -48,7 +48,7 @@ public final class C0559rm extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        int computeBoolSize = CodedOutputByteBufferNano.computeBoolSize(4, this.d) + CodedOutputByteBufferNano.computeBoolSize(3, this.c) + CodedOutputByteBufferNano.computeBoolSize(2, this.b) + CodedOutputByteBufferNano.computeBoolSize(1, this.f1212a) + super.computeSerializedSize();
+        int computeBoolSize = CodedOutputByteBufferNano.computeBoolSize(4, this.d) + CodedOutputByteBufferNano.computeBoolSize(3, this.c) + CodedOutputByteBufferNano.computeBoolSize(2, this.b) + CodedOutputByteBufferNano.computeBoolSize(1, this.f1217a) + super.computeSerializedSize();
         boolean z = this.e;
         if (z) {
             computeBoolSize += CodedOutputByteBufferNano.computeBoolSize(5, z);
@@ -59,7 +59,7 @@ public final class C0559rm extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeBool(1, this.f1212a);
+        codedOutputByteBufferNano.writeBool(1, this.f1217a);
         codedOutputByteBufferNano.writeBool(2, this.b);
         codedOutputByteBufferNano.writeBool(3, this.c);
         codedOutputByteBufferNano.writeBool(4, this.d);
@@ -82,7 +82,7 @@ public final class C0559rm extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 8) {
-                this.f1212a = codedInputByteBufferNano.readBool();
+                this.f1217a = codedInputByteBufferNano.readBool();
             } else if (readTag == 16) {
                 this.b = codedInputByteBufferNano.readBool();
             } else if (readTag == 24) {

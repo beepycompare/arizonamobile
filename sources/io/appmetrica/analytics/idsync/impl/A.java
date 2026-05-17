@@ -1,9 +1,9 @@
 package io.appmetrica.analytics.idsync.impl;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract /* synthetic */ class A {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f457a = {1, 2, 3, 4};
+    public static final /* synthetic */ int[] f462a = {1, 2, 3, 4};
 
     public static /* synthetic */ int a(int i) {
         if (i != 0) {
@@ -14,7 +14,7 @@ public abstract /* synthetic */ class A {
 
     public static /* synthetic */ int[] b(int i) {
         int[] iArr = new int[i];
-        System.arraycopy(f457a, 0, iArr, 0, i);
+        System.arraycopy(f462a, 0, iArr, 0, i);
         return iArr;
     }
 }

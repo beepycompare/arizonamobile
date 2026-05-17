@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class RunnableFutureTask<R, E extends Exception> implements RunnableFuture<R> {
     private boolean canceled;
     private Exception exception;

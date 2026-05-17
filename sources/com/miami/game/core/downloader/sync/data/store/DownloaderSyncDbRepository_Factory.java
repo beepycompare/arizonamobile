@@ -3,7 +3,7 @@ package com.miami.game.core.downloader.sync.data.store;
 import com.miami.game.core.downloader.database.DownloaderInfoDatabase;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DownloaderSyncDbRepository_Factory implements Factory<DownloaderSyncDbRepository> {
     private final Provider<DownloaderInfoDatabase> databaseProvider;
 

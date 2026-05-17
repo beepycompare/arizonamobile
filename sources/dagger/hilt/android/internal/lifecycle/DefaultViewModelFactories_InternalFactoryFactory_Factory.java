@@ -5,7 +5,7 @@ import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DefaultViewModelFactories_InternalFactoryFactory_Factory implements Factory<DefaultViewModelFactories.InternalFactoryFactory> {
     private final Provider<Map<Class<?>, Boolean>> keySetProvider;
     private final Provider<ViewModelComponentBuilder> viewModelComponentBuilderProvider;

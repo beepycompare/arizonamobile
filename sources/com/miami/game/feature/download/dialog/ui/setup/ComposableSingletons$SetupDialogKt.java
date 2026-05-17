@@ -29,12 +29,12 @@ public final class ComposableSingletons$SetupDialogKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_1149507$lambda$0(BoxScope DialogButtonNo, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(DialogButtonNo, "$this$DialogButtonNo");
-        ComposerKt.sourceInformation(composer, "C110@4418L10,110@4391L85:SetupDialog.kt#18sjrx");
+        ComposerKt.sourceInformation(composer, "C109@4347L10,109@4320L85:SetupDialog.kt#18sjrx");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1149507, i, -1, "com.miami.game.feature.download.dialog.ui.setup.ComposableSingletons$SetupDialogKt.lambda$1149507.<anonymous> (SetupDialog.kt:110)");
+                ComposerKt.traceEventStart(1149507, i, -1, "com.miami.game.feature.download.dialog.ui.setup.ComposableSingletons$SetupDialogKt.lambda$1149507.<anonymous> (SetupDialog.kt:109)");
             }
             TextKt.m2712TextNvy7gAk("ОТМЕНА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {

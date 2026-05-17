@@ -44,7 +44,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* compiled from: BalloonIndicatorType.kt */
 @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\b\u0007\u0018\u00002\u00020\u0001B\u0019\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0002\u0010\u0006JN\u0010\u0007\u001a\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00050\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0014\u0010\u0011\u001a\u0010\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\b\u0018\u00010\u0012H\u0017ø\u0001\u0000¢\u0006\u0004\b\u0013\u0010\u0014J\u0018\u0010\u0015\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u000e2\u0006\u0010\u0017\u001a\u00020\u0005H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u0018²\u0006\n\u0010\u0019\u001a\u00020\u0005X\u008a\u0084\u0002²\u0006\n\u0010\u001a\u001a\u00020\fX\u008a\u0084\u0002"}, d2 = {"Lcom/tbuonomo/viewpagerdotsindicator/compose/type/BalloonIndicatorType;", "Lcom/tbuonomo/viewpagerdotsindicator/compose/type/IndicatorType;", "dotsGraphic", "Lcom/tbuonomo/viewpagerdotsindicator/compose/model/DotGraphic;", "balloonSizeFactor", "", "(Lcom/tbuonomo/viewpagerdotsindicator/compose/model/DotGraphic;F)V", "IndicatorTypeComposable", "", "globalOffsetProvider", "Lkotlin/Function0;", "modifier", "Landroidx/compose/ui/Modifier;", "dotCount", "", "dotSpacing", "Landroidx/compose/ui/unit/Dp;", "onDotClicked", "Lkotlin/Function1;", "IndicatorTypeComposable--jt2gSs", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;IFLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "computeDotWidth", "currentDotIndex", "globalOffset", "viewpagerdotsindicator_release", "dotSize", "dotModifier"}, k = 1, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BalloonIndicatorType extends IndicatorType {
     public static final int $stable = 0;
     private final float balloonSizeFactor;
@@ -66,7 +66,7 @@ public final class BalloonIndicatorType extends IndicatorType {
 
     @Override // com.tbuonomo.viewpagerdotsindicator.compose.type.IndicatorType
     /* renamed from: IndicatorTypeComposable--jt2gSs  reason: not valid java name */
-    public void mo9162IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
+    public void mo9181IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
         int i3;
         Composer composer2;
         Intrinsics.checkNotNullParameter(globalOffsetProvider, "globalOffsetProvider");
@@ -124,7 +124,7 @@ public final class BalloonIndicatorType extends IndicatorType {
             Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            Modifier m850height3ABfNKs = SizeKt.m850height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7555constructorimpl(this.dotsGraphic.m9161getSizeD9Ej5fM() * this.balloonSizeFactor));
+            Modifier m850height3ABfNKs = SizeKt.m850height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7555constructorimpl(this.dotsGraphic.m9180getSizeD9Ej5fM() * this.balloonSizeFactor));
             Arrangement.Horizontal m689spacedByD5KLDUw = Arrangement.INSTANCE.m689spacedByD5KLDUw(f, Alignment.Companion.getCenterHorizontally());
             int i4 = i3;
             PaddingValues m815PaddingValuesa9UjIt4$default = PaddingKt.m815PaddingValuesa9UjIt4$default(f, 0.0f, f, 0.0f, 10, null);
@@ -289,7 +289,7 @@ public final class BalloonIndicatorType extends IndicatorType {
                 }
 
                 public final void invoke(Composer composer3, int i5) {
-                    BalloonIndicatorType.this.mo9162IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+                    BalloonIndicatorType.this.mo9181IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
                 }
             });
         }
@@ -297,6 +297,6 @@ public final class BalloonIndicatorType extends IndicatorType {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final float computeDotWidth(int i, float f) {
-        return Dp.m7555constructorimpl(this.dotsGraphic.m9161getSizeD9Ej5fM() + Dp.m7555constructorimpl(Dp.m7555constructorimpl(RangesKt.coerceAtLeast(this.balloonSizeFactor - 1.0f, 0.0f) * this.dotsGraphic.m9161getSizeD9Ej5fM()) * (1.0f - RangesKt.coerceAtMost(Math.abs(i - f), 1.0f)))) / this.dotsGraphic.m9161getSizeD9Ej5fM();
+        return Dp.m7555constructorimpl(this.dotsGraphic.m9180getSizeD9Ej5fM() + Dp.m7555constructorimpl(Dp.m7555constructorimpl(RangesKt.coerceAtLeast(this.balloonSizeFactor - 1.0f, 0.0f) * this.dotsGraphic.m9180getSizeD9Ej5fM()) * (1.0f - RangesKt.coerceAtMost(Math.abs(i - f), 1.0f)))) / this.dotsGraphic.m9180getSizeD9Ej5fM();
     }
 }

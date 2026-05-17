@@ -42,11 +42,11 @@ import com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogE
 import com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogExternalUiStateHolder;
 import com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogType;
 import com.miami.game.feature.download.screen.ui.DownloadScreenComponent;
-import com.miami.game.feature.download.screen.ui.compose.DownloadScreenKt;
 import com.miami.game.feature.download.screen.ui.model.DownloadExternalUiState;
 import com.miami.game.feature.download.screen.ui.model.DownloadExternalUiStateHolder;
 import com.miami.game.feature.home.ui.model.HomeExternalUiState;
 import com.miami.game.feature.home.ui.model.HomeExternalUiStateHolder;
+import com.miami.game.ui.download.screen.DownloadScreenRouteKt;
 import com.miami.game.ui.theme.ThemeKt;
 import dagger.hilt.android.AndroidEntryPoint;
 import java.io.File;
@@ -174,7 +174,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onCreate$lambda$0(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C99@3668L175,99@3643L200:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C99@3652L175,99@3627L200:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
@@ -198,7 +198,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$0$0(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C100@3705L124,100@3686L143:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C100@3689L124,100@3670L143:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
@@ -222,14 +222,14 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$0$0$0(DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C101@3727L84:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C101@3711L84:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-298306341, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous>.<anonymous> (UpdateActivity.kt:101)");
             }
-            DownloadScreenKt.DownloadScreenRoute(downloadScreenComponent, composer, DownloadScreenComponent.$stable);
+            DownloadScreenRouteKt.DownloadScreenRoute(downloadScreenComponent, composer, DownloadScreenComponent.$stable);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

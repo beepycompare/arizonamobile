@@ -13,7 +13,7 @@ public final class C0659vm extends MessageNano {
     public static volatile C0659vm[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f1275a;
+    public long f1280a;
 
     public C0659vm() {
         a();
@@ -31,19 +31,19 @@ public final class C0659vm extends MessageNano {
     }
 
     public final C0659vm a() {
-        this.f1275a = 18000000L;
+        this.f1280a = 18000000L;
         this.cachedSize = -1;
         return this;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        return CodedOutputByteBufferNano.computeInt64Size(1, this.f1275a) + super.computeSerializedSize();
+        return CodedOutputByteBufferNano.computeInt64Size(1, this.f1280a) + super.computeSerializedSize();
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeInt64(1, this.f1275a);
+        codedOutputByteBufferNano.writeInt64(1, this.f1280a);
         super.writeTo(codedOutputByteBufferNano);
     }
 
@@ -59,7 +59,7 @@ public final class C0659vm extends MessageNano {
                     break;
                 }
             } else {
-                this.f1275a = codedInputByteBufferNano.readInt64();
+                this.f1280a = codedInputByteBufferNano.readInt64();
             }
         }
         return this;

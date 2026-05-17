@@ -190,16 +190,20 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
+        /* JADX WARN: Code restructure failed: missing block: B:14:0x0063, code lost:
+            r4 = r3.getFocusedChildBounds();
+         */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
         public static final Unit invokeSuspend$lambda$1(ContentInViewNode contentInViewNode, UpdatableAnimationState updatableAnimationState, BringIntoViewSpec bringIntoViewSpec) {
-            boolean z;
             ContentInViewNode contentInViewNode2;
-            boolean z2;
+            boolean z;
             float m432calculateScrollDeltaI_oMVgE;
             Rect focusedChildBounds;
             boolean m436isMaxVisibleEQwtKw$default;
             BringIntoViewRequestPriorityQueue bringIntoViewRequestPriorityQueue = contentInViewNode.bringIntoViewRequests;
             while (true) {
-                z = true;
                 if (bringIntoViewRequestPriorityQueue.requests.getSize() == 0) {
                     contentInViewNode2 = contentInViewNode;
                     break;
@@ -217,18 +221,12 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
                 }
                 Unit unit = Unit.INSTANCE;
                 Result.Companion companion = Result.Companion;
-                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m9183constructorimpl(unit));
+                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m9202constructorimpl(unit));
                 contentInViewNode = contentInViewNode2;
             }
-            z2 = contentInViewNode2.trackingFocusedChild;
-            if (z2) {
-                focusedChildBounds = contentInViewNode2.getFocusedChildBounds();
-                if (focusedChildBounds == null || !ContentInViewNode.m436isMaxVisibleEQwtKw$default(contentInViewNode2, focusedChildBounds, 0L, 0L, 3, null)) {
-                    z = false;
-                }
-                if (z) {
-                    contentInViewNode2.trackingFocusedChild = false;
-                }
+            z = contentInViewNode2.trackingFocusedChild;
+            if (z && focusedChildBounds != null && ContentInViewNode.m436isMaxVisibleEQwtKw$default(contentInViewNode2, focusedChildBounds, 0L, 0L, 3, null)) {
+                contentInViewNode2.trackingFocusedChild = false;
             }
             m432calculateScrollDeltaI_oMVgE = contentInViewNode2.m432calculateScrollDeltaI_oMVgE(bringIntoViewSpec, IntOffset.Companion.m7694getZeronOccac());
             updatableAnimationState.setValue(m432calculateScrollDeltaI_oMVgE);

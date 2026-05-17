@@ -7,16 +7,16 @@ import java.io.File;
 public final class C0527qe implements I6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f1188a;
+    public final File f1193a;
     public final Jg b;
 
     public C0527qe(File file, Jg jg) {
-        this.f1188a = file;
+        this.f1193a = file;
         this.b = jg;
     }
 
     @Override // io.appmetrica.analytics.impl.I6
     public final File a(Context context, String str) {
-        return new File(this.f1188a, this.b.a(str));
+        return new File(this.f1193a, this.b.a(str));
     }
 }

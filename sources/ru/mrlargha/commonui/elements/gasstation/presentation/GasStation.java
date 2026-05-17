@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.gasstation.presentation;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -33,9 +32,10 @@ import ru.mrlargha.commonui.elements.gasstation.domain.GasStationFuel;
 import ru.mrlargha.commonui.elements.gasstation.domain.GasStationShop;
 import ru.mrlargha.commonui.utils.ConverterKt;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: GasStation.kt */
-@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 /2\u00020\u0001:\u0003/01B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u001b\u001a\u00020\u001cH\u0002J\b\u0010\u001d\u001a\u00020\u001cH\u0002J\b\u0010\u001e\u001a\u00020\u001cH\u0002J\b\u0010\u001f\u001a\u00020\u001cH\u0002J\b\u0010 \u001a\u00020\u001cH\u0002J\b\u0010!\u001a\u00020\u001cH\u0002J\b\u0010\"\u001a\u00020\u001cH\u0002J\b\u0010#\u001a\u00020\u001cH\u0002J\u0010\u0010$\u001a\u00020\u001c2\u0006\u0010%\u001a\u00020&H\u0002J\u0010\u0010'\u001a\u00020\u001c2\u0006\u0010%\u001a\u00020&H\u0002J\u0010\u0010(\u001a\u00020\u001c2\u0006\u0010\u0015\u001a\u00020)H\u0002J\u0018\u0010*\u001a\u00020\u001c2\u0006\u0010%\u001a\u00020&2\u0006\u0010+\u001a\u00020\u0005H\u0016J\u0010\u0010,\u001a\u00020\u00122\u0006\u0010-\u001a\u00020\u0005H\u0002J\b\u0010.\u001a\u00020\u001cH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0015\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0016R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u001a\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0016¨\u00062"}, d2 = {"Lru/mrlargha/commonui/elements/gasstation/presentation/GasStation;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "gasStation", "Landroidx/constraintlayout/widget/ConstraintLayout;", "gasStationBinding", "Lru/mrlargha/commonui/databinding/GasStationBinding;", "gasStationAdapter", "Lru/mrlargha/commonui/elements/gasstation/presentation/GasStationAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "commonBorderSize", "gasNow", "fuelType", "Ljava/lang/Integer;", "fuelAmount", FirebaseAnalytics.Param.PRICE, "", "choseFuelCount", "yellowActive", "", "yellowDisable", "greenActive", "greenDisable", "blueActive", "blueDisable", "redActive", "redDisable", "addShopItem", "data", "", "addFuelType", "mapFuelType", "Lru/mrlargha/commonui/elements/gasstation/domain/GasStationFuel;", "onBackendMessage", "subId", "intToBoolean", "int", "resetSettings", "Companion", "Spawner", "FuelType", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0006\u0018\u0000 +2\u00020\u0001:\u0003+,-B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0016\u001a\u00020\u0017H\u0002J\b\u0010\u0018\u001a\u00020\u0017H\u0002J\b\u0010\u0019\u001a\u00020\u0017H\u0002J\b\u0010\u001a\u001a\u00020\u0017H\u0002J\b\u0010\u001b\u001a\u00020\u0017H\u0002J\b\u0010\u001c\u001a\u00020\u0017H\u0002J\b\u0010\u001d\u001a\u00020\u0017H\u0002J\b\u0010\u001e\u001a\u00020\u0017H\u0002J\u0010\u0010\u001f\u001a\u00020\u00172\u0006\u0010 \u001a\u00020!H\u0002J\u0010\u0010\"\u001a\u00020\u00172\u0006\u0010 \u001a\u00020!H\u0002J\u0010\u0010#\u001a\u00020\u00172\u0006\u0010\u0010\u001a\u00020$H\u0002J\u0018\u0010%\u001a\u00020\u00172\u0006\u0010 \u001a\u00020!2\u0006\u0010&\u001a\u00020\u0005H\u0016J\u0010\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020\u0005H\u0002J\b\u0010*\u001a\u00020\u0017H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0010\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0011R\u000e\u0010\u0012\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0015\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0011¨\u0006."}, d2 = {"Lru/mrlargha/commonui/elements/gasstation/presentation/GasStation;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "gasStation", "Landroidx/constraintlayout/widget/ConstraintLayout;", "gasStationBinding", "Lru/mrlargha/commonui/databinding/GasStationBinding;", "gasStationAdapter", "Lru/mrlargha/commonui/elements/gasstation/presentation/GasStationAdapter;", "commonBorderSize", "gasNow", "fuelType", "Ljava/lang/Integer;", "fuelAmount", FirebaseAnalytics.Param.PRICE, "", "choseFuelCount", "yellowActive", "", "yellowDisable", "greenActive", "greenDisable", "blueActive", "blueDisable", "redActive", "redDisable", "addShopItem", "data", "", "addFuelType", "mapFuelType", "Lru/mrlargha/commonui/elements/gasstation/domain/GasStationFuel;", "onBackendMessageHandled", "subId", "intToBoolean", "", "int", "resetSettings", "Companion", "Spawner", "FuelType", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class GasStation extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
@@ -48,9 +48,7 @@ public final class GasStation extends SAMPUIElement {
     private final ConstraintLayout gasStation;
     private final GasStationAdapter gasStationAdapter;
     private final GasStationBinding gasStationBinding;
-    private final boolean isArizonaType;
     private long price;
-    private final SharedPreferences sharedPref;
 
     private final boolean intToBoolean(int i) {
         return i != 0 && i == 1;
@@ -69,14 +67,10 @@ public final class GasStation extends SAMPUIElement {
         this.gasStationBinding = bind;
         GasStationAdapter gasStationAdapter = new GasStationAdapter(targetActivity);
         this.gasStationAdapter = gasStationAdapter;
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
-        this.sharedPref = sharedPreferences;
-        boolean z = sharedPreferences.getBoolean("isArizonaType", false);
-        this.isArizonaType = z;
         this.commonBorderSize = ConverterKt.dpToPx(1, targetActivity);
         constraintLayout.setClickable(true);
         addViewToConstraintLayout(constraintLayout, -1, -1);
-        if (!z) {
+        if (!UtilsKt.isArizonaType()) {
             bind.gsLogoRed.setText("ЛУКОЙЛ");
             bind.gsLogoWhite.setVisibility(8);
             bind.gsFuelCountCurrencyIc.setImageResource(R.drawable.currency_rubble);
@@ -108,14 +102,14 @@ public final class GasStation extends SAMPUIElement {
             }
 
             @Override // android.widget.SeekBar.OnSeekBarChangeListener
-            public void onProgressChanged(SeekBar seekBar, int i2, boolean z2) {
+            public void onProgressChanged(SeekBar seekBar, int i2, boolean z) {
                 Intrinsics.checkNotNullParameter(seekBar, "seekBar");
                 GasStation.this.gasStationBinding.gsFuelCounter.setText("+" + i2 + "l.");
                 GasStation.this.gasStationBinding.gsFuelNowCount.setText((GasStation.this.gasNow + i2) + "l.");
                 GasStation.this.gasStationBinding.gsFuelTotalPrice.setText(MoneyElementKt.toMoneyFormattedSpannable$default(i2 * GasStation.this.price, false, null, null, 7, null));
                 AppCompatImageView gsFuelCountCurrencyIc = GasStation.this.gasStationBinding.gsFuelCountCurrencyIc;
                 Intrinsics.checkNotNullExpressionValue(gsFuelCountCurrencyIc, "gsFuelCountCurrencyIc");
-                gsFuelCountCurrencyIc.setVisibility(GasStation.this.isArizonaType ? 8 : 0);
+                gsFuelCountCurrencyIc.setVisibility(UtilsKt.isArizonaType() ? 8 : 0);
                 GasStation.this.choseFuelCount = Integer.valueOf(i2);
             }
         });
@@ -287,10 +281,10 @@ public final class GasStation extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(lowerCase2, "toLowerCase(...)");
         if (Intrinsics.areEqual(lowerCase, lowerCase2)) {
             this.gasStationBinding.gsFuelName92.setText(gasStationFuel.getTitle());
-            this.gasStationBinding.gsFuelTypePrice92.setText("Недоступно");
+            this.gasStationBinding.gsFuelTypePrice92.setText(getTargetActivity().getString(R.string.common_unavailable_capitalized));
             GasStationBinding gasStationBinding = this.gasStationBinding;
             if (intToBoolean(gasStationFuel.getAvailable())) {
-                if (this.isArizonaType) {
+                if (UtilsKt.isArizonaType()) {
                     gasStationBinding.gsFuelTypePrice92.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", 3, null));
                 } else {
                     gasStationBinding.gsFuelTypePrice92.setText(gasStationFuel.getPrice() + "₽ /1l.");
@@ -305,10 +299,10 @@ public final class GasStation extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(lowerCase3, "toLowerCase(...)");
         if (Intrinsics.areEqual(lowerCase, lowerCase3)) {
             this.gasStationBinding.gsFuelName95.setText(gasStationFuel.getTitle());
-            this.gasStationBinding.gsFuelTypePrice95.setText("Недоступно");
+            this.gasStationBinding.gsFuelTypePrice95.setText(getTargetActivity().getString(R.string.common_unavailable_capitalized));
             GasStationBinding gasStationBinding2 = this.gasStationBinding;
             if (intToBoolean(gasStationFuel.getAvailable())) {
-                if (this.isArizonaType) {
+                if (UtilsKt.isArizonaType()) {
                     gasStationBinding2.gsFuelTypePrice95.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", 3, null));
                 } else {
                     gasStationBinding2.gsFuelTypePrice95.setText(gasStationFuel.getPrice() + "₽ /1l.");
@@ -323,10 +317,10 @@ public final class GasStation extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(lowerCase4, "toLowerCase(...)");
         if (Intrinsics.areEqual(lowerCase, lowerCase4)) {
             this.gasStationBinding.gsFuelName100.setText(gasStationFuel.getTitle());
-            this.gasStationBinding.gsFuelTypePrice100.setText("Недоступно");
+            this.gasStationBinding.gsFuelTypePrice100.setText(getTargetActivity().getString(R.string.common_unavailable_capitalized));
             GasStationBinding gasStationBinding3 = this.gasStationBinding;
             if (intToBoolean(gasStationFuel.getAvailable())) {
-                if (this.isArizonaType) {
+                if (UtilsKt.isArizonaType()) {
                     gasStationBinding3.gsFuelTypePrice100.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", 3, null));
                 } else {
                     gasStationBinding3.gsFuelTypePrice100.setText(gasStationFuel.getPrice() + "₽ /1l.");
@@ -341,10 +335,10 @@ public final class GasStation extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(lowerCase5, "toLowerCase(...)");
         if (Intrinsics.areEqual(lowerCase, lowerCase5)) {
             this.gasStationBinding.gsFuelNameDiesel.setText(gasStationFuel.getTitle());
-            this.gasStationBinding.gsFuelTypePriceDiesel.setText("Недоступно");
+            this.gasStationBinding.gsFuelTypePriceDiesel.setText(getTargetActivity().getString(R.string.common_unavailable_capitalized));
             GasStationBinding gasStationBinding4 = this.gasStationBinding;
             if (intToBoolean(gasStationFuel.getAvailable())) {
-                if (this.isArizonaType) {
+                if (UtilsKt.isArizonaType()) {
                     gasStationBinding4.gsFuelTypePriceDiesel.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", 3, null));
                 } else {
                     gasStationBinding4.gsFuelTypePriceDiesel.setText(gasStationFuel.getPrice() + "₽ /1l.");
@@ -356,7 +350,7 @@ public final class GasStation extends SAMPUIElement {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == 0) {
             addFuelType(data);

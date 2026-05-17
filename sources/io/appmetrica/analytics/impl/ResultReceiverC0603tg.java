@@ -9,11 +9,11 @@ import com.adjust.sdk.Constants;
 public final class ResultReceiverC0603tg extends ResultReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0250fg f1238a;
+    public final InterfaceC0250fg f1243a;
 
     public ResultReceiverC0603tg(Handler handler, InterfaceC0250fg interfaceC0250fg) {
         super(handler);
-        this.f1238a = interfaceC0250fg;
+        this.f1243a = interfaceC0250fg;
     }
 
     public static void a(ResultReceiver resultReceiver, C0454ng c0454ng) {
@@ -35,7 +35,7 @@ public final class ResultReceiverC0603tg extends ResultReceiver {
                 }
             } catch (Throwable unused) {
             }
-            this.f1238a.a(c0454ng);
+            this.f1243a.a(c0454ng);
         }
     }
 }

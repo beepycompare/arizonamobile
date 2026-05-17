@@ -7,7 +7,7 @@ import java.lang.reflect.Type;
 import javax.annotation.Nullable;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public interface Converter<F, T> {
     @Nullable
     T convert(F f) throws IOException;

@@ -457,7 +457,7 @@ public class AppCompatTextViewAutoSizeHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Api23Impl {
         private Api23Impl() {
         }

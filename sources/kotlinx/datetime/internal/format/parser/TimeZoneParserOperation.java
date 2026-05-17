@@ -33,14 +33,14 @@ public final class TimeZoneParserOperation<Output> implements ParserOperation<Ou
 
     @Override // kotlinx.datetime.internal.format.parser.ParserOperation
     /* renamed from: consume-FANa98k */
-    public Object mo10797consumeFANa98k(Output output, CharSequence input, int i) {
+    public Object mo10816consumeFANa98k(Output output, CharSequence input, int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         int validateTimeZone = Companion.validateTimeZone(input, i);
         if (validateTimeZone > i) {
             ParserOperationKt.setWithoutReassigning(this.setter, output, input.subSequence(i, validateTimeZone).toString(), i, validateTimeZone);
-            return ParseResult.Companion.m10808OkQi1bsqg(validateTimeZone);
+            return ParseResult.Companion.m10827OkQi1bsqg(validateTimeZone);
         }
-        return ParseResult.Companion.m10807ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.TimeZoneParserOperation$$ExternalSyntheticLambda0
+        return ParseResult.Companion.m10826ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.TimeZoneParserOperation$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return TimeZoneParserOperation.consume_FANa98k$lambda$0();

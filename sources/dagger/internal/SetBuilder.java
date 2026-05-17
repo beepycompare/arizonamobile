@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public final class SetBuilder<T> {
     private static final String SET_CONTRIBUTIONS_CANNOT_BE_NULL = "Set contributions cannot be null";
     private final List<T> contributions;

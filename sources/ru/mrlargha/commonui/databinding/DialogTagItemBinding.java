@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.viewbinding.ViewBinding;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class DialogTagItemBinding implements ViewBinding {
     private final CustomCardView rootView;
 

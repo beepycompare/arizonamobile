@@ -2,7 +2,7 @@ package androidx.media3.exoplayer.source;
 
 import java.util.Arrays;
 import java.util.Random;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface ShuffleOrder {
     ShuffleOrder cloneAndClear();
 

@@ -9,7 +9,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.util.Log;
 import androidx.annotation.ReplaceWith;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class NavUtils {
     public static final String PARENT_ACTIVITY = "android.support.PARENT_ACTIVITY";
     private static final String TAG = "NavUtils";

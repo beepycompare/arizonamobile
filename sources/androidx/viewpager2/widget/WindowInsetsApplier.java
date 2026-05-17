@@ -7,7 +7,7 @@ import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class WindowInsetsApplier implements OnApplyWindowInsetsListener {
     private WindowInsetsApplier() {
     }

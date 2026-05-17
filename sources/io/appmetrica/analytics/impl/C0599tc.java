@@ -11,13 +11,13 @@ import org.json.JSONObject;
 public final class C0599tc implements F8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Qg f1235a;
+    public final Qg f1240a;
     public final We b;
     public final String c = "activation_unlock_event_sending";
     public final AtomicBoolean d;
 
     public C0599tc(Qg qg, C0467o4 c0467o4, We we) {
-        this.f1235a = qg;
+        this.f1240a = qg;
         this.b = we;
         boolean z = false;
         this.d = new AtomicBoolean((we.a(false) || a(c0467o4)) ? true : true);
@@ -25,14 +25,14 @@ public final class C0599tc implements F8 {
 
     public final void a(String str) {
         try {
-            Qj qj = AbstractC0482oj.f1158a;
+            Qj qj = AbstractC0482oj.f1163a;
             String str2 = this.c;
             JSONObject put = new JSONObject().put("source", str).put("framework", FrameworkDetector.framework());
             M9 i = C0448na.I.i();
-            Bundle applicationMetaData = i.d.getApplicationMetaData(i.f690a);
+            Bundle applicationMetaData = i.d.getApplicationMetaData(i.f695a);
             JSONObject put2 = put.put("appmetrica_plugin_id", applicationMetaData != null ? applicationMetaData.getString("io.appmetrica.analytics.plugin_id") : null);
             C0433mk c0433mk = C0448na.I.D;
-            String jSONObject = put2.put("activation_offset", TimeUnit.SECONDS.convert(c0433mk.f1121a.currentTimeMillis() - c0433mk.b, TimeUnit.MILLISECONDS)).toString();
+            String jSONObject = put2.put("activation_offset", TimeUnit.SECONDS.convert(c0433mk.f1126a.currentTimeMillis() - c0433mk.b, TimeUnit.MILLISECONDS)).toString();
             qj.getClass();
             qj.a(new Oj(str2, jSONObject));
         } catch (Throwable unused) {
@@ -42,7 +42,7 @@ public final class C0599tc implements F8 {
     @Override // io.appmetrica.analytics.impl.F8
     public final boolean b() {
         String str;
-        if (!this.d.get() && (str = ((C0380kh) this.f1235a.a()).m) != null && !Intrinsics.areEqual(str, "629a824d-c717-4ba5-bc0f-3f3968554d01") && this.d.compareAndSet(false, true)) {
+        if (!this.d.get() && (str = ((C0380kh) this.f1240a.a()).m) != null && !Intrinsics.areEqual(str, "629a824d-c717-4ba5-bc0f-3f3968554d01") && this.d.compareAndSet(false, true)) {
             this.b.b(true);
             a("activation");
         }
@@ -57,7 +57,7 @@ public final class C0599tc implements F8 {
     }
 
     public static boolean a(C0467o4 c0467o4) {
-        String str = c0467o4.f1146a;
+        String str = c0467o4.f1151a;
         return (str == null || Intrinsics.areEqual(str, "629a824d-c717-4ba5-bc0f-3f3968554d01")) ? false : true;
     }
 }

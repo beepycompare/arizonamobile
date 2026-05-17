@@ -42,7 +42,7 @@ public abstract class Ja {
                     } catch (Throwable th) {
                         th = th;
                         try {
-                            Qj qj = AbstractC0482oj.f1158a;
+                            Qj qj = AbstractC0482oj.f1163a;
                             qj.getClass();
                             qj.a(new C0507pj("error_during_file_reading", th));
                             bArr = null;
@@ -73,7 +73,7 @@ public abstract class Ja {
                     return new String(bArr, "UTF-8");
                 } catch (UnsupportedEncodingException e) {
                     String str = new String(bArr);
-                    Qj qj2 = AbstractC0482oj.f1158a;
+                    Qj qj2 = AbstractC0482oj.f1163a;
                     qj2.getClass();
                     qj2.a(new C0507pj("read_share_file_with_unsupported_encoding", e));
                     return str;

@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public abstract class AbstractC0367k4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final boolean f1074a;
+    public static final boolean f1079a;
     public static final boolean b;
     public static final boolean c;
     public static final boolean d;
@@ -12,7 +12,7 @@ public abstract class AbstractC0367k4 {
 
     static {
         C0559rm c0559rm = new C0559rm();
-        f1074a = c0559rm.f1212a;
+        f1079a = c0559rm.f1217a;
         b = c0559rm.b;
         c = c0559rm.c;
         d = c0559rm.d;

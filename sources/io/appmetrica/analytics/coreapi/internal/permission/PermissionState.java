@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.coreapi.internal.permission;
 
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PermissionState {
     public final boolean granted;
     public final String name;

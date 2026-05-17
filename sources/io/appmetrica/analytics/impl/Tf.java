@@ -7,7 +7,7 @@ import java.io.File;
 public final class Tf implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f799a;
+    public final File f804a;
     public final Function b;
     public final Consumer c;
     public final Consumer d;
@@ -15,7 +15,7 @@ public final class Tf implements Runnable {
     public final InterfaceC0126al f;
 
     public Tf(File file, Function function, Consumer consumer, Consumer consumer2, Z9 z9, InterfaceC0126al interfaceC0126al) {
-        this.f799a = file;
+        this.f804a = file;
         this.b = function;
         this.c = consumer;
         this.d = consumer2;
@@ -28,25 +28,25 @@ public final class Tf implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        if (this.f799a.exists()) {
-            C0696x9 b = this.e.b(this.f799a.getName());
+        if (this.f804a.exists()) {
+            C0696x9 b = this.e.b(this.f804a.getName());
             Consumer consumer = this.c;
             try {
-                b.f1302a.lock();
+                b.f1307a.lock();
                 b.b.a();
             } catch (Throwable unused) {
             }
-            if (!this.f799a.exists()) {
-                consumer.consume(this.f799a);
+            if (!this.f804a.exists()) {
+                consumer.consume(this.f804a);
                 b.c();
                 Z9 z9 = this.e;
-                String name = this.f799a.getName();
+                String name = this.f804a.getName();
                 synchronized (z9) {
                     z9.b.remove(name);
                 }
                 return;
             }
-            Object apply = this.b.apply(this.f799a);
+            Object apply = this.b.apply(this.f804a);
             if (apply != null) {
                 if (this.f.a(apply)) {
                     this.d.consume(apply);
@@ -59,9 +59,9 @@ public final class Tf implements Runnable {
                     };
                 }
             }
-            consumer.consume(this.f799a);
+            consumer.consume(this.f804a);
             b.c();
-            this.e.a(this.f799a.getName());
+            this.e.a(this.f804a.getName());
         }
     }
 }

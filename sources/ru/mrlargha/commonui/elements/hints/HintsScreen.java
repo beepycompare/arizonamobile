@@ -24,7 +24,7 @@ import ru.mrlargha.commonui.databinding.HintsScreenBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: HintsScreen.kt */
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u0000 \u00142\u00020\u0001:\u0002\u0014\u0015B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0002J\u0018\u0010\u0010\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lru/mrlargha/commonui/elements/hints/HintsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/HintsScreenBinding;", "setHintInfo", "", "info", "Lru/mrlargha/commonui/elements/hints/HintsScreen$Companion$HintInfo;", "onBackendMessage", "data", "", "subId", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u0000 \u00142\u00020\u0001:\u0002\u0014\u0015B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0002J\u0018\u0010\u0010\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lru/mrlargha/commonui/elements/hints/HintsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/HintsScreenBinding;", "setHintInfo", "", "info", "Lru/mrlargha/commonui/elements/hints/HintsScreen$Companion$HintInfo;", "onBackendMessageHandled", "data", "", "subId", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class HintsScreen extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
@@ -84,21 +84,21 @@ public final class HintsScreen extends SAMPUIElement {
             hintsScreenBinding.leftHint.setVisibility(0);
             hintsScreenBinding.leftHintContainerText.setText(spannable$default);
             Picasso picasso = Picasso.get();
-            String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso.load(resourceUrl$default + "projects/arizona-rp/systems/quest_notify/" + hintInfo.getBackgroundImage()).into(hintsScreenBinding.leftHintPerson);
+            String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            picasso.load(projectResourceUrl$default + "systems/quest_notify/" + hintInfo.getBackgroundImage()).into(hintsScreenBinding.leftHintPerson);
         } else if (position != 1) {
         } else {
             hintsScreenBinding.leftHint.setVisibility(8);
             hintsScreenBinding.rightHint.setVisibility(0);
             hintsScreenBinding.rightHintContainerText.setText(spannable$default);
             Picasso picasso2 = Picasso.get();
-            String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso2.load(resourceUrl$default2 + "projects/arizona-rp/systems/quest_notify/" + hintInfo.getBackgroundImage()).into(hintsScreenBinding.rightHintPerson);
+            String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            picasso2.load(projectResourceUrl$default2 + "systems/quest_notify/" + hintInfo.getBackgroundImage()).into(hintsScreenBinding.rightHintPerson);
         }
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == 0) {
             setHintInfo((Companion.HintInfo) MapperKt.toModel(data, Companion.HintInfo.class));

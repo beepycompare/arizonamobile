@@ -9,12 +9,12 @@ import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 public final class C0474ob {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Handler f1152a;
+    public final Handler f1157a;
     public final I2 b;
     public final RunnableC0499pb c;
 
     public C0474ob(Handler handler, I2 i2) {
-        this.f1152a = handler;
+        this.f1157a = handler;
         this.b = i2;
         this.c = new RunnableC0499pb(handler, i2);
     }

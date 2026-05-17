@@ -140,8 +140,8 @@ public final class MenuContentKt {
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i3 >> 15) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             startRestartGroup = startRestartGroup;
-            ScalingButtonKt.ScalingButton(onClickAccount, null, ComposableSingletons$MenuContentKt.INSTANCE.m9113getLambda$432014182$home(), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
-            ScalingButtonKt.ScalingButton(onClickForum, null, ComposableSingletons$MenuContentKt.INSTANCE.m9114getLambda$989998245$home(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onClickAccount, null, ComposableSingletons$MenuContentKt.INSTANCE.m9116getLambda$432014182$home(), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onClickForum, null, ComposableSingletons$MenuContentKt.INSTANCE.m9117getLambda$989998245$home(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

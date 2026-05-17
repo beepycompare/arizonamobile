@@ -73,13 +73,14 @@ public final class NewVersionAvailableDialogKt {
 
     public static final void NewVersionAvailableDialogRoute(final CommonDialogComponent component, final Function0<Unit> onBackClick, final Function0<Unit> navigateToDownloadScreen, Composer composer, final int i) {
         int i2;
+        Composer composer2;
         Intrinsics.checkNotNullParameter(component, "component");
         Intrinsics.checkNotNullParameter(onBackClick, "onBackClick");
         Intrinsics.checkNotNullParameter(navigateToDownloadScreen, "navigateToDownloadScreen");
         Composer startRestartGroup = composer.startRestartGroup(1398636739);
         ComposerKt.sourceInformation(startRestartGroup, "C(NewVersionAvailableDialogRoute)N(component,onBackClick,navigateToDownloadScreen)30@1399L33,32@1494L198,32@1457L235,40@1731L29,44@1846L20,45@1888L20,42@1766L149:NewVersionAvailableDialog.kt#as3uag");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(component) : startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
@@ -89,50 +90,56 @@ public final class NewVersionAvailableDialogKt {
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i2 |= startRestartGroup.changedInstance(navigateToDownloadScreen) ? 256 : 128;
         }
-        if (!startRestartGroup.shouldExecute((i2 & 147) != 146, i2 & 1)) {
-            startRestartGroup.skipToGroupEnd();
+        int i3 = i2;
+        boolean z = true;
+        if (!startRestartGroup.shouldExecute((i3 & 147) != 146, i3 & 1)) {
+            composer2 = startRestartGroup;
+            composer2.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1398636739, i2, -1, "com.miami.game.feature.download.dialog.ui.download.NewVersionAvailableDialogRoute (NewVersionAvailableDialog.kt:29)");
+                ComposerKt.traceEventStart(1398636739, i3, -1, "com.miami.game.feature.download.dialog.ui.download.NewVersionAvailableDialogRoute (NewVersionAvailableDialog.kt:29)");
             }
-            int i3 = i2 & 112;
-            BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i3, 1);
+            int i4 = i3 & 112;
+            BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i4, 1);
             SharedEventFlow<CommonDialogUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -234849335, "CC(remember):NewVersionAvailableDialog.kt#9igjgp");
-            boolean z = (i3 == 32) | ((i2 & 896) == 256);
+            boolean z2 = (i4 == 32) | ((i3 & 896) == 256);
             NewVersionAvailableDialogKt$NewVersionAvailableDialogRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
-            if (z || rememberedValue == Composer.Companion.getEmpty()) {
+            if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new NewVersionAvailableDialogKt$NewVersionAvailableDialogRoute$1$1(onBackClick, navigateToDownloadScreen, null);
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue, startRestartGroup, 0, 6);
-            startRestartGroup = startRestartGroup;
+            composer2 = startRestartGroup;
             CommonDialogUiState NewVersionAvailableDialogRoute$lambda$1 = NewVersionAvailableDialogRoute$lambda$1(FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7));
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -234838249, "CC(remember):NewVersionAvailableDialog.kt#9igjgp");
-            boolean changedInstance = startRestartGroup.changedInstance(component);
-            NewVersionAvailableDialogKt$NewVersionAvailableDialogRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
-            if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
+            ComposerKt.sourceInformationMarkerStart(composer2, -234838249, "CC(remember):NewVersionAvailableDialog.kt#9igjgp");
+            int i5 = i3 & 14;
+            boolean z3 = i5 == 4 || ((i3 & 8) != 0 && composer2.changedInstance(component));
+            NewVersionAvailableDialogKt$NewVersionAvailableDialogRoute$2$1 rememberedValue2 = composer2.rememberedValue();
+            if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new NewVersionAvailableDialogKt$NewVersionAvailableDialogRoute$2$1(component);
-                startRestartGroup.updateRememberedValue(rememberedValue2);
+                composer2.updateRememberedValue(rememberedValue2);
             }
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function0 = (Function0) ((KFunction) rememberedValue2);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -234836905, "CC(remember):NewVersionAvailableDialog.kt#9igjgp");
-            boolean changedInstance2 = startRestartGroup.changedInstance(component);
-            NewVersionAvailableDialogKt$NewVersionAvailableDialogRoute$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
-            if (changedInstance2 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                rememberedValue3 = new NewVersionAvailableDialogKt$NewVersionAvailableDialogRoute$3$1(component);
-                startRestartGroup.updateRememberedValue(rememberedValue3);
+            ComposerKt.sourceInformationMarkerStart(composer2, -234836905, "CC(remember):NewVersionAvailableDialog.kt#9igjgp");
+            if (i5 != 4 && ((i3 & 8) == 0 || !composer2.changedInstance(component))) {
+                z = false;
             }
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            NewVersionAvailableDialogScreen(NewVersionAvailableDialogRoute$lambda$1, function0, (Function0) ((KFunction) rememberedValue3), startRestartGroup, 0);
+            NewVersionAvailableDialogKt$NewVersionAvailableDialogRoute$3$1 rememberedValue3 = composer2.rememberedValue();
+            if (z || rememberedValue3 == Composer.Companion.getEmpty()) {
+                rememberedValue3 = new NewVersionAvailableDialogKt$NewVersionAvailableDialogRoute$3$1(component);
+                composer2.updateRememberedValue(rememberedValue3);
+            }
+            ComposerKt.sourceInformationMarkerEnd(composer2);
+            NewVersionAvailableDialogScreen(NewVersionAvailableDialogRoute$lambda$1, function0, (Function0) ((KFunction) rememberedValue3), composer2, CommonDialogUiState.$stable);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
-        ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
+        ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.NewVersionAvailableDialogKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function2
@@ -274,7 +281,7 @@ public final class NewVersionAvailableDialogKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$NewVersionAvailableDialogKt.INSTANCE.m9092getLambda$1405896063$dialogs(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$NewVersionAvailableDialogKt.INSTANCE.m9095getLambda$1405896063$dialogs(), composer, 48);
             ComposerKt.sourceInformationMarkerStart(composer, 1194099340, "CC(remember):NewVersionAvailableDialog.kt#9igjgp");
             boolean changed2 = composer.changed(function02);
             Object rememberedValue2 = composer.rememberedValue();
@@ -290,7 +297,7 @@ public final class NewVersionAvailableDialogKt {
                 composer.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$NewVersionAvailableDialogKt.INSTANCE.m9093getLambda$1889472662$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$NewVersionAvailableDialogKt.INSTANCE.m9096getLambda$1889472662$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

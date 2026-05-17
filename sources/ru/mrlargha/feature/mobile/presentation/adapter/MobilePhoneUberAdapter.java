@@ -30,7 +30,13 @@ public final class MobilePhoneUberAdapter extends RecyclerView.Adapter<MobilePho
     public MobilePhoneUberAdapter(Activity activity) {
         Intrinsics.checkNotNullParameter(activity, "activity");
         this.activity = activity;
-        this.list = CollectionsKt.listOf((Object[]) new MobilePhoneUberChoseTaxi[]{new MobilePhoneUberChoseTaxi("Эконом", 1000, true), new MobilePhoneUberChoseTaxi("Комфорт", 2000, false), new MobilePhoneUberChoseTaxi("Бизнес", 10000, false)});
+        String string = activity.getString(R.string.mobile_uber_economy);
+        Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+        String string2 = activity.getString(R.string.mobile_uber_comfort);
+        Intrinsics.checkNotNullExpressionValue(string2, "getString(...)");
+        String string3 = activity.getString(R.string.mobile_uber_business);
+        Intrinsics.checkNotNullExpressionValue(string3, "getString(...)");
+        this.list = CollectionsKt.listOf((Object[]) new MobilePhoneUberChoseTaxi[]{new MobilePhoneUberChoseTaxi(string, 1000, true), new MobilePhoneUberChoseTaxi(string2, 2000, false), new MobilePhoneUberChoseTaxi(string3, 10000, false)});
     }
 
     public final Activity getActivity() {
@@ -60,17 +66,17 @@ public final class MobilePhoneUberAdapter extends RecyclerView.Adapter<MobilePho
                 if (hashCode == 1932155732 && title.equals("Комфорт")) {
                     holder.getUberItem().mpUberPriority.setImageDrawable(ContextCompat.getDrawable(this.activity, R.drawable.ic_uber_comfort_car));
                     holder.getUberItem().mpUberPriorityTitle.setText(this.list.get(i).getTitle());
-                    holder.getUberItem().mpUberPriorityDescription.setText("От " + this.list.get(i).getPrice() + "$");
+                    holder.getUberItem().mpUberPriorityDescription.setText(this.activity.getString(R.string.mobile_from_price, new Object[]{Integer.valueOf(this.list.get(i).getPrice())}));
                 }
             } else if (title.equals("Эконом")) {
                 holder.getUberItem().mpUberPriority.setImageDrawable(ContextCompat.getDrawable(this.activity, R.drawable.ic_uber_econom_car));
                 holder.getUberItem().mpUberPriorityTitle.setText(this.list.get(i).getTitle());
-                holder.getUberItem().mpUberPriorityDescription.setText(this.list.get(i).getPrice() + "$");
+                holder.getUberItem().mpUberPriorityDescription.setText(this.activity.getString(R.string.mobile_price_currency, new Object[]{Integer.valueOf(this.list.get(i).getPrice())}));
             }
         } else if (title.equals("Бизнес")) {
             holder.getUberItem().mpUberPriority.setImageDrawable(ContextCompat.getDrawable(this.activity, R.drawable.ic_uber_business_car));
             holder.getUberItem().mpUberPriorityTitle.setText(this.list.get(i).getTitle());
-            holder.getUberItem().mpUberPriorityDescription.setText("От " + this.list.get(i).getPrice() + "$");
+            holder.getUberItem().mpUberPriorityDescription.setText(this.activity.getString(R.string.mobile_from_price, new Object[]{Integer.valueOf(this.list.get(i).getPrice())}));
         }
         if (this.list.get(i).isActive()) {
             holder.getUberItem().mpUberPriorityItem.setBackground(ContextCompat.getDrawable(this.activity, R.drawable.ic_mobile_phone_uber_taxi_shield));

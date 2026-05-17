@@ -4,7 +4,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface ICommonExecutor extends IInterruptionSafeThread, Executor {
     @Override // java.util.concurrent.Executor
     void execute(Runnable runnable);

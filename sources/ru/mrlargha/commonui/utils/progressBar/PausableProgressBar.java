@@ -156,7 +156,7 @@ public final class PausableProgressBar extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes3.dex */
     public class PausableScaleAnimation extends ScaleAnimation {
         private long mElapsedAtPause;
         private boolean mPaused;

@@ -10,7 +10,7 @@ public final class CellularNetworkTypeConverter {
     public static final CellularNetworkTypeConverter INSTANCE = new CellularNetworkTypeConverter();
 
     /* renamed from: a  reason: collision with root package name */
-    private static final SparseArray f422a;
+    private static final SparseArray f427a;
 
     static {
         SparseArray sparseArray = new SparseArray();
@@ -35,7 +35,7 @@ public final class CellularNetworkTypeConverter {
         if (AndroidUtils.isApiAchieved(29)) {
             sparseArray.put(20, "NR");
         }
-        f422a = sparseArray;
+        f427a = sparseArray;
     }
 
     private CellularNetworkTypeConverter() {
@@ -45,7 +45,7 @@ public final class CellularNetworkTypeConverter {
     public static final String convert(Integer num) {
         if (num != null) {
             num.intValue();
-            String str = (String) f422a.get(num.intValue());
+            String str = (String) f427a.get(num.intValue());
             return str == null ? "unknown" : str;
         }
         return "unknown";

@@ -12,7 +12,7 @@ import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class ChatBinding implements ViewBinding {
     public final AppCompatImageView binderButton;
     public final ConstraintLayout chat;

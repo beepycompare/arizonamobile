@@ -9,10 +9,10 @@ public final class W2 extends Ci {
 
     @Override // io.appmetrica.analytics.impl.Ci
     public final Object a(int i) {
-        return Boolean.valueOf(this.f536a.getResources().getBoolean(i));
+        return Boolean.valueOf(this.f541a.getResources().getBoolean(i));
     }
 
     public final Boolean b(int i) {
-        return Boolean.valueOf(this.f536a.getResources().getBoolean(i));
+        return Boolean.valueOf(this.f541a.getResources().getBoolean(i));
     }
 }

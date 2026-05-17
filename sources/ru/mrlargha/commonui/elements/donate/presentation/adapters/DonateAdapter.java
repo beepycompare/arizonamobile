@@ -380,7 +380,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:19:0x0119, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:19:0x010c, code lost:
             if (r9.getTextGradientColor().size() > 1) goto L21;
          */
         /*
@@ -406,10 +406,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
                 ImageView ivAzCoinIc2 = donateDefaultItemBinding.ivAzCoinIc;
                 Intrinsics.checkNotNullExpressionValue(ivAzCoinIc2, "ivAzCoinIc");
                 ivAzCoinIc2.setVisibility(0);
-                ImageView imageView = donateDefaultItemBinding.ivAzCoinIc;
-                Context context = donateDefaultItemBinding.getRoot().getContext();
-                Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
-                imageView.setImageResource(UtilsKt.getArizonaType(context) ? R.drawable.ic_dollar : R.drawable.blueprint_ic_rub);
+                donateDefaultItemBinding.ivAzCoinIc.setImageResource(UtilsKt.isArizonaType() ? R.drawable.ic_dollar : R.drawable.blueprint_ic_rub);
                 donateDefaultItemBinding.ivAzCoinIc.setImageTintList(ColorStateList.valueOf(Color.parseColor("#CCFFFFFF")));
                 donateDefaultItemBinding.tvAzCoins.setText(String.valueOf(donateItemModelUi.getTotalEarnings()));
                 if (UtilsKt.isArizonaType()) {
@@ -502,7 +499,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonateDefaultItemBinding donateDefaultItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11105getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11124getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donateDefaultItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");
@@ -682,7 +679,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonatePosterItemBinding donatePosterItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11105getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11124getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donatePosterItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");

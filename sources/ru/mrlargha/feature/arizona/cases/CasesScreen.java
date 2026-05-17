@@ -1,6 +1,7 @@
 package ru.mrlargha.feature.arizona.cases;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Environment;
@@ -59,7 +60,7 @@ import ru.mrlargha.feature.arizona.cases.pages.CasesBasePage;
 import ru.mrlargha.feature.arizona.cases.pages.CasesMainPage;
 import ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage;
 /* compiled from: CasesScreen.kt */
-@Metadata(d1 = {"\u0000\u009c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u00002\u00020\u0001:\u0001GB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0016J\u0018\u0010*\u001a\u00020'2\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u0005H\u0016J\u0010\u0010.\u001a\u00020'2\u0006\u0010/\u001a\u00020)H\u0002J\b\u00100\u001a\u00020'H\u0002J\b\u00101\u001a\u00020'H\u0002J\b\u00102\u001a\u00020)H\u0002J\u0010\u00103\u001a\u00020'2\u0006\u00104\u001a\u00020\u0012H\u0002J\u0016\u00105\u001a\u00020'2\f\u00106\u001a\b\u0012\u0004\u0012\u0002070\u0014H\u0002J\u0010\u00108\u001a\u00020'2\u0006\u00109\u001a\u00020\u000bH\u0002J\"\u0010:\u001a\u00020'2\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u00052\b\b\u0002\u00109\u001a\u00020\u000bH\u0002J\"\u0010;\u001a\u00020'2\b\u0010<\u001a\u0004\u0018\u00010=2\u000e\b\u0002\u0010>\u001a\b\u0012\u0004\u0012\u00020'0?H\u0002J\b\u0010@\u001a\u00020'H\u0002J\n\u0010A\u001a\u0004\u0018\u00010,H\u0002J\u0012\u0010B\u001a\u0004\u0018\u00010=2\u0006\u0010C\u001a\u00020,H\u0002J\u0010\u0010D\u001a\u00020'2\u0006\u0010E\u001a\u00020,H\u0002J\b\u0010F\u001a\u00020'H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00120\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0013\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\u00140\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00170\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001d\u001a\u00020\u001e¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010#\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020%0$X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006H"}, d2 = {"Lru/mrlargha/feature/arizona/cases/CasesScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "currentPage", "Lru/mrlargha/feature/arizona/cases/CasesPages;", "casesBinding", "Lru/mrlargha/feature/arizona/cases/databinding/ArizonaCasesScreenBinding;", "initMainPageJob", "Lkotlinx/coroutines/Job;", "infoState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/feature/arizona/cases/CasesInfoModel;", "casesState", "", "Lru/mrlargha/feature/arizona/cases/data/remote/models/CasesModel;", "prizesList", "Lru/mrlargha/feature/arizona/cases/CasesGuaranteedPrizeModel;", "casesSharedPreference", "Lru/mrlargha/feature/arizona/cases/data/local/CasesSharedPreference;", "exoPlayer", "Landroidx/media3/exoplayer/ExoPlayer;", "videoPlayingType", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/feature/arizona/cases/data/remote/apiservices/CasesApiService;", "pagesMap", "", "Lru/mrlargha/feature/arizona/cases/pages/CasesBasePage;", "setVisibility", "", "visible", "", "onBackendMessage", "data", "", "subId", "setLoadingScreen", "isLoadingScreen", "setupListeners", "setCollectors", "startGoldBoxAnimation", "initInfo", CommonUrlParts.MODEL, "setWinnerPrize", "prizeIds", "Lru/mrlargha/feature/arizona/cases/CasesWinItemModel;", "changePage", "page", "sendEventToPage", "playVideo", "videoFile", "Ljava/io/File;", "onEnded", "Lkotlin/Function0;", "releasePlayer", "getSAMPPath", "getVideoFile", "videoName", "showToast", "message", "onQuality", "Spawner", "cases"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u009c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u00002\u00020\u0001:\u0001GB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0016J\u0018\u0010*\u001a\u00020'2\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u0005H\u0016J\u0010\u0010.\u001a\u00020'2\u0006\u0010/\u001a\u00020)H\u0002J\b\u00100\u001a\u00020'H\u0002J\b\u00101\u001a\u00020'H\u0002J\b\u00102\u001a\u00020)H\u0002J\u0010\u00103\u001a\u00020'2\u0006\u00104\u001a\u00020\u0012H\u0002J\u0016\u00105\u001a\u00020'2\f\u00106\u001a\b\u0012\u0004\u0012\u0002070\u0014H\u0002J\u0010\u00108\u001a\u00020'2\u0006\u00109\u001a\u00020\u000bH\u0002J\"\u0010:\u001a\u00020'2\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u00052\b\b\u0002\u00109\u001a\u00020\u000bH\u0002J\"\u0010;\u001a\u00020'2\b\u0010<\u001a\u0004\u0018\u00010=2\u000e\b\u0002\u0010>\u001a\b\u0012\u0004\u0012\u00020'0?H\u0002J\b\u0010@\u001a\u00020'H\u0002J\n\u0010A\u001a\u0004\u0018\u00010,H\u0002J\u0012\u0010B\u001a\u0004\u0018\u00010=2\u0006\u0010C\u001a\u00020,H\u0002J\u0010\u0010D\u001a\u00020'2\u0006\u0010E\u001a\u00020,H\u0002J\b\u0010F\u001a\u00020'H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00120\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0013\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\u00140\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00170\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001d\u001a\u00020\u001e¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010#\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020%0$X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006H"}, d2 = {"Lru/mrlargha/feature/arizona/cases/CasesScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "currentPage", "Lru/mrlargha/feature/arizona/cases/CasesPages;", "casesBinding", "Lru/mrlargha/feature/arizona/cases/databinding/ArizonaCasesScreenBinding;", "initMainPageJob", "Lkotlinx/coroutines/Job;", "infoState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/feature/arizona/cases/CasesInfoModel;", "casesState", "", "Lru/mrlargha/feature/arizona/cases/data/remote/models/CasesModel;", "prizesList", "Lru/mrlargha/feature/arizona/cases/CasesGuaranteedPrizeModel;", "casesSharedPreference", "Lru/mrlargha/feature/arizona/cases/data/local/CasesSharedPreference;", "exoPlayer", "Landroidx/media3/exoplayer/ExoPlayer;", "videoPlayingType", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/feature/arizona/cases/data/remote/apiservices/CasesApiService;", "pagesMap", "", "Lru/mrlargha/feature/arizona/cases/pages/CasesBasePage;", "setVisibility", "", "visible", "", "onBackendMessageHandled", "data", "", "subId", "setLoadingScreen", "isLoadingScreen", "setupListeners", "setCollectors", "startGoldBoxAnimation", "initInfo", CommonUrlParts.MODEL, "setWinnerPrize", "prizeIds", "Lru/mrlargha/feature/arizona/cases/CasesWinItemModel;", "changePage", "page", "sendEventToPage", "playVideo", "videoFile", "Ljava/io/File;", "onEnded", "Lkotlin/Function0;", "releasePlayer", "getSAMPPath", "getVideoFile", "videoName", "showToast", "message", "onQuality", "Spawner", "cases"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CasesScreen extends SAMPUIElement {
     private final CasesApiService api;
@@ -116,6 +117,9 @@ public final class CasesScreen extends SAMPUIElement {
                 return CasesScreen.pagesMap$lambda$0(CasesScreen.this);
             }
         })), TuplesKt.to(casesPages2, new CasesOpenPage(targetActivity, openPage, getNotifier())));
+        Context applicationContext = targetActivity.getApplicationContext();
+        Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
+        CasesResponseKt.setAppContext(applicationContext);
         addViewToConstraintLayout(constraintLayout, -1, -1);
         setupListeners();
     }
@@ -141,10 +145,10 @@ public final class CasesScreen extends SAMPUIElement {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == CasesId.MAIN_PAGE_INIT.getSubId()) {
-            BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), Dispatchers.getMain(), null, new CasesScreen$onBackendMessage$1(data, this, null), 2, null);
+            BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), Dispatchers.getMain(), null, new CasesScreen$onBackendMessageHandled$1(data, this, null), 2, null);
         } else if (i == CasesId.SET_WIN_CASES.getSubId()) {
             try {
                 setWinnerPrize(MapperKt.toListModel(data, CasesWinItemModel.class));
@@ -155,7 +159,7 @@ public final class CasesScreen extends SAMPUIElement {
                 Intrinsics.checkNotNullExpressionValue(btnClose, "btnClose");
                 btnClose.setVisibility(8);
             } catch (Exception unused) {
-                Toast.makeText(getTargetActivity(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+                Toast.makeText(getTargetActivity(), getTargetActivity().getString(R.string.cases_error_interface, new Object[]{Integer.valueOf(getBackendID())}), 1).show();
             }
         } else if (i == CasesId.UPDATE_DIAMOND_COUNT.getSubId()) {
             this.casesBinding.diamondProgress.setProgress(Integer.parseInt(data));
@@ -172,7 +176,7 @@ public final class CasesScreen extends SAMPUIElement {
             playVideo(getVideoFile(StringsKt.replace$default(data, "\"", "", false, 4, (Object) null)), new Function0() { // from class: ru.mrlargha.feature.arizona.cases.CasesScreen$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    return CasesScreen.onBackendMessage$lambda$0(CasesScreen.this);
+                    return CasesScreen.onBackendMessageHandled$lambda$0(CasesScreen.this);
                 }
             });
         } else if (i == CasesId.SHOW_OPEN_CASE_VIDEO.getSubId()) {
@@ -180,7 +184,7 @@ public final class CasesScreen extends SAMPUIElement {
             playVideo(getVideoFile(StringsKt.replace$default(data, "\"", "", false, 4, (Object) null)), new Function0() { // from class: ru.mrlargha.feature.arizona.cases.CasesScreen$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    return CasesScreen.onBackendMessage$lambda$1(CasesScreen.this);
+                    return CasesScreen.onBackendMessageHandled$lambda$1(CasesScreen.this);
                 }
             });
         } else if (i == CasesId.SET_PRIZE_PROGRESS.getSubId()) {
@@ -189,13 +193,13 @@ public final class CasesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit onBackendMessage$lambda$0(CasesScreen casesScreen) {
+    public static final Unit onBackendMessageHandled$lambda$0(CasesScreen casesScreen) {
         casesScreen.changePage(CasesPages.MAIN);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit onBackendMessage$lambda$1(CasesScreen casesScreen) {
+    public static final Unit onBackendMessageHandled$lambda$1(CasesScreen casesScreen) {
         casesScreen.changePage(CasesPages.OPEN);
         return Unit.INSTANCE;
     }
@@ -396,7 +400,9 @@ public final class CasesScreen extends SAMPUIElement {
     private final void playVideo(File file, final Function0<Unit> function0) {
         final ArizonaCasesScreenBinding arizonaCasesScreenBinding = this.casesBinding;
         if (file == null || !file.exists()) {
-            showToast("Видео не найдено");
+            String string = getTargetActivity().getString(R.string.cases_video_not_found);
+            Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+            showToast(string);
             function0.invoke();
             return;
         }
@@ -430,8 +436,18 @@ public final class CasesScreen extends SAMPUIElement {
 
             @Override // androidx.media3.common.Player.Listener
             public void onPlayerError(PlaybackException error) {
+                Activity targetActivity;
                 Intrinsics.checkNotNullParameter(error, "error");
-                this.showToast("Ошибка воспроизведения " + error.getMessage());
+                CasesScreen casesScreen = this;
+                targetActivity = casesScreen.getTargetActivity();
+                int i = R.string.cases_playback_error;
+                String message = error.getMessage();
+                if (message == null) {
+                    message = "";
+                }
+                String string2 = targetActivity.getString(i, new Object[]{message});
+                Intrinsics.checkNotNullExpressionValue(string2, "getString(...)");
+                casesScreen.showToast(string2);
                 this.releasePlayer();
             }
         });
@@ -499,7 +515,7 @@ public final class CasesScreen extends SAMPUIElement {
     }
 
     private final void onQuality() {
-        this.casesBinding.textBonus.setText("Качество будет определено при открытии сертификата.\nВы можете получить:\n- Хлам\n- Обычное\n- Идеальное");
+        this.casesBinding.textBonus.setText(getTargetActivity().getString(R.string.cases_bonus_quality_info));
         this.casesBinding.overlay.setVisibility(0);
         this.casesBinding.cardInfo.setVisibility(0);
     }

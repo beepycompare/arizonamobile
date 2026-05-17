@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class StatsDataSource implements DataSource {
     private long bytesRead;
     private final DataSource dataSource;

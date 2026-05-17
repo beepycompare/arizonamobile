@@ -176,8 +176,8 @@ public final class PaydayData {
         int i4 = (i2 & 8) != 0 ? 1 : i;
         PaydayMultiplier paydayMultiplier3 = (i2 & 16) != 0 ? new PaydayMultiplier(0, 0L, 3, null) : paydayMultiplier;
         PaydayLevel paydayLevel3 = (i2 & 32) != 0 ? new PaydayLevel(0, 0, 0, null, 15, null) : paydayLevel;
-        PaydayDeposit paydayDeposit3 = (i2 & 64) != 0 ? new PaydayDeposit(null, 0L, 0, false, null, 31, null) : paydayDeposit;
-        PaydayFraction paydayFraction3 = (i2 & 128) != 0 ? new PaydayFraction(null, null, 0L, 0, 0, null, 63, null) : paydayFraction;
+        PaydayDeposit paydayDeposit3 = (i2 & 64) != 0 ? new PaydayDeposit(null, 0L, 0, null, false, null, 63, null) : paydayDeposit;
+        PaydayFraction paydayFraction3 = (i2 & 128) != 0 ? new PaydayFraction(null, null, 0L, 0, null, 0, null, 127, null) : paydayFraction;
         PaydayAz paydayAz3 = (i2 & 256) != 0 ? new PaydayAz(0L, 0L, 3, null) : paydayAz;
         PaydayLaw paydayLaw3 = (i2 & 512) != 0 ? new PaydayLaw(0, 0, 0, 7, null) : paydayLaw;
         if ((i2 & 1024) != 0) {

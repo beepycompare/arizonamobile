@@ -4,13 +4,13 @@ package io.appmetrica.analytics.impl;
 public abstract class AbstractC0541r4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0555ri f1200a;
+    public final C0555ri f1205a;
 
     public AbstractC0541r4(C0555ri c0555ri) {
-        this.f1200a = c0555ri;
+        this.f1205a = c0555ri;
     }
 
     public final C0555ri a() {
-        return this.f1200a;
+        return this.f1205a;
     }
 }

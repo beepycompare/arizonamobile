@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public final class C0746z9 implements IHandlerExecutor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Looper f1330a;
+    public final Looper f1335a;
     public final Handler b;
     public final HandlerThreadC0168cb c;
 
@@ -22,7 +22,7 @@ public final class C0746z9 implements IHandlerExecutor {
     }
 
     public static HandlerThreadC0168cb a(String str) {
-        HandlerThreadC0168cb handlerThreadC0168cb = new HandlerThreadC0168cb(str + Constants.FILENAME_SEQUENCE_SEPARATOR + ThreadFactoryC0750zd.f1332a.incrementAndGet());
+        HandlerThreadC0168cb handlerThreadC0168cb = new HandlerThreadC0168cb(str + Constants.FILENAME_SEQUENCE_SEPARATOR + ThreadFactoryC0750zd.f1337a.incrementAndGet());
         handlerThreadC0168cb.start();
         return handlerThreadC0168cb;
     }
@@ -44,7 +44,7 @@ public final class C0746z9 implements IHandlerExecutor {
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor
     public final Looper getLooper() {
-        return this.f1330a;
+        return this.f1335a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
@@ -52,7 +52,7 @@ public final class C0746z9 implements IHandlerExecutor {
         boolean z;
         HandlerThreadC0168cb handlerThreadC0168cb = this.c;
         synchronized (handlerThreadC0168cb) {
-            z = handlerThreadC0168cb.f935a;
+            z = handlerThreadC0168cb.f940a;
         }
         return z;
     }
@@ -71,7 +71,7 @@ public final class C0746z9 implements IHandlerExecutor {
     public final void stopRunning() {
         HandlerThreadC0168cb handlerThreadC0168cb = this.c;
         synchronized (handlerThreadC0168cb) {
-            handlerThreadC0168cb.f935a = false;
+            handlerThreadC0168cb.f940a = false;
             handlerThreadC0168cb.interrupt();
         }
     }
@@ -89,7 +89,7 @@ public final class C0746z9 implements IHandlerExecutor {
 
     public C0746z9(HandlerThreadC0168cb handlerThreadC0168cb, Looper looper, Handler handler) {
         this.c = handlerThreadC0168cb;
-        this.f1330a = looper;
+        this.f1335a = looper;
         this.b = handler;
     }
 

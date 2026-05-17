@@ -12,6 +12,6 @@ public final class C0566s4 extends J2 {
             c0258fo.c = new C0284go();
             return c0258fo;
         }
-        return this.f637a.a(cdo, ((Ad) interfaceC0314i2).a());
+        return this.f642a.a(cdo, ((Ad) interfaceC0314i2).a());
     }
 }

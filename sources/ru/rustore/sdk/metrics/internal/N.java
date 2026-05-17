@@ -9,7 +9,7 @@ import ru.rustore.sdk.metrics.internal.X;
 public final class N {
 
     /* renamed from: a  reason: collision with root package name */
-    public final I f1587a;
+    public final I f1592a;
     public final K b;
     public final L c;
     public final InterfaceC0819g d;
@@ -19,7 +19,7 @@ public final class N {
         Intrinsics.checkNotNullParameter(persistentMetricsEventDtoFactory, "persistentMetricsEventDtoFactory");
         Intrinsics.checkNotNullParameter(persistentMetricsEventMapper, "persistentMetricsEventMapper");
         Intrinsics.checkNotNullParameter(logger, "logger");
-        this.f1587a = persistentMetricsEventDataSource;
+        this.f1592a = persistentMetricsEventDataSource;
         this.b = persistentMetricsEventDtoFactory;
         this.c = persistentMetricsEventMapper;
         this.d = logger;
@@ -27,7 +27,7 @@ public final class N {
 
     public final void a(List<D> persistentMetricsEvents) {
         Intrinsics.checkNotNullParameter(persistentMetricsEvents, "persistentMetricsEvents");
-        I i = this.f1587a;
+        I i = this.f1592a;
         L l = this.c;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(persistentMetricsEvents, 10));
         for (D d : persistentMetricsEvents) {

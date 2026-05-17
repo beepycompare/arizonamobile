@@ -35,7 +35,7 @@ public final class ComposableSingletons$SocialContentKt {
     });
 
     /* renamed from: getLambda$-2110633905$home  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9115getLambda$2110633905$home() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9118getLambda$2110633905$home() {
         return f142lambda$2110633905;
     }
 

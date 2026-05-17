@@ -118,7 +118,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
             return BitmapResource.obtain(decodeFrame(t, build, longValue, num.intValue(), i, i2, downsampleStrategy2), this.bitmapPool);
         } finally {
             if (Build.VERSION.SDK_INT >= 29) {
-                UByte$$ExternalSyntheticBackport0.m9256m((Object) build);
+                UByte$$ExternalSyntheticBackport0.m9275m((Object) build);
             } else {
                 build.release();
             }

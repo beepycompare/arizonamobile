@@ -31,6 +31,6 @@ public final class CoreAppModule {
 
     @Provides
     public final BuildConfigRepository provideBuildConfigRepository() {
-        return new BuildConfigRepository("release", BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE, false, true, BuildConfig.APPLICATION_ID);
+        return new BuildConfigRepository("release", BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE, false, true, false, BuildConfig.APPLICATION_ID);
     }
 }

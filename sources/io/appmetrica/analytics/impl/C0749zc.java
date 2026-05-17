@@ -44,7 +44,7 @@ public final class C0749zc {
             default:
                 throw new NoWhenBranchMatchedException();
         }
-        a9.f496a = i;
+        a9.f501a = i;
         Ac.b.getClass();
         Set<Map.Entry> entrySet = map.entrySet();
         LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(entrySet, 10)), 16));

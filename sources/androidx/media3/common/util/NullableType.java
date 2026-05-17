@@ -11,6 +11,6 @@ import javax.annotation.meta.When;
 @Nonnull(when = When.MAYBE)
 @Documented
 @Retention(RetentionPolicy.CLASS)
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public @interface NullableType {
 }

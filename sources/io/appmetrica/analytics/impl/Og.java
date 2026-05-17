@@ -23,7 +23,7 @@ public final class Og extends Rg {
         try {
             JSONObject jSONObject = new JSONObject(value);
             if (TtmlNode.TEXT_EMPHASIS_MARK_OPEN.equals(jSONObject.optString("type"))) {
-                xo xoVar = this.f767a.t;
+                xo xoVar = this.f772a.t;
                 synchronized (xoVar) {
                     xoVar.c(xoVar.b() + 1);
                 }
@@ -41,12 +41,12 @@ public final class Og extends Rg {
     }
 
     public final void b() {
-        xo xoVar = this.f767a.t;
+        xo xoVar = this.f772a.t;
         synchronized (xoVar) {
             xoVar.a(xoVar.a() + 1);
         }
-        this.f767a.z();
-        M8 m8 = this.f767a.l;
+        this.f772a.z();
+        M8 m8 = this.f772a.l;
         if (m8.c == null) {
             m8.a();
         }
@@ -55,11 +55,11 @@ public final class Og extends Rg {
         o8.b = new HashSet();
         o8.d = 0;
         O8 o82 = m8.c;
-        o82.f721a = true;
+        o82.f726a = true;
         R8 r8 = m8.b;
         IBinaryDataHelper iBinaryDataHelper = r8.c;
         Q8 q8 = r8.b;
-        r8.f763a.getClass();
+        r8.f768a.getClass();
         iBinaryDataHelper.insert("event_hashes", q8.toByteArray((Q8) P8.a(o82)));
     }
 
@@ -68,7 +68,7 @@ public final class Og extends Rg {
             try {
                 String queryParameter = Uri.parse(str).getQueryParameter(Constants.REFERRER);
                 if (!TextUtils.isEmpty(queryParameter)) {
-                    C0415m2 c0415m2 = this.f767a.t().y;
+                    C0415m2 c0415m2 = this.f772a.t().y;
                     for (String str2 : Uri.decode(queryParameter).split("&")) {
                         String decode = Uri.decode(str2);
                         int indexOf = decode.indexOf("=");
@@ -89,8 +89,8 @@ public final class Og extends Rg {
             return true;
         }
         if (c0415m2 != null) {
-            for (Pair pair : c0415m2.f1107a) {
-                if (lo.a(pair.first, str) && ((obj = pair.second) == null || ((C0390l2) obj).f1088a.equals(str2))) {
+            for (Pair pair : c0415m2.f1112a) {
+                if (lo.a(pair.first, str) && ((obj = pair.second) == null || ((C0390l2) obj).f1093a.equals(str2))) {
                     return true;
                 }
             }

@@ -12,7 +12,7 @@ import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.commonui.utils.ui.StrokeTextView;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class HudElementDamageFeedItemRightBinding implements ViewBinding {
     public final CustomCardView cardId;
     public final LinearLayout container;

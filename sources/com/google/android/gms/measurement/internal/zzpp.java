@@ -15,7 +15,6 @@ import android.os.RemoteException;
 import android.os.ext.SdkExtensions;
 import android.text.TextUtils;
 import androidx.core.app.NotificationCompat;
-import androidx.media3.exoplayer.Renderer;
 import androidx.privacysandbox.ads.adservices.java.measurement.MeasurementManagerFutures;
 import com.android.vending.expansion.zipfile.APEZProvider;
 import com.google.android.gms.common.GoogleApiAvailabilityLight;
@@ -694,7 +693,7 @@ public final class zzpp extends zzjf {
                 return false;
             }
             try {
-                num = zzT.getMeasurementApiStatusAsync().get(Renderer.DEFAULT_DURATION_TO_PROGRESS_US, TimeUnit.MILLISECONDS);
+                num = zzT.getMeasurementApiStatusAsync().get(10000L, TimeUnit.MILLISECONDS);
             } catch (InterruptedException | CancellationException | ExecutionException | TimeoutException e2) {
                 e = e2;
                 num = null;

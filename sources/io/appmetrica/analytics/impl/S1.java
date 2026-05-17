@@ -12,7 +12,7 @@ import java.util.Iterator;
 public final class S1 implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f774a = new ArrayList();
+    public final ArrayList f779a = new ArrayList();
     public volatile C0719y7 b = null;
 
     public final void a(C0719y7 c0719y7) {
@@ -46,7 +46,7 @@ public final class S1 implements ActivityLifecycleListener {
         synchronized (this) {
             C0719y7 c0719y7 = this.b;
             if (c0719y7 == null) {
-                this.f774a.add(r1);
+                this.f779a.add(r1);
             } else {
                 ((C0746z9) C0135b4.l().c.a()).b.post(new P1(r1, c0719y7));
             }
@@ -55,8 +55,8 @@ public final class S1 implements ActivityLifecycleListener {
 
     public final synchronized ArrayList a() {
         ArrayList arrayList;
-        arrayList = new ArrayList(this.f774a);
-        this.f774a.clear();
+        arrayList = new ArrayList(this.f779a);
+        this.f779a.clear();
         return arrayList;
     }
 }

@@ -2,7 +2,7 @@ package io.appmetrica.analytics.coreutils.internal.data;
 
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateSerializer;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class BaseProtobufStateSerializer<T extends MessageNano> implements ProtobufStateSerializer<T> {
     @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
     public abstract T defaultValue();

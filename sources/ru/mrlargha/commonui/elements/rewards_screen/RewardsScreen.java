@@ -36,10 +36,9 @@ import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.RewardsLayoutBinding;
 import ru.mrlargha.commonui.databinding.RewardsLayoutItemBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
-import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.ui.kit.ParseColoredTextKt;
 /* compiled from: RewardsScreen.kt */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 *2\u00020\u0001:\u0002*+B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H\u0016J\u0010\u0010\u0016\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0018H\u0002J \u0010\u0019\u001a\u00020\u00132\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u0017\u001a\u00020\u0018H\u0002J\u0010\u0010\u001e\u001a\u00020\u000f2\u0006\u0010\u001f\u001a\u00020 H\u0002J(\u0010!\u001a\u00020\u00132\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u000f2\u0006\u0010%\u001a\u00020\u000f2\u0006\u0010&\u001a\u00020\u0005H\u0002J\u0018\u0010'\u001a\u00020\u00132\u0006\u0010(\u001a\u00020\u000f2\u0006\u0010)\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011¨\u0006,"}, d2 = {"Lru/mrlargha/commonui/elements/rewards_screen/RewardsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/RewardsLayoutBinding;", "timer", "Landroid/os/CountDownTimer;", "path", "", "getPath", "()Ljava/lang/String;", "setVisibility", "", "visible", "", "setRewardScreenInfo", "info", "Lru/mrlargha/commonui/elements/rewards_screen/RewardsScreen$Companion$RewardScreenInfo;", "setItemReward", "itemBinding", "Lru/mrlargha/commonui/databinding/RewardsLayoutItemBinding;", "rewardItem", "Lru/mrlargha/commonui/elements/rewards_screen/RewardsScreen$Companion$RewardItem;", "formatTime", "millisUntilFinished", "", "colorizeTextView", "textView", "Landroid/widget/TextView;", "fullString", "subString", "color", "onBackendMessage", "data", "subId", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 *2\u00020\u0001:\u0002*+B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H\u0016J\u0010\u0010\u0016\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0018H\u0002J \u0010\u0019\u001a\u00020\u00132\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u0017\u001a\u00020\u0018H\u0002J\u0010\u0010\u001e\u001a\u00020\u000f2\u0006\u0010\u001f\u001a\u00020 H\u0002J(\u0010!\u001a\u00020\u00132\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u000f2\u0006\u0010%\u001a\u00020\u000f2\u0006\u0010&\u001a\u00020\u0005H\u0002J\u0018\u0010'\u001a\u00020\u00132\u0006\u0010(\u001a\u00020\u000f2\u0006\u0010)\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\u00020\u000fX\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011¨\u0006,"}, d2 = {"Lru/mrlargha/commonui/elements/rewards_screen/RewardsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/RewardsLayoutBinding;", "timer", "Landroid/os/CountDownTimer;", "path", "", "getPath", "()Ljava/lang/String;", "setVisibility", "", "visible", "", "setRewardScreenInfo", "info", "Lru/mrlargha/commonui/elements/rewards_screen/RewardsScreen$Companion$RewardScreenInfo;", "setItemReward", "itemBinding", "Lru/mrlargha/commonui/databinding/RewardsLayoutItemBinding;", "rewardItem", "Lru/mrlargha/commonui/elements/rewards_screen/RewardsScreen$Companion$RewardItem;", "formatTime", "millisUntilFinished", "", "colorizeTextView", "textView", "Landroid/widget/TextView;", "fullString", "subString", "color", "onBackendMessageHandled", "data", "subId", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class RewardsScreen extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
@@ -51,7 +50,6 @@ public final class RewardsScreen extends SAMPUIElement {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public RewardsScreen(Activity targetActivity, final int i) {
         super(targetActivity, i);
-        String str;
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         View inflate = targetActivity.getLayoutInflater().inflate(R.layout.rewards_layout, (ViewGroup) null);
         Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout");
@@ -60,12 +58,7 @@ public final class RewardsScreen extends SAMPUIElement {
         RewardsLayoutBinding bind = RewardsLayoutBinding.bind(constraintLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
-        if (UtilsKt.isArizonaType()) {
-            str = "projects/arizona-rp/systems/reward_banner/";
-        } else {
-            str = "projects/rodina-rp/systems/reward_banner/";
-        }
-        this.path = str;
+        this.path = "systems/reward_banner/";
         constraintLayout.setClickable(true);
         addViewToConstraintLayout(constraintLayout, -1, -1);
         EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
@@ -128,7 +121,7 @@ public final class RewardsScreen extends SAMPUIElement {
         }
         RewardsLayoutBinding rewardsLayoutBinding = this.binding;
         int i = 0;
-        Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl(false) + this.path + "background/" + rewardScreenInfo.getBackground()).into(rewardsLayoutBinding.layoutBg);
+        Picasso.get().load(FirebaseConfigHelper.INSTANCE.getProjectResourceUrl(false) + this.path + "background/" + rewardScreenInfo.getBackground()).into(rewardsLayoutBinding.layoutBg);
         String str = rewardScreenInfo.getTitleHeaders() + "\n" + rewardScreenInfo.getTitle();
         if (rewardScreenInfo.getType() == 7) {
             rewardsLayoutBinding.title.setTypeface(ResourcesCompat.getFont(getTargetActivity(), R.font.hardpixel));
@@ -170,9 +163,9 @@ public final class RewardsScreen extends SAMPUIElement {
     private final void setItemReward(RewardsLayoutItemBinding rewardsLayoutItemBinding, Companion.RewardItem rewardItem, Companion.RewardScreenInfo rewardScreenInfo) {
         int parseColor = Color.parseColor(rewardScreenInfo.getColor());
         Picasso picasso = Picasso.get();
-        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
         String str = this.path;
-        picasso.load(resourceUrl$default + str + "items/" + rewardItem.getImage()).into(rewardsLayoutItemBinding.shortPrizeIc);
+        picasso.load(projectResourceUrl$default + str + "items/" + rewardItem.getImage()).into(rewardsLayoutItemBinding.shortPrizeIc);
         rewardsLayoutItemBinding.shortPrizeTitle.setText(rewardItem.getTitle());
         rewardsLayoutItemBinding.shortPrizeDescription.setText(rewardItem.getValue());
         if (rewardItem.getBadge().length() > 0) {
@@ -204,7 +197,7 @@ public final class RewardsScreen extends SAMPUIElement {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == 0) {
             setRewardScreenInfo((Companion.RewardScreenInfo) MapperKt.toModel(data, Companion.RewardScreenInfo.class));

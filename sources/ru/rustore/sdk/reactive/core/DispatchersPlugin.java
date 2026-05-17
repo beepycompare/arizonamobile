@@ -10,7 +10,7 @@ public final class DispatchersPlugin {
     public static final DispatchersPlugin INSTANCE = new DispatchersPlugin();
 
     /* renamed from: io  reason: collision with root package name */
-    private static Dispatcher f1630io;
+    private static Dispatcher f1635io;
     private static Dispatcher main;
 
     private DispatchersPlugin() {
@@ -34,14 +34,14 @@ public final class DispatchersPlugin {
     public final Dispatcher getIo() {
         Dispatcher dispatcher;
         synchronized (this) {
-            dispatcher = f1630io;
+            dispatcher = f1635io;
         }
         return dispatcher;
     }
 
     public final void setIo(Dispatcher dispatcher) {
         synchronized (this) {
-            f1630io = dispatcher;
+            f1635io = dispatcher;
             Unit unit = Unit.INSTANCE;
         }
     }

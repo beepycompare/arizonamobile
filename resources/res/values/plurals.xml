@@ -8,8 +8,26 @@
         <item quantity="one">Rewind %d second</item>
         <item quantity="other">Rewind %d seconds</item>
     </plurals>
+    <plurals name="ghetto_territories">
+        <item quantity="one">%d территория</item>
+        <item quantity="few">%d территории</item>
+        <item quantity="many">%d территорий</item>
+        <item quantity="other">%d территории</item>
+    </plurals>
     <plurals name="mtrl_badge_content_description">
         <item quantity="one">%d new notification</item>
         <item quantity="other">%d new notifications</item>
+    </plurals>
+    <plurals name="situation_promo_hours">
+        <item quantity="one">%d час</item>
+        <item quantity="few">%d часа</item>
+        <item quantity="many">%d часов</item>
+        <item quantity="other">%d часа</item>
+    </plurals>
+    <plurals name="situation_rank">
+        <item quantity="one">%d ранг</item>
+        <item quantity="few">%d ранга</item>
+        <item quantity="many">%d рангов</item>
+        <item quantity="other">%d ранга</item>
     </plurals>
 </resources>

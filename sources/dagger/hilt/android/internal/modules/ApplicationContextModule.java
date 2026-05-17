@@ -6,7 +6,7 @@ import dagger.Module;
 import dagger.Provides;
 import dagger.hilt.android.internal.Contexts;
 @Module
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ApplicationContextModule {
     private final Context applicationContext;
 

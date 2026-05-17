@@ -477,7 +477,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
         return Thread.currentThread().getId();
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     private static class NullFilteringHeadersMap extends ForwardingMap<String, List<String>> {
         private final Map<String, List<String>> headers;
 

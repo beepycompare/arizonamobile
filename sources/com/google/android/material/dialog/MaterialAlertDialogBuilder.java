@@ -21,7 +21,7 @@ import com.google.android.material.color.MaterialColors;
 import com.google.android.material.resources.MaterialAttributes;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public class MaterialAlertDialogBuilder extends AlertDialog.Builder {
     private static final int DEF_STYLE_ATTR = R.attr.alertDialogStyle;
     private static final int DEF_STYLE_RES = com.google.android.material.R.style.MaterialAlertDialog_MaterialComponents;

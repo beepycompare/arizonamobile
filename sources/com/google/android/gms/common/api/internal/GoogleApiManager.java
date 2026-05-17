@@ -7,7 +7,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import androidx.collection.ArraySet;
-import androidx.media3.exoplayer.Renderer;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApi;
@@ -51,7 +50,7 @@ public class GoogleApiManager implements Handler.Callback {
     @NotOnlyInitialized
     private final Handler zar;
     private volatile boolean zas;
-    private long zae = Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
+    private long zae = 10000;
     private boolean zaf = false;
     private final AtomicInteger zal = new AtomicInteger(1);
     private final AtomicInteger zam = new AtomicInteger(0);
@@ -170,7 +169,7 @@ public class GoogleApiManager implements Handler.Callback {
         ApiKey apiKey4;
         switch (message.what) {
             case 1:
-                this.zae = true == ((Boolean) message.obj).booleanValue() ? Renderer.DEFAULT_DURATION_TO_PROGRESS_US : 300000L;
+                this.zae = true == ((Boolean) message.obj).booleanValue() ? 10000L : 300000L;
                 this.zar.removeMessages(12);
                 for (ApiKey apiKey5 : this.zan.keySet()) {
                     Handler handler = this.zar;

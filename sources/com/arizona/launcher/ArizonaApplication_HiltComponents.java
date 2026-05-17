@@ -14,6 +14,7 @@ import com.miami.game.core.downloader.database.LauncherDBModule;
 import com.miami.game.core.downloader.sync.DowndloaderSyncModule;
 import com.miami.game.core.foreground.service.DownloadService_GeneratedInjector;
 import com.miami.game.core.local.repository.di.LocalRepositoryModule;
+import com.miami.game.core.play.country.billing.PlayCountryResolverModule;
 import com.miami.game.core.server.di.FavoriteServerModule;
 import dagger.Binds;
 import dagger.Component;
@@ -125,7 +126,7 @@ public final class ArizonaApplication_HiltComponents {
     }
 
     @Singleton
-    @Component(modules = {ApplicationContextModule.class, ActivityRetainedCBuilderModule.class, ServiceCBuilderModule.class, ArizonaLauncherAPIModule.class, ConnectionResolverModule.class, CoreAppModule.class, DatabaseModule.class, DowndloaderModule.class, DowndloaderSyncModule.class, FavoriteServerModule.class, HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule.class, LauncherDBModule.class, LocalRepositoryModule.class, NetworkApiModule.class, PreferencesModule.class, UpdateApiModule.class})
+    @Component(modules = {ApplicationContextModule.class, ActivityRetainedCBuilderModule.class, ServiceCBuilderModule.class, ArizonaLauncherAPIModule.class, ConnectionResolverModule.class, CoreAppModule.class, DatabaseModule.class, DowndloaderModule.class, DowndloaderSyncModule.class, FavoriteServerModule.class, HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule.class, LauncherDBModule.class, LocalRepositoryModule.class, NetworkApiModule.class, PlayCountryResolverModule.class, PreferencesModule.class, UpdateApiModule.class})
     @javax.inject.Singleton
     /* loaded from: classes3.dex */
     public static abstract class SingletonC implements ArizonaApplication_GeneratedInjector, FragmentGetContextFix.FragmentGetContextFixEntryPoint, HiltWrapper_ActivityRetainedComponentManager_ActivityRetainedComponentBuilderEntryPoint, ServiceComponentManager.ServiceComponentBuilderEntryPoint, SingletonComponent, GeneratedComponent {

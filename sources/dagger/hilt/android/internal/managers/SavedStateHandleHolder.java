@@ -7,7 +7,7 @@ import androidx.lifecycle.viewmodel.CreationExtras;
 import androidx.lifecycle.viewmodel.MutableCreationExtras;
 import dagger.hilt.android.internal.ThreadUtil;
 import dagger.hilt.internal.Preconditions;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class SavedStateHandleHolder {
     private CreationExtras extras;
     private SavedStateHandle handle;

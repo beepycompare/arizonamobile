@@ -67,13 +67,14 @@ public final class SetupDialogKt {
 
     public static final void SetupDialogRoute(final CommonDialogComponent component, final Function0<Unit> onBackClick, final Function0<Unit> navigateToDownloadScreen, Composer composer, final int i) {
         int i2;
+        Composer composer2;
         Intrinsics.checkNotNullParameter(component, "component");
         Intrinsics.checkNotNullParameter(onBackClick, "onBackClick");
         Intrinsics.checkNotNullParameter(navigateToDownloadScreen, "navigateToDownloadScreen");
         Composer startRestartGroup = composer.startRestartGroup(1304023394);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SetupDialogRoute)N(component,onBackClick,navigateToDownloadScreen)47@2373L33,49@2468L198,49@2431L235,57@2707L34,60@2781L29,63@2856L20,64@2898L20,67@3040L21,68@3081L20,69@3122L19,62@2816L335:SetupDialog.kt#18sjrx");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SetupDialogRoute)N(component,onBackClick,navigateToDownloadScreen)46@2302L33,48@2397L198,48@2360L235,56@2636L34,59@2710L29,62@2785L20,63@2827L20,66@2969L21,67@3010L20,68@3051L19,61@2745L335:SetupDialog.kt#18sjrx");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(component) : startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
@@ -83,16 +84,17 @@ public final class SetupDialogKt {
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i2 |= startRestartGroup.changedInstance(navigateToDownloadScreen) ? 256 : 128;
         }
-        if (startRestartGroup.shouldExecute((i2 & 147) != 146, i2 & 1)) {
+        int i3 = i2;
+        if (startRestartGroup.shouldExecute((i3 & 147) != 146, i3 & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1304023394, i2, -1, "com.miami.game.feature.download.dialog.ui.setup.SetupDialogRoute (SetupDialog.kt:46)");
+                ComposerKt.traceEventStart(1304023394, i3, -1, "com.miami.game.feature.download.dialog.ui.setup.SetupDialogRoute (SetupDialog.kt:45)");
             }
-            int i3 = i2 & 112;
-            BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i3, 1);
+            int i4 = i3 & 112;
+            BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i4, 1);
             SharedEventFlow<CommonDialogUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963961112, "CC(remember):SetupDialog.kt#9igjgp");
-            boolean z = (i3 == 32) | ((i2 & 896) == 256);
+            boolean z = (i4 == 32) | ((i3 & 896) == 256);
             SetupDialogKt$SetupDialogRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (z || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new SetupDialogKt$SetupDialogRoute$1$1(onBackClick, navigateToDownloadScreen, null);
@@ -103,18 +105,19 @@ public final class SetupDialogKt {
             ObserveExternalNavigationActionsKt.observeExternalNavigationActions(component.getExternalNavigationAction(), startRestartGroup, 0);
             State collectAsStateWithLifecycle = FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963948874, "CC(remember):SetupDialog.kt#9igjgp");
-            boolean changedInstance = startRestartGroup.changedInstance(component);
+            int i5 = i3 & 14;
+            boolean z2 = i5 == 4 || ((i3 & 8) != 0 && startRestartGroup.changedInstance(component));
             SetupDialogKt$SetupDialogRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
-            if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
+            if (z2 || rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new SetupDialogKt$SetupDialogRoute$2$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             KFunction kFunction = (KFunction) rememberedValue2;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963947530, "CC(remember):SetupDialog.kt#9igjgp");
-            boolean changedInstance2 = startRestartGroup.changedInstance(component);
+            boolean z3 = i5 == 4 || ((i3 & 8) != 0 && startRestartGroup.changedInstance(component));
             SetupDialogKt$SetupDialogRoute$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
-            if (changedInstance2 || rememberedValue3 == Composer.Companion.getEmpty()) {
+            if (z3 || rememberedValue3 == Composer.Companion.getEmpty()) {
                 rememberedValue3 = new SetupDialogKt$SetupDialogRoute$3$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
@@ -123,40 +126,41 @@ public final class SetupDialogKt {
             String descriptionText = SetupDialogRoute$lambda$1(collectAsStateWithLifecycle).getDescriptionText();
             boolean isPrivacyAccepted = SetupDialogRoute$lambda$1(collectAsStateWithLifecycle).isPrivacyAccepted();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963942985, "CC(remember):SetupDialog.kt#9igjgp");
-            boolean changedInstance3 = startRestartGroup.changedInstance(component);
+            boolean z4 = i5 == 4 || ((i3 & 8) != 0 && startRestartGroup.changedInstance(component));
             SetupDialogKt$SetupDialogRoute$4$1 rememberedValue4 = startRestartGroup.rememberedValue();
-            if (changedInstance3 || rememberedValue4 == Composer.Companion.getEmpty()) {
+            if (z4 || rememberedValue4 == Composer.Companion.getEmpty()) {
                 rememberedValue4 = new SetupDialogKt$SetupDialogRoute$4$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue4);
             }
             KFunction kFunction3 = (KFunction) rememberedValue4;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963941674, "CC(remember):SetupDialog.kt#9igjgp");
-            boolean changedInstance4 = startRestartGroup.changedInstance(component);
+            boolean z5 = i5 == 4 || ((i3 & 8) != 0 && startRestartGroup.changedInstance(component));
             SetupDialogKt$SetupDialogRoute$5$1 rememberedValue5 = startRestartGroup.rememberedValue();
-            if (changedInstance4 || rememberedValue5 == Composer.Companion.getEmpty()) {
+            if (z5 || rememberedValue5 == Composer.Companion.getEmpty()) {
                 rememberedValue5 = new SetupDialogKt$SetupDialogRoute$5$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue5);
             }
             KFunction kFunction4 = (KFunction) rememberedValue5;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963940363, "CC(remember):SetupDialog.kt#9igjgp");
-            boolean changedInstance5 = startRestartGroup.changedInstance(component);
+            boolean z6 = i5 == 4 || ((i3 & 8) != 0 && startRestartGroup.changedInstance(component));
             SetupDialogKt$SetupDialogRoute$6$1 rememberedValue6 = startRestartGroup.rememberedValue();
-            if (changedInstance5 || rememberedValue6 == Composer.Companion.getEmpty()) {
+            if (z6 || rememberedValue6 == Composer.Companion.getEmpty()) {
                 rememberedValue6 = new SetupDialogKt$SetupDialogRoute$6$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue6);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             SetupDialogContent(isPrivacyAccepted, descriptionText, (Function0) kFunction, (Function0) kFunction2, (Function0) kFunction3, (Function0) kFunction4, (Function0) ((KFunction) rememberedValue6), startRestartGroup, 0);
-            startRestartGroup = startRestartGroup;
+            composer2 = startRestartGroup;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         } else {
-            startRestartGroup.skipToGroupEnd();
+            composer2 = startRestartGroup;
+            composer2.skipToGroupEnd();
         }
-        ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
+        ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
@@ -178,7 +182,7 @@ public final class SetupDialogKt {
         Intrinsics.checkNotNullParameter(onTerms, "onTerms");
         Intrinsics.checkNotNullParameter(onAccept, "onAccept");
         Composer startRestartGroup = composer.startRestartGroup(-1274880745);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SetupDialogContent)N(isPrivacyAccepted,updateSize,onConfirm,onDismiss,onPolicy,onTerms,onAccept)86@3472L35,87@3585L1328,87@3512L1401:SetupDialog.kt#18sjrx");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SetupDialogContent)N(isPrivacyAccepted,updateSize,onConfirm,onDismiss,onPolicy,onTerms,onAccept)85@3401L35,86@3514L1328,86@3441L1401:SetupDialog.kt#18sjrx");
         if ((i & 6) == 0) {
             z2 = z;
             i2 = (startRestartGroup.changed(z2) ? 4 : 2) | i;
@@ -209,7 +213,7 @@ public final class SetupDialogKt {
             composer2.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1274880745, i2, -1, "com.miami.game.feature.download.dialog.ui.setup.SetupDialogContent (SetupDialog.kt:84)");
+                ComposerKt.traceEventStart(-1274880745, i2, -1, "com.miami.game.feature.download.dialog.ui.setup.SetupDialogContent (SetupDialog.kt:83)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1094708966, "CC(remember):SetupDialog.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -247,10 +251,10 @@ public final class SetupDialogKt {
         String str3;
         int i2;
         Composer composer2 = composer;
-        ComposerKt.sourceInformation(composer2, "C88@3595L18,89@3622L27,106@4285L622:SetupDialog.kt#18sjrx");
+        ComposerKt.sourceInformation(composer2, "C87@3524L18,88@3551L27,105@4214L622:SetupDialog.kt#18sjrx");
         if (composer2.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(97924095, i, -1, "com.miami.game.feature.download.dialog.ui.setup.SetupDialogContent.<anonymous> (SetupDialog.kt:88)");
+                ComposerKt.traceEventStart(97924095, i, -1, "com.miami.game.feature.download.dialog.ui.setup.SetupDialogContent.<anonymous> (SetupDialog.kt:87)");
             }
             ComponentKt.AlertLabelDialog(composer2, 0);
             DescriptionTextKt.DescriptionText(str, composer2, 0);
@@ -262,7 +266,7 @@ public final class SetupDialogKt {
                 composer2.endReplaceGroup();
             } else {
                 composer2.startReplaceGroup(974047945);
-                ComposerKt.sourceInformation(composer2, "91@3696L570");
+                ComposerKt.sourceInformation(composer2, "90@3625L570");
                 Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                 ComposerKt.sourceInformationMarkerStart(composer2, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
                 MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(-Dp.m7555constructorimpl(12.0f))), centerVertically, composer2, 54);
@@ -289,7 +293,7 @@ public final class SetupDialogKt {
                 Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(composer2, 1047564806, "C93@3860L93,95@3955L75,93@3836L194,98@4047L204:SetupDialog.kt#18sjrx");
+                ComposerKt.sourceInformationMarkerStart(composer2, 1047564806, "C92@3789L93,94@3884L75,92@3765L194,97@3976L204:SetupDialog.kt#18sjrx");
                 ComposerKt.sourceInformationMarkerStart(composer2, 33792859, "CC(remember):SetupDialog.kt#9igjgp");
                 Object rememberedValue = composer2.rememberedValue();
                 if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -350,7 +354,7 @@ public final class SetupDialogKt {
             Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer2, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer2, 2071125742, "C107@4328L43,107@4303L187,113@4587L70,116@4659L238,113@4503L394:SetupDialog.kt#18sjrx");
+            ComposerKt.sourceInformationMarkerStart(composer2, 2071125742, "C106@4257L43,106@4232L187,112@4516L70,115@4588L238,112@4432L394:SetupDialog.kt#18sjrx");
             ComposerKt.sourceInformationMarkerStart(composer2, 1452284078, "CC(remember):SetupDialog.kt#9igjgp");
             boolean changed = composer2.changed(function03);
             Object rememberedValue2 = composer2.rememberedValue();
@@ -415,12 +419,12 @@ public final class SetupDialogKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit SetupDialogContent$lambda$1$0$1(MutableState mutableState, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C96@3977L35:SetupDialog.kt#18sjrx");
+        ComposerKt.sourceInformation(composer, "C95@3906L35:SetupDialog.kt#18sjrx");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1817021325, i, -1, "com.miami.game.feature.download.dialog.ui.setup.SetupDialogContent.<anonymous>.<anonymous>.<anonymous> (SetupDialog.kt:96)");
+                ComposerKt.traceEventStart(-1817021325, i, -1, "com.miami.game.feature.download.dialog.ui.setup.SetupDialogContent.<anonymous>.<anonymous>.<anonymous> (SetupDialog.kt:95)");
             }
             CheckButtonKt.CheckButton(((Boolean) mutableState.getValue()).booleanValue(), composer, 0);
             if (ComposerKt.isTraceInProgress()) {
@@ -446,12 +450,12 @@ public final class SetupDialogKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit SetupDialogContent$lambda$1$1$2(MutableState mutableState, boolean z, BoxScope DialogButtonYes, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(DialogButtonYes, "$this$DialogButtonYes");
-        ComposerKt.sourceInformation(composer, "C117@4704L10,117@4677L206:SetupDialog.kt#18sjrx");
+        ComposerKt.sourceInformation(composer, "C116@4633L10,116@4606L206:SetupDialog.kt#18sjrx");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1429769364, i, -1, "com.miami.game.feature.download.dialog.ui.setup.SetupDialogContent.<anonymous>.<anonymous>.<anonymous> (SetupDialog.kt:117)");
+                ComposerKt.traceEventStart(-1429769364, i, -1, "com.miami.game.feature.download.dialog.ui.setup.SetupDialogContent.<anonymous>.<anonymous>.<anonymous> (SetupDialog.kt:116)");
             }
             TextKt.m2712TextNvy7gAk("ЗАГРУЗИТЬ", null, (((Boolean) mutableState.getValue()).booleanValue() || z) ? Color.Companion.m4809getWhite0d7_KjU() : Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.4f, 0.0f, 0.0f, 0.0f, 14, null), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131066);
             if (ComposerKt.isTraceInProgress()) {

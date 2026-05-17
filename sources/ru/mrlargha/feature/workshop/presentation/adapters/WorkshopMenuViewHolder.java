@@ -1,6 +1,8 @@
 package ru.mrlargha.feature.workshop.presentation.adapters;
 
+import android.content.Context;
 import android.view.View;
+import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import kotlin.Metadata;
@@ -32,7 +34,10 @@ public final class WorkshopMenuViewHolder extends RecyclerView.ViewHolder {
     public final void bind(final WorkshopMenus item, final int i, int i2) {
         Intrinsics.checkNotNullParameter(item, "item");
         ItemMenuBtnBinding itemMenuBtnBinding = this.binding;
-        itemMenuBtnBinding.tvCraftMenu.setText((CharSequence) CollectionsKt.first((List<? extends Object>) StringsKt.split$default((CharSequence) item.getMenuName(), new String[]{" "}, false, 0, 6, (Object) null)));
+        TextView textView = itemMenuBtnBinding.tvCraftMenu;
+        Context context = this.binding.getRoot().getContext();
+        Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
+        textView.setText((CharSequence) CollectionsKt.first((List<? extends Object>) StringsKt.split$default((CharSequence) item.menuName(context), new String[]{" "}, false, 0, 6, (Object) null)));
         if (i == i2) {
             itemMenuBtnBinding.parentLayout.setBackgroundResource(R.drawable.paralel_white);
             itemMenuBtnBinding.tvCraftMenu.setTextColor(-16777216);

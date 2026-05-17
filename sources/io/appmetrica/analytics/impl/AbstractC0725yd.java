@@ -7,7 +7,7 @@ public abstract class AbstractC0725yd extends Xe implements InterfaceC0633ul {
     }
 
     public final String c(String str, String str2) {
-        return this.f853a.getString(f(str), str2);
+        return this.f858a.getString(f(str), str2);
     }
 
     public final InterfaceC0633ul d(String str, String str2) {
@@ -15,7 +15,7 @@ public abstract class AbstractC0725yd extends Xe implements InterfaceC0633ul {
     }
 
     public final boolean e(String str) {
-        return this.f853a.a(f(str));
+        return this.f858a.a(f(str));
     }
 
     public abstract String f(String str);
@@ -33,7 +33,7 @@ public abstract class AbstractC0725yd extends Xe implements InterfaceC0633ul {
     }
 
     public final int c(String str, int i) {
-        return this.f853a.getInt(f(str), i);
+        return this.f858a.getInt(f(str), i);
     }
 
     public final InterfaceC0633ul d(String str, long j) {
@@ -45,10 +45,10 @@ public abstract class AbstractC0725yd extends Xe implements InterfaceC0633ul {
     }
 
     public final long c(String str, long j) {
-        return this.f853a.getLong(f(str), j);
+        return this.f858a.getLong(f(str), j);
     }
 
     public final boolean c(String str, boolean z) {
-        return this.f853a.getBoolean(f(str), z);
+        return this.f858a.getBoolean(f(str), z);
     }
 }

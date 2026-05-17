@@ -13,7 +13,7 @@ import com.squareup.picasso.Request;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class RequestCreator {
     private static final AtomicInteger nextId = new AtomicInteger();
     private final Request.Builder data;

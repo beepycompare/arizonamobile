@@ -18,13 +18,13 @@ public final class Ik implements ProtobufConverter {
         ArrayList arrayList = new ArrayList(map.size());
         for (Map.Entry<String, byte[]> entry : map.entrySet()) {
             Lk lk = new Lk();
-            lk.f681a = entry.getKey().getBytes(Charsets.UTF_8);
+            lk.f686a = entry.getKey().getBytes(Charsets.UTF_8);
             lk.b = entry.getValue();
             arrayList.add(lk);
         }
         Object[] array = arrayList.toArray(new Lk[0]);
         if (array != null) {
-            kk.f663a = (Lk[]) array;
+            kk.f668a = (Lk[]) array;
             return kk;
         }
         throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
@@ -33,10 +33,10 @@ public final class Ik implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Map<String, byte[]> toModel(Kk kk) {
-        Lk[] lkArr = kk.f663a;
+        Lk[] lkArr = kk.f668a;
         LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(lkArr.length), 16));
         for (Lk lk : lkArr) {
-            Pair pair = TuplesKt.to(new String(lk.f681a, Charsets.UTF_8), lk.b);
+            Pair pair = TuplesKt.to(new String(lk.f686a, Charsets.UTF_8), lk.b);
             linkedHashMap.put(pair.getFirst(), pair.getSecond());
         }
         return linkedHashMap;

@@ -1,5 +1,5 @@
 package dagger.internal;
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public final class Preconditions {
     public static <T> T checkNotNull(T reference) {
         reference.getClass();

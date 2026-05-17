@@ -3,7 +3,7 @@ package androidx.media3.exoplayer.video;
 import androidx.media3.container.ObuParser;
 import java.nio.ByteBuffer;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class Av1SampleDependencyParser {
     private static final int MAX_BYTES_FROM_KEYFRAME_TO_READ = 500;
     private static final int MAX_OBU_COUNT_FOR_PARTIAL_SKIP = 8;

@@ -1,5 +1,7 @@
 package com.arizonagames.feature.arizona.family;
 
+import android.app.Activity;
+import android.widget.TextView;
 import com.arizonagames.feature.arizona.family.adapters.MembersAdapter;
 import com.arizonagames.feature.arizona.family.data.FamilyData;
 import com.arizonagames.feature.arizona.family.data.MemberItem;
@@ -20,7 +22,7 @@ import kotlinx.coroutines.Dispatchers;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FamilyScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$requestMembersName$1$1", f = "FamilyScreen.kt", i = {}, l = {453}, m = "invokeSuspend", n = {}, nl = {456}, s = {}, v = 2)
+@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$requestMembersName$1$1", f = "FamilyScreen.kt", i = {}, l = {445}, m = "invokeSuspend", n = {}, nl = {448}, s = {}, v = 2)
 /* loaded from: classes3.dex */
 public final class FamilyScreen$requestMembersName$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ FamilyData $it;
@@ -51,6 +53,7 @@ public final class FamilyScreen$requestMembersName$1$1 extends SuspendLambda imp
     public final Object invokeSuspend(Object obj) {
         FamilyMainBinding familyMainBinding;
         MembersAdapter membersAdapter;
+        Activity targetActivity;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -68,10 +71,13 @@ public final class FamilyScreen$requestMembersName$1$1 extends SuspendLambda imp
         List<MemberItem> list = (List) obj;
         familyMainBinding = this.this$0.binding;
         FamilyMembersBinding familyMembersBinding = familyMainBinding.members;
+        FamilyScreen familyScreen = this.this$0;
         familyMembersBinding.loaderBar.setVisibility(8);
         if (list.isEmpty()) {
             familyMembersBinding.empty.setVisibility(0);
-            familyMembersBinding.empty.setText("Ничего не найдено");
+            TextView textView = familyMembersBinding.empty;
+            targetActivity = familyScreen.getTargetActivity();
+            textView.setText(targetActivity.getString(R.string.family_nothing_found));
         } else {
             familyMembersBinding.empty.setVisibility(8);
         }

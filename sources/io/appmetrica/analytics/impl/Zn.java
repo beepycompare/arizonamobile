@@ -10,7 +10,7 @@ public final class Zn extends A4 {
 
     @Override // io.appmetrica.analytics.impl.A4
     public final boolean a(P5 p5, C0616u4 c0616u4) {
-        C0467o4 c0467o4 = c0616u4.b.d.f1335a;
+        C0467o4 c0467o4 = c0616u4.b.d.f1340a;
         this.b.a(c0467o4.i);
         Kb m = C0448na.I.m();
         if (Boolean.TRUE.equals(c0467o4.b)) {

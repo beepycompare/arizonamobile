@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
@@ -57,7 +56,7 @@ import ru.mrlargha.feature.documents.databinding.DocumentsHealthBinding;
 import ru.mrlargha.feature.documents.databinding.DocumentsLayoutBinding;
 import ru.mrlargha.feature.documents.databinding.DocumentsMainBinding;
 /* compiled from: DocumentScreen.kt */
-@Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0002OPB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020\u0005H\u0016J\b\u0010!\u001a\u00020\u001dH\u0002J\u0010\u0010\"\u001a\u00020\u001d2\u0006\u0010#\u001a\u00020$H\u0016J\u0010\u0010%\u001a\u00020\u001d2\u0006\u0010&\u001a\u00020\u0005H\u0002J\u0016\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00050(2\u0006\u0010)\u001a\u00020\u0005H\u0002J\b\u0010*\u001a\u00020\u001dH\u0002J\b\u0010+\u001a\u00020\u001dH\u0002J\u0010\u0010,\u001a\u00020\u001d2\u0006\u0010-\u001a\u00020.H\u0002J\u0010\u0010/\u001a\u00020\u001d2\u0006\u00100\u001a\u000201H\u0002J\u0010\u00102\u001a\u00020\u001d2\u0006\u00103\u001a\u000204H\u0002J8\u00105\u001a\u00020\u001d2\u0006\u00106\u001a\u00020$2\u0006\u00107\u001a\u00020$2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020;2\u0006\u0010=\u001a\u00020>H\u0002J\u0010\u0010?\u001a\u00020\u001d2\u0006\u0010@\u001a\u00020\u0005H\u0002J\u0010\u0010A\u001a\u00020\u001d2\u0006\u0010@\u001a\u00020\u0005H\u0002J\u0010\u0010B\u001a\u00020\u001d2\u0006\u00100\u001a\u00020CH\u0002J\u0010\u0010D\u001a\u00020\u001d2\u0006\u00100\u001a\u00020EH\u0002J\b\u0010F\u001a\u00020\u001dH\u0002J\u0010\u0010G\u001a\u00020\u001d2\u0006\u00100\u001a\u00020HH\u0002J\b\u0010I\u001a\u00020\u001dH\u0002J\u0010\u0010J\u001a\u00020\u001d2\u0006\u00100\u001a\u00020KH\u0002J\b\u0010L\u001a\u00020\u001dH\u0002J\u0010\u0010M\u001a\u00020\u001d2\u0006\u00100\u001a\u00020NH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0019*\u0004\u0018\u00010\u00180\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006Q"}, d2 = {"Lru/mrlargha/feature/documents/DocumentsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/documents/databinding/DocumentsLayoutBinding;", "isShowingDocs", "emptyPhoto", "propertyResidentalAdapter", "Lru/mrlargha/feature/documents/PropertyAdapter;", "propertyComercialAdapter", "vipLevelAdapter", "Lru/mrlargha/feature/documents/VipLevelAdapter;", "vipTypeAdapter", "Lru/mrlargha/feature/documents/VipTypeAdapter;", "transportAdapter", "Lru/mrlargha/feature/documents/TransportAdapter;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "soundIdNavigation", "soundIdOther", "onBackendMessage", "", "data", "", "subId", "setBgRes", "setVisibility", "visible", "", "setTabsVisibility", "bites", "intToBitArrayMSB", "", "number", "setNavigation", "setAdapters", "navigateTo", "nav", "Lru/mrlargha/feature/documents/DocumentsScreen$Navigation;", "setMainInfo", "info", "Lru/mrlargha/feature/documents/data/InfoItemMain;", "setLicensesInfo", "licenseInfo", "Lru/mrlargha/feature/documents/data/LicenseInfo;", "setLicensesItem", "isRight", "isHasLicenses", "document", "Landroid/widget/ImageView;", "title", "Landroid/widget/TextView;", "item", TtmlNode.RUBY_CONTAINER, "Landroid/view/View;", "showDocs", "int", "dipLicense", "setHealthInfo", "Lru/mrlargha/feature/documents/data/HealthInfo;", "setArmyInfo", "Lru/mrlargha/feature/documents/data/ArmyInfo;", "clearPropertyInfo", "setPropertyInfo", "Lru/mrlargha/feature/documents/data/PropertyInfo;", "clearVipInfo", "setVipInfo", "Lru/mrlargha/feature/documents/data/VipInfo;", "clearTransportInfo", "setTransportInfo", "Lru/mrlargha/feature/documents/data/TransportInfo;", "Navigation", "Spawner", "documents"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0002OPB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020\u0005H\u0016J\b\u0010!\u001a\u00020\u001dH\u0002J\u0010\u0010\"\u001a\u00020\u001d2\u0006\u0010#\u001a\u00020$H\u0016J\u0010\u0010%\u001a\u00020\u001d2\u0006\u0010&\u001a\u00020\u0005H\u0002J\u0016\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00050(2\u0006\u0010)\u001a\u00020\u0005H\u0002J\b\u0010*\u001a\u00020\u001dH\u0002J\b\u0010+\u001a\u00020\u001dH\u0002J\u0010\u0010,\u001a\u00020\u001d2\u0006\u0010-\u001a\u00020.H\u0002J\u0010\u0010/\u001a\u00020\u001d2\u0006\u00100\u001a\u000201H\u0002J\u0010\u00102\u001a\u00020\u001d2\u0006\u00103\u001a\u000204H\u0002J8\u00105\u001a\u00020\u001d2\u0006\u00106\u001a\u00020$2\u0006\u00107\u001a\u00020$2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020;2\u0006\u0010=\u001a\u00020>H\u0002J\u0010\u0010?\u001a\u00020\u001d2\u0006\u0010@\u001a\u00020\u0005H\u0002J\u0010\u0010A\u001a\u00020\u001d2\u0006\u0010@\u001a\u00020\u0005H\u0002J\u0010\u0010B\u001a\u00020\u001d2\u0006\u00100\u001a\u00020CH\u0002J\u0010\u0010D\u001a\u00020\u001d2\u0006\u00100\u001a\u00020EH\u0002J\b\u0010F\u001a\u00020\u001dH\u0002J\u0010\u0010G\u001a\u00020\u001d2\u0006\u00100\u001a\u00020HH\u0002J\b\u0010I\u001a\u00020\u001dH\u0002J\u0010\u0010J\u001a\u00020\u001d2\u0006\u00100\u001a\u00020KH\u0002J\b\u0010L\u001a\u00020\u001dH\u0002J\u0010\u0010M\u001a\u00020\u001d2\u0006\u00100\u001a\u00020NH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0019*\u0004\u0018\u00010\u00180\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006Q"}, d2 = {"Lru/mrlargha/feature/documents/DocumentsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/documents/databinding/DocumentsLayoutBinding;", "isShowingDocs", "emptyPhoto", "propertyResidentalAdapter", "Lru/mrlargha/feature/documents/PropertyAdapter;", "propertyComercialAdapter", "vipLevelAdapter", "Lru/mrlargha/feature/documents/VipLevelAdapter;", "vipTypeAdapter", "Lru/mrlargha/feature/documents/VipTypeAdapter;", "transportAdapter", "Lru/mrlargha/feature/documents/TransportAdapter;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "soundIdNavigation", "soundIdOther", "onBackendMessageHandled", "", "data", "", "subId", "setBgRes", "setVisibility", "visible", "", "setTabsVisibility", "bites", "intToBitArrayMSB", "", "number", "setNavigation", "setAdapters", "navigateTo", "nav", "Lru/mrlargha/feature/documents/DocumentsScreen$Navigation;", "setMainInfo", "info", "Lru/mrlargha/feature/documents/data/InfoItemMain;", "setLicensesInfo", "licenseInfo", "Lru/mrlargha/feature/documents/data/LicenseInfo;", "setLicensesItem", "isRight", "isHasLicenses", "document", "Landroid/widget/ImageView;", "title", "Landroid/widget/TextView;", "item", TtmlNode.RUBY_CONTAINER, "Landroid/view/View;", "showDocs", "int", "dipLicense", "setHealthInfo", "Lru/mrlargha/feature/documents/data/HealthInfo;", "setArmyInfo", "Lru/mrlargha/feature/documents/data/ArmyInfo;", "clearPropertyInfo", "setPropertyInfo", "Lru/mrlargha/feature/documents/data/PropertyInfo;", "clearVipInfo", "setVipInfo", "Lru/mrlargha/feature/documents/data/VipInfo;", "clearTransportInfo", "setTransportInfo", "Lru/mrlargha/feature/documents/data/TransportInfo;", "Navigation", "Spawner", "documents"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DocumentsScreen extends SAMPUIElement {
     private final DocumentsLayoutBinding binding;
@@ -174,114 +173,106 @@ public final class DocumentsScreen extends SAMPUIElement {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
-        try {
-            switch (i) {
-                case 1:
-                    Integer intOrNull = StringsKt.toIntOrNull(data);
-                    setTabsVisibility(intOrNull != null ? intOrNull.intValue() : 0);
+        switch (i) {
+            case 1:
+                Integer intOrNull = StringsKt.toIntOrNull(data);
+                setTabsVisibility(intOrNull != null ? intOrNull.intValue() : 0);
+                return;
+            case 2:
+                int type = ((InfoCommon) MapperKt.toModel(data, InfoCommon.class)).getType();
+                if (type == DocumentsBites.Main.getValue()) {
+                    setMainInfo((InfoItemMain) MapperKt.toModel(data, InfoItemMain.class));
+                    navigateTo(Navigation.Main);
                     return;
-                case 2:
-                    int type = ((InfoCommon) MapperKt.toModel(data, InfoCommon.class)).getType();
-                    if (type == DocumentsBites.Main.getValue()) {
-                        setMainInfo((InfoItemMain) MapperKt.toModel(data, InfoItemMain.class));
+                } else if (type == DocumentsBites.Licenses.getValue()) {
+                    setLicensesInfo((LicenseInfo) MapperKt.toModel(data, LicenseInfo.class));
+                    navigateTo(Navigation.Licenses);
+                    return;
+                } else if (type == DocumentsBites.Health.getValue()) {
+                    setHealthInfo((HealthInfo) MapperKt.toModel(data, HealthInfo.class));
+                    navigateTo(Navigation.Health);
+                    return;
+                } else if (type == DocumentsBites.Army.getValue()) {
+                    setArmyInfo((ArmyInfo) MapperKt.toModel(data, ArmyInfo.class));
+                    navigateTo(Navigation.Army);
+                    return;
+                } else if (type == DocumentsBites.Property.getValue()) {
+                    clearPropertyInfo();
+                    setPropertyInfo((PropertyInfo) MapperKt.toModel(data, PropertyInfo.class));
+                    navigateTo(Navigation.Property);
+                    return;
+                } else if (type == DocumentsBites.Transport.getValue()) {
+                    clearTransportInfo();
+                    setTransportInfo((TransportInfo) MapperKt.toModel(data, TransportInfo.class));
+                    navigateTo(Navigation.Transport);
+                    return;
+                } else if (type == DocumentsBites.Vip.getValue()) {
+                    clearVipInfo();
+                    setVipInfo((VipInfo) MapperKt.toModel(data, VipInfo.class));
+                    navigateTo(Navigation.Vip);
+                    return;
+                } else {
+                    return;
+                }
+            case 3:
+                int type2 = ((InfoCommon) MapperKt.toModel(data, InfoCommon.class)).getType();
+                if (type2 == DocumentsBites.Property.getValue()) {
+                    setPropertyInfo((PropertyInfo) MapperKt.toModel(data, PropertyInfo.class));
+                    return;
+                } else if (type2 == DocumentsBites.Transport.getValue()) {
+                    setTransportInfo((TransportInfo) MapperKt.toModel(data, TransportInfo.class));
+                    return;
+                } else if (type2 == DocumentsBites.Vip.getValue()) {
+                    setVipInfo((VipInfo) MapperKt.toModel(data, VipInfo.class));
+                    return;
+                } else {
+                    return;
+                }
+            case 4:
+                Integer intOrNull2 = StringsKt.toIntOrNull(data);
+                int intValue = intOrNull2 != null ? intOrNull2.intValue() : 0;
+                this.isShowingDocs = intValue;
+                showDocs(intValue);
+                return;
+            case 5:
+                Integer intOrNull3 = StringsKt.toIntOrNull(data);
+                dipLicense(intOrNull3 != null ? intOrNull3.intValue() : 0);
+                return;
+            case 6:
+                Integer intOrNull4 = StringsKt.toIntOrNull(data);
+                if (intOrNull4 != null) {
+                    int intValue2 = intOrNull4.intValue();
+                    Log.d("frontend", "onBackendMessage: " + intValue2);
+                    if (intValue2 == DocumentsBites.Main.getValue()) {
                         navigateTo(Navigation.Main);
                         return;
-                    } else if (type == DocumentsBites.Licenses.getValue()) {
-                        setLicensesInfo((LicenseInfo) MapperKt.toModel(data, LicenseInfo.class));
+                    } else if (intValue2 == DocumentsBites.Licenses.getValue()) {
                         navigateTo(Navigation.Licenses);
                         return;
-                    } else if (type == DocumentsBites.Health.getValue()) {
-                        setHealthInfo((HealthInfo) MapperKt.toModel(data, HealthInfo.class));
+                    } else if (intValue2 == DocumentsBites.Health.getValue()) {
                         navigateTo(Navigation.Health);
                         return;
-                    } else if (type == DocumentsBites.Army.getValue()) {
-                        setArmyInfo((ArmyInfo) MapperKt.toModel(data, ArmyInfo.class));
+                    } else if (intValue2 == DocumentsBites.Army.getValue()) {
                         navigateTo(Navigation.Army);
                         return;
-                    } else if (type == DocumentsBites.Property.getValue()) {
-                        clearPropertyInfo();
-                        setPropertyInfo((PropertyInfo) MapperKt.toModel(data, PropertyInfo.class));
+                    } else if (intValue2 == DocumentsBites.Property.getValue()) {
                         navigateTo(Navigation.Property);
                         return;
-                    } else if (type == DocumentsBites.Transport.getValue()) {
-                        clearTransportInfo();
-                        setTransportInfo((TransportInfo) MapperKt.toModel(data, TransportInfo.class));
+                    } else if (intValue2 == DocumentsBites.Transport.getValue()) {
                         navigateTo(Navigation.Transport);
                         return;
-                    } else if (type == DocumentsBites.Vip.getValue()) {
-                        clearVipInfo();
-                        setVipInfo((VipInfo) MapperKt.toModel(data, VipInfo.class));
+                    } else if (intValue2 == DocumentsBites.Vip.getValue()) {
                         navigateTo(Navigation.Vip);
                         return;
                     } else {
                         return;
                     }
-                case 3:
-                    int type2 = ((InfoCommon) MapperKt.toModel(data, InfoCommon.class)).getType();
-                    if (type2 == DocumentsBites.Property.getValue()) {
-                        setPropertyInfo((PropertyInfo) MapperKt.toModel(data, PropertyInfo.class));
-                        return;
-                    } else if (type2 == DocumentsBites.Transport.getValue()) {
-                        setTransportInfo((TransportInfo) MapperKt.toModel(data, TransportInfo.class));
-                        return;
-                    } else if (type2 == DocumentsBites.Vip.getValue()) {
-                        setVipInfo((VipInfo) MapperKt.toModel(data, VipInfo.class));
-                        return;
-                    } else {
-                        return;
-                    }
-                case 4:
-                    Integer intOrNull2 = StringsKt.toIntOrNull(data);
-                    int intValue = intOrNull2 != null ? intOrNull2.intValue() : 0;
-                    this.isShowingDocs = intValue;
-                    showDocs(intValue);
-                    return;
-                case 5:
-                    Integer intOrNull3 = StringsKt.toIntOrNull(data);
-                    dipLicense(intOrNull3 != null ? intOrNull3.intValue() : 0);
-                    return;
-                case 6:
-                    Integer intOrNull4 = StringsKt.toIntOrNull(data);
-                    if (intOrNull4 != null) {
-                        int intValue2 = intOrNull4.intValue();
-                        Log.d("frontend", "onBackendMessage: " + intValue2);
-                        if (intValue2 == DocumentsBites.Main.getValue()) {
-                            navigateTo(Navigation.Main);
-                            return;
-                        } else if (intValue2 == DocumentsBites.Licenses.getValue()) {
-                            navigateTo(Navigation.Licenses);
-                            return;
-                        } else if (intValue2 == DocumentsBites.Health.getValue()) {
-                            navigateTo(Navigation.Health);
-                            return;
-                        } else if (intValue2 == DocumentsBites.Army.getValue()) {
-                            navigateTo(Navigation.Army);
-                            return;
-                        } else if (intValue2 == DocumentsBites.Property.getValue()) {
-                            navigateTo(Navigation.Property);
-                            return;
-                        } else if (intValue2 == DocumentsBites.Transport.getValue()) {
-                            navigateTo(Navigation.Transport);
-                            return;
-                        } else if (intValue2 == DocumentsBites.Vip.getValue()) {
-                            navigateTo(Navigation.Vip);
-                            return;
-                        } else {
-                            return;
-                        }
-                    }
-                    return;
-                default:
-                    return;
-            }
-        } catch (Exception e) {
-            Log.d("documents", data + "  " + e.getMessage());
-            e.printStackTrace();
-            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
-            getNotifier().setUIElementVisible(getBackendID(), false);
-            SAMPUIElement.notifyClick$default(this, 0, 0, null, 4, null);
+                }
+                return;
+            default:
+                return;
         }
     }
 
@@ -557,8 +548,8 @@ public final class DocumentsScreen extends SAMPUIElement {
         }
         documentsLayoutBinding.main.notAvailableContainer.setVisibility(8);
         Picasso picasso = Picasso.get();
-        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso.load(resourceUrl$default + infoItemMain.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding.main.photo);
+        String substringBefore$default = StringsKt.substringBefore$default(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null), "projects", (String) null, 2, (Object) null);
+        picasso.load(substringBefore$default + infoItemMain.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding.main.photo);
         documentsLayoutBinding.main.name.setText(infoItemMain.getName());
         documentsLayoutBinding.main.sex.setText(infoItemMain.getSex());
         documentsLayoutBinding.main.birth.setText(infoItemMain.getBirthday());
@@ -1504,8 +1495,8 @@ public final class DocumentsScreen extends SAMPUIElement {
         }
         documentsLayoutBinding.health.notAvailableContainer.setVisibility(8);
         Picasso picasso = Picasso.get();
-        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso.load(resourceUrl$default + healthInfo.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding.health.photo);
+        String substringBefore$default = StringsKt.substringBefore$default(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null), "projects", (String) null, 2, (Object) null);
+        picasso.load(substringBefore$default + healthInfo.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding.health.photo);
         documentsLayoutBinding.health.name.setText(healthInfo.getName());
         documentsLayoutBinding.health.hpState.setText(healthInfo.getState());
         documentsLayoutBinding.health.duration.setText(healthInfo.getMed_card_time());
@@ -1602,8 +1593,8 @@ public final class DocumentsScreen extends SAMPUIElement {
         }
         documentsLayoutBinding.army.notAvailableContainer.setVisibility(8);
         Picasso picasso = Picasso.get();
-        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso.load(resourceUrl$default + armyInfo.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding.army.photo);
+        String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso.load(projectResourceUrl$default + armyInfo.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding.army.photo);
         documentsLayoutBinding.army.name.setText(armyInfo.getName());
         documentsLayoutBinding.army.armyOnline.setText(armyInfo.getArmy_online());
         documentsLayoutBinding.army.haveArmyTicket.setText(armyInfo.getHave_army_ticket());

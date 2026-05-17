@@ -6,7 +6,7 @@ import org.json.JSONObject;
 public final class uo implements to {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C8 f1263a;
+    public final C8 f1268a;
 
     public uo() {
         this(new C8());
@@ -22,10 +22,10 @@ public final class uo implements to {
             } catch (Throwable unused) {
             }
         }
-        return this.f1263a.a(n8, c0380kh);
+        return this.f1268a.a(n8, c0380kh);
     }
 
     public uo(C8 c8) {
-        this.f1263a = c8;
+        this.f1268a = c8;
     }
 }

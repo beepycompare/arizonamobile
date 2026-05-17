@@ -7,7 +7,7 @@ import java.util.List;
 public final class C0229el implements InterfaceC0139b8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Gf f982a;
+    public final Gf f987a;
     public final C0276gg b;
 
     public C0229el() {
@@ -19,14 +19,14 @@ public final class C0229el implements InterfaceC0139b8 {
     public final List<Di> fromModel(C0204dl c0204dl) {
         Di di;
         C0620u8 c0620u8 = new C0620u8();
-        c0620u8.f1252a = 3;
+        c0620u8.f1257a = 3;
         c0620u8.d = new C0570s8();
-        Di fromModel = this.f982a.fromModel(c0204dl.f961a);
-        c0620u8.d.f1219a = (C0446n8) fromModel.f552a;
+        Di fromModel = this.f987a.fromModel(c0204dl.f966a);
+        c0620u8.d.f1224a = (C0446n8) fromModel.f557a;
         C0703xg c0703xg = c0204dl.b;
         if (c0703xg != null) {
             di = this.b.fromModel(c0703xg);
-            c0620u8.d.b = (C0496p8) di.f552a;
+            c0620u8.d.b = (C0496p8) di.f557a;
         } else {
             di = null;
         }
@@ -40,7 +40,7 @@ public final class C0229el implements InterfaceC0139b8 {
     }
 
     public C0229el(Gf gf, C0276gg c0276gg) {
-        this.f982a = gf;
+        this.f987a = gf;
         this.b = c0276gg;
     }
 

@@ -176,15 +176,15 @@ public final class CasesMainPage implements CasesBasePage {
         this.isHasCost = false;
         arizonaCasesMainPageBinding.animateContainer.setVisibility(4);
         this.baseModel = casesInfoModel;
-        arizonaCasesMainPageBinding.tvCountLeft.setText(casesInfoModel.m11156getCountLeft());
+        arizonaCasesMainPageBinding.tvCountLeft.setText(casesInfoModel.m11175getCountLeft());
         setSelectXType(true);
         hidePrizePage$default(this, false, 1, null);
         Picasso picasso = Picasso.get();
-        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso.load(resourceUrl$default + "projects/arizona-rp/systems/cases/" + casesInfoModel.getCaseId() + ".webp").into(arizonaCasesMainPageBinding.ivCase);
+        String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso.load(projectResourceUrl$default + "systems/cases/" + casesInfoModel.getCaseId() + ".webp").into(arizonaCasesMainPageBinding.ivCase);
         Picasso picasso2 = Picasso.get();
-        String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso2.load(resourceUrl$default2 + "projects/arizona-rp/systems/cases/logo_" + casesInfoModel.getCaseId() + ".webp").into(arizonaCasesMainPageBinding.ivCaseLogo, new Callback() { // from class: ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$initialize$1$1
+        String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso2.load(projectResourceUrl$default2 + "systems/cases/logo_" + casesInfoModel.getCaseId() + ".webp").into(arizonaCasesMainPageBinding.ivCaseLogo, new Callback() { // from class: ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$initialize$1$1
             @Override // com.squareup.picasso.Callback
             public void onError(Exception exc) {
             }
@@ -197,7 +197,7 @@ public final class CasesMainPage implements CasesBasePage {
                 ArizonaCasesMainPageBinding.this.animateContainer.animate().translationY(0.0f).alpha(1.0f).setDuration(400L).setInterpolator(new DecelerateInterpolator()).start();
             }
         });
-        int i = WhenMappings.$EnumSwitchMapping$0[casesInfoModel.m11157getCurrency().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[casesInfoModel.m11176getCurrency().ordinal()];
         if (i == 1) {
             arizonaCasesMainPageBinding.ivMoneyIc.setImageResource(R.drawable.ic_rubble);
             arizonaCasesMainPageBinding.ivMoneyIc.setImageTintList(ColorStateList.valueOf(-16777216));
@@ -222,7 +222,7 @@ public final class CasesMainPage implements CasesBasePage {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void checkIsHavaCase(CasesInfoModel casesInfoModel) {
-        String str;
+        String string;
         ArizonaCasesMainPageBinding arizonaCasesMainPageBinding = this.binding;
         TextView textView = arizonaCasesMainPageBinding.tvOpenCase;
         if (casesInfoModel.getCountLeft() > 0) {
@@ -230,6 +230,7 @@ public final class CasesMainPage implements CasesBasePage {
             Intrinsics.checkNotNullExpressionValue(ivMoneyIc, "ivMoneyIc");
             ivMoneyIc.setVisibility(8);
             setXVisible(true);
+            string = this.targetActivity.getString(ru.mrlargha.feature.arizona.cases.R.string.cases_open);
         } else {
             Integer cost = casesInfoModel.getCost();
             if ((cost != null ? cost.intValue() : -1) <= 0) {
@@ -237,16 +238,17 @@ public final class CasesMainPage implements CasesBasePage {
                 Intrinsics.checkNotNullExpressionValue(ivMoneyIc2, "ivMoneyIc");
                 ivMoneyIc2.setVisibility(8);
                 setXVisible(true);
+                string = this.targetActivity.getString(ru.mrlargha.feature.arizona.cases.R.string.cases_unavailable);
             } else {
                 ImageView ivMoneyIc3 = arizonaCasesMainPageBinding.ivMoneyIc;
                 Intrinsics.checkNotNullExpressionValue(ivMoneyIc3, "ivMoneyIc");
                 ivMoneyIc3.setVisibility(0);
                 setXVisible(false);
                 this.isHasCost = true;
-                str = "Открыть за " + casesInfoModel.getCost();
+                string = this.targetActivity.getString(ru.mrlargha.feature.arizona.cases.R.string.cases_open_for, new Object[]{String.valueOf(casesInfoModel.getCost())});
             }
         }
-        textView.setText(str);
+        textView.setText(string);
     }
 
     private final void setXVisible(boolean z) {
@@ -273,12 +275,14 @@ public final class CasesMainPage implements CasesBasePage {
             Integer cost = casesInfoModel.getCost();
             double intValue = (cost != null ? cost.intValue() : 0) * (casesInfoModel.getDiscount() / 100.0d);
             Integer cost2 = casesInfoModel.getCost();
-            arizonaCasesMainPageBinding.tvOpenCase.setText("Открыть за " + ((int) ((cost2 != null ? cost2.intValue() : 0) - intValue)));
+            arizonaCasesMainPageBinding.tvOpenCase.setText(this.targetActivity.getString(ru.mrlargha.feature.arizona.cases.R.string.cases_open_for, new Object[]{String.valueOf((int) ((cost2 != null ? cost2.intValue() : 0) - intValue))}));
             return;
         }
         TextView textView = arizonaCasesMainPageBinding.tvOpenCase;
+        Activity activity = this.targetActivity;
+        int i = ru.mrlargha.feature.arizona.cases.R.string.cases_open_for;
         Integer cost3 = casesInfoModel.getCost();
-        textView.setText("Открыть за " + (cost3 != null ? Integer.valueOf(cost3.intValue()) : null));
+        textView.setText(activity.getString(i, new Object[]{String.valueOf(cost3 != null ? Integer.valueOf(cost3.intValue()) : null)}));
         CardView discountContainer2 = arizonaCasesMainPageBinding.discountContainer;
         Intrinsics.checkNotNullExpressionValue(discountContainer2, "discountContainer");
         discountContainer2.setVisibility(8);
@@ -345,7 +349,9 @@ public final class CasesMainPage implements CasesBasePage {
     public static final void setupListeners$lambda$0$3(ArizonaCasesMainPageBinding arizonaCasesMainPageBinding, CasesMainPage casesMainPage, View view) {
         CharSequence text = arizonaCasesMainPageBinding.tvOpenCase.getText();
         Intrinsics.checkNotNullExpressionValue(text, "getText(...)");
-        if (StringsKt.contains$default(text, (CharSequence) "Недоступно", false, 2, (Object) null)) {
+        String string = casesMainPage.targetActivity.getString(ru.mrlargha.feature.arizona.cases.R.string.cases_unavailable);
+        Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+        if (StringsKt.contains$default(text, (CharSequence) string, false, 2, (Object) null)) {
             return;
         }
         casesMainPage.notifier.clickedWrapper(UIElementID.CASES.getId(), casesMainPage.x, 0);

@@ -1,18 +1,24 @@
 package com.arizona.game;
 
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Process;
 import android.util.Log;
 import android.view.MotionEvent;
 import com.google.android.vending.expansion.downloader.Helpers;
 import com.wardrumstudios.utils.WarDownloaderService;
 import com.wardrumstudios.utils.WarMedia;
 import java.io.File;
+import java.lang.reflect.Field;
+import java.util.List;
 import java.util.Objects;
 /* loaded from: classes3.dex */
 public abstract class GTASAInternal extends WarMedia {
+    private static final int LEGACY_TOTAL_MEMORY_MB = 256;
+    private static final String TAG = "GTASAInternal";
     static boolean UseAndroidHal = false;
     static String vmVersion;
     boolean IsAmazonBuild = false;
@@ -45,7 +51,7 @@ public abstract class GTASAInternal extends WarMedia {
                 System.loadLibrary("bass_ssl");
             }
         } catch (RuntimeException e) {
-            Log.d("GTASAInternal", e.toString());
+            Log.d(TAG, e.toString());
         }
     }
 
@@ -54,10 +60,95 @@ public abstract class GTASAInternal extends WarMedia {
         super.onActivityResult(paramInt1, paramInt2, paramIntent);
     }
 
+    @Override // com.wardrumstudios.utils.WarMedia
+    public int GetMemoryInfo(boolean refreshRunningProcesses) {
+        int[] warMediaIntArrayField;
+        ActivityManager activityManager = (ActivityManager) getSystemService("activity");
+        if (activityManager == null) {
+            Log.w(TAG, "GetMemoryInfo: ActivityManager is unavailable");
+            return getWarMediaIntField("availableMemory", 0);
+        }
+        ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+        activityManager.getMemoryInfo(memoryInfo);
+        int i = (int) ((memoryInfo.availMem / 1024) / 1024);
+        int i2 = (int) (memoryInfo.threshold / 1024);
+        setWarMediaField("mgr", activityManager);
+        setWarMediaField("memInfo", memoryInfo);
+        setWarMediaField("memoryThreshold", Integer.valueOf(i2));
+        setWarMediaField("availableMemory", Integer.valueOf(i));
+        setWarMediaField("totalMemory", Integer.valueOf((int) ((memoryInfo.totalMem / 1024) / 1024)));
+        if (refreshRunningProcesses) {
+            warMediaIntArrayField = getRunningProcessIds(activityManager);
+        } else {
+            warMediaIntArrayField = getWarMediaIntArrayField("myPid");
+        }
+        if (warMediaIntArrayField != null && warMediaIntArrayField.length > 0) {
+            setWarMediaField("myPid", warMediaIntArrayField);
+            try {
+                activityManager.getProcessMemoryInfo(warMediaIntArrayField);
+                return i;
+            } catch (RuntimeException e) {
+                Log.w(TAG, "GetMemoryInfo: unable to query process memory info", e);
+            }
+        }
+        return i;
+    }
+
+    private int[] getRunningProcessIds(ActivityManager activityManager) {
+        try {
+            List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = activityManager.getRunningAppProcesses();
+            if (runningAppProcesses == null || runningAppProcesses.isEmpty()) {
+                return new int[]{Process.myPid()};
+            }
+            int[] iArr = new int[runningAppProcesses.size()];
+            for (int i = 0; i < runningAppProcesses.size(); i++) {
+                iArr[i] = runningAppProcesses.get(i).pid;
+            }
+            return iArr;
+        } catch (RuntimeException e) {
+            Log.w(TAG, "GetMemoryInfo: unable to read running processes", e);
+            return new int[]{Process.myPid()};
+        }
+    }
+
+    private int[] getWarMediaIntArrayField(String fieldName) {
+        Object warMediaField = getWarMediaField(fieldName);
+        if (warMediaField instanceof int[]) {
+            return (int[]) warMediaField;
+        }
+        return null;
+    }
+
+    private int getWarMediaIntField(String fieldName, int defaultValue) {
+        Object warMediaField = getWarMediaField(fieldName);
+        return warMediaField instanceof Integer ? ((Integer) warMediaField).intValue() : defaultValue;
+    }
+
+    private Object getWarMediaField(String fieldName) {
+        try {
+            Field declaredField = WarMedia.class.getDeclaredField(fieldName);
+            declaredField.setAccessible(true);
+            return declaredField.get(this);
+        } catch (IllegalAccessException | NoSuchFieldException e) {
+            Log.w(TAG, "Unable to read WarMedia field: " + fieldName, e);
+            return null;
+        }
+    }
+
+    private void setWarMediaField(String fieldName, Object value) {
+        try {
+            Field declaredField = WarMedia.class.getDeclaredField(fieldName);
+            declaredField.setAccessible(true);
+            declaredField.set(this, value);
+        } catch (IllegalAccessException | NoSuchFieldException e) {
+            Log.w(TAG, "Unable to update WarMedia field: " + fieldName, e);
+        }
+    }
+
     @Override // com.wardrumstudios.utils.WarMedia, com.wardrumstudios.utils.WarGamepad, com.wardrumstudios.utils.WarBilling, com.wardrumstudios.utils.WarBase, com.nvidia.devtech.NvEventQueueActivity, android.app.Activity
     public void onCreate(Bundle paramBundle) {
         System.out.println("Build Type: release");
-        System.out.println("Version: v17.1.5");
+        System.out.println("Version: v17.1.7");
         this.HELLO_ID = 123324;
         this.appIntent = new Intent(this, GTASA.class);
         this.appTickerText = "GTA3 San Andreas";

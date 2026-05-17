@@ -12,7 +12,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SkySnapshot.kt */
 @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b!\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0081\b\u0018\u0000 82\u00020\u0001:\u000278BW\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\u0006\u0010\u0007\u001a\u00020\u0005\u0012\u0006\u0010\b\u001a\u00020\u0005\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\u0005\u0012\u0006\u0010\f\u001a\u00020\u0005\u0012\u0006\u0010\r\u001a\u00020\u000e\u0012\u0006\u0010\u000f\u001a\u00020\u0010¢\u0006\u0004\b\u0011\u0010\u0012J\t\u0010#\u001a\u00020\u0003HÆ\u0003J\t\u0010$\u001a\u00020\u0005HÆ\u0003J\t\u0010%\u001a\u00020\u0005HÆ\u0003J\t\u0010&\u001a\u00020\u0005HÆ\u0003J\t\u0010'\u001a\u00020\u0005HÆ\u0003J\t\u0010(\u001a\u00020\nHÆ\u0003J\t\u0010)\u001a\u00020\u0005HÆ\u0003J\t\u0010*\u001a\u00020\u0005HÆ\u0003J\t\u0010+\u001a\u00020\u000eHÆ\u0003J\u0010\u0010,\u001a\u00020\u0010HÆ\u0003¢\u0006\u0004\b-\u0010!Jt\u0010.\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00052\b\b\u0002\u0010\u0007\u001a\u00020\u00052\b\b\u0002\u0010\b\u001a\u00020\u00052\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\u00052\b\b\u0002\u0010\f\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u0010HÆ\u0001¢\u0006\u0004\b/\u00100J\u0014\u00101\u001a\u0002022\b\u00103\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u00104\u001a\u00020\u0003HÖ\u0081\u0004J\n\u00105\u001a\u000206HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0011\u0010\u0006\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0016R\u0011\u0010\u0007\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0016R\u0011\u0010\b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0016R\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u0011\u0010\u000b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u0016R\u0011\u0010\f\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0016R\u0011\u0010\r\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0013\u0010\u000f\u001a\u00020\u0010¢\u0006\n\n\u0002\u0010\"\u001a\u0004\b \u0010!¨\u00069"}, d2 = {"Lcom/skydoves/cloudy/internals/SkySnapshot;", "", "radius", "", "offsetX", "", "offsetY", "childWidth", "childHeight", "direction", "Lcom/skydoves/cloudy/internals/SkySnapshot$ProgressiveDirection;", "fadeStart", "fadeEnd", "easing", "Landroidx/compose/animation/core/Easing;", "tintColor", "Landroidx/compose/ui/graphics/Color;", "<init>", "(IFFFFLcom/skydoves/cloudy/internals/SkySnapshot$ProgressiveDirection;FFLandroidx/compose/animation/core/Easing;JLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getRadius", "()I", "getOffsetX", "()F", "getOffsetY", "getChildWidth", "getChildHeight", "getDirection", "()Lcom/skydoves/cloudy/internals/SkySnapshot$ProgressiveDirection;", "getFadeStart", "getFadeEnd", "getEasing", "()Landroidx/compose/animation/core/Easing;", "getTintColor-0d7_KjU", "()J", "J", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component10-0d7_KjU", "copy", "copy-fnh65Uc", "(IFFFFLcom/skydoves/cloudy/internals/SkySnapshot$ProgressiveDirection;FFLandroidx/compose/animation/core/Easing;J)Lcom/skydoves/cloudy/internals/SkySnapshot;", "equals", "", "other", "hashCode", "toString", "", "ProgressiveDirection", "Companion", "cloudy_release"}, k = 1, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SkySnapshot {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
@@ -32,7 +32,7 @@ public final class SkySnapshot {
     }
 
     /* renamed from: copy-fnh65Uc$default  reason: not valid java name */
-    public static /* synthetic */ SkySnapshot m9144copyfnh65Uc$default(SkySnapshot skySnapshot, int i, float f, float f2, float f3, float f4, ProgressiveDirection progressiveDirection, float f5, float f6, Easing easing, long j, int i2, Object obj) {
+    public static /* synthetic */ SkySnapshot m9163copyfnh65Uc$default(SkySnapshot skySnapshot, int i, float f, float f2, float f3, float f4, ProgressiveDirection progressiveDirection, float f5, float f6, Easing easing, long j, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             i = skySnapshot.radius;
         }
@@ -70,7 +70,7 @@ public final class SkySnapshot {
         float f8 = f5;
         float f9 = f4;
         float f10 = f2;
-        return skySnapshot.m9146copyfnh65Uc(i, f, f10, f3, f9, progressiveDirection2, f8, f7, easing2, j2);
+        return skySnapshot.m9165copyfnh65Uc(i, f, f10, f3, f9, progressiveDirection2, f8, f7, easing2, j2);
     }
 
     public final int component1() {
@@ -78,7 +78,7 @@ public final class SkySnapshot {
     }
 
     /* renamed from: component10-0d7_KjU  reason: not valid java name */
-    public final long m9145component100d7_KjU() {
+    public final long m9164component100d7_KjU() {
         return this.tintColor;
     }
 
@@ -115,7 +115,7 @@ public final class SkySnapshot {
     }
 
     /* renamed from: copy-fnh65Uc  reason: not valid java name */
-    public final SkySnapshot m9146copyfnh65Uc(int i, float f, float f2, float f3, float f4, ProgressiveDirection direction, float f5, float f6, Easing easing, long j) {
+    public final SkySnapshot m9165copyfnh65Uc(int i, float f, float f2, float f3, float f4, ProgressiveDirection direction, float f5, float f6, Easing easing, long j) {
         Intrinsics.checkNotNullParameter(direction, "direction");
         Intrinsics.checkNotNullParameter(easing, "easing");
         return new SkySnapshot(i, f, f2, f3, f4, direction, f5, f6, easing, j, null);
@@ -192,7 +192,7 @@ public final class SkySnapshot {
     }
 
     /* renamed from: getTintColor-0d7_KjU  reason: not valid java name */
-    public final long m9147getTintColor0d7_KjU() {
+    public final long m9166getTintColor0d7_KjU() {
         return this.tintColor;
     }
 
@@ -200,7 +200,7 @@ public final class SkySnapshot {
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: SkySnapshot.kt */
     @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0007\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007¨\u0006\b"}, d2 = {"Lcom/skydoves/cloudy/internals/SkySnapshot$ProgressiveDirection;", "", "<init>", "(Ljava/lang/String;I)V", "NONE", "TOP_TO_BOTTOM", "BOTTOM_TO_TOP", "EDGES", "cloudy_release"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class ProgressiveDirection {
         private static final /* synthetic */ EnumEntries $ENTRIES;
         private static final /* synthetic */ ProgressiveDirection[] $VALUES;
@@ -237,7 +237,7 @@ public final class SkySnapshot {
 
     /* compiled from: SkySnapshot.kt */
     @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003JE\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\t2\u0006\u0010\u000b\u001a\u00020\t2\u0006\u0010\f\u001a\u00020\t2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010¢\u0006\u0004\b\u0011\u0010\u0012¨\u0006\u0013"}, d2 = {"Lcom/skydoves/cloudy/internals/SkySnapshot$Companion;", "", "<init>", "()V", "fromProgressive", "Lcom/skydoves/cloudy/internals/SkySnapshot;", "radius", "", "offsetX", "", "offsetY", "childWidth", "childHeight", "progressive", "Lcom/skydoves/cloudy/CloudyProgressive;", "tintColor", "Landroidx/compose/ui/graphics/Color;", "fromProgressive-PE3pjmc", "(IFFFFLcom/skydoves/cloudy/CloudyProgressive;J)Lcom/skydoves/cloudy/internals/SkySnapshot;", "cloudy_release"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -247,7 +247,7 @@ public final class SkySnapshot {
         }
 
         /* renamed from: fromProgressive-PE3pjmc  reason: not valid java name */
-        public final SkySnapshot m9148fromProgressivePE3pjmc(int i, float f, float f2, float f3, float f4, CloudyProgressive progressive, long j) {
+        public final SkySnapshot m9167fromProgressivePE3pjmc(int i, float f, float f2, float f3, float f4, CloudyProgressive progressive, long j) {
             ProgressiveParams progressiveParams;
             ProgressiveParams progressiveParams2;
             Intrinsics.checkNotNullParameter(progressive, "progressive");

@@ -7,11 +7,11 @@ import com.android.billingclient.api.QueryProductDetailsResult;
 import io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider;
 import java.util.List;
 import kotlin.jvm.functions.Function0;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class f implements ProductDetailsResponseListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f356a;
+    public final String f361a;
     public final BillingClient b;
     public final UtilsProvider c;
     public final Function0 d;
@@ -20,7 +20,7 @@ public final class f implements ProductDetailsResponseListener {
     public final n g;
 
     public f(String str, BillingClient billingClient, UtilsProvider utilsProvider, h hVar, List list, d dVar, n nVar) {
-        this.f356a = str;
+        this.f361a = str;
         this.b = billingClient;
         this.c = utilsProvider;
         this.d = hVar;
@@ -29,6 +29,7 @@ public final class f implements ProductDetailsResponseListener {
         this.g = nVar;
     }
 
+    @Override // com.android.billingclient.api.ProductDetailsResponseListener
     public final void onProductDetailsResponse(BillingResult billingResult, QueryProductDetailsResult queryProductDetailsResult) {
         this.c.getWorkerExecutor().execute(new e(this, billingResult, queryProductDetailsResult));
     }

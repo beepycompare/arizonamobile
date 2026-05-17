@@ -57,11 +57,9 @@ public class ButtonBarLayout extends LinearLayout {
             z = true;
         }
         super.onMeasure(i3, i2);
-        if (this.mAllowStacking && !isStacked()) {
-            if ((getMeasuredWidthAndState() & (-16777216)) == 16777216) {
-                setStacked(true);
-                z = true;
-            }
+        if (this.mAllowStacking && !isStacked() && (getMeasuredWidthAndState() & (-16777216)) == 16777216) {
+            setStacked(true);
+            z = true;
         }
         if (z) {
             super.onMeasure(i, i2);

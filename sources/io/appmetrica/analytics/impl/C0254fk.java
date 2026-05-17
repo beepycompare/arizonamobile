@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public final class C0254fk implements X6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f997a = "service_main.db";
+    public final String f1002a = "service_main.db";
     public final String b = "metrica_data.db";
 
     @Override // io.appmetrica.analytics.impl.X6
@@ -14,6 +14,6 @@ public final class C0254fk implements X6 {
 
     @Override // io.appmetrica.analytics.impl.X6
     public final String b() {
-        return this.f997a;
+        return this.f1002a;
     }
 }

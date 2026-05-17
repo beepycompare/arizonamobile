@@ -6,14 +6,14 @@ import android.os.ResultReceiver;
 public final class C0666w4 implements InterfaceC0250fg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ResultReceiver f1281a;
+    public final /* synthetic */ ResultReceiver f1286a;
 
     public C0666w4(ResultReceiver resultReceiver) {
-        this.f1281a = resultReceiver;
+        this.f1286a = resultReceiver;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0250fg
     public final void a(C0454ng c0454ng) {
-        ResultReceiverC0603tg.a(this.f1281a, c0454ng);
+        ResultReceiverC0603tg.a(this.f1286a, c0454ng);
     }
 }

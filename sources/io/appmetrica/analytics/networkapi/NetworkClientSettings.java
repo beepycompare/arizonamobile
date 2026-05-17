@@ -9,7 +9,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class NetworkClientSettings {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Integer f1384a;
+    private final Integer f1389a;
     private final Integer b;
     private final SSLSocketFactory c;
     private final Boolean d;
@@ -21,7 +21,7 @@ public final class NetworkClientSettings {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private Integer f1385a;
+        private Integer f1390a;
         private Integer b;
         private SSLSocketFactory c;
         private Boolean d;
@@ -29,11 +29,11 @@ public final class NetworkClientSettings {
         private int f = Integer.MAX_VALUE;
 
         public final NetworkClientSettings build() {
-            return new NetworkClientSettings(this.f1385a, this.b, this.c, this.d, this.e, this.f, null);
+            return new NetworkClientSettings(this.f1390a, this.b, this.c, this.d, this.e, this.f, null);
         }
 
         public final Builder withConnectTimeout(int i) {
-            this.f1385a = Integer.valueOf(i);
+            this.f1390a = Integer.valueOf(i);
             return this;
         }
 
@@ -68,7 +68,7 @@ public final class NetworkClientSettings {
     }
 
     public final Integer getConnectTimeout() {
-        return this.f1384a;
+        return this.f1389a;
     }
 
     public final Boolean getInstanceFollowRedirects() {
@@ -92,11 +92,11 @@ public final class NetworkClientSettings {
     }
 
     public String toString() {
-        return "NetworkClientSettings(connectTimeout=" + this.f1384a + ", readTimeout=" + this.b + ", sslSocketFactory=" + this.c + ", useCaches=" + this.d + ", instanceFollowRedirects=" + this.e + ", maxResponseSize=" + this.f + ')';
+        return "NetworkClientSettings(connectTimeout=" + this.f1389a + ", readTimeout=" + this.b + ", sslSocketFactory=" + this.c + ", useCaches=" + this.d + ", instanceFollowRedirects=" + this.e + ", maxResponseSize=" + this.f + ')';
     }
 
     private NetworkClientSettings(Integer num, Integer num2, SSLSocketFactory sSLSocketFactory, Boolean bool, Boolean bool2, int i) {
-        this.f1384a = num;
+        this.f1389a = num;
         this.b = num2;
         this.c = sSLSocketFactory;
         this.d = bool;

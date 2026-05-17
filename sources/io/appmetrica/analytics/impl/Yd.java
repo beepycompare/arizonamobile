@@ -5,16 +5,16 @@ import java.util.Collection;
 public final class Yd implements so {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f866a;
+    public final String f871a;
 
     public Yd(String str) {
-        this.f866a = str;
+        this.f871a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.so
     public final qo a(Collection<Object> collection) {
         if (lo.a((Collection) collection)) {
-            return new qo(this, false, this.f866a + " is null or empty.");
+            return new qo(this, false, this.f871a + " is null or empty.");
         }
         return new qo(this, true, "");
     }

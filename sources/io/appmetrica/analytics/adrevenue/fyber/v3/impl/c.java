@@ -16,15 +16,15 @@ import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.HashMap;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class c implements ModuleAdRevenueProcessor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final b f296a;
+    public final b f301a;
     public final ClientContext b;
 
     public c(b bVar, ClientContext clientContext) {
-        this.f296a = bVar;
+        this.f301a = bVar;
         this.b = clientContext;
     }
 
@@ -39,14 +39,14 @@ public final class c implements ModuleAdRevenueProcessor {
         if (ReflectionUtils.isArgumentsOfClasses(objArr, ImpressionData.class)) {
             ImpressionData impressionData = (ImpressionData) objArr[0];
             InternalClientModuleFacade internalClientModuleFacade = this.b.getInternalClientModuleFacade();
-            this.f296a.getClass();
+            this.f301a.getClass();
             PlacementType placementType = impressionData.getPlacementType();
             BigDecimal valueOf = BigDecimal.valueOf(WrapUtils.getFiniteDoubleOrDefault(impressionData.getNetPayout(), FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE));
             Currency currency = Currency.getInstance(impressionData.getCurrency());
             if (placementType == null) {
                 moduleAdType = null;
             } else {
-                int i = a.f295a[placementType.ordinal()];
+                int i = a.f300a[placementType.ordinal()];
                 if (i == 1) {
                     moduleAdType = ModuleAdType.BANNER;
                 } else if (i == 2) {

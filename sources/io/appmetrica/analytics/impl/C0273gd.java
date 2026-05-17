@@ -31,14 +31,14 @@ public final class C0273gd extends Rg {
 
     @Override // io.appmetrica.analytics.impl.Rg
     public final boolean a(P5 p5) {
-        if (this.f767a.t.c()) {
+        if (this.f772a.t.c()) {
             ArrayList arrayList = this.b;
             if (!(arrayList instanceof Collection) || !arrayList.isEmpty()) {
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
                     Pair pair = (Pair) it.next();
                     Tc tc = (Tc) pair.component2();
-                    if (((ModuleServiceEventHandler) pair.component1()).handle(new Wc(tc.b, tc.f797a, new Vc(tc.d, tc.c, p5)), p5)) {
+                    if (((ModuleServiceEventHandler) pair.component1()).handle(new Wc(tc.b, tc.f802a, new Vc(tc.d, tc.c, p5)), p5)) {
                         return true;
                     }
                 }

@@ -5,13 +5,13 @@ import java.util.Set;
 public final class O8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f721a;
+    public boolean f726a;
     public Set b;
     public int c;
     public int d;
 
     public O8(boolean z, int i, int i2, Set set) {
-        this.f721a = z;
+        this.f726a = z;
         this.b = set;
         this.c = i;
         this.d = i2;

@@ -2139,7 +2139,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
             return;
         }
         firstSessionDelayManager.c = 4;
-        firstSessionDelayManager.f230a.initI();
+        firstSessionDelayManager.f235a.initI();
         ArrayList arrayList = firstSessionDelayManager.b;
         int size = arrayList.size();
         int i = 0;
@@ -2196,12 +2196,12 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         readActivityStateI(adjustConfig.context);
         readEventMetadataI(adjustConfig.context);
         FirstSessionDelayManager firstSessionDelayManager = this.firstSessionDelayManager;
-        if (firstSessionDelayManager.f230a.getActivityState() == null && firstSessionDelayManager.f230a.getAdjustConfig().isFirstSessionDelayEnabled) {
+        if (firstSessionDelayManager.f235a.getActivityState() == null && firstSessionDelayManager.f235a.getAdjustConfig().isFirstSessionDelayEnabled) {
             firstSessionDelayManager.c = 3;
             return;
         }
         firstSessionDelayManager.c = 2;
-        firstSessionDelayManager.f230a.initI();
+        firstSessionDelayManager.f235a.initI();
         ArrayList arrayList = firstSessionDelayManager.b;
         int size = arrayList.size();
         int i = 0;
@@ -2332,7 +2332,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         if (firstSessionDelayManager.c != 3) {
             return;
         }
-        firstSessionDelayManager.f230a.getAdjustConfig().coppaComplianceEnabled = z;
+        firstSessionDelayManager.f235a.getAdjustConfig().coppaComplianceEnabled = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -2353,7 +2353,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         if (firstSessionDelayManager.c != 3) {
             return;
         }
-        firstSessionDelayManager.f230a.getAdjustConfig().externalDeviceId = str;
+        firstSessionDelayManager.f235a.getAdjustConfig().externalDeviceId = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -2374,7 +2374,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         if (firstSessionDelayManager.c != 3) {
             return;
         }
-        firstSessionDelayManager.f230a.getAdjustConfig().playStoreKidsComplianceEnabled = z;
+        firstSessionDelayManager.f235a.getAdjustConfig().playStoreKidsComplianceEnabled = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

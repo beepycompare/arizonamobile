@@ -6,10 +6,10 @@ public final class Io extends Location {
     public static final /* synthetic */ int b = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f633a;
+    public final String f638a;
 
     public Io(Location location, String str) {
         super(location);
-        this.f633a = str;
+        this.f638a = str;
     }
 }

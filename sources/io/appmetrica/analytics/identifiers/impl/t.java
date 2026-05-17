@@ -1,9 +1,9 @@
 package io.appmetrica.analytics.identifiers.impl;
 
 import android.os.Binder;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class t extends Binder implements u {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int f456a = 0;
+    public static final /* synthetic */ int f461a = 0;
 }

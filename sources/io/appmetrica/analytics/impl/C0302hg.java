@@ -8,11 +8,11 @@ import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 public final class C0302hg implements InstallReferrerStateListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0327ig f1028a;
+    public final /* synthetic */ C0327ig f1033a;
     public final /* synthetic */ InterfaceC0578sg b;
 
     public C0302hg(C0327ig c0327ig, InterfaceC0578sg interfaceC0578sg) {
-        this.f1028a = c0327ig;
+        this.f1033a = c0327ig;
         this.b = interfaceC0578sg;
     }
 
@@ -31,9 +31,9 @@ public final class C0302hg implements InstallReferrerStateListener {
 
     @Override // com.android.installreferrer.api.InstallReferrerStateListener
     public final void onInstallReferrerSetupFinished(int i) {
-        final C0327ig c0327ig = this.f1028a;
+        final C0327ig c0327ig = this.f1033a;
         if (i == 0) {
-            ICommonExecutor iCommonExecutor = c0327ig.f1045a;
+            ICommonExecutor iCommonExecutor = c0327ig.f1050a;
             final InterfaceC0578sg interfaceC0578sg = this.b;
             iCommonExecutor.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.hg$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable

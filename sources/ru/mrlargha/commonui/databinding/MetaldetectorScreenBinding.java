@@ -13,7 +13,7 @@ import androidx.viewbinding.ViewBindings;
 import com.google.android.material.button.MaterialButton;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.elements.metaldetector.LocatorView;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class MetaldetectorScreenBinding implements ViewBinding {
     public final MaterialButton digButton;
     public final Guideline guideline2;

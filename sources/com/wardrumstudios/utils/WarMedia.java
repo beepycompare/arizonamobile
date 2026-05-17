@@ -91,7 +91,7 @@ import java.util.Locale;
 import java.util.UUID;
 import java.util.regex.Pattern;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnSeekCompleteListener, MediaPlayer.OnErrorListener, IDownloaderClient {
     static final int REQUEST_READ_EXTERNAL_STORAGE = 8001;
     AudioManager audioManager;
@@ -275,7 +275,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.wardrumstudios.utils.WarMedia$1  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class AnonymousClass1 implements Runnable {
         final /* synthetic */ Activity val$myActivity;
 
@@ -307,7 +307,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.wardrumstudios.utils.WarMedia$2  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class AnonymousClass2 implements Runnable {
         final /* synthetic */ Activity val$myActivity;
 
@@ -337,7 +337,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     class PoolInfo {
         float duration;
         String filename;
@@ -349,7 +349,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class XAPKFile {
         public final long mFileSize;
         public final int mFileVersion;

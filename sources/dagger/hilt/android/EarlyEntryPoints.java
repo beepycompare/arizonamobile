@@ -10,7 +10,7 @@ import dagger.hilt.internal.Preconditions;
 import dagger.hilt.internal.TestSingletonComponentManager;
 import java.lang.annotation.Annotation;
 import javax.annotation.Nonnull;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class EarlyEntryPoints {
     @Nonnull
     public static <T> T get(Context applicationContext, Class<T> entryPoint) {

@@ -1,8 +1,8 @@
 package com.pierfrancescosoffritti.androidyoutubeplayer;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class R {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class attr {
         public static int autoPlay = 0x7f040051;
         public static int enableAutomaticInitialization = 0x7f04022d;
@@ -13,15 +13,15 @@ public final class R {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class id {
-        public static int view_tree_lifecycle_owner = 0x7f0a1078;
+        public static int view_tree_lifecycle_owner = 0x7f0a105e;
 
         private id() {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class raw {
         public static int ayp_youtube_player = 0x7f110000;
 
@@ -29,7 +29,7 @@ public final class R {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class styleable {
         public static int[] YouTubePlayerView = {com.arizona21.game.R.attr.autoPlay, com.arizona21.game.R.attr.enableAutomaticInitialization, com.arizona21.game.R.attr.handleNetworkEvents, com.arizona21.game.R.attr.videoId};
         public static int YouTubePlayerView_autoPlay = 0x00000000;

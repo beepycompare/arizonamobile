@@ -1,6 +1,7 @@
 package ru.mrlargha.arizona.rating;
 
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
+import android.app.Activity;
+import android.widget.TextView;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -11,11 +12,12 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
+import ru.mrlargha.feature.arizona.item.rating.R;
 import ru.mrlargha.feature.arizona.item.rating.databinding.RatingScreenBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ItemRatingScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.arizona.rating.ItemRatingScreen$search$1", f = "ItemRatingScreen.kt", i = {}, l = {184, 185}, m = "invokeSuspend", n = {}, nl = {185, DownloaderService.STATUS_WAITING_TO_RETRY}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.arizona.rating.ItemRatingScreen$search$1", f = "ItemRatingScreen.kt", i = {}, l = {177, 178}, m = "invokeSuspend", n = {}, nl = {178, 187}, s = {}, v = 2)
 /* loaded from: classes5.dex */
 public final class ItemRatingScreen$search$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $quality;
@@ -117,6 +119,7 @@ public final class ItemRatingScreen$search$1 extends SuspendLambda implements Fu
             List list;
             RatingScreenBinding ratingScreenBinding2;
             RatingScreenBinding ratingScreenBinding3;
+            Activity targetActivity;
             List list2;
             IntrinsicsKt.getCOROUTINE_SUSPENDED();
             if (this.label == 0) {
@@ -133,7 +136,9 @@ public final class ItemRatingScreen$search$1 extends SuspendLambda implements Fu
                     ratingScreenBinding2 = itemRatingScreen.binding;
                     ratingScreenBinding2.searchNotFound.setVisibility(0);
                     ratingScreenBinding3 = this.this$0.binding;
-                    ratingScreenBinding3.searchText.setText("Упс.. Транспорт не найден");
+                    TextView textView = ratingScreenBinding3.searchText;
+                    targetActivity = this.this$0.getTargetActivity();
+                    textView.setText(targetActivity.getString(R.string.rating_not_found_transport));
                 }
                 return Unit.INSTANCE;
             }

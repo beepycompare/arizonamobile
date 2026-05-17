@@ -3,7 +3,7 @@ package com.google.android.billing;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class SkuDetails {
     String mDescription;
     String mItemType;
@@ -14,7 +14,7 @@ public class SkuDetails {
     String mType;
 
     public SkuDetails(String str) throws JSONException {
-        this(IabHelper.ITEM_TYPE_INAPP, str);
+        this("inapp", str);
     }
 
     public SkuDetails(String str, String str2) throws JSONException {

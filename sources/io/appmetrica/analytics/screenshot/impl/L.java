@@ -16,7 +16,7 @@ import org.json.JSONObject;
 public final class L implements JsonParser {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Y f1449a;
+    public final Y f1454a;
     public final X b;
 
     public L() {
@@ -33,7 +33,7 @@ public final class L implements JsonParser {
     }
 
     public L(Y y, X x) {
-        this.f1449a = y;
+        this.f1454a = y;
         this.b = x;
     }
 
@@ -43,22 +43,22 @@ public final class L implements JsonParser {
         N n;
         P p;
         Q q;
-        boolean z = AbstractC0775o.f1481a;
-        boolean extractFeature = RemoteConfigJsonUtils.extractFeature(jSONObject, "screenshot", AbstractC0775o.f1481a);
-        Y y = this.f1449a;
+        boolean z = AbstractC0775o.f1486a;
+        boolean extractFeature = RemoteConfigJsonUtils.extractFeature(jSONObject, "screenshot", AbstractC0775o.f1486a);
+        Y y = this.f1454a;
         X x = this.b;
         x.getClass();
         JSONObject optJSONObject = jSONObject.optJSONObject("screenshot");
         if (optJSONObject == null) {
             q = new Q();
-            q.f1454a = new N();
+            q.f1459a = new N();
             q.b = new P();
             O o = new O();
             o.c = AbstractC0775o.b;
             q.c = o;
         } else {
             Q q2 = new Q();
-            x.f1458a.getClass();
+            x.f1463a.getClass();
             JSONObject optJSONObject2 = optJSONObject.optJSONObject("api_captor_config");
             O o2 = null;
             if (optJSONObject2 == null) {
@@ -67,11 +67,11 @@ public final class L implements JsonParser {
                 n = new N();
                 Boolean optBooleanOrNull = JsonUtils.optBooleanOrNull(optJSONObject2, "enabled");
                 if (optBooleanOrNull != null) {
-                    n.f1451a = optBooleanOrNull.booleanValue();
+                    n.f1456a = optBooleanOrNull.booleanValue();
                 }
             }
             if (n != null) {
-                q2.f1454a = n;
+                q2.f1459a = n;
             }
             x.b.getClass();
             JSONObject optJSONObject3 = optJSONObject.optJSONObject("service_captor_config");
@@ -81,7 +81,7 @@ public final class L implements JsonParser {
                 p = new P();
                 Boolean optBooleanOrNull2 = JsonUtils.optBooleanOrNull(optJSONObject3, "enabled");
                 if (optBooleanOrNull2 != null) {
-                    p.f1453a = optBooleanOrNull2.booleanValue();
+                    p.f1458a = optBooleanOrNull2.booleanValue();
                 }
                 Long optLongOrNull = JsonUtils.optLongOrNull(optJSONObject3, "delay_seconds");
                 if (optLongOrNull != null) {
@@ -97,7 +97,7 @@ public final class L implements JsonParser {
                 o2 = new O();
                 Boolean optBooleanOrNull3 = JsonUtils.optBooleanOrNull(optJSONObject4, "enabled");
                 if (optBooleanOrNull3 != null) {
-                    o2.f1452a = optBooleanOrNull3.booleanValue();
+                    o2.f1457a = optBooleanOrNull3.booleanValue();
                 }
                 JSONArray optJSONArray = optJSONObject4.optJSONArray("media_store_column_names");
                 if (optJSONArray != null) {

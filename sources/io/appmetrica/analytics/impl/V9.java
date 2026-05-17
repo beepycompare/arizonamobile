@@ -9,12 +9,12 @@ public final class V9 implements Parcelable {
     public static final U9 CREATOR = new U9();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Boolean f825a;
+    public final Boolean f830a;
     public final IdentifierStatus b;
     public final String c;
 
     public V9(Boolean bool, IdentifierStatus identifierStatus, String str) {
-        this.f825a = bool;
+        this.f830a = bool;
         this.b = identifierStatus;
         this.c = str;
     }
@@ -30,25 +30,25 @@ public final class V9 implements Parcelable {
         }
         if (obj instanceof V9) {
             V9 v9 = (V9) obj;
-            return Intrinsics.areEqual(this.f825a, v9.f825a) && this.b == v9.b && Intrinsics.areEqual(this.c, v9.c);
+            return Intrinsics.areEqual(this.f830a, v9.f830a) && this.b == v9.b && Intrinsics.areEqual(this.c, v9.c);
         }
         return false;
     }
 
     public final int hashCode() {
-        Boolean bool = this.f825a;
+        Boolean bool = this.f830a;
         int hashCode = (this.b.hashCode() + ((bool == null ? 0 : bool.hashCode()) * 31)) * 31;
         String str = this.c;
         return hashCode + (str != null ? str.hashCode() : 0);
     }
 
     public final String toString() {
-        return "FeaturesInternal(sslPinning=" + this.f825a + ", status=" + this.b + ", errorExplanation=" + this.c + ')';
+        return "FeaturesInternal(sslPinning=" + this.f830a + ", status=" + this.b + ", errorExplanation=" + this.c + ')';
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeValue(this.f825a);
+        parcel.writeValue(this.f830a);
         parcel.writeString(this.b.getValue());
         parcel.writeString(this.c);
     }

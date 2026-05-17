@@ -11,7 +11,6 @@ import android.text.TextUtils;
 import android.util.SparseArray;
 import androidx.collection.ArrayMap;
 import androidx.core.app.NotificationCompat;
-import androidx.media3.exoplayer.Renderer;
 import androidx.privacysandbox.ads.adservices.java.measurement.MeasurementManagerFutures;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.CollectionUtils;
@@ -1406,7 +1405,7 @@ public final class zzlj extends zzg {
                     while (!z) {
                         zzicVar.zzaV().zzk().zza("[sgtm] Getting upload batches from service (FE)");
                         final AtomicReference atomicReference = new AtomicReference();
-                        zzicVar.zzaW().zzk(atomicReference, Renderer.DEFAULT_DURATION_TO_PROGRESS_US, "[sgtm] Getting upload batches", new Runnable() { // from class: com.google.android.gms.measurement.internal.zzli
+                        zzicVar.zzaW().zzk(atomicReference, 10000L, "[sgtm] Getting upload batches", new Runnable() { // from class: com.google.android.gms.measurement.internal.zzli
                             @Override // java.lang.Runnable
                             public final /* synthetic */ void run() {
                                 zzlj.this.zzu.zzt().zzx(atomicReference, zzoo.zza(zzls.SGTM_CLIENT));
@@ -1480,7 +1479,7 @@ public final class zzlj extends zzg {
                     zzb();
                     zzicVar.zzaV().zzk().zza("Getting trigger URIs (FE)");
                     final AtomicReference atomicReference = new AtomicReference();
-                    zzicVar.zzaW().zzk(atomicReference, Renderer.DEFAULT_DURATION_TO_PROGRESS_US, "get trigger URIs", new Runnable() { // from class: com.google.android.gms.measurement.internal.zzla
+                    zzicVar.zzaW().zzk(atomicReference, 10000L, "get trigger URIs", new Runnable() { // from class: com.google.android.gms.measurement.internal.zzla
                         @Override // java.lang.Runnable
                         public final /* synthetic */ void run() {
                             zzlj zzljVar = zzlj.this;

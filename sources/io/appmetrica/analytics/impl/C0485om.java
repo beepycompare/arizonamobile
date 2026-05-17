@@ -1,6 +1,5 @@
 package io.appmetrica.analytics.impl;
 
-import androidx.media3.exoplayer.Renderer;
 import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
 import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
 import io.appmetrica.analytics.protobuf.nano.InternalNano;
@@ -14,7 +13,7 @@ public final class C0485om extends MessageNano {
     public static volatile C0485om[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f1161a;
+    public long f1166a;
 
     public C0485om() {
         a();
@@ -32,7 +31,7 @@ public final class C0485om extends MessageNano {
     }
 
     public final C0485om a() {
-        this.f1161a = Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
+        this.f1166a = 10000L;
         this.cachedSize = -1;
         return this;
     }
@@ -40,14 +39,14 @@ public final class C0485om extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        long j = this.f1161a;
-        return j != Renderer.DEFAULT_DURATION_TO_PROGRESS_US ? CodedOutputByteBufferNano.computeInt64Size(1, j) + computeSerializedSize : computeSerializedSize;
+        long j = this.f1166a;
+        return j != 10000 ? CodedOutputByteBufferNano.computeInt64Size(1, j) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        long j = this.f1161a;
-        if (j != Renderer.DEFAULT_DURATION_TO_PROGRESS_US) {
+        long j = this.f1166a;
+        if (j != 10000) {
             codedOutputByteBufferNano.writeInt64(1, j);
         }
         super.writeTo(codedOutputByteBufferNano);
@@ -65,7 +64,7 @@ public final class C0485om extends MessageNano {
                     break;
                 }
             } else {
-                this.f1161a = codedInputByteBufferNano.readInt64();
+                this.f1166a = codedInputByteBufferNano.readInt64();
             }
         }
         return this;

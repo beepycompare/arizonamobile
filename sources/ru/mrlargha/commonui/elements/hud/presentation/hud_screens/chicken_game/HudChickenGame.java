@@ -112,7 +112,7 @@ public final class HudChickenGame {
             final HudChickenGameToolsModel hudChickenGameToolsModel = (HudChickenGameToolsModel) obj;
             HudChickenGameToolsItemBinding hudChickenGameToolsItemBinding2 = (HudChickenGameToolsItemBinding) CollectionsKt.getOrNull(listOf, i);
             if (hudChickenGameToolsItemBinding2 != null) {
-                Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl(false) + "projects/rodina-rp/systems/pirate-event/chickengrad/bonuses/" + hudChickenGameToolsModel.getImage()).into(hudChickenGameToolsItemBinding2.ivItem);
+                Picasso.get().load(FirebaseConfigHelper.INSTANCE.getProjectResourceUrl(false) + "systems/pirate-event/chickengrad/bonuses/" + hudChickenGameToolsModel.getImage()).into(hudChickenGameToolsItemBinding2.ivItem);
                 hudChickenGameToolsItemBinding2.tvCount.setText(String.valueOf(hudChickenGameToolsModel.getCount()));
                 ImageView ivIc = hudChickenGameToolsItemBinding2.ivIc;
                 Intrinsics.checkNotNullExpressionValue(ivIc, "ivIc");

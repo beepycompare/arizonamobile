@@ -9,7 +9,7 @@ public final class Vn extends AbstractC0473oa {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0473oa
     public final void a(List<Rg> list) {
-        list.add(this.f1151a.h);
-        list.add(this.f1151a.n);
+        list.add(this.f1156a.h);
+        list.add(this.f1156a.n);
     }
 }

@@ -24,7 +24,7 @@ import kotlin.collections.CollectionsKt;
 public final class B1 implements A1, InterfaceC0562s0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f507a;
+    public boolean f512a;
     public final Context b;
     public final InterfaceC0738z1 c;
     public final C0109a4 d;
@@ -71,7 +71,7 @@ public final class B1 implements A1, InterfaceC0562s0 {
             j1.getClass();
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                j1.f636a.a(action, Integer.valueOf(J1.a(intent)));
+                j1.f641a.a(action, Integer.valueOf(J1.a(intent)));
             }
             for (Map.Entry entry : j1.b.entrySet()) {
                 I1 i1 = (I1) entry.getKey();
@@ -95,18 +95,18 @@ public final class B1 implements A1, InterfaceC0562s0 {
 
     @Override // io.appmetrica.analytics.impl.A1
     public final void onCreate() {
-        if (!this.f507a) {
+        if (!this.f512a) {
             this.g.b(this.b);
             C0448na c0448na = C0448na.I;
             synchronized (c0448na) {
                 c0448na.B.initAsync();
-                c0448na.u.a(c0448na.f1133a);
+                c0448na.u.a(c0448na.f1138a);
                 c0448na.u.a(new C0361jo(c0448na.B));
-                NetworkServiceLocator.init(c0448na.f1133a, new C0239f5(new C0506pi(c0448na.h()), new C0493p5(c0448na.f1133a)));
+                NetworkServiceLocator.init(c0448na.f1138a, new C0239f5(new C0506pi(c0448na.h()), new C0493p5(c0448na.f1138a)));
                 c0448na.l().a(c0448na.q);
                 c0448na.E();
             }
-            Wj.f841a.e();
+            Wj.f846a.e();
             C0308hm c0308hm = C0448na.I.u;
             c0308hm.b();
             C0256fm b = c0308hm.b();
@@ -123,7 +123,7 @@ public final class B1 implements A1, InterfaceC0562s0 {
             c1.getClass();
             this.f = new Sg(context, c0109a4);
             Context context2 = this.b;
-            AbstractC0613u1.f1245a.b(context2);
+            AbstractC0613u1.f1250a.b(context2);
             AppMetrica.getReporter(context2, "20799a27-fa80-4b36-b2db-0f8141f24180");
             Context context3 = this.b;
             Sg sg = this.f;
@@ -149,18 +149,18 @@ public final class B1 implements A1, InterfaceC0562s0 {
             File nativeCrashDirectory = FileUtils.getNativeCrashDirectory(context3);
             String absolutePath = nativeCrashDirectory != null ? nativeCrashDirectory.getAbsolutePath() : null;
             if (absolutePath != null) {
-                r.f723a.init(context3, new NativeCrashServiceConfig(absolutePath));
-                List<NativeCrash> allCrashes = r.f723a.getAllCrashes();
+                r.f728a.init(context3, new NativeCrashServiceConfig(absolutePath));
+                List<NativeCrash> allCrashes = r.f728a.getAllCrashes();
                 if (!allCrashes.isEmpty()) {
                     Jd b2 = r.b.b(context3, sg);
                     for (NativeCrash nativeCrash : allCrashes) {
                         b2.newCrash(nativeCrash);
                     }
                 }
-                r.f723a.setDefaultCrashHandler(r.b.a(context3, sg));
+                r.f728a.setDefaultCrashHandler(r.b.a(context3, sg));
             }
             new I5(CollectionsKt.listOf(new Yg())).run();
-            this.f507a = true;
+            this.f512a = true;
         } else {
             C0448na.I.v().a(this.b.getResources().getConfiguration());
         }
@@ -188,7 +188,7 @@ public final class B1 implements A1, InterfaceC0562s0 {
         } catch (Throwable unused) {
             bf = null;
         }
-        Integer asInteger = bf != null ? bf.f520a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
+        Integer asInteger = bf != null ? bf.f525a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
         if (asInteger != null) {
             this.h.b(asInteger.intValue());
         }
@@ -197,7 +197,7 @@ public final class B1 implements A1, InterfaceC0562s0 {
     @Override // io.appmetrica.analytics.impl.A1
     public final void reportData(int i, Bundle bundle) {
         this.j.getClass();
-        List<InterfaceC0203dk> list = (List) C0448na.I.v.f981a.get(Integer.valueOf(i));
+        List<InterfaceC0203dk> list = (List) C0448na.I.v.f986a.get(Integer.valueOf(i));
         if (list == null) {
             list = CollectionsKt.emptyList();
         }
@@ -219,7 +219,7 @@ public final class B1 implements A1, InterfaceC0562s0 {
         } catch (Throwable unused) {
             bf = null;
         }
-        Integer asInteger = bf != null ? bf.f520a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
+        Integer asInteger = bf != null ? bf.f525a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
         if (asInteger != null) {
             this.h.c(asInteger.intValue());
         }
@@ -236,7 +236,7 @@ public final class B1 implements A1, InterfaceC0562s0 {
             j1.getClass();
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                j1.f636a.a(action, Integer.valueOf(J1.a(intent)));
+                j1.f641a.a(action, Integer.valueOf(J1.a(intent)));
             }
             for (Map.Entry entry : j1.b.entrySet()) {
                 I1 i1 = (I1) entry.getKey();
@@ -250,7 +250,7 @@ public final class B1 implements A1, InterfaceC0562s0 {
     }
 
     public B1(Context context, InterfaceC0738z1 interfaceC0738z1, C0109a4 c0109a4, J1 j1, C0218ea c0218ea, C0262g2 c0262g2, C1 c1) {
-        this.f507a = false;
+        this.f512a = false;
         this.b = context;
         this.c = interfaceC0738z1;
         this.d = c0109a4;
@@ -272,11 +272,11 @@ public final class B1 implements A1, InterfaceC0562s0 {
 
     @Override // io.appmetrica.analytics.impl.A1
     public final void a(Intent intent, int i) {
-        ((C0612u0) this.c).f1244a.stopSelf(i);
+        ((C0612u0) this.c).f1249a.stopSelf(i);
     }
 
     @Override // io.appmetrica.analytics.impl.A1
     public final void a(Intent intent, int i, int i2) {
-        ((C0612u0) this.c).f1244a.stopSelf(i2);
+        ((C0612u0) this.c).f1249a.stopSelf(i2);
     }
 }

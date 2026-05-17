@@ -11,6 +11,6 @@ import kotlin.annotations.jvm.UnderMigration;
 @Nonnull
 @UnderMigration(status = MigrationStatus.STRICT)
 @Retention(RetentionPolicy.CLASS)
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public @interface NonNullApi {
 }

@@ -7,7 +7,7 @@ import dagger.hilt.EntryPoints;
 import dagger.hilt.android.components.ActivityRetainedComponent;
 import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
 import dagger.hilt.internal.GeneratedComponentManager;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ActivityComponentManager implements GeneratedComponentManager<Object> {
     protected final Activity activity;
     private final GeneratedComponentManager<ActivityRetainedComponent> activityRetainedComponentManager;
@@ -15,7 +15,7 @@ public class ActivityComponentManager implements GeneratedComponentManager<Objec
     private volatile Object component;
     private final Object componentLock = new Object();
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface ActivityComponentBuilderEntryPoint {
         ActivityComponentBuilder activityComponentBuilder();
     }

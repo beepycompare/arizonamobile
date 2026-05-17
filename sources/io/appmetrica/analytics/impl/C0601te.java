@@ -7,11 +7,11 @@ import java.util.concurrent.atomic.AtomicLong;
 public final class C0601te implements S8, InterfaceC0626ue {
 
     /* renamed from: a  reason: collision with root package name */
-    public final L6 f1237a;
+    public final L6 f1242a;
     public final AtomicLong b;
 
     public C0601te(L6 l6) {
-        this.f1237a = l6;
+        this.f1242a = l6;
         this.b = new AtomicLong(l6.a());
         l6.a(this);
     }
@@ -28,7 +28,7 @@ public final class C0601te implements S8, InterfaceC0626ue {
 
     @Override // io.appmetrica.analytics.impl.S8
     public final void a() {
-        this.b.set(this.f1237a.a());
+        this.b.set(this.f1242a.a());
     }
 
     public final long b() {

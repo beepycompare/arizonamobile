@@ -2,7 +2,7 @@ package com.airbnb.lottie.utils;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class LottieThreadFactory implements ThreadFactory {
     private static final AtomicInteger poolNumber = new AtomicInteger(1);
     private final ThreadGroup group;

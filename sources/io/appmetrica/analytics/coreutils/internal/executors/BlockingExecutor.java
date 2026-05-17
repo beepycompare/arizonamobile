@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.coreutils.internal.executors;
 
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BlockingExecutor implements Executor {
     @Override // java.util.concurrent.Executor
     public void execute(Runnable runnable) {

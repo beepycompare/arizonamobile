@@ -42,7 +42,7 @@ public final class MobilePhoneDriverOrdersAdapter extends RecyclerView.Adapter<M
         Intrinsics.checkNotNullParameter(holder, "holder");
         holder.getDriverOrder().driverClientName.setText(this.orders.get(i).getName());
         holder.getDriverOrder().driverRate.setText(String.valueOf(this.orders.get(i).getRating()));
-        holder.getDriverOrder().driverDistnace.setText(this.orders.get(i).getDistance() + " м");
+        holder.getDriverOrder().driverDistnace.setText(holder.itemView.getContext().getString(R.string.mobile_driver_distance_meters, Integer.valueOf(this.orders.get(i).getDistance())));
         holder.getDriverOrder().driverOrderItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.adapter.MobilePhoneDriverOrdersAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

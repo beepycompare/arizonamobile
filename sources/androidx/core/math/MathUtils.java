@@ -1,7 +1,7 @@
 package androidx.core.math;
 
 import androidx.collection.SieveCacheKt;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public class MathUtils {
     public static double clamp(double d, double d2, double d3) {
         return d < d2 ? d2 : d > d3 ? d3 : d;

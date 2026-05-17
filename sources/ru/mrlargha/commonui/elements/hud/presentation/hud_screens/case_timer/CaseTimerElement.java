@@ -70,8 +70,8 @@ public final class CaseTimerElement {
         }
         this.timer = null;
         Picasso picasso = Picasso.get();
-        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso.load(resourceUrl$default + "projects/arizona-rp/systems/cases/" + caseTimerInfo.getImage() + ".webp").into(this.binding.image);
+        String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso.load(projectResourceUrl$default + "systems/cases/" + caseTimerInfo.getImage() + ".webp").into(this.binding.image);
         this.binding.timer.setText(TimeConverterKt.toTimeString(caseTimerInfo.getTime()));
         final long time = caseTimerInfo.getTime() * 1000;
         this.timer = new CountDownTimer(time) { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.case_timer.CaseTimerElement$setData$1

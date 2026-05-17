@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.new_container;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.text.SpannableString;
@@ -30,17 +29,16 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.NewContainerLayoutBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: NewContainerScreen.kt */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000  2\u00020\u0001:\u0002 !B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0005H\u0002J\u0010\u0010\u001a\u001a\u00020\u00162\u0006\u0010\u001b\u001a\u00020\u001cH\u0002J\u0018\u0010\u001d\u001a\u00020\u00162\u0006\u0010\u001e\u001a\u00020\u00142\u0006\u0010\u001f\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"Lru/mrlargha/commonui/elements/new_container/NewContainerScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/NewContainerLayoutBinding;", "awardsAdapter", "Lru/mrlargha/commonui/elements/new_container/NewContainerAwardsAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "imageCdnPath", "", "colorizeTextView", "", "textView", "Landroid/widget/TextView;", "color", "setContainerInfo", "info", "Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Companion$ContainerInfo;", "onBackendMessage", "data", "subId", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 \u001b2\u00020\u0001:\u0002\u001b\u001cB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0005H\u0002J\u0010\u0010\u0015\u001a\u00020\u00112\u0006\u0010\u0016\u001a\u00020\u0017H\u0002J\u0018\u0010\u0018\u001a\u00020\u00112\u0006\u0010\u0019\u001a\u00020\u000f2\u0006\u0010\u001a\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001d"}, d2 = {"Lru/mrlargha/commonui/elements/new_container/NewContainerScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/NewContainerLayoutBinding;", "awardsAdapter", "Lru/mrlargha/commonui/elements/new_container/NewContainerAwardsAdapter;", "imageCdnPath", "", "colorizeTextView", "", "textView", "Landroid/widget/TextView;", "color", "setContainerInfo", "info", "Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Companion$ContainerInfo;", "onBackendMessageHandled", "data", "subId", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class NewContainerScreen extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
     private final NewContainerAwardsAdapter awardsAdapter;
     private final NewContainerLayoutBinding binding;
     private final String imageCdnPath;
-    private final boolean isArizonaType;
     private final ConstraintLayout layout;
-    private final SharedPreferences sharedPref;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public NewContainerScreen(Activity targetActivity, int i) {
@@ -56,14 +54,10 @@ public final class NewContainerScreen extends SAMPUIElement {
         this.binding = bind;
         NewContainerAwardsAdapter newContainerAwardsAdapter = new NewContainerAwardsAdapter();
         this.awardsAdapter = newContainerAwardsAdapter;
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
-        this.sharedPref = sharedPreferences;
-        boolean z = sharedPreferences.getBoolean("isArizonaType", false);
-        this.isArizonaType = z;
-        if (z) {
-            str = "projects/arizona-rp/systems/container/";
+        if (UtilsKt.isArizonaType()) {
+            str = "systems/container/";
         } else {
-            str = "projects/rodina-rp/systems/nft_container/";
+            str = "systems/nft_container/";
         }
         this.imageCdnPath = str;
         constraintLayout.setClickable(true);
@@ -102,9 +96,13 @@ public final class NewContainerScreen extends SAMPUIElement {
     }
 
     private final void colorizeTextView(TextView textView, int i) {
-        SpannableString spannableString = new SpannableString(r1);
-        int indexOf$default = StringsKt.indexOf$default((CharSequence) r1, "контейнера", 0, false, 6, (Object) null);
-        spannableString.setSpan(new ForegroundColorSpan(i), indexOf$default, "контейнера".length() + indexOf$default, 33);
+        String string = getTargetActivity().getString(R.string.take_container_content);
+        Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+        String substringAfterLast$default = StringsKt.substringAfterLast$default(string, '\n', (String) null, 2, (Object) null);
+        String str = string;
+        SpannableString spannableString = new SpannableString(str);
+        int indexOf$default = StringsKt.indexOf$default((CharSequence) str, substringAfterLast$default, 0, false, 6, (Object) null);
+        spannableString.setSpan(new ForegroundColorSpan(i), indexOf$default, substringAfterLast$default.length() + indexOf$default, 33);
         textView.setText(spannableString);
     }
 
@@ -116,18 +114,18 @@ public final class NewContainerScreen extends SAMPUIElement {
         newContainerLayoutBinding.actionButton.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(containerInfo.getMainColor())));
         newContainerLayoutBinding.blurContainer.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(containerInfo.getMainColor())));
         Picasso picasso = Picasso.get();
-        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
         String str = this.imageCdnPath;
-        picasso.load(resourceUrl$default + str + containerInfo.getLogo()).into(newContainerLayoutBinding.mainImageContainer);
+        picasso.load(projectResourceUrl$default + str + containerInfo.getLogo()).into(newContainerLayoutBinding.mainImageContainer);
         this.awardsAdapter.addWinnerInfo(containerInfo.getItems());
         String backgroundImage = containerInfo.getBackgroundImage();
         if (backgroundImage != null && backgroundImage.length() != 0) {
             NewContainerLayoutBinding newContainerLayoutBinding2 = this.binding;
             newContainerLayoutBinding2.blurContainer.setVisibility(4);
             Picasso picasso2 = Picasso.get();
-            String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             String str2 = this.imageCdnPath;
-            picasso2.load(resourceUrl$default2 + str2 + containerInfo.getBackgroundImage()).into(newContainerLayoutBinding2.imageBg);
+            picasso2.load(projectResourceUrl$default2 + str2 + containerInfo.getBackgroundImage()).into(newContainerLayoutBinding2.imageBg);
         } else {
             NewContainerLayoutBinding newContainerLayoutBinding3 = this.binding;
             newContainerLayoutBinding3.imageBg.setImageDrawable(null);
@@ -137,9 +135,9 @@ public final class NewContainerScreen extends SAMPUIElement {
         if (buttonBackgroundImage != null && buttonBackgroundImage.length() != 0) {
             NewContainerLayoutBinding newContainerLayoutBinding4 = this.binding;
             Picasso picasso3 = Picasso.get();
-            String resourceUrl$default3 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            String projectResourceUrl$default3 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             String str3 = this.imageCdnPath;
-            picasso3.load(resourceUrl$default3 + str3 + containerInfo.getButtonBackgroundImage()).into(newContainerLayoutBinding4.imageButtonBg);
+            picasso3.load(projectResourceUrl$default3 + str3 + containerInfo.getButtonBackgroundImage()).into(newContainerLayoutBinding4.imageButtonBg);
             newContainerLayoutBinding4.actionButtonText.setTextColor(-1);
             newContainerLayoutBinding4.actionButton.setBackgroundTintList(null);
             return;
@@ -150,7 +148,7 @@ public final class NewContainerScreen extends SAMPUIElement {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
+    public void onBackendMessageHandled(String data, int i) {
         Companion.ContainerInfo containerInfo;
         Intrinsics.checkNotNullParameter(data, "data");
         if (i != 0 || (containerInfo = (Companion.ContainerInfo) MapperKt.jsonToModel(data, Companion.ContainerInfo.class, getBackendID(), getTargetActivity(), getNotifier())) == null) {

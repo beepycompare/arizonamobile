@@ -6,10 +6,10 @@ import org.json.JSONObject;
 public final class xo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final yo f1312a;
+    public final yo f1317a;
 
     public xo(We we, Bo bo, String str) {
-        this.f1312a = new yo(we, bo, new zo() { // from class: io.appmetrica.analytics.impl.xo$$ExternalSyntheticLambda0
+        this.f1317a = new yo(we, bo, new zo() { // from class: io.appmetrica.analytics.impl.xo$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.zo
             public final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
                 return xo.a(jSONObject, jSONObject2);
@@ -35,43 +35,43 @@ public final class xo {
     }
 
     public final synchronized void b(long j) {
-        yo yoVar = this.f1312a;
+        yo yoVar = this.f1317a;
         yoVar.a(yoVar.a().put("session_id", j));
     }
 
     public final synchronized boolean c() {
-        return this.f1312a.a().optBoolean("first_event_done", false);
+        return this.f1317a.a().optBoolean("first_event_done", false);
     }
 
     public final synchronized boolean d() {
-        return this.f1312a.a().optBoolean("init_event_done", false);
+        return this.f1317a.a().optBoolean("init_event_done", false);
     }
 
     public final synchronized int b() {
-        return this.f1312a.a().optInt("open_id", 1);
+        return this.f1317a.a().optInt("open_id", 1);
     }
 
     public final synchronized void c(int i) {
-        yo yoVar = this.f1312a;
+        yo yoVar = this.f1317a;
         yoVar.a(yoVar.a().put("open_id", i));
     }
 
     public final synchronized void b(int i) {
-        yo yoVar = this.f1312a;
+        yo yoVar = this.f1317a;
         yoVar.a(yoVar.a().put("last_migration_api_level", i));
     }
 
     public final synchronized int a() {
-        return this.f1312a.a().optInt("attribution_id", 1);
+        return this.f1317a.a().optInt("attribution_id", 1);
     }
 
     public final synchronized void a(int i) {
-        yo yoVar = this.f1312a;
+        yo yoVar = this.f1317a;
         yoVar.a(yoVar.a().put("attribution_id", i));
     }
 
     public final synchronized void a(long j) {
-        yo yoVar = this.f1312a;
+        yo yoVar = this.f1317a;
         yoVar.a(yoVar.a().put("external_attribution_window_start", j));
     }
 }
